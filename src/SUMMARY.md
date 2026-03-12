@@ -12,6 +12,10 @@
 - [Verifiable Intent: A Deep Dive](./verifiable-intent.md)
 - [Context Infrastructure: The Lasting Investment](./context-infrastructure.md)
 
+# The Evidence
+
+- [When Trust Breaks Down](./when-trust-breaks.md)
+
 # The Framework
 
 - [The PAC Framework](./pac-framework.md)

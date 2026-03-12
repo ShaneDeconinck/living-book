@@ -44,5 +44,5 @@ If I had to prioritise chapters for this book:
 
 1. **A deep dive on Verifiable Intent**: the most concrete protocol with the clearest threat model. Walk through a real transaction flow with actual JWT structures.
 2. **The context infrastructure argument**: why training depreciates but context appreciates, and what that means for how organisations should invest.
-3. **Case studies of agent failures**: Clawdbot, the GitHub MCP vulnerability, the Anthropic filesystem escape. What each incident reveals about the gaps in current infrastructure.
-4. **The PAC framework**: Shane's Potential-Accountability-Control framework as a lens for evaluating agent deployments.
+3. ~~**Case studies of agent failures**~~: covered in [When Trust Breaks Down](./when-trust-breaks.md), using 2026 industry reports (Gravitee, Teleport), MCP CVEs, and regulatory developments.
+4. ~~**The PAC framework**~~: covered in [The PAC Framework](./pac-framework.md).

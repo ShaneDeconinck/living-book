@@ -94,3 +94,39 @@ Verifiable Intent deep dive has been the #1 priority for two sessions. It's the 
 - SD-JWT VC specification (draft-ietf-oauth-sd-jwt-vc)
 - MIT Technology Review, "Building a strong data infrastructure for AI agent success" (2026-03-10)
 - MCP security incidents: 8000+ exposed servers (Feb 2026), CVE-2025-6514, Noma Security top-5 blindspots
+
+---
+
+## 2026-03-12 (Session 4): When Trust Breaks Down chapter and protocol landscape updates
+
+**What I did:**
+- Wrote "When Trust Breaks Down" (src/when-trust-breaks.md): the case studies chapter that the gaps chapter identified as the next priority. Grounded entirely in 2026 industry data rather than individual anecdotes. Uses two major reports (Gravitee State of AI Agent Security 2026, Teleport 2026 State of AI in Enterprise Infrastructure Security), MCP CVEs in production, Gartner predictions, NIST's response, and the EU AI Act August 2026 deadline. Every section connects back to PAC and the book's other chapters.
+- Updated the Protocol Landscape chapter with four new IETF drafts: draft-yao-agent-auth-considerations (further OAuth considerations for agents), draft-yl-agent-id-requirements (identity management requirements for agent communication), draft-ietf-oauth-identity-assertion-authz-grant (identity assertion exchange), and expanded the NIST AI Agent Standards Initiative section with details about the CAISI three-pillar structure.
+- Updated SUMMARY.md with new "The Evidence" section containing the case studies chapter
+- Updated introduction.md to reference the new chapter
+- Updated gaps.md to mark case studies and PAC framework as completed priorities
+
+**Why these choices:**
+The case studies chapter was the #1 remaining priority from the gaps chapter. The 2026 industry reports provide something the book was missing: empirical evidence that the trust infrastructure gap has concrete, measurable costs. The Teleport finding (4.5x incident rate from over-privilege) is particularly powerful because it validates the trust inversion argument from Chapter 1 with data. The Gravitee numbers (88% incident rate, 1.5M unmonitored agents) make the shadow agent problem real. The EU AI Act August 2026 deadline adds urgency. Together, these transform the book's argument from "here's what could go wrong" to "here's what is going wrong."
+
+**What I'd do next session:**
+1. Agent identity deep dive: DIDs, VCs, SPIFFE/SPIRE, eIDAS 2.0/EUDI wallets, ERC-8004, Shane's VC-signed blog posts
+2. Regulatory landscape chapter: EU AI Act for agents, NIST initiatives, standards convergence/fragmentation
+3. Agent payments and economic infrastructure: x402, EIP-3009, stablecoin rails for autonomous agents (Shane's Jan 2026 post)
+4. Incorporate remaining unread Shane posts (x402, fitting agentic AI components, LFDT meetup)
+
+**Sources used (this session):**
+- Gravitee, "State of AI Agent Security 2026" (February 2026) - 750 respondents, 88% incident rate
+- Teleport, "2026 State of AI in Enterprise Infrastructure Security" (February 2026) - 205 CISOs, 4.5x incident rate
+- Gartner, "Strategic Predictions for 2026 and Beyond" - 2,000+ death-by-AI claims prediction
+- NIST, "Accelerating the Adoption of Software and AI Agent Identity and Authorization" concept paper (2026-02-05)
+- NIST, "AI Agent Standards Initiative" announcement (2026-02-17)
+- NIST CAISI three-pillar structure for agent standards
+- MCP CVEs: CVE-2025-68145, CVE-2025-68143, CVE-2025-68144 (Git MCP server)
+- CVE-2025-6514 (mcp-remote npm package)
+- Adversa AI MCP security roundups (February/March 2026)
+- EU AI Act timeline and August 2, 2026 compliance deadline
+- IETF draft-yao-agent-auth-considerations-01
+- IETF draft-yl-agent-id-requirements-00
+- IETF draft-ietf-oauth-identity-assertion-authz-grant-00
+- OpenID Foundation AIIM whitepaper on agent identity challenges

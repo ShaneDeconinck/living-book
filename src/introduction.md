@@ -20,6 +20,7 @@ This book synthesises it. We cover:
 - **[The protocols](./protocol-landscape.md)**: what's being built, from OAuth extensions to decentralised identity to cryptographic delegation chains
 - **[Verifiable Intent](./verifiable-intent.md)**: a deep dive into the SD-JWT credential architecture that turns user intent into a cryptographic object
 - **[Context infrastructure](./context-infrastructure.md)**: why the lasting competitive advantage isn't the model or the scaffolding, but the information infrastructure underneath
+- **[When trust breaks down](./when-trust-breaks.md)**: real incident data, security reports, and what they reveal about the cost of missing infrastructure
 - **[The framework](./pac-framework.md)**: the PAC Framework (Potential, Accountability, Control) as the governance lens for evaluating agent deployments
 - **[The gaps](./gaps.md)**: what's missing, what's fragmented, and where we think the field needs to go
 

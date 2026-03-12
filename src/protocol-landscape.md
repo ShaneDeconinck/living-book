@@ -22,6 +22,16 @@ Several groups are working to make OAuth agent-aware:
 
 **OpenID Connect for Agents (OIDC-A)** ([paper](https://arxiv.org/html/2509.25974v1)) extends OpenID Connect with agent-specific claims, attestation mechanisms, delegation chain support, and dedicated endpoints. Relying parties validate delegation chains by verifying chronological ordering, confirming each issuer is trusted, validating scope reduction at each step, and enforcing constraints.
 
+**Agent Authorization Profile (AAP)** ([draft-aap-oauth-profile](https://datatracker.ietf.org/doc/html/draft-aap-oauth-profile-00.html)) defines an authorization profile for OAuth 2.0 and JWT designed specifically for autonomous AI agents. It extends existing standards without introducing a new protocol, focusing on how agents obtain and present credentials when operating independently.
+
+**OAuth Scope Aggregation** ([draft-jia-oauth-scope-aggregation](https://datatracker.ietf.org/doc/draft-jia-oauth-scope-aggregation/)) addresses a practical problem in multi-step agent workflows: rather than requesting authorization at each step, the agent aggregates the scopes required across an entire workflow and initiates a single authorization procedure. This reduces user interruption while maintaining explicit consent for the full scope of agent action.
+
+**Further Considerations on AI Agent Auth** ([draft-yao-agent-auth-considerations](https://www.ietf.org/archive/id/draft-yao-agent-auth-considerations-01.html)) extends the initial IETF agent auth draft with additional analysis of how OAuth extensions should be applied: covering agent registration, token lifecycle, and the boundaries between what existing standards handle and where new work is needed.
+
+**Digital Identity Management for Agent Communication** ([draft-yl-agent-id-requirements](https://datatracker.ietf.org/doc/html/draft-yl-agent-id-requirements-00)) defines requirements for agent identity management in communication protocols: how agents should be identified, how identity metadata should be structured, and what lifecycle management looks like.
+
+**Identity Assertion Authorization Grant** ([draft-ietf-oauth-identity-assertion-authz-grant](https://www.ietf.org/archive/id/draft-ietf-oauth-identity-assertion-authz-grant-00.html)) is an OAuth 2.0 extension that enables a client to exchange an identity assertion (like a SAML assertion or ID token) for an access token. This is relevant for agent scenarios where identity needs to cross protocol boundaries.
+
 ## Cross-Domain Trust: DIDs, VCs, and TSP
 
 Within one organisation, a shared identity provider anchors trust. Across organisations, you need something else.
@@ -76,13 +86,21 @@ The project focuses on four areas:
 
 Standards under consideration include MCP, OAuth 2.0/2.1, OpenID Connect, SPIFFE/SPIRE, SCIM, and NGAC. The comment period runs through April 2, 2026 ([submit feedback](mailto:AI-Identity@nist.gov)).
 
-Separately, NIST launched the [AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative) in February 2026, seeking industry input on interoperability and security standards.
+Separately, NIST launched the [AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative) on February 17, 2026, through their Center for AI Standards and Innovation (CAISI). The initiative has three pillars: facilitating industry-led development of agent standards and US leadership in international standards bodies; fostering community-led open source protocol development for agents; and advancing research in agent security and identity. The initiative will coordinate with the National Science Foundation and other interagency partners. NIST plans to publish research, guidelines, and further deliverables throughout 2026.
 
 ## OpenID Foundation: The Trust Fabric
 
 The OpenID Foundation's AI Identity Management (AIIM) Community Group [responded to NIST's RFI](https://openid.net/oidf-responds-to-nist-on-ai-agent-security/) in March 2026 with a key framing: there needs to be a "trust fabric" beneath the technical controls.
 
 Their [whitepaper (October 2025)](https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/) identified the core challenge: the autonomy inflection point is approaching faster than most realise. A single agent calling a handful of internal APIs is manageable. Highly autonomous agents spawning sub-agents across organisational boundaries, making thousands of decisions daily: that requires treating agents as first-class citizens in identity infrastructure, with proper lifecycle management, governance policies, and accountability.
+
+## Zero Trust for Agents
+
+The Cloud Security Alliance published the [Agentic Trust Framework (ATF)](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents) in February 2026, applying Zero Trust principles specifically to AI agents. ATF is an open governance specification: all actions logged, inputs validated, circuit breakers preventing runaway failures. Organisations progress agents from initial deployment through increasing levels of autonomy, with clear criteria and controls at each stage.
+
+The urgency is real. A [CSA/Strata Identity survey (February 2026)](https://cloudsecurityalliance.org/press-releases/2026/02/05/cloud-security-alliance-strata-survey-finds-that-enterprises-are-in-time-to-trust-phase-as-they-build-ai-autonomy-foundations) found that 84% of organisations doubt they could pass a compliance audit focused on agent behaviour or access controls. Agent adoption is surging: 58% of organisations currently manage between 1-100 agents, but over 70% expect to manage hundreds within the next year.
+
+Red Hat's [zero trust analysis for autonomous agentic AI systems (February 2026)](https://next.redhat.com/2026/02/26/zero-trust-for-autonomous-agentic-ai-systems-building-more-secure-foundations/) reinforces the same direction: traditional perimeter-based security models break down when agents operate autonomously across trust boundaries.
 
 ## Open-Source Implementations
 
@@ -91,6 +109,7 @@ The gap between specification and production is closing:
 - **Alibaba's Open Agent Auth** ([GitHub](https://github.com/alibaba/open-agent-auth)): enterprise framework implementing cryptographic identity binding, fine-grained authorisation, request-level isolation, and semantic audit trails. Builds on the IETF Agent Operation Authorization draft with OAuth 2.0, OpenID Connect, WIMSE, W3C VC, and MCP integration.
 - **AGNTCY** ([agntcy.org](https://agntcy.org)): Linux Foundation project (via Cisco) building agent identity and discovery infrastructure.
 - **NANDA** ([MIT Media Lab](https://nanda.media.mit.edu/)): decentralised agent registry and authentication.
+- **AgentGateway** ([GitHub](https://github.com/agentgateway/agentgateway)): a Rust-based proxy for agent-to-agent and agent-to-tool communication that integrates with policy engines (Open Policy Agent, Kyverno, OpenFGA/SpiceDB) for fine-grained, context-aware authorization at the network layer.
 
 ## How the Pieces Fit
 
@@ -100,8 +119,9 @@ No single protocol solves agent trust. The picture that's emerging:
 |-------|-----------|-------------|
 | **Identity** | OAuth + OBO | DIDs, TSP |
 | **Authority** | Scopes, RBAC, ABAC | VCs, delegation chains |
-| **Delegation** | OBO token chains | PIC, Verifiable Intent |
-| **Connectivity** | MCP | A2A |
+| **Delegation** | OBO token chains, AAP | PIC, Verifiable Intent |
+| **Connectivity** | MCP, AgentGateway | A2A |
+| **Policy enforcement** | OPA, ABAC | ATF, AgentGateway |
 | **Audit** | Structured logs | Cryptographic proof |
 
 The common thread: authority must be explicit, bounded, traceable, and independently verifiable. Whether that's an OAuth scope within your org or a verifiable credential across the internet, the principle is the same.
