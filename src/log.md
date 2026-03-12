@@ -162,3 +162,40 @@ It was the #1 remaining priority in the gaps doc. Shane's writing on the scaffol
 **Next session priorities:**
 1. Agent Payments and Economics chapter (x402, EIP-3009, payment as trust signal)
 2. Sandboxing and Execution Security chapter (native OS vs Docker vs DevContainers, OWASP Top 10)
+
+## 2026-03-12: Agent Payments and Economics Chapter
+
+**What I did:**
+- Wrote Chapter 7: "Agent Payments and Economics" covering the full landscape of agent payment infrastructure. Sections: why traditional payments break for agents, payment as trust signal (Shane's key insight), x402 and EIP-3009 (gasless stablecoin payments with detailed flow and economics), the three commerce protocols (AP2/Google, ACP/Stripe+OpenAI, UCP/Google+Shopify+Walmart), on-chain agent identity via ERC-8004 (three registries: identity, reputation, validation), real-world milestones (Santander/Mastercard first European agent payment, Stripe x402 preview, J.P. Morgan/Mirakl agentic commerce), micro-transaction economics, authorization via Verifiable Intent constraints, PAC mapping table, infrastructure maturity for payments (I1-I5), and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Marked Agent Payments as done in gaps.md.
+- Added new observations on payment infrastructure velocity and ERC-8004 as cross-organizational trust primitive.
+
+**Why this chapter:**
+It was the #1 priority in the gaps doc. Shane has deep hands-on experience (built an x402 demo, analyzed ERC-8004 and Verifiable Intent in detail), and the real-world deployment milestones from Q1 2026 (Santander/Mastercard, Stripe, J.P. Morgan) make the timing right. Agent payments are moving from proof-of-concept to production, and the convergence of payment protocols with trust infrastructure (Verifiable Intent, ERC-8004) validates the PAC Framework's emphasis on Control pillar infrastructure.
+
+**Sources used:**
+- Shane's blog posts: x402 hands-on (Jan 7, 2026), ERC-8004 mainnet (Jan 28, 2026), Verifiable Intent (Mar 6, 2026)
+- PAC Framework from trustedagentic.ai
+- x402 specification (x402.org) and Foundation announcement (Coinbase/Cloudflare, Sep 2025)
+- Stripe: x402 payments documentation, The Block coverage (Feb 11, 2026)
+- Google Cloud Blog: AP2 announcement (2026)
+- Stripe/OpenAI: ACP specification and Instant Checkout in ChatGPT
+- Google Developers Blog: UCP specification
+- ERC-8004: EIP specification, multi-chain deployment data
+- Mastercard Newsroom: Santander agent payment milestone (Mar 2, 2026)
+- J.P. Morgan Payments: Mirakl Nexus agentic commerce agreement (Mar 10, 2026)
+- Solana x402 transaction data (35M+ transactions, $10M+ volume)
+- Web searches on agent payment economics, micro-transaction infrastructure, stablecoin settlement
+
+**What I noticed:**
+- The speed of adoption is striking. In January 2026, Shane built a proof-of-concept. By March 2026, Mastercard and Santander completed a live regulated payment. That is an unusually fast move from experimental to production in financial services.
+- The three commerce protocols (AP2, ACP, UCP) are more complementary than competitive. AP2 handles payment authorization, ACP handles checkout flows, UCP handles product discovery. Verifiable Intent provides the shared cryptographic constraint layer. This is convergence, not fragmentation.
+- ERC-8004's three-registry pattern (identity, reputation, validation) is a general architecture that could apply off-chain too. The insight that payment receipts provide Sybil resistance for reputation (you can only rate services you paid for) is elegant.
+- The micro-transaction economics are decisive. Traditional payment processing ($0.30 minimum) cannot support $0.01 API calls. L2 stablecoin settlement ($0.002 gas) can. This is not a marginal improvement: it is the difference between viable and impossible for agent-to-agent commerce.
+- Payment infrastructure and trust infrastructure are converging. Verifiable Intent turns spending constraints into cryptographic objects. ERC-8004 turns reputation into on-chain signals. x402 turns settlement into inline HTTP. These are not separate systems: they are layers of the same governance stack.
+- The chapter connects to all three PAC pillars more naturally than some previous chapters. Payment as a trust signal is simultaneously Potential (new business models), Accountability (auditable proof of authorization), and Control (cryptographic spending constraints). This makes it a strong example of how the pillars are interdependent.
+
+**Next session priorities:**
+1. Sandboxing and Execution Security chapter (native OS vs Docker vs DevContainers, OWASP Top 10)
+2. Cross-Organization Trust chapter (TSP + eIDAS 2.0 + EUDI + Verifiable Credentials assembly)

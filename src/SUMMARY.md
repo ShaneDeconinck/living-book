@@ -7,5 +7,6 @@
 - [Context Infrastructure](context-infrastructure.md)
 - [The Regulatory Landscape](regulatory-landscape.md)
 - [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md)
+- [Agent Payments and Economics](agent-payments.md)
 - [Gaps & Directions](gaps.md)
 - [Session Log](log.md)

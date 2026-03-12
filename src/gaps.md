@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12)
+## Observations (Updated 2026-03-12, Session 2)
 
 ### Verifiable Intent Is a Big Deal
 
@@ -11,6 +11,14 @@ Mastercard and Google open-sourced Verifiable Intent on March 5, 2026: a three-l
 ### The Identity Standards Landscape Is Converging Fast
 
 Between NIST's concept paper (Feb 2026), OpenID's AIIM Community Group, the IETF draft for OBO with AI agents, and Verifiable Intent, the standards bodies are all moving on agent identity simultaneously. The window for shaping these standards is narrow (NIST comment period closes April 2). This convergence validates the PAC Framework's emphasis on building on emerging standards rather than proprietary solutions.
+
+### Agent Payments Infrastructure Is Moving Faster Than Expected
+
+Between Stripe's x402 preview (February 2026), Santander/Mastercard's first live agent payment in Europe (March 2, 2026), and J.P. Morgan/Mirakl's agentic commerce agreement (March 10, 2026), the largest payment processors in the world are building agent payment infrastructure. x402 on Solana has processed 35M+ transactions. The three commerce protocols (AP2, ACP, UCP) are more complementary than competitive, and Verifiable Intent provides the shared authorization layer. The gap between "agents can pay" and "agents routinely pay" is closing fast.
+
+### ERC-8004 As Cross-Organizational Trust Primitive
+
+ERC-8004's deployment across 12+ chains with singleton contracts is interesting not just for blockchain use cases. The three-registry pattern (identity, reputation, validation) is a general architecture for cross-organizational agent trust. The reputation registry's use of payment receipts as Sybil resistance (proof you actually used the service before rating it) is a design pattern worth watching. Whether this lands on-chain or gets replicated off-chain, the pattern matters.
 
 ## Earlier Observations
 
@@ -50,7 +58,7 @@ Prioritized by impact:
 
 4. ~~**Reliability, Evaluation, and the Complacency Trap** (Potential + Accountability)~~: DONE. Chapter covers reliability decomposition (consistency, robustness, predictability, safety), benchmark landscape (SWE-bench, τ-bench, GAIA, HAL), the evaluation gap (offline vs online, 52% to 37% adoption drop), automation complacency from human factors research (Bainbridge 1983, Don Norman 1990), the 99% problem, infrastructure-in-the-loop as replacement for human-in-the-loop, and evaluation as governance infrastructure.
 
-5. **Agent Payments and Economics** (Potential + Control): x402, EIP-3009, the economics of agent-to-agent commerce on L2s. Payment as trust signal.
+5. ~~**Agent Payments and Economics** (Potential + Control)~~: DONE. Chapter covers why traditional payments break for agents, payment as trust signal, x402 and EIP-3009 (gasless stablecoin payments), the three commerce protocols (AP2/ACP/UCP), ERC-8004 on-chain registries, real-world milestones (Santander/Mastercard, Stripe x402, J.P. Morgan/Mirakl), micro-transaction economics, authorization via Verifiable Intent constraints, PAC mapping, and infrastructure maturity for payments.
 
 6. **Sandboxing and Execution Security** (Control): native OS vs Docker vs DevContainers. OWASP Top 10 for Agentic Applications. Containment by design.
 
