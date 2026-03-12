@@ -44,7 +44,7 @@ Prioritized by impact:
 
 1. ~~**Agent Identity and Delegation** (Control + Accountability)~~: DONE. Chapter covers OAuth limitations, OBO/DPoP extensions, DIDs/VCs, TSP, Verifiable Intent (Mastercard/Google), NIST/OpenID convergence, and infrastructure maturity mapping.
 
-2. **Context Infrastructure** (Potential + Control): why context is the durable investment. Structure, permissions, discovery, authority, freshness. Concrete examples from Clawdbot and Claude Code. THIS IS NEXT.
+2. ~~**Context Infrastructure** (Potential + Control)~~: DONE. Chapter covers the depreciation cycle, scaffolding trap, five dimensions (structure, permissions, discovery, authority, freshness), concrete examples from Claude Code/Manus/Clawdbot, MCP/A2A discovery protocols, agent gateways, and infrastructure maturity mapping.
 
 3. **The Regulatory Landscape** (Accountability): EU AI Act, NIST guidance, ISO 42001. How PAC maps to compliance. Timely given August 2026 enforcement.
 
