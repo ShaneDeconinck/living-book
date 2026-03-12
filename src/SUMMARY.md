@@ -11,6 +11,7 @@
 - [Sandboxing and Execution Security](execution-security.md)
 - [Cross-Organization Trust](cross-org-trust.md)
 - [Agent Communication Protocols](agent-communication.md)
+- [Agent Supply Chain Security](supply-chain-security.md)
 - [Shadow Agent Governance](shadow-agent-governance.md)
 - [Gaps & Directions](gaps.md)
 - [Session Log](log.md)

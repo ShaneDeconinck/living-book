@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-12: Agent Supply Chain Security Chapter
+
+**What I did:**
+- Wrote Chapter 10: "Agent Supply Chain Security" covering the trust chain beyond the agent itself. Sections: the OpenClaw ClawHavoc crisis as concrete case study, agent supply chain attack taxonomy (six distinct attack vectors), the trust registry problem, AI-BOM concept, defense patterns (four layers), CSA Agentic Trust Framework, PAC mapping, infrastructure maturity (I1-I5), and practical recommendations.
+- Updated agent-communication.md with the MCP 2026 roadmap details announced March 9, 2026 (four priority areas: streamable HTTP transport, Tasks primitive refinements, .well-known discovery, enterprise deployment needs).
+- Updated gaps.md with three new observations (supply chain as newest attack surface, MCP roadmap specifics, non-human identity scale) and three new open questions (multi-agent orchestration, incident response, human-agent interaction UX).
+
+**Why this chapter:**
+Stepped back and assessed what the book was missing most. All 12 existing chapters were assessed as complete and well-sourced. The CLAUDE.md target is 15+ chapters. The biggest gap was supply chain security: the OpenClaw ClawHavoc campaign (1,184 malicious skills), BlueRock's MCP SSRF findings (36.7% of 7,000 servers), and the Azure MCP SSRF (CVE-2026-26118) are all recent, significant, and directly connected to Shane's writing about OpenClaw and the scaffolding trap. The execution-security chapter covers sandboxing and containment, but supply chain is a distinct problem: it's about trusting the components inside the sandbox, not just containing the sandbox itself.
+
+**What I considered but did not do:**
+- Multi-agent orchestration chapter: important but less urgent than supply chain (the cross-org trust and communication chapters already touch on agent-to-agent patterns).
+- Incident response chapter: valuable but depends on supply chain and other security chapters being in place first.
+- Human-agent interaction UX chapter: the complacency trap chapter frames the problem well; the UX solution needs more source material.
+
+**Sources used:**
+- Shane's blog posts: "AI Agent Reliability Is Getting Easier" (OpenClaw reference), "OpenClaw and Moltbook" (AI literacy, trust/fear dynamics)
+- PAC Framework from trustedagentic.ai (read fresh)
+- Koi Security ClawHavoc research (1,184 malicious skills on ClawHub)
+- SecurityScorecard OpenClaw enterprise exposure analysis (135,000+ instances)
+- BlueRock Security MCP fURI vulnerability research (36.7% SSRF rate across 7,000 servers)
+- Microsoft CVE-2026-26118 (Azure MCP SSRF)
+- Anthropic/UK AISI/Turing Institute model poisoning research (250 documents)
+- OWASP Top 10 for Agentic Applications (ASI04: Memory Poisoning)
+- NVIDIA AI Red Team sandboxing guidance (configuration file protection)
+- CSA Agentic Trust Framework (February 2026)
+- CSA/Strata Identity survey (NHI ratio 100:1, 84% compliance doubt)
+- OWASP AI-BOM Initiative, SPDX 3.0.1 AI profiles
+- MCP 2026 Roadmap announcement (March 9, 2026)
+- MCPTox benchmark (capable models more vulnerable to tool poisoning)
+- ERC-8004 reputation registry pattern
+
+**What I noticed:**
+- The supply chain chapter reveals a pattern: every chapter in the book assumes the components inside the agent are trustworthy. Supply chain security is the chapter that questions that assumption. It connects to every other chapter: identity (tool publisher identity), context (context sources as supply chain components), execution security (sandboxing assumes trust in what's sandboxed), communication (MCP servers as supply chain links), shadow agents (unsanctioned agents with unverified dependencies).
+- The CSA survey data quantifies the identity gap at enterprise scale: NHIs outnumber humans 100:1. This makes Shane's trust inversion principle not just theoretically important but operationally urgent.
+- The MCP roadmap's inclusion of "enterprise deployment needs" (audit trails, SSO-integrated auth, gateway behavior) signals MCP transitioning from developer protocol to production infrastructure. This is the maturity curve the book's infrastructure maturity tables predict.
+- The AI-BOM concept is the supply chain equivalent of the agent registry from the shadow agent governance chapter. Both are inventory problems. The difference: the agent registry inventories agents; the AI-BOM inventories each agent's dependencies. Together they provide full visibility.
+
+**Next session priorities:**
+1. Human-agent interaction patterns chapter (UX of trust, oversight models beyond "human in the loop")
+2. Multi-agent orchestration and trust composition chapter
+3. Review and tighten existing chapters for cross-references to the new supply chain chapter
+
 ## 2026-03-12: Foundation Chapters
 
 **What I did:**

@@ -87,10 +87,12 @@ The HTTP transport enables remote MCP servers, which is where production deploym
 
 Running MCP at scale has surfaced gaps. Stateful sessions conflict with load balancers. Horizontal scaling requires workarounds. There is no standard way for a registry or crawler to discover what a server does without connecting to it.[^5]
 
-The 2026 roadmap addresses two priorities:
+The 2026 roadmap, announced March 9, 2026, identifies four priority areas where Spec Enhancement Proposals (SEPs) receive expedited review:[^5]
 
-1. **Stateless transport**: evolving the session model so servers can scale horizontally without holding state per client.
+1. **Streamable HTTP transport improvements**: making MCP servers viable as remote services at scale by resolving conflicts between stateful sessions, load balancers, and horizontal scaling.
 2. **Server discovery via `.well-known`**: MCP Server Cards, a standardized metadata format served at `.well-known/mcp.json`, would let browsers, crawlers, and registries discover server capabilities, available transports, authentication requirements, and protocol versions without establishing a connection.[^6]
+3. **Tasks primitive refinements**: improving retry semantics and expiry policies based on early production use of long-running operations.
+4. **Enterprise deployment needs**: audit trails, SSO-integrated auth, gateway behavior, and configuration portability for production environments.
 
 These are infrastructure maturity improvements. They move MCP from "works in development" to "works in production at scale." The specification updates are targeted for the next release, tentatively slated for June 2026.[^5]
 
@@ -378,7 +380,7 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 
 **If you are crossing organizational boundaries**: evaluate TMCP and TA2A for trust-layer integration. Standard MCP/A2A do not verify server identity or track delegation chains. For cross-org deployments, you need verifiable identifiers and authenticated channels that survive across trust boundaries.
 
-**What to watch**: the MCP specification update (targeted June 2026) will address stateless transport and `.well-known` discovery. The AAIF governance structure will shape how MCP, A2A, and agent gateways evolve together. And the authorization gap: the distance between what communication protocols can express ("connect to this tool") and what governance requires ("connect to this tool, for this purpose, under these constraints"): remains the most important unsolved problem in the stack.
+**What to watch**: the MCP specification update (targeted June 2026) will address streamable HTTP transport, `.well-known` discovery, Tasks primitive refinements, and enterprise deployment needs (audit trails, SSO-integrated auth, gateway behavior). The AAIF governance structure will shape how MCP, A2A, and agent gateways evolve together. And the authorization gap: the distance between what communication protocols can express ("connect to this tool") and what governance requires ("connect to this tool, for this purpose, under these constraints"): remains the most important unsolved problem in the stack.
 
 ---
 
