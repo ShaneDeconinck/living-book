@@ -1,0 +1,10 @@
+[book]
+title = "Trusted AI Agents"
+authors = ["Shane Deconinck", "Ghosty"]
+language = "en"
+src = "src"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://shanedeconinck.be/book"
