@@ -44,6 +44,7 @@ The book opens with the problem ([Why Agents Break Trust](why-agents-break-trust
 - **[Shadow Agent Governance](shadow-agent-governance.md)**: the transition from ungoverned to governed. Discovery, registration, the amnesty model, and why infrastructure enforcement beats prohibition.
 - **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes (or breaks) when agents delegate to other agents. Delegation Capability Tokens, cascading failures, and governance that scales with delegation depth.
 - **[Human-Agent Collaboration Patterns](human-agent-collaboration.md)**: designing oversight that does not depend on sustained human vigilance. The autonomy dial, permission granularity matched to blast radius, and agent self-governance.
+- **[Building the Inferential Edge](building-the-edge.md)**: synthesis and roadmap. How the technical chapters compose into a coherent trust infrastructure stack, what to build first, and why the edge compounds.
 
 Start wherever your need is most urgent. Each chapter stands on its own while connecting to the larger framework.
 

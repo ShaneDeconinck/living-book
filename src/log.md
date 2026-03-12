@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-12: Building the Inferential Edge (Concluding Chapter)
+
+**What I did:**
+- Wrote Chapter 15: "Building the Inferential Edge," the book's concluding synthesis chapter. Sections: the gap (inferential edge thesis with current data), the trust infrastructure stack (how all 13 technical chapters compose into Control/Accountability/Potential layers), where to start (four-phase implementation roadmap mapped to I1-I5 maturity levels), the organizational challenge (process redesign, governance as enablement, compounding organizational learning), the convergence timeline (NIST April 2, MCP June 2026, EU AI Act August 2, AAIF late 2026, NIST-EU 2027), PAC as iterative practice, and the edge that compounds.
+- Updated SUMMARY.md with new chapter (16 chapters total including Gaps & Directions).
+- Updated introduction's Structure section to reference the concluding chapter.
+- Updated PAC Framework chapter's "Applying the Framework" section to reference the concluding chapter.
+- Updated gaps.md with two new observations: MCP attack surface acceleration (30 CVEs in 60 days, 38% servers lack auth), and the concluding synthesis note.
+
+**Why this chapter:**
+Stepped back and assessed what the book was missing most. The book had 15 chapters, all complete and well-sourced, covering the full PAC landscape. But it had no ending. After Human-Agent Collaboration Patterns, the reader jumped to Gaps & Directions with no synthesis. The book read as a strong reference collection but not as a complete narrative. A concluding chapter was the highest-impact move because it: (1) ties the inferential edge thesis (Shane's central argument) to all 13 technical chapters, showing how they compose into a coherent stack; (2) provides a practical implementation roadmap sequenced by the I1-I5 maturity levels used throughout the book; (3) addresses the organizational dimension (70% of failures are organizational, not technical) which no individual technical chapter covers; (4) maps the convergence timeline that creates urgency; (5) closes the loop on PAC as iterative practice.
+
+**What I considered but did not do:**
+- Expanding the introduction (52 lines). It remains concise but complete: purpose, audience, methodology, and structure. Expanding risks filler.
+- Quality review of individual chapters. All chapters are well-sourced and current. The concluding chapter implicitly reviews the whole book by showing how chapters connect.
+- Dedicated incident response chapter. Still valuable as a future addition, but lower impact than the synthesis chapter. The Multi-Agent Trust chapter covers CoSAI basics.
+- Chain-of-thought compliance deep-dive. Partially addressed in Human-Agent Collaboration chapter. Full treatment needs more source material.
+
+**Sources used:**
+- Shane's blog posts: "When Intelligence Becomes Commodity" (inferential edge thesis), "The Work That's Leaving" (organizational transformation), "AI Agents Need the Inverse of Human Trust" (trust inversion), "Trusted AI Agents by Design" (TSP + PIC, March 11 LFDT meetup), "Trusted AI Agents: Why Traditional IAM Breaks Down" (PAC Framework)
+- PAC Framework from trustedagentic.ai (read fresh, including all 19 questions and dimension scales)
+- Gravitee: State of AI Agent Security 2026 (88% security incidents, 14.4% full security approval)
+- Microsoft Security Blog: 80% of Fortune 500 use active AI agents, 50%+ without oversight (February 2026)
+- Gartner: 1,000+ legal claims projected by end 2026
+- Adversa AI: 30 MCP CVEs in 60 days, 38% of 500+ servers lack authentication (March 2026)
+- Deloitte: Tech Trends 2026 (14% deployable, 11% in production)
+- Enterprise AI transformation research: 70% of failures from organizational resistance
+- NIST: AI Agent Identity and Authorization concept paper (comment period April 2, 2026)
+- CYE/Noma: Shadow AI statistics (1,200 unofficial AI apps per enterprise)
+
+**What I noticed:**
+- The four-phase roadmap (Visibility, Enforcement, Governance, Architecture) maps cleanly to the I1-I5 infrastructure maturity scale used throughout the book. This was not designed top-down: the phases emerged from asking "what depends on what?" The registry must exist before enforcement can reference it. Enforcement must exist before governance can compose across agents. Governance must exist before cross-organizational architecture can build on it. The I-levels were the right abstraction.
+- The organizational challenge section draws on data not used elsewhere in the book (70% failure rate from organizational resistance, the process redesign insight). This is territory Shane covers in "The Work That's Leaving" and "When Intelligence Becomes Commodity" but that the technical chapters naturally avoid. The concluding chapter is where these strategic arguments land.
+- The convergence timeline creates genuine urgency. NIST comment period in three weeks. EU AI Act enforcement in five months. Organizations building agent infrastructure are simultaneously racing standards timelines and regulatory deadlines. The chapter makes this concrete.
+- The book now has a complete narrative arc: problem (Chapter 1) to framework (Chapter 2) to 13 technical deep-dives to synthesis and roadmap (Chapter 15). A reader can enter at any chapter for reference, or read front-to-back for the full argument. The introduction and concluding chapter bookend the work.
+- With the concluding chapter, the book has reached a natural first-edition completeness. All major topics from the PAC Framework are covered. The remaining open questions (semantic interoperability, agent gateway + service mesh convergence, chain-of-thought compliance, dedicated incident response) are second-order topics that benefit from more real-world data. Future sessions should focus on quality improvement, freshening sources as the landscape evolves, and adding chapters only when significant new source material warrants it.
+
+**Next session priorities:**
+1. Quality review: re-read the full book for consistency, voice, flow, and identify the weakest sections for improvement.
+2. Monitor the NIST April 2 deadline and EU AI Act developments for regulatory chapter updates.
+3. Track MCP specification evolution (June 2026 target) for communication protocols chapter updates.
+4. Consider whether the semantic interoperability gap warrants its own chapter as more source material emerges.
+
 ## 2026-03-12: Why Agents Break Trust: Grounding in Real Incidents
 
 **What I did:**

@@ -190,6 +190,7 @@ The subsequent chapters apply PAC to specific technical domains:
 - **Shadow Agent Governance**: the transition from ungoverned to governed agents, discovery, registration, and infrastructure enforcement (Accountability + Control)
 - **Multi-Agent Trust and Orchestration**: how trust properties compose across delegation chains, Delegation Capability Tokens, cascading failures, and governance that scales with depth (Control + Accountability + Potential)
 - **Human-Agent Collaboration Patterns**: designing oversight that works, the autonomy dial, permission granularity matched to blast radius, and agent self-governance as complement to human oversight (Accountability + Potential)
+- **Building the Inferential Edge**: synthesis chapter. How the technical chapters compose into a trust infrastructure stack, a phased implementation roadmap, and why the edge compounds (Potential + Accountability + Control)
 
 Each chapter connects back to this framework. The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
 

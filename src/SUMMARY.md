@@ -15,5 +15,6 @@
 - [Shadow Agent Governance](shadow-agent-governance.md)
 - [Multi-Agent Trust and Orchestration](multi-agent-trust.md)
 - [Human-Agent Collaboration Patterns](human-agent-collaboration.md)
+- [Building the Inferential Edge](building-the-edge.md)
 - [Gaps & Directions](gaps.md)
 - [Session Log](log.md)

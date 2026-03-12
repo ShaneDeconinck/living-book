@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 11)
+## Observations (Updated 2026-03-12, Session 12)
 
 ### Multi-Agent Governance Is the Next Frontier
 
@@ -75,6 +75,14 @@ The industry is converging on three oversight models: Human-in-the-Loop (HITL), 
 ### Authorization Platforms for AI Agents Are Maturing
 
 Permit.io, Cerbos, Stytch, and WorkOS are all shipping fine-grained, context-aware permission models designed specifically for AI agents. The key pattern: attribute-based access control (ABAC) where permissions depend on what the agent is doing, for whom, and in what context, not just agent identity. Permit.io's Access Request MCP enables human-in-the-loop approval workflows via MCP. Cerbos provides dynamic authorization for MCP servers. This tooling layer is what makes per-task permission granularity practically implementable.
+
+### MCP Attack Surface Is Accelerating
+
+Adversa AI's March 2026 analysis reveals 30 CVEs filed against MCP infrastructure in just 60 days, and 38% of 500+ scanned servers completely lack authentication. Combined with the existing data (BlueRock's 36.7% SSRF rate, the Azure MCP CVE-2026-26118, MCPTox benchmark results), MCP's security gap is widening even as the protocol matures functionally. The 2026 roadmap's enterprise deployment focus (audit trails, SSO-integrated auth, gateway behavior) is the right response, but the gap between protocol ambition and deployment reality is a first-order risk. Covered in both the Supply Chain Security and Communication Protocols chapters.
+
+### The Concluding Synthesis
+
+The book now has a concluding chapter ("Building the Inferential Edge") that synthesizes the 13 technical chapters into a coherent trust infrastructure stack, provides a phased implementation roadmap mapped to infrastructure maturity levels (I1-I5), addresses the organizational challenge (70% of AI project failures are organizational, not technical), and maps the convergence timeline (NIST April 2, MCP June 2026, EU AI Act August 2). The chapter's central argument: the inferential edge compounds. Every agent governed teaches the organization how to govern the next one. The book now has a complete narrative arc: problem, framework, 13 technical deep-dives, synthesis and roadmap.
 
 ## Earlier Observations
 
