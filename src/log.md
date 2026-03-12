@@ -267,3 +267,37 @@ It was the #1 priority in the session log and identified as "the hard problem" i
 **Next session priorities:**
 1. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents, connecting to Accountability pillar)
 2. Revisit and strengthen existing chapters: the introduction may need updating to reflect the expanded scope (now 9 substantive chapters), and the PAC Framework chapter may benefit from forward references to the cross-org trust stack
+
+## 2026-03-12: Foundation Revision Session
+
+**What I did:**
+- Updated the PAC Framework chapter (Chapter 2) with two significant additions from the March 2026 framework revision:
+  1. **Error margin emphasis**: Expanded the Reliability section to stress that a reliability percentage without an error margin means nothing. Connected to the distinction between enumerable failure modes (workflows) and open-ended failure spaces (autonomous agents), which determines how knowable the error margin is and therefore how much autonomy can be safely earned.
+  2. **Implementation Architecture section**: Added a new section replacing the old "workflow design" concept. The key insight: workflows, agent loops, and autonomous agents are not exclusive choices but composable layers. The outer layer sets the reliability floor and tightens the error margin; the inner layer raises the quality ceiling. This reframes architecture selection as a governance decision, not just a capability decision.
+- Updated the "Applying the Framework" section to list all 7 current technical chapters (was listing only 5).
+- Rewrote the Introduction to incorporate Shane's "When Intelligence Becomes Commodity" thesis (March 2, 2026): intelligence is commodity, the inferential edge is infrastructure, and that edge compounds. This post had been missed in previous sessions. The introduction now frames the entire book around the gap between model access and organizational readiness, and includes a full chapter listing with one-line descriptions and cross-references.
+
+**Why revisions, not a new chapter:**
+Step 4 of the session protocol says to reassess priorities before writing. The PAC Framework chapter is the spine of the book, and it was behind the actual framework by two significant updates (error margin, implementation architecture). The introduction was listing 5 chapters when 9 exist and was missing the commodity intelligence thesis, which is the single best answer to "why does this book matter?" Foundations first.
+
+**Sources used:**
+- Shane's blog post: "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge" (March 2, 2026), previously unreferenced
+- PAC Framework from trustedagentic.ai (March 2026 revision): P7 question on error margins, implementation architecture composability model
+- Web searches for recent developments (March 2026):
+  - Alteryx/Gartner: 28% of US firms have zero confidence in AI data quality (March 9, 2026)
+  - OpenID Foundation AIIM group filed response to NIST RFI on agent security (March 2026)
+  - NIST RFI on AI Agent Security closed March 9, 2026
+  - Agentic AI Foundation (AAIF) under Linux Foundation: permanent home for A2A and MCP, co-founded by OpenAI, Anthropic, Google, Microsoft, AWS, Block
+  - McKinsey: "Trust in the Age of Agents" publication
+
+**What I noticed:**
+- The "commodity intelligence" framing resolves a gap in the book's argument. Previous chapters explained what trust infrastructure looks like but not why it is the competitive differentiator. Shane's March 2 post makes the strategic case: when anyone can access the intelligence, the edge is the infrastructure to unleash it. This is a value argument (Potential pillar) that motivates the technical depth in every subsequent chapter.
+- The implementation architecture composability model is a more nuanced framing than the previous chapter offered. It explains why organizations do not have to choose between reliability (workflows) and capability (autonomous agents): they can compose them. This has practical implications for every chapter's recommendations.
+- The error margin distinction (enumerable vs open-ended failure modes) connects directly to the Reliability chapter's discussion of evaluation gaps. Offline evaluation can enumerate workflow failures; it cannot enumerate autonomous agent failures. This is why online evaluation matters and why the 52%-to-37% offline-to-online evaluation drop is a governance problem, not just a tooling gap.
+- The AAIF (Agentic AI Foundation) governance structure for MCP and A2A is significant: having both protocols under one foundation with six major sponsors (OpenAI, Anthropic, Google, Microsoft, AWS, Block) suggests convergence rather than fragmentation. Worth tracking for a future Agent Communication Protocols chapter.
+- The NIST RFI closure (March 9) and April 2 concept paper deadline mean the standards window is narrowing. Organizations that want to influence agent identity standards have weeks, not months.
+
+**Next session priorities:**
+1. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents)
+2. Agent Communication Protocols chapter (MCP, A2A in depth, AAIF governance, the discovery and interoperability layer)
+3. Consider whether the book needs a strategic opening chapter that makes the commodity intelligence argument before diving into the problem statement

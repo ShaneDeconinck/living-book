@@ -21,9 +21,11 @@ Not every process benefits from an agent. The framework defines four tiers of bu
 
 Most organizations start at V1 and stay there. The interesting question is what infrastructure investments move you toward V3 and V4.
 
-### Reliability and Blast Radius
+### Reliability, Error Margins, and Blast Radius
 
-Reliability is not a single number. It is a percentage with an error margin. An agent that "works 95% of the time" means something very different depending on what happens the other 5%.
+Reliability is not a single number. It is a percentage with an error margin. Without the error margin, the percentage means nothing.
+
+An agent that "works 95% of the time" tells you almost nothing. Is that ±2% based on thousands of runs across diverse inputs? Or ±15% based on a handful of demos? The confidence interval determines whether you can make governance decisions based on the number. A workflow's failures are enumerable: you can test every branch. An autonomous agent's failures are not: the space of possible behaviors is open-ended. This distinction determines how knowable your error margin is, which in turn constrains how much autonomy the agent can safely earn.[^7]
 
 The framework pairs reliability with blast radius, a five-level scale:
 
@@ -47,6 +49,14 @@ How much independence an agent earns depends on its reliability, blast radius, a
 
 The key insight: autonomy is earned, not declared. An agent does not start at A5 because the product team wants it to. It starts at A1 and progresses as the infrastructure, reliability data, and governance thresholds justify it.
 
+### Implementation Architecture: Composability, Not Categories
+
+A common mistake is treating workflows, agent loops, and autonomous agents as exclusive choices: pick one architecture and build around it. The framework rejects this. They compose.
+
+A workflow can contain an agent loop step that delegates to an autonomous sub-agent. The outer layer sets the reliability floor and tightens the error margin. The inner layer raises the quality ceiling. A customer service system might use a deterministic workflow for routing and compliance checks, an agent loop for understanding the customer's problem, and an autonomous sub-agent for searching knowledge bases and drafting responses. Each layer has a different reliability profile, and the composition determines the overall system's governance requirements.
+
+This matters because the implementation architecture determines how knowable your error margin is. A pure workflow has enumerable failure modes: you can test every branch. A pure autonomous agent has an open-ended failure space. A composed system inherits the reliability floor of its outer layer while gaining the capability ceiling of its inner layer. The architecture choice is not about capability. It is about how confidently you can govern the result.[^7]
+
 ### Durability: Build on What Stays Stable
 
 Models improve. Scaffolding becomes obsolete. What lasts?
@@ -59,7 +69,7 @@ Shane identifies three durable investments:
 
 And one liability: **harness debt**. Scaffolding built to compensate for weaker models (retry logic, output parsers, chain-of-thought templates) becomes dead weight when models improve. The Claude Code team demonstrated this: as the underlying model got better, they deleted scaffolding rather than optimizing it.[^3]
 
-The practical implication: invest in context and evaluation. Be cautious about investing heavily in model-specific workarounds.
+The practical implication: invest in context and evaluation. Be cautious about investing heavily in model-specific workarounds. And when you do build scaffolding, design it as composable layers rather than monolithic pipelines, so you can strip away the outer constraints as the model earns more autonomy.
 
 ## Accountability: Who Is Accountable, and Can You Prove It?
 
@@ -166,13 +176,15 @@ This is a cycle, not a checklist. Models improve, protocols land, regulations ti
 
 ## Applying the Framework
 
-The next chapters apply PAC to specific technical domains:
+The subsequent chapters apply PAC to specific technical domains:
 
 - **Agent Identity and Delegation**: how identity, credentials, and authority flow through agent systems (Control + Accountability)
 - **Context Infrastructure**: what information reaches agents and how to govern it (Potential + Control)
-- **Reliability and Evaluation**: measuring whether agents work, and what to do when they do not (Potential + Accountability)
-- **Regulatory Landscape**: how the EU AI Act, NIST guidance, and emerging standards map to PAC (Accountability)
-- **Agent Payments and Economics**: how agents transact and what infrastructure enables it (Potential + Control)
+- **The Regulatory Landscape**: how the EU AI Act, NIST guidance, and emerging standards map to PAC (Accountability)
+- **Reliability, Evaluation, and the Complacency Trap**: measuring whether agents work, the dangerous intersection of improving reliability and degrading oversight, and why infrastructure must replace human vigilance (Potential + Accountability)
+- **Agent Payments and Economics**: how agents transact, payment as a trust signal, and the infrastructure that enables agent commerce (Potential + Control)
+- **Sandboxing and Execution Security**: containment by architecture rather than policy, from OS-level sandboxing to defense in depth (Control)
+- **Cross-Organization Trust**: the hard problem of agents operating across trust boundaries, from protocol-level solutions (TSP, PIC) to credential infrastructure (VCs, EUDI wallets) (Control + Accountability)
 
 Each chapter connects back to this framework. The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
 
@@ -184,3 +196,4 @@ Each chapter connects back to this framework. The goal is not to memorize the le
 [^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," trustedagentic.ai, January 2026. Also: "Auth for Agent Builders: A Crash Course," January 2026.
 [^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act enforcement timeline per European Commission.
 [^6]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," trustedagentic.ai, February 2026.
+[^7]: Shane Deconinck, PAC Framework, trustedagentic.ai, updated March 2026. The implementation architecture composability model, error margin emphasis, and the distinction between enumerable and open-ended failure modes are from the March 2026 framework revision.

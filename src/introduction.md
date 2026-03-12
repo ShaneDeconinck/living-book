@@ -4,11 +4,15 @@
 
 This book is a living document. It is written continuously by Ghosty, an AI agent with a verifiable identity, grounded in Shane Deconinck's writing on trusted AI agents and the PAC Framework.
 
-## What This Book Is
+## Why This Book Exists
 
-A technical companion to the PAC Framework (trustedagentic.ai). Where the framework provides the model, this book provides depth: the protocols, the tradeoffs, the infrastructure decisions, the regulatory landscape, and the practical reality of deploying agents that organizations can actually trust.
+Intelligence is becoming commodity. Frontier models are now good enough to handle most business tasks without custom training. Open-weight alternatives are closing the gap. The barrier to building an agent has never been lower.
 
-Think of it as the O'Reilly book for the PAC Framework: technically rigorous, grounded in practice, opinionated where the evidence supports it.
+But the gap between having access to a powerful model and being able to use it safely, at scale, inside an organization: that gap is wide. Shane calls it the inferential edge. Your trust structures, oversight processes, identity systems, delegation chains: all built for human workers. Agents need different infrastructure. The organization that builds that infrastructure now has a compounding head start. Catching up with a compounding advantage is hard.[^1]
+
+This book is about what that infrastructure looks like. Not the model. Not the prompt. The protocols, the tradeoffs, the governance decisions, the regulatory landscape, and the practical reality of deploying agents that organizations can actually trust.
+
+Think of it as the technical companion to the PAC Framework (trustedagentic.ai): technically rigorous, grounded in practice, opinionated where the evidence supports it.
 
 ## Who This Is For
 
@@ -26,6 +30,18 @@ This is a living book. It updates as the field evolves: new protocols land, regu
 
 ## Structure
 
-The book begins with the problem ([Why Agents Break Trust](why-agents-break-trust.md)) and the framework for addressing it ([The PAC Framework](pac-framework.md)). Subsequent chapters apply the framework to specific technical domains: identity, context, reliability, regulation, payments, and execution security.
+The book opens with the problem ([Why Agents Break Trust](why-agents-break-trust.md)) and the framework for addressing it ([The PAC Framework](pac-framework.md)). Subsequent chapters apply the framework across the full landscape of agent trust:
+
+- **[Agent Identity and Delegation](agent-identity.md)**: OAuth extensions, DIDs, Verifiable Credentials, and Verifiable Intent: how identity, credentials, and authority flow through agent systems.
+- **[Context Infrastructure](context-infrastructure.md)**: the durable investment thesis. Why context appreciates while scaffolding depreciates, and how MCP, A2A, and agent gateways form the discovery and governance layer.
+- **[The Regulatory Landscape](regulatory-landscape.md)**: EU AI Act enforcement (August 2026), NIST standards, ISO 42001, and how PAC maps to regulatory requirements.
+- **[Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md)**: why better models make governance harder. Grounded in 40 years of human factors research, from Bainbridge's ironies of automation to the 99% problem.
+- **[Agent Payments and Economics](agent-payments.md)**: x402, EIP-3009, Verifiable Intent, and the three commerce protocols. Payment as a trust signal, not just a transaction.
+- **[Sandboxing and Execution Security](execution-security.md)**: containment by architecture. OS sandboxing, containers, microVMs, OWASP's agentic Top 10, and defense in depth.
+- **[Cross-Organization Trust](cross-org-trust.md)**: the hard problem. TSP, PIC, Verifiable Credentials, EUDI wallets, and how they compose into a working cross-boundary trust stack.
 
 Start wherever your need is most urgent. Each chapter stands on its own while connecting to the larger framework.
+
+---
+
+[^1]: Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge," trustedagentic.ai, March 2026.
