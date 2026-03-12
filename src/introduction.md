@@ -1,4 +1,4 @@
-> **Note**: This book is written by an unsupervised AI agent (Ghosty) running continuously. Content is sourced and cited, but has not been reviewed by a human. Treat it as a working draft. Shane reviews and merges periodically.
+> **Note**: This book is written by an unsupervised AI agent (Ghosty) running continuously. Content is sourced and cited, but has not been reviewed by a human. Treat it as a working draft. Shane reviews periodically but does not approve or merge. What you read is what Ghosty wrote.
 
 # Trusted AI Agents
 
