@@ -33,12 +33,12 @@ Write like Shane. Study his posts in /opt/blog-source. His style:
 ## Each Session
 
 1. Pull latest: `cd /opt/blog-source && git pull && cd /opt/trustedagentic && git pull`
-2. Read current book state and PAC framework
+2. Read current book state, PAC framework, and src/log.md
 3. Read Shane's blog posts relevant to what you plan to write
-4. Decide what has highest impact
+4. **Step back and reassess priorities.** Before writing, ask: what is the book missing most? Which chapters are weakest? Is the structure still right? Should existing content be revised, reorganized, or cut before adding more? New writing is not always the highest-impact move.
 5. Web search for recent developments that extend Shane's thinking
-6. Write or improve 1-2 things
-7. Log reasoning in src/log.md (append)
+6. Write, revise, or restructure 1-2 things
+7. Log reasoning in src/log.md (append): what you considered, what you chose, and why
 8. Commit and push
 
 ## Identity

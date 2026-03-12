@@ -26,7 +26,7 @@ First, agents typically receive broad credentials. An agent that manages your ca
 
 Second, agents chain. Agent A calls Agent B, which calls Agent C. Each hop inherits some version of the original authority, but the intent degrades. By the time Agent C acts, it may be several interpretive steps removed from what the human actually wanted. If Agent C causes harm, the delegation chain is unclear, the intent is ambiguous, and the credentials were broad enough to allow it.
 
-This is not a prompt engineering problem. Better prompts do not fix confused deputies. Infrastructure does: scoped credentials, delegation chains with authority that can only decrease, and audit trails that capture what happened at each hop.[^2]
+This is not a prompt engineering problem. Better prompts do not fix confused deputies. Infrastructure does: scoped credentials, delegation chains with authority that can only decrease, and audit trails that capture what happened at each hop. When agents delegate to other agents, the problem compounds: governance cost scales with delegation depth, not just agent count. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter covers how trust properties compose (or break) across delegation chains.[^2]
 
 ## Shadow Agents
 
@@ -41,7 +41,7 @@ These shadow agents are not malicious. They are people trying to be more product
 - **No audit trail.** Their actions are logged as the employee's actions, if logged at all.
 - **No blast radius assessment.** Nobody evaluated what happens when these agents fail.
 
-The EU AI Act, which begins enforcing its high-risk system obligations in August 2026, requires organizations to maintain transparency, human oversight, and risk management for AI systems. Shadow agents make compliance nearly impossible, because you cannot govern what you cannot see.[^3]
+The EU AI Act, which begins enforcing its high-risk system obligations in August 2026, requires organizations to maintain transparency, human oversight, and risk management for AI systems. Shadow agents make compliance nearly impossible, because you cannot govern what you cannot see. The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers how to transition from ungoverned to governed: discovery, registration, the amnesty model, and infrastructure enforcement.[^3]
 
 ## Reliability Is Getting Easier. Governance Is Not.
 
@@ -49,7 +49,7 @@ Models are improving rapidly. Tasks that required elaborate scaffolding a year a
 
 But reliability and governance are different problems. Reliability asks: does the agent get the right answer? Governance asks: when it gets the wrong answer, can you explain what happened, who authorized it, and what the blast radius was?
 
-Better models actually make governance harder. When an agent succeeds 99% of the time, humans stop watching. Oversight becomes a formality. And the 1% failure, when it comes, happens without anyone paying attention. Shane calls this the complacency trap: the better agents get, the less humans monitor them, and the more damage the rare failure causes.[^4]
+Better models actually make governance harder. When an agent succeeds 99% of the time, humans stop watching. Oversight becomes a formality. And the 1% failure, when it comes, happens without anyone paying attention. Shane calls this the complacency trap: the better agents get, the less humans monitor them, and the more damage the rare failure causes. The [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter grounds this in 40 years of human factors research, and the [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers how to design oversight that does not depend on sustained human vigilance.[^4]
 
 This is why the book focuses on trust infrastructure, not model capabilities. The model will keep improving. The infrastructure to deploy it responsibly is what most organizations lack.
 

@@ -244,7 +244,7 @@ Shane's agent profiler makes infrastructure a gate, not a slider[^profiler-post]
 - Protect configuration files from agent modification. This is a non-negotiable control that closes the most common persistence vector.
 - Scope credentials to the current task with the shortest practical lifetime.
 - Monitor agent behavior at the execution layer. Anomaly detection provides the signal that static rules miss.
-- Treat sandboxing as one layer in a defense-in-depth architecture. It covers half the OWASP agentic risks. The other half require identity, authorization, communication security, and organizational governance.
+- Treat sandboxing as one layer in a defense-in-depth architecture. It covers half the OWASP agentic risks. The other half require identity ([Agent Identity and Delegation](agent-identity.md)), authorization ([Cross-Organization Trust](cross-org-trust.md)), communication security ([Agent Communication Protocols](agent-communication.md)), supply chain integrity ([Agent Supply Chain Security](supply-chain-security.md)), and organizational governance ([Shadow Agent Governance](shadow-agent-governance.md)).
 
 Sandboxing is not the complete answer to execution security. But it is the foundation. Without it, every other security measure is advisory rather than structural. With it, the blast radius of any failure is bounded by architecture, not by vigilance.
 

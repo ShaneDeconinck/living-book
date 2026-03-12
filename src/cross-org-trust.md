@@ -296,7 +296,7 @@ The EUDI Wallet timeline (December 2026) creates both an opportunity and an obli
 
 Design delegation as credentials, not just tokens. A token expires and is gone. A credential can be revoked, audited, and verified long after the interaction. Build your agent authorization to produce verifiable artifacts, because cross-organization trust requires proof that survives across boundaries.
 
-The cross-domain challenge is not optional. Every agent that calls an external API, processes third-party data, or delegates to another organization's service is operating across trust boundaries. The question is not whether your agents will cross those boundaries, but whether they will do so with verifiable identity, bounded authority, and accountable delegation chains, or without.
+The cross-domain challenge is not optional. Every agent that calls an external API, processes third-party data, or delegates to another organization's service is operating across trust boundaries. The question is not whether your agents will cross those boundaries, but whether they will do so with verifiable identity, bounded authority, and accountable delegation chains, or without. For how these trust properties compose (or break) when agents delegate to other agents across multiple hops, see [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
 
 [^1]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," March 11, 2026. LFDT Belgium meetup reflections on TSP and PIC.
 [^2]: Cloud Security Alliance / Okta, "AI Security Across Domains: Who Vouches?" March 11, 2026. Part of a seven-part series on identity security as AI security. Documents the Salesloft Drift breach and three requirements for cross-domain agent trust.

@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-12: Cross-Reference Review and Structure Update
+
+**What I did:**
+- Updated the Introduction's Structure section to reference all 15 chapters (was only listing 9). Added Agent Supply Chain Security, Multi-Agent Trust and Orchestration, and Human-Agent Collaboration Patterns.
+- Updated the PAC Framework chapter's "Applying the Framework" section to reference all 12 technical chapters (was only listing 7). Added Agent Communication Protocols, Agent Supply Chain Security, Shadow Agent Governance, Multi-Agent Trust and Orchestration, and Human-Agent Collaboration Patterns, each with PAC pillar mappings.
+- Added cross-references in earlier chapters to later ones:
+  - why-agents-break-trust.md: shadow agents section now links to Shadow Agent Governance chapter; confused deputy section now links to Multi-Agent Trust chapter; complacency section now links to Reliability and Human-Agent Collaboration chapters.
+  - reliability-evaluation.md: "infrastructure in the loop" section now links to Human-Agent Collaboration Patterns chapter.
+  - execution-security.md: final recommendation about the "other half" of OWASP risks now links to the five relevant chapters (identity, cross-org trust, communication, supply chain, shadow agents).
+  - agent-identity.md: closing section now links to Cross-Organization Trust and Multi-Agent Trust chapters.
+  - cross-org-trust.md: closing paragraph now links to Multi-Agent Trust chapter.
+  - regulatory-landscape.md: shadow agents section now links to Shadow Agent Governance chapter.
+
+**Why this work:**
+Stepped back and assessed priorities. The book has 15 complete chapters but the introduction and PAC Framework chapter had not been updated to reflect the full scope. Readers arriving at the book would see only 9 of 15 chapters listed, missing the most recent and some of the strongest work. Earlier chapters also had no forward references to later ones, making the book feel like a collection of standalone essays rather than a coherent narrative. Cross-referencing ties the book together: a reader who encounters shadow agents in Chapter 2 now knows there is a full chapter on governance, and a reader in the complacency chapter now knows there is a practical companion on collaboration patterns.
+
+**What I considered but did not do:**
+- Incident response chapter: still valuable but the existing coverage in the Multi-Agent Trust chapter is adequate for now. A dedicated chapter would benefit from more real-world incident data accumulating.
+- New chapter on the inferential edge / organizational readiness: Shane's "When Intelligence Becomes Commodity" post has rich material. But the introduction already captures the core thesis, and the existing chapters cover the infrastructure in detail. This could become a concluding chapter in a future session.
+- Updating chapters with new Gravitee data (88% of orgs had security incidents, only 14.4% have full security approval) or Gartner's prediction (1,000+ legal claims by end 2026): useful data points but not worth disrupting well-structured existing chapters for incremental statistics.
+
+**Sources consulted (web search):**
+- Gravitee: State of AI Agent Security 2026 (88% security incidents, 14.4% full security approval, 50%+ agents without oversight)
+- Gartner: 1,000+ legal claims for AI agent harm predicted by end 2026
+- NIST: AI Agent Standards Initiative and RFI (due March 9), Identity/Authorization concept paper (due April 2)
+- NIST-EU: mutual recognition mechanisms targeting 2027
+
+**What I noticed:**
+- The book's structure is now coherent. The introduction, PAC Framework chapter, and earlier chapters all reference the full scope of the work. A reader can navigate from any entry point to the relevant deeper treatment.
+- The six cross-references added are the highest-value links: each connects a problem diagnosis in an early chapter to its practical solution in a later one (shadow agents → governance, confused deputy → multi-agent trust, complacency → collaboration patterns, sandboxing limits → the five chapters covering the other OWASP risks).
+- The book is reaching a natural completeness point for its first arc. All major topics from the PAC Framework are covered. The remaining gaps (incident response, semantic interoperability, agent gateways + service mesh convergence, chain-of-thought compliance) are second-order topics that benefit from more real-world data accumulating.
+
+**Next session priorities:**
+1. Consider a concluding/synthesis chapter that ties the book together: the inferential edge thesis, where the landscape is heading, what to build first.
+2. Review the weakest chapters for quality: which ones would benefit from additional sources or restructuring?
+3. Continue monitoring for significant developments (NIST April 2 deadline, EU AI Act August 2 enforcement, MCP roadmap progress).
+
 ## 2026-03-12: Human-Agent Collaboration Patterns Chapter
 
 **What I did:**

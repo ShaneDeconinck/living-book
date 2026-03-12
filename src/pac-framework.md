@@ -185,6 +185,11 @@ The subsequent chapters apply PAC to specific technical domains:
 - **Agent Payments and Economics**: how agents transact, payment as a trust signal, and the infrastructure that enables agent commerce (Potential + Control)
 - **Sandboxing and Execution Security**: containment by architecture rather than policy, from OS-level sandboxing to defense in depth (Control)
 - **Cross-Organization Trust**: the hard problem of agents operating across trust boundaries, from protocol-level solutions (TSP, PIC) to credential infrastructure (VCs, EUDI wallets) (Control + Accountability)
+- **Agent Communication Protocols**: how agents discover tools and each other, the security gap between adoption and maturity, and why communication protocols solve discovery but not trust (Potential + Control)
+- **Agent Supply Chain Security**: trust beyond the agent itself, from tool poisoning to dependency confusion, and the emerging AI-BOM standard (Control + Accountability)
+- **Shadow Agent Governance**: the transition from ungoverned to governed agents, discovery, registration, and infrastructure enforcement (Accountability + Control)
+- **Multi-Agent Trust and Orchestration**: how trust properties compose across delegation chains, Delegation Capability Tokens, cascading failures, and governance that scales with depth (Control + Accountability + Potential)
+- **Human-Agent Collaboration Patterns**: designing oversight that works, the autonomy dial, permission granularity matched to blast radius, and agent self-governance as complement to human oversight (Accountability + Potential)
 
 Each chapter connects back to this framework. The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
 

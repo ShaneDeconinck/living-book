@@ -134,7 +134,7 @@ Anthropic's research acknowledges this directly, recommending that the focus sho
 
 Shane takes this further: "Human in the loop is not a reliable safety net"[^trust-inversion].
 
-The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. The distinction maps to PAC's Control pillar: "Policy says 'don't.' Architecture says 'can't.' The difference matters"[^pac-framework].
+The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. The distinction maps to PAC's Control pillar: "Policy says 'don't.' Architecture says 'can't.' The difference matters"[^pac-framework]. The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
 
 Concretely, this means:
 

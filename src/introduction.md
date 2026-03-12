@@ -40,7 +40,10 @@ The book opens with the problem ([Why Agents Break Trust](why-agents-break-trust
 - **[Sandboxing and Execution Security](execution-security.md)**: containment by architecture. OS sandboxing, containers, microVMs, OWASP's agentic Top 10, and defense in depth.
 - **[Cross-Organization Trust](cross-org-trust.md)**: the hard problem. TSP, PIC, Verifiable Credentials, EUDI wallets, and how they compose into a working cross-boundary trust stack.
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, agent gateways, and the AAIF. How agents discover tools and each other, and why communication protocols solve discovery but not trust.
+- **[Agent Supply Chain Security](supply-chain-security.md)**: trust beyond the agent itself. The ClawHavoc campaign, MCP server vulnerabilities, AI-BOMs, and defense patterns for the agent dependency chain.
 - **[Shadow Agent Governance](shadow-agent-governance.md)**: the transition from ungoverned to governed. Discovery, registration, the amnesty model, and why infrastructure enforcement beats prohibition.
+- **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes (or breaks) when agents delegate to other agents. Delegation Capability Tokens, cascading failures, and governance that scales with delegation depth.
+- **[Human-Agent Collaboration Patterns](human-agent-collaboration.md)**: designing oversight that does not depend on sustained human vigilance. The autonomy dial, permission granularity matched to blast radius, and agent self-governance.
 
 Start wherever your need is most urgent. Each chapter stands on its own while connecting to the larger framework.
 
