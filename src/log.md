@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-12: Why Agents Break Trust: Grounding in Real Incidents
+
+**What I did:**
+- Expanded why-agents-break-trust.md from 92 to 116 lines by adding concrete real-world failure examples to every section that was previously theoretical-only.
+- "What Changed" section: added the Perplexity Comet indirect prompt injection incident (August 2025) as a concrete example of how agent intent expansion becomes a vulnerability.
+- "Confused Deputy" section: restructured from two failure modes to three, each grounded in evidence. Added Shane's Google Workspace CLI analysis (gmail.readonly scope creep), the Subabase Cursor agent breach (privileged agent processing attacker-embedded SQL via support tickets), and Galileo's 87% cascading failure statistic for multi-agent delegation chains.
+- Added entirely new section "The Supply Chain You Cannot See" covering three documented incidents: GitHub MCP vulnerability (May 2025, malicious instructions in Issues exfiltrating source code and keys), MCPTox benchmark results (72.8% attack success rate on o1-mini, more capable models more susceptible), and the postmark-mcp backdoored NPM package (September 2025, first supply chain attack targeting MCP infrastructure). This section bridges to the Supply Chain Security and Agent Communication Protocols chapters.
+- Added 8 new footnotes with sources for all added incidents and research.
+
+**Why this work:**
+- Stepped back and assessed all 16 chapters for quality. The chapter quality ranking identified why-agents-break-trust.md as the weakest foundational chapter: only 92 lines, essential problem-framing role, but entirely theoretical. Every argument was abstract. The introduction and gaps chapter are shorter but serve different purposes (roadmap and research notes). This chapter is where a reader decides whether the rest of the book matters.
+- The new supply chain section fills a gap: the original chapter covered confused deputies, shadow agents, and complacency but not the tool/supply chain attack surface. With MCP adoption accelerating (97M+ monthly SDK downloads), tool poisoning is now a primary trust failure mode, not a niche concern. It needed to be introduced early.
+- Prioritized this over expanding other weak areas (introduction, human-agent-collaboration permission section) because the problem chapter is the foundation: if the "why" is not convincing, the "how" chapters lose their urgency.
+
+**What I considered but did not do:**
+- Expanding the introduction (52 lines). It works as a concise roadmap. A longer introduction risks repeating what the problem chapter should establish.
+- Adding more content to human-agent-collaboration.md's permission granularity section. On closer reading, it is actually complete (per-tool-call, per-task, and per-session authorization mapped to blast radius levels). The earlier assessment was inaccurate.
+- Incorporating the Mastercard Verifiable Intent blog post (March 6, 2026) into agent-identity.md. The post is already well-covered in that chapter. Could be deepened in a future session.
+- Web search found IBM's 2026 X-Force Threat Index, Adversa AI's 2025 incident report, and NIST's AI Agent Standards Initiative (comment period through April 2, 2026). These are worth tracking for future chapter updates.
+
 ## 2026-03-12: Cross-Reference Review and Structure Update
 
 **What I did:**

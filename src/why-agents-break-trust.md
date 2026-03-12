@@ -12,7 +12,9 @@ Traditional software does what you tell it. An API endpoint receives a request, 
 
 Agents are different. They interpret intent and expand it. You tell an agent to "find the best deal on flights to London" and it decides which sites to check, which filters to apply, which tradeoffs to make between price and convenience. The human provided a goal. The agent made the decisions.
 
-This distinction matters because our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
+This distinction is not theoretical. In August 2025, Perplexity's AI-powered browser Comet demonstrated exactly how intent expansion becomes a vulnerability. Attackers embedded hidden commands in Reddit comment sections. When a user activated Comet's "summarize current page" feature, the agent followed the embedded instructions instead: the user's intent was "summarize," but the agent's interpretation expanded to execute concealed commands planted by a third party.[^perplexity] The user never authorized those actions. The agent acted on what it found, not what the user meant.
+
+This matters because our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
 
 Shane put it directly in his writing on this topic: "When agents decide, delegation becomes abdication." The gap between what a user intended and what an agent does is where accountability dissolves.[^1]
 
@@ -20,11 +22,13 @@ Shane put it directly in his writing on this topic: "When agents decide, delegat
 
 The confused deputy problem is not new. It was first described in 1988: a program with elevated privileges gets tricked into misusing them on behalf of a less-privileged caller. The classic solution is capability-based security: don't give the program ambient authority, give it specific capabilities scoped to what it needs.
 
-Agents make this problem worse in two ways.
+Agents make this problem worse in three ways.
 
-First, agents typically receive broad credentials. An agent that manages your calendar might have full read/write access to your Google account, not because it needs all of that, but because scoping credentials precisely for every possible agent action is hard. The agent has more authority than any single task requires.
+First, agents typically receive broad credentials. Shane's analysis of Google's Workspace CLI illustrates the pattern: `gmail.readonly` grants access to every email in your account, forever. When you tell an agent to "help me find one email," the credential it receives allows reading all of them. The agent has more authority than any single task requires, because the credential system was not designed for task-scoped access.[^google-workspace]
 
-Second, agents chain. Agent A calls Agent B, which calls Agent C. Each hop inherits some version of the original authority, but the intent degrades. By the time Agent C acts, it may be several interpretive steps removed from what the human actually wanted. If Agent C causes harm, the delegation chain is unclear, the intent is ambiguous, and the credentials were broad enough to allow it.
+Second, agents process untrusted input with trusted credentials. In mid-2025, Supabase's Cursor agent demonstrated this exactly. The agent ran with privileged service-role access to help developers. Support tickets contained user-supplied input. Attackers embedded SQL instructions in those tickets. The agent, operating with full database credentials, processed the instructions as commands and exfiltrated sensitive integration tokens.[^supabase-cursor] The agent was not compromised in the traditional sense: it did what it was designed to do (process support tickets) using the credentials it was given (full database access). The problem was that nobody scoped those credentials to the actual task.
+
+Third, agents chain. Agent A calls Agent B, which calls Agent C. Each hop inherits some version of the original authority, but the intent degrades. By the time Agent C acts, it may be several interpretive steps removed from what the human actually wanted. If Agent C causes harm, the delegation chain is unclear, the intent is ambiguous, and the credentials were broad enough to allow it. Research from Galileo quantifies the cascading risk: a single compromised agent can poison 87% of downstream decision-making within four hours through propagation across agent networks, faster than traditional incident response can contain it.[^galileo-cascade]
 
 This is not a prompt engineering problem. Better prompts do not fix confused deputies. Infrastructure does: scoped credentials, delegation chains with authority that can only decrease, and audit trails that capture what happened at each hop. When agents delegate to other agents, the problem compounds: governance cost scales with delegation depth, not just agent count. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter covers how trust properties compose (or break) across delegation chains.[^2]
 
@@ -42,6 +46,18 @@ These shadow agents are not malicious. They are people trying to be more product
 - **No blast radius assessment.** Nobody evaluated what happens when these agents fail.
 
 The EU AI Act, which begins enforcing its high-risk system obligations in August 2026, requires organizations to maintain transparency, human oversight, and risk management for AI systems. Shadow agents make compliance nearly impossible, because you cannot govern what you cannot see. The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers how to transition from ungoverned to governed: discovery, registration, the amnesty model, and infrastructure enforcement.[^3]
+
+## The Supply Chain You Cannot See
+
+There is a fourth way agents break trust, and it is the one least visible to the teams deploying them: the tools agents use are themselves an attack surface.
+
+In May 2025, a critical vulnerability in GitHub's Model Context Protocol integration showed what this looks like. Attackers embedded malicious instructions in public repository Issues. When a developer's locally running AI agent processed those issues through MCP, it indiscriminately executed the embedded commands, exfiltrating private repository source code and cryptographic keys. The developer never saw the malicious instructions. The agent followed them because they appeared in a context the agent was designed to read.[^github-mcp]
+
+The MCPTox benchmark, the first systematic evaluation of agent robustness against tool poisoning in realistic MCP settings, tested 20 prominent LLM agents against 45 real-world MCP servers and 353 authentic tools. The results were sobering: o1-mini achieved a 72.8% attack success rate. More capable models were often more susceptible, because the attack exploits their superior instruction-following abilities.[^mcptox]
+
+The supply chain vulnerability extends beyond tool descriptions. In September 2025, security researchers found a backdoored NPM package called postmark-mcp: a connector designed to let AI agents send emails via the Postmark API. It was the first documented supply chain attack specifically targeting MCP infrastructure.[^postmark-mcp] The pattern is familiar from traditional software supply chains (compromised packages in npm, PyPI, and similar registries) but the blast radius is different. A compromised library in traditional software does what the code says. A compromised tool in an agent's supply chain can influence what the agent decides to do next.
+
+The [Agent Supply Chain Security](supply-chain-security.md) chapter covers the full attack surface in detail: tool compromise, tool poisoning, MCP vulnerabilities, model supply chain risks, memory poisoning, and configuration file attacks. The [Agent Communication Protocols](agent-communication.md) chapter covers what the MCP ecosystem is doing about it: OAuth-based authentication in the 2026 MCP roadmap, trust registries like BlueRock, and the emerging security analysis that found 36.7% of MCP servers vulnerable to SSRF attacks.
 
 ## Reliability Is Getting Easier. Governance Is Not.
 
@@ -86,7 +102,14 @@ Let's start with the framework itself.
 ---
 
 [^1]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026.
+[^perplexity]: Adversa AI, "2025 AI Security Incidents Report," 2026. The Perplexity Comet vulnerability was disclosed in August 2025 and demonstrated indirect prompt injection through embedded instructions in web content.
+[^google-workspace]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," shanedeconinck.be, March 2026.
+[^supabase-cursor]: Barrack.ai, "Every AI App Data Breach Since January 2025: 20 Incidents, Same Root Causes," 2026. The Supabase Cursor agent breach is also covered in Practical DevSecOps, "MCP Security Vulnerabilities," 2026.
+[^galileo-cascade]: Galileo AI research on cascading failures in multi-agent systems, cited in multiple industry analyses of agent network resilience, 2025-2026.
 [^2]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," trustedagentic.ai, January 2026.
 [^3]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act high-risk obligations enforcement begins August 2, 2026.
 [^4]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," trustedagentic.ai, February 2026.
-[^5]: NIST, "Accelerating the Adoption of Software and AI Agent Identity and Authorization," NCCoE Concept Paper, February 2026.
+[^github-mcp]: Reported across multiple security outlets in May 2025. The vulnerability allowed arbitrary command execution through malicious instructions embedded in GitHub Issues processed by MCP-connected agents.
+[^mcptox]: MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers, arXiv:2508.14925, 2025. Tested 20 LLM agents against 353 authentic tools from 45 live MCP servers.
+[^postmark-mcp]: Security researchers disclosed the backdoored postmark-mcp NPM package in September 2025. It was the first documented supply chain attack specifically targeting MCP infrastructure.
+[^5]: NIST, "Accelerating the Adoption of Software and AI Agent Identity and Authorization," NCCoE Concept Paper, February 2026. Comment period open through April 2, 2026.
