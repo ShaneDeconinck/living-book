@@ -50,5 +50,5 @@ If I had to prioritise chapters for this book:
 4. ~~**The PAC framework**~~: covered in [The PAC Framework](./pac-framework.md).
 5. ~~**Agent identity deep dive**~~: covered in [Agent Identity: Proving Who (or What) Is Acting](./agent-identity.md), with SPIFFE, VCs, DIDs, eIDAS 2.0, ERC-8004.
 6. ~~**Practical trust-building guide**~~: covered in [Building Agents That Earn Trust](./earning-trust.md), with autonomy levels, sandbox architecture, delegation patterns.
-7. **Agent payments and economic infrastructure**: x402, EIP-3009, stablecoin rails for autonomous agent commerce. Shane has a hands-on post with a working proof-of-concept.
+7. ~~**Agent payments and economic infrastructure**~~: covered in [Agent Payments: When Agents Need to Spend Money](./agent-payments.md), with x402 hands-on experience, AP2/VDC architecture, Verifiable Intent integration, protocol fragmentation analysis, and PAC mapping.
 8. **Multi-agent coordination**: how trust, identity, and authority work when agents hire other agents. The composition problem across all the protocols.

@@ -167,3 +167,37 @@ Agent identity was the #1 priority from Session 4 and is foundational: multiple 
 - OpenID Foundation AIIM community group, NIST RFI response (March 2026)
 - Tobin South, "Identity Management for Agentic AI" (arXiv:2510.25819)
 - NHI-to-human ratio statistic (144:1, Q1 2026)
+
+---
+
+## 2026-03-12 (Session 6): Agent Payments chapter
+
+**What I did:**
+- Wrote "Agent Payments: When Agents Need to Spend Money" (src/agent-payments.md): covers the two emerging approaches to agent payments. x402 (Coinbase/Cloudflare/Stripe): HTTP 402-based protocol with on-chain stablecoin settlement, including Shane's hands-on proof-of-concept with EIP-3009 gasless payments, L2 economics, and current adoption reality ($28K daily volume despite $7B ecosystem valuation). AP2 (Google/Mastercard/60+ partners): Verifiable Digital Credentials with Intent and Cart Mandates, connection to Verifiable Intent's SD-JWT layers. Covers the fragmentation problem (AP2, ACP, UCP, x402, VI all emerging simultaneously), trust challenges specific to payments (KYA, intent preservation, liability when constraints are satisfied, EU EUDI wallet angle), and maps everything to PAC pillars.
+- Updated SUMMARY.md to add the new chapter under "Making It Real"
+- Updated gaps.md to mark agent payments as completed priority
+
+**Why these choices:**
+Agent payments was the #1 priority from Session 5 and the last major gap in the book's roadmap. The field moved significantly in early 2026: x402 launched with Coinbase/Cloudflare/Stripe support, Google announced AP2 with 60+ partners, and Verifiable Intent provided the credential bridge between the approaches. The chapter captures a moment where payment infrastructure for agents is being built in real time, with real data showing the gap between infrastructure readiness and actual adoption. It also connects naturally to the Verifiable Intent chapter (AP2's VDC chain maps to VI's SD-JWT layers) and the protocol landscape (fragmentation pattern).
+
+**What I'd do next session:**
+1. Multi-agent coordination chapter: DeepMind's Intelligent Delegation framework, Delegation Capability Tokens (Macaroons/Biscuits), trust when agents hire agents
+2. Cross-reference pass across all chapters
+3. Remaining Shane posts: ai-agents-first-principles-resources, lfdt-member-summit-2026
+
+**Sources used (this session):**
+- Shane's blog posts: "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009" (2026-01-07), "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization" (2026-03-06)
+- x402 specification and whitepaper (x402.org)
+- Coinbase/Cloudflare x402 Foundation announcement (coinbase.com/blog, blog.cloudflare.com/x402)
+- CoinDesk, "Coinbase-backed AI payments protocol wants to fix micropayment but demand is just not there yet" (2026-03-11)
+- Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)" (2026)
+- AP2 specification (ap2-protocol.org/specification)
+- PayPal Developer Blog, "Agent Payments Protocol: Building Verifiable Trust for Agentic Commerce" (2026)
+- Stripe, "Introducing our agentic commerce solutions" (2026)
+- Google Developers Blog, "Under the Hood: Universal Commerce Protocol (UCP)" (2026)
+- PYMNTS, "Agentic Commerce Pushes 'Know Your Human' Into Verification Processes" (2026)
+- Mastercard, "How Verifiable Intent builds trust in agentic AI commerce" (2026)
+- Biometric Update, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD" (2026-03)
+- Google DeepMind, "Intelligent AI Delegation" (arXiv:2602.11865, 2026-02-12)
+- CSA, "AI Security Across Domains: Who Vouches?" (2026-03-11)
+- IACR, "Trustworthy Agent Network" (eprint 2026/497)

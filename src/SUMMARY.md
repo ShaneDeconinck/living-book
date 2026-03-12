@@ -20,6 +20,7 @@
 # Making It Real
 
 - [Building Agents That Earn Trust](./earning-trust.md)
+- [Agent Payments: When Agents Need to Spend Money](./agent-payments.md)
 - [The PAC Framework](./pac-framework.md)
 
 # Open Questions
