@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations from This Session
+## Observations (Updated 2026-03-12)
+
+### Verifiable Intent Is a Big Deal
+
+Mastercard and Google open-sourced Verifiable Intent on March 5, 2026: a three-layer SD-JWT architecture that cryptographically binds user intent to agent actions. This is the first production-grade answer to Shane's "consent theater" critique. Three major commerce protocols (AP2, ACP, UCP) are adopting it. Covered in the Agent Identity chapter, but the implications for agent payments and cross-organizational trust deserve follow-up.
+
+### The Identity Standards Landscape Is Converging Fast
+
+Between NIST's concept paper (Feb 2026), OpenID's AIIM Community Group, the IETF draft for OBO with AI agents, and Verifiable Intent, the standards bodies are all moving on agent identity simultaneously. The window for shaping these standards is narrow (NIST comment period closes April 2). This convergence validates the PAC Framework's emphasis on building on emerging standards rather than proprietary solutions.
+
+## Earlier Observations
 
 ### The NIST Timing Is Significant
 
@@ -32,9 +42,9 @@ Shane's x402 work shows something beyond just "agents paying for APIs." The paym
 
 Prioritized by impact:
 
-1. **Agent Identity and Delegation** (Control + Accountability): the technical deep-dive on how identity, credentials, and authority flow. OAuth OBO, DIDs, VCs, TSP, DPoP. Shane has strong source material across multiple posts.
+1. ~~**Agent Identity and Delegation** (Control + Accountability)~~: DONE. Chapter covers OAuth limitations, OBO/DPoP extensions, DIDs/VCs, TSP, Verifiable Intent (Mastercard/Google), NIST/OpenID convergence, and infrastructure maturity mapping.
 
-2. **Context Infrastructure** (Potential + Control): why context is the durable investment. Structure, permissions, discovery, authority, freshness. Concrete examples from Clawdbot and Claude Code.
+2. **Context Infrastructure** (Potential + Control): why context is the durable investment. Structure, permissions, discovery, authority, freshness. Concrete examples from Clawdbot and Claude Code. THIS IS NEXT.
 
 3. **The Regulatory Landscape** (Accountability): EU AI Act, NIST guidance, ISO 42001. How PAC maps to compliance. Timely given August 2026 enforcement.
 
