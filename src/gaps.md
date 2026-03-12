@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 8)
+## Observations (Updated 2026-03-12, Session 9)
 
 ### The Protocol Stack Is Converging Under Neutral Governance
 
@@ -31,6 +31,10 @@ NVIDIA's guidance highlights that agent modification of configuration files (~/.
 ### Verifiable Intent Is a Big Deal
 
 Mastercard and Google open-sourced Verifiable Intent on March 5, 2026: a three-layer SD-JWT architecture that cryptographically binds user intent to agent actions. This is the first production-grade answer to Shane's "consent theater" critique. Three major commerce protocols (AP2, ACP, UCP) are adopting it. Covered in the Agent Identity chapter, but the implications for agent payments and cross-organizational trust deserve follow-up.
+
+### Shadow Agent Scale Is Larger Than Most Organizations Realize
+
+98% of organizations report unsanctioned AI use. 80% of Fortune 500 companies have active AI agents built on low-code/no-code platforms. 1,200 unofficial AI applications per enterprise on average, with 86% reporting no visibility into AI data flows. The governance gap is not theoretical: shadow AI breaches already cost $670K more than standard incidents, and Gartner predicts 40%+ of enterprises will face shadow AI security or compliance incidents by 2030. The most important insight for the book: shadow agents prove where value exists. Discovery is simultaneously a governance exercise and a product research exercise. The highest-value shadow agents reveal the use cases the organization should invest in governing, not prohibiting.
 
 ### The Identity Standards Landscape Is Converging Fast
 
@@ -88,12 +92,14 @@ Prioritized by impact:
 
 7. ~~**Cross-Organization Trust** (Control + Accountability)~~: DONE.
 
-8. ~~**Agent Communication Protocols** (Potential + Control)~~: DONE. Chapter covers MCP architecture (client-server, JSON-RPC, transports, 2026 roadmap), A2A (Agent Cards, task lifecycle, v0.3 gRPC), MCP security incidents and attack vectors (tool poisoning, overprivileged tokens, resource poisoning, MCPTox benchmark), the authorization gap (Shane's consent theater critique, possession-based vs proof-based authorization), agent gateways (AgentGateway MCP federation, Cedar policies, limits of gateway-level governance), trust layer integrations (TMCP/TA2A running MCP and A2A over TSP, PIC as authority layer), the broader protocol landscape (ACP, UCP, protocol stack composition), AAIF governance under Linux Foundation, PAC mapping, and infrastructure maturity for communication protocols. Chapter covers the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case, the token model's limits, PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP), where TSP and PIC meet, VCs as trust carriers (SD-JWT VC and W3C VC comparison), content provenance (Shane's VC-signed blog posts), credential delegation architecture (three-layer chain, Verifiable Intent as operational envelope), Windley's society of agents (policies, promises, credentials, reputation), EUDI wallet infrastructure, the semantic boundary problem, PAC mapping, and infrastructure maturity for cross-org trust.
+8. ~~**Agent Communication Protocols** (Potential + Control)~~: DONE.
+
+9. ~~**Shadow Agent Governance** (Accountability + Control)~~: DONE. Chapter covers the scale of shadow agents (98% unsanctioned AI use, 1,200 unofficial apps per enterprise), why shadow agents exist (value-seeking, not malice), why they differ from shadow IT (they make decisions, inherit authority, compound), the governance gap (human/app IAM architectural mismatch), discovery tools (Okta ISPM, Noma Agentic Risk Map, network analysis, platform auditing), the agent registry (identity, owner, authority, permissions, blast radius, evaluation, regulatory classification), registry enforcement through infrastructure (identity providers, gateways, network controls, platform controls), the amnesty model for transition (discover, classify, amnesty period, triage, enforce, maintain), organizational ownership models (centralized, federated, infrastructure-enforced), audit trail requirements for agents (delegation chain, intent capture, action trace, scope verification), the organizational shift (prohibition to enablement, human-speed to agent-speed governance, perimeter to identity), PAC mapping table, and infrastructure maturity for shadow agent governance (I1-I5). Chapter covers MCP architecture (client-server, JSON-RPC, transports, 2026 roadmap), A2A (Agent Cards, task lifecycle, v0.3 gRPC), MCP security incidents and attack vectors (tool poisoning, overprivileged tokens, resource poisoning, MCPTox benchmark), the authorization gap (Shane's consent theater critique, possession-based vs proof-based authorization), agent gateways (AgentGateway MCP federation, Cedar policies, limits of gateway-level governance), trust layer integrations (TMCP/TA2A running MCP and A2A over TSP, PIC as authority layer), the broader protocol landscape (ACP, UCP, protocol stack composition), AAIF governance under Linux Foundation, PAC mapping, and infrastructure maturity for communication protocols. Chapter covers the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case, the token model's limits, PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP), where TSP and PIC meet, VCs as trust carriers (SD-JWT VC and W3C VC comparison), content provenance (Shane's VC-signed blog posts), credential delegation architecture (three-layer chain, Verifiable Intent as operational envelope), Windley's society of agents (policies, promises, credentials, reputation), EUDI wallet infrastructure, the semantic boundary problem, PAC mapping, and infrastructure maturity for cross-org trust.
 
 ## Open Questions
 
 - How do agent gateways interact with service mesh architectures? Is there a convergence point?
-- What does "agent registration" look like in practice? Is there an analog to domain registration or certificate transparency?
-- How should organizations handle the transition from shadow agents to governed agents without killing productivity?
+- ~~What does "agent registration" look like in practice? Is there an analog to domain registration or certificate transparency?~~ Covered in Shadow Agent Governance chapter: agent registry with enforcement through identity providers, gateways, and network controls.
+- ~~How should organizations handle the transition from shadow agents to governed agents without killing productivity?~~ Covered in Shadow Agent Governance chapter: the amnesty model.
 - What is the right granularity for agent permissions? Per-task? Per-session? Per-tool-call?
 - How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact?

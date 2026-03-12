@@ -348,3 +348,38 @@ It was the #2 priority from the previous session and the biggest structural gap 
 1. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents; Okta ISPM Agent Discovery, Gartner stats on shadow AI scale, connecting to Accountability pillar)
 2. Consider whether existing chapters need cross-references to the new communication protocols chapter (several chapters reference MCP/A2A and could benefit from forward references)
 3. The book now has 10 substantive chapters. Assess whether the structure is right for the remaining 5+ chapters needed to reach 15+.
+
+## 2026-03-12: Shadow Agent Governance Chapter
+
+**What I did:**
+- Wrote Chapter 11: "Shadow Agent Governance" covering the full landscape of transitioning from ungoverned to governed agent deployments. Sections: the scale of shadow agents (98% unsanctioned AI use, 1,200 unofficial apps per enterprise, 86% no visibility into AI data flows), why shadow agents exist (value-seeking pattern, not malice), why they differ from shadow IT (they make decisions, inherit authority, compound), the governance gap (human/application IAM architectural mismatch with agent requirements), discovery tools (Okta ISPM Agent Discovery via OAuth consent events, Noma Security Agentic Risk Map, network/API traffic analysis, low-code platform auditing), the agent registry (identity, owner, authority, permissions, blast radius, evaluation status, regulatory classification), registry enforcement through infrastructure (identity providers, API/agent gateways, network controls, platform controls), the amnesty model for transition (discover, classify, amnesty period, triage by blast radius, enforce after amnesty, maintain the path), organizational ownership models (centralized governance office, federated with central standards, infrastructure-enforced), audit trail requirements for agents (delegation chain, intent capture, action trace, scope verification), the organizational shift (prohibition to enablement, human-speed to agent-speed governance, perimeter to identity), PAC mapping table across all three pillars, infrastructure maturity for shadow agent governance (I1-I5), and practical recommendations by level.
+- Updated SUMMARY.md with new chapter.
+- Updated introduction with new chapter listing.
+- Updated gaps.md: marked Shadow Agent Governance as done, added observation on shadow agent scale, marked two open questions as addressed.
+
+**Why this chapter:**
+Shadow Agent Governance has been the #1 priority for three consecutive sessions. It fills the biggest remaining gap in the Accountability pillar: the practical bridge between "agents are already running ungoverned" (Chapter 1) and "here's the infrastructure to govern them" (Chapters 3-10). The chapter directly addresses two of the open questions from the gaps doc ("how to transition from shadow to governed" and "what does agent registration look like in practice"). The timing is right: Gartner, Microsoft, Okta, and Noma all published major shadow AI research in Q1 2026, providing concrete data and tooling to ground the recommendations.
+
+**Sources used:**
+- Shane's blog posts: boardroom questions (Feb 8, 2026), trust inversion (Feb 3, 2026), scaffolding trap (Feb 2, 2026), the work that's leaving (Feb 27, 2026), agent profiler reasoning (Feb 26, 2026), Google Workspace CLI/OAuth critique (Mar 5, 2026)
+- PAC Framework from trustedagentic.ai
+- Vectra AI: "Shadow AI explained: risks, costs, and enterprise governance" (2026)
+- Help Net Security: "AI went from assistant to autonomous actor and security never caught up" (March 3, 2026): 21% executive visibility, 80% risky agent behaviors
+- Gartner: 40% of enterprise apps with AI agents by 2026, 68% unauthorized AI tool use, $492M governance spending in 2026, 40%+ shadow AI breach prediction by 2030
+- Microsoft Security Blog: Cyber Pulse report (February 10, 2026): 80% Fortune 500 with active agents, 29% unsanctioned agent use, industry distribution
+- Okta: ISPM Agent Discovery (February 12, 2026): OAuth consent event monitoring, Copilot Studio/Agentforce integration timeline
+- Noma Security: Agentic Risk Map (2026): MCP server discovery, agent-to-agent relationship mapping, runtime behavioral monitoring
+- Netskope: 223 data policy violations per month per enterprise (2026)
+
+**What I noticed:**
+- The scale data is overwhelming and consistent across sources. 98% unsanctioned AI use (Vectra), 1,200 unofficial apps per enterprise (Help Net Security), 80% Fortune 500 with low-code agents (Microsoft), 68% unauthorized tool use (Gartner). These are not outlier findings: every major analyst and security vendor is reporting the same picture. Shadow agents are not an edge case. They are the default state.
+- The amnesty model emerged as the most practical transition approach. Prohibition consistently fails (employees route around bans using personal devices and accounts, making the shadow deeper). The organizations succeeding at this treat shadow agent creators as early adopters who identified high-value use cases, not as policy violators. This reframes governance from a security exercise to a product exercise: what are people building, and how do we make it safe?
+- Shane's boardroom question about structural prevention ("Can your infrastructure prevent an agent from running without being registered?") is the sharpest framing of the gap between discovery and governance. Every discovery tool I found (Okta, Noma, network monitoring) provides visibility into current state. None of them prevent new shadow agents from appearing. Only infrastructure enforcement (registry-integrated identity providers, gateways, network controls) provides the structural guarantee.
+- The governance speed mismatch is the root cause of shadow agents. Agent deployment takes minutes (low-code platforms). Governance review takes weeks (traditional vendor assessment). Until governance operates at agent speed (automated classification, self-service registration, infrastructure-enforced controls), shadow agents will continue to appear faster than governance can catch them.
+- The chapter connects to the Potential pillar more strongly than expected. Shadow agent discovery is simultaneously a governance exercise and a strategic intelligence exercise. The use cases employees choose to automate first are the highest-value, lowest-friction opportunities. Organizations that treat discovery data as product research (not just risk data) gain strategic insight alongside governance.
+- The infrastructure maturity table for this chapter maps cleanly to the regulatory timeline. Most organizations are at I1-I2. EU AI Act August 2026 enforcement requires I3+ for high-risk deployments. That is a five-month gap. This urgency framing connects to the Regulatory Landscape chapter and makes the practical recommendations concrete and time-bounded.
+
+**Next session priorities:**
+1. The book now has 11 substantive chapters. Assess structure for remaining chapters: candidates include Agent Testing and Red Teaming, Organizational Change Management / Agent-First Organizations, Supply Chain Security for Agents, and the Semantic Boundary Problem.
+2. Consider cross-references between chapters. Shadow Agent Governance references Agent Identity, Cross-Org Trust, Communication Protocols, Sandboxing, and Reliability chapters. Backward references from those chapters to this one could strengthen the book's cohesion.
+3. Revisit the introduction structure: with 11 chapters, the chapter listing is getting long. Consider grouping by theme (Foundation, Infrastructure, Governance, Operations).

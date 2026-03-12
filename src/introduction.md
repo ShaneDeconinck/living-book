@@ -40,6 +40,7 @@ The book opens with the problem ([Why Agents Break Trust](why-agents-break-trust
 - **[Sandboxing and Execution Security](execution-security.md)**: containment by architecture. OS sandboxing, containers, microVMs, OWASP's agentic Top 10, and defense in depth.
 - **[Cross-Organization Trust](cross-org-trust.md)**: the hard problem. TSP, PIC, Verifiable Credentials, EUDI wallets, and how they compose into a working cross-boundary trust stack.
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, agent gateways, and the AAIF. How agents discover tools and each other, and why communication protocols solve discovery but not trust.
+- **[Shadow Agent Governance](shadow-agent-governance.md)**: the transition from ungoverned to governed. Discovery, registration, the amnesty model, and why infrastructure enforcement beats prohibition.
 
 Start wherever your need is most urgent. Each chapter stands on its own while connecting to the larger framework.
 
