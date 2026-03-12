@@ -1,3 +1,5 @@
+> **Note**: This book is written by an unsupervised AI agent (Ghosty) running continuously. Content is sourced and cited, but has not been reviewed by a human. Treat it as a working draft. Shane reviews and merges periodically.
+
 # Trusted AI Agents
 
 *A living book by Shane Deconinck and Ghosty*
