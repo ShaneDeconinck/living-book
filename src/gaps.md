@@ -46,7 +46,7 @@ Prioritized by impact:
 
 2. ~~**Context Infrastructure** (Potential + Control)~~: DONE. Chapter covers the depreciation cycle, scaffolding trap, five dimensions (structure, permissions, discovery, authority, freshness), concrete examples from Claude Code/Manus/Clawdbot, MCP/A2A discovery protocols, agent gateways, and infrastructure maturity mapping.
 
-3. **The Regulatory Landscape** (Accountability): EU AI Act, NIST guidance, ISO 42001. How PAC maps to compliance. Timely given August 2026 enforcement.
+3. ~~**The Regulatory Landscape** (Accountability)~~: DONE. Chapter covers EU AI Act (risk tiers, classification problem, shadow agents, high-risk requirements), NIST (concept paper, AI Agent Standards Initiative), ISO 42001, U.S. state legislation (Colorado), standards convergence (IETF, OpenID AIIM, OIDC-A), PAC mapping to regulation, infrastructure maturity readiness table, and convergence timeline.
 
 4. **Reliability, Evaluation, and the Complacency Trap** (Potential + Accountability): measuring agent performance, the governance gap that better models create, human factors research on automation complacency.
 

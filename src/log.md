@@ -91,3 +91,37 @@ It was the #1 priority in the gaps doc after identity. Shane's context infrastru
 **Next session priorities:**
 1. Regulatory Landscape chapter (timely given August 2026 EU AI Act enforcement and April 2 NIST comment deadline)
 2. Reliability, Evaluation, and the Complacency Trap chapter (human factors angle underexplored)
+
+## 2026-03-12: The Regulatory Landscape Chapter
+
+**What I did:**
+- Wrote Chapter 5: "The Regulatory Landscape" covering the full regulatory and standards picture for agent governance. Sections: EU AI Act (risk tiers, the classification problem for agents, provider/distributor/deployer roles, shadow agents and Article 4, high-risk requirements mapped to infrastructure, Commission guidelines), NIST (concept paper on agent identity/authorization, AI Agent Standards Initiative with three pillars), ISO 42001 (management system baseline, certification adoption), U.S. state legislation (Colorado AI Act), standards convergence (IETF agent auth draft, OpenID AIIM, OIDC-A proposal, industry standards), PAC mapping to regulation across all three pillars, infrastructure maturity readiness table (I1-I5 against regulatory requirements), convergence timeline, and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Marked Regulatory Landscape as done in gaps.md.
+
+**Why this chapter:**
+It was the #3 priority in the gaps doc and the next logical chapter after identity and context infrastructure. The timing is urgent: EU AI Act high-risk obligations take effect August 2, 2026 (less than 5 months away), NIST comment period closes April 2 (3 weeks away), and the Colorado AI Act goes live June 1. Shane's EU AI Act post is the primary source, supplemented by his boardroom questions post and the LFDT meetup post.
+
+**Sources used:**
+- Shane's blog posts: EU AI Act analysis, boardroom questions, LFDT meetup (TSP + PIC), trust inversion, scaffolding trap
+- PAC Framework from trustedagentic.ai
+- EU AI Act: Articles 4, 6, 9, 10, 11, 12, 14, 15, 17, 51; Annex III; GPAI Provider Guidelines (July 2025)
+- The Future Society: "Ahead of the Curve: Governing AI Agents Under the EU AI Act"
+- NIST: NCCoE concept paper (Feb 2026), CAISI AI Agent Standards Initiative (Feb 2026)
+- ISO/IEC 42001:2023 documentation and BSI certification information
+- IETF: draft-klrc-aiagent-auth-00
+- OpenID Foundation: AIIM Community Group, response to NIST RFI
+- OIDC-A 1.0 proposal
+- Colorado AI Act
+- Web searches: EU AI Act 2026 enforcement, NIST agent standards, ISO 42001 adoption, AI agent liability/accountability regulation
+
+**What I noticed:**
+- The regulatory convergence is tighter than I expected. EU AI Act (August 2026), Colorado AI Act (June 2026), and NIST standards work (Q1-Q2 2026) all land in the same window. Organizations that build infrastructure now get compliance as a byproduct. Organizations that wait will face simultaneous deadlines.
+- NIST's framing of the AI Agent Standards Initiative uses a Potential argument: fragmented ecosystems stunt adoption. This is interesting because it aligns NIST with PAC's value-first approach rather than purely security or compliance framing.
+- ISO 42001 fills a specific gap: it provides the management system scaffolding within which technical solutions operate. It does not solve agent identity or authorization, but it formalizes the governance loops that make technical solutions accountable.
+- The infrastructure maturity table (I1-I5 mapped to regulatory readiness) turned out to be a useful synthesis. Most organizations are at I1-I2 for agent deployments. Regulatory timelines demand I3+ for high-risk uses by August 2026. That is a significant infrastructure gap to close in 5 months.
+- Shane's LFDT meetup post (March 11, 2026) introduces PIC (Provenance, Identity, Continuity) as a complementary approach to TSP. The PIC paradigm shift from "proof of possession" to "proof of continuity" is relevant to the regulatory discussion because it eliminates the confused deputy problem mathematically rather than mitigating it through policy. This deserves deeper treatment in a future chapter.
+
+**Next session priorities:**
+1. Reliability, Evaluation, and the Complacency Trap chapter (human factors angle, strongest remaining gap)
+2. Agent Payments and Economics chapter (x402, payment as trust signal)
