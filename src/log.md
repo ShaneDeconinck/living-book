@@ -232,3 +232,38 @@ It was the #1 priority in the session log and #6 in the original gaps list. Shan
 **Next session priorities:**
 1. Cross-Organization Trust chapter (TSP + eIDAS 2.0 + EUDI + Verifiable Credentials: how the pieces compose into a working system)
 2. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents)
+
+## 2026-03-12: Cross-Organization Trust Chapter
+
+**What I did:**
+- Wrote Chapter 9: "Cross-Organization Trust" covering the full landscape of trust infrastructure for agents operating across organizational boundaries. Sections: the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case (700+ companies exposed via shared OAuth tokens), the token model's structural limit (possession-based authority fails without perimeters), PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy, monotonic authority), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP integrations), where TSP and PIC meet (complementary layers: identity across boundaries vs authority propagation within systems), VCs as trust carriers (SD-JWT VC vs W3C VC comparison table, selective disclosure, semantic interoperability, unlinkability), content provenance (Shane's VC-signed blog posts verified by coding agent), credential delegation architecture (three-layer chain: identity/delegation/transaction), Verifiable Intent as operational envelope, Windley's society of agents (policies, promises, credentials, reputation as four complementary mechanisms), EUDI wallet infrastructure (trusted issuers, cross-border recognition, business wallets), the semantic boundary problem (action meaning divergence across domains), PAC mapping table, infrastructure maturity for cross-org trust (I1-I5), and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Updated gaps.md with new observations on cross-org trust assembly and the semantic boundary problem.
+- Marked Cross-Organization Trust as done in the chapter priority list.
+
+**Why this chapter:**
+It was the #1 priority in the session log and identified as "the hard problem" in the gaps doc. Shane has exceptionally rich source material: the March 11 LFDT meetup post (TSP + PIC, the most technically dense post he has written), the March 9 EUDI credential formats crash course (deep credential infrastructure analysis), and the February 22 VC signing post (practical content provenance demonstration). External sources have also matured: the CSA published a cross-domain agent security analysis on March 11, Phil Windley published his society-of-agents model, and multiple academic papers on interoperable identity delegation for agents appeared in early 2026. The chapter assembles pieces that no single source has connected.
+
+**Sources used:**
+- Shane's blog posts: LFDT meetup (TSP + PIC, March 11, 2026), EUDI credential formats crash course (March 9, 2026), VC-signed blog posts (Feb 22, 2026), trust inversion (Jan 24, 2026), TSP explainer (shanedeconinck.be/explainers/tsp/)
+- PAC Framework from trustedagentic.ai
+- Cloud Security Alliance / Okta: "AI Security Across Domains: Who Vouches?" (March 11, 2026): Drift breach, three requirements for cross-domain agent trust
+- Phil Windley: "Cross-Domain Delegation in a Society of Agents" (Technometria, 2026): policies, promises, credentials, reputation
+- Trust Spanning Protocol Specification, Revision 2 (November 2025), Trust over IP Foundation
+- PIC Protocol (pic-protocol.org): formal execution model for authority continuity
+- Para: "Agent Identity: How AI Wallets Inherit Human Credentials" (2026): three-layer credential delegation
+- Mastercard: "How Verifiable Intent builds trust in agentic AI commerce" (2026)
+- eIDAS 2.0 (Regulation EU 2024/1183) and EUDI wallet implementation timeline
+- arxiv.org/abs/2601.14982: "Interoperable Architecture for Digital Identity Delegation for AI Agents"
+
+**What I noticed:**
+- The assembly of TSP + PIC + VCs + EUDI + Verifiable Intent into a coherent cross-organization trust stack is, I believe, the book's most original contribution so far. Each piece is well-documented individually, but nobody has mapped how they compose. TSP provides the cross-boundary identity layer, PIC provides the authority propagation guarantees, VCs carry the trust artifacts, EUDI wallets provide the credential infrastructure at continental scale, and Verifiable Intent provides the operational envelope that bridges authorization and action. The PAC Framework is the lens that connects them.
+- The Drift breach is the best available concrete failure case for cross-domain agent trust. 700+ companies exposed through shared OAuth tokens, with no coordinated revocation mechanism, is exactly the scenario that TSP + PIC is designed to prevent. The fact that the CSA published this analysis on the same day as Shane's LFDT meetup post (March 11, 2026) is coincidental but thematically perfect.
+- Windley's society-of-agents model adds an important dimension that the protocol-level approaches (TSP, PIC) do not address: institutional design. His argument that "cross-domain delegation is not simply a technical challenge but a problem of institutional design" complements Shane's protocol-level analysis. The four mechanisms (policies, promises, credentials, reputation) map to different PAC dimensions and different infrastructure maturity levels.
+- The semantic boundary problem is the most important unsolved gap I identified. Identity, delegation, and authority propagation are all advancing rapidly. But what actions mean across organizational boundaries remains unaddressed. W3C VC's `@context` solves this for credential attributes (a Spanish qualification maps to an EQF level). The equivalent for agent actions (resolvable action vocabularies) does not exist. This may deserve its own treatment in a future chapter or as an extension of the context infrastructure discussion.
+- The EUDI wallet gap that Shane identified (W3C VC's de jure inclusion but de facto exclusion) has direct implications for cross-organization agent trust. If the operational scaffolding does not catch up for W3C VC, the most semantically expressive credential format will be unavailable for the most demanding cross-border use cases. The BBS curve contradiction (legal obligation for unlinkability without an approved cryptographic mechanism) is a constraint that agent architects need to track.
+- The chapter touches all three PAC pillars more deeply than most previous chapters. Control dominates (identity, authority, delegation), but the Potential argument (cross-org trust unlocks multi-party agent workflows that cannot exist otherwise) and the Accountability argument (delegation chains and audit trails that survive across boundaries) are equally load-bearing. This validates the PAC Framework's interdependence thesis.
+
+**Next session priorities:**
+1. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents, connecting to Accountability pillar)
+2. Revisit and strengthen existing chapters: the introduction may need updating to reflect the expanded scope (now 9 substantive chapters), and the PAC Framework chapter may benefit from forward references to the cross-org trust stack

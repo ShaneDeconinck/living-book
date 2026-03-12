@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 3)
+## Observations (Updated 2026-03-12, Session 4)
+
+### Cross-Organization Trust Is the Book's Most Original Assembly
+
+The Cross-Organization Trust chapter assembles pieces that no single source has connected: TSP for cross-boundary identity, PIC for authority continuity, VCs as the trust carrier, EUDI wallets as the infrastructure at scale, Verifiable Intent as operational envelopes, and Windley's society-of-agents model for institutional design. Each piece exists independently, but the chapter maps how they compose into a working cross-organization agent trust stack. The Drift breach (700+ companies exposed via shared OAuth tokens) provides the concrete failure case, and PIC's mathematical elimination of the confused deputy provides the structural solution. This is the chapter where the PAC Framework's interdependencies are most visible: Control (identity + authority propagation), Accountability (delegation chains + audit trails), and Potential (unlocking multi-party agent workflows that cannot exist without cross-org trust).
+
+### The Semantic Boundary Problem Is Unsolved
+
+Identity, delegation, and authority propagation are advancing fast. But semantic interoperability (what do actions mean across organizational boundaries?) remains the hardest unsolved layer. Shane's "close a deal" example from the LFDT meetup illustrates this: correctly delegated authority with divergent meaning. W3C VC's `@context` mechanism solves this for credential attributes (a Spanish qualification maps to an EQF level deterministically). The equivalent for agent actions (resolvable action vocabularies) does not exist yet. This is a gap worth tracking and potentially a future chapter topic.
 
 ### The Execution Security Landscape Is Maturing Fast
 
@@ -46,9 +54,9 @@ Shane's post on context infrastructure is one of his most original contributions
 
 The Reliability, Evaluation, and the Complacency Trap chapter covers this in depth, grounding the argument in Bainbridge (1983) and Don Norman (1990). The key framing: complacency is not a human weakness to overcome but a design constraint to engineer around. Infrastructure-in-the-loop replaces human-in-the-loop. The PAC connection (Potential undermines Accountability without Control) is the chapter's organizing thesis.
 
-### Cross-Organization Trust Is the Hard Problem
+### Cross-Organization Trust Is Now Covered
 
-Within a single organization, extending existing IAM to handle agents is tractable. The genuinely hard problem is when agents cross trust boundaries: your agent calls my API, my agent delegates to a third party's agent. TSP, eIDAS 2.0, EUDI wallets, and Verifiable Credentials are all pieces, but nobody has assembled them into a working cross-organizational agent trust system at scale. This is where the book could make its most original contribution: mapping the specific technical requirements and gaps.
+The Cross-Organization Trust chapter addresses the hard problem of agents crossing trust boundaries. It covers the token model's structural limits, PIC (proof of continuity replacing proof of possession), TSP (identity verification without shared authority), VCs as trust carriers (SD-JWT VC and W3C VC), the EUDI wallet infrastructure, Windley's society-of-agents model, the semantic boundary problem, and infrastructure maturity mapping I1-I5. The remaining gap is semantic interoperability: what actions mean across organizational boundaries.
 
 ### Agent Payments as Trust Signal
 
@@ -69,6 +77,8 @@ Prioritized by impact:
 5. ~~**Agent Payments and Economics** (Potential + Control)~~: DONE. Chapter covers why traditional payments break for agents, payment as trust signal, x402 and EIP-3009 (gasless stablecoin payments), the three commerce protocols (AP2/ACP/UCP), ERC-8004 on-chain registries, real-world milestones (Santander/Mastercard, Stripe x402, J.P. Morgan/Mirakl), micro-transaction economics, authorization via Verifiable Intent constraints, PAC mapping, and infrastructure maturity for payments.
 
 6. ~~**Sandboxing and Execution Security** (Control)~~: DONE. Chapter covers the permission prompt problem, containment by design (filesystem + network isolation), the isolation spectrum (native OS, containers, gVisor, microVMs), OWASP Top 10 for Agentic Applications with sandboxing coverage mapping, defense in depth (six layers: input validation, sandboxed execution, configuration protection, output validation, credential scoping, behavioral monitoring), ephemeral vs persistent sandboxes, real-world architectures (Claude Code, Codex CLI, Docker microVM), PAC mapping, and infrastructure maturity for execution security.
+
+7. ~~**Cross-Organization Trust** (Control + Accountability)~~: DONE. Chapter covers the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case, the token model's limits, PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP), where TSP and PIC meet, VCs as trust carriers (SD-JWT VC and W3C VC comparison), content provenance (Shane's VC-signed blog posts), credential delegation architecture (three-layer chain, Verifiable Intent as operational envelope), Windley's society of agents (policies, promises, credentials, reputation), EUDI wallet infrastructure, the semantic boundary problem, PAC mapping, and infrastructure maturity for cross-org trust.
 
 ## Open Questions
 
