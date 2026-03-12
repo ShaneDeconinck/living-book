@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>When Trust Breaks Down - Trusted AI Agents</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Trusted AI Agents</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://shanedeconinck.be/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="when-trust-breaks-down"><a class="header" href="#when-trust-breaks-down">When Trust Breaks Down</a></h1>
+<p>The previous chapters described what's being built. This chapter looks at what happens when it isn't built, or isn't built fast enough. The evidence is no longer theoretical.</p>
+<h2 id="the-numbers"><a class="header" href="#the-numbers">The Numbers</a></h2>
+<p>Two reports published in February 2026 tell the same story from different angles.</p>
+<p><a href="https://www.gravitee.io/state-of-ai-agent-security">Gravitee's State of AI Agent Security 2026</a> surveyed 750 CIOs, CTOs, and engineering leaders across the US and UK. Their headline finding: 88% of organizations reported confirmed or suspected AI agent security or privacy incidents in the past year. In healthcare, that number hits 92.7%.</p>
+<p>The scale matters. Gravitee estimates over 3 million AI agents are now operating within corporations, a workforce larger than Walmart's entire global headcount. Of those, 47% run without any security oversight or logging. That's approximately 1.5 million agents operating in the dark.</p>
+<p><a href="https://goteleport.com/about/newsroom/press-releases/2026-state-of-ai-in-enterprise-security-report/">Teleport's 2026 State of AI in Enterprise Infrastructure Security</a>, based on interviews with 205 CISOs and security architects, found the sharpest predictor of security outcomes. Not AI sophistication. Not organizational maturity. Access scope. Organizations with over-privileged AI systems reported a 76% incident rate. Those that enforced least-privilege: 17%. That's a 4.5x difference.</p>
+<p>Two numbers from the Teleport report land hard:</p>
+<ul>
+<li><strong>67%</strong> of organizations still rely on static credentials for AI systems. Static credentials correlated with a 20-point increase in incident rates.</li>
+<li><strong>Only 13%</strong> feel highly prepared for agentic AI, while 79% are already evaluating or deploying it.</li>
+</ul>
+<p>Gartner's <a href="https://www.gartner.com/en/articles/strategic-predictions-for-2026">strategic predictions for 2026</a> project that more than 2,000 "death by AI" legal claims will be filed by the end of 2026 due to insufficient AI risk guardrails. They add that over 40% of agentic AI projects will be canceled by end of 2027 due to escalating costs or unclear business value.</p>
+<p>This is the gap the PAC Framework describes: Potential is being captured, but Accountability and Control haven't caught up.</p>
+<h2 id="the-identity-vacuum"><a class="header" href="#the-identity-vacuum">The Identity Vacuum</a></h2>
+<p>The most consistent finding across both reports: agents aren't being treated as identities.</p>
+<p>Gravitee found that only 21.9% of teams treat AI agents as independent, identity-bearing entities. The rest are running agents under shared credentials, inherited user sessions, or nothing at all. 45.6% of teams rely on shared API keys for agent-to-agent authentication. 27.2% have resorted to custom, hardcoded authorization logic.</p>
+<p>This is exactly the problem <a href="./agents-create-intent.html">Chapter 1</a> described: when agents create intent, they need their own identity. When they don't have one, you can't trace what happened, who authorized it, or what went wrong. Delegation becomes abdication.</p>
+<p>NIST recognized this when they published their <a href="https://csrc.nist.gov/pubs/other/2026/02/05/accelerating-the-adoption-of-software-and-ai-agent/ipd">concept paper on AI agent identity and authorization</a> in February 2026. The paper's core premise: AI agents should be treated as identifiable entities within enterprise identity systems rather than as anonymous automation running under shared credentials. They identified OAuth, OpenID Connect, SPIFFE/SPIRE, and SCIM as the building blocks, and proposed a demonstration project to show how they compose in practice.</p>
+<p>Then, on February 17, NIST <a href="https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure">announced the AI Agent Standards Initiative</a>, organized through their Center for AI Standards and Innovation (CAISI). The initiative has three pillars: facilitating industry-led agent standards, fostering community-led open source protocol development, and advancing research in agent security and identity. Public input on the concept paper was open through April 2, 2026.</p>
+<p>The timing isn't coincidental. The incident data made the case that voluntary best practices weren't enough.</p>
+<h2 id="mcp-when-the-plumbing-leaks"><a class="header" href="#mcp-when-the-plumbing-leaks">MCP: When the Plumbing Leaks</a></h2>
+<p>The Model Context Protocol (MCP) has become the dominant interface for connecting AI models to external tools and data. Its adoption is impressive. Its security track record is not.</p>
+<p>In early 2026, three CVEs were published for Anthropic's own Git MCP server:</p>
+<ul>
+<li><strong>CVE-2025-68145</strong>: Path validation bypass allowing access to files outside the configured repository</li>
+<li><strong>CVE-2025-68143</strong>: Unrestricted <code>git_init</code> enabling arbitrary directory creation</li>
+<li><strong>CVE-2025-68144</strong>: Argument injection in git commands enabling remote code execution</li>
+</ul>
+<p>All three were exploitable through prompt injection: an attacker could craft input that caused the AI model to invoke MCP tools in unintended ways. The model didn't need to be compromised. It just needed to follow instructions that happened to be malicious.</p>
+<p>The supply chain risks are real too. The popular <code>mcp-remote</code> npm package, used to add OAuth support to MCP servers, was found to contain a critical vulnerability (<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-6514">CVE-2025-6514</a>). This is the kind of dependency that gets installed without much scrutiny and runs with whatever permissions the MCP server has.</p>
+<p>The broader pattern: MCP servers often accept unauthenticated calls, skip OAuth entirely, or implement it poorly. Many don't verify requests or protect user sessions. <a href="https://adversa.ai/blog/top-mcp-security-resources-march-2026/">Adversa AI's monthly MCP security roundups</a> have become a running chronicle of what goes wrong when tool interfaces ship without the trust infrastructure they need.</p>
+<p>From a PAC perspective, these aren't reliability problems. They're Control failures. The infrastructure doesn't enforce what policy demands. The wrong thing isn't impossible: it's easy.</p>
+<h2 id="the-over-privilege-pattern"><a class="header" href="#the-over-privilege-pattern">The Over-Privilege Pattern</a></h2>
+<p>Teleport's finding deserves its own section because it maps directly to the trust inversion argument.</p>
+<p>Traditional IAM works by granting broad access and restricting specific actions. The Teleport data shows what happens when that model is applied to agents: a 76% incident rate. The organizations that inverted this, granting minimal access and requiring explicit authorization for each capability, dropped to 17%.</p>
+<p>This is the same principle the <a href="./agents-create-intent.html">trust inversion chapter</a> described: agents must be restricted to what they <em>can</em> do, not blocked from what they <em>can't</em>. The Teleport data turns that principle into empirical evidence.</p>
+<p>The 67% static credential finding is equally telling. Static credentials mean no rotation, no scoping, no audit trail of which agent used which credential for what purpose. It's the confused deputy problem at organizational scale: the agent has credentials, but no one knows what it's doing with them.</p>
+<p>Verifiable Intent's L2 constraints address exactly this: every agent action carries the constraint envelope that governs it. The constraint types (amount limits, merchant categories, time windows, geographic restrictions) exist precisely because "the agent has a token" isn't enough. You need to know what the token allows, and you need the infrastructure to enforce it.</p>
+<h2 id="shadow-agents"><a class="header" href="#shadow-agents">Shadow Agents</a></h2>
+<p>Both Gravitee and the OpenID Foundation's <a href="https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/">AIIM whitepaper</a> flag the same risk: shadow agents.</p>
+<p>Gravitee found that only 14.4% of organizations have full security approval for their entire agent fleet. The rest have agents running that were never reviewed, never registered, never scoped. Some were built by individual developers. Some were spun up by other agents: 25.5% of deployed agents have the capability to create and task other agents.</p>
+<p>This is the registration problem the <a href="./gaps.html">Gaps chapter</a> flagged. You can't govern what you can't see. NIST's concept paper explicitly focuses on enterprise agents where organizations maintain control, because the alternative, agents operating across boundaries where no single organization controls the environment, is a harder problem that requires cross-domain trust infrastructure (TSP, DIDs, verifiable credentials) that's still being built.</p>
+<p>The PAC Framework's Accountability pillar starts with a question: "Do you know every agent running in your organisation?" For most organizations, the honest answer is no.</p>
+<h2 id="what-the-eu-ai-act-means-for-agent-incidents"><a class="header" href="#what-the-eu-ai-act-means-for-agent-incidents">What the EU AI Act Means for Agent Incidents</a></h2>
+<p>The EU AI Act's <a href="https://artificialintelligenceact.eu/">high-risk system obligations take effect on August 2, 2026</a>. These include requirements for risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy, robustness, and cybersecurity. Non-compliance carries fines of up to 35 million euros or a percentage of global annual turnover.</p>
+<p>The Act doesn't specifically address "AI agents" as a category. But agents that operate in high-risk domains, think healthcare, finance, employment, law enforcement, critical infrastructure, fall squarely within its scope. The Annex III categories map cleanly to areas where agents are already being deployed.</p>
+<p>Three requirements are particularly relevant for the incidents described in this chapter:</p>
+<ol>
+<li><strong>Transparency</strong> (Article 50): AI systems must disclose their artificial nature. An agent operating under shared credentials with no identity of its own can't satisfy this requirement.</li>
+<li><strong>Human oversight</strong>: High-risk systems must be designed so humans can effectively oversee them. The Gravitee finding that 47% of agents run without monitoring suggests widespread non-compliance.</li>
+<li><strong>Record-keeping</strong>: Technical logs must be automatically generated and retained. Agents without audit trails can't produce them.</li>
+</ol>
+<p>The PAC Framework's Accountability pillar was designed with this regulatory landscape in mind. The question "Could you explain to a regulator what your agent did and why?" is about to become urgent.</p>
+<h2 id="the-pattern"><a class="header" href="#the-pattern">The Pattern</a></h2>
+<p>Every incident in this chapter follows the same pattern:</p>
+<ol>
+<li>An agent is deployed with more access than it needs</li>
+<li>No independent identity is established for the agent</li>
+<li>No constraint infrastructure bounds what the agent can do</li>
+<li>Something goes wrong</li>
+<li>No one can explain what happened or who authorized it</li>
+</ol>
+<p>This is the gap between Potential and Control. Organizations are capturing value from agents (the PAC Framework's Potential pillar) without building the infrastructure to enforce governance (the Control pillar) or establishing clear accountability chains (the Accountability pillar).</p>
+<p>The protocols described in <a href="./protocol-landscape.html">The Protocol Landscape</a> and <a href="./verifiable-intent.html">Verifiable Intent</a> are being built to close this gap. The question is whether they'll be adopted before the next wave of incidents, or because of it.</p>
+<p><strong>The infrastructure problem is clear. The incident data makes the cost of delay concrete. What remains is building it.</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="context-infrastructure.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="pac-framework.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="context-infrastructure.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="pac-framework.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

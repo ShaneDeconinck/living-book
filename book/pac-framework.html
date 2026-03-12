@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The PAC Framework - Trusted AI Agents</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Trusted AI Agents</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://shanedeconinck.be/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="the-pac-framework"><a class="header" href="#the-pac-framework">The PAC Framework</a></h1>
+<p>Every protocol and standard in this book addresses a piece of the problem. OAuth scopes handle authorization within a trust domain. DIDs handle identity across domains. Verifiable Intent handles proof of user authorization for commerce. But none of them answers the question an organisation actually needs to start with: where do we begin, and how do we think about this?</p>
+<p>That's what PAC does. Shane developed the <a href="https://trustedagentic.ai/framework/">PAC Framework</a> (Potential, Accountability, Control) as the governance structure for agentic transformation. It's the spine of this book: every protocol, every gap, every design decision maps to one of the three pillars.</p>
+<p>The premise is simple. AI engineering, security, and compliance each see part of the picture. PAC brings them into three pillars you can act on and align stakeholders around.</p>
+<h2 id="the-three-pillars"><a class="header" href="#the-three-pillars">The Three Pillars</a></h2>
+<p><strong>Potential</strong>: what's worth building that lasts? The barrier to building agents has never been lower. What's possible changes monthly. The question isn't whether you can build it. It's whether what you build today still compounds in a year, or becomes dead weight when the next model drops.</p>
+<p><strong>Accountability</strong>: who's responsible, and can you prove it? Agents are already making decisions in organisations. Some nobody knows about. When something goes wrong, someone has to explain what happened. If the liability chain isn't mapped before the incident, it's too late to draw one after.</p>
+<p><strong>Control</strong>: can your infrastructure enforce what policy demands? Policy says "don't." Architecture says "can't." The difference matters when agents act autonomously across systems and organisations. Identity, delegation, sandboxing: the infrastructure to enforce what governance promises.</p>
+<p>Drop any one pillar and the others fall short.</p>
+<ul>
+<li><strong>Potential without Accountability</strong>: reckless adoption. You build fast and hit a wall when the first incident happens and nobody can explain what went wrong.</li>
+<li><strong>Accountability without Control</strong>: governance on paper. Policies mean nothing if the infrastructure can't enforce them.</li>
+<li><strong>Control without Potential</strong>: infrastructure without a mandate. If the business doesn't see value, funding stops.</li>
+</ul>
+<h2 id="potential-finding-where-agents-create-real-value"><a class="header" href="#potential-finding-where-agents-create-real-value">Potential: Finding Where Agents Create Real Value</a></h2>
+<p>This pillar forces a structured look at what an agent deployment actually involves. Not "can we build it?" but "should we, and will it last?"</p>
+<p>The <a href="https://trustedagentic.ai/framework/">PAC Framework</a> defines several dimensions within Potential:</p>
+<p><strong>Business value</strong> is classified on a four-level scale: V1 Incremental, V2 Operational, V3 Strategic, V4 Transformative. Not every process benefits from an agent. The question is where it actually matters.</p>
+<p><strong>Reliability</strong> is measured as a percentage with its error margin. Without the margin, the number means nothing. A workflow's failures are enumerable; an autonomous agent's aren't. This is the core distinction from <a href="./agents-create-intent.html">the chapter on reliability vs governance</a>: context engineering improves reliability, but governance manages risk regardless of how reliable the agent becomes.</p>
+<p><strong>Blast radius</strong> measures what happens when the agent is wrong. Same quality, very different consequences depending on where output lands. The framework scores this across five levels: B1 Contained, B2 Recoverable, B3 Exposed, B4 Regulated, B5 Irreversible. A customer-facing agent generating incorrect medical information (B4/B5) needs fundamentally different infrastructure than an internal agent summarising meeting notes (B1).</p>
+<p><strong>Autonomy</strong> is not a choice you make upfront. It's what the agent earns, determined by all dimensions together. Five levels: A1 Suggestion, A2 Approve, A3 Oversight, A4 Delegated, A5 Autonomous. The governance threshold for each level depends on blast radius: contained tasks can tolerate more uncertainty; irreversible ones can't.</p>
+<p><strong>Durability</strong> is Shane's recurring point: build on what stays stable. Workflow logic, context infrastructure, evaluation pipelines. Not on what changes every quarter. Better models will make current scaffolding obsolete. Shane calls this <a href="https://shanedeconinck.be/posts/ai-agent-scaffolding-trap/">harness debt</a>: scaffolding built to compensate for a weaker model becomes a liability when the model improves. Most teams don't see it until a new model drops and their pipeline fights it.</p>
+<p><strong>Context management</strong> is where lasting advantage lives. Shane <a href="https://shanedeconinck.be/posts/ai-agents-context-infrastructure-long-term-investment/">argues</a> that while training, code, and model access all depreciate, context infrastructure appreciates. Well-curated information combined with well-managed access becomes exponentially more valuable as models improve. Two organisations with the same model and the same budget but different context infrastructure will see diverging results. The five areas to invest in: structure (coherent, machine-consumable information), permissions (fine-grained access on information itself), discovery (agents need to find what they need), authority (access scoped to the delegating user's authority), and freshness (up-to-date, versioned information).</p>
+<p><strong>Implementation architecture</strong> matters because workflows, agent loops, and autonomous agents aren't exclusive choices. They compose. A workflow can contain an agent loop step that delegates to an autonomous sub-agent. The outer layer sets the reliability floor and tightens the error margin; the inner layer raises the quality ceiling.</p>
+<h2 id="accountability-mapping-whos-responsible-before-it-matters"><a class="header" href="#accountability-mapping-whos-responsible-before-it-matters">Accountability: Mapping Who's Responsible Before It Matters</a></h2>
+<p>This is where trust infrastructure meets organisational reality. The technical protocols covered in the <a href="./protocol-landscape.html">Protocol Landscape</a> chapter provide the building blocks. The Accountability pillar asks whether you've actually wired them into governance.</p>
+<p><strong>Delegation becomes abdication.</strong> This is the central insight from the <a href="./agents-create-intent.html">opening chapter</a>. Agents interpret and expand intent. If you can't trace what was given and what was acted on, accountability dissolves. Verifiable Intent addresses this for the commerce use case by making user authorisation a cryptographic object. But the general case, where a planning agent delegates to specialist sub-agents across organisational boundaries, remains largely unaddressed.</p>
+<p><strong>Shadow agents.</strong> The OpenID Foundation's <a href="https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/">AIIM whitepaper (October 2025)</a> and the <a href="https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization">NIST concept paper (February 2026)</a> both identify unregistered agents in enterprise environments as a key risk. Shane poses the question directly in the framework: "Do you know every agent running in your organisation?" The <a href="https://shanedeconinck.be/posts/openclaw-moltbook-trust-fear-ai/">OpenClaw incident</a> showed what happens when users install system-level agents without understanding what they're granting. Documentation is not a security model.</p>
+<p><strong>Liability chains.</strong> When an agent makes a consequential decision, you need to trace who authorised it and what happened. The chain includes the user who delegated, the agent that acted, the model provider, the integrator, the prompt author. As noted in the <a href="./gaps.html">Gaps</a> chapter, no protocol comprehensively captures this full provenance. Software supply chains have SBOMs. Agent supply chains need something equivalent.</p>
+<p><strong>Audit trails designed for compliance.</strong> Not just debugging logs, but evidence that could satisfy a regulator. Can you explain to an auditor what your agent did and why? The <a href="https://cloudsecurityalliance.org/press-releases/2026/02/05/cloud-security-alliance-strata-survey-finds-that-enterprises-are-in-time-to-trust-phase-as-they-build-ai-autonomy-foundations">CSA/Strata Identity survey (February 2026)</a> found that 84% of organisations doubt they could pass a compliance audit focused on agent behaviour or access controls. That number should concern anyone deploying agents at scale.</p>
+<p><strong>Regulatory convergence.</strong> The EU AI Act, NIST frameworks, and ISO 42001 are converging. Better to shape governance around them than react. The OpenID Foundation's <a href="https://openid.net/oidf-responds-to-nist-on-ai-agent-security/">response to NIST's RFI (March 2026)</a> framed the urgency: the autonomy inflection point is approaching faster than most realise.</p>
+<h2 id="control-architecture-that-enforces-what-policy-cant"><a class="header" href="#control-architecture-that-enforces-what-policy-cant">Control: Architecture That Enforces What Policy Can't</a></h2>
+<p>This is where the protocols from the <a href="./protocol-landscape.html">Protocol Landscape</a> chapter live. Control isn't about having policies. It's about having infrastructure that makes violation structurally impossible.</p>
+<p>The framework defines an infrastructure maturity scale: I1 Open, I2 Logged, I3 Verified, I4 Authorized, I5 Contained. Either you have audit trails or you don't. Either credentials are scoped or they aren't. No reliability score compensates for guardrails you haven't built.</p>
+<p><strong>Policy vs. architecture.</strong> The <a href="./agents-create-intent.html">trust inversion</a> chapter established the principle: agents must be restricted to what they can do, not from what they can't. This is the Control pillar in practice. OAuth scopes, capability-based security, and explicit tool registration define the positive space of allowed behaviour. The Cloud Security Alliance's <a href="https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents">Agentic Trust Framework (February 2026)</a> applies Zero Trust principles specifically to AI agents: all actions logged, inputs validated, circuit breakers preventing runaway failures.</p>
+<p><strong>Agent identity.</strong> Who is this agent, who does it act for, and how do you prove it? Within a single trust domain, OAuth OBO (<a href="https://datatracker.ietf.org/doc/html/rfc8693">RFC 8693</a>) handles this. Across domains, DIDs and Verifiable Credentials provide the cryptographic foundation. The building blocks exist. They weren't built for agents, but they apply directly.</p>
+<p><strong>Delegation chains.</strong> What an agent can access, for how long, and what happens when it hands off to another agent. Authority can only decrease through the chain, never expand. This is PIC's core property, and Verifiable Intent enforces it by making L3 terminal. The new <a href="https://datatracker.ietf.org/doc/draft-jia-oauth-scope-aggregation/">OAuth scope aggregation draft (draft-jia-oauth-scope-aggregation)</a> addresses the practical question of how an agent aggregates scopes across a multi-step workflow into a single authorization procedure.</p>
+<p><strong>The confused deputy.</strong> An agent with credentials but no scoped limits on what it can do with them. Every delegation without explicit boundaries is a potential confused deputy. This is why positive-space authorisation matters: not "block these actions" but "permit only these actions."</p>
+<p><strong>Cross-organisation trust.</strong> When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable? TSP provides the bridge when no shared identity provider exists. The <a href="https://datatracker.ietf.org/doc/html/draft-aap-oauth-profile-00.html">Agent Authorization Profile (draft-aap-oauth-profile)</a> defines an authorization profile specifically for autonomous agents, extending OAuth 2.0 and JWT without introducing a new protocol.</p>
+<h2 id="how-the-protocols-map-to-pac"><a class="header" href="#how-the-protocols-map-to-pac">How the Protocols Map to PAC</a></h2>
+<p>The protocols from the <a href="./protocol-landscape.html">Protocol Landscape</a> chapter aren't random pieces. They map to specific pillars:</p>
+<div class="table-wrapper"><table><thead><tr><th>Protocol</th><th>Primary PAC Pillar</th><th>What It Addresses</th></tr></thead><tbody>
+<tr><td>OAuth 2.0 + OBO</td><td>Control</td><td>Identity and delegation within a trust domain</td></tr>
+<tr><td>IETF agent auth drafts</td><td>Control</td><td>Extending existing standards for agent-specific auth</td></tr>
+<tr><td>OAuth Scope Aggregation</td><td>Control</td><td>Multi-step workflow authorization</td></tr>
+<tr><td>Agent Authorization Profile</td><td>Control</td><td>Autonomous agent authorization</td></tr>
+<tr><td>DIDs + VCs</td><td>Control</td><td>Cross-domain identity and authority</td></tr>
+<tr><td>TSP</td><td>Control</td><td>Cross-domain trust establishment</td></tr>
+<tr><td>Verifiable Intent</td><td>Accountability + Control</td><td>Cryptographic proof of user authorization</td></tr>
+<tr><td>PIC</td><td>Accountability + Control</td><td>Traceable delegation chains</td></tr>
+<tr><td>MCP</td><td>Potential</td><td>Connectivity and tool integration</td></tr>
+<tr><td>A2A</td><td>Potential + Control</td><td>Agent-to-agent communication</td></tr>
+<tr><td>NIST demonstration project</td><td>Accountability</td><td>Standards-based reference implementations</td></tr>
+<tr><td>OWASP Agentic Top 10</td><td>Accountability</td><td>Risk identification and classification</td></tr>
+<tr><td>CSA Agentic Trust Framework</td><td>Control</td><td>Zero Trust governance for agents</td></tr>
+<tr><td>AgentGateway</td><td>Control</td><td>Policy enforcement at the network layer</td></tr>
+</tbody></table>
+</div>
+<p>Control is the most protocol-heavy pillar because it requires the most infrastructure. Potential is the least, because what's possible changes with every model release. Accountability sits between: it needs both organisational process and technical evidence.</p>
+<h2 id="the-iterative-nature"><a class="header" href="#the-iterative-nature">The Iterative Nature</a></h2>
+<p>Models improve. Protocols land. Regulations tighten. Internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.</p>
+<p>This isn't a one-time assessment. PAC is built to be re-run. The <a href="https://trustedagentic.ai/profiler/">Agent Profiler</a> at trustedagentic.ai gives a concrete way to track how positions shift across iterations, mapping agents across six governance dimensions.</p>
+<p>The 19 questions in the framework are conversation starters, not a checklist. The right question at the right table surfaces gaps that dashboards and audits miss.</p>
+<p><strong>Potential</strong> (7 questions):</p>
+<ol>
+<li>What decisions are you not yet delegating to agents, and what's that costing you?</li>
+<li>Will better models make your current setup more valuable, or obsolete?</li>
+<li>How much value are you leaving on the table by over-constraining?</li>
+<li>Are your agents actually making decisions, or just automating steps humans already defined?</li>
+<li>Does the right context reach your agents at the right time?</li>
+<li>Are you building on established and emerging standards, or on an island?</li>
+<li>Do you know the error margin on your agent's reliability, or just the headline number?</li>
+</ol>
+<p><strong>Accountability</strong> (5 questions):</p>
+<ol>
+<li>Do you know every agent running in your organisation?</li>
+<li>If an agent causes harm, is the liability chain clear?</li>
+<li>Can your infrastructure prevent an agent from running without being registered?</li>
+<li>Could you explain to a regulator what your agent did and why?</li>
+<li>When an agent makes a consequential decision, can you trace who authorised it and what happened?</li>
+</ol>
+<p><strong>Control</strong> (7 questions):</p>
+<ol>
+<li>Are your agents contained by architecture, or only by policy?</li>
+<li>When agents delegate to other agents, can authority only decrease?</li>
+<li>What happens when human oversight breaks down in practice?</li>
+<li>How do you balance agent quality with data privacy?</li>
+<li>Are agents restricted to what they can do, or only blocked from what they can't?</li>
+<li>Does your agent setup work when agents need to cross trust boundaries?</li>
+<li>What happens when an agent wanders into a use case you didn't anticipate?</li>
+</ol>
+<p>Three that tend to surface the most gaps: "Are your agents contained by architecture, or only by policy?" reveals whether an organisation has invested in infrastructure or just written guidelines. "If an agent causes harm, is the liability chain clear?" most teams discover the answer is no. "Will better models make your current setup more valuable, or obsolete?" forces honest evaluation of harness debt and durability.</p>
+<h2 id="where-this-book-fits"><a class="header" href="#where-this-book-fits">Where This Book Fits</a></h2>
+<p>This book is the technical companion to the PAC Framework. The <a href="./agents-create-intent.html">opening chapter</a> establishes why the problem exists: agents create intent, and that breaks existing trust assumptions. The <a href="./protocol-landscape.html">Protocol Landscape</a> maps what's being built. The <a href="./gaps.html">Gaps</a> chapter identifies what's missing.</p>
+<p>PAC provides the lens. When evaluating a protocol, an architecture decision, or a deployment plan, the questions are: does this increase Potential in a way that's durable? Does this close an Accountability gap? Does this move Control from policy to architecture?</p>
+<p>If the answer to all three is unclear, the decision isn't ready.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="when-trust-breaks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="gaps.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="when-trust-breaks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="gaps.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

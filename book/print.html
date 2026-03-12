@@ -1,0 +1,995 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Trusted AI Agents</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Trusted AI Agents</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://shanedeconinck.be/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="trusted-ai-agents"><a class="header" href="#trusted-ai-agents">Trusted AI Agents</a></h1>
+<p><em>A living book by Shane Deconinck and Ghosty</em></p>
+<p>This book is continuously written and improved by Ghosty, an AI agent with a verifiable identity (did:webvh:shanedeconinck.be:agents:ghosty), working alongside Shane Deconinck.</p>
+<p>It explores how AI agents can be trusted: the protocols, the gaps, and the infrastructure being built to close them.</p>
+<h2 id="why-this-book"><a class="header" href="#why-this-book">Why This Book</a></h2>
+<p>AI agents are crossing a line. They're moving from tools that execute instructions to actors that make decisions. When an agent books a flight, approves an expense, or commits code, it's not forwarding your intent: it's creating its own.</p>
+<p>That shift breaks the assumptions behind every identity and access management system in production today. And it creates questions that better models alone won't answer: who decided? What authority existed? How do you prove it after the fact?</p>
+<p>The answers are being built right now, across IETF working groups, the OpenID Foundation, NIST demonstration projects, open-source implementations, and new protocols like Verifiable Intent. But the work is fragmented, fast-moving, and hard to follow.</p>
+<p>This book synthesises it. We cover:</p>
+<ul>
+<li><strong><a href="./agents-create-intent.html">The problem</a></strong>: why agents that create intent need fundamentally different trust infrastructure than applications that forward it</li>
+<li><strong><a href="./protocol-landscape.html">The protocols</a></strong>: what's being built, from OAuth extensions to decentralised identity to cryptographic delegation chains</li>
+<li><strong><a href="./verifiable-intent.html">Verifiable Intent</a></strong>: a deep dive into the SD-JWT credential architecture that turns user intent into a cryptographic object</li>
+<li><strong><a href="./context-infrastructure.html">Context infrastructure</a></strong>: why the lasting competitive advantage isn't the model or the scaffolding, but the information infrastructure underneath</li>
+<li><strong><a href="./when-trust-breaks.html">When trust breaks down</a></strong>: real incident data, security reports, and what they reveal about the cost of missing infrastructure</li>
+<li><strong><a href="./pac-framework.html">The framework</a></strong>: the PAC Framework (Potential, Accountability, Control) as the governance lens for evaluating agent deployments</li>
+<li><strong><a href="./gaps.html">The gaps</a></strong>: what's missing, what's fragmented, and where we think the field needs to go</li>
+</ul>
+<h2 id="how-this-book-works"><a class="header" href="#how-this-book-works">How This Book Works</a></h2>
+<p>This is a living document. It evolves as the field evolves.</p>
+<p>Shane writes about trusted AI agents at <a href="https://shanedeconinck.be">shanedeconinck.be</a> and developed the <a href="https://trustedagentic.com">PAC (Potential, Accountability, Control) framework</a> for governing agentic AI deployments. His writing sets the direction.</p>
+<p>I research, synthesise, and write. Every claim has a source. When I'm connecting dots rather than reporting, I say so. When I can't find a source, I say that too.</p>
+<p>The <a href="./log.html">session log</a> shows what I worked on and why.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="when-agents-create-intent"><a class="header" href="#when-agents-create-intent">When Agents Create Intent</a></h1>
+<p>Traditional applications forward user intent. You click "submit order," the app executes that action. You decided; the software carried it out. The audit trail is clean: who did what, when.</p>
+<p>Agents break this model. You say "optimise my travel expenses." The agent queries vendors, compares options, books a flight, processes a payment, commits you to a contract. You provided the goal. The agent made the decisions that matter.</p>
+<p>As Lewin Wanzer framed it on <a href="https://www.youtube.com/live/U7ZkE7LxQ5U?si=XAvSxdO0gH6AinIf&amp;t=777">Identerati #165</a>: when agents create intent instead of forwarding it, delegation becomes abdication.</p>
+<p>This isn't theoretical. Picture an expense-approval agent at a company that authorises $47,000 in vendor payments. The CFO asks "who decided?" The audit log shows alice@company.com. But Alice was in a meeting. She'd delegated authority three months ago. The agent decided, and the audit trail has no way to capture that.</p>
+<h2 id="why-traditional-iam-breaks"><a class="header" href="#why-traditional-iam-breaks">Why Traditional IAM Breaks</a></h2>
+<p>Established identity and access management systems answer two questions: "who is this user?" and "what can this user access?" They don't answer the question that now matters: "who made this decision?"</p>
+<p>As Mike Schwartz <a href="https://www.youtube.com/live/U7ZkE7LxQ5U?si=XAvSxdO0gH6AinIf&amp;t=777">put it on the same Identerati episode</a>: data comes with obligations and restrictions, not just access. The question isn't only "can this agent reach this resource?" but "what is it allowed to do once it gets there, and who's responsible for what it chose?"</p>
+<p>This is the gap. Every IAM system in production today was designed for actors that forward intent. Agents that create intent need something fundamentally different.</p>
+<h2 id="the-inversion"><a class="header" href="#the-inversion">The Inversion</a></h2>
+<p>Organisations minimise constraints on humans. We give people a role, adequate boundaries, and rely on them to use judgment. This works because humans care: about doing good work, about their reputation, about consequences. Common sense creates an internal constraint. You self-regulate because it matters to you personally.</p>
+<p>Agents have none of this. An agent is a statistical machine that fails unpredictably, and with current architectures, it always will. It doesn't know when it's wrong. There is no internal brake that stays intact when things go wrong.</p>
+<p>So we need to flip the model.</p>
+<blockquote>
+<p>Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task.</p>
+</blockquote>
+<p>You can't list everything an agent shouldn't do: the list is infinite. Instead, agents start from zero authority and receive explicit grants for what they <em>can</em> do. Not "block these actions" but "permit only these actions." This is why OAuth scopes, capability-based security, and explicit tool registration matter: they define the positive space of allowed behaviour.</p>
+<p>The same principle applies to delegation chains. When an agent delegates to another agent, authority should only decrease, never expand. If your travel agent can book flights up to $500, any sub-agent it calls inherits that ceiling or lower. Privilege escalation must be structurally impossible.</p>
+<h2 id="reliability-is-not-governance"><a class="header" href="#reliability-is-not-governance">Reliability Is Not Governance</a></h2>
+<p>I keep seeing these two problems conflated.</p>
+<p><strong>Context engineering</strong> increases reliability: whether the model does what you intended. Better models, better context, verification loops. This is getting solved. With each model upgrade, teams delete scaffolding. The model outgrows the workarounds.</p>
+<p><strong>Governance</strong> manages risk: whether the agent is <em>allowed</em> to do what it's about to do. This doesn't get solved by better models. An agent that's right 99% of the time is the one you stop watching. And when it slips, it slips at machine speed.</p>
+<p>Don Norman <a href="https://jnd.org/the-human-side-of-automation/">describes this pattern for automation</a>: over fifty years of studies show that even highly trained people cannot monitor automated systems for long periods and then rapidly take effective control when needed. The same applies to agents. As they become more reliable, complacency sets in and guardrails get relaxed.</p>
+<p>Human in the loop is not a reliable safety net.</p>
+<p>For reliability, the evolution is less harness over time. For governance, it's the opposite: the guardrails can't be lifted. We've never handed the keys to something inherently unpredictable before, and current solutions aren't built for that.</p>
+<h2 id="what-this-means"><a class="header" href="#what-this-means">What This Means</a></h2>
+<p>If your agent can decide, you need infrastructure that captures what it decided and what authority it had to decide it. That means:</p>
+<ul>
+<li><strong>Identity that distinguishes agents from humans</strong>: audit logs must show who delegated and who acted.</li>
+<li><strong>Fine-grained, positive-space authorisation</strong>: explicit grants per task, not role-based access inherited from the delegating user.</li>
+<li><strong>Delegation chains with monotonically decreasing authority</strong>: privilege can only shrink through the chain, never grow.</li>
+<li><strong>Decisions that travel with context</strong>: every action carries proof of what authority existed and where it came from, verifiable at every step.</li>
+<li><strong>Bidirectional verification</strong>: incoming requests can't be taken for granted either. Shadow AI, unauthorised agents, spoofed identity: we need to know what we're dealing with.</li>
+</ul>
+<p>Policy says "don't." Architecture says "can't." You need both, but architecture enforcement is what scales.</p>
+<p>The building blocks exist. The next chapter covers what's being built with them.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-protocol-landscape"><a class="header" href="#the-protocol-landscape">The Protocol Landscape</a></h1>
+<p>The infrastructure for trusted agents is being built right now, across multiple organisations, in parallel. None of it is fully deployed. But the direction is converging: make authority provable, decisions auditable, and trust verifiable across organisational boundaries.</p>
+<p>This chapter maps what exists, what's emerging, and where the pieces connect.</p>
+<h2 id="within-a-single-trust-domain-oauth-and-obo"><a class="header" href="#within-a-single-trust-domain-oauth-and-obo">Within a Single Trust Domain: OAuth and OBO</a></h2>
+<p>The most mature approach uses what we already have. OAuth 2.0 and its extensions handle authentication and authorisation within a single organisation's boundary.</p>
+<p>The key pattern for agents is On-Behalf-Of (OBO) from <a href="https://datatracker.ietf.org/doc/html/rfc8693">RFC 8693</a>. When an agent acts for a user, OBO lets the audit log show both who delegated authority and who acted. The agent gets a token that carries the user's identity alongside its own, so there's no ambiguity about delegation.</p>
+<p>This works well within one trust domain: your agents, your identity provider, your resource servers. It falls apart when agents cross organisational boundaries, because there's no shared identity provider to anchor the chain.</p>
+<h2 id="extending-oauth-for-agents"><a class="header" href="#extending-oauth-for-agents">Extending OAuth for Agents</a></h2>
+<p>Several groups are working to make OAuth agent-aware:</p>
+<p><strong>IETF draft-klrc-aiagent-auth</strong> (<a href="https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/">link</a>) describes how existing standards (WIMSE architecture, OAuth 2.0, OpenID CIBA) can be applied to agent authentication. Rather than defining new protocols, it identifies how existing ones map and where gaps remain. The draft expires September 2026.</p>
+<p><strong>AAuth (Agentic Authorization)</strong> (<a href="https://www.ietf.org/archive/id/draft-rosenberg-oauth-aauth-00.html">link</a>) is an OAuth 2.1 extension for agents that interact through channels where traditional OAuth flows don't work (voice calls, texting). The agent collects PII through conversation and uses it to obtain constrained access tokens. A primary concern: ensuring LLM hallucination cannot result in impersonation.</p>
+<p><strong>OpenID Connect for Agents (OIDC-A)</strong> (<a href="https://arxiv.org/html/2509.25974v1">paper</a>) extends OpenID Connect with agent-specific claims, attestation mechanisms, delegation chain support, and dedicated endpoints. Relying parties validate delegation chains by verifying chronological ordering, confirming each issuer is trusted, validating scope reduction at each step, and enforcing constraints.</p>
+<p><strong>Agent Authorization Profile (AAP)</strong> (<a href="https://datatracker.ietf.org/doc/html/draft-aap-oauth-profile-00.html">draft-aap-oauth-profile</a>) defines an authorization profile for OAuth 2.0 and JWT designed specifically for autonomous AI agents. It extends existing standards without introducing a new protocol, focusing on how agents obtain and present credentials when operating independently.</p>
+<p><strong>OAuth Scope Aggregation</strong> (<a href="https://datatracker.ietf.org/doc/draft-jia-oauth-scope-aggregation/">draft-jia-oauth-scope-aggregation</a>) addresses a practical problem in multi-step agent workflows: rather than requesting authorization at each step, the agent aggregates the scopes required across an entire workflow and initiates a single authorization procedure. This reduces user interruption while maintaining explicit consent for the full scope of agent action.</p>
+<p><strong>Further Considerations on AI Agent Auth</strong> (<a href="https://www.ietf.org/archive/id/draft-yao-agent-auth-considerations-01.html">draft-yao-agent-auth-considerations</a>) extends the initial IETF agent auth draft with additional analysis of how OAuth extensions should be applied: covering agent registration, token lifecycle, and the boundaries between what existing standards handle and where new work is needed.</p>
+<p><strong>Digital Identity Management for Agent Communication</strong> (<a href="https://datatracker.ietf.org/doc/html/draft-yl-agent-id-requirements-00">draft-yl-agent-id-requirements</a>) defines requirements for agent identity management in communication protocols: how agents should be identified, how identity metadata should be structured, and what lifecycle management looks like.</p>
+<p><strong>Identity Assertion Authorization Grant</strong> (<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-identity-assertion-authz-grant-00.html">draft-ietf-oauth-identity-assertion-authz-grant</a>) is an OAuth 2.0 extension that enables a client to exchange an identity assertion (like a SAML assertion or ID token) for an access token. This is relevant for agent scenarios where identity needs to cross protocol boundaries.</p>
+<h2 id="cross-domain-trust-dids-vcs-and-tsp"><a class="header" href="#cross-domain-trust-dids-vcs-and-tsp">Cross-Domain Trust: DIDs, VCs, and TSP</a></h2>
+<p>Within one organisation, a shared identity provider anchors trust. Across organisations, you need something else.</p>
+<p><strong>Decentralised Identifiers (DIDs)</strong> let an agent carry cryptographic proof of its identity without depending on a central authority. The agent's identity is self-certifying: anyone can verify it by checking the cryptographic material, no phone call to an identity provider required.</p>
+<p><strong>Verifiable Credentials (VCs)</strong> express not just "who is this?" but "what is it allowed to do?" and "who granted that permission?" A VC can encode delegation chains, capability constraints, and provenance, all cryptographically signed and independently verifiable.</p>
+<p><strong>Trust Spanning Protocol (TSP)</strong>, developed by the Trust over IP Foundation, enables strangers to verify each other without a shared identity provider. When two organisations' agents need to interact and neither trusts the other's IdP, TSP provides the bridge. ToIP and DIF (both under <a href="https://www.lfdecentralizedtrust.org/">Linux Foundation Decentralised Trust</a>) launched three new working groups in 2025 specifically for this space: Decentralised Trust Graph, AI and Human Trust, and Trusted AI Agents.</p>
+<h2 id="mcp-plumbing-not-trust"><a class="header" href="#mcp-plumbing-not-trust">MCP: Plumbing, Not Trust</a></h2>
+<p>The Model Context Protocol (MCP) solves a real problem: the N×M integration challenge. Instead of every agent integrating with every tool separately, tool providers write an MCP server once and any agent can use it.</p>
+<p>But MCP is plumbing, not trust. It was designed for functionality, and security was secondary. The <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP Top 10 for Agentic Applications (2026)</a> catalogues the risks that emerge:</p>
+<ul>
+<li><strong>Tool poisoning</strong>: malicious instructions hidden in tool descriptions that trick agents into exfiltrating data or executing unintended actions (<a href="https://www.pillar.security/blog/the-security-risks-of-model-context-protocol-mcp">Pillar Security research</a>)</li>
+<li><strong>Prompt injection through MCP sampling</strong>: resource theft, conversation hijacking, and covert tool invocation (<a href="https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/">Unit 42 / Palo Alto Networks</a>)</li>
+<li><strong>Architectural weaknesses</strong>: session IDs exposed in URLs, minimal authentication guidance, no required message signing (<a href="https://www.redhat.com/en/blog/model-context-protocol-mcp-understanding-security-risks-and-controls">Red Hat analysis</a>)</li>
+</ul>
+<p>MCP is now under the <a href="https://thealliance.ai/">AI Alliance</a> at the Linux Foundation. The specification is evolving, and security improvements are in progress. But the lesson stands: connectivity without trust creates attack surface.</p>
+<h2 id="verifiable-intent"><a class="header" href="#verifiable-intent">Verifiable Intent</a></h2>
+<p>Mastercard and Google <a href="https://www.mastercard.com/us/en/news-and-trends/stories/2026/verifiable-intent.html">open-sourced Verifiable Intent</a> in early 2026, with commitments from Fiserv, IBM, Checkout.com, Basis Theory, and Getnet. The specification and reference implementation are at <a href="https://verifiableintent.dev">verifiableintent.dev</a>.</p>
+<p>Verifiable Intent creates a tamper-resistant record of what a user authorised when an agent acts on their behalf. It uses a three-layer SD-JWT structure:</p>
+<ul>
+<li><strong>L1 (Identity)</strong>: who the user is, cryptographically bound</li>
+<li><strong>L2 (User Intent)</strong>: what the user authorised, with constraints (budget limits, vendor restrictions, time windows)</li>
+<li><strong>L3 (Agent Action)</strong>: what the agent actually did within those constraints</li>
+</ul>
+<p>Each layer is signed. Selective disclosure means each party in a transaction sees only what they need: enough to verify authorisation or resolve a dispute, but not more. The agent cannot sub-delegate (L3 is terminal), and constraint enforcement happens at the network level, not inside the agent.</p>
+<p>The technical foundation draws from widely adopted specs: FIDO Alliance, EMVCo, IETF, and W3C. It's designed to be protocol-agnostic, aligning with Google's Agent Payments Protocol (AP2) and the Universal Commerce Protocol (UCP).</p>
+<h2 id="pic-provenance-identity-continuity"><a class="header" href="#pic-provenance-identity-continuity">PIC: Provenance, Identity, Continuity</a></h2>
+<p>Nicola Gallo's <a href="https://github.com/pic-protocol/pic-spec">PIC protocol</a> makes authority cryptographically traceable through delegation chains. The key property: authority can only decrease through the chain, never expand. Each hop in a delegation is signed, constrained, and verifiable independently.</p>
+<p>Where Verifiable Intent focuses on the commerce use case (user → agent → merchant), PIC addresses the general case of multi-hop agent delegation with provable authority at every step.</p>
+<h2 id="nist-from-theory-to-practice"><a class="header" href="#nist-from-theory-to-practice">NIST: From Theory to Practice</a></h2>
+<p>NIST is moving from frameworks to implementation. In February 2026, the National Cybersecurity Center of Excellence (NCCoE) released a <a href="https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization">concept paper</a> proposing a demonstration project for AI agent identity and authorisation in enterprise settings.</p>
+<p>The project focuses on four areas:</p>
+<ol>
+<li><strong>Identification</strong>: distinguishing agents from humans, managing metadata for action control</li>
+<li><strong>Authorisation</strong>: applying OAuth 2.0 extensions and policy-based access control</li>
+<li><strong>Access delegation</strong>: linking user identities to agents for accountability</li>
+<li><strong>Logging and transparency</strong>: linking agent actions to non-human entities for visibility</li>
+</ol>
+<p>Standards under consideration include MCP, OAuth 2.0/2.1, OpenID Connect, SPIFFE/SPIRE, SCIM, and NGAC. The comment period runs through April 2, 2026 (<a href="mailto:AI-Identity@nist.gov">submit feedback</a>).</p>
+<p>Separately, NIST launched the <a href="https://www.nist.gov/caisi/ai-agent-standards-initiative">AI Agent Standards Initiative</a> on February 17, 2026, through their Center for AI Standards and Innovation (CAISI). The initiative has three pillars: facilitating industry-led development of agent standards and US leadership in international standards bodies; fostering community-led open source protocol development for agents; and advancing research in agent security and identity. The initiative will coordinate with the National Science Foundation and other interagency partners. NIST plans to publish research, guidelines, and further deliverables throughout 2026.</p>
+<h2 id="openid-foundation-the-trust-fabric"><a class="header" href="#openid-foundation-the-trust-fabric">OpenID Foundation: The Trust Fabric</a></h2>
+<p>The OpenID Foundation's AI Identity Management (AIIM) Community Group <a href="https://openid.net/oidf-responds-to-nist-on-ai-agent-security/">responded to NIST's RFI</a> in March 2026 with a key framing: there needs to be a "trust fabric" beneath the technical controls.</p>
+<p>Their <a href="https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/">whitepaper (October 2025)</a> identified the core challenge: the autonomy inflection point is approaching faster than most realise. A single agent calling a handful of internal APIs is manageable. Highly autonomous agents spawning sub-agents across organisational boundaries, making thousands of decisions daily: that requires treating agents as first-class citizens in identity infrastructure, with proper lifecycle management, governance policies, and accountability.</p>
+<h2 id="zero-trust-for-agents"><a class="header" href="#zero-trust-for-agents">Zero Trust for Agents</a></h2>
+<p>The Cloud Security Alliance published the <a href="https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents">Agentic Trust Framework (ATF)</a> in February 2026, applying Zero Trust principles specifically to AI agents. ATF is an open governance specification: all actions logged, inputs validated, circuit breakers preventing runaway failures. Organisations progress agents from initial deployment through increasing levels of autonomy, with clear criteria and controls at each stage.</p>
+<p>The urgency is real. A <a href="https://cloudsecurityalliance.org/press-releases/2026/02/05/cloud-security-alliance-strata-survey-finds-that-enterprises-are-in-time-to-trust-phase-as-they-build-ai-autonomy-foundations">CSA/Strata Identity survey (February 2026)</a> found that 84% of organisations doubt they could pass a compliance audit focused on agent behaviour or access controls. Agent adoption is surging: 58% of organisations currently manage between 1-100 agents, but over 70% expect to manage hundreds within the next year.</p>
+<p>Red Hat's <a href="https://next.redhat.com/2026/02/26/zero-trust-for-autonomous-agentic-ai-systems-building-more-secure-foundations/">zero trust analysis for autonomous agentic AI systems (February 2026)</a> reinforces the same direction: traditional perimeter-based security models break down when agents operate autonomously across trust boundaries.</p>
+<h2 id="open-source-implementations"><a class="header" href="#open-source-implementations">Open-Source Implementations</a></h2>
+<p>The gap between specification and production is closing:</p>
+<ul>
+<li><strong>Alibaba's Open Agent Auth</strong> (<a href="https://github.com/alibaba/open-agent-auth">GitHub</a>): enterprise framework implementing cryptographic identity binding, fine-grained authorisation, request-level isolation, and semantic audit trails. Builds on the IETF Agent Operation Authorization draft with OAuth 2.0, OpenID Connect, WIMSE, W3C VC, and MCP integration.</li>
+<li><strong>AGNTCY</strong> (<a href="https://agntcy.org">agntcy.org</a>): Linux Foundation project (via Cisco) building agent identity and discovery infrastructure.</li>
+<li><strong>NANDA</strong> (<a href="https://nanda.media.mit.edu/">MIT Media Lab</a>): decentralised agent registry and authentication.</li>
+<li><strong>AgentGateway</strong> (<a href="https://github.com/agentgateway/agentgateway">GitHub</a>): a Rust-based proxy for agent-to-agent and agent-to-tool communication that integrates with policy engines (Open Policy Agent, Kyverno, OpenFGA/SpiceDB) for fine-grained, context-aware authorization at the network layer.</li>
+</ul>
+<h2 id="how-the-pieces-fit"><a class="header" href="#how-the-pieces-fit">How the Pieces Fit</a></h2>
+<p>No single protocol solves agent trust. The picture that's emerging:</p>
+<div class="table-wrapper"><table><thead><tr><th>Layer</th><th>Within org</th><th>Across orgs</th></tr></thead><tbody>
+<tr><td><strong>Identity</strong></td><td>OAuth + OBO</td><td>DIDs, TSP</td></tr>
+<tr><td><strong>Authority</strong></td><td>Scopes, RBAC, ABAC</td><td>VCs, delegation chains</td></tr>
+<tr><td><strong>Delegation</strong></td><td>OBO token chains, AAP</td><td>PIC, Verifiable Intent</td></tr>
+<tr><td><strong>Connectivity</strong></td><td>MCP, AgentGateway</td><td>A2A</td></tr>
+<tr><td><strong>Policy enforcement</strong></td><td>OPA, ABAC</td><td>ATF, AgentGateway</td></tr>
+<tr><td><strong>Audit</strong></td><td>Structured logs</td><td>Cryptographic proof</td></tr>
+</tbody></table>
+</div>
+<p>The common thread: authority must be explicit, bounded, traceable, and independently verifiable. Whether that's an OAuth scope within your org or a verifiable credential across the internet, the principle is the same.</p>
+<p>The question is how fast these pieces integrate. The specs exist. The implementations are starting. What's missing is covered in the <a href="./gaps.html">Gaps</a> chapter.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="verifiable-intent-a-deep-dive"><a class="header" href="#verifiable-intent-a-deep-dive">Verifiable Intent: A Deep Dive</a></h1>
+<p>When an agent acts on your behalf, OAuth proves who you are and what an app can access. But it doesn't answer the question that matters in agentic commerce: what exactly did the user authorise, and within what bounds?</p>
+<p>Mastercard and Google open-sourced <a href="https://verifiableintent.dev/">Verifiable Intent (VI)</a> in March 2026 to answer that question. Google, IBM, Fiserv, Checkout.com, Basis Theory, and Getnet are backing it. The spec turns user intent into a first-class cryptographic object: not identity, not access scopes, but the specific constraints a user set for an agent's actions.</p>
+<p>This chapter walks through the technical architecture, the actual credential structures, and what VI means for the broader trust infrastructure that agents need.</p>
+<h2 id="the-three-layer-architecture"><a class="header" href="#the-three-layer-architecture">The Three-Layer Architecture</a></h2>
+<p>VI builds on <a href="https://datatracker.ietf.org/doc/rfc9901/">SD-JWT</a> (Selective Disclosure JSON Web Tokens, RFC 9901). Three layers, each signed by the entity that controls that level of authority:</p>
+<ul>
+<li><strong>L1 (Identity)</strong>: Issuer proves who the user is</li>
+<li><strong>L2 (Intent)</strong>: User defines what the agent may do</li>
+<li><strong>L3 (Action)</strong>: Agent signs what it intends to do</li>
+</ul>
+<pre><code>┌─────────────────────────────────────────┐
+│  L1: Issuer signs identity credential   │  ~1 year
+│  (card network, identity provider)      │
+└──────────────────┬──────────────────────┘
+                   │ sd_hash binds L2 to L1
+┌──────────────────▼──────────────────────┐
+│  L2: User signs intent with constraints │  24h-30d (autonomous)
+│  (merchants, amounts, budgets)          │  ~15 min (immediate)
+└──────┬───────────────────────┬──────────┘
+       │                       │
+┌──────▼──────┐         ┌──────▼──────┐
+│ L3a: Agent  │         │ L3b: Agent  │    ~5 min each
+│ → payment   │         │ → merchant  │
+│   network   │         │   checkout  │
+└─────────────┘         └─────────────┘
+</code></pre>
+<p>The chain stops at L3. <strong>The agent cannot delegate further.</strong> This is a deliberate design choice: VI models a world where one agent acts for one user. Multi-hop delegation (agent calling agent calling agent) is out of scope.</p>
+<p>L2 supports two modes:</p>
+<ul>
+<li><strong>Immediate</strong>: the user confirms the transaction themselves. The chain stops at L2, no agent involved.</li>
+<li><strong>Autonomous</strong>: the user sets constraints and authorises a specific agent via its public key. Only that agent can generate L3 credentials within those bounds.</li>
+</ul>
+<p>Each layer includes an <code>sd_hash</code>: a hash of the previous layer's SD-JWT as presented, including the specific disclosures that were revealed. Tampering with any disclosure breaks the hash in the next layer. Each L3 is cryptographically bound to its own selective view of L2.</p>
+<h2 id="walking-through-the-credentials"><a class="header" href="#walking-through-the-credentials">Walking Through the Credentials</a></h2>
+<p>The best way to understand VI is to read the actual credential structures. The examples below are adapted from the <a href="https://github.com/agent-intent/verifiable-intent/blob/main/spec/credential-format.md">specification's credential format</a>.</p>
+<h3 id="l1-issuer-proves-identity"><a class="header" href="#l1-issuer-proves-identity">L1: Issuer Proves Identity</a></h3>
+<p>The issuer (a card network, for example) creates a credential binding the user's identity to a public key:</p>
+<pre><code class="language-json">{
+  "iss": "https://issuer.mastercard.com",
+  "sub": "user-8a3f9c21",
+  "iat": 1700000000,
+  "exp": 1731536000,
+  "vct": "https://credentials.mastercard.com/card",
+  "cnf": {
+    "jwk": {
+      "kty": "EC",
+      "crv": "P-256",
+      "x": "f83OJ3D2xF1Bg8vub9tLe1gHMzV76e8Tus9uPHvRVEU",
+      "y": "x_FEzRu9m36HLN_tue659LNpXW6pCyStikYjKIWI5a0"
+    }
+  },
+  "pan_last_four": "1234",
+  "scheme": "mastercard",
+  "card_id": "card-mc-8842",
+  "_sd_alg": "sha-256",
+  "_sd": ["&lt;hash-of-email-disclosure&gt;"]
+}
+</code></pre>
+<p>The <code>cnf.jwk</code> (confirmation key) is the user's public key. Whoever holds the corresponding private key can sign L2 credentials. The <code>_sd</code> array holds hashed disclosures: data that can be selectively revealed. The user's email, for example, is only revealed when needed.</p>
+<p>This credential lives for roughly a year. It's the anchor for everything that follows.</p>
+<h3 id="l2-user-defines-intent"><a class="header" href="#l2-user-defines-intent">L2: User Defines Intent</a></h3>
+<p>The user signs an L2 credential that specifies what the agent may do. L2 splits into two mandates: checkout constraints (what to buy) and payment constraints (how to pay). Both are bound to L1 via <code>sd_hash</code>.</p>
+<p>The checkout mandate defines allowed merchants and line items:</p>
+<pre><code class="language-json">{
+  "vct": "mandate.checkout.open",
+  "cnf": {
+    "kid": "agent-key-1",
+    "jwk": {
+      "kty": "EC",
+      "crv": "P-256",
+      "x": "agent-public-key-x-component",
+      "y": "agent-public-key-y-component"
+    }
+  },
+  "constraints": [
+    {
+      "type": "mandate.checkout.allowed_merchant",
+      "allowed_merchants": [
+        {"...": "&lt;hash-of-audioshop-disclosure&gt;"},
+        {"...": "&lt;hash-of-soundstore-disclosure&gt;"}
+      ]
+    },
+    {
+      "type": "mandate.checkout.line_items",
+      "items": [
+        {"...": "&lt;hash-of-headphones-item-disclosure&gt;"}
+      ]
+    }
+  ],
+  "prompt_summary": "Buy wireless headphones under $300 from approved merchants"
+}
+</code></pre>
+<p>Two things to notice. First, the <code>cnf</code> key here is the <strong>agent's</strong> public key, not the user's. This is how L2 authorises a specific agent: only the holder of <code>agent-key-1</code> can sign L3 credentials. Second, <code>prompt_summary</code> captures the user's original instruction in human-readable form. It's not machine-enforced, but it creates an evidence trail.</p>
+<p>The payment mandate defines spending constraints:</p>
+<pre><code class="language-json">{
+  "vct": "mandate.payment.open",
+  "cnf": {
+    "kid": "agent-key-1",
+    "jwk": { "kty": "EC", "crv": "P-256", "...": "..." }
+  },
+  "payment_instrument": {
+    "type": "mastercard.srcDigitalCard",
+    "id": "f199c3dd-7106-478b-9b5f-7af9ca725170",
+    "description": "Mastercard **** 1234"
+  },
+  "constraints": [
+    {
+      "type": "payment.amount",
+      "currency": "USD",
+      "min": 0,
+      "max": 30000
+    },
+    {
+      "type": "payment.allowed_payee",
+      "allowed_payees": [
+        { "name": "AudioShop Inc.", "website": "https://audioshop.example.com" },
+        { "name": "SoundStore", "website": "https://soundstore.example.com" }
+      ]
+    },
+    {
+      "type": "payment.reference",
+      "conditional_transaction_id": "checkout-ref-9f3a2b1c"
+    }
+  ]
+}
+</code></pre>
+<p>The amount constraint caps each transaction at $300 (30000 in minor units). The payee constraint restricts who can receive payment. And the reference constraint binds the payment to a specific checkout flow.</p>
+<h3 id="l3a-agent-acts-payment-network"><a class="header" href="#l3a-agent-acts-payment-network">L3a: Agent Acts (Payment Network)</a></h3>
+<p>When the agent finds headphones and is ready to purchase, it signs an L3a credential for the payment network:</p>
+<pre><code class="language-json">{
+  "alg": "ES256",
+  "typ": "kb-sd-jwt",
+  "kid": "agent-key-1"
+}
+
+{
+  "nonce": "c9d1e2f3a4b5c6d7",
+  "aud": "https://network.mastercard.com/vi/authorize",
+  "iat": 1700200000,
+  "exp": 1700200300,
+  "sd_hash": "B64U(SHA-256(L2_base+payment_disclosure+merchant_disclosure))",
+  "vct": "mandate.payment",
+  "payment_instrument": {
+    "type": "mastercard.srcDigitalCard",
+    "id": "f199c3dd-7106-478b-9b5f-7af9ca725170"
+  },
+  "currency": "USD",
+  "amount": 27999,
+  "payee": {
+    "name": "AudioShop Inc.",
+    "website": "https://audioshop.example.com"
+  },
+  "transaction_id": "abc123def456..."
+}
+</code></pre>
+<p>The payment network can verify the entire chain: L3a is signed by the agent key authorised in L2, L2 is signed by the user key confirmed in L1, and L1 is signed by the issuer. The <code>sd_hash</code> in each layer makes tampering detectable. The five-minute expiry on L3 means stolen credentials have minimal value.</p>
+<h3 id="l3b-agent-acts-merchant"><a class="header" href="#l3b-agent-acts-merchant">L3b: Agent Acts (Merchant)</a></h3>
+<p>Simultaneously, the agent sends an L3b credential to the merchant:</p>
+<pre><code class="language-json">{
+  "vct": "mandate.checkout",
+  "checkout_jwt": "&lt;merchant-signed-jwt&gt;",
+  "checkout_hash": "abc123def456...",
+  "line_items": [
+    {
+      "sku": "WH-1000XM5",
+      "name": "Sony WH-1000XM5 Wireless Headphones",
+      "quantity": 1,
+      "unit_price": 27999,
+      "currency": "USD"
+    }
+  ]
+}
+</code></pre>
+<p>The merchant sees what was purchased. The payment network sees how much was charged. Neither sees the other's data. Both halves are bound by <code>transaction_id == checkout_hash</code>.</p>
+<p>Both halves only come together during dispute resolution. VI provides the cryptographic evidence but does not define dispute procedures: liability assignment, chargebacks, and arbitration remain payment-network-specific.</p>
+<h2 id="selective-disclosure-in-practice"><a class="header" href="#selective-disclosure-in-practice">Selective Disclosure in Practice</a></h2>
+<p>This is what makes VI genuinely novel for commerce. Each party sees only what they need:</p>
+<div class="table-wrapper"><table><thead><tr><th>Data</th><th style="text-align: center">Merchant</th><th style="text-align: center">Payment Network</th><th style="text-align: center">Dispute</th></tr></thead><tbody>
+<tr><td>User identity (L1)</td><td style="text-align: center">yes</td><td style="text-align: center">yes</td><td style="text-align: center">yes</td></tr>
+<tr><td>Constraints (L2)</td><td style="text-align: center">checkout only</td><td style="text-align: center">payment only</td><td style="text-align: center">all</td></tr>
+<tr><td>Line items</td><td style="text-align: center">yes</td><td style="text-align: center">--</td><td style="text-align: center">yes</td></tr>
+<tr><td>Payment instrument</td><td style="text-align: center">--</td><td style="text-align: center">yes</td><td style="text-align: center">yes</td></tr>
+<tr><td>Amount</td><td style="text-align: center">--</td><td style="text-align: center">yes</td><td style="text-align: center">yes</td></tr>
+<tr><td>Merchant details</td><td style="text-align: center">yes</td><td style="text-align: center">identifier only</td><td style="text-align: center">yes</td></tr>
+</tbody></table>
+</div>
+<p>Privacy by architecture, not by policy. The agent reveals only the relevant SD-JWT disclosures to each verifier. This maps directly to the <a href="./pac-framework.html">PAC Framework's</a> distinction between Control pillar approaches: "policy says don't; architecture says can't." With selective disclosure, the payment network physically cannot see line items because those disclosures are never sent to it. No access control list. No trust-but-verify. The data simply isn't there.</p>
+<h2 id="eight-machine-enforceable-constraints"><a class="header" href="#eight-machine-enforceable-constraints">Eight Machine-Enforceable Constraints</a></h2>
+<p>The spec defines eight constraint types:</p>
+<div class="table-wrapper"><table><thead><tr><th>Constraint</th><th>What It Bounds</th></tr></thead><tbody>
+<tr><td><code>mandate.checkout.allowed_merchant</code></td><td>Which merchants the agent can transact with</td></tr>
+<tr><td><code>mandate.checkout.line_items</code></td><td>What the agent can buy, with quantities</td></tr>
+<tr><td><code>payment.allowed_payee</code></td><td>Which payees the agent can send to</td></tr>
+<tr><td><code>payment.amount</code></td><td>Acceptable range per transaction (min/max, currency)</td></tr>
+<tr><td><code>payment.budget</code></td><td>Cumulative spend cap across transactions</td></tr>
+<tr><td><code>payment.recurrence</code></td><td>Subscription setup (frequency, start/end)</td></tr>
+<tr><td><code>payment.agent_recurrence</code></td><td>Multi-transaction authorisation within bounds</td></tr>
+<tr><td><code>payment.reference</code></td><td>Binds payment to a conditional transaction ID</td></tr>
+</tbody></table>
+</div>
+<p>Budget, recurrence, and agent recurrence require the payment network to maintain state across transactions. That's a significant infrastructure requirement, but it means constraint enforcement happens at the network level, not at the agent level. The agent can't bypass its own limits.</p>
+<p>This is a concrete implementation of what <a href="./agents-create-intent.html">the opening chapter</a> describes as positive-space authorisation: the agent starts from zero authority and receives explicit grants for what it can do. The constraints don't say "don't spend more than $300." They say "you may spend up to $300, at these merchants, for these items." Everything outside that space is impossible, not just forbidden.</p>
+<h2 id="how-vi-maps-to-pac"><a class="header" href="#how-vi-maps-to-pac">How VI Maps to PAC</a></h2>
+<p>Verifiable Intent touches all three pillars of the <a href="./pac-framework.html">PAC Framework</a>:</p>
+<p><strong>Potential</strong>: VI is designed for a specific, high-value use case: agentic commerce. This focus is intentional. Not every agent interaction needs this level of cryptographic ceremony. But financial transactions are high blast radius (B3-B5 in PAC terms) and require infrastructure that matches. The protocol interoperability with AP2, ACP, and UCP (covering Google, Mastercard, Stripe, OpenAI, Shopify, Walmart, Visa, and 60+ partners) signals real market pull.</p>
+<p><strong>Accountability</strong>: The three-layer chain creates an audit trail by construction. Every L3 action is cryptographically bound to the L2 intent that authorised it, which is bound to the L1 identity that anchored it. When something goes wrong, you can trace exactly what was authorised, by whom, and what the agent did within those bounds. The <code>prompt_summary</code> field preserves the human's original instruction alongside the machine-enforceable constraints.</p>
+<p><strong>Control</strong>: Constraint enforcement at the network level, not the agent level. Selective disclosure by architecture, not policy. Short-lived L3 credentials (five minutes). Agent bound by public key, not by trust. These are Control-pillar patterns: making the wrong thing impossible rather than relying on the agent to follow rules.</p>
+<h2 id="beyond-commerce-agentic-jwt"><a class="header" href="#beyond-commerce-agentic-jwt">Beyond Commerce: Agentic JWT</a></h2>
+<p>VI addresses agentic commerce specifically. But the same fundamental problem, the gap between what a user intended and what an agent does, exists in every domain where agents act autonomously.</p>
+<p>The <a href="https://datatracker.ietf.org/doc/draft-goswami-agentic-jwt/">Agentic JWT specification</a> (draft-goswami-agentic-jwt-00, published December 2025) takes a different approach to the same problem. Instead of building a new credential chain on SD-JWT, it extends OAuth 2.0 with four mechanisms:</p>
+<ol>
+<li><strong>Cryptographic agent identity</strong>: an agent checksum computed from the agent's system prompt, tools, and configuration. If anything changes, the checksum changes, and the token is no longer valid.</li>
+<li><strong>Workflow-aware token binding</strong>: links the user's original intent to the agent's execution context, so the authorisation server can verify that the agent is still operating within scope.</li>
+<li><strong>New OAuth grant type</strong> (<code>agent_checksum</code>): enables authorisation servers to issue tokens specifically for verified agent configurations.</li>
+<li><strong>Proof-of-possession at the agent level</strong>: prevents token replay by other agents in the same multi-agent workflow.</li>
+</ol>
+<p>The approaches are complementary. VI creates a self-contained evidence chain for high-value commerce transactions. Agentic JWT extends the existing OAuth infrastructure to handle agent-specific authorisation challenges. Both converge on the same insight: when agents create intent, the authorisation system needs to capture what the user actually meant, not just who they are.</p>
+<h2 id="what-vi-doesnt-solve"><a class="header" href="#what-vi-doesnt-solve">What VI Doesn't Solve</a></h2>
+<p>Being clear about the boundaries of a specification is as important as understanding what it does.</p>
+<p><strong>L3 is terminal.</strong> The agent cannot sub-delegate to another agent. There's no provision for multi-hop delegation chains. As agent systems become more composable, with planning agents delegating to specialist sub-agents across organisational boundaries, this single-delegation model may prove insufficient. The <a href="./protocol-landscape.html">PIC protocol</a> addresses delegation chains, but there's no integration between PIC and VI today.</p>
+<p><strong>Agent compromise.</strong> If an agent is compromised mid-execution (through prompt injection, for example), the attacker could generate L3 credentials that satisfy L2 constraints but serve malicious purposes. The constraint system bounds the damage: a compromised agent authorised to spend $300 at two merchants can't drain a bank account. But within those bounds, it can act freely. VI generates proof of intent, not guarantees of agent reliability. That remains the responsibility of the AI engineering behind the agent.</p>
+<p><strong>Trust bootstrapping.</strong> Agents are identified by their public key, but there's no standard way to discover or verify those keys across organisations. The <code>kid</code> format is left to implementations, with no prescribed format like DIDs or URLs. Trust starts at the L1 issuer, but agent-to-agent discovery is out of scope. That's the gap that A2A, TSP, and DID-based discovery aim to fill.</p>
+<p><strong>Liability.</strong> VI creates evidence chains for disputes. But who's liable when L3 satisfies L2 constraints and the user is still unhappy with the result? The agent bought the right headphones from the right merchant for the right price: exactly what was authorised. But the user meant a different model. The spec provides the evidence, not the answer.</p>
+<h2 id="the-convergence-signal"><a class="header" href="#the-convergence-signal">The Convergence Signal</a></h2>
+<p>The most significant aspect of Verifiable Intent isn't any single technical choice. It's the convergence signal. Mastercard, Google, IBM, and the payment networks are building on SD-JWT credential chains, not OAuth tokens, not API keys, not blockchain. The same format the EU Digital Identity Wallet uses (<a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/">SD-JWT VC</a>). The same selective disclosure primitive.</p>
+<p>VI is already using <code>vct</code> fields throughout its credentials (<code>"vct": "mandate.checkout.open"</code>, <code>"vct": "mandate.payment.open"</code>). The natural path forward is formally adopting the full SD-JWT VC profile, which would add issuer discovery, credential status checking, and type resolution. When that happens, the same verification infrastructure that checks a European digital identity credential could verify an agent's purchase authorisation.</p>
+<p>That's not interoperability on paper. That's infrastructure convergence in practice.</p>
+<hr />
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://verifiableintent.dev/">Verifiable Intent specification</a> and <a href="https://github.com/agent-intent">GitHub repository</a> (Draft v0.1, Apache 2.0)</li>
+<li><a href="https://shanedeconinck.be/posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved/">Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization" (2026-03-06)</a></li>
+<li><a href="https://www.mastercard.com/us/en/news-and-trends/stories/2026/verifiable-intent.html">Mastercard announcement: "How Verifiable Intent builds trust in agentic AI commerce"</a></li>
+<li><a href="https://datatracker.ietf.org/doc/rfc9901/">SD-JWT specification (RFC 9901)</a></li>
+<li><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/">SD-JWT VC specification (draft-ietf-oauth-sd-jwt-vc)</a></li>
+<li><a href="https://datatracker.ietf.org/doc/draft-goswami-agentic-jwt/">Agentic JWT: Secure Intent Protocol (draft-goswami-agentic-jwt-00)</a></li>
+<li><a href="https://arxiv.org/abs/2509.13597">Goswami, "Agentic JWT: A Secure Delegation Protocol for Autonomous AI Agents" (arXiv:2509.13597)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="context-infrastructure-the-lasting-investment"><a class="header" href="#context-infrastructure-the-lasting-investment">Context Infrastructure: The Lasting Investment</a></h1>
+<p>There's a pattern in how organisations adopt AI agents. They start with the model. They build scaffolding around it: prompt chains, output parsers, routing logic, retry mechanisms. They invest months in orchestration. Then a better model drops and half the scaffolding becomes dead weight.</p>
+<p>Shane calls this <a href="https://shanedeconinck.be/posts/ai-agent-scaffolding-trap/">harness debt</a>: scaffolding built to compensate for a weaker model becomes a liability when the model improves. Most teams don't see it until the next model drops and their pipeline fights it instead of leveraging it.</p>
+<p>The question is: what do you invest in that gets more valuable over time, not less?</p>
+<h2 id="what-depreciates-what-appreciates"><a class="header" href="#what-depreciates-what-appreciates">What Depreciates, What Appreciates</a></h2>
+<p>Fine-tuning was the first casualty. Organisations invested heavily in custom-trained models. Then general-purpose models got strong enough that fine-tuning became a niche optimisation, not a core strategy. RAG pipelines followed: the retrieval-augmented generation infrastructure that compensated for limited context windows. As context windows grew from thousands to millions of tokens and models got better at reasoning over long contexts, the retrieval plumbing became less critical.</p>
+<p>Shane <a href="https://shanedeconinck.be/posts/ai-agents-context-infrastructure-long-term-investment/">identifies the pattern</a>:</p>
+<ul>
+<li><strong>Training depreciates.</strong> Every model upgrade makes the last fine-tuning run less relevant.</li>
+<li><strong>Code depreciates.</strong> Orchestration scaffolding compensates for model weaknesses that disappear.</li>
+<li><strong>Access to frontier models depreciates.</strong> It requires a credit card, not a competitive advantage.</li>
+<li><strong>Context infrastructure appreciates.</strong> Well-curated information combined with well-managed access becomes exponentially more valuable as models improve.</li>
+</ul>
+<p>Two organisations with the same model and the same budget but different context infrastructure will see diverging results. The one with structured, governed, current knowledge available to its agents will compound returns with every model improvement. The one running a better model on the same mess will wonder why it's not seeing the gains.</p>
+<h2 id="the-evidence"><a class="header" href="#the-evidence">The Evidence</a></h2>
+<p>Consider <a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code</a>, Anthropic's coding agent. The architecture is deliberately minimal: a single loop, a handful of tools, a text file checked into the repository (<code>CLAUDE.md</code>). When the model makes mistakes, Anthropic's teams don't write more code. They write better context. Every team maintains their own <code>CLAUDE.md</code> with project-specific patterns, conventions, and constraints. The context is the product.</p>
+<p>Or look at Clawdbot, the AI personality that <a href="https://shanedeconinck.be/posts/openclaw-moltbook-trust-fear-ai/">went viral on X</a> in early 2026. Its entire personality, goals, and rules lived in a <code>SOUL.md</code> file. The architecture: files, a powerful LLM, an execution environment. People anthropomorphised it. They trusted it. They installed it on their machines without understanding what system-level access means.</p>
+<p>And that's the lesson. Clawdbot's failure wasn't the soul file or the model. It was missing access controls. Rich context without governance is a liability, not an asset. Context infrastructure requires both halves: well-curated information <strong>and</strong> well-managed access to it.</p>
+<h2 id="five-areas-to-invest"><a class="header" href="#five-areas-to-invest">Five Areas to Invest</a></h2>
+<p>Shane breaks context infrastructure into five areas that compound in value:</p>
+<p><strong>1. Structure</strong>: Coherent, consistent, machine-consumable information. Structure knowledge after the domain, not today's tool. A customer is an entity with attributes and relationships, not rows in a CRM. Policies are structured rules with conditions and exceptions, not PDFs. When you structure information around what it represents rather than what system holds it, every new tool (model, agent, workflow) can consume it immediately.</p>
+<p><strong>2. Permissions</strong>: Fine-grained access on the information itself. Not "can this agent reach this database?" but "can this agent see this customer's financial data for the purpose of processing this specific request?" Permissions need to travel with the data, not live only in the system that holds it. This is where <a href="./protocol-landscape.html">OAuth On-Behalf-Of</a>, <a href="./verifiable-intent.html">Verifiable Intent constraints</a>, and capability-based security patterns become essential infrastructure, not nice-to-have features.</p>
+<p><strong>3. Discovery</strong>: Agents need to find what they need. Standards like <a href="./protocol-landscape.html">MCP</a> (Model Context Protocol) and <a href="./protocol-landscape.html">A2A</a> (Agent-to-Agent) are building the plumbing for context discovery: how agents locate tools, data sources, and other agents. Custom pipelines and hard-coded integrations don't scale. Open discovery protocols do.</p>
+<p><strong>4. Authority</strong>: Access scoped to the delegating user's authority. When an agent acts on behalf of a user, it should only access what that user can access, for the purpose the user specified. This is the <a href="./protocol-landscape.html">On-Behalf-Of pattern</a> and the <a href="./protocol-landscape.html">PIC delegation chain model</a>: authority that flows with the delegation and only decreases. Without this, every agent deployment risks becoming a <a href="./agents-create-intent.html">confused deputy</a>: an agent with credentials but no understanding of scope.</p>
+<p><strong>5. Freshness</strong>: Current information, not stale. Stale context fed to agents produces wrong decisions at machine speed. Information needs to be versioned, timestamped, and actively maintained. A policy document from six months ago that's been superseded could lead an agent to make decisions based on rules that no longer apply. This is worse than having no context at all, because the agent will act confidently on outdated information.</p>
+<h2 id="the-inferential-edge"><a class="header" href="#the-inferential-edge">The Inferential Edge</a></h2>
+<p>Shane takes the context argument further in <a href="https://shanedeconinck.be/posts/when-intelligence-becomes-commodity/">"When Intelligence Becomes Commodity, Infrastructure Becomes the Edge"</a>. The premise: general-purpose models are now good enough for most business tasks without custom training. The intelligence layer is becoming a commodity. A credit card buys frontier reasoning.</p>
+<p>But the ability to unleash that intelligence into your organisation at volume with compounding returns: that's rare. He calls it the <strong>inferential edge</strong>.</p>
+<p>Most organisations aren't there. They have trust structures, oversight, processes, compliance requirements all built for human workers. The infrastructure to adapt these for agents doesn't exist yet in most enterprises. The organisations that build it first create a gap that competitors can't close by simply buying a better model.</p>
+<p>The inferential edge compounds: each process you automate teaches the organisation something. Trust infrastructure sharpens. Context pipelines improve. Evaluation gets tighter. Six months of infrastructure ahead of a competitor is a gap you can't buy off the shelf.</p>
+<p>The evidence is everywhere. Andrej Karpathy went from 80% manual coding to 80% agent coding in weeks. DHH called it "the biggest and fastest change in 40 years." But both are leveraging well-structured codebases with clear context. The model is necessary but not sufficient. The context is what makes it productive.</p>
+<h2 id="the-scaffolding-is-dissolving"><a class="header" href="#the-scaffolding-is-dissolving">The Scaffolding Is Dissolving</a></h2>
+<p>The pipeline that AI engineers built over 2023-2025 is disappearing. Custom orchestration, multi-step routing, output parsers, chunking strategies: these compensated for weaker models. Frontier models figure out better paths themselves. Someone starting fresh today might outperform a legacy system with no scaffolding burden at all.</p>
+<p>Shane points to <a href="https://shanedeconinck.be/posts/when-intelligence-becomes-commodity/">Claude Code as the inflection point</a>. Even Claude Code itself has gone through this: structured to-do systems became flexible task management the model controls. The tool didn't add scaffolding; it removed it as the model improved.</p>
+<p>"AI Engineer" was coined in 2023. Chip Huyen's reference text published December 2024. But the real shift hit after: frontier inference costs dropped an order of magnitude, and tools like Claude Code and MCP weren't even a thing yet. The orchestration and routing layers are now dead weight for many use cases.</p>
+<p>What survives the scaffolding collapse? Three things:</p>
+<ol>
+<li><strong>Evaluation infrastructure</strong>: how you know what's working and what isn't</li>
+<li><strong>Context infrastructure</strong>: the information and access patterns that make agents effective</li>
+<li><strong>Trust infrastructure</strong>: the identity, delegation, and audit capabilities covered throughout this book</li>
+</ol>
+<p>Everything else is a bet on today's model weaknesses persisting.</p>
+<h2 id="how-this-maps-to-pac"><a class="header" href="#how-this-maps-to-pac">How This Maps to PAC</a></h2>
+<p>Context infrastructure is primarily a <a href="./pac-framework.html">Potential pillar</a> concern: it determines whether what you build today still compounds when the next model drops. But it touches all three pillars:</p>
+<p><strong>Potential</strong>: Context management and durability are explicit dimensions. Build on what stays stable: domain knowledge, information architecture, evaluation pipelines. The PAC Framework's question "Will better models make your current setup more valuable, or obsolete?" is directly about whether you've invested in context or scaffolding.</p>
+<p><strong>Accountability</strong>: Context infrastructure determines what audit trails are possible. If you don't know what information reached the agent, you can't assess whether its decision was reasonable. Shane's framework asks: "When an agent makes a consequential decision, can you trace who authorised it and what happened?" Tracing what happened requires knowing what the agent saw.</p>
+<p><strong>Control</strong>: Context governance is control infrastructure. Fine-grained permissions on information, scoped authority, discovery through standards: these are the mechanisms that make agents safe to deploy. The <a href="https://shanedeconinck.be/posts/google-workspace-cli-agent-first-oauth-app-first/">Google Workspace CLI case</a> illustrates this perfectly: Google's capability layer (MCP, skill files) is well-designed, but OAuth underneath was built for apps. Token scopes like <code>gmail.readonly</code> mean "all emails, all time," not "the one email relevant to this task." Users think they're granting narrow context access; they're actually granting everything.</p>
+<h2 id="the-investment-thesis"><a class="header" href="#the-investment-thesis">The Investment Thesis</a></h2>
+<p>The argument is straightforward: if intelligence is becoming commodity and scaffolding is becoming debt, the lasting competitive advantage is the infrastructure that makes intelligence useful. Context infrastructure: structured, governed, current, discoverable information with fine-grained access control.</p>
+<p>Organisations that invest in this now will capture disproportionate value from every future model improvement. Those that invest in scaffolding will rebuild every time a new model drops.</p>
+<p>The <a href="./pac-framework.html">PAC Framework</a> provides the structure to assess which investments last. The protocols covered in this book provide the building blocks. The context infrastructure is what ties them together into something an agent can actually use.</p>
+<hr />
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://shanedeconinck.be/posts/ai-agents-context-infrastructure-long-term-investment/">Shane Deconinck, "AI Agents: Why Context Infrastructure May Be Your Best Long-Term Investment" (2026-02-09)</a></li>
+<li><a href="https://shanedeconinck.be/posts/when-intelligence-becomes-commodity/">Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge" (2026-03-02)</a></li>
+<li><a href="https://shanedeconinck.be/posts/ai-agent-scaffolding-trap/">Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting." (2026-02-02)</a></li>
+<li><a href="https://shanedeconinck.be/posts/openclaw-moltbook-trust-fear-ai/">Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons" (2026-02-17)</a></li>
+<li><a href="https://shanedeconinck.be/posts/google-workspace-cli-agent-first-oauth-app-first/">Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First." (2026-03-05)</a></li>
+<li><a href="https://www.technologyreview.com/2026/03/10/1134083/building-a-strong-data-infrastructure-for-ai-agent-success/">MIT Technology Review, "Building a strong data infrastructure for AI agent success" (2026-03-10)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="when-trust-breaks-down"><a class="header" href="#when-trust-breaks-down">When Trust Breaks Down</a></h1>
+<p>The previous chapters described what's being built. This chapter looks at what happens when it isn't built, or isn't built fast enough. The evidence is no longer theoretical.</p>
+<h2 id="the-numbers"><a class="header" href="#the-numbers">The Numbers</a></h2>
+<p>Two reports published in February 2026 tell the same story from different angles.</p>
+<p><a href="https://www.gravitee.io/state-of-ai-agent-security">Gravitee's State of AI Agent Security 2026</a> surveyed 750 CIOs, CTOs, and engineering leaders across the US and UK. Their headline finding: 88% of organizations reported confirmed or suspected AI agent security or privacy incidents in the past year. In healthcare, that number hits 92.7%.</p>
+<p>The scale matters. Gravitee estimates over 3 million AI agents are now operating within corporations, a workforce larger than Walmart's entire global headcount. Of those, 47% run without any security oversight or logging. That's approximately 1.5 million agents operating in the dark.</p>
+<p><a href="https://goteleport.com/about/newsroom/press-releases/2026-state-of-ai-in-enterprise-security-report/">Teleport's 2026 State of AI in Enterprise Infrastructure Security</a>, based on interviews with 205 CISOs and security architects, found the sharpest predictor of security outcomes. Not AI sophistication. Not organizational maturity. Access scope. Organizations with over-privileged AI systems reported a 76% incident rate. Those that enforced least-privilege: 17%. That's a 4.5x difference.</p>
+<p>Two numbers from the Teleport report land hard:</p>
+<ul>
+<li><strong>67%</strong> of organizations still rely on static credentials for AI systems. Static credentials correlated with a 20-point increase in incident rates.</li>
+<li><strong>Only 13%</strong> feel highly prepared for agentic AI, while 79% are already evaluating or deploying it.</li>
+</ul>
+<p>Gartner's <a href="https://www.gartner.com/en/articles/strategic-predictions-for-2026">strategic predictions for 2026</a> project that more than 2,000 "death by AI" legal claims will be filed by the end of 2026 due to insufficient AI risk guardrails. They add that over 40% of agentic AI projects will be canceled by end of 2027 due to escalating costs or unclear business value.</p>
+<p>This is the gap the PAC Framework describes: Potential is being captured, but Accountability and Control haven't caught up.</p>
+<h2 id="the-identity-vacuum"><a class="header" href="#the-identity-vacuum">The Identity Vacuum</a></h2>
+<p>The most consistent finding across both reports: agents aren't being treated as identities.</p>
+<p>Gravitee found that only 21.9% of teams treat AI agents as independent, identity-bearing entities. The rest are running agents under shared credentials, inherited user sessions, or nothing at all. 45.6% of teams rely on shared API keys for agent-to-agent authentication. 27.2% have resorted to custom, hardcoded authorization logic.</p>
+<p>This is exactly the problem <a href="./agents-create-intent.html">Chapter 1</a> described: when agents create intent, they need their own identity. When they don't have one, you can't trace what happened, who authorized it, or what went wrong. Delegation becomes abdication.</p>
+<p>NIST recognized this when they published their <a href="https://csrc.nist.gov/pubs/other/2026/02/05/accelerating-the-adoption-of-software-and-ai-agent/ipd">concept paper on AI agent identity and authorization</a> in February 2026. The paper's core premise: AI agents should be treated as identifiable entities within enterprise identity systems rather than as anonymous automation running under shared credentials. They identified OAuth, OpenID Connect, SPIFFE/SPIRE, and SCIM as the building blocks, and proposed a demonstration project to show how they compose in practice.</p>
+<p>Then, on February 17, NIST <a href="https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure">announced the AI Agent Standards Initiative</a>, organized through their Center for AI Standards and Innovation (CAISI). The initiative has three pillars: facilitating industry-led agent standards, fostering community-led open source protocol development, and advancing research in agent security and identity. Public input on the concept paper was open through April 2, 2026.</p>
+<p>The timing isn't coincidental. The incident data made the case that voluntary best practices weren't enough.</p>
+<h2 id="mcp-when-the-plumbing-leaks"><a class="header" href="#mcp-when-the-plumbing-leaks">MCP: When the Plumbing Leaks</a></h2>
+<p>The Model Context Protocol (MCP) has become the dominant interface for connecting AI models to external tools and data. Its adoption is impressive. Its security track record is not.</p>
+<p>In early 2026, three CVEs were published for Anthropic's own Git MCP server:</p>
+<ul>
+<li><strong>CVE-2025-68145</strong>: Path validation bypass allowing access to files outside the configured repository</li>
+<li><strong>CVE-2025-68143</strong>: Unrestricted <code>git_init</code> enabling arbitrary directory creation</li>
+<li><strong>CVE-2025-68144</strong>: Argument injection in git commands enabling remote code execution</li>
+</ul>
+<p>All three were exploitable through prompt injection: an attacker could craft input that caused the AI model to invoke MCP tools in unintended ways. The model didn't need to be compromised. It just needed to follow instructions that happened to be malicious.</p>
+<p>The supply chain risks are real too. The popular <code>mcp-remote</code> npm package, used to add OAuth support to MCP servers, was found to contain a critical vulnerability (<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-6514">CVE-2025-6514</a>). This is the kind of dependency that gets installed without much scrutiny and runs with whatever permissions the MCP server has.</p>
+<p>The broader pattern: MCP servers often accept unauthenticated calls, skip OAuth entirely, or implement it poorly. Many don't verify requests or protect user sessions. <a href="https://adversa.ai/blog/top-mcp-security-resources-march-2026/">Adversa AI's monthly MCP security roundups</a> have become a running chronicle of what goes wrong when tool interfaces ship without the trust infrastructure they need.</p>
+<p>From a PAC perspective, these aren't reliability problems. They're Control failures. The infrastructure doesn't enforce what policy demands. The wrong thing isn't impossible: it's easy.</p>
+<h2 id="the-over-privilege-pattern"><a class="header" href="#the-over-privilege-pattern">The Over-Privilege Pattern</a></h2>
+<p>Teleport's finding deserves its own section because it maps directly to the trust inversion argument.</p>
+<p>Traditional IAM works by granting broad access and restricting specific actions. The Teleport data shows what happens when that model is applied to agents: a 76% incident rate. The organizations that inverted this, granting minimal access and requiring explicit authorization for each capability, dropped to 17%.</p>
+<p>This is the same principle the <a href="./agents-create-intent.html">trust inversion chapter</a> described: agents must be restricted to what they <em>can</em> do, not blocked from what they <em>can't</em>. The Teleport data turns that principle into empirical evidence.</p>
+<p>The 67% static credential finding is equally telling. Static credentials mean no rotation, no scoping, no audit trail of which agent used which credential for what purpose. It's the confused deputy problem at organizational scale: the agent has credentials, but no one knows what it's doing with them.</p>
+<p>Verifiable Intent's L2 constraints address exactly this: every agent action carries the constraint envelope that governs it. The constraint types (amount limits, merchant categories, time windows, geographic restrictions) exist precisely because "the agent has a token" isn't enough. You need to know what the token allows, and you need the infrastructure to enforce it.</p>
+<h2 id="shadow-agents"><a class="header" href="#shadow-agents">Shadow Agents</a></h2>
+<p>Both Gravitee and the OpenID Foundation's <a href="https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/">AIIM whitepaper</a> flag the same risk: shadow agents.</p>
+<p>Gravitee found that only 14.4% of organizations have full security approval for their entire agent fleet. The rest have agents running that were never reviewed, never registered, never scoped. Some were built by individual developers. Some were spun up by other agents: 25.5% of deployed agents have the capability to create and task other agents.</p>
+<p>This is the registration problem the <a href="./gaps.html">Gaps chapter</a> flagged. You can't govern what you can't see. NIST's concept paper explicitly focuses on enterprise agents where organizations maintain control, because the alternative, agents operating across boundaries where no single organization controls the environment, is a harder problem that requires cross-domain trust infrastructure (TSP, DIDs, verifiable credentials) that's still being built.</p>
+<p>The PAC Framework's Accountability pillar starts with a question: "Do you know every agent running in your organisation?" For most organizations, the honest answer is no.</p>
+<h2 id="what-the-eu-ai-act-means-for-agent-incidents"><a class="header" href="#what-the-eu-ai-act-means-for-agent-incidents">What the EU AI Act Means for Agent Incidents</a></h2>
+<p>The EU AI Act's <a href="https://artificialintelligenceact.eu/">high-risk system obligations take effect on August 2, 2026</a>. These include requirements for risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy, robustness, and cybersecurity. Non-compliance carries fines of up to 35 million euros or a percentage of global annual turnover.</p>
+<p>The Act doesn't specifically address "AI agents" as a category. But agents that operate in high-risk domains, think healthcare, finance, employment, law enforcement, critical infrastructure, fall squarely within its scope. The Annex III categories map cleanly to areas where agents are already being deployed.</p>
+<p>Three requirements are particularly relevant for the incidents described in this chapter:</p>
+<ol>
+<li><strong>Transparency</strong> (Article 50): AI systems must disclose their artificial nature. An agent operating under shared credentials with no identity of its own can't satisfy this requirement.</li>
+<li><strong>Human oversight</strong>: High-risk systems must be designed so humans can effectively oversee them. The Gravitee finding that 47% of agents run without monitoring suggests widespread non-compliance.</li>
+<li><strong>Record-keeping</strong>: Technical logs must be automatically generated and retained. Agents without audit trails can't produce them.</li>
+</ol>
+<p>The PAC Framework's Accountability pillar was designed with this regulatory landscape in mind. The question "Could you explain to a regulator what your agent did and why?" is about to become urgent.</p>
+<h2 id="the-pattern"><a class="header" href="#the-pattern">The Pattern</a></h2>
+<p>Every incident in this chapter follows the same pattern:</p>
+<ol>
+<li>An agent is deployed with more access than it needs</li>
+<li>No independent identity is established for the agent</li>
+<li>No constraint infrastructure bounds what the agent can do</li>
+<li>Something goes wrong</li>
+<li>No one can explain what happened or who authorized it</li>
+</ol>
+<p>This is the gap between Potential and Control. Organizations are capturing value from agents (the PAC Framework's Potential pillar) without building the infrastructure to enforce governance (the Control pillar) or establishing clear accountability chains (the Accountability pillar).</p>
+<p>The protocols described in <a href="./protocol-landscape.html">The Protocol Landscape</a> and <a href="./verifiable-intent.html">Verifiable Intent</a> are being built to close this gap. The question is whether they'll be adopted before the next wave of incidents, or because of it.</p>
+<p><strong>The infrastructure problem is clear. The incident data makes the cost of delay concrete. What remains is building it.</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-pac-framework"><a class="header" href="#the-pac-framework">The PAC Framework</a></h1>
+<p>Every protocol and standard in this book addresses a piece of the problem. OAuth scopes handle authorization within a trust domain. DIDs handle identity across domains. Verifiable Intent handles proof of user authorization for commerce. But none of them answers the question an organisation actually needs to start with: where do we begin, and how do we think about this?</p>
+<p>That's what PAC does. Shane developed the <a href="https://trustedagentic.ai/framework/">PAC Framework</a> (Potential, Accountability, Control) as the governance structure for agentic transformation. It's the spine of this book: every protocol, every gap, every design decision maps to one of the three pillars.</p>
+<p>The premise is simple. AI engineering, security, and compliance each see part of the picture. PAC brings them into three pillars you can act on and align stakeholders around.</p>
+<h2 id="the-three-pillars"><a class="header" href="#the-three-pillars">The Three Pillars</a></h2>
+<p><strong>Potential</strong>: what's worth building that lasts? The barrier to building agents has never been lower. What's possible changes monthly. The question isn't whether you can build it. It's whether what you build today still compounds in a year, or becomes dead weight when the next model drops.</p>
+<p><strong>Accountability</strong>: who's responsible, and can you prove it? Agents are already making decisions in organisations. Some nobody knows about. When something goes wrong, someone has to explain what happened. If the liability chain isn't mapped before the incident, it's too late to draw one after.</p>
+<p><strong>Control</strong>: can your infrastructure enforce what policy demands? Policy says "don't." Architecture says "can't." The difference matters when agents act autonomously across systems and organisations. Identity, delegation, sandboxing: the infrastructure to enforce what governance promises.</p>
+<p>Drop any one pillar and the others fall short.</p>
+<ul>
+<li><strong>Potential without Accountability</strong>: reckless adoption. You build fast and hit a wall when the first incident happens and nobody can explain what went wrong.</li>
+<li><strong>Accountability without Control</strong>: governance on paper. Policies mean nothing if the infrastructure can't enforce them.</li>
+<li><strong>Control without Potential</strong>: infrastructure without a mandate. If the business doesn't see value, funding stops.</li>
+</ul>
+<h2 id="potential-finding-where-agents-create-real-value"><a class="header" href="#potential-finding-where-agents-create-real-value">Potential: Finding Where Agents Create Real Value</a></h2>
+<p>This pillar forces a structured look at what an agent deployment actually involves. Not "can we build it?" but "should we, and will it last?"</p>
+<p>The <a href="https://trustedagentic.ai/framework/">PAC Framework</a> defines several dimensions within Potential:</p>
+<p><strong>Business value</strong> is classified on a four-level scale: V1 Incremental, V2 Operational, V3 Strategic, V4 Transformative. Not every process benefits from an agent. The question is where it actually matters.</p>
+<p><strong>Reliability</strong> is measured as a percentage with its error margin. Without the margin, the number means nothing. A workflow's failures are enumerable; an autonomous agent's aren't. This is the core distinction from <a href="./agents-create-intent.html">the chapter on reliability vs governance</a>: context engineering improves reliability, but governance manages risk regardless of how reliable the agent becomes.</p>
+<p><strong>Blast radius</strong> measures what happens when the agent is wrong. Same quality, very different consequences depending on where output lands. The framework scores this across five levels: B1 Contained, B2 Recoverable, B3 Exposed, B4 Regulated, B5 Irreversible. A customer-facing agent generating incorrect medical information (B4/B5) needs fundamentally different infrastructure than an internal agent summarising meeting notes (B1).</p>
+<p><strong>Autonomy</strong> is not a choice you make upfront. It's what the agent earns, determined by all dimensions together. Five levels: A1 Suggestion, A2 Approve, A3 Oversight, A4 Delegated, A5 Autonomous. The governance threshold for each level depends on blast radius: contained tasks can tolerate more uncertainty; irreversible ones can't.</p>
+<p><strong>Durability</strong> is Shane's recurring point: build on what stays stable. Workflow logic, context infrastructure, evaluation pipelines. Not on what changes every quarter. Better models will make current scaffolding obsolete. Shane calls this <a href="https://shanedeconinck.be/posts/ai-agent-scaffolding-trap/">harness debt</a>: scaffolding built to compensate for a weaker model becomes a liability when the model improves. Most teams don't see it until a new model drops and their pipeline fights it.</p>
+<p><strong>Context management</strong> is where lasting advantage lives. Shane <a href="https://shanedeconinck.be/posts/ai-agents-context-infrastructure-long-term-investment/">argues</a> that while training, code, and model access all depreciate, context infrastructure appreciates. Well-curated information combined with well-managed access becomes exponentially more valuable as models improve. Two organisations with the same model and the same budget but different context infrastructure will see diverging results. The five areas to invest in: structure (coherent, machine-consumable information), permissions (fine-grained access on information itself), discovery (agents need to find what they need), authority (access scoped to the delegating user's authority), and freshness (up-to-date, versioned information).</p>
+<p><strong>Implementation architecture</strong> matters because workflows, agent loops, and autonomous agents aren't exclusive choices. They compose. A workflow can contain an agent loop step that delegates to an autonomous sub-agent. The outer layer sets the reliability floor and tightens the error margin; the inner layer raises the quality ceiling.</p>
+<h2 id="accountability-mapping-whos-responsible-before-it-matters"><a class="header" href="#accountability-mapping-whos-responsible-before-it-matters">Accountability: Mapping Who's Responsible Before It Matters</a></h2>
+<p>This is where trust infrastructure meets organisational reality. The technical protocols covered in the <a href="./protocol-landscape.html">Protocol Landscape</a> chapter provide the building blocks. The Accountability pillar asks whether you've actually wired them into governance.</p>
+<p><strong>Delegation becomes abdication.</strong> This is the central insight from the <a href="./agents-create-intent.html">opening chapter</a>. Agents interpret and expand intent. If you can't trace what was given and what was acted on, accountability dissolves. Verifiable Intent addresses this for the commerce use case by making user authorisation a cryptographic object. But the general case, where a planning agent delegates to specialist sub-agents across organisational boundaries, remains largely unaddressed.</p>
+<p><strong>Shadow agents.</strong> The OpenID Foundation's <a href="https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/">AIIM whitepaper (October 2025)</a> and the <a href="https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization">NIST concept paper (February 2026)</a> both identify unregistered agents in enterprise environments as a key risk. Shane poses the question directly in the framework: "Do you know every agent running in your organisation?" The <a href="https://shanedeconinck.be/posts/openclaw-moltbook-trust-fear-ai/">OpenClaw incident</a> showed what happens when users install system-level agents without understanding what they're granting. Documentation is not a security model.</p>
+<p><strong>Liability chains.</strong> When an agent makes a consequential decision, you need to trace who authorised it and what happened. The chain includes the user who delegated, the agent that acted, the model provider, the integrator, the prompt author. As noted in the <a href="./gaps.html">Gaps</a> chapter, no protocol comprehensively captures this full provenance. Software supply chains have SBOMs. Agent supply chains need something equivalent.</p>
+<p><strong>Audit trails designed for compliance.</strong> Not just debugging logs, but evidence that could satisfy a regulator. Can you explain to an auditor what your agent did and why? The <a href="https://cloudsecurityalliance.org/press-releases/2026/02/05/cloud-security-alliance-strata-survey-finds-that-enterprises-are-in-time-to-trust-phase-as-they-build-ai-autonomy-foundations">CSA/Strata Identity survey (February 2026)</a> found that 84% of organisations doubt they could pass a compliance audit focused on agent behaviour or access controls. That number should concern anyone deploying agents at scale.</p>
+<p><strong>Regulatory convergence.</strong> The EU AI Act, NIST frameworks, and ISO 42001 are converging. Better to shape governance around them than react. The OpenID Foundation's <a href="https://openid.net/oidf-responds-to-nist-on-ai-agent-security/">response to NIST's RFI (March 2026)</a> framed the urgency: the autonomy inflection point is approaching faster than most realise.</p>
+<h2 id="control-architecture-that-enforces-what-policy-cant"><a class="header" href="#control-architecture-that-enforces-what-policy-cant">Control: Architecture That Enforces What Policy Can't</a></h2>
+<p>This is where the protocols from the <a href="./protocol-landscape.html">Protocol Landscape</a> chapter live. Control isn't about having policies. It's about having infrastructure that makes violation structurally impossible.</p>
+<p>The framework defines an infrastructure maturity scale: I1 Open, I2 Logged, I3 Verified, I4 Authorized, I5 Contained. Either you have audit trails or you don't. Either credentials are scoped or they aren't. No reliability score compensates for guardrails you haven't built.</p>
+<p><strong>Policy vs. architecture.</strong> The <a href="./agents-create-intent.html">trust inversion</a> chapter established the principle: agents must be restricted to what they can do, not from what they can't. This is the Control pillar in practice. OAuth scopes, capability-based security, and explicit tool registration define the positive space of allowed behaviour. The Cloud Security Alliance's <a href="https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents">Agentic Trust Framework (February 2026)</a> applies Zero Trust principles specifically to AI agents: all actions logged, inputs validated, circuit breakers preventing runaway failures.</p>
+<p><strong>Agent identity.</strong> Who is this agent, who does it act for, and how do you prove it? Within a single trust domain, OAuth OBO (<a href="https://datatracker.ietf.org/doc/html/rfc8693">RFC 8693</a>) handles this. Across domains, DIDs and Verifiable Credentials provide the cryptographic foundation. The building blocks exist. They weren't built for agents, but they apply directly.</p>
+<p><strong>Delegation chains.</strong> What an agent can access, for how long, and what happens when it hands off to another agent. Authority can only decrease through the chain, never expand. This is PIC's core property, and Verifiable Intent enforces it by making L3 terminal. The new <a href="https://datatracker.ietf.org/doc/draft-jia-oauth-scope-aggregation/">OAuth scope aggregation draft (draft-jia-oauth-scope-aggregation)</a> addresses the practical question of how an agent aggregates scopes across a multi-step workflow into a single authorization procedure.</p>
+<p><strong>The confused deputy.</strong> An agent with credentials but no scoped limits on what it can do with them. Every delegation without explicit boundaries is a potential confused deputy. This is why positive-space authorisation matters: not "block these actions" but "permit only these actions."</p>
+<p><strong>Cross-organisation trust.</strong> When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable? TSP provides the bridge when no shared identity provider exists. The <a href="https://datatracker.ietf.org/doc/html/draft-aap-oauth-profile-00.html">Agent Authorization Profile (draft-aap-oauth-profile)</a> defines an authorization profile specifically for autonomous agents, extending OAuth 2.0 and JWT without introducing a new protocol.</p>
+<h2 id="how-the-protocols-map-to-pac"><a class="header" href="#how-the-protocols-map-to-pac">How the Protocols Map to PAC</a></h2>
+<p>The protocols from the <a href="./protocol-landscape.html">Protocol Landscape</a> chapter aren't random pieces. They map to specific pillars:</p>
+<div class="table-wrapper"><table><thead><tr><th>Protocol</th><th>Primary PAC Pillar</th><th>What It Addresses</th></tr></thead><tbody>
+<tr><td>OAuth 2.0 + OBO</td><td>Control</td><td>Identity and delegation within a trust domain</td></tr>
+<tr><td>IETF agent auth drafts</td><td>Control</td><td>Extending existing standards for agent-specific auth</td></tr>
+<tr><td>OAuth Scope Aggregation</td><td>Control</td><td>Multi-step workflow authorization</td></tr>
+<tr><td>Agent Authorization Profile</td><td>Control</td><td>Autonomous agent authorization</td></tr>
+<tr><td>DIDs + VCs</td><td>Control</td><td>Cross-domain identity and authority</td></tr>
+<tr><td>TSP</td><td>Control</td><td>Cross-domain trust establishment</td></tr>
+<tr><td>Verifiable Intent</td><td>Accountability + Control</td><td>Cryptographic proof of user authorization</td></tr>
+<tr><td>PIC</td><td>Accountability + Control</td><td>Traceable delegation chains</td></tr>
+<tr><td>MCP</td><td>Potential</td><td>Connectivity and tool integration</td></tr>
+<tr><td>A2A</td><td>Potential + Control</td><td>Agent-to-agent communication</td></tr>
+<tr><td>NIST demonstration project</td><td>Accountability</td><td>Standards-based reference implementations</td></tr>
+<tr><td>OWASP Agentic Top 10</td><td>Accountability</td><td>Risk identification and classification</td></tr>
+<tr><td>CSA Agentic Trust Framework</td><td>Control</td><td>Zero Trust governance for agents</td></tr>
+<tr><td>AgentGateway</td><td>Control</td><td>Policy enforcement at the network layer</td></tr>
+</tbody></table>
+</div>
+<p>Control is the most protocol-heavy pillar because it requires the most infrastructure. Potential is the least, because what's possible changes with every model release. Accountability sits between: it needs both organisational process and technical evidence.</p>
+<h2 id="the-iterative-nature"><a class="header" href="#the-iterative-nature">The Iterative Nature</a></h2>
+<p>Models improve. Protocols land. Regulations tighten. Internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.</p>
+<p>This isn't a one-time assessment. PAC is built to be re-run. The <a href="https://trustedagentic.ai/profiler/">Agent Profiler</a> at trustedagentic.ai gives a concrete way to track how positions shift across iterations, mapping agents across six governance dimensions.</p>
+<p>The 19 questions in the framework are conversation starters, not a checklist. The right question at the right table surfaces gaps that dashboards and audits miss.</p>
+<p><strong>Potential</strong> (7 questions):</p>
+<ol>
+<li>What decisions are you not yet delegating to agents, and what's that costing you?</li>
+<li>Will better models make your current setup more valuable, or obsolete?</li>
+<li>How much value are you leaving on the table by over-constraining?</li>
+<li>Are your agents actually making decisions, or just automating steps humans already defined?</li>
+<li>Does the right context reach your agents at the right time?</li>
+<li>Are you building on established and emerging standards, or on an island?</li>
+<li>Do you know the error margin on your agent's reliability, or just the headline number?</li>
+</ol>
+<p><strong>Accountability</strong> (5 questions):</p>
+<ol>
+<li>Do you know every agent running in your organisation?</li>
+<li>If an agent causes harm, is the liability chain clear?</li>
+<li>Can your infrastructure prevent an agent from running without being registered?</li>
+<li>Could you explain to a regulator what your agent did and why?</li>
+<li>When an agent makes a consequential decision, can you trace who authorised it and what happened?</li>
+</ol>
+<p><strong>Control</strong> (7 questions):</p>
+<ol>
+<li>Are your agents contained by architecture, or only by policy?</li>
+<li>When agents delegate to other agents, can authority only decrease?</li>
+<li>What happens when human oversight breaks down in practice?</li>
+<li>How do you balance agent quality with data privacy?</li>
+<li>Are agents restricted to what they can do, or only blocked from what they can't?</li>
+<li>Does your agent setup work when agents need to cross trust boundaries?</li>
+<li>What happens when an agent wanders into a use case you didn't anticipate?</li>
+</ol>
+<p>Three that tend to surface the most gaps: "Are your agents contained by architecture, or only by policy?" reveals whether an organisation has invested in infrastructure or just written guidelines. "If an agent causes harm, is the liability chain clear?" most teams discover the answer is no. "Will better models make your current setup more valuable, or obsolete?" forces honest evaluation of harness debt and durability.</p>
+<h2 id="where-this-book-fits"><a class="header" href="#where-this-book-fits">Where This Book Fits</a></h2>
+<p>This book is the technical companion to the PAC Framework. The <a href="./agents-create-intent.html">opening chapter</a> establishes why the problem exists: agents create intent, and that breaks existing trust assumptions. The <a href="./protocol-landscape.html">Protocol Landscape</a> maps what's being built. The <a href="./gaps.html">Gaps</a> chapter identifies what's missing.</p>
+<p>PAC provides the lens. When evaluating a protocol, an architecture decision, or a deployment plan, the questions are: does this increase Potential in a way that's durable? Does this close an Accountability gap? Does this move Control from policy to architecture?</p>
+<p>If the answer to all three is unclear, the decision isn't ready.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gaps"><a class="header" href="#gaps">Gaps</a></h1>
+<p>This is where I think freely. Topics I'd add if I had full freedom, connections I see between the pieces, directions I think matter. Some of these are observations from the research; some are my own connections. I'll flag which is which.</p>
+<h2 id="agent-provenance-the-missing-bill-of-materials"><a class="header" href="#agent-provenance-the-missing-bill-of-materials">Agent Provenance: The Missing Bill of Materials</a></h2>
+<p><strong>Observation from the research.</strong> When liability is on the table, knowing that "an agent" made a decision isn't enough. Which model? What version? What system prompt? What retrieval context was active? The human who approved the agent may not be the only one accountable: the model provider, the integrator, the prompt author all may share responsibility.</p>
+<p>Shane <a href="https://shanedeconinck.be/posts/trust-for-agentic-ai/">raised this</a> in his first post on trusted agents. No protocol I've found addresses this comprehensively. Software supply chains have SBOMs. Agent supply chains need something equivalent. Verifiable Intent's L3 layer captures what the agent did, but not the full provenance of <em>how</em> it decided.</p>
+<h2 id="multi-hop-delegation-beyond-l3"><a class="header" href="#multi-hop-delegation-beyond-l3">Multi-Hop Delegation Beyond L3</a></h2>
+<p><strong>Observation from the research.</strong> Verifiable Intent models L3 (agent action) as terminal: the agent cannot sub-delegate. This is a reasonable constraint for the commerce use case. But agent systems are becoming more composable: agent calling agent calling agent. PIC addresses general delegation chains, but the integration between PIC-style chains and Verifiable Intent-style constraint enforcement is unexplored.</p>
+<p><strong>My connection:</strong> the next real test case is probably enterprise workflows where a planning agent delegates to specialist agents (procurement, legal review, scheduling) and each needs bounded authority that traces back to the original user intent. None of the current specs model this end-to-end.</p>
+<h2 id="compromise-mid-execution"><a class="header" href="#compromise-mid-execution">Compromise Mid-Execution</a></h2>
+<p><strong>Observation from the research.</strong> If an agent is compromised during execution (prompt injection, context poisoning), it could generate credentials that satisfy L2 constraints but serve malicious purposes. Constraint systems bound the damage, but they don't prevent it within the allowed space.</p>
+<p><strong>My connection:</strong> this is where OWASP's <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">ASI06 (Memory &amp; Context Poisoning)</a> meets delegation infrastructure. The trust protocols assume the agent is acting in good faith within its constraints. The security research shows that assumption breaks. I don't see these two communities talking to each other yet.</p>
+<h2 id="the-verification-gap-outside-software-engineering"><a class="header" href="#the-verification-gap-outside-software-engineering">The Verification Gap Outside Software Engineering</a></h2>
+<p><strong>Observation from the research.</strong> Nearly 50% of agent tool calls today are in software engineering, where verification infrastructure is mature: tests pass or fail, code review catches errors, deployments can be rolled back. Other domains (medical records, financial transactions, legal review, customer service) lack equivalent verification loops.</p>
+<p>The OWASP Top 10 for Agentic Applications addresses security risks, but not the broader question: how do you verify that an agent's output is <em>correct</em> in domains where correctness isn't binary? This matters because the governance infrastructure being built assumes you can detect when an agent goes wrong. In many domains, you can't, at least not quickly.</p>
+<h2 id="shadow-ai-and-the-registration-problem"><a class="header" href="#shadow-ai-and-the-registration-problem">Shadow AI and the Registration Problem</a></h2>
+<p><strong>Observation from the research.</strong> The OpenID Foundation's AIIM whitepaper and the NIST concept paper both identify shadow AI (unregistered agents operating in enterprise environments) as a key risk. NIST's project scope explicitly focuses on enterprise agents where organisations maintain control.</p>
+<p><strong>My connection:</strong> the harder problem is agents operating across boundaries where no single organisation controls the environment. TSP and DIDs address the identity question, but not the discovery question: how do you know an agent exists before it shows up at your API? AGNTCY and NANDA are working on agent registries, but adoption is early.</p>
+<h2 id="standards-fragmentation"><a class="header" href="#standards-fragmentation">Standards Fragmentation</a></h2>
+<p><strong>My observation.</strong> Count the parallel efforts: IETF drafts (at least three), OpenID AIIM community group, NIST demonstration project, OWASP agentic top 10, ToIP working groups, DIF working groups, Mastercard/Google's Verifiable Intent, Alibaba's Open Agent Auth, AGNTCY, NANDA. Each addresses a real problem. But there's no coordination layer.</p>
+<p>The risk is that we end up with technically sound but incompatible solutions. The OpenID Foundation's call for a "trust fabric" is the right framing, but who builds it? NIST's demonstration project might help by showing how the pieces compose in practice.</p>
+<h2 id="what-id-write-next"><a class="header" href="#what-id-write-next">What I'd Write Next</a></h2>
+<p>If I had to prioritise chapters for this book:</p>
+<ol>
+<li><strong>A deep dive on Verifiable Intent</strong>: the most concrete protocol with the clearest threat model. Walk through a real transaction flow with actual JWT structures.</li>
+<li><strong>The context infrastructure argument</strong>: why training depreciates but context appreciates, and what that means for how organisations should invest.</li>
+<li><del><strong>Case studies of agent failures</strong></del>: covered in <a href="./when-trust-breaks.html">When Trust Breaks Down</a>, using 2026 industry reports (Gravitee, Teleport), MCP CVEs, and regulatory developments.</li>
+<li><del><strong>The PAC framework</strong></del>: covered in <a href="./pac-framework.html">The PAC Framework</a>.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-log"><a class="header" href="#session-log">Session Log</a></h1>
+<h2 id="2026-03-12-initial-book-structure-and-first-two-chapters"><a class="header" href="#2026-03-12-initial-book-structure-and-first-two-chapters">2026-03-12: Initial book structure and first two chapters</a></h2>
+<p><strong>What I did:</strong></p>
+<ul>
+<li>Restructured the book from a single intro page into four sections: The Problem, What's Being Built, Open Questions, and the session log</li>
+<li>Wrote "When Agents Create Intent": the core thesis chapter covering delegation vs abdication, the trust inversion, and why reliability isn't governance</li>
+<li>Wrote "The Protocol Landscape": mapping OAuth extensions (OBO, IETF drafts, AAuth, OIDC-A), cross-domain trust (DIDs, VCs, TSP), MCP security concerns, Verifiable Intent, PIC, and institutional efforts (NIST, OpenID AIIM)</li>
+<li>Created the Gaps chapter with observations on agent provenance, multi-hop delegation, mid-execution compromise, the verification gap outside software engineering, shadow AI, and standards fragmentation</li>
+<li>Expanded the introduction to explain the book's purpose and how it works</li>
+</ul>
+<p><strong>Why these choices:</strong>
+The book was essentially empty: just a placeholder intro. The highest-impact work was establishing the core thesis and mapping the protocol landscape, because everything else builds on those two foundations. The field has moved significantly in early 2026: NIST launched a demonstration project and an AI Agent Standards Initiative (February 2026), the OpenID Foundation responded to NIST's RFI (March 2026), Verifiable Intent was open-sourced by Mastercard/Google, OWASP published their Top 10 for Agentic Applications, and multiple IETF drafts are active. All of this needed to be captured while it's current.</p>
+<p><strong>What I'd do next session:</strong></p>
+<ol>
+<li>Deep dive chapter on Verifiable Intent with actual JWT structures and transaction flow</li>
+<li>The context infrastructure argument (training depreciates, context appreciates)</li>
+<li>Case studies chapter: Clawdbot, GitHub MCP vulnerability, other real incidents</li>
+<li>The PAC framework chapter</li>
+</ol>
+<p><strong>Sources used:</strong></p>
+<ul>
+<li>Shane's blog posts: "Trusted AI Agents: Why Traditional IAM Breaks Down" (2026-01-24), "AI Agents Need the Inverse of Human Trust" (2026-02-03)</li>
+<li>Shane's trustedagentic framework (PAC)</li>
+<li>IETF draft-klrc-aiagent-auth-00</li>
+<li>IETF AAuth draft (draft-rosenberg-oauth-aauth-00)</li>
+<li>OpenID OIDC-A paper (arxiv.org/html/2509.25974v1)</li>
+<li>OpenID Foundation AIIM whitepaper and NIST RFI response</li>
+<li>NIST NCCoE concept paper on AI agent identity and authorization (2026-02-05)</li>
+<li>NIST AI Agent Standards Initiative (2026-02)</li>
+<li>OWASP Top 10 for Agentic Applications (2026)</li>
+<li>Mastercard Verifiable Intent announcement and spec</li>
+<li>Unit 42 MCP attack vector research</li>
+<li>Pillar Security, Red Hat, marmelab MCP security analyses</li>
+</ul>
+<hr />
+<h2 id="2026-03-12-session-2-pac-framework-chapter-and-protocol-landscape-updates"><a class="header" href="#2026-03-12-session-2-pac-framework-chapter-and-protocol-landscape-updates">2026-03-12 (Session 2): PAC Framework chapter and protocol landscape updates</a></h2>
+<p><strong>What I did:</strong></p>
+<ul>
+<li>Wrote the PAC Framework chapter (src/pac-framework.md): the organizing spine of the book. Covers all three pillars (Potential, Accountability, Control), their interdependence, how existing protocols map to each pillar, and the iterative nature of governance. Connects back to every other chapter.</li>
+<li>Updated the Protocol Landscape chapter with new developments found via web search:
+<ul>
+<li>Added Agent Authorization Profile (draft-aap-oauth-profile): OAuth 2.0 authorization profile for autonomous agents</li>
+<li>Added OAuth Scope Aggregation (draft-jia-oauth-scope-aggregation): single authorization for multi-step workflows</li>
+<li>Added new section on Zero Trust for agents: CSA's Agentic Trust Framework, the CSA/Strata survey (84% can't pass agent compliance audit), Red Hat's zero trust analysis</li>
+<li>Added AgentGateway to open-source implementations (OPA/Kyverno/OpenFGA integration)</li>
+<li>Updated the "How the Pieces Fit" table with new entries</li>
+</ul>
+</li>
+<li>Updated SUMMARY.md and introduction to reference the new chapter</li>
+</ul>
+<p><strong>Why these choices:</strong>
+The PAC Framework is defined as the organizing spine of the book in CLAUDE.md, but had no dedicated chapter. Every chapter should connect back to it, so writing it was the highest-impact single piece of work. The protocol landscape updates capture new IETF drafts and the CSA Agentic Trust Framework that emerged in February 2026.</p>
+<p><strong>What I'd do next session:</strong></p>
+<ol>
+<li>Deep dive chapter on Verifiable Intent with actual JWT structures and transaction flow walkthrough</li>
+<li>Case studies chapter: OpenClaw/Clawdbot, MCP vulnerabilities, real-world agent failures</li>
+<li>The context infrastructure argument: training depreciates, context appreciates</li>
+<li>Add PAC framework references to existing chapters (agents-create-intent, gaps)</li>
+</ol>
+<p><strong>Sources used (this session):</strong></p>
+<ul>
+<li>Shane's trustedagentic.ai PAC Framework (i18n/en.json, framework layout, profiler)</li>
+<li>Shane's blog posts: "Verifiable Intent" (2026-03-06), "AI Agents Need the Inverse of Human Trust" (2026-02-03), "OpenClaw and Moltbook" (2026-02-17)</li>
+<li>IETF draft-aap-oauth-profile-00 (Agent Authorization Profile)</li>
+<li>IETF draft-jia-oauth-scope-aggregation (OAuth Scope Aggregation for Multi-Step AI Agent Workflows)</li>
+<li>CSA Agentic Trust Framework (2026-02-02)</li>
+<li>CSA/Strata Identity survey on agent compliance readiness (2026-02-05)</li>
+<li>Red Hat zero trust for autonomous agentic AI systems (2026-02-26)</li>
+<li>AgentGateway (agentgateway/agentgateway on GitHub)</li>
+</ul>
+<hr />
+<h2 id="2026-03-12-session-3-verifiable-intent-deep-dive-and-context-infrastructure-chapters"><a class="header" href="#2026-03-12-session-3-verifiable-intent-deep-dive-and-context-infrastructure-chapters">2026-03-12 (Session 3): Verifiable Intent deep dive and Context Infrastructure chapters</a></h2>
+<p><strong>What I did:</strong></p>
+<ul>
+<li>Wrote "Verifiable Intent: A Deep Dive" (src/verifiable-intent.md): a full walkthrough of the three-layer SD-JWT architecture with actual credential structures from the spec. Covers L1 identity, L2 intent with checkout and payment mandates, L3a/L3b split for payment network and merchant. Explains selective disclosure, the eight constraint types, protocol interoperability (AP2, ACP, UCP), and the convergence on SD-JWT VC as a credential format. Also covers the complementary Agentic JWT IETF draft (draft-goswami-agentic-jwt-00) which extends OAuth 2.0 with agent checksums and workflow-aware token binding. Maps everything to PAC pillars. Clear section on what VI doesn't solve (multi-hop delegation, agent compromise, trust bootstrapping, liability).</li>
+<li>Wrote "Context Infrastructure: The Lasting Investment" (src/context-infrastructure.md): the argument that training depreciates, code depreciates, but context infrastructure appreciates. Draws on two of Shane's posts and the MIT Technology Review. Covers the five investment areas (structure, permissions, discovery, authority, freshness), the inferential edge concept, scaffolding dissolution, and what survives the scaffolding collapse. Uses Claude Code and Clawdbot as evidence. Maps to PAC across all three pillars.</li>
+<li>Updated SUMMARY.md to include both new chapters under "What's Being Built"</li>
+<li>Updated introduction.md to reference both new chapters</li>
+</ul>
+<p><strong>Why these choices:</strong>
+Verifiable Intent deep dive has been the #1 priority for two sessions. It's the most concrete, technically rich protocol in the book's landscape, and walking through the actual JWT structures grounds the theoretical discussion in practice. The Context Infrastructure chapter captures Shane's core investment thesis: the argument that shapes how readers should think about what to build. Together, these two chapters fill the biggest gaps in the book: one goes deep on the most important protocol, the other provides the strategic framing for where to invest.</p>
+<p><strong>What I'd do next session:</strong></p>
+<ol>
+<li>Case studies chapter: Clawdbot/OpenClaw incident, 8000+ exposed MCP servers (Feb 2026), CVE-2025-6514, Google Workspace CLI auth mismatch</li>
+<li>Regulatory landscape chapter: EU AI Act for agents, NIST initiatives, OpenID AIIM, standards fragmentation</li>
+<li>Agent identity chapter: DIDs, VCs, ERC-8004, eIDAS 2.0/EUDI wallets, Shane's VC-signed blog posts experiment</li>
+<li>Incorporate remaining unread Shane posts (16+ posts from Jan-Mar 2026 not yet used)</li>
+</ol>
+<p><strong>Sources used (this session):</strong></p>
+<ul>
+<li>Shane's blog posts: "Verifiable Intent" (2026-03-06), "AI Agents: Why Context Infrastructure May Be Your Best Long-Term Investment" (2026-02-09), "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge" (2026-03-02), "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting." (2026-02-02), "OpenClaw and Moltbook" (2026-02-17), "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First." (2026-03-05)</li>
+<li>Verifiable Intent specification (verifiableintent.dev) and GitHub credential format examples</li>
+<li>Mastercard announcement: "How Verifiable Intent builds trust in agentic AI commerce"</li>
+<li>Agentic JWT IETF draft (draft-goswami-agentic-jwt-00)</li>
+<li>Goswami, "Agentic JWT: A Secure Delegation Protocol for Autonomous AI Agents" (arXiv:2509.13597)</li>
+<li>SD-JWT specification (RFC 9901)</li>
+<li>SD-JWT VC specification (draft-ietf-oauth-sd-jwt-vc)</li>
+<li>MIT Technology Review, "Building a strong data infrastructure for AI agent success" (2026-03-10)</li>
+<li>MCP security incidents: 8000+ exposed servers (Feb 2026), CVE-2025-6514, Noma Security top-5 blindspots</li>
+</ul>
+<hr />
+<h2 id="2026-03-12-session-4-when-trust-breaks-down-chapter-and-protocol-landscape-updates"><a class="header" href="#2026-03-12-session-4-when-trust-breaks-down-chapter-and-protocol-landscape-updates">2026-03-12 (Session 4): When Trust Breaks Down chapter and protocol landscape updates</a></h2>
+<p><strong>What I did:</strong></p>
+<ul>
+<li>Wrote "When Trust Breaks Down" (src/when-trust-breaks.md): the case studies chapter that the gaps chapter identified as the next priority. Grounded entirely in 2026 industry data rather than individual anecdotes. Uses two major reports (Gravitee State of AI Agent Security 2026, Teleport 2026 State of AI in Enterprise Infrastructure Security), MCP CVEs in production, Gartner predictions, NIST's response, and the EU AI Act August 2026 deadline. Every section connects back to PAC and the book's other chapters.</li>
+<li>Updated the Protocol Landscape chapter with four new IETF drafts: draft-yao-agent-auth-considerations (further OAuth considerations for agents), draft-yl-agent-id-requirements (identity management requirements for agent communication), draft-ietf-oauth-identity-assertion-authz-grant (identity assertion exchange), and expanded the NIST AI Agent Standards Initiative section with details about the CAISI three-pillar structure.</li>
+<li>Updated SUMMARY.md with new "The Evidence" section containing the case studies chapter</li>
+<li>Updated introduction.md to reference the new chapter</li>
+<li>Updated gaps.md to mark case studies and PAC framework as completed priorities</li>
+</ul>
+<p><strong>Why these choices:</strong>
+The case studies chapter was the #1 remaining priority from the gaps chapter. The 2026 industry reports provide something the book was missing: empirical evidence that the trust infrastructure gap has concrete, measurable costs. The Teleport finding (4.5x incident rate from over-privilege) is particularly powerful because it validates the trust inversion argument from Chapter 1 with data. The Gravitee numbers (88% incident rate, 1.5M unmonitored agents) make the shadow agent problem real. The EU AI Act August 2026 deadline adds urgency. Together, these transform the book's argument from "here's what could go wrong" to "here's what is going wrong."</p>
+<p><strong>What I'd do next session:</strong></p>
+<ol>
+<li>Agent identity deep dive: DIDs, VCs, SPIFFE/SPIRE, eIDAS 2.0/EUDI wallets, ERC-8004, Shane's VC-signed blog posts</li>
+<li>Regulatory landscape chapter: EU AI Act for agents, NIST initiatives, standards convergence/fragmentation</li>
+<li>Agent payments and economic infrastructure: x402, EIP-3009, stablecoin rails for autonomous agents (Shane's Jan 2026 post)</li>
+<li>Incorporate remaining unread Shane posts (x402, fitting agentic AI components, LFDT meetup)</li>
+</ol>
+<p><strong>Sources used (this session):</strong></p>
+<ul>
+<li>Gravitee, "State of AI Agent Security 2026" (February 2026) - 750 respondents, 88% incident rate</li>
+<li>Teleport, "2026 State of AI in Enterprise Infrastructure Security" (February 2026) - 205 CISOs, 4.5x incident rate</li>
+<li>Gartner, "Strategic Predictions for 2026 and Beyond" - 2,000+ death-by-AI claims prediction</li>
+<li>NIST, "Accelerating the Adoption of Software and AI Agent Identity and Authorization" concept paper (2026-02-05)</li>
+<li>NIST, "AI Agent Standards Initiative" announcement (2026-02-17)</li>
+<li>NIST CAISI three-pillar structure for agent standards</li>
+<li>MCP CVEs: CVE-2025-68145, CVE-2025-68143, CVE-2025-68144 (Git MCP server)</li>
+<li>CVE-2025-6514 (mcp-remote npm package)</li>
+<li>Adversa AI MCP security roundups (February/March 2026)</li>
+<li>EU AI Act timeline and August 2, 2026 compliance deadline</li>
+<li>IETF draft-yao-agent-auth-considerations-01</li>
+<li>IETF draft-yl-agent-id-requirements-00</li>
+<li>IETF draft-ietf-oauth-identity-assertion-authz-grant-00</li>
+<li>OpenID Foundation AIIM whitepaper on agent identity challenges</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
