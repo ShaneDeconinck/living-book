@@ -125,3 +125,40 @@ It was the #3 priority in the gaps doc and the next logical chapter after identi
 **Next session priorities:**
 1. Reliability, Evaluation, and the Complacency Trap chapter (human factors angle, strongest remaining gap)
 2. Agent Payments and Economics chapter (x402, payment as trust signal)
+
+## 2026-03-12: Reliability, Evaluation, and the Complacency Trap Chapter
+
+**What I did:**
+- Wrote Chapter 6: "Reliability, Evaluation, and the Complacency Trap" covering the dangerous intersection of improving reliability and degrading human oversight. Sections: what reliability actually means (four dimensions: consistency, robustness, predictability, safety), the benchmark landscape (SWE-bench Verified, τ-bench, GAIA, HAL), the evaluation gap (offline vs online adoption drop from 52% to 37%), the observability shift (debugging vs governance-grade audit trails), the complacency trap (grounded in Bainbridge 1983 and Don Norman 1990), the agent-specific version (review fatigue, accountability diffusion, scope creep, the 99% problem), why better models make governance harder (the PAC interdependency break), from human-in-the-loop to infrastructure-in-the-loop, evaluation as governance infrastructure, PAC mapping table, and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Marked Reliability chapter as done in gaps.md.
+- Updated complacency observation in gaps.md to reflect coverage.
+
+**Why this chapter:**
+It was the #1 remaining priority in the gaps doc. Shane's writing on the scaffolding trap, trust inversion, and Anthropic's autonomy data all pointed to the same gap: reliability is improving faster than governance. The human factors angle (Bainbridge's ironies of automation, Don Norman's intermediate automation problem) provides 40+ years of research grounding that makes the argument concrete rather than speculative. The chapter bridges Potential and Accountability pillars, which were less deeply covered than Control.
+
+**Sources used:**
+- Shane's blog posts: scaffolding trap, trust inversion (Don Norman quote, "human in the loop is not a reliable safety net"), Anthropic's data analysis (50% coding, upper-right quadrant), agent profiler reasoning ("infrastructure is a gate, not a slider")
+- PAC Framework from trustedagentic.ai
+- Lisanne Bainbridge, "Ironies of Automation" (Automatica, 1983): skill degradation and vigilance failure
+- Don Norman, "The 'Problem' of Automation" (1990): intermediate automation as the danger zone
+- Saumya Banthia et al., "Towards a Science of AI Agent Reliability" (arXiv, Feb 2026): four-dimensional reliability decomposition
+- LangChain State of AI Agents 2026: 57% in production, 52% offline evals, 37% online evals, 32% cite quality as top barrier
+- Anthropic, "Measuring AI Agent Autonomy in Practice" (Feb 2026): 73% human oversight, domain distribution
+- Sierra τ-bench: dynamic benchmark exposing agent brittleness in interactive settings
+- Princeton HAL Leaderboard: unified benchmarking across SWE-bench, GAIA, τ-bench (ICLR 2026)
+- Help Net Security (March 2026): only 21% executive visibility into agent permissions, 80% report risky agent behaviors
+- Clinical study: 6% tumor detection rate reduction after months of AI-assisted colonoscopy
+- Braintrust, Arize: agent observability ecosystem 2026
+
+**What I noticed:**
+- The evaluation gap data (52% offline, 37% online, 23% not evaluating at all) is the complacency trap in quantitative form. Teams invest in proving capability and underinvest in monitoring behavior. This is exactly the Potential-Accountability split Shane describes.
+- Bainbridge's 1983 paper is strikingly relevant. Her two ironies (skill degradation + vigilance failure) map directly to agent oversight: reviewers lose the ability to catch errors because they rarely need to, and monitoring a highly reliable system is cognitively exhausting. The 40-year gap between her writing and current AI agent deployment shows how slowly automation governance lessons transfer between domains.
+- The clinician colonoscopy study (6% tumor detection drop with AI assistance) is the most concrete evidence I found for the complacency trap in a high-stakes domain. It illustrates Bainbridge's skill degradation pattern: the AI made clinicians better on average but degraded their independent capability.
+- τ-bench's results are important for a reason beyond benchmark scores: they show that static benchmarks do not predict dynamic performance. An agent that scores well on SWE-bench may struggle with τ-bench because interactive, real-time environments create failure modes that controlled test sets do not. This validates Anthropic's finding that pre-deployment evaluation alone is insufficient.
+- The "infrastructure in the loop" framing feels like the right synthesis. It respects Shane's position that "human in the loop is not a reliable safety net" while providing a constructive alternative. Structural authorization, anomaly detection, automatic containment, and audit trails do not depend on human vigilance. They encode human judgment into infrastructure that operates whether anyone is watching or not.
+- The PAC interdependency break (high reliability reducing governance investment) is the chapter's most important idea. It explains why the problem gets worse as agents get better, which is counterintuitive enough to be worth stating clearly.
+
+**Next session priorities:**
+1. Agent Payments and Economics chapter (x402, EIP-3009, payment as trust signal)
+2. Sandboxing and Execution Security chapter (native OS vs Docker vs DevContainers, OWASP Top 10)

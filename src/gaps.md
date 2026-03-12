@@ -26,9 +26,9 @@ Agent gateways are emerging as infrastructure analogous to API gateways: central
 
 Shane's post on context infrastructure is one of his most original contributions. The argument that context appreciates while everything else depreciates is strong and counterintuitive. The Clawdbot example (an agent's personality and behavior governed entirely by a `SOUL.md` file) and the Claude Code example (raw file access via search, not vector databases) are concrete illustrations that deserve deeper treatment. Five dimensions to explore: structure, permissions, discovery, authority, freshness.
 
-### The Complacency Problem Is Underexplored
+### The Complacency Problem Is Now Covered
 
-Shane flags it in the reliability post, but I think it deserves more attention. As agents get more reliable, human oversight degrades. This is well-documented in aviation automation research (automation complacency, mode confusion). There is likely useful literature from human factors engineering that could ground this section in decades of research rather than just recent AI experience. Connection to PAC: this is a failure mode where Potential (high reliability) undermines Accountability (meaningful oversight) without appropriate Control (infrastructure-enforced checkpoints).
+The Reliability, Evaluation, and the Complacency Trap chapter covers this in depth, grounding the argument in Bainbridge (1983) and Don Norman (1990). The key framing: complacency is not a human weakness to overcome but a design constraint to engineer around. Infrastructure-in-the-loop replaces human-in-the-loop. The PAC connection (Potential undermines Accountability without Control) is the chapter's organizing thesis.
 
 ### Cross-Organization Trust Is the Hard Problem
 
@@ -48,7 +48,7 @@ Prioritized by impact:
 
 3. ~~**The Regulatory Landscape** (Accountability)~~: DONE. Chapter covers EU AI Act (risk tiers, classification problem, shadow agents, high-risk requirements), NIST (concept paper, AI Agent Standards Initiative), ISO 42001, U.S. state legislation (Colorado), standards convergence (IETF, OpenID AIIM, OIDC-A), PAC mapping to regulation, infrastructure maturity readiness table, and convergence timeline.
 
-4. **Reliability, Evaluation, and the Complacency Trap** (Potential + Accountability): measuring agent performance, the governance gap that better models create, human factors research on automation complacency.
+4. ~~**Reliability, Evaluation, and the Complacency Trap** (Potential + Accountability)~~: DONE. Chapter covers reliability decomposition (consistency, robustness, predictability, safety), benchmark landscape (SWE-bench, τ-bench, GAIA, HAL), the evaluation gap (offline vs online, 52% to 37% adoption drop), automation complacency from human factors research (Bainbridge 1983, Don Norman 1990), the 99% problem, infrastructure-in-the-loop as replacement for human-in-the-loop, and evaluation as governance infrastructure.
 
 5. **Agent Payments and Economics** (Potential + Control): x402, EIP-3009, the economics of agent-to-agent commerce on L2s. Payment as trust signal.
 
