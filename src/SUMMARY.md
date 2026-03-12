@@ -13,5 +13,6 @@
 - [Agent Communication Protocols](agent-communication.md)
 - [Agent Supply Chain Security](supply-chain-security.md)
 - [Shadow Agent Governance](shadow-agent-governance.md)
+- [Multi-Agent Trust and Orchestration](multi-agent-trust.md)
 - [Gaps & Directions](gaps.md)
 - [Session Log](log.md)

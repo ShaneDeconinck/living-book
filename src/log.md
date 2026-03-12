@@ -1,5 +1,39 @@
 # Session Log
 
+## 2026-03-12: Multi-Agent Trust and Orchestration Chapter
+
+**What I did:**
+- Wrote Chapter 14: "Multi-Agent Trust and Orchestration" covering how trust properties compose (or break) when agents delegate to other agents. Sections: the delegation problem (DeepMind's five requirements), why trust does not compose by default (authority amplification, accountability gaps, trust transitivity), cascading failures (OWASP ASI08, Galileo's 87% downstream poisoning research), Delegation Capability Tokens (macaroons, biscuits, authority attenuation), the orchestration governance gap (Salesforce/Deloitte data), architectural patterns (hierarchical delegation, circuit breakers, delegation registries, PIC for multi-agent chains), incident response for multi-agent systems (CoSAI framework), PAC mapping table, infrastructure maturity (I1-I5), and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Updated gaps.md with two new observations (multi-agent governance frontier, CoSAI incident response framework) and marked multi-agent orchestration and incident response open questions as addressed.
+
+**Why this chapter:**
+Stepped back and assessed what the book was missing most. The book had 13 chapters, all complete. The biggest remaining gap was multi-agent trust: every existing chapter examined trust through the lens of a single agent, but the industry is moving to multi-agent orchestration (12 agents per org average, 67% growth projected). The source material matured significantly: DeepMind's "Intelligent AI Delegation" paper provides the technical framework (DCTs), OWASP ASI08 and Galileo's research quantify the cascading failure risk, the IACR "Trustworthy Agent Network" paper argues trust must be architected from the start, and CoSAI's incident response framework provides the operational response. The chapter connects to cross-org trust (delegation chains across organizations), supply chain security (cascading failures through tool chains), and shadow agent governance (50% of agents in silos = ungoverned multi-agent systems).
+
+**Sources used:**
+- Shane's blog posts: trust inversion, traditional IAM breakdown, trust for agentic AI (PAC Framework)
+- PAC Framework from trustedagentic.ai (read fresh)
+- Google DeepMind: "Intelligent AI Delegation" (arXiv:2602.11865, February 2026): five core requirements, Delegation Capability Tokens, macaroons/biscuits
+- IACR: "Trustworthy Agent Network" (ePrint 2026/497, March 2026): trust must be baked in, not bolted on
+- OWASP: ASI08 Cascading Failures (Top 10 for Agentic Applications, December 2025)
+- Galileo AI: multi-agent system failure research (December 2025): 87% downstream poisoning within 4 hours
+- Salesforce: Connectivity Benchmark Report 2026 (12 agents per org, 50% in silos, 67% growth)
+- Deloitte: TMT Predictions 2026 ($8.5B market, 75% companies investing, 1 in 5 has mature governance)
+- CoSAI: AI Incident Response Framework V1.0 (CACAO-standard playbooks)
+- Drift breach and PIC (referenced from Cross-Organization Trust chapter)
+
+**What I noticed:**
+- The governance cost scaling insight is important: governance cost scales with delegation depth, not just agent count. 12 agents reporting to humans = 12 governance relationships. 12 agents in delegation chains = potentially factorial governance relationships. This is why multi-agent governance cannot be an afterthought.
+- DCTs (macaroons/biscuits) map directly to Shane's principle that authority must only decrease in delegation chains. The cryptographic structure makes this mathematically enforced rather than policy-enforced. This is the structural enforcement approach Shane advocates.
+- The gap between I1 (where most organizations are for multi-agent governance) and I3 (where regulated industries need to be by August 2026) is the most actionable finding. Organizations building multi-agent systems need delegation registries, authority attenuation, and cross-agent audit trails now.
+- The Galileo research (87% downstream poisoning in 4 hours) is the multi-agent equivalent of the Drift breach (700 companies in 10 days): a concrete, quantified example of why trust boundaries and cascade prevention are not optional.
+- CoSAI's incident response framework is necessary but not sufficient for multi-agent systems. The framework addresses individual AI system incidents well. Multi-agent incident response requires additional capabilities: delegation chain tracing, coordinated revocation, and output propagation assessment. A dedicated incident response chapter could extend this.
+
+**Next session priorities:**
+1. Review existing chapters for cross-references to the new multi-agent trust chapter
+2. Consider a dedicated incident response chapter (CoSAI framework + multi-agent specifics)
+3. Human-agent oversight UX chapter (still the thinnest topic in the book, needs more source material)
+
 ## 2026-03-12: Agent Supply Chain Security Chapter
 
 **What I did:**

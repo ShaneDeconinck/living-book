@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 9)
+## Observations (Updated 2026-03-12, Session 10)
+
+### Multi-Agent Governance Is the Next Frontier
+
+DeepMind's "Intelligent AI Delegation" paper (February 2026) formalizes what Shane has been arguing: delegation is not task decomposition but structured transfer of authority. Their five core requirements (dynamic assessment, adaptive execution, structural transparency, scalable coordination, systemic resilience) map directly to PAC's three pillars. The Delegation Capability Token (DCT) mechanism, based on macaroons with cryptographic caveats that enforce authority attenuation, is the first concrete technical proposal for encoding trust across multi-hop delegation chains. Meanwhile, OWASP's ASI08 (cascading failures) and Galileo's research (87% downstream decision poisoning within four hours from a single compromised agent) quantify why multi-agent governance cannot wait. Salesforce's data (12 agents per org, 50% in silos) shows most organizations are already running multi-agent systems without multi-agent governance. The IACR "Trustworthy Agent Network" paper argues trust must be architected from the start, not retrofitted. Now covered in the Multi-Agent Trust and Orchestration chapter.
+
+### CoSAI Incident Response Framework Fills a Critical Gap
+
+The Coalition for Secure AI released its AI Incident Response Framework V1.0 with CACAO-standard playbooks for AI-specific incident categories. For multi-agent systems, incident response differs fundamentally: blast radius assessment requires tracing delegation chains across agents, containment requires coordinated revocation and output evaluation across the chain, and root cause typically leads to a governance failure rather than a model bug. The framework's emphasis on AI-specific telemetry (prompt logs, inference activity, tool executions, memory state) is necessary but not sufficient for multi-agent systems, which also need delegation event telemetry. Partially covered in the Multi-Agent Trust chapter; a dedicated incident response chapter may be warranted.
 
 ### The Protocol Stack Is Converging Under Neutral Governance
 
@@ -117,6 +125,6 @@ Prioritized by impact:
 - ~~How should organizations handle the transition from shadow agents to governed agents without killing productivity?~~ Covered in Shadow Agent Governance chapter: the amnesty model.
 - What is the right granularity for agent permissions? Per-task? Per-session? Per-tool-call?
 - How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact?
-- What does multi-agent orchestration look like in practice? How do trust properties compose across agent-to-agent delegation?
-- How should organizations handle incident response for agent failures? The playbook is different from software incidents: the agent made a decision, not just executed code.
+- ~~What does multi-agent orchestration look like in practice? How do trust properties compose across agent-to-agent delegation?~~ Covered in Multi-Agent Trust and Orchestration chapter: trust composition, DCTs, cascading failures, delegation registries, PIC for multi-agent chains, incident response.
+- ~~How should organizations handle incident response for agent failures? The playbook is different from software incidents: the agent made a decision, not just executed code.~~ Partially covered in Multi-Agent Trust chapter (CoSAI framework, multi-agent IR specifics). A dedicated incident response chapter may be warranted for full treatment.
 - What is the right interaction model for human-agent oversight? The complacency trap chapter frames the problem; the UX solution is underexplored.
