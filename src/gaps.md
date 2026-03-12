@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 2)
+## Observations (Updated 2026-03-12, Session 3)
+
+### The Execution Security Landscape Is Maturing Fast
+
+OWASP released the Top 10 for Agentic Applications in December 2025, providing the first peer-reviewed framework for agentic security risks. Simultaneously, both Anthropic and OpenAI have shipped native OS sandboxing (Seatbelt/bubblewrap/seccomp/Landlock) for their coding agents, and the NVIDIA AI Red Team published concrete guidance on sandboxing agentic workflows. The convergence of risk frameworks, vendor implementations, and production guidance signals that execution security is transitioning from afterthought to baseline requirement. Sandboxing covers 5 of OWASP's 10 agentic risks but the remaining 5 require identity, communication security, and organizational governance: exactly the other chapters in this book.
+
+### Configuration File Protection Is an Underappreciated Attack Vector
+
+NVIDIA's guidance highlights that agent modification of configuration files (~/.zshrc, .gitconfig, MCP configs) enables persistence and sandbox escape. This vector is subtle: a sandboxed agent that can modify a git hook effectively achieves code execution outside the sandbox the next time a commit occurs. Protecting configuration files should be treated as a non-negotiable control, not an optional hardening step.
 
 ### Verifiable Intent Is a Big Deal
 
@@ -60,7 +68,7 @@ Prioritized by impact:
 
 5. ~~**Agent Payments and Economics** (Potential + Control)~~: DONE. Chapter covers why traditional payments break for agents, payment as trust signal, x402 and EIP-3009 (gasless stablecoin payments), the three commerce protocols (AP2/ACP/UCP), ERC-8004 on-chain registries, real-world milestones (Santander/Mastercard, Stripe x402, J.P. Morgan/Mirakl), micro-transaction economics, authorization via Verifiable Intent constraints, PAC mapping, and infrastructure maturity for payments.
 
-6. **Sandboxing and Execution Security** (Control): native OS vs Docker vs DevContainers. OWASP Top 10 for Agentic Applications. Containment by design.
+6. ~~**Sandboxing and Execution Security** (Control)~~: DONE. Chapter covers the permission prompt problem, containment by design (filesystem + network isolation), the isolation spectrum (native OS, containers, gVisor, microVMs), OWASP Top 10 for Agentic Applications with sandboxing coverage mapping, defense in depth (six layers: input validation, sandboxed execution, configuration protection, output validation, credential scoping, behavioral monitoring), ephemeral vs persistent sandboxes, real-world architectures (Claude Code, Codex CLI, Docker microVM), PAC mapping, and infrastructure maturity for execution security.
 
 ## Open Questions
 

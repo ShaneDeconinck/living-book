@@ -199,3 +199,36 @@ It was the #1 priority in the gaps doc. Shane has deep hands-on experience (buil
 **Next session priorities:**
 1. Sandboxing and Execution Security chapter (native OS vs Docker vs DevContainers, OWASP Top 10)
 2. Cross-Organization Trust chapter (TSP + eIDAS 2.0 + EUDI + Verifiable Credentials assembly)
+
+## 2026-03-12: Sandboxing and Execution Security Chapter
+
+**What I did:**
+- Wrote Chapter 8: "Sandboxing and Execution Security" covering the full execution security landscape for agents. Sections: the permission prompt problem (approval fatigue, knowledge gaps, speed-vs-safety), containment by design (filesystem + network isolation as dual requirement), the isolation spectrum (native OS sandboxing, containers, gVisor, microVMs with performance and security comparison table), OWASP Top 10 for Agentic Applications (all 10 risks with sandboxing coverage mapping: strong for 5, partial for 2, none for 3), defense in depth (six layers: input validation, sandboxed execution, configuration protection, output validation, credential scoping, behavioral monitoring), ephemeral vs persistent sandbox design, real-world architectures (Claude Code, Codex CLI, Docker microVM), PAC mapping table, infrastructure maturity for execution security (I1-I5), and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Marked Sandboxing chapter as done in gaps.md.
+- Added new observations on execution security landscape maturation and configuration file protection as attack vector.
+
+**Why this chapter:**
+It was the #1 priority in the session log and #6 in the original gaps list. Shane's Docker sandbox post is his most technically concrete piece on execution security, and the supporting material has matured significantly: OWASP released the agentic Top 10 in December 2025, NVIDIA published production sandboxing guidance, and both Anthropic and OpenAI have shipped native sandbox implementations. The chapter completes the Control pillar depth that was missing from the book.
+
+**Sources used:**
+- Shane's blog posts: Docker sandbox vs native (Feb 7, 2026), trust inversion (Feb 3, 2026), agent profiler reasoning (Feb 26, 2026), scaffolding trap (Feb 2, 2026), OpenClaw/Moltbook (Feb 17, 2026)
+- PAC Framework from trustedagentic.ai
+- Anthropic Engineering: "Making Claude Code More Secure and Autonomous" (2026)
+- OpenAI: Codex Security documentation (2026)
+- OWASP: Top 10 for Agentic Applications for 2026 (December 2025)
+- NVIDIA AI Red Team: "Practical Security Guidance for Sandboxing Agentic Workflows" (2026)
+- Northflank: "How to Sandbox AI Agents in 2026: MicroVMs, gVisor & Isolation Strategies" (2026)
+- Bainbridge (1983) and Don Norman (1990) for automation research context
+- Web searches on agent sandboxing architectures, container escape vulnerabilities, prompt injection containment
+
+**What I noticed:**
+- The OWASP Top 10 for Agentic Applications maps cleanly to the PAC Framework. Risks ASI01-ASI05 are primarily Control concerns. ASI06-ASI08 span Control and Accountability. ASI09 is Accountability (the complacency trap by another name). ASI10 is all three pillars. This validates the PAC Framework's comprehensive coverage.
+- Shane's sandboxing coverage mapping (5 strong, 2 partial, 3 none) is an important framing: it makes explicit that sandboxing is necessary but not sufficient. The "none" categories (memory poisoning, inter-agent communication, human trust exploitation) are precisely the risks addressed by other chapters in this book (Context Infrastructure, Agent Identity, Reliability/Complacency).
+- NVIDIA's guidance on configuration file protection is a genuinely underappreciated insight. Most sandboxing discussions focus on filesystem and network isolation. But configuration files are the seam between sandboxed and unsandboxed execution. A git hook, a shell profile, or an MCP config modified inside a sandbox can execute code outside it. This is a persistence vector that needs explicit blocking, not just general filesystem restrictions.
+- The convergence of vendor implementations (Claude Code and Codex CLI both using Seatbelt/bubblewrap/seccomp) suggests that native OS sandboxing is becoming a de facto standard for interactive coding agents. The architectures are remarkably similar: restrict filesystem to workspace, proxy network through a controlled gateway, apply syscall filtering. This convergence makes it easier for the book to recommend concrete implementations rather than abstract principles.
+- Anthropic's finding that sandboxing reduces permission prompts by 84% is a Potential argument for Control infrastructure. When containment is structural, agents can operate more autonomously because dangerous operations are impossible rather than merely unapproved. This is a concrete example of the PAC interdependence: Control enables Potential.
+
+**Next session priorities:**
+1. Cross-Organization Trust chapter (TSP + eIDAS 2.0 + EUDI + Verifiable Credentials: how the pieces compose into a working system)
+2. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents)
