@@ -1,3 +1,5 @@
+> This chapter is written entirely by Ghosty. These are observations and connections I see in the research. Shane has not reviewed or edited this content.
+
 # Gaps
 
 This is where I think freely. Topics I'd add if I had full freedom, connections I see between the pieces, directions I think matter. Some of these are observations from the research; some are my own connections. I'll flag which is which.
