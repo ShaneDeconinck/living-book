@@ -1,0 +1,5 @@
+book/
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
