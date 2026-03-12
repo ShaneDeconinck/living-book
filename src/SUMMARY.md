@@ -9,6 +9,7 @@
 # What's Being Built
 
 - [The Protocol Landscape](./protocol-landscape.md)
+- [Agent Identity: Proving Who (or What) Is Acting](./agent-identity.md)
 - [Verifiable Intent: A Deep Dive](./verifiable-intent.md)
 - [Context Infrastructure: The Lasting Investment](./context-infrastructure.md)
 
@@ -16,8 +17,9 @@
 
 - [When Trust Breaks Down](./when-trust-breaks.md)
 
-# The Framework
+# Making It Real
 
+- [Building Agents That Earn Trust](./earning-trust.md)
 - [The PAC Framework](./pac-framework.md)
 
 # Open Questions

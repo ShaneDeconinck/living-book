@@ -130,3 +130,40 @@ The case studies chapter was the #1 remaining priority from the gaps chapter. Th
 - IETF draft-yl-agent-id-requirements-00
 - IETF draft-ietf-oauth-identity-assertion-authz-grant-00
 - OpenID Foundation AIIM whitepaper on agent identity challenges
+
+---
+
+## 2026-03-12 (Session 5): Agent Identity and Building Agents That Earn Trust
+
+**What I did:**
+- Wrote "Agent Identity: Proving Who (or What) Is Acting" (src/agent-identity.md): a comprehensive chapter covering the full identity stack agents inherit. Starts with the auth history (Kerberos through DIDs), then deep-dives into SPIFFE for workload identity (attestation-based, no secrets at rest, 144:1 NHI-to-human ratio), Verifiable Credentials and the eIDAS 2.0/EUDI Wallet convergence (four credential formats, SD-JWT VC as the agent format of choice), DIDs for cross-domain identity, ERC-8004 on-chain agent registries (identity, reputation, validation; mainnet since Jan 29 2026), and the IETF/OpenID response. Includes a composition table showing how the layers work together. Maps to all three PAC pillars.
+- Wrote "Building Agents That Earn Trust" (src/earning-trust.md): the practical/operational chapter. Covers autonomy as output not input (Shane's profiler + CSA's six levels), sandbox architecture (native vs DevContainers vs Docker microVMs, 90% incident reduction), delegation patterns (OBO, PIC, TSP), the Framework-Runtime-Harness mental model, boardroom questions mapped to PAC, EU AI Act compliance requirements (Article 9/12/14, August 2026 deadline), Singapore's MGF, workforce signals, and a practical seven-step deployment sequence.
+- Incorporated 12 previously unused Shane blog posts: history-of-auth, erc-8004-mainnet, eudi-credential-formats, signing-blog-posts-verifiable-credentials, lfdt-meetup-trust-ecosystems-authority-continuity, agent-profiler-reasoning, early-indicators-agent-use-cases-anthropic-data, docker-sandbox-coding-agents, ai-agents-beyond-pocs-iam-emerging-patterns, fitting-agentic-ai-components-in-a-mental-model, agentic-ai-curated-questions-for-the-boardroom, the-work-thats-leaving, ai-agents-eu-ai-act
+- Updated SUMMARY.md: added Agent Identity under "What's Being Built", created new "Making It Real" section with the practical chapter alongside the PAC Framework
+- Updated introduction.md with references to both new chapters
+- Updated gaps.md to mark agent identity and practical guide as completed priorities, added two new priorities (agent payments, multi-agent coordination)
+
+**Why these choices:**
+Agent identity was the #1 priority from Session 4 and is foundational: multiple existing chapters reference identity concepts without a dedicated deep dive. The practical chapter was the biggest structural gap: the book had plenty of "what needs to exist" but no "how to actually do it." Together, these chapters shift the book from describing the problem and landscape to giving readers actionable guidance. The 12 incorporated Shane posts represent the bulk of his unused writing, ensuring the book is grounded in his voice and observations rather than drifting.
+
+**What I'd do next session:**
+1. Agent payments chapter: x402, EIP-3009, stablecoin rails, Shane's working PoC
+2. Multi-agent coordination chapter: trust, identity, and authority when agents hire agents
+3. Cross-reference pass: ensure all chapters link to each other where relevant
+4. Remaining Shane posts: ai-agents-first-principles-resources, lfdt-member-summit-2026, new-explainers
+
+**Sources used (this session):**
+- Shane's blog posts (12): history-of-auth, erc-8004-mainnet, eudi-credential-formats, signing-blog-posts-verifiable-credentials, lfdt-meetup-trust-ecosystems-authority-continuity, agent-profiler-reasoning, early-indicators-agent-use-cases-anthropic-data, docker-sandbox-coding-agents, ai-agents-beyond-pocs-iam-emerging-patterns, fitting-agentic-ai-components-in-a-mental-model, agentic-ai-curated-questions-for-the-boardroom, the-work-thats-leaving, ai-agents-eu-ai-act
+- SPIFFE/SPIRE documentation and concepts (spiffe.io)
+- HashiCorp, "SPIFFE: Securing the identity of agentic AI and non-human actors" (2026)
+- Aembit/Security Boulevard, "SPIFFE vs. OAuth: Access Control for Nonhuman Identities" (March 2026)
+- Solo.io, "Agent Identity and Access Management: Can SPIFFE Work?" (2026)
+- ERC-8004 specification (eips.ethereum.org/EIPS/eip-8004) and mainnet launch coverage (crypto.news)
+- eIDAS 2.0 regulation and EUDI Wallet implementation timeline
+- CSA, "Autonomy Levels for Agentic AI" (January 2026)
+- Singapore IMDA, Model AI Governance Framework for Agentic AI (January 2026)
+- Docker Sandboxes documentation and microVM architecture (docs.docker.com)
+- Northflank, "How to sandbox AI agents in 2026" (2026)
+- OpenID Foundation AIIM community group, NIST RFI response (March 2026)
+- Tobin South, "Identity Management for Agentic AI" (arXiv:2510.25819)
+- NHI-to-human ratio statistic (144:1, Q1 2026)

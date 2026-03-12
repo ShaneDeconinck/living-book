@@ -20,9 +20,11 @@ This book synthesises it. We cover:
 
 - **[The problem](./agents-create-intent.md)**: why agents that create intent need fundamentally different trust infrastructure than applications that forward it
 - **[The protocols](./protocol-landscape.md)**: what's being built, from OAuth extensions to decentralised identity to cryptographic delegation chains
+- **[Agent identity](./agent-identity.md)**: how SPIFFE, Verifiable Credentials, DIDs, eIDAS 2.0, and ERC-8004 compose into an identity stack for agents
 - **[Verifiable Intent](./verifiable-intent.md)**: a deep dive into the SD-JWT credential architecture that turns user intent into a cryptographic object
 - **[Context infrastructure](./context-infrastructure.md)**: why the lasting competitive advantage isn't the model or the scaffolding, but the information infrastructure underneath
 - **[When trust breaks down](./when-trust-breaks.md)**: real incident data, security reports, and what they reveal about the cost of missing infrastructure
+- **[Building trusted agents](./earning-trust.md)**: the practical sequence: autonomy levels, sandbox architecture, delegation patterns, regulatory compliance, and what boards need to ask
 - **[The framework](./pac-framework.md)**: the PAC Framework (Potential, Accountability, Control) as the governance lens for evaluating agent deployments
 - **[The gaps](./gaps.md)**: what's missing, what's fragmented, and where we think the field needs to go
 

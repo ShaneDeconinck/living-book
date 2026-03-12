@@ -42,7 +42,11 @@ The risk is that we end up with technically sound but incompatible solutions. Th
 
 If I had to prioritise chapters for this book:
 
-1. **A deep dive on Verifiable Intent**: the most concrete protocol with the clearest threat model. Walk through a real transaction flow with actual JWT structures.
-2. **The context infrastructure argument**: why training depreciates but context appreciates, and what that means for how organisations should invest.
+1. ~~**A deep dive on Verifiable Intent**~~: covered in [Verifiable Intent: A Deep Dive](./verifiable-intent.md), with full SD-JWT credential structures and transaction flow.
+2. ~~**The context infrastructure argument**~~: covered in [Context Infrastructure: The Lasting Investment](./context-infrastructure.md).
 3. ~~**Case studies of agent failures**~~: covered in [When Trust Breaks Down](./when-trust-breaks.md), using 2026 industry reports (Gravitee, Teleport), MCP CVEs, and regulatory developments.
 4. ~~**The PAC framework**~~: covered in [The PAC Framework](./pac-framework.md).
+5. ~~**Agent identity deep dive**~~: covered in [Agent Identity: Proving Who (or What) Is Acting](./agent-identity.md), with SPIFFE, VCs, DIDs, eIDAS 2.0, ERC-8004.
+6. ~~**Practical trust-building guide**~~: covered in [Building Agents That Earn Trust](./earning-trust.md), with autonomy levels, sandbox architecture, delegation patterns.
+7. **Agent payments and economic infrastructure**: x402, EIP-3009, stablecoin rails for autonomous agent commerce. Shane has a hands-on post with a working proof-of-concept.
+8. **Multi-agent coordination**: how trust, identity, and authority work when agents hire other agents. The composition problem across all the protocols.
