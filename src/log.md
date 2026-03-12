@@ -301,3 +301,50 @@ Step 4 of the session protocol says to reassess priorities before writing. The P
 1. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents)
 2. Agent Communication Protocols chapter (MCP, A2A in depth, AAIF governance, the discovery and interoperability layer)
 3. Consider whether the book needs a strategic opening chapter that makes the commodity intelligence argument before diving into the problem statement
+
+## 2026-03-12: Agent Communication Protocols Chapter
+
+**What I did:**
+- Wrote Chapter 10: "Agent Communication Protocols" covering the full communication protocol landscape for agents. Sections: the discovery problem (tool discovery vs agent discovery, N×M integration cost), MCP architecture (client-server model, JSON-RPC, three capability types, transport options, OAuth 2.1 requirements), MCP 2026 roadmap (stateless transport, `.well-known/mcp.json` Server Cards, June 2026 target), MCP adoption (97M monthly downloads, all major providers), MCP security (timeline of incidents from May 2025 to October 2025, three primary attack vectors, MCPTox benchmark showing capable models are more vulnerable, three trust gaps MCP leaves open), A2A protocol (Agent Cards, task lifecycle, v0.3 gRPC support, 150+ organizations), MCP and A2A complementarity (A2A for network layer, MCP for resource layer), the authorization gap (Shane's consent theater critique of Google Workspace CLI, possession-based vs proof-based authorization, coarse OAuth scopes as intentional design), agent gateways (AgentGateway MCP federation, Cedar policy authorization, security protections, limits at the tool level), trust layer integrations (TMCP and TA2A running MCP/A2A over TSP, PIC as authority layer, combined trust stack properties), broader protocol landscape (ACP, UCP, protocol stack composition table), AAIF governance under Linux Foundation (three founding projects, governance model, why neutral governance matters for trust), PAC mapping table, infrastructure maturity for communication protocols (I1-I5), and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Updated gaps.md with two new observations (protocol stack convergence under neutral governance, MCP security maturity lagging adoption).
+- Marked Agent Communication Protocols as done in gaps.md chapter list.
+- Updated introduction with new chapter listing.
+
+**Why this chapter:**
+It was the #2 priority from the previous session and the biggest structural gap in the book. MCP and A2A are referenced in almost every existing chapter (Context Infrastructure, Cross-Organization Trust, Agent Identity, Sandboxing) but never given dedicated treatment. With AAIF formation under Linux Foundation (December 2025), 97M monthly MCP downloads, and a timeline of security incidents illustrating the gap between adoption and security maturity, the chapter was both overdue and timely. Shane has deep source material: explainers on MCP, A2A, AgentGateway, OBO, and TSP, plus his March 5 post on Google's Workspace CLI which provides the sharpest articulation of the authorization gap.
+
+**Sources used:**
+- Shane's blog posts: Google Workspace CLI/OAuth critique (March 5, 2026), LFDT meetup on TSP + PIC (March 11, 2026), new explainers post (January 16, 2026), fitting agentic AI components in a mental model (January 6, 2026)
+- Shane's explainers: MCP, A2A, AgentGateway, TSP (January 2026)
+- Shane's MCP spec notes: "MCP is plumbing, not trust"
+- PAC Framework from trustedagentic.ai
+- MCP 2026 Roadmap (blog.modelcontextprotocol.io): stateless transport, `.well-known` discovery, June 2026 target
+- SEP-1649: MCP Server Cards proposal
+- A2A Protocol Specification v0.3 (a2a-protocol.org): gRPC support, Agent Card signing
+- AuthZed: Timeline of MCP Security Breaches (May 2025 - October 2025)
+- MCPTox benchmark: 20 LLM agents, 45 MCP servers, 353 tools
+- AgentGateway documentation (agentgateway.dev): MCP federation, Cedar policies, Rust implementation
+- Solo.io: Enterprise AgentGateway, community participants (AWS, Microsoft, Red Hat, IBM, Cisco, Shell)
+- Linux Foundation: AAIF announcement (December 9, 2025), governance model
+- Anthropic: MCP donation to AAIF
+- OpenAI: AAIF co-founding
+- Google Cloud Blog: A2A upgrade, 150+ organizations
+- LangGraph v0.2: A2A as first-class protocol target (January 2026)
+- Stripe/OpenAI: Agent Commerce Protocol (ACP)
+- Google/Shopify/Walmart: Unified Commerce Protocol (UCP)
+- Wenjing Chu (Futurewei/Trust over IP): TMCP and TA2A presentation at LFDT meetup
+
+**What I noticed:**
+- Shane's framing "MCP is plumbing, not trust" is the organizing thesis for the chapter. It is precise and important: communication protocols solve the N×M integration problem (necessary plumbing) but create new security risks and leave trust gaps that identity infrastructure must fill. This is why the chapter connects back to Agent Identity, Cross-Org Trust, and Sandboxing.
+- The MCP security incident timeline is more severe than I expected. Five significant incidents in six months (May-October 2025), including a supply-chain backdoor with 437K+ downloads (mcp-remote CVE-2025-6514) and a path traversal that leaked a token controlling 3,000+ MCP servers (Smithery). The pattern: adoption outpaces security maturity. This validates Shane's emphasis on building trust infrastructure alongside capability infrastructure.
+- The MCPTox finding that more capable models are more vulnerable to tool poisoning is counterintuitive and important. The attack exploits superior instruction-following ability: a model that is better at following instructions is also better at following malicious instructions embedded in tool descriptions. This connects to the Reliability chapter's point about better models making governance harder.
+- Shane's Google Workspace CLI post (March 5) is the sharpest articulation of the authorization gap I've seen. The "consent theater" framing (user thinks "help me find one email," token grants "read everything forever") makes the abstract problem concrete. The table mapping user intent to actual scope granted is effective because every reader has experienced this gap.
+- The protocol stack table (Trust → Agent discovery → Tool discovery → Commerce → Authorization → Enforcement) shows how the pieces compose, but also exposes that no unified identity flows across all layers. This is the most important unsolved problem in the stack. TMCP/TA2A are designed to solve it but adoption is early.
+- AAIF governance matters for trust infrastructure in a way that goes beyond the usual open-source governance story. When the communication protocols are under neutral governance, organizations can build trust infrastructure on top without vendor-lock-in risk. This aligns with the EU AI Act's emphasis on open standards and the PAC Framework's emphasis on building on emerging standards.
+- Agent gateways are converging fast (Gartner predicts majority of API gateway vendors add MCP by end of 2026, community includes AWS/Microsoft/Red Hat/IBM/Cisco/Shell), but the structural limitation Shane identified remains: gateways operate at the tool level, mapping onto the same coarse OAuth scopes. The deeper fix (possession-based to proof-based authorization) requires Verifiable Intent and PIC, not just another policy layer.
+
+**Next session priorities:**
+1. Shadow Agent Governance chapter (practical guidance for transitioning from shadow agents to governed agents; Okta ISPM Agent Discovery, Gartner stats on shadow AI scale, connecting to Accountability pillar)
+2. Consider whether existing chapters need cross-references to the new communication protocols chapter (several chapters reference MCP/A2A and could benefit from forward references)
+3. The book now has 10 substantive chapters. Assess whether the structure is right for the remaining 5+ chapters needed to reach 15+.

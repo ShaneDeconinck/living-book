@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 4)
+## Observations (Updated 2026-03-12, Session 8)
+
+### The Protocol Stack Is Converging Under Neutral Governance
+
+The AAIF formation (December 2025) puts MCP, goose, and AGENTS.md under Linux Foundation governance with eight platinum members (OpenAI, Anthropic, Google, Microsoft, AWS, Block, Bloomberg, Cloudflare). A2A was already under the Linux Foundation. AgentGateway is also contributed. This means the core communication infrastructure for agents is now under neutral governance, similar to how Linux, Kubernetes, and other foundational infrastructure evolved. The most important unsolved problem in the stack is unified identity across protocol layers: MCP has its own OAuth, A2A has its own auth scheme, and no identity flows end-to-end across both. TMCP and TA2A are designed to be that unifying identity layer but adoption is early.
+
+### MCP Security Maturity Lags Adoption
+
+97 million monthly SDK downloads against a timeline of serious security incidents (GitHub prompt injection, supply-chain backdoors via mcp-remote, Smithery path traversal leaking 3,000+ server tokens) illustrates a familiar pattern: adoption outpaces security maturity. The MCPTox benchmark finding that more capable models are more vulnerable to tool poisoning (because attacks exploit instruction-following ability) is counterintuitive and important. The MCP specification's June 2026 update targeting stateless transport and `.well-known` discovery is a maturity improvement, but the authorization gap (communication protocols solve discovery, not trust) remains structural.
 
 ### Cross-Organization Trust Is the Book's Most Original Assembly
 
@@ -78,7 +86,9 @@ Prioritized by impact:
 
 6. ~~**Sandboxing and Execution Security** (Control)~~: DONE. Chapter covers the permission prompt problem, containment by design (filesystem + network isolation), the isolation spectrum (native OS, containers, gVisor, microVMs), OWASP Top 10 for Agentic Applications with sandboxing coverage mapping, defense in depth (six layers: input validation, sandboxed execution, configuration protection, output validation, credential scoping, behavioral monitoring), ephemeral vs persistent sandboxes, real-world architectures (Claude Code, Codex CLI, Docker microVM), PAC mapping, and infrastructure maturity for execution security.
 
-7. ~~**Cross-Organization Trust** (Control + Accountability)~~: DONE. Chapter covers the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case, the token model's limits, PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP), where TSP and PIC meet, VCs as trust carriers (SD-JWT VC and W3C VC comparison), content provenance (Shane's VC-signed blog posts), credential delegation architecture (three-layer chain, Verifiable Intent as operational envelope), Windley's society of agents (policies, promises, credentials, reputation), EUDI wallet infrastructure, the semantic boundary problem, PAC mapping, and infrastructure maturity for cross-org trust.
+7. ~~**Cross-Organization Trust** (Control + Accountability)~~: DONE.
+
+8. ~~**Agent Communication Protocols** (Potential + Control)~~: DONE. Chapter covers MCP architecture (client-server, JSON-RPC, transports, 2026 roadmap), A2A (Agent Cards, task lifecycle, v0.3 gRPC), MCP security incidents and attack vectors (tool poisoning, overprivileged tokens, resource poisoning, MCPTox benchmark), the authorization gap (Shane's consent theater critique, possession-based vs proof-based authorization), agent gateways (AgentGateway MCP federation, Cedar policies, limits of gateway-level governance), trust layer integrations (TMCP/TA2A running MCP and A2A over TSP, PIC as authority layer), the broader protocol landscape (ACP, UCP, protocol stack composition), AAIF governance under Linux Foundation, PAC mapping, and infrastructure maturity for communication protocols. Chapter covers the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case, the token model's limits, PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP), where TSP and PIC meet, VCs as trust carriers (SD-JWT VC and W3C VC comparison), content provenance (Shane's VC-signed blog posts), credential delegation architecture (three-layer chain, Verifiable Intent as operational envelope), Windley's society of agents (policies, promises, credentials, reputation), EUDI wallet infrastructure, the semantic boundary problem, PAC mapping, and infrastructure maturity for cross-org trust.
 
 ## Open Questions
 

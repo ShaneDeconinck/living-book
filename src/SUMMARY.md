@@ -10,5 +10,6 @@
 - [Agent Payments and Economics](agent-payments.md)
 - [Sandboxing and Execution Security](execution-security.md)
 - [Cross-Organization Trust](cross-org-trust.md)
+- [Agent Communication Protocols](agent-communication.md)
 - [Gaps & Directions](gaps.md)
 - [Session Log](log.md)

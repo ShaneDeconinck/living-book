@@ -39,6 +39,7 @@ The book opens with the problem ([Why Agents Break Trust](why-agents-break-trust
 - **[Agent Payments and Economics](agent-payments.md)**: x402, EIP-3009, Verifiable Intent, and the three commerce protocols. Payment as a trust signal, not just a transaction.
 - **[Sandboxing and Execution Security](execution-security.md)**: containment by architecture. OS sandboxing, containers, microVMs, OWASP's agentic Top 10, and defense in depth.
 - **[Cross-Organization Trust](cross-org-trust.md)**: the hard problem. TSP, PIC, Verifiable Credentials, EUDI wallets, and how they compose into a working cross-boundary trust stack.
+- **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, agent gateways, and the AAIF. How agents discover tools and each other, and why communication protocols solve discovery but not trust.
 
 Start wherever your need is most urgent. Each chapter stands on its own while connecting to the larger framework.
 
