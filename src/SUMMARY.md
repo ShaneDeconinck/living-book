@@ -14,5 +14,6 @@
 - [Agent Supply Chain Security](supply-chain-security.md)
 - [Shadow Agent Governance](shadow-agent-governance.md)
 - [Multi-Agent Trust and Orchestration](multi-agent-trust.md)
+- [Human-Agent Collaboration Patterns](human-agent-collaboration.md)
 - [Gaps & Directions](gaps.md)
 - [Session Log](log.md)

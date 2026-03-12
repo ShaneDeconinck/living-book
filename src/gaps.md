@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 10)
+## Observations (Updated 2026-03-12, Session 11)
 
 ### Multi-Agent Governance Is the Next Frontier
 
@@ -68,6 +68,14 @@ The March 9, 2026 MCP roadmap announcement identifies four priority areas for ex
 
 CSA/Strata survey data shows non-human identities (service accounts, API tokens, agent credentials) outnumber human users by up to 100:1. Most organizations cannot distinguish sanctioned from unsanctioned agent activity. 84% doubt they could pass a compliance audit focused on agent behavior. This quantifies the identity gap that Shane's trust inversion principle addresses: when agents are the majority of your identity surface, human-centric IAM is not just insufficient, it is architecturally wrong.
 
+### Human-Agent Collaboration UX Is the Missing Governance Layer
+
+The industry is converging on three oversight models: Human-in-the-Loop (HITL), Human-on-the-Loop (HOTL), and Infrastructure-in-the-Loop. Smashing Magazine's February 2026 taxonomy of agentic UX patterns (explainable rationale, confidence signals, action audit, escalation pathways) provides the first comprehensive design framework for agent oversight interfaces. Anthropic's autonomy research shows agents recognize their own uncertainty (16.4% self-initiated clarification) more often than humans interrupt (7.1%), suggesting agent self-governance is a viable complement to external oversight. Deloitte's "silicon-based workforce" framing (only 14% have deployable solutions, 11% in production) highlights that the organizations succeeding are redesigning processes around human-agent collaboration, not automating existing workflows. The per-task autonomy dial (different autonomy levels for different task types within the same agent) is emerging as the practical governance pattern. Now covered in the Human-Agent Collaboration Patterns chapter.
+
+### Authorization Platforms for AI Agents Are Maturing
+
+Permit.io, Cerbos, Stytch, and WorkOS are all shipping fine-grained, context-aware permission models designed specifically for AI agents. The key pattern: attribute-based access control (ABAC) where permissions depend on what the agent is doing, for whom, and in what context, not just agent identity. Permit.io's Access Request MCP enables human-in-the-loop approval workflows via MCP. Cerbos provides dynamic authorization for MCP servers. This tooling layer is what makes per-task permission granularity practically implementable.
+
 ## Earlier Observations
 
 ### The NIST Timing Is Significant
@@ -123,8 +131,8 @@ Prioritized by impact:
 - How do agent gateways interact with service mesh architectures? Is there a convergence point?
 - ~~What does "agent registration" look like in practice? Is there an analog to domain registration or certificate transparency?~~ Covered in Shadow Agent Governance chapter: agent registry with enforcement through identity providers, gateways, and network controls.
 - ~~How should organizations handle the transition from shadow agents to governed agents without killing productivity?~~ Covered in Shadow Agent Governance chapter: the amnesty model.
-- What is the right granularity for agent permissions? Per-task? Per-session? Per-tool-call?
-- How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact?
+- ~~What is the right granularity for agent permissions? Per-task? Per-session? Per-tool-call?~~ Covered in Human-Agent Collaboration Patterns chapter: granularity should match blast radius (per-tool-call for B4-B5, per-task for B2-B3, per-session for B1 with containment).
+- How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in Human-Agent Collaboration chapter (agent uncertainty as governance signal, escalation as auditable event). Full treatment of chain-of-thought compliance still open.
 - ~~What does multi-agent orchestration look like in practice? How do trust properties compose across agent-to-agent delegation?~~ Covered in Multi-Agent Trust and Orchestration chapter: trust composition, DCTs, cascading failures, delegation registries, PIC for multi-agent chains, incident response.
 - ~~How should organizations handle incident response for agent failures? The playbook is different from software incidents: the agent made a decision, not just executed code.~~ Partially covered in Multi-Agent Trust chapter (CoSAI framework, multi-agent IR specifics). A dedicated incident response chapter may be warranted for full treatment.
-- What is the right interaction model for human-agent oversight? The complacency trap chapter frames the problem; the UX solution is underexplored.
+- ~~What is the right interaction model for human-agent oversight? The complacency trap chapter frames the problem; the UX solution is underexplored.~~ Covered in Human-Agent Collaboration Patterns chapter: three oversight models (HITL, HOTL, infrastructure-in-the-loop), per-task autonomy dials, UX patterns for pre/in/post-action oversight, and agent self-governance through uncertainty recognition.

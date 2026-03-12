@@ -1,5 +1,43 @@
 # Session Log
 
+## 2026-03-12: Human-Agent Collaboration Patterns Chapter
+
+**What I did:**
+- Wrote Chapter 15: "Human-Agent Collaboration Patterns" covering how to design effective human-agent oversight that does not depend on sustained human vigilance. Sections: three oversight models (HITL, HOTL, infrastructure-in-the-loop), the autonomy dial (per-task autonomy levels, not per-agent), UX patterns that work (pre-action intent visibility, in-action explainable rationale, post-action audit and undo), permission granularity (matched to blast radius: per-tool-call for B4-B5, per-task for B2-B3, per-session for B1), the self-aware agent (agent-initiated oversight via uncertainty recognition, Anthropic's 16.4% vs 7.1% finding), the organizational shift (Deloitte's "silicon-based workforce," onboarding/performance/escalation/offboarding lifecycle), PAC mapping table, infrastructure maturity for collaboration (I1-I5), and practical recommendations.
+- Updated SUMMARY.md with new chapter.
+- Updated gaps.md with two new observations (human-agent collaboration UX as missing governance layer, authorization platforms maturing) and marked three open questions as addressed (permission granularity, human-agent oversight UX, partially chain-of-thought compliance).
+
+**Why this chapter:**
+Stepped back and assessed what the book was missing most. The book had 14 complete chapters. The complacency trap chapter (Ch. 6) diagnoses the oversight problem thoroughly, grounding it in 40+ years of human factors research. But it stops at the prescription level: "build infrastructure that does not depend on human vigilance" without specifying what that collaboration looks like in practice. This was the biggest conceptual gap: every prior chapter assumes an oversight model without defining it. The human-agent collaboration chapter is the operational companion to the complacency chapter: one says why human oversight fails, the other says what to build instead.
+
+**What I considered but did not do:**
+- Incident response chapter: still valuable but less urgent than the oversight gap. The multi-agent trust chapter covers CoSAI basics.
+- Cross-reference review of earlier chapters: useful housekeeping but lower impact than filling the oversight gap.
+- Revising existing chapters with recent developments: chapters are well-sourced and current through March 2026.
+
+**Sources used:**
+- Shane's blog posts: trust inversion, early indicators of agent use cases (Anthropic autonomy data), inferential edge, PAC Framework
+- PAC Framework from trustedagentic.ai (read fresh)
+- Anthropic: "Measuring AI Agent Autonomy in Practice" (February 2026): 20% to 40%+ auto-approve progression, 16.4% agent-initiated clarification vs 7.1% human interruption, oversight infrastructure recommendations
+- Smashing Magazine: "Designing For Agentic AI: Practical UX Patterns For Control, Consent, And Accountability" (February 2026): taxonomy of agentic UX patterns (explainable rationale, confidence signals, action audit, escalation pathways)
+- UX Magazine: "Secrets of Agentic UX: Emerging Design Patterns for Human Interaction with AI Agents" (2026)
+- ByteBridge: "From Human-in-the-Loop to Human-on-the-Loop: Evolving AI Agent Autonomy" (January 2026)
+- Deloitte: "The agentic reality check: Preparing for a silicon-based workforce" (Tech Trends 2026): 14% deployable solutions, 11% in production, process redesign vs. process automation
+- Authorization platforms: Permit.io (Access Request MCP, AI access control), Cerbos (dynamic authorization for MCP servers), Stytch (agent permissions), WorkOS (comparison guide)
+- Bainbridge (1983) and Don Norman (1990): referenced via complacency chapter, not repeated
+
+**What I noticed:**
+- The autonomy dial concept (per-task, not per-agent) is a genuine insight that resolves a tension in how organizations think about agent governance. Most governance models set autonomy at the agent level, but trust is task-specific. The PAC Framework's A1-A5 scale maps cleanly to this when applied per task type rather than per agent.
+- Anthropic's finding that agents recognize uncertainty more often than humans (16.4% vs 7.1%) is the strongest empirical evidence for agent self-governance as a viable complement to external oversight. This deserves more attention: if we can monitor agent calibration over time, we have a measurable governance metric that does not depend on human attention.
+- The authorization platform landscape (Permit.io, Cerbos, Stytch, WorkOS) shows that the infrastructure for fine-grained agent permissions is shipping now, not theoretical. The gap between "permission granularity should match blast radius" (the principle) and "here is how you implement it" (the tooling) is closing.
+- Deloitte's 14%/11% deployment numbers are sobering. The vast majority of organizations have not deployed agents in production. The ones succeeding are redesigning processes, not automating existing ones. This reinforces Shane's inferential edge thesis: the competitive advantage is organizational readiness, not model capability.
+- This chapter completes the "governance in practice" arc: complacency (why oversight fails) + collaboration (how to redesign it) + shadow agents (how to discover what is already running) + multi-agent trust (how governance scales across agent-to-agent delegation). The book now has a complete story from problem diagnosis to operational solution.
+
+**Next session priorities:**
+1. Cross-reference review: ensure earlier chapters reference the new collaboration and multi-agent trust chapters where appropriate
+2. Consider a dedicated incident response chapter (CoSAI framework + multi-agent IR + agent-specific playbooks)
+3. Review the book's overall flow: with 15 chapters, is the ordering still right? Should any chapters be combined or reordered?
+
 ## 2026-03-12: Multi-Agent Trust and Orchestration Chapter
 
 **What I did:**
