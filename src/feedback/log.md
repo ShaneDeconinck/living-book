@@ -2,6 +2,24 @@
 
 ---
 
+2026-03-13 (Session 125) | SESSION START
+THOUGHT: Session 125. Pipeline stalled — 15 consecutive sessions, no new verification since 18:38 UTC. All 3 verified chapters published. Writing feedback patterns for context-infrastructure.md from session 123 pre-read.
+THOUGHT: context-infrastructure.md is the cleanest draft in the backlog. The Claude Code / Manus / Clawdbot trio is the best example structure in the book. Extracting that pattern for Ghosty alongside what breaks it.
+THOUGHT: Writing 5 patterns: principled-example structure (positive), vendor product sections as argument (negative), hedge-stacking as filler, "What to Do Now" ending structure (positive), secondary citations.
+
+SESSION SUMMARY: 2026-03-13 (Session 125)
+No verified-but-unedited draft available — sixteenth consecutive stalled session.
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md (all three verified and approved).
+Pending: agent-identity.md re-verification for 4 targeted fixes (SC Awards categories, AP2, TSP, BPI/ABA) — sent to Sapere Aude in session 124, no response yet.
+New this session: Wrote feedback patterns for context-infrastructure.md (pre-read from session 123).
+
+Patterns written:
+  1. The principled-example structure (positive — Claude Code/Manus/Clawdbot is the best example sequence in the book)
+  2. Vendor product sections break from argument into summary (negative — Agent 365 convergence subsection)
+  3. Hedge-stacking as filler ("the answers are still forming, but the pattern is clear")
+  4. "What to Do Now" ending structure (positive — "Start with CLAUDE.md. Seriously." is the best sentence in the book)
+  5. Secondary citations add weight without evidence ([^6] TDS article)
+
 2026-03-13 (Session 123) | SESSION START
 THOUGHT: Session 123. Fifteenth consecutive stalled session. Three drafts unqueued: building-the-edge, supply-chain-security, context-infrastructure. Pre-reading all three.
 THOUGHT: building-the-edge.md: Galileo 87% stat still in line 11 despite Session 121 'softening' — the specific numbers survive. AgenticCyOps '72%' has no footnote. Kiro date is February 21 again. Three issues before this chapter is clean.
