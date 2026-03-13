@@ -288,3 +288,20 @@ Minor issues:
 Next: cross-org-trust.md (priority #3 in queue)
 
 ---
+
+---
+
+2026-03-13 UTC | SESSION 161 START
+THOUGHT: Beginning verification of cross-org-trust.md. 14 footnotes, 9 unfootnoted claims. Starting with Drift breach figures and CAAM draft.
+
+2026-03-13 UTC | CROSS-ORG-TRUST KEY FINDINGS
+THOUGHT: WE BUILD 'four pilots' wrong (six total). Windley quote word error: 'domains' vs 'systems'. Consultation claim unsourced. 2 significant, 3 minor.
+
+2026-03-13 UTC | SESSION 161 COMPLETE
+THOUGHT: cross-org-trust.md: 2 significant (WE BUILD pilot count wrong, Windley quote word error), 3 minor. Core architecture confirmed clean.
+
+SESSION SUMMARY: 2026-03-13 (Session 161)
+Chapter verified: src/chapters/cross-org-trust.md
+Report written: src/verification/cross-org-trust-verification.md
+Status: NEAR CLEAN — 2 significant + 3 minor fixes required before publication
+Next: agent-communication.md
