@@ -28,7 +28,7 @@ Every identity system, every authorization framework, every audit mechanism we h
 
 This creates three problems that compound each other.
 
-**The delegation problem.** When you tell an agent to "handle vendor payments," you express intent. The agent interprets and expands that intent: which vendors, which amounts, which payment methods, what happens when something looks unusual. The gap between what you meant and what the agent does is where accountability dissolves. Shane put it directly: "When agents decide, delegation becomes abdication."[^delegation]
+**The delegation problem.** When you tell an agent to "handle vendor payments," you express intent. The agent interprets and expands that intent: which vendors, which amounts, which payment methods, what happens when something looks unusual. The gap between what you meant and what the agent does is where accountability dissolves. As Shane frames it, building on Lewin Wanzer's observation: "When agents create intent instead of forwarding it, delegation becomes abdication."[^delegation]
 
 **The identity problem.** Agents typically inherit their human principal's credentials. A developer's agent runs with the developer's access. An executive's agent sends emails as the executive. Every agent action looks like a human action in the audit trail, if it appears in the audit trail at all. When something goes wrong, you cannot distinguish what the human did from what the agent did. The Huntress 2026 Cyber Threat Report found identity threats dominating their incident data, with OAuth abuse more than doubling year-over-year. The core issue is not proving who the identity belongs to: it is constraining what the identity is allowed to do.[^huntress]
 
@@ -123,7 +123,7 @@ Let's start with why agents break trust.
 [^gravitee-monitoring]: Gravitee, "State of AI Agent Security 2026," gravitee.io, 2026. 47.1% of organizations monitor agent activity, meaning more than half operate without oversight.
 [^rsac-sandbox]: RSAC 2026 Innovation Sandbox finalists, rsaconference.com, March 2026.
 [^mckinsey]: McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Featuring Rich Isenberg (partner, Risk & Resilience).
-[^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026.
+[^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026. Shane credits this framing to Lewin Wanzer, discussed on Identerati #165.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026.
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026.
 [^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 2026.

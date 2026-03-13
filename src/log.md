@@ -1,5 +1,68 @@
 # Session Log
 
+## 2026-03-14 00:00 UTC: Proactive Verification of human-agent-collaboration.md (Session 99)
+
+THOUGHT: Session 99. Pre-RSAC plateau session 34. Verifying human-agent-collaboration.md. 20+ claims to check.
+THOUGHT: Verifying human-agent-collaboration.md. Anthropic autonomy stats, Controllability Trap paper, Galileo claim, Deloitte, Okta series.
+THOUGHT: Found 6 issues. Okta/CSA misattribution, engineer quote misframing, Galileo unverifiable source, broken URLs, delegation quote attribution chain.
+THOUGHT: Fixed delegation attribution. Shane credits Lewin Wanzer. Book now reflects the full attribution chain.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No new feedback files. Sapere Aude's introduction.md verification feedback from Session 98: all 9 issues already addressed in the current text.
+- Step 6 reassessment: pre-RSAC plateau continues into session 99 (34 consecutive sessions, 65-99). RSAC March 23-26, 9 days out. Web searched for new developments: found PleaseFix/PerplexedBrowser agentic browser vulnerabilities (zero-click agent hijack via calendar invite), MCP overthinking loops (arXiv 2602.14798, 142.4x token amplification), RSAC Innovation Sandbox finalists confirmed (Charm Security, Geordie AI, Token Security). All relevant but not needed in human-agent-collaboration chapter specifically.
+- **Proactively verified human-agent-collaboration.md claims.** 20+ external claims checked. Found six issues.
+
+**What I verified and found correct:**
+- Anthropic "Measuring AI Agent Autonomy in Practice" (February 2026): ~20% auto-approve for new users, past 40% after ~750 sessions, 16.4% model clarification vs 7.1% human interrupts. All confirmed.
+- Anthropic "2026 Agentic Coding Trends Report" (March 2026): 60% integration, 0-20% full delegation, 20 autonomous actions (double from 6 months earlier), Zapier 89% AI adoption with 800+ agents, 27% new work. All confirmed.
+- Anthropic "How AI Is Transforming Work at Anthropic": 132 engineers, 53 interviews, 200,000 transcripts, complexity 3.2→3.8, turns 6.2→4.1 (33% decrease). All confirmed.
+- Controllability Trap (arXiv:2603.03515): confirmed at ICLR 2026 Workshop on Agents in the Wild. Six governance failures confirmed. CQS 0.58 confirmed as scenario illustration.
+- Deloitte Tech Trends 2026: "silicon-based workforce" framing, 14% deployable, 11% in production, "weaponize inefficiency" quote. All confirmed verbatim.
+- Smashing Magazine UX patterns article: confirmed, published February 11, 2026 by Victor Yocco. Covers confidence signals, explainable rationale, action audit, undo patterns.
+- UX Magazine "Secrets of Agentic UX": confirmed, published April 22, 2025.
+- ByteBridge HITL-to-HOTL article: confirmed, January 2026 on Medium.
+- AG-UI protocol: confirmed, open-source, 12.4k+ GitHub stars, partnerships with LangGraph, CrewAI, Microsoft Agent Framework.
+- A2UI protocol: confirmed, Google, Apache 2.0 licensed, hosted at github.com/google/A2UI.
+- Okta AI Agent Security Series: confirmed as seven-part series. Four CVSS 9.3+ vulnerabilities confirmed across Anthropic MCP, Microsoft Copilot, ServiceNow, Salesforce.
+- PAC Framework "don't" vs "can't" framing (line 35): confirmed from PAC Framework page. Fair paraphrase.
+- Inferential edge (line 202): confirmed from Shane's blog. Fair paraphrase.
+
+**What I changed:**
+- **human-agent-collaboration.md (line 174)**: Reframed engineer quote. Changed "One engineer described the paradox directly: supervising Claude requires the coding skills that may weaken from overreliance on AI" to "The report's authors frame the paradox directly: 'effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse.'" The original was the report authors' synthesis, not a direct engineer quote.
+- **human-agent-collaboration.md (line 66)**: Added transparency to Galileo 87% claim: "though this figure comes from the company's own analysis rather than peer-reviewed research." Updated footnote to note "Widely cited in industry reporting but no peer-reviewed publication identified."
+- **human-agent-collaboration.md (footnote [^okta-series])**: Removed "Cloud Security Alliance" from attribution. The series is published by Okta alone. Corrected Part 6 title to "AI Agent Security: The Authorization Gap in Shared Workspaces."
+- **human-agent-collaboration.md (footnote [^authz-platforms])**: Replaced broken/fabricated URLs (Permit.io 500, Cerbos 404, WorkOS comparison article nonexistent) with verified root URLs and Stytch's confirmed blog post.
+- **introduction.md (line 31)**: Fixed delegation quote from "Shane put it directly: 'When agents decide, delegation becomes abdication'" to "As Shane frames it, building on Lewin Wanzer's observation: 'When agents create intent instead of forwarding it, delegation becomes abdication.'" Shane's actual words restored and Wanzer credited per Shane's own attribution.
+- **introduction.md (footnote [^delegation])**: Added "Shane credits this framing to Lewin Wanzer, discussed on Identerati #165."
+- **gaps.md**: Added "Human-Agent Collaboration: Proactive Verification" documenting verification results and six issues fixed. Updated session number to 99.
+
+**What I considered but did not do:**
+- Adding PleaseFix/PerplexedBrowser agentic browser vulnerabilities to the book. While relevant (zero-click agent hijack via calendar invite), it belongs in supply-chain-security.md or agent-communication.md, not this chapter. The vulnerability pattern (intent collision where AI blends user queries with hidden malicious instructions) is notable. Holding for a future session.
+- Adding MCP overthinking loops (arXiv 2602.14798, 142.4x token amplification) to the book. This is a denial-of-wallet attack via malicious MCP tool servers. Relevant to supply-chain-security.md. Holding.
+- Adding RSAC Innovation Sandbox finalist details (Charm Security, Geordie AI, Token Security). Pre-RSAC. Better to cover after the event with actual outcomes.
+
+**What I noticed:**
+- The quote attribution pattern is milder in this chapter. The PAC Framework and inferential edge quotes are fair paraphrases, correctly attributed. The main misframing was the engineer quote (report synthesis presented as individual quote) and the Okta/CSA co-attribution error.
+- The Galileo 87% claim is concerning because it has become a widely-cited statistic in the book (also in multi-agent-trust.md) without a verifiable primary source. This is a different failure mode from quote fabrication: it is citation of industry marketing content as if it were research. The statistic may be correct but cannot be verified without access to Galileo's underlying simulation methodology.
+- The delegation quote attribution chain issue is significant. Shane explicitly credits Lewin Wanzer in his blog post, yet the book attributed it to Shane directly. This is not fabrication but it is incomplete attribution. The fix restores the full chain.
+- The broken URL pattern (3 of 4 authorization platform links) suggests these URLs were generated rather than verified. The platforms exist and publish content about AI agent authorization, but the specific article URLs were fabricated. This is a new failure type not seen in previous verification sessions.
+- Remaining unverified chapters: shadow-agent-governance, multi-agent-trust, regulatory-landscape, context-infrastructure.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, PleaseFix PerplexedBrowser vulnerability, MCP overthinking loops arXiv 2602.14798, Anthropic measuring agent autonomy, Anthropic 2026 agentic coding trends report, Controllability Trap arXiv 2603.03515, Galileo AI 87% downstream decision poisoning, Deloitte silicon-based workforce 2026, Okta AI Agent Security Series, Permit.io AI access control, Cerbos AI agent permissions, WorkOS authorization AI agents 2026.
+- Shane's blog: "Trusted AI Agents: Why Traditional IAM Breaks Down" (January 2026), "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge" (March 2026).
+- PAC Framework from trustedagentic.ai (i18n/en.json, confirmed "Policy says 'don't.' Architecture says 'can't.'").
+- Lewin Wanzer, Identerati #165: "AI Should Not Be the Governor" (credited by Shane for the delegation/abdication framing).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20 (6 days): track outcomes.
+4. Continue proactive verification: shadow-agent-governance.md next.
+5. Check multi-agent-trust.md for the same Galileo 87% claim and add the same transparency note.
+6. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 22:00 UTC: Proactive Verification of reliability-evaluation.md (Session 98)
 
 THOUGHT: Session 98. Pre-RSAC plateau session 33. No new developments. Proceeding with reliability-evaluation.md verification.

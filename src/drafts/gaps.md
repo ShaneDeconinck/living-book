@@ -2,7 +2,16 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 98)
+## Observations (Updated 2026-03-14, Session 99)
+
+### Human-Agent Collaboration: Proactive Verification
+
+Session 99 proactively verified human-agent-collaboration.md. 20+ external claims checked. Most verified cleanly: Anthropic autonomy research (20%→40% auto-approve, 16.4% vs 7.1% clarification rates confirmed), Anthropic 2026 Agentic Coding Trends Report (60% integration, 0-20% full delegation, 20 autonomous actions, Zapier 89%/800+ agents, 27% new work: all confirmed), Controllability Trap paper arXiv:2603.03515 (confirmed at ICLR 2026 Workshop, six failures, CQS 0.58 scenario confirmed), Deloitte Tech Trends 2026 ("silicon-based workforce," 14% deployable, 11% production, "weaponize inefficiency": all confirmed verbatim), Smashing Magazine UX patterns article (confirmed, published February 11, 2026), UX Magazine article (confirmed), ByteBridge HITL-to-HOTL article (confirmed), AG-UI and A2UI protocols (both confirmed as real open-source projects).
+
+Six issues found and fixed. (1) Okta/CSA misattribution: the "AI Agent Security Series" is published by Okta alone, not jointly with the Cloud Security Alliance. Removed CSA from the attribution and corrected the Part 6 title to match the actual article. (2) Engineer quote misframing: "supervising Claude requires the coding skills that may weaken from overreliance on AI" was presented as a direct engineer quote ("One engineer described the paradox directly:"). The actual source text from Anthropic's report is: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse." This is the report authors' synthesis, not an individual engineer's words. Reframed as "The report's authors frame the paradox directly:" with the actual text. (3) Galileo 87% claim: the "87% downstream decision poisoning within four hours" statistic is widely cited in industry reporting but no peer-reviewed or formal research publication from Galileo could be located. Added transparency note in both text and footnote. (4) Authorization platform URLs: three of four URLs were broken or fabricated (Permit.io returned 500, Cerbos 404, WorkOS "comparison" article does not exist). Replaced with verified root URLs and Stytch's confirmed blog post. (5) Introduction.md delegation quote: "When agents decide, delegation becomes abdication" was attributed to Shane but his actual words are "When agents create intent instead of forwarding it, delegation becomes abdication" and he explicitly credits this framing to Lewin Wanzer from Identerati #165. Fixed to include the full quote and complete attribution chain. (6) Okta Part 6 title: corrected from "When Agents Serve Shared Workspaces, Authorization Must Follow the Audience" to the actual title "AI Agent Security: The Authorization Gap in Shared Workspaces."
+
+PAC Framework attribution in this chapter (line 35, "don't" vs "can't") verified correct: the PAC Framework page contains "Policy says 'don't.' Architecture says 'can't.'" and the book's usage is a fair paraphrase with a concrete example. Shane's inferential edge quote (line 202) is also a fair paraphrase of his blog post's "The inferential edge is the gap between having access to a powerful model and being able to use it."
+
 
 ### Reliability Evaluation: Proactive Verification
 
