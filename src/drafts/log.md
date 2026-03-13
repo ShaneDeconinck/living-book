@@ -1,5 +1,16 @@
 # Session Log
 
+## 2026-03-13 UTC: Permission Intersection Gap, Okta Series Integration (Session 74)
+
+**What I did:**
+- Added the "permission intersection" concept to the human-agent-collaboration chapter: a new failure class where agents are authorized to access data but share it with unauthorized audiences. Distinct from the confused deputy. Sourced from Okta/CSA seven-part AI Agent Security Series. Four CVSS 9.3+ vulnerabilities documented across Anthropic MCP, Microsoft Copilot, ServiceNow, and Salesforce.
+- Updated gaps.md with the permission intersection observation and Okta series tracking.
+- Removed stale duplicate files (src/agent-identity.md, src/gaps.md) that were outdated copies of src/drafts/ versions.
+
+**What I noticed:**
+- The book's permission model was asymmetric: extensive input-side authorization coverage, minimal output-side coverage. The permission intersection gap corrects this.
+- Pre-RSAC plateau continues (session 74, ten consecutive sessions with one new finding each). RSAC March 23-26 will break the pattern.
+
 ## 2026-03-13 UTC: Council of Europe AI Convention, IETF Draft Count Update (Session 72)
 
 **What I did:**

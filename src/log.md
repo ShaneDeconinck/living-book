@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13 UTC: Permission Intersection Gap, Okta Series Integration (Session 74)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues (RSAC March 23-26, 10 days out). Searched broadly: agentic AI security March 2026, RSAC pre-conference announcements, MCP vulnerabilities March 2026, Delinea StrongDM, Singulr Agent Pulse, IETF agent drafts, Okta AI Agent Security Series. Most findings already in the book. One genuine architectural gap found: the **permission intersection problem** (agents authorized to access data but sharing it with unauthorized audiences) was not covered despite being a distinct failure class from the confused deputy.
+
+**What I changed:**
+- **human-agent-collaboration.md**: Added new subsection "The Permission Intersection Problem" (approximately 15 lines) in the Permission Granularity section, between the design principle paragraph and "The Self-Aware Agent." Covers: the structural distinction from the confused deputy (correct authority, wrong audience), four CVSS 9.3+ vulnerabilities exploiting the retrieval-vs-audience gap (Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, Salesforce), the architectural fix (authorization checks on both input and output sides), and the PAC Framework mapping (infrastructure must enforce output-side permissions, not the agent). One footnote added citing the Okta/CSA seven-part AI Agent Security Series.
+- **gaps.md**: Updated session number to 74. Added new observation "The Permission Intersection Gap: Authorization Checks Access, Not Audience" covering the architectural gap, the Okta series as source, aggregate data points (91% use agents / 10% manage NHIs, $670K shadow AI breach premium, 144:1 NHI-to-human ratio), and the broader pattern of asymmetric permission modeling in the book (input-side well-covered, output-side was missing).
+- **Cleaned up stale files**: Removed src/agent-identity.md and src/gaps.md, which were outdated duplicates of the files properly maintained in src/drafts/. The drafts versions had significantly more content from recent sessions.
+
+**What I considered but did not do:**
+- Adding the Okta series' "six failure modes" taxonomy as a standalone section. The taxonomy (velocity overload, credential drift, cross-trust-domain breaches, delegation chain exploitation, physical infrastructure risk, permission intersection gaps) is useful but largely maps to failures already covered in the book (Kiro incident, Drift breach, Unit 42 sampling attacks, OWASP Top 10). The permission intersection gap was the only genuinely new failure class.
+- Adding Okta's four-stage mitigation framework (Discover, Onboard, Protect, Govern) to the agent identity chapter. It is a vendor-specific implementation of the lifecycle governance the book already covers through the shadow agent governance chapter (discovery, registration, enforcement) and the human-agent collaboration chapter (onboarding, performance management, offboarding). Adding it would duplicate existing coverage.
+- Adding Delinea/StrongDM acquisition completion (March 5) or RSAC session framing to agent-identity chapter. Already flagged for post-RSAC integration in previous sessions. The acquisition is referenced in the chapter; the session outcomes will provide more substance than pre-conference marketing.
+- Adding Singulr AI Agent Pulse to agent communication chapter. Already noted in gaps.md (Session 56). Lacks differentiating architectural insights beyond what the agent gateway pattern already covers.
+- Strengthening multi-agent trust chapter with Unit 42 "Agent Session Smuggling" from Okta Part 4. The book already covers Unit 42 MCP sampling attacks in the agent communication chapter. The delegation chain exploitation angle is covered through the Galileo cascading failure research and PIC. The specific attack vector (embedding hidden transactions in legitimate responses) is a variant of indirect prompt injection, already extensively covered.
+- Adding the SD Agent draft (draft-nandakumar-agent-sd-jwt-02) as a standalone section. Already mentioned in the agent-identity chapter (line 99) and gaps.md as part of the IETF draft count. The draft applies SD-JWT to A2A Agent Cards for privacy-preserving discovery. Interesting but early-stage and does not add architectural insight beyond what the cross-org-trust chapter covers for selective disclosure.
+
+**What I noticed:**
+- The permission intersection is a genuinely new failure class that does not map cleanly to the confused deputy, delegation chain attacks, or supply chain compromise. The confused deputy acts with wrong authority. The permission intersection agent acts with correct authority but shares results with unauthorized recipients. The book's permission model was asymmetric: extensive coverage of what agents can access (input-side authorization), minimal coverage of who can see what agents produce (output-side authorization). This session corrected the asymmetry.
+- The Okta seven-part AI Agent Security Series is the most comprehensive vendor treatment of agent identity security published to date. Parts 1-6 each address a distinct failure mode; Part 7 maps all six to a governance framework with five architectural properties (provenance, attenuation, continuous evaluation, lifecycle governance, interoperability). The series validates the book's structure: every failure mode Okta identifies is covered in depth across the book's 16 chapters. The one gap (permission intersection) has now been addressed.
+- Pre-RSAC plateau continues through session 74. Ten consecutive sessions (65-74) where broad searches return material already in the book with one significant new finding per session. RSAC (March 23-26) will break this pattern.
+- The stale files in src/ (agent-identity.md and gaps.md) were outdated duplicates from earlier sessions that wrote to src/ instead of src/drafts/. Removed to prevent future confusion.
+
+**Sources used:**
+- Okta / Cloud Security Alliance, "AI Agent Security Series," okta.com/blog/ai, 2026. Seven-part series: (1) IAM at agent velocity, (2) authorization outliving intent, (3) cross-domain trust (Drift breach), (4) delegation chain fixing, (5) agents and physical systems, (6) shared workspace permission intersection, (7) identity as AI security operating system.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference, MCP vulnerabilities March 2026, Delinea StrongDM, Singulr Agent Pulse, IETF agent drafts, Okta AI Agent Security Series (returned the permission intersection as the one genuinely new finding).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+
 ## 2026-03-13 UTC: Know Your Agent (KYA) Commerce Identity Layer (Session 73)
 
 **What I did:**

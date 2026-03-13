@@ -141,6 +141,16 @@ The technical implementation is maturing. Authorization platforms like Permit.io
 
 The critical design principle: permission granularity should match blast radius, not convenience. Organizations consistently err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is exactly the pattern that makes the confused deputy attack possible[^identity-chapter].
 
+### The Permission Intersection Problem
+
+There is a subtler failure mode that per-action authorization alone does not prevent: the permission intersection gap. When an agent serves a shared workspace or multiple users, it may retrieve data that User A is authorized to see and present it in a context where User B can see it too. The agent's access was authorized. The retrieval was within scope. But the audience was wrong.
+
+This is distinct from the confused deputy. The confused deputy acts with authority it should not have. The permission intersection agent acts with correct authority but delivers results to an unauthorized audience. Four vulnerabilities rated CVSS 9.3 or higher across Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, and Salesforce exploited exactly this gap: agents retrieving data under one user's permissions while broadcasting to users who lacked access to that data.[^okta-series]
+
+The fix requires authorization checks on both sides of the agent's operation: not just "can the agent access this data?" but "can every recipient of the agent's output see this data?" In shared contexts (team channels, collaborative workspaces, multi-user dashboards), the effective permission should be the intersection of all participants' permissions, not the union. This is harder to implement than input-side authorization because it requires the agent to know who will see its output at the time it retrieves data, and shared contexts change membership dynamically.
+
+For the PAC Framework, this maps to the Control pillar's infrastructure enforcement: the permission intersection must be computed and enforced by infrastructure, not left to the agent's judgment. An agent cannot reliably assess who will eventually see a Slack message, a shared document, or a dashboard widget. The infrastructure that delivers the agent's output must enforce the narrowest applicable scope.
+
 ## The Self-Aware Agent
 
 One of the most significant findings from Anthropic's autonomy research is that agents can participate in their own governance. Not through hard-coded rules but through learned behavior: recognizing uncertainty and requesting human input.
@@ -247,3 +257,5 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 [^controllability-trap]: "The Controllability Trap: A Governance Framework for Military AI Agents," ICLR 2026 Workshop on Agents in the Wild, [arXiv:2603.03515](https://arxiv.org/abs/2603.03515) (March 2026). Identifies six agentic governance failures (Interpretive Divergence, Correction Absorption, Belief Resistance, Commitment Irreversibility, State Divergence, Cascade Severance) and proposes the Agentic Military AI Governance Framework (AMAGF) with a continuous Control Quality Score.
 
 [^cascade-severance]: Galileo AI, multi-agent system failure research, December 2025. Also cited in Chapter 13, "Multi-Agent Trust and Orchestration."
+
+[^okta-series]: Okta / Cloud Security Alliance, "AI Agent Security Series," okta.com/blog/ai, 2026. Seven-part series mapping identity failures in agentic AI. Part 6 ("When Agents Serve Shared Workspaces, Authorization Must Follow the Audience") identifies the permission intersection gap. Part 7 ("Identity and Authorization: The Operating System for AI Security") maps six failure modes including four CVSS 9.3+ vulnerabilities exploiting the retrieval-vs-audience authorization gap across Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, and Salesforce.

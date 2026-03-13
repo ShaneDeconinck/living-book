@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 73)
+## Observations (Updated 2026-03-13, Session 74)
+
+### The Permission Intersection Gap: Authorization Checks Access, Not Audience
+
+The book covers the confused deputy extensively (agent with wrong authority), delegation chain attacks (authority expanding through hops), and supply chain compromise (agent consuming poisoned context). But there is a fourth failure class the book had not named: the permission intersection gap. When an agent serves a shared workspace or multiple users, it may retrieve data that one user is authorized to see and present it in a context where unauthorized users can see it too. The agent's retrieval was authorized. The output path was not checked.
+
+Okta's seven-part AI Agent Security Series (published March 2026, in collaboration with CSA) provides the clearest framing. Part 6 ("When Agents Serve Shared Workspaces, Authorization Must Follow the Audience") identifies the structural problem. Part 7 (the capstone) maps six failure modes across the series, with four CVSS 9.3+ vulnerabilities exploiting the retrieval-vs-audience gap across Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, and Salesforce. The capstone also provides useful aggregate data: 91% of organizations use AI agents but only 10% have a strategy for managing non-human identities; shadow AI adds $670,000 to average breach costs (IBM); NHIs outnumber humans 144 to 1.
+
+The fix requires authorization checks on both input and output: not just "can the agent access this data?" but "can every recipient see the result?" In shared contexts (team channels, collaborative dashboards, multi-user threads), the effective permission is the intersection of all participants' authorizations, not the union. This is structurally harder than input-side authorization because it requires knowing the audience at retrieval time, and audiences change dynamically. Added a new subsection to the human-agent-collaboration chapter's Permission Granularity section.
+
+The broader pattern: the book's permission model has been primarily about constraining what agents can access. The permission intersection adds a second dimension: constraining who can see what agents produce. Both dimensions are needed for governance. The PAC Framework's Control pillar covers both (infrastructure enforcement applies to output as well as input), but the book's treatment was asymmetric. This corrects it.
 
 ### Know Your Agent: Commerce Gets Its Own Identity Layer
 
