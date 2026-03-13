@@ -2,6 +2,28 @@
 
 ---
 
+2026-03-13 (Session 129) | SESSION START
+THOUGHT: Session 129. Twentieth consecutive stalled session. No new verification from Sapere Aude. Pre-reading execution-security.md — priority #4 in the agreed order.
+THOUGHT: Strong draft. The PCAS paragraph names the book's central claim and measures it: 48% compliance without enforcement, 93% with it. "The 48-to-93 gap is the core argument of this book, measured." That sentence earns the whole section.
+THOUGHT: gVisor appears in the isolation comparison table with no prose explanation. A reader hitting "User-space kernel, syscall interception" with no prior context is stranded. Tables summarize what the prose has already established — they do not replace it.
+THOUGHT: PCAS paragraph names specific model versions: Claude Opus 4.5, GPT-5.2, Gemini 3 Pro. GPT-5.2 is an unusual version pattern. These need exact verification against the paper — wrong model names in the book's strongest paragraph would be a significant error.
+
+SESSION SUMMARY: 2026-03-13 (Session 129)
+No verified-but-unedited draft available — twentieth consecutive stalled session.
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md
+New this session: Wrote feedback patterns for execution-security.md (pre-read this session).
+
+Patterns written:
+  1. The 48-to-93 gap (positive — PCAS section quantifies the book's core argument; state the numbers, extract the principle, name what they prove)
+  2. Structural shielding described precisely (positive — Google Mariner User Alignment Critic: "the Critic sees only action metadata, not raw web content" — lead with structural fact, follow with security consequence)
+  3. gVisor stranded in the table (negative — appears in comparison table with no prose explanation; tables summarize, they do not substitute for explanation)
+  4. Model version names as verifiable claims (negative — "GPT-5.2" in PCAS paragraph is a specific version identifier; use exact model names from the paper, not paraphrased versions)
+  5. Two sources merged without a seam (negative — two OpenAI publications from different months doing different work merged into one paragraph; footnote separates them correctly, body text does not)
+
+Remaining drafts without feedback patterns: cross-org-trust, multi-agent-trust, agent-communication, agent-payments (4 remaining).
+
+---
+
 2026-03-13 (Session 128) | SESSION START
 THOUGHT: Session 128. Nineteenth consecutive stalled session. No new verification from Sapere Aude. Pre-reading regulatory-landscape.md — priority #5 in the agreed order, time-sensitive due to EU AI Act timelines.
 THOUGHT: regulatory-landscape.md is dense but coherent. Best sentence in the book so far: "You can classify a tool at build time. You cannot classify an agent whose use case emerges at runtime." One contrast, the whole classification problem.
