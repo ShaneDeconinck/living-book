@@ -1,6 +1,6 @@
 # The PAC Framework
 
-The PAC Framework is a governance model for AI agents built around three interdependent pillars: Potential, Accountability, and Control. It was developed by Shane Deconinck and is published at trustedagentic.ai. This chapter walks through the framework in depth, connecting each pillar to the technical infrastructure that makes it real.[^1]
+The PAC Framework is a governance model for AI agents built around three interdependent pillars: Potential, Accountability, and Control. It was developed by Shane Deconinck and is published at trustedagentic.ai.[^1]
 
 The framework exists because organizations tend to approach agent deployment from one angle and miss the others. A team focused on business value (Potential) ships an agent without mapping the liability chain (Accountability). A security team locks down permissions (Control) so tightly that the agent cannot deliver value (Potential). A compliance team writes policies (Accountability) with no infrastructure to enforce them (Control).
 
@@ -206,7 +206,7 @@ In the profiler, infrastructure requirements are cumulative per autonomy level:
 
 No amount of reliability compensates for guardrails you have not built. A brilliant agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened. This makes the profiler actionable: instead of "improve your governance posture," it says specifically: "you need identity verification and authorization scopes before this agent can move from human-approval to oversight mode."[^profiler]
 
-Anthropic's autonomy research supports this structure. They found that 80% of tool calls come from agents with at least one safeguard in place, and 73% appear to have a human in the loop.[^anthropic-autonomy-profiler] The infrastructure exists or it does not. Organizations build it before granting autonomy, not after.
+Eighty percent of tool calls come from agents with at least one safeguard in place, and 73% appear to have a human in the loop.[^anthropic-autonomy-profiler] The infrastructure exists or it does not. Organizations build it before granting autonomy, not after.
 
 ### Using the Profiler
 

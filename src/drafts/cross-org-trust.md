@@ -142,9 +142,7 @@ CAAM is an early individual draft, not yet adopted by an IETF working group. But
 
 ## Verifiable Credentials as the Trust Carrier
 
-The protocols above establish how to communicate trust across boundaries. Verifiable Credentials (VCs) are the format for carrying it.
-
-A VC is a cryptographic statement by an issuer about a subject: "this agent is authorized to act on behalf of Alice, with these constraints, until this date." The holder (the agent or its wallet) can present the VC to any verifier, who can check the signature without contacting the issuer. No phone-home. No shared infrastructure.
+The protocols above establish how to communicate trust across boundaries. Verifiable Credentials are the format for carrying it. The question for cross-organization agent trust is which credential format, and that choice determines what can travel across boundaries.
 
 Shane's EUDI credential formats crash course walks through the four formats the European Digital Identity Wallet supports: X.509, mdoc, SD-JWT VC, and W3C VC.[^6] Each has different strengths:
 
