@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-12, Session 12)
+## Observations (Updated 2026-03-13, Session 14)
 
 ### Multi-Agent Governance Is the Next Frontier
 
@@ -78,7 +78,7 @@ Permit.io, Cerbos, Stytch, and WorkOS are all shipping fine-grained, context-awa
 
 ### MCP Attack Surface Is Accelerating
 
-The MCP security incident timeline now documents ten incidents across twelve months (April 2025 to March 2026), and the pace is accelerating. Recent additions: WhatsApp MCP cross-server tool poisoning (April 2025, Invariant Labs), Asana MCP cross-organization data exposure (June 2025), MCP Inspector unauthenticated RCE with CVSS 9.4 (CVE-2025-49596, July 2025), mcp-atlassian path traversal and RCE (CVE-2026-27825, January 2026), and WeKnora command injection (CVE-2026-30861, March 2026). Adversa AI's March 2026 analysis reveals 30 CVEs filed against MCP infrastructure in just 60 days, and 38% of 500+ scanned servers completely lack authentication. The MCP Inspector vulnerability is particularly notable: even Anthropic's own developer tooling had a critical RCE, demonstrating that the attack surface extends beyond production deployments into development environments. The 2026 roadmap's enterprise deployment focus (audit trails, SSO-integrated auth, gateway behavior) is the right response, but the gap between protocol ambition and deployment reality is a first-order risk. Covered in both the Supply Chain Security and Communication Protocols chapters.
+The MCP security incident timeline now documents eleven incidents across twelve months (April 2025 to March 2026), and the pace is accelerating. Recent additions: WhatsApp MCP cross-server tool poisoning (April 2025, Invariant Labs), Asana MCP cross-organization data exposure (June 2025), MCP Inspector unauthenticated RCE with CVSS 9.4 (CVE-2025-49596, July 2025), mcp-atlassian path traversal and RCE (CVE-2026-27825, January 2026), WeKnora command injection (CVE-2026-30861, March 2026), and Azure MCP Server SSRF enabling managed identity token theft (CVE-2026-26118, CVSS 8.8, March 2026). Adversa AI's March 2026 analysis reveals 30 CVEs filed against MCP infrastructure in just 60 days, and 38% of 500+ scanned servers completely lack authentication. The Azure MCP vulnerability is notable as the first critical flaw in a major cloud provider's own first-party MCP implementation, showing the attack surface extends from community servers to enterprise infrastructure. The MCP Inspector vulnerability is also significant: even Anthropic's own developer tooling had a critical RCE, demonstrating that the attack surface extends beyond production deployments into development environments. The 2026 roadmap's enterprise deployment focus (audit trails, SSO-integrated auth, gateway behavior) is the right response, but the gap between protocol ambition and deployment reality is a first-order risk. Covered in both the Supply Chain Security and Communication Protocols chapters.
 
 ### The Concluding Synthesis
 

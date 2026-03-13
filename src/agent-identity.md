@@ -58,6 +58,8 @@ The problems compound with agents:
 
 Shane identified this gap clearly: an agent usually acts on behalf of a user but creates its own intent. It is neither a human (who would use interactive OAuth) nor a traditional service (which would use Client Credentials). It is something new: a delegated entity with decision-making capability.[^2]
 
+The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] Nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005. Shared API keys cannot carry delegation semantics, enforce scope attenuation, or create auditable accountability chains. The identity stack described in the rest of this chapter exists to close that gap.
+
 This gap is what the rest of this chapter addresses: the infrastructure emerging to close it.
 
 ## OAuth Extensions for Agents
@@ -252,3 +254,4 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^12]: Mastercard, "How Verifiable Intent Builds Trust in Agentic AI Commerce," March 5, 2026.
 [^13]: NIST NCCoE, "Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization," February 5, 2026.
 [^14]: OpenID Foundation, "Identity Management for Agentic AI," Artificial Intelligence Identity Management Community Group whitepaper, 2025.
+[^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.

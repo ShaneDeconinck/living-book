@@ -116,8 +116,9 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 | October 2025 | Smithery path traversal | Leaked Fly.io token controlling 3,000+ MCP servers |
 | January 2026 | mcp-atlassian CVE-2026-27825 | Path traversal enabling arbitrary file write and RCE via Confluence attachments[^27] |
 | March 2026 | WeKnora CVE-2026-30861 | Command injection in MCP stdio configuration validation[^28] |
+| March 2026 | Azure MCP Server CVE-2026-26118 | SSRF enabling managed identity token theft and privilege escalation, CVSS 8.8[^29] |
 
-Ten incidents in twelve months, and the pace is accelerating. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
+Eleven incidents in twelve months, and the pace is accelerating. The Azure MCP vulnerability is notable: Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
 
 1. **Overprivileged tokens**: a single powerful token serving all users. The GitHub breach happened because a personal access token with broad repository access was used for an MCP integration. The confused deputy problem in action.
 2. **Tool schema manipulation**: the server lies about what a tool does. The user thinks they are searching contacts; the tool is exfiltrating data. Tool descriptions are visible to the LLM but not typically shown to users.
@@ -417,3 +418,4 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 [^26]: Oligo Security, CVE-2025-49596, July 2025. Missing authentication between MCP Inspector client and proxy enabled unauthenticated RCE and DNS rebinding attacks on developer workstations. Patched in version 0.14.1.
 [^27]: Arctic Wolf, CVE-2026-27825, January 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE.
 [^28]: CVE-2026-30861, March 2026. Command injection in WeKnora MCP stdio configuration validation.
+[^29]: Microsoft Security Update, CVE-2026-26118, March 10, 2026. SSRF in Azure MCP Server Tools enabling managed identity token theft and privilege escalation. CVSS 8.8.

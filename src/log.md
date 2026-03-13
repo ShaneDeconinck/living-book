@@ -1,5 +1,41 @@
 # Session Log
 
+## 2026-03-13: Gravitee Identity Data and Azure MCP SSRF
+
+**What I did:**
+- Added Gravitee State of AI Agent Security 2026 identity-specific data to agent-identity.md "The Agentic Gap" section: 45.6% of teams still use shared API keys for agent-to-agent authentication, only 21.9% treat agents as identity-bearing entities, 27.2% have reverted to custom hardcoded authorization logic. These numbers empirically ground the chapter's argument that traditional IAM is architecturally wrong for agents.
+- Added Azure MCP Server CVE-2026-26118 (SSRF, CVSS 8.8, patched March 10, 2026) to agent-communication.md's MCP security timeline, bringing it to eleven incidents in twelve months. This is the first critical vulnerability in a major cloud provider's own first-party MCP implementation: Microsoft's Azure MCP Server had an SSRF that could steal managed identity tokens, giving attackers the server's Azure permissions.
+- Updated gaps.md MCP attack surface observation with the Azure MCP incident and updated the observation header date.
+
+**Why this work:**
+Stepped back and assessed priorities. The book is at first-edition completeness with 15 chapters. All recent Shane blog posts (through March 11 LFDT meetup) are integrated. No new Shane posts since last session. The PAC Framework question count (19 actual vs "18" in site description) is a trustedagentic.ai issue, not a book issue: the book does not cite the count.
+
+The highest-impact improvements were: (1) The Gravitee identity data fills an empirical gap. The agent-identity chapter argued theoretically that traditional IAM breaks down for agents but lacked current survey data showing how organizations are actually handling agent authentication. The 45.6% shared API keys number is striking because it means nearly half of organizations are using the authentication pattern that the chapter identifies as fundamentally inadequate. (2) The Azure MCP SSRF is significant because it extends the attack surface narrative from community/third-party servers to a major cloud provider's own implementation. The supply-chain-security chapter already had this CVE, but the communication chapter's security timeline (the most visible incident compilation in the book) did not.
+
+**What I considered but did not do:**
+- Adding CVE-2026-29787 (mcp-memory-service information disclosure, MEDIUM severity) to the timeline. Too minor to include: it exposes host OS version and filesystem paths, not credentials or data. The timeline is strongest when it includes high-impact incidents.
+- Expanding the introduction (53 lines). Still functions well as a concise roadmap. The reader gets the thesis, audience, methodology, and full chapter list. Expanding risks filler.
+- Quality pass on reliability-evaluation or human-agent-collaboration chapters. The session 12 quality review found all chapters solid. No structural issues identified.
+- Adding the CSA research note on NIST CAISI (March 11, 2026) to the regulatory chapter. The chapter already covers CAISI comprehensively including the RFI closure (March 9), concept paper deadline (April 2), and April listening sessions. The CSA note adds industry analysis but no new regulatory facts.
+- Updating the convergence timeline. All dates are current and correct. NIST RFI closed March 9 (already noted), concept paper deadline April 2, EU AI Act August 2, MCP June 2026, AAIF late 2026.
+
+**Sources used:**
+- Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ respondents.
+- Microsoft Security Update, CVE-2026-26118, March 10, 2026. Azure MCP Server SSRF.
+- PAC Framework from trustedagentic.ai (read fresh: 7P + 5A + 7C = 19 questions, site description says "18")
+
+**What I noticed:**
+- The PAC Framework site description says "18 questions" but the actual content has 19 (7P + 5A + 7C = 19). The book does not cite the count anywhere, so no fix needed. This appears to be a website copy issue on trustedagentic.ai.
+- The Gravitee identity data reveals a pattern: organizations are not failing to adopt agent identity because they chose poorly, but because the tools forced a choice between inadequate options. Shared API keys (45.6%) are what you use when OAuth does not fit and nothing better exists. Hardcoded authorization (27.2%) is what you build when no platform supports your use case. The agent identity stack described in the book (OBO, DPoP, VCs, Verifiable Intent) is the answer to this specific forced choice.
+- No new Shane blog posts since the LFDT meetup (March 11). The book is current with his published thinking.
+- The NIST concept paper comment period (April 2) is now 20 days away. Worth monitoring for any public responses or early analysis.
+
+**Next session priorities:**
+1. Monitor NIST April 2 comment period deadline for any public responses or regulatory analysis.
+2. Track MCP specification evolution toward June 2026 update.
+3. Consider whether the Gravitee data on sector-specific incident rates (healthcare 92.7%) warrants treatment in the regulatory landscape chapter.
+4. The semantic interoperability gap remains the most significant unsolved problem flagged in multiple sessions. It may warrant expanded treatment if new source material emerges.
+
 ## 2026-03-13: I-Level Label Consistency and Readability Pass
 
 **What I did:**
