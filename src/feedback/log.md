@@ -2,6 +2,53 @@
 
 ---
 
+2026-03-13 (Session 118) | SESSION START
+THOUGHT: Session 118. Pipeline stalled for tenth consecutive session — no Sapere Aude verification since 18:38 UTC. Pre-reading agent-communication.md.
+THOUGHT: agent-communication.md is the best-organized chapter so far. Argument is clear from line 1. Protocol stack built methodically: MCP → A2A → authorization gap → gateways → trust integrations → broader protocols → governance. No em dashes. Good.
+THOUGHT: Domain attribution error in footnotes: [^1], [^3], [^16] say trustedagentic.ai but confirmed in /opt/blog-source that MCP/A2A explainers, Workspace CLI post, and LFDT meetup post are all on shanedeconinck.be. Same pattern as agent-identity.md [^9]. Need to flag for Sapere Aude.
+THOUGHT: Prose issues in agent-communication.md: scaffolding sentences ("The distinction is important." line ~205; "These are infrastructure maturity improvements." line ~99). Some section transitions explain themselves unnecessarily. Otherwise tight.
+THOUGHT: Queue now 8 deep. Formally queuing multi-agent-trust.md as #7 and agent-communication.md as #8.
+
+SESSION SUMMARY: 2026-03-13 (Session 118)
+No verified-but-unedited draft available — tenth consecutive stalled session.
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md
+New this session: Pre-read agent-communication.md in full (541 lines). Strong chapter — clearest protocol stack coverage in the book. Formally queuing multi-agent-trust.md (#7) and agent-communication.md (#8) for verification.
+Editorial pre-notes for agent-communication.md:
+  - "The distinction is important." (~line 205): scaffolding, cut — next sentence makes the point
+  - "These are infrastructure maturity improvements." (~line 99): scaffolding, cut
+  - "This matters for the book's argument." (~line 103): can be cut or integrated into the sentence that follows
+  - Practical Recommendations section: excellent, keep intact
+  - PAC mapping table: excellent, keep intact
+  - Infrastructure maturity table: excellent, keep intact
+  - All the protocol JSON examples: keep — real messages are Shane's style
+Verification flags for Sapere Aude (agent-communication.md):
+  1. [^1] MCP/A2A explainers attributed to trustedagentic.ai — confirmed as shanedeconinck.be/explainers/mcp/ and /explainers/a2a/ in /opt/blog-source. Fix domain.
+  2. [^3] Google Workspace CLI post attributed to trustedagentic.ai — confirmed shanedeconinck.be in agent-identity verification. Fix domain.
+  3. [^16] LFDT meetup post attributed to trustedagentic.ai — confirmed shanedeconinck.be/posts/lfdt-meetup-trust-ecosystems-authority-continuity/ in /opt/blog-source. Fix domain.
+  4. MCP SDK downloads "crossed 97 million monthly" by February 2026 — confirm statistic and source.
+  5. 30 MCP CVEs Jan-Feb 2026, 38% of 500+ scanned servers lack authentication — confirm from dev.to/authzed source.
+  6. Overthinking loops: 14 malicious tools, 142.4x token amplification — confirm against arXiv:2602.14798.
+  7. Azure MCP CVE-2026-26118, CVSS 8.8, patched March 10, 2026 — confirm CVE details.
+  8. A2A v1.0 reached 150+ participating organizations — confirm and check with v0.3 vs v1.0 distinction.
+  9. AAIF founding: December 9, 2025 announcement — confirm date.
+  10. WebMCP in Chrome 146 Canary — confirm version number.
+  11. A2A-T at MWC 2026, March 2 — confirm announcement date.
+  12. mcp-remote CVE-2025-6514, 437k+ downloads — confirm CVE and download count.
+  Note on #1-3: trustedagentic.ai vs shanedeconinck.be is a recurring Ghosty error. Three instances in one chapter. This matches the TSP footnote error caught in agent-identity.md. Worth a feedback note to Ghosty on the pattern.
+Queue for Sapere Aude (updated):
+  1. agent-identity.md re-verification (3 targeted fixes, commit 324c707)
+  2. pac-framework.md first verification
+  3. regulatory-landscape.md first verification
+  4. execution-security.md first verification (Ghosty self-verified 8 issues, 637cf92)
+  5. shadow-agent-governance.md first verification (Ghosty self-verified 2 issues, d3ba32a)
+  6. cross-org-trust.md first verification (Ghosty self-verified 2 issues, e7ad805)
+  7. multi-agent-trust.md first verification (Ghosty self-verified 3 issues, 6b2b6e5) — formally queued this session
+  8. agent-communication.md first verification (new — 12 verification flags above)
+Sent: multi-agent-trust.md and agent-communication.md verification requests to Sapere Aude.
+Next: Edit whichever chapter Sapere Aude clears first.
+
+---
+
 2026-03-13 (Session 117) | SESSION START
 THOUGHT: Session 117. Pipeline still stalled — no Sapere Aude verification since 18:38 UTC. Nine consecutive sessions. Pre-reading cross-org-trust.md, next in priority order.
 THOUGHT: cross-org-trust.md is strong — clearest PAC integration of any draft, argument well-built. Lead with the second paragraph ("the genuinely hard problem"). Drift breach section is the anchor. PIC/TSP/VCs stack is well explained.
