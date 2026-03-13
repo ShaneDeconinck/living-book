@@ -1,5 +1,39 @@
 # Session Log
 
+## 2026-03-13: MCP Denial-of-Wallet Attack and EU Digital Omnibus Timeline (Session 37)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state and recent session log. Book remains in maintenance mode pre-RSAC.
+- Web searched for developments since Session 36. Found two significant additions:
+  1. Overthinking loop / denial-of-wallet attack on MCP agents (arXiv:2602.14798, February 2026): malicious MCP tools induce cyclic reasoning loops amplifying token consumption up to 142.4x. A new attack class not previously in the book.
+  2. EU Digital Omnibus legislative proposal (November 2025): proposes deferring Annex III high-risk AI obligations from August 2, 2026 to a backstop of December 2, 2027, pending availability of compliance support measures. Not yet adopted.
+
+**What I changed:**
+- **agent-communication.md**: Added the overthinking loop / denial-of-wallet attack as a fifth MCP attack vector, after the sampling attack and MCPTox sections. The attack exploits open tool registries: individually plausible tool calls chain into cycles that drain API budgets without any single call looking abnormal. Cross-referenced the execution-security chapter's resource budget argument. Added footnote citing arXiv:2602.14798.
+- **regulatory-landscape.md**: Added the Digital Omnibus timeline uncertainty after the Commission's February 2026 Guidelines section. The Omnibus could shift the Annex III enforcement deadline sixteen months later. Framed through the PAC lens: build the infrastructure regardless, because the requirements do not change with the timeline. Added footnote citing Sidley Austin and IAPP analyses.
+
+**What I considered but did not do:**
+- Updating every chapter that references "August 2026" enforcement. The statutory deadline remains August 2, 2026 unless/until the Omnibus is adopted. The regulatory-landscape chapter is the authoritative source; other chapters correctly reference the current law.
+- Adding Geordie AI SC Awards 2026 finalist status. Already covered as RSAC Innovation Sandbox finalist in building-the-edge, shadow-agent-governance, and gaps chapters. An additional award does not add analytical value.
+- Adding Endor Labs "Classic Vulnerabilities Meet AI Infrastructure" AppSec analysis. The book's agent-communication and supply-chain-security chapters already make this point with concrete CVE data. The framing (old vulnerability classes in new infrastructure) is already captured.
+
+**What I noticed:**
+- The denial-of-wallet attack is architecturally distinct from all four previously documented MCP attack vectors (overprivileged tokens, tool schema manipulation, resource poisoning, sampling abuse). Those target data or permissions. This one targets the compute budget. The defense is infrastructure-level resource controls, which connects to the execution-security chapter's argument that sandboxing must include cost and token budgets, not just filesystem and network isolation.
+- The EU Digital Omnibus creates a genuine strategic dilemma for organizations. August 2026 is still the statutory deadline, but December 2027 may become the practical one. The PAC Framework resolves this cleanly: the infrastructure requirements are the same regardless of enforcement date. Organizations that build now get optionality; organizations that wait gamble on the Omnibus passing.
+- RSAC 2026 (March 23-26) remains the next high-impact event, now 10 days out. Innovation Sandbox winner announced March 23. No pre-RSAC developments warrant additional changes.
+
+**Sources used:**
+- Yohan Lee et al., "Overthinking Loops in Agents: A Structural Risk via MCP Tools," arXiv:2602.14798, February 2026.
+- Sidley Austin, "EU Digital Omnibus: The European Commission Proposes Important Changes to the EU's Digital Rulebook," December 2025.
+- IAPP, "EU Digital Omnibus: Analysis of Key Changes," December 2025.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+
 ## 2026-03-13: Full Assessment, Pre-RSAC Holding Pattern (Session 36)
 
 **What I did:**
