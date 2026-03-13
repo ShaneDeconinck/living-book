@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 22)
+## Observations (Updated 2026-03-13, Session 23)
+
+### McKinsey Validates the Governance-First Thesis
+
+McKinsey's March 2026 "Trust in the Age of Agents" research (The McKinsey Podcast, Rich Isenberg) provides the first major management consultancy validation of the book's core argument: 80% of organizations have encountered risky behavior from AI agents. Isenberg's framing: "Agency isn't a feature. It's a transfer of decision rights." This maps directly to Shane's "delegation becomes abdication" argument. McKinsey's governance framework (archetypes, tiered approvals, continuous monitoring) is a simplified version of PAC. The most quotable insight for the book: "The scariest failures are ones you can't reconstruct because you didn't log the workflow," which directly validates the audit trail requirements in Chapters 2, 3, and 12. McKinsey also projects that enterprises will operate thousands of agents within 5-10 years. Updated in Why Agents Break Trust chapter.
+
+### The PAC Framework's 19 Questions Are Now in the Book
+
+The PAC Framework page at trustedagentic.ai features "19 Questions for Your Team" (7 Potential, 5 Accountability, 7 Control) as a core practical tool. The book, as the framework's technical companion, now includes all 19 questions in the PAC Framework chapter, with each question connected to the relevant technical chapter. This is the bridge between the framework as a strategic tool and the book as a technical reference: a reader can start from any question and follow it to the detailed treatment. The questions also serve as a navigation aid for a 15-chapter book.
 
 ### Agent Identity Is Becoming a Platform Feature, and a Product Category
 

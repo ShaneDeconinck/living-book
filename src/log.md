@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13: PAC Questions, McKinsey Governance Validation
+
+**What I did:**
+- Added a new section "The 19 Questions" to the PAC Framework chapter (pac-framework.md). The PAC Framework page at trustedagentic.ai features 19 questions (7 Potential, 5 Accountability, 7 Control) as a core practical tool, but the book did not include them. Each question is now presented with a connection to the relevant technical chapter(s), creating a navigation bridge between the framework and the book's 13 technical chapters. The questions section sits between the interdependencies discussion and the "Applying the Framework" chapter listing, making the practical application layer explicit.
+- Added McKinsey "Trust in the Age of Agents" (March 2026) findings to the opening of why-agents-break-trust.md. Key data: 80% of organizations have encountered risky behavior from AI agents. Rich Isenberg's framing: "Agency isn't a feature. It's a transfer of decision rights." Also: "The scariest failures are ones you can't reconstruct because you didn't log the workflow." This is the first major management consultancy to validate the book's governance-first thesis with specific data and framing that maps directly to the PAC pillars.
+- Updated gaps.md: added two new observations (McKinsey governance validation, PAC questions added), incremented session number to 23.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged (still 19 questions, same pillar structure). RSAC 2026 is 10 days out (March 23-26). The book has 15 chapters, all substantive. The question was: what improves the book most right now?
+
+The PAC Framework chapter is the spine of the book. The framework's own website prominently features "19 Questions for Your Team" as a core practical feature: conversation starters that translate abstract pillar concepts into concrete decisions. The book, as the framework's deep technical companion, did not include them. This is the most significant content gap between the framework and its companion text. Adding the questions also solves a navigation problem: with 15 chapters, readers need a way to find which chapter addresses their specific concern. The questions serve as an index: start from the question that matters to your organization, follow it to the chapter(s) that provide the technical depth.
+
+McKinsey entering the agentic governance conversation with "Trust in the Age of Agents" is significant for the book's credibility and reach. McKinsey is the most widely read management consultancy. Their 80% statistic (organizations encountering risky agent behavior) and Isenberg's "transfer of decision rights" framing validate the book's premise with a source that board-level readers recognize immediately. Adding this to the opening chapter strengthens the case for why the book exists.
+
+**What I considered but did not do:**
+- Restructuring the introduction with chapter groupings (Foundation/Infrastructure/Governance/Operations). The introduction is functional at 54 lines. Grouping adds navigation value, but the 19 questions now serve the navigation purpose better: they connect questions to chapters rather than imposing a taxonomy. Deferred.
+- Adding Zenity's proposed execution roadmap for the White House cybersecurity strategy (SAGL, SSDF Annex). These are Zenity's recommendations, not official policy. The regulatory landscape chapter already covers the White House strategy's substance. Adding vendor recommendations for policy implementation is less authoritative than the existing coverage.
+- Adding Atos Sovereign Agentic Studios (March 12, 2026). Interesting as a market signal (enterprise systems integrators building agent production infrastructure) but not technically substantive for the book. The operating model concept (moving from pilots to production) is already covered in the shadow agent governance and building-the-edge chapters.
+- Fetching the full McKinsey article. The page timed out on fetch, but the podcast transcript and summary from search results provided sufficient data points. The 80% statistic, the "transfer of decision rights" framing, and the "can't reconstruct" quote are the high-value elements.
+- Adding a dedicated section on McKinsey's three-component governance framework (archetypes, tiered approvals, monitoring). This maps to PAC (archetypes = Potential assessment, tiered approvals = Accountability thresholds, monitoring = Control infrastructure) but adding a separate framework comparison would dilute rather than strengthen the PAC chapter. The data points are more valuable as supporting evidence than as a parallel framework.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: 19 questions confirmed, pillar structure unchanged).
+- Shane's blog posts (checked: no new posts since March 11).
+- McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Rich Isenberg (partner, Risk & Resilience). 80% of organizations encountering risky agent behavior, "agency is a transfer of decision rights," governance requires archetypes + tiered approvals + monitoring.
+- Web search for recent developments: confirmed RSAC Innovation Sandbox details (March 23), NIST CAISI RFI deadline passed (March 9), Atos Sovereign Agentic Studios launched (March 12).
+
+**What I noticed:**
+- McKinsey's framing ("agency is a transfer of decision rights") is more precise than "delegation becomes abdication" in one respect: it identifies what is being transferred (decision rights, not just tasks). Shane's framing is sharper in a different respect: it identifies when the transfer goes wrong (when traceability is lost). Together, they make the complete argument: agency transfers decision rights, and without traceability, that transfer is abdication.
+- The 19 questions have a clear structure that maps to the book. Potential questions (1-7) ask about value, durability, and measurement. Accountability questions (8-12) ask about visibility, liability, and auditability. Control questions (13-19) ask about enforcement, delegation, and containment. Writing the chapter connections for each question revealed that most questions map to 2-3 chapters rather than one, reinforcing the book's thesis that trust infrastructure is interconnected.
+- McKinsey's projection (thousands of agents per enterprise in 5-10 years) aligns with the book's urgency argument but does not add new evidence beyond what Microsoft (80% Fortune 500 with agents), Gartner (40% of enterprise apps with agents by 2026), and Deloitte (14% deployable) already established. The value of the McKinsey citation is not the projection but the source: board-level readers respond to McKinsey's name.
+- The NIST CAISI RFI deadline has passed (March 9). The listening session submission deadline is March 20 (7 days). The concept paper comment period closes April 2. The timeline is narrowing for influencing federal standards.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Innovation Sandbox results, Zenity 0-click demo outcomes, Bedrock Data MCP governance sessions, any new product announcements or research disclosures.
+2. Consider cross-referencing between chapters. The 19 questions revealed that most map to 2-3 chapters, but the chapters themselves do not always cross-reference each other explicitly. Adding forward/backward references between related chapters would strengthen the book's cohesion.
+3. Check for new Shane blog posts. RSAC period likely to generate new writing.
+4. Consider whether the introduction needs updating with the McKinsey data or the 19 questions as a reader guide.
+
 ## 2026-03-13: Protocol Threat Modeling, Multi-Agent Defense Metrics
 
 **What I did:**

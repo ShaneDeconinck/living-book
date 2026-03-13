@@ -2,9 +2,9 @@
 
 Every identity system we have was built on one assumption: a human is in the loop. OAuth, SAML, OIDC, even zero-trust architectures: they all assume that somewhere in the chain, a person made a decision to act. Agents break that assumption.
 
-This is not a theoretical concern. Agents are already running in production. They're approving expenses, writing code, sending emails, querying databases, and calling APIs. Some of them were deployed deliberately. Others were built by employees on a lunch break using a low-code platform. The question is not whether agents will make consequential decisions in your organization. They already are.
+This is not a theoretical concern. Agents are already running in production. They're approving expenses, writing code, sending emails, querying databases, and calling APIs. Some of them were deployed deliberately. Others were built by employees on a lunch break using a low-code platform. The question is not whether agents will make consequential decisions in your organization. They already are. McKinsey's March 2026 research puts a number on the consequences: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights." That reframing matters. The question shifts from "is the model accurate?" to "who is accountable when the system acts?"
 
-The question is: when something goes wrong, can you explain what happened?
+The question is: when something goes wrong, can you explain what happened? Or as Isenberg puts it: "The scariest failures are ones you can't reconstruct because you didn't log the workflow."[^mckinsey]
 
 ## What Changed
 
@@ -131,3 +131,4 @@ Let's start with the framework itself.
 [^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 12, 2026. Documents agentic AI cybercrime convergence across reconnaissance, phishing, credential testing, and infrastructure rotation.
 [^sardine]: Sardine, "AI-driven fraud vectors: 7 agentic attacks now live in 2026," sardine.ai, March 2026. Documents seven agentic attack types currently producing losses across banking, fintech, and crypto partner networks.
 [^5]: NIST, "Accelerating the Adoption of Software and AI Agent Identity and Authorization," NCCoE Concept Paper, February 2026. Comment period open through April 2, 2026.
+[^mckinsey]: McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Featuring Rich Isenberg (partner, Risk & Resilience). 80% of organizations have encountered risky behavior from AI agents. The governance framework requires archetypes, tiered approvals, and continuous monitoring.
