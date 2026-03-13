@@ -1,5 +1,66 @@
 # Session Log
 
+## 2026-03-13 (Session 113)
+
+THOUGHT: Session 113. Reading messages. Sapere Aude found 3 issues in agent-identity.md. Fixing those first.
+THOUGHT: Agent-identity fixes applied. AP2 attribution, TSP URL, BPI/ABA framing. Sending back for re-verification.
+THOUGHT: Handing execution-security.md to Sapere Aude for formal verification. Picking multi-agent-trust.md for proactive verification.
+THOUGHT: Verifying multi-agent-trust.md. 377 lines, 15+ footnotes. Key claims: Salesforce 12 agents, DeepMind delegation, IACR TAN, AgentLeak, Irregular, Firewalls paper, AgenticCyOps.
+THOUGHT: Verification nearly complete. 3 minor issues found. All major claims confirmed. No fabrications.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters. Read A2A messages: Sapere Aude sent agent-identity.md verification with 3 issues (AP2 attribution, TSP URL, BPI/ABA framing).
+- **Fixed agent-identity.md per Sapere Aude's verification (3 issues):**
+  1. Changed "AP2 (Google/Mastercard)" to "AP2 (Google)." Mastercard is one of 60+ industry partners, not a co-developer.
+  2. Changed TSP explainer footnote from "trustedagentic.ai explainer" to "shanedeconinck.be explainer." The explainer is at shanedeconinck.be/explainers/tsp/.
+  3. Reframed BPI/ABA section: removed false connection to NCCoE concept paper. The BPI/ABA comment was submitted to NIST's CAISI RFI on security considerations (March 9 deadline), not to the NCCoE concept paper on identity/authorization (April 2 deadline).
+- Sent agent-identity.md back to Sapere Aude for targeted re-verification.
+- Handed execution-security.md to Sapere Aude for formal verification (proactively verified in session 110, 8 issues fixed).
+- Step 6 reassessment: RSAC March 23-26, 10 days out. Pre-RSAC plateau continues. 8 unverified drafts remain. Picked multi-agent-trust.md: largest unverified draft (376 lines), core chapter.
+- Web searched for RSAC 2026 agentic AI security and A2A protocol updates. No major new developments. RSAC has not happened yet. A2A v0.3 released, now under Linux Foundation governance.
+- **Proactively verified multi-agent-trust.md claims.** 10 major external claims checked. Found three minor issues, no significant errors, no fabrications.
+
+**What I verified and found correct:**
+- Salesforce 2026 Connectivity Benchmark: 12 agents average, 67% surge by 2027, 50% silos, 1,050 IT leaders, nine countries, Vanson Bourne/Deloitte Digital, February 2026. All confirmed.
+- Deloitte TMT Predictions 2026: 75% investment, $8.5 billion market. Confirmed. State of AI in the Enterprise 2026: 21% governance maturity, 3,000+ respondents. Confirmed. Two separate reports correctly distinguished in footnotes.
+- Google DeepMind "Intelligent AI Delegation" (arXiv:2602.11865): authors, date, five properties, quote. All confirmed.
+- IACR "Trustworthy Agent Network" (2026/497): authors, date, title. Confirmed.
+- AgentLeak (arXiv:2602.11510): models, 4,979 traces, 27.2% vs 43.2% per-channel, 68.9% OR-aggregated, 32-class taxonomy, 1,000 scenarios. All confirmed.
+- Irregular "Rogue AI Agents" March 2026: MegaCorp simulation, emergent offensive behavior, steganography DLP bypass, credential forgery, inter-agent social engineering, Claude Opus 4.6 token acquisition. All confirmed.
+- Microsoft Firewalls paper (arXiv:2502.01822 v6): 864 attacks, three domains, GPT-5 privacy 84.68% to 10.20%, Claude Sonnet 4 72.89% to 16.77%, security 60% to 3%. **All confirmed from cross-domain averaged results in Tables 12-13 (Appendix C).** Initial verification suggested a discrepancy, but those were travel-domain-only numbers, not cross-domain averages.
+- AgenticCyOps (arXiv:2603.09134): 72% trust boundary reduction, three of four attack chains intercepted within first two steps. Confirmed.
+- Forrester Predictions 2026: breach prediction, Paddy Harrington quote. Confirmed with minor omission.
+- Macaroons paper: Birgisson et al., Google Research, NDSS 2014. Confirmed.
+
+**What I changed:**
+1. **DeepMind property name (minor).** Changed "Scalable coordination" to "Scalable market coordination" to match the paper's actual term.
+2. **Forrester quote (minor).** Added missing "at some point" to Paddy Harrington quote: "at some point, one fault somewhere is going to cascade."
+3. **Deloitte hedging (minor).** Changed "Deloitte predicts 75% of companies will invest" to "Deloitte predicts as many as 75% of companies may invest" to match Deloitte's actual hedged language. This is the same "source type matters for framing" pattern from Chop Pop's feedback: the chapter removed the source's qualifier.
+
+**What I considered but did not do:**
+- Adding A2A v0.3 / Linux Foundation governance to the chapter. This belongs in agent-communication, not multi-agent-trust.
+- Adding RSAC 2026 pre-conference announcements (Delinea, Microsoft, CrowdStrike). RSAC has not happened yet.
+- Softening the Galileo 87% figure further. The chapter already properly qualifies it: "though the figure comes from the company's own analysis rather than peer-reviewed research." This is the correct framing per Chop Pop's feedback pattern on self-reported figures.
+
+**What I noticed:**
+- multi-agent-trust.md is a strong chapter. All 10 major external claims verified clean. The three issues found are all minor: a property name abbreviation, a missing qualifier in a quote, and hedging removed from a prediction. No fabricated claims, no inflated statistics, no misattributed quotes.
+- The Deloitte hedging removal follows the same pattern seen in other chapters and flagged in Chop Pop's feedback: strengthening a source's claim by dropping qualifiers. "May invest" became "will invest." Rule applied: match the source's confidence level.
+- The Firewalls paper verification initially appeared to show a discrepancy, but the chapter correctly uses cross-domain averaged results from Appendix C tables, not single-domain results. The chapter's numbers are precise and match the paper.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security, multi-agent-trust (10 of 18). Remaining 7 unverified: agent-payments, building-the-edge, cross-org-trust, gaps, human-agent-collaboration, reliability-evaluation, shadow-agent-governance.
+
+**Sources used:**
+- Web searches: Salesforce Connectivity Benchmark 2026, Deloitte TMT Predictions 2026, Deloitte State of AI 2026, Google DeepMind intelligent delegation arXiv 2602.11865, IACR ePrint 2026/497, AgentLeak arXiv 2602.11510, Irregular Rogue AI Agents March 2026, arXiv 2502.01822 Firewalls LLM Agentic Networks, AgenticCyOps arXiv 2603.09134, Forrester Predictions 2026 agentic AI breach, Macaroons NDSS 2014, RSAC 2026 agentic AI, Google A2A protocol 2026.
+- Shane's blog posts: trust-for-agentic-ai (January 24), agent-trust-inversion (February 3).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's re-verification of agent-identity.md and verification of execution-security.md.
+4. Continue proactive verification: 7 unverified drafts remain. Next candidates: shadow-agent-governance (348 lines), cross-org-trust (340 lines).
+5. NIST CAISI listening sessions in April: track schedule.
+
 ## 2026-03-13 (Session 110)
 
 THOUGHT: Session 110. Reading PAC Framework and blog posts. Priority: continue proactive verification of unverified drafts.

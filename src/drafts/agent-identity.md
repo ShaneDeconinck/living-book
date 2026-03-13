@@ -281,7 +281,7 @@ The selective disclosure is critical: each party sees only what it needs. The me
 
 And critically: the agent cannot sub-delegate. Layer 3 is terminal. This enforces the PAC principle that authority must only decrease through delegation chains, never increase.[^12]
 
-Three major commerce protocols are adopting Verifiable Intent: AP2 (Google/Mastercard), ACP (Stripe/OpenAI), and UCP (Google/Shopify/Walmart). The specification is built on established standards: SD-JWT, JWT, JWS, and ES256 from IETF, FIDO Alliance, EMVCo, and W3C.[^11]
+Three major commerce protocols are adopting Verifiable Intent: AP2 (Google), ACP (Stripe/OpenAI), and UCP (Google/Shopify/Walmart). The specification is built on established standards: SD-JWT, JWT, JWS, and ES256 from IETF, FIDO Alliance, EMVCo, and W3C.[^11]
 
 ## The Regulatory Convergence
 
@@ -300,7 +300,7 @@ The comment period runs through April 2, 2026, nearly the same window as the EU 
 
 ### Industry Response: The Agent Transparency Label
 
-The NIST concept paper drew the first concrete industry proposal for standardized agent transparency. On March 9, 2026, the Bank Policy Institute and the American Bankers Association submitted a joint comment to NIST's CAISI proposing what they call a "nutrition label" for AI agents: a risk-scaled, controlled-sharing profile that standardizes what organizations must disclose about their agents to counterparties.[^bpi-aba]
+Separately, NIST's CAISI issued a request for information on security considerations for AI agent systems, with a March 9 comment deadline. The Bank Policy Institute and the American Bankers Association submitted a joint response proposing what they call a "nutrition label" for AI agents: a risk-scaled, controlled-sharing profile that standardizes what organizations must disclose about their agents to counterparties.[^bpi-aba]
 
 The proposal has two tiers. A foundational baseline covers every agent: purpose, data dependencies, operational boundaries, permission scope, human approval requirements, logging capabilities, and change notification requirements. An enhanced tier adds detail when risk or complexity is higher: deeper data dependency documentation, protective measures for high-risk actions, and operational validation evidence. The analogy to food nutrition labels is deliberate: a standard baseline set of information for due diligence, with added detail when the stakes are higher.
 
@@ -390,7 +390,7 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^6]: IETF RFC 9449, "OAuth 2.0 Demonstrating Proof of Possession (DPoP)," September 2023.
 [^7]: Auth0, "Auth0 for AI Agents," generally available November 2025.
 [^8]: Shane Deconinck, "My Content Comes with Verifiable Credentials. Your Agent Can Verify," February 22, 2026.
-[^9]: Shane Deconinck, "Understanding TSP: The Trust Spanning Protocol Explained," trustedagentic.ai explainer.
+[^9]: Shane Deconinck, "Understanding TSP: The Trust Spanning Protocol Explained," shanedeconinck.be explainer.
 [^10]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," January 24, 2026.
 [^11]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," March 6, 2026.
 [^12]: Mastercard, "How Verifiable Intent Builds Trust in Agentic AI Commerce," March 5, 2026.

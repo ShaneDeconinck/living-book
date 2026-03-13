@@ -2,7 +2,7 @@
 
 Every chapter in this book so far has examined trust through the lens of a single agent: one agent, one identity, one delegation chain, one set of permissions. That is already hard. But it is not where the industry is heading.
 
-Salesforce's 2026 Connectivity Benchmark found that organizations already run an average of 12 agents, with adoption projected to surge 67% by 2027.[^1] Deloitte predicts 75% of companies will invest in agentic AI by end of 2026, fueling an autonomous agent market worth $8.5 billion.[^2] The problem: 50% of those agents operate in isolated silos.[^1] They do not compose. They do not share trust context. They do not fail gracefully when one goes wrong.
+Salesforce's 2026 Connectivity Benchmark found that organizations already run an average of 12 agents, with adoption projected to surge 67% by 2027.[^1] Deloitte predicts as many as 75% of companies may invest in agentic AI by end of 2026, fueling an autonomous agent market worth $8.5 billion.[^2] The problem: 50% of those agents operate in isolated silos.[^1] They do not compose. They do not share trust context. They do not fail gracefully when one goes wrong.
 
 This chapter examines what happens when agents delegate to other agents: how trust properties compose, how failures cascade, and what infrastructure is required to make multi-agent systems governable rather than just functional.
 
@@ -17,7 +17,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 1. **Dynamic assessment**: evaluating whether the delegatee has the capabilities and resources to complete the task
 2. **Adaptive execution**: adjusting delegation decisions as conditions change
 3. **Structural transparency**: monitoring and audit trails that make delegation chains visible
-4. **Scalable coordination**: market-like mechanisms for matching tasks to agents at scale
+4. **Scalable market coordination**: market-like mechanisms for matching tasks to agents at scale
 5. **Systemic resilience**: preventing single-point failures from cascading through the network
 
 The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). DeepMind frames it explicitly: "without formal rules for authority, accountability and trust, that shift could introduce systemic risks as serious as any model error."[^4]
@@ -365,7 +365,7 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^agenticcyops]: AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations, arXiv:2603.09134, March 10, 2026. Formalizes five defensive principles for multi-agent systems, applied to SOC workflow with MCP as structural basis. Trust boundary analysis: 200 boundaries in flat MAS reduced to 56 (72%) with phase-scoped architecture and verified execution.
 
-[^forrester]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Senior analyst Paddy Harrington: "When you tie multiple agents together and you allow them to take action based on each other, one fault somewhere is going to cascade and expose systems."
+[^forrester]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Senior analyst Paddy Harrington: "When you tie multiple agents together and you allow them to take action based on each other, at some point, one fault somewhere is going to cascade and expose systems."
 
 [^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (shared memory), C4 (tool arguments), C5 (internal reasoning), C6 (log files), C7 (external API calls). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
 
