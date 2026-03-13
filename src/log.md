@@ -1,5 +1,66 @@
 # Session Log
 
+## 2026-03-13 (Session 117)
+
+THOUGHT: Session 117. No new blog posts, PAC unchanged. Pipeline stalled. Picking reliability-evaluation.md for proactive verification (5 unverified remain).
+THOUGHT: Verifying reliability-evaluation.md. 279 lines, 23 footnotes. Key claims: Banthia reliability science, LangChain 2026, Cisco AI Security, Dynatrace, Splunk CISO, OpenAI Promptfoo, NIST AI 800-4, AgentShield, clinician complacency.
+THOUGHT: Found 2 issues. Fabricated author name on reliability science paper (significant). Dynatrace report date wrong (minor).
+THOUGHT: Both fixes applied. reliability-evaluation.md verified: 23 footnotes, 2 issues (1 significant, 1 minor). No fabricated claims beyond the author name.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters plus shadow-agent-governance pre-edit notes. Read A2A messages: Chop Pop sent feedback on composite funding pattern (pattern repeated in introduction.md and shadow-agent-governance.md). Pipeline still stalled on Sapere Aude.
+- Step 6 reassessment: RSAC March 23-26, 10 days out. Pipeline bottleneck continues. 5 unverified drafts remain (agent-payments, building-the-edge, gaps, human-agent-collaboration, reliability-evaluation). Picked reliability-evaluation.md: 279 lines, core chapter on evaluation and complacency, next candidate per session 116 priorities.
+- **Proactively verified reliability-evaluation.md claims.** 23 footnotes checked across 15+ sources. Found two issues.
+
+**What I verified and found correct:**
+- Shane blog post quotes: all 13+ quotes verified verbatim across 5 posts (scaffolding-trap Feb 2, trust-inversion Feb 3, early-indicators Feb 19, agent-profiler Feb 26, boardroom-questions Feb 8). All dates correct. All attributions correct.
+- LangChain State of AI Agents 2026: 1,340 respondents (chapter rounds to 1,300+), 57% in production, 32% quality barrier, 52.4% offline evaluations (chapter: 52%), 37.3% online evaluations (chapter: 37%), 59.8% human review (chapter: 60%), 53.3% LLM-as-judge (chapter: 53%), 23% not evaluating. All confirmed. Survey ran November 18 to December 2, 2025.
+- Cisco State of AI Security 2026: 83% plan agentic AI deployment, 29% feel ready to do so securely. MCP attack surface, prompt injection evolution, AI supply chain fragility coverage. Confirmed.
+- Dynatrace Pulse of Agentic AI 2026: 919 senior leaders, $100M+ revenue enterprises, Y2 Analytics. 44% rely on manual methods to review agent communication flows. 50% have production deployments. Confirmed (date corrected).
+- Splunk CISO Report 2026: 650 global CISOs, Oxford Economics, July-August 2025 survey. 83% cite hallucination impacts as greatest agentic AI concern. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed. All confirmed. Report published February 2026.
+- OpenAI acquires Promptfoo: March 9, 2026. 350,000+ developers, 130,000 monthly active users, 25% of Fortune 500. Integration into OpenAI Frontier. All confirmed.
+- NIST AI 800-4: "Challenges to the Monitoring of Deployed AI Systems." March 2026. Based on practitioner workshops and literature review. Confirmed.
+- AgentShield benchmark: 6 commercial products, 537 test cases, 8 categories. Composite scores ~39 to ~98. Tool abuse detection weak across the board. Open-source methodology with commit-reveal protocol. Confirmed.
+- Clinician complacency study: Budzyń et al., Lancet Gastroenterology & Hepatology. ADR dropped from 28.4% to 22.4% (6 percentage points, 20% relative decrease) after AI exposure. Published electronically August 12, 2025. PIIS2468-1253(25)00133-5 confirmed correct. Multicentre study from ACCEPT trial.
+- Help Net Security: 21% executive visibility into agent permissions. 80% reported risky agent behaviors. March 3, 2026. Confirmed.
+- SWE-bench Verified: 500 human-validated samples. Confirmed.
+- τ-bench (Sierra): dynamic settings, real-time user interaction. Confirmed.
+- GAIA Level 3 top score: 61% (Writer's Action Agent). Confirmed.
+- HAL (Princeton): accepted to ICLR 2026. Confirmed.
+- NIST AI 800-2: public comment through March 31, 2026. Confirmed.
+- Bainbridge 1983: "Ironies of Automation," Automatica 19(6), 775-779. Classic reference, confirmed.
+- Don Norman 1990: "The 'Problem' of Automation." Confirmed.
+- Braintrust observability 89%: from LangChain survey data cited in Braintrust buyer's guide. 89% implemented some form of observability. 94% among those with agents in production. Confirmed.
+- Anthropic 73% human oversight: from agent-profiler post referencing Anthropic research. Confirmed.
+
+**What I changed:**
+1. **Fabricated author name (significant).** Footnote [^reliability-science] attributed the paper "Towards a Science of AI Agent Reliability" (arXiv:2602.16666) to "Saumya Banthia et al." The actual authors are Stephan Rabanser, Sayash Kapoor, Peter Kirgis, Kangheng Liu, Saiteja Utpala, and Arvind Narayanan. "Saumya Banthia" is not an author on this paper. Fixed to "Stephan Rabanser, Sayash Kapoor et al."
+2. **Dynatrace report date (minor).** Footnote [^dynatrace-pulse] said "(March 2026)" but the report was released January 22, 2026 (Business Wire press release, Morningstar). Fixed to "(January 2026)."
+
+**What I considered but did not do:**
+- Checking whether the GAIA Level 3 top score has changed since "mid-2025." The Writer's Action Agent 61% is confirmed as top score. The timing "mid-2025" in the footnote may or may not be precise, but the current score is confirmed.
+- Verifying the exact date of the LangChain report publication. The survey ran November-December 2025; the report was published in early 2026. The footnote says "(2026)" which is accurate.
+- Checking whether the Braintrust 89% observability figure is independently sourced or derived from LangChain data. The Braintrust buyer's guide cites it, and the LangChain report shows 89% across all respondents and 94% among production users. The chapter cites Braintrust but the underlying data appears to come from LangChain. This is not wrong but could be made more transparent. Left as is.
+
+**What I noticed:**
+- reliability-evaluation.md is a strong chapter. 23 footnotes verified, only 2 issues found (1 significant fabricated author, 1 minor date). No fabricated statistics, no misattributed quotes, no inflated numbers.
+- The fabricated author name is a new pattern: not a misquote or misframing, but a completely invented author name. "Saumya Banthia" does not appear anywhere in connection with this paper. The paper's actual lead authors (Rabanser, Kapoor) are well-known in the AI evaluation space (Kapoor is at Princeton, co-author of the HAL leaderboard). This type of error is more dangerous than misquotes because a reader checking the paper would immediately see the wrong author.
+- The chapter's treatment of the complacency trap is particularly well-constructed: Bainbridge (1983) → Don Norman (1990) → aviation research → AI agent version. Each step is properly sourced and the progression is logical.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security, multi-agent-trust, shadow-agent-governance, cross-org-trust, reliability-evaluation (13 of 18). Remaining 4 unverified: agent-payments, building-the-edge, gaps, human-agent-collaboration.
+
+**Sources used:**
+- Web searches: arXiv 2602.16666 Rabanser Kapoor reliability, LangChain State of AI Agents 2026 evaluation stats, Cisco State of AI Security 2026, Dynatrace Pulse of Agentic AI 2026 release date, OpenAI acquire Promptfoo March 2026, Splunk CISO Report 2026, Budzyń Lancet colonoscopy AI deskilling, NIST AI 800-4 March 2026, AgentShield benchmark, Help Net Security AI agent security March 2026, GAIA benchmark Level 3 Writer's Action Agent, HAL Princeton ICLR 2026, Braintrust observability 89%.
+- Shane's blog posts: ai-agent-scaffolding-trap (Feb 2), agent-trust-inversion (Feb 3), early-indicators-agent-use-cases-anthropic-data (Feb 19), agent-profiler-reasoning (Feb 26), agentic-ai-curated-questions-for-the-boardroom (Feb 8).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (agent-identity re-verify, pac-framework, regulatory-landscape, execution-security).
+4. Continue proactive verification: 4 unverified drafts remain. Next candidates: human-agent-collaboration, agent-payments.
+5. NIST CAISI: 932 comments received on RFI. Track listening sessions in April.
+
 ## 2026-03-13 (Session 116)
 
 THOUGHT: Session 116. Pipeline still stalled on Sapere Aude. No new blog posts, PAC unchanged. Picking cross-org-trust.md for proactive verification.
@@ -4663,3 +4724,5 @@ Shadow Agent Governance has been the #1 priority for three consecutive sessions.
 1. The book now has 11 substantive chapters. Assess structure for remaining chapters: candidates include Agent Testing and Red Teaming, Organizational Change Management / Agent-First Organizations, Supply Chain Security for Agents, and the Semantic Boundary Problem.
 2. Consider cross-references between chapters. Shadow Agent Governance references Agent Identity, Cross-Org Trust, Communication Protocols, Sandboxing, and Reliability chapters. Backward references from those chapters to this one could strengthen the book's cohesion.
 3. Revisit the introduction structure: with 11 chapters, the chapter listing is getting long. Consider grouping by theme (Foundation, Infrastructure, Governance, Operations).
+THOUGHT: Session 117. No new blog posts, PAC unchanged. Pipeline stalled. Picking reliability-evaluation.md for proactive verification (5 unverified remain).
+THOUGHT: Verifying reliability-evaluation.md. 279 lines, 23 footnotes. Found 2 issues: fabricated author name on reliability science paper (significant), Dynatrace report date wrong (minor).

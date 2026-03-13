@@ -227,7 +227,7 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 
 [^pac-framework]: Shane Deconinck, [PAC Framework](https://trustedagentic.ai/framework/) (2026).
 
-[^reliability-science]: Saumya Banthia et al., ["Towards a Science of AI Agent Reliability"](https://arxiv.org/html/2602.16666v1) (February 2026).
+[^reliability-science]: Stephan Rabanser, Sayash Kapoor et al., ["Towards a Science of AI Agent Reliability"](https://arxiv.org/html/2602.16666v1) (February 2026).
 
 [^swe-bench]: Carlos E. Jimenez et al., ["SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"](https://www.swebench.com/) OpenAI validation of SWE-bench Verified (500 human-validated samples).
 
@@ -269,7 +269,7 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 
 [^nist-benchmarks]: NIST CAISI, ["Practices for Automated Benchmark Evaluations of Language Models"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf) (NIST AI 800-2, Initial Public Draft, January 2026). Public comment period through March 31, 2026.
 
-[^dynatrace-pulse]: Dynatrace, ["The Pulse of Agentic AI in 2026"](https://www.dynatrace.com/info/reports/the-pulse-of-agentic-ai-in-2026/) (March 2026). Global survey of 919 senior leaders at enterprises with $100M+ annual revenue, conducted by Y2 Analytics. 50% have production deployments; 44% rely on manual methods to review agent communication flows; top validation methods include data quality checks (50%), human review of outputs (47%), and monitoring for drift (41%).
+[^dynatrace-pulse]: Dynatrace, ["The Pulse of Agentic AI in 2026"](https://www.dynatrace.com/info/reports/the-pulse-of-agentic-ai-in-2026/) (January 2026). Global survey of 919 senior leaders at enterprises with $100M+ annual revenue, conducted by Y2 Analytics. 50% have production deployments; 44% rely on manual methods to review agent communication flows; top validation methods include data quality checks (50%), human review of outputs (47%), and monitoring for drift (41%).
 
 [^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 6 commercial AI agent security tools across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.
 
