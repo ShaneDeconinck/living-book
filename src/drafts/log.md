@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 UTC: MCP Governance Gets a Production Blueprint (Session 86)
+
+THOUGHT: Microsoft Inside Track blog: first documented production MCP governance at enterprise scale. Four-layer risk model.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 16 chapters, all substantive. No feedback files. No agent messages.
+- Step 6 reassessment: pre-RSAC plateau continues into its 22nd session (65-86). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 announcements, MCP vulnerability security March 2026, AI agent identity authorization standards IETF March 2026, Microsoft Agent 365 E7 governance details, NIST AI agent standards initiative, Anthropic Claude agent security March 2026, Adversa AI MCP Security Top 25. Most findings already in the book. One genuinely significant new finding: **Microsoft's internal MCP governance architecture** (Inside Track blog, March 2026), the first documented production-scale MCP governance implementation at enterprise scale.
+
+**What I changed:**
+- **agent-communication.md**: Added new subsection "MCP Governance in Production" (approximately 20 lines) between "OWASP MCP Top 10" and "A2A: Connecting Agents to Agents." Covers: Microsoft's four-layer risk model (applications/agents, AI platform, data, infrastructure), context minimization as a design principle (MCP servers expose minimum context), egress pinning to approved hosts via private endpoints, pre-publication security/privacy/responsible AI review gates, end-to-end observability via correlation IDs on every tool call, the four operational motions (observe, inventory, evaluate, contain), and the ecosystem-scope limitation that validates the book's cross-org trust argument. One footnote added citing Microsoft Inside Track blogs.
+- **gaps.md**: Updated session number to 86. Added new observation "MCP Governance Gets a Production Blueprint" covering the four-layer risk model, the practical significance as the first documented I3-level MCP governance, and the ecosystem-scope limitation.
+
+**What I considered but did not do:**
+- Adding Microsoft Agent 365 deployment details (100,000+ agents on their tenant, "riding the wave of agents" blog). The book already covers Agent 365 extensively across shadow-agent-governance.md, agent-identity.md, context-infrastructure.md, building-the-edge.md. The internal deployment scale is interesting but does not add architectural insight.
+- Adding Adversa AI MCP Security Top 25 as a separate reference. The 30 CVEs data and 38% authentication gap are already cited in the agent-communication chapter. The Top 25 taxonomy is complementary to the OWASP MCP Top 10 already covered but adds classification dimensions (AI/AppSec/Unique), not new vulnerability classes.
+- Adding Anthropic Claude Code Review (parallel AI agents checking PRs, $15-25 per review). Interesting as an "agents checking agents" pattern, but the book already covers this through Google's User Alignment Critic (architecturally isolated guardian agent) and Anthropic's 500+ vulnerability findings. Claude Code Review is a product announcement, not an architectural insight.
+- Adding DryRun Security report on Claude generating the most unresolved security flaws. Already noted as already-covered pattern in Session 82.
+- Adding NIST AI Agent Standards Initiative details. Already covered in regulatory-landscape chapter and gaps.md.
+- Revising or restructuring existing chapters. At session 86, with RSAC 10 days away, adding the one genuinely new production governance pattern is the right incremental move.
+
+**What I noticed:**
+- Microsoft's MCP governance architecture is the first production implementation of the governance principles the book argues for. The agent-communication chapter previously went from "here's what's wrong" (incidents, CVEs, threat models, OWASP) to "here's what trust layers should look like" (TMCP, TA2A, PIC) with a gap in between: "here's what governance looks like today." Microsoft's internal approach fills that gap with concrete patterns that organizations can implement before the full trust stack matures.
+- The four-layer risk model (applications/agents, AI platform, data, infrastructure) is more nuanced than the book's existing treatment of MCP security. It acknowledges that MCP failures occur at different layers and need different controls. This parallels the defense-in-depth architecture in the execution-security chapter (OS-level containment, semantic policy enforcement, AI-based oversight) but applied to the communication layer.
+- Context minimization as a protocol-level design principle extends the least-privilege concept from the identity layer (scoped tokens, constrained delegation) to the communication layer (scoped tool definitions, constrained context). This is the same principle operating at a different layer of the stack.
+- Pre-RSAC plateau continues through session 86. Twenty-two consecutive sessions (65-86) where broad searches return material already in the book with one significant new finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Microsoft, "Protecting AI conversations at Microsoft with Model Context Protocol security and governance," Inside Track Blog, March 2026.
+- Microsoft, "Riding the wave of agents washing over Microsoft with good governance," Inside Track Blog, March 2026.
+- Microsoft, "Deploying Microsoft Agent 365: How we're extending our infrastructure to manage agents at Microsoft," Inside Track Blog, March 2026.
+- Web searches: agentic AI security March 2026, RSAC 2026 agentic AI announcements, MCP vulnerability security March 2026, AI agent identity authorization standards IETF March 2026, Microsoft Agent 365 E7 governance details, NIST AI agent standards initiative March 2026, Anthropic Claude agent security March 2026, Adversa AI MCP Security Top 25 (all returned material already in the book except Microsoft Inside Track MCP governance).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether Microsoft's MCP governance patterns are adopted by other enterprises or replicated by competing platforms.
+
 ## 2026-03-13 UTC: RoguePilot Rendering Gap (Session 85)
 
 THOUGHT: RoguePilot: passive prompt injection via GitHub Issues weaponizes Copilot for repo takeover. Novel rendering gap attack.

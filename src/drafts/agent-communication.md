@@ -176,6 +176,24 @@ The OWASP MCP Top 10 matters for two reasons. First, it provides a shared vocabu
 
 [^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org/www-project-mcp-top-10, 2026. Developed through industry collaboration with researchers and practitioners. Designed as a living document evolving alongside MCP capabilities.
 
+### MCP Governance in Production
+
+The incident timeline, threat models, and risk taxonomies describe what can go wrong. Microsoft's internal MCP deployment provides the first documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
+
+Microsoft organizes MCP risk into four layers: **applications and agents** (the top, where business logic and tool calls originate), **AI platform** (the orchestration and model layer), **data** (what agents access and produce), and **infrastructure** (the compute, network, and identity substrate). Each layer has distinct failure modes and distinct controls. Mapping mitigations to where failures actually happen, rather than applying a single security model across the stack, is the practical insight.
+
+Three governance patterns stand out:
+
+**Context minimization.** MCP servers are designed to expose the minimum context an agent needs, not everything the server has access to. This is the protocol-level application of least privilege: the server's tool definitions, resource scopes, and response structures are designed to limit what enters the agent's context window. Combined with egress controls that pin outbound traffic to approved hosts via private endpoints and firewall rules, the architecture constrains both what goes in (context minimization) and what goes out (egress pinning). A compromised MCP server cannot "call anywhere."
+
+**Pre-publication review gates.** No MCP server is published to the organization until it passes security, privacy, and responsible AI reviews. This is a registry enforcement pattern: the MCP server catalog acts as a governance checkpoint, not just a discovery mechanism. It connects directly to the [Shadow Agent Governance](shadow-agent-governance.md) chapter's registry argument: if MCP servers can only be discovered through the governed catalog, ungoverned servers cannot be connected to.
+
+**End-to-end observability.** Every tool call carries a correlation ID from client through gateway to server and back. This creates the audit trail that incident response requires: when something goes wrong, the full call chain is reconstructable. The four operational motions (observe, inventory, evaluate, contain) parallel the [Reliability, Evaluation](reliability-evaluation.md) chapter's argument that governance-grade observability means monitoring the full communication surface, not just outputs.
+
+The limitation is the same one the [Shadow Agent Governance](shadow-agent-governance.md) chapter identifies for Agent 365 more broadly: this governance model works within a single platform's ecosystem. Agents that span providers, use non-Microsoft MCP servers, or operate across organizational boundaries need the cross-organizational trust infrastructure described in [Cross-Organization Trust](cross-org-trust.md). But for organizations already running MCP within a managed environment, the pattern shows what I3-level governance (verified, policy-enforced communication) looks like in practice.
+
+[^ms-mcp-governance]: Microsoft, "Protecting AI conversations at Microsoft with Model Context Protocol security and governance," Inside Track Blog, March 2026. See also Microsoft, "Riding the wave of agents washing over Microsoft with good governance," Inside Track Blog, March 2026.
+
 ## A2A: Connecting Agents to Agents
 
 If MCP is how agents find tools, A2A (Agent-to-Agent) is how agents find each other. Created by Google in April 2025 and donated to the Linux Foundation in June 2025, A2A standardizes agent discovery, communication, and collaboration.[^10]

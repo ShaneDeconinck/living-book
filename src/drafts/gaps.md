@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 85)
+## Observations (Updated 2026-03-13, Session 86)
+
+### MCP Governance Gets a Production Blueprint
+
+Microsoft's Inside Track blog (March 2026) published the first documented production-scale MCP governance implementation: their internal approach to securing AI conversations through the Model Context Protocol. The architecture organizes risk into four layers (applications/agents, AI platform, data, infrastructure), applies context minimization so MCP servers expose only what agents need, pins egress to approved hosts via private endpoints, requires pre-publication security/privacy/responsible AI reviews before any MCP server enters the organization's catalog, and tracks every tool call end-to-end via correlation IDs.
+
+The significance is practical, not theoretical. The book's agent-communication chapter had extensive coverage of what goes wrong with MCP (11 incidents in 12 months, 30 CVEs in 60 days, OWASP MCP Top 10, systematic threat models) but lacked a documented production governance pattern. Microsoft's internal approach provides the first concrete example of I3-level MCP governance: verified, policy-enforced, auditable communication through a governed catalog. The four-layer risk model is a more nuanced framing than "apply security to MCP": it maps controls to the layer where failures actually occur, rather than treating MCP security as a single concern.
+
+The limitation validates the book's cross-organization trust argument: the governance model works within Microsoft's ecosystem but not across providers or organizational boundaries. Organizations operating multi-cloud or multi-vendor agent deployments still need the trust layer integrations (TMCP, TA2A, PIC) the chapter covers. Added to the Agent Communication Protocols chapter as a new subsection between the OWASP MCP Top 10 and A2A sections.
 
 ### The Rendering Gap: Invisible Instructions in Visible Content
 
