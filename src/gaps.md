@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 48)
+## Observations (Updated 2026-03-13, Session 49)
 
 ### OWASP MCP Top 10: Protocol Security Becomes a Standards Category
 
@@ -51,6 +51,10 @@ x402 has massive infrastructure backing: Coinbase, Cloudflare, Stripe, Stellar, 
 ### CrowdStrike's "Intern" Framing Signals Market Maturity
 
 CrowdStrike CEO George Kurtz's RSAC 2026 keynote (March 24) frames the agent governance gap as: "Most organizations deploy AI agents with less governance than they'd give an intern." The "AI Operational Reality Manifesto" he is unveiling is positioned as a peer-driven framework for deploying agents at velocity with governance. This matters for the book because CrowdStrike is the largest pure-play cybersecurity vendor making agent governance a keynote topic at the largest security conference. When the CEO of a $80B+ cybersecurity company makes agent governance the centerpiece of his RSAC keynote, the topic has moved from niche to mainstream security concern. The "intern" analogy is effective because it makes the abstract concrete: everyone understands the governance gap between what an intern can do and what they should do without supervision. That is exactly the agent governance problem.
+
+### Agent Identity M&A: The Category Is Already Consolidating
+
+Two major acquisitions in Q1 2026 signal that agent identity has moved from product category formation to consolidation. CrowdStrike acquired SGNL for $740M (January 8) to extend Falcon identity security to continuous, context-aware authorization for human, non-human, and AI agent identities. Delinea completed its acquisition of StrongDM (March 5) to combine enterprise PAM with just-in-time runtime authorization for agents. The timing matters: the "Agent Identity Is Now a Product Category" section of the agent-identity chapter documents product launches (Auth0, Teleport, Microsoft Entra, Token Security, Geordie AI, Imprivata). These acquisitions show the next phase: established security vendors paying hundreds of millions to acquire the capability rather than build it. When CrowdStrike pays $740M for agent authorization before its CEO even delivers his RSAC keynote on agent governance, the market has priced the infrastructure gap as a strategic asset. Added to the Agent Identity chapter.
 
 ### Two Surveys, Same Identity Gap
 

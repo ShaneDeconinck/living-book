@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-13: Agent Identity M&A Consolidation (Session 49)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits still CSS dark mode fixes). PAC Framework unchanged (19 questions, same pillar structure).
+- Read current book state: all 16 chapters assessed by line count. Strongest: agent-communication (501), regulatory-landscape (335), shadow-agent-governance (330), agent-identity (325). Read agent-identity.md in full (325 lines).
+- Step 4 reassessment: RSAC is 10 days away (March 23-26). The book is pre-RSAC plateau. All 16 chapters are developed and cross-referenced. No structural issues. The question was whether any genuinely new developments warranted integration before RSAC.
+- Web searched for recent developments: MCP security March 2026, AI agent governance enterprise trust, RSAC 2026 preview, CSA Agentic Trust Framework, Adversa AI MCP Top 25, Gartner predictions, Zenity RSAC preview, Delinea RSAC, non-human identity acquisitions March 2026, CrowdStrike SGNL acquisition.
+
+**What I changed:**
+- **agent-identity.md**: Added M&A consolidation paragraph to the "Agent Identity Is Now a Product Category" section. Two acquisitions: CrowdStrike acquiring SGNL for $740M (January 8, 2026) for continuous identity authorization across human, NHI, and AI agent identities, and Delinea completing StrongDM acquisition (March 5, 2026) for unified PAM and runtime authorization. Updated the pattern summary paragraph to include "security platform acquirers (CrowdStrike, Delinea)" alongside existing categories. Added two new footnotes.
+- **gaps.md**: Updated session number to 49. Added new observation "Agent Identity M&A: The Category Is Already Consolidating" documenting the CrowdStrike/SGNL ($740M) and Delinea/StrongDM acquisitions as evidence that agent identity has moved from product category formation to consolidation.
+
+**What I considered but did not do:**
+- Adding the Gartner "death by AI" legal claims prediction (2,000+ by end of 2026). The log already references the 1,000+ version. The updated number may reflect different reporting of the same prediction. The book's existing data (Forrester breach prediction, Gravitee 88% incident rate, Teleport 4.5x incident rate) already makes the urgency argument without needing another Gartner number.
+- Adding the Alteryx/Gartner "28% of US firms have zero confidence in AI data quality" finding. Interesting for the context-infrastructure chapter but the data quality issue is about general AI deployment, not agent-specific trust infrastructure. The book focuses on agent trust, not general AI data governance.
+- Adding Zenity's RSAC 2026 demo preview (Michael Bargury, 0-click vulnerability chains across ChatGPT, Gemini, Copilot, Einstein). The conference has not happened yet. Pre-conference marketing is not a strong enough source. Already flagged for post-RSAC session.
+- Adding Delinea's RSAC session "Agentic AI on Trial: Human Identity or Machine Identity?" framing. The question is directly addressed by the book's agent-identity chapter. The session has not happened yet.
+- Strengthening existing chapters with more CSA, CoSAI, or Adversa AI data. The book already covers all three extensively. No new substantive findings beyond what is already integrated.
+
+**What I noticed:**
+- The agent identity M&A timeline is accelerating. CrowdStrike/SGNL ($740M, January 8) and Delinea/StrongDM (completed March 5) are both Q1 2026 acquisitions explicitly framed around agent identity authorization. Combined with the product launches already in the book (Auth0 Token Vault November 2025, Teleport Agentic Identity Framework January 2026, Microsoft Entra Agent ID March 2026, Imprivata March 2026), the agent identity product category went from "emerging" to "consolidating" in under six months.
+- CrowdStrike paying $740M for SGNL before Kurtz delivers his RSAC keynote on agent governance is a sequencing signal. The acquisition gives CrowdStrike a concrete product to point to when making the "agents need governance" argument. The keynote is not just thought leadership: it is backed by a $740M investment in the infrastructure to deliver it.
+- The web searches confirmed that all other recent developments (CSA ATF, 30 CVEs, overthinking loops, CoSAI IR, OWASP MCP Top 10, ConductorOne data) are already well-integrated into the book. The pre-RSAC coverage is comprehensive.
+
+**Sources used:**
+- CrowdStrike, "CrowdStrike to Acquire SGNL to Transform Identity Security for the AI Era," crowdstrike.com, January 8, 2026. $740M acquisition.
+- Delinea, "Delinea Completes StrongDM Acquisition to Secure AI Agents with Continuous Identity Authorization," globenewswire.com, March 5, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: 19 questions confirmed, pillar structure unchanged).
+- Shane's blog (checked: no new posts since March 11, 2026).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote content, Zenity 0-click demo results, Bedrock Data sessions, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Track whether Anthropic DOD lawsuit produces precedent.
+
 ## 2026-03-13: OWASP MCP Top 10 and Azure MCP Confused Deputy (Session 48)
 
 **What I did:**
