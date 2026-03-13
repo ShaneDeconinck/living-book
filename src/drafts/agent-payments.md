@@ -186,6 +186,31 @@ Critically, these constraints are enforced at the network level, not at the agen
 
 This is the Control pillar in action: policy says "don't spend more than $300"; architecture says "can't spend more than $300."
 
+### Selective Disclosure: Privacy by Architecture
+
+Verifiable Intent splits L3 into two credentials: L3a goes to the payment network, L3b goes to the merchant. Each party only sees what they need:[^13]
+
+| Data | Merchant | Payment Network | Dispute |
+|---|:---:|:---:|:---:|
+| User identity (L1) | yes | yes | yes |
+| Constraints (L2) | checkout only | payment only | all |
+| Line items | yes | no | yes |
+| Payment instrument | no | yes | yes |
+| Amount | no | yes | yes |
+| Merchant details | yes | identifier only | yes |
+
+Both halves are bound by `transaction_id == checkout_hash`, without either party seeing the other's data. Both halves only come together during dispute resolution. This is privacy by architecture, not by policy: the agent reveals only the relevant SD-JWT disclosures to each verifier.
+
+### What Verifiable Intent Does Not Solve
+
+Shane's analysis of the spec identifies three gaps that matter for payment deployments:[^13]
+
+**L3 is terminal.** The agent cannot sub-delegate to another agent. There is no provision for multi-hop delegation chains. VI models a world where one agent acts for one user. As agent systems become more composable (agent calling agent calling agent), this single delegation step may prove insufficient for complex procurement workflows.
+
+**Agent compromise within constraints.** If an agent is compromised mid-execution (prompt injection, for example), the attacker could generate L3 credentials that satisfy L2 constraints but serve malicious purposes. A compromised agent authorized to buy headphones under $300 from approved merchants could buy the wrong headphones from an approved merchant. The constraint system bounds the damage but does not prevent it. VI generates proof of intent, not a guarantee of agent reliability.
+
+**Trust bootstrapping.** Agents are identified by their public key, but there is no standard way to discover or verify those keys across organizations. The `kid` format is left to implementations, with no prescribed format like DIDs or URLs. This is the gap that A2A, TSP, and DID-based discovery aim to fill, and why VI alone is not a complete trust solution for agent commerce.
+
 ## Know Your Agent: Commerce Identity Verification
 
 Verifiable Intent constrains what an agent can do once authorized. But a prior question remains: how do you know the agent is legitimate in the first place? Traditional commerce has KYC (Know Your Customer) and KYB (Know Your Business). Agent commerce needs a third layer: KYA, Know Your Agent.[^kya-pymnts]

@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13 (Session 152)
+
+THOUGHT: Session 152. Shane's March 6 VI post is a key primary source. The agent-payments chapter cites it but doesn't cover Shane's limitations analysis or selective disclosure model. Context-infrastructure now staged (9 staged).
+THOUGHT: Strengthening agent-payments.md with Shane's VI analysis: selective disclosure table, three limitations (terminal L3, agent compromise within constraints, trust bootstrapping gap).
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. PAC Framework unchanged.
+- Checked /opt/a2a-messages/. Chop Pop staged context-infrastructure.md (message 5700) with 7 cuts and 6 factual flags for Sapere Aude. Pipeline now 4 published, 9 staged.
+- Read Shane's March 6 blog post: "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization." This is a detailed technical analysis of the VI spec with SD-JWT chain examples, selective disclosure tables, constraint types, and critically, a "What It Doesn't Solve" section identifying three gaps. The agent-payments chapter cited this post (footnote [^13]) but had not incorporated Shane's limitations analysis or selective disclosure model.
+- **Strengthened agent-payments.md Authorization section with two new subsections:**
+  1. "Selective Disclosure: Privacy by Architecture" — added Shane's selective disclosure table showing what data each party (merchant, payment network, dispute) sees. The split L3a/L3b credential model and `transaction_id == checkout_hash` binding. This is the privacy-by-architecture argument that makes VI more than just constraint enforcement.
+  2. "What Verifiable Intent Does Not Solve" — added Shane's three identified gaps: (a) L3 is terminal (no multi-hop delegation, limiting complex procurement), (b) agent compromise within constraints (prompt injection can abuse valid constraints), (c) trust bootstrapping (no standard key discovery, the gap A2A/TSP/DIDs fill). These limitations give the chapter the honest-assessment balance that Chop Pop's feedback patterns value.
+- **Updated gaps.md pipeline status.** Context-infrastructure now staged (9 staged total). 5 remaining in drafts (agent-payments, building-the-edge, reliability-evaluation, plus gaps and introduction which are always in drafts).
+- Web searched for recent developments: agentic AI trust/identity/authorization March 2026, RSAC Innovation Sandbox, MCP/A2A updates. RSAC Innovation Sandbox winner not yet announced (March 23). No new developments requiring chapter modifications.
+
+**What I considered but did not do:**
+- Adding Mastercard's VI open-sourcing details (verifiableintent.dev, Apache 2.0, ES256) to agent-payments. The footnote already cites Shane's post which covers these. The spec URL is in the post for readers who want it.
+- Adding Shane's SD-JWT vs SD-JWT VC distinction (VI is "halfway there" to Verifiable Credentials, already uses `vct` fields). Technically important but more relevant to agent-identity than agent-payments. Noted for future session.
+- Adding the L2 immediate vs autonomous mode distinction from Shane's post. The chapter already covers autonomous mode implicitly through the constraint enforcement section. The immediate mode (user confirms directly, no agent) is outside the chapter's scope.
+- Writing new chapters. Three drafts remain (agent-payments, building-the-edge, reliability-evaluation). All have been proactively cleaned. The highest-impact work is strengthening existing content with Shane's primary sources.
+
+**What I noticed:**
+- Shane's VI post (March 6) was cited but underused. The chapter had the constraint table but not the selective disclosure model or limitations. This is the pattern the CLAUDE.md warns about: reading Shane first, then building on his thinking. The limitations section is especially important because it gives the chapter the honest-assessment quality Chop Pop identified as one of its strengths.
+- The "L3 is terminal" limitation is architecturally significant for the book's argument. The book covers multi-agent trust, delegation chains, and composability extensively. VI currently cannot support agent-to-agent delegation chains for payment. This connects to the gaps chapter's observation about protocol composition creating novel gaps.
+- Pipeline at 4 published, 9 staged. Only agent-payments, building-the-edge, and reliability-evaluation remain in drafts. Sapere Aude verification queue now holds 9 chapters plus pac-framework stats retroactive (10 items). Sapere Aude remains the bottleneck.
+- RSAC Innovation Sandbox winner March 23 (10 days). NIST NCCoE stakeholder interest deadline March 20 (7 days).
+
+**Sources used:**
+- Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," March 6, 2026. Primary source for selective disclosure table, three VI limitations, constraint types.
+- Web searches: agentic AI trust identity authorization security March 2026, RSAC 2026 Innovation Sandbox winner, MCP A2A protocol security update March 2026, Mastercard Verifiable Intent agentic AI commerce 2026.
+- No new external sources incorporated into chapters this session. All additions sourced from Shane's existing blog post.
+
+**Next session priorities:**
+1. Check for Sapere Aude verification of staged chapters (10 items in queue).
+2. Check for Chop Pop editorial on agent-payments.md (next in queue after context-infrastructure).
+3. Consider adding Shane's SD-JWT vs SD-JWT VC analysis to agent-identity chapter.
+4. NIST NCCoE stakeholder interest deadline March 20 (7 days).
+5. RSAC 2026 Innovation Sandbox winner (March 23).
+
 ## 2026-03-13 (Session 151)
 
 THOUGHT: Session 151. Human-agent-collaboration now staged by Chop Pop (8 staged total). No new Shane posts, PAC unchanged. Pipeline nearly complete: only 4 chapters remain in drafts.
