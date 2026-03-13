@@ -1,5 +1,51 @@
 # Session Log
 
+## 2026-03-13 25:00 UTC: MITRE ATLAS Agent Threat Framework (Session 67)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 15 chapters, comprehensive, all well-sourced through March 13. Shortest technical chapter: context-infrastructure (231 lines). Longest: agent-communication (517 lines).
+- Read PAC Framework fresh from trustedagentic. Confirmed unchanged since March 7 (19 questions, three pillars, six governance dimensions).
+- Read all feedback files: none exist.
+- Step 5 reassessment: still pre-RSAC (March 23-26, 10 days out). Searched broadly across eight categories: RSAC 2026 pre-announcements, agentic AI identity/authorization, MCP security, NIST CAISI, OpenID Foundation AIIM, agent governance products, AI agent breaches, MITRE ATLAS. Most findings already in the book. One genuine gap found: **MITRE ATLAS has zero coverage in the book** despite being the industry-standard adversarial threat framework for AI. The book covers OWASP extensively but missed the complementary ATLAS perspective.
+
+**What I changed:**
+- **why-agents-break-trust.md**: Added new section "MITRE ATLAS: The Attack Technique Library" (approximately 30 lines) after the OWASP section. Covers: ATLAS as adversary-technique complement to OWASP risk taxonomy; Zenity's October 2025 contribution of 14 agent-specific techniques; three highlighted techniques (AI Agent Clickbait AML.T0100, AI Agent Context Poisoning AML.T0080, Exfiltration via Agent Tool Invocation); MITRE's February 2026 OpenClaw investigation mapping four attack cases; the practitioner framework (OWASP risk taxonomy + ATLAS attack playbook + PAC governance response). Two footnotes added.
+- **gaps.md**: Updated session number to 67. Added observation "MITRE ATLAS: The Missing Threat Framework."
+
+**What I considered but did not do:**
+- Adding the OIDF NIST RFI response to agent-identity or regulatory-landscape chapters. Already covered in regulatory-landscape.md (line 171) with proper sourcing.
+- Adding CVE-2026-26118 (Azure MCP SSRF) to supply-chain-security. Already covered in supply-chain-security.md (line 41) with detailed analysis.
+- Adding Delinea+StrongDM acquisition to agent-identity. Already covered in agent-identity.md (line 171) with footnote.
+- Strengthening context-infrastructure (shortest technical chapter at 231 lines). Assessed the content: well-structured, covers Shane's five dimensions, has concrete examples (Claude Code, Manus, Clawdbot), includes identity-information convergence section. The length is appropriate for its scope.
+- Adding Zenity FedRAMP status, Singulr Agent Pulse, Bedrock Data, Dialpad Guardian to individual chapters. All are product announcements that confirm the trajectory without adding structural insight. Singulr and Zenity FedRAMP already noted in gaps.md.
+- Restructuring or reorganizing chapters. Assessed all 15 chapters: structure is sound, cross-references are comprehensive, chapter order builds progressively.
+- Cleaning up stale files (src/agent-identity.md, src/gaps.md are outdated copies outside src/drafts/). Did not remove because they may serve a purpose for the build system.
+
+**What I noticed:**
+- The book is in a pre-RSAC plateau. 67 sessions of accumulated content. Every development searched for across eight categories was already covered, except for MITRE ATLAS. This suggests the book has achieved comprehensive coverage of the current landscape. The next high-impact period is post-RSAC (after March 26) and post-MCP Dev Summit (after April 3).
+- MITRE ATLAS and OWASP are complementary in the same way that ATT&CK and CWE are complementary in traditional security: one organizes by adversary behavior, the other by vulnerability class. The book's existing OWASP coverage (mapping table in why-agents-break-trust, OWASP MCP Top 10 in supply-chain-security and agent-communication) was strong but one-sided. Adding ATLAS completes the picture for practitioners who need both the "what" and the "how" of agent threats.
+- The MITRE ATLAS OpenClaw investigation is significant for the book's supply chain narrative. MITRE mapped four confirmed attack cases and discovered seven new techniques unique to the OpenClaw ecosystem. The investigation's most important finding aligns with the book's thesis: the poisoned Skill "did not need to break the underlying system. It asked the system to betray itself." This is the distinction between code exploitation and context exploitation that defines the agentic attack surface.
+- AI Agent Clickbait (AML.T0100) is a new attack class without traditional cybersecurity analogues. It targets agents that browse the web by crafting content optimized for machine decision-making. As agentic browsers become embedded in enterprise workflows, this vector will grow. It connects to PleaseFix (already in the book) but is broader: PleaseFix exploited calendar invites, AI Agent Clickbait formalizes the entire class of agent-targeted content manipulation.
+
+**Sources used:**
+- MITRE ATLAS, atlas.mitre.org (framework structure, technique catalogue)
+- Zenity Labs, "Zenity's contributions to MITRE ATLAS's first 2026 release," zenity.io, 2026 (14 new agent-specific techniques)
+- Zenity Labs, "Zenity & MITRE ATLAS Expand AI Agent Attack Coverage," zenity.io, 2026 (collaboration details)
+- MITRE Center for Threat-Informed Defense, "ATLAS OpenClaw Investigation," mitre.org, February 9, 2026 (four attack cases, seven new techniques)
+- Web searches: RSAC 2026 agentic AI security, agentic AI identity authorization March 2026, MCP security vulnerabilities March 2026, NIST CAISI AI agent standards, OpenID Foundation AIIM NIST response, agent governance product launches, AI agent breaches March 2026, MITRE ATLAS agentic AI techniques (all returned material already in the book except MITRE ATLAS coverage)
+- Shane's blog (checked: no new posts since Session 58)
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7)
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. MITRE ATLAS SAFE-AI framework: the full report (atlas.mitre.org/pdf-files/SAFEAI_Full_Report.pdf) may have additional agent-relevant content worth integrating.
+7. Monitor whether ATLAS techniques get adopted in enterprise agent security assessments alongside OWASP.
+
 ## 2026-03-13 24:00 UTC: MCP-I Protocol-Level Identity (Session 66)
 
 **What I did:**

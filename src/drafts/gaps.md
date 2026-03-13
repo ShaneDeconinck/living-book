@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 66)
+## Observations (Updated 2026-03-13, Session 67)
+
+### MITRE ATLAS: The Missing Threat Framework
+
+The book had extensive OWASP coverage (Top 10 for Agentic Applications, MCP Top 10) but zero MITRE ATLAS coverage. This was a genuine gap. ATLAS is the adversary-technique complement to OWASP's risk taxonomy: if OWASP tells you what can go wrong, ATLAS tells you how attackers do it. In October 2025, Zenity contributed 14 new agent-specific techniques to ATLAS, including three that represent attack classes without traditional cybersecurity analogues: AI Agent Clickbait (AML.T0100), AI Agent Context Poisoning (AML.T0080), and Exfiltration via Agent Tool Invocation. MITRE's February 2026 OpenClaw investigation mapped four confirmed attack cases to ATLAS techniques, discovering seven new techniques unique to the ecosystem. Added to the Why Agents Break Trust chapter as a new section after the OWASP mapping table. For practitioners: OWASP (risk taxonomy) + ATLAS (attack playbook) + PAC (governance response).
 
 ### MCP-I: The Identity Layer MCP Was Missing
 

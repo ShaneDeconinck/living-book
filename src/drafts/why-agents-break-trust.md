@@ -130,6 +130,28 @@ The mapping to this book:
 
 The OWASP taxonomy organizes risks by attack surface. The PAC Framework organizes by governance response. Together, they answer both questions a practitioner needs: what can go wrong (OWASP), and what infrastructure prevents it (PAC).
 
+## MITRE ATLAS: The Attack Technique Library
+
+OWASP organizes by risk: what can go wrong. MITRE ATLAS organizes by adversary technique: how attackers do it. If the OWASP Top 10 for Agentic Applications is the risk taxonomy, ATLAS is the attack playbook.
+
+MITRE ATLAS (Adversarial Threat Landscape for AI Systems) extends the ATT&CK framework, the industry standard for cyber threat modeling, to AI and machine learning systems. In October 2025, Zenity Labs contributed 14 new attack techniques and sub-techniques specifically targeting AI agents: the first major ATLAS update focused on agentic AI rather than models alone.[^atlas-zenity] The framework now catalogues 15 tactics, 66+ techniques, and 46+ sub-techniques for adversarial AI.
+
+The agent-specific techniques fill a gap that model-level threat frameworks miss. Three are worth highlighting because they represent attack classes that do not exist in traditional cybersecurity:
+
+**AI Agent Clickbait (AML.T0100).** Agents increasingly browse the web, read documents, and interact with UIs on behalf of humans. Attackers can craft content optimized to manipulate machine decision-making, not human judgment. Because agents lack skepticism and situational awareness, they comply with instructions that appear task-aligned. As agentic browsers become embedded in enterprise copilots and workflow tools, this attack vector grows. AI Agent Clickbait formalizes it for defenders.[^atlas-zenity]
+
+**AI Agent Context Poisoning (AML.T0080).** Adversaries manipulate the context used by an agent's LLM to persistently influence its responses or actions. This is the threat class Microsoft documented in the wild with AI Recommendation Poisoning (covered in [Agent Supply Chain Security](supply-chain-security.md)): 31 companies across 14 industries embedding hidden instructions to bias agent memory. ATLAS codifies the technique so security teams can model it systematically.
+
+**Exfiltration via AI Agent Tool Invocation.** The agent's own tools become the exfiltration channel. An attacker who achieves prompt injection does not need to establish a C2 channel: they instruct the agent to use its legitimate "write" tools (send an email, update a CRM record, post to Slack) with sensitive data encoded in the parameters. The data leaves through authorized channels that security tooling is designed to trust, not inspect.
+
+In February 2026, MITRE published a detailed investigation of OpenClaw security incidents, mapping four confirmed attack cases to ATLAS techniques.[^atlas-openclaw] The investigation discovered seven new techniques unique to the OpenClaw ecosystem, all assessed as mature and realized in the wild. The attack chain that earned the most attention: a poisoned OpenClaw Skill shared on ClawHub achieved 4,000+ downloads in a single hour using a malicious prompt hidden in the Skill payload. The Skill did not need to break the underlying system. It asked the system to betray itself: the distinction between code exploitation and context exploitation that defines the agentic attack surface.
+
+For practitioners, OWASP and ATLAS are complementary tools. OWASP's Agentic Top 10 tells you which risk categories to prioritize (goal hijacking, tool misuse, supply chain). ATLAS tells you the specific adversary techniques within each category and how they chain together. The PAC Framework tells you what infrastructure prevents them. Together: risk taxonomy (OWASP) + attack playbook (ATLAS) + governance response (PAC).
+
+[^atlas-zenity]: Zenity Labs, "Zenity's contributions to MITRE ATLAS's first 2026 release," zenity.io, 2026. See also MITRE ATLAS, atlas.mitre.org. 14 new agent-specific techniques and sub-techniques contributed in collaboration with the MITRE Center for Threat-Informed Defense.
+
+[^atlas-openclaw]: MITRE, "ATLAS OpenClaw Investigation," mitre.org, February 9, 2026. Four confirmed attack cases mapped to ATLAS techniques, with seven new techniques unique to OpenClaw. Published by the Center for Threat-Informed Defense.
+
 ## The Shape of This Book
 
 This book is organized around the PAC Framework: Potential, Accountability, and Control. These three pillars capture what organizations need to evaluate when deploying agents:
