@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-13: Firewalled Agent Networks (Session 56)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state: all 15 substantive chapters assessed. Line counts reviewed. Multi-agent trust (321) was the target based on a specific open research problem identified in the text.
+- Step 4 reassessment: Still pre-RSAC (March 23-26). No new external developments in the blog-source or PAC framework since Session 55 (same day). Web searched broadly: AI agent security governance March 2026, RSAC 2026 AI agent security previews, agentic AI trust identity authorization March 2026, firewalls for LLM agentic networks, Zenity FedRAMP, Singulr Agent Pulse, agent-as-principal survey. Found one significant new research paper that directly addresses an open problem identified in the multi-agent trust chapter.
+
+**What I changed:**
+- **multi-agent-trust.md**: Added a new subsection "Firewalled Agent Networks" (approximately 30 lines) after the "Trust Boundaries with Circuit Breakers" subsection in the "Architectural Patterns for Multi-Agent Trust" section. The subsection integrates the Microsoft Research paper "Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 1, 2026), which provides the first empirically validated architecture for trust boundary enforcement in agent-to-agent communication. The paper uses a dual-firewall approach: an Information Firewall (outbound, data minimization via task-context projection) and a Language Converter Firewall (inbound, protocol conversion that makes malicious patterns inexpressible). Results across 864 attacks on the ConVerse benchmark: privacy attacks reduced from 84% to 10% (GPT-5), security attacks from 60% to 3%. Task completion quality maintained or improved. Connected to the PAC Framework's "can't vs. don't" distinction and to the AgenticCyOps results already in the chapter. Added one footnote.
+- **gaps.md**: Updated session number to 56. Added new observation "Firewalled Agent Networks: Trust Boundaries Get Empirical Validation" covering the firewalls paper, its significance for the book's trust boundary arguments, and the complementarity with the AgenticCyOps results. Also noted Zenity FedRAMP "In Process" status (March 12) and Singulr AI Agent Pulse launch (March 9) as evidence that agent governance is becoming operational infrastructure.
+
+**What I considered but did not do:**
+- Adding the Zenity FedRAMP milestone to the regulatory landscape or shadow agent governance chapter. While significant (first AI agent security platform pursuing federal authorization), it is a vendor milestone rather than a conceptual development. The book already covers Zenity's PleaseFix vulnerability research in the why-agents-break-trust chapter. The FedRAMP milestone is noted in gaps.md for potential future use.
+- Adding Singulr AI Agent Pulse to the communication protocols chapter. Agent Pulse provides agent discovery, risk intelligence, and runtime enforcement with MCP support, but lacks differentiating architectural insights beyond what the chapter already covers through the agent gateway pattern. Noted in gaps.md.
+- Adding the Bedrock Data RSAC preview to the context infrastructure chapter. Bedrock Data's "sensitive data sentinel" for AI agent pipelines is pre-RSAC marketing. Multiple previous sessions have deferred this to post-RSAC coverage. The concept (data-layer governance for agent context) is already covered in the context infrastructure chapter's permissions and authority dimensions.
+- Searching for the "Identity, Authorization, and Trust in Agentic LLM Systems: A Survey of the Agent-as-Principal Security Paradigm" paper. ResearchGate showed it exists but I could not find the full text or enough detail to assess its contribution beyond what the book already covers. The "agent-as-principal" framing aligns with the book's existing treatment in the agent identity and why-agents-break-trust chapters. Worth revisiting when the full paper becomes available.
+- Expanding the "Trust Boundaries with Circuit Breakers" section to cover the Firewalled Agent Networks in more detail (e.g., reproducing the ConVerse benchmark setup, covering the automated protocol learning in depth). The current treatment is sufficient: the section establishes what the architecture is, how it works, why it works, and what its results and limitations are. The footnote provides the full reference for readers who want technical depth.
+
+**What I noticed:**
+- The firewalls paper solves the specific open problem the multi-agent trust chapter identified: "Runtime verification that catches semantic failures without unacceptable latency is an open research problem." The solution is architectural: instead of trying to verify semantic correctness of natural language (which is the hard AI problem), convert to a structured protocol where semantic attacks become syntactically impossible. This mirrors the PAC Framework's "can't vs. don't" distinction at the communication layer.
+- The paper's dual-firewall approach maps neatly to the two attack surfaces AgenticCyOps identified: tool orchestration (analogous to outbound information control) and memory management (analogous to inbound input control). The two papers complement each other: AgenticCyOps reduces the number of trust boundaries through phase-scoped architecture, while the firewalls paper secures the communication at remaining boundaries. Together they represent defense in depth for multi-agent systems.
+- The multi-agent trust chapter now has three empirically grounded architectural patterns: DCTs/macaroons (cryptographic authority attenuation), AgenticCyOps (phase-scoped trust boundary reduction, 72% boundary reduction), and Firewalled Agent Networks (communication-layer security, 84% to 10% privacy attack reduction). This gives practitioners three complementary tools: scope the authority (DCTs), reduce the attack surface (AgenticCyOps), and secure the communication channels (firewalls).
+- The agent governance vendor landscape continues to expand pre-RSAC: Zenity (FedRAMP), Singulr (Agent Pulse), Onyx Security ($40M launch), Bedrock Data (RSAC sessions). This confirms the trajectory noted in previous sessions. Post-RSAC coverage (after March 26) remains the highest priority for vendor landscape updates.
+
+**Sources used:**
+- Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026. Microsoft Research. Open-source: github.com/microsoft/Firewalled-Agentic-Networks.
+- Zenity, "Zenity Achieves FedRAMP 'In Process' Status for AI Agent Security," businesswire.com, March 12, 2026.
+- Singulr AI, "Singulr AI Launches Agent Pulse, Extending Its AI Governance and Control Plane to Autonomous Agents and MCP," businesswire.com, March 9, 2026.
+- Shane's blog (checked: no new posts since Session 55).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements. Delinea "Agentic on Trial" session outcome for agent identity chapter.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Locate and assess the "Agent-as-Principal Security Paradigm" survey paper when full text becomes available.
+6. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
+7. Track cross-environment governance tools (Entro, Oasis, ConductorOne) for production deployment data.
+
 ## 2026-03-13: Agent Oversight Failure Mechanisms (Session 55)
 
 **What I did:**

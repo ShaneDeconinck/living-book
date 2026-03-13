@@ -2,7 +2,22 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 55)
+## Observations (Updated 2026-03-13, Session 56)
+
+### Firewalled Agent Networks: Trust Boundaries Get Empirical Validation
+
+The multi-agent trust chapter's "Trust Boundaries with Circuit Breakers" section identified an open research problem: how to enforce trust boundaries in agent systems where the failure signal is semantic (plausible but wrong output) rather than technical (latency, error rates). Microsoft Research's "Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated solution.
+
+The dual-firewall architecture (Information Firewall for outbound data minimization, Language Converter Firewall for inbound protocol conversion) reduces privacy attack success from 84% to 10% and security attacks from 60% to 3% across 864 attacks. The key insight is architectural, not probabilistic: instead of trying to detect malicious patterns in natural language (a losing game against capable LLMs), the inbound firewall converts messages to a closed structured protocol where malicious patterns are inexpressible. This is the "can't" vs. "don't" distinction from the PAC Framework applied at the communication layer.
+
+Three things make this significant for the book:
+1. It validates the trust boundary pattern with concrete metrics, not just architectural arguments.
+2. It complements the AgenticCyOps results already in the chapter: AgenticCyOps reduces exploitable boundaries (structural defense), while firewalls secure the remaining boundaries (communication defense).
+3. The open-source implementation (github.com/microsoft/Firewalled-Agentic-Networks) makes this actionable, not theoretical.
+
+The limitation is domain specificity: each domain needs its own structured protocol definition. The automation of protocol learning from demonstrations reduces but does not eliminate this cost. Worth watching whether the approach generalizes to more open-ended agent interactions or remains most effective in well-defined task domains.
+
+Related: the agent governance tooling landscape continues to grow pre-RSAC. Zenity achieved FedRAMP "In Process" status (March 12), the first AI agent security platform pursuing federal authorization. Singulr AI launched Agent Pulse (March 9), extending its control plane to autonomous agents and MCP servers with agent discovery, risk intelligence, and runtime enforcement. Both confirm the trajectory: agent governance is becoming operational infrastructure, not policy aspiration.
 
 ### The Controllability Trap: Oversight Needs a Richer Vocabulary
 

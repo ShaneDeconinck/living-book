@@ -152,7 +152,25 @@ The OWASP ASI08 mitigation guidance recommends this layered approach:[^8]
 2. **Runtime verification**: multi-agent consensus checks and ground truth validation before acting on delegated outputs
 3. **Observability**: automated cascade pattern detection with kill switches
 
-The challenge: circuit breakers in traditional systems trip on measurable signals (latency, error rates). In agent systems, the failure signal is semantic: the output looks plausible but is wrong. Runtime verification that catches semantic failures without unacceptable latency is an open research problem.
+The challenge: circuit breakers in traditional systems trip on measurable signals (latency, error rates). In agent systems, the failure signal is semantic: the output looks plausible but is wrong. Runtime verification that catches semantic failures without unacceptable latency is an open research problem, but recent work is making progress.
+
+### Firewalled Agent Networks
+
+Microsoft Research's "Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
+
+The architecture uses dual firewalls at every trust boundary:
+
+**Information Firewall (outbound).** Before an agent's message leaves its trust domain, the firewall projects the message onto the task context, stripping information that exceeds what the task requires. This prevents information leakage: an agent authorized to negotiate a flight booking should not transmit the user's full travel history, dietary preferences, or loyalty program details to the counterparty agent. The firewall enforces this structurally, not by trusting the agent to self-censor.
+
+**Language Converter Firewall (inbound).** Before an incoming message reaches the agent, it is converted from unconstrained natural language into a closed, domain-specific, structured protocol. The conversion uses deterministic validation: only well-formed fields pass through. Persuasive framing, urgency tactics, embedded instructions, and social engineering attempts are structurally eliminated because they cannot be expressed in the validated protocol format. This is not prompt filtering (which tries to detect malicious patterns in natural language). It is protocol conversion (which makes malicious patterns inexpressible).
+
+The results across 864 attacks spanning three domains are significant. Privacy attack success rates dropped from 84% to 10% for GPT-5 and from 74% to 6% for Claude 3.7 Sonnet. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
+
+The architecture has an open-source implementation and both firewalls operate in a trusted environment isolated from external input, applying domain-specific rules learned automatically from demonstrations. This means the firewalls do not need manual rule engineering for each new domain: they learn what constitutes legitimate task-context content from examples of correct interactions.
+
+For the PAC Framework, this is the Control pillar applied at the communication layer. The Information Firewall enforces data minimization (the agent cannot leak what the firewall does not transmit). The Language Converter Firewall enforces input validation at trust boundaries (the agent cannot follow instructions the firewall cannot express in the validated protocol). Together, they address the two surfaces that the AgenticCyOps analysis identified as accounting for all documented multi-agent attack vectors: tool orchestration and memory management. The communication channel between agents is where both attack types enter.
+
+The practical limitation is domain specificity. Each domain (travel booking, financial transactions, healthcare coordination) needs its own structured protocol definition. The automation of protocol learning from demonstrations reduces this cost but does not eliminate it. For organizations deploying multi-agent systems across many domains, the protocol engineering overhead is a real consideration. But within a specific domain, the 84%-to-10% privacy attack reduction and 60%-to-3% security attack reduction represent a qualitative improvement in trust boundary enforcement.
 
 ### Delegation Registries
 
@@ -319,3 +337,5 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 [^agenticcyops]: AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations, arXiv:2603.09134, March 10, 2026. Formalizes five defensive principles for multi-agent systems, applied to SOC workflow with MCP as structural basis. Trust boundary analysis: 200 boundaries in flat MAS reduced to 56 (72%) with phase-scoped architecture and verified execution.
 
 [^forrester]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Senior analyst Paddy Harrington: "When you tie multiple agents together and you allow them to take action based on each other, one fault somewhere is going to cascade and expose systems."
+
+[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026. Microsoft Research. Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Privacy attack success reduction: GPT-5 from 84% to 10%, Claude 3.7 Sonnet from 74% to 6%. Security attack success reduction: from 60% to 3%.
