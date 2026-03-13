@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 52)
+## Observations (Updated 2026-03-13, Session 53)
+
+### The ICAM-Information Governance Convergence: Identity and Context Are One Problem
+
+The book has treated Agent Identity (Chapter 3) and Context Infrastructure (Chapter 4) as related but separate concerns. Identity answers "who is this agent and what authority does it carry?" Context answers "what information reaches the agent and how is it governed?" Gartner's Market Guide for Guardian Agents (February 2026) argues these should converge: organizations managing agent ICAM and information governance as separate disciplines create a structural gap where the identity system says "authorized" while the information system has no corresponding policy, or vice versa.
+
+Microsoft Agent 365 is the first major implementation of this convergence: Entra (identity) + Purview (data governance) + Defender (security) as a unified control plane. But the convergence only works within a single vendor ecosystem. Agents that span Azure, AWS, GCP, SaaS platforms, and on-prem infrastructure need cross-environment governance that no single vendor provides. Entro Security and Oasis Security have both published analyses of this gap, arguing that Agent 365 solves a slice of the problem (Microsoft environments) but not the whole (the hybrid reality of enterprise agent deployments).
+
+This has implications for the book's structure. The Context Infrastructure chapter now includes a section on the convergence and its practical requirements. But the deeper question is whether the book should more explicitly treat identity and information governance as a single infrastructure problem rather than two problems that interact. The PAC Framework's Control pillar already implies this: I4 (Authorized) requires both identity verification and scoped information access. The open question is whether a future revision should restructure the Agent Identity and Context Infrastructure chapters to reflect this convergence, or whether keeping them separate (with explicit cross-references) better serves readers who are implementing one before the other.
+
+The cross-environment gap is particularly significant. Federated identity across trust boundaries is a problem with emerging solutions (TSP, EUDI wallets, VCs). Federated information governance across trust boundaries is a problem with almost no solutions. When an agent queries your Azure SQL database through one identity and your AWS S3 bucket through another, it has two sets of information policies that don't communicate. This is the next frontier after cross-organizational identity: cross-organizational data governance for agents.
 
 ### AI Tools as Attack Infrastructure: The QUIETVAULT Precedent
 

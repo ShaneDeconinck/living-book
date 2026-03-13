@@ -106,6 +106,16 @@ Shane's Google Workspace example applies here too: the user intends "help me fin
 
 Permissions on context connect directly to the Control pillar: infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
 
+#### The convergence of identity and information governance
+
+Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps directly to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
+
+This convergence is not theoretical. Microsoft Agent 365 (generally available May 1, 2026) integrates three previously separate systems into a unified control plane for agents: Entra for agent identity and access management, Purview for data governance and compliance, and Defender for runtime risk assessment.[^agent-365-convergence] Each agent gets a unique Entra Agent ID subject to the same Conditional Access and Identity Protection controls that govern human accounts, while Purview evaluates data interactions and Defender assesses compromise risk. The integration means that an agent's identity, its information access policies, and its behavioral risk profile are evaluated together, not in separate silos with separate policy languages.
+
+The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what the PAC Framework requires at I4 and above.
+
+The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-environment governance that no single vendor provides today.[^entro-critique] This is the same cross-organizational trust problem the [Cross-Organization Trust](cross-org-trust.md) chapter addresses for identity, now extended to information governance. The agent that queries your Azure SQL database through one identity and your AWS S3 bucket through another has two sets of information policies that do not talk to each other. Solving this requires not just federated identity (which standards like TSP and EUDI address) but federated information governance: portable, verifiable policies that travel with the agent's context across trust boundaries.
+
 ### 3. Discovery
 
 Agents need to find what they need. Two protocols are emerging as the standard discovery layer:
@@ -213,3 +223,9 @@ Context infrastructure connects to several other chapters. [Agent Identity and D
 [^rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. 50 unique prompts from 31 companies across 14 industries identified over 60 days.
 
 [^11]: Shane Deconinck, "Fitting Agentic AI Components in a Mental Model," January 6, 2026.
+
+[^gartner-convergence]: Gartner, "Market Guide for Guardian Agents," Avivah Litan and Daryl Plummer, February 25, 2026. The guide identifies the convergence of agent ICAM with information governance as a key trend, arguing that organizations managing these as integrated capabilities are better positioned to govern agents that simultaneously need identity, access control, and data governance.
+
+[^agent-365-convergence]: Microsoft, "Secure agentic AI for your Frontier Transformation," Microsoft Security Blog, March 9, 2026. Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, 2026. Agent 365 integrates Entra (identity), Purview (data governance), and Defender (security) into a unified agent control plane. Generally available May 1, 2026.
+
+[^entro-critique]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026. Argues that Agent 365 governs Microsoft environments but leaves gaps for organizations using multiple cloud providers. See also Oasis Security, "Agent 365 & Entra Agent ID vs. Oasis: AI Agent Governance for Hybrid Environments," oasis.security, March 2026.
