@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13: PleaseFix Vulnerability and Agent 365 Convergence Timeline
+
+**What I did:**
+- Added Zenity Labs PleaseFix vulnerability disclosure (March 3, 2026) to why-agents-break-trust.md, building on the existing Perplexity Comet coverage. PleaseFix is a family of 0-click vulnerabilities in agentic browsers where calendar invites trigger autonomous agent execution: file exfiltration and credential theft without user interaction. The ClickFix-to-PleaseFix evolution illustrates how social engineering techniques are adapting from targeting humans to targeting agents.
+- Added Microsoft Agent 365 GA date (May 1, 2026) to building-the-edge.md convergence timeline. Agent 365 is the first major platform vendor to ship a unified control plane for agent governance (registry, shadow agent discovery, Agent IDs, least-privilege access, audit trails with e-discovery). Priced at $15/user/month standalone.
+- Added new observation to gaps.md: "Social Engineering Is Adapting from Humans to Agents." The PleaseFix pattern (attack techniques evolving from targeting humans to targeting agents) is a threat evolution signal worth tracking across the book.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. The book has 15 chapters with a complete narrative arc. All chapters in the "Chapters to Write Next" list are done. The remaining open questions are narrow (service mesh convergence, chain-of-thought compliance).
+
+The PleaseFix vulnerability is the highest-impact addition because it strengthens the opening chapter's evidence base with a concrete, recent example that builds directly on existing coverage. The book already mentions the August 2025 Perplexity Comet incident. PleaseFix (March 3, 2026) shows the vulnerability family is broader and more severe: 0-click attacks via calendar invites, no user interaction required. The ClickFix-to-PleaseFix naming is itself an argument: it frames the evolution from human social engineering to agent social engineering as a recognized pattern, not a one-off incident.
+
+The Agent 365 convergence timeline entry fills a gap: the book already covers Agent 365 in depth in the Shadow Agent Governance chapter, but the May 1 GA date was missing from the building-the-edge.md convergence timeline. This is the most significant entry between April 2 (NIST comment period) and June 2026 (MCP update).
+
+**What I considered but did not do:**
+- Adding Microsoft's "Frontier Transformation" / E7 Frontier Suite ($99/user/month) detail to the book. The Agent 365 standalone pricing is already covered. The E7 bundle is a Microsoft product strategy detail, not a trust infrastructure development.
+- Expanding the PleaseFix coverage into the execution security or supply chain chapters. The vulnerability is already well-placed in Chapter 1 as an intent expansion example. The execution security chapter focuses on sandboxing, not browser security.
+- Writing a new section on agentic browser security. This is a real emerging attack surface but the book already covers the pattern (indirect prompt injection, confused deputies, intent expansion). A dedicated section would add breadth without depth.
+- Updating the MCP attack surface observation in gaps.md. PleaseFix is not an MCP vulnerability: it targets agentic browsers directly. Different attack surface, different observation.
+- Zenity's upcoming RSAC demo (March 23, "0-click access-to-impact" chains across ChatGPT, Gemini, Copilot, Einstein). The conference has not happened yet. Pre-conference marketing is not a strong enough source. Worth a dedicated session after March 23.
+
+**Sources used:**
+- Zenity Labs, "PleaseFix Vulnerability Family in Perplexity Comet and Other Agentic Browsers," BusinessWire, March 3, 2026.
+- Zenity Labs, "PerplexedBrowser: Perplexity's Agent Browser Can Leak Your Personal PC Local Files," labs.zenity.io, March 2026.
+- Help Net Security, "The vulnerability that turns your AI agent against you," March 4, 2026.
+- Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," March 9, 2026.
+- Microsoft, "Microsoft Agent 365: The Control Plane for AI Agents," microsoft.com, 2026.
+- AdminDroid, "Microsoft Agent 365: Unified Control Plane to Manage Agents," March 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The PleaseFix naming convention (ClickFix → PleaseFix) is an indicator that the security research community is recognizing agent-targeted attacks as a distinct category, not just a variant of web attacks. When attack patterns get their own names, the category is maturing.
+- Microsoft's pricing strategy for Agent 365 ($15/user/month standalone) positions agent governance as a commodity feature, not a premium security product. This is the "infrastructure becomes platform feature" pattern the book has been tracking. Compare: Imprivata charges per managed identity for healthcare agents, Token Security and Geordie AI are startup-priced. Microsoft's approach of bundling it into existing enterprise licenses means agent governance will reach the majority of enterprise agents by default.
+- The Entro Security critique ("Microsoft Agent 365 Pushes AI Identity Forward, But Enterprise Agents Still Need Cross-Environment Governance") validates the book's architecture: single-vendor control planes are necessary but insufficient. The cross-organizational trust infrastructure (TSP, PIC, VCs) remains essential for agents that span providers and organizations. This is already well-covered in the Shadow Agent Governance chapter (line 129).
+- RSAC 2026 (March 23-26) remains the highest-priority upcoming event. Zenity's "0-click access-to-impact" demo across ChatGPT, Gemini, Copilot, Einstein, and custom agents will likely provide the most detailed cross-platform vulnerability data to date. Worth a dedicated session after the conference.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Zenity demo, Innovation Sandbox presentations (Token Security, Geordie AI), Microsoft security sessions, Bedrock Data MCP governance sessions.
+2. NIST CAISI listening session participation deadline is March 20 (7 days).
+3. NIST AI 800-2 benchmark evaluation comment period closes March 31.
+4. NIST concept paper comment period closes April 2.
+5. Consider whether the book needs cross-references strengthened between chapters. With 15 chapters, internal coherence matters.
+
 ## 2026-03-13: Agent Security Market Formation and NHI Attack Data
 
 **What I did:**

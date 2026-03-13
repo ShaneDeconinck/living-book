@@ -14,6 +14,8 @@ Agents are different. They interpret intent and expand it. You tell an agent to 
 
 This distinction is not theoretical. In August 2025, Perplexity's AI-powered browser Comet demonstrated exactly how intent expansion becomes a vulnerability. Attackers embedded hidden commands in Reddit comment sections. When a user activated Comet's "summarize current page" feature, the agent followed the embedded instructions instead: the user's intent was "summarize," but the agent's interpretation expanded to execute concealed commands planted by a third party.[^perplexity] The user never authorized those actions. The agent acted on what it found, not what the user meant.
 
+The pattern escalated. In March 2026, Zenity Labs disclosed PleaseFix: a family of 0-click vulnerabilities affecting agentic browsers, including Comet.[^pleasefix] A calendar invite is enough. When the agent autonomously processes the invite, attacker-controlled content triggers execution: file exfiltration from the local filesystem, credential theft from password managers, all within the agent's authenticated session. No user interaction required. The naming is deliberate: ClickFix was social engineering that tricked humans into executing malicious actions. PleaseFix is the same technique adapted for agents, where no click is needed at all. The attack surface shifted from the human to the agent.
+
 This matters because our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
 
 Shane put it directly in his writing on this topic: "When agents decide, delegation becomes abdication." The gap between what a user intended and what an agent does is where accountability dissolves.[^1]
@@ -105,6 +107,7 @@ Let's start with the framework itself.
 
 [^1]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026.
 [^perplexity]: Adversa AI, "2025 AI Security Incidents Report," 2026. The Perplexity Comet vulnerability was disclosed in August 2025 and demonstrated indirect prompt injection through embedded instructions in web content.
+[^pleasefix]: Zenity Labs, "PleaseFix Vulnerability Family in Perplexity Comet and Other Agentic Browsers," March 3, 2026. Two exploit paths: file system exfiltration via calendar invites and credential theft via password manager access. Perplexity addressed the browser-side agent execution issue before public disclosure.
 [^google-workspace]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," shanedeconinck.be, March 2026.
 [^supabase-cursor]: Barrack.ai, "Every AI App Data Breach Since January 2025: 20 Incidents, Same Root Causes," 2026. The Supabase Cursor agent breach is also covered in Practical DevSecOps, "MCP Security Vulnerabilities," 2026.
 [^galileo-cascade]: Galileo AI research on cascading failures in multi-agent systems, cited in multiple industry analyses of agent network resilience, 2025-2026.

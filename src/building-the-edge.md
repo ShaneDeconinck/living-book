@@ -76,6 +76,7 @@ The book was written during a period of unusual convergence. Standards, regulati
 - **March 2026:** White House releases national cybersecurity strategy with Pillar 5 explicitly naming agentic AI as a strategic priority: the first national strategy globally to do so.
 - **March 23-26, 2026:** RSAC 2026 Conference, with agent security as a dominant theme. Two Innovation Sandbox finalists (Token Security, Geordie AI) are purpose-built for agent identity and governance, signaling the market's shift from "interesting problem" to "product category."
 - **April 2026:** NIST CAISI hosts sector-specific virtual workshops on barriers to AI agent adoption in healthcare, finance, and education. Participation requires submission by March 20.
+- **May 1, 2026:** Microsoft Agent 365 generally available. The first major platform vendor to ship a unified control plane for agent governance: agent registry, shadow agent discovery, unique Agent IDs with lifecycle management, least-privilege access, and audit trails with e-discovery. Priced at $15/user/month standalone or bundled in Microsoft 365 E7 at $99/user/month.[^agent365]
 - **April 2, 2026:** NIST comment period closes for the AI Agent Identity and Authorization concept paper. This shapes the U.S. federal approach to agent identity standards.
 - **June 2026:** MCP specification update targeting streamable HTTP transport, Tasks primitive refinements, .well-known discovery, and enterprise deployment needs.
 - **August 2, 2026:** EU AI Act high-risk AI system obligations take effect. Organizations deploying agents in regulated domains need compliance infrastructure by this date.
@@ -119,3 +120,4 @@ The intelligence is rapidly becoming commodity. The edge is the infrastructure t
 [^13]: Reported across multiple enterprise AI transformation studies, 2025-2026. See also Deloitte Tech Trends 2026.
 [^14]: Deloitte, "The agentic reality check: Preparing for a silicon-based workforce," Tech Trends 2026.
 [^15]: Shane Deconinck, "The Work That's Leaving," shanedeconinck.be, February 2026.
+[^agent365]: Microsoft, "Secure agentic AI for your Frontier Transformation," Microsoft Security Blog, March 9, 2026. Microsoft, "Microsoft Agent 365: The Control Plane for AI Agents," microsoft.com, 2026.
