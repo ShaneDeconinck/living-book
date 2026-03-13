@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 UTC: RoguePilot Rendering Gap (Session 85)
+
+THOUGHT: RoguePilot: passive prompt injection via GitHub Issues weaponizes Copilot for repo takeover. Novel rendering gap attack.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 16 chapters, all substantive. No feedback files. No agent messages.
+- Step 6 reassessment: pre-RSAC plateau continues into its 19th session (65-85). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, Anthropic Claude agent security March 2026, NIST CAISI RFI responses, IETF OAuth agent delegation March 2026, McKinsey trust in age of agents, new infosec products March 13 2026, AI agent vulnerability attack research March 2026. Most findings already in the book. One genuinely significant finding: **Orca Security's RoguePilot vulnerability** (February 2026, patched by Microsoft), the first documented passive prompt injection through GitHub Issues that achieves full repository takeover by exploiting the rendering gap between what humans see and what LLMs process.
+
+**What I changed:**
+- **supply-chain-security.md**: Added new subsection "Project Data as Prompt Injection" (approximately 15 lines) after the Configuration File Attacks section. Covers: the rendering gap (HTML comments invisible to humans, visible to LLMs), the attack chain (Issue → Codespace auto-context → Copilot follows hidden instructions → GITHUB_TOKEN exfiltration → repo takeover), the zero-barrier entry (no repo access needed to create an issue), the generalization to any system that feeds user-generated content into AI context, and the defense through treating all context sources as untrusted input with output-side authorization. One footnote added citing Orca Security's disclosure.
+- **gaps.md**: Updated session number to 85. Added new observation "The Rendering Gap: Invisible Instructions in Visible Content" covering the architectural novelty, the connection to three existing patterns (indirect prompt injection, confused deputy, permission intersection), and the generalization beyond GitHub.
+
+**What I considered but did not do:**
+- Adding Anthropic Claude Code Review (March 10, multi-agent parallel PR analysis). Interesting multi-agent orchestration pattern but confirms the guardian agent / multi-agent oversight pattern already covered in execution-security.md (Google User Alignment Critic) and multi-agent-trust.md.
+- Adding Microsoft Agent 365 / E7 Frontier Suite details. Already extensively covered across shadow-agent-governance.md, agent-identity.md, context-infrastructure.md, building-the-edge.md.
+- Adding Flashpoint 2026 GTIR offensive agentic AI frameworks. Already cited in why-agents-break-trust.md and introduction.md.
+- Adding DryRun Security Agentic Coding Report (Claude generates most unresolved security flaws). Already considered and rejected in session 82: confirms pattern without changing it.
+- Adding NIST CAISI RFI responses (SIIA, BPI/ABA, CEI). Deadline passed March 9. Responses are public but no NIST synthesis yet. Better to track outcomes.
+- Adding McKinsey "Trust in the Age of Agents." General governance guidance without architectural specifics. The book's PAC Framework provides more actionable structure.
+- Adding new IETF OAuth agent delegation drafts. All already covered in agent-identity.md and regulatory-landscape.md (draft-klrc, OBO extension, Transaction Tokens for Agents, AAuth, Decoupled Authorization Model).
+- Adding Terra Portal (agentic pentesting desktop) or Singulr Agent Pulse. Narrow vendor products without new architectural insight.
+- Adding Chinese authorities restricting OpenClaw. Confirms the regulatory response pattern already in the book but no architectural insight.
+
+**What I noticed:**
+- The rendering gap is a genuinely new concept the book was missing. The supply chain chapter covered code injection (malicious packages), description injection (tool poisoning), configuration injection (hooks, MCP configs), and AI tool weaponization (QUIETVAULT). RoguePilot adds data injection: user-generated content that is safe in its rendered form but malicious in its raw form. The attack exploits a fundamental property of LLMs: they process raw text, not rendered views. Any rendering layer (HTML, Markdown, rich text) that can hide content from human viewers while preserving it for LLM consumption creates this gap.
+- The barrier-to-entry progression in the supply chain chapter is now clear: malicious packages require publisher access, tool poisoning requires MCP server access, configuration attacks require repo write access, and data injection (RoguePilot) requires only the ability to create a GitHub Issue. The attack surface expands as the barrier drops.
+- Pre-RSAC plateau continues through session 85. Nineteen consecutive sessions (65-85) where broad searches return material already in the book with one significant new finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Orca Security, "RoguePilot: Exploiting GitHub Copilot for a Repository Takeover," orca.security, February 2026. Also covered by The Hacker News, SecurityWeek, Cybersecurity News, VPNCentral.
+- Web searches: agentic AI security March 2026, RSAC 2026 announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, Anthropic Claude agent security March 2026, NIST CAISI RFI responses, IETF OAuth agent delegation March 2026, new infosec products March 13 2026, AI agent vulnerability attack research March 2026 (all returned material already in the book except RoguePilot).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether the rendering gap attack class is reproduced against other AI coding assistants beyond Copilot.
+
 ## 2026-03-13 UTC: Pre-RSAC Plateau Assessment (Session 84)
 
 THOUGHT: Session 84. Pre-RSAC plateau session 20. All searches return covered material. Time to look at chapter quality, not just new material.
