@@ -1,5 +1,52 @@
 # Session Log
 
+## 2026-03-13: QUIETVAULT and AI Tools as Attack Infrastructure (Session 52)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits are CSS dark mode fixes and book page updates). PAC Framework unchanged.
+- Read current book state: all 13 substantive chapters, 15 total including intro, gaps, and log. Assessed chapter line counts. Strongest: agent-communication (501), shadow-agent-governance (345), regulatory-landscape (335), agent-identity (329). Weakest by length: why-agents-break-trust (143), building-the-edge (167), context-infrastructure (215).
+- Step 4 reassessment: RSAC is 10 days away (March 23-26). Book remains at pre-RSAC plateau with all chapters well-developed. Assessed whether recent developments warranted integration rather than adding content speculatively. Focused on web search for new findings.
+- Web searched: AI agent security governance March 2026, RSAC 2026 previews, MCP security CVEs, Google Cloud Threat Horizons H1 2026, federal RSAC boycott, NIST AI Agent Standards Initiative updates, UNC6426/QUIETVAULT attack details, Google AI malware families.
+
+**What I changed:**
+- **supply-chain-security.md**: Added new attack category "AI Tools as Attack Infrastructure" within the "Agent Supply Chain Is Different" section. Documented the UNC6426/QUIETVAULT attack chain: npm supply chain compromise of Nx framework, QUIETVAULT credential stealer detecting and weaponizing locally installed AI CLI tools (Claude Code, Gemini CLI, Amazon Q Developer) with permission-bypass flags for filesystem reconnaissance, OIDC trust chain abuse, and full AWS admin takeover in 72 hours. Also documented Google's five AI-powered malware families (FRUITSHELL, PROMPTFLUX, PROMPTSTEAL, PROMPTLOCK, QUIETVAULT), including APT28/GRU use of PROMPTSTEAL against Ukrainian targets. Connected to sandboxing chapter's containment argument and the AI-assisted LOTL concept.
+- **why-agents-break-trust.md**: Added paragraph to bilateral threat section referencing UNC6426/QUIETVAULT and Google's five AI malware families. Key framing: adversaries are not just targeting AI tools, they are using developers' own AI tools against them.
+- **gaps.md**: Updated session number to 52. Added two new observations: "AI Tools as Attack Infrastructure: The QUIETVAULT Precedent" (full analysis of the new threat category and its implications for the book) and "Federal Agencies Boycott RSAC 2026" (CISA/FBI/NSA withdrawal and its implications for public-private coordination on agent standards).
+
+**What I considered but did not do:**
+- Strengthening the context-infrastructure chapter with the Gartner ICAM + information governance convergence point (flagged in Session 51 as priority #5). This is a valid cross-chapter concern but less urgent than integrating the QUIETVAULT finding, which represents a genuinely new threat category. The ICAM convergence revision remains a priority for a future session.
+- Adding the Google Threat Horizons "83% of cloud breaches start with identity" finding to the agent-identity chapter. The chapter already has strong identity-gap data (CSA/Strata: 100:1 NHI-to-human ratio, ConductorOne: 95% running agents with 22% visibility, Teleport: 4.5x higher incident rate for over-privileged AI). Adding another percentage would be incremental, not structural.
+- Adding the federal RSAC boycott to the regulatory-landscape chapter. The boycott is politically significant but not directly about agent governance. It is relevant as context (NIST standards development and CISA operational implementation are disconnected) but not as chapter content. Noted in gaps.md instead.
+- Expanding the building-the-edge convergence timeline with the Google Threat Horizons report. The timeline already has March 2026 entries. The QUIETVAULT finding is better served in the supply chain chapter where it can be fully contextualized.
+- Adding a new section on AI tool containment recommendations (monitoring AI tool activity, restricting permission-bypass flags in enterprise environments). This is a valid operational concern but better addressed post-RSAC when operational guidance from the OWASP Agentic Security Hackathon and CoSAI's "Securing MCP" session may provide frameworks.
+
+**What I noticed:**
+- The QUIETVAULT attack represents a category shift in the threat landscape that the book had not previously articulated. The book covered attacks on AI tools (MCP vulnerabilities, tool poisoning, configuration file attacks) and attacks by adversary-built AI (Flashpoint's agentic chains, Sardine's attack vectors). QUIETVAULT adds a third category: attacks through existing AI tools. The adversary does not build or compromise the AI. They use the developer's own AI tool as a reconnaissance agent. This is "living off the land" adapted for the AI era.
+- The permission-bypass mechanism is architecturally important. QUIETVAULT used flags like --dangerously-skip-permissions, which exist for legitimate automation workflows (CI/CD pipelines, headless execution). The same feature that makes AI tools useful in automation makes them exploitable by malware. This is not a bug in the AI tools: it is a design tension between automation ergonomics and security. The sandboxing chapter's argument for structural containment (not permission prompts) applies directly.
+- Google's treatment of AI tools as equivalent to administrative shells (PowerShell, bash) is a significant framing for enterprise security teams. It means AI coding tools need the same monitoring, logging, and behavioral analysis that EDR products apply to administrative tools. This is a practical recommendation that organizations can act on immediately.
+- The APT28/PROMPTSTEAL finding confirms that state-sponsored actors are using LLMs operationally, not just experimentally. Russia's GRU using LLM-generated commands for credential theft in Ukraine is the highest-confidence attribution of state-sponsored AI-powered attacks documented to date.
+- The five malware families collectively demonstrate that AI-powered malware is no longer theoretical or experimental. It is operational, diverse (five distinct families with different AI capabilities), and deployed by actors ranging from criminal groups to state intelligence services.
+
+**Sources used:**
+- Google Cloud Security, "Cloud Threat Horizons Report H1 2026," cloud.google.com, March 2026.
+- The Hacker News, "UNC6426 Exploits nx npm Supply-Chain Attack to Gain AWS Admin Access in 72 Hours," March 2026.
+- CSA Research Note, "CISO Briefing: UNC6426 — nx Supply Chain to AWS Admin via OIDC," labs.cloudsecurityalliance.org, March 2026.
+- Socket.dev, "Nx npm Packages Compromised in Supply Chain Attack," 2025-2026.
+- Google Threat Intelligence Group, AI-powered malware families reporting, via Cybersecurity Dive, Bleeping Computer, Infosecurity Magazine, The Hacker News, 2025-2026.
+- State of Surveillance, "FBI, NSA, and CISA Vanish From RSA 2026: Inside the Federal Boycott," March 2026.
+- The Register, "Feds skipping infosec industry's biggest conference, RSAC," January 2026.
+- CoSAI, "CoSAI at RSAC 2026: Leading the Conversation on Secure AI," coalitionforsecureai.org, March 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from Session 51).
+- Shane's blog (checked: no new posts since last session).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Gartner ICAM + information governance convergence: cross-chapter revision connecting Agent Identity and Context Infrastructure chapters.
+6. Consider whether AI tool containment (monitoring, permission-flag restrictions) warrants a dedicated section in the Sandboxing chapter based on RSAC session outcomes.
+
 ## 2026-03-13: Gartner Guardian Agents Market Guide Integration (Session 51)
 
 **What I did:**

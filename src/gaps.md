@@ -2,7 +2,21 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 51)
+## Observations (Updated 2026-03-13, Session 52)
+
+### AI Tools as Attack Infrastructure: The QUIETVAULT Precedent
+
+Google's Cloud Threat Horizons Report (H1 2026) documents the first supply chain attack that weaponizes developer AI tools as post-exploitation reconnaissance infrastructure. Threat actor UNC6426 compromised the Nx npm build framework and delivered QUIETVAULT, a credential stealer that detected locally installed AI CLI tools (Claude Code, Gemini CLI, Amazon Q Developer), invoked them with permission-bypass flags, and issued natural-language prompts for filesystem reconnaissance. The AI tool performed the attacker's work: searching for credentials, secrets, and configuration files beyond what standard environment variable enumeration would find. The full chain: npm compromise → QUIETVAULT → AI tool weaponization → stolen GitHub PAT → OIDC trust chain abuse → AWS admin in 72 hours → S3 exfiltration and production destruction.
+
+This represents a category shift in the threat landscape. Previous chapters documented attacks on AI tools (MCP vulnerabilities, tool poisoning, configuration file attacks) and attacks by adversary-built AI (Flashpoint's agentic attack chains, Sardine's seven attack vectors). QUIETVAULT is attacks through existing AI tools: the adversary does not build or compromise the AI. They use the developer's own AI as a reconnaissance agent. Google calls this "AI-assisted Living Off the Land" (LOTL) and recommends treating AI tool activity with the same scrutiny as administrative command-line tools.
+
+The broader pattern is even more significant. Google identified five AI-powered malware families in active deployment: QUIETVAULT (AI tool weaponization), PROMPTFLUX (hourly self-rewriting using Gemini to evade detection), PROMPTSTEAL (APT28/GRU querying LLMs for credential-theft commands targeting Ukraine), PROMPTLOCK (LLM-generated ransomware via dynamic Lua scripts), and FRUITSHELL (hardcoded prompts to bypass LLM security analysis). This is not a prediction about future threats. These are operational malware families documented in the wild by a major cloud provider's threat intelligence team.
+
+Implications for the book: the Supply Chain Security chapter now covers AI tools as attack infrastructure as a distinct threat category. The Why Agents Break Trust chapter's bilateral threat section now references UNC6426 and the five malware families. The practical recommendation: organizations deploying AI coding tools need monitoring and containment for those tools that goes beyond the tools' own permission systems, because those permission systems can be bypassed by the same flags developers use for legitimate automation (like --dangerously-skip-permissions).
+
+### Federal Agencies Boycott RSAC 2026
+
+CISA, FBI, and NSA withdrew from RSAC 2026 (March 23-26) after the conference named former CISA Director Jen Easterly as CEO. This creates a gap in the public-private coordination on cybersecurity at exactly the moment NIST is running the AI Agent Standards Initiative and the comment period for the AI Agent Identity and Authorization concept paper closes (April 2). The operational agencies that would normally coordinate with industry on implementing NIST standards are absent from the industry's main gathering. This does not change the technical content of the book but is worth noting as context for the regulatory landscape: standards development (NIST) and operational implementation (CISA) are currently disconnected. Whether this affects the timeline for translating NIST standards into operational guidance remains to be seen.
 
 ### Gartner Formalizes Agent Governance as a Market Category
 
