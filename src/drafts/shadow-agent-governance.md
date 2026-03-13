@@ -76,7 +76,7 @@ The OpenClaw ban wave is notable as the first coordinated response to a specific
 
 [^kaspersky-18pct]: Kaspersky, OpenClaw deployment analysis, January 2026. Of 1.5 million deployed agents, 18% exhibited malicious or policy-violating behavior once operating independently.
 
-[^openai-hire]: TrendingTopics.eu, "Meta and Others Restrict OpenClaw While Some Startups Embrace the Controversial AI Tool," February 2026. OpenAI hired OpenClaw creator Peter Steinberger on February 14 and committed to maintaining the project.
+[^openai-hire]: TrendingTopics.eu, "Meta and Others Restrict OpenClaw While Some Startups Embrace the Controversial AI Tool," February 2026. OpenAI hired OpenClaw creator Peter Steinberger on February 15 and committed to maintaining the project.
 
 [^china-openclaw]: Bloomberg, "China Moves to Limit Use of OpenClaw AI at Banks, Government Agencies," March 11, 2026.
 
@@ -162,7 +162,7 @@ The limitation is scope: Agent 365 governs agents within the Microsoft ecosystem
 
 The market is rapidly crystallizing beyond Microsoft. At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance: Token Security provides continuous discovery, lifecycle governance, and intent-based access controls specifically for AI agents that "think, learn, and act autonomously," and Geordie AI offers a security and governance platform that gives enterprises real-time visibility into their agentic footprint with posture and behavior monitoring.[^rsac-sandbox] That agent identity and governance attracted two Innovation Sandbox finalists in the same year signals that the market has moved from "interesting problem" to "fundable product category."
 
-The funding signals reinforce the market thesis. Onyx Security emerged from stealth on March 12, 2026, with $40 million to build what it calls the "Secure AI Control Plane": continuous agent discovery, reasoning-step monitoring, and real-time policy enforcement.[^onyx] Combined with Kai's $125 million round the day before,[^kai-funding-ref] $165 million flowed into agent governance infrastructure in 48 hours. Venture capital is pricing agent trust as a category.
+The funding signals reinforce the market thesis. Onyx Security emerged from stealth on March 12, 2026, with $40 million to build what it calls the "Secure AI Control Plane": continuous agent discovery, reasoning-step monitoring, and real-time policy enforcement.[^onyx] Two days earlier, Kai raised $125 million for an agentic AI cybersecurity platform that uses AI agents for threat intelligence, detection, and incident response.[^kai-funding-ref] The two rounds illustrate adjacent but distinct bets: Onyx on governing agents, Kai on deploying agents for security operations. Venture capital is pricing agent trust as a category.
 
 ### Gartner formalizes the category
 

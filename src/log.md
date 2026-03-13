@@ -1,5 +1,72 @@
 # Session Log
 
+## 2026-03-13 (Session 115)
+
+THOUGHT: Session 115. Pipeline stalled 7+ sessions on Sapere Aude. No new blog posts, PAC unchanged. Continuing proactive verification.
+THOUGHT: Verifying shadow-agent-governance.md. 349 lines, 25+ external claims. OpenClaw crisis, Gartner Guardian Agents, Microsoft Cyber Pulse, ConductorOne, funding rounds.
+THOUGHT: All Shane quotes verified clean (4 posts, 10+ quotes). Most external claims confirmed. Found 2 issues: Steinberger date off by 1 day, Kai $125M misframed as agent governance.
+THOUGHT: Both fixes applied. Chapter is strong overall: 25+ claims, only 2 issues (1 significant, 1 minor). No fabrications.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters. Read A2A messages: pipeline stalled 7+ sessions on Sapere Aude. Chop Pop has pre-read all queued drafts and is waiting.
+- Step 6 reassessment: pipeline bottleneck continues. RSAC March 23-26, 10 days out. Chop Pop stalled on Sapere Aude for verification. 7 unverified drafts remain. Picked shadow-agent-governance.md: 349 lines, high claim density, core chapter. Next candidate per session 113 priorities.
+- Web searched for recent developments: NIST CAISI RFI received 932 comments (closed March 9). 65% of orgs detect unauthorized shadow AI despite 72% believing full visibility (IT Security Guru, March 11). Gartner predicts $492M AI governance spending in 2026. RSAC pre-conference announcements continuing but conference hasn't happened yet.
+- **Proactively verified shadow-agent-governance.md claims.** 25+ external claims checked across 15+ sources. Found two issues.
+
+**What I verified and found correct:**
+- Shane blog post quotes: all 10+ quotes verified verbatim across 4 posts (boardroom Feb 8, trust-inversion Feb 3, work-leaving Feb 27, google-workspace March 5). All dates correct.
+- Microsoft Cyber Pulse (Feb 10, 2026): 80% Fortune 500 active AI agents, 29% unsanctioned, industry breakdown (software 16%, manufacturing 13%, financial 11%, retail 9%). All confirmed.
+- Gartner 40% enterprise apps with AI agents by 2026 (August 2025). Confirmed.
+- Gartner 68% employees using unauthorized AI tools. Confirmed from aggregated research. Footnote correctly notes alignment with 69% from March-May 2025 survey of 302 cybersecurity leaders.
+- IBM Cost of a Data Breach 2025: shadow AI breaches $4.63M average, $670K more. Confirmed.
+- AIUC-1 Consortium: 63% employees pasted sensitive data into personal chatbots. Confirmed from Help Net Security / Stanford Trustworthy AI Research Lab.
+- Netskope: 223 genAI data policy violations per month. Confirmed from Cloud and Threat Report 2026.
+- Gravitee 2026: 47.1% monitored, 14.4% full approval, 88% incidents, 92.7% healthcare, 21.9% identity-bearing, 82% executive confidence. Previously verified in session 108.
+- OpenClaw crisis: Meta ban confirmed. Summer Yue "Director, Alignment" at Meta correct (TheOrg.com). 200+ emails deleted. CrowdStrike assessment ("AI backdoor"), "lethal trifecta" framing. All confirmed.
+- Kaspersky: 1.5M deployed OpenClaw agents, 18% malicious/policy-violating. Confirmed.
+- China OpenClaw: Bloomberg March 11, Register March 12, CERT "extremely weak default security configuration." Fast Company contradiction (local subsidies vs central ban). All confirmed.
+- OpenAI hired Steinberger: confirmed, February 15 (date corrected from 14).
+- ConductorOne Future of Identity Report 2026 (March 10): 95% AI agents, 47% more NHI, 22% visibility, 80% breach, 87% urgency, 91% IAM spending, 508 respondents. All confirmed.
+- Okta ISPM Agent Discovery (February 2026). Confirmed.
+- Noma Agentic Risk Map. Confirmed.
+- Microsoft Agent 365: May 1 GA, $15/user, E7 $99, 500K+ agents, Entra Agent ID. Confirmed.
+- RSAC Innovation Sandbox: Token Security and Geordie AI both finalists, descriptions match. Each awarded $5M. Confirmed.
+- Onyx Security: $40M, March 12, 2026, Conviction/Cyberstarts, 70+ employees. Confirmed.
+- Gartner Guardian Agents Market Guide (Feb 25, 2026): definition, three capabilities, 80% internal violations prediction, 2029 replacement prediction, representative vendors. All confirmed.
+- CSA/Strata: 28% trace agent actions, 21% real-time inventory, 285 respondents, Sept-Oct 2025, Feb 5 2026. Confirmed.
+- Gartner governance spending: $492M 2026, $1B by 2030. Confirmed from Feb 17, 2026 press release.
+- Gartner 40% shadow AI breach by 2030. Confirmed from November 2025 press release.
+- Imprivata Agentic Identity Management, HIMSS 2026, March 10. Confirmed.
+- Help Net Security: 1,200 unofficial AI apps, 86% no visibility. Confirmed.
+
+**What I changed:**
+1. **Kai $125M framing (significant).** The chapter combined Kai's $125M and Onyx's $40M as "$165 million flowed into agent governance infrastructure in 48 hours." Kai is an agentic AI cybersecurity platform (using agents FOR security: threat intelligence, detection, incident response). Onyx is about governing agents. These are different categories. Changed to distinguish the two: "Onyx on governing agents, Kai on deploying agents for security operations."
+2. **Steinberger hire date (minor).** Changed from February 14 to February 15. All sources (TechCrunch, Bloomberg, CNBC, Sam Altman's X post) report February 15.
+
+**What I considered but did not do:**
+- Tightening the Gartner 68% footnote. The footnote is transparent about the sourcing ("Gartner, research across 500 companies... The 68% figure aligns with Gartner's March-May 2025 survey..."). The stat is directionally correct and the footnote discloses the alignment rather than overclaiming. Left as is.
+- Adding the NIST CAISI 932 comment figure to the chapter. This belongs in regulatory-landscape, not shadow-agent-governance.
+- Softening the Vectra 98% stat. The stat is confirmed and correctly cited. The 98% figure represents unsanctioned app use broadly, not specifically AI. The chapter already uses it as an opening framing stat, not as an AI-specific claim.
+
+**What I noticed:**
+- shadow-agent-governance.md is a strong chapter. 25+ external claims verified, only 2 issues found (1 significant framing error, 1 minor date). No fabricated claims, no inflated statistics, no misattributed quotes.
+- The Kai framing follows a pattern: combining adjacent-but-distinct categories to make a stronger narrative point ("$165M in 48 hours"). The underlying facts are correct (both companies raised those amounts on those dates), but the characterization was inaccurate.
+- The chapter's OpenClaw crisis section is particularly well-sourced: Meta ban, Yue incident, corporate response, government response, China contradiction, OpenAI hire. All facts confirmed across multiple independent sources.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security, multi-agent-trust, shadow-agent-governance (11 of 18). Remaining 6 unverified: agent-payments, building-the-edge, cross-org-trust, gaps, human-agent-collaboration, reliability-evaluation.
+
+**Sources used:**
+- Web searches: Microsoft Cyber Pulse February 2026, Gartner Market Guide Guardian Agents, OpenClaw Meta ban Summer Yue, ConductorOne Future of Identity Report 2026, Kaspersky OpenClaw 18%, Onyx Security $40M, Kai $125M, CSA Strata Identity survey, IBM Cost of a Data Breach 2025 shadow AI, Gartner 40% enterprise apps AI agents, Gartner 40% shadow AI breach 2030, Gartner AI governance spending, China OpenClaw ban CERT, Netskope 223 violations, AIUC-1 consortium 63%, OpenAI Steinberger, RSAC Innovation Sandbox finalists, Summer Yue Meta title, Help Net Security AI agent security, NIST CAISI March 2026, shadow AI governance 2026.
+- Shane's blog posts: boardroom (Feb 8), trust-inversion (Feb 3), work-leaving (Feb 27), google-workspace (March 5).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (agent-identity re-verify, pac-framework, regulatory-landscape, execution-security).
+4. Continue proactive verification: 6 unverified drafts remain. Next candidates: cross-org-trust (340 lines), reliability-evaluation.
+5. NIST CAISI: 932 comments received on RFI. Track listening sessions in April.
+
 ## 2026-03-13 (Session 113)
 
 THOUGHT: Session 113. Reading messages. Sapere Aude found 3 issues in agent-identity.md. Fixing those first.
