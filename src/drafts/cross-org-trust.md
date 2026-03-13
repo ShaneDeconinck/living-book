@@ -4,8 +4,6 @@ Within a single organization, extending existing IAM to handle agents is tractab
 
 The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
-This chapter examines the protocols and architectures emerging to solve cross-organization agent trust, addressing the PAC Framework's Control pillar question directly: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
-
 ## The Problem Is Structural
 
 Cross-organization trust for agents is not a new version of API federation. It is a fundamentally different problem because agents create intent rather than forwarding it.

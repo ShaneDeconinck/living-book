@@ -2,8 +2,6 @@
 
 Communication protocols are the plumbing of the agent ecosystem. They determine how agents discover tools, talk to other agents, and traverse organizational boundaries. Get the plumbing right, and agents can compose into systems that create value no single agent could deliver. Get it wrong, and every integration is bespoke, every boundary a wall, every tool connection a security risk.
 
-This chapter covers the protocol landscape as it stands in early 2026: MCP for connecting agents to tools, A2A for connecting agents to agents, AgentGateway for policy enforcement, the trust layer integrations that add verifiable identity, and the governance structures that determine whether any of this converges or fragments.
-
 The critical insight, and the one Shane has been making since his first explainers on these protocols: **communication protocols solve discovery, not trust**.[^1] MCP tells an agent what tools exist. A2A tells an agent what other agents can do. Neither tells the agent whether to trust what it finds. That gap is where the rest of this book's infrastructure: identity, delegation, authority, and governance: becomes load-bearing.
 
 ## The Discovery Problem

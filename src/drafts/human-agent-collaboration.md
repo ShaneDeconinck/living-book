@@ -1,8 +1,6 @@
 # Human-Agent Collaboration Patterns
 
-[Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) diagnosed a problem: humans are bad at monitoring systems that rarely fail. The solution is not to remove humans from oversight. It is to redesign how humans and agents work together so that oversight does not depend on sustained vigilance.
-
-This chapter is about that redesign. How to structure the collaboration between humans and agents so that governance is effective, not performative. How to set the right autonomy level for each task, not each agent. How to build interfaces that make oversight actionable rather than exhausting. And how to let agents participate in their own governance by recognizing when they are uncertain.
+Humans are bad at monitoring systems that rarely fail. The solution is not to remove humans from oversight. It is to redesign how humans and agents work together so that oversight does not depend on sustained vigilance.
 
 ## Three Oversight Models
 

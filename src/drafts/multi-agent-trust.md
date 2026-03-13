@@ -1,10 +1,8 @@
 # Multi-Agent Trust and Orchestration
 
-Every chapter in this book so far has examined trust through the lens of a single agent: one agent, one identity, one delegation chain, one set of permissions. That is already hard. But it is not where the industry is heading.
+Trust for a single agent: one identity, one delegation chain, one set of permissions: is already hard. But it is not where the industry is heading.
 
 Salesforce's 2026 Connectivity Benchmark found that organizations already run an average of 12 agents, with adoption projected to surge 67% by 2027.[^1] Deloitte predicts as many as 75% of companies may invest in agentic AI by end of 2026, fueling an autonomous agent market worth $8.5 billion.[^2] The problem: 50% of those agents operate in isolated silos.[^1] They do not compose. They do not share trust context. They do not fail gracefully when one goes wrong.
-
-This chapter examines what happens when agents delegate to other agents: how trust properties compose, how failures cascade, and what infrastructure is required to make multi-agent systems governable rather than just functional.
 
 ## The Delegation Problem
 

@@ -1,6 +1,6 @@
 # Agent Supply Chain Security
 
-The previous chapter covered how to contain an agent: sandboxing, isolation, defense in depth. But containment assumes you trust what is running inside the sandbox. The supply chain question is different: can you trust the components the agent depends on?
+Containment: sandboxing, isolation, defense in depth: assumes you trust what is running inside the sandbox. The supply chain question is different: can you trust the components the agent depends on?
 
 An agent is not a single piece of software. It is an assembly: a model, a set of tools, a plugin ecosystem, prompt templates, configuration files, and the APIs those tools call. Each component is a link in a trust chain. Compromise any link, and the agent does exactly what it is told to do: the wrong thing, with the right credentials.
 

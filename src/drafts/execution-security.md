@@ -1,7 +1,5 @@
 # Sandboxing and Execution Security
 
-Every previous chapter in this book has dealt with a question of trust: who is this agent, what can it access, who authorized it, and who is accountable when it fails? This chapter deals with the question that comes after all of those: what happens when the agent actually runs?
-
 Execution security is the Control pillar made physical. Identity and delegation define what an agent *should* be allowed to do. Execution security defines what it *can* do. The gap between those two is where incidents happen.
 
 ## The Permission Prompt Problem

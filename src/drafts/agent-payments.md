@@ -2,8 +2,6 @@
 
 When an agent pays for something, it does more than transfer money. It creates proof that someone authorized expenditure, binds an economic stake to an action, and produces an audit trail that connects identity to intent to outcome. Payment is not just a transaction: it is a trust signal.
 
-This chapter covers why traditional payment infrastructure breaks for agents, the emerging protocols that fix it, and what the economics of agent-to-agent commerce look like in practice. It connects to all three PAC pillars: Potential (new value from autonomous commerce), Accountability (payment as auditable proof of authorization), and Control (cryptographic enforcement of spending constraints).
-
 ## Why Traditional Payments Break for Agents
 
 Traditional payment infrastructure assumes a human at the keyboard. Credit cards require cardholder authentication (3D Secure, biometrics). Account signups need manual verification. Billing cycles assume monthly invoices reviewed by humans.
