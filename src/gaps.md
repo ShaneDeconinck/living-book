@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 16)
+## Observations (Updated 2026-03-13, Session 17)
+
+### Agent Identity Is Becoming a Platform Feature
+
+Microsoft Entra Agent ID (GA May 1, 2026) is the first major identity provider to create a dedicated identity type for agents, alongside users and service principals. This is a productization inflection point: agent identity verification (I3) and scoped authorization (I4) are no longer custom infrastructure projects. They are platform features at $15/user/month. ConductorOne's March 2026 survey confirms the demand: 95% of enterprises run autonomous AI agents, 47% have more non-human identities than humans, yet only 22% have full visibility. The 80% identity breach rate and 91% IAM spending increase show the market is moving from awareness to investment. The limitation is ecosystem scope: Agent 365 governs Microsoft environments but not cross-provider or cross-organizational agent deployments. The cross-org trust infrastructure (TSP, PIC, VCs) remains necessary for the harder problem. Updated in Agent Identity and Shadow Agent Governance chapters.
 
 ### Multi-Agent Governance Is the Next Frontier
 
@@ -58,7 +62,7 @@ Singapore launched the world's first governance framework purpose-built for agen
 
 ### The Identity Standards Landscape Is Converging Fast
 
-Between NIST's concept paper (Feb 2026), OpenID's AIIM Community Group, the IETF draft for OBO with AI agents, Verifiable Intent, and now the CSA IAM framework, the standards and industry bodies are all converging on agent identity simultaneously. The window for shaping these standards is narrow (NIST concept paper comment period closes April 2, benchmark evaluations comment period closes March 31). This convergence validates the PAC Framework's emphasis on building on emerging standards rather than proprietary solutions.
+Between NIST's concept paper (Feb 2026), OpenID's AIIM Community Group, the IETF draft for OBO with AI agents, Verifiable Intent, the CSA IAM framework, and now Microsoft Entra Agent ID, both standards bodies and major vendors are converging on agent identity simultaneously. The window for shaping these standards is narrow (NIST concept paper comment period closes April 2, benchmark evaluations comment period closes March 31). Microsoft's productization of agent identity (Entra Agent ID, May 1, 2026) means the debate is shifting from "should agents have their own identities?" to "how do we federate agent identities across providers?" This convergence validates the PAC Framework's emphasis on building on emerging standards rather than proprietary solutions.
 
 ### Agent Payments Infrastructure Is Moving Faster Than Expected
 

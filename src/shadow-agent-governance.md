@@ -62,6 +62,8 @@ The core problem is structural. Organizations have invested decades in identity 
 
 **Neither model assumes autonomous decision-making.** Both human and application IAM assume that the entity follows instructions. Agents create intent. They decide what to do given a goal. This is the trust inversion: "Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task."[^trust-inversion]
 
+The scale of this mismatch is quantifiable. ConductorOne's 2026 Future of Identity Report found that 95% of enterprises now run AI agents that autonomously perform IT or security tasks, and 47% of organizations report more non-human identities than human users, yet only 22% have full visibility into those identities.[^conductorone] Eighty percent experienced at least one identity-related breach in the past year. Eighty-seven percent rate non-human identity risk as moderately to extremely urgent. And 91% increased IAM spending in response, signaling that identity security is becoming a foundational control as autonomous systems expand.[^conductorone]
+
 The governance gap is not a tooling gap. It is an architectural mismatch. Organizations cannot govern shadow agents by extending the models designed for humans and applications. They need new infrastructure designed for actors that operate autonomously, inherit authority through delegation, and cross system boundaries at machine speed.
 
 ## Discovery: Seeing What Exists
@@ -117,6 +119,14 @@ Enforcement requires integration with the infrastructure layers the agent depend
 **Network controls.** Agents that cannot reach external services without passing through a governed proxy cannot exfiltrate data or connect to unauthorized APIs. This is the network isolation dimension from the Sandboxing chapter applied at the organizational level.
 
 **Platform controls.** Low-code platforms that support agent building (Copilot Studio, Agentforce, etc.) should be configured to require registration as a deployment prerequisite. If the platform cannot enforce this natively, the gateway layer provides the enforcement point.
+
+### Vendor implementations are arriving
+
+Microsoft Agent 365 (generally available May 1, 2026) is the first major vendor to ship a purpose-built agent registry and governance platform. Each agent gets its own Microsoft Entra Agent ID with lifecycle management: creation, rotation, and decommissioning governed by the same entitlement management processes used for human identities. The platform includes a centralized catalog of both sanctioned and shadow agents, bridging discovery and enforcement in a single product.[^agent-365] At $15 per user per month standalone (or bundled in Microsoft 365 E7 at $99), Microsoft is pricing agent governance as a platform feature, not an enterprise add-on.
+
+This is significant because it validates the architectural direction described above: the identity provider is the natural enforcement point for agent registration. An agent that cannot get an Entra Agent ID cannot authenticate to Microsoft 365 resources. The registry is not advisory. It is the prerequisite for identity, and identity is the prerequisite for access.
+
+The limitation is scope: Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-organizational trust infrastructure described in [Cross-Organization Trust](cross-org-trust.md). But for the 80% of Fortune 500 organizations already running agents on Microsoft platforms,[^ms-cyber-pulse] this is a significant step from I1 to I3.
 
 The goal is Shane's architectural principle: "Policy says 'don't.' Architecture says 'can't.'"[^boardroom] An unregistered agent should not be prohibited by policy. It should be unable to function because the infrastructure it depends on requires registration.
 
@@ -270,3 +280,5 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^netskope]: Netskope, AI data policy violation statistics (2026).
 [^ms-cyber-pulse-data]: Microsoft, Cyber Pulse: An AI Security Report (2026).
 [^gartner-governance-spend]: Gartner, AI governance spending forecast: $492M in 2026, surpassing $1B by 2030.
+[^conductorone]: ConductorOne, "Future of Identity Report 2026," March 10, 2026. Survey of 508 IT and security leaders at U.S. organizations with 1,000+ employees.
+[^agent-365]: Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 9, 2026. Generally available May 1, 2026.

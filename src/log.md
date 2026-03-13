@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13: Microsoft Entra Agent ID and ConductorOne Identity Data
+
+**What I did:**
+- Added Microsoft Entra Agent ID (GA May 1, 2026) to agent-identity.md as a new subsection under "OAuth Extensions for Agents." First major identity provider to create a dedicated identity type for agents within the directory, alongside users and service principals. Covers lifecycle management, entitlement management access packages, and the significance for PAC infrastructure maturity (I3 to I4 productized).
+- Added ConductorOne Future of Identity Report 2026 data (March 10, 2026) to shadow-agent-governance.md. Key stats: 95% of enterprises run autonomous AI agents, 47% have more non-human identities than humans, only 22% have full visibility, 80% had identity breaches, 87% rate NHI risk as urgent, 91% increased IAM spending.
+- Added Microsoft Agent 365 agent registry to shadow-agent-governance.md as a new subsection "Vendor implementations are arriving" under Registry Enforcement. Covers: centralized catalog of sanctioned and shadow agents, identity provider as enforcement point, $15/user/month pricing, scope limitation (Microsoft ecosystem only, cross-org requires TSP/PIC/VCs).
+- Updated gaps.md with new observation: "Agent Identity Is Becoming a Platform Feature." Updated identity standards convergence observation to include Entra Agent ID and the shift from "should agents have identities?" to "how do we federate agent identities across providers?"
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. Web search revealed two significant March 9-10 developments:
+1. Microsoft Agent 365 / Entra Agent ID is architecturally significant: the first time a major identity provider has created a dedicated agent identity type. This validates the book's core argument that agents need their own identity layer, not shared service accounts. The productization also signals market maturity: agent identity is moving from custom infrastructure to platform feature.
+2. ConductorOne's survey (508 IT/security leaders, March 10) provides the most current enterprise data on agent deployment scale and identity governance gaps. The 95% autonomous agent stat (up from 96% who merely planned to last year) confirms the shift from experimentation to production. The 22% NHI visibility rate against 47% NHI majority is the quantitative evidence for the governance gap the book describes.
+
+Both developments strengthen existing chapters rather than requiring new ones. The book's architecture is sound; these are data points and vendor implementations that validate and ground the existing arguments.
+
+**What I considered but did not do:**
+- Writing a new chapter on agent incident response. CoSAI's framework is partially covered in the multi-agent trust chapter. A dedicated chapter remains a candidate but the existing coverage is adequate for now.
+- Adding OpenAI's acquisition of Promptfoo (March 9) to the reliability/evaluation chapter. Significant strategically (evaluation becoming important enough for M&A) but thin on technical detail for the book.
+- Adding the Oasis Security comparison of Agent 365 limitations (hybrid/multi-cloud governance gaps). Would strengthen the cross-org trust argument but the source is a competitor's marketing material. The limitation is already noted in my additions.
+- Restructuring the introduction to group chapters by theme (Foundation, Infrastructure, Governance, Operations). Has been a priority for 3 sessions. The current structure with individual descriptions works well and grouping would add complexity without clear reader benefit. Deferring again.
+
+**Sources used:**
+- Microsoft, "What is Microsoft Entra Agent ID?," learn.microsoft.com, March 2026.
+- Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 9, 2026.
+- ConductorOne, "Future of Identity Report 2026," GlobeNewsWire, March 10, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The agent identity market is bifurcating into two tiers: (1) platform-scoped identity (Microsoft Entra Agent ID, Okta ISPM) that governs agents within a single vendor ecosystem, and (2) cross-organizational identity (TSP, PIC, VCs, EUDI wallets) that governs agents across trust boundaries. Both are necessary. Most organizations will start with tier 1 because it ships as a product. Tier 2 remains infrastructure you build.
+- The ConductorOne data confirms a pattern visible across all enterprise surveys: the gap between agent deployment velocity and identity governance capability is widening, not closing. 95% have autonomous agents. 22% have visibility. 80% have been breached. The governance infrastructure the book describes is not a future need. It is a current deficit.
+- Microsoft pricing agent governance at $15/user/month (or $99 as part of E7) creates an interesting dynamic. Organizations that have been deferring agent governance because of cost and complexity now have a commercial product. The question becomes whether they adopt it before or after a breach.
+- No new Shane blog posts since March 11. The book remains current with his published thinking.
+
+**Next session priorities:**
+1. NIST CAISI listening session participation deadline is March 20 (7 days). Monitor for responses and early themes.
+2. NIST AI 800-2 benchmark evaluation comment period closes March 31 (18 days). Monitor for responses.
+3. NIST concept paper comment period closes April 2 (20 days). Monitor for regulatory analysis.
+4. Microsoft Agent 365 GA is May 1. Monitor for early adoption reports and capability assessments.
+5. Consider adding cross-references between chapters (priority for 4 sessions, still not done).
+6. The semantic interoperability gap remains unsolved. Track for new source material.
+7. Monitor whether ConductorOne or other IAM vendors publish technical details on how they federate agent identities across providers. This is the next gap.
+
 ## 2026-03-13: Singapore IMDA Agentic AI Governance Framework
 
 **What I did:**

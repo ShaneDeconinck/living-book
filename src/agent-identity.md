@@ -96,6 +96,16 @@ Identity platforms are shipping agent-specific products. Auth0's Token Vault, ge
 
 This is pragmatic infrastructure. It does not solve the deeper problems of purpose encoding or delegation chains, but it eliminates a class of bugs where agents fail because tokens expired, refresh logic was wrong, or credentials were stored insecurely. For teams building agents today, managed token infrastructure reduces the blast radius of the credentials problem.
 
+### Microsoft Entra Agent ID
+
+Microsoft took a more fundamental step in March 2026: creating a dedicated identity type for agents within the identity provider itself. Microsoft Entra Agent ID, part of the Agent 365 platform (generally available May 1, 2026), gives each AI agent its own identity in Entra with lifecycle management: creation, rotation, and decommissioning governed by the same entitlement management processes used for human identities.[^entra-agent-id]
+
+This is architecturally significant. Auth0 manages tokens for agents. Microsoft is making agents first-class identity objects in the enterprise directory, alongside users and service principals. Agents get their own entry in the identity provider, their own access packages, and their own governance workflows.
+
+The platform includes an agent registry: a centralized catalog of both sanctioned and shadow agents operating within Microsoft environments. This bridges the gap between identity (covered here) and shadow agent governance (covered in the [Shadow Agent Governance](shadow-agent-governance.md) chapter): agents that exist in the registry get identities; agents that do not exist cannot authenticate.
+
+For the PAC Framework, Entra Agent ID represents the I3 to I4 transition becoming productized. Agent identity verification (I3) and scoped authorization through entitlement management (I4) are no longer custom infrastructure projects. They are platform features. The question shifts from "can we build agent identity infrastructure?" to "how quickly can we deploy it?"
+
 ## Beyond OAuth: Verifiable Identity
 
 OAuth extensions address the "who" question within existing infrastructure. But agents increasingly operate across organizational boundaries, where no single OAuth provider has authority. This is where decentralized identity enters.
@@ -268,3 +278,4 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^14]: OpenID Foundation, "Identity Management for Agentic AI," Artificial Intelligence Identity Management Community Group whitepaper, 2025.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
 [^csa]: Cloud Security Alliance, "Agentic AI Identity & Access Management: A New Approach," cloudsecurityalliance.org, 2025-2026. Framework proposing DID+VC+ZKP-based IAM for multi-agent systems.
+[^entra-agent-id]: Microsoft, "What is Microsoft Entra Agent ID?," learn.microsoft.com, March 2026. Part of Microsoft Agent 365, generally available May 1, 2026. See also ConductorOne, "Future of Identity Report 2026," March 10, 2026.
