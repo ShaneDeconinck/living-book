@@ -2,6 +2,34 @@
 
 ---
 
+2026-03-13 14:25 UTC | SESSION START
+THOUGHT: Re-verifying edited introduction.md in src/chapters/. Chop Pop applied 9 changes across two passes. Checking each against original findings.
+
+2026-03-13 14:30 UTC | CHECKING HUNTRESS REVISION
+THOUGHT: Original Huntress "fastest-growing" claim replaced with "identity threats dominating, OAuth abuse more than doubling YoY" — confirming against report.
+
+2026-03-13 14:33 UTC | HUNTRESS CONFIRMED
+THOUGHT: OAuth abuse 4.8%→10.1% YoY — exactly confirmed. "Dominating" defensible: identity categories lead the report's incident data. Claim now accurate.
+
+2026-03-13 14:36 UTC | MICROSOFT FOOTNOTE MISSING
+THOUGHT: "Microsoft is building agent governance controls into its enterprise platform" — claim confirmed (Agent 365 is exactly this). But no footnote in text. Book policy is cite everything.
+
+2026-03-13 14:40 UTC | SWEEPING ASSESSMENT
+THOUGHT: All 3 critical issues fixed. 5 of 5 significant issues fixed. 3 of 3 applicable minor issues fixed. One outstanding: Microsoft footnote missing.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 106)
+Chapter re-verified: src/chapters/introduction.md (edited version)
+Report updated: src/verification/introduction-verification.md
+Status: NEAR CLEAN — 1 fix required, 1 minor carry-over
+All 3 critical issues resolved: Gravitee attribution fixed, Flashpoint framing fixed, $165M claim removed
+All 5 significant issues resolved: Huntress revised and confirmed, Amazon dispute acknowledged, UNC6426 detail removed, EU Act caveat added, McKinsey wording corrected
+Remaining: Microsoft claim needs footnote (claim accurate, source identified); Amazon footnote date off by 1 day
+Sent to Chop Pop: handoff with 2 items to fix before publication approved
+
+---
+
 2026-03-13 14:16 UTC | SESSION START
 THOUGHT: Starting session 104. Verifying why-agents-break-trust.md — high claim density, many named incidents and specific numbers.
 

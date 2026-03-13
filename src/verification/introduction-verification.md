@@ -7,6 +7,52 @@
 
 ---
 
+## Re-Verification: Edited Chapter (src/chapters/introduction.md)
+
+**Re-verification date:** 2026-03-13
+**Edited chapter:** src/chapters/introduction.md
+**Status:** NEAR CLEAN — 1 remaining issue (Microsoft footnote missing), 1 minor carry-over
+
+Chop Pop applied 9 edits across two passes. All 3 critical issues and all 5 significant issues from the original report are resolved. One item remains.
+
+### What Was Fixed
+
+| Original Issue | Fix Applied | Verified |
+|---|---|---|
+| Attribution error: "more than half without oversight" footnoted to Microsoft instead of Gravitee | Separate [^gravitee-monitoring] footnote now points directly to Gravitee | ✓ |
+| "In December 2025 alone" misrepresents month-over-month figure | Changed to "between November and December 2025" | ✓ |
+| $165M VC claim — no source found | Removed entirely | ✓ |
+| Huntress "non-human identity fastest-growing attack vector" — not in report | Replaced with "identity threats dominating incident data, with OAuth abuse more than doubling year-over-year" | ✓ Confirmed (OAuth: 4.8%→10.1% YoY exact) |
+| Amazon Kiro — AI causation not acknowledged as disputed | Added: "Amazon disputes the AI causation framing, attributing the outage to 'misconfigured access controls, not AI.'" | ✓ |
+| UNC6426 "permission-bypass flags" — unverified technical detail | Removed. Text now reads: "invoked them with natural-language prompts to perform filesystem reconnaissance for credentials" | ✓ |
+| EU AI Act August 2026 — Digital Omnibus delay not acknowledged | Added: "though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027" | ✓ |
+| McKinsey "research" overclaims a podcast as primary research | Changed to "McKinsey's 2026 reporting" | ✓ |
+| Sardine "18-month cycles" compresses a range | Changed to "cycles of up to 18 months" | ✓ |
+| RSAC "five of ten" — count not precisely sourceable | Changed to "Several RSAC 2026 Innovation Sandbox finalists" | ✓ |
+| Huntress [^huntress] footnote placed at editorial synthesis | Moved to end of the cited fact only | ✓ |
+
+### Remaining Issue
+
+**Microsoft claim — footnote missing (must fix)**
+
+**Location:** The Window section
+**Text:** "Microsoft is building agent governance controls into its enterprise platform."
+**Problem:** No footnote. The claim is factually accurate — Microsoft Agent 365, announced alongside the March 9, 2026 Microsoft 365 frontier suite, is exactly a "unified control plane for agents" enabling IT and security teams to observe, govern, and secure agents across the organization. This is well documented and verifiable. But the book's stated policy is "cite everything," and this sentence has no citation. One sentence in a well-cited chapter without a footnote is conspicuous.
+**Source that supports it:** Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," microsoft.com/security/blog, March 9, 2026.
+**Required fix:** Add a footnote: `[^microsoft-agent365]: Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," microsoft.com/security/blog, March 9, 2026. Microsoft Agent 365, announced with the Frontier Suite (M365 E7), is described as "a unified control plane for agents" for enterprise governance.`
+
+### Minor Carry-over
+
+**Amazon footnote date** — `[^kiro]` still lists "Amazon response at aboutamazon.com, February 21, 2026." The about.amazon.com response was published February 20, 2026 (same day as FT reporting); February 21 is when Engadget covered Amazon's response. One-day discrepancy in a footnote. Fix when convenient: change "February 21" to "February 20."
+
+### Re-Verification Conclusion
+
+The chapter is ready for publication pending one fix: add a Microsoft Agent 365 footnote to the Microsoft sentence in The Window section. Once that footnote is added, the chapter is clean. No claims were changed in meaning by the editing, no context was removed that affects accuracy, and all critical issues have been resolved.
+
+---
+
+---
+
 ## Summary
 
 14 external claims verified. 2 confirmed outright. Several confirmed with caveats. 3 require correction. 1 requires removal or sourcing.
