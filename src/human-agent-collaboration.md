@@ -36,6 +36,8 @@ Shane frames this as the difference between "don't" and "can't." Policy says the
 
 Infrastructure-in-the-loop does not remove humans from governance. It moves them from enforcement to design. Humans define the authorization boundaries, set the blast radius thresholds, configure the anomaly detection rules, and investigate flagged incidents. These are high-value activities that play to human strengths: judgment, context, and strategic thinking. What humans no longer do is watch a stream of agent actions and approve each one. That is the task they were failing at.
 
+Anthropic's 2026 Agentic Coding Trends Report identifies a complementary approach: scaling oversight through AI-automated review systems[^anthropic-coding-trends]. Instead of adding more human reviewers as agent output scales, organizations deploy review agents that maintain quality while accelerating throughput. Development environments now display status across multiple concurrent agent sessions. Version control systems handle simultaneous agent-generated contributions. The oversight is not diminished: it is augmented and scaled through intelligent tooling. This is infrastructure-in-the-loop applied to the review function itself: the human designs the review criteria and investigates flagged issues, while automated systems apply those criteria at machine speed across all agent output.
+
 The PAC Framework's infrastructure levels (I1 through I5) define what this looks like concretely:
 
 - At **I2 (Logged)**, the human can investigate after the fact but cannot prevent unauthorized actions in real time.
@@ -51,6 +53,8 @@ Most organizations think about autonomy at the agent level: "this agent is auton
 
 In practice, trust is task-specific. You trust your assistant to schedule meetings but not to send emails to clients on your behalf. You trust a coding agent to refactor internal utilities but not to modify authentication logic. The same agent, operating under the same identity, requires different oversight for different actions.
 
+Anthropic's 2026 Agentic Coding Trends Report provides production-scale evidence for this pattern. Developers integrate AI into 60% of their work but fully delegate only 0-20% of tasks[^anthropic-coding-trends]. The remaining 40-80% involves active supervision, validation, and human judgment: the developer adjusts the autonomy level per task, granting full delegation for routine implementation while maintaining close oversight for architectural decisions. This is not a transitional state. It is the collaboration model that works.
+
 The autonomy dial pattern implements this. Instead of a single autonomy level per agent, each task type gets its own setting[^smashing-patterns]:
 
 **Observe and Suggest (A1)**: the agent analyzes and recommends but takes no action. Appropriate for novel task types, high-stakes decisions, or domains where the human has expertise the agent lacks.
@@ -65,7 +69,9 @@ The autonomy dial pattern implements this. Instead of a single autonomy level pe
 
 The key insight is that the dial should be set per task type, not per agent, and it should be dynamic. An email agent might operate at A4 for internal scheduling but A2 for client-facing communications. A coding agent might operate at A5 for test generation but A2 for production deployments. The mapping between task type and autonomy level is the governance artifact that organizations need to create and maintain.
 
-Anthropic's data shows that users naturally gravitate toward this model. On the most complex goals in Claude Code, the model asks for clarification in 16.4% of turns, while humans interrupt in only 7.1%[^anthropic-autonomy]. The agent recognizes its own uncertainty more often than the human recognizes it. This suggests that the autonomy dial should not be set purely by human judgment: the agent's own confidence signal should factor in.
+The pace of change in these settings is measurable. Anthropic reports that coding agents now complete 20 actions autonomously before requiring human input, double what was possible six months earlier[^anthropic-coding-trends]. Task horizons are expanding from minutes to days or weeks, with agents building full systems autonomously and pausing only for strategic human checkpoints. This expansion is not unchecked: organizations that succeed are expanding autonomy incrementally, matching each increase to demonstrated reliability at the current blast radius.
+
+Anthropic's earlier autonomy research shows that users naturally gravitate toward this model. On the most complex goals in Claude Code, the model asks for clarification in 16.4% of turns, while humans interrupt in only 7.1%[^anthropic-autonomy]. The agent recognizes its own uncertainty more often than the human recognizes it. This suggests that the autonomy dial should not be set purely by human judgment: the agent's own confidence signal should factor in.
 
 ## UX Patterns That Work
 
@@ -131,7 +137,9 @@ Deloitte's 2026 Tech Trends report frames the organizational challenge directly:
 
 This framing clarifies what is actually changing. The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned (the shadow agent governance chapter quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
 
-What this looks like in practice:
+Anthropic's 2026 Agentic Coding Trends Report documents this shift in the engineering domain specifically. Engineers who wrote every line of code now increasingly orchestrate long-running systems of agents that handle implementation details, focusing human time on architecture and strategy[^anthropic-coding-trends]. More time on orchestration, review, and system design. Less on routine implementation. This is not a loss of engineering skill: it is a reallocation toward higher-judgment work. The same pattern is extending beyond engineering: sales, legal, marketing, and operations teams are using agents to solve local process problems without waiting on engineering queues. Zapier reports 89% AI adoption across their organization with 800+ agents deployed internally[^anthropic-coding-trends]. And 27% of AI-assisted work consists of tasks that would not have been done at all without agents: new work enabled by the collaboration, not old work automated[^anthropic-coding-trends].
+
+What the lifecycle looks like in practice:
 
 **Onboarding**: an agent entering production gets a defined role, scoped permissions, a designated owner, and an initial autonomy level. This maps to the agent registry described in the shadow agent governance chapter: identity, owner, authority, permissions, blast radius classification, evaluation requirements[^shadow-chapter].
 
@@ -207,5 +215,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 [^deloitte-silicon]: Deloitte, ["The agentic reality check: Preparing for a silicon-based workforce"](https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html), Tech Trends 2026.
 
 [^shadow-chapter]: See Chapter 12 of this book, "Shadow Agent Governance," for the agent registry model and amnesty-based transition approach.
+
+[^anthropic-coding-trends]: Anthropic, ["2026 Agentic Coding Trends Report: How coding agents are reshaping software engineering"](https://resources.anthropic.com/2026-agentic-coding-trends-report) (March 2026). Eight trends across three categories: foundation trends (role shifts, multi-agent coordination), capability trends (expanding task horizons, cross-domain agents), and impact trends (organizational adoption, security architecture).
 
 [^inferential-edge]: Shane Deconinck, ["When Intelligence Becomes Commodity, Infrastructure Becomes the Edge"](https://shanedeconinck.be/posts/inferential-edge/) (March 2026).

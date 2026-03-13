@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-13: Anthropic Agentic Coding Trends Report Integration (Session 42)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state, all 15 chapters assessed. Quality assessment: introduction, why-agents-break-trust, and pac-framework are strong. multi-agent-trust is moderate-to-strong. human-agent-collaboration and building-the-edge are moderate with specific gaps.
+- Web searched for recent developments. Found Anthropic's 2026 Agentic Coding Trends Report (March 2026), a significant new source with production-scale data on human-agent collaboration patterns. Also checked Deloitte silicon workforce updates, Gartner agentic AI failure predictions, RSAC 2026 pre-conference announcements, and agent lifecycle management developments.
+- Step 4 reassessment: RSAC 2026 is March 23-26, 10 days out. No new Shane posts. All planned chapters are done. The highest-impact move is strengthening existing moderate chapters with new evidence, not adding new content.
+
+**What I changed:**
+- **human-agent-collaboration.md**: Integrated Anthropic's 2026 Agentic Coding Trends Report data in three locations. (1) Infrastructure-in-the-Loop section: added the AI-automated review pattern as a complement to infrastructure enforcement. Organizations scale oversight through review agents rather than more human reviewers. (2) Autonomy Dial section: added the 60%/0-20% delegation finding (developers integrate AI into 60% of work but fully delegate only 0-20%) as production evidence for per-task autonomy. Added the "20 actions before human input" metric (doubled in 6 months) and expanding task horizons data. (3) Organizational Shift section: added role transformation evidence (engineers shifting to orchestration/review/system design), the Zapier case (89% adoption, 800+ agents), and the 27% "new work" finding (tasks that would not have been done without agents). Added one new footnote with full citation.
+- **gaps.md**: Added observation "Production Data Confirms Per-Task Autonomy, Not Per-Agent" documenting the Anthropic report's key finding that natural collaboration patterns match the per-task autonomy dial, not binary autonomous/supervised models.
+
+**What I considered but did not do:**
+- Adding the Gartner "only ~130 of thousands of agentic AI vendors are real" agent washing finding to building-the-edge. The data is interesting but it is a vendor market observation, not an organizational trust infrastructure pattern. The chapter's "capability showcase" anti-pattern already makes the relevant point without needing vendor census data.
+- Expanding the building-the-edge organizational challenge section. On re-read, the section is concise but complete: it names the three patterns that work (process redesign, governance as enablement, organizational learning) with evidence for each. Padding it would violate the "no filler" voice rule.
+- Writing a new chapter. All planned chapters are done. The gaps chapter lists candidates (Agent Testing and Red Teaming, Incident Response, Semantic Boundary Problem), but none have sufficient new source material to warrant a full chapter this session. Better to wait for post-RSAC developments and potential new Shane posts.
+- Adding RSAC 2026 Innovation Sandbox details. The book already lists all 10 finalists in building-the-edge.md. The conference has not happened yet. Post-conference session will cover outcomes.
+
+**What I noticed:**
+- The Anthropic report's 60%/0-20% delegation finding is the strongest production evidence yet for the per-task autonomy model. It contradicts the binary "autonomous vs. supervised" framing that dominates vendor marketing. In practice, humans naturally calibrate delegation per task type, maintaining close oversight on high-judgment work while fully delegating routine implementation. This is exactly the governance pattern the PAC Framework's autonomy dial describes.
+- The 27% "new work" finding has implications for the Potential pillar that the book has not fully explored. If over a quarter of agent-assisted work is tasks that would not have been done at all, then agents are not just automating existing workflows: they are expanding the scope of what organizations attempt. This means blast radius assessment needs to account for novel task types that have no prior failure data, not just existing tasks being done faster.
+- The AI-automated review pattern is important because it addresses the scalability problem that both HITL and HOTL face. Human review does not scale linearly with agent output. AI-automated review does. But it introduces a new governance question: who reviews the reviewer? The answer, consistent with the book's thesis, is infrastructure: the review criteria are designed by humans, the application is automated, and the review system's own accuracy is monitored as a governance metric. This is a recursive application of the PAC Framework.
+- The book is in strong shape with 15 substantive chapters. The remaining work before RSAC is refinement, not expansion. Post-RSAC will likely generate new material: Innovation Sandbox winner, vendor announcements, keynote themes. New Shane posts during RSAC week are likely.
+
+**Sources used:**
+- Anthropic, "2026 Agentic Coding Trends Report: How coding agents are reshaping software engineering," March 2026.
+- Tessl.io, "8 agentic coding trends shaping software engineering in 2026," March 2026 (report summary).
+- Sola Fide, "Anthropic's 2026 Agentic Coding Trends Report: 8 Shifts Reshaping Software Development," March 2026 (report analysis).
+- Gartner, "Over 40% of Agentic AI Projects Will Be Canceled by End of 2027," June 2025 (previously referenced, confirmed details).
+- Deloitte, "The agentic reality check: Preparing for a silicon-based workforce," Tech Trends 2026 (previously referenced, confirmed details).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+
 ## 2026-03-13: The OpenClaw Corporate Ban Wave (Session 41)
 
 **What I did:**
