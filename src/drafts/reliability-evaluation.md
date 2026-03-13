@@ -8,7 +8,7 @@ This is good news for Potential. It is dangerous news for Accountability.
 
 Shane frames the split clearly: context engineering increases reliability, which is about whether the model does what you intended. Governance manages risk, which is about whether the agent is *allowed* to do what it is about to do. Better models solve the first problem. They make the second one worse[^trust-inversion].
 
-This chapter is about the space between those two problems. How reliability is measured today, where evaluation falls short, and what happens when agents get reliable enough that we stop paying attention.
+The space between those two problems is where governance lives. How reliability is measured today, where evaluation falls short, and what happens when agents get reliable enough that we stop paying attention.
 
 ## What Reliability Actually Means
 
