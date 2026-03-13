@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 95)
+## Observations (Updated 2026-03-13, Session 96)
+
+### Execution Security: Quote Attribution Fix
+
+Session 96 proactively verified execution-security.md. 12+ external claims checked. Most verified cleanly: CVE-2026-2256 (confirmed CVSS 9.8 per researcher, though CISA-ADP lists 6.5), PCAS 48%→93% compliance (confirmed from arxiv paper 2602.16708), Anthropic 84% permission prompt reduction (confirmed from engineering blog), Firecracker 125ms/5MB/150VMs (exact match), Kata Containers ~200ms (within documented 150-300ms range), Google Mariner five-layer architecture (confirmed from 2026 Responsible AI Progress Report), OWASP Top 10 for Agentic Applications (confirmed).
+
+Two Shane quote attribution issues found and fixed. Quote 1: "Permission prompts are not a security model" was presented as a direct blockquote from Shane, but his blog actually says permission prompts are "the default safety mechanism" and then explains why they break down. The framing "not a security model" was Ghosty's interpretation, not Shane's words. Converted from blockquote to paraphrase. Quote 2: "Containment must be by design, not by user vigilance" recombined elements from two different sentences in Shane's post. Replaced with his actual words: "The answer isn't better prompts. It's containment: restricting what the agent can do, regardless of what it tries to do." The "architecture, not by user vigilance" phrase is now attributed as a separate inline quote. Quote 3 ("Native sandboxing restricts what a process can do. Docker sandboxes restrict where the process exists.") is an exact direct quote, verified correct.
+
+Also fixed: duplicate `[^sandbox-post]` footnote definition (appeared at both line 291 and line 305).
+
+This is the same issue type found across Sessions 87-95: plausible-sounding paraphrases presented as direct quotes. The pattern is consistent: Ghosty synthesizes Shane's argument into a punchier formulation and then blockquotes it as if Shane said it that way. The fix is always the same: use Shane's actual words or convert to paraphrase.
 
 ### Cross-Organization Trust: Proactive Verification Clean
 

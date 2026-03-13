@@ -8,11 +8,7 @@ Execution security is the Control pillar made physical. Identity and delegation 
 
 Most agent tools today rely on permission prompts as their primary security mechanism. The agent wants to run a command, edit a file, or make a network request. A prompt appears. The user clicks "yes."
 
-Shane has been direct about why this fails[^sandbox-post]:
-
-> Permission prompts are not a security model. Approval fatigue, knowledge gaps, and speed-vs-safety tradeoffs mean users click "yes" without reading.
-
-Three failure modes make permission prompts unreliable:
+Shane has been direct about why this fails[^sandbox-post]: permission prompts are the default safety mechanism in most coding agents, but in practice they break down. Three failure modes make them unreliable:
 
 **Approval fatigue.** A coding agent might request dozens of file operations per minute. After the fifth prompt, most users switch to auto-approve. The twentieth prompt, the one that matters, gets the same reflexive "yes" as all the others.
 
@@ -34,7 +30,9 @@ The alternative, filtering dangerous commands through denylists, does not work. 
 
 Shane draws the distinction clearly[^sandbox-post]:
 
-> Containment must be by design, not by user vigilance. The answer is restricting what the agent can do regardless of what it tries to do.
+> The answer isn't better prompts. It's containment: restricting what the agent *can* do, regardless of what it *tries* to do.
+
+The damage, as he puts it, "is contained by architecture, not by user vigilance."
 
 A sandbox needs two boundaries[^anthropic-sandbox]:
 
@@ -303,8 +301,6 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^northflank]: Northflank, "How to Sandbox AI Agents in 2026: MicroVMs, gVisor & Isolation Strategies," northflank.com, 2026.
 
 [^nvidia-sandbox]: NVIDIA AI Red Team, "Practical Security Guidance for Sandboxing Agentic Workflows and Managing Execution Risk," developer.nvidia.com, 2026.
-
-[^sandbox-post]: Shane Deconinck, "Your Coding Agent Needs a Sandbox: Docker Sandbox vs Native vs DevContainers," trustedagentic.ai, February 7, 2026.
 
 [^profiler-post]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," trustedagentic.ai, February 26, 2026.
 

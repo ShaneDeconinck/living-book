@@ -1,5 +1,61 @@
 # Session Log
 
+## 2026-03-13 18:00 UTC: Proactive Verification of execution-security.md (Session 96)
+
+THOUGHT: Session 96. Pre-RSAC plateau session 31. No new developments found. Continuing proactive verification: execution-security.md.
+THOUGHT: Verifying execution-security.md. Starting with CVE-2026-2256, PCAS compliance stats, Firecracker numbers, Anthropic 84%.
+THOUGHT: Found quote attribution issues in execution-security.md. Two of three Shane blockquotes are paraphrases, not direct quotes.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No feedback files. Agent messages unchanged since Session 90.
+- Step 6 reassessment: pre-RSAC plateau continues into session 96 (31 consecutive sessions, 65-96). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI March 2026. All findings already in the book. NIST CAISI RFI comment period closed March 9. April listening sessions upcoming. OpenClaw rogue iMessage incident, Microsoft Agent 365, ArmorCode $16M: all already covered or not significant enough to add.
+- **Proactively verified execution-security.md claims.** 12+ external claims checked. Found two Shane quote attribution issues and a duplicate footnote.
+
+**What I verified and found correct:**
+- CVE-2026-2256 (ModelScope MS-Agent): Confirmed via researcher's Medium post, GitHub PoC, CERT/CC. CVSS 9.8 widely cited (researcher and third parties), though CISA-ADP lists 6.5. The check_safe() denylist bypass mechanism confirmed.
+- PCAS 48%→93% compliance: Confirmed from arxiv paper 2602.16708 (February 18, 2026). Three case studies, Datalog-derived policy language, zero violations in instrumented runs.
+- Anthropic 84% permission prompt reduction: Confirmed directly from Anthropic engineering blog "Making Claude Code More Secure and Autonomous."
+- Firecracker 125ms boot, <5MB memory, 150 VMs/second/host: Exact match confirmed from Firecracker official site and Northflank.
+- Kata Containers ~200ms: Within documented 150-300ms range. "Roughly 200ms" is a reasonable middle estimate.
+- Google Mariner five-layer architecture: Confirmed from Google's 2026 Responsible AI Progress Report. User Alignment Critic, Agent Origin Sets, prompt injection classification, mandatory human oversight, pre-launch testing all confirmed.
+- OWASP Top 10 for Agentic Applications: December 2025, 10 risk categories confirmed.
+- Bainbridge "Ironies of Automation" (1983) and Norman (1990): Standard references, correct citations.
+
+**What I changed:**
+- **execution-security.md (line 11-14)**: Removed blockquote "Permission prompts are not a security model." This was Ghosty's interpretation, not Shane's words. Shane's blog says permission prompts are "the default safety mechanism" and then explains why they break down. Converted to inline paraphrase.
+- **execution-security.md (line 35-37)**: Replaced blockquote "Containment must be by design, not by user vigilance" with Shane's actual words: "The answer isn't better prompts. It's containment: restricting what the agent can do, regardless of what it tries to do." Added "architecture, not by user vigilance" as a separate inline quote from a different sentence in the same post.
+- **execution-security.md (line 305)**: Removed duplicate `[^sandbox-post]` footnote definition.
+- **gaps.md**: Added new observation "Execution Security: Quote Attribution Fix" documenting the verification results and the recurring pattern of paraphrases presented as direct quotes. Updated session number to 96.
+
+**What I considered but did not do:**
+- Noting the CVSS score discrepancy (9.8 vs CISA-ADP 6.5) in the text. The 9.8 is from the discovering researcher and is widely cited by third parties. The CISA-ADP score uses different evaluation criteria. The book's use of 9.8 is defensible without additional caveat.
+- Adding OpenClaw rogue iMessage incident details to supply-chain-security.md. The chapter already covers OpenClaw extensively (ClawHavoc, ClawJacked, SecurityScorecard, Shane's blog post). The iMessage incident is well-known but adding it would be marginal value.
+- Adding ArmorCode $16M or other minor funding rounds. Not significant enough to change the book's narrative.
+
+**What I noticed:**
+- The quote attribution pattern is now confirmed across multiple chapters. Sessions 87 (introduction: Gravitee-vs-Microsoft attribution), 90 (agent-identity verification), and now 96 (execution-security) have all found instances where Ghosty synthesizes Shane's argument into a punchier formulation and blockquotes it as if Shane wrote it that way. The fix is consistent: use Shane's actual words or convert to paraphrase. Remaining unverified chapters (agent-payments, reliability-evaluation, human-agent-collaboration, shadow-agent-governance, multi-agent-trust, regulatory-landscape, context-infrastructure) should be checked for the same pattern.
+- Execution-security.md is otherwise well-sourced. The technical claims (CVE details, Firecracker performance, PCAS compliance stats, Anthropic sandbox metrics) all verified cleanly. The chapter's synthesis (connecting sandboxing to PAC infrastructure maturity, mapping OWASP risks to containment coverage) is the book's contribution and does not need external verification.
+- The pre-RSAC plateau has lasted 31 sessions. The proactive verification approach continues to find issues worth fixing.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI March 2026, CVE-2026-2256 ModelScope, PCAS Policy Compiler Secure Agentic Systems, Anthropic Claude Code sandbox 84%, Firecracker microVM performance, Kata Containers boot time, Google Mariner User Alignment Critic.
+- Shane's blog: "Your Coding Agent Needs a Sandbox: Docker Sandbox vs Native vs DevContainers," February 7, 2026 (verified exact quote wording).
+- Itamar Yochpaz, "CVE-2026-2256: From AI Prompt to Full System Compromise," Medium, February 2026.
+- arxiv 2602.16708, "Policy Compiler for Secure Agentic Systems," February 18, 2026.
+- Anthropic Engineering, "Making Claude Code More Secure and Autonomous," anthropic.com, 2026.
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening sessions begin in April: track announcements.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): track announcements.
+6. Track SEP-1932 and SEP-1933 progress: will they ship in the June 2026 MCP specification release?
+7. Continue proactive verification: agent-payments.md next.
+8. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 16:00 UTC: Proactive Verification of cross-org-trust.md (Session 95)
 
 THOUGHT: Session 95. Pre-RSAC plateau session 30. Searching for new developments before reassessing.
