@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 32)
+## Observations (Updated 2026-03-13, Session 43)
+
+### Two Surveys, Same Identity Gap
+
+The CSA/Strata survey (285 respondents, February 2026) and the Gravitee survey (919 respondents, February 2026) independently measured how organizations authenticate and govern agents. The findings converge: 44-46% use shared/static API keys, 21-22% treat agents as identity-bearing entities, and only 18-28% have confidence in their ability to trace agent actions or manage agent identities through IAM. Two independent surveys with different respondent pools arriving at the same numbers is stronger evidence than either alone. The identity gap is not an artifact of one measurement approach. It is the actual state of the industry.
+
+### Microsoft at 500,000 Internal Agents
+
+Microsoft disclosed that it has visibility into more than 500,000 agents operating across its own organization. This is the largest disclosed internal agent deployment. The number matters for two reasons: first, it validates that agent governance at scale is a real operational problem, not a theoretical one. Second, it means Microsoft is eating its own cooking with Agent 365 before shipping it to customers. Agent governance at that scale requires the registry-as-infrastructure pattern the book describes: you cannot manage 500,000 agents through spreadsheets and manual review. The identity provider becomes the enforcement point by necessity.
 
 ### Forrester's PAC-Shaped RSAC Expectations
 

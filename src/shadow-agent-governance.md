@@ -154,7 +154,7 @@ Enforcement requires integration with the infrastructure layers the agent depend
 
 ### Vendor implementations are arriving
 
-Microsoft Agent 365 (generally available May 1, 2026) is the first major vendor to ship a purpose-built agent registry and governance platform. Each agent gets its own Microsoft Entra Agent ID with lifecycle management: creation, rotation, and decommissioning governed by the same entitlement management processes used for human identities. The platform includes a centralized catalog of both sanctioned and shadow agents, bridging discovery and enforcement in a single product.[^agent-365] At $15 per user per month standalone (or bundled in Microsoft 365 E7 at $99), Microsoft is pricing agent governance as a platform feature, not an enterprise add-on.
+Microsoft Agent 365 (generally available May 1, 2026) is the first major vendor to ship a purpose-built agent registry and governance platform. Each agent gets its own Microsoft Entra Agent ID with lifecycle management: creation, rotation, and decommissioning governed by the same entitlement management processes used for human identities. The platform includes a centralized catalog of both sanctioned and shadow agents, bridging discovery and enforcement in a single product.[^agent-365] At $15 per user per month standalone (or bundled in Microsoft 365 E7 at $99), Microsoft is pricing agent governance as a platform feature, not an enterprise add-on. Microsoft's own internal deployment validates the scale: the company has visibility into more than 500,000 agents across its organization, with the most widely used focused on research, coding, sales intelligence, customer triage, and HR self-service.[^agent-365] That is not a pilot. It is an organization governing half a million agents through the same platform it is shipping to customers.
 
 This is significant because it validates the architectural direction described above: the identity provider is the natural enforcement point for agent registration. An agent that cannot get an Entra Agent ID cannot authenticate to Microsoft 365 resources. The registry is not advisory. It is the prerequisite for identity, and identity is the prerequisite for access.
 
@@ -228,6 +228,8 @@ Gartner forecasts that AI governance spending will reach $492 million in 2026 an
 ## Audit Trails for Accountability
 
 Shane's boardroom question is direct: "When an agent makes a consequential decision, can you trace who authorized it and what happened?"[^boardroom] For shadow agents, the answer is definitively no. For governed agents, it must be yes.
+
+The CSA/Strata Identity survey quantifies how far most organizations are from that "yes." Only 28% of respondents can reliably trace agent actions back to a human sponsor across all environments. Only 21% maintain a real-time inventory of active agents. And nearly 80% of organizations deploying autonomous AI cannot tell, in real time, what those systems are doing or who is responsible for them.[^csa-strata-traceability] These are not organizations without governance ambitions: 40% are increasing their identity and security budgets specifically for agent risks. The gap is not intent. It is infrastructure.
 
 The audit trail requirements for agents differ from both human and application audit trails:
 
@@ -325,3 +327,4 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^onyx]: Onyx Security, "Onyx Security Launches with $40M in Funding to Build the Secure AI Control Plane for the Agentic Era," businesswire.com, March 12, 2026. Backed by Conviction and Cyberstarts. 70+ employees, already engaged with Fortune 500 customers.
 [^kai-funding-ref]: Kai, "Kai Emerges from Stealth with $125M," prnewswire.com, March 10, 2026.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026," gravitee.io, February 2026. Survey of 919 executives and practitioners across industries.
+[^csa-strata-traceability]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA Survey Report, February 5, 2026. Survey of 285 IT and security professionals conducted September-October 2025. 28% can trace agent actions to human sponsor; 21% maintain real-time agent inventory; 40% increasing identity/security budgets for agent risks.

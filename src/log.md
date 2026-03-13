@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-13: CSA/Strata Survey Integration and Microsoft 500K Agents (Session 43)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged (19 questions, same description discrepancy).
+- Read current book state, all 15 chapters assessed. Quality assessment: all chapters are strong. The book is in pre-RSAC holding pattern (March 23-26, 10 days out).
+- Web searched for recent developments. Found: Microsoft Agent 365 internal deployment of 500,000+ agents (largest disclosed), CSA/Strata Identity survey corroborating the Gravitee identity gap data from a second independent source, CoSAI IR Framework v1.0 (already covered in multi-agent-trust), RSAC pre-conference coverage (conference hasn't happened yet), Bedrock Data MCP governance tools.
+- Step 4 reassessment: The book has 15 substantive chapters, all strong. RSAC is 10 days out. No new Shane posts. The highest-impact work is targeted strengthening with new independent evidence, not new content or structural changes.
+
+**What I changed:**
+- **shadow-agent-governance.md**: Two additions. (1) Added Microsoft's internal 500K agent deployment to the Agent 365 section. This is the largest disclosed internal deployment and validates agent governance at enterprise scale: you cannot manage half a million agents through manual review. (2) Added CSA/Strata survey traceability data (28% can trace agent actions to human sponsor, 21% real-time inventory, 80% no real-time visibility) to the Audit Trails for Accountability section, directly quantifying the gap that Shane's boardroom question identifies. Added one new footnote.
+- **agent-identity.md**: Added CSA/Strata authentication methods data (44% static API keys, 43% username/password, 35% shared service accounts, 18% highly confident in IAM) alongside the existing Gravitee data. Two independent surveys from different respondent pools converging on the same finding strengthens the argument from "one survey says" to "industry consensus." Added one new footnote.
+- **gaps.md**: Updated session number in header. Added two new observations: "Two Surveys, Same Identity Gap" (convergence of CSA/Strata and Gravitee findings) and "Microsoft at 500,000 Internal Agents" (implications for registry-as-infrastructure pattern).
+
+**What I considered but did not do:**
+- Writing a new chapter on agent testing and red teaming. The gaps doc lists it as a candidate, but existing chapters already cover testing (reliability-evaluation), red teaming examples (why-agents-break-trust with CodeWall/McKinsey), and agent-specific attack patterns (supply-chain-security with MCPTox, shadow-agent-governance with OpenClaw). Insufficient new material to justify a standalone chapter this session.
+- Adding the OIDC-A (OpenID Connect for Agents) specification to agent-identity.md. OIDC-A is an academic proposal (arXiv paper), not an official OpenID Foundation specification. The chapter already covers the OpenID AIIM Community Group and the standards coordination happening there. Adding an unaffiliated academic proposal risks suggesting it has more weight than it does.
+- Expanding human-agent-collaboration.md. The chapter is 221 lines and Session 42 identified it as "moderate" quality, but on re-read it covers its scope well: three oversight models, autonomy dial with production evidence, UX patterns, permission granularity, self-aware agents, and organizational shift. No specific gaps emerged that new source material could fill.
+- Expanding the convergence timeline in building-the-edge.md with RSAC forecasts. The conference hasn't happened yet. Post-RSAC session will cover outcomes, Innovation Sandbox winner, and vendor announcements. Pre-conference coverage adds speculation, not evidence.
+
+**What I noticed:**
+- The convergence of CSA/Strata and Gravitee survey data is significant methodologically. Two independent surveys with different respondent pools (285 vs 919), different organizations (CSA vs Gravitee), and different sampling approaches arriving at nearly identical findings (44-46% shared/static API keys, 21-22% treating agents as identity-bearing entities) eliminates the possibility that either survey's findings are artifacts of its methodology. The identity gap is the actual state of the industry.
+- Microsoft's 500K internal agent number has strategic implications beyond the immediate "governance at scale" point. Microsoft is simultaneously the largest agent governance customer (500K agents internally), the largest agent governance vendor (Agent 365), and one of the largest agent platform providers (Copilot Studio, Azure AI). This vertical integration means Microsoft is building governance from operational experience, not theoretical architecture. Whether this is an advantage (they understand the problem deeply) or a conflict (they define the problem and sell the solution) depends on whether the governance patterns they build are genuinely open or Microsoft-ecosystem-locked. The book's existing observation about Agent 365's scope limitation (Microsoft ecosystem only) addresses this.
+- The book is now at a natural pre-RSAC plateau. All 15 chapters are substantive and well-sourced. The remaining incremental improvements (adding more survey data, more vendor announcements) have diminishing returns. The next high-impact session will be post-RSAC (after March 26): Innovation Sandbox winner, vendor product announcements, keynote themes, and likely new Shane posts about conference outcomes.
+
+**Sources used:**
+- Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA Survey Report, February 5, 2026. Survey of 285 IT and security professionals.
+- Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 2026. Internal deployment: 500,000+ agents.
+- Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," March 9, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: 19 questions confirmed, pillar structure unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+5. Consider whether the book needs thematic grouping in the introduction (Foundation/Infrastructure/Governance/Operations) now that all 15 chapters are done.
+
 ## 2026-03-13: Anthropic Agentic Coding Trends Report Integration (Session 42)
 
 **What I did:**
