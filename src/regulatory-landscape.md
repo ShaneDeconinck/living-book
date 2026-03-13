@@ -93,7 +93,7 @@ In the same month, NIST's Center for AI Standards and Innovation (CAISI) launche
 
 The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." This is a Potential argument, in PAC terms. NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
 
-CAISI's Request for Information on AI Agent Security closed March 9, 2026. The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
+CAISI's Request for Information on AI Agent Security closed March 9, 2026, drawing 932 public comments: a measure of how urgently industry wants guidance on agent governance.[^caisi-comments] Among the respondents, the OpenID Foundation's AIIM Threat Modeling Subgroup submitted concrete recommendations for agent identity standards,[^openidaiim] and the Software & Information Industry Association (SIIA) argued that many agentic AI risks can be addressed by extending established cybersecurity practices (secure-by-design, least-privilege, continuous monitoring) rather than creating entirely new frameworks.[^siia-rfi] The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
 
 ## ISO 42001: The Management System Baseline
 
@@ -321,5 +321,9 @@ The gap between what agents can do and what regulation requires is an infrastruc
 [^mcp]: MCP adoption figures and governance as of March 2026. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
 
 [^a2a]: A2A v0.3 with 150+ organizations. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
+
+[^caisi-comments]: NIST CAISI RFI on AI Agent Security, 932 comments received via regulations.gov by the March 9, 2026 deadline.
+
+[^siia-rfi]: SIIA, "SIIA Response to NIST RFI on Security Considerations for AI Agents," siia.net, March 2026.
 
 [^csaatf]: Cloud Security Alliance, ["The Agentic Trust Framework: Zero Trust Governance for AI Agents"](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents), February 2, 2026. Open governance specification published under Creative Commons. ATF GitHub repository and specification at [github.com/CSA-AI/ATF](https://github.com/CSA-AI/ATF).

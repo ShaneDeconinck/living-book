@@ -1,5 +1,35 @@
 # Session Log
 
+## 2026-03-13: Onyx Security, NIST RFI Engagement Data (Session 34)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (only CSS/dark mode fixes). PAC Framework unchanged.
+- Web searched for developments since Session 33. Found two data points not yet in the book:
+  1. Onyx Security emerged from stealth March 12 with $40M to build a "Secure AI Control Plane" for agent governance. 70+ employees, Fortune 500 customers, backed by Conviction and Cyberstarts.
+  2. NIST CAISI RFI on AI Agent Security received 932 public comments by its March 9 deadline. SIIA submitted a response alongside the already-covered OpenID Foundation response.
+
+**What I changed:**
+- **building-the-edge.md**: Added Onyx Security $40M funding to March 2026 convergence timeline entry, alongside Kai's $125M. Added observation that $165M in 48 hours confirms VC sees agent trust as a category. Added footnote.
+- **shadow-agent-governance.md**: Added Onyx Security and Kai funding signals to vendor implementations section, reinforcing market crystallization narrative. Added two footnotes.
+- **regulatory-landscape.md**: Added 932 comments figure to CAISI RFI paragraph. Added SIIA response alongside OpenID Foundation. Added two footnotes.
+
+**What I considered but did not do:**
+- Adding Bold Security ($40M, March 12). Endpoint-focused (AI on edge devices), not specifically about agent identity/trust/governance. Less relevant to the book's scope.
+- Adding Mimecast State of Human Risk 2026 data (98% orgs use AI for defense, 80% concerned about data exposure). Session 33 already decided this is a vendor product announcement, not a new concept. The book covers the human-as-control-plane argument through better sources.
+- Adding the Flashpoint 1,500% rise in AI-related illicit discussions stat. Already covered through other threat data in the book.
+
+**What I noticed:**
+- The book continues to be near-complete. Web searches return mostly developments already covered. The two additions this session (Onyx funding, NIST engagement figure) strengthen existing narratives rather than introducing new ones.
+- The $165M in 48 hours (Kai + Onyx) is the strongest market signal yet that agent governance is becoming a fundable product category. This validates the book's thesis that identity and control infrastructure, not model capability, is where the competitive edge forms.
+- RSAC 2026 (March 23-26) remains the next major event to cover post-conference.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+5. Monitor whether Forrester's "PAC-shaped" predictions materialize in vendor announcements.
+
 ## 2026-03-13: Full Book Review and Verification (Session 33)
 
 **What I did:**
