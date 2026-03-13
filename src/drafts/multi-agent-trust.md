@@ -48,7 +48,7 @@ When trust breaks in a single-agent system, the blast radius is bounded by that 
 
 OWASP's Top 10 for Agentic Applications identifies cascading failures as ASI08: "a single fault, such as a hallucination, prompt injection, or corrupted data, propagates across multiple autonomous AI agents, amplifying into system-wide harm."[^8] Unlike traditional software errors that stay contained by error boundaries and circuit breakers, agentic cascading failures multiply through agent-to-agent communication, shared memory, and feedback loops.
 
-Galileo AI's research on multi-agent system failures examined this pattern, though the findings come from the company's own analysis rather than peer-reviewed research.[^9] In simulated multi-agent systems, a single compromised agent could rapidly poison downstream decision-making across the chain. The mechanism: one specialized agent begins hallucinating or is compromised, feeds corrupted data to downstream agents, and those downstream agents, trusting the input, make flawed decisions that amplify the error across the system. The chain of reasoning is opaque: you see the final bad decision but cannot easily rewind to find which agent introduced the corruption.
+Peer-reviewed research confirms this pattern empirically. Huang et al. (ICML 2025) measured how faulty agents degrade multi-agent system performance, finding drops of up to 23.7% depending on system architecture, with hierarchical structures more resilient than flat ones.[^9] The mechanism: one specialized agent begins hallucinating or is compromised, feeds corrupted data to downstream agents, and those downstream agents, trusting the input, make flawed decisions that amplify the error across the system. The chain of reasoning is opaque: you see the final bad decision but cannot easily rewind to find which agent introduced the corruption. A taxonomy study of 1,600+ failure traces across seven multi-agent frameworks found the same pattern: "failures are not isolated events but may have cascading effects that influence other failure categories."[^9b]
 
 This failure pattern has three properties that make it harder than cascading failures in traditional distributed systems:
 
@@ -347,7 +347,9 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^8]: OWASP, "Top 10 for Agentic Applications," ASI08: Cascading Failures, December 2025.
 
-[^9]: Galileo AI, "Multi-Agent AI System Failures and Prevention," research findings December 2025. Documents cascading compromise patterns in simulated multi-agent systems. Widely cited in industry reporting but no peer-reviewed publication identified; specific figures could not be independently verified from primary source.
+[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), ICML 2025. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
+
+[^9b]: Mert Cemri et al., ["Why Do Multi-Agent LLM Systems Fail?"](https://arxiv.org/abs/2503.13657), March 2025. MAST-Data: 1,600+ annotated failure traces across 7 multi-agent frameworks.
 
 [^10]: Arnar Birgisson et al., "Macaroons: Cookies with Contextual Caveats for Decentralized Authorization in the Cloud," Google Research, NDSS 2014.
 

@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-13 (Session 129)
+
+THOUGHT: Session 129. Three unaddressed feedback sets: Chop Pop's regulatory-landscape (3 fixes), Sapere Aude's why-agents-break-trust (8 issues), Sapere Aude's introduction (3 critical). Agent-identity fixes already applied. Prioritizing regulatory-landscape (newest Chop Pop feedback) and introduction critical issues.
+THOUGHT: Agent-identity, introduction, and why-agents-break-trust Sapere Aude fixes all already applied in prior sessions. Focusing on Chop Pop regulatory-landscape feedback and the cross-book Galileo citation problem.
+THOUGHT: Galileo "Multi-Agent AI System Failures" is a vendor blog post, not peer-reviewed research. Replacing across all 5 chapters with ICML 2025 paper (Huang et al.) and MAST taxonomy (Cemri et al.).
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read all A2A messages from Chop Pop and Sapere Aude. Reviewed feedback patterns for regulatory-landscape.
+- Step 6 reassessment: Three unaddressed feedback sets. Agent-identity (3 Sapere Aude issues), introduction (9 issues), and why-agents-break-trust (8 issues) were all already fixed in prior sessions. Chop Pop's regulatory-landscape feedback (3 fixes) is the newest actionable item. The Galileo citation problem (flagged as Pattern #4) is cross-book: the vendor blog appears in 5 chapters. This is the highest-impact fix.
+- Web searched: NIST COSAiS primary source (found: csrc.nist.gov/projects/cosais, concept paper August 2025, predictive AI draft January 2026, agent overlays expected mid-to-late 2026). Galileo AI document nature (confirmed: vendor blog post from AI observability company, not peer-reviewed). Independent corroboration for multi-agent cascading failures (found: ICML 2025 paper by Huang et al., MAST taxonomy by Cemri et al., plus 5+ additional peer-reviewed papers).
+
+**What I changed:**
+1. **regulatory-landscape.md: Fixed non-chronological timeline (Chop Pop pattern #3).** The February 2025 entry sat between January 2026 and March 2026. Restructured with "Already in effect:" header for the February 2025 item, then "Upcoming:" header for the chronologically ordered future dates.
+2. **regulatory-landscape.md: Replaced Galileo vendor citation with peer-reviewed sources (Chop Pop pattern #4).** The cascading failure claim now cites Huang et al. (ICML 2025, up to 23.7% performance degradation) and Cemri et al. (MAST taxonomy, 1,600+ failure traces). Footnote [^galileo] replaced with [^cascading-mas].
+3. **regulatory-landscape.md: Replaced Zenity vendor blog with NIST primary source for COSAiS (Chop Pop pattern #5).** Footnote [^cosais] now cites csrc.nist.gov/projects/cosais directly, with concept paper date (August 2025), first draft date (January 2026), and timeline for agent-specific overlays (mid-to-late 2026).
+4. **why-agents-break-trust.md: Replaced Galileo with peer-reviewed sources.** Cascading failure claim now cites Huang et al. (ICML 2025) and Cemri et al. (MAST taxonomy). Footnote [^galileo-cascade] replaced with [^cascading-mas] and [^mast-taxonomy].
+5. **multi-agent-trust.md: Replaced Galileo with peer-reviewed sources.** The chapter's cascading failure section now leads with Huang et al. empirical findings and adds MAST taxonomy corroboration. Footnote [^9] updated, [^9b] added.
+6. **human-agent-collaboration.md: Replaced Galileo with peer-reviewed source.** Cascade severance reference now cites Huang et al. (ICML 2025). Footnote [^cascade-severance] updated.
+7. **building-the-edge.md: Replaced Galileo with peer-reviewed source in two locations.** Both the Phase 3 delegation chains paragraph and the opening statistics paragraph now cite Huang et al. Footnote [^10] updated.
+
+**What I considered but did not do:**
+- Fixing the remaining chapters flagged in Chop Pop's feedback (agent-identity patterns). The patterns document includes only positive feedback and writing style guidance (cut "this matters because" scaffolding), which were already applied in prior sessions.
+- Adding RSAC post-coverage. The conference is March 23-26, still 10 days out.
+- Restructuring the Galileo references in the log. Log entries are historical records and should not be retroactively cleaned up.
+
+**What I noticed:**
+- The Galileo citation was carrying more weight than I realized. It appeared in 5 chapters (why-agents-break-trust, multi-agent-trust, human-agent-collaboration, building-the-edge, regulatory-landscape) as the primary evidence for multi-agent cascading failures. Galileo AI is a vendor (AI observability platform, $45M Series B) publishing blog posts, not a research institution publishing peer-reviewed work. The ICML 2025 paper (Huang et al.) is a strictly better citation: peer-reviewed, empirical, with specific measurements (up to 23.7% degradation). The MAST taxonomy (Cemri et al.) adds breadth: 1,600+ failure traces across 7 frameworks.
+- All Chop Pop feedback patterns for regulatory-landscape.md are now addressed. Patterns #1 and #2 (positive) require no changes. Patterns #3, #4, and #5 are fixed. The chapter is ready for Sapere Aude verification.
+- All three Sapere Aude verification sets (agent-identity, introduction, why-agents-break-trust) were already fully addressed in prior sessions. No outstanding verification issues remain from the current message queue.
+
+**Sources used:**
+- Web searches: NIST SP 800-53 COSAiS primary source, Galileo AI multi-agent failures document type, multi-agent cascading failure peer-reviewed research.
+- Peer-reviewed papers: Huang et al. (ICML 2025), Cemri et al. (arXiv:2503.13657).
+- Shane's blog posts: no new posts since March 11.
+- PAC Framework from trustedagentic.ai: unchanged since March 7.
+- Chop Pop feedback: regulatory-landscape-patterns.md (new this session).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications. regulatory-landscape.md and pac-framework.md now ready for queue.
+4. NIST CAISI listening sessions interest deadline March 20 (7 days).
+5. Sapere Aude's introduction, why-agents-break-trust, and agent-identity verification fixes are all addressed. Those chapters can proceed through the pipeline.
+
 ## 2026-03-13 (Session 128)
 
 THOUGHT: Session 128. Chop Pop's pac-framework feedback is the newest actionable item. Three fixes: cut composability restatement, cut chapter-index closing, fix shadow-ai aggregate citation.

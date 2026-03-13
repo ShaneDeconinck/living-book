@@ -61,7 +61,7 @@ Penalties are tiered by violation severity. Prohibited AI practices (Article 5):
 
 Article 73's incident reporting guidelines, which become binding in August 2026, have a structural blind spot: they assume single-agent, single-occurrence failures.[^article73gap] When an incident results from the interaction of multiple AI systems, the current framework provides no mechanism to attribute accountability across the chain.
 
-This matters for three reasons. First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence: a single compromised agent in a multi-agent chain can rapidly poison downstream decisions across the system.[^galileo] Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
+This matters for three reasons. First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. Research on LLM-based multi-agent systems confirms the pattern: faulty or compromised agents degrade downstream decision-making across the chain, with performance drops of up to 23.7% depending on system structure.[^cascading-mas] The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence in detail. Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
@@ -256,8 +256,13 @@ Most organizations today operate at I1-I2 for their agent deployments. Regulator
 
 The regulatory and standards timelines are converging on a narrow window:
 
+Already in effect:
+
+- **February 2, 2025**: EU AI Act Article 4 (AI literacy) in force. Organizations must ensure adequate AI literacy among staff operating AI systems.
+
+Upcoming:
+
 - **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. World's first agentic AI governance framework.
-- **February 2025**: EU AI Act Article 4 (AI literacy) already in effect.
 - **March 6, 2026**: White House releases "President Trump's Cyber Strategy for America." First national cybersecurity strategy to explicitly name agentic AI as a strategic priority (Pillar 5).
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
 - **March 11, 2026**: EU Parliament approves conclusion of the Council of Europe Framework Convention on AI (455-101-74). First binding international AI treaty advances toward ratification.
@@ -315,7 +320,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^whitehousecyber]: The White House, ["President Trump's Cyber Strategy for America"](https://www.whitehouse.gov/wp-content/uploads/2026/03/President-Trumps-Cyber-Strategy-for-America.pdf), March 6, 2026.
 
-[^cosais]: NIST SP 800-53 COSAiS (Controls Overlay for Secure AI Systems) adapts federal security controls for single-agent and multi-agent use cases. Referenced in Zenity, ["From Policy Planning to Agentic Action"](https://zenity.io/blog/current-events/from-policy-planning-to-agentic-action), March 2026.
+[^cosais]: NIST, [Control Overlays for Securing AI Systems (COSAiS)](https://csrc.nist.gov/projects/cosais). Concept paper released August 2025; first discussion draft (predictive AI overlay) published January 2026. Use cases include single-agent and multi-agent AI systems. Agent-specific overlay drafts expected mid-to-late 2026.
 
 [^colorado]: Colorado AI Act, effective June 30, 2026. Requires risk management policies, impact assessments, and transparency for high-risk AI in consequential decisions.
 
@@ -325,7 +330,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^article73gap]: Natàlia Fernández Ashman, Usman Anwar, and Marta Bieńkiewicz, ["EU Regulations Are Not Ready for Multi-Agent AI Incidents"](https://www.techpolicy.press/eu-regulations-are-not-ready-for-multiagent-ai-incidents/), TechPolicy.Press, January 13, 2026.
 
-[^galileo]: Galileo AI, "Multi-Agent AI System Failures and Prevention," research findings December 2025. Documents cascading compromise patterns in multi-agent systems.
+[^cascading-mas]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), ICML 2025. Empirically measures how faulty agents degrade multi-agent system performance across different architectures. See also Mert Cemri et al., ["Why Do Multi-Agent LLM Systems Fail?"](https://arxiv.org/abs/2503.13657), March 2025, which documents cascading failure patterns across 1,600+ failure traces.
 
 [^openidaiim]: OpenID Foundation, ["OIDF Responds to NIST on AI Agent Security"](https://openid.net/oidf-responds-to-nist-on-ai-agent-security/), March 2026.
 
