@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 94)
+## Observations (Updated 2026-03-13, Session 95)
+
+### Cross-Organization Trust: Proactive Verification Clean
+
+Session 95 proactively verified cross-org-trust.md before Sapere Aude reaches it. Verified 10+ external claims: CSA/Okta Drift breach (700+ companies, 10 days, stolen OAuth tokens), PIC microsecond performance claim (confirmed in Shane's LFDT meetup blog post), CAAM IETF draft (confirmed on datatracker, February 24, 2026), MCP-I donation to DIF (confirmed via Vouched and BiometricUpdate), Phil Windley "Cross-Domain Delegation in a Society of Agents" (confirmed on Technometria), WE BUILD consortium three recommendations (confirmed via BiometricUpdate), CSA seven-part series structure (confirmed). One minor fix: the CSA uses "verifiable delegation" where the book used "delegation proof." Changed to match the source's actual terminology (two instances). The chapter's other key terms ("operational envelopes," "coordinated revocation") match the CSA's actual language. This is the same issue type as the Huntress characterization (projecting specific framing onto a source), but much milder: "delegation proof" and "verifiable delegation" are near-synonyms describing the same requirement.
 
 ### Building-the-Edge Quality Sweep: Digital Omnibus and Verification Consistency
 

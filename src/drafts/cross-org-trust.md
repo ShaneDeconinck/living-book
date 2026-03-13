@@ -28,11 +28,11 @@ The deeper failure was not the token theft itself. It was that each domain valid
 
 The CSA identified three requirements that current infrastructure lacks:[^2]
 
-- **Delegation proof**: tokens that explicitly differentiate user identity from agent identity and carry verifiable proof of the delegation chain
+- **Verifiable delegation**: tokens that explicitly differentiate user identity from agent identity and carry verifiable proof of the delegation chain
 - **Operational envelopes**: cryptographic constraints that travel with the token and define what an agent can do, not just what resources it can access
 - **Coordinated revocation**: shared, real-time risk signals between providers so revocation in one domain invalidates access in others
 
-These requirements map directly to the Control pillar. Delegation proof is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
+These requirements map directly to the Control pillar. Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
 
 ## The Token Model's Structural Limit
 

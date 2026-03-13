@@ -1,5 +1,59 @@
 # Session Log
 
+## 2026-03-13 16:00 UTC: Proactive Verification of cross-org-trust.md (Session 95)
+
+THOUGHT: Session 95. Pre-RSAC plateau session 30. Searching for new developments before reassessing.
+THOUGHT: All web search findings already in the book. Shifting to proactive quality: cross-org-trust.md.
+THOUGHT: cross-org-trust.md claims verified clean. One minor CSA terminology fix.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No feedback files. Agent messages unchanged since Session 90.
+- Step 6 reassessment: pre-RSAC plateau continues into session 95 (30 consecutive sessions, 65-95). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI AI agent standards March 2026. All findings already in the book. SurePath AI MCP Policy Controls (March 12) already considered and excluded in Session 92. Microsoft Inside Track MCP governance already in agent-communication.md (Session 92). No genuinely new content found.
+- **Shifted to proactive quality: verifying cross-org-trust.md claims.** This chapter assembles pieces from multiple sources (CSA/Okta, PIC protocol, CAAM IETF draft, MCP-I, Phil Windley, WE BUILD consortium, Shane's blog) and is vulnerable to the same issue types found in previous verifications.
+
+**What I verified and found correct:**
+- CSA/Okta Drift breach: 700+ companies, 10 days, stolen OAuth tokens. Confirmed via CSA blog and TechTarget. "Seven-part series on identity security as AI security" confirmed.
+- PIC microsecond performance: "executing a continuity chain takes microseconds, comparable to a token exchange call" is Shane's language from his LFDT meetup blog post (line 87). Not from PIC's own documentation, but correctly attributed to footnote [^1] (Shane's blog).
+- CAAM IETF draft: confirmed on IETF datatracker as draft-barney-caam-00, published February 24, 2026, expires August 28, 2026.
+- MCP-I donation to DIF: confirmed via Vouched blog, BiometricUpdate, DIF blog. Three conformance levels confirmed.
+- Phil Windley "Cross-Domain Delegation in a Society of Agents": confirmed on Technometria, March 4, 2026.
+- WE BUILD consortium three recommendations: confirmed via BiometricUpdate, March 9, 2026.
+- EU AI Act Digital Omnibus: chapter does not mention August 2026 AI Act deadline (only references eIDAS 2.0 December 2026 EUDI Wallet deadline). No caveat needed.
+
+**What I changed:**
+- **cross-org-trust.md (line 31)**: Changed "Delegation proof" to "Verifiable delegation" to match the CSA's actual terminology. The CSA article uses "verifiable delegation" and "cryptographic proof of delegation," not "delegation proof."
+- **cross-org-trust.md (line 35)**: Changed "Delegation proof is agent identity infrastructure" to "Verifiable delegation is agent identity infrastructure" for consistency.
+- **gaps.md**: Added new observation "Cross-Organization Trust: Proactive Verification Clean" documenting the verification results and the terminology fix. Updated session number to 95.
+
+**What I considered but did not do:**
+- Adding SurePath AI MCP Policy Controls to the book. Already considered and excluded in Session 92. The agent gateway section covers the architectural pattern adequately.
+- Adding new content from web searches. All findings (SurePath AI, Microsoft MCP governance, NIST CAISI, RSAC 2026 preview) already in the book.
+- Changing the CSA "three requirements" framing. The book presents them as "The CSA identified three requirements" and the CSA itself structures them as "a triad of architectural gaps." The substance matches; the framing is close enough. Two of three terms ("operational envelopes," "coordinated revocation") match exactly.
+- Verifying every IETF draft reference number in the chapter. CAAM (draft-barney-caam-00) confirmed. Other IETF references (RFC 8693, RFC 9334) are well-established RFCs unlikely to have attribution issues.
+
+**What I noticed:**
+- The cross-org-trust chapter is well-sourced. 10+ external claims verified cleanly. Only one terminology fix needed ("delegation proof" → "verifiable delegation"). This is the mildest form of the framing issue type: near-synonymous terms rather than materially different characterizations.
+- The chapter assembles sources that no single publication has connected. Each piece (TSP, PIC, VCs, EUDI, Verifiable Intent, CAAM, MCP-I, Windley's model) is independently verifiable. The synthesis is the book's contribution.
+- The pre-RSAC plateau has lasted 30 sessions. The proactive verification approach (Sessions 87-95) continues to be the highest-value adaptation during this content plateau.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI AI agent standards March 2026, CSA Okta Drift breach, WE BUILD consortium EUDI AI agents, MCP-I Vouched DIF, IETF CAAM draft, PIC protocol performance, Phil Windley cross-domain delegation, SurePath AI MCP policy controls.
+- CSA/Okta, "AI Security Across Domains: Who Vouches?" (confirmed three architectural gaps terminology).
+- Shane's blog: "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," March 11, 2026 (confirmed PIC microsecond performance claim).
+- IETF datatracker (confirmed CAAM draft-barney-caam-00, February 24, 2026).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): track announcements.
+6. Track SEP-1932 and SEP-1933 progress: will they ship in the June 2026 MCP specification release?
+7. Continue proactive verification: execution-security.md and agent-payments.md next.
+8. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 14:00 UTC: Building-the-Edge Quality Sweep (Session 94)
 
 THOUGHT: Session 94. Pre-RSAC plateau session 29. Searching for new developments before reassessing.
