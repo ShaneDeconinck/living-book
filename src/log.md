@@ -1,5 +1,41 @@
 # Session Log
 
+## 2026-03-13: Quality Review and MCP Security Timeline Expansion
+
+**What I did:**
+- Performed quality review of all 15 chapters. Assessed chapter lengths, source coverage, and structural completeness. The book is solid at first-edition completeness.
+- Expanded the MCP security incident timeline in agent-communication.md from 5 incidents to 10, covering April 2025 through March 2026. New incidents added: WhatsApp MCP cross-server tool poisoning (Invariant Labs, April 2025), Asana MCP cross-organization data exposure (June 2025), MCP Inspector CVE-2025-49596 unauthenticated RCE with CVSS 9.4 (July 2025), mcp-atlassian CVE-2026-27825 path traversal and RCE (January 2026), WeKnora CVE-2026-30861 command injection (March 2026).
+- Strengthened supply-chain-security.md tool poisoning section with the WhatsApp MCP case as a concrete real-world example of cross-server tool poisoning. Added MCP Inspector CVE to MCP Server Vulnerabilities section. Added two new footnotes with sources.
+- Updated gaps.md MCP attack surface observation with the expanded incident timeline and the developer tooling attack surface insight.
+
+**Why this work:**
+Stepped back and assessed priorities. The book is at first-edition completeness. Two new Shane blog posts (Verifiable Intent March 6, LFDT meetup March 11) were already well-integrated by the previous session. The quality review confirmed chapters are solid, well-sourced, and structurally complete. The highest-impact move was strengthening the MCP security evidence: web search revealed five significant incidents not yet in the book, with CVE numbers and specific sources. The expanded timeline (ten incidents in twelve months) makes a stronger case than the original five. The WhatsApp case is particularly valuable because it demonstrates cross-server tool poisoning: a malicious server exploiting a legitimate one, with no compromise of the legitimate server needed. The MCP Inspector CVE is notable because it shows the attack surface extends into developer tooling, not just production agents.
+
+**What I considered but did not do:**
+- Expanding the introduction (53 lines). Still works as a concise roadmap. No new material warrants expansion.
+- Adding new chapters. The book covers all major PAC Framework dimensions. Remaining open topics (incident response, semantic interoperability, chain-of-thought compliance) need more source material to warrant full chapters.
+- Updating the regulatory landscape chapter with NIST April 2 deadline proximity. No new information beyond what's already there. Worth monitoring in the next session (20 days until deadline).
+- Incorporating Wenjing Chu's "three-legged stool" framing (guardrails, alignment, governance) from the March 11 LFDT meetup. The cross-org-trust chapter already covers TSP extensively. The framing is useful but adding it would duplicate existing coverage without adding technical depth.
+
+**Sources used:**
+- AuthZed, "A Timeline of Model Context Protocol (MCP) Security Breaches," authzed.com, 2025-2026
+- Invariant Labs / Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com, April 2025
+- Nudge Security, "SaaS Security Alert: Asana MCP Server Data Exposure Incident," June 2025
+- Oligo Security, CVE-2025-49596, MCP Inspector RCE, CVSS 9.4, July 2025
+- Arctic Wolf, CVE-2026-27825, mcp-atlassian path traversal and RCE, January 2026
+- CVE-2026-30861, WeKnora command injection, March 2026
+
+**What I noticed:**
+- The MCP security incident pattern is clear: adoption far outpaces security maturity. 97 million monthly SDK downloads against ten documented breaches in twelve months, 30 CVEs in 60 days, and 38% of servers lacking authentication. The incidents span every attack vector: tool poisoning (WhatsApp), access control (Asana), supply chain (mcp-remote, Postmark), infrastructure (MCP Inspector, Smithery), and now SaaS integration (mcp-atlassian). This is the strongest empirical evidence in the book for why communication protocols solve discovery but not trust.
+- The WhatsApp case is architecturally important: it demonstrates that MCP's multi-server model creates a cross-server attack surface. A malicious server does not need to compromise other servers. It just needs to share an agent context with them. The tool description is the attack vector, not the code.
+- Shane's two most recent posts (Verifiable Intent March 6, LFDT meetup March 11) were already well-integrated by the previous session. The book's coverage of TSP, PIC, Verifiable Intent, TMCP, and TA2A is current.
+
+**Next session priorities:**
+1. Monitor NIST April 2 comment period deadline. Update regulatory chapter if new information emerges.
+2. Continue tracking MCP specification evolution toward June 2026 update.
+3. Quality pass on the agent-identity and cross-org-trust chapters: these are the most technically dense and could benefit from readability review.
+4. Consider whether the semantic interoperability gap (Shane's "close a deal" example) warrants expanded treatment in the cross-org-trust chapter or a standalone section.
+
 ## 2026-03-12: Building the Inferential Edge (Concluding Chapter)
 
 **What I did:**

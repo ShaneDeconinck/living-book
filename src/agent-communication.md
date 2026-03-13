@@ -106,13 +106,18 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 
 | Date | Incident | Impact |
 |------|----------|--------|
+| April 2025 | WhatsApp MCP exfiltration | Tool poisoning: malicious server silently exfiltrated entire WhatsApp history via legitimate whatsapp-mcp[^24] |
 | May 2025 | GitHub MCP prompt injection | Private repos, salary data leaked to public PR via overprivileged PAT |
+| June 2025 | Asana MCP data exposure | Cross-organization data leak: one org's data visible to other orgs due to access control flaw[^25] |
 | July 2025 | mcp-remote CVE-2025-6514 | Command injection in OAuth proxy, 437k+ downloads, supply-chain backdoor |
+| July 2025 | MCP Inspector CVE-2025-49596 | Unauthenticated RCE in Anthropic's official developer tool, CVSS 9.4[^26] |
 | August 2025 | Anthropic Filesystem MCP | Sandbox escape, symlink bypass enabling arbitrary file access |
 | September 2025 | Fake Postmark MCP package | Supply-chain attack, BCC'd all emails to attacker |
 | October 2025 | Smithery path traversal | Leaked Fly.io token controlling 3,000+ MCP servers |
+| January 2026 | mcp-atlassian CVE-2026-27825 | Path traversal enabling arbitrary file write and RCE via Confluence attachments[^27] |
+| March 2026 | WeKnora CVE-2026-30861 | Command injection in MCP stdio configuration validation[^28] |
 
-These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
+Ten incidents in twelve months, and the pace is accelerating. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
 
 1. **Overprivileged tokens**: a single powerful token serving all users. The GitHub breach happened because a personal access token with broad repository access was used for an MCP integration. The confused deputy problem in action.
 2. **Tool schema manipulation**: the server lies about what a tool does. The user thinks they are searching contacts; the tool is exfiltrating data. Tool descriptions are visible to the LLM but not typically shown to users.
@@ -407,3 +412,8 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 [^21]: Google Developers Blog, Unified Commerce Protocol (UCP), 2026. Co-developed with Shopify and Walmart.
 [^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.
 [^23]: PAC Framework, trustedagentic.ai, March 2026.
+[^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025. Demonstrated cross-server exfiltration via malicious tool descriptions. Covered in Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com.
+[^25]: Nudge Security, "SaaS Security Alert: Asana MCP Server Data Exposure Incident," June 2025. Access control logic flaw exposed cross-organizational data.
+[^26]: Oligo Security, CVE-2025-49596, July 2025. Missing authentication between MCP Inspector client and proxy enabled unauthenticated RCE and DNS rebinding attacks on developer workstations. Patched in version 0.14.1.
+[^27]: Arctic Wolf, CVE-2026-27825, January 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE.
+[^28]: CVE-2026-30861, March 2026. Command injection in WeKnora MCP stdio configuration validation.
