@@ -18,11 +18,17 @@ A malicious npm package needs to find credentials on disk. A malicious agent ski
 
 SecurityScorecard's scan found over 135,000 publicly exposed OpenClaw instances across 82 countries, with more than 50,000 exploitable via remote code execution.[^securityscorecard] Shane noted the core lesson in his analysis of the OpenClaw chaos: "if the creator telling users not to do something doesn't work, documentation is not a security model."[^shane-openclaw] Rich context (OpenClaw's SOUL.md file) made the agent compelling. Missing access controls made it dangerous. Both layers are needed. But the supply chain dimension adds a third: you also need to trust the components you are loading into that context.
 
+The marketplace was not the only problem. OpenClaw itself had a critical platform vulnerability. CVE-2026-25253, dubbed "ClawJacked" by the Oasis Security researchers who discovered it, enabled one-click remote code execution through a logic flaw in how OpenClaw processed URL parameters.[^clawjacked] The attack chain illustrates how supply chain compromise and execution security failures compound: a malicious link caused OpenClaw to establish a WebSocket connection to an attacker-controlled server without user confirmation, transmitting the user's authentication token. Because OpenClaw's server did not validate the WebSocket origin header, the hijack bypassed localhost network restrictions entirely. With the stolen token's `operator.admin` privileges, the attacker could disable the user approval mechanism (setting approvals to "off") and escape OpenClaw's Docker container to execute commands directly on the host machine. The full kill chain: one click → token theft → disable safety controls → sandbox escape → host-level RCE. OpenClaw patched within 24 hours, but Belgium's Centre for Cybersecurity issued a national advisory, and the incident exposed a fundamental architecture problem: the approval system that users relied on for safety was itself a revocable permission, not a structural constraint.[^ccb-openclaw] The [Sandboxing and Execution Security](execution-security.md) chapter's argument that containment must be infrastructure, not policy, is precisely this lesson.
+
 [^clawhavoc]: Koi Security, "ClawHavoc: Coordinated Supply Chain Attack on ClawHub," February 2026. Confirmed by Antiy CERT with 1,184 malicious skills identified across the expanded registry.
 
 [^securityscorecard]: SecurityScorecard, "OpenClaw Exploitation in Enterprise Networks," February 2026. Identified 135,000+ publicly exposed instances, 50,000+ with RCE vectors, 53,000+ correlated with prior breach activity.
 
 [^shane-openclaw]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," trustedagentic.ai, February 17, 2026.
+
+[^clawjacked]: Oasis Security, CVE-2026-25253, "ClawJacked: 1-Click RCE in OpenClaw Through Auth Token Exfiltration," February 2026. CVSS 8.8. Patched in OpenClaw v2026.2.25.
+
+[^ccb-openclaw]: Centre for Cybersecurity Belgium (CCB), "Warning: Critical vulnerability in OpenClaw allows 1-click remote code execution," SafeOnWeb advisory, February 2026.
 
 ## The Agent Supply Chain Is Different
 

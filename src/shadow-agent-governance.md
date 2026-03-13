@@ -56,6 +56,20 @@ The identity gap is equally stark. Only 21.9% of teams treat AI agents as indepe
 
 These statistics describe a governance vacuum: agents operating with real permissions, accessing real data, making real decisions, with no registration, no audit trail, and no accountability chain.
 
+### When shadow agents trigger government action
+
+The OpenClaw crisis made this governance vacuum visible at national scale. In March 2026, Chinese government agencies and state-owned enterprises, including the country's largest banks, received official notices warning staff against installing OpenClaw on office devices.[^china-openclaw] China's CERT characterized the platform as having "extremely weak default security configuration."[^china-cert] The response was reactive: some agencies banned installation outright, others required prior approval, several instructed employees to notify superiors if they had already installed it so devices could be checked and the software removed. This is the shadow agent pattern in its purest form: employees had already adopted OpenClaw because it solved real problems, and the government discovered the exposure after the fact.
+
+The contradiction in Beijing's response reveals the governance dilemma. At the same time that central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are genuinely useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
+
+These were the first major government warnings specifically targeting an AI agent platform, distinct from broader AI regulation. They signal that shadow agent governance is no longer a theoretical concern. Governments are now encountering the same discovery problem that enterprises face: agents are already running, nobody authorized them, and the security posture is unknown.
+
+[^china-openclaw]: Bloomberg, "China Moves to Limit Use of OpenClaw AI at Banks, Government Agencies," March 11, 2026.
+
+[^china-cert]: The Register, "China's CERT warns OpenClaw can inflict nasty wounds," March 12, 2026. CERT characterized OpenClaw's default security configuration as "extremely weak."
+
+[^china-contradiction]: Fast Company, "China went crazy for OpenClaw. Now it's working to ban it," March 2026. Documents the simultaneous central ban and local government subsidies for OpenClaw-based development.
+
 ## The Governance Gap
 
 The core problem is structural. Organizations have invested decades in identity and access management for humans and applications. Neither model works for agents.

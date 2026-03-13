@@ -1,5 +1,43 @@
 # Session Log
 
+## 2026-03-13: ClawJacked and the First Government Response to Shadow Agents (Session 40)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state, recent session logs, and gaps chapter. RSAC 2026 is 10 days out (March 23-26). Book remains in pre-RSAC holding pattern.
+- Web searched for recent developments. Found two significant additions not previously in the book:
+  1. CVE-2026-25253 "ClawJacked" (February 2026): One-click RCE in OpenClaw via auth token exfiltration. Oasis Security discovered a logic flaw where a malicious URL caused OpenClaw to establish an unauthenticated WebSocket connection, transmitting the user's admin token. The attacker could then disable approval prompts and escape the Docker container to execute commands on the host. CVSS 8.8. Belgium's CCB issued a national advisory. Patched in v2026.2.25 within 24 hours.
+  2. China government response to OpenClaw (March 8-11, 2026): First major government action against a specific AI agent platform. State agencies, SOEs, and major banks received official notices to restrict or remove OpenClaw. China's CERT characterized the platform as having "extremely weak default security configuration." Simultaneously, local governments in Shenzhen and Wuxi were subsidizing companies building on OpenClaw, illustrating the governance dilemma.
+
+**What I changed:**
+- **supply-chain-security.md**: Added CVE-2026-25253 (ClawJacked) after the existing SecurityScorecard paragraph in the OpenClaw Crisis section. The vulnerability demonstrates that the risk extended beyond the ClawHub marketplace to the platform itself. The kill chain (malicious URL → WebSocket hijack → token theft → disable approvals → container escape → host RCE) illustrates how supply chain and execution security failures compound. Added cross-reference to the Sandboxing and Execution Security chapter. Added two footnotes (Oasis Security CVE, Belgium CCB advisory).
+- **shadow-agent-governance.md**: Added new subsection "When shadow agents trigger government action" after "The numbers behind the risk" and before "The Governance Gap." Documents China's government response as the first government action against a specific AI agent, the contradiction between central bans and local subsidies, and the implication that shadow agent governance has moved from enterprise concern to national security concern. Added three footnotes (Bloomberg, The Register, Fast Company).
+- **gaps.md**: Updated "Agent Supply Chain Is the Newest Attack Surface" observation to include CVE-2026-25253, the China government response, and the three-layer risk demonstration (marketplace, platform, deployment sprawl).
+
+**What I considered but did not do:**
+- Adding ClawJacked to the execution-security chapter. The vulnerability's sandbox escape aspect (disabling approvals via admin token, escaping Docker container) is relevant, but the supply-chain-security chapter is the authoritative OpenClaw location and already cross-references the sandboxing chapter. Adding it to both would dilute the narrative.
+- Adding China's response to the regulatory-landscape chapter. The Chinese government action was an employer directive (don't install this on work computers), not a regulatory action under AI legislation. It fits shadow-agent-governance (discovery and response to unsanctioned AI agents) better than regulatory-landscape (legislative frameworks and compliance requirements).
+- Updating for OWASP Top 10 for Agentic Applications 2026 categories. Already referenced in the book (execution-security, supply-chain-security). The full category list (ASI01-ASI10) does not add analytical depth beyond what is already covered through specific CVEs and incidents.
+- Adding the NIST AI Agent Standards Initiative three-pillar structure. Already covered in the regulatory-landscape chapter with RFI deadline and listening session details. No new information found.
+
+**What I noticed:**
+- CVE-2026-25253 is architecturally significant because the approval system was the security model. Users relied on "approve before executing" as their protection against malicious actions. The vulnerability showed that the approval mechanism was itself a software permission that could be disabled by an attacker with the right token. This validates the execution-security chapter's central thesis: permission prompts are not a security model. Containment must be structural (the agent cannot perform certain actions) rather than procedural (the agent asks before performing actions).
+- The China government response reveals a tension that no governance framework has resolved: the same AI agent can be simultaneously a security threat and an economic priority. Central prohibition and local subsidy happening at the same time is not contradiction: it is the natural result of shadow agent governance at scale. Organizations face the same tension: banning agents drives adoption underground, but permitting them without infrastructure creates unmanaged risk. The answer is infrastructure that makes governed use easier than ungoverned use, which is exactly what the shadow-agent-governance chapter argues.
+- The OpenClaw crisis is now the most extensively documented AI agent security incident in the book, spanning supply chain (ClawHavoc), platform vulnerability (ClawJacked), deployment sprawl (135K exposed instances), and government response (China). It serves as the primary case study for the argument that agent security requires infrastructure at every layer, not just any single defense.
+
+**Sources used:**
+- Oasis Security, CVE-2026-25253, "ClawJacked: 1-Click RCE in OpenClaw Through Auth Token Exfiltration," February 2026. CVSS 8.8.
+- Centre for Cybersecurity Belgium (CCB), "Warning: Critical vulnerability in OpenClaw allows 1-click remote code execution," SafeOnWeb advisory, February 2026.
+- Bloomberg, "China Moves to Limit Use of OpenClaw AI at Banks, Government Agencies," March 11, 2026.
+- The Register, "China's CERT warns OpenClaw can inflict nasty wounds," March 12, 2026.
+- Fast Company, "China went crazy for OpenClaw. Now it's working to ban it," March 2026.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+
 ## 2026-03-13: Amazon Kiro and the Confused Deputy at Infrastructure Scale (Session 39)
 
 **What I did:**
