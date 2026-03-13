@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 25)
+## Observations (Updated 2026-03-13, Session 26)
+
+### The Agent Profiler Makes PAC Actionable
+
+Shane's PAC Agent Profiler (trustedagentic.ai/profiler, open source, v0.1) operationalizes the PAC Framework through six independent dimensions: Business Value, Reliability, Blast Radius, Infrastructure, Governance Thresholds, and Autonomy. The critical design choice: autonomy is the dependent variable, not an input. You assess the other five dimensions and the appropriate autonomy level falls out. Infrastructure is binary per autonomy level: each level requires specific capabilities, and if they are not built, that level is locked regardless of how reliable the agent is. This is the practical bridge from the PAC Framework as a conceptual model to PAC as a governance tool. The profiler section is now in the PAC Framework chapter, connecting to Anthropic's autonomy data (80% of tool calls have at least one safeguard, 73% involve human oversight).
+
+### CSA's Agentic Trust Framework Operationalizes Zero Trust for Agents
+
+The Cloud Security Alliance's Agentic Trust Framework (ATF, February 2026) is the first open governance specification applying Zero Trust principles to AI agents. Five elements (Identity, Behavior, Data Governance, Segmentation, Incident Response) organized around governance questions. Progressive autonomy with five gates (accuracy, security audits, measurable impact, clean operational history, stakeholder approval). Aligns with OWASP Top 10 for Agentic Applications and CoSAI. Published under Creative Commons. For organizations building to PAC, ATF provides an operational playbook for the Control pillar specifically. Added to the Regulatory Landscape chapter's Standards Convergence section.
 
 ### The Agent Protocol Stack Is Expanding Toward the Browser and the User
 

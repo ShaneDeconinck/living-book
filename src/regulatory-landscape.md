@@ -172,6 +172,22 @@ The AIIM work matters because OpenID Connect is the dominant identity layer for 
 
 A proposal for OpenID Connect for Agents (OIDC-A) 1.0 extends OpenID Connect Core to provide a framework for representing, authenticating, and authorizing LLM-based agents within the OAuth 2.0 ecosystem.[^oidca] This is still early, but it represents the kind of extension that could bridge the gap between existing identity infrastructure and agent-specific requirements.
 
+### CSA Agentic Trust Framework
+
+The Cloud Security Alliance published the Agentic Trust Framework (ATF) in February 2026: an open governance specification that applies Zero Trust principles to AI agents.[^csaatf] The framework's premise is direct: "No AI agent should be trusted by default, regardless of purpose or claimed capability. Trust must be earned through demonstrated behavior and continuously verified through monitoring."
+
+ATF is organized around five elements, each addressing a governance question:
+
+1. **Identity** ("Who are you?"): authentication, authorization, and session management for agents.
+2. **Behavior** ("What are you doing?"): observability, anomaly detection, and intent analysis.
+3. **Data Governance** ("What are you consuming? What are you producing?"): input validation, PII protection, and output governance.
+4. **Segmentation** ("Where can you go?"): access controls, resource boundaries, and policy enforcement.
+5. **Incident Response** ("What if you go rogue?"): circuit breakers, kill switches, and containment mechanisms.
+
+The PAC mapping is natural. Identity and Segmentation are Control. Behavior and Data Governance span Accountability and Control. Incident Response is the intersection of all three pillars. ATF's progressive autonomy model, where agents must pass five gates (accuracy, security audits, measurable impact, clean operational history, explicit stakeholder approval) to advance to the next autonomy level, mirrors the PAC Agent Profiler's infrastructure-as-gate principle.
+
+What makes ATF significant is its practicality. It aligns with the OWASP Top 10 for Agentic Applications and CoSAI recommendations, is published under Creative Commons, and is designed for implementation with existing open-source tools. For organizations building to the PAC Framework, ATF provides an operational playbook for the Control pillar specifically.
+
 ### Industry Standards
 
 The industry side is moving in parallel. Verifiable Intent (Mastercard and Google, open-sourced March 2026) provides cryptographic binding of user intent to agent actions through a three-layer SD-JWT architecture.[^verifiableintent] MCP is becoming the standard discovery protocol for agent context, with 97 million monthly SDK downloads and Linux Foundation governance.[^mcp] A2A has reached 150+ organizations with v0.3.[^a2a]
@@ -305,3 +321,5 @@ The gap between what agents can do and what regulation requires is an infrastruc
 [^mcp]: MCP adoption figures and governance as of March 2026. See the Context Infrastructure chapter for details.
 
 [^a2a]: A2A v0.3 with 150+ organizations. See the Context Infrastructure chapter for details.
+
+[^csaatf]: Cloud Security Alliance, ["The Agentic Trust Framework: Zero Trust Governance for AI Agents"](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents), February 2, 2026. Open governance specification published under Creative Commons. ATF GitHub repository and specification at [github.com/CSA-AI/ATF](https://github.com/CSA-AI/ATF).

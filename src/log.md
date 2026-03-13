@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13: Agent Profiler Section, CSA Agentic Trust Framework
+
+**What I did:**
+- Added a new "Agent Profiler" section to pac-framework.md, placed between the Interdependencies and 19 Questions sections. The section presents Shane's six-dimension model (Business Value, Reliability, Blast Radius, Infrastructure, Governance Thresholds, Autonomy) as a practical assessment tool, based on his February 26, 2026 blog post. Key insights surfaced: autonomy as dependent variable (not an input), infrastructure as gate (binary per autonomy level, cumulative requirements), and the profiler as a progression tool that changes over time. Connected to Anthropic's autonomy data (80% of tool calls have safeguards, 73% involve human oversight).
+- Added a new "CSA Agentic Trust Framework" subsection to regulatory-landscape.md's Standards Convergence section. The ATF (February 2, 2026) is an open governance specification applying Zero Trust to AI agents with five elements (Identity, Behavior, Data Governance, Segmentation, Incident Response) and progressive autonomy gates. Mapped to PAC pillars. Published under Creative Commons, aligned with OWASP Top 10 for Agentic Applications and CoSAI.
+- Updated gaps.md: added two new observations (Agent Profiler, CSA ATF), incremented session number to 26.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 is 10 days out (March 23-26). The book has 15 chapters, all substantive, recently cross-referenced.
+
+The PAC Framework chapter is the spine of the book. The trustedagentic.ai site prominently features the Agent Profiler as a practical tool, but the book, as the framework's deep technical companion, did not explain it. The individual dimensions (Business Value, Reliability, Blast Radius, Autonomy, Infrastructure) were covered across sections but not synthesized into the profiler as a unified assessment tool. Shane's February 26 blog post provides the synthesis: six dimensions as independent axes, autonomy as dependent variable, infrastructure as gate. Adding the profiler section makes the PAC chapter more actionable: readers can now understand not just what the framework measures but how to use the profiler to assess a specific agent deployment.
+
+CSA's Agentic Trust Framework was absent from the book despite CSA being one of the most important industry bodies for cloud security. The ATF directly validates the book's thesis (zero trust applied to agents, progressive autonomy earned through infrastructure) and provides an operational playbook that maps to PAC's Control pillar. Adding it to the Standards Convergence section alongside IETF, OpenID, and industry standards completes the picture of industry convergence on agent governance.
+
+**What I considered but did not do:**
+- Writing a new chapter. The book has 15 chapters. Structural improvements and gap-filling within existing chapters have higher marginal impact before RSAC.
+- Adding a CSA ATF section to the execution-security chapter. The ATF is a governance framework, not a technical security architecture. The regulatory landscape chapter's Standards Convergence section is the natural home.
+- Expanding the introduction. At 53 lines it is concise but functional. The Agent Profiler section in the PAC chapter and the 19 Questions already serve as navigation aids. The introduction does not need expansion.
+- Adding the arXiv TRiSM paper (December 2025) or 4C Framework (February 2026) for agentic AI. Both are academic frameworks. The book already has PAC as its organizing spine and CSA ATF as an operational complement. Adding more frameworks risks diluting the narrative.
+- Updating the building-the-edge chapter's mention of the Agent Profiler to link to the new PAC chapter section. The existing reference ("The Agent Profiler at trustedagentic.ai provides a concrete way to track how your positions shift across iterations") is adequate and the chapter is deliberately clean. Cross-referencing can be considered in a future session.
+- Pre-RSAC coverage of Zenity, Bedrock Data, or Innovation Sandbox announcements. The conference has not happened yet (March 23-26). Post-conference coverage will be more valuable.
+
+**Sources used:**
+- Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," shanedeconinck.be, February 26, 2026. Introduces the PAC Agent Profiler and six-dimension model.
+- Anthropic, "Measuring AI Agent Autonomy in Practice," February 2026. 80% of tool calls have safeguards, 73% involve human oversight.
+- Cloud Security Alliance, "The Agentic Trust Framework: Zero Trust Governance for AI Agents," February 2, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+- Web searches for recent developments: CSA ATF, NIST CAISI listening session deadline (March 20), MCP security CVE status, arXiv papers on agent trust governance.
+
+**What I noticed:**
+- The Agent Profiler's "infrastructure as gate" principle resolves a tension the book has been building toward: the PAC chapter describes infrastructure levels (I1-I5) and autonomy levels (A1-A5) but did not explicitly state that infrastructure gates autonomy. The profiler makes this structural: you cannot advance autonomy without the corresponding infrastructure, period. This is stronger than "infrastructure constrains autonomy" (which implies flexibility). It is "infrastructure locks autonomy" (which is binary). The distinction matters for practitioners.
+- CSA's ATF five-gate progressive autonomy model (accuracy, security audits, measurable impact, clean operational history, stakeholder approval) provides a concrete promotion workflow that the PAC Framework describes conceptually but does not prescribe operationally. ATF fills the "how do we actually advance an agent from A2 to A3?" question that PAC leaves to implementers. The two frameworks are complementary: PAC provides the assessment model, ATF provides the promotion workflow.
+- The governance framework landscape is now three-layered: regulatory (EU AI Act, Singapore MGF, Colorado AI Act), standards (NIST, IETF, OpenID), and operational (CSA ATF, OWASP Agentic Top 10, CoSAI). The book's regulatory landscape chapter now covers all three layers. The PAC Framework sits above them as the assessment and decision-making model.
+- NIST CAISI listening session participation deadline is March 20 (7 days). The sessions will cover sector-specific barriers in healthcare, finance, and education. These sectors map to high blast-radius use cases (B4-B5) where the Agent Profiler's infrastructure gate is most consequential.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Innovation Sandbox results (Token Security, Geordie AI), Zenity 0-click demo outcomes, Bedrock Data MCP governance sessions, new product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider updating building-the-edge chapter's Agent Profiler reference to link to the new PAC chapter section.
+4. NIST CAISI listening session deadline is March 20. Monitor for published outcomes or pre-session materials.
+5. Consider whether the book's PAC-to-regulation mapping table needs updating to include CSA ATF alongside EU, NIST, ISO, Singapore.
+
 ## 2026-03-13: Expanding Protocol Stack (WebMCP, AG-UI, A2UI)
 
 **What I did:**
