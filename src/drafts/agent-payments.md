@@ -83,7 +83,7 @@ The infrastructure investment behind x402 is substantial. The x402 Foundation, c
 
 Cloudflare is also proposing a **deferred payment scheme** for x402: batch settlements at the end of each day rather than per-request on-chain transactions.[^cloudflare-x402] This is architecturally significant because it makes x402 payment-rail-agnostic. The cryptographic trust (intent capture, authorization verification) is established immediately via the x402 handshake, but financial settlement can happen through traditional payment methods, stablecoins, or both. The deferred scheme directly addresses the adoption friction the book identified: most organizations do not hold USDC. With deferred settlement, they do not need to.
 
-The honest assessment: infrastructure investment is ahead of organic demand. Despite major backing from Stripe, Coinbase, Cloudflare, and Stellar, x402's daily organic volume sits around $28,000 as of early 2026, with significant wash trading inflating cumulative transaction counts.[^x402-volume] Daily transactions dropped over 90% from a December 2025 peak. This is not unusual for early infrastructure protocols: TCP/IP, email, and HTTP itself took years of infrastructure building before organic usage caught up. The pattern of major infrastructure providers treating agent payments as a first-class use case suggests the bet is on the infrastructure being ready when demand arrives, not on demand having already arrived.
+The honest assessment: infrastructure investment is ahead of organic demand. Despite major backing from Stripe, Coinbase, Cloudflare, and Stellar, x402's daily organic volume sits around $28,000 as of early March 2026, with roughly half of observed transactions reflecting artificial activity (self-dealing and wash trading) according to Artemis on-chain analytics.[^x402-volume] Daily transactions dropped over 92% from a December 2025 peak of approximately 731,000 to about 57,000 in February 2026. This is not unusual for early infrastructure protocols: TCP/IP, email, and HTTP itself took years of infrastructure building before organic usage caught up. The pattern of major infrastructure providers treating agent payments as a first-class use case suggests the bet is on the infrastructure being ready when demand arrives, not on demand having already arrived.
 
 ## The Three Commerce Protocols
 
@@ -115,7 +115,7 @@ Where AP2 handles the payment authorization flow, UCP handles the product discov
 
 These protocols are more complementary than competitive. AP2 handles payment authorization, ACP handles checkout flows, UCP handles product discovery. Verifiable Intent (covered in the [Agent Identity and Delegation](agent-identity.md) chapter) provides the cryptographic constraint layer that all three can use. The real question is whether they converge on shared primitives or fragment into incompatible ecosystems.
 
-The fact that Google participates in both AP2 and UCP, while Stripe participates in both ACP and x402, suggests convergence is more likely than fragmentation. But it is early.
+Google participates in both AP2 and UCP; Stripe participates in both ACP and x402. Whether this signals convergence or hedging is unknown. Companies joining multiple protocols is what you would expect regardless of the outcome. The shared primitives (SD-JWT credentials, mandate structures, x402 for settlement) suggest a possible convergence path, but it is too early to call.
 
 ## On-Chain Agent Identity: ERC-8004
 
@@ -271,9 +271,7 @@ For organizations building agent systems today:
 
 **On-chain versus off-chain.** ERC-8004's on-chain registries provide censorship resistance and composability with DeFi primitives. Off-chain registries (A2A agent cards, MCP servers) provide lower latency and simpler integration. Most organizations will use both: on-chain for cross-organizational trust, off-chain for internal operations.
 
-The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now. The organizations that understand payment as trust infrastructure, not just financial plumbing, will be better positioned to deploy agents that can operate autonomously within governed bounds.
-
-Payment infrastructure connects to several other layers of the trust stack. [Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture, the foundation for payment authorization constraints. [Cross-Organization Trust](cross-org-trust.md) addresses the harder problem: what happens when agents pay across organizational boundaries, where shared OAuth tokens are insufficient. [Agent Communication Protocols](agent-communication.md) covers the discovery layer (MCP, A2A) through which agents find payable services, and why discovery without trust creates the consent theater problem that payment authorization must solve.
+The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now. The constraint layer that makes it governable lives in [Agent Identity and Delegation](agent-identity.md): the SD-JWT architecture that encodes spending limits, merchant restrictions, and recurrence parameters at the credential level.
 
 [^1]: Stripe pricing: 2.9% + $0.30 per successful card charge, as of March 2026.
 [^2]: Shane Deconinck, "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026.
@@ -283,7 +281,7 @@ Payment infrastructure connects to several other layers of the trust stack. [Age
 [^6]: Solana, "What is x402? Payment Protocol for AI Agents on Solana," 2026. Multi-chain expansion: Etherlink (TZ APAC's Tez402, March 2026), Stellar (stablecoin API payments), Polygon, Arbitrum, and others.
 [^cloudflare-x402]: Cloudflare, "Launching the x402 Foundation with Coinbase, and support for x402 transactions," blog.cloudflare.com, 2026. Agent SDK and MCP server integration, deferred payment scheme proposal for batch settlements via traditional payment methods or stablecoins.
 [^stellar-x402]: Stellar, x402 support announcement, 2026. Enables AI agents to pay for APIs and digital services through direct stablecoin transactions on Stellar.
-[^x402-volume]: MEXC News, "Analysis: The x402 protocol's average daily transaction volume is only $28,000," March 2026. Daily transactions dropped over 92% from December 2025 peak of ~731,000 to ~57,000 in February 2026, with approximately half attributed to wash trading.
+[^x402-volume]: Sam Reynolds, "Coinbase-backed AI payments protocol wants to fix micropayment but demand is just not there yet," CoinDesk, March 11, 2026. Data sourced from Artemis on-chain analytics. Approximately 131,000 daily transactions generating ~$28,000 in volume; roughly half reflect artificial activity (self-dealing and wash trading). Daily transactions dropped over 92% from December 2025 peak.
 [^7]: Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)," 2026.
 [^8]: Stripe Blog, "Developing an open standard for agentic commerce," 2026; OpenAI, "Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol," 2026.
 [^9]: Google Developers Blog, "Under the Hood: Universal Commerce Protocol (UCP)," 2026.

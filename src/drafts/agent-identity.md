@@ -72,7 +72,7 @@ The identity community is not starting from scratch. The first wave of solutions
 
 OAuth 2.0 Token Exchange (RFC 8693) enables an entity to exchange one token for another, explicitly tracking the delegation. The resulting token encodes two identities: the user (the resource owner who delegated) and the agent (the acting party).[^4]
 
-This is significant because it preserves the delegation chain. When Agent A uses OBO to get a token for calling Service X, the token says: "User Alice authorized Agent A to act on her behalf, with these specific scopes." If Agent A then delegates to Agent B, a second exchange can capture that hop too.
+The resulting token preserves the delegation chain. When Agent A uses OBO to get a token for calling Service X, the token says: "User Alice authorized Agent A to act on her behalf, with these specific scopes." If Agent A then delegates to Agent B, a second exchange can capture that hop too.
 
 In practice, the token request includes:
 

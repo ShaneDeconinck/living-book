@@ -190,7 +190,7 @@ For agents specifically, the delegation chain needs to be carried in credentials
 
 ### The Three-Layer Chain
 
-A pattern appearing across multiple implementations separates agent credential delegation into three layers:[^8]
+Agent credential delegation is converging on a three-layer structure, visible independently in Para's AI wallet architecture, Verifiable Intent's SD-JWT chain, and Trulioo's Digital Agent Passport:[^8]
 
 1. **User Identity Layer.** The human completes identity verification once, receiving a cryptographic attestation tied to their identifier (whether a DID, wallet address, or organizational credential).
 2. **Delegation Layer.** The user cryptographically authorizes the agent with scoped permissions: spending limits, approved services, time bounds, purpose constraints. This delegation is a signed credential, not just a token.
@@ -331,7 +331,7 @@ The cross-domain challenge is not optional. Every agent that calls an external A
 [^5]: Shane Deconinck, "Understanding TSP: The Trust Spanning Protocol Explained," shanedeconinck.be/explainers/tsp/.
 [^6]: Shane Deconinck, "EUDI Credential Formats Crash Course: X.509, mDL, SD-JWT VC, and W3C VC," March 9, 2026.
 [^7]: Shane Deconinck, "My Content Comes with Verifiable Credentials. Your Agent Can Verify," February 22, 2026.
-[^8]: Para, "Agent Identity: How AI Wallets Inherit Human Credentials," 2026. Three-layer credential delegation architecture. See also arxiv.org/abs/2601.14982 for academic treatment of interoperable identity delegation.
+[^8]: The three-layer pattern appears independently in: Para, "Agent Identity: How AI Wallets Inherit Human Credentials," 2026 (user identity → delegation → presentation); Mastercard/Google Verifiable Intent (user identity → SD-JWT delegation → network enforcement); Trulioo KYA (developer/user verification → Digital Agent Passport → merchant validation). See also arxiv.org/abs/2601.14982 for academic treatment of interoperable identity delegation.
 [^9]: Mastercard, "How Verifiable Intent builds trust in agentic AI commerce," 2026. See also the Agent Payments chapter of this book.
 [^10]: Phil Windley, "Cross-Domain Delegation in a Society of Agents," Technometria, 2026.
 [^11]: European Commission, European Digital Identity (eIDAS 2.0), Regulation (EU) 2024/1183. EUDI Wallet implementation timeline: December 2026 for Member State availability.

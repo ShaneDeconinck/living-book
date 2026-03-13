@@ -109,9 +109,9 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are all converging simultaneously. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Microsoft is shipping the first major agent governance control plane. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge: the organizational readiness to let powerful models run safely: compounds with every month of head start.
+The standards, regulations, and infrastructure for agent governance are all converging simultaneously. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Microsoft is shipping the first major agent governance control plane. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge, the organizational readiness to let powerful models run safely, compounds with every month of head start.
 
-The intelligence is rapidly becoming commodity. The edge is the infrastructure to unleash it.[^edge]
+The intelligence is becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
 Let's start with why agents break trust.
 
