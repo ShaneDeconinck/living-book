@@ -32,11 +32,11 @@ Authentication and authorization for software evolved through several eras, each
 
 **Federated identity (OIDC, 2014)** solved "how do I prove who I am to a new service?" Built identity (ID Tokens, JWTs) on top of OAuth's authorization layer.
 
-**Workload identity (SPIFFE, 2017; WIMSE, 2023)** solved "how do I authenticate software to software?" Attestation-based identity for services, not people.
+**Workload identity (SPIFFE, 2017; WIMSE, 2023)** solved "how do I authenticate software to software?" Attestation-based identity for services, not people. (WIMSE is now being extended for agents specifically: see the WIMSE section later in this chapter.)
 
 **Decentralized identity (DIDs, 2019; VCs, 2019)** solved "how do I prove claims about myself without relying on a central authority?" Cryptographic credentials the holder controls.
 
-Every layer was a response to a real limitation of the previous one. But none of them were designed for an entity that receives a goal and decides how to accomplish it. They all assume either a human making decisions or software executing predetermined logic.
+Every layer was a response to a real limitation of the previous one. Most were not designed for an entity that receives a goal and decides how to accomplish it. They assume either a human making decisions or software executing predetermined logic. The standards community is now adapting several of these layers for agents: OAuth extensions, WIMSE, SCIM, and DIDs are all being reworked. The rest of this chapter covers what that looks like.
 
 ### Where OAuth Falls Short
 
@@ -179,6 +179,22 @@ Without SCIM-level provisioning, agent lifecycle management is manual. An admini
 For the shadow agent governance problem (covered in [Shadow Agent Governance](shadow-agent-governance.md)), SCIM provisioning creates a structural enforcement point: if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications. This is the "can't vs. don't" distinction applied to agent lifecycle: the agent cannot exist in the application ecosystem without having been provisioned through the governed channel.
 
 That both drafts come from identity platform practitioners (Okta, Microsoft ecosystem) rather than academic researchers signals that agent lifecycle management is hitting production requirements, not theoretical design. The same pattern played out with human SCIM: the protocol emerged from the operational need to manage identities at scale across SaaS applications, not from standards committee design.
+
+### WIMSE for Agents: Workload Identity Meets Agent Identity
+
+SCIM handles lifecycle provisioning across applications. But there is a lower layer: how does an agent get an identity in the first place, at the infrastructure level, before it ever touches an application?
+
+This is the problem workload identity was built for. SPIFFE (Secure Production Identity Framework for Everyone) assigns cryptographic identities to software workloads based on their runtime environment: which Kubernetes pod they run in, which cloud instance they occupy, what attestation they can provide. The identity comes from the infrastructure, not from a pre-shared secret. WIMSE (Workload Identity in Multi-System Environments) extends this across trust domains.
+
+The IETF draft "WIMSE Applicability for AI Agents" (draft-ni-wimse-ai-agent-identity, now at revision 02) bridges workload identity to agent identity directly.[^wimse-agents] The draft identifies three requirements that make agents different from traditional workloads: automated credential management with reduced validity periods to minimize exposure windows, minimal privileged access tokens that are task-oriented with short lifespans, and explicit workflow management to prevent agents from accessing resources outside their assigned scope.
+
+The key architectural contribution is the dual-identity credential: a credential that binds both the agent's identity and its owner's identity cryptographically. Where a standard SPIFFE SVID identifies only the workload, a WIMSE agent credential identifies the agent and the specific user or department it represents. An agent acting on behalf of Alice in the R&D department carries a credential that an authorization server can verify on both dimensions: this is a trusted agent, and it is specifically representing Alice's authority. This maps directly to the OBO pattern but at the infrastructure layer rather than the OAuth layer.
+
+The draft also introduces an Identity Proxy: an intermediary that can request, inspect, replace, or augment agent identity credentials while exposing a local Agent API. This matters for credential management at scale: agents do not handle their own credential lifecycle. The proxy manages credential rotation, scope verification, and credential augmentation as agents move between tasks.
+
+CyberArk's Secure AI Agents Solution, generally available since late 2025, validates this architecture in production. The approach uses SPIFFE Verifiable Identity Documents (SVIDs) as universal, short-lived identities for AI agents, with two-way trust established between authorization servers and SPIFFE roots of trust via SPIRE.[^cyberark-agents] CyberArk's Workload Identity Day Zero event framed the design principle: "AI agents are workloads that need narrowly scoped permissions, explicit authorization of actions, and confirmation of intent."
+
+The layering matters. OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner? Each layer addresses a different phase, and an agent operating in a well-governed environment needs all three.
 
 ### Agent Identity Is Now a Product Category
 
@@ -383,3 +399,5 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^txn-tokens-a2a]: IETF, "Agent-to-Agent (A2A) Profile for OAuth Transaction Tokens," draft-liu-oauth-a2a-profile-00, 2026. Applies Transaction Tokens to A2A protocol interactions for agent delegation context propagation.
 [^scim-agents]: IETF, "SCIM Agents and Agentic Applications Extension," draft-abbey-scim-agent-extension-00. Defines "Agent" and "AgenticApplication" SCIM resource types for cross-domain provisioning and lifecycle management. See also IETF, "SCIM Agentic Identity Schema," draft-wahl-scim-agent-schema-01 (complementary schema approach). WorkOS, "SCIM for AI: Inside the new IETF draft for agent and agentic application provisioning," workos.com, 2026. Microsoft, "Beyond OAuth: Why SCIM must evolve for the AI agent revolution," techcommunity.microsoft.com, 2026.
 [^aauth]: IETF, "AAuth: Agentic Authorization OAuth 2.1 Extension," draft-rosenberg-oauth-aauth-01, 2026. Authors: Jonathan Rosenberg and Pat White. Defines the Agent Authorization Grant for non-web channel agent interactions (voice, SMS, messaging). Addresses LLM hallucination as impersonation vector through mandatory out-of-band identity verification.
+[^wimse-agents]: IETF, "WIMSE Applicability for AI Agents," draft-ni-wimse-ai-agent-identity-02, 2026. Extends WIMSE architecture to AI agents with dual-identity credentials binding agent and owner identities, Identity Proxy for credential management, and requirements for automated credential management with reduced validity periods. See also IETF 122 WIMSE WG minutes, March 2026.
+[^cyberark-agents]: CyberArk, "CyberArk Introduces First Identity Security Solution Purpose-Built to Protect AI Agents with Privilege Controls," cyberark.com, November 2025. General availability late 2025. Uses SPIFFE SVIDs as short-lived agent identities. See also GitGuardian, "Workload And Agentic Identity at Scale: Insights From CyberArk's Workload Identity Day Zero," blog.gitguardian.com, November 2025.

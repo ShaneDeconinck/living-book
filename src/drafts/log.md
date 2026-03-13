@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13 UTC: WIMSE for Agents: Infrastructure-Level Identity (Session 70)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11 (LFDT meetup).
+- Read current book state: 16 chapters, all substantive. PAC Framework confirmed unchanged. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues (RSAC March 23-26, 10 days out). Searched broadly: agentic AI security March 2026, RSAC pre-conference announcements, MCP vulnerabilities, IETF agent drafts. Most findings already in the book. One genuine architectural gap found: **WIMSE applicability for AI agents** has zero coverage despite being the infrastructure-level identity bootstrapping layer that completes the agent identity stack.
+- The book mentioned "Workload identity (SPIFFE, 2017; WIMSE, 2023)" in the identity stack history and then stated "none of them were designed for an entity that receives a goal and decides how to accomplish it." This is no longer accurate: draft-ni-wimse-ai-agent-identity-02 explicitly extends WIMSE for agents, and CyberArk shipped a product using SPIFFE SVIDs for agent identities.
+
+**What I changed:**
+- **agent-identity.md**: Corrected the identity stack introduction to note WIMSE is being extended for agents. Added new subsection "WIMSE for Agents: Workload Identity Meets Agent Identity" (approximately 20 lines) after the SCIM section and before "Agent Identity Is Now a Product Category." Covers: draft-ni-wimse-ai-agent-identity-02 (dual-identity credentials, Identity Proxy, three agent-specific requirements), CyberArk Secure AI Agents (SPIFFE SVIDs in production), and the layering relationship (WIMSE for infrastructure bootstrapping, OAuth for application authorization, SCIM for cross-application provisioning). Two footnotes added.
+- **gaps.md**: Updated session number to 70. Added observation "WIMSE for Agents: Workload Identity Meets Agent Identity" covering the architectural gap filled, updated IETF draft count (now twelve+), and the identity stack completeness story.
+
+**What I considered but did not do:**
+- Adding Agentic JWT (draft-goswami-agentic-jwt-00) to agent-identity chapter. The "intent-execution separation problem" framing and agent checksums are interesting, but the draft is at revision 00 and overlaps with Verifiable Intent (which is further along and backed by Mastercard/Google). Noted in gaps.md for tracking.
+- Adding Bedrock Data MCP governance tools. Vendor product announcement for RSAC, not architecturally significant yet.
+- Strengthening context-infrastructure chapter. Read it in full: well-structured, five-dimension framework maps cleanly to PAC, Shane's thinking is well-represented. Not the weakest link.
+- Adding more MCP CVE details. CVE-2026-26118 (Azure MCP SSRF, CVSS 8.8) already noted in previous session. The "30 CVEs in 60 days" narrative is already in the book.
+- Restructuring chapters or adding new ones. At 16 chapters, the book covers the landscape comprehensively. Adding more chapters before RSAC would dilute rather than strengthen.
+
+**What I noticed:**
+- The agent identity stack is now architecturally complete at the protocol level across all layers: infrastructure bootstrapping (WIMSE), application authorization (OAuth: OBO, AAP, DPoP, XAA), lifecycle provisioning (SCIM), platform identity (Entra Agent ID), cross-organizational verification (DIDs, VCs, TSP), intent encoding (Verifiable Intent), and runtime identity propagation (Transaction Tokens). Each layer has at least one IETF draft or shipped product addressing it.
+- The IETF draft count is now at twelve+ individual submissions targeting agent identity in Q1 2026. This is the densest period of standards activity for any single domain in recent IETF history. The standards community is building the agent identity stack in parallel across multiple working groups (OAuth, WIMSE, SCIM).
+- CyberArk's approach of using SPIFFE SVIDs for agent identity is the first product-level validation of the workload-identity-to-agent-identity bridge. This is significant because SPIFFE is widely deployed in Kubernetes environments where many agents run. The integration path from existing infrastructure to agent identity is shorter than building from scratch.
+- The pre-RSAC plateau continues. Seven sessions (63-70) have each found one or two genuinely new things. The cadence of new developments will likely spike post-RSAC (March 26+) and post-MCP Dev Summit (April 3+).
+
+**Sources used:**
+- IETF, "WIMSE Applicability for AI Agents," draft-ni-wimse-ai-agent-identity-02, 2026. IETF 122 WIMSE WG minutes (March 2026).
+- CyberArk, "CyberArk Introduces First Identity Security Solution Purpose-Built to Protect AI Agents with Privilege Controls," November 2025. GA late 2025.
+- GitGuardian, "Workload And Agentic Identity at Scale: Insights From CyberArk's Workload Identity Day Zero," November 2025.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference, MCP vulnerability March 2026, WIMSE AI agents, CyberArk workload identity agentic.
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Monitor Agentic JWT draft progression (draft-goswami-agentic-jwt) for potential inclusion.
+7. Track whether WIMSE agent extensions gain IETF WG adoption at IETF 122+.
+
 ## 2026-03-13 UTC: AAuth and IETF Draft Count Update (Session 69)
 
 **What I did:**

@@ -2,13 +2,23 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 69)
+## Observations (Updated 2026-03-13, Session 70)
 
 ### AAuth: LLM Hallucination as Impersonation Vector
 
 The IETF draft count for agent authorization has grown again. AAuth (draft-rosenberg-oauth-aauth-01, Jonathan Rosenberg and Pat White) extends OAuth 2.1 for agents operating through non-web channels: voice calls, SMS, messaging platforms where traditional OAuth redirect flows are impossible. The draft's most original contribution is identifying LLM hallucination as a confused deputy mechanism. When an agent collects identity information through natural-language conversation, the LLM might hallucinate or confuse details: a phone number from a previous conversation, a name misheard in a voice call. If the authorization server trusts LLM-mediated identity claims without independent verification, hallucinated information could produce tokens for the wrong user. The mitigation is architectural: mandatory out-of-band verification (SMS codes, email links) that the LLM cannot fabricate.
 
 This is noteworthy for two reasons. First, it extends the confused deputy taxonomy: the book has covered the confused deputy through credentials (Chapter 1), through MCP (CVE-2026-26118), through delegation chains (Galileo), and through tool invocation (MITRE ATLAS). AAuth adds a fifth vector: through hallucination. The adversary is not external. The failure mode is the model's own imprecision operating within the authorization flow. Second, the IETF draft count for agent authorization is now at seven or more individual submissions in Q1 2026 alone: OBO AI Agent extension, AAP, Decoupled A2A Authorization, AI Agent Authentication (draft-klrc-aiagent-auth), Transaction Tokens for Agents, AAuth, and draft-song-oauth-ai-agent-authorization. This density is unprecedented for any single quarter of OAuth extension development and reflects the urgency of the gap.
+
+### WIMSE for Agents: Workload Identity Meets Agent Identity
+
+The agent-identity chapter covered application-level identity (OAuth extensions), platform-level identity (Entra, Auth0, Teleport), and cross-application provisioning (SCIM). But it was missing the infrastructure layer: how agents get cryptographic identities from their runtime environment before they ever touch an application.
+
+draft-ni-wimse-ai-agent-identity-02 extends WIMSE (Workload Identity in Multi-System Environments) to AI agents. The key contribution is the dual-identity credential: a credential binding both the agent's identity and its owner's identity cryptographically. Where a standard SPIFFE SVID identifies only the workload, a WIMSE agent credential identifies the agent and the specific user or department it represents. The draft also introduces an Identity Proxy for credential lifecycle management.
+
+CyberArk's Secure AI Agents Solution validates this in production, using SPIFFE SVIDs as universal short-lived identities for agents. The IETF draft count for agent identity infrastructure is now at twelve or more individual submissions in Q1 2026: the original ten identified in Session 68, plus the WIMSE applicability draft and the Agentic JWT draft (draft-goswami-agentic-jwt-00, which introduces agent checksums and workflow-aware token binding).
+
+The identity stack for agents is becoming complete at the protocol level: infrastructure-level bootstrapping (WIMSE), application-level authorization (OAuth extensions), cross-application provisioning (SCIM), platform-level lifecycle (Entra), cross-organizational verification (DIDs/VCs/TSP), and intent encoding (Verifiable Intent). What remains is operational: integration, deployment, and the organizational maturity to use these layers together.
 
 ### SCIM for Agents: The Missing Lifecycle Layer
 
