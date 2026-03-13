@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 15)
+## Observations (Updated 2026-03-13, Session 16)
 
 ### Multi-Agent Governance Is the Next Frontier
 
@@ -51,6 +51,10 @@ The Cloud Security Alliance's "Agentic AI Identity & Access Management" framewor
 ### NIST Is Building the Evaluation Standards Stack
 
 Two new NIST CAISI publications: AI 800-4 "Challenges to the Monitoring of Deployed AI Systems" (March 2026) documents why post-deployment monitoring remains fragmented (drift detection, distributed logging, human-AI feedback loops, deceptive behavior identification). AI 800-2 "Practices for Automated Benchmark Evaluations" (comment period through March 31, 2026) standardizes how benchmarks are constructed and reported. Together, NIST is building a standards stack for AI evaluation from pre-deployment through post-deployment. Both added to the Reliability, Evaluation chapter.
+
+### Singapore's IMDA Framework Starts from the Right Premise
+
+Singapore launched the world's first governance framework purpose-built for agentic AI on January 22, 2026 at WEF Davos. Where the EU AI Act regulates AI broadly (agents are an afterthought), Singapore's four dimensions (risk bounding, human accountability, technical controls, end-user responsibility) are designed around autonomous agents from the start. Compliance is voluntary but organizations remain legally accountable. The PAC mapping is clean: risk bounding maps to Potential, human accountability to Accountability, technical controls to Control. The framework is a living document accepting feedback and case studies. The book now covers this in the Regulatory Landscape chapter, filling a gap in APAC regulatory coverage. Worth watching: whether Singapore's approach influences other APAC regulators (Japan, South Korea, Australia all have AI governance consultations underway).
 
 ### The Identity Standards Landscape Is Converging Fast
 
@@ -126,7 +130,7 @@ Prioritized by impact:
 
 2. ~~**Context Infrastructure** (Potential + Control)~~: DONE. Chapter covers the depreciation cycle, scaffolding trap, five dimensions (structure, permissions, discovery, authority, freshness), concrete examples from Claude Code/Manus/Clawdbot, MCP/A2A discovery protocols, agent gateways, and infrastructure maturity mapping.
 
-3. ~~**The Regulatory Landscape** (Accountability)~~: DONE. Chapter covers EU AI Act (risk tiers, classification problem, shadow agents, high-risk requirements), NIST (concept paper, AI Agent Standards Initiative), ISO 42001, U.S. state legislation (Colorado), standards convergence (IETF, OpenID AIIM, OIDC-A), PAC mapping to regulation, infrastructure maturity readiness table, and convergence timeline.
+3. ~~**The Regulatory Landscape** (Accountability)~~: DONE. Chapter covers EU AI Act (risk tiers, classification problem, shadow agents, high-risk requirements), NIST (concept paper, AI Agent Standards Initiative), ISO 42001, Singapore IMDA (world's first agentic AI governance framework, four dimensions mapping to PAC), U.S. state legislation (Colorado), standards convergence (IETF, OpenID AIIM, OIDC-A), PAC mapping to regulation, infrastructure maturity readiness table, and convergence timeline.
 
 4. ~~**Reliability, Evaluation, and the Complacency Trap** (Potential + Accountability)~~: DONE. Chapter covers reliability decomposition (consistency, robustness, predictability, safety), benchmark landscape (SWE-bench, τ-bench, GAIA, HAL), the evaluation gap (offline vs online, 52% to 37% adoption drop), automation complacency from human factors research (Bainbridge 1983, Don Norman 1990), the 99% problem, infrastructure-in-the-loop as replacement for human-in-the-loop, and evaluation as governance infrastructure.
 

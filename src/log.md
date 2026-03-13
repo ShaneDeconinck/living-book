@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13: Singapore IMDA Agentic AI Governance Framework
+
+**What I did:**
+- Added Singapore's Model AI Governance Framework for Agentic AI to regulatory-landscape.md. New section "Singapore: The First Agentic AI Governance Framework" covering the world's first government framework purpose-built for agentic AI, launched January 22, 2026 at WEF Davos. Covers IMDA's four dimensions (risk bounding, human accountability, technical controls, end-user responsibility) and maps them to PAC pillars. Added footnote with source link to the framework PDF.
+- Updated the regulatory-landscape.md convergence timeline with Singapore's January 2026 launch.
+- Updated the chapter introduction paragraph to mention Singapore alongside EU, NIST, ISO, and Colorado.
+- Updated the convergence narrative to include Singapore as a third perspective alongside NIST and EU.
+- Added Singapore's January 2026 date to the building-the-edge.md convergence timeline.
+- Added new observation to gaps.md: Singapore's IMDA framework starts from the right premise (agents are different from traditional AI). Noted APAC regulatory coverage gap is now filled.
+- Updated gaps.md regulatory landscape chapter summary to include Singapore.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. Web search revealed the book had zero APAC regulatory coverage, a significant gap given that Singapore's IMDA framework is the world's first government-sponsored governance framework designed specifically for agentic AI. The EU AI Act regulates AI broadly and treats agents as an afterthought. Singapore's framework starts from agents: autonomous, multi-step systems capable of reaching unanticipated use cases. This is exactly the classification problem the EU is still working through. The four dimensions map cleanly to PAC: risk bounding to Potential, human accountability to Accountability, technical controls to Control. Adding this fills a geographic and conceptual gap in the regulatory landscape chapter.
+
+**What I considered but did not do:**
+- Adding the multiple competing IETF drafts narrative (draft-klrc, draft-yao, draft-song, draft-yl-agent-id) to show standards fragmentation. The book already covers draft-klrc and the OBO draft. The fragmentation angle could strengthen the standards convergence section, but requires more research to do well and the individual drafts are still evolving.
+- Strengthening pac-framework.md with concrete autonomy level examples. Same concern as previous sessions: adding examples without strong source material risks unsupported assertions.
+- Adding the Mayer Brown analysis of agentic AI governance (February 2026) to the regulatory chapter. Legal analysis pieces add depth but the chapter already covers the core frameworks. Best reserved for a future session focused on legal liability.
+
+**Sources used:**
+- Singapore IMDA, "Model AI Governance Framework for Agentic AI," imda.gov.sg, January 22, 2026.
+- Baker McKenzie, "Singapore: Governance Framework for Agentic AI Launched," January 2026.
+- Computer Weekly, "Singapore debuts world's first governance framework for agentic AI," January 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+
+**What I noticed:**
+- The book now has regulatory coverage across three major jurisdictions: EU (comprehensive AI regulation), U.S. (NIST identity/authorization + state legislation), and Singapore (first agentic AI governance framework). Japan, South Korea, and Australia all have AI governance consultations underway but none has published an agentic-specific framework yet.
+- Singapore's voluntary compliance model contrasts with the EU's enforcement model. The book covers both approaches, which gives readers a useful comparison: prescriptive regulation (EU) vs. guidance-based governance (Singapore).
+- The NIST CAISI listening session participation deadline is March 20, 2026: 7 days from now. The book already notes this in the regulatory chapter.
+- No new Shane blog posts since March 11. The book remains current with his published thinking.
+
+**Next session priorities:**
+1. NIST CAISI listening session participation deadline is March 20 (7 days). Monitor for responses.
+2. NIST AI 800-2 benchmark evaluation comment period closes March 31 (18 days). Monitor for responses.
+3. NIST concept paper comment period closes April 2 (20 days). Monitor for regulatory analysis.
+4. The semantic interoperability gap remains unsolved. Track for new source material.
+5. Consider adding the IETF standards fragmentation narrative (4+ competing drafts on agent auth) to the standards convergence section.
+6. Monitor APAC regulatory developments: Japan, South Korea, Australia AI governance consultations.
+
 ## 2026-03-13: CSA IAM Framework and NIST Evaluation Standards
 
 **What I did:**

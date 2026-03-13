@@ -1,6 +1,6 @@
 # The Regulatory Landscape
 
-Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
+Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. Singapore launched the world's first agentic AI governance framework in January 2026. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
 
 This chapter maps the regulatory landscape to the PAC Framework. The thesis: organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
 
@@ -110,6 +110,23 @@ Colorado's approach shares the EU's risk-based framing but focuses specifically 
 
 Other states are considering similar legislation. The pattern is clear: in the absence of comprehensive federal AI regulation, states are filling the gap with sector-specific and risk-specific rules. For organizations operating across states, this creates a patchwork that increases the value of a unified governance framework.
 
+## Singapore: The First Agentic AI Governance Framework
+
+On January 22, 2026, Singapore's Infocomm Media Development Authority (IMDA) launched the Model AI Governance Framework for Agentic AI at the World Economic Forum. It is the world's first government-sponsored governance framework designed specifically for AI agents capable of autonomous planning, reasoning, and action.[^imda]
+
+Where the EU AI Act regulates AI broadly and mentions agents only by implication, Singapore built a framework around agents from the start. The framework addresses four dimensions:
+
+1. **Assessing and bounding risks upfront**: limit what agents can do by controlling tool access, permissions, operational environments, and the scope of actions they may take. These serve as the primary defense against unintended or harmful actions.
+2. **Making humans meaningfully accountable**: organizational structures must allocate clear responsibilities across the AI lifecycle, covering developers, deployers, operators, and end users. Human oversight mechanisms must effectively override, intercept, or review agentic AI actions, especially for actions with real-world material impact.
+3. **Implementing technical controls and processes**: baseline testing, access control to whitelisted services, and monitoring throughout the agent lifecycle.
+4. **Enabling end-user responsibility**: users deploying agents bear responsibility for how they configure and use them.
+
+Compliance is voluntary, but organizations remain legally accountable for their agents' behaviors and actions. IMDA describes the framework as a living document, inviting feedback and case studies demonstrating responsible agentic AI deployment.
+
+The PAC mapping is direct. Risk bounding is Potential: assess blast radius, reliability, and autonomy level before deploying. Human accountability is Accountability: delegation chains, audit trails, clear ownership. Technical controls are Control: infrastructure as gate, policy enforced through architecture not just documentation. End-user responsibility connects to PAC's shadow agent problem: when employees deploy agents without governance review, accountability breaks down.
+
+What makes Singapore's framework notable is not just that it was first, but that it starts from the right premise: agents are different from traditional AI systems. The EU AI Act's risk classification was designed for fixed-purpose systems. Singapore's framework assumes agents are autonomous, multi-step, and capable of reaching use cases not anticipated at deployment. That is the classification problem the EU is still working through in implementation guidelines.
+
 ## Standards Convergence
 
 Beyond regulation, the standards bodies shaping agent protocols are converging on agent trust infrastructure simultaneously. This convergence is significant because it means the technical building blocks for compliance are being standardized, not proprietary.
@@ -182,6 +199,7 @@ Most organizations today operate at I1-I2 for their agent deployments. Regulator
 
 The regulatory and standards timelines are converging on a narrow window:
 
+- **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. World's first agentic AI governance framework.
 - **February 2025**: EU AI Act Article 4 (AI literacy) already in effect.
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
 - **March 20, 2026**: NIST CAISI listening session participation requests due.
@@ -192,7 +210,7 @@ The regulatory and standards timelines are converging on a narrow window:
 - **August 2, 2026**: EU AI Act high-risk system obligations take effect.
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
-Shane's observation is worth restating: NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] NIST focuses on identity and authorization (mapping to PAC's Control pillar). The EU AI Act focuses on risk management and transparency (mapping to PAC's Accountability pillar). Neither alone is sufficient. Together, they describe the full governance surface.
+Shane's observation is worth restating: NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] NIST focuses on identity and authorization (mapping to PAC's Control pillar). The EU AI Act focuses on risk management and transparency (mapping to PAC's Accountability pillar). Singapore adds a third perspective: governance designed for agents from the ground up, addressing all three PAC pillars in a single framework. Neither alone is sufficient. Together, they describe the full governance surface.
 
 ## What This Means in Practice
 
@@ -237,6 +255,8 @@ The gap between what agents can do and what regulation requires is an infrastruc
 [^iso42001adoption]: BSI, ["ISO 42001: AI Management System"](https://www.bsigroup.com/en-US/products-and-services/standards/iso-42001-ai-management-system/).
 
 [^colorado]: Colorado AI Act, effective June 1, 2026. Requires risk management policies, impact assessments, and transparency for high-risk AI in consequential decisions.
+
+[^imda]: Singapore IMDA, ["Model AI Governance Framework for Agentic AI"](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf), January 22, 2026.
 
 [^ietfdraft]: IETF, [draft-klrc-aiagent-auth-00: AI Agent Authentication and Authorization](https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/).
 
