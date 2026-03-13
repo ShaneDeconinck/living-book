@@ -1,5 +1,60 @@
 # Session Log
 
+## 2026-03-13 (Session 116)
+
+THOUGHT: Session 116. Pipeline still stalled on Sapere Aude. No new blog posts, PAC unchanged. Picking cross-org-trust.md for proactive verification.
+THOUGHT: Verifying cross-org-trust.md. 340 lines, 14 footnotes. Key claims: CSA/Okta Drift breach, PIC/Gallo, TSP, Phil Windley, MCP-I/Vouched, CAAM draft, WE BUILD, Para, Verifiable Intent.
+THOUGHT: Found 2 issues. Windley quote misquoted (significant). MCP-I Level 1 incorrectly includes DID issuance (minor).
+THOUGHT: Both fixes applied. cross-org-trust.md verified: 14 footnotes, 2 issues (1 significant, 1 minor). No fabrications.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters. Read A2A messages: pipeline stalled 8+ sessions on Sapere Aude. Chop Pop continues pre-reading queued drafts.
+- Step 6 reassessment: RSAC March 23-26, 10 days out. Pipeline bottleneck continues. 6 unverified drafts remain (agent-payments, building-the-edge, cross-org-trust, gaps, human-agent-collaboration, reliability-evaluation). Picked cross-org-trust.md: 340 lines, core chapter, next candidate per session 115 priorities.
+- **Proactively verified cross-org-trust.md claims.** 14 footnotes checked across 10+ sources. Found two issues.
+
+**What I verified and found correct:**
+- Shane's LFDT meetup blog post (March 11, 2026): title, date, all PIC and TSP descriptions match. "Close a deal" semantic divergence scenario attributed to Nicola Gallo correctly. PIC structural elements (identity, intent, authority, workload, governance) match verbatim. TSP description (wallet + verifiable identifiers, TMCP) matches. Meetup date March 3, blog post March 11: correctly distinguished.
+- Shane's EUDI credential formats post (March 9, 2026): title, date, four format descriptions (X.509, mdoc, SD-JWT VC, W3C VC), W3C VC de facto exclusion analysis, BLS12-381 cryptographic contradiction. All confirmed.
+- Shane's VC signing post (February 22, 2026): title, date, vc.json, did:webvh, Ed25519, eddsa-jcs-2022, `<link rel="verifiable-credential">`, Claude Code verification experiment. All confirmed.
+- Shane's TSP explainer at shanedeconinck.be/explainers/tsp/. Confirmed location.
+- CSA/Okta "AI Security Across Domains: Who Vouches?" (March 11, 2026): part of seven-part series confirmed. Salesloft Drift breach: 700+ companies, ten days (August 8-17, 2025), stolen OAuth tokens, UNC6395/GRUB1 attribution. Google Workspace, Cloudflare, Heap all confirmed as affected. Three requirements (verifiable delegation, operational envelopes, coordinated revocation) confirmed verbatim.
+- PIC Protocol at pic-protocol.org: Nicola Gallo, Nitro Agility S.r.l. Provenance, Identity, Continuity. Confirmed.
+- TSP specification: Revision 2, November 2025, Trust over IP Foundation, Linux Foundation Decentralized Trust. Confirmed.
+- Phil Windley "Cross-Domain Delegation in a Society of Agents," Technometria, March 4, 2026. Four mechanisms (policies, promises, credentials, reputation) confirmed. Interaction sequence confirmed.
+- CAAM (draft-barney-caam-00): February 24, 2026. Authors confirmed: J. M. Barney, R. Pioli, D. Watson. Session Context Object, Ghost Token Pattern, AuthZ-at-Discovery, SPIFFE trust domain, RATS attestation. All confirmed.
+- MCP-I / Vouched: donated to DIF Trusted AI Agents Working Group, March 2026. Three conformance levels confirmed. blog.identity.foundation article "Why We Brought MCP-I to DIF (and Why DIF Said Yes)" confirmed.
+- WE BUILD consortium: BiometricUpdate.com report confirmed. Three recommendations (safe AI agent strategy on EUDIF/Business Wallet, standards working groups, testing/pilots before regulation) confirmed. Described as one of EU's Large Scale Pilots. Confirmed.
+- Para "Agent Identity: How AI Wallets Inherit Human Credentials" at blog.getpara.com. Three-layer credential delegation confirmed. arXiv:2601.14982 (Saavedra, January 2026, "Interoperable Architecture for Digital Identity Delegation") confirmed.
+- Mastercard/Google Verifiable Intent: SD-JWT three-layer architecture, Shane's March 6 blog post. Previously verified in agent-identity sessions.
+- eIDAS 2.0: Regulation (EU) 2024/1183, December 2026 Member State deadline. Confirmed.
+- RFC 8693 (OAuth 2.0 Token Exchange / OBO). Confirmed.
+
+**What I changed:**
+1. **Windley quote misquoted (significant).** The chapter had: "policies without promises cannot coordinate across systems; promises without enforcement become meaningless; reputation without boundaries devolves into hindsight." The actual text is: "Policies without promises cannot coordinate behavior across domains. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight." Three differences: "systems" vs "behavior across domains", "become meaningless" vs "are merely declarations of intent", "devolves into hindsight" vs "turns governance into little more than hindsight." Fixed to match the source verbatim.
+2. **MCP-I Level 1 description (minor).** The chapter said Level 1 includes "basic DID issuance alongside existing OIDC or JWT identifiers." Level 1 actually provides "foundational support using existing identifiers (OIDC, JWT) for immediate implementation." DID verification comes at Level 2. Fixed to match source.
+
+**What I considered but did not do:**
+- Checking whether the MCP-I DIF blog post date is March 5 or March 6. The footnote says March 5. Vouched's own announcement appears to be March 6. The DIF blog might have been published a day earlier. Could not confirm a discrepancy with certainty. Left as is.
+- Verifying every detail of the CAAM SCO structure. The chapter describes it as "a cryptographically signed JWT or CWT." The IETF draft confirms this. Left as is.
+
+**What I noticed:**
+- cross-org-trust.md is a strong chapter. 14 footnotes verified, only 2 issues found (1 significant quote misquotation, 1 minor conformance level error). No fabricated claims, no inflated statistics, no misattributed concepts.
+- The Windley misquote follows a pattern seen in other chapters: condensing a quote for narrative flow while losing the source's actual words. "Are merely declarations of intent" became "become meaningless" and "turns governance into little more than hindsight" became "devolves into hindsight." The paraphrases capture the meaning but are presented in quotes. Rule: if it's in quotes, match the source.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security, multi-agent-trust, shadow-agent-governance, cross-org-trust (12 of 18). Remaining 5 unverified: agent-payments, building-the-edge, gaps, human-agent-collaboration, reliability-evaluation.
+
+**Sources used:**
+- Web searches: CSA Okta "AI Security Across Domains Who Vouches" March 2026, Phil Windley "Cross-Domain Delegation" Technometria, Vouched MCP-I DIF March 2026, IETF draft-barney-caam-00, WE BUILD EUDI Wallet AI agents, Para Agent Identity AI Wallets, PIC protocol pic-protocol.org Nicola Gallo, Salesloft Drift breach Heap Cloudflare, arXiv 2601.14982, Trust Spanning Protocol Revision 2, Okta AI agent security series, CAAM draft authors.
+- Shane's blog posts: lfdt-meetup-trust-ecosystems-authority-continuity (March 11), eudi-credential-formats-crash-course (March 9), signing-blog-posts-verifiable-credentials (February 22), mastercard-verifiable-intent (March 6).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (agent-identity re-verify, pac-framework, regulatory-landscape, execution-security).
+4. Continue proactive verification: 5 unverified drafts remain. Next candidates: reliability-evaluation, human-agent-collaboration.
+5. NIST CAISI: 932 comments received on RFI. Track listening sessions in April.
+
 ## 2026-03-13 (Session 115)
 
 THOUGHT: Session 115. Pipeline stalled 7+ sessions on Sapere Aude. No new blog posts, PAC unchanged. Continuing proactive verification.

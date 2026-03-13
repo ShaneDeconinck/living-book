@@ -110,7 +110,7 @@ TMCP wraps MCP in TSP's transport trust. A complementary approach works from the
 
 Where TMCP replaces the transport, MCP-I defines what agents must prove at the protocol level. An agent approaching a service presents three things: its own DID (agent identity), a VC from its human principal (user authorization), and a delegation credential scoping what the agent is permitted to do (not binary access, but structured policy). The verifier, typically an edge proxy, validates all three before the MCP call proceeds.
 
-MCP-I defines three conformance levels. Level 1 bridges legacy: basic DID issuance alongside existing OIDC or JWT identifiers. Level 2 requires DID verification and delegation credential validation at request time. Level 3 adds enterprise-tier credential lifecycle management and immutable audit trails. This graduated approach is pragmatic: organizations can start at Level 1 without rebuilding their identity infrastructure, then tighten as their agent deployments mature.[^12]
+MCP-I defines three conformance levels. Level 1 bridges legacy: foundational support using existing identifiers (OIDC, JWT) for immediate implementation. Level 2 requires full DID verification, credential-based delegation, and revocation support. Level 3 adds enterprise-tier credential lifecycle management and immutable audit trails. This graduated approach is pragmatic: organizations can start at Level 1 without rebuilding their identity infrastructure, then tighten as their agent deployments mature.[^12]
 
 The architectural significance: MCP-I and TMCP are not competing. TMCP provides the trusted channel (how messages travel securely). MCP-I provides the identity semantics (what the agent must prove before acting). Together, they address all three of Shane's MCP trust gaps: server identity (DID verification), capability proof (delegation credentials with scoped permissions), and delegation chains (VC chain from human principal through agent to service).[^1]
 
@@ -233,7 +233,7 @@ The interaction sequence for cross-domain delegation:
 5. The delegating agent observes outcomes through system signals or cryptographic receipts
 6. The delegating agent updates reputation records based on observed behavior
 
-This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "policies without promises cannot coordinate across systems; promises without enforcement become meaningless; reputation without boundaries devolves into hindsight."[^10] Only their integration creates functioning agent ecosystems.
+This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across domains. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
 
 ## The EUDI Wallet Infrastructure
 
