@@ -70,7 +70,7 @@ QUIETVAULT is not an isolated case. Google identified five AI-powered malware fa
 
 [^google-threat-horizons]: Google Cloud Security, "Cloud Threat Horizons Report H1 2026," cloud.google.com, March 2026. Key recommendation: "Organizations should monitor AI agent logs and process execution to identify when an LLM is being used for anomalous discovery tasks."
 
-[^google-ai-malware]: Google Threat Intelligence Group, reported across Cybersecurity Dive, Bleeping Computer, Infosecurity Magazine, and The Hacker News, 2025-2026. Five AI-powered malware families: FRUITSHELL, PROMPTFLUX, PROMPTSTEAL, PROMPTLOCK, and QUIETVAULT. APT28 (GRU) use of PROMPTSTEAL confirmed in Ukrainian targeting.
+[^google-ai-malware]: Google Threat Intelligence Group, reported across Cybersecurity Dive, Bleeping Computer, Infosecurity Magazine, and The Hacker News, 2025-2026. Five AI-powered malware families: FRUITSHELL, PROMPTFLUX, PROMPTSTEAL, PROMPTLOCK, and QUIETVAULT. PROMPTSTEAL attributed by Google Threat Intelligence to APT28 (GRU) in Ukrainian targeting.
 
 **Configuration File Attacks.** NVIDIA's AI Red Team guidance highlights that agent modification of configuration files (~/.zshrc, .gitconfig, MCP configs) enables persistence and sandbox escape.[^nvidia] A sandboxed agent that can modify a git hook achieves code execution outside the sandbox the next time a commit occurs. The configuration layer sits below most security models and above most sandboxes.
 
@@ -124,6 +124,8 @@ The traditional answer to supply chain security is verification: sign packages, 
 
 BlueRock launched the MCP Trust Registry, providing security analysis of over 7,000 MCP servers with vulnerability scanning and tool analysis.[^mcp-trust] This is the agent ecosystem's equivalent of npm audit or Snyk: automated scanning for known vulnerability patterns. It is necessary but not sufficient. The OpenClaw crisis showed that malicious skills can pass basic scanning by staging payloads behind seemingly innocent prerequisites.
 
+Cisco's AI Defense expansion (February 2026) adds enterprise-grade supply chain tooling: an MCP Catalog that automatically discovers, inventories, and assesses risk across MCP servers and registries spanning public and private platforms, and an AI BOM (AI Bill of Materials) that provides centralized visibility and governance for AI software assets including MCP servers and third-party dependencies.[^cisco-ai-defense] This is the first major enterprise security vendor shipping MCP-specific supply chain controls as a product capability, not a research prototype.
+
 The AAIF (Agentic AI Interoperability Foundation) governance under the Linux Foundation puts MCP, goose, and AGENTS.md under neutral oversight with eight platinum members.[^aaif] This provides governance for the protocol layer but does not solve the marketplace layer. Anyone can still publish an MCP server or agent skill.
 
 **What is missing:**
@@ -133,6 +135,8 @@ There is no equivalent of certificate transparency for agent tools. No public, a
 There is no standard for tool attestation. A Verifiable Credential can prove who published a tool and when. It cannot prove what the tool does. The gap between claimed behavior (the tool description) and actual behavior (what the code executes) is where tool poisoning lives.
 
 [^mcp-trust]: BlueRock, MCP Trust Registry (mcp-trust.com), 2026. Security analysis of 7,000+ MCP servers.
+
+[^cisco-ai-defense]: Cisco, "Cisco Redefines Security for the Agentic Era with AI Defense Expansion and AI-Aware SASE," newsroom.cisco.com, February 10, 2026. AI BOM provides centralized AI asset visibility; MCP Catalog discovers and manages risk across MCP server registries; AI-Aware SASE adds MCP visibility and control with intent-aware inspection. See also Help Net Security, "Cisco enhances security for enterprise AI adoption," February 11, 2026.
 
 [^aaif]: Agentic AI Interoperability Foundation, announced December 9, 2025. Platinum members: OpenAI, Anthropic, Google, Microsoft, AWS, Block, Bloomberg, Cloudflare.
 
@@ -275,7 +279,7 @@ Agent supply chain security touches all three pillars, but the weight falls on C
 | **I4: Authorized** | Tools must be explicitly approved before use. Allowlists, not blocklists. Runtime behavioral monitoring detects deviations. | Approval workflows, behavioral baselines, runtime monitoring, dependency isolation. |
 | **I5: Contained** | Full supply chain containment. Every component is verified, attested, isolated, and continuously monitored. Compromised components are automatically quarantined. Dynamic dependency trees are tracked in real-time. | Cryptographic attestation, automated quarantine, real-time dependency tracking, ephemeral execution, anomaly detection. |
 
-Most organizations deploying agents today operate at I1 or I2. The OpenClaw crisis demonstrated the consequences. Moving to I3 requires tooling (trust registries, vulnerability scanners, AI-BOM generators) that is emerging but not mature. I4 and I5 require organizational commitment to treat agent supply chains with the same rigor as software supply chains, plus the additional tooling for AI-specific components.
+Most organizations deploying agents today operate at I1 or I2. The OpenClaw crisis demonstrated the consequences. Moving to I3 requires tooling that is emerging but not yet mature. Cisco's AI Defense AI BOM and MCP Catalog push I3 capabilities into an enterprise product,[^cisco-ai-defense] and Cisco's AI-Aware SASE extends supply chain controls to the network layer with MCP visibility, intent-aware inspection of agent interactions, and unified policy enforcement across SD-WAN and SSE. I4 and I5 require organizational commitment to treat agent supply chains with the same rigor as software supply chains, plus the additional tooling for AI-specific components.
 
 ## What to Do Now
 

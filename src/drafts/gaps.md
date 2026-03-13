@@ -106,6 +106,8 @@ Hu and Rong's "Sovereign Agents" paper introduces agents that persist, act, and 
 
 The book covers agent protocols at the application layer (MCP, A2A) and identity layer (OAuth, WIMSE). A parallel set of IETF drafts is emerging at the network layer: Agent Communication Gateway (semantic routing by intent), AgentDNS (DNS-like discovery for agents), Semantic Inference Routing Protocol. These approach agent infrastructure from below (routing, naming, discovery) while the identity community approaches from above (OAuth, VCs, delegation). Whether these layers converge or remain separate stacks is an open architectural question.
 
+Cisco's AI-Aware SASE (February 2026) is the first evidence of convergence: MCP visibility and control at the network layer, intent-aware inspection of agent interactions, AI traffic optimization for predictable performance during agentic workload surges. When a SASE vendor adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks.
+
 ### AI-Native Policy Languages
 
 MACAW/MAPL introduces policy languages designed specifically for governing agentic AI systems, with hierarchical composition (child policies can only add restrictions) and cryptographic attestations. The industry is moving from policy-based governance ("tell the agent what not to do") to cryptographic governance ("prove the agent was authorized to do it"). This adds a third option alongside "can't" and "don't": "prove."
@@ -139,7 +141,7 @@ All 15 chapters complete, plus introduction, framework chapter, and capstone. Ea
 15. Human-Agent Collaboration Patterns (Accountability + Potential)
 16. Building the Inferential Edge (capstone)
 
-Published (in SUMMARY.md): introduction, why-agents-break-trust, agent-identity, pac-framework. Staged (in src/chapters/, awaiting Sapere Aude re-verification): execution-security, regulatory-landscape. Pipeline unblocked: Sapere Aude returned three verification reports in session 143, all 17 issues pre-resolved. Re-verification of current versions requested. Chop Pop editorial continues independently: cross-org-trust next in queue.
+Published (in SUMMARY.md): introduction, why-agents-break-trust, agent-identity, pac-framework. Staged (in src/chapters/, awaiting Sapere Aude verification): execution-security, regulatory-landscape, cross-org-trust, agent-communication. Pipeline: 4 published, 4 staged, 10 remaining in drafts. Chop Pop editorial completed on cross-org-trust and agent-communication (both staged since session 144). Supply-chain-security and multi-agent-trust next in Chop Pop's queue.
 
 ## Open Questions
 
