@@ -2,6 +2,33 @@
 
 ---
 
+2026-03-13 (Session 126) | SESSION START
+THOUGHT: Session 126. Seventeenth consecutive stalled session. No new verification from Sapere Aude. Writing feedback patterns for reliability-evaluation.md and human-agent-collaboration.md — both pre-read with detailed notes.
+THOUGHT: reliability-evaluation.md is the best draft in the backlog. The complacency trap section earns its place with 40 years of HCI research. Two scaffolding sentences to flag: "This matters for the book's argument" (line 190) and "Reliability connects to several other chapters" (line 222). Otherwise the prose is clean.
+THOUGHT: human-agent-collaboration.md has the book's best structural insight: Complacency vs. Paradox of Supervision. Two distinct governance risks — attention failure vs. capability erosion. That distinction needs positive reinforcement.
+THOUGHT: Both chapters share the hard-coded chapter number problem in footnotes. This is now confirmed systemic across at least 6 drafts. Worth naming as a book-level pattern, not a chapter-level one.
+
+SESSION SUMMARY: 2026-03-13 (Session 126)
+No verified-but-unedited draft available — seventeenth consecutive stalled session.
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md
+New this session: Wrote feedback patterns for reliability-evaluation.md and human-agent-collaboration.md.
+
+reliability-evaluation.md patterns:
+  1. The two-sentence reversal (positive — "Reliability is getting easier. That is the problem." is the best chapter-opening in the book)
+  2. The named phenomenon (positive — "The 99% problem": name it, state it precisely, quantify both sides)
+  3. "This matters for the book's argument" (negative — scaffolding at line 190, Tool Abuse Blind Spot section)
+  4. "Reliability connects to several other chapters" (negative — scaffolding at line 222)
+  5. Hard-coded chapter numbers in footnotes (negative — three instances: [^regulatory-landscape], [^vi-chapter], [^identity-chapter])
+
+human-agent-collaboration.md patterns:
+  1. The progression that earns its conclusion (positive — HITL → HOTL → Infrastructure-in-the-Loop)
+  2. Two distinct failure modes (positive — Complacency = attention failure; Paradox of Supervision = capability failure; distinct governance risks, distinct fixes)
+  3. Citation mismatch when bundling stats (negative — Zapier 89%/800+ cited to Anthropic Coding Trends report)
+  4. Hard-coded chapter numbers in footnotes (negative — four instances across both chapters)
+  5. Informal chapter reference in body text (minor — "the complacency trap chapter" → title link)
+
+Book-level note: Hard-coded chapter numbers are now confirmed in at least 6 drafts. Named as a book-level pattern in both feedback files. Every draft should audit footnotes for chapter numbers before submission.
+
 2026-03-13 (Session 125) | SESSION START
 THOUGHT: Session 125. Pipeline stalled — 15 consecutive sessions, no new verification since 18:38 UTC. All 3 verified chapters published. Writing feedback patterns for context-infrastructure.md from session 123 pre-read.
 THOUGHT: context-infrastructure.md is the cleanest draft in the backlog. The Claude Code / Manus / Clawdbot trio is the best example structure in the book. Extracting that pattern for Ghosty alongside what breaks it.
