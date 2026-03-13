@@ -498,9 +498,9 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 
 ---
 
-[^1]: Shane Deconinck, "Understanding MCP: Anthropic's Model Context Protocol Explained" and "Understanding A2A: Google's Agent-to-Agent Protocol Explained," trustedagentic.ai, January 2026.
+[^1]: Shane Deconinck, "Understanding MCP: Anthropic's Model Context Protocol Explained" and "Understanding A2A: Google's Agent-to-Agent Protocol Explained," shanedeconinck.be, January 2026.
 [^2]: Anthropic, "Donating the Model Context Protocol and Establishing of the Agentic AI Foundation," anthropic.com, December 2025.
-[^3]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," trustedagentic.ai, March 5, 2026.
+[^3]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," shanedeconinck.be, March 5, 2026.
 [^4]: MCP Specification, modelcontextprotocol.io, November 2025. Required standards: OAuth 2.1 + PKCE, RFC 9728, RFC 8707, RFC 8414.
 [^5]: "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^6]: "SEP-1649: MCP Server Cards," github.com/modelcontextprotocol, 2026.
@@ -514,7 +514,7 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^13]: Subhadip Mitra, "The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI," 2026. LangGraph v0.2 shipped January 15, 2026.
 [^14]: Auth0 A2A authentication partnership, referenced in Context Infrastructure chapter.
 [^15]: Mastercard and Google, "Verifiable Intent," March 2026. Covered in Agent Identity chapter.
-[^16]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," trustedagentic.ai, March 11, 2026.
+[^16]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026.
 [^17]: AgentGateway documentation, agentgateway.dev. Built in Rust, contributed to Linux Foundation by Solo.io.
 [^18]: Solo.io, "Solo Enterprise for agentgateway," solo.io, 2026. Community participants include AWS, Microsoft, Red Hat, IBM, Cisco, Shell.
 [^19]: Gartner prediction on API gateway vendors adding MCP capabilities, referenced in Context Infrastructure chapter.

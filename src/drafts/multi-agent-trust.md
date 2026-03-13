@@ -335,7 +335,7 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026, potentially $45 billion by 2030 with effective orchestration.
 
-[^3]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 24, 2026.
+[^3]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 24, 2026.
 
 [^4]: Nenad Tomašev, Matija Franklin, and Simon Osindero, "Intelligent AI Delegation," Google DeepMind, arXiv:2602.11865, February 12, 2026.
 
@@ -343,7 +343,7 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^6]: Yixiang Yao et al., "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On," IACR ePrint Archive 2026/497, March 2026.
 
-[^7]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," trustedagentic.ai, February 3, 2026.
+[^7]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 3, 2026.
 
 [^8]: OWASP, "Top 10 for Agentic Applications," ASI08: Cascading Failures, December 2025.
 

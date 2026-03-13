@@ -123,7 +123,7 @@ Let's start with why agents break trust.
 [^gravitee-monitoring]: Gravitee, "State of AI Agent Security 2026," gravitee.io, 2026. 47.1% of organizations monitor agent activity, meaning more than half operate without oversight.
 [^rsac-sandbox]: RSAC 2026 Innovation Sandbox finalists, rsaconference.com, March 2026.
 [^mckinsey]: McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Featuring Rich Isenberg (partner, Risk & Resilience).
-[^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026. Shane credits this framing to Lewin Wanzer, discussed on Identerati #165.
+[^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 2026. Shane credits this framing to Lewin Wanzer, discussed on Identerati #165.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026.
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026.
 [^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 2026.

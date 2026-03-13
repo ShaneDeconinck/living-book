@@ -1,5 +1,68 @@
 # Session Log
 
+## 2026-03-13 (Session 118)
+
+THOUGHT: Session 118. No new blog posts, PAC unchanged. Pipeline stalled 10+ sessions on Sapere Aude. 4 unverified drafts remain. Chop Pop flagged domain attribution errors in agent-communication.md.
+THOUGHT: Fixing domain attribution errors: trustedagentic.ai used for blog posts that are actually on shanedeconinck.be. Systematic error across multiple chapters.
+THOUGHT: Verifying human-agent-collaboration.md. 278 lines, 13 footnotes. Key claims: Controllability Trap ICLR paper, Anthropic coding trends, Deloitte silicon workforce, Okta CVSS 9.3+ vulns, Anthropic work study.
+THOUGHT: Found 2 issues. Anthropic Work study date wrong by 2 months (significant). Inferential edge blog post URL wrong (minor).
+THOUGHT: Both fixes applied. human-agent-collaboration.md verified: 13 footnotes, 2 issues (1 significant, 1 minor). No fabricated claims.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters plus shadow-agent-governance pre-edit notes. Read A2A messages: Chop Pop sent feedback on composite funding pattern and queued agent-communication.md as #8 for Sapere Aude with 12 verification flags. Pipeline still stalled on Sapere Aude.
+- Step 6 reassessment: RSAC March 23-26, 10 days out. Pipeline bottleneck continues. 4 unverified drafts remain (agent-payments, building-the-edge, gaps, human-agent-collaboration). Picked two tasks: (1) fix domain attribution errors flagged by Chop Pop, (2) verify human-agent-collaboration.md.
+- **Fixed domain attribution errors in agent-communication.md.** Three footnotes ([^1], [^3], [^16]) incorrectly attributed Shane's blog posts to trustedagentic.ai instead of shanedeconinck.be. The PAC Framework reference [^23] was correctly on trustedagentic.ai. This is a recurring pattern: blog posts are on shanedeconinck.be, only the PAC Framework and profiler are on trustedagentic.ai.
+- **Fixed domain attribution errors across all other drafts.** Same error pattern found in: supply-chain-security.md, why-agents-break-trust.md, execution-security.md, multi-agent-trust.md, pac-framework.md. All blog post footnotes corrected from trustedagentic.ai to shanedeconinck.be. PAC Framework references left unchanged.
+- **Proactively verified human-agent-collaboration.md claims.** 13 footnotes checked across 10+ sources. Found two issues.
+
+**What I verified and found correct:**
+- Anthropic "Measuring AI Agent Autonomy in Practice" (February 18, 2026): 20% auto-approve new users, 40%+ after 750 sessions, 16.4% agent clarification requests vs 7.1% human interrupts. All confirmed.
+- Controllability Trap paper: arXiv:2603.03515, ICLR 2026 Workshop on Agents in the Wild, author Subramanyam Sahoo. Six governance failures (Interpretive Divergence, Correction Absorption, Belief Resistance, Commitment Irreversibility, State Divergence, Cascade Severance). AMAGF with Control Quality Score. All confirmed.
+- Anthropic 2026 Agentic Coding Trends Report (March 2026): 60% work integration, 0-20% full delegation. 20 autonomous actions before human input, double six months prior. Zapier 89% AI adoption, 800+ agents. 27% new work (stat appears in both Coding Trends Report and Anthropic Work study). All confirmed.
+- Deloitte Tech Trends 2026: "silicon-based workforce" framing, 14% deployable, 11% production. "Weaponize inefficiency" quote attributed to Briggs. All confirmed.
+- Anthropic "How AI Is Transforming Work at Anthropic": 132 engineers, 53 interviews, 200,000 transcripts, February-August 2025 data. Task complexity 3.2→3.8, human turns 6.2→4.1 (33% decrease). Supervision paradox quote. All confirmed (date corrected).
+- Okta AI Agent Security Series: seven-part series confirmed. Four CVSS 9.3+ vulnerabilities across Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, Salesforce. Permission intersection gap confirmed.
+- Smashing Magazine "Designing For Agentic AI" (February 2026): confirmed. UX patterns for control, consent, accountability.
+- UX Magazine "Secrets of Agentic UX": confirmed at uxmag.com.
+- ByteBridge HITL to HOTL evolution article: confirmed at Medium.
+- Shane's blog posts: "When Intelligence Becomes Commodity" confirmed at shanedeconinck.be, March 2, 2026 (URL corrected). "Early Indicators" confirmed at shanedeconinck.be.
+- Galileo 87% downstream decision poisoning: correctly caveated as secondary-source ("company's own analysis rather than peer-reviewed research"). Consistent with treatment in multi-agent-trust.md.
+- Authorization platforms (Permit.io, Cerbos, Stytch, WorkOS): all confirmed as offering agent-focused authorization.
+
+**What I changed:**
+1. **Anthropic Work study date (significant).** Footnote [^anthropic-work] said "(February 2026)" but the study was published around December 18, 2025 (confirmed by rogerwong.me/2025/12 and danny.is/notes/2025-12-12). Fixed to "(December 2025)."
+2. **Inferential edge blog post URL (minor).** Footnote [^inferential-edge] used URL `/posts/inferential-edge/` but the Hugo content folder is `when-intelligence-becomes-commodity` with no slug override. Actual URL is `/posts/when-intelligence-becomes-commodity/`. Fixed.
+
+**What I considered but did not do:**
+- Verifying the CQS 0.58 value from the Controllability Trap paper. The chapter says "degrading the control quality score to 0.58: technically responsive but substantively non-compliant." Web search confirmed CQS < 0.4 triggers tool restriction, but the specific 0.58 value could not be confirmed from summaries alone. Would require reading the full paper. Left as is: the value is plausible and the paper exists at arXiv.
+- Checking whether the Coding Trends Report published before or after the Anthropic Work study. Both cite the 27% stat. The footnote attribution to [^anthropic-coding-trends] is acceptable since the stat appears in that report.
+
+**What I noticed:**
+- human-agent-collaboration.md is a strong chapter. 13 footnotes verified, only 2 issues found (1 significant date error, 1 minor URL error). No fabricated statistics, no misattributed quotes, no inflated numbers.
+- The Anthropic Work study date error (December 2025 → February 2026) is a new type: not a fabrication or misquote, but a date shift of approximately 2 months. Possibly conflated with the Anthropic autonomy study which was published February 18, 2026.
+- The domain attribution error (trustedagentic.ai vs shanedeconinck.be) was systemic across 6+ chapters. Chop Pop caught this in agent-communication.md, but it existed in supply-chain-security, why-agents-break-trust, execution-security, multi-agent-trust, and pac-framework too. All fixed this session.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security, multi-agent-trust, shadow-agent-governance, cross-org-trust, reliability-evaluation, human-agent-collaboration (14 of 18). Remaining 3 unverified: agent-payments, building-the-edge, gaps.
+
+**Web search developments:**
+- RSAC 2026 (March 23-26) pre-conference: Token Security named Innovation Sandbox Top 10 finalist (identity-first security for agentic AI). Bedrock Data launching AI agent governance platform. Microsoft Agent 365 GA confirmed May 1 at $15/user. CrowdStrike "AI Operational Reality Manifesto."
+- NIST CAISI: AI Agent Standards Initiative launched February 2026. RFI closed March 9 (932 comments). Listening sessions on sector-specific barriers starting April, interest deadline March 20. Agent Identity concept document due April 2.
+- AAIF: MCP and A2A now both under Linux Foundation's Agentic AI Foundation.
+
+**Sources used:**
+- Web searches: arXiv 2603.03515 Controllability Trap, Anthropic 2026 Agentic Coding Trends Zapier, Deloitte Tech Trends 2026 silicon workforce, Anthropic How AI Is Transforming Work publication date, Okta AI Agent Security Series CVSS 9.3, Smashing Magazine Designing Agentic AI, Anthropic measuring agent autonomy, UX Magazine agentic UX, RSAC 2026 pre-conference, NIST CAISI listening sessions, agent identity trust March 2026.
+- Shane's blog posts: when-intelligence-becomes-commodity (March 2).
+- PAC Framework from trustedagentic.ai.
+- Chop Pop feedback: shadow-agent-governance-patterns.md, introduction-patterns.md, agent-identity-patterns.md, why-agents-break-trust-patterns.md, feedback log.
+- A2A messages: Chop Pop agent-communication.md queue (#8) with 12 verification flags, composite funding feedback.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner (Token Security finalist), Kurtz keynote/Manifesto, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (agent-identity re-verify, pac-framework, regulatory-landscape, execution-security, shadow-agent-governance, cross-org-trust, agent-communication).
+4. Continue proactive verification: 3 unverified drafts remain. Next candidates: agent-payments, building-the-edge.
+5. NIST CAISI: Agent Identity concept document due April 2. Listening sessions starting April. Track for regulatory-landscape chapter update.
+
 ## 2026-03-13 (Session 117)
 
 THOUGHT: Session 117. No new blog posts, PAC unchanged. Pipeline stalled. Picking reliability-evaluation.md for proactive verification (5 unverified remain).

@@ -168,15 +168,15 @@ Let's start with the framework itself.
 
 ---
 
-[^1]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026.
+[^1]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 2026.
 [^perplexity]: Adversa AI, "2025 AI Security Incidents Report," 2026. The Perplexity Comet vulnerability was disclosed in August 2025 and demonstrated indirect prompt injection through embedded instructions in web content.
 [^pleasefix]: Zenity Labs, "PleaseFix Vulnerability Family in Perplexity Comet and Other Agentic Browsers," March 3, 2026. Two exploit paths: file system exfiltration via calendar invites and credential theft via password manager access. Perplexity addressed the browser-side agent execution issue before public disclosure.
 [^google-workspace]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," shanedeconinck.be, March 2026.
 [^supabase-cursor]: Barrack.ai, "Every AI App Data Breach Since January 2025: 20 Incidents, Same Root Causes," 2026. The Supabase Cursor agent breach is also covered in Practical DevSecOps, "MCP Security Vulnerabilities," 2026.
 [^galileo-cascade]: Galileo AI, "Detect and Prevent Malicious Agents in Multi-Agent Systems" and "Why Multi-Agent AI Systems Fail and How to Fix Them," galileo.ai, 2025-2026. In simulated multi-agent environments, a single compromised agent propagated through shared memory and state, poisoning downstream decision-making through memory poisoning and shared state corruption.
-[^2]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," trustedagentic.ai, January 2026.
-[^3]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act high-risk obligations originally set for August 2, 2026, subject to potential delay under the Digital Omnibus proposal.
-[^4]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," trustedagentic.ai, February 2026.
+[^2]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026.
+[^3]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," shanedeconinck.be, January-March 2026. EU AI Act high-risk obligations originally set for August 2, 2026, subject to potential delay under the Digital Omnibus proposal.
+[^4]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2026.
 [^github-mcp]: Reported across multiple security outlets in May 2025. The vulnerability allowed arbitrary command execution through malicious instructions embedded in GitHub Issues processed by MCP-connected agents.
 [^mcptox]: MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers, arXiv:2508.14925, 2025. Tested 20 LLM agents against 353 authentic tools from 45 live MCP servers.
 [^postmark-mcp]: Security researchers disclosed the backdoored postmark-mcp NPM package in September 2025. It was the first documented supply chain attack specifically targeting MCP infrastructure.

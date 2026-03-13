@@ -289,11 +289,11 @@ Each chapter connects back to this framework. The goal is not to memorize the le
 ---
 
 [^1]: Shane Deconinck, PAC Framework, trustedagentic.ai. The framework and its dimensions are the source for this entire chapter.
-[^2]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," trustedagentic.ai, February 2026.
-[^3]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," trustedagentic.ai, February 2026. The Claude Code scaffolding deletion example is cited directly.
-[^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," trustedagentic.ai, January 2026. Also: "Auth for Agent Builders: A Crash Course," January 2026.
-[^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act enforcement timeline per European Commission. The Digital Omnibus proposal (November 2025) may defer Annex III high-risk obligations to December 2027; see the Regulatory Landscape chapter for details.
-[^6]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," trustedagentic.ai, February 2026.
+[^2]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," shanedeconinck.be, February 2026.
+[^3]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2026. The Claude Code scaffolding deletion example is cited directly.
+[^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026. Also: "Auth for Agent Builders: A Crash Course," January 2026.
+[^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," shanedeconinck.be, January-March 2026. EU AI Act enforcement timeline per European Commission. The Digital Omnibus proposal (November 2025) may defer Annex III high-risk obligations to December 2027; see the Regulatory Landscape chapter for details.
+[^6]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 2026.
 [^7]: Shane Deconinck, PAC Framework, trustedagentic.ai, updated March 2026. The implementation architecture composability model, error margin emphasis, and the distinction between enumerable and open-ended failure modes are from the March 2026 framework revision.
 [^teleport]: Teleport, "State of AI in Enterprise Infrastructure Security" (February 2026). Survey finding: over-privileged AI systems drive 4.5x higher incident rates. Access scope, not AI sophistication, is the strongest predictor of security outcomes.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control" (February 2026). Survey of 919 executives and practitioners. 82% executive confidence vs. 14.4% full security approval.

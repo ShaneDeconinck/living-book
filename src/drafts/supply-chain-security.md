@@ -24,7 +24,7 @@ The marketplace was not the only problem. OpenClaw itself had a critical platfor
 
 [^securityscorecard]: SecurityScorecard STRIKE Team, "How Exposed OpenClaw Deployments Turn Agentic AI Into an Attack Surface," securityscorecard.com, February 2026. Identified 135,000+ publicly exposed instances across 82 countries, 15,200+ vulnerable to RCE, 53,000+ correlated with prior breach activity.
 
-[^shane-openclaw]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," trustedagentic.ai, February 17, 2026.
+[^shane-openclaw]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," shanedeconinck.be, February 17, 2026.
 
 [^clawjacked]: Oasis Security, CVE-2026-25253, "ClawJacked: 1-Click RCE in OpenClaw Through Auth Token Exfiltration," February 2026. CVSS 8.8. Patched in OpenClaw v2026.2.25.
 
@@ -248,7 +248,7 @@ The gap between principle and practice remains wide. Only 21% of organizations m
 
 [^csa-atf]: Cloud Security Alliance, "The Agentic Trust Framework: Zero Trust Governance for AI Agents," February 2, 2026.
 
-[^shane-inversion]: Shane Deconinck, "What Trusted AI Agents Really Need: The Inverse of Human Trust," trustedagentic.ai, February 2026.
+[^shane-inversion]: Shane Deconinck, "What Trusted AI Agents Really Need: The Inverse of Human Trust," shanedeconinck.be, February 2026.
 
 [^csa-survey]: Cloud Security Alliance and Strata Identity survey, February 5, 2026. Findings on enterprise agent governance readiness.
 

@@ -286,9 +286,9 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 ---
 
-[^sandbox-post]: Shane Deconinck, "Your Coding Agent Needs a Sandbox: Docker Sandbox vs Native vs DevContainers," trustedagentic.ai, February 7, 2026.
+[^sandbox-post]: Shane Deconinck, "Your Coding Agent Needs a Sandbox: Docker Sandbox vs Native vs DevContainers," shanedeconinck.be, February 7, 2026.
 
-[^trust-inversion]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," trustedagentic.ai, February 3, 2026.
+[^trust-inversion]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 3, 2026.
 
 [^bainbridge]: Lisanne Bainbridge, "Ironies of Automation," *Automatica* 19, no. 6 (1983): 775-779.
 
@@ -302,7 +302,7 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^nvidia-sandbox]: NVIDIA AI Red Team, "Practical Security Guidance for Sandboxing Agentic Workflows and Managing Execution Risk," developer.nvidia.com, 2026.
 
-[^profiler-post]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," trustedagentic.ai, February 26, 2026.
+[^profiler-post]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," shanedeconinck.be, February 26, 2026.
 
 [^owasp]: OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025.
 
