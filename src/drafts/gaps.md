@@ -2,7 +2,13 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 68)
+## Observations (Updated 2026-03-13, Session 69)
+
+### AAuth: LLM Hallucination as Impersonation Vector
+
+The IETF draft count for agent authorization has grown again. AAuth (draft-rosenberg-oauth-aauth-01, Jonathan Rosenberg and Pat White) extends OAuth 2.1 for agents operating through non-web channels: voice calls, SMS, messaging platforms where traditional OAuth redirect flows are impossible. The draft's most original contribution is identifying LLM hallucination as a confused deputy mechanism. When an agent collects identity information through natural-language conversation, the LLM might hallucinate or confuse details: a phone number from a previous conversation, a name misheard in a voice call. If the authorization server trusts LLM-mediated identity claims without independent verification, hallucinated information could produce tokens for the wrong user. The mitigation is architectural: mandatory out-of-band verification (SMS codes, email links) that the LLM cannot fabricate.
+
+This is noteworthy for two reasons. First, it extends the confused deputy taxonomy: the book has covered the confused deputy through credentials (Chapter 1), through MCP (CVE-2026-26118), through delegation chains (Galileo), and through tool invocation (MITRE ATLAS). AAuth adds a fifth vector: through hallucination. The adversary is not external. The failure mode is the model's own imprecision operating within the authorization flow. Second, the IETF draft count for agent authorization is now at seven or more individual submissions in Q1 2026 alone: OBO AI Agent extension, AAP, Decoupled A2A Authorization, AI Agent Authentication (draft-klrc-aiagent-auth), Transaction Tokens for Agents, AAuth, and draft-song-oauth-ai-agent-authorization. This density is unprecedented for any single quarter of OAuth extension development and reflects the urgency of the gap.
 
 ### SCIM for Agents: The Missing Lifecycle Layer
 
