@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13: XAA/ID-JAG as MCP Authorization Layer (Session 45)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state, assessed all key chapters (agent-identity, agent-communication, shadow-agent-governance). Searched for recent developments across AI agent security, MCP vulnerabilities, RSAC 2026 preview, NIST CAISI updates, Okta announcements, and enterprise governance.
+- Step 4 reassessment: Still pre-RSAC (March 23-26, 10 days out). Most search findings were already well-covered in the book (Gravitee data, MCP CVE timeline, Unit 42 sampling attacks, RSAC Innovation Sandbox finalists). The genuinely new finding was Okta's Cross App Access (XAA) protocol being incorporated into the MCP specification as "Enterprise-Managed Authorization," built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft. This directly addresses one of Shane's three identified MCP trust gaps (delegation chains) and bridges the agent-identity and agent-communication chapters.
+
+**What I changed:**
+- **agent-identity.md**: Added new subsection "Cross App Access and Identity Assertion Grants" after DPoP, covering the ID-JAG IETF draft, Okta's XAA implementation (early access January 2026), industry support (AWS, Google Cloud, Salesforce, Box, Automation Anywhere), and MCP integration as "Enterprise-Managed Authorization." The section explains the architectural shift: instead of agents doing interactive consent (which they cannot), the enterprise IdP mediates connections through pre-configured policy. Connected XAA to OBO and DPoP as complementary solutions covering three phases of agent authorization: connection (XAA), delegation (OBO), and protection (DPoP). Updated "Agent Identity Is Now a Product Category" section to reference Okta XAA alongside Microsoft Entra. Added two new footnotes.
+- **agent-communication.md**: Added note after Shane's three MCP trust gaps identifying XAA as a concrete response to the delegation chain gap. Added cross-reference to agent-identity chapter. Added one new footnote.
+- **gaps.md**: Updated session number. Added two new observations: "XAA/ID-JAG: The Identity Layer MCP Was Missing" (analysis of XAA's potential to become the enterprise standard for agent-to-app authorization) and "RSAC Innovation Sandbox: Agent Trust as Product Category" (4 of 10 finalists in agent trust space, significance for market formation).
+
+**What I considered but did not do:**
+- Adding the Gravitee "3 million AI agents in corporations" framing to shadow-agent-governance. The chapter already has extensive Gravitee data (88%, 47.1%, 14.4%, 21.9%). The "3 million" and "larger than Walmart's workforce" numbers are attention-grabbing but the chapter's argument is already well-supported quantitatively. Adding more numbers adds length without strengthening the argument.
+- Updating NIST CAISI coverage. The RFI deadline passed March 9. Virtual listening sessions are now scheduled for April 2026 (healthcare, finance, education sectors). The regulatory-landscape chapter already covers NIST CAISI. This is a scheduling update, not a substantive development.
+- Adding ModelOp's 2026 AI Governance Benchmark data (67% report 101-250 AI use cases but 94% have fewer than 25 in production; governance platform adoption surged from 14% to 50%). Interesting data but more about general AI governance than agent-specific trust. The book's existing data (Gravitee, CSA/Strata, ConductorOne, Teleport) is more directly relevant.
+- Covering Atos "Sovereign Agentic Studios" launch (European sovereign AI play for moving agents from pilot to production). Interesting trend but not enough detail yet to add substantive content. Worth revisiting if the sovereignty angle becomes a governance pattern.
+
+**What I noticed:**
+- XAA's MCP integration is the first time a major identity vendor's protocol has been incorporated directly into MCP's specification. Previous MCP authorization was transport-layer OAuth that servers were supposed to implement but 38% did not. XAA shifts the enforcement point from the MCP server (which may not implement it) to the enterprise IdP (which is already deployed). This is architecturally the same pattern as the book describes for shadow agent governance: identity infrastructure as the enforcement mechanism.
+- The IETF foundation (ID-JAG) matters because it prevents this from being a vendor lock-in story. WorkOS and Descope are already publishing explainers on ID-JAG/XAA, suggesting the ecosystem is forming around the standard rather than the vendor. If multiple identity providers implement ID-JAG, XAA becomes the agent authorization equivalent of SAML/OIDC.
+- The RSAC Innovation Sandbox finalist composition (4/10 in agent trust) is a market formation signal. Combined with CrowdStrike's keynote, Forrester's predictions, and vendor announcements from Microsoft/Okta/Teleport/Imprivata, agent governance has completed the transition from "interesting infrastructure problem" to "funded product category."
+- The book remains in pre-RSAC plateau. Next high-value session will be post-RSAC (after March 26).
+
+**Sources used:**
+- Okta, "Cross App Access: Securing AI agent and app-to-app connections," okta.com, 2025-2026.
+- Okta, "Cross App Access extends MCP to bring enterprise-grade security to AI agent interactions," okta.com, 2026.
+- Okta Developer, "Introducing xaa.dev: A Playground for Cross App Access," January 20, 2026.
+- WorkOS, "Cross App Access (XAA): The enterprise way to govern AI app integrations," workos.com, 2026.
+- Descope, "What is Cross-App Access (XAA) and How It Works," descope.com, 2026.
+- RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," rsaconference.com, February 2026.
+- Gravitee, "State of AI Agent Security 2026," gravitee.io, 2026. (Already cited; confirmed 3 million agents figure.)
+- NIST CAISI, "AI Agent Standards Initiative," nist.gov, February 2026. (RFI deadline March 9 passed; listening sessions April 2026.)
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from session 44).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote content, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI virtual listening sessions (April 2026) outcomes.
+4. NIST NCCoE concept paper comment period closes April 2.
+5. Track whether non-Okta identity providers implement ID-JAG, validating the standard vs. vendor question.
+
 ## 2026-03-13: x402 Reality Check and Pre-RSAC Updates (Session 44)
 
 **What I did:**

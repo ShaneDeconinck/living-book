@@ -142,7 +142,7 @@ Shane identifies three trust gaps that MCP does not address:[^1]
 2. **Capability proof**: the server says it can access Salesforce. Can it prove that?
 3. **Delegation chains**: User → Agent → MCP Server → API. Who authorized what at each step?
 
-These gaps are precisely what the identity infrastructure from [Chapter 3](agent-identity.md) and the trust layer integrations later in this chapter are designed to fill.
+These gaps are precisely what the identity infrastructure from [Chapter 3](agent-identity.md) and the trust layer integrations later in this chapter are designed to fill. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This directly addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
 
 ### Systematic Protocol Threat Modeling
 
@@ -482,3 +482,4 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^agui]: CopilotKit, "AG-UI: the Agent-User Interaction Protocol," ag-ui.com, 2026. Open, lightweight, event-based protocol for streaming agent events to frontend applications. Now compatible with Microsoft Agent Framework, Oracle, and Google integrations.
 [^a2ui]: Google, "A2UI: Agent-to-UI Protocol," a2ui.org, 2026. Apache 2.0 licensed protocol for agent-generated interactive UIs across web, mobile, and desktop. Created by Google with CopilotKit contributions.
 [^overthinking-loops]: Yohan Lee et al., "Overthinking Loops in Agents: A Structural Risk via MCP Tools," arXiv:2602.14798, February 2026. Demonstrates that 14 malicious tools across three servers can induce cyclic overthinking loops in MCP-based agents, amplifying token consumption up to 142.4x. The attack exploits standard MCP interfaces: no protocol violation required. Experiments restricted to open-source models for responsible disclosure.
+[^xaa-mcp]: Okta, "Cross App Access extends MCP to bring enterprise-grade security to AI agent interactions," okta.com, 2026. XAA incorporated into MCP specification as "Enterprise-Managed Authorization" extension. Built on IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft. See also [Agent Identity and Delegation](agent-identity.md) for full coverage of the XAA protocol.

@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 44)
+## Observations (Updated 2026-03-13, Session 45)
+
+### XAA/ID-JAG: The Identity Layer MCP Was Missing
+
+Okta's Cross App Access protocol being incorporated into MCP as "Enterprise-Managed Authorization" is architecturally significant in a way that deserves watching. The pattern: instead of each MCP server managing its own authentication (which 38% do not do at all), the enterprise identity provider mediates every agent-to-server connection. IT/security pre-approve integrations through policy. The IdP issues short-lived, scoped tokens only when policy permits. This is the OAuth consent screen problem solved for agents: agents cannot do interactive consent, so the IdP handles it through pre-configured policy instead. The IETF foundation (Identity Assertion JWT Authorization Grant) matters because it means this is a standards-track solution, not just a vendor feature. Industry support from AWS, Google Cloud, Salesforce, and Box suggests this could become the default agent authorization pattern for enterprise environments. The question worth tracking: does XAA become the enterprise authorization standard for agent-to-app connections the way OAuth became the standard for user-to-app connections? The MCP integration positions it for that. But standards adoption depends on whether non-Okta identity providers implement ID-JAG too. If WorkOS and Descope are already explaining it, the ecosystem is forming.
+
+### RSAC Innovation Sandbox: Agent Trust as Product Category
+
+Four of the ten RSAC 2026 Innovation Sandbox finalists are directly in the agent trust/identity/governance space: Token Security (non-human identity management), Geordie AI (agent posture and behavior governance), Glide Identity (AI-era passwordless authentication), and Realm Labs (AI application trustworthiness). Every finalist received a $5M investment. When 40% of the cybersecurity industry's premier startup competition focuses on agent trust, the market category is real. The winner (announced March 23) will signal which sub-problem the market thinks is most urgent. Worth comparing to the Forrester PAC-shaped expectations: if the winner aligns with identity/control rather than detection/response, that validates the PAC Framework's ordering (Control before Accountability).
 
 ### x402: Infrastructure Investment Ahead of Organic Demand
 

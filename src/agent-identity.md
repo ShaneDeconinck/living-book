@@ -92,6 +92,20 @@ For agents, this matters because stolen tokens become useless. If an agent's tok
 
 DPoP is complementary to OBO: use OBO to track delegation, use DPoP to prevent token theft.
 
+### Cross App Access and Identity Assertion Grants
+
+OBO and DPoP solve delegation tracking and token binding. But both assume the agent is operating within a system where it already has a relationship with the authorization server. The harder problem: how does an agent connect to a new application it has never interacted with, without forcing a human through an OAuth consent screen?
+
+The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been actively contributing to with public and industry collaborators, addresses this directly. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
+
+The architectural shift matters: instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
+
+Okta's product implementation, Cross App Access (XAA), shipped in early access in January 2026 with industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, and others. A developer playground (xaa.dev) launched the same month for testing integrations.[^xaa]
+
+The most significant development: XAA has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. This directly addresses one of the three trust gaps Shane identified in MCP (covered in [Agent Communication Protocols](agent-communication.md)): MCP defines how agents discover and call tools, but not how authorization travels with those calls. With XAA as the MCP authorization layer, the enterprise IdP can enforce policy over which agents connect to which MCP servers, with what scopes, and under whose authority. The delegation chain that was invisible in plain MCP becomes auditable through the IdP.[^xaa-mcp]
+
+XAA is complementary to OBO and DPoP. OBO tracks the delegation chain (who authorized whom). DPoP binds tokens to keys (preventing theft). XAA handles the initial connection establishment (getting the agent a scoped token for a new application without interactive consent). Together, they cover the three critical phases of agent authorization: connection, delegation, and protection.
+
 ### The Platform Response: Auth0 for AI Agents
 
 Identity platforms are shipping agent-specific products. Auth0's Token Vault, generally available since November 2025, manages the OAuth lifecycle for agents: handling consent flows, storing tokens, refreshing them automatically, and scoping access across 30+ pre-integrated services.[^7]
@@ -126,7 +140,7 @@ Sector-specific solutions are emerging alongside the horizontal platforms. Impri
 
 Teleport's research quantifies why this convergence is happening now: over-privileged AI systems drive 4.5x higher incident rates (76% vs 17%), and access scope, not AI sophistication, is the strongest predictor of security outcomes.[^teleport] The Huntress 2026 Cyber Threat Report confirms the same pattern from the attacker's perspective: non-human identity compromise is now the fastest-growing enterprise attack vector, with the critical finding that the issue is not proving who the identity belonged to but constraining what it could do.[^huntress]
 
-The pattern: platform vendors (Microsoft, Okta), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), and sector-specific providers (Imprivata) are all converging on agent identity governance at the same time. This is no longer an infrastructure gap for organizations to build around. It is a product category forming in real time. The practical implication: organizations evaluating agent identity infrastructure should assess vendor coverage against their actual agent footprint. Microsoft Entra covers Microsoft environments. Imprivata covers healthcare systems. Teleport covers infrastructure access. None of them covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
+The pattern: platform vendors (Microsoft Entra, Okta XAA), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), and sector-specific providers (Imprivata) are all converging on agent identity governance at the same time. This is no longer an infrastructure gap for organizations to build around. It is a product category forming in real time. The practical implication: organizations evaluating agent identity infrastructure should assess vendor coverage against their actual agent footprint. Microsoft Entra covers Microsoft environments. Imprivata covers healthcare systems. Teleport covers infrastructure access. None of them covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
 
 ## Beyond OAuth: Verifiable Identity
 
@@ -307,3 +321,5 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^imprivata]: Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," imprivata.com, March 10, 2026. Announced at HIMSS 2026.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026. Identifies NHI compromise as the fastest-growing enterprise attack vector.
 [^csa-strata-auth]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA Survey Report, February 5, 2026. Survey of 285 IT and security professionals conducted September-October 2025. Authentication methods: 44% static API keys, 43% username/password, 35% shared service accounts. Only 18% highly confident in IAM for agents.
+[^xaa]: Okta, "Cross App Access: Securing AI agent and app-to-app connections," okta.com, 2025-2026. Built on IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft. Early access January 2026. Industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, Glean, Grammarly, Miro, WRITER. See also WorkOS, "Cross App Access (XAA): The enterprise way to govern AI app integrations," workos.com, 2026; Descope, "What is Cross-App Access (XAA) and How It Works," descope.com, 2026.
+[^xaa-mcp]: Okta, "Cross App Access extends MCP to bring enterprise-grade security to AI agent interactions," okta.com, 2026. XAA incorporated into MCP specification as "Enterprise-Managed Authorization" extension.
