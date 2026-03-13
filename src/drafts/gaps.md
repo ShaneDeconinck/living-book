@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 97)
+## Observations (Updated 2026-03-13, Session 98)
+
+### Reliability Evaluation: Proactive Verification
+
+Session 98 proactively verified reliability-evaluation.md. 20+ external claims checked. Most verified cleanly: reliability science paper (arxiv 2602.16666, four dimensions confirmed), SWE-bench Verified (500 samples), τ-bench (Sierra, dynamic settings), GAIA Level 3 top score 61%, HAL from Princeton (ICLR 2026), NIST AI 800-2 public comment through March 31, 2026, LangChain 2026 (1,340 respondents, 57% in production, 32% quality barrier), Cisco State of AI Security 2026 (83% plan agentic AI, 29% feel ready), Dynatrace 919 leaders / 44% manual methods, NIST AI 800-4 March 2026 (confirmed), AgentShield benchmark (537 test cases, 6 products, scores ~39 to ~98), OpenAI Promptfoo acquisition March 9, 2026, Splunk CISO Report (650 CISOs, 83% hallucination concern). Shane quotes verified against source posts: "After twenty correct outputs, who reviews the twenty-first carefully?" (exact match from anthropic-data post), "As reliability improves, the risk might grow" (exact match from trust-inversion post), "Human in the loop is not a reliable safety net" (exact match from trust-inversion post), "Infrastructure is a gate, not a slider" (exact match from agent-profiler post), 73% human oversight (exact match from agent-profiler post).
+
+Three issues found and fixed. (1) Attribution: "Shane's framing of audit trails 'designed for compliance, not just debugging'" attributed a conceptual framing to Shane via the PAC Framework that he never wrote. Searched all Shane blog posts and the trustedagentic.ai framework page: the phrase does not appear. Replaced with Shane's actual audit trail illustration from trust-for-agentic-ai ("the audit trail has no way to capture that"). Same recurring pattern as Sessions 87-97. (2) Quote compression: "Policy says 'don't.' Architecture says 'can't.' The difference matters" was attributed to the PAC Framework but is actually a compressed version of Shane's boardroom-questions post: "Policy says what agents shouldn't do. Architecture limits what they can do, regardless of what they try." Replaced with Shane's actual words and corrected the footnote. (3) Vague citation: clinician complacency footnote said "Referenced in industry analysis" without naming the source. The actual study is Budzyń et al. in The Lancet Gastroenterology & Hepatology (August 2025). Also corrected the text from "6% lower" to "6 percentage points" (the actual absolute drop; the relative decrease was 20%).
+
+
 
 ### Agent Payments: Proactive Verification
 

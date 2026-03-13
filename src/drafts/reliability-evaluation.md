@@ -71,7 +71,7 @@ The observability ecosystem has matured rapidly. By 2026, 89% of organizations r
 
 Dynatrace's survey of 919 enterprise leaders (March 2026) reveals the quality gap behind that 89% headline. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
 
-Shane's framing of audit trails "designed for compliance, not just debugging" applies here[^pac-framework]. A debugging log tells an engineer what to fix. A compliance-grade audit trail tells a regulator what the agent did, what authority it had, who delegated that authority, and what information was available at the time of the decision. These are different artifacts with different requirements.
+The distinction between debugging and compliance matters here. A debugging log tells an engineer what to fix. A compliance-grade audit trail tells a regulator what the agent did, what authority it had, who delegated that authority, and what information was available at the time of the decision. Shane's trust-for-agentic-ai post illustrates the gap: an expense-approval agent authorized $47,000 in vendor payments, but "the audit trail has no way to capture" that the agent, not the human, made the decision[^trust-for-agentic]. These are different artifacts with different requirements.
 
 The EU AI Act Article 12 requires "automatic recording of events" for high-risk AI systems, with logs capable of supporting post-market monitoring[^regulatory-landscape]. NIST's concept paper emphasizes traceability of agent actions to their authorizing principals[^nist-concept]. Neither is satisfied by a debugging log. Both require structured observability at I3 or above.
 
@@ -112,7 +112,7 @@ The complacency pattern for agents has specific characteristics:
 
 **The 99% problem**: an agent that is right 99% of the time is more dangerous than one that is right 80% of the time. At 80%, humans stay engaged because errors are frequent enough to maintain vigilance. At 99%, the errors are rare enough to seem like anomalies rather than a systemic issue. But 1% of a million actions is ten thousand failures.
 
-Recent evidence reinforces this pattern beyond AI. A study found that clinicians' rate of detecting tumors during colonoscopy was 6% lower after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
+Recent evidence reinforces this pattern beyond AI. A multicentre study in The Lancet found that clinicians' adenoma detection rate during colonoscopy dropped by 6 percentage points (a 20% relative decrease) after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
 
 Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report, surveying 650 global CISOs, confirms the tension: 82% believe agentic AI will increase their teams' detection and response speed, but 83% cite hallucination impacts (missed alerts, false positives) as their greatest concern for agentic AI, and 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
 
@@ -138,7 +138,7 @@ Anthropic's research acknowledges this directly, recommending that the focus sho
 
 Shane takes this further: "Human in the loop is not a reliable safety net"[^trust-inversion].
 
-The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. The distinction maps to PAC's Control pillar: "Policy says 'don't.' Architecture says 'can't.' The difference matters"[^pac-framework]. The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
+The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. As Shane puts it in his boardroom questions: "Policy says what agents shouldn't do. Architecture limits what they *can* do, regardless of what they try"[^boardroom-questions]. The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
 
 Concretely, this means:
 
@@ -255,7 +255,7 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 
 [^nist-concept]: NIST NCCoE, "Accelerating the Adoption of Software and AI Agent Identity and Authorization" (February 2026).
 
-[^clinician-complacency]: Referenced in industry analysis of automation complacency effects on clinical decision-making, 2026. The 6% reduction in tumor detection rate after months of AI-assisted colonoscopy illustrates the skill degradation pattern Bainbridge described in 1983.
+[^clinician-complacency]: Budzyń et al., ["Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study"](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract), *The Lancet Gastroenterology & Hepatology* (August 2025). Adenoma detection rate in non-AI exams fell from 28.4% to 22.4% (6 percentage points) after months of routine AI-assisted colonoscopy, a 20% relative decrease.
 
 [^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Only 21% of executives report complete visibility into agent permissions.
 
@@ -272,3 +272,7 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 [^dynatrace-pulse]: Dynatrace, ["The Pulse of Agentic AI in 2026"](https://www.dynatrace.com/info/reports/the-pulse-of-agentic-ai-in-2026/) (March 2026). Global survey of 919 senior leaders at enterprises with $100M+ annual revenue, conducted by Y2 Analytics. 50% have production deployments; 44% rely on manual methods to review agent communication flows; top validation methods include data quality checks (50%), human review of outputs (47%), and monitoring for drift (41%).
 
 [^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 6 commercial AI agent security tools across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.
+
+[^trust-for-agentic]: Shane Deconinck, ["Trust for Agentic AI"](https://shanedeconinck.be/posts/trust-for-agentic-ai/) (January 2026).
+
+[^boardroom-questions]: Shane Deconinck, ["Agentic AI: Curated Questions for the Boardroom"](https://shanedeconinck.be/posts/agentic-ai-curated-questions-for-the-boardroom/) (February 2026).

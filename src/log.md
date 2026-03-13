@@ -1,5 +1,72 @@
 # Session Log
 
+## 2026-03-13 22:00 UTC: Proactive Verification of reliability-evaluation.md (Session 98)
+
+THOUGHT: Session 98. Pre-RSAC plateau session 33. No new developments. Proceeding with reliability-evaluation.md verification.
+THOUGHT: Verifying reliability-evaluation.md. 20+ claims. Shane quotes are highest risk. Checking trust-inversion, anthropic-data, agent-profiler posts.
+THOUGHT: Found three issues: fabricated "compliance not debugging" attribution, compressed policy/architecture quote, vague Lancet citation.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No new feedback files. Agent messages: Sapere Aude's introduction.md feedback already addressed in Session 87's response (confirmed from a2a-messages).
+- Step 6 reassessment: pre-RSAC plateau continues into session 98 (33 consecutive sessions, 65-98). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST AI agent identity March 2026. New findings: OpenAI Codex Security (March 6, scanned 1.2M commits, 10,561 high-severity findings), Bedrock Data MCP-based "sensitive data sentinel" for RSAC, Bloomberg reports OpenClaw driving China's agentic AI adoption and raising security concerns. All either already covered or tangential. Codex Security is notable but belongs in supply-chain-security if anywhere; holding for post-RSAC assessment.
+- **Proactively verified reliability-evaluation.md claims.** 20+ external claims checked. Found three issues: one Shane attribution fabrication, one quote compression with wrong footnote, one vague citation.
+
+**What I verified and found correct:**
+- Reliability science paper (arxiv 2602.16666): four dimensions (consistency, robustness, predictability, safety) confirmed. Authors: Rabanser, Kapoor, Kirgis, Liu, Utpala, Narayanan. February 18, 2026.
+- SWE-bench Verified: 500 human-validated samples from open-source repos. Confirmed.
+- τ-bench from Sierra: dynamic settings with real-time interaction. Confirmed.
+- GAIA Level 3 top score 61%: confirmed via HAL leaderboard.
+- HAL from Princeton: accepted to ICLR 2026. Confirmed.
+- NIST AI 800-2: public comment through March 31, 2026. Confirmed.
+- LangChain 2026 State of AI Agents: 1,340 respondents (survey November-December 2025), 57% in production, 32% quality barrier. Confirmed.
+- Cisco State of AI Security 2026: 83% plan agentic AI, 29% feel ready to do so securely. Confirmed from Cisco blog.
+- Dynatrace Pulse of Agentic AI 2026: 919 senior leaders, 44% manual methods for agent communication review. Confirmed.
+- NIST AI 800-4: March 2026, practitioner workshops and literature review. Confirmed from NIST news release.
+- AgentShield benchmark: 537 test cases, 6 products, scores ~39 to ~98, tool abuse weak. Confirmed from GitHub and Hacker News.
+- OpenAI Promptfoo acquisition: March 9, 2026, 350,000+ developers. Confirmed from OpenAI blog.
+- Splunk CISO Report: 650 CISOs, 83% hallucination concern, 86% social engineering fear, 82% detection speed improvement. Confirmed.
+- Bainbridge "Ironies of Automation" (1983): standard reference. Correct.
+- Don Norman "The Problem of Automation" (1990): standard reference. Correct.
+- Shane's trust-inversion post quotes: "Context engineering increases reliability...Governance manages risk" (paraphrase, matches blog lines 61-63), "As reliability improves, the risk might grow. When an agent gets things right 99% of the time, we stop watching" (exact match, blog line 65), Don Norman blockquote "Over fifty years..." (exact match, blog line 67), "Human in the loop is not a reliable safety net" (exact match, blog line 72).
+- Shane's anthropic-data post: "after twenty correct outputs, who reviews the twenty-first carefully?" (exact match, blog line 62), "code committed under a developer's account looks the same whether the human or the agent wrote it" (exact match, blog line 62).
+- Shane's agent-profiler post: "Infrastructure is a gate, not a slider" (exact match, blog line 71), "73% involve human oversight of some form" (exact match, blog line 80).
+
+**What I changed:**
+- **reliability-evaluation.md (line 74)**: Replaced "Shane's framing of audit trails 'designed for compliance, not just debugging' applies here[^pac-framework]" with a reference to Shane's actual audit trail illustration from trust-for-agentic-ai: "the audit trail has no way to capture" that the agent made the decision. Added new footnote [^trust-for-agentic].
+- **reliability-evaluation.md (line 141)**: Replaced compressed "Policy says 'don't.' Architecture says 'can't.' The difference matters[^pac-framework]" with Shane's actual words from his boardroom-questions post: "Policy says what agents shouldn't do. Architecture limits what they can do, regardless of what they try." Added new footnote [^boardroom-questions].
+- **reliability-evaluation.md (line 115)**: Changed "6% lower" to "6 percentage points (a 20% relative decrease)" for precision.
+- **reliability-evaluation.md (footnote [^clinician-complacency])**: Replaced vague "Referenced in industry analysis" with the actual source: Budzyń et al., The Lancet Gastroenterology & Hepatology (August 2025), with specific numbers (28.4% to 22.4%).
+- **gaps.md**: Added new observation "Reliability Evaluation: Proactive Verification" documenting the verification results and three issues fixed. Updated session number to 98.
+
+**What I considered but did not do:**
+- Adding OpenAI Codex Security to the book. While notable (1.2M commits scanned, 10,561 high-severity findings), it's a code vulnerability scanner, not directly about agent trust infrastructure. Could fit in supply-chain-security.md but the chapter already covers the pattern of evaluation being absorbed into platforms (via the Promptfoo acquisition). Holding for post-RSAC assessment when the full picture of announcements is available.
+- Adding Bedrock Data's MCP-based "sensitive data sentinel" for AI agent tool chains. Pre-RSAC press release. Will be more useful to cover after the actual RSAC session delivers content.
+- Adding Bloomberg's China/OpenClaw report (March 12). Already covered in supply-chain-security.md.
+
+**What I noticed:**
+- The attribution pattern continues but is milder in this chapter. The "designed for compliance, not just debugging" framing was Ghosty's synthesis attributed to the PAC Framework, but the PAC Framework page is just a stub with no textual content. Unlike previous chapters where blockquotes were fabricated, this chapter used inline attribution ("Shane's framing of...") which is less egregious but still incorrectly implies Shane coined the phrase.
+- The quote compression issue ("Policy says 'don't.' Architecture says 'can't.'") is a new variant: taking Shane's actual words and making them pithier. Shane's version is longer but more precise. The compressed version loses the nuance of "regardless of what they try" which is the key operational point.
+- The vague citation issue is different from the attribution pattern. It's not misattribution; it's under-citation. The study exists, the numbers are correct, but the footnote was essentially "trust me." Replacing with the actual Lancet reference makes it verifiable.
+- Reliability-evaluation.md is otherwise very well sourced. 20+ claims verified cleanly. The Shane quotes in this chapter are mostly exact matches or close paraphrases, unlike earlier chapters where fabricated blockquotes were common. The proactive verification approach has improved Ghosty's quote discipline in later chapters.
+- Remaining unverified chapters: human-agent-collaboration, shadow-agent-governance, multi-agent-trust, regulatory-landscape, context-infrastructure.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview agentic AI, MCP security March 2026, NIST AI agent identity March 2026, colonoscopy AI deskilling Lancet, AgentShield benchmark March 2026, Cisco State of AI Security 2026, NIST AI 800-4 March 2026, LangChain State of AI Agents 2026, OpenAI Codex Security March 2026, Bedrock Data RSAC 2026.
+- Shane's blog: "AI Agents Need the Inverse of Human Trust" (February 3, 2026), "Early Indicators of Agent Use Cases: What Anthropic's Data Shows" (February 19, 2026), "Untangling Autonomy and Risk for AI Agents" (February 26, 2026), "Trust for Agentic AI" (January 2026), "Agentic AI: Curated Questions for the Boardroom" (February 2026).
+- All Shane blog .md files searched for "designed for compliance": zero matches.
+- PAC Framework from trustedagentic.ai (confirmed: framework.md contains only frontmatter, no textual content).
+- Budzyń et al., The Lancet Gastroenterology & Hepatology (August 2025).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session request deadline March 20 (7 days): track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): track announcements.
+6. Continue proactive verification: human-agent-collaboration.md next.
+7. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 20:00 UTC: Proactive Verification of agent-payments.md (Session 97)
 
 THOUGHT: Session 97. Pre-RSAC plateau session 32. No new developments. Proceeding with agent-payments.md verification.
