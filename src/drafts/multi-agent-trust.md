@@ -134,7 +134,7 @@ Both approaches enforce what the PAC Framework calls decreasing authority in del
 
 ## The Orchestration Governance Gap
 
-Deloitte's 2026 prediction is stark: only one in five companies has a mature governance model for agentic AI, even as 75% plan to invest in it by year's end.[^2] Forrester goes further: an agentic AI deployment will cause a public breach leading to employee dismissals in 2026, with cascading multi-agent failures as the primary mechanism.[^forrester] For multi-agent orchestration, the governance gap is wider still.
+Deloitte's 2026 findings are stark: only one in five companies has a mature governance model for agentic AI, even as 75% plan to invest in it by year's end.[^2][^deloitte-stateofai] Forrester goes further: an agentic AI deployment will cause a public breach leading to employee dismissals in 2026, with cascading multi-agent failures as the primary mechanism.[^forrester] For multi-agent orchestration, the governance gap is wider still.
 
 Current orchestration frameworks (LangGraph, CrewAI, AutoGen, and their successors) focus on capability: how to decompose tasks, assign agents, and combine results. They are good at the Potential pillar. They are thin on Accountability and Control.
 
@@ -193,13 +193,13 @@ The architecture uses dual firewalls at every trust boundary:
 
 **Language Converter Firewall (inbound).** Before an incoming message reaches the agent, it is converted from unconstrained natural language into a closed, domain-specific, structured protocol. The conversion uses deterministic validation: only well-formed fields pass through. Persuasive framing, urgency tactics, embedded instructions, and social engineering attempts are structurally eliminated because they cannot be expressed in the validated protocol format. This is not prompt filtering (which tries to detect malicious patterns in natural language). It is protocol conversion (which makes malicious patterns inexpressible).
 
-The results across 864 attacks spanning three domains are significant. Privacy attack success rates dropped from 84% to 10% for GPT-5 and from 74% to 6% for Claude 3.7 Sonnet. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
+The results across 864 attacks spanning three domains are significant. Averaged across domains, privacy attack success rates dropped from 85% to 10% for GPT-5 and from 73% to 17% for Claude Sonnet 4. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
 
 The architecture has an open-source implementation and both firewalls operate in a trusted environment isolated from external input, applying domain-specific rules learned automatically from demonstrations. This means the firewalls do not need manual rule engineering for each new domain: they learn what constitutes legitimate task-context content from examples of correct interactions.
 
 For the PAC Framework, this is the Control pillar applied at the communication layer. The Information Firewall enforces data minimization (the agent cannot leak what the firewall does not transmit). The Language Converter Firewall enforces input validation at trust boundaries (the agent cannot follow instructions the firewall cannot express in the validated protocol). Together, they address the two surfaces that the AgenticCyOps analysis identified as accounting for all documented multi-agent attack vectors: tool orchestration and memory management. The communication channel between agents is where both attack types enter.
 
-The practical limitation is domain specificity. Each domain (travel booking, financial transactions, healthcare coordination) needs its own structured protocol definition. The automation of protocol learning from demonstrations reduces this cost but does not eliminate it. For organizations deploying multi-agent systems across many domains, the protocol engineering overhead is a real consideration. But within a specific domain, the 84%-to-10% privacy attack reduction and 60%-to-3% security attack reduction represent a qualitative improvement in trust boundary enforcement.
+The practical limitation is domain specificity. Each domain (travel booking, financial transactions, healthcare coordination) needs its own structured protocol definition. The automation of protocol learning from demonstrations reduces this cost but does not eliminate it. For organizations deploying multi-agent systems across many domains, the protocol engineering overhead is a real consideration. But within a specific domain, the privacy and security attack reductions represent a qualitative improvement in trust boundary enforcement.
 
 ### Delegation Registries
 
@@ -271,7 +271,7 @@ This composition is not yet implemented end-to-end. But the pieces are designed 
 
 ## When Agents Fail: Incident Response for Multi-Agent Systems
 
-The Coalition for Secure AI (CoSAI) released its AI Incident Response Framework, Version 1.0, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse.
+The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse.
 
 For multi-agent systems, incident response differs from single-agent failures in three ways:
 
@@ -357,7 +357,7 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^13]: Nicola Gallo, PIC (Provenance, Identity, Continuity) paradigm, presented at LFDT Belgium meetup, March 2026. Documented in the Cross-Organization Trust chapter.
 
-[^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework, Version 1.0," OASIS Open Project, 2026. Includes CACAO-standard playbooks for AI-specific incident categories.
+[^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework," OASIS Open Project, 2026. Pre-release available on GitHub (cosai-oasis/ws2-defenders); formal V1.0 approval pending. Includes CACAO-standard playbooks for AI-specific incident categories.
 
 [^tsp]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Wenjing Chu (Futurewei/Trust over IP), Trust Spanning Protocol presentation at LFDT Belgium meetup, March 3, 2026. TSP specification: trustoverip.github.io/tswg-tsp-specification.
 
@@ -369,6 +369,8 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (shared memory), C4 (tool arguments), C5 (internal reasoning), C6 (log files), C7 (external API calls). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
 
-[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026. Microsoft Research. Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Privacy attack success reduction: GPT-5 from 84% to 10%, Claude 3.7 Sonnet from 74% to 6%. Security attack success reduction: from 60% to 3%.
+[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026 (v6). Microsoft Research. Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Cross-domain average privacy attack success reduction: GPT-5 from 84.68% to 10.20%, Claude Sonnet 4 from 72.89% to 16.77%. Security attack success reduction: from 60% to 3%.
+
+[^deloitte-stateofai]: Deloitte, "State of AI in the Enterprise, 2026" (surveyed 3,000+ business and IT leaders). The 21% governance maturity figure comes from this report, not the TMT Predictions. The 75% investment plan and $8.5 billion market figure are from the TMT Predictions [^2].
 
 [^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, Securiti, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Anthropic documented Claude Opus 4.6 acquiring authentication tokens from its environment. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
