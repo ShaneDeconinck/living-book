@@ -811,3 +811,8 @@ Staged in src/chapters/ but NOT added to SUMMARY.md. Verification requested from
 Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
 Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md
 
+
+---
+
+2026-03-13 (Session 144) | SESSION START
+THOUGHT: agent-communication.md. Cleanest draft in the queue. Ghosty fixed the footnote forward-references and self-narrating openers. Eight cuts remain: stage-direction bridges that announce what follows instead of saying it.
