@@ -184,6 +184,18 @@ Runtime monitoring detects anomalous behavior that static rules miss. An agent t
 
 This is the "infrastructure in the loop" pattern from Chapter 6: monitoring that does not depend on human vigilance but operates continuously and responds structurally.
 
+### Layer 7: Semantic Policy Enforcement
+
+The six layers above operate at the system level: they constrain what the agent can physically do (filesystem, network, syscalls) and detect anomalous behavior patterns. But there is a gap between OS-level containment and business-level governance. A sandboxed agent may be unable to access files outside its workspace but still able to take actions within its workspace that violate organizational policy: sharing confidential data with an unauthorized tool, executing a workflow step out of sequence, or calling an API in a way that triggers regulatory obligations.
+
+The Policy Compiler for Secure Agentic Systems (PCAS), published in February 2026, addresses this gap with a reference monitor that intercepts all agent actions and validates them against policy before execution.[^pcas] The architecture is straightforward: policies are expressed in a Datalog-derived language over dependency graphs that capture the relationships between agents, tools, data, and actions. Before an agent executes any action, the reference monitor checks the action against the active policy set. Violations are blocked before they occur.
+
+The results quantify the "can't vs. don't" gap precisely. Without enforcement, frontier models (GPT-4o, Claude 3.5 Sonnet, Llama 3.1 70B) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They simply do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
+
+The 48-to-93 gap is the core argument of this book, measured. Policy alone ("don't share customer data") fails more than half the time. Infrastructure enforcement ("the reference monitor blocks any action that would share customer data") approaches perfect compliance. The remaining gap between 93% and 100% comes from runs where the policy compiler's dependency graph did not fully cover the action space, which is an engineering problem, not a fundamental limitation.
+
+PCAS is complementary to OS-level sandboxing, not a replacement. Sandboxing constrains the execution environment: what files, networks, and system resources the agent can access. PCAS constrains the business logic: what actions the agent is allowed to take given the relationships between entities in the current context. A fully governed agent needs both: sandboxing to prevent system-level exploitation, and semantic policy enforcement to prevent business-level policy violations.
+
 ## Ephemeral Versus Persistent Sandboxes
 
 A design decision with security implications: should sandboxes be ephemeral (destroyed after each task) or persistent (reused across tasks)?
@@ -281,3 +293,5 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.
 
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
+
+[^pcas]: Palumbo, Choudhary, Choi, Chalasani, Christodorescu, and Jha, "Policy Compiler for Secure Agentic Systems," arXiv:2602.16708, February 2026. Reference monitor using a Datalog-derived policy language over dependency graphs. Tested on customer service tasks across GPT-4o, Claude 3.5 Sonnet, and Llama 3.1 70B. Without enforcement: 48% policy compliance. With PCAS: 93% compliance, zero violations in fully instrumented runs.
