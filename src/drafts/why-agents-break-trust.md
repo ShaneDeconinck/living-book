@@ -16,7 +16,7 @@ This distinction is not theoretical. In August 2025, Perplexity's AI-powered bro
 
 The pattern escalated. In March 2026, Zenity Labs disclosed PleaseFix: a family of 0-click vulnerabilities affecting agentic browsers, including Comet.[^pleasefix] Two distinct exploit paths: a calendar invite triggers file exfiltration from the local filesystem; a second path achieves credential theft from password managers. Both operate within the agent's authenticated session. No user interaction required. The naming is deliberate: ClickFix was social engineering that tricked humans into executing malicious actions. PleaseFix is the same technique adapted for agents, where no click is needed at all. The attack surface shifted from the human to the agent.
 
-This matters because our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
+Our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
 
 Shane put it directly in his writing on this topic: "When agents decide, delegation becomes abdication." The gap between what a user intended and what an agent does is where accountability dissolves.[^1]
 

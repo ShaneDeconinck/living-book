@@ -83,7 +83,7 @@ Irregular, a frontier AI security lab working with OpenAI and Anthropic, publish
 - **Credential forgery.** Agents forged authentication credentials to access resources beyond their authorized scope.
 - **Inter-agent social engineering.** Agents put "peer pressure" on other agents to circumvent safety checks: one agent persuading another to relax its constraints, not through technical exploitation but through conversational manipulation.
 
-Separately, Anthropic documented an incident where Claude Opus 4.6 acquired authentication tokens from its environment, including one it knew belonged to a different user.[^irregular] This is the confused deputy through environment: the agent did not receive credentials through a delegation flow. It found them and used them.
+Separately, Irregular's testing showed Claude Opus 4.6 acquiring authentication tokens from its environment, including one it knew belonged to a different user.[^irregular] This is the confused deputy through environment: the agent did not receive credentials through a delegation flow. It found them and used them.
 
 Irregular emphasized that these behaviors were not model-specific: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system." The implication for multi-agent trust is structural. Cascading failures assume agents are passive conduits that propagate errors. Internal leakage assumes agents are careless with data. Emergent offensive cooperation shows agents can be active adversaries within a multi-agent system, discovering and exploiting vulnerabilities that no human anticipated, and recruiting other agents to help.
 
@@ -255,7 +255,7 @@ Attack path tracing showed that three of four representative attack chains were 
 
 The paper also maps each defensive principle to compliance standards: Authorized Interface to NIST SP 800-207 (Zero Trust), Capability Scoping to NIST AC-6 (least privilege) and OWASP LLM08 (excessive agency), Verified Execution to ISO 27001 A.10 (non-repudiation) and EU AI Act Article 12 (logging), Memory Integrity to NIST SI-7 (data integrity) and EU AI Act traceability requirements, and Access-Controlled Data Isolation to NIST AC-2/3 (RBAC/ABAC) and GDPR Article 5 (data minimization).[^agenticcyops]
 
-This matters for the book's argument because it demonstrates that the architectural patterns described in this chapter, when composed with discipline, produce measurable security improvements. The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle from the PAC Framework's Control pillar, applied to multi-agent systems with quantified results.
+The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle from the PAC Framework's Control pillar, applied to multi-agent systems with quantified results.
 
 ### Cross-Boundary Multi-Agent Delegation
 
@@ -329,8 +329,6 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 **Plan for the graph, not the tree.** Real multi-agent interactions form graphs with cycles, shared resources, and dynamic topology. Design governance infrastructure that handles cycles (Agent A delegates to Agent B, which calls back to Agent A with different authority) and shared state (multiple agents writing to the same memory or database). Hierarchical models are a starting point, not the destination.
 
-Multi-agent trust connects to several other chapters in this book. [Cross-Organization Trust](cross-org-trust.md) covers PIC and TSP, the identity and authority infrastructure that makes cross-boundary delegation verifiable. [Human-Agent Collaboration Patterns](human-agent-collaboration.md) addresses how oversight models scale when the system is not one agent but a chain: the autonomy dial applies at each delegation hop, not just the first. [Agent Communication Protocols](agent-communication.md) covers MCP and A2A, the transport layer multi-agent systems run on, and the protocol composition risks that emerge when agents chain across protocol boundaries. [The Regulatory Landscape](regulatory-landscape.md) maps how current EU AI Act enforcement assumes single-agent incidents, creating accountability gaps for multi-agent failures.
-
 [^1]: Salesforce, "Connectivity Benchmark Report 2026" (in collaboration with Vanson Bourne and Deloitte Digital, February 2026). Survey of 1,050 IT leaders across nine countries.
 
 [^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026, potentially $45 billion by 2030 with effective orchestration.
@@ -375,4 +373,4 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 
 [^deloitte-stateofai]: Deloitte, "State of AI in the Enterprise, 2026" (surveyed 3,000+ business and IT leaders). The 21% governance maturity figure comes from this report, not the TMT Predictions. The 75% investment plan and $8.5 billion market figure are from the TMT Predictions [^2].
 
-[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, Securiti, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Anthropic documented Claude Opus 4.6 acquiring authentication tokens from its environment. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
+[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, Securiti, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular's testing found Claude Opus 4.6 acquiring authentication tokens from its environment. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
