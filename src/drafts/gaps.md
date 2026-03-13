@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 60)
+## Observations (Updated 2026-03-13, Session 61)
+
+### Agent Security Tooling Has a Systematic Blind Spot
+
+The AgentShield benchmark (March 2026) is the first open, reproducible evaluation of commercial AI agent security products: 6 products, 537 test cases, 8 categories. The headline finding is not the score spread (~39 to ~98 composite) but the pattern within it: products that catch over 95% of prompt injection attempts miss most unauthorized tool calls. Tool abuse detection is weak across the board.
+
+This validates a structural concern the book has been circling: the industry's security investment is concentrated on prompt-level attacks (the vector that dominates academic research and media coverage) while the operationally more dangerous vector (legitimate tool calls with legitimate credentials, a.k.a. the confused deputy through infrastructure) is underdefended. The AgentShield data turns this from an architectural argument into an empirical finding. Added to the Reliability, Evaluation chapter.
+
+The benchmark's methodology is also noteworthy: open-source test corpus, auditable scoring, and a commit-reveal protocol for cryptographic result verification. This addresses the evaluation integrity problem that the Promptfoo acquisition raised: when the entity being evaluated controls the evaluation environment, independent verification is not optional.
 
 ### Four IETF Drafts in Four Weeks: OAuth Agent Authorization Is Accelerating
 

@@ -181,6 +181,16 @@ The Accountability pillar requires that evaluation be independent enough to be t
 
 The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). The two are complementary, not substitutes. Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
 
+### The Tool Abuse Blind Spot
+
+The AgentShield benchmark, released in March 2026 as the first open, reproducible evaluation of commercial AI agent security products, exposes a systematic gap in the security tooling layer itself.[^agentshield] Testing six commercial products across 537 test cases in eight categories, the benchmark found composite scores ranging from approximately 39 to 98: a wide spread that reflects genuine capability differences. But the most important finding cuts across all products: tool abuse detection is weak across the board. Several products that catch over 95% of prompt injection attempts miss most unauthorized tool calls.
+
+This matters for the book's argument. The industry has built increasingly sophisticated defenses against prompt injection: the attack vector that dominates the threat taxonomy. But agents do not just process prompts. They invoke tools. An agent that is fully protected against prompt injection but not against unauthorized tool use is protected against one attack vector while leaving the more operationally dangerous one open: the confused deputy operating through legitimate tool calls with legitimate credentials.
+
+The benchmark's methodology is itself notable. The test corpus, scoring methodology, and adapter code are open source and auditable. AgentShield includes a commit-reveal protocol that allows vendors to run the benchmark locally on proprietary models while cryptographically proving result legitimacy. This addresses the evaluation integrity problem: when the entity being evaluated controls the evaluation environment, independent verification matters.
+
+For the PAC Framework, AgentShield validates a specific claim: evaluation must be multi-dimensional. An agent security product that scores 98% on prompt injection and 40% on tool abuse provides a false sense of security. The governance question is not "is this agent protected?" but "protected against which threat categories, and at what coverage level?" Infrastructure at I4 (Authorized) requires that evaluation cover the full attack surface, not just the most studied subset.
+
 ## Mapping to PAC
 
 The reliability and evaluation landscape maps to all three PAC pillars:
@@ -256,3 +266,5 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 [^splunk-ciso]: Splunk (Cisco), ["The CISO Report: From Risk to Resilience in the AI Era"](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/splunk-report-agentic-ai-takes-center-stage-in-cisos-path-to-digital-resilience.html) (February 2026). Survey of 650 global CISOs. 83% cite hallucination impacts as greatest agentic AI concern. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed.
 
 [^nist-benchmarks]: NIST CAISI, ["Practices for Automated Benchmark Evaluations of Language Models"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf) (NIST AI 800-2, Initial Public Draft, January 2026). Public comment period through March 31, 2026.
+
+[^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 6 commercial AI agent security tools across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.

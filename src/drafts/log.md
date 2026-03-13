@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 21:00 UTC: AgentShield Benchmark Integration (Session 61)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state: all 15 chapters complete, sourced through March 13. No feedback files present.
+- Read PAC Framework fresh from trustedagentic. Confirmed 19 questions, three pillars, six governance dimensions. Unchanged since March 7.
+- Step 5 reassessment: the book is comprehensive. RSAC (March 23-26) is 10 days away and is the next major event. Searched broadly for new developments. Found one significant new source not in the book: the AgentShield benchmark.
+- Web searched across agent security, MCP vulnerabilities, RSAC 2026, AI agent identity standards, EU AI Act enforcement, OWASP hackathon, and OpenClaw/SOUL.md. Most findings already covered.
+
+**What I changed:**
+- **reliability-evaluation.md**: Added new subsection "The Tool Abuse Blind Spot" after the "Evaluation Is Being Absorbed into the Platform" section. The AgentShield benchmark (March 2026) is the first open, reproducible benchmark of commercial AI agent security products: 6 products, 537 test cases, 8 categories. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong. Products catching 95%+ of prompt injection miss most unauthorized tool calls. This validates the book's argument that evaluation must be multi-dimensional. The benchmark's commit-reveal protocol for cryptographic result verification addresses the evaluation integrity problem. Connected to the PAC Framework's I4 requirement for full attack surface coverage. Added footnote.
+- **gaps.md**: Updated session number to 61. Added observation "Agent Security Tooling Has a Systematic Blind Spot" covering the AgentShield benchmark findings and their implications for the book's confused deputy argument.
+
+**What I considered but did not do:**
+- Adding the TRiSM for Agentic AI review paper (ScienceDirect, 2026). This is a comprehensive academic review proposing CSS (Component Synergy Score) and TUE (Tool Utilization Efficacy) metrics for multi-agent systems. However, the book already covers the multi-agent trust landscape more concretely through Galileo's cascading failure research, AgenticCyOps' empirical results, and AgentLeak's leakage taxonomy. The TRiSM review adds framework vocabulary but no new empirical findings.
+- Adding the ACM Computing Surveys "AI Agents Under Threat" paper. The threat taxonomy is comprehensive but the book's treatment through OWASP Top 10, MCPTox, and incident analysis is more practitioner-oriented.
+- Updating the NIST CAISI workshop timeline. Already fully covered in regulatory-landscape.md (March 20 submission deadline, April sessions in healthcare/finance/education) and building-the-edge.md convergence timeline.
+- Adding OpenClaw SOUL.md vulnerability details. Already covered in shadow-agent-governance chapter and supply-chain-security chapter through the ClawJacked CVE, ClawHavoc campaign, and 1,184 malicious skills.
+- Writing a new chapter. The book is at 15 chapters, all complete. The highest-impact work until RSAC is targeted strengthening, not expansion.
+
+**What I noticed:**
+- The AgentShield finding about tool abuse detection weakness is the most architecturally significant result this session, because it provides empirical evidence for a pattern the book has argued theoretically: the confused deputy problem operating through legitimate tool calls is harder to detect than prompt injection. The industry has optimized for the visible attack (injection) while leaving the structural attack (credential misuse through tools) underdefended. This connects to Shane's "can't vs. don't" framing: prompt injection defenses are "don't" controls (detecting and blocking malicious input), while tool abuse prevention requires "can't" controls (scoped credentials that structurally prevent unauthorized actions regardless of what the prompt says).
+- The book is in a pre-RSAC plateau. All major sources through March 13, 2026 are integrated. No new Shane posts. No framework changes. The next major inflection will be RSAC (March 23-26): Innovation Sandbox winner, Kurtz keynote, OWASP hackathon findings, product announcements. The session after RSAC should be a significant content update.
+- The EU Digital Omnibus proposal (deferring Annex III high-risk obligations to December 2027) is already in the book. Web searches confirmed no progress on adoption. The prudent guidance remains: plan for August 2026 as the binding deadline.
+
+**Sources used:**
+- AgentShield benchmark (github.com/doronp/agentshield-benchmark, March 2026): 6 commercial products, 537 test cases, composite scores ~39 to ~98.
+- Adversa AI, "Top Agentic AI Security Resources, March 2026" (adversa.ai): confirmed AgentShield as new, other resources already covered.
+- NIST, AI Agent Standards Initiative and CAISI workshops (checked: already covered).
+- Microsoft, "Secure agentic AI for your Frontier Transformation" (March 9, 2026, checked: already covered).
+- OWASP GenAI Security Summit at RSAC 2026 (checked: event not yet occurred).
+- EU AI Act Digital Omnibus (checked: no adoption progress).
+- Shane's blog (checked: no new posts since Session 58).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. NIST CAISI listening session participation deadline is March 20 (7 days).
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results and AgentShield data.
+
 ## 2026-03-13 19:30 UTC: Pre-RSAC Plateau and Quality Maintenance (Session 60)
 
 **What I did:**
