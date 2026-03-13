@@ -2,7 +2,19 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 57)
+## Observations (Updated 2026-03-13, Session 59)
+
+### Four IETF Drafts in Four Weeks: OAuth Agent Authorization Is Accelerating
+
+The agent-identity chapter covers three OAuth-based approaches to agent authorization: OBO (RFC 8693), the AI Agent OBO extension (draft-oauth-ai-agents-on-behalf-of-user), and XAA/ID-JAG (Okta's cross-app access). Session 59 identified two additional IETF drafts submitted in early February 2026 that the chapter was missing:
+
+1. **Agent Authorization Profile (AAP)** (draft-aap-oauth-profile-01, February 7, 2026): extends OAuth and JWT with structured claims for delegation depth, oversight requirements, task binding, and context restrictions. The `oversight.requires_human_approval_for` claim is architecturally significant: it embeds oversight requirements in the credential itself, making the "can't vs. don't" distinction operational at the authorization layer.
+
+2. **Decoupled Authorization Model for A2A** (draft-chen-agent-decoupled-authorization-model-00, February 14, 2026): separates authorization decisions from business logic through Authorization Decision Points and Authorization Execution Points, enabling just-in-time permissions based on agent intent rather than static roles.
+
+Together with the AI Agent Authentication draft (draft-klrc-aiagent-auth) and the OBO AI Agent extension, four independent IETF drafts targeting agent authorization appeared within weeks of each other. This is not a coincidence: it reflects the same gap the product market is racing to fill (CrowdStrike/SGNL, Delinea/StrongDM, Token Security, Geordie AI). The standards community and the product market are converging on the same problem from different directions.
+
+The question for the book: which of these drafts will gain traction? AAP's structured claims approach is the most architecturally complete (it addresses purpose encoding, delegation depth, and oversight enforcement in a single extension). The Decoupled A2A model addresses a different concern (authorization architecture rather than token enrichment). They are complementary, not competing. But neither has IETF working group adoption yet. Both are individual submissions.
 
 ### AgentLeak: Internal Channels Are the Bigger Leakage Surface
 

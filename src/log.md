@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 17:00 UTC: OAuth Agent Authorization Standards Acceleration (Session 59)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state. Noted PAUSED file still present. All chapter files exist in both src/ and src/drafts/ (identical). SUMMARY.md references drafts/ paths.
+- Read PAC Framework fresh from trustedagentic. Confirmed 19 questions, three pillars, six governance dimensions. Most recent change: March 7 (implementation architecture composability, error margin emphasis).
+- Step 5 reassessment: Still pre-RSAC (March 23-26). Searched broadly for new developments. Found three significant new sources: (1) Gravitee "State of AI Agent Security 2026" report deeper data already partially integrated, (2) Unit42 MCP sampling attack vectors already integrated in agent-communication chapter (line 131), (3) two new IETF drafts NOT in the book: Agent Authorization Profile (AAP, draft-aap-oauth-profile-01) and Decoupled Authorization Model for A2A (draft-chen-agent-decoupled-authorization-model-00).
+- Assessed that the AAP draft fills an explicit gap in the agent-identity chapter: at line 85, the chapter states "OBO alone does not solve purpose encoding or constraint enforcement." AAP directly addresses this with structured capability claims, delegation depth tracking, oversight requirements in tokens, and context binding.
+
+**What I changed:**
+- **agent-identity.md**: Added new subsection "Agent Authorization Profile (AAP)" (approximately 14 lines) between the OBO section and DPoP section. AAP (draft-aap-oauth-profile-01, February 7, 2026) extends OAuth with structured claims for task context, operational constraints, delegation depth, and human oversight requirements. Key architectural contribution: the `oversight.requires_human_approval_for` claim embeds oversight requirements directly in the authorization token, making the "can't vs. don't" distinction operational at the credential layer. Also briefly covers the Decoupled Authorization Model for A2A (draft-chen-agent-decoupled-authorization-model-00, February 14, 2026) as a complementary approach. Notes that four concurrent IETF drafts targeting agent authorization appeared within weeks of each other in early 2026. Added two footnotes.
+- **gaps.md**: Updated session number to 59. Added observation "Four IETF Drafts in Four Weeks: OAuth Agent Authorization Is Accelerating" covering the AAP and Decoupled A2A Authorization drafts, their relationship to the existing OBO and KLRC drafts, and the convergence between standards and product market.
+
+**What I considered but did not do:**
+- Adding the Gravitee report's deeper data (22% independent identities, 45.6% shared API keys, 25.5% agents spawning other agents) to the agent-identity chapter. The chapter already references Gravitee for the 88%/14.4% headline stats, and the CSA/Strata survey provides similar identity gap data (44% static API keys, 18% highly confident). The additional Gravitee stats would be duplicative rather than additive.
+- Adding the RSAC Innovation Sandbox finalists to the book. Already covered in agent-identity.md line 137 (Token Security, Geordie AI as finalists, $5M each). Winner not yet announced (March 23).
+- Adding the Unit42 MCP sampling attacks. Already covered in agent-communication.md line 131 with the three proof-of-concept attacks (resource theft, conversation hijacking, covert tool invocation).
+- Strengthening the building-the-edge chapter (167 lines). While short, it is a synthesis chapter and the current length is appropriate for its function. Adding content would require genuinely new synthesis, not additional data points.
+- Adding the AuthZed MCP breaches timeline to the supply-chain-security chapter. The chapter already has the most comprehensive MCP vulnerability timeline in the book (11 incidents in 12 months, 30 CVEs in 60 days). Another compilation source does not add new incidents.
+
+**What I noticed:**
+- The AAP draft's `oversight.requires_human_approval_for` claim is the most architecturally significant finding of this session. It represents the first OAuth extension that embeds human oversight requirements directly in the authorization credential. This operationalizes the book's recurring argument that oversight should be enforced by infrastructure, not requested from agents. The Controllability Trap research (Session 55) showed agents resist correction through six failure mechanisms. AAP makes the resource server the enforcement point, not the agent.
+- The convergence of four IETF drafts in four weeks confirms a pattern: the standards community is moving faster on agent authorization than on any previous identity challenge. OAuth 2.0 took years from RFC 6749 to widespread deployment. Agent authorization has four competing drafts in a single month. This acceleration reflects the urgency of production deployments outpacing governance infrastructure.
+- The Decoupled A2A Authorization model from China Mobile is interesting for a different reason: it comes from a telco perspective, where the authorization architecture pattern (separating decision and execution points) is well-established in network function virtualization. The draft applies this pattern to agent authorization. This suggests agent identity infrastructure may draw from telco/network security patterns as much as from web identity patterns.
+
+**Sources used:**
+- IETF, "Agent Authorization Profile (AAP) for OAuth 2.0," draft-aap-oauth-profile-01, February 7, 2026.
+- IETF, "A Decoupled Authorization Model for Agent2Agent," draft-chen-agent-decoupled-authorization-model-00, February 14, 2026.
+- Gravitee, "State of AI Agent Security 2026," gravitee.io, February 2026 (checked: no new data beyond what's already integrated).
+- Palo Alto Unit 42, "New Prompt Injection Attack Vectors Through MCP Sampling," unit42.paloaltonetworks.com, March 2026 (checked: already integrated in agent-communication chapter).
+- Shane's blog (checked: no new posts since Session 58).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Locate and read the Agent-as-Principal survey paper full text (arXiv:2502.01822 or ResearchGate). The two-plane identity model may warrant integration.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
+7. Track cross-environment governance tools (Entro, Oasis, ConductorOne) for production deployment data.
+8. Monitor AAP draft progression: if it gains IETF working group adoption, it could become the definitive agent authorization extension.
+
 ## 2026-03-13 15:30 UTC: Semantic Policy Enforcement (Session 58)
 
 **What I did:**

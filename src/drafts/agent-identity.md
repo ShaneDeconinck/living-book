@@ -84,6 +84,20 @@ The IETF has a draft specifically for AI agents: "OAuth 2.0 Extension: On-Behalf
 
 This is real progress. But OBO alone does not solve purpose encoding or constraint enforcement. The token says who delegated and who acts, but not what the user actually intended.
 
+### Agent Authorization Profile (AAP)
+
+The Agent Authorization Profile (draft-aap-oauth-profile, February 2026) addresses this gap directly. AAP extends OAuth 2.0 and JWT with structured claims that encode what OBO leaves out: task context, operational constraints, delegation depth, and human oversight requirements.[^aap]
+
+The key addition is structured capabilities rather than flat scopes. Where a standard OAuth scope says "write:email," an AAP capability claim specifies: write email, to these recipients, for this task, within this time window, in this network zone, with these rate limits. The `context` claim binds tokens to specific operational constraints (network zones, time windows, geographic restrictions) that resource servers validate at runtime.
+
+For delegation chains, AAP uses token exchange with mandatory privilege reduction: each delegation hop produces a new token with a subset of the parent's capabilities, tracked through parent-token linkage. Delegation depth is explicit in the token, not implicit in a chain of trust relationships.
+
+Most significant for agent governance: the `oversight.requires_human_approval_for` claim embeds human oversight requirements directly into the authorization token. Instead of the agent deciding when to ask for approval (which the [Human-Agent Collaboration](human-agent-collaboration.md) chapter shows agents resist), the token itself declares which actions require human sign-off. The resource server enforces this, not the agent. This is the PAC Framework's "can't vs. don't" distinction applied to authorization: the agent cannot bypass oversight requirements because they are encoded in the credential, not in the agent's instructions.
+
+A complementary draft from China Mobile (draft-chen-agent-decoupled-authorization-model, February 2026) takes a different angle: it decouples authorization decisions from business logic through separate Authorization Decision and Execution Points, enabling just-in-time permissions based on specific agent intent rather than static role assignments.[^decoupled-auth] Where AAP enriches the token, the Decoupled model restructures the authorization architecture itself.
+
+Both drafts are individual submissions, not IETF-endorsed standards. But together with the AI Agent Authentication draft (draft-klrc-aiagent-auth) and the On-Behalf-Of extension, they represent four concurrent IETF efforts specifically targeting agent authorization, all submitted within weeks of each other in early 2026. The standards ecosystem is responding to the same gap the products are: agents need richer authorization than OAuth was built to provide.
+
 ### DPoP (Demonstration of Proof-of-Possession)
 
 DPoP (RFC 9449) binds tokens to cryptographic keys. Instead of bearer tokens that anyone holding them can use, DPoP tokens require the presenter to prove they hold the private key the token was bound to.[^6]
@@ -327,3 +341,5 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^xaa-mcp]: Okta, "Cross App Access extends MCP to bring enterprise-grade security to AI agent interactions," okta.com, 2026. XAA incorporated into MCP specification as "Enterprise-Managed Authorization" extension.
 [^crowdstrike-sgnl]: CrowdStrike, "CrowdStrike to Acquire SGNL to Transform Identity Security for the AI Era," crowdstrike.com, January 8, 2026. $740M acquisition. SGNL provides continuous identity authorization: real-time grant, deny, and revoke across SaaS and cloud based on Falcon platform risk signals.
 [^delinea-strongdm]: Delinea, "Delinea Completes StrongDM Acquisition to Secure AI Agents with Continuous Identity Authorization," globenewswire.com, March 5, 2026. Combines enterprise PAM with just-in-time runtime authorization for human and non-human identities.
+[^aap]: IETF, "Agent Authorization Profile (AAP) for OAuth 2.0," draft-aap-oauth-profile-01, February 7, 2026. Individual submission by Angel Cruz. Extends OAuth 2.0 and JWT with structured claims for agent identity, task context, operational constraints, delegation chains, and human oversight requirements.
+[^decoupled-auth]: IETF, "A Decoupled Authorization Model for Agent2Agent," draft-chen-agent-decoupled-authorization-model-00, February 14, 2026. Authors: Meiling Chen and Li Su (China Mobile). Proposes just-in-time, intent-based permissions through decoupled Authorization Decision Points and Authorization Execution Points.
