@@ -1,6 +1,6 @@
 # The Regulatory Landscape
 
-Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. Singapore launched the world's first agentic AI governance framework in January 2026. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
+Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. The White House released a national cybersecurity strategy naming agentic AI as a strategic priority in March 2026. Singapore launched the world's first agentic AI governance framework in January 2026. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
 
 This chapter maps the regulatory landscape to the PAC Framework. The thesis: organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
 
@@ -102,13 +102,30 @@ For agent deployments specifically, ISO 42001 matters because it formalizes the 
 
 ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate. An organization with ISO 42001 certification has the governance structure. What it needs is the infrastructure to enforce it.
 
+## The U.S. Federal Response: Promote and Secure
+
+On March 6, 2026, the White House released "President Trump's Cyber Strategy for America," a seven-page framework organized around six policy pillars. Pillar 5 ("Sustain Superiority in Critical and Emerging Technologies") explicitly names agentic AI as a strategic priority: securing the AI technology stack from data centers to models while "promoting agentic AI to scale network defense." An accompanying Executive Order on "Combating Cybercrime, Fraud, and Predatory Schemes Against American Citizens" was issued the same day.[^whitehousecyber]
+
+This is the first national cybersecurity strategy globally to directly address agentic AI. But the framing is different from the EU's. Where the EU AI Act classifies and restricts AI systems by risk tier, the U.S. strategy promotes and secures: it treats agentic AI as a capability advantage to be deployed for autonomous threat detection and disruption, not a risk to be governed through classification.[^whitehousecyber]
+
+The strategy's six pillars have implications for agent trust infrastructure:
+
+- **Pillar 2 (Promote Common-Sense Regulation)** calls for streamlining cyber regulations and reducing compliance burdens. This signals a lighter regulatory touch than the EU, relying more on industry-led standards than mandatory compliance frameworks.
+- **Pillar 3 (Modernize Federal Networks)** mandates zero-trust architectures, post-quantum cryptography, and AI-driven security tools. For agent deployments in federal environments, this establishes the baseline infrastructure.
+- **Pillar 4 (Secure Critical Infrastructure)** strengthens supply chain resilience across energy, finance, telecom, water, and healthcare: the sectors where autonomous agents carry the highest blast radius.
+- **Pillar 5 (Sustain Superiority)** is where agentic AI appears explicitly. Securing the AI technology stack and leveraging cyber diplomacy are both relevant to the cross-organizational trust infrastructure the book describes.
+
+The practical regulatory work is happening through NIST. The strategy provides the policy umbrella; NIST's AI Agent Standards Initiative and NCCoE concept paper provide the technical substance. SP 800-53 COSAiS (Controls Overlay for Secure AI Systems) adapts the federal government's foundational security control catalog to both single-agent and multi-agent use cases.[^cosais] Together, these create a U.S. approach that is standards-driven rather than compliance-driven: build the right infrastructure and compliance follows, rather than comply with mandates and hope the infrastructure catches up.
+
+The contrast with the EU is instructive. The EU AI Act creates compliance obligations that force infrastructure investment. The U.S. approach creates standards and guidelines that incentivize it. For organizations operating in both jurisdictions, building to the EU's requirements satisfies the U.S. standards. The reverse is not necessarily true.
+
 ## The U.S. State Landscape
 
-The EU AI Act gets the most attention, but U.S. state legislation is moving too. The Colorado AI Act takes effect June 1, 2026, requiring risk management policies, impact assessments, and transparency for high-risk AI systems used in consequential decisions.[^colorado]
+In the absence of comprehensive federal AI regulation (the cyber strategy addresses security but not AI classification), U.S. states are filling the gap. The Colorado AI Act takes effect June 1, 2026, requiring risk management policies, impact assessments, and transparency for high-risk AI systems used in consequential decisions.[^colorado]
 
 Colorado's approach shares the EU's risk-based framing but focuses specifically on consumer-facing decisions: employment, credit, insurance, housing. For organizations deploying agents in these domains, it creates domestic compliance obligations on a timeline that precedes the EU's by two months.
 
-Other states are considering similar legislation. The pattern is clear: in the absence of comprehensive federal AI regulation, states are filling the gap with sector-specific and risk-specific rules. For organizations operating across states, this creates a patchwork that increases the value of a unified governance framework.
+Other states are considering similar legislation. The pattern is clear: state-level regulation is converging on risk-based frameworks while federal policy focuses on promotion and standards. For organizations operating across states, this creates a patchwork that increases the value of a unified governance framework.
 
 ## Singapore: The First Agentic AI Governance Framework
 
@@ -201,6 +218,7 @@ The regulatory and standards timelines are converging on a narrow window:
 
 - **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. World's first agentic AI governance framework.
 - **February 2025**: EU AI Act Article 4 (AI literacy) already in effect.
+- **March 6, 2026**: White House releases "President Trump's Cyber Strategy for America." First national cybersecurity strategy to explicitly name agentic AI as a strategic priority (Pillar 5).
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
 - **March 20, 2026**: NIST CAISI listening session participation requests due.
 - **March 31, 2026**: NIST AI 800-2 (Practices for Automated Benchmark Evaluations) public comment period closes.
@@ -210,7 +228,7 @@ The regulatory and standards timelines are converging on a narrow window:
 - **August 2, 2026**: EU AI Act high-risk system obligations take effect.
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
-Shane's observation is worth restating: NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] NIST focuses on identity and authorization (mapping to PAC's Control pillar). The EU AI Act focuses on risk management and transparency (mapping to PAC's Accountability pillar). Singapore adds a third perspective: governance designed for agents from the ground up, addressing all three PAC pillars in a single framework. Neither alone is sufficient. Together, they describe the full governance surface.
+Shane's observation is worth restating: NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts (Accountability pillar). The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards (Control pillar). Singapore governs by design, with a framework built for agents from the ground up across all three PAC pillars. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, and Singapore provides the template for agent-native governance.
 
 ## What This Means in Practice
 
@@ -253,6 +271,10 @@ The gap between what agents can do and what regulation requires is an infrastruc
 [^iso42001]: [ISO/IEC 42001:2023](https://www.iso.org/standard/42001), AI Management Systems.
 
 [^iso42001adoption]: BSI, ["ISO 42001: AI Management System"](https://www.bsigroup.com/en-US/products-and-services/standards/iso-42001-ai-management-system/).
+
+[^whitehousecyber]: The White House, ["President Trump's Cyber Strategy for America"](https://www.whitehouse.gov/wp-content/uploads/2026/03/President-Trumps-Cyber-Strategy-for-America.pdf), March 6, 2026.
+
+[^cosais]: NIST SP 800-53 COSAiS (Controls Overlay for Secure AI Systems) adapts federal security controls for single-agent and multi-agent use cases. Referenced in Zenity, ["From Policy Planning to Agentic Action"](https://zenity.io/blog/current-events/from-policy-planning-to-agentic-action), March 2026.
 
 [^colorado]: Colorado AI Act, effective June 1, 2026. Requires risk management policies, impact assessments, and transparency for high-risk AI in consequential decisions.
 
