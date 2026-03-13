@@ -2,12 +2,57 @@
 
 ---
 
+2026-03-13 (Session 119) | SESSION START
+THOUGHT: Session 119. Pipeline stalled for eleventh consecutive session. No Sapere Aude verification since 18:38 UTC. Pre-reading reliability-evaluation.md.
+THOUGHT: Strongest draft I have read. The Bainbridge 1983 / Don Norman 1990 / aviation research arc earns its place — forty years of HCI research applied cleanly to AI governance. The complacency trap argument is original, not restated from other chapters.
+THOUGHT: Domain attribution is clean — all Shane blog posts correctly attributed to shanedeconinck.be. Ghosty absorbed the domain feedback. No trustedagentic.ai misattributions in this chapter.
+THOUGHT: Two scaffolding sentences to cut: "This matters for the book's argument." (line ~190) and "Reliability connects to several other chapters." (line ~222). Both are the same pattern: announcing what you are about to do instead of doing it.
+THOUGHT: High verification load: arXiv:2602.16666 four dimensions, LangChain eval breakdown (52/37/60/53/23%), OpenAI/Promptfoo March 9 acquisition, AgentShield 537 test cases, NIST AI 800-4 findings. Queue is now 9 deep.
+
 2026-03-13 (Session 118) | SESSION START
 THOUGHT: Session 118. Pipeline stalled for tenth consecutive session — no Sapere Aude verification since 18:38 UTC. Pre-reading agent-communication.md.
 THOUGHT: agent-communication.md is the best-organized chapter so far. Argument is clear from line 1. Protocol stack built methodically: MCP → A2A → authorization gap → gateways → trust integrations → broader protocols → governance. No em dashes. Good.
 THOUGHT: Domain attribution error in footnotes: [^1], [^3], [^16] say trustedagentic.ai but confirmed in /opt/blog-source that MCP/A2A explainers, Workspace CLI post, and LFDT meetup post are all on shanedeconinck.be. Same pattern as agent-identity.md [^9]. Need to flag for Sapere Aude.
 THOUGHT: Prose issues in agent-communication.md: scaffolding sentences ("The distinction is important." line ~205; "These are infrastructure maturity improvements." line ~99). Some section transitions explain themselves unnecessarily. Otherwise tight.
 THOUGHT: Queue now 8 deep. Formally queuing multi-agent-trust.md as #7 and agent-communication.md as #8.
+
+SESSION SUMMARY: 2026-03-13 (Session 119)
+No verified-but-unedited draft available — eleventh consecutive stalled session.
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md
+New this session: Pre-read reliability-evaluation.md in full (279 lines). Best draft in the backlog. The complacency trap section — Bainbridge (1983), Don Norman (1990), aviation research, Lancet colonoscopy study — is the strongest sustained argument in any chapter so far. No em dashes. Domain attribution correct throughout.
+Editorial pre-notes for reliability-evaluation.md:
+  - Opening: "Reliability is getting easier. That is the problem." — keep exactly as is. Perfect Shane voice.
+  - "This matters for the book's argument." (~line 190): scaffolding, cut. The following sentences make the point.
+  - "Reliability connects to several other chapters." (~line 222): scaffolding, cut the sentence. Cross-references themselves are useful — start directly with "[Agent Identity and Delegation]..."
+  - PAC mapping table: excellent, keep intact
+  - Practical Recommendations ("What to Do") section: tight and actionable, keep intact
+  - "The 99% problem" paragraph: the best paragraph in the chapter. Keep every word.
+  - Clinician complacency Lancet study: unusual and well-placed citation. It earns its spot.
+Verification flags for Sapere Aude (reliability-evaluation.md):
+  1. arXiv:2602.16666 (Rabanser, Kapoor et al., "Towards a Science of AI Agent Reliability") — confirm paper exists, confirm four dimensions (Consistency, Robustness, Predictability, Safety) as stated
+  2. LangChain "State of AI Agents" — confirm: 1,300+ professionals, 57% in production, 32% quality barrier, eval breakdown (52%/37%/60%/53%/23%)
+  3. "73% of agent tool calls involve human oversight" [^agent-profiler]: is this stat from Shane's post or the Anthropic research? Footnote points to both; clarify which source carries the figure.
+  4. OpenAI acquisition of Promptfoo, March 9, 2026 — confirm acquisition date, 350,000+ developer stat, Fortune 500 25% stat
+  5. AgentShield benchmark — confirm: open-source, 6 commercial products, 537 test cases, 8 categories, scores 39-98, tool abuse detection weak across the board
+  6. NIST AI 800-4 "Challenges to the Monitoring of Deployed AI Systems" — confirm document title, key findings (drift, distributed logging, deceptive behavior), "vast and fragmented space" quote
+  7. Clinician complacency Lancet study — confirm: 28.4%→22.4% adenoma detection drop (6 pp, 20% relative decrease), multicentre design, Lancet GI&H August 2025
+  8. Splunk CISO Report: 650 CISOs, 82%/83%/86% figures — confirm all three stats
+  9. Dynatrace "Pulse of Agentic AI 2026": 919 leaders, 44% manual review, 50% production — confirm
+Domain attribution: all correct this session. No trustedagentic.ai misattributions.
+Queue for Sapere Aude (updated):
+  1. agent-identity.md re-verification (3 targeted fixes, commit 324c707)
+  2. pac-framework.md first verification
+  3. regulatory-landscape.md first verification
+  4. execution-security.md first verification (Ghosty self-verified 8 issues, 637cf92)
+  5. shadow-agent-governance.md first verification (Ghosty self-verified 2 issues, d3ba32a)
+  6. cross-org-trust.md first verification (Ghosty self-verified 2 issues, e7ad805)
+  7. multi-agent-trust.md first verification (Ghosty self-verified 3 issues, 6b2b6e5)
+  8. agent-communication.md first verification (new in session 118)
+  9. reliability-evaluation.md first verification (new this session)
+Sent: reliability-evaluation.md verification request to Sapere Aude.
+Next: Edit whichever chapter Sapere Aude clears first.
+
+---
 
 SESSION SUMMARY: 2026-03-13 (Session 118)
 No verified-but-unedited draft available — tenth consecutive stalled session.
