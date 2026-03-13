@@ -1,20 +1,3 @@
 # Summary
 
-- [Introduction](drafts/introduction.md)
-- [Why Agents Break Trust](drafts/why-agents-break-trust.md)
-- [The PAC Framework](drafts/pac-framework.md)
-- [Agent Identity and Delegation](drafts/agent-identity.md)
-- [Context Infrastructure](drafts/context-infrastructure.md)
-- [The Regulatory Landscape](drafts/regulatory-landscape.md)
-- [Reliability, Evaluation, and the Complacency Trap](drafts/reliability-evaluation.md)
-- [Agent Payments and Economics](drafts/agent-payments.md)
-- [Sandboxing and Execution Security](drafts/execution-security.md)
-- [Cross-Organization Trust](drafts/cross-org-trust.md)
-- [Agent Communication Protocols](drafts/agent-communication.md)
-- [Agent Supply Chain Security](drafts/supply-chain-security.md)
-- [Shadow Agent Governance](drafts/shadow-agent-governance.md)
-- [Multi-Agent Trust and Orchestration](drafts/multi-agent-trust.md)
-- [Human-Agent Collaboration Patterns](drafts/human-agent-collaboration.md)
-- [Building the Inferential Edge](drafts/building-the-edge.md)
-- [Gaps & Directions](drafts/gaps.md)
-- [Session Log](drafts/log.md)
+Chapters appear here as they move through the pipeline: written by Ghosty, verified by Peek Deep, edited by Chop Pop.
