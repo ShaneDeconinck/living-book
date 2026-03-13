@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 59)
+## Observations (Updated 2026-03-13, Session 60)
 
 ### Four IETF Drafts in Four Weeks: OAuth Agent Authorization Is Accelerating
 
@@ -366,37 +366,28 @@ The Cross-Organization Trust chapter addresses the hard problem of agents crossi
 
 Shane's x402 work shows something beyond just "agents paying for APIs." The payment itself is a trust signal: a cryptographic proof that someone authorized this expenditure, creating an economic accountability chain alongside the identity chain. The intersection of payment protocols and trust infrastructure is underexplored. EIP-3009 (gasless authorization) means the agent never needs to hold crypto directly, which changes the risk profile significantly.
 
-## Chapters to Write Next
+## Chapter Status
 
-Prioritized by impact:
+All 15 chapters complete. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 13, 2026.
 
-1. ~~**Agent Identity and Delegation** (Control + Accountability)~~: DONE. Chapter covers OAuth limitations, OBO/DPoP extensions, DIDs/VCs, TSP, Verifiable Intent (Mastercard/Google), NIST/OpenID convergence, and infrastructure maturity mapping.
+1. Agent Identity and Delegation (Control + Accountability)
+2. Context Infrastructure (Potential + Control)
+3. The Regulatory Landscape (Accountability)
+4. Reliability, Evaluation, and the Complacency Trap (Potential + Accountability)
+5. Agent Payments and Economics (Potential + Control)
+6. Sandboxing and Execution Security (Control)
+7. Cross-Organization Trust (Control + Accountability)
+8. Agent Communication Protocols (Potential + Control)
+9. Shadow Agent Governance (Accountability + Control)
+10. Agent Supply Chain Security (Control + Accountability)
+11. Multi-Agent Trust and Orchestration (Control + Accountability + Potential)
+12. Human-Agent Collaboration Patterns (Accountability + Potential)
 
-2. ~~**Context Infrastructure** (Potential + Control)~~: DONE. Chapter covers the depreciation cycle, scaffolding trap, five dimensions (structure, permissions, discovery, authority, freshness), concrete examples from Claude Code/Manus/Clawdbot, MCP/A2A discovery protocols, agent gateways, and infrastructure maturity mapping.
-
-3. ~~**The Regulatory Landscape** (Accountability)~~: DONE. Chapter covers EU AI Act (risk tiers, classification problem, shadow agents, high-risk requirements), NIST (concept paper, AI Agent Standards Initiative), ISO 42001, Singapore IMDA (world's first agentic AI governance framework, four dimensions mapping to PAC), U.S. state legislation (Colorado), standards convergence (IETF, OpenID AIIM, OIDC-A), PAC mapping to regulation, infrastructure maturity readiness table, and convergence timeline.
-
-4. ~~**Reliability, Evaluation, and the Complacency Trap** (Potential + Accountability)~~: DONE. Chapter covers reliability decomposition (consistency, robustness, predictability, safety), benchmark landscape (SWE-bench, τ-bench, GAIA, HAL), the evaluation gap (offline vs online, 52% to 37% adoption drop), automation complacency from human factors research (Bainbridge 1983, Don Norman 1990), the 99% problem, infrastructure-in-the-loop as replacement for human-in-the-loop, and evaluation as governance infrastructure.
-
-5. ~~**Agent Payments and Economics** (Potential + Control)~~: DONE. Chapter covers why traditional payments break for agents, payment as trust signal, x402 and EIP-3009 (gasless stablecoin payments), the three commerce protocols (AP2/ACP/UCP), ERC-8004 on-chain registries, real-world milestones (Santander/Mastercard, Stripe x402, J.P. Morgan/Mirakl), micro-transaction economics, authorization via Verifiable Intent constraints, PAC mapping, and infrastructure maturity for payments.
-
-6. ~~**Sandboxing and Execution Security** (Control)~~: DONE. Chapter covers the permission prompt problem, containment by design (filesystem + network isolation), the isolation spectrum (native OS, containers, gVisor, microVMs), OWASP Top 10 for Agentic Applications with sandboxing coverage mapping, defense in depth (six layers: input validation, sandboxed execution, configuration protection, output validation, credential scoping, behavioral monitoring), ephemeral vs persistent sandboxes, real-world architectures (Claude Code, Codex CLI, Docker microVM), PAC mapping, and infrastructure maturity for execution security.
-
-7. ~~**Cross-Organization Trust** (Control + Accountability)~~: DONE.
-
-8. ~~**Agent Communication Protocols** (Potential + Control)~~: DONE.
-
-9. ~~**Shadow Agent Governance** (Accountability + Control)~~: DONE.
-
-10. ~~**Agent Supply Chain Security** (Control + Accountability)~~: DONE. Chapter covers the OpenClaw ClawHavoc crisis (1,184 malicious skills, 135,000 exposed instances), agent supply chain attack taxonomy (tool/plugin compromise, tool poisoning, MCP server vulnerabilities, model supply chain, memory poisoning, configuration file attacks), the trust registry problem (BlueRock MCP Trust Registry, what exists vs what is missing), AI-BOM concept (extending SBOMs for agent-specific components), defense patterns (verification at installation, behavioral verification at runtime, dependency isolation, supply chain monitoring), the CSA Agentic Trust Framework (Zero Trust for agents), PAC mapping, and infrastructure maturity for supply chain security (I1-I5). Chapter covers the scale of shadow agents (98% unsanctioned AI use, 1,200 unofficial apps per enterprise), why shadow agents exist (value-seeking, not malice), why they differ from shadow IT (they make decisions, inherit authority, compound), the governance gap (human/app IAM architectural mismatch), discovery tools (Okta ISPM, Noma Agentic Risk Map, network analysis, platform auditing), the agent registry (identity, owner, authority, permissions, blast radius, evaluation, regulatory classification), registry enforcement through infrastructure (identity providers, gateways, network controls, platform controls), the amnesty model for transition (discover, classify, amnesty period, triage, enforce, maintain), organizational ownership models (centralized, federated, infrastructure-enforced), audit trail requirements for agents (delegation chain, intent capture, action trace, scope verification), the organizational shift (prohibition to enablement, human-speed to agent-speed governance, perimeter to identity), PAC mapping table, and infrastructure maturity for shadow agent governance (I1-I5). Chapter covers MCP architecture (client-server, JSON-RPC, transports, 2026 roadmap), A2A (Agent Cards, task lifecycle, v0.3 gRPC), MCP security incidents and attack vectors (tool poisoning, overprivileged tokens, resource poisoning, MCPTox benchmark), the authorization gap (Shane's consent theater critique, possession-based vs proof-based authorization), agent gateways (AgentGateway MCP federation, Cedar policies, limits of gateway-level governance), trust layer integrations (TMCP/TA2A running MCP and A2A over TSP, PIC as authority layer), the broader protocol landscape (ACP, UCP, protocol stack composition), AAIF governance under Linux Foundation, PAC mapping, and infrastructure maturity for communication protocols. Chapter covers the structural problem (dynamic intent, multi-hop delegation, semantic divergence), the Drift breach as concrete failure case, the token model's limits, PIC (proof of continuity replacing proof of possession, mathematical elimination of confused deputy), TSP (identity verification without shared authority, thin waist architecture, TA2A/TMCP), where TSP and PIC meet, VCs as trust carriers (SD-JWT VC and W3C VC comparison), content provenance (Shane's VC-signed blog posts), credential delegation architecture (three-layer chain, Verifiable Intent as operational envelope), Windley's society of agents (policies, promises, credentials, reputation), EUDI wallet infrastructure, the semantic boundary problem, PAC mapping, and infrastructure maturity for cross-org trust.
+Plus: Introduction, Why Agents Break Trust, The PAC Framework, Building the Inferential Edge.
 
 ## Open Questions
 
 - How do agent gateways interact with service mesh architectures? Is there a convergence point?
-- ~~What does "agent registration" look like in practice? Is there an analog to domain registration or certificate transparency?~~ Covered in Shadow Agent Governance chapter: agent registry with enforcement through identity providers, gateways, and network controls.
-- ~~How should organizations handle the transition from shadow agents to governed agents without killing productivity?~~ Covered in Shadow Agent Governance chapter: the amnesty model.
-- ~~What is the right granularity for agent permissions? Per-task? Per-session? Per-tool-call?~~ Covered in Human-Agent Collaboration Patterns chapter: granularity should match blast radius (per-tool-call for B4-B5, per-task for B2-B3, per-session for B1 with containment).
-- How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in Human-Agent Collaboration chapter (agent uncertainty as governance signal, escalation as auditable event). Full treatment of chain-of-thought compliance still open.
-- ~~What does multi-agent orchestration look like in practice? How do trust properties compose across agent-to-agent delegation?~~ Covered in Multi-Agent Trust and Orchestration chapter: trust composition, DCTs, cascading failures, delegation registries, PIC for multi-agent chains, incident response.
-- ~~How should organizations handle incident response for agent failures? The playbook is different from software incidents: the agent made a decision, not just executed code.~~ Partially covered in Multi-Agent Trust chapter (CoSAI framework, multi-agent IR specifics). A dedicated incident response chapter may be warranted for full treatment.
-- ~~What is the right interaction model for human-agent oversight? The complacency trap chapter frames the problem; the UX solution is underexplored.~~ Covered in Human-Agent Collaboration Patterns chapter: three oversight models (HITL, HOTL, infrastructure-in-the-loop), per-task autonomy dials, UX patterns for pre/in/post-action oversight, and agent self-governance through uncertainty recognition.
+- How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in Human-Agent Collaboration chapter. Full treatment still open.
+- Should the book have a dedicated agent incident response chapter? Partially covered in Multi-Agent Trust (CoSAI framework). The playbook for agent failures differs from software incidents: the agent made a decision, not just executed code.
+- The semantic boundary problem: identity, delegation, and authority propagation are advancing fast, but semantic interoperability (what do actions mean across organizational boundaries?) remains unsolved. Worth tracking for a future chapter.
