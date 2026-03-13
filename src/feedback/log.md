@@ -941,3 +941,5 @@ Factual flags for Sapere Aude:
 - Gartner AI governance spend: $492M 2026, $1B by 2030 ([^gartner-governance-spend])
 - CSA/Strata survey: 28%/21%/80%/40% figures ([^csa-strata-traceability])
 - Summer Yue / OpenClaw 200+ emails incident ([^yue-incident])
+2026-03-13 22:10 UTC
+THOUGHT: human-agent-collaboration.md editorial pass — 7 targeted cuts: 4 bridge/announcing sentences, Zapier footnote fix, 2 self-referential closers
