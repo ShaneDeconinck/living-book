@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-13: Teleport 4.5x Research, Flashpoint Bilateral Threat, Colorado Date Fix
+
+**What I did:**
+- Added Teleport's 2026 State of AI in Enterprise Infrastructure Security research to agent-identity.md. Key finding: over-privileged AI systems drive 4.5x higher incident rates (76% vs 17%). Access scope, not AI sophistication, is the strongest predictor of outcomes. This is the strongest quantitative evidence yet for Shane's trust inversion principle. Added both in the Trust Inversion section (as the data that proves the argument) and as a new platform response subsection (Teleport Agentic Identity Framework: cryptographic identity, ephemeral privileges, automatic revocation on task completion).
+- Added Flashpoint 2026 Global Threat Intelligence Report data (March 12, 2026) to why-agents-break-trust.md. The threat is bilateral: adversaries are deploying agentic AI frameworks for autonomous attack chains (reconnaissance, phishing, credential testing, infrastructure rotation without human control). 11.1M infostealer infections, 3.3B stolen credentials, 1,500% spike in criminal AI forum discussions (December 2025). Added after the reliability section to frame the urgency: the governance challenge is not just "can we trust our agents?" but "can our defenses operate at the speed adversary agents now move?"
+- Fixed Colorado AI Act date from June 1, 2026 to June 30, 2026 in regulatory-landscape.md (three occurrences). The implementation date was delayed following a special legislative session in August 2025. Also fixed "precedes the EU's by two months" to "roughly a month" since June 30 to August 2 is about one month.
+- Updated gaps.md: added Teleport data to Agent Identity observation, added new observation on bilateral threat landscape, incremented session number to 18.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 (March 23-26) has not happened yet. The book has 15 chapters with a complete narrative arc.
+
+The Teleport 4.5x research is the highest-impact addition because it transforms the trust inversion argument from a principle into a quantified fact. Shane argues agents must be restricted to what they can do (inverse of human trust). Teleport's data proves the cost of violating this: 4.5x higher incident rates. The finding that access scope (not AI sophistication) predicts outcomes is precisely what the book argues: the infrastructure matters more than the model.
+
+The Flashpoint data adds a dimension the book was missing: the bilateral threat. Every previous section in Chapter 1 frames the problem as "your agents might break trust." The Flashpoint data shows adversaries are deploying agents offensively, creating a speed asymmetry that makes governance infrastructure not just a compliance exercise but a defensive necessity.
+
+The Colorado date fix is small but important: regulatory timelines are load-bearing claims in a book about governance. Getting them wrong undermines credibility.
+
+**What I considered but did not do:**
+- Adding the Teleport framework to the Shadow Agent Governance chapter. Teleport focuses on infrastructure access for agents in production, not on discovering or registering shadow agents. The agent identity chapter is the right home.
+- Writing a new section on agentic fraud. Security Boulevard's March 2026 piece on agentic fraud (credential abuse, session hijacking, automated account takeover) is interesting but the patterns are already covered by the confused deputy framing and the Flashpoint data. A dedicated section would add breadth without depth.
+- Expanding the Flashpoint data into a new chapter on adversarial use of agents. The bilateral threat framing is better as a paragraph in Chapter 1 that strengthens urgency. A full chapter on offensive AI is outside the book's scope (trust infrastructure for your agents, not threat intelligence about adversary agents).
+- Adding the Keyfactor "Digital Trust Digest: AI Identity Edition" to the book. It covers the same developments (Entra Agent ID, NIST, ephemeral credentials) already in the book. No new data.
+- Cross-references between chapters. Multiple session logs mention this as a priority. I assessed the current state and the chapters already cross-reference well (forward and backward references exist throughout). The highest-impact cross-reference work would be after RSAC when new data might restructure relationships between chapters.
+
+**Sources used:**
+- Teleport, "2026 State of AI in Enterprise Infrastructure Security," goteleport.com, February 17, 2026. Survey of 205 senior infrastructure and security leaders by Eleven Market Research.
+- Teleport, "Agentic Identity Framework," goteleport.com, January 27, 2026.
+- Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 12, 2026.
+- Help Net Security, "Agentic attack chains advance as infostealers flood criminal markets," March 12, 2026.
+- Colorado General Assembly, SB 24-205. Implementation delayed to June 30, 2026 following August 2025 special session.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The Teleport 4.5x finding is the most decision-relevant data point in the book for CISOs. It translates an architectural principle (least privilege for agents) into a risk metric (4.5x incident rate difference). When presenting to leadership, "76% vs 17%" is more persuasive than any architectural argument.
+- The bilateral threat creates a speed asymmetry that makes infrastructure-in-the-loop (from the Human-Agent Collaboration chapter) not just a governance pattern but a defensive necessity. If adversary agents can test 3.3B credentials against your endpoints at machine speed, your detection and response infrastructure must also operate at machine speed. Human-in-the-loop response is too slow for agent-speed attacks.
+- The agent identity product category is expanding faster than expected. Since starting the book: Auth0 Token Vault (November 2025), Teleport Agentic Identity Framework (January 2026), Microsoft Entra Agent ID (March 2026, GA May 2026), Imprivata Agentic Identity Management (March 2026), Token Security and Geordie AI (RSAC finalists, March 2026). Six products in five months. The infrastructure maturity scale (I1-I5) is useful for mapping where these products land: Auth0 at I2-I3 (token management), Teleport at I3-I4 (ephemeral credentials with enforcement), Microsoft at I3-I4 (registry + lifecycle), Imprivata at I4 (sector-specific continuous verification).
+- The Colorado date delay (June 1 to June 30) is a small detail but part of a pattern: regulatory timelines for AI keep slipping as legislators discover implementation complexity. The EU AI Act high-risk obligations (August 2, 2026) and NIST comment periods (March-April 2026) have held. Whether Colorado's June 30 date holds is worth tracking.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Zenity demo, Innovation Sandbox presentations (Token Security, Geordie AI), Microsoft security sessions. This is the highest-priority upcoming event.
+2. NIST CAISI listening session participation deadline is March 20 (7 days). Worth noting in the book if any outcomes are published.
+3. Consider whether the bilateral threat framing should be reflected in other chapters (execution security, supply chain security) or whether the Chapter 1 addition is sufficient.
+4. Cross-references between chapters remain a lower-priority but recurring item.
+
 ## 2026-03-13: PleaseFix Vulnerability and Agent 365 Convergence Timeline
 
 **What I did:**

@@ -12,6 +12,8 @@ In organizations, humans operate within broad boundaries. You trust employees wi
 
 Agents need the inverse. The default should be zero authority. Every capability must be explicitly granted, scoped to the task, time-bounded, and revocable. Not because agents are malicious, but because they have no judgment about whether an action is appropriate. An agent that can read all your email will read all your email if any part of its task touches email. It does not think "that seems excessive." It does what its credentials allow.
 
+Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this precisely. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] The finding that matters most: access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
+
 This inversion maps directly to the Control pillar of PAC. Policy says "agents should only access what they need." Architecture must say "agents can only access what they need." The gap between those two statements is where incidents happen.
 
 ## Why Traditional IAM Breaks Down
@@ -95,6 +97,14 @@ DPoP is complementary to OBO: use OBO to track delegation, use DPoP to prevent t
 Identity platforms are shipping agent-specific products. Auth0's Token Vault, generally available since November 2025, manages the OAuth lifecycle for agents: handling consent flows, storing tokens, refreshing them automatically, and scoping access across 30+ pre-integrated services.[^7]
 
 This is pragmatic infrastructure. It does not solve the deeper problems of purpose encoding or delegation chains, but it eliminates a class of bugs where agents fail because tokens expired, refresh logic was wrong, or credentials were stored insecurely. For teams building agents today, managed token infrastructure reduces the blast radius of the credentials problem.
+
+### Teleport Agentic Identity Framework
+
+Teleport's Agentic Identity Framework, launched in January 2026, takes a different approach from Auth0: instead of managing tokens for cloud services, it extends Teleport's infrastructure access platform (SSH, Kubernetes, databases, internal applications) to treat AI agents as first-class identities.[^teleport]
+
+The framework eliminates long-lived secrets entirely, replacing them with short-lived, cryptographic identities that are continuously validated. Every agent session gets ephemeral credentials scoped to exactly the resources it needs, for exactly the duration it needs them. When the task completes, the credentials expire. No refresh tokens, no standing access, no accumulated privilege.
+
+This is the trust inversion made operational: zero authority by default, explicit grants per task, automatic revocation on completion. For infrastructure access (where compromised credentials give attackers lateral movement across production systems), the difference between standing access and ephemeral access is the difference between a contained incident and a breach.
 
 ### Microsoft Entra Agent ID
 
@@ -279,3 +289,4 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
 [^csa]: Cloud Security Alliance, "Agentic AI Identity & Access Management: A New Approach," cloudsecurityalliance.org, 2025-2026. Framework proposing DID+VC+ZKP-based IAM for multi-agent systems.
 [^entra-agent-id]: Microsoft, "What is Microsoft Entra Agent ID?," learn.microsoft.com, March 2026. Part of Microsoft Agent 365, generally available May 1, 2026. See also ConductorOne, "Future of Identity Report 2026," March 10, 2026.
+[^teleport]: Teleport, "2026 State of AI in Enterprise Infrastructure Security," February 17, 2026. Survey of 205 senior infrastructure and security leaders. See also Teleport, "Agentic Identity Framework," goteleport.com, January 27, 2026.

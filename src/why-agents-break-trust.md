@@ -71,6 +71,8 @@ But reliability and governance are different problems. Reliability asks: does th
 
 Better models actually make governance harder. When an agent succeeds 99% of the time, humans stop watching. Oversight becomes a formality. And the 1% failure, when it comes, happens without anyone paying attention. Shane calls this the complacency trap: the better agents get, the less humans monitor them, and the more damage the rare failure causes. The [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter grounds this in 40 years of human factors research, and the [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers how to design oversight that does not depend on sustained human vigilance.[^4]
 
+And the threat is bilateral. Organizations are not only defending their own agents: adversaries are deploying agents too. Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control.[^flashpoint] Infostealers infected 11.1 million machines in 2025, producing 3.3 billion stolen credentials traded on criminal markets. Paired with agentic AI frameworks, those credentials can be tested against thousands of endpoints simultaneously: corporate VPNs, SaaS providers, cloud services, at a speed that outpaces conventional detection. Criminal forum discussions referencing AI spiked 1,500% in December 2025 alone.[^flashpoint] The governance challenge is not just "can we trust our agents?" It is: can our defenses operate at the speed adversary agents now move?
+
 This is why the book focuses on trust infrastructure, not model capabilities. The model will keep improving. The infrastructure to deploy it responsibly is what most organizations lack.
 
 ## What Trust Infrastructure Looks Like
@@ -118,4 +120,5 @@ Let's start with the framework itself.
 [^mcptox]: MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers, arXiv:2508.14925, 2025. Tested 20 LLM agents against 353 authentic tools from 45 live MCP servers.
 [^postmark-mcp]: Security researchers disclosed the backdoored postmark-mcp NPM package in September 2025. It was the first documented supply chain attack specifically targeting MCP infrastructure.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026. Identifies NHI compromise as the fastest-growing enterprise attack vector.
+[^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 12, 2026. Documents agentic AI cybercrime convergence across reconnaissance, phishing, credential testing, and infrastructure rotation.
 [^5]: NIST, "Accelerating the Adoption of Software and AI Agent Identity and Authorization," NCCoE Concept Paper, February 2026. Comment period open through April 2, 2026.

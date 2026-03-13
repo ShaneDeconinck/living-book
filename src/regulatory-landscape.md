@@ -121,9 +121,9 @@ The contrast with the EU is instructive. The EU AI Act creates compliance obliga
 
 ## The U.S. State Landscape
 
-In the absence of comprehensive federal AI regulation (the cyber strategy addresses security but not AI classification), U.S. states are filling the gap. The Colorado AI Act takes effect June 1, 2026, requiring risk management policies, impact assessments, and transparency for high-risk AI systems used in consequential decisions.[^colorado]
+In the absence of comprehensive federal AI regulation (the cyber strategy addresses security but not AI classification), U.S. states are filling the gap. The Colorado AI Act takes effect June 30, 2026, requiring risk management policies, impact assessments, and transparency for high-risk AI systems used in consequential decisions.[^colorado]
 
-Colorado's approach shares the EU's risk-based framing but focuses specifically on consumer-facing decisions: employment, credit, insurance, housing. For organizations deploying agents in these domains, it creates domestic compliance obligations on a timeline that precedes the EU's by two months.
+Colorado's approach shares the EU's risk-based framing but focuses specifically on consumer-facing decisions: employment, credit, insurance, housing. For organizations deploying agents in these domains, it creates domestic compliance obligations on a timeline that precedes the EU's by roughly a month.
 
 Other states are considering similar legislation. The pattern is clear: state-level regulation is converging on risk-based frameworks while federal policy focuses on promotion and standards. For organizations operating across states, this creates a patchwork that increases the value of a unified governance framework.
 
@@ -224,7 +224,7 @@ The regulatory and standards timelines are converging on a narrow window:
 - **March 31, 2026**: NIST AI 800-2 (Practices for Automated Benchmark Evaluations) public comment period closes.
 - **April 2, 2026**: NIST NCCoE concept paper comment period closes.
 - **April 2026+**: NIST CAISI listening sessions on sector-specific barriers begin (healthcare, finance, education).
-- **June 1, 2026**: Colorado AI Act takes effect.
+- **June 30, 2026**: Colorado AI Act takes effect.
 - **August 2, 2026**: EU AI Act high-risk system obligations take effect.
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
@@ -276,7 +276,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^cosais]: NIST SP 800-53 COSAiS (Controls Overlay for Secure AI Systems) adapts federal security controls for single-agent and multi-agent use cases. Referenced in Zenity, ["From Policy Planning to Agentic Action"](https://zenity.io/blog/current-events/from-policy-planning-to-agentic-action), March 2026.
 
-[^colorado]: Colorado AI Act, effective June 1, 2026. Requires risk management policies, impact assessments, and transparency for high-risk AI in consequential decisions.
+[^colorado]: Colorado AI Act, effective June 30, 2026. Requires risk management policies, impact assessments, and transparency for high-risk AI in consequential decisions.
 
 [^imda]: Singapore IMDA, ["Model AI Governance Framework for Agentic AI"](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf), January 22, 2026.
 
