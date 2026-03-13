@@ -190,15 +190,16 @@ Discovery in A2A happens through Agent Cards: structured metadata documents that
 {
   "name": "travel-planner",
   "description": "Plans multi-city itineraries with budget optimization",
-  "protocolVersions": ["0.3.0"],
   "supportedInterfaces": [
     {
       "type": "jsonrpc-over-http",
-      "url": "https://travel.example.com/a2a"
+      "url": "https://travel.example.com/a2a",
+      "protocolVersions": ["1.0"]
     },
     {
       "type": "grpc",
-      "url": "grpc://travel.example.com:443"
+      "url": "grpc://travel.example.com:443",
+      "protocolVersions": ["1.0"]
     }
   ],
   "capabilities": {
@@ -206,12 +207,13 @@ Discovery in A2A happens through Agent Cards: structured metadata documents that
     "pushNotifications": true
   },
   "authentication": {
-    "schemes": ["oauth2"]
+    "schemes": ["oauth2"],
+    "pkce_required": true
   }
 }
 ```
 
-The `protocolVersions` field tells clients which A2A spec versions the agent supports. The `supportedInterfaces` field advertises the concrete endpoints and protocol bindings: JSON-RPC over HTTP is the default, with gRPC available for higher-performance deployments since v0.3.[^11]
+V1.0 restructured Agent Cards: protocol versions moved from a top-level field into per-interface declarations, enabling agents to support different spec versions on different transports. The `supportedInterfaces` array advertises the concrete endpoints and protocol bindings: JSON-RPC over HTTP is the default, with gRPC available for higher-performance deployments.[^11]
 
 ### Task Lifecycle
 
@@ -225,11 +227,15 @@ This task model is what separates A2A from MCP. An MCP tool call is synchronous 
 
 ### Adoption and Security
 
-A2A has reached 150+ participating organizations with v0.3.[^12] The addition of gRPC support signals readiness for high-throughput production deployments. Quarkus, the Java framework, released an A2A SDK at v0.3.0, and LangGraph v0.2 added A2A as a first-class protocol target in January 2026.[^13]
+A2A reached 150+ participating organizations with v0.3, and v1.0 shipped in early 2026 with significant security hardening.[^12] Quarkus, the Java framework, released an A2A SDK at v0.3.0, and LangGraph v0.2 added A2A as a first-class protocol target in January 2026.[^13] Enterprise adoption is broadening: Amazon Bedrock AgentCore added native A2A support, and SAP, Salesforce, and ServiceNow are building A2A into their agent frameworks.
 
-The security model mirrors OpenAPI's authentication at launch: agents can require OAuth, API keys, or other standard mechanisms. But A2A v0.3 supports Agent Card signing without enforcing it.[^11] An unsigned Agent Card can be spoofed. A malicious agent could advertise capabilities it does not have, or impersonate a legitimate agent. This is the agent-discovery equivalent of MCP's tool-poisoning problem.
+V1.0 addressed three security gaps that v0.3 left open. First, **Agent Card signing via JWS** (RFC 7515) with JSON Canonicalization Scheme (RFC 8785) for deterministic serialization. In v0.3, agent card signing was supported but not enforced: an unsigned card could be spoofed, and a malicious agent could advertise capabilities it did not have. V1.0 provides the cryptographic infrastructure to verify card authenticity before establishing communication. This is the agent-discovery equivalent of certificate verification in TLS: you can still choose not to verify, but the protocol gives you the tools to do so.[^11] [^a2a-v1]
 
-Auth0 partnering on A2A authentication is a convergence point: the same identity infrastructure that governs human access is being extended to govern agent-to-agent communication.[^14]
+Second, **OAuth 2.0 modernization**: v1.0 removed the deprecated Implicit and Password flows (security risks well-documented in OAuth 2.1) and added PKCE support with a `pkce_required` field for authorization code flows. It also added the Device Code flow (RFC 8628) for CLI and IoT agent scenarios where browser redirects are impractical.
+
+Third, **mutual TLS support** in security scheme declarations, enabling bidirectional authentication between agents.
+
+Auth0 partnering with Google Cloud to define A2A authentication specifications is a convergence point: the same identity infrastructure that governs human access is being extended to govern agent-to-agent communication.[^14]
 
 ## MCP and A2A: Complementary, Not Competitive
 
@@ -472,7 +478,8 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^8]: AuthZed, "A Timeline of Model Context Protocol (MCP) Security Breaches," authzed.com, 2025-2026.
 [^9]: MCPTox benchmark results and Practical DevSecOps, "MCP Security Vulnerabilities," 2026.
 [^10]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," cloud.google.com, 2026.
-[^11]: A2A Protocol Specification v0.3, a2a-protocol.org, 2026.
+[^11]: A2A Protocol Specification v1.0, a2a-protocol.org, 2026.
+[^a2a-v1]: A2A Protocol, "What's New in v1.0," a2a-protocol.org/latest/whats-new-v1/, 2026. Breaking changes from v0.3 include unified Part types, per-interface protocol versioning, cursor-based pagination, and google.rpc.Status error model.
 [^12]: Google, A2A adoption statistics, 2026. 150+ participating organizations.
 [^13]: Subhadip Mitra, "The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI," 2026. LangGraph v0.2 shipped January 15, 2026.
 [^14]: Auth0 A2A authentication partnership, referenced in Context Infrastructure chapter.

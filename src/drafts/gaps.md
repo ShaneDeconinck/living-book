@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 62)
+## Observations (Updated 2026-03-13, Session 63)
+
+### A2A v1.0: The Agent Communication Protocol Gets a Security Layer
+
+A2A v1.0 shipped with three security improvements that directly address gaps this book has flagged. Agent Card signing via JWS (RFC 7515) with JSON Canonicalization Scheme (RFC 8785) addresses the spoofing problem the book noted in the agent-communication chapter: v0.3 supported signing without enforcing it, meaning any agent could impersonate any other. OAuth 2.0 modernization (removing Implicit/Password flows, adding PKCE) aligns with OAuth 2.1's security posture. Mutual TLS support enables bidirectional authentication.
+
+The architectural significance: A2A v1.0 is the first agent communication protocol version to ship with production-grade cryptographic integrity for agent discovery. MCP still lacks this: MCP Server Cards (SEP-1649) remain a proposal. The gap between A2A's signed agent cards and MCP's unsigned tool descriptions will become a source of protocol-boundary attacks, exactly the pattern the Anbiaee et al. threat model identified across protocol composition.
+
+The v1.0 release also broke backward compatibility across part types, enum values, error handling, and pagination. This is the protocol growing up: moving from "get adoption" to "get security right." The breaking changes are a tax on early adopters, but the security improvements make it worth paying.
+
+For the PAC Framework: A2A v1.0 moves agent-to-agent communication from I2 (logged but not verified) toward I3 (verified identity, cryptographic integrity). The remaining gap is authorization: signed Agent Cards prove identity, but they do not encode what the agent is allowed to do. That requires the OAuth and delegation infrastructure covered in the agent-identity chapter.
 
 ### The Book Covers the Full OWASP Agentic Attack Surface
 

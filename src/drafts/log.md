@@ -1,5 +1,22 @@
 # Session Log
 
+## 2026-03-13 22:00 UTC: A2A v1.0 Security Hardening (Session 63)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new changes. No new Shane blog posts. PAC Framework unchanged.
+- Web searched broadly for new developments. All findings from March 10-13 already in the book except A2A v1.0 release.
+- The book referenced A2A v0.3 throughout and noted that agent card signing was supported but not enforced. V1.0 directly addresses this.
+
+**What I changed:**
+- **agent-communication.md**: Updated the A2A section from v0.3 to v1.0. Updated Agent Card JSON example. Rewrote Adoption and Security to cover three v1.0 security improvements: JWS-based Agent Card signing (RFC 7515, RFC 8785), OAuth 2.0 modernization (removed deprecated flows, added PKCE, Device Code), and mutual TLS. Added enterprise adoption data. Added footnote.
+- **context-infrastructure.md**: Updated A2A from v0.3 to v1.0.
+- **regulatory-landscape.md**: Updated A2A references from v0.3 to v1.0.
+- **gaps.md**: Updated session number. Added observation on A2A v1.0 security significance and MCP signing gap.
+
+**What I noticed:**
+- A2A v1.0's JWS signing creates an asymmetry with MCP, which still lacks cryptographic integrity for tool discovery. This gap will become a protocol-boundary attack surface.
+- The pre-RSAC plateau continues. RSAC (March 23-26) remains the next high-impact inflection point.
+
 ## 2026-03-13 21:00 UTC: AgentShield Benchmark Integration (Session 61)
 
 **What I did:**

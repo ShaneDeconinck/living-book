@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13 22:00 UTC: A2A v1.0 Security Hardening (Session 63)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new changes since Session 62.
+- Read current book state: all 15 chapters, SUMMARY.md, and PAC Framework. Framework unchanged (19 questions, three pillars, six governance dimensions). No new Shane blog posts. No feedback files exist.
+- Step 5 reassessment: still pre-RSAC (March 23-26). Web searched broadly for new developments across eight categories: RSAC preview, MCP CVEs, agent authorization standards, NIST updates, EU AI Act enforcement, academic papers, A2A security, OpenID agent identity. All findings from March 10-13 are already in the book (CVE-2026-26118, overthinking loops, NIST NCCoE concept paper, 932 CAISI comments, OIDF NIST response) with one exception: **A2A v1.0 release**.
+- The book referenced A2A v0.3 throughout and noted (agent-communication.md:230) that "A2A v0.3 supports Agent Card signing without enforcing it." V1.0 directly addresses this and other security gaps.
+
+**What I changed:**
+- **agent-communication.md**: Updated the A2A section (Agent Cards, Adoption and Security) from v0.3 to v1.0. Updated Agent Card JSON example to reflect v1.0's per-interface protocol versioning and PKCE support. Rewrote the Adoption and Security subsection to cover three v1.0 security improvements: (1) JWS-based Agent Card signing with JSON Canonicalization Scheme (RFC 7515, RFC 8785), (2) OAuth 2.0 modernization (removed Implicit/Password flows, added PKCE, added Device Code flow), (3) mutual TLS support. Added enterprise adoption data (Amazon Bedrock AgentCore, SAP, Salesforce, ServiceNow). Added footnote for v1.0 changes.
+- **context-infrastructure.md**: Updated A2A reference from v0.3 to v1.0 with key security features.
+- **regulatory-landscape.md**: Updated A2A references from v0.3 to v1.0 in body text and footnote.
+- **gaps.md**: Updated session number to 63. Added observation "A2A v1.0: The Agent Communication Protocol Gets a Security Layer" analyzing the architectural significance of JWS signing for agent discovery, the gap between A2A's signed cards and MCP's unsigned tool descriptions, and the PAC Framework implications (moving agent communication from I2 toward I3).
+
+**What I considered but did not do:**
+- Adding the ACM Computing Surveys "AI Agents Under Threat" paper. Comprehensive academic survey, but the book's treatment through OWASP Top 10, MCPTox, and incident analysis is more practitioner-oriented. Already considered and rejected in Session 61.
+- Adding the CoSAI MCP Security White Paper (January 2026, 12 threat categories). The book already has comprehensive MCP threat coverage through the Anbiaee et al. protocol threat model, the CVE timeline, and the OWASP MCP Top 10. Another threat taxonomy would be duplicative.
+- Updating the multi-agent-trust chapter's A2A references. The chapter discusses A2A at the architectural level (composability gaps, Trustworthy Agent Network paper) rather than version-specific details. The v0.3/v1.0 distinction is less relevant there than in the communication and context chapters.
+- Adding Token Security's SC Awards finalist status (March 4). Already noted as Innovation Sandbox finalist. SC Awards is incremental.
+
+**What I noticed:**
+- A2A v1.0's Agent Card signing via JWS creates an asymmetry with MCP. A2A now has production-grade cryptographic integrity for agent discovery. MCP does not: Server Cards (SEP-1649) remain a proposal, and 38% of MCP servers lack authentication entirely. This asymmetry will become a source of protocol-boundary attacks in multi-protocol deployments where agents compose A2A and MCP calls. The Anbiaee et al. threat model already identified cross-protocol composition as the highest-risk scenario.
+- The pre-RSAC plateau continues. 63 sessions of accumulated content means web searches consistently return material already in the book. The A2A v1.0 update was the only genuinely new finding. RSAC (March 23-26) remains the next high-impact inflection point.
+- The v1.0 breaking changes (part types, enums, pagination, error model) are a useful signal: the A2A protocol is prioritizing correctness over backward compatibility. This is the same pattern OAuth went through from RFC 6749 to RFC 6750 to the eventual OAuth 2.1 consolidation. Protocols that break early for security tend to be more durable.
+
+**Sources used:**
+- A2A Protocol, "What's New in v1.0," a2a-protocol.org/latest/whats-new-v1/, 2026.
+- A2A Protocol Specification v1.0, a2a-protocol.org, 2026.
+- Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," cloud.google.com, 2026.
+- Web searches: RSAC 2026 agent security, MCP CVEs March 2026, AI agent authorization standards, NIST agent security, EU AI Act enforcement, A2A protocol security, OpenID agent identity (all returned material already in the book except A2A v1.0).
+- Shane's blog (checked: no new posts since Session 58).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. NIST CAISI listening session participation deadline is March 20.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Monitor A2A v1.0 adoption: whether the breaking changes slow or accelerate enterprise rollouts.
+7. Track MCP Server Cards (SEP-1649) progress: closing the signing gap with A2A.
+
 ## 2026-03-13 20:30 UTC: OWASP Agentic Risk Mapping and Book Assessment (Session 62)
 
 **What I did:**

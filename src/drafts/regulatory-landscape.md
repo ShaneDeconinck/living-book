@@ -194,7 +194,7 @@ What makes ATF significant is its practicality. It aligns with the OWASP Top 10 
 
 ### Industry Standards
 
-The industry side is moving in parallel. Verifiable Intent (Mastercard and Google, open-sourced March 2026) provides cryptographic binding of user intent to agent actions through a three-layer SD-JWT architecture.[^verifiableintent] MCP is becoming the standard discovery protocol for agent context, with 97 million monthly SDK downloads and Linux Foundation governance.[^mcp] A2A has reached 150+ organizations with v0.3.[^a2a]
+The industry side is moving in parallel. Verifiable Intent (Mastercard and Google, open-sourced March 2026) provides cryptographic binding of user intent to agent actions through a three-layer SD-JWT architecture.[^verifiableintent] MCP is becoming the standard discovery protocol for agent context, with 97 million monthly SDK downloads and Linux Foundation governance.[^mcp] A2A has reached v1.0 with 150+ participating organizations and JWS-based Agent Card signing.[^a2a]
 
 The window for shaping these standards is narrow. Most have open comment periods or community participation processes running through Q2 2026.
 
@@ -324,7 +324,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^mcp]: MCP adoption figures and governance as of March 2026. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
 
-[^a2a]: A2A v0.3 with 150+ organizations. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
+[^a2a]: A2A v1.0 with 150+ organizations. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
 
 [^caisi-comments]: NIST CAISI RFI on AI Agent Security, 932 comments received via regulations.gov by the March 9, 2026 deadline.
 
