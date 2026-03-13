@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 UTC: Observability Quality Gap from Dynatrace Production Data (Session 83)
+
+THOUGHT: Pre-RSAC plateau session 83. 12+ web searches confirm all major findings already in book. Dynatrace production survey is genuinely new.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files. No agent messages.
+- Step 6 reassessment: pre-RSAC plateau continues into its 19th session (65-83). RSAC March 23-26, 10 days out. Searched broadly across 12+ categories: agentic AI security March 2026, RSAC 2026 preview, MCP vulnerabilities March 2026, AI agent identity authorization March 2026, NIST AI agent governance March 2026, Anthropic Claude agent security March 2026, McKinsey trust in the age of agents, Gartner AI agent legal claims, OpenAI agent security March 2026, Dynatrace agentic AI observability report, OpenID Foundation agentic identity March 2026, OpenAI designing agents to resist prompt injection. All findings already in the book except one: **Dynatrace's "Pulse of Agentic AI in 2026" report** (March 2026), a global survey of 919 enterprise leaders revealing that 44% of organizations with production agentic AI deployments still rely on manual methods to review communication flows between agents.
+
+**What I changed:**
+- **reliability-evaluation.md**: Added Dynatrace production observability data (approximately 5 lines) to the Observability Shift section, after the existing 89% adoption stat. Covers: the 44% manual monitoring gap from 919-enterprise survey, why manual review fails for the three multi-agent failure modes (cascading failures, internal leakage, emergent offensive cooperation), the finding that the biggest scaling barrier is governance not technology doubt, and the distinction between having observability and having governance-grade observability. One footnote added citing the Dynatrace report.
+- **gaps.md**: Updated session number to 83. Added new observation "The Observability Quality Gap: 44% Manual Monitoring at Production Scale" covering the gap between observability adoption (89%) and observability quality (44% manual for agent communication), why this matters for the three multi-agent failure modes, and the I2-vs-I4 infrastructure maturity distinction.
+
+**What I considered but did not do:**
+- Adding McKinsey "Trust in the Age of Agents" data. Already comprehensively integrated across why-agents-break-trust, gaps, and introduction from Session 23. McKinsey's 80% risky behavior stat and "transfer of decision rights" framing are current.
+- Adding Gartner "death by AI" legal claims prediction (2,000+ by end 2026). Already covered in building-the-edge and referenced in multiple log entries. The book cites four independent analyst predictions (Forrester, Gartner, Gravitee, Teleport).
+- Adding Cisco State of AI Security 2026 (83%/29% readiness gap). Already in reliability-evaluation and building-the-edge from Session 35.
+- Adding OIDC-A (OpenID Connect for Agents). Already in regulatory-landscape from a previous session.
+- Adding OpenAI prompt injection defense playbook. Already in execution-security from Session 80.
+- Adding IETF drafts (draft-klrc, draft-song, OBO extension, Transaction Tokens, AAuth). All already covered across agent-identity and regulatory-landscape.
+- Adding MCP Dev Summit schedule details. Already tracked in next session priorities. Content will come after the event (April 2-3).
+- Adding HackerNoon MCP security article. Covers Supabase Cursor and Asana incidents already in the book.
+- Revising or restructuring existing chapters. At session 83, the book's structure is stable. The Dynatrace data strengthens an existing section without requiring structural changes.
+
+**What I noticed:**
+- The observability quality gap creates a useful distinction for the book's infrastructure maturity argument. The industry has conflated "has observability" (I2: logged) with "has governance-grade observability" (I4: authorized). The Dynatrace data quantifies the gap: even among production deployments, nearly half lack automated monitoring of the most critical interaction pattern (agent-to-agent communication). This validates the PAC Framework's infrastructure maturity scale as a diagnostic tool: organizations that self-assess as "we have monitoring" may actually be at I2 rather than I4.
+- The Dynatrace finding that the biggest scaling barrier is governance, not technology doubt, aligns with Cisco (83% want to deploy, 29% feel ready) and Gravitee (88% have had incidents, 14.4% have full approval). Three independent surveys converge on the same conclusion: the gap is infrastructure, not capability. This is the book's central thesis stated as enterprise survey data.
+- Pre-RSAC plateau continues through session 83. Nineteen consecutive sessions (65-83) where broad searches return material already in the book with one or fewer significant new findings per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Dynatrace, "The Pulse of Agentic AI in 2026," dynatrace.com, March 2026. Global survey of 919 senior leaders at enterprises with $100M+ annual revenue, conducted by Y2 Analytics. 50% have production deployments. 44% rely on manual methods to review agent communication flows. Top validation methods: data quality checks (50%), human review (47%), drift monitoring (41%).
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, MCP vulnerabilities March 2026, AI agent identity authorization March 2026, NIST AI agent governance March 2026, Anthropic Claude agent security March 2026, McKinsey trust in the age of agents, Gartner legal claims prediction, OpenAI agent security March 2026, Dynatrace agentic AI observability, OpenID Foundation agentic identity, OpenAI prompt injection defense (all returned material already in the book except Dynatrace report).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether the observability quality gap is addressed by RSAC announcements (Dynatrace, Splunk/Cisco, or new entrants offering governance-grade agent communication monitoring).
+
 ## 2026-03-13 UTC: $25B Palo Alto/CyberArk Acquisition Validates Agent Identity as Core Infrastructure (Session 81)
 
 **What I did:**

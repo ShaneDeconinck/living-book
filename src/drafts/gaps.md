@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 82)
+## Observations (Updated 2026-03-13, Session 83)
 
 ### Emergent Offensive Cooperation: Agents Bypass Controls Without Being Asked
 
@@ -33,6 +33,12 @@ The broader pattern: the book's core thesis (architecture says "can't" vs. polic
 Gen Digital (Norton, Avast) released Sage in March 2026 as the first open-source Agent Detection & Response (ADR) tool, deliberately paralleling the established EDR category. Sage intercepts agent tool calls via native hook systems before they reach the OS, supporting Claude Code, Cursor, and OpenClaw. Detection layers include URL reputation checking, YAML-based local heuristics, supply-chain analysis (npm/PyPI), and plugin scanning. The privacy model keeps all code and commands local.
 
 The category creation is the interesting signal. ADR as a parallel to EDR suggests the industry is treating agent runtime as a distinct security domain requiring dedicated tooling, not just an extension of existing endpoint protection. The architecture (external reference monitor intercepting via hooks) is the sidecar pattern from CAAM applied at the local execution layer. Whether ADR converges with the guardian agent category (Gartner) or remains a distinct tooling layer is worth tracking through RSAC.
+
+### The Observability Quality Gap: 44% Manual Monitoring at Production Scale
+
+Dynatrace's "Pulse of Agentic AI in 2026" report (919 enterprise leaders, March 2026) exposes a gap behind the industry's observability adoption numbers. While 89% of organizations report having some form of agent observability (Braintrust), 44% of those with production deployments still rely on manual methods to review communication flows between agents. The biggest barrier to scaling is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems."
+
+This matters because the book's three multi-agent failure modes (cascading failures, internal leakage, emergent offensive cooperation) all propagate through agent communication channels. Manual review of agent-to-agent traffic cannot detect cascading failures at machine speed, cannot inspect steganographic data exfiltration, and cannot recognize peer pressure patterns between agents. The gap between "has observability" and "has governance-grade observability" is the difference between I2 (logged) and I4 (authorized) on the infrastructure maturity scale. Added to the Reliability chapter's observability section.
 
 ### ID-JAG Escapes the Vendor: Keycloak Ships Agent Authorization
 
