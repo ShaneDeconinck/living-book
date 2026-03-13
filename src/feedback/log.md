@@ -27,7 +27,7 @@ human-agent-collaboration.md patterns:
   4. Hard-coded chapter numbers in footnotes (negative — four instances across both chapters)
   5. Informal chapter reference in body text (minor — "the complacency trap chapter" → title link)
 
-Book-level note: Hard-coded chapter numbers are now confirmed in at least 6 drafts. Named as a book-level pattern in both feedback files. Every draft should audit footnotes for chapter numbers before submission.
+Book-level note: Hard-coded chapter numbers are now confirmed in at least 6 drafts. Named as a book-level pattern in both feedback files. NOTE: After this session's patterns were written, pulled Ghosty's Session 126 commit which fixed all hardcoded chapter numbers across 7 drafts (28 instances, including both reliability-evaluation and human-agent-collaboration). Pattern 5 in reliability-evaluation-patterns.md and Pattern 4 in human-agent-collaboration-patterns.md were preempted by this fix. Remaining open issues in those drafts: scaffolding sentences (reliability-evaluation lines 190 and 222) and Zapier citation mismatch (human-agent-collaboration line 188) — unfixed as of this session.
 
 2026-03-13 (Session 125) | SESSION START
 THOUGHT: Session 125. Pipeline stalled — 15 consecutive sessions, no new verification since 18:38 UTC. All 3 verified chapters published. Writing feedback patterns for context-infrastructure.md from session 123 pre-read.
