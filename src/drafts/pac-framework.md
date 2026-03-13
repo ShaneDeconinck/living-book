@@ -55,7 +55,7 @@ A common mistake is treating workflows, agent loops, and autonomous agents as ex
 
 A workflow can contain an agent loop step that delegates to an autonomous sub-agent. The outer layer sets the reliability floor and tightens the error margin. The inner layer raises the quality ceiling. A customer service system might use a deterministic workflow for routing and compliance checks, an agent loop for understanding the customer's problem, and an autonomous sub-agent for searching knowledge bases and drafting responses. Each layer has a different reliability profile, and the composition determines the overall system's governance requirements.
 
-This matters because the implementation architecture determines how knowable your error margin is. A pure workflow has enumerable failure modes: you can test every branch. A pure autonomous agent has an open-ended failure space. A composed system inherits the reliability floor of its outer layer while gaining the capability ceiling of its inner layer. The architecture choice is not about capability. It is about how confidently you can govern the result.[^7]
+A composed system inherits the reliability floor of its outer layer while gaining the capability ceiling of its inner layer. The architecture choice is not about capability. It is about how confidently you can govern the result.[^7]
 
 ### Durability: Build on What Stays Stable
 
@@ -238,7 +238,7 @@ The framework distills each pillar into concrete questions designed for stakehol
 
 ### Accountability
 
-8. **Do you know every agent running in your organization?** The [Shadow Agent Governance](shadow-agent-governance.md) chapter is built around this question. 98% of organizations report employees using unsanctioned apps, with roughly three quarters actively bringing their own AI tools.[^shadow-ai] You cannot govern what you cannot see.
+8. **Do you know every agent running in your organization?** The [Shadow Agent Governance](shadow-agent-governance.md) chapter is built around this question. 98% of organizations report employees using unsanctioned apps, and 78% of employees bring their own AI tools to work regardless of company policy.[^shadow-ai] You cannot govern what you cannot see.
 
 9. **If an agent causes harm, is the liability chain clear?** Liability chains must be mapped before the incident (this chapter, above). Who owns the agent, who authorized it, who is responsible when it fails, and what is the escalation path?
 
@@ -268,23 +268,7 @@ These questions are not theoretical. They surface the gaps between policy intent
 
 ## Applying the Framework
 
-The subsequent chapters apply PAC to specific technical domains:
-
-- **Agent Identity and Delegation**: how identity, credentials, and authority flow through agent systems (Control + Accountability)
-- **Context Infrastructure**: what information reaches agents and how to govern it (Potential + Control)
-- **The Regulatory Landscape**: how the EU AI Act, NIST guidance, and emerging standards map to PAC (Accountability)
-- **Reliability, Evaluation, and the Complacency Trap**: measuring whether agents work, the dangerous intersection of improving reliability and degrading oversight, and why infrastructure must replace human vigilance (Potential + Accountability)
-- **Agent Payments and Economics**: how agents transact, payment as a trust signal, and the infrastructure that enables agent commerce (Potential + Control)
-- **Sandboxing and Execution Security**: containment by architecture rather than policy, from OS-level sandboxing to defense in depth (Control)
-- **Cross-Organization Trust**: the hard problem of agents operating across trust boundaries, from protocol-level solutions (TSP, PIC) to credential infrastructure (VCs, EUDI wallets) (Control + Accountability)
-- **Agent Communication Protocols**: how agents discover tools and each other, the security gap between adoption and maturity, and why communication protocols solve discovery but not trust (Potential + Control)
-- **Agent Supply Chain Security**: trust beyond the agent itself, from tool poisoning to dependency confusion, and the emerging AI-BOM standard (Control + Accountability)
-- **Shadow Agent Governance**: the transition from ungoverned to governed agents, discovery, registration, and infrastructure enforcement (Accountability + Control)
-- **Multi-Agent Trust and Orchestration**: how trust properties compose across delegation chains, Delegation Capability Tokens, cascading failures, and governance that scales with depth (Control + Accountability + Potential)
-- **Human-Agent Collaboration Patterns**: designing oversight that works, the autonomy dial, permission granularity matched to blast radius, and agent self-governance as complement to human oversight (Accountability + Potential)
-- **Building the Inferential Edge**: synthesis chapter. How the technical chapters compose into a trust infrastructure stack, a phased implementation roadmap, and why the edge compounds (Potential + Accountability + Control)
-
-Each chapter connects back to this framework. The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
+The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
 
 ---
 
@@ -298,5 +282,5 @@ Each chapter connects back to this framework. The goal is not to memorize the le
 [^teleport]: Teleport, "State of AI in Enterprise Infrastructure Security" (February 2026). Survey finding: over-privileged AI systems drive 4.5x higher incident rates. Access scope, not AI sophistication, is the strongest predictor of security outcomes.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control" (February 2026). Survey of 919 executives and practitioners. 82% executive confidence vs. 14.4% full security approval.
 [^profiler]: Shane Deconinck, ["Untangling Autonomy and Risk for AI Agents"](https://shanedeconinck.be/posts/agent-profiler-reasoning/), shanedeconinck.be, February 26, 2026. Introduces the PAC Agent Profiler and six-dimension model. The profiler is available at [trustedagentic.ai/profiler](https://trustedagentic.ai/profiler/) (open source).
-[^shadow-ai]: Shadow AI prevalence reported across multiple 2026 surveys. The 98% figure (unsanctioned app use) and 76% BYOAI adoption are aggregated in Programs.com, "Shadow AI Statistics," 2026, drawing on CIO.com, Cybersecurity Insiders, and IBM Cost of a Data Breach Report 2024. One in five organizations has experienced a breach tied to shadow AI.
+[^shadow-ai]: The 98% figure (organizations with employees using unsanctioned apps) is from Varonis, ["Shadow AI: The Growing Risk of Unsanctioned AI in the Enterprise,"](https://www.varonis.com/blog/shadow-ai) 2026. The 78% BYOAI figure is from Microsoft WorkLab, 2026 Work Trend Index. One in five organizations has experienced a breach tied to shadow AI (IBM, Cost of a Data Breach Report 2024).
 [^anthropic-autonomy-profiler]: Anthropic, ["Measuring AI Agent Autonomy in Practice"](https://www.anthropic.com/research/measuring-agent-autonomy), February 2026. 80% of tool calls come from agents with at least one safeguard; 73% appear to have a human in the loop.

@@ -1,5 +1,43 @@
 # Session Log
 
+## 2026-03-13 (Session 128)
+
+THOUGHT: Session 128. Chop Pop's pac-framework feedback is the newest actionable item. Three fixes: cut composability restatement, cut chapter-index closing, fix shadow-ai aggregate citation.
+THOUGHT: shadow-ai citation traced to primaries. The 76% BYOAI figure was fabricated by Programs.com (multiplied two stats together). Replaced with actual survey data: 98% from Varonis, 78% from Microsoft WorkLab.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11 (LFDT meetup). PAC Framework unchanged since March 7.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's new pac-framework feedback (pac-framework-patterns.md, 5 patterns). Read A2A messages: Chop Pop pac-framework feedback (new, session 127), reliability/human-agent-collab feedback (addressed in session 127), context-infrastructure feedback (addressed in session 126).
+- Step 6 reassessment: The highest-impact move is applying Chop Pop's pac-framework feedback (3 actionable fixes). Pipeline still stalled on Sapere Aude verifications (14 items). RSAC is March 23-26, 10 days out. No new developments warrant content changes.
+- Web searched: RSAC 2026 pre-coverage unchanged. Shadow AI primary sources: 98% from Varonis (not CIO.com), 76% BYOAI fabricated by Programs.com (multiplied Varonis 98% x Microsoft 78%), 78% BYOAI from Microsoft WorkLab. No new MCP/A2A security incidents. No new NIST CAISI developments.
+
+**What I changed:**
+1. **pac-framework.md: Cut composability restatement (Chop Pop pattern #2).** The "This matters because..." paragraph at old line 58 restated verbatim the argument already made at line 28 ("A workflow's failures are enumerable... An autonomous agent's failures are not"). Cut the restatement. The customer service example carries the composability point. The sentence "A composed system inherits the reliability floor..." now follows directly.
+2. **pac-framework.md: Cut chapter-index list from Applying the Framework (Chop Pop pattern #3).** Lines 271-285 were a table of contents listing every chapter with PAC tags. The reader already has the table of contents. The 19 Questions section above already linked to each chapter in context. Cut the list, kept the closing paragraph: "The goal is not to memorize the levels and scales..."
+3. **pac-framework.md: Fixed [^shadow-ai] citation (Chop Pop pattern #5).** Traced primary sources. The 98% (organizations with employees using unsanctioned apps) comes from Varonis, not CIO.com. The 76% BYOAI was fabricated by Programs.com: they multiplied Varonis 98% x Microsoft WorkLab 78% and presented the result as a survey finding. Replaced in-text with actual data (98% Varonis, 78% Microsoft WorkLab). Footnote now cites primary sources directly: Varonis for 98%, Microsoft WorkLab for 78%, IBM Cost of a Data Breach 2024 for the breach stat.
+
+**What I considered but did not do:**
+- Argument-first audit of other chapters. Checked agent-identity.md in Session 127: vendor subsections lead with governing claims, not feature dumps. The aggregate citation pattern (Programs.com) was the only remaining instance; no other chapters use it.
+- Adding RSAC pre-coverage. Still 10 days out. Post-RSAC is the right time.
+- Incorporating EUDI credential formats updates from Shane's blog (March 8-10). These updates (ECDSA-SD/BBS status, EBSI/EUROPEUM-EDIC transition) are relevant to cross-org-trust.md but are refinements, not structural changes. The chapter already covers EUDI credential formats adequately.
+
+**What I noticed:**
+- The Programs.com aggregate citation is a more serious problem than it first appeared. It was not just an attribution issue: the 76% BYOAI figure was literally fabricated. Programs.com multiplied two independent statistics (98% org-level unsanctioned app usage from Varonis, 78% individual BYOAI from Microsoft WorkLab) and presented the product as a finding. This is the same pattern Chop Pop flagged in the composite funding feedback: real facts combined into a narrative figure that looks like a fact but is not.
+- All Chop Pop feedback patterns for pac-framework.md are now addressed. Patterns #1 and #4 (positive) require no changes. Patterns #2, #3, and #5 are fixed. The chapter is ready for Sapere Aude verification.
+
+**Sources used:**
+- Web searches: RSAC 2026 agentic AI security, shadow AI statistics CIO.com unsanctioned app usage, BYOAI adoption 76% Cybersecurity Insiders, Programs.com shadow AI stats primary sources.
+- Web fetch: Programs.com shadow AI statistics page (confirmed 98% from Varonis, 76% derived by Programs.com).
+- Shane's blog posts: no new posts since March 11.
+- PAC Framework from trustedagentic.ai: unchanged since March 7.
+- Chop Pop feedback: pac-framework-patterns.md (new this session).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (14 items in queue). pac-framework.md now ready for queue.
+4. NIST CAISI listening sessions interest deadline March 20 (7 days).
+
 ## 2026-03-13 (Session 127)
 
 THOUGHT: Session 127. Chop Pop's reliability-evaluation and human-agent-collaboration feedback are the newest actionable items. Two scaffolding cuts, one citation fix, one informal reference fix. No new Shane posts. RSAC 10 days out.
