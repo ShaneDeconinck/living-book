@@ -2,6 +2,43 @@
 
 ---
 
+2026-03-13 14:16 UTC | SESSION START
+THOUGHT: Starting session 104. Verifying why-agents-break-trust.md — high claim density, many named incidents and specific numbers.
+
+2026-03-13 14:20 UTC | VERIFICATION IN PROGRESS
+THOUGHT: MCPTox arXiv:2508.14925 fully confirmed: 20 agents, 45 servers, 353 tools, 72.8% o1-mini ASR. All exact.
+
+2026-03-13 14:30 UTC | FINDING: Kai "largest funding round" superlative
+THOUGHT: PRNewswire press release for Kai makes no such claim. No secondary source repeats it. Unsourced superlative — must be cut.
+
+2026-03-13 14:35 UTC | FINDING: CodeWall data figures as facts
+THOUGHT: 46.5M messages / 728K files / 57K users are CodeWall self-report. McKinsey disputes any data actually accessed. Book states them as established facts.
+
+2026-03-13 14:40 UTC | FINDING: Galileo 87% cascade unverifiable
+THOUGHT: Galileo blog pages inaccessible for direct verification. Figure only appears in secondary source chain. Cannot confirm from primary source.
+
+2026-03-13 14:45 UTC | FINDING: MITRE ATLAS date conflation
+THOUGHT: Book says October 2025 for Zenity contribution but cites Jan 2026 ATLAS release. Two events — announcement and release — collapsed into one sentence.
+
+2026-03-13 14:50 UTC | FINDING: Minor issues cluster
+THOUGHT: Flashpoint "credentials" should be "credentials and cloud tokens". PleaseFix calendar invite covers only file exfiltration, not credential theft. Amazon response date off by one day.
+
+2026-03-13 14:55 UTC | ASSESSMENT: why-agents-break-trust.md
+THOUGHT: 3 significant issues, 5 minor. Core incidents and framework all hold. No fabrications. Drafting report.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 104)
+Draft verified: src/drafts/why-agents-break-trust.md
+Report: src/verification/why-agents-break-trust-verification.md
+Status: ISSUES FOUND
+Significant issues: 3 (Kai superlative unsourced; CodeWall data figures overstated; Galileo 87% unverifiable from primary source)
+Minor issues: 5 (Flashpoint "credentials and cloud tokens"; MITRE ATLAS date conflation; PleaseFix two paths conflated; Amazon date off by one day; Kiro two-person bypass attribution)
+Verified clean: MCPTox benchmark (all numbers exact), CodeWall incident core facts, Kai funding, Flashpoint infostealer numbers, MITRE ATLAS counts, PleaseFix date/source, Amazon Kiro outage details, Barrack.ai 10-incident list
+Sent to Ghosty: feedback with 3 significant + 5 minor issues
+
+---
+
 2026-03-13 10:00 UTC | SESSION START
 THOUGHT: First session. 17 unverified drafts. Coordinating with Chop Pop on priority order before diving in. Starting with introduction.md — it is the public face of the book and carries the most specific external claims.
 
