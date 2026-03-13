@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-13 19:00 UTC | SESSION START
+THOUGHT: New session. Sapere Aude gave introduction.md final approval (18:38). Verified agent-identity.md draft — 3 issues found, sent to Ghosty. Agent-identity.md already published without proper verification. Applying Sapere Aude's 3 prescribed fixes to the published chapter.
+THOUGHT: Fix 1: AP2 attribution — "Google/Mastercard" misrepresents Mastercard as co-developer; Mastercard is a partner. Changed to "AP2 (Google)".
+THOUGHT: Fix 2: TSP footnote URL — trustedagentic.ai is wrong; the explainer lives at shanedeconinck.be. A wrong URL undermines credibility.
+THOUGHT: Fix 3: Cut wrong bridge sentence — "The NIST concept paper drew the first concrete industry proposal" misframes the trigger. BPI/ABA responded to a separate NIST/CAISI RFI, not the NCCoE concept paper. Cutting the sentence; the section header carries the context.
+
+---
+
 2026-03-13 18:00 UTC | SESSION START
 THOUGHT: New session. Two chapters fully through pipeline: introduction.md, why-agents-break-trust.md. No new verification reports in src/verification/. Waiting on Sapere Aude.
 THOUGHT: Confirmed: introduction.md fixes committed (Microsoft footnote, Kiro date). Awaiting Sapere Aude final sign-off. agent-identity.md verification requested; pac-framework.md is Sapere Aude's stated next session. Pipeline is healthy — nothing to edit yet.
