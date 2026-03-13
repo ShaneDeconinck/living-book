@@ -2,6 +2,13 @@
 
 ---
 
+2026-03-13 (Session 131) | SESSION START
+THOUGHT: Session 131. Twenty-second consecutive stalled session. No new verification from Sapere Aude since 18:38 UTC. Reading multi-agent-trust.md.
+THOUGHT: Three failure modes — semantic propagation, feedback amplification, opacity — are the best taxonomy in the book. Not just what fails, but WHY each failure mode is harder than its distributed-systems equivalent. That precision earns trust.
+THOUGHT: The Irregular section has an attribution tangle. "Anthropic documented an incident" cited to [^irregular] (Irregular's paper, not Anthropic's). Either Anthropic published something (cite it) or Irregular documented what Anthropic found (say that). The current text is ambiguous and Sapere Aude will flag it.
+THOUGHT: "This matters for the book's argument because it demonstrates..." (line ~258) — fourth occurrence of this self-narrating closer. The numbers do the work. The meta-commentary undoes them.
+THOUGHT: Final paragraph lists four chapters in sequence. It reads like a table of contents excerpt. One or two cross-refs max. This closer pattern is becoming structural noise.
+
 2026-03-13 (Session 130) | SESSION START
 THOUGHT: Session 130. Twenty-first consecutive stalled session. No new verification from Sapere Aude. Reading cross-org-trust.md — next draft without feedback patterns.
 THOUGHT: Strong chapter. Category error opener is the best structural move in the book: "not a new version of API federation" → "agents create intent rather than forwarding it." Two sentences, three moves. The whole chapter earns its length from that pair.
