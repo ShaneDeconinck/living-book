@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-13: Cross-Chapter Connections and Market Signal Updates (Session 30)
+
+**What I did:**
+- Added cross-chapter connection paragraphs to the two chapters that were missing them: `reliability-evaluation.md` and `agent-communication.md`. These follow the pattern established in `context-infrastructure.md` (identified as best-in-class in session 29): a closing paragraph that maps connections to 4 related chapters with brief explanations of each link.
+- Strengthened the bilateral threat narrative in `why-agents-break-trust.md` with two March 2026 market signals: OpenAI Codex Security (1.2M commits scanned, 792 critical findings in 30 days) and Kai ($125M emergence for agentic AI cybersecurity). These validate the "agents vs agents" framing already in the chapter and add concrete data on the defensive side responding in kind.
+- Added the same two developments to the convergence timeline in `building-the-edge.md` (March 2026 entry), strengthening the pattern of convergence across standards, regulation, and market investment.
+
+**Chapters modified:**
+- **reliability-evaluation.md**: Added cross-chapter connection paragraph linking to Agent Identity, Sandboxing, Human-Agent Collaboration, and Shadow Agent Governance chapters.
+- **agent-communication.md**: Added cross-chapter connection paragraph linking to Agent Identity, Sandboxing, Supply Chain Security, and Cross-Organization Trust chapters.
+- **why-agents-break-trust.md**: Added OpenAI Codex Security and Kai data to the bilateral threat section. Two new footnotes.
+- **building-the-edge.md**: Added OpenAI Codex Security and Kai to the March 2026 convergence timeline entry. Two new footnotes.
+
+**Why this work:**
+Stepped back and assessed priorities as instructed. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 (March 23-26) still 10 days out. The book is structurally complete at 15 chapters with 21 cross-references added last session.
+
+The cross-chapter connection paragraphs were the highest-priority structural improvement. Session 29 identified context-infrastructure.md's pattern as a template and noted 13 of 15 chapters already had closing connection paragraphs. Completing the remaining two (reliability-evaluation and agent-communication) ensures every chapter now explicitly maps its connections to the book's network. This is a reader navigation improvement: someone finishing any chapter now has a signposted path to related material.
+
+The Codex Security and Kai additions are market signals, not new concepts. The bilateral threat framing was already strong (Flashpoint, Sardine, CodeWall). But the defensive side was underrepresented: the chapter documented adversary agents at length while only implicitly noting that defenders would follow. Codex Security's 1.2M-commit scan and Kai's $125M funding make the response concrete and quantified. The convergence timeline addition reinforces the pattern: March 2026 saw offensive agents (CodeWall Lilli hack), defensive agents (Codex Security, Kai), authorization infrastructure (Verifiable Intent), and national strategy (White House Pillar 5) all converging simultaneously.
+
+**What I considered but did not do:**
+- Adding SurePath AI MCP Policy Controls to the agent communication chapter. SurePath is a vendor product for MCP access control (allowlists/blocklists). The agent gateway section already covers MCP-level policy enforcement generically through AgentGateway and Cedar policies. Adding vendor-specific products risks the chapter becoming a market map rather than a technical treatment.
+- Adding Bedrock Data's MCP Sensitive Data Sentinel. Pre-RSAC positioning. Better covered after the conference (March 23-26) with session content.
+- Expanding the introduction. At 53 lines it remains concise and functional. The chapter listing is comprehensive. Expanding it risks diluting the clear framing.
+- Reorganizing chapter order. The current sequence (problem, framework, identity, context, regulation, reliability, payments, sandboxing, cross-org, communication, supply chain, shadow governance, multi-agent, human-agent, conclusion) follows a logical progression from foundation to infrastructure to governance to practice. No reordering is warranted.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 11).
+- OpenAI, "Codex Security: now in research preview," openai.com, March 6, 2026. 1.2M commits, 792 critical, 10,561 high-severity findings.
+- The Hacker News, "OpenAI Codex Security Scanned 1.2 Million Commits," March 2026.
+- Kai, "Kai Emerges from Stealth with $125M," prnewswire.com, March 10, 2026. Evolution Equity Partners led. Galina Antova (Claroty co-founder), Dr. Damiano Bolzoni (SecurityMatters/Forescout co-founder).
+- SurePath AI, "Advances Real-Time MCP Policy Controls," prnewswire.com, 2026. Reviewed but not added.
+
+**What I noticed:**
+- All 15 chapters now have cross-chapter connection paragraphs. The book's navigation network is complete. Every chapter ending gives the reader 3-5 signposted paths to related material.
+- The bilateral threat framing in Chapter 1 is now balanced: adversary agents (Flashpoint, Sardine, CodeWall) and defensive agents (Codex Security, Kai) both have concrete examples. This matters because the trust infrastructure thesis applies to both sides: organizations need trust infrastructure to govern their defensive agents just as much as to protect against adversary agents.
+- The convergence timeline in the concluding chapter is becoming dense for March 2026. Five distinct entries now (White House strategy, Verifiable Intent, Codex Security, Kai, RSAC). This density is itself a signal: March 2026 is a inflection month for the agent security market. Post-RSAC additions may warrant splitting the timeline into sub-categories (standards, products, regulation, market investment).
+- The MCP governance tooling layer is maturing fast (SurePath AI, Bedrock Data, AgentGateway, Cedar policies). A future session could add a "governance tooling maturity" section to the communication protocols chapter. For now, the agent gateway section covers the architectural pattern adequately.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Innovation Sandbox results (Token Security, Geordie AI winner), product announcements, keynote themes, Bedrock Data MCP governance sessions.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider splitting the convergence timeline by category if post-RSAC additions make it too dense.
+
 ## 2026-03-13: Cross-Reference Revision Pass (Session 29)
 
 **What I did:**
