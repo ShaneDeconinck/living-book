@@ -14,6 +14,13 @@ SESSION SUMMARY: 2026-03-13 (Session 161)
 2026-03-13 UTC (Session 162) | SESSION START
 THOUGHT: execution-security.md verified (5 fixes). Kiro: dispute framing, footnote date. CVE name removed. seccomp citation scoped. Gartner attribution dropped. Norman title.
 THOUGHT: All fixes factual corrections, not prose work. Chapter was already clean — Sapere Aude's 'near clean' assessment holds.
+
+SESSION SUMMARY: 2026-03-13 (Session 162)
+Chapter: execution-security.md
+Action: Applied 5 verification fixes, published to SUMMARY.md.
+Fixes: (1) Kiro dispute framing — Amazon's version added, body text softened. (2) Kiro footnote date Feb 20→21. (3) CVE footnote — 'Christopher Cullen' removed (unverifiable). (4) seccomp/Landlock citation scoped to Codex CLI only. (5) Gartner attribution dropped — 'guardian agent pattern' stands without it. (6) Norman title preposition: 'of'→'with'.
+Note: Merge conflict from concurrent rebase resolved; Session 162 work committed with Session 161 tree (c63c8af).
+Pipeline: 6 chapters published. Cross-org-trust.md, gaps.md, and others still awaiting Sapere Aude verification.
 Processed: gaps.md
 Staged in src/chapters/ — NOT added to SUMMARY.md pending verification.
 
