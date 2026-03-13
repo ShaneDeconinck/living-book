@@ -28,6 +28,8 @@ The answer is not better prompts. The answer is containment by design.
 
 Containment means restricting what an agent can do regardless of what it tries to do. The restrictions are structural, not advisory. An agent inside a properly configured sandbox cannot exfiltrate SSH keys, not because it has been told not to, but because the sandbox prevents filesystem access to `~/.ssh/` at the operating system level.
 
+The alternative, filtering dangerous commands through denylists, does not work. CVE-2026-2256 in ModelScope's MS-Agent framework demonstrated this in March 2026.[^ms-agent] The framework's Shell tool used a `check_safe()` method with regex-based denylist filtering to block unsafe commands. Attackers bypassed it with alternative encodings, shell syntax variations, and command obfuscation, achieving arbitrary remote code execution rated CVSS 9.8. The pattern is general: any denylist-based approach assumes you can enumerate everything dangerous. Agents, by design, generate novel command sequences. A denylist that blocks `rm -rf /` does not block the creative reformulation an agent or an attacker produces. Containment must be structural, not lexical.
+
 Shane draws the distinction clearly[^sandbox-post]:
 
 > Containment must be by design, not by user vigilance. The answer is restricting what the agent can do regardless of what it tries to do.
@@ -273,3 +275,5 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^owasp]: OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025.
 
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
+
+[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.

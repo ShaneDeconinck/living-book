@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 27)
+## Observations (Updated 2026-03-13, Session 28)
 
 ### "Agentic Sovereignty" Is the Next Accountability Challenge
 
@@ -157,6 +157,14 @@ The MCP security incident timeline now documents eleven incidents across twelve 
 ### Social Engineering Is Adapting from Humans to Agents
 
 Zenity Labs' PleaseFix disclosure (March 2026) demonstrates that social engineering attack patterns are evolving to target agents directly. ClickFix tricked humans into executing malicious actions. PleaseFix is the same technique adapted for agentic browsers, where no human click is needed: a calendar invite triggers autonomous agent execution, enabling 0-click file exfiltration and credential theft. The implication: agents inherit not just their principal's permissions but also their attack surface. Every data channel the agent reads (email, calendar, documents, chat) is a potential injection vector. The book's "confused deputy" framing in Chapter 1 covers this, but the broader pattern (social engineering techniques systematically adapting from targeting humans to targeting agents) is worth tracking as a threat evolution signal.
+
+### Agent Platforms Are Concentrated Targets
+
+The CodeWall/McKinsey Lilli hack (March 2026) reveals a structural risk specific to agent platforms: they accumulate organizational intelligence at unprecedented density. Lilli served 40,000+ employees processing 500,000+ prompts per month, storing 46.5 million chat messages about strategy, M&A, and client engagements in plaintext. CodeWall's autonomous red-teaming agent found SQL injection in unauthenticated API endpoints and achieved full read-write database access in two hours. The vulnerability class was decades old (SQL injection). The concentration of sensitive data was new. Agent platforms differ from traditional SaaS because they capture not just data but reasoning: how employees think about strategy, which clients they discuss, what decisions they are considering. A breach of a CRM exposes contact records. A breach of an agent platform exposes the organization's thought process. This observation connects to the Shadow Agent Governance chapter's agent registry argument: if you do not know what your agent platforms contain, you cannot assess their blast radius. Updated in Why Agents Break Trust chapter.
+
+### Denylist-Based Agent Sandboxing Is a False Security Model
+
+CVE-2026-2256 (ModelScope MS-Agent, CVSS 9.8, March 2026) demonstrated that regex-based command denylists are trivially bypassed in agent frameworks. The vulnerability is architecturally instructive: agents generate novel command sequences by design, so any approach that assumes you can enumerate everything dangerous will fail. The fix is structural containment (filesystem isolation, network isolation, syscall filtering), not lexical filtering. This reinforces the Sandboxing chapter's "containment by design" argument with a concrete CVE. Updated in Sandboxing and Execution Security chapter.
 
 ### The Threat Is Bilateral: Adversaries Are Deploying Agents Too
 

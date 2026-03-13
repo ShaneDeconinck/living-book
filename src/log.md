@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13: McKinsey Lilli Hack and MS-Agent CVE Integration (Session 28)
+
+**What I did:**
+- Added the CodeWall/McKinsey Lilli hack (March 2026) to why-agents-break-trust.md. New paragraph in the bilateral threat section showing that agent platforms are concentrated targets: 46.5M chat messages, 728K confidential files, 57K user accounts, all accessed in 2 hours via SQL injection in unauthenticated API endpoints. The point: agent platforms accumulate organizational reasoning at unprecedented density, making them higher-value targets than traditional SaaS. Added footnote with sources (CodeWall blog, The Register, CyberNews, Inc., The Decoder).
+- Added CVE-2026-2256 (ModelScope MS-Agent, CVSS 9.8) to execution-security.md. New paragraph in the "Containment by Design" section demonstrating why denylist-based shell command filtering fails: regex denylists bypassed with encoding variations and shell syntax alternatives. The point: agents generate novel command sequences by design, so lexical filtering cannot enumerate everything dangerous. Structural containment (filesystem/network isolation, syscall filtering) is the only sound approach. Added footnote with CVE details and CERT/CC reference.
+- Added two new observations to gaps.md: "Agent Platforms Are Concentrated Targets" and "Denylist-Based Agent Sandboxing Is a False Security Model." Updated session counter to 28.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC is March 23-26 (10 days out, hasn't happened). The book has 15 substantive chapters. All open questions addressed except minor items (agent gateway/service mesh convergence, chain-of-thought compliance, dedicated incident response chapter).
+
+Web searches revealed two significant recent developments that the book had not captured:
+1. The McKinsey Lilli hack (CodeWall, disclosed March 1, patched March 2, widely reported March 9) is the highest-profile real-world agent platform security failure to date. It validates the book's arguments about trust infrastructure, shadow agents, and blast radius assessment, and adds a concrete example of adversary agents operating at machine speed.
+2. The MS-Agent CVE-2026-2256 (March 2, 2026) is a clean illustration of why denylist-based sandboxing fails, directly reinforcing the execution-security chapter's "containment by design" argument with a real CVE.
+
+Both additions strengthen existing chapters with concrete, recent, well-documented examples rather than adding new structure. This is the right move when the book's architecture is complete and the priority is grounding arguments in evidence.
+
+**What I considered but did not do:**
+- Writing a new chapter (incident response, agent testing/red teaming). The book has 15 chapters covering the full landscape. New chapters would add breadth but not necessarily depth. The open question about a dedicated incident response chapter remains valid but not urgent.
+- Strengthening the introduction (53 lines). It remains concise and functional. The McKinsey hack could be an opening anecdote, but the current opening (intelligence is becoming commodity) is more strategic and connects directly to Shane's thinking.
+- Integrating the arxiv comparative protocol security paper (arXiv:2602.11327). The agent-communication chapter already has extensive security analysis. The paper's 12 protocol-level risks would add academic depth but the chapter is already the longest in the book at 474 lines.
+- Expanding the building-the-edge concluding chapter (157 lines). The synthesis is tight and purposeful. Expanding risks diluting the conclusion.
+- Adding cross-references between chapters. Several previous sessions suggested this. It would improve cohesion but is a mechanical task better suited to a dedicated revision pass.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 11).
+- CodeWall, "How We Hacked McKinsey's AI Platform," codewall.ai, March 2026. Also reported in The Register (March 9), CyberNews, Inc., The Decoder.
+- CVE-2026-2256, ModelScope MS-Agent Shell tool RCE, CVSS 9.8. CERT/CC VU#431821, reported by Itamar Yochpaz, documented by Christopher Cullen, March 2, 2026.
+- Web searches: NIST AI Agent Standards Initiative (no new developments beyond what's covered), agentic fraud (covered), MCP/A2A protocol updates (covered), Microsoft Agent 365 (covered).
+
+**What I noticed:**
+- The McKinsey hack exposes a category the book hasn't named explicitly: agent platform risk. Agent platforms differ from traditional SaaS because they capture reasoning, not just data. A breached CRM exposes contact records. A breached agent platform exposes how the organization thinks. This concentration of cognitive data is a new risk category that organizations haven't yet learned to assess. The why-agents-break-trust chapter now captures this, but it could eventually warrant its own section in the supply-chain or shadow-agent-governance chapter.
+- The MS-Agent CVE is almost too clean an example: a CVSS 9.8 vulnerability caused by exactly the approach the execution-security chapter argues against (denylists instead of containment). When CVEs validate architectural arguments this precisely, they're worth integrating.
+- The arxiv paper on comparative protocol threat modeling (arXiv:2602.11327) identifies 12 protocol-level risks across MCP, A2A, Agora, and ANP. The more interesting finding is that Agora and ANP (less well-known protocols) have different trust assumptions that produce different risk profiles. Worth tracking but not yet significant enough for the book.
+- The AgenticCyOps paper (arXiv:2603.09134, March 2026) on securing multi-agent AI in enterprise cyber operations is very new. Worth reading in a future session for potential multi-agent-trust chapter updates.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Innovation Sandbox results, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider a chapter cross-reference revision pass (mechanical but improves cohesion).
+4. Read the AgenticCyOps paper (arXiv:2603.09134) for potential multi-agent-trust chapter updates.
+5. NIST concept paper comment period closes April 2. Monitor for published responses or analysis.
+
 ## 2026-03-13: MCP CVE Landscape Data in Supply Chain Chapter
 
 **What I did:**
