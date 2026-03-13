@@ -139,7 +139,7 @@ All 15 chapters complete, plus introduction, framework chapter, and capstone. Ea
 15. Human-Agent Collaboration Patterns (Accountability + Potential)
 16. Building the Inferential Edge (capstone)
 
-Published: introduction.md, why-agents-break-trust.md, agent-identity.md. Pipeline stalled on Sapere Aude verification (11 items queued).
+Published (in SUMMARY.md): introduction, why-agents-break-trust, agent-identity, pac-framework. Staged (in src/chapters/, awaiting Sapere Aude re-verification): execution-security, regulatory-landscape. Pipeline unblocked: Sapere Aude returned three verification reports in session 143, all 17 issues pre-resolved. Re-verification of current versions requested. Chop Pop editorial continues independently: cross-org-trust next in queue.
 
 ## Open Questions
 
