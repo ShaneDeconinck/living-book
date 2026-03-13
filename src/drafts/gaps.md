@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 76)
+## Observations (Updated 2026-03-13, Session 77)
+
+### The Agent Transparency Label: Financial Industry Proposes Standardized Disclosure
+
+The BPI/ABA joint comment to NIST CAISI (March 9, 2026) proposes the first concrete format for standardized agent transparency: a risk-scaled "nutrition label" with foundational and enhanced tiers. The foundational tier covers agent purpose, data dependencies, operational boundaries, permission scope, human approval requirements, and logging. The enhanced tier adds detail for high-risk interactions. The specific mechanism is a "Data Dependency Label" documenting what data an agent accesses and how it uses it.
+
+This fills a gap in the trust stack the book describes. The book covers identity verification (KYA: is this agent legitimate?), authorization (Verifiable Intent: what can this agent do?), and identity infrastructure (OAuth, VCs, DIDs: how do we prove it?). The transparency label occupies the middle: what does this agent do, what does it access, and what constrains it? This is the information a counterparty needs before deciding whether to trust an agent, and before the identity and authorization mechanisms engage.
+
+The broader pattern: the financial industry is the first sector to propose standardized agent disclosure, but the concept generalizes. Healthcare agents need analogous transparency (what patient data can they access? what clinical decisions can they influence?). Supply chain agents need it (what systems can they modify? what inventory can they move?). The "nutrition label" metaphor works because it transforms agent transparency from an ad-hoc, per-interaction negotiation into a standardized, machine-readable disclosure that infrastructure can enforce. Whether this converges with Agent Cards in A2A (which already carry machine-readable capability metadata) or remains a separate regulatory artifact is an open question. Added to the agent-identity chapter's Regulatory Convergence section.
 
 ### The Paradox of Supervision: Delegation Erodes the Skills Oversight Requires
 
