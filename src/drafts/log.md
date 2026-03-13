@@ -1,5 +1,46 @@
 # Session Log
 
+## 2026-03-13 UTC: CAAM Authorization Mesh and Ghost Token Pattern (Session 78)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues into its 14th session (65-78). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, OpenAI Codex Security, RSAC Innovation Sandbox finalists, Microsoft Agent 365/Frontier Suite, ConductorOne Future of Identity Report, IETF OAuth agent delegation drafts, AI agent security news March 12-13 2026. Most findings already in the book (OpenAI Codex Security, Promptfoo acquisition, Microsoft Agent 365/E7, ConductorOne report, RSAC Innovation Sandbox finalists, A2A v1.0, 30 MCP CVEs, all IETF drafts). One genuinely new finding: **CAAM (Contextual Agent Authorization Mesh)**, draft-barney-caam-00, February 24, 2026, by Jonathan Barney, Roberto Pioli, and Darron Watson.
+
+**What I changed:**
+- **cross-org-trust.md**: Added new subsection "CAAM: The Authorization Mesh" (approximately 20 lines) between "Where TSP and PIC Meet" and "Verifiable Credentials as the Trust Carrier." Covers: the post-discovery, pre-execution authorization gap; Session Context Object (SCO) as cryptographically signed purpose/scope/delegation-depth carrier; the Ghost Token Pattern (raw tokens in vault, sidecar synthesizes ephemeral single-use tokens); AuthZ-at-Discovery (agents advertise security posture via SPIFFE trust domain, RATS attestation, policy manifest before session establishment); composition with TSP (identity), PIC (authority continuity), and SPIFFE/RATS (workload attestation). One footnote added citing the IETF draft.
+- **gaps.md**: Updated session number to 78. Added new observation "The Ghost Token Pattern: Authorization Isolation as Infrastructure" covering the three authorization isolation patterns now documented (sidecar/CAAM, guardian agent/Google, reference monitor/PCAS), how they compose across different layers, and the connection between AuthZ-at-Discovery and the BPI/ABA transparency label.
+
+**What I considered but did not do:**
+- Adding NIST CAISI listening session detail (sector-specific virtual workshops in April 2026 for financial services, healthcare, education, with March 20 participation deadline). The book already tracks the March 20 deadline. The sector-specific scope is a scheduling detail, not an architectural insight.
+- Adding RSAC Innovation Sandbox finalist details (Token Security, Geordie AI, Glide Identity, etc.). Already covered in shadow-agent-governance.md, agent-identity.md, gaps.md, and building-the-edge.md.
+- Adding OpenAI Codex Security (11,000 bugs in one month). Already covered in execution-security.md and building-the-edge.md.
+- Adding Microsoft Agent 365/E7 Frontier Suite details. Already extensively covered across shadow-agent-governance.md, agent-identity.md, context-infrastructure.md, building-the-edge.md.
+- Adding ConductorOne Future of Identity Report 2026 (95% autonomous agents, 22% visibility). Already covered in shadow-agent-governance.md and agent-identity.md.
+- Adding new infosec product announcements (Singulr Agent Pulse, Terra Portal, SOC Prime DetectFlow). Singulr already noted in gaps.md. Others are vendor products without architectural insight for the book.
+- Revising or restructuring existing chapters. At session 78, with RSAC 10 days away, adding the one genuinely new finding is the right incremental move.
+
+**What I noticed:**
+- CAAM fills a specific gap in the cross-org trust architecture. The chapter had TSP for identity establishment, PIC for authority continuity, VCs for credential portability, and Verifiable Intent for operational envelopes. What was missing was the runtime authorization enforcement layer: the mechanism that intercepts tool calls, synthesizes scoped tokens, and evaluates contextual risk before execution. CAAM provides this through the sidecar model.
+- The Ghost Token Pattern is the most practically significant contribution. It solves the same problem PIC identifies (authority as an object that can be stolen) through infrastructure isolation rather than mathematical proof. The agent never possesses the real delegation tokens. The sidecar synthesizes ephemeral, request-bound tokens from a vault. This is "infrastructure in the loop" at the credential layer.
+- Three distinct authorization isolation patterns are now documented across the book: sidecar interception (CAAM, credential/token layer), guardian agent review (Google User Alignment Critic, action-intent layer), and reference monitor enforcement (PCAS, business-logic layer). These compose because they operate at different layers of the stack. An agent could have all three: CAAM controlling its credentials, a guardian agent reviewing its actions, and PCAS enforcing semantic policies. Each catches threats the others miss.
+- AuthZ-at-Discovery connects the BPI/ABA transparency label to protocol-level enforcement. The label describes what the agent does and accesses (disclosure). AuthZ-at-Discovery verifies whether the agent's infrastructure can enforce those descriptions (verification). Together: disclosure plus verification. This is the trust negotiation layer the book described conceptually but did not have a protocol-level mechanism for.
+- Pre-RSAC plateau continues through session 78. Fourteen consecutive sessions (65-78) where broad searches return material already in the book with one significant new finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- IETF, "Contextual Agent Authorization Mesh (CAAM)," draft-barney-caam-00, February 24, 2026. Authors: Jonathan M. Barney, Roberto Pioli, Darron Watson.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, OpenAI Codex Security March 2026, RSAC Innovation Sandbox finalists, Microsoft Agent 365 Frontier Suite, ConductorOne future of identity report, IETF OAuth agent delegation March 2026, AI agent security news March 12-13 2026, NIST CAISI listening session March 20 (all returned material already in the book except CAAM).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions beyond BPI/ABA.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether CAAM gains traction alongside the other agent authorization drafts. The sidecar model and Ghost Token Pattern are architecturally distinct from the token-enrichment approaches (AAP, OBO extension) and may attract a different constituency.
+
 ## 2026-03-13 UTC: Permission Intersection Gap, Okta Series Integration (Session 74)
 
 **What I did:**

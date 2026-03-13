@@ -126,6 +126,20 @@ Both share a conviction: existing web protocols (HTTP, OAuth, TLS) are mature an
 
 Both are designed to work with existing infrastructure, not replace it. PIC can use OAuth as a federated backbone, embedding its causal authority in custom claims. TSP is agnostic to identifier types, making it compatible with systems like EUDI wallets and verifiable credentials.
 
+### CAAM: The Authorization Mesh
+
+TSP establishes identity across boundaries. PIC ensures authority cannot expand through delegation chains. But what happens in between: after an agent is discovered but before it executes a tool call?
+
+The Contextual Agent Authorization Mesh (CAAM, draft-barney-caam-00, February 2026) addresses this gap through a sidecar-based authorization mediator that intercepts tool calls outside the agent's reasoning loop.[^caam] The core mechanism is the Session Context Object (SCO): a cryptographically signed JWT or CWT carrying purpose constraints, scope ceiling, delegation depth, attestation evidence, and a contextual risk score. Every tool call passes through the sidecar, which evaluates the SCO against declared policies before the call proceeds.
+
+Two architectural choices stand out.
+
+First, CAAM introduces what the authors call the Ghost Token Pattern. Raw delegation tokens never reach the agent. They remain in a vault managed by the sidecar. When the agent needs to act, the sidecar synthesizes a short-lived, single-use token bound to the specific request, the current SCO, and the contextual risk score. The agent operates with ephemeral credentials that cannot be replayed, exfiltrated, or used outside their intended context. This addresses the token-as-authority-object problem that PIC solves theoretically: CAAM solves it at the infrastructure layer through token isolation.
+
+Second, CAAM requires AuthZ-at-Discovery: before a session is established, the agent must advertise its SPIFFE trust domain, supported attestation evidence types, inference boundary hash, and policy manifest URI. The receiving party evaluates this security posture before permitting any interaction. This operationalizes the transparency label concept at the protocol level: the agent's security properties are machine-verifiable preconditions, not post-hoc audit artifacts.
+
+CAAM is an early individual draft, not yet adopted by an IETF working group. But the architecture it describes composes naturally with the rest of the stack: SPIFFE for workload identity, RATS (RFC 9334) for execution environment attestation, TSP for cross-boundary channels, and PIC for authority continuity. The sidecar model is the practical deployment pattern for "infrastructure in the loop": authorization decisions happen in a layer the agent cannot influence, even if it is compromised.
+
 ## Verifiable Credentials as the Trust Carrier
 
 The protocols above establish how to communicate trust across boundaries. Verifiable Credentials (VCs) are the format for carrying it.
@@ -323,3 +337,4 @@ The cross-domain challenge is not optional. Every agent that calls an external A
 [^11]: European Commission, European Digital Identity (eIDAS 2.0), Regulation (EU) 2024/1183. EUDI Wallet implementation timeline: December 2026 for Member State availability.
 [^12]: Vouched, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 5, 2026. MCP-I specification at modelcontextprotocol-identity.io. Three conformance levels for graduated adoption.
 [^we-build]: WE BUILD consortium, reported in BiometricUpdate.com, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD," March 9, 2026. WE BUILD is one of the EU's four Large Scale Pilots for EUDI Wallet implementation. See also Thierry Thevenet, "From AI in Wallets to Wallet for AI Agents," Medium, March 2026.
+[^caam]: IETF, "Contextual Agent Authorization Mesh (CAAM)," draft-barney-caam-00, February 24, 2026. Authors: Jonathan M. Barney, Roberto Pioli, Darron Watson. Individual draft, expires August 28, 2026. Defines sidecar-based authorization mediator for post-discovery, pre-execution authorization with Session Context Objects, Ghost Token Pattern, and Contextual Risk Scoring.

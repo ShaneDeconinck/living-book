@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 77)
+## Observations (Updated 2026-03-13, Session 78)
+
+### The Ghost Token Pattern: Authorization Isolation as Infrastructure
+
+CAAM (Contextual Agent Authorization Mesh, draft-barney-caam-00, February 2026) introduces the Ghost Token Pattern: raw delegation tokens never reach the agent. They remain in a vault managed by an authorization sidecar. When the agent needs to act, the sidecar synthesizes a short-lived, single-use token bound to the specific request, the current Session Context Object, and a contextual risk score. The agent operates only with ephemeral credentials.
+
+This is the most concrete architectural pattern yet for solving the "token as authority object" problem at the infrastructure layer. PIC solves it theoretically (authority is continuity, not possession). CAAM solves it practically (the agent never possesses the real token). The two approaches compose: PIC ensures authority cannot expand through the chain; Ghost Tokens ensure the agent cannot exfiltrate or replay the credentials that carry that authority.
+
+The broader pattern: three distinct approaches to isolating authorization from agent reasoning are now documented. The sidecar model (CAAM) intercepts tool calls. The guardian agent model (Google's User Alignment Critic) reviews proposed actions. The reference monitor model (PCAS) enforces semantic policies. Each operates at a different layer: CAAM at the credential/token layer, the guardian agent at the action-intent layer, PCAS at the business-logic layer. All three are "infrastructure in the loop" patterns, and they compose because they address different concerns.
+
+The CAAM draft also introduces AuthZ-at-Discovery: agents must advertise their security posture (SPIFFE trust domain, attestation evidence, policy manifest) before a session is established. This connects to the BPI/ABA transparency label: the label describes what the agent does and accesses; AuthZ-at-Discovery verifies whether the agent's infrastructure can be trusted to enforce those descriptions. Disclosure plus verification. Added to the cross-organization trust chapter.
 
 ### The Agent Transparency Label: Financial Industry Proposes Standardized Disclosure
 
