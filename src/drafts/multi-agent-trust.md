@@ -337,7 +337,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^4]: Nenad Tomašev, Matija Franklin, and Simon Osindero, "Intelligent AI Delegation," Google DeepMind, arXiv:2602.11865, February 12, 2026.
 
-[^5]: Cloud Security Alliance, "AI Agents Have Outgrown Their Credentials: Why Drift's Breach Changes Everything," CSA Research, 2026. Documented in the Cross-Organization Trust chapter.
+[^5]: Cloud Security Alliance, "AI Agents Have Outgrown Their Credentials: Why Drift's Breach Changes Everything," CSA Research, 2026.
 
 [^6]: Yixiang Yao et al., "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On," IACR ePrint Archive 2026/497, March 2026.
 
@@ -355,7 +355,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^12]: EU AI Act, Articles 4, 6, 9, 28; risk classification and provider/deployer obligations for AI systems.
 
-[^13]: Nicola Gallo, PIC (Provenance, Identity, Continuity) paradigm, presented at LFDT Belgium meetup, March 2026. Documented in the Cross-Organization Trust chapter.
+[^13]: Nicola Gallo, PIC (Provenance, Identity, Continuity) paradigm, presented at LFDT Belgium meetup, March 2026.
 
 [^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework," OASIS Open Project, 2026. Pre-release available on GitHub (cosai-oasis/ws2-defenders); formal V1.0 approval pending. Includes CACAO-standard playbooks for AI-specific incident categories.
 
