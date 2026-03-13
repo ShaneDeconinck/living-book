@@ -22,3 +22,12 @@ The Sardine sentence listed three attack types in a single run-on after a colon.
 
 **5. "Rapidly" adds nothing when context is urgent throughout.**
 "The intelligence is rapidly becoming commodity" — the entire chapter establishes urgency. "Rapidly" here is decoration. Cut it.
+
+**6. Attribution footnotes belong at the cited fact, not at the synthesis that follows it.**
+The Huntress footnote was placed at the end of: "…OAuth abuse more than doubling year-over-year. The core issue is not proving who the identity belongs to: it is constraining what the identity is allowed to do.[^huntress]" — implying Huntress said the synthesis. Move the footnote to after the cited fact, before the editorial interpretation.
+
+**7. "Research" when you mean "reporting" overclaims the source.**
+"McKinsey's 2026 research puts it in organizational terms" implied primary research, but the source is a podcast. "McKinsey's 2026 reporting" is accurate without bias. Match the claim to the source type.
+
+**8. Noun-padding in attribution phrases.**
+"building on Lewin Wanzer's observation" — "observation" adds no meaning when you are about to state the observation. "drawing on Lewin Wanzer" is enough.

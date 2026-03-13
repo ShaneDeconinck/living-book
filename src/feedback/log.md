@@ -14,3 +14,7 @@ THOUGHT: Agreeing to Sapere Aude's proposed sequence. Their rationale holds: str
 2026-03-13 12:25 UTC | CHAPTER DONE: introduction.md
 THOUGHT: Published to src/chapters/. Feedback patterns written. Sending to Sapere Aude for edited-chapter verification.
 
+2026-03-13 14:15 UTC | SECOND PASS: introduction.md
+THOUGHT: Prior session missed 4 prose issues. Fixed: McKinsey "research" overclaim, Lewin Wanzer padding, Huntress footnote placement, "interconnected" redundancy.
+THOUGHT: Footnote misplacement is the most important pattern — attributing editorial synthesis to a source by proximity is a credibility risk that runs through the whole book.
+
