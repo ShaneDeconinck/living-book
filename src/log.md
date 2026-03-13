@@ -1,5 +1,51 @@
 # Session Log
 
+## 2026-03-13 26:00 UTC: SCIM for Agents: Lifecycle Provisioning (Session 68)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date.
+- Read current book state: 15 chapters, all well-sourced. Read PAC Framework fresh from trustedagentic. Confirmed unchanged (19 questions, three pillars, six governance dimensions). No feedback files exist.
+- Discovered that sessions 63-67 all claimed "no new Shane blog posts since Session 58" but five substantial posts were published March 2-11: "When Intelligence Becomes Commodity" (March 2), "Google Workspace CLI" (March 5), "Verifiable Intent" (March 6), "EUDI Credential Formats" (March 9), "LFDT Meetup: TSP and PIC" (March 11). Verified that the book content DID integrate these posts correctly despite the log being wrong. The session logs were inaccurate, not the book content.
+- Step 5 reassessment: still pre-RSAC (March 23-26, 10 days out). Searched broadly: agentic AI security March 12-13, MCP CVEs March 2026, IETF agent authorization drafts. Most findings already in the book. One genuine gap found: **SCIM for AI Agents** has zero coverage despite being the provisioning layer that completes the agent identity lifecycle.
+- Verified McKinsey Lilli hack (already in why-agents-break-trust at line 90). Verified OpenClaw crisis details (already comprehensive in supply-chain-security). Verified Rubrik Agent Cloud (product announcement, confirms trajectory without adding structural insight).
+
+**What I changed:**
+- **agent-identity.md**: Added new subsection "SCIM for Agents: Lifecycle Provisioning at the Protocol Level" (approximately 20 lines) after the Microsoft Entra Agent ID section and before "Agent Identity Is Now a Product Category." Covers: two IETF drafts (draft-abbey-scim-agent-extension-00 from Okta, draft-wahl-scim-agent-schema-01 from Mark Wahl) defining "Agent" and "AgenticApplication" as SCIM resource types; the architectural gap filled (authorization vs identity vs provisioning); connection to shadow agent governance (SCIM as structural enforcement point: unprovisioned agents cannot authenticate); parallel with human SCIM emergence from operational need. One footnote added with four sources.
+- **gaps.md**: Updated session number to 68. Added observation "SCIM for Agents: The Missing Lifecycle Layer" covering the architectural gap, the IETF draft count (now at least ten individual submissions targeting agent identity infrastructure in Q1 2026), and the lifecycle completeness story.
+
+**What I considered but did not do:**
+- Adding new MCP CVEs (CVE-2026-29787 mcp-memory-service info disclosure, CVE-2026-32111 ha-mcp SSRF, CVE-2026-32112 ha-mcp XSS). All are medium severity and do not change the book's MCP vulnerability narrative (already covers 30+ CVEs, CVE-2026-26118, MCPTox, OWASP MCP Top 10). The CVE count continues to grow, confirming the trajectory.
+- Adding AAuth (draft-rosenberg-oauth-aauth-00): OAuth 2.1 extension for voice/SMS channels where traditional OAuth flows are impossible. Niche use case (PSTN-based agent interactions). Draft v00 from October 2025, not a new development.
+- Adding draft-goswami-agentic-jwt-00: another agent-focused JWT draft. Not yet reviewed in detail. Part of the growing IETF draft count noted in gaps.md.
+- Strengthening the introduction. Read it in full: well-structured at 133 lines. All Shane blog posts already referenced. No gaps found.
+- Adding Rubrik Agent Cloud / Agent Rewind to execution-security or shadow-agent-governance. Product announcement that confirms the trajectory (agent governance as product category) without adding structural insight. Rubrik's "Agent Rewind" (correlating agent actions with backup snapshots for remediation) is novel conceptually but a single vendor feature, not an architectural pattern yet.
+- Correcting session log entries 63-67 about Shane's blog posts. The logs are historical records; correcting them would be revisionist. Instead, noted the discrepancy in this session's log.
+
+**What I noticed:**
+- The agent-identity chapter now covers the full agent identity lifecycle at the protocol level: connection establishment (XAA/ID-JAG), delegation tracking (OBO), purpose encoding (AAP), identity propagation (Transaction Tokens), token binding (DPoP), identity creation (Entra Agent ID), lifecycle provisioning (SCIM), and intent verification (Verifiable Intent). This is architecturally complete: every phase of an agent's identity lifecycle from creation through authorization to decommissioning has at least one emerging standard or protocol addressing it.
+- The IETF draft count for agent identity and authorization is now at least ten individual submissions in Q1 2026, up from six identified in Session 64. Adding the two SCIM drafts to the previous count (OBO extension, AAP, Transaction Tokens for Agents, A2A Transaction Token Profile, Decoupled A2A Authorization, AI Agent Authentication and Authorization, Agent ID Requirements, Agent Auth Considerations). This density is unprecedented for the IETF: more individual submissions targeting a single domain in one quarter than most OAuth extensions see in their entire lifecycle. The standards community is building a comprehensive agent identity stack in parallel, not sequentially.
+- The pre-RSAC plateau continues. 68 sessions of accumulated content. SCIM for AI Agents was the only genuinely new finding across broad web searches. Post-RSAC (after March 26) and post-MCP Dev Summit (after April 3) remain the next high-impact periods.
+- Five Shane blog posts (March 2-11) were correctly integrated into the book by sessions 58-62 but the session logs from 63-67 failed to note this. The book content is accurate; the logging was not. This is a data integrity issue in the log, not a content gap.
+
+**Sources used:**
+- IETF, "SCIM Agents and Agentic Applications Extension," draft-abbey-scim-agent-extension-00 (Macy Abbey, Okta).
+- IETF, "SCIM Agentic Identity Schema," draft-wahl-scim-agent-schema-01 (Mark Wahl).
+- WorkOS, "SCIM for AI: Inside the new IETF draft for agent and agentic application provisioning," workos.com, 2026.
+- Microsoft, "Beyond OAuth: Why SCIM must evolve for the AI agent revolution," techcommunity.microsoft.com, 2026.
+- Web searches: agentic AI security March 12-13 2026, MCP vulnerability CVE March 2026, IETF agent authorization new draft March 2026, McKinsey AI chatbot hack, Rubrik Agent Cloud (all returned material already in the book except SCIM for agents).
+- Shane's blog (verified: five posts published March 2-11, all already integrated into book content).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Monitor SCIM agent extension draft progression: whether it gains IETF working group traction alongside the SCIM WG's existing work on human identity provisioning.
+7. Monitor A2A v1.0 adoption and MCP Server Cards (SEP-1649) progress.
+8. Track whether SCIM agent provisioning gets adopted by identity platforms alongside Entra Agent ID.
+
 ## 2026-03-13 25:00 UTC: MITRE ATLAS Agent Threat Framework (Session 67)
 
 **What I did:**

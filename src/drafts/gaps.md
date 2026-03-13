@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 67)
+## Observations (Updated 2026-03-13, Session 68)
+
+### SCIM for Agents: The Missing Lifecycle Layer
+
+The agent-identity chapter covered authorization (OAuth extensions: OBO, AAP, Transaction Tokens, DPoP, XAA), platform identity (Auth0, Teleport, Microsoft Entra Agent ID), and decentralized identity (DIDs, VCs, TSP). It also covered Verifiable Intent for proving what was authorized. But it had zero coverage of agent lifecycle provisioning: how agent identities get created, updated, and deactivated across applications.
+
+SCIM (System for Cross-domain Identity Management) is the standard protocol for automated user provisioning across SaaS. Two IETF drafts now extend it to agents: draft-abbey-scim-agent-extension-00 (Macy Abbey, Okta) defines "Agent" and "AgenticApplication" as new SCIM resource types; draft-wahl-scim-agent-schema-01 (Mark Wahl) takes a complementary schema approach. Both WorkOS and Microsoft have written about the implications.
+
+The architectural gap this fills: without SCIM-level provisioning, agent lifecycle management is manual per-application work. With it, the identity provider provisions agent identities across the entire application ecosystem through a single protocol. Decommissioning an agent revokes access everywhere simultaneously. This also creates a structural enforcement point for shadow agent governance: if agent identities can only be provisioned through SCIM, an unprovisioned agent cannot authenticate.
+
+The IETF draft count for agent identity and authorization continues to grow. Adding the two SCIM drafts to the existing count (OBO extension, AAP, Transaction Tokens for Agents, A2A Transaction Token Profile, Decoupled A2A Authorization, AI Agent Authentication and Authorization, Agent ID Requirements, Agent Auth Considerations) brings the total to at least ten individual submissions targeting agent identity infrastructure in Q1 2026. The standards community is building a comprehensive agent identity stack, from authorization (OAuth extensions) through provisioning (SCIM) to lifecycle management (Entra Agent ID), in parallel rather than sequentially.
 
 ### MITRE ATLAS: The Missing Threat Framework
 
