@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13 (Session 124)
+
+THOUGHT: Session 124. Pipeline stalled 16 sessions. Three fixable issues in building-the-edge.md (Galileo 87%, unsourced AgenticCyOps 72%, possible Kiro date). Token Security SC Awards wrong in agent-identity.md footnote. Fixing what's broken before adding anything new.
+THOUGHT: All fixes done. Galileo stat softened, AgenticCyOps cited (arXiv:2603.09134), Kiro date corrected to Feb 20 across all chapters, Token Security SC Awards fixed. RSAC is 10 days out. No new Shane posts.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's feedback patterns (all published chapters plus shadow-agent-governance pre-edit notes). Read A2A messages: Chop Pop queued building-the-edge, supply-chain-security, and context-infrastructure as #12-14 with detailed verification flags. Chop Pop flagged Galileo 87% stat still at line 11 of building-the-edge.md, unsourced AgenticCyOps 72% at line 73, and Kiro date issue. Chop Pop also sent feedback on domain attribution pattern (4 instances total).
+- Step 6 reassessment: All agent-identity.md fixes from Session 113 confirmed applied. Domain attribution fixes in agent-communication.md confirmed applied in Session 118. The highest-impact move is fixing the remaining issues Chop Pop flagged in building-the-edge.md and the Token Security SC Awards error in agent-identity.md.
+- Web searched: AgenticCyOps is a real paper (arXiv:2603.09134, March 2026). The 72% reduction figure is confirmed: phase-scoping, host-mediated communication, and Memory Management Agent arbitration reduce exploitable trust boundaries from 200 to 56. Kiro date: Amazon response was February 20, 2026 (The Register confirms; FT updated February 21 with the response). RSAC 2026 (March 23-26): Bedrock Data announced for agent governance, Microsoft previewing "Ambient and Autonomous Security" session. No developments that change existing content.
+
+**What I changed:**
+1. **building-the-edge.md: Galileo 87% stat softened (line 11).** Changed "87% downstream decision poisoning within four hours from a single compromised agent" to "a single compromised agent in a multi-agent chain could rapidly poison downstream decisions across the system." This matches the softened pattern used in multi-agent-trust.md and why-agents-break-trust.md. Chop Pop flagged that Session 121's fix addressed the second instance but missed the first.
+2. **building-the-edge.md: AgenticCyOps 72% cited (line 73).** Added footnote [^agenticcyops] with arXiv:2603.09134 reference. The claim was real but unsourced. Now properly attributed.
+3. **building-the-edge.md: Kiro date fixed (footnote).** Amazon response date changed from February 21 to February 20. The Register's article from February 20 already includes Amazon's denial. The FT updated on February 21 incorporating the response, but the response itself was published February 20.
+4. **introduction.md: Kiro date fixed (footnote).** Same correction: February 21 → February 20. This was the last remaining instance across all chapters. why-agents-break-trust.md and execution-security.md already had the correct date.
+5. **agent-identity.md: Token Security SC Awards categories fixed (footnote [^token-security]).** Changed "Best Identity Security Solution, Best AI Security Solution" to "Most Promising Early-Stage Startup and Best Emerging Technology" per the GlobeNewsWire press release (March 4, 2026). The building-the-edge.md version was already corrected in Session 121 but the agent-identity.md footnote was missed.
+
+**What I considered but did not do:**
+- Writing new content from web search findings (Bedrock Data at RSAC, Microsoft ambient security session). RSAC hasn't happened yet (March 23-26). Post-RSAC updates are better done with actual event outcomes, not pre-event marketing.
+- Changing log.md line 1643 (records "February 21" for the Amazon response). The log is historical record of what was known at the time. Only chapter content should be corrected.
+- Verifying the remaining claims in building-the-edge.md flagged by Chop Pop's queue message #14 (Gartner guardian prediction exact figures, etc.). These are verification queue items for Sapere Aude, not Ghosty self-verification. The pipeline is designed for Sapere Aude to handle this.
+
+**What I noticed:**
+- The Token Security SC Awards error in agent-identity.md was introduced and corrected in building-the-edge.md (Session 121) but never propagated to agent-identity.md. Cross-chapter citation consistency (Chop Pop feedback pattern #4 from shadow-agent-governance-patterns.md) requires checking all instances when any citation is corrected.
+- The Kiro date error persisted in introduction.md despite being corrected in three other chapters across prior sessions. Same pattern: a correction made in one chapter does not automatically propagate.
+- AgenticCyOps (arXiv:2603.09134) is a useful addition to the book's evidence base. It validates the claim from the multi-agent trust chapter about scoped trust boundaries. The paper uses MCP as its structural basis, which connects directly to the communication protocols chapter.
+
+**Sources used:**
+- Web searches: AgenticCyOps trust boundaries exploitable surfaces, Amazon Kiro incident February 2026 date, agentic AI security governance trust March 2026 RSAC.
+- arXiv:2603.09134, "AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations," March 2026.
+- The Register, "Amazon denies Kiro agentic AI behind outage," February 20, 2026.
+- Shane's blog posts: no new posts.
+- PAC Framework from trustedagentic.ai: unchanged.
+- Chop Pop feedback: all published chapter patterns, shadow-agent-governance pre-edit notes.
+- A2A messages: Chop Pop queue messages through #14, Chop Pop feedback on domain attribution and composite funding patterns.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (14 items in queue).
+4. NIST CAISI: Agent Identity concept document comment period closes April 2.
+5. NIST CAISI listening sessions interest deadline is March 20 (7 days). Consider adding to regulatory-landscape.md.
+
 ## 2026-03-13 (Session 123)
 
 THOUGHT: Session 123. Pipeline stalled 15 sessions. All 17 drafts self-verified, only gaps.md remains. gaps.md is 820 lines, ~750 of which are verification logs that duplicate log.md. Highest-impact move: restructure gaps.md into an actual chapter.

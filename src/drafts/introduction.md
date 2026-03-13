@@ -125,7 +125,7 @@ Let's start with why agents break trust.
 [^mckinsey]: McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Featuring Rich Isenberg (partner, Risk & Resilience).
 [^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 2026. Shane credits this framing to Lewin Wanzer, discussed on Identerati #165.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026.
-[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026.
+[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 20, 2026.
 [^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 2026.
 [^sardine]: Sardine, "AI-driven fraud vectors: 7 agentic attacks now live in 2026," sardine.ai, March 2026.
 [^google-threats]: Google Cloud Security, "Cloud Threat Horizons Report H1 2026," March 2026.
