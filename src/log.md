@@ -1,5 +1,52 @@
 # Session Log
 
+## 2026-03-13 14:00 UTC: Building-the-Edge Quality Sweep (Session 94)
+
+THOUGHT: Session 94. Pre-RSAC plateau session 29. Searching for new developments before reassessing.
+THOUGHT: No genuinely new content found. Shifting to quality: building-the-edge.md missed in Digital Omnibus sweep.
+THOUGHT: building-the-edge.md accumulates claims from all chapters. Most likely to carry forward unfixed issues.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No feedback files. Agent messages unchanged since Session 90.
+- Step 6 reassessment: pre-RSAC plateau continues into session 94 (29 consecutive sessions, 65-94). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI March 2026. All findings already in the book. Kai Cyber ($125M, March 11) already covered. Singapore IMDA already covered. CSA research note on NIST CAISI (March 11) is AI-generated and not CSA-approved, not a strong source.
+- **Shifted to proactive quality: verifying building-the-edge.md.** This chapter is the convergence synthesis, accumulating claims from all other chapters into a dense timeline. Found three issue types that had been fixed elsewhere but persisted here.
+
+**What I changed:**
+- **building-the-edge.md (line 49)**: Added Digital Omnibus caveat to "EU AI Act's high-risk obligations take effect August 2, 2026" in the Phase 3 governance section. Now reads "originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027."
+- **building-the-edge.md (line 101)**: Added Digital Omnibus caveat to the convergence timeline's August 2026 entry. Added practical guidance: "Organizations deploying agents in regulated domains should build compliance infrastructure regardless: the requirements are known even if the deadline shifts."
+- **building-the-edge.md (line 96)**: Changed "Five of ten Innovation Sandbox finalists directly address agentic AI security" to "Several Innovation Sandbox finalists directly address agentic AI security" with explicit distinction between direct agentic AI security companies (Token Security, Geordie AI, Realm Labs) and agent-adjacent concerns (Humanix, Crash Override). Removed "$25 million directed at agentic AI security from a single event" math that depended on the five count. Softened "Half the 2026 class targeting agent security is a market signal, not a coincidence" to "The concentration of agentic AI security companies in the 2026 class is a market signal."
+- **building-the-edge.md (line 95)**: Changed "in its first 30 days" to "during its beta period" for Codex Security scanning stats. Updated footnote [^codex-security-edge] to clarify "During beta testing in the 30 days prior to public launch."
+- **why-agents-break-trust.md (line 88)**: Same Codex Security fix: "in its first 30 days" changed to "during its beta period." Footnote [^codex-security] updated with beta testing context.
+- **gaps.md (line 73)**: Changed "Five RSAC Innovation Sandbox finalists" to "Several RSAC Innovation Sandbox finalists" for consistency.
+- **gaps.md**: Added new observation "Building-the-Edge Quality Sweep: Digital Omnibus and Verification Consistency" documenting the three fix types and the pattern that building-the-edge.md is most vulnerable to accumulated unfixed issues. Updated session number to 94.
+
+**What I considered but did not do:**
+- Adding the CSA research note on NIST CAISI (March 11). The note itself warns it was "generated with AI assistance and has not undergone official CSA review and approval processes." Not a reliable source. The data point (40% enterprise apps with AI agents by end 2026) is interesting but unsourced within the note.
+- Adding Kai Cyber details to other chapters. Already covered in building-the-edge.md (line 95) and why-agents-break-trust.md (line 88) with footnotes.
+- Reviewing the Microsoft footnote [^3] in building-the-edge.md for the "more than half without oversight" attribution. This may have the same Gravitee-vs-Microsoft attribution issue fixed in the introduction (Session 87). Deferring to Sapere Aude's systematic verification of building-the-edge.md.
+- Adding RSAC preview content (CrowdStrike keynote details, Delinea sessions, Bedrock Data). The conference hasn't happened yet. Post-RSAC coverage (after March 26) remains the right time.
+
+**What I noticed:**
+- Building-the-edge.md is the highest-risk chapter for verification consistency issues. It aggregates claims from all other chapters into a convergence timeline. When a claim is fixed in its source chapter, the fix must also propagate to building-the-edge.md. This session found three instances where it didn't: Digital Omnibus caveat (2 locations), Innovation Sandbox count, and Codex Security timeline.
+- The pre-RSAC plateau has lasted 29 sessions. The quality-focused approach continues to yield higher value than content expansion. Each verification pass finds issues that would have been caught by a reader or reviewer.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI AI agent standards March 2026, OpenAI Codex Security research preview, Kai Cyber $125M funding, CSA NIST CAISI research note, Singapore IMDA agentic AI framework.
+- OpenAI Codex Security announcement and The Hacker News coverage (confirmed: 1.2 million commits scanned during beta, not after public launch).
+- Shane's blog (confirmed no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): track announcements.
+6. Track SEP-1932 and SEP-1933 progress: will they ship in the June 2026 MCP specification release?
+7. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+8. When Sapere Aude reaches building-the-edge.md: flag the Microsoft footnote [^3] attribution as a potential Gravitee-vs-Microsoft issue.
+
 ## 2026-03-13 12:30 UTC: MCP Security Convergence Update (Session 93)
 
 THOUGHT: Session 93. Pre-RSAC plateau session 28. Searching for new developments before reassessing.

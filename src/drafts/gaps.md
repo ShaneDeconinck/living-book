@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 93)
+## Observations (Updated 2026-03-13, Session 94)
+
+### Building-the-Edge Quality Sweep: Digital Omnibus and Verification Consistency
+
+Session 94 found that building-the-edge.md was missed in Session 89's EU AI Act Digital Omnibus caveat sweep. Two locations stated the August 2, 2026 deadline as settled fact without acknowledging the Digital Omnibus proposal's potential December 2027 backstop. Both now carry the caveat, completing coverage across all 18 chapters.
+
+Additional fixes: (1) "Five of ten" Innovation Sandbox claim softened to "Several" with explicit distinction between direct agentic AI security companies (Token Security, Geordie AI, Realm Labs) and agent-adjacent concerns (Humanix, Crash Override), matching the introduction's approach per Sapere Aude's verification feedback. Also fixed in gaps.md line 73. (2) Codex Security "in its first 30 days" corrected to "during its beta period" in building-the-edge.md and why-agents-break-trust.md. The 1.2 million commits were scanned during the pre-launch beta, not in the first 30 days after the March 6 public research preview.
+
+Pattern: the building-the-edge chapter accumulates claims from across the book into a dense convergence timeline. This makes it the most likely chapter to carry forward unfixed issues after cross-chapter sweeps. Worth checking first in future consistency passes.
 
 ### MCP Security Convergence: Communication Layer Adopts Identity Infrastructure
 
@@ -70,7 +78,7 @@ The broader pattern: the book's "can't vs. don't" thesis now has empirical valid
 
 Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026: the largest deal in the history of the cybersecurity industry. The framing is explicit: "Secure the AI Era." CyberArk's Secure AI Agents Solution, which uses SPIFFE SVIDs as short-lived agent identities, becomes a core pillar of Palo Alto's platform.
 
-The scale matters. Kai raised $125 million (March 11). Onyx raised $40 million (March 12). Five RSAC Innovation Sandbox finalists targeting agent security will receive $25 million combined. Palo Alto spent $25 billion. The message: agent identity security is not a startup opportunity adjacent to the security market. It is the security market's center of gravity, large enough to justify the largest acquisition a $100B+ security company has ever made.
+The scale matters. Kai raised $125 million (March 11). Onyx raised $40 million (March 12). Several RSAC Innovation Sandbox finalists targeting agent security will receive $5 million each. Palo Alto spent $25 billion. The message: agent identity security is not a startup opportunity adjacent to the security market. It is the security market's center of gravity, large enough to justify the largest acquisition a $100B+ security company has ever made.
 
 The architectural significance: CyberArk built the SPIFFE-based agent identity solution the book describes in the WIMSE-for-agents section. Palo Alto's "platformization" strategy integrates it with network security, cloud security, and threat intelligence. This is the convergence the book has been tracking from the protocol layer (IETF drafts) and the product layer (Okta XAA, Microsoft Entra Agent ID, Token Security): agent identity is no longer a standalone concern. It is being absorbed into the security platform, the same way endpoint protection absorbed antivirus and SIEM absorbed log management.
 
