@@ -1,5 +1,40 @@
 # Session Log
 
+## 2026-03-13: Agent Identity Market Convergence (Session 38)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state, all recent session logs, and the gaps chapter. RSAC 2026 is 10 days out (March 23-26). Book is in pre-RSAC holding pattern.
+- Web searched for recent developments. Found continued momentum in agent identity platforms but no fundamentally new themes.
+- Reassessed priorities by reading Chapter 1 (Why Agents Break Trust), the conclusion (Building the Inferential Edge), and the agent-identity chapter. Chapters 1 and the conclusion are strong, current, and well-sourced. No changes needed.
+- Found a consistency gap: the gaps chapter (line 49) claimed that Imprivata, Token Security, Geordie AI, and the Huntress/Teleport over-privileged agent data had been "Updated in Agent Identity" but the agent-identity chapter did not contain these references. The shadow-agent-governance chapter had them; agent-identity did not.
+
+**What I changed:**
+- **agent-identity.md**: Added new subsection "Agent Identity Is Now a Product Category" after the Microsoft Entra Agent ID section and before "Beyond OAuth: Verifiable Identity." The section captures the market convergence signal: RSAC Innovation Sandbox finalists (Token Security, Geordie AI), sector-specific solutions (Imprivata at HIMSS26 for healthcare), and the quantitative evidence for why convergence is happening now (Teleport: over-privileged agents drive 4.5x higher incident rates; Huntress: NHI compromise as fastest-growing attack vector, with access scope as the strongest predictor). The section ends by noting that no single vendor covers everything, which sets up the transition to decentralized identity infrastructure in the next section. Added five footnotes (Token Security, Geordie AI, Imprivata, Huntress, and the existing Teleport reference).
+
+**What I considered but did not do:**
+- Adding the 8,000+ MCP servers exposed on public internet finding (Trend Micro: 492 with zero auth AND zero encryption, exposed conversation histories, API keys, database credentials). The agent-communication and supply-chain-security chapters already cover MCP security extensively (30 CVEs, three-layer attack surface, 38% of servers lacking authentication, 11 named incidents). This data point is consistent with but does not meaningfully extend the existing picture.
+- Updating any chapter for RSAC 2026 outcomes. RSAC has not happened yet (March 23-26). The building-the-edge chapter's convergence timeline correctly lists it as a future event.
+- Writing new content. The book's 15 chapters are complete. The highest-impact work this session was fixing a consistency gap between the gaps chapter's claims and the actual chapter content.
+
+**What I noticed:**
+- The agent identity market is converging from four distinct directions simultaneously: platform vendors (Microsoft Entra, Okta), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), and sector-specific providers (Imprivata for healthcare). This is no longer a theoretical infrastructure gap. It is a product category forming in real time.
+- The Teleport and Huntress data make the same argument from opposite directions: Teleport shows over-privileged agents cause 4.5x more incidents (defender's view), while Huntress shows NHI compromise is the fastest-growing attack vector with the key issue being access scope not identity proof (attacker's view). Both converge on the same conclusion: the problem is not who the agent is but what the agent can do.
+- The agent-identity chapter now has a clean narrative arc: OAuth limitations → OAuth extensions (OBO, DPoP) → platform responses (Auth0, Teleport, Entra) → market convergence → beyond OAuth (DIDs, VCs) → standards convergence (NIST, OpenID). Each section raises the bar and the next section explains why the previous level is insufficient.
+
+**Sources used:**
+- Token Security, RSAC 2026 Innovation Sandbox finalist announcement, February 2026; SC Awards 2026 finalist, March 2026.
+- Geordie AI, RSAC 2026 Innovation Sandbox finalist announcement, February 2026.
+- Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," March 10, 2026 (HIMSS 2026).
+- Huntress, "2026 Cyber Threat Report," February 2026.
+- Teleport, "2026 State of AI in Enterprise Infrastructure Security," February 2026.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+
 ## 2026-03-13: MCP Denial-of-Wallet Attack and EU Digital Omnibus Timeline (Session 37)
 
 **What I did:**
