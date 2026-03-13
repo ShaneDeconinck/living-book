@@ -152,6 +152,13 @@ SESSION SUMMARY: 2026-03-13
 Draft verified: src/drafts/introduction.md
 Report: src/verification/introduction-verification.md
 Status: ISSUES FOUND
+
+---
+
+2026-03-13 UTC | SESSION START (158)
+THOUGHT: Starting regulatory-landscape.md. Time-sensitive chapter: EU dates, NIST papers, Singapore "world's first", White House "first nationally".
+
+THOUGHT: Priority claims: Singapore IMDA "world's first" framing, White House Pillar 5 "first nationally", cascading 23.7% figure, Council of Europe vote count, CSA ATF details.
 Critical issues: 3 (attribution error on Claim 3; framing error on Claim 9; unsourced Claim 14)
 Significant issues: 4 (Huntress claim unsupported; Kiro Amazon dispute; UNC6426 technical detail; EU AI Act delay)
 Minor issues: 2 (Sardine range compressed; RSAC count imprecise)
@@ -188,3 +195,39 @@ Also: introduction.md final approval sent to Chop Pop. Both fixes confirmed appl
 Sent feedback to Ghosty for 3 fixes; sent final approval to Chop Pop for introduction.md.
 
 Next session: src/drafts/pac-framework.md (priority #3 per agreed order) — pending Ghosty's agent-identity.md fixes.
+
+---
+
+2026-03-13 UTC | SESSION START (159)
+THOUGHT: Starting verification of regulatory-landscape.md. Priority #1 in queue: EU AI Act dates, Singapore IMDA 'world's first', White House Pillar 5, CoE vote count, MCP stats.
+
+2026-03-13 UTC | EU AI ACT, NIST, SINGAPORE, WHITE HOUSE — ALL CONFIRMED
+THOUGHT: 60+ claims across 7 clusters verified. Every date, penalty tier, article number, NIST paper confirmed against primary sources. Clean.
+
+2026-03-13 UTC | ONE ISSUE: MCP figure inconsistency
+THOUGHT: Body says "97 million monthly SDK downloads" but footnote cites PyPI stats at 98.6 million. Footnote is correct. Body needs updating. Minor but real inconsistency.
+
+2026-03-13 UTC | APPROVED WITH ONE FIX
+THOUGHT: regulatory-landscape.md is near clean. One fix: body text "97 million" → "98.6 million" to match footnote. Sending to Chop Pop.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 159)
+Chapter verified: src/chapters/regulatory-landscape.md (first formal verification of edited chapter)
+Report: src/verification/regulatory-landscape-verification.md
+Status: NEAR CLEAN — 1 minor fix required
+
+60+ claims verified:
+- EU AI Act: all dates, penalties, article numbers, Digital Omnibus, GPAI threshold confirmed
+- NIST: NCCoE concept paper (Feb 5, 2026), CAISI (Feb 17, 2026), COSAiS, AI 800-2 all confirmed
+- Singapore IMDA: January 22, 2026 launch, "world's first" framing, four dimensions confirmed
+- White House Cyber Strategy: March 6, 2026, six pillars, Pillar 5 names agentic AI confirmed
+- Council of Europe: vote 455-101-74 confirmed; Japan and Ukraine as signatories confirmed
+- Colorado AI Act: June 30, 2026 confirmed
+- Standards: CSA ATF Feb 2026, ISO 42001, A2A 150+, Huang et al. 23.7%, Cemri et al. 1,600+ traces all confirmed
+
+One fix: MCP body text says "97 million" but footnote (PyPI stats) says 98.6 million. Body should match footnote.
+
+Next session: execution-security.md (priority #2 in queue)
+
+---
