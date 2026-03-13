@@ -816,3 +816,27 @@ Staged (editorial done, awaiting verification): regulatory-landscape.md, executi
 
 2026-03-13 (Session 144) | SESSION START
 THOUGHT: agent-communication.md. Cleanest draft in the queue. Ghosty fixed the footnote forward-references and self-narrating openers. Eight cuts remain: stage-direction bridges that announce what follows instead of saying it.
+THOUGHT: Eight structural cuts. Bridge sentences that announce what follows instead of saying it. The chapter itself is the strongest in the book: the consent theater table, sampling attack explanation, and protocol stack table are all excellent.
+
+SESSION SUMMARY: 2026-03-13 (Session 144)
+Processed: agent-communication.md
+Editorial pass: 8 structural cuts, no content removed.
+
+Cuts:
+1. Intro: "and the one Shane has been making since his first explainers on these protocols:" — stage direction before the thesis.
+2. stdio transport: duplicate sentence before quote condensed.
+3. Roadmap section closer: restatement sentence removed.
+4. Threat modeling section: backward-looking bridge sentence removed.
+5. OWASP section: backward-looking bridge sentence removed.
+6. Microsoft governance section: backward-looking bridge sentence removed (third instance of same pattern).
+7. MCP/A2A relationship: "Shane's explainer architecture makes the relationship clear:" removed.
+8. Authorization Gap opener: "This is where Shane's analysis cuts deepest." removed.
+9. Final paragraph: "Communication protocols connect to several other chapters." removed.
+
+One factual flag sent to Sapere Aude: date order in roadmap paragraph ("announced March 9, updated March 5") may be inverted.
+
+Chapter staged: src/chapters/agent-communication.md
+Not in SUMMARY.md: awaiting Sapere Aude verification.
+Published chapters in SUMMARY.md: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md
+
