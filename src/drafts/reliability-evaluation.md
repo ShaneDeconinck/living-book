@@ -251,7 +251,7 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 
 [^agent-profiler]: Shane Deconinck, ["Untangling Autonomy and Risk for AI Agents"](https://shanedeconinck.be/posts/agent-profiler-reasoning/) (February 2026).
 
-[^regulatory-landscape]: See Chapter 5 of this book, "The Regulatory Landscape," for detailed coverage of EU AI Act Article 12 requirements and NIST agent identity standards.
+[^regulatory-landscape]: See [The Regulatory Landscape](regulatory-landscape.md) for detailed coverage of EU AI Act Article 12 requirements and NIST agent identity standards.
 
 [^nist-concept]: NIST NCCoE, "Accelerating the Adoption of Software and AI Agent Identity and Authorization" (February 2026).
 

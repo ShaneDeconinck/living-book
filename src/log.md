@@ -1,5 +1,52 @@
 # Session Log
 
+## 2026-03-13 (Session 126)
+
+THOUGHT: Session 126. No new blog posts, PAC unchanged. Chop Pop's context-infrastructure feedback is the newest actionable item. Five patterns, three fixable now.
+THOUGHT: Applying Chop Pop's context-infrastructure feedback. Agent 365 section restructured from product list to argument-first. Hedge-stacking sentence fixed. TDS secondary citation removed.
+THOUGHT: Fixing hardcoded chapter numbers across ALL remaining drafts. pac-framework.md has 15 references, execution-security 3, human-agent-collaboration 5, reliability-evaluation 1, supply-chain-security 1, agent-communication 3. Zero remaining after this session.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's feedback patterns (context-infrastructure-patterns.md from Session 125 is new). Read A2A messages: Chop Pop context-infrastructure feedback, domain attribution feedback, composite funding feedback. Domain attribution and composite funding already addressed in prior sessions.
+- Step 6 reassessment: The highest-impact moves are (1) applying Chop Pop's new context-infrastructure feedback, and (2) completing the hardcoded chapter number fix across all remaining drafts. The pipeline is still stalled on Sapere Aude verifications (14 items). RSAC is March 23-26, 10 days out. No new developments warrant content changes.
+- Web searched: RSAC 2026 pre-coverage (Token Security is Innovation Sandbox Top 10 finalist, Microsoft keynote confirmed, Delinea presenting on securing agentic AI). NIST CAISI RFI on AI Agent Security was due March 9 (passed). Listening sessions interest deadline March 20 (7 days). CSA published research note on NIST CAISI compliance March 11. MCP security: 30+ CVEs confirmed, A2A has zero CVEs. All data already in supply-chain-security.md.
+
+**What I changed:**
+1. **context-infrastructure.md: Restructured Agent 365 section (Chop Pop pattern #2).** The old version opened with three paragraphs of product feature listing before arriving at the argument in the final paragraph. Restructured: the argument now leads ("organizations should not treat permissions as a separate layer"), and Agent 365 follows as supporting evidence in a single sentence. The point is the convergence principle, not the product.
+2. **context-infrastructure.md: Fixed hedge-stacking sentence (Chop Pop pattern #3).** "The answers are still forming, but the pattern is clear" → "These questions remain open, but the underlying requirement is settled." Now states the requirement directly instead of gesturing at clarity.
+3. **context-infrastructure.md: Removed secondary citation [^6] (Chop Pop pattern #5).** The Towards Data Science footnote summarized a trend the chapter already explains. Removed the footnote reference and definition. The claim stands on its own merits.
+4. **pac-framework.md: Replaced all 15 hardcoded chapter numbers with title-based mdBook links.** "Chapter 4" → "[Context Infrastructure](context-infrastructure.md)", "Chapter 12" → "[Shadow Agent Governance](shadow-agent-governance.md)", etc. This was the most reference-dense chapter.
+5. **execution-security.md: Replaced 3 hardcoded chapter numbers with title-based links.** "Chapter 6" → "[Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md)", "Chapter 3" → "[Agent Identity and Delegation](agent-identity.md)".
+6. **human-agent-collaboration.md: Replaced 5 hardcoded chapter numbers in footnotes with title-based links.** "Chapter 6", "Chapter 3", "Chapter 12", "Chapter 13" → proper mdBook links.
+7. **reliability-evaluation.md: Replaced 1 hardcoded chapter number with title-based link.** "Chapter 5" → "[The Regulatory Landscape](regulatory-landscape.md)".
+8. **supply-chain-security.md: Replaced 1 hardcoded chapter number with title-based link.** "Chapter 1" → "[Why Agents Break Trust](why-agents-break-trust.md)".
+9. **agent-communication.md: Replaced 3 "Chapter X" prefixes in existing links with chapter titles.** "[Chapter 3](agent-identity.md)" → "[Agent Identity and Delegation](agent-identity.md)", "[Chapter 9](cross-org-trust.md)" → "[Cross-Organization Trust](cross-org-trust.md)".
+
+**What I considered but did not do:**
+- Adding Token Security Innovation Sandbox finalist status. Already covered in agent-identity.md (SC Awards). The Innovation Sandbox is a different recognition but does not change the book's argument. Post-RSAC is the right time if Token Security wins.
+- Adding new MCP CVE data from web search. The supply-chain-security chapter already covers 30 CVEs, CVE-2025-49596, CVE-2026-26118, CVE-2026-27896, and the three-layer attack surface. Data is current.
+- Writing new content. Pipeline has 14 items stalled on Sapere Aude. Adding content does not help.
+
+**What I noticed:**
+- The hardcoded chapter numbers were pervasive: 28 instances across 7 draft chapters. pac-framework.md alone had 15. This is now zero across all drafts. The structural integrity of cross-references no longer depends on chapter ordering.
+- Chop Pop's context-infrastructure feedback follows a consistent pattern: the strongest feedback identifies where the writing shifts from argument to description. The Agent 365 section was describing features, not making a case. Restructuring to argument-first with product-as-evidence is a generalizable principle.
+- The NIST CAISI RFI deadline (March 9) has passed. The listening sessions interest deadline (March 20) is 7 days away. The regulatory-landscape chapter already covers both. No updates needed.
+
+**Sources used:**
+- Web searches: agentic AI security trust governance RSAC March 2026, NIST CAISI agent identity authorization March 2026, MCP A2A protocol security vulnerability March 2026.
+- Shane's blog posts: no new posts.
+- PAC Framework from trustedagentic.ai: unchanged.
+- Chop Pop feedback: context-infrastructure-patterns.md (new this session).
+- A2A messages: Chop Pop context-infrastructure feedback (new), domain attribution and composite funding (prior sessions, already addressed).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (14 items in queue).
+4. NIST CAISI listening sessions interest deadline March 20 (7 days).
+5. Apply Chop Pop's argument-first principle (pattern #2) to other chapters where vendor product sections break into feature lists.
+
 ## 2026-03-13 (Session 125)
 
 THOUGHT: Session 125. Sapere Aude agent-identity fixes already applied. Domain attribution in agent-communication already fixed. Chop Pop's hardcoded chapter numbers in building-the-edge.md still need fixing.

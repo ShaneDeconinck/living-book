@@ -222,47 +222,47 @@ The framework distills each pillar into concrete questions designed for stakehol
 
 ### Potential
 
-1. **What decisions are you not yet delegating to agents, and what's that costing you?** The answer reveals where value is being left on the table. Context infrastructure (Chapter 4) and reliability evaluation (Chapter 6) determine which decisions agents can handle.
+1. **What decisions are you not yet delegating to agents, and what's that costing you?** The answer reveals where value is being left on the table. [Context Infrastructure](context-infrastructure.md) and [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) determine which decisions agents can handle.
 
 2. **Will better models make your current setup more valuable, or obsolete?** This is the durability question. If your architecture is tightly coupled to a specific model's weaknesses (harness debt), the next model drop makes it a liability. Context infrastructure appreciates. Scaffolding depreciates.
 
-3. **How much value are you leaving on the table by over-constraining?** Governance that is too tight kills adoption. Shadow agents (Chapter 12) are the evidence: employees route around constraints when governance moves too slowly. The solution is governance at agent speed, not tighter prohibition.
+3. **How much value are you leaving on the table by over-constraining?** Governance that is too tight kills adoption. Shadow agents (the [Shadow Agent Governance](shadow-agent-governance.md) chapter) are the evidence: employees route around constraints when governance moves too slowly. The solution is governance at agent speed, not tighter prohibition.
 
 4. **Are your agents actually making decisions, or just automating steps humans already defined?** The difference between workflow automation and agentic AI. True agent value comes from handling judgment-heavy tasks: interpretation, adaptation, exception handling. If the agent is only following a deterministic script, you have an expensive workflow, not an agent.
 
-5. **Does the right context reach your agents at the right time?** Context infrastructure (Chapter 4) is the durable investment. Shane's argument: context appreciates with every model upgrade. The question is whether your context pipelines are structured, permissioned, and fresh enough to enable agent decision-making.
+5. **Does the right context reach your agents at the right time?** [Context Infrastructure](context-infrastructure.md) is the durable investment. Shane's argument: context appreciates with every model upgrade. The question is whether your context pipelines are structured, permissioned, and fresh enough to enable agent decision-making.
 
-6. **Are you building on established and emerging standards, or on an island?** Communication protocols (Chapter 10), identity standards (Chapter 3), and regulatory frameworks (Chapter 5) are converging fast. Building on standards reduces lock-in risk and positions for cross-organizational interoperability.
+6. **Are you building on established and emerging standards, or on an island?** [Communication protocols](agent-communication.md), [identity standards](agent-identity.md), and [regulatory frameworks](regulatory-landscape.md) are converging fast. Building on standards reduces lock-in risk and positions for cross-organizational interoperability.
 
-7. **Do you know the error margin on your agent's reliability, or just the headline number?** The reliability chapter (Chapter 6) makes this case in depth. A percentage without a confidence interval is meaningless. The implementation architecture (workflow, agent loop, autonomous) determines how knowable your error margin is.
+7. **Do you know the error margin on your agent's reliability, or just the headline number?** The [Reliability, Evaluation](reliability-evaluation.md) chapter makes this case in depth. A percentage without a confidence interval is meaningless. The implementation architecture (workflow, agent loop, autonomous) determines how knowable your error margin is.
 
 ### Accountability
 
-8. **Do you know every agent running in your organization?** The shadow agent governance chapter (Chapter 12) is built around this question. 98% of organizations report employees using unsanctioned apps, with roughly three quarters actively bringing their own AI tools.[^shadow-ai] You cannot govern what you cannot see.
+8. **Do you know every agent running in your organization?** The [Shadow Agent Governance](shadow-agent-governance.md) chapter is built around this question. 98% of organizations report employees using unsanctioned apps, with roughly three quarters actively bringing their own AI tools.[^shadow-ai] You cannot govern what you cannot see.
 
 9. **If an agent causes harm, is the liability chain clear?** Liability chains must be mapped before the incident (this chapter, above). Who owns the agent, who authorized it, who is responsible when it fails, and what is the escalation path?
 
-10. **Can your infrastructure prevent an agent from running without being registered?** This is Shane's sharpest boardroom question. It separates discovery (knowing what agents exist) from governance (preventing unregistered agents from operating). Only infrastructure enforcement (Chapter 12) provides the structural guarantee.
+10. **Can your infrastructure prevent an agent from running without being registered?** This is Shane's sharpest boardroom question. It separates discovery (knowing what agents exist) from governance (preventing unregistered agents from operating). Only infrastructure enforcement (the [Shadow Agent Governance](shadow-agent-governance.md) chapter covers how) provides the structural guarantee.
 
-11. **Could you explain to a regulator what your agent did and why?** The regulatory landscape (Chapter 5) maps the compliance requirements. The EU AI Act requires transparency and record-keeping for high-risk systems. Audit trails designed for compliance, not debugging, are the infrastructure requirement.
+11. **Could you explain to a regulator what your agent did and why?** [The Regulatory Landscape](regulatory-landscape.md) maps the compliance requirements. The EU AI Act requires transparency and record-keeping for high-risk systems. Audit trails designed for compliance, not debugging, are the infrastructure requirement.
 
-12. **When an agent makes a consequential decision, can you trace who authorized it and what happened?** Delegation chains (Chapter 3), audit trails (this chapter), and multi-agent orchestration (Chapter 13) compose into the answer. The trace must go from the human principal through every delegation hop to the final action.
+12. **When an agent makes a consequential decision, can you trace who authorized it and what happened?** [Delegation chains](agent-identity.md), audit trails (this chapter), and [multi-agent orchestration](multi-agent-trust.md) compose into the answer. The trace must go from the human principal through every delegation hop to the final action.
 
 ### Control
 
-13. **Are your agents contained by architecture, or only by policy?** Policy says "don't." Architecture says "can't." Sandboxing (Chapter 8) and identity infrastructure (Chapter 3) are what make the difference when agents act autonomously.
+13. **Are your agents contained by architecture, or only by policy?** Policy says "don't." Architecture says "can't." [Sandboxing](execution-security.md) and [identity infrastructure](agent-identity.md) are what make the difference when agents act autonomously.
 
-14. **When agents delegate to other agents, can authority only decrease?** The multi-agent trust chapter (Chapter 13) covers Delegation Capability Tokens and PIC. Authority attenuation at every hop is a non-negotiable property for multi-agent systems.
+14. **When agents delegate to other agents, can authority only decrease?** The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter covers Delegation Capability Tokens and PIC. Authority attenuation at every hop is a non-negotiable property for multi-agent systems.
 
-15. **What happens when human oversight breaks down in practice?** The human-agent collaboration chapter (Chapter 14) and the reliability chapter (Chapter 6) address this directly. Bainbridge's irony: the more reliable the agent, the less attentive the human overseer. Infrastructure-in-the-loop replaces sustained human vigilance.
+15. **What happens when human oversight breaks down in practice?** The [Human-Agent Collaboration](human-agent-collaboration.md) chapter and the [Reliability, Evaluation](reliability-evaluation.md) chapter address this directly. Bainbridge's irony: the more reliable the agent, the less attentive the human overseer. Infrastructure-in-the-loop replaces sustained human vigilance.
 
-16. **How do you balance agent quality with data privacy?** Agents need context to perform well, but data governance constrains what they can access. Context infrastructure (Chapter 4) addresses the permissioning layer. The regulatory landscape (Chapter 5) sets the legal constraints.
+16. **How do you balance agent quality with data privacy?** Agents need context to perform well, but data governance constrains what they can access. [Context Infrastructure](context-infrastructure.md) addresses the permissioning layer. [The Regulatory Landscape](regulatory-landscape.md) sets the legal constraints.
 
 17. **Are agents restricted to what they can do, or only blocked from what they can't?** Shane's trust inversion. Humans operate on blocklists (default allow, block specifics). Agents should operate on allowlists (default deny, grant specifics). Capability-based security scoped to the current task.
 
-18. **Does your agent setup work when agents need to cross trust boundaries?** Cross-organization trust (Chapter 9) is the hard problem. TSP, PIC, Verifiable Credentials, and EUDI wallets compose into the infrastructure for agents operating across organizational boundaries.
+18. **Does your agent setup work when agents need to cross trust boundaries?** [Cross-Organization Trust](cross-org-trust.md) is the hard problem. TSP, PIC, Verifiable Credentials, and EUDI wallets compose into the infrastructure for agents operating across organizational boundaries.
 
-19. **What happens when an agent wanders into a use case you didn't anticipate?** Sandboxing (Chapter 8) and supply chain security (Chapter 11) contain the blast radius. But the deeper answer is the autonomy-infrastructure gate: agents operating at higher autonomy levels (A4-A5) require higher infrastructure levels (I4-I5), which structurally constrain the space of possible actions.
+19. **What happens when an agent wanders into a use case you didn't anticipate?** [Sandboxing](execution-security.md) and [supply chain security](supply-chain-security.md) contain the blast radius. But the deeper answer is the autonomy-infrastructure gate: agents operating at higher autonomy levels (A4-A5) require higher infrastructure levels (I4-I5), which structurally constrain the space of possible actions.
 
 These questions are not theoretical. They surface the gaps between policy intention and infrastructure reality. The subsequent chapters provide the technical depth to answer each one.
 

@@ -146,7 +146,7 @@ Shane identifies three trust gaps that MCP does not address:[^1]
 2. **Capability proof**: the server says it can access Salesforce. Can it prove that?
 3. **Delegation chains**: User → Agent → MCP Server → API. Who authorized what at each step?
 
-These gaps are precisely what the identity infrastructure from [Chapter 3](agent-identity.md) and the trust layer integrations later in this chapter are designed to fill. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This directly addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
+These gaps are precisely what the identity infrastructure from [Agent Identity and Delegation](agent-identity.md) and the trust layer integrations later in this chapter are designed to fill. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This directly addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
 
 ### Systematic Protocol Threat Modeling
 
@@ -296,8 +296,8 @@ This is not a fixable bug. Coarse scopes are intentional OAuth design. You canno
 The responses to this gap are emerging at multiple layers:
 
 - **AgentGateway** adds a policy layer that restricts which tools an agent can invoke and under what conditions. But it maps onto the same coarse OAuth scopes underneath.[^3]
-- **Verifiable Intent** (covered in [Chapter 3](agent-identity.md)) encodes purpose, constraints, and oversight into cryptographic credentials. The authorization decision is per-action, not per-session.[^15]
-- **PIC** replaces proof of possession with proof of continuity, where delegated authority can only diminish, never expand (covered in [Chapter 9](cross-org-trust.md)).[^16]
+- **Verifiable Intent** (covered in [Agent Identity and Delegation](agent-identity.md)) encodes purpose, constraints, and oversight into cryptographic credentials. The authorization decision is per-action, not per-session.[^15]
+- **PIC** replaces proof of possession with proof of continuity, where delegated authority can only diminish, never expand (covered in [Cross-Organization Trust](cross-org-trust.md)).[^16]
 
 The gap between "the agent can connect" (solved by MCP/A2A) and "the agent should connect" (unsolved by communication protocols alone) is the central tension of this chapter.
 
@@ -331,7 +331,7 @@ Gartner predicts that a majority of API gateway vendors will add MCP capabilitie
 
 ## Trust Layer Integrations: TMCP and TA2A
 
-The communication protocols (MCP, A2A) and the trust protocols (TSP, PIC) from [Chapter 9](cross-org-trust.md) are designed to compose. Shane's LFDT meetup post describes how this works in practice.[^16]
+The communication protocols (MCP, A2A) and the trust protocols (TSP, PIC) from [Cross-Organization Trust](cross-org-trust.md) are designed to compose. Shane's LFDT meetup post describes how this works in practice.[^16]
 
 ### TMCP: Trust-Enabled MCP
 

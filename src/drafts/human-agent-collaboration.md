@@ -242,7 +242,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 **Invest in the interface, not just the model.** A well-designed collaboration interface with a capable model will outperform a frontier model with a poor interface. The interface determines whether governance is effective or performative. Explainable rationale, scope indicators, undo capability, and escalation pathways are not UX polish: they are governance infrastructure[^smashing-patterns]. The protocol layer for building these interfaces is maturing: AG-UI standardizes how agent backends stream events (tool calls, state changes, lifecycle signals) to frontends, and A2UI enables agents to generate interactive UIs natively across platforms. Both are covered in the [Agent Communication Protocols](agent-communication.md) chapter. These protocols make the oversight patterns described in this chapter implementable at scale rather than bespoke per integration.
 
-[^complacency-chapter]: See Chapter 6 of this book, "Reliability, Evaluation, and the Complacency Trap," for the full treatment of automation complacency research from Bainbridge (1983) and Don Norman (1990).
+[^complacency-chapter]: See [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) for the full treatment of automation complacency research from Bainbridge (1983) and Don Norman (1990).
 
 [^anthropic-autonomy]: Anthropic, ["Measuring AI Agent Autonomy in Practice"](https://www.anthropic.com/research/measuring-agent-autonomy) (February 2026). Also covered in Shane Deconinck, ["Early Indicators of Agent Use Cases: What Anthropic's Data Shows"](https://shanedeconinck.be/posts/early-indicators-agent-use-cases-anthropic-data/) (February 2026).
 
@@ -254,15 +254,15 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 [^ux-magazine]: UX Magazine, ["Secrets of Agentic UX: Emerging Design Patterns for Human Interaction with AI Agents"](https://uxmag.com/articles/secrets-of-agentic-ux-emerging-design-patterns-for-human-interaction-with-ai-agents) (2026).
 
-[^vi-chapter]: See Chapter 3 of this book, "Agent Identity and Delegation," for the full treatment of Verifiable Intent's three-layer SD-JWT architecture.
+[^vi-chapter]: See [Agent Identity and Delegation](agent-identity.md) for the full treatment of Verifiable Intent's three-layer SD-JWT architecture.
 
-[^identity-chapter]: See Chapter 3 of this book, "Agent Identity and Delegation," for coverage of the confused deputy problem and how identity infrastructure addresses it.
+[^identity-chapter]: See [Agent Identity and Delegation](agent-identity.md) for coverage of the confused deputy problem and how identity infrastructure addresses it.
 
 [^authz-platforms]: Authorization platforms for AI agents are maturing rapidly. See [Permit.io](https://www.permit.io/), [Cerbos](https://www.cerbos.dev/), [Stytch](https://stytch.com/blog/handling-ai-agent-permissions/), and [WorkOS](https://workos.com/) for current approaches to fine-grained, context-aware permission models designed for AI agents.
 
 [^deloitte-silicon]: Deloitte, ["The agentic reality check: Preparing for a silicon-based workforce"](https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html), Tech Trends 2026.
 
-[^shadow-chapter]: See Chapter 12 of this book, "Shadow Agent Governance," for the agent registry model and amnesty-based transition approach.
+[^shadow-chapter]: See [Shadow Agent Governance](shadow-agent-governance.md) for the agent registry model and amnesty-based transition approach.
 
 [^anthropic-coding-trends]: Anthropic, ["2026 Agentic Coding Trends Report: How coding agents are reshaping software engineering"](https://resources.anthropic.com/2026-agentic-coding-trends-report) (March 2026). Eight trends across three categories: foundation trends (role shifts, multi-agent coordination), capability trends (expanding task horizons, cross-domain agents), and impact trends (organizational adoption, security architecture).
 
@@ -270,7 +270,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 [^controllability-trap]: "The Controllability Trap: A Governance Framework for Military AI Agents," ICLR 2026 Workshop on Agents in the Wild, [arXiv:2603.03515](https://arxiv.org/abs/2603.03515) (March 2026). Identifies six agentic governance failures (Interpretive Divergence, Correction Absorption, Belief Resistance, Commitment Irreversibility, State Divergence, Cascade Severance) and proposes the Agentic Military AI Governance Framework (AMAGF) with a continuous Control Quality Score.
 
-[^cascade-severance]: Galileo AI, multi-agent system failure analysis, December 2025. Widely cited in industry reporting but no peer-reviewed publication identified. Also cited in Chapter 13, "Multi-Agent Trust and Orchestration."
+[^cascade-severance]: Galileo AI, multi-agent system failure analysis, December 2025. Widely cited in industry reporting but no peer-reviewed publication identified. Also cited in [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
 
 [^okta-series]: Okta, "AI Agent Security Series: Rebuilding IAM for Autonomous Trust," okta.com/blog/ai, 2026. Seven-part series mapping identity failures in agentic AI. Part 6 ("AI Agent Security: The Authorization Gap in Shared Workspaces") identifies the permission intersection gap. Part 7 ("Identity and Authorization: The Operating System for AI Security") maps six failure modes including four CVSS 9.3+ vulnerabilities exploiting the retrieval-vs-audience authorization gap across Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, and Salesforce.
 

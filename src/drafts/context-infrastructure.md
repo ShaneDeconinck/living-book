@@ -92,7 +92,7 @@ Whether it lives in files, databases, or graphs: make it coherent. Consistent na
 
 The principle is to model information after the domain, not after today's tool or framework. A customer relationship represented as an entity with attributes, not as rows in a CRM export. A policy captured as structured rules, not buried in a PDF. When information is modeled after what it actually represents, any tool, any agent, any future system can consume it.
 
-The industry is learning this through experience. The evolution from basic RAG (chunk text, embed it, retrieve by similarity) to knowledge graph-augmented retrieval reflects a growing understanding that relationships between entities matter as much as the entities themselves.[^6] Vector similarity search finds passages that sound related. Structured knowledge finds passages that are related: following entity relationships, reasoning over constraints, respecting hierarchies.
+The industry is learning this through experience. The evolution from basic RAG (chunk text, embed it, retrieve by similarity) to knowledge graph-augmented retrieval reflects a growing understanding that relationships between entities matter as much as the entities themselves. Vector similarity search finds passages that sound related. Structured knowledge finds passages that are related: following entity relationships, reasoning over constraints, respecting hierarchies.
 
 For the PAC Framework, structure directly affects reliability. An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure is a Potential investment that compounds.
 
@@ -110,9 +110,9 @@ Permissions on context connect directly to the Control pillar: infrastructure-le
 
 Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps directly to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
 
-This convergence is not theoretical. Microsoft Agent 365 (generally available May 1, 2026) integrates three previously separate systems into a unified control plane for agents: Entra for agent identity and access management, Purview for data governance and compliance, and Defender for runtime risk assessment.[^agent-365-convergence] Each agent gets a unique Entra Agent ID subject to the same Conditional Access and Identity Protection controls that govern human accounts, while Purview evaluates data interactions and Defender assesses compromise risk. The integration means that an agent's identity, its information access policies, and its behavioral risk profile are evaluated together, not in separate silos with separate policy languages.
-
 The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what the PAC Framework requires at I4 and above.
+
+Microsoft Agent 365 (generally available May 1, 2026) is the first major implementation of this pattern, integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos.[^agent-365-convergence]
 
 The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-environment governance that no single vendor provides today.[^entro-critique] This is the same cross-organizational trust problem the [Cross-Organization Trust](cross-org-trust.md) chapter addresses for identity, now extended to information governance. The agent that queries your Azure SQL database through one identity and your AWS S3 bucket through another has two sets of information policies that do not talk to each other. Solving this requires not just federated identity (which standards like TSP and EUDI address) but federated information governance: portable, verifiable policies that travel with the agent's context across trust boundaries.
 
@@ -138,7 +138,7 @@ For context infrastructure specifically, authority means the agent sees what the
 
 The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner calls agent gateways the "missing layer" for secure AI integration, predicting that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026.[^10]
 
-But agent gateways introduce new questions. How do they interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? The answers are still forming, but the pattern is clear: context delivery needs an enforcement layer between the agent and the information.
+But agent gateways introduce new questions. How do they interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
 
 ### 5. Freshness
 
@@ -215,7 +215,6 @@ Context infrastructure connects to several other chapters. [Agent Identity and D
 [^3]: Anthropic Engineering Blog, "Effective context engineering for AI agents," September 29, 2025.
 [^4]: Manus, "Context Engineering for AI Agents: Lessons from Building Manus," 2026.
 [^5]: LangChain Blog, "Context Engineering for Agents," October 2025.
-[^6]: See "Is RAG Dead? The Rise of Context Engineering and Semantic Layers for Agentic AI," Towards Data Science, 2026, for a comprehensive analysis of the evolution from basic RAG to structured retrieval.
 [^7]: Model Context Protocol, "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^8]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," 2026.
 [^9]: PIC Protocol, github.com/pic-protocol/pic-spec.

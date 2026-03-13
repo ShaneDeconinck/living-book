@@ -117,7 +117,7 @@ The ten risks are:
 6. **ASI06: Memory and Context Poisoning.** Attackers poison agent memory systems, embeddings, or RAG databases to influence future decisions[^owasp].
 7. **ASI07: Insecure Inter-Agent Communication.** Multi-agent message exchanges lack authentication, encryption, or semantic validation[^owasp].
 8. **ASI08: Cascading Failures.** Errors in one agent propagate across planning, execution, and downstream systems, compounding rapidly[^owasp].
-9. **ASI09: Human-Agent Trust Exploitation.** Users over-trust agent recommendations, leading to unsafe approvals or exposures. This is the complacency trap from Chapter 6, now classified as a security risk[^owasp].
+9. **ASI09: Human-Agent Trust Exploitation.** Users over-trust agent recommendations, leading to unsafe approvals or exposures. This is the complacency trap from [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md), now classified as a security risk[^owasp].
 10. **ASI10: Rogue Agents.** Compromised or misaligned agents act harmfully while appearing legitimate[^owasp].
 
 ### What Sandboxing Covers
@@ -178,13 +178,13 @@ Before agent output reaches the user or triggers downstream actions, scan for se
 
 Agents should receive only the credentials they need for the current task, with the shortest practical lifetime. The NVIDIA guidance recommends explicit secret injection rather than inheriting host credentials[^nvidia-sandbox]. This prevents the accumulation of stale credentials inside the sandbox and limits the damage from a compromised agent to the scope of its current task.
 
-This connects directly to the identity and delegation architecture from Chapter 3. Short-lived, task-scoped tokens (OAuth OBO with DPoP binding, or Verifiable Intent constraints) are the authorization analog of execution sandboxing: they constrain what the agent can do even if it escapes the sandbox.
+This connects directly to the identity and delegation architecture from [Agent Identity and Delegation](agent-identity.md). Short-lived, task-scoped tokens (OAuth OBO with DPoP binding, or Verifiable Intent constraints) are the authorization analog of execution sandboxing: they constrain what the agent can do even if it escapes the sandbox.
 
 ### Layer 6: Behavioral Monitoring
 
 Runtime monitoring detects anomalous behavior that static rules miss. An agent that suddenly starts scanning directories outside its workspace, making unusual network requests, or generating code patterns inconsistent with its task may be compromised. Anomaly detection at the execution layer provides the signal; automated containment (killing the process, tightening sandbox restrictions) provides the response.
 
-This is the "infrastructure in the loop" pattern from Chapter 6: monitoring that does not depend on human vigilance but operates continuously and responds structurally.
+This is the "infrastructure in the loop" pattern from [Reliability, Evaluation](reliability-evaluation.md): monitoring that does not depend on human vigilance but operates continuously and responds structurally.
 
 ### Layer 7: Semantic Policy Enforcement
 
