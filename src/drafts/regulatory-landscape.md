@@ -336,11 +336,11 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^oidca]: ["OpenID Connect for Agents (OIDC-A) 1.0"](https://arxiv.org/html/2509.25974v1).
 
-[^verifiableintent]: Covered in detail in the Agent Identity and Delegation chapter. See Shane Deconinck, ["Verifiable Intent: Mastercard and Google Open-Source Agent Authorization"](https://shanedeconinck.be/posts/verifiable-intent-mastercard-google-agent-authorization/).
+[^verifiableintent]: Mastercard, "How Verifiable Intent builds trust in agentic AI commerce," mastercard.com, March 5, 2026. See also Shane Deconinck, ["Verifiable Intent: Mastercard and Google Open-Source Agent Authorization"](https://shanedeconinck.be/posts/verifiable-intent-mastercard-google-agent-authorization/).
 
-[^mcp]: MCP adoption figures and governance as of March 2026. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
+[^mcp]: PyPI download statistics for the `mcp` package: pypistats.org/packages/mcp (98.6 million monthly downloads as of February 2026). MCP donated to Linux Foundation's Agentic AI Foundation (AAIF) in December 2025: Anthropic, "Donating the Model Context Protocol," anthropic.com, 2026.
 
-[^a2a]: A2A v1.0 with 150+ organizations. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
+[^a2a]: Google Developers Blog, "What's new with Agents: ADK, Agent Engine, and A2A Enhancements," developers.googleblog.com, 2026. A2A v1.0 with 150+ organizations and JWS-based Agent Card signing.
 
 [^caisi-comments]: NIST CAISI RFI on AI Agent Security, docket NIST-2025-0035, regulations.gov. Comment period closed March 9, 2026.
 

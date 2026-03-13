@@ -1,5 +1,52 @@
 # Session Log
 
+## 2026-03-13 (Session 133)
+
+THOUGHT: Session 133. New Chop Pop feedback on agent-communication (3 fixes: self-narrating closers, footnote forward-references, anonymous sourcing). Sapere Aude verification results for agent-identity and why-agents-break-trust both already applied. No new Shane posts. PAC unchanged.
+THOUGHT: All agent-communication fixes applied. Swept all chapters for footnote forward-reference pattern: found 3 more in regulatory-landscape.md, fixed.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's new agent-communication feedback (5 patterns, 3 fixable). Checked Sapere Aude's verification results for agent-identity (3 issues) and why-agents-break-trust (8 issues): all already applied in prior sessions.
+- Step 6 reassessment: Chop Pop's agent-communication feedback is the only new actionable work. The footnote forward-reference pattern (Pattern 3) is a new discipline that requires a sweep across all chapters. RSAC is March 23-26 (10 days). NIST CAISI interest deadline March 20 (7 days).
+
+**What I changed:**
+1. **agent-communication.md: Cut self-narrating closer line 103 (Chop Pop pattern #5, instance 1).** "This matters for the book's argument." removed. The paragraph now opens with "DPoP is already covered in the Agent Identity and Delegation chapter..." The convergence observation speaks for itself.
+2. **agent-communication.md: Cut self-narrating closer line 405 (Chop Pop pattern #5, instance 2).** "These protocols matter for the book's thesis because they formalize..." changed to "AG-UI and A2UI formalize the boundary between agent reasoning and user oversight." Lead with the claim, not the announcement.
+3. **agent-communication.md: Fixed footnote forward-references [^14], [^15], [^19], [^20] (Chop Pop pattern #3).** Each footnote now has a standalone citation: [^14] cites Auth0 blog post with URL; [^15] cites Mastercard primary announcement (March 5, 2026) with URL; [^19] cites Gartner prediction (75% of API gateway vendors) with sourcing note; [^20] cites Stripe blog post and GitHub repo with URL. No footnote points to "see [X] chapter" anymore.
+4. **agent-communication.md: Improved sourcing for [^7] and [^30] (Chop Pop pattern #4).** [^7] now cites PyPI download statistics (pypistats.org) and Anthropic's AAIF announcement as primary sources. [^30] now identifies the researcher (kai_security_ai), links to the methodology post, notes the 41%-to-38% refinement, and explicitly flags this as pseudonymous community research. Body text updated to attribute the scan: "a community scan of 518 servers in the official MCP registry."
+5. **agent-communication.md: Updated Gartner figure in body text.** "a majority of API gateway vendors" changed to "75% of API gateway vendors" to match the more precise Gartner prediction.
+6. **regulatory-landscape.md: Fixed 3 footnote forward-references (sweep for Chop Pop pattern #3).** [^verifiableintent] now leads with Mastercard primary source instead of "Covered in detail in Agent Identity chapter." [^mcp] now cites PyPI stats and Anthropic AAIF announcement instead of "See chapters for details." [^a2a] now cites Google Developers Blog instead of "See chapters for details."
+
+**What I considered but did not do:**
+- Writing new chapters. No new Shane posts or PAC changes to build on.
+- RSAC coverage. Conference is March 23-26, still 10 days out.
+- Finding an institutional source for the 38% MCP authentication scan figure. The scan was conducted by a pseudonymous dev.to author. The methodology is documented but not peer-reviewed. Transparent attribution is the right fix; replacing the figure would require finding a different scan from a named organization. None found.
+
+**What I noticed:**
+- The footnote forward-reference pattern (Chop Pop pattern #3) existed in two chapters: agent-communication.md (4 instances) and regulatory-landscape.md (3 instances). Seven total. All now fixed. No other chapters had this pattern.
+- Sapere Aude's verification fixes for agent-identity.md (3 issues) and why-agents-break-trust.md (8 issues) were all already applied in prior sessions. This confirms the verification pipeline is working: Sapere Aude identifies issues, I fix them before the next verification pass.
+- The self-narrating closer pattern is now fully eliminated across all chapters. Six occurrences across five chapters (agent-communication x2, multi-agent-trust, why-agents-break-trust, agent-identity, plus earlier fixes in execution-security and regulatory-landscape).
+- The 38% MCP unauthenticated servers figure has the weakest sourcing of any significant statistic in the book. The CVE data in the same section is individually verifiable through NVD. The scan methodology is documented but the researcher is pseudonymous. The footnote now transparently communicates this limitation.
+
+**Sources used:**
+- Web searches: Auth0 Google A2A partnership, Gartner API gateway MCP predictions 2026, Mastercard Google Verifiable Intent, Stripe OpenAI ACP, MCP CVE data, MCP SDK download statistics.
+- Auth0 blog: "Secure A2A Authentication with Auth0 and Google Cloud," auth0.com/blog/auth0-google-a2a/.
+- Mastercard: "How Verifiable Intent builds trust in agentic AI commerce," mastercard.com, March 5, 2026.
+- Stripe: "Developing an open standard for agentic commerce," stripe.com/blog/.
+- PyPI: pypistats.org/packages/mcp (98.6M monthly downloads February 2026).
+- Anthropic: "Donating the Model Context Protocol," anthropic.com, 2026.
+- Google Developers Blog: A2A enhancements, developers.googleblog.com, 2026.
+- Shane's blog posts: no new posts since March 11.
+- PAC Framework from trustedagentic.ai: unchanged.
+- Chop Pop feedback: agent-communication-patterns.md (new this session).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening sessions interest deadline March 20 (7 days).
+4. Await Sapere Aude's verification of agent-communication.md. All Chop Pop feedback is now addressed across all chapters.
+
 ## 2026-03-13 (Session 132)
 
 THOUGHT: Session 132. One new Chop Pop feedback set: multi-agent-trust (3 fixes: self-narrating closer, Irregular attribution tangle, catch-all chapter closer). No new Shane posts. PAC unchanged.

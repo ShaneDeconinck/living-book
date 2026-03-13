@@ -100,7 +100,7 @@ These are infrastructure maturity improvements. They move MCP from "works in dev
 
 Beyond the four priority areas, the roadmap lists security and authorization as "on the horizon": not yet a top priority, but with sponsored work already underway. Two SEPs are notable. SEP-1932 brings DPoP (Demonstration of Proof-of-Possession) to MCP, binding tokens to cryptographic keys so stolen tokens are useless without the private key.[^mcp-dpop] SEP-1933 adds Workload Identity Federation, enabling agents to authenticate using platform-issued identities (cloud workload credentials) rather than static client secrets.[^mcp-wif] Both are pull requests in the MCP specification repository, not proposals waiting for attention. The roadmap also targets finer-grained least-privilege scopes, OAuth mix-up attack guidance, and a community-driven vulnerability disclosure program routed through the Linux Foundation.
 
-This matters for the book's argument. DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md) chapter as critical infrastructure for preventing token theft. Workload Identity Federation connects to the WIMSE (Workload Identity in Multi-System Environments) work discussed in the same chapter. The fact that MCP is now adopting both confirms the trajectory: the identity layer and the communication layer are converging. Communication protocols that started as "plumbing, not trust" are adding trust infrastructure because production deployments cannot function without it.
+DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md) chapter as critical infrastructure for preventing token theft. Workload Identity Federation connects to the WIMSE (Workload Identity in Multi-System Environments) work discussed in the same chapter. MCP adopting both confirms the trajectory: the identity layer and the communication layer are converging. Communication protocols that started as "plumbing, not trust" are adding trust infrastructure because production deployments cannot function without it.
 
 ### Adoption
 
@@ -138,7 +138,7 @@ Research from the MCPTox benchmark tested 20 prominent LLM agents against tool p
 
 A fifth attack vector targets the agent's compute budget rather than its data or permissions. Lee et al. demonstrated that malicious MCP tool servers can induce cyclic "overthinking loops": a small set of cycle-inducing tools, when co-registered alongside legitimate tools in a shared registry, force the agent into repetitive reasoning steps that amplify token consumption up to 142.4x.[^overthinking-loops] The attack is subtle: no single tool call looks abnormal. The damage emerges from composition: individually plausible calls chain into cycles that drain API budgets. This is a denial-of-wallet attack, and it exploits the same property that makes MCP powerful: open tool registries where any server can offer tools. The defense requires what the [Sandboxing and Execution Security](execution-security.md) chapter argues for: resource budgets and cost controls enforced at the infrastructure level, not left to the agent's judgment.
 
-The MCP specification explicitly forbids two anti-patterns: token passthrough (forwarding tokens without validation) and admin tokens for multi-user deployments (a single powerful token). But specification requirements and production practice diverge: 38% of scanned MCP servers accept connections from any client without authentication.[^30]
+The MCP specification explicitly forbids two anti-patterns: token passthrough (forwarding tokens without validation) and admin tokens for multi-user deployments (a single powerful token). But specification requirements and production practice diverge: a community scan of 518 servers in the official MCP registry found that 38% accept connections from any client without authentication.[^30]
 
 Shane identifies three trust gaps that MCP does not address:[^1]
 
@@ -327,7 +327,7 @@ Shane identifies AgentGateway's structural limitation:[^3] it operates at the to
 
 The policies map onto the same coarse OAuth scopes underneath. AgentGateway is real progress: instead of "the agent has a token, therefore it can do anything the token allows," you get a policy layer that can restrict and audit tool access. But it is a governance layer on top of an authorization model that was not designed for agents. The deeper fix requires the shift from possession-based to proof-based authorization.[^3]
 
-Gartner predicts that a majority of API gateway vendors will add MCP capabilities by the end of 2026.[^19] Early participation in AgentGateway's community meetings includes AWS, Microsoft, Red Hat, IBM, Cisco, and Shell.[^18] The pattern is converging fast. What remains unclear is whether these implementations will address the authorization gap or merely replicate it at a new layer.
+Gartner predicts that 75% of API gateway vendors will integrate MCP capabilities by the end of 2026.[^19] Early participation in AgentGateway's community meetings includes AWS, Microsoft, Red Hat, IBM, Cisco, and Shell.[^18] The pattern is converging fast. What remains unclear is whether these implementations will address the authorization gap or merely replicate it at a new layer.
 
 ## Trust Layer Integrations: TMCP and TA2A
 
@@ -402,7 +402,7 @@ AG-UI (Agent-User Interaction Protocol), created by CopilotKit and now compatibl
 
 A2UI (Agent-to-UI), an Apache 2.0 protocol created by Google with CopilotKit contributions, enables agents to generate rich, interactive UIs that render natively across web, mobile, and desktop without executing arbitrary code.[^a2ui]
 
-These protocols matter for the book's thesis because they formalize the boundary between agent reasoning and user oversight. The Human-Agent Collaboration chapter discusses oversight patterns (pre-action approval, confidence signals, escalation pathways). AG-UI and A2UI provide the protocol layer that makes those patterns implementable at scale: structured streaming from agent to UI, with standardized event types for tool calls that need approval, state changes that need visibility, and actions that need confirmation.
+AG-UI and A2UI formalize the boundary between agent reasoning and user oversight. The [Human-Agent Collaboration](human-agent-collaboration.md) chapter discusses oversight patterns: pre-action approval, confidence signals, escalation pathways. These two protocols provide the layer that makes those patterns implementable at scale: structured streaming from agent to UI, with standardized event types for tool calls that need approval, state changes that need visibility, and actions that need confirmation.
 
 ### The Protocol Stack
 
@@ -504,7 +504,7 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^4]: MCP Specification, modelcontextprotocol.io, November 2025. Required standards: OAuth 2.1 + PKCE, RFC 9728, RFC 8707, RFC 8414.
 [^5]: "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^6]: "SEP-1649: MCP Server Cards," github.com/modelcontextprotocol, 2026.
-[^7]: MCP SDK download statistics, February 2026. Python + TypeScript combined.
+[^7]: PyPI download statistics for the `mcp` package: pypistats.org/packages/mcp (98.6 million monthly downloads as of February 2026). Figure also cited in Anthropic, "Donating the Model Context Protocol and Establishing of the Agentic AI Foundation," anthropic.com, 2026.
 [^8]: AuthZed, "A Timeline of Model Context Protocol (MCP) Security Breaches," authzed.com, 2025-2026.
 [^9]: MCPTox benchmark results and Practical DevSecOps, "MCP Security Vulnerabilities," 2026.
 [^10]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," cloud.google.com, 2026.
@@ -512,13 +512,13 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^a2a-v1]: A2A Protocol, "What's New in v1.0," a2a-protocol.org/latest/whats-new-v1/, 2026. Breaking changes from v0.3 include unified Part types, per-interface protocol versioning, cursor-based pagination, and google.rpc.Status error model.
 [^12]: Google, A2A adoption statistics, 2026. 150+ participating organizations.
 [^13]: Subhadip Mitra, "The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI," 2026. LangGraph v0.2 shipped January 15, 2026.
-[^14]: Auth0 A2A authentication partnership, referenced in Context Infrastructure chapter.
-[^15]: Mastercard and Google, "Verifiable Intent," March 2026. Covered in Agent Identity chapter.
+[^14]: Auth0, "Secure A2A Authentication with Auth0 and Google Cloud," auth0.com/blog/auth0-google-a2a/, 2026. Auth0 partnering with Google Cloud to define A2A authentication specifications and build SDKs showcasing A2A auth capabilities.
+[^15]: Mastercard, "How Verifiable Intent builds trust in agentic AI commerce," mastercard.com, March 5, 2026. Standards-based framework co-developed with Google linking identity, intent, and action into a tamper-resistant record. Aligned with Google's AP2 and UCP protocols.
 [^16]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026.
 [^17]: AgentGateway documentation, agentgateway.dev. Built in Rust, contributed to Linux Foundation by Solo.io.
 [^18]: Solo.io, "Solo Enterprise for agentgateway," solo.io, 2026. Community participants include AWS, Microsoft, Red Hat, IBM, Cisco, Shell.
-[^19]: Gartner prediction on API gateway vendors adding MCP capabilities, referenced in Context Infrastructure chapter.
-[^20]: Stripe and OpenAI, Agent Commerce Protocol (ACP), 2026.
+[^19]: Gartner, 2026 predictions: 75% of API gateway vendors will integrate MCP features by end of 2026; 40% of enterprise applications will embed autonomous AI agents. Gartner reports are paywalled; figure widely cited in industry coverage including K2View, "MCP Gartner insights," k2view.com, 2025.
+[^20]: Stripe, "Developing an open standard for agentic commerce," stripe.com/blog/developing-an-open-standard-for-agentic-commerce, 2026. ACP specification at github.com/agentic-commerce-protocol. Apache 2.0 licensed. Powers Instant Checkout in ChatGPT.
 [^21]: Google Developers Blog, Unified Commerce Protocol (UCP), 2026. Co-developed with Shopify and Walmart.
 [^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.
 [^23]: PAC Framework, trustedagentic.ai, March 2026.
@@ -528,7 +528,7 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^27]: Arctic Wolf, CVE-2026-27825, February 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE. Fix released in version 0.17.0 on February 24, 2026.
 [^28]: CVE-2026-30861, March 2026. Command injection in WeKnora MCP stdio configuration validation.
 [^29]: Microsoft Security Update, CVE-2026-26118, March 10, 2026. SSRF in Azure MCP Server Tools enabling managed identity token theft and privilege escalation. CVSS 8.8.
-[^30]: "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Analysis of 30 MCP-related CVEs filed January-February 2026 with vulnerability class breakdown. Authentication scan of 500+ MCP servers found 38% completely lack authentication.
+[^30]: CVE categorization from kai_security_ai, "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Individual CVEs are verifiable in NVD (nvd.nist.gov). The 38% unauthenticated figure comes from a separate scan of 518 servers in the official MCP registry by the same researcher: "I Scanned Every Server in the Official MCP Registry. Here's What I Found," dev.to, February 2026; initially reported as 41%, refined to 38% after excluding servers with schema-level access controls. Methodology described in post. Note: pseudonymous community research, not institutional.
 [^a2a-t]: Huawei, "Huawei to Announce the Open Source Project of A2A-T Software," huawei.com, February 2026. Announced at MWC 2026 Global Autonomous Network Industry Summit, March 2, 2026. Based on TM Forum IG1453 (beta, February 6, 2026) and enhanced prompt meta-model IG1453A. Three open-source components: Protocol SDK, Registry Center, Orchestration Center.
 [^unit42-sampling]: Palo Alto Networks Unit 42, "New Prompt Injection Attack Vectors Through MCP Sampling," unit42.paloaltonetworks.com, 2026. Demonstrates three proof-of-concept attacks exploiting MCP sampling's implicit trust model: resource theft via hidden instructions in sampling requests, conversation hijacking through persistent instruction injection, and prompt manipulation where servers modify prompts and responses while appearing normal. Defense requires request sanitization, response filtering, token limits by operation type, and explicit approval for tool execution.
 [^protocol-threats]: Zeynab Anbiaee et al., "Security Threat Modeling for Emerging AI-Agent Protocols: A Comparative Analysis of MCP, A2A, Agora, and ANP," arXiv:2602.11327, February 2026. Identifies twelve protocol-level risks across authentication, supply chain, and operational integrity domains with qualitative risk assessment across protocol lifecycle phases.
