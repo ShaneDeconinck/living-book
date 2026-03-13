@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 49)
+## Observations (Updated 2026-03-13, Session 50)
+
+### CVE-2025-59536: When Context Infrastructure Becomes Attack Surface
+
+Check Point Research's disclosure of CVE-2025-59536 in Claude Code (CVSS 8.7) exposes a tension the book has not yet fully reckoned with. The book uses Claude Code's CLAUDE.md pattern as the exemplar of context infrastructure: simple files, continuously curated, immediately valuable. The CVE shows the other side: those same project configuration files (hooks, .mcp.json, MCP settings) are attack vectors when they come from untrusted sources. Hooks auto-execute shell commands on project open. MCP configurations can override user consent for external tool connections. The vulnerability was patched (September 2025), but the architectural pattern persists: any tool that lets project files configure agent behavior must treat those files as potentially hostile input. This applies beyond Claude Code to any agent development tool that reads configuration from the project directory. The deeper observation: context infrastructure and attack surface are the same thing viewed from different trust perspectives. When you control the context, it is infrastructure. When an attacker controls it, it is a weapon. The supply chain security chapter now covers this. The open question is whether the context-infrastructure chapter needs a "context trust" section that explicitly addresses the hostile context case, not just the stale context case.
 
 ### OWASP MCP Top 10: Protocol Security Becomes a Standards Category
 

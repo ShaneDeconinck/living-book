@@ -1,5 +1,46 @@
 # Session Log
 
+## 2026-03-13: Claude Code CVE and Configuration File Attack Surface (Session 50)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits still CSS dark mode fixes). PAC Framework unchanged (19 questions, same pillar structure).
+- Read current book state: all 16 chapters assessed by line count. Strongest: agent-communication (501), regulatory-landscape (335), shadow-agent-governance (330), agent-identity (329). Read why-agents-break-trust, context-infrastructure, human-agent-collaboration, and supply-chain-security in full.
+- Step 4 reassessment: RSAC is 10 days away (March 23-26). The book remains at pre-RSAC plateau. All chapters well-developed. Searched for what might have been missed rather than adding new content speculatively.
+- Web searched for recent developments: AI agent trust security March 2026, RSAC 2026 AI agent governance preview, Token Security Innovation Sandbox, CVE-2025-59536 Claude Code, RSAC 2026 Innovation Sandbox finalists, Geordie AI platform, Glide Identity authentication.
+
+**What I changed:**
+- **supply-chain-security.md**: Expanded the "Configuration File Attacks" section with CVE-2025-59536 (CVSS 8.7), Check Point Research's disclosure of two attack vectors in Claude Code. First: hooks exploitation where malicious repository hooks auto-execute shell commands when a developer opens a project. Second: MCP consent bypass where .mcp.json and settings files override user approval for external tool connections. Connected this to the book's use of Claude Code as a positive context infrastructure example, noting that the same files that encode organizational knowledge also encode trust assumptions. Added footnote with Check Point Research source, CVE identifiers, patch timeline, and media coverage.
+- **gaps.md**: Updated session number to 50. Added new observation "CVE-2025-59536: When Context Infrastructure Becomes Attack Surface" exploring the tension between context infrastructure (which the book celebrates) and configuration-based attack surface (which the CVE demonstrates). Raised open question about whether the context-infrastructure chapter needs a "context trust" section addressing hostile context, not just stale context.
+
+**What I considered but did not do:**
+- Adding Glide Identity as a third Innovation Sandbox finalist alongside Token Security and Geordie AI. Glide is "agent-ready authentication" using SIM-anchored cryptographic identity, but its focus is human authentication infrastructure that extends to agents, not purpose-built agent governance. The current framing ("two of ten finalists are purpose-built for agent governance") is more precise than broadening to three with a weaker match.
+- Adding the NIST AI Agent Standards Initiative (CAISI) to additional chapters. Already comprehensively covered in regulatory-landscape.md with three pillars, RFI deadline (March 9, closed), 932 comments received, listening session details (April 2026), and convergence timeline entries.
+- Expanding the context-infrastructure chapter with a "context trust" section. The CVE raises the question but the answer belongs in the supply chain chapter (where it now lives) rather than the context chapter. Context-infrastructure is about what to build. Supply chain is about what to verify. The CVE is a verification problem, not a design problem.
+- Adding broader RSAC 2026 pre-conference coverage (Microsoft sessions, Bedrock Data, Delinea sessions). The conference has not happened yet. Pre-conference marketing is not a strong enough source. Already flagged for post-RSAC session.
+
+**What I noticed:**
+- The Claude Code CVE reveals a fundamental architectural tension: the same project configuration files that make context infrastructure powerful (CLAUDE.md, hooks, .mcp.json) are the attack surface when those files come from untrusted sources. This is not specific to Claude Code. Any agent development tool that reads behavior configuration from the project directory faces the same tension. The defense is treating project configuration as untrusted input, the same way web applications treat URL parameters.
+- The RSAC 2026 Innovation Sandbox is heavily weighted toward agent identity and governance: Token Security, Geordie AI, and Glide Identity all have explicit agent/AI security positioning. Combined with Charm Security (anti-social-engineering for agents) and Realm Labs (inference-time interpretability), at least 5 of 10 finalists are directly relevant to the book's themes. The contest results (March 23) will be a significant signal.
+- The book's coverage of configuration file attacks was previously limited to NVIDIA's general guidance. The Claude Code CVE adds a concrete, high-profile, well-documented example from one of the tools the book discusses extensively. This strengthens the supply chain chapter's argument by showing the pattern is not theoretical.
+
+**Sources used:**
+- Check Point Research, "Caught in the Hook: RCE and API Token Exfiltration Through Claude Code Project Files," research.checkpoint.com, February 25, 2026. CVE-2025-59536 (CVSS 8.7), CVE-2026-21852.
+- The Hacker News, "Claude Code Flaws Allow Remote Code Execution and API Key Exfiltration," February 2026.
+- Dark Reading, "Flaws in Claude Code Put Developers' Machines at Risk," February 2026.
+- The Register, "Claude's collaboration tools allowed remote code execution," February 26, 2026.
+- Token Security, "Top 10 Finalist for RSAC 2026 Innovation Sandbox," globenewswire.com, February 10, 2026.
+- Geordie AI, "Top 10 Finalist for RSAC 2026 Innovation Sandbox," globenewswire.com, February 10, 2026.
+- Glide Identity, "Top 10 Finalist for RSAC 2026 Innovation Sandbox," businesswire.com, February 10, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: 19 questions confirmed, pillar structure unchanged).
+- Shane's blog (checked: no new posts since March 11, 2026).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote content, Zenity 0-click demo results, Bedrock Data sessions, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Track whether Anthropic DOD lawsuit produces precedent.
+
 ## 2026-03-13: Agent Identity M&A Consolidation (Session 49)
 
 **What I did:**

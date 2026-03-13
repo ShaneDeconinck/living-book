@@ -58,6 +58,8 @@ This is not prompt injection in the traditional sense. There is no malicious pay
 
 **Configuration File Attacks.** NVIDIA's AI Red Team guidance highlights that agent modification of configuration files (~/.zshrc, .gitconfig, MCP configs) enables persistence and sandbox escape.[^nvidia] A sandboxed agent that can modify a git hook achieves code execution outside the sandbox the next time a commit occurs. The configuration layer sits below most security models and above most sandboxes.
 
+Check Point Research's disclosure of CVE-2025-59536 in Claude Code demonstrated this pattern concretely against one of the most widely used AI development tools.[^claude-code-cve] Two attack vectors exploited project configuration files that developers routinely trust. First, Claude Code's hooks mechanism (predefined actions that run when a session begins) could be weaponized: a malicious repository includes a hooks configuration that executes arbitrary shell commands automatically when a developer opens the project. No user interaction beyond opening the project is required. Second, repository-defined MCP configurations (.mcp.json and claude/settings.json) could override the user's explicit approval requirements for external tool connections by setting `enableAllProjectMcpServers` to true: the MCP consent bypass. Together, the two vectors achieve the same kill chain as the OpenClaw ClawJacked vulnerability: open a project, lose control. The vulnerability is architecturally instructive because the configuration files that enable it are the same files that make Claude Code's context infrastructure powerful. CLAUDE.md files, hooks, and MCP configurations are the mechanisms through which development teams share context (covered in [Context Infrastructure](context-infrastructure.md)). The same files that encode organizational knowledge also encode trust assumptions. When those files come from an untrusted source (a cloned repository, a pull request, a shared project), the trust assumption inverts: context infrastructure becomes attack surface.
+
 [^mcptox]: MCPTox benchmark, referenced in OWASP analysis and agent communication security research. Finding: instruction-following capability correlates with tool poisoning vulnerability.
 
 [^bluerock]: BlueRock Security, "MCP fURI: SSRF Vulnerability in Microsoft Markitdown MCP," January 20, 2026. Analysis covered 7,000+ MCP servers.
@@ -85,6 +87,8 @@ This is not prompt injection in the traditional sense. There is no malicious pay
 [^dod-anthropic]: Malwarebytes, "Pentagon ditches Anthropic AI over 'security risk' and OpenAI takes over," March 2026. TechCrunch, "OpenAI and Google employees rush to Anthropic's defense in DOD lawsuit," March 9, 2026. Over 30 employees from OpenAI and Google DeepMind filed an amicus brief; 875+ employees across both companies signed an open letter.
 
 [^nvidia]: NVIDIA AI Red Team, "Sandboxing Agentic AI Workflows," 2025-2026. Guidance on configuration file protection as non-negotiable control.
+
+[^claude-code-cve]: Check Point Research, "Caught in the Hook: RCE and API Token Exfiltration Through Claude Code Project Files," research.checkpoint.com, February 25, 2026. CVE-2025-59536 (CVSS 8.7) covers hooks exploitation and MCP consent bypass. CVE-2026-21852 covers a related API token exfiltration vector. Anthropic patched the hooks vulnerability September 22, 2025, and published CVE-2025-59536 October 3, 2025. See also The Hacker News, Dark Reading, The Register coverage February 2026.
 
 ## The Trust Registry Problem
 
