@@ -31,7 +31,7 @@ This is what The Future Society calls the "multi-purpose problem": generic agent
 
 The Act distinguishes three roles: provider (builds or substantially modifies an AI system), distributor (makes it available without substantial modification), and deployer (uses it under their own authority). Where you fall matters.
 
-For agent builders using commercial LLMs, the GPAI provider obligations sit with the model provider, not with you. RAG, prompt engineering, orchestration, and tool-calling frameworks do not trigger provider obligations. The July 2025 guidelines clarify that only significant modifications to model weights (at least one-third of original training compute) cross that line.[^gpaiguidelines] If you are building agents with context engineering, you are a deployer, not a provider.
+For agent builders using commercial LLMs, the GPAI provider obligations sit with the model provider, not with you. RAG, prompt engineering, orchestration, and tool-calling frameworks do not trigger provider obligations. The July 2025 guidelines clarify that significant modifications to model weights trigger provider obligations, using one-third of original training compute as an indicative threshold.[^gpaiguidelines] If you are building agents with context engineering, you are a deployer, not a provider.
 
 One wrinkle worth noting: open-weight models that cross the systemic risk threshold (10^25+ FLOPs) carry the full GPAI with systemic risk obligations. If the original provider has no EU presence and has not complied, that risk may flow down to the first entity in the EU value chain.[^shaneeuai]
 
@@ -71,7 +71,7 @@ None of these are abstract requirements. They map directly to infrastructure you
 
 The Commission was required to publish, by February 2, 2026, guidelines specifying practical implementation of Article 6 alongside a comprehensive list of practical examples of use cases that are and are not high-risk.[^commissionguidelines] These guidelines are significant for agent builders because they operationalize the classification rules, but they were written with traditional AI in mind. The multi-purpose problem, where an agent's use case is not fixed at deployment, remains an open interpretation challenge.
 
-As of March 2026, fifteen months after the AI Act entered force, the European AI Office has published no guidance specifically addressing AI agents, autonomous tool use, or runtime behavior.[^futuresociety] The Act applies to agents, but the operational details of how to classify, monitor, and report on autonomous agent behavior remain unspecified.
+As of March 2026, nineteen months after the AI Act entered force, the European AI Office has published no guidance specifically addressing AI agents, autonomous tool use, or runtime behavior.[^futuresociety] The Act applies to agents, but the operational details of how to classify, monitor, and report on autonomous agent behavior remain unspecified.
 
 The timeline itself is now uncertain. In late 2025, the European Commission proposed the Digital Omnibus package, which would defer high-risk AI obligations for Annex III systems until compliance support measures (harmonized standards, common specifications, and Commission guidelines) are confirmed available, with a backstop deadline of December 2, 2027: sixteen months later than the original August 2, 2026 date.[^digital-omnibus] The rationale is pragmatic: the standards and guidance that organizations need to comply are not yet ready. But the Omnibus is a legislative proposal, not yet adopted. Organizations face a familiar dilemma: plan for August 2026 and potentially over-invest, or plan for December 2027 and risk non-compliance if the Omnibus fails or narrows.
 
@@ -97,7 +97,7 @@ In the same month, NIST's Center for AI Standards and Innovation (CAISI) launche
 
 The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." This is a Potential argument, in PAC terms. NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
 
-CAISI's Request for Information on AI Agent Security closed March 9, 2026, drawing 932 public comments: a measure of how urgently industry wants guidance on agent governance.[^caisi-comments] Among the respondents, the OpenID Foundation's AIIM Threat Modeling Subgroup submitted concrete recommendations for agent identity standards,[^openidaiim] and the Software & Information Industry Association (SIIA) argued that many agentic AI risks can be addressed by extending established cybersecurity practices (secure-by-design, least-privilege, continuous monitoring) rather than creating entirely new frameworks.[^siia-rfi] The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
+CAISI's Request for Information on AI Agent Security closed March 9, 2026, drawing substantial public participation: a measure of how urgently industry wants guidance on agent governance. Among the respondents, the OpenID Foundation's AIIM Threat Modeling Subgroup submitted concrete recommendations for agent identity standards,[^openidaiim] and the Software & Information Industry Association (SIIA) argued that many agentic AI risks can be addressed by extending established cybersecurity practices (secure-by-design, least-privilege, continuous monitoring) rather than creating entirely new frameworks.[^siia-rfi] The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
 
 ## ISO 42001: The Management System Baseline
 
@@ -266,7 +266,7 @@ The regulatory and standards timelines are converging on a narrow window:
 - **April 2, 2026**: NIST NCCoE concept paper comment period closes.
 - **April 2026+**: NIST CAISI listening sessions on sector-specific barriers begin (healthcare, finance, education).
 - **June 30, 2026**: Colorado AI Act takes effect.
-- **August 2, 2026**: EU AI Act high-risk system obligations take effect.
+- **August 2, 2026**: EU AI Act high-risk system obligations originally take effect (subject to potential delay under the Digital Omnibus proposal; backstop December 2, 2027).
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
 Shane's observation is worth restating: NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts (Accountability pillar). The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards (Control pillar). Singapore governs by design, with a framework built for agents from the ground up across all three PAC pillars. The Council of Europe Convention establishes binding international principles that cut across all three pillars. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
@@ -337,7 +337,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^a2a]: A2A v1.0 with 150+ organizations. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
 
-[^caisi-comments]: NIST CAISI RFI on AI Agent Security, 932 comments received via regulations.gov by the March 9, 2026 deadline.
+[^caisi-comments]: NIST CAISI RFI on AI Agent Security, docket NIST-2025-0035, regulations.gov. Comment period closed March 9, 2026.
 
 [^siia-rfi]: SIIA, "SIIA Response to NIST RFI on Security Considerations for AI Agents," siia.net, March 2026.
 

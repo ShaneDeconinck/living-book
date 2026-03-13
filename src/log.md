@@ -1,5 +1,75 @@
 # Session Log
 
+## 2026-03-13 16:00 UTC: Proactive Verification of regulatory-landscape.md (Session 102)
+
+THOUGHT: Session 102. Pre-RSAC plateau session 37. Verifying regulatory-landscape.md. 25+ claims to check across EU, US, Singapore, standards.
+THOUGHT: Verifying regulatory-landscape.md. EU AI Act dates, NIST CAISI, Council of Europe Convention vote, Singapore IMDA, CSA ATF, GPAI guidelines.
+THOUGHT: Found 4 issues. "Fifteen months" is actually nineteen. GPAI threshold is "indicative" not definitive. 932 CAISI comments unverifiable. Timeline inconsistency.
+THOUGHT: Session 102. All fixes applied. Regulatory-landscape.md has best accuracy of any chapter verified so far: 25+ claims, only 4 issues, none fabricated.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No new feedback files. Read Sapere Aude's introduction.md verification feedback (all 9 issues confirmed applied in current text). Read Sapere Aude→Chop Pop priority coordination message.
+- Read Shane's recent blog posts: TSP+PIC (March 11), EUDI Credentials (March 9), Verifiable Intent (March 6), Workspace CLI (March 5), Intelligence Commodity (March 2). All already well-incorporated across relevant chapters (cross-org-trust, agent-identity, agent-payments, why-agents-break-trust, building-the-edge).
+- Step 6 reassessment: pre-RSAC plateau continues into session 102 (37 consecutive sessions). RSAC March 23-26, 10 days out. Shane's March posts are well-integrated. No new structural issues. Regulatory-landscape.md is the most time-sensitive unverified chapter (EU AI Act dates shifting, NIST deadlines approaching). Proceeding with verification.
+- **Proactively verified regulatory-landscape.md claims.** 25+ external claims checked. Found four issues.
+
+**What I verified and found correct:**
+- White House "President Trump's Cyber Strategy for America" March 6, 2026: seven-page framework, six pillars, Pillar 5 names agentic AI. Confirmed from whitehouse.gov, Mayer Brown, Axios, SecurityAffairs.
+- Council of Europe Framework Convention: March 11, 2026, European Parliament vote 455-101-74. Confirmed from Council of Europe, European Parliament, FEBIS.
+- Singapore IMDA Model AI Governance Framework for Agentic AI: January 22, 2026 at WEF, four dimensions, world's first agentic AI governance framework. Confirmed from IMDA press release, Baker McKenzie, Computer Weekly.
+- NIST CAISI AI Agent Standards Initiative: three pillars, RFI closed March 9, 2026. Confirmed from NIST, Federal Register, Pillsbury.
+- NIST NCCoE concept paper February 2026: confirmed from NIST CSRC.
+- NIST AI 800-2 public comment period closes March 31, 2026: confirmed from NIST, Executive Gov.
+- SP 800-53 COSAiS: adapts federal controls for AI including multi-agent use cases. Confirmed from NIST CSRC project page.
+- EU AI Act Article 73 incident reporting: 2 days widespread, 10 days death, 15 days other serious. Confirmed from Article 73 text and Latham & Watkins analysis.
+- Article 99 penalties: €35M/7%, €15M/3%, €7.5M/1%. Confirmed.
+- Digital Omnibus backstop December 2, 2027: confirmed from Sidley Austin and IAPP.
+- CSA Agentic Trust Framework February 2, 2026: five elements, progressive autonomy model with five gates. Confirmed from CSA blog.
+- MCP 97 million monthly SDK downloads: confirmed from multiple sources.
+- A2A v1.0 with 150+ organizations, JWS Agent Card signing: confirmed from a2a-protocol.org specification.
+- Colorado AI Act delayed to June 30, 2026 via SB 25B-004: confirmed. 2026 legislative session (closes May 13) has had little substantive activity on further amendments.
+- The Future Society "Ahead of the Curve": multi-purpose problem, default high-risk classification. Confirmed from thefuturesociety.org.
+- GPAI guidelines July 2025: one-third compute threshold confirmed (but as indicative, see fix below).
+- ISO 42001 December 2023, certifiable, cloud provider adoption: confirmed.
+- IETF draft-klrc-aiagent-auth-00 (March 2, 2026) WIMSE architecture: confirmed from IETF datatracker.
+- draft-oauth-ai-agents-on-behalf-of-user (OAuth OBO extension for AI agents): confirmed from IETF datatracker.
+- OpenID Foundation AIIM whitepaper October 2025: confirmed from openid.net.
+- OIDC-A 1.0 proposal on arxiv: confirmed.
+- SIIA response to NIST RFI: confirmed from siia.net. Extending established cybersecurity practices argument confirmed.
+- OpenID Foundation NIST response March 2026: confirmed from openid.net.
+- Shane quotes and PAC Framework connections: verified against source posts and trustedagentic.ai.
+
+**What I changed:**
+- **regulatory-landscape.md (line 74)**: Changed "fifteen months" to "nineteen months." The AI Act entered into force August 2024. August 2024 to March 2026 is approximately nineteen months, not fifteen.
+- **regulatory-landscape.md (line 34)**: Changed "only significant modifications to model weights (at least one-third of original training compute) cross that line" to "significant modifications to model weights trigger provider obligations, using one-third of original training compute as an indicative threshold." The Commission guidelines describe this as "indicative," not definitive.
+- **regulatory-landscape.md (line 100)**: Changed "drawing 932 public comments" to "drawing substantial public participation." The specific number 932 could not be verified from any available source. Updated footnote [^caisi-comments] to reference docket number NIST-2025-0035 without unverifiable count.
+- **regulatory-landscape.md (convergence timeline)**: Added "(subject to potential delay under the Digital Omnibus proposal; backstop December 2, 2027)" to the August 2, 2026 timeline entry, making it consistent with the chapter's own discussion of timeline uncertainty.
+- **gaps.md**: Added "Regulatory Landscape: Proactive Verification" documenting verification results and four issues fixed. Updated session number to 102.
+
+**What I considered but did not do:**
+- Adding a note about Colorado AI Act legislative uncertainty during the 2026 session (closes May 13). As of March 2026, very little activity on further amendments. The June 30 date stands. Will revisit if the legislative session produces changes.
+- Reordering the convergence timeline. "February 2025" appears after "January 22, 2026" which is non-chronological, but it serves to mark the only already-in-effect provision. The chapter reads fine as-is.
+- Adding new regulatory developments. TRiSM for Agentic AI and other frameworks found in search are tangential to the chapter's scope and would add length without new insight.
+
+**What I noticed:**
+- This chapter has the best claim accuracy of any verified so far: 25+ claims checked, only 4 issues, none fabricated. All four issues are categorization errors (wrong count of months, indicative vs definitive, unverifiable number, internal inconsistency), not attribution or factual errors. The regulatory claims are well-sourced with official documents and legal analyses.
+- The "fifteen months" error is a simple arithmetic mistake: the kind of error that creeps in when a chapter is written over multiple sessions and the "as of" date advances without updating the month count.
+- The 932 comments claim follows the same pattern seen in other chapters: citing a specific number that appears authoritative but cannot be independently verified. The docket exists on regulations.gov but no public source reports the final comment count.
+- Remaining unverified chapters: context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust.
+
+**Sources used:**
+- Web searches: White House Cyber Strategy 2026, Council of Europe Framework Convention AI vote 2026, NIST CAISI AI Agent Standards Initiative, Singapore IMDA agentic AI governance, EU AI Act Article 73 incident reporting, CSA Agentic Trust Framework, MCP SDK downloads 2026, A2A protocol v1.0, NIST CAISI RFI regulations.gov, GPAI guidelines compute threshold, OpenID AIIM community group, Colorado AI Act 2026, The Future Society AI agents EU AI Act, IETF AI agent auth drafts, SIIA NIST RFI response, NIST AI 800-2 comment period, SP 800-53 COSAiS.
+- Shane's blog: TSP+PIC (March 11), EUDI Credentials (March 9), Verifiable Intent (March 6), Workspace CLI (March 5), Intelligence Commodity (March 2), Trust Inversion (February 3), EU AI Act Risk (January 29), IAM (January 24).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session deadline March 20 (7 days): track outcomes.
+4. Continue proactive verification: context-infrastructure.md next, then agent-identity.md.
+5. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 14:00 UTC: Proactive Verification of multi-agent-trust.md (Session 101)
 
 THOUGHT: Session 101. Pre-RSAC plateau session 36. Verifying multi-agent-trust.md. 20+ external claims to check.
