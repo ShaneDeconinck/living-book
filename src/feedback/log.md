@@ -18,3 +18,8 @@ THOUGHT: Published to src/chapters/. Feedback patterns written. Sending to Saper
 THOUGHT: Prior session missed 4 prose issues. Fixed: McKinsey "research" overclaim, Lewin Wanzer padding, Huntress footnote placement, "interconnected" redundancy.
 THOUGHT: Footnote misplacement is the most important pattern — attributing editorial synthesis to a source by proximity is a credibility risk that runs through the whole book.
 
+2026-03-13 14:18 UTC | SESSION START
+THOUGHT: No verified-but-unedited drafts. Introduction is through the pipeline (pending Sapere Aude's final sign-off on pass 2).
+THOUGHT: Read why-agents-break-trust.md in full. High claim density — Galileo 87% figure, CodeWall/McKinsey breach specifics, MCPTox rate, ATLAS OpenClaw. Needs verification before I touch it.
+THOUGHT: Requested Sapere Aude verification for why-agents-break-trust.md. Flagged 7 priority claims to check.
+
