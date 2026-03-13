@@ -1,6 +1,6 @@
 # Human-Agent Collaboration Patterns
 
-The complacency trap chapter diagnosed a problem: humans are bad at monitoring systems that rarely fail. The solution is not to remove humans from oversight. It is to redesign how humans and agents work together so that oversight does not depend on sustained vigilance.
+[Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) diagnosed a problem: humans are bad at monitoring systems that rarely fail. The solution is not to remove humans from oversight. It is to redesign how humans and agents work together so that oversight does not depend on sustained vigilance.
 
 This chapter is about that redesign. How to structure the collaboration between humans and agents so that governance is effective, not performative. How to set the right autonomy level for each task, not each agent. How to build interfaces that make oversight actionable rather than exhausting. And how to let agents participate in their own governance by recognizing when they are uncertain.
 
@@ -185,7 +185,7 @@ Deloitte's 2026 Tech Trends report frames the organizational challenge directly:
 
 This framing clarifies what is actually changing. The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned (the shadow agent governance chapter quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
 
-Anthropic's 2026 Agentic Coding Trends Report documents this shift in the engineering domain specifically. Engineers who wrote every line of code now increasingly orchestrate long-running systems of agents that handle implementation details, focusing human time on architecture and strategy[^anthropic-coding-trends]. More time on orchestration, review, and system design. Less on routine implementation. This is not a loss of engineering skill: it is a reallocation toward higher-judgment work. The same pattern is extending beyond engineering: sales, legal, marketing, and operations teams are using agents to solve local process problems without waiting on engineering queues. Zapier reports 89% AI adoption across their organization with 800+ agents deployed internally[^anthropic-coding-trends]. And 27% of AI-assisted work consists of tasks that would not have been done at all without agents: new work enabled by the collaboration, not old work automated[^anthropic-coding-trends].
+Anthropic's 2026 Agentic Coding Trends Report documents this shift in the engineering domain specifically. Engineers who wrote every line of code now increasingly orchestrate long-running systems of agents that handle implementation details, focusing human time on architecture and strategy[^anthropic-coding-trends]. More time on orchestration, review, and system design. Less on routine implementation. This is not a loss of engineering skill: it is a reallocation toward higher-judgment work. The same pattern is extending beyond engineering: sales, legal, marketing, and operations teams are using agents to solve local process problems without waiting on engineering queues. Zapier reports 89% AI adoption across their organization with 800+ agents deployed internally[^zapier-adoption]. And 27% of AI-assisted work consists of tasks that would not have been done at all without agents: new work enabled by the collaboration, not old work automated[^anthropic-coding-trends].
 
 What the lifecycle looks like in practice:
 
@@ -265,6 +265,8 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 [^shadow-chapter]: See [Shadow Agent Governance](shadow-agent-governance.md) for the agent registry model and amnesty-based transition approach.
 
 [^anthropic-coding-trends]: Anthropic, ["2026 Agentic Coding Trends Report: How coding agents are reshaping software engineering"](https://resources.anthropic.com/2026-agentic-coding-trends-report) (March 2026). Eight trends across three categories: foundation trends (role shifts, multi-agent coordination), capability trends (expanding task horizons, cross-domain agents), and impact trends (organizational adoption, security architecture).
+
+[^zapier-adoption]: Anthropic, ["Zapier builds an AI-first remote culture with Claude for Enterprise"](https://claude.com/customers/zapier) (2026). 89% company-wide AI adoption, 800+ agents deployed internally, 10x year-over-year growth in Anthropic app usage.
 
 [^inferential-edge]: Shane Deconinck, ["When Intelligence Becomes Commodity, Infrastructure Becomes the Edge"](https://shanedeconinck.be/posts/when-intelligence-becomes-commodity/) (March 2026).
 
