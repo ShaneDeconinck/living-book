@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 74)
+## Observations (Updated 2026-03-13, Session 75)
+
+### Guardian Agents in Production: Google's User Alignment Critic
+
+Google's browser agent security architecture (detailed in the 2026 Responsible AI Progress Report) is the first production implementation from a major vendor of what Gartner's Market Guide calls a "guardian agent": a secondary AI system whose sole purpose is governing a primary AI system's behavior. The User Alignment Critic is a separate Gemini model that reviews every proposed agent action for intent alignment. The architectural isolation is the key insight: the Critic sees only action metadata, not the web content the agent processes. This means the oversight model cannot be poisoned through the same channel as the primary agent. Indirect prompt injection on a web page can influence the browsing agent but cannot reach the model that decides whether to approve the action.
+
+This is "infrastructure in the loop" taken a step further: not just structural containment (sandboxes) or rule-based enforcement (PCAS), but reasoning-based oversight architecturally shielded from the threat surface. The tradeoff is a new dependency: if the Critic model fails or is circumvented, the oversight layer fails. Google mitigates this with four additional layers (Agent Origin Sets, prompt injection classifiers, mandatory human oversight for sensitive actions, pre-launch testing), making the Critic one layer in a defense-in-depth stack rather than a single point of governance.
+
+The broader pattern: the book's execution security chapter now covers three distinct defense architectures: OS-level containment (Claude Code, Codex CLI, Docker), semantic policy enforcement (PCAS reference monitor), and application-level AI-based oversight (Google's User Alignment Critic). These are not alternatives. They operate at different layers of the stack and compose: OS-level containment prevents system exploitation, semantic policy enforcement prevents business logic violations, and AI-based oversight catches novel threats that neither rules nor sandboxes anticipate. The question is whether AI-based oversight is trustworthy enough to be a governance layer, or whether it introduces the same reliability problems (hallucination, adversarial manipulation) that it is supposed to prevent. Google's answer is architectural isolation: shield the oversight model from the threat surface. Whether this holds against sophisticated adversaries is an empirical question the industry has not yet answered.
 
 ### The Permission Intersection Gap: Authorization Checks Access, Not Audience
 

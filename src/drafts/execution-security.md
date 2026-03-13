@@ -226,6 +226,24 @@ Docker Desktop's sandbox approach provides the strongest isolation by running wo
 
 This architecture allows agents to run completely non-interactively: no permission prompts are needed because the VM boundary contains any possible operation. The tradeoff is higher setup cost and the overhead of file synchronization between host and VM.
 
+### Google Project Mariner: Application-Level Defense in Depth
+
+The three architectures above are OS-level containment for coding agents. Google's browser agent security architecture, detailed in its 2026 Responsible AI Progress Report, takes a different approach: application-level defense in depth for an agent that browses the web on behalf of users.[^google-mariner]
+
+The architecture has five layers, each addressing a distinct threat:
+
+**User Alignment Critic.** A separate Gemini model reviews every proposed agent action and vetoes anything that does not match the user's specific intent. The architectural detail matters: the Critic sees only action metadata, not the raw web content the agent is processing. This isolation means the Critic cannot be poisoned through the same channel the agent operates in. An attacker who embeds malicious instructions on a web page can influence the browsing agent but cannot reach the oversight model. This is "infrastructure in the loop" with a twist: the infrastructure is itself an AI model, but one architecturally shielded from the threat surface.
+
+**Agent Origin Sets.** Task-scoped browsing boundaries restrict the agent's reach to data directly related to the current task. The web equivalent of filesystem sandboxing: the agent cannot wander into unrelated domains or access data outside its assignment. This is the permission scoping principle from the identity chapter applied to browsing scope.
+
+**Prompt injection classification.** Every page the agent visits is scanned for attempts to manipulate it through embedded instructions. This operates alongside Chrome's existing safety features and on-device scam detection. Input validation at every hop, not just at the entry point.
+
+**Mandatory human oversight for sensitive actions.** Payments, social media posts, and credential use all require explicit human confirmation. This is the autonomy dial from the [Human-Agent Collaboration](human-agent-collaboration.md) chapter in production: the agent operates at A3 (oversight) for routine browsing but drops to A2 (approve) for high-consequence actions, enforced by infrastructure rather than policy.
+
+**Pre-launch testing.** All five layers were built before the capability shipped, not in response to incidents. The framing matters: security as a prerequisite for launch, not a patch applied after deployment.
+
+The Google architecture complements the OS-level approaches (Claude Code, Codex CLI, Docker) rather than competing with them. OS-level sandboxing constrains system resources: files, network, syscalls. Google's application-level architecture constrains agent behavior: intent alignment, task scope, action classification. A fully governed browser agent would use both: OS-level containment to prevent system exploitation, and application-level oversight to prevent the agent from acting outside its mandate. The User Alignment Critic is the most concrete production implementation of the "guardian agent" pattern that Gartner's Market Guide described as an emerging category: a secondary AI system whose sole purpose is governing a primary AI system's behavior.
+
 ## Connecting to PAC
 
 Execution security is primarily a Control pillar concern, but it intersects with all three pillars:
@@ -293,3 +311,5 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.
 
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
+
+[^google-mariner]: Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026. Five-layer security architecture for browser agents: User Alignment Critic (intent verification via separate Gemini model shielded from web content), Agent Origin Sets (task-scoped browsing boundaries), prompt injection classification (per-page scanning), mandatory human oversight (payments, credentials, social media), and pre-launch security testing. See also Google Security Blog, "Multi-Layered Security Architecture for Chrome's Agentic AI Features," December 2025.

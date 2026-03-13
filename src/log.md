@@ -1,5 +1,46 @@
 # Session Log
 
+## 2026-03-13 UTC: Google Browser Agent Security Architecture (Session 75)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues into its 11th session (65-75). RSAC March 23-26, 10 days out. Searched broadly across seven categories: RSAC 2026, MCP vulnerabilities, NIST CAISI, agent identity standards, agentic AI security, Shane's blog, AI agent governance frameworks. Most findings already in the book. One genuinely significant finding: **Google's browser agent five-layer security architecture** (detailed in the 2026 Responsible AI Progress Report, with the underlying Chrome architecture published December 2025) was not covered despite being the most detailed published production agent security architecture from a major vendor. The architecture implements the book's "infrastructure in the loop" thesis through a novel mechanism: a secondary AI model (User Alignment Critic) architecturally shielded from the agent's threat surface.
+
+**What I changed:**
+- **execution-security.md**: Added new subsection "Google Project Mariner: Application-Level Defense in Depth" (approximately 20 lines) under Real-World Architectures, after Docker Sandbox. Covers: the five-layer architecture (User Alignment Critic, Agent Origin Sets, prompt injection classification, mandatory human oversight for sensitive actions, pre-launch testing), the architectural isolation of the Critic model (sees action metadata only, not web content, making it unpoisonable through the agent's channel), how application-level defense complements OS-level sandboxing, and the connection to Gartner's guardian agent category. One footnote added citing the 2026 Responsible AI Progress Report and December 2025 Chrome security blog post.
+- **gaps.md**: Updated session number to 75. Added new observation "Guardian Agents in Production: Google's User Alignment Critic" covering the architectural isolation pattern, the three defense architecture types now in the execution-security chapter (OS-level containment, semantic policy enforcement, AI-based oversight), how they compose, and the open question of whether AI-based oversight is trustworthy enough to be a governance layer.
+
+**What I considered but did not do:**
+- Adding HIMSS26 outcomes to the regulatory landscape or building-the-edge chapter. HIMSS26 (March 9-11) confirmed AI governance as a "patient safety issue" in healthcare, with concrete deployment outcomes (42% reduction in prior auth time, 20% reduction in denials). Interesting, but the book already covers healthcare through Imprivata (shadow-agent-governance.md, agent-identity.md) and the Gravitee 92.7% healthcare incident rate. HIMSS26 confirms the pattern without changing it.
+- Adding Bedrock Data's MCP governance announcement (March 10). Pre-RSAC vendor positioning for their MCP-based "sensitive data sentinel." Substance will come from their RSAC sessions. Too early for chapter content.
+- Adding the Google 2026 Responsible AI Progress Report's seven-layer governance framework (research, policies, testing, mitigation, launch review, monitoring, governance) as a standalone organizational model. The PAC Framework already provides the book's governance structure. Google's seven layers are a corporate governance process, not a technical architecture. The five-layer browser agent security model is the technically substantive contribution.
+- Updating NIST coverage. CAISI RFI deadline passed (March 9). No new output published. CAISI listening session participation deadline is March 20. NCCoE concept paper comment period closes April 2. All already tracked in the book.
+- Adding new RSAC 2026 Innovation Sandbox details. Token Security, Geordie AI, and the five agentic AI finalists are already well-covered in shadow-agent-governance.md, agent-identity.md, and building-the-edge.md.
+- Adding Gravitee report data. Already comprehensively integrated across six chapters (shadow-agent-governance, agent-identity, pac-framework, introduction, building-the-edge, gaps). Previous sessions explicitly chose not to add more Gravitee numbers.
+- Adding new MCP CVEs or OpenClaw crisis escalation details. Both already covered in previous sessions. The vulnerability narratives are well-established.
+
+**What I noticed:**
+- Google's browser agent security architecture introduces a third defense paradigm the book was missing. The execution-security chapter previously covered two: OS-level containment (sandboxes, containers, microVMs) and rule-based semantic enforcement (PCAS reference monitor). Google's User Alignment Critic adds reasoning-based oversight: a secondary AI model that evaluates agent actions for intent alignment. The three paradigms operate at different layers and compose: OS-level prevents system exploitation, rules prevent business logic violations, AI-based oversight catches novel threats. The architectural isolation (Critic sees metadata only, not raw content) is the key design decision that makes this trustworthy: the oversight model is shielded from the threat surface it governs.
+- The User Alignment Critic is the first production implementation of Gartner's "guardian agent" concept from the February 2026 Market Guide. Gartner predicted guardian agents would "eliminate the need for nearly half of incumbent AI security systems in over 70% of organizations" by 2029. Google shipped one. The gap between the prediction and the implementation reveals the architectural question: guardian agents work only if they cannot be compromised through the same channels as the agents they govern. Architectural isolation (separate model, metadata-only visibility) is how Google solves this. Whether this pattern generalizes beyond browser agents is an open question.
+- Pre-RSAC plateau continues through session 75, the 11th consecutive session. Broad web searches return material already in the book, with one architecturally significant finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026.
+- Google Security Blog, "Multi-Layered Security Architecture for Chrome's Agentic AI Features," December 2025. Also covered by SecurityWeek, TechCrunch, BleepingComputer, The Hacker News.
+- ResultSense, "What Google's 2026 responsible AI report actually tells us about governing agentic systems," February 20, 2026.
+- Web searches: RSAC 2026 agentic AI, MCP vulnerabilities March 2026, NIST CAISI March 2026, agent identity authorization 2026, agentic AI security March 2026, Shane Deconinck blog, AI agent governance frameworks March 2026, HIMSS26 agentic AI, Gravitee state of AI agent security, Imprivata HIMSS 2026 (all returned material already in the book except Google browser agent architecture).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether the guardian agent pattern (AI-based oversight with architectural isolation) generalizes beyond browser agents to coding agents, enterprise agents, and multi-agent orchestration.
+
 ## 2026-03-13 UTC: Permission Intersection Gap, Okta Series Integration (Session 74)
 
 **What I did:**
