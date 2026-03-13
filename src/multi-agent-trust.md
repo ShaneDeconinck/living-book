@@ -188,6 +188,18 @@ Where DCTs encode what authority an agent has, PIC verifies that the chain of de
 
 PIC's mathematical elimination of the confused deputy problem becomes critical in multi-agent systems where the confused deputy risk multiplies with every hop. At delegation depth three, there are three potential confused deputy scenarios. At depth five, there are five. PIC's proof of continuity addresses all of them structurally.
 
+### Cross-Boundary Multi-Agent Delegation
+
+Multi-agent systems within a single organization can rely on shared infrastructure: the same identity provider, the same policy engine, the same audit system. The harder problem is multi-agent delegation across organizational boundaries, where Agent A in one organization delegates to Agent B in another.
+
+The Trust Spanning Protocol (TSP) addresses the identity layer of this problem.[^tsp] TSP gives each agent its own verifiable identifier and wallet. When agents communicate across boundaries, every interaction is authenticated and signed. The delegation chain travels with the request: not just "this agent wants access" but "this agent acts on behalf of this user, with this delegated authority, traceable to this origin." TSP is deliberately thin: it provides the identity and communication bedrock, and agent protocols like MCP and A2A run on top. Replace MCP's transport layer with TSP and you get authenticated, signed, traceable interactions at every hop in a multi-agent chain.[^tsp]
+
+Verifiable Intent (VI) addresses a complementary problem for commerce scenarios: cryptographically binding user intent to agent actions through three-layer SD-JWT chains.[^vi] But VI has a design constraint directly relevant to multi-agent systems: **L3 is terminal.** The agent that generates the L3 credential cannot sub-delegate to another agent. There is no provision for multi-hop delegation chains within VI. This is a deliberate choice in Draft v0.1: it models a world where one agent acts for one user.
+
+For multi-agent commerce, this means VI handles the final mile (one agent executing a bounded transaction) but not the orchestration above it. A planning agent that delegates to a shopping agent that delegates to a payment agent needs a different mechanism for the first two hops: DCTs, PIC, or equivalent authority propagation. VI enters at the last hop, where the payment agent generates the L3 credential within the user's L2 constraints. The trust stack composes: PIC or DCTs for authority attenuation through the delegation chain, TSP for cross-boundary identity at each hop, and VI for the final cryptographic proof that the action matched the user's intent.
+
+This composition is not yet implemented end-to-end. But the pieces are designed to interoperate: TSP is agnostic to payload formats, PIC can use OAuth as a federated backbone, and VI is built on SD-JWT (an IETF standard with broad tooling support). The architectural direction is clear even if the integration is early.
+
 ## When Agents Fail: Incident Response for Multi-Agent Systems
 
 The Coalition for Secure AI (CoSAI) released its AI Incident Response Framework, Version 1.0, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse.
@@ -275,3 +287,7 @@ The gap between I1 (where most organizations are) and I3 (where regulated indust
 [^13]: Nicola Gallo, PIC (Provenance, Identity, Continuity) paradigm, presented at LFDT Belgium meetup, March 2026. Documented in the Cross-Organization Trust chapter.
 
 [^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework, Version 1.0," OASIS Open Project, 2026. Includes CACAO-standard playbooks for AI-specific incident categories.
+
+[^tsp]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Wenjing Chu (Futurewei/Trust over IP), Trust Spanning Protocol presentation at LFDT Belgium meetup, March 3, 2026. TSP specification: trustoverip.github.io/tswg-tsp-specification.
+
+[^vi]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026. Verifiable Intent specification, Draft v0.1, verifiableintent.dev. L3 terminal limitation: "The chain stops at L3: the agent cannot delegate further."

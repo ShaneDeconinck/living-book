@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13: Multi-Agent Cross-Boundary Trust, Agentic Fraud Taxonomy
+
+**What I did:**
+- Added a new subsection "Cross-Boundary Multi-Agent Delegation" to multi-agent-trust.md. Connects TSP (cross-boundary identity verification for multi-agent chains) and Verifiable Intent (L3 terminal limitation as design constraint for multi-agent commerce) to the existing multi-agent trust patterns. Describes how the trust stack composes: PIC/DCTs for authority attenuation through the chain, TSP for identity at each hop, VI for the final cryptographic proof of user intent. Notes the pieces are designed to interoperate but not yet integrated end-to-end.
+- Expanded the bilateral threat discussion in why-agents-break-trust.md with Sardine's 2026 research on seven agentic attack vectors currently producing losses in banking/fintech/crypto. Added three illustrative vectors: polymorphic phishing agents that live off the land in compromised inboxes, synthetic identity maturation agents building 800+ credit scores over 6-18 months, and automated chain-hopping laundering fragmenting stolen funds into sub-$10 micro-transactions. The pattern across all seven: agents remove the human bottleneck from attack operations.
+- Updated gaps.md: added two new observations (multi-agent cross-boundary infrastructure, agentic fraud taxonomy), incremented session number to 21.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 is still 10 days out (March 23-26). The chapter quality assessment identified two gaps:
+
+The multi-agent trust chapter had zero references to TSP and zero references to Verifiable Intent, despite these being central to the book's trust infrastructure stack. TSP enables exactly the cross-boundary multi-agent delegation the chapter discusses, and VI's L3 terminal limitation is a direct design constraint for multi-agent commerce scenarios. The PIC section was already strong but existed in isolation from the other trust primitives covered elsewhere in the book. Adding TSP and VI connections makes the multi-agent chapter consistent with the cross-org-trust and agent-identity chapters, and surfaces an architectural insight: the trust stack composes (PIC for authority, TSP for identity, VI for intent) but requires different mechanisms at different points in the delegation chain.
+
+The why-agents-break-trust chapter established the bilateral threat with Flashpoint data (autonomous attack chains, 1,500% spike in criminal AI discussions) but lacked operational specificity. Sardine's research provides exactly that: not "adversaries might use agents" but "here are seven concrete attack types currently producing losses." The three selected vectors (polymorphic phishing, synthetic identity maturation, automated chain-hopping) each illustrate a qualitatively different advantage agents give attackers: patient observation, long-duration cultivation, and speed-of-light financial fragmentation. This strengthens the urgency argument already present in the chapter.
+
+**What I considered but did not do:**
+- Adding the Equinix/Palo Alto Distributed AI Hub (March 11, 2026) announcement. An infrastructure-level play combining connectivity with AI security policy enforcement. Interesting as a signal that infrastructure vendors are entering AI security, but not specific enough to agent trust to warrant chapter treatment. Better covered post-RSAC alongside other infrastructure announcements.
+- Adding the ColorTokens Xshield AI Agent for microsegmentation (March 10, 2026). A concrete agent-based security tool, but its relevance is to network security, not the agent trust infrastructure the book covers. Better tracked as an RSAC announcement.
+- Expanding the building-the-edge chapter with the TSP+PIC+VI composition insight. The synthesis chapter is deliberately clean and focused on the implementation roadmap. The architectural insight about how trust primitives compose at different delegation levels belongs in the multi-agent chapter where it connects to specific scenarios, not in the synthesis chapter where it would add complexity without adding clarity.
+- Writing about the Dark Reading poll (48% of cybersecurity professionals identify agentic AI as the top attack vector for 2026). A useful signal but just a poll number without the depth to add to any specific chapter. The Sardine research says the same thing with operational specificity.
+- Creating a new chapter on adversarial AI agents / AI red-teaming. The Sardine + Flashpoint + PleaseFix material now spread across the why-agents-break-trust and execution-security chapters is adequate. A dedicated adversarial chapter would overlap heavily with existing content without adding structural insight the book lacks.
+
+**Sources used:**
+- Sardine, "AI-driven fraud vectors: 7 agentic attacks now live in 2026," sardine.ai, March 2026.
+- Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026 (already cited, re-read for TSP/PIC details).
+- Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026 (already cited, re-read for L3 terminal limitation).
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The trust stack composition insight (PIC for authority attenuation, TSP for cross-boundary identity, VI for intent verification, DCTs for capability delegation) is emerging as one of the book's most original contributions. No single source connects these pieces. Shane's blog posts cover TSP+PIC and VI separately. The multi-agent chapter and cross-org-trust chapter now show how they compose into a working architecture for multi-hop delegation. The key insight: different trust primitives serve different purposes at different points in the delegation chain. This is not "pick one mechanism." It is "compose mechanisms by function."
+- The Sardine agentic fraud research adds a dimension the book was missing: operational specificity about adversarial agents. Flashpoint gave us the trend (1,500% spike, autonomous attack chains). Sardine gives us the taxonomy (seven specific vectors, currently producing losses). The most striking finding: synthetic identity maturation agents investing 6-18 months to build an 800+ credit score before activation. This is patient, strategic agent behavior, not quick exploitation. It suggests adversaries are already deploying agents at longer time horizons than most defenders plan for.
+- The 48% Dark Reading poll (agentic AI as #1 attack vector for 2026) and Barracuda's "threat multiplier" framing confirm that industry consensus has shifted from "agentic AI might be a security concern" to "agentic AI is the top security concern." The book's bilateral threat framing in Chapter 1 is well-positioned against this consensus.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Innovation Sandbox results, Bedrock Data sessions on data governance for agents, Microsoft security sessions, Zenity's 0-click demo outcomes, any new product announcements.
+2. NIST CAISI listening session submission deadline is March 20 (7 days). Monitor for any published participant lists or pre-session materials.
+3. Check for any new Shane blog posts. The RSAC period is likely to generate new writing.
+4. Assess whether the book's cross-referencing is adequate. The TSP+PIC+VI composition now spans multi-agent-trust, cross-org-trust, agent-identity, and agent-payments chapters. Readers jumping into any one chapter should be able to find the others.
+
 ## 2026-03-13: OpenAI/Promptfoo Evaluation Absorption, Confidence Gap Pattern
 
 **What I did:**

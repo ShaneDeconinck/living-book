@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 20)
+## Observations (Updated 2026-03-13, Session 21)
 
 ### Agent Identity Is Becoming a Platform Feature, and a Product Category
 
@@ -120,7 +120,11 @@ Zenity Labs' PleaseFix disclosure (March 2026) demonstrates that social engineer
 
 ### The Threat Is Bilateral: Adversaries Are Deploying Agents Too
 
-Flashpoint's 2026 Global Threat Intelligence Report (March 12, 2026) documents a qualitative shift: adversaries are now using agentic AI frameworks for autonomous attack chains. Reconnaissance, phishing generation, credential testing, and infrastructure rotation operate without continuous human control. Combined with the infostealer ecosystem (11.1M infected machines, 3.3B stolen credentials in 2025), agentic attack chains can test stolen credentials against thousands of endpoints simultaneously at speeds that outpace conventional detection. Criminal forum AI discussions spiked 1,500% in December 2025. The implication for the book: the governance challenge is not just "can we trust our agents?" but "can our defenses operate at the speed adversary agents now move?" This bilateral framing strengthens the urgency argument in Chapter 1 and connects to the execution security chapter's defense-in-depth model. Added to Why Agents Break Trust chapter.
+Flashpoint's 2026 Global Threat Intelligence Report (March 12, 2026) documents a qualitative shift: adversaries are now using agentic AI frameworks for autonomous attack chains. Reconnaissance, phishing generation, credential testing, and infrastructure rotation operate without continuous human control. Combined with the infostealer ecosystem (11.1M infected machines, 3.3B stolen credentials in 2025), agentic attack chains can test stolen credentials against thousands of endpoints simultaneously at speeds that outpace conventional detection. Criminal forum AI discussions spiked 1,500% in December 2025. Sardine's 2026 research documents seven agentic attack vectors currently producing losses across banking, fintech, and crypto networks: polymorphic phishing agents that live off the land in compromised inboxes, synthetic identity maturation agents building 800+ credit scores over 6-18 months, automated chain-hopping laundering fragmenting stolen funds into sub-$10 micro-transactions, and four others. The pattern: agents remove the human bottleneck from attack operations, making every attack vector faster, more persistent, and harder to detect. Updated in Why Agents Break Trust chapter.
+
+### Multi-Agent Trust Needs Cross-Boundary Infrastructure
+
+The Multi-Agent Trust chapter now connects TSP and Verifiable Intent to the multi-agent delegation problem. TSP provides the cross-boundary identity layer for multi-agent chains across organizations: authenticated, signed, traceable interactions at every delegation hop. VI's L3 terminal limitation (the agent cannot sub-delegate) is a design constraint for multi-agent commerce: VI handles the final mile (one agent, one transaction) but not the orchestration above it. The trust stack composes: PIC or DCTs for authority attenuation through the chain, TSP for cross-boundary identity at each hop, VI for the final cryptographic proof that the action matched user intent. The pieces are designed to interoperate but not yet integrated end-to-end. Updated in Multi-Agent Trust and Orchestration chapter.
 
 ### The Concluding Synthesis
 
