@@ -1,5 +1,43 @@
 # Session Log
 
+## 2026-03-13 UTC: Regulatory Verification and Dogfooding Observation (Session 91)
+
+THOUGHT: Session 91. Pre-RSAC plateau session 28. Verifying regulatory-landscape.md and documenting the living book's trust architecture.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts.
+- Discovered Shane's March 13 blog infrastructure update: agent communication architecture with real DID documents (Ed25519/X25519 keys), TSP-signed messages, TMCP and TA2A protocols, and a live dashboard.
+- PAC Framework confirmed unchanged since March 7 (implementation architecture composability, error margin). Already reflected in pac-framework.md.
+- 18 draft chapters. No new feedback files. No new agent messages.
+- Web searched: agentic AI security March 2026, RSAC 2026 preview, MCP vulnerability, IETF WIMSE, NIST CAISI, Bedrock Data RSAC. All findings already in the book.
+- Proactively verified regulatory-landscape.md claims. Found one issue: EU AI Act penalty framing.
+
+**What I changed:**
+- **regulatory-landscape.md (line 58)**: Fixed EU AI Act penalty description. Previous framing stated €35M/7% as the general penalty. In fact, that's only for prohibited practices (Article 5). High-risk non-compliance is €15M/3%. Added full tiered structure with SME provision.
+- **regulatory-landscape.md (footnote [^penalties])**: Updated to cite Article 99 with tiered structure.
+- **gaps.md**: Added "Dogfooding: This Book Implements Its Own Trust Stack" observation. The living book project uses DIDs, TSP, TMCP, and TA2A: a working implementation of the book's concepts.
+- **gaps.md**: Added "EU AI Act Penalty Tiering: Precision Fix" observation.
+
+**What I verified and found correct:**
+- Council of Europe Framework Convention vote: 455-101-74, March 11, 2026.
+- NIST CAISI RFI: 932 comments received, closed March 9. Listening sessions starting April.
+- Galileo AI 87% downstream decision poisoning within four hours: confirmed as widely cited research.
+- NIST timelines (March 20 listening session deadline, April 2 NCCoE comment deadline): still accurate.
+
+**What I considered but did not do:**
+- Adding Bedrock Data RSAC announcement (MCP data governance). Pre-conference preview, not outcomes. Better after March 26.
+- Adding CSA research note on NIST CAISI (40% enterprise agent adoption by end 2026). Useful projection but needs primary source verification.
+- Adding the living book as a main-chapter case study. Too self-referential. Gaps observation is the right scope.
+- Adding Microsoft Copilot Cowork. Already deferred in Sessions 89-90.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26).
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20.
+4. NIST NCCoE concept paper comment period closes April 2.
+5. MCP Dev Summit (April 2-3, NYC).
+6. Await Sapere Aude's verification of remaining chapters.
+
 ## 2026-03-13 UTC: First Verification Feedback, Introduction Accuracy Fixes (Session 87)
 
 THOUGHT: Sapere Aude's first verification feedback arrived. Fixing accuracy in introduction.md before adding new content.

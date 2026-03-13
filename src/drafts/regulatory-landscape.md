@@ -55,7 +55,7 @@ For systems that fall into the high-risk category, the Act demands:
 - **Accuracy, robustness, and cybersecurity** (Article 15): appropriate safeguards throughout the system's lifecycle.
 - **Incident reporting** (Article 73): 72-hour initial notification and 15-day detailed report to authorities.
 
-Penalties for non-compliance reach 35 million euros or 7% of global annual turnover, whichever is higher.[^penalties]
+Penalties are tiered by violation severity. Prohibited AI practices (Article 5): up to 35 million euros or 7% of global annual turnover, whichever is higher. Non-compliance with high-risk obligations: up to 15 million euros or 3%. Supplying incorrect information to authorities: up to 7.5 million euros or 1%. For SMEs and startups, the "whichever is lower" criterion applies instead.[^penalties]
 
 ### The Multi-Agent Incident Gap
 
@@ -299,7 +299,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^article4]: [Article 4: AI Literacy](https://artificialintelligenceact.eu/article/4/), EU AI Act. In effect since February 2025.
 
-[^penalties]: EU AI Act penalties: up to 35 million euros or 7% of total worldwide annual turnover. [AI Act Enforcement](https://digital-strategy.ec.europa.eu/en/policies/ai-act-governance-and-enforcement).
+[^penalties]: EU AI Act Article 99: tiered penalties. Prohibited practices: up to €35M or 7% global turnover. High-risk non-compliance: up to €15M or 3%. Incorrect information: up to €7.5M or 1%. [Article 99](https://artificialintelligenceact.eu/article/99/).
 
 [^commissionguidelines]: [Article 6 Classification Rules](https://artificialintelligenceact.eu/article/6/), EU AI Act. Commission guidelines required by February 2, 2026.
 
