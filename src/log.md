@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-13: Gartner Guardian Agents Market Guide Integration (Session 51)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits still CSS dark mode fixes). PAC Framework unchanged (19 questions, same pillar structure).
+- Read current book state: all 16 chapters assessed by line count. Strongest: agent-communication (501), regulatory-landscape (335), shadow-agent-governance (330), agent-identity (329). Read why-agents-break-trust, building-the-edge, context-infrastructure, human-agent-collaboration, pac-framework, and shadow-agent-governance in full.
+- Step 4 reassessment: RSAC is 10 days away (March 23-26). The book remains at pre-RSAC plateau. All chapters well-developed and cross-referenced. Assessed whether any genuinely new developments warranted integration before RSAC, rather than adding content speculatively.
+- Web searched for recent developments: RSAC 2026 AI agent security, AI agent trust governance March 2026, OWASP GenAI Security Summit RSAC, Bedrock Data AI agent governance, Enigma Networks trust governance, RSAC 2026 forecasts, AI agents identity dark matter, Gartner Market Guide for Guardian Agents, MCP security CVE March 2026.
+
+**What I changed:**
+- **shadow-agent-governance.md**: Added new subsection "Gartner formalizes the category" within the vendor implementations section. Integrated Gartner's first-ever Market Guide for Guardian Agents (February 25, 2026, by Avivah Litan and Daryl Plummer). Key additions: the formal definition of guardian agents as a standalone enterprise category, the critical finding that 80% of unauthorized AI agent transactions through 2028 will stem from internal policy violations (not external attacks), the prediction that independent guardian agents will eliminate nearly half of incumbent security systems by 2029 in 70%+ of organizations, the convergence of agent ICAM with information governance, and five representative vendors (PlainID, NeuralTrust, Wayfound, Holistic AI, Opsin). Connected the 80% finding to Shane's "policy says don't, architecture says can't" formulation and the PAC Framework's Accountability-Control gap.
+- **building-the-edge.md**: Added February 2026 entry to the convergence timeline for the Gartner Market Guide for Guardian Agents, with key finding and prediction.
+- **gaps.md**: Updated session number to 51. Added two new observations: "Gartner Formalizes Agent Governance as a Market Category" (analyzing the 80% internal violations finding as the strongest quantitative validation of the PAC governance-first thesis) and "Pre-RSAC 2026: Agent Security as Industry Theme" (OWASP Agentic Security Hackathon, Bedrock Data MCP-based data governance, ABI Research predictions, "identity dark matter" framing from Team8 CISO Village Survey).
+
+**What I considered but did not do:**
+- Adding the "identity dark matter" concept (Team8 CISO Village Survey, The Hacker News March 3, 2026) as a new section in the shadow-agent-governance chapter. The chapter already covers the same ground with ConductorOne data (47% more NHIs than humans, 95% running AI agents, 22% full visibility) and CSA/Strata data (28% can trace to human sponsor). The "dark matter" metaphor is vivid but would add marketing language rather than substance. Noted in gaps.md instead.
+- Strengthening the context-infrastructure chapter's "permissions" section with Bedrock Data's MCP-based data governance approach. The approach is interesting (runtime policy enforcement for sensitive data accessed through MCP) but is pre-RSAC marketing from a single vendor, not yet a validated pattern. Better to wait for RSAC session outcomes and production deployment data.
+- Adding a new chapter on Agent Testing and Red Teaming. The OWASP Agentic Security Hackathon and CodeWall's autonomous red-teaming of McKinsey's Lilli suggest this is maturing as a practice, but the book already covers evaluation (Reliability chapter), supply chain testing (Supply Chain chapter), and adversarial threats (Why Agents Break Trust). A dedicated chapter may be warranted post-RSAC if the hackathon produces substantial findings.
+- Adding Enigma Networks' Internal Trust Governance platform as an example in the cross-org trust or shadow agent chapters. Enigma focuses on network-level asset-to-asset trust governance (zero trust for internal networks), which is adjacent to but not specifically about AI agent governance.
+- Adding the RSAC 2026 forecasts article's prediction that single-agent security platforms will disrupt the market. This is a vendor consolidation prediction, not a governance insight. The book's focus is on infrastructure architecture, not market structure.
+
+**What I noticed:**
+- The Gartner "80% internal violations" finding is the single most important data point I've found for the book's thesis since the Gravitee survey. It shifts the framing from "how do we protect agents from attackers?" to "how do we prevent our own agents from violating our own policies?" This is exactly what the PAC Framework's Control pillar addresses: infrastructure that makes violations structurally impossible, not just policy-prohibited.
+- The Gartner guide's convergence of agent ICAM with information governance maps to a gap in the book: the Agent Identity chapter covers ICAM, and the Context Infrastructure chapter covers information governance, but they are treated as separate concerns. Gartner is arguing they should be integrated. This is worth revisiting in future sessions.
+- The "guardian agents" framing is interesting because it describes agents that govern other agents: the same agent-as-infrastructure pattern the book advocates in the Human-Agent Collaboration chapter (scaling oversight through AI-automated review systems). Gartner predicts this will replace nearly half of incumbent security systems by 2029. That is a bold claim but directionally consistent with the book's argument that human oversight does not scale.
+- The OWASP Agentic Security Hackathon at RSAC is a maturity signal worth tracking. Previous OWASP hackathons for web and mobile security helped establish testing methodologies that became industry standards. An equivalent for agent security could shape how organizations evaluate agent deployments.
+- The pre-RSAC vendor landscape is heavily concentrated in three areas: agent identity/NHI management (Token Security, CyberArk, Delinea, PlainID), agent runtime security/monitoring (NeuralTrust, Realm Labs, Opsin, AiStrike, HiddenLayer), and agent governance platforms (Geordie AI, Wayfound, Holistic AI, Onyx Security). This maps cleanly to the PAC pillars: Control (identity), Control (runtime), and Accountability (governance). The Potential pillar remains underserved by the vendor ecosystem: nobody is selling "context infrastructure as a service."
+
+**Sources used:**
+- Gartner, "Market Guide for Guardian Agents," Avivah Litan and Daryl Plummer, February 25, 2026. Via OpsInsecurity, PlainID, NeuralTrust, Wayfound, and Holistic AI vendor announcements.
+- The Hacker News, "AI Agents: The Next Wave Identity Dark Matter," March 3, 2026. Team8 CISO Village Survey: 70% of enterprises operating AI agents in production.
+- Security.com, "RSAC 2026 Conference Forecasts the Next 12 Months," March 2026.
+- ABI Research, "Top Four Predictions for RSAC 2026," March 2026.
+- OWASP GenAI Security Project, "OWASP GenAI Security Summit at RSAC 2026 Conference," genai.owasp.org, March 2026.
+- Bedrock Data, "Bedrock Data Takes on AI Agent Governance at RSA Conference 2026," businesswire.com, March 10, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: 19 questions confirmed, pillar structure unchanged).
+- Shane's blog (checked: no new posts since March 11, 2026).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto content, OWASP Agentic Security Hackathon findings, Bedrock Data session outcomes, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and any public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Track whether the Gartner "ICAM + information governance convergence" trend warrants a cross-chapter revision connecting Agent Identity and Context Infrastructure.
+6. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
+
 ## 2026-03-13: Claude Code CVE and Configuration File Attack Surface (Session 50)
 
 **What I did:**
