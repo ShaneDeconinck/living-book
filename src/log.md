@@ -1,5 +1,41 @@
 # Session Log
 
+## 2026-03-13: MCP Aggregate Vulnerability Data and NIST Listening Session Deadline
+
+**What I did:**
+- Strengthened agent-communication.md MCP security narrative with aggregate vulnerability data: 30 CVEs filed in January-February 2026 alone, across three attack layers (servers, SDKs, host apps/dev tools). Vulnerability class breakdown: 43% exec/shell injection, 20% tooling/infrastructure, 13% auth bypass, 10% path traversal, 7% new classes (eval() injection, env var injection). Added stat: 38% of 500+ scanned MCP servers completely lack authentication.
+- Updated the "Hundreds of MCP servers remain publicly exposed" line with the more specific "38% of scanned MCP servers accept connections without authentication" stat from the same source.
+- Updated regulatory-landscape.md with the NIST CAISI listening session participation deadline (March 20, 2026) and sector focus (healthcare, finance, education). Added to both the prose and the convergence timeline.
+- Updated gaps.md MCP attack surface observation with the aggregate vulnerability data and structural pattern analysis.
+
+**Why this work:**
+Stepped back and assessed priorities. The book is at first-edition completeness with 15 chapters. No new Shane blog posts since March 11. The PAC Framework is unchanged. The highest-impact improvement was strengthening the MCP security narrative with aggregate data. The curated timeline of 11 incidents tells the story well, but the "30 CVEs in 60 days" stat transforms the narrative from "here are individual incidents" to "this is systemic, rapidly-scaling vulnerability at the protocol infrastructure level." The vulnerability class breakdown (43% exec/shell injection) reveals that these are not exotic attacks: they are the same vulnerability classes that plague traditional software, now appearing in agent infrastructure that organizations are deploying at production scale. The "38% lack authentication" stat is more specific and credible than the previous "Hundreds of MCP servers" language.
+
+The NIST March 20 deadline is time-sensitive (7 days away) and was not in the book. Organizations reading the regulatory chapter should know about this participation window.
+
+**What I considered but did not do:**
+- Adding CVE-2026-31841 (Hyperterse MCP framework, CVSS 6.5, March 12, SQL query exposure) to the timeline. Medium severity, narrow impact (exposes raw SQL queries in tool search results). The timeline is strongest with high-impact incidents. The aggregate "30 CVEs" stat captures it in the total without diluting the curated list.
+- The OpenClaw crisis: already well-covered in supply-chain-security.md with 1,184 malicious skills, 135K exposed instances, and Shane's analysis. No new information found beyond what is already in the chapter.
+- Adding the "agentic fraud" framing (SecurityBoulevard, Experian forecast) to why-agents-break-trust or shadow-agent-governance. These chapters already cover agent-as-threat-vector well. The "agentic fraud" label is marketing, not a new concept.
+- Expanding the EUDI credential formats integration. The cross-org-trust chapter already has strong coverage of Shane's March 9 post, including the comparison table, semantic boundary problem, and de jure/de facto gap. No improvement needed.
+
+**Sources used:**
+- "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Analysis of 30 MCP CVEs with vulnerability class breakdown and server authentication scan.
+- NIST CAISI, "CAISI to Host Listening Sessions on Barriers to AI Adoption," nist.gov, February 2026. Participation deadline March 20, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: 7P + 5A + 7C = 19 questions, site description says "18")
+
+**What I noticed:**
+- The MCP vulnerability class breakdown (43% exec/shell injection) suggests the ecosystem is repeating patterns from early web application security. The same vulnerabilities that OWASP documented for web apps in the 2000s are appearing in MCP server implementations in 2026. This is not surprising: the developers building MCP servers are often not security specialists, and the protocol does not enforce secure patterns.
+- The three-layer attack surface (servers, SDKs, host apps) is an important structural insight. The book's agent-communication chapter covers server-level and tool-level attacks well, but the SDK layer and developer tooling layer are less explored. The MCP Inspector CVE is the main example. Worth monitoring for SDK-level vulnerabilities.
+- NIST's listening session sector focus (healthcare, finance, education) aligns with the Gravitee data showing healthcare at 92.7% agent-related incidents. The regulatory chapter already notes CAISI listening sessions; the sector focus adds specificity.
+- No new Shane blog posts since March 11. No PAC Framework changes.
+
+**Next session priorities:**
+1. The NIST March 20 listening session deadline passes today+7. Monitor for any public analysis of submissions.
+2. NIST April 2 concept paper comment period closes in 20 days. Monitor for public responses.
+3. The MCP SDK vulnerability layer is underexplored in the book. If new SDK-level CVEs emerge, they warrant expanded treatment.
+4. The semantic interoperability gap remains the most significant unsolved problem.
+
 ## 2026-03-13: Gravitee Identity Data and Azure MCP SSRF
 
 **What I did:**

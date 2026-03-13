@@ -118,7 +118,9 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 | March 2026 | WeKnora CVE-2026-30861 | Command injection in MCP stdio configuration validation[^28] |
 | March 2026 | Azure MCP Server CVE-2026-26118 | SSRF enabling managed identity token theft and privilege escalation, CVSS 8.8[^29] |
 
-Eleven incidents in twelve months, and the pace is accelerating. The Azure MCP vulnerability is notable: Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
+Eleven incidents in twelve months, and the pace is accelerating. But this curated timeline understates the scale. Between January and February 2026 alone, 30 MCP-related CVEs were filed across three distinct attack layers: MCP servers themselves, protocol implementation libraries (the official TypeScript, Python, and Go SDKs), and host applications and development tools.[^30] The breakdown by vulnerability class: 43% exec()/shell injection, 20% tooling and infrastructure, 13% authentication bypass, 10% path traversal, 7% new classes like eval() injection and environment variable injection. Scanning of over 500 MCP servers found that 38% completely lack authentication: no API key, no OAuth, no access control of any kind.[^30]
+
+The Azure MCP vulnerability is notable: Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
 
 1. **Overprivileged tokens**: a single powerful token serving all users. The GitHub breach happened because a personal access token with broad repository access was used for an MCP integration. The confused deputy problem in action.
 2. **Tool schema manipulation**: the server lies about what a tool does. The user thinks they are searching contacts; the tool is exfiltrating data. Tool descriptions are visible to the LLM but not typically shown to users.
@@ -126,7 +128,7 @@ Eleven incidents in twelve months, and the pace is accelerating. The Azure MCP v
 
 Research from the MCPTox benchmark tested 20 prominent LLM agents against these attack vectors using 45 real-world MCP servers and 353 tools. The results are counterintuitive: more capable models were often more vulnerable, because the attacks exploit superior instruction-following abilities.[^9]
 
-The MCP specification explicitly forbids two anti-patterns: token passthrough (forwarding tokens without validation) and admin tokens for multi-user deployments (a single powerful token). But specification requirements and production practice diverge. Hundreds of MCP servers remain publicly exposed without basic authentication.[^9]
+The MCP specification explicitly forbids two anti-patterns: token passthrough (forwarding tokens without validation) and admin tokens for multi-user deployments (a single powerful token). But specification requirements and production practice diverge: 38% of scanned MCP servers accept connections from any client without authentication.[^30]
 
 Shane identifies three trust gaps that MCP does not address:[^1]
 
@@ -419,3 +421,4 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 [^27]: Arctic Wolf, CVE-2026-27825, January 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE.
 [^28]: CVE-2026-30861, March 2026. Command injection in WeKnora MCP stdio configuration validation.
 [^29]: Microsoft Security Update, CVE-2026-26118, March 10, 2026. SSRF in Azure MCP Server Tools enabling managed identity token theft and privilege escalation. CVSS 8.8.
+[^30]: "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Analysis of 30 MCP-related CVEs filed January-February 2026 with vulnerability class breakdown. Authentication scan of 500+ MCP servers found 38% completely lack authentication.

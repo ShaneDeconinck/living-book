@@ -83,7 +83,7 @@ In the same month, NIST's Center for AI Standards and Innovation (CAISI) launche
 
 The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." This is a Potential argument, in PAC terms. NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
 
-CAISI's Request for Information on AI Agent Security closed March 9, 2026. The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption.[^caisi]
+CAISI's Request for Information on AI Agent Security closed March 9, 2026. The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
 
 ## ISO 42001: The Management System Baseline
 
@@ -184,8 +184,9 @@ The regulatory and standards timelines are converging on a narrow window:
 
 - **February 2025**: EU AI Act Article 4 (AI literacy) already in effect.
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
+- **March 20, 2026**: NIST CAISI listening session participation requests due.
 - **April 2, 2026**: NIST NCCoE concept paper comment period closes.
-- **April 2026+**: NIST CAISI listening sessions on sector-specific barriers begin.
+- **April 2026+**: NIST CAISI listening sessions on sector-specific barriers begin (healthcare, finance, education).
 - **June 1, 2026**: Colorado AI Act takes effect.
 - **August 2, 2026**: EU AI Act high-risk system obligations take effect.
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
