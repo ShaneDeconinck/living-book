@@ -89,12 +89,12 @@ The HTTP transport enables remote MCP servers, which is where production deploym
 
 Running MCP at scale has surfaced gaps. Stateful sessions conflict with load balancers. Horizontal scaling requires workarounds. There is no standard way for a registry or crawler to discover what a server does without connecting to it.[^5]
 
-The 2026 roadmap, announced March 9, 2026, identifies four priority areas where Spec Enhancement Proposals (SEPs) receive expedited review:[^5]
+The 2026 roadmap, announced March 9, 2026 (updated March 5), identifies four priority areas where Spec Enhancement Proposals (SEPs) receive expedited review:[^5]
 
-1. **Streamable HTTP transport improvements**: making MCP servers viable as remote services at scale by resolving conflicts between stateful sessions, load balancers, and horizontal scaling.
-2. **Server discovery via `.well-known`**: MCP Server Cards, a standardized metadata format served at `.well-known/mcp.json`, would let browsers, crawlers, and registries discover server capabilities, available transports, authentication requirements, and protocol versions without establishing a connection.[^6]
-3. **Tasks primitive refinements**: improving retry semantics and expiry policies based on early production use of long-running operations.
-4. **Enterprise deployment needs**: audit trails, SSO-integrated auth, gateway behavior, and configuration portability for production environments.
+1. **Transport Evolution and Scalability**: making MCP servers viable as remote services at scale by resolving conflicts between stateful sessions, load balancers, and horizontal scaling. This includes evolving Streamable HTTP for stateless operation across multiple server instances and defining session creation, resumption, and migration. It also covers MCP Server Cards: a standardized metadata format served at `.well-known/mcp.json`, letting browsers, crawlers, and registries discover server capabilities without establishing a connection.[^6]
+2. **Agent Communication**: iterating on the Tasks primitive (improving retry semantics and expiry policies based on early production use), and defining agent-to-agent interaction patterns within MCP.
+3. **Governance Maturation**: establishing a Contributor Ladder SEP, delegation models for Working Groups, and charter templates for transparent community governance.
+4. **Enterprise Readiness**: audit trails and observability, enterprise-managed auth moving away from static secrets toward SSO-integrated flows, gateway and proxy patterns, and configuration portability for production environments.
 
 These are infrastructure maturity improvements. They move MCP from "works in development" to "works in production at scale." The specification updates are targeted for the next release, tentatively slated for June 2026.[^5]
 
@@ -115,12 +115,12 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 | April 2025 | WhatsApp MCP exfiltration | Tool poisoning: malicious server silently exfiltrated entire WhatsApp history via legitimate whatsapp-mcp[^24] |
 | May 2025 | GitHub MCP prompt injection | Private repos, salary data leaked to public PR via overprivileged PAT |
 | June 2025 | Asana MCP data exposure | Cross-organization data leak: one org's data visible to other orgs due to access control flaw[^25] |
-| July 2025 | mcp-remote CVE-2025-6514 | Command injection in OAuth proxy, 437k+ downloads, supply-chain backdoor |
-| July 2025 | MCP Inspector CVE-2025-49596 | Unauthenticated RCE in Anthropic's official developer tool, CVSS 9.4[^26] |
+| July 2025 | mcp-remote CVE-2025-6514 | Command injection in OAuth proxy, 437k+ downloads, supply-chain attack surface |
+| June 2025 | MCP Inspector CVE-2025-49596 | Unauthenticated RCE in Anthropic's official developer tool, CVSS 9.4[^26] |
 | August 2025 | Anthropic Filesystem MCP | Sandbox escape, symlink bypass enabling arbitrary file access |
 | September 2025 | Fake Postmark MCP package | Supply-chain attack, BCC'd all emails to attacker |
 | October 2025 | Smithery path traversal | Leaked Fly.io token controlling 3,000+ MCP servers |
-| January 2026 | mcp-atlassian CVE-2026-27825 | Path traversal enabling arbitrary file write and RCE via Confluence attachments[^27] |
+| February 2026 | mcp-atlassian CVE-2026-27825 | Path traversal enabling arbitrary file write and RCE via Confluence attachments[^27] |
 | March 2026 | WeKnora CVE-2026-30861 | Command injection in MCP stdio configuration validation[^28] |
 | March 2026 | Azure MCP Server CVE-2026-26118 | SSRF enabling managed identity token theft and privilege escalation, CVSS 8.8[^29] |
 
@@ -525,7 +525,7 @@ Communication protocols connect to several other chapters. [Agent Identity and D
 [^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025. Demonstrated cross-server exfiltration via malicious tool descriptions. Covered in Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com.
 [^25]: Nudge Security, "SaaS Security Alert: Asana MCP Server Data Exposure Incident," June 2025. Access control logic flaw exposed cross-organizational data.
 [^26]: Oligo Security, CVE-2025-49596, July 2025. Missing authentication between MCP Inspector client and proxy enabled unauthenticated RCE and DNS rebinding attacks on developer workstations. Patched in version 0.14.1.
-[^27]: Arctic Wolf, CVE-2026-27825, January 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE.
+[^27]: Arctic Wolf, CVE-2026-27825, February 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE. Fix released in version 0.17.0 on February 24, 2026.
 [^28]: CVE-2026-30861, March 2026. Command injection in WeKnora MCP stdio configuration validation.
 [^29]: Microsoft Security Update, CVE-2026-26118, March 10, 2026. SSRF in Azure MCP Server Tools enabling managed identity token theft and privilege escalation. CVSS 8.8.
 [^30]: "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Analysis of 30 MCP-related CVEs filed January-February 2026 with vulnerability class breakdown. Authentication scan of 500+ MCP servers found 38% completely lack authentication.

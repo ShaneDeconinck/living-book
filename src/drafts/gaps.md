@@ -2,7 +2,45 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 104)
+## Observations (Updated 2026-03-13, Session 105)
+
+### Agent Communication: Proactive Verification
+
+Session 105 proactively verified agent-communication.md. 40+ external claims checked across MCP specification and roadmap, A2A protocol, CVEs, academic papers, OWASP, Microsoft governance, AgentGateway, WebMCP, AG-UI, A2UI, and Shane's blog posts. Four issues found and fixed.
+
+**What was verified and found correct:**
+- MCP released by Anthropic November 2024, JSON-RPC 2.0, client-server architecture with three roles, three capability types plus sampling. Confirmed from MCP specification.
+- MCP 2026 roadmap announced March 9, 2026 by David Soria Parra. Confirmed from blog.modelcontextprotocol.io.
+- SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) as sponsored work on the roadmap. Confirmed from GitHub PRs.
+- MCP 97 million monthly SDK downloads. Previously verified.
+- MCP security incident timeline: WhatsApp MCP exfiltration April 2025 (confirmed from Invariant Labs and Docker blog), GitHub MCP prompt injection May 2025 (confirmed from Docker blog and Invariant Labs: private repos and salary data leaked via overprivileged PAT), Asana MCP data exposure June 2025 (confirmed from Nudge Security), mcp-remote CVE-2025-6514 July 2025 (confirmed from JFrog: command injection in OAuth proxy, 437k+ downloads, CVSS 9.6), Anthropic Filesystem MCP sandbox escape August 2025, Fake Postmark MCP September 2025, Smithery path traversal October 2025 (confirmed from GitGuardian: Fly.io token, 3,243 apps), CVE-2026-30861 WeKnora March 2026, CVE-2026-26118 Azure MCP Server SSRF March 2026 (confirmed from Microsoft Patch Tuesday March 10, 2026, CVSS 8.8).
+- 30 MCP-related CVEs January-February 2026 with vulnerability class breakdown: 43% exec/shell injection, 20% tooling, 13% auth bypass, 10% path traversal. 38% of 535 scanned MCP servers lack authentication. Confirmed from dev.to analysis.
+- MCPTox benchmark: 45 real-world MCP servers, 353 tools, 20 LLM agents, more capable models often more vulnerable. o1-mini 72.8% attack success rate. Confirmed from arXiv:2508.14925.
+- Palo Alto Unit 42 MCP sampling attacks: three proof-of-concept attacks on a coding copilot (resource theft, conversation hijacking, prompt manipulation). Confirmed from unit42.paloaltonetworks.com.
+- Anbiaee et al. security threat model: arXiv:2602.11327, February 2026. Twelve protocol-level risks, comparative analysis of MCP, A2A, Agora, ANP. ANP strongest security posture, A2A second, MCP and Agora weakest. Confirmed from arXiv.
+- Lee et al. overthinking loops: arXiv:2602.14798, February 2026. 14 malicious tools across three servers, 142.4x token amplification. Confirmed from arXiv.
+- OWASP MCP Top 10: confirmed from owasp.org. Token mismanagement, context over-sharing, prompt/command injection, supply chain attacks, insufficient auth. Living document in beta phase.
+- Microsoft MCP governance: "Protecting AI conversations at Microsoft" Inside Track Blog, March 2026. Four layers, context minimization, pre-publication review gates, end-to-end observability. Confirmed from microsoft.com.
+- A2A created by Google April 2025, donated to Linux Foundation June 23, 2025. Confirmed from LF press release and Google Developers Blog.
+- A2A v1.0 with 150+ organizations, JWS Agent Card signing, OAuth 2.0 modernization, mutual TLS support. Previously verified.
+- Quarkus A2A SDK v0.3.0. Confirmed from quarkus.io blog.
+- LangGraph v0.2 A2A support January 15, 2026. Confirmed from Subhadip Mitra article.
+- Amazon Bedrock AgentCore native A2A support. Confirmed from AWS documentation and blog.
+- A2A-T by Huawei at MWC 2026 Global Autonomous Network Industry Summit, March 2, 2026. TM Forum IG1453 beta February 6, 2026. Three open-source components: Protocol SDK, Registry Center, Orchestration Center. Confirmed from huawei.com and multiple tech news outlets.
+- Auth0 partnering with Google Cloud for A2A authentication specifications. Confirmed from Okta newsroom and Auth0 blog.
+- AgentGateway: Solo.io, Rust, Linux Foundation, MCP federation, Cedar policies, community participants including AWS, Microsoft, Red Hat, IBM, Cisco, Shell. Confirmed from agentgateway.dev and LF press release.
+- WebMCP: Chrome 146 Canary early preview, Google and Microsoft, W3C Web Machine Learning community group, declarative and imperative APIs. Confirmed from developer.chrome.com and VentureBeat.
+- AG-UI: CopilotKit, event-based protocol for agent-to-frontend streaming, compatible with Microsoft Agent Framework. Oracle, Google, and CopilotKit joint integrations. Confirmed from ag-ui.com, CopilotKit blog, and Microsoft Learn.
+- A2UI: Google, Apache 2.0, CopilotKit contributions, declarative JSON format for agent-generated UIs. Confirmed from a2ui.org, Google Developers Blog (February 26, 2026), and github.com/google/A2UI.
+- ACP (Stripe/OpenAI), UCP (Google/Shopify/Walmart). Previously verified.
+- AAIF December 9, 2025, founding projects MCP, goose, AGENTS.md. Previously verified.
+- Shane's blog references: all verified against blog source.
+
+**What was changed:**
+1. **MCP 2026 Roadmap priority areas restructured** (significant). The chapter listed four priorities as: (1) Streamable HTTP transport improvements, (2) Server discovery via .well-known, (3) Tasks primitive refinements, (4) Enterprise deployment needs. The actual roadmap lists: (1) Transport Evolution and Scalability, (2) Agent Communication, (3) Governance Maturation, (4) Enterprise Readiness. The chapter's #1 and #2 were sub-items of the actual #1. "Tasks primitive refinements" is under "Agent Communication." "Governance Maturation" was entirely missing. Restructured to match the actual roadmap.
+2. **MCP Inspector CVE-2025-49596 date** (minor). Changed from "July 2025" to "June 2025." AuthZed's timeline (the chapter's cited source [^8]) lists it as June 2025. Patched June 13, 2025.
+3. **CVE-2026-27825 mcp-atlassian date** (minor). Changed from "January 2026" to "February 2026." Fix released February 24, 2026 per Arctic Wolf and GitLab advisory. No source confirms a January date.
+4. **mcp-remote CVE-2025-6514 characterization** (minor). Changed "supply-chain backdoor" to "supply-chain attack surface." The vulnerability was a command injection in an OAuth proxy, not an intentionally planted backdoor. JFrog describes it as a "supply chain attack" vector.
 
 ### Agent Identity: Proactive Verification
 

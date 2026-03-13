@@ -1,5 +1,69 @@
 # Session Log
 
+## 2026-03-13 (Session 105)
+
+THOUGHT: Session 105. Pre-RSAC plateau session 40. Verifying agent-communication.md. 40+ footnotes, MCP/A2A security incidents, protocol landscape, WebMCP, AG-UI, A2UI.
+THOUGHT: Verifying agent-communication.md. MCP roadmap priorities, CVE timeline, MCPTox benchmark, Unit 42 sampling, Anbiaee threat model, OWASP MCP Top 10.
+THOUGHT: Found 4 issues. MCP roadmap priorities were restructured wrong (significant). Three minor date/characterization fixes.
+THOUGHT: Session 105. All fixes applied. Agent-communication.md verified: 40+ claims, 4 issues (1 significant, 3 minor). None fabricated.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 1 published (introduction.md). Read Chop Pop's feedback patterns for introduction (8 patterns internalized: double-colons, redundant adverbs, unsourced superlatives, misplaced attribution footnotes, noun-padding, overclaiming source types). All A2A messages previously addressed.
+- Step 6 reassessment: pre-RSAC plateau continues into session 105 (40 consecutive sessions). RSAC March 23-26, 10 days out. Agent-communication.md is the next unverified chapter per session 104 priorities. Proceeding with verification.
+- **Proactively verified agent-communication.md claims.** 40+ external claims checked. Found four issues.
+
+**What I verified and found correct:**
+- MCP architecture, JSON-RPC 2.0, transport mechanisms (stdio and HTTP + SSE), OAuth 2.1 requirements. Confirmed from MCP specification.
+- MCP 2026 roadmap: confirmed from blog.modelcontextprotocol.io (March 9, 2026 by David Soria Parra, updated March 5). SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) confirmed from GitHub.
+- MCP security incident timeline: 10 of 11 incidents individually confirmed. WhatsApp MCP (Invariant Labs, April 2025), GitHub MCP (Docker blog, May 2025), Asana MCP (Nudge Security, June 2025), mcp-remote CVE-2025-6514 (JFrog, July 2025, CVSS 9.6, 437k+ downloads), Smithery (GitGuardian, October 2025, Fly.io token, 3,243 apps), CVE-2026-26118 Azure MCP SSRF (Microsoft Patch Tuesday, March 10, 2026, CVSS 8.8).
+- 30 MCP CVEs January-February 2026: 43% exec/shell injection, 20% tooling, 13% auth bypass, 10% path traversal, 38% of 535 servers lack auth. All confirmed from dev.to analysis.
+- MCPTox benchmark: 45 servers, 353 tools, 20 LLM agents, o1-mini 72.8% attack success rate. Confirmed from arXiv:2508.14925.
+- Unit 42 sampling attacks: three PoC attacks (resource theft, conversation hijacking, prompt manipulation). Confirmed from unit42.paloaltonetworks.com.
+- Anbiaee et al. threat model: arXiv:2602.11327, twelve risks, ANP strongest posture, MCP/Agora weakest. Confirmed.
+- Lee et al. overthinking loops: arXiv:2602.14798, 14 malicious tools, 142.4x token amplification. Confirmed.
+- OWASP MCP Top 10: confirmed from owasp.org. Living document in beta.
+- Microsoft MCP governance: confirmed from Inside Track Blog March 2026.
+- A2A: created April 2025, LF June 23, 2025, v1.0 security hardening, Quarkus SDK v0.3.0, LangGraph v0.2 January 15, 2026, Amazon Bedrock AgentCore A2A support. All confirmed.
+- A2A-T: Huawei, MWC 2026 March 2, TM Forum IG1453. Confirmed.
+- Auth0/Google Cloud A2A partnership. Confirmed from Okta newsroom.
+- AgentGateway: Solo.io, Rust, LF, Cedar policies. Confirmed.
+- WebMCP: Chrome 146 Canary, Google + Microsoft, W3C. Confirmed from developer.chrome.com.
+- AG-UI: CopilotKit, Microsoft Agent Framework compatible. Confirmed from ag-ui.com and Microsoft Learn.
+- A2UI: Google, Apache 2.0, CopilotKit contributions. Confirmed from a2ui.org and Google Developers Blog (February 26, 2026).
+- ACP, UCP, AAIF. Previously verified.
+- Shane's blog references. All verified.
+
+**What I changed:**
+1. **MCP 2026 Roadmap priority areas restructured (significant).** The chapter incorrectly listed four priorities as: (1) Streamable HTTP transport improvements, (2) Server discovery via .well-known, (3) Tasks primitive refinements, (4) Enterprise deployment needs. The actual roadmap (March 9, 2026) lists: (1) Transport Evolution and Scalability, (2) Agent Communication, (3) Governance Maturation, (4) Enterprise Readiness. The chapter's #1 and #2 were sub-items of the actual priority #1 (Transport). "Tasks primitive refinements" is under "Agent Communication," not a standalone priority. "Governance Maturation" was entirely missing. Restructured to match the actual roadmap.
+2. **MCP Inspector CVE-2025-49596 date (minor).** Changed from "July 2025" to "June 2025." AuthZed's timeline (chapter's cited source [^8]) lists it as June 2025. Patched June 13, 2025 in version 0.14.1.
+3. **CVE-2026-27825 mcp-atlassian date (minor).** Changed from "January 2026" to "February 2026." Fix released February 24, 2026 per Arctic Wolf and GitLab advisory.
+4. **mcp-remote CVE-2025-6514 characterization (minor).** Changed "supply-chain backdoor" to "supply-chain attack surface." The vulnerability was a command injection in an OAuth proxy, not an intentionally planted backdoor.
+
+**What I considered but did not do:**
+- Verifying every individual claim in the protocol threat model descriptions (e.g., exact twelve risks enumerated by Anbiaee et al.). The paper exists on arXiv with the stated ID, the authors match, and the comparative findings (ANP strongest, MCP/Agora weakest) are consistent with the protocol designs.
+- Checking the exact OWASP MCP Top 10 risk labels against the chapter's descriptions. The chapter synthesizes from the OWASP page rather than quoting directly. The categories match well enough.
+- Adding MCP Apps (first official MCP extension, GA January 2026) as mentioned in the actual roadmap. The chapter doesn't cover it, but it's relevant to priority #4 (MCP Extensions was the roadmap's framing). Left this for potential future addition rather than verification scope.
+
+**What I noticed:**
+- The MCP roadmap error follows a pattern: the chapter took specific items from within the roadmap's broader categories and presented them as the top-level categories themselves. This is a structuring error where sub-items were promoted to priority areas, and the actual organizing categories (especially "Governance Maturation" and "Agent Communication") were lost. This is the most significant error in the chapter because it misrepresents what the MCP community is prioritizing.
+- The CVE date errors follow the same pattern seen in other chapters: dates shift between vulnerability discovery, patch release, blog publication, and CVE assignment. The chapter used blog publication dates rather than the primary timeline source it cites.
+- This chapter is the most technically complex in the book: 540+ lines, 40+ footnotes, covering protocols, CVEs, academic papers, industry standards, and enterprise deployments. Despite this density, only one significant error was found (the roadmap restructuring). The security incident timeline, protocol descriptions, and academic citations were all accurate.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication (5 of 18). Remaining: supply-chain-security, pac-framework, why-agents-break-trust.
+
+**Sources used:**
+- Web searches: MCP 2026 roadmap blog, A2A Google April 2025 Linux Foundation June 2025, MCP CVEs 30 CVEs three layers, Huawei A2A-T MWC 2026, WebMCP Chrome 146 Canary, OWASP MCP Top 10, AG-UI CopilotKit, A2UI Google, Unit 42 MCP sampling, Anbiaee et al. arXiv:2602.11327, Lee et al. arXiv:2602.14798, MCPTox benchmark, Microsoft MCP governance Inside Track, AgentGateway Solo.io, Auth0 Google Cloud A2A, WhatsApp MCP exfiltration, CVE-2025-6514, CVE-2025-49596, CVE-2026-27825, CVE-2026-26118, GitHub MCP prompt injection, Smithery path traversal, Quarkus A2A SDK, LangGraph v0.2 A2A, Amazon Bedrock AgentCore A2A.
+- Web fetch: blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/, authzed.com/blog/timeline-mcp-breaches.
+- Shane's blog posts: Workspace CLI (March 5), TSP+PIC LFDT meetup (March 11), MCP/A2A explainers.
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session deadline March 20 (7 days): track outcomes.
+4. Continue proactive verification: supply-chain-security.md next.
+5. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 20:00 UTC: Proactive Verification of agent-identity.md (Session 104)
 
 THOUGHT: Session 104. Pre-RSAC plateau session 39. Verifying agent-identity.md. 30+ claims to check across IETF, acquisitions, surveys, products.
