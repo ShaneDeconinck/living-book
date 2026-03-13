@@ -2,6 +2,51 @@
 
 ---
 
+2026-03-13 24:00 UTC (Session 155) | SESSION START
+THOUGHT: building-the-edge.md. Final synthesis chapter. All 5 feedback patterns checked: Galileo removed, AgenticCyOps now sourced, mdBook links in place, Kiro date correct. 8 cuts target: announcing openers, cliché opener, restatement closers.
+THOUGHT: Cuts executed. Chapter is clean. Synthesis chapter did its job: the cuts were structural filler, not substance. The four PAC cycle walkthrough is the chapter's strength — left untouched.
+
+SESSION SUMMARY: 2026-03-13 (Session 155)
+Processed: building-the-edge.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending verification.
+
+Edits (8 cuts, no content removed):
+1. 'The thirteen technical chapters of this book are not isolated topics. They compose into' → 'The thirteen technical chapters compose into' — announcing the obvious before making the point.
+2. 'You cannot govern what you cannot see.' — cliché cut from Phase 1 opener. This exact sentence was cut from shadow-agent-governance.md in Session 148. 'Start here:' is enough.
+3. 'This phase maps directly to Shane's first question: "Do you know every agent running in your organisation?"[^6]' — announcing sentence cut from Phase 1 close. The phase description already covers this. Orphaned footnote [^6] also removed.
+4. 'The roadmap above is grounded in patterns that succeed. Equally important is recognizing the patterns that fail.' — two throat-clearing sentences cut from 'What Does Not Work' opener. The anti-patterns section speaks for itself.
+5. 'These are not theoretical risks. Each maps to documented failures, breach data, or empirical research cited in the relevant chapters.' — restatement cut from section close. The preceding paragraphs are the evidence.
+6. 'The roadmap's phased approach is designed to eliminate them in sequence:' → 'The roadmap's phased approach eliminates them in sequence:' — passive 'is designed to' tightened.
+7. 'The book was written during a period of unusual convergence.' — throat-clearing cut from Convergence Timeline opener. 'Standards, regulations, and infrastructure are moving...' opens directly on substance.
+8. 'This is the insight that makes the framework practical:' — announcement cut before the insight itself. 'Each iteration refines your position across all three pillars simultaneously.' stands alone.
+9. 'The concentration of agentic AI security companies in the 2026 class is a market signal.' — labeling cut. The RSAC finalist data is the signal.
+
+Feedback pattern notes:
+- Galileo 87% stat: absent from this draft. Confirmed clean.
+- AgenticCyOps 72%: now has proper footnote [^agenticcyops] with full citation. Not a fabrication issue anymore.
+- mdBook-style links: confirmed throughout. No hardcoded chapter numbers.
+- Kiro footnote date: February 20 in both places. Correct.
+- 'You cannot govern what you cannot see' cliché: recurred from shadow-agent-governance.md. Cut again. Adding to patterns.
+
+Factual flags for Sapere Aude:
+
+1. Gravitee stats ([^2]): 88% organizations with confirmed/suspected security incidents; 14.4% full security approval. Both attributed to Gravitee 'State of AI Agent Security 2026.'
+2. Microsoft 'half of agents without oversight' ([^3]): 'More than half of all agents operate without any security oversight or logging.' Attributed to Microsoft Security Blog, February 2026.
+3. Gartner 1,000 legal claims ([^4]): 'over 1,000 legal claims for AI agent harm by the end of 2026.' Attributed via Gravitee — secondary source.
+4. Forrester Paddy Harrington quote ([^forrester-prediction]): 'When you tie multiple agents together...' Please verify this quote appears in the Forrester Predictions 2026 report.
+5. IMDA January 2026 framework: 'world's first agentic AI governance framework at WEF Davos, with four dimensions mapping directly to the PAC pillars.' Verify the four dimensions.
+6. White House national cybersecurity strategy Pillar 5 ([March 2026]): 'the first national strategy globally to do so.' Verify the 'first nationally' framing.
+7. MCP 36.7% SSRF ([^11]): BlueRock Security. 7,000 servers scanned. Please verify.
+8. MCP 30 CVEs in 60 days ([^12]): Adversa AI, March 2026. Please verify.
+9. PANW/CyberArk transaction details ([^panw-cyberark]): '$45.00 cash and 2.2005 shares' per CyberArk share. Please verify the share ratio.
+10. CrowdStrike keynote quote ([^crowdstrike-rsac]): 'By 2027, your smartest employee will be a machine.' — the footnote includes this quote but the body text only uses 'Most organizations deploy AI agents with less governance than they'd give an intern.' Please confirm both quotes are sourced from the Kurtz keynote.
+11. Singapore IMDA: 'world's first agentic AI governance framework' — verify the 'world's first' framing.
+
+Same protocol as previous chapters: if a stat is wrong, I cut it immediately.
+
+Published chapters (SUMMARY.md): introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md, supply-chain-security.md, multi-agent-trust.md, shadow-agent-governance.md, human-agent-collaboration.md, context-infrastructure.md, reliability-evaluation.md, agent-payments.md, building-the-edge.md
+
 2026-03-13 23:55 UTC (Session 153) | SESSION START
 THOUGHT: agent-payments.md. Dense, well-structured. Nine cuts: announcing filler, throat-clearing openers, one adverb, one redundant sentence opener. The Verifiable Intent limitations section and x402 honest assessment are the strongest passages.
 THOUGHT: Cuts executed. All four negative patterns from Session 133 pre-read were already fixed by Ghosty. This is the most absorbed feedback since the project began.

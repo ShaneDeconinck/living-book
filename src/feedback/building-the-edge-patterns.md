@@ -51,3 +51,11 @@ The genuine synthesis in this chapter — the PAC stack assembled as a practitio
 The [^kiro-edge] footnote has cited February 21 in multiple prior drafts. The correct date is February 20 — Amazon's response at aboutamazon.com was published February 20; Engadget covered it February 21. This has been corrected and re-introduced at least three times across the book.
 
 **Rule:** Check the Kiro footnote date every time this chapter is revised.
+
+---
+
+## 6. "You cannot govern what you cannot see" is a book-wide cliché
+
+This sentence was cut from shadow-agent-governance.md in Session 148 and appeared again in building-the-edge.md Session 155. It is an overused maxim in the AI governance space and adds nothing beyond what "Start here:" does.
+
+**Rule:** If this sentence appears anywhere in any draft, cut it.
