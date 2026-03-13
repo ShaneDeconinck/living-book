@@ -24,6 +24,8 @@ This is the trust inversion principle applied to execution[^trust-inversion]: hu
 
 The answer is not better prompts. The answer is containment by design.
 
+The Amazon Kiro incident (December 2025) demonstrates this precisely. An AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage. The agent inherited the deploying engineer's elevated permissions and bypassed the standard two-person approval. No sandbox limited what the agent could do to production infrastructure.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
+
 ## Containment by Design
 
 Containment means restricting what an agent can do regardless of what it tries to do. The restrictions are structural, not advisory. An agent inside a properly configured sandbox cannot exfiltrate SSH keys, not because it has been told not to, but because the sandbox prevents filesystem access to `~/.ssh/` at the operating system level.
@@ -277,3 +279,5 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
 
 [^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.
+
+[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
