@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13 (Session 130)
+
+THOUGHT: Session 130. Chop Pop's execution-security feedback is new: gVisor prose gap, PCAS model names need verification, two OpenAI sources merged without seam. Three fixes.
+THOUGHT: PCAS model names verified against arXiv:2602.16708. Claude Opus 4.5, GPT-5.2, Gemini 3 Pro are exact. Draft matches source.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's new execution-security feedback (execution-security-patterns.md, 5 patterns, 3 fixable). Read all A2A messages: execution-security feedback is the only new actionable item. Domain attribution feedback (agent-communication.md [^1], [^3], [^16]) already uses correct shanedeconinck.be domain.
+- Step 6 reassessment: Chop Pop's execution-security feedback (3 fixes) is the highest-impact work. RSAC is March 23-26, 10 days out. No new developments warrant content changes beyond the feedback fixes. NIST CAISI listening sessions interest deadline March 20 (7 days).
+- Web searched: PCAS paper (arXiv:2602.16708) model names verified. gVisor for AI agent sandboxing (confirmed: user-space kernel intercepting syscalls, 10-30% I/O overhead, positioned between containers and MicroVMs). RSAC 2026 pre-coverage (unchanged: Token Security finalist, Microsoft keynote, Delinea presenting, agentic AI governance dominant theme).
+
+**What I changed:**
+1. **execution-security.md: Added gVisor prose section before isolation table (Chop Pop pattern #3).** The table had four rows but only three had prose explanations. Added "gVisor: User-Space Kernel Interception" subsection: what gVisor is (Google's user-space kernel), how it works (Sentry process intercepts syscalls), where it sits (between containers and MicroVMs), and the tradeoff (10-30% I/O overhead). The table row now traces to a preceding paragraph.
+2. **execution-security.md: Verified PCAS model names (Chop Pop pattern #4).** Fetched the PCAS paper (arXiv:2602.16708v1). The paper uses exactly Claude Opus 4.5, GPT-5.2, and Gemini 3 Pro. GPT-5.2 is an unusual version pattern but it is what the paper reports. The 48% and 93% compliance figures are confirmed. No changes needed.
+3. **execution-security.md: Added seam between two OpenAI publications (Chop Pop pattern #5).** The March 2026 guidance ("Designing AI agents to resist prompt injection") and December 2025 work ("Continuously hardening ChatGPT Atlas") were merged in one paragraph with no signal that these were different publications. Added publication names and dates to the opening of each paragraph. The reader can now tell where one source ends and the other begins.
+
+**What I considered but did not do:**
+- Updating RSAC coverage. The conference is March 23-26, still 10 days out. Post-RSAC is the right time.
+- Writing new chapters. No new Shane blog posts or PAC Framework changes to build on.
+- Addressing NIST CAISI listening sessions deadline (March 20). This is an informational note for Shane, not a chapter change.
+
+**What I noticed:**
+- All Chop Pop feedback patterns for execution-security.md are now addressed. Patterns #1 and #2 (positive) require no changes. Patterns #3, #4, and #5 are fixed (or verified). The chapter is ready for Sapere Aude verification.
+- The domain attribution feedback for agent-communication.md footnotes [^1], [^3], [^16] was already correct in the current draft. All three cite shanedeconinck.be. This was likely fixed in a prior session.
+- RSAC 2026 will be dominated by agentic AI governance themes. Multiple sessions on securing agentic AI, non-human identity management, and AI-native code security. This aligns with the book's thesis. Post-conference coverage should update building-the-edge.md and potentially regulatory-landscape.md.
+
+**Sources used:**
+- Web searches: PCAS paper model names, gVisor AI agent sandboxing, RSAC 2026 agentic AI security.
+- Web fetch: arXiv:2602.16708v1 (PCAS paper, model name verification).
+- Shane's blog posts: no new posts since March 11.
+- PAC Framework from trustedagentic.ai: unchanged.
+- Chop Pop feedback: execution-security-patterns.md (new this session).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications. execution-security.md now ready for queue.
+4. NIST CAISI listening sessions interest deadline March 20 (7 days).
+
 ## 2026-03-13 (Session 129)
 
 THOUGHT: Session 129. Three unaddressed feedback sets: Chop Pop's regulatory-landscape (3 fixes), Sapere Aude's why-agents-break-trust (8 issues), Sapere Aude's introduction (3 critical). Agent-identity fixes already applied. Prioritizing regulatory-landscape (newest Chop Pop feedback) and introduction critical issues.
