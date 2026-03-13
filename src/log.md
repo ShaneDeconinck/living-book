@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 12:30 UTC: MCP Security Convergence Update (Session 93)
+
+THOUGHT: Session 93. Pre-RSAC plateau session 28. Searching for new developments before reassessing.
+THOUGHT: MCP roadmap now has security SEPs (DPoP, WIF) that validate the book's identity architecture. Adding.
+THOUGHT: Context-infrastructure chapter solid. Updating gaps with MCP security convergence observation.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No feedback files. Agent messages unchanged since Session 90's response to Sapere Aude.
+- Step 6 reassessment: pre-RSAC plateau continues into session 93 (28 consecutive sessions, 65-93). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, MCP security vulnerabilities March 2026, NIST AI agent security March 2026, RSAC 2026 preview.
+- **Found a significant update**: MCP 2026 Roadmap (updated March 5, 2026) now includes security and authorization as "on the horizon" with two sponsored SEPs already underway: SEP-1932 (DPoP for MCP) and SEP-1933 (Workload Identity Federation for MCP). This validates the book's argument that communication and identity layers are converging.
+
+**What I changed:**
+- **agent-communication.md**: Added two paragraphs after the roadmap section's four priority areas. The first describes SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) as sponsored work with active PRs, plus the broader security roadmap items (least-privilege scopes, OAuth mix-up guidance, vulnerability disclosure program). The second connects these to the book's argument: the identity infrastructure the agent-identity chapter advocates is now being adopted into the communication protocol itself. Added two footnotes ([^mcp-dpop], [^mcp-wif]) with GitHub PR links.
+- **agent-communication.md**: Updated the "What to watch" practical recommendations to mention the security SEPs alongside the June 2026 specification release.
+- **gaps.md**: Added new observation "MCP Security Convergence: Communication Layer Adopts Identity Infrastructure" documenting the three-level convergence (protocol: DPoP/WIF, enterprise: XAA, governance: Linux Foundation vulnerability disclosure). Updated session number to 93.
+
+**What I considered but did not do:**
+- Adding the complete RSAC 2026 Innovation Sandbox finalist list. The book already says "several" finalists (deliberately softened from "five" in Session 87 per Sapere Aude feedback) and names Token Security and Geordie AI specifically. The full list is now known (Charm Security, Clearly AI, Geordie AI, Glide Identity, Humanix, Realm Labs, Token Security, ZeroPath, Crash Override, and one more), but adding all names would not strengthen the argument. The current approach is better: specific examples that illustrate the trend.
+- Revising the context-infrastructure chapter. Reviewed it in full (232 lines). The chapter is well-structured, well-sourced, and has strong cross-chapter connections. No verification issues found.
+- Adding the AuthZed MCP breach timeline. Already in the book as footnote [^8] in agent-communication.md, and the specific incidents (WhatsApp, GitHub, Asana) are already in the incident timeline table.
+- Adding new MCP CVE data. Already in the book: 30 CVEs stat, 38% no-auth stat, vulnerability class breakdown all present in agent-communication.md (line 123) and supply-chain-security.md.
+
+**What I noticed:**
+- The MCP security convergence is the most architecturally significant development since the XAA integration. DPoP and Workload Identity Federation being adopted into MCP means the protocol is moving from "you need to add security on top" to "security is part of the protocol." This is the trajectory the book has been arguing for.
+- The pre-RSAC plateau has lasted 28 sessions. The pattern has been: Sessions 65-86 (increasingly marginal content search), Sessions 87-90 (verification quality sweep), Sessions 91-92 (targeted fixes), Session 93 (MCP security convergence). The quality-focused approach continues to yield higher value than content expansion during this plateau.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, MCP model context protocol security vulnerability March 2026, NIST AI agent security framework March 2026, MCP 2026 roadmap, RSAC 2026 Innovation Sandbox finalists.
+- MCP 2026 Roadmap, modelcontextprotocol.io/development/roadmap (last updated March 5, 2026). Confirmed SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) as sponsored work underway.
+- RSAC 2026 Innovation Sandbox finalists (confirmed full list of 10 via prnewswire.com, rsaconference.com, and individual finalist announcements).
+- Shane's blog (confirmed no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): track announcements.
+6. Track SEP-1932 and SEP-1933 progress: will they ship in the June 2026 MCP specification release?
+7. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 UTC: Proactive Verification of agent-identity.md (Session 90)
 
 THOUGHT: Pre-RSAC plateau session 26. Proactively verifying agent-identity.md claims before Sapere Aude reaches it.

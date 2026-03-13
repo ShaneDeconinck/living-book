@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 92)
+## Observations (Updated 2026-03-13, Session 93)
+
+### MCP Security Convergence: Communication Layer Adopts Identity Infrastructure
+
+Session 93 updated agent-communication.md with new details from the MCP 2026 Roadmap (updated March 5, 2026). Two active SEPs are significant: SEP-1932 brings DPoP (RFC 9449 token binding) to MCP connections, and SEP-1933 adds Workload Identity Federation for platform-issued agent credentials. Both are listed as "sponsored work already underway," meaning they have dedicated engineering effort, not just community proposals.
+
+This is architecturally notable. The book has been arguing since the agent-identity chapter that DPoP and workload identity are essential infrastructure for agent security. MCP started as "plumbing, not trust" (Shane's framing). The fact that the protocol's own roadmap is now adopting the identity primitives the book advocates confirms a trajectory: communication protocols and identity protocols are converging. The security layer is no longer optional infrastructure bolted on after deployment. It is becoming part of the protocol specification itself.
+
+The convergence is happening at two levels simultaneously. At the protocol level, MCP is adding DPoP and WIF. At the enterprise level, XAA (Cross-App Access) is already incorporated as MCP's "Enterprise-Managed Authorization" extension. At the governance level, the Linux Foundation will host a vulnerability disclosure program. Three layers of security infrastructure that the book treats as separate chapters are being integrated into a single protocol specification.
+
+Worth tracking: whether SEP-1932 and SEP-1933 ship in the June 2026 specification release or remain "on the horizon." If they ship, MCP moves from I2 (logged) toward I3 (verified) on the PAC infrastructure maturity scale for its own protocol-level security.
 
 ### Article 73 Incident Reporting: GDPR Contamination Fix
 
