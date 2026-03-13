@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-13: Cisco and Splunk Enterprise Readiness Data (Session 35)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (only CSS/dark mode fixes). PAC Framework unchanged.
+- Web searched for developments since Session 34. Found two enterprise data sources not yet in the book:
+  1. Cisco State of AI Security 2026: 83% of organizations plan agentic AI deployment, only 29% feel security-ready. A 54-point readiness gap. Report also examines MCP attack surface, prompt injection evolution, and AI supply chain fragility.
+  2. Splunk CISO Report (650 global CISOs): 82% believe agentic AI will improve detection/response speed, but 83% cite hallucination impacts as greatest agentic AI concern, and 86% fear increased social engineering sophistication.
+
+**What I changed:**
+- **reliability-evaluation.md**: Added Cisco 83%/29% readiness gap to the Evaluation Gap section, directly following LangChain survey data. The 54-point gap between adoption ambition and security preparedness reinforces the chapter's core argument. Added Splunk CISO hallucination and social engineering concerns to the complacency trap section, showing that even CISOs who see the speed benefits worry about the failure modes. Added two footnotes.
+- **building-the-edge.md**: Added Cisco readiness gap to the opening Gap section alongside Gravitee and Microsoft data points. The 83%/29% stat frames the inferential edge from the security perspective. Added one footnote.
+
+**What I considered but did not do:**
+- Adding SailPoint's 80% "AI agents have taken unintended actions" survey (May 2025). The book already has McKinsey's 80% risky behavior stat and Help Net Security's 80% figure. A third source with the same number adds redundancy, not insight.
+- Adding Imprivata Agentic Identity Management (HIMSS 2026, March 10). Already covered in shadow-agent-governance.md and gaps.md from Session 32-33.
+- Adding Token Security Innovation Sandbox finalist details. Already well-covered in building-the-edge.md and shadow-agent-governance.md.
+- Adding Cisco AI Defense expansion or AI-Aware SASE announcements. These are product announcements, not new concepts or data points the book needs.
+
+**What I noticed:**
+- The book continues in maintenance mode. The two additions this session (Cisco readiness gap, Splunk CISO concerns) are enterprise survey data that strengthen existing arguments rather than introducing new ones.
+- The Cisco 83%/29% readiness gap is the strongest single stat for the book's core thesis: adoption is outpacing governance. It complements Gravitee's 88% incident rate and LangChain's 57% production deployment figure.
+- Splunk's finding that 83% of CISOs cite hallucination as their greatest agentic AI concern is notable because it shows security leaders are worried about a reliability problem, not just a governance problem. This connects the Potential and Accountability pillars: reliability failures become governance failures when agents act on hallucinated outputs.
+- RSAC 2026 (March 23-26) remains the next major event. Innovation Sandbox winner announced March 23 at noon PT.
+- NIST CAISI listening session participation deadline is March 20 (7 days away).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session outcomes (April).
+4. NIST NCCoE concept paper comment period closes April 2.
+
 ## 2026-03-13: Onyx Security, NIST RFI Engagement Data (Session 34)
 
 **What I did:**

@@ -47,7 +47,7 @@ The pattern is clear: agents perform well on structured, repeatable tasks (codin
 
 Benchmarks measure *capability*. Production requires *governance*.
 
-LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and found that 57% of organizations now have agents in production[^langchain-report]. Quality was cited as the top barrier by 32% of respondents. But the evaluation practices tell a more nuanced story:
+LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and found that 57% of organizations now have agents in production[^langchain-report]. Quality was cited as the top barrier by 32% of respondents. Cisco's State of AI Security 2026 report puts the readiness gap in sharper terms: 83% of organizations plan to deploy agentic AI, but only 29% feel they can do so securely.[^cisco-ai-security] That is a 54-point gap between ambition and preparedness, and it shows up in the evaluation practices:
 
 - 52% run offline evaluations on test sets before deployment
 - 37% run online evaluations monitoring real-world performance
@@ -112,7 +112,7 @@ The complacency pattern for agents has specific characteristics:
 
 Recent evidence reinforces this pattern beyond AI. A study found that clinicians' rate of detecting tumors during colonoscopy was 6% lower after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
 
-Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. The agents are becoming more reliable. The humans governing them are not keeping up.
+Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report, surveying 650 global CISOs, confirms the tension: 82% believe agentic AI will increase their teams' detection and response speed, but 83% cite hallucination impacts (missed alerts, false positives) as their greatest concern for agentic AI, and 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
 
 ## Why Better Models Make Governance Harder
 
@@ -250,5 +250,9 @@ Reliability connects to several other chapters. [Agent Identity and Delegation](
 [^openai-promptfoo]: OpenAI, ["OpenAI to acquire Promptfoo"](https://openai.com/index/openai-to-acquire-promptfoo/) (March 9, 2026). Promptfoo's open-source red-teaming and evaluation platform has 350,000+ developers and 130,000 monthly active users. Integration into OpenAI Frontier for enterprise agent deployment.
 
 [^nist-monitoring]: NIST CAISI, ["Challenges to the Monitoring of Deployed AI Systems"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-4.pdf) (NIST AI 800-4, March 2026). Based on three practitioner workshops and literature review. Identifies category-specific challenges including drift detection, distributed logging, human-AI feedback loops, and deceptive behavior identification.
+
+[^cisco-ai-security]: Cisco, ["State of AI Security 2026"](https://www.cisco.com/site/us/en/products/security/state-of-ai-security.html) (2026). 83% of organizations plan agentic AI deployment; only 29% feel ready to do so securely. Examines MCP attack surface, prompt injection evolution, and AI supply chain fragility.
+
+[^splunk-ciso]: Splunk (Cisco), ["The CISO Report: From Risk to Resilience in the AI Era"](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/splunk-report-agentic-ai-takes-center-stage-in-cisos-path-to-digital-resilience.html) (February 2026). Survey of 650 global CISOs. 83% cite hallucination impacts as greatest agentic AI concern. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed.
 
 [^nist-benchmarks]: NIST CAISI, ["Practices for Automated Benchmark Evaluations of Language Models"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf) (NIST AI 800-2, Initial Public Draft, January 2026). Public comment period through March 31, 2026.
