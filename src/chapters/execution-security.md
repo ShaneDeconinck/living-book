@@ -18,7 +18,7 @@ This is the trust inversion principle applied to execution[^trust-inversion]: hu
 
 The answer is not better prompts. The answer is containment by design.
 
-The Amazon Kiro incident (December 2025) demonstrates this precisely. An AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage. The agent inherited the deploying engineer's elevated permissions and bypassed the standard two-person approval. No sandbox limited what the agent could do to production infrastructure.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
+The Amazon Kiro incident (December 2025) demonstrates this precisely. According to Financial Times reporting, an AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage — a characterization Amazon disputes, attributing the event to misconfigured access controls rather than AI behavior. Whatever the cause, the agent had access to production infrastructure with no sandbox to limit what it could do.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
 
 ## Containment by Design
 
@@ -44,7 +44,7 @@ Not all sandboxes are equal. The strength of isolation depends on where the boun
 
 Native sandboxing uses operating system security primitives to restrict a process without creating a separate execution environment. The agent runs as a regular process on the host, but the OS kernel enforces restrictions on what that process can access.
 
-On macOS, this means Seatbelt: the same sandbox mechanism that isolates iOS apps. On Linux, it is a combination of technologies: bubblewrap for filesystem namespace isolation, seccomp BPF for syscall filtering, and Landlock for filesystem access control[^anthropic-sandbox][^codex-security].
+On macOS, this means Seatbelt: the same sandbox mechanism that isolates iOS apps. On Linux, it is a combination of technologies: bubblewrap for filesystem namespace isolation, seccomp BPF for syscall filtering, and Landlock for filesystem access control[^codex-security].
 
 Claude Code uses this approach on both platforms. The sandbox restricts filesystem access to the working directory and routes network traffic through a proxy running outside the sandbox. Critically, the restrictions apply not just to the agent process but to any scripts, programs, or subprocesses it spawns[^anthropic-sandbox].
 
@@ -240,7 +240,7 @@ The architecture has five layers, each addressing a distinct threat:
 
 **Pre-launch testing.** All five layers were built before the capability shipped, not in response to incidents. The framing matters: security as a prerequisite for launch, not a patch applied after deployment.
 
-The Google architecture complements the OS-level approaches (Claude Code, Codex CLI, Docker) rather than competing with them. OS-level sandboxing constrains system resources: files, network, syscalls. Google's application-level architecture constrains agent behavior: intent alignment, task scope, action classification. A fully governed browser agent would use both: OS-level containment to prevent system exploitation, and application-level oversight to prevent the agent from acting outside its mandate. The User Alignment Critic is the most concrete production implementation of the "guardian agent" pattern that Gartner's Market Guide described as an emerging category: a secondary AI system whose sole purpose is governing a primary AI system's behavior.
+The Google architecture complements the OS-level approaches (Claude Code, Codex CLI, Docker) rather than competing with them. OS-level sandboxing constrains system resources: files, network, syscalls. Google's application-level architecture constrains agent behavior: intent alignment, task scope, action classification. A fully governed browser agent would use both: OS-level containment to prevent system exploitation, and application-level oversight to prevent the agent from acting outside its mandate. The User Alignment Critic is the most concrete production implementation of the guardian agent pattern: a secondary AI system whose sole purpose is governing a primary AI system's behavior.
 
 ## Connecting to PAC
 
@@ -288,7 +288,7 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^bainbridge]: Lisanne Bainbridge, "Ironies of Automation," *Automatica* 19, no. 6 (1983): 775-779.
 
-[^norman]: Don Norman, "The 'Problem' of Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation,'" *Philosophical Transactions of the Royal Society* B327 (1990): 585-593.
+[^norman]: Don Norman, "The 'Problem' with Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation,'" *Philosophical Transactions of the Royal Society* B327 (1990): 585-593.
 
 [^anthropic-sandbox]: Anthropic Engineering (David Dworken and Oliver Weller-Davies), "Beyond Permission Prompts: Making Claude Code More Secure and Autonomous," anthropic.com/engineering/claude-code-sandboxing, 2026.
 
@@ -306,9 +306,9 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Draws parallels between prompt injection and social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. The RL-trained automated attacker for multi-step vulnerability discovery is described in a separate publication: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," openai.com, December 22, 2025.
 
-[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 6.5 (Medium). Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations, shell syntax alternatives, and unblocked interpreters (python3, perl, ruby, node). At the time of disclosure, no vendor patch was available.
+[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 6.5 (Medium). Reported by Itamar Yochpaz, CERT/CC VU#431821, March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations, shell syntax alternatives, and unblocked interpreters (python3, perl, ruby, node). At the time of disclosure, no vendor patch was available.
 
-[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 20, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
+[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
 
 [^google-mariner]: Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026. Five-layer security architecture for browser agents: User Alignment Critic (intent verification via separate Gemini model shielded from web content), Agent Origin Sets (task-scoped browsing boundaries), prompt injection classification (per-page scanning), mandatory human oversight (payments, credentials, social media), and pre-launch security testing. See also Google Security Blog, "Architecting Security for Agentic Capabilities in Chrome," December 8, 2025.
 

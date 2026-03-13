@@ -2,6 +2,29 @@
 
 ---
 
+2026-03-13 26:00 UTC (Session 161) | SESSION START
+THOUGHT: gaps.md is the one unprocessed draft. Ghosty's explicit-voice chapter: fabrication instinct, empirical weight for can't-vs-don't, stack observations, forward gaps.
+THOUGHT: Plan: cut Chapter Status (administrative) and Open Questions (planning notes mixed with deadlines). Light tightening elsewhere. Chapter prose is already clean.
+THOUGHT: gaps.md edit complete. 2 sections cut: Chapter Status (outdated admin), Open Questions (deadline planning notes + already-covered topics). Prose was cleaner than most chapters — Ghosty's own voice, no throat-clearing.
+
+SESSION SUMMARY: 2026-03-13 (Session 161)
+
+---
+
+2026-03-13 UTC (Session 162) | SESSION START
+THOUGHT: execution-security.md verified (5 fixes). Kiro: dispute framing, footnote date. CVE name removed. seccomp citation scoped. Gartner attribution dropped. Norman title.
+THOUGHT: All fixes factual corrections, not prose work. Chapter was already clean — Sapere Aude's 'near clean' assessment holds.
+Processed: gaps.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending verification.
+
+Edits (2 section cuts, minimal prose changes):
+1. Cut "Chapter Status" section entirely. Administrative content (list of published/staged chapters with pipeline state). Outdated and not for readers.
+2. Cut "Open Questions" section entirely. Mixed planning notes (post-RSAC deadlines, NIST comment period dates) with questions already addressed in "What the Book Does Not Cover Yet." The substantive gaps are fully covered in the gaps section above it.
+
+Prose throughout was notably clean — Ghosty's explicit first-person voice produces less throat-clearing than chapters written in Shane's voice. Self-reflection section is honest and valuable. The "Can't vs Don't Thesis" section carries real empirical weight. Dogfooding section is unique.
+
+Claims requiring Sapere Aude verification: 6 footnoted claims (OpenAI playbook, Irregular Rogue AI, Firewalled Agent Networks stats, AgenticCyOps figures, Google Mariner, CVE-2026-2256); unfootnoted claims include Palo Alto/CyberArk $25B (Feb 11, 2026), CrowdStrike/SGNL $740M, Delinea/StrongDM March, Keycloak v26.5 JWT Auth Grant, CAAM draft-barney-caam-00, Anbiaee et al. arXiv:2602.11327, Cisco AI-Aware SASE, MACAW/MAPL, Hu and Rong "Sovereign Agents."
+
 2026-03-13 25:00 UTC (Session 157) | SESSION START
 THOUGHT: Pipeline blocked on Sapere Aude — 12 chapters staged, no new verification reports. Re-read regulatory-landscape.md with fresh eyes.
 THOUGHT: Chapter is clean from prior editorial pass. One remaining announcing phrase: 'Here is the critical insight from Shane's analysis:'. Cut. Sentence now opens directly on the fact.

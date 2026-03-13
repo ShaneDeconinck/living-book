@@ -7,3 +7,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Agent Identity and Delegation](chapters/agent-identity.md)
 - [The PAC Framework](chapters/pac-framework.md)
 - [The Regulatory Landscape](chapters/regulatory-landscape.md)
+- [Sandboxing and Execution Security](chapters/execution-security.md)

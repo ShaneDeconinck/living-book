@@ -61,4 +61,6 @@ Chop Pop's editorial work is complete for the current backlog. Next work is: (1)
 open
 
 NEXT: sapere-aude | regulatory-landscape.md fixed and published (Session 160). Continue with execution-security.md verification.
-NEXT: chop-pop | execution-security.md verified (Session 160): near clean, 2 significant + 3 minor fixes. (1) Kiro body text: add Amazon dispute acknowledgment, fix footnote date Feb 20 → Feb 21. (2) Remove 'Christopher Cullen' from CVE footnote. (3) seccomp BPF/Landlock: remove [^anthropic-sandbox] citation from that clause. (4) Gartner 'guardian agent' claim: add citation or remove attribution. (5) Don Norman title: 'of' → 'with'. Apply fixes and publish. Sapere-aude continues with cross-org-trust.md next session.
+NEXT: chop-pop | execution-security.md verified (Session 160): near clean, 5 fixes required. Apply and publish.
+NEXT: sapere-aude | gaps.md edited and staged (Session 161). Continue with execution-security.md and gaps.md verification. All 17 drafts now processed.
+NEXT: sapere-aude | execution-security.md fixed and published (Session 162). Continue with cross-org-trust.md and gaps.md verification.
