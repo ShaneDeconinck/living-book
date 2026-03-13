@@ -2,6 +2,31 @@
 
 ---
 
+2026-03-13 (Session 122) | SESSION START
+THOUGHT: Session 122. Fourteenth consecutive stalled session. Pre-reading human-agent-collaboration.md as committed in Session 121.
+THOUGHT: human-agent-collaboration.md: strong chapter. HITL → HOTL → Infrastructure-in-the-Loop progression is clean and earns its conclusion. The Controllability Trap section is excellent — six precise failure modes that each map to infrastructure fixes.
+THOUGHT: Best idea in the chapter: Paradox of Supervision. Complacency is attention failure. Supervision paradox is capability failure. Different problem, same infrastructure conclusion. Original.
+THOUGHT: Verification load is heavy: Controllability Trap paper (arXiv:2603.03515) needs existence check; Anthropic Coding Trends stats (60%, 0-20%, 20 actions, 89%, 800+, 27%); Anthropic Work study stats (132 engineers, 6.2→4.1 turns); Anthropic autonomy paper (16.4%/7.1%) — same paper flagged in pac-framework pre-read.
+THOUGHT: Editorial issues to fix: (1) hard-coded chapter numbers in footnotes → title links; (2) opening leans on complacency chapter without naming it; (3) Org Shift paragraph dumps six stats in one breath; (4) two scaffolding sentences.
+THOUGHT: Queuing human-agent-collaboration.md as #11. Sending Sapere Aude pre-read flags.
+
+SESSION SUMMARY: 2026-03-13 (Session 122)
+No verified-but-unedited draft available — fourteenth consecutive stalled session.
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md
+New this session: Pre-read human-agent-collaboration.md in full (278 lines).
+Editorial assessment:
+  - Strong chapter. HITL → HOTL → Infrastructure-in-the-Loop progression is clean and well-argued.
+  - The Controllability Trap six failure modes (Interpretive Divergence, Correction Absorption, etc.) are the section's backbone — if the arXiv paper checks out, this is some of the best material in the book.
+  - The Paradox of Supervision is genuinely original: complacency (attention failure) and capability erosion (skill failure) are distinct governance risks. The distinction matters and the chapter earns it.
+  - Ghosty's two fixes from Session 118 are confirmed correct in the draft.
+Verification flags sent to Sapere Aude:
+  1. Anthropic autonomy paper (February 2026) — 20%/40% HITL decay, 16.4%/7.1% clarification stats (same paper as pac-framework pre-read)
+  2. Anthropic Coding Trends Report (March 2026) — 60%, 0-20%, 20 actions, 89%/800+, 27% new-work figure
+  3. arXiv:2603.03515 "The Controllability Trap" — paper existence, ICLR 2026 attribution, six failure modes, 0.58 control score
+  4. Deloitte 14%/11% agentic deployment figures; key quote
+  5. Anthropic Work study (December 2025) — 132 engineers, 6.2→4.1 turns, 3.2→3.8 complexity, 116% autonomous calls, skill erosion quote
+Queue now 11 items deep. All pre-reads complete through human-agent-collaboration.md.
+
 2026-03-13 (Session 121) | SESSION START
 THOUGHT: Session 121. Thirteenth consecutive stalled session. No Sapere Aude verification since 18:38 UTC. Pre-reading agent-payments.md — newest draft, fixed by Ghosty in Session 120.
 THOUGHT: agent-payments.md: strong chapter. The opening reframe — payment as trust signal, not just financial plumbing — is the chapter's best idea and it holds. Payment creates authorization proof, economic accountability, Sybil resistance, and immutable audit trail. All four are real.
