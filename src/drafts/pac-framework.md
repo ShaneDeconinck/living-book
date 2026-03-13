@@ -208,7 +208,7 @@ In the profiler, infrastructure requirements are cumulative per autonomy level:
 
 No amount of reliability compensates for guardrails you have not built. A brilliant agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened. This makes the profiler actionable: instead of "improve your governance posture," it says specifically: "you need identity verification and authorization scopes before this agent can move from human-approval to oversight mode."[^profiler]
 
-Anthropic's autonomy research supports this structure. They found that 80% of tool calls in the wild have at least one safeguard in place, and 73% involve human oversight of some form.[^anthropic-autonomy-profiler] The infrastructure exists or it does not. Organizations build it before granting autonomy, not after.
+Anthropic's autonomy research supports this structure. They found that 80% of tool calls come from agents with at least one safeguard in place, and 73% appear to have a human in the loop.[^anthropic-autonomy-profiler] The infrastructure exists or it does not. Organizations build it before granting autonomy, not after.
 
 ### Using the Profiler
 
@@ -238,7 +238,7 @@ The framework distills each pillar into concrete questions designed for stakehol
 
 ### Accountability
 
-8. **Do you know every agent running in your organization?** The shadow agent governance chapter (Chapter 12) is built around this question. 98% of organizations report unsanctioned AI use. You cannot govern what you cannot see.
+8. **Do you know every agent running in your organization?** The shadow agent governance chapter (Chapter 12) is built around this question. 98% of organizations report employees using unsanctioned apps, with roughly three quarters actively bringing their own AI tools.[^shadow-ai] You cannot govern what you cannot see.
 
 9. **If an agent causes harm, is the liability chain clear?** Liability chains must be mapped before the incident (this chapter, above). Who owns the agent, who authorized it, who is responsible when it fails, and what is the escalation path?
 
@@ -298,4 +298,5 @@ Each chapter connects back to this framework. The goal is not to memorize the le
 [^teleport]: Teleport, "State of AI in Enterprise Infrastructure Security" (February 2026). Survey finding: over-privileged AI systems drive 4.5x higher incident rates. Access scope, not AI sophistication, is the strongest predictor of security outcomes.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control" (February 2026). Survey of 919 executives and practitioners. 82% executive confidence vs. 14.4% full security approval.
 [^profiler]: Shane Deconinck, ["Untangling Autonomy and Risk for AI Agents"](https://shanedeconinck.be/posts/agent-profiler-reasoning/), shanedeconinck.be, February 26, 2026. Introduces the PAC Agent Profiler and six-dimension model. The profiler is available at [trustedagentic.ai/profiler](https://trustedagentic.ai/profiler/) (open source).
-[^anthropic-autonomy-profiler]: Anthropic, ["Measuring AI Agent Autonomy in Practice"](https://www.anthropic.com/research/measuring-agent-autonomy), February 2026. 80% of tool calls have at least one safeguard; 73% involve human oversight.
+[^shadow-ai]: Shadow AI prevalence reported across multiple 2026 surveys. The 98% figure (unsanctioned app use) and 76% BYOAI adoption are aggregated in Programs.com, "Shadow AI Statistics," 2026, drawing on CIO.com, Cybersecurity Insiders, and IBM Cost of a Data Breach Report 2024. One in five organizations has experienced a breach tied to shadow AI.
+[^anthropic-autonomy-profiler]: Anthropic, ["Measuring AI Agent Autonomy in Practice"](https://www.anthropic.com/research/measuring-agent-autonomy), February 2026. 80% of tool calls come from agents with at least one safeguard; 73% appear to have a human in the loop.
