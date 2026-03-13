@@ -74,6 +74,8 @@ The book was written during a period of unusual convergence. Standards, regulati
 
 - **January 2026:** Singapore's IMDA launches the world's first agentic AI governance framework at WEF Davos, with four dimensions mapping directly to the PAC pillars.
 - **March 2026:** White House releases national cybersecurity strategy with Pillar 5 explicitly naming agentic AI as a strategic priority: the first national strategy globally to do so.
+- **March 23-26, 2026:** RSAC 2026 Conference, with agent security as a dominant theme. Two Innovation Sandbox finalists (Token Security, Geordie AI) are purpose-built for agent identity and governance, signaling the market's shift from "interesting problem" to "product category."
+- **April 2026:** NIST CAISI hosts sector-specific virtual workshops on barriers to AI agent adoption in healthcare, finance, and education. Participation requires submission by March 20.
 - **April 2, 2026:** NIST comment period closes for the AI Agent Identity and Authorization concept paper. This shapes the U.S. federal approach to agent identity standards.
 - **June 2026:** MCP specification update targeting streamable HTTP transport, Tasks primitive refinements, .well-known discovery, and enterprise deployment needs.
 - **August 2, 2026:** EU AI Act high-risk AI system obligations take effect. Organizations deploying agents in regulated domains need compliance infrastructure by this date.

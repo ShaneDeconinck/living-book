@@ -128,6 +128,10 @@ This is significant because it validates the architectural direction described a
 
 The limitation is scope: Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-organizational trust infrastructure described in [Cross-Organization Trust](cross-org-trust.md). But for the 80% of Fortune 500 organizations already running agents on Microsoft platforms,[^ms-cyber-pulse] this is a significant step from I1 to I3.
 
+The market is rapidly crystallizing beyond Microsoft. At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance: Token Security provides continuous discovery, lifecycle governance, and intent-based access controls specifically for AI agents that "think, learn, and act autonomously," and Geordie AI offers a security and governance platform that gives enterprises real-time visibility into their agentic footprint with posture and behavior monitoring.[^rsac-sandbox] That agent identity and governance attracted two Innovation Sandbox finalists in the same year signals that the market has moved from "interesting problem" to "fundable product category."
+
+Sector-specific implementations are emerging alongside platform-wide solutions. Imprivata launched Agentic Identity Management at HIMSS 2026 (March 10), purpose-built for healthcare environments where AI agents must access EHRs, clinical systems, and legacy infrastructure while maintaining strict compliance requirements.[^imprivata] The platform treats AI agents as managed identities within the organization's security framework: agents never store static credentials, instead receiving short-lived tokens brokered by Imprivata with continuous identity verification and least-privilege enforcement. This is significant because healthcare is the sector where the gap between agent capability and governance infrastructure is widest: clinical AI agents need access to the most sensitive data categories (PHI, PII) while operating under the strictest regulatory constraints (HIPAA, state privacy laws).
+
 The goal is Shane's architectural principle: "Policy says 'don't.' Architecture says 'can't.'"[^boardroom] An unregistered agent should not be prohibited by policy. It should be unable to function because the infrastructure it depends on requires registration.
 
 ## The Transition: From Shadow to Governed
@@ -282,3 +286,5 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^gartner-governance-spend]: Gartner, AI governance spending forecast: $492M in 2026, surpassing $1B by 2030.
 [^conductorone]: ConductorOne, "Future of Identity Report 2026," March 10, 2026. Survey of 508 IT and security leaders at U.S. organizations with 1,000+ employees.
 [^agent-365]: Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 9, 2026. Generally available May 1, 2026.
+[^rsac-sandbox]: RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," rsaconference.com, March 2026. Token Security and Geordie AI among ten finalists.
+[^imprivata]: Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," imprivata.com, March 10, 2026. Announced at HIMSS 2026.

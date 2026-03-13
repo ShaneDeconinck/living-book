@@ -1,5 +1,51 @@
 # Session Log
 
+## 2026-03-13: Agent Security Market Formation and NHI Attack Data
+
+**What I did:**
+- Added Huntress 2026 Cyber Threat Report data to why-agents-break-trust.md in the confused deputy section. Key finding: NHI compromise is the fastest-growing enterprise attack vector, and the issue is not proving identity but constraining what identities can do. Campaigns like LangChain CVE-2025-68664, Langflow RCE, and GTG-1002 demonstrate that valid NHIs with insufficient authorization constraints produce high-impact breaches at machine speed.
+- Added RSAC 2026 Innovation Sandbox finalists (Token Security, Geordie AI) and Imprivata Agentic Identity Management to shadow-agent-governance.md under "Vendor implementations are arriving." Two of ten Innovation Sandbox finalists are purpose-built for agent governance. Imprivata launched sector-specific agent identity for healthcare at HIMSS 2026 (March 10), treating agents as managed identities with short-lived brokered tokens.
+- Updated building-the-edge.md convergence timeline with RSAC 2026 Conference (March 23-26) and NIST CAISI sector-specific virtual workshops (April 2026, participation deadline March 20).
+- Updated gaps.md "Agent Identity Is Becoming a Platform Feature" observation to include the market crystallization signal: platform vendors, startups, and sector-specific providers all converging on agent governance simultaneously.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. The chapter quality assessment revealed that the book's frame chapters (introduction, why-agents-break-trust, pac-framework, building-the-edge) are shorter than the technical chapters, but reading them closely they are well-written and dense. The issue is not thinness but the relative depth of evidence supporting their arguments.
+
+The Huntress NHI attack data is the highest-impact addition because it provides the specific validation the confused deputy argument needed: not a survey about perceptions, but documented attack campaigns where the root cause was authorization constraints, not identity verification. The finding that "the issue was not proving who the identity belonged to, but constraining what the identity was allowed to do" is the single-sentence summary of the book's core argument.
+
+The RSAC Innovation Sandbox data is significant because it shows agent security crossing the threshold from "infrastructure gap organizations must build around" to "product category startups are funded to solve." Two of ten RSAC finalists in the same year, combined with Imprivata's sector-specific launch and the existing Microsoft/Okta coverage, tells a clear market formation story.
+
+**What I considered but did not do:**
+- Strengthening the introduction chapter. At 53 lines it is the thinnest chapter, but it reads well as a concise setup. Shane's style is direct and concise. A longer introduction risks diluting the opening.
+- Adding a worked example to pac-framework.md showing the framework applied to a specific agent deployment. Would make the framework more tangible but fabricating a scenario without a source violates the "do not make your own conclusions" rule.
+- Adding Zenity's Michael Bargury "0-click access-to-impact" demo preview from RSAC. The conference has not happened yet (March 23). Pre-conference marketing materials are not strong enough sources.
+- Restructuring the introduction to group chapters by theme. Deferred for 4+ sessions. The current linear structure works and grouping adds complexity without clear reader benefit. Dropping this as a standing priority.
+- Adding the SailPoint "80% of IT pros have seen agents act unexpectedly" stat. Interesting but the book already has extensive survey data on the governance gap.
+
+**Sources used:**
+- Huntress, "2026 Cyber Threat Report," huntress.com, February 2026.
+- RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," rsaconference.com, March 2026.
+- Token Security, RSAC Innovation Sandbox finalist announcement, March 2026.
+- Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," March 10, 2026.
+- NIST CAISI, "Listening Sessions on Barriers to AI Adoption," nist.gov, February 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The book's argument is strengthening with each session not because of new ideas but because the evidence base is thickening. The Huntress report, the RSAC finalists, and Imprivata all validate what the book has been saying: agents need their own identity and governance infrastructure, distinct from human and application IAM. The difference is that six months ago this was an architectural argument. Now it is a product category.
+- The Huntress finding about NHI authorization (not identity) being the root cause maps precisely to Shane's trust inversion: the issue is not "who is this agent?" but "what can this agent do?" The book has been making this argument from first principles. Now there is breach data confirming it.
+- RSAC 2026 (March 23-26) will likely be the most significant event for the book's domain in 2026. Between the Innovation Sandbox presentations, Zenity's agent vulnerability demo, and Bedrock Data's MCP governance sessions, there should be substantial new material. Worth a dedicated session after the conference.
+- NIST CAISI's expansion to sector-specific workshops (healthcare, finance, education in April) signals that NIST is moving from general agent identity/authorization standards to sector-specific guidance. This may require expanding the regulatory landscape chapter with sector-specific subsections after the workshops produce outputs.
+- The introduction restructuring has been deferred for enough sessions that it should be formally dropped as a priority. The current structure works.
+
+**Next session priorities:**
+1. RSA Conference 2026 (March 23-26) announcements. This is the highest-priority event for the book. Wait until after the conference for a dedicated session.
+2. NIST CAISI listening session participation deadline is March 20 (7 days).
+3. NIST AI 800-2 benchmark evaluation comment period closes March 31 (18 days).
+4. NIST concept paper comment period closes April 2 (20 days).
+5. The book's frame chapters (intro, pac-framework, building-the-edge) remain shorter than technical chapters. Consider whether a worked example or case study approach could strengthen the pac-framework chapter without violating source rules.
+6. Monitor whether RSAC Innovation Sandbox presentations from Token Security and Geordie AI provide enough technical detail for deeper coverage.
+
 ## 2026-03-13: White House National Cybersecurity Strategy
 
 **What I did:**

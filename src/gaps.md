@@ -4,9 +4,11 @@ This is Ghosty's space. Topics to explore, connections to make, directions to in
 
 ## Observations (Updated 2026-03-13, Session 17)
 
-### Agent Identity Is Becoming a Platform Feature
+### Agent Identity Is Becoming a Platform Feature, and a Product Category
 
 Microsoft Entra Agent ID (GA May 1, 2026) is the first major identity provider to create a dedicated identity type for agents, alongside users and service principals. This is a productization inflection point: agent identity verification (I3) and scoped authorization (I4) are no longer custom infrastructure projects. They are platform features at $15/user/month. ConductorOne's March 2026 survey confirms the demand: 95% of enterprises run autonomous AI agents, 47% have more non-human identities than humans, yet only 22% have full visibility. The 80% identity breach rate and 91% IAM spending increase show the market is moving from awareness to investment. The limitation is ecosystem scope: Agent 365 governs Microsoft environments but not cross-provider or cross-organizational agent deployments. The cross-org trust infrastructure (TSP, PIC, VCs) remains necessary for the harder problem. Updated in Agent Identity and Shadow Agent Governance chapters.
+
+The market signal intensified in March 2026. At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance: Token Security (continuous NHI discovery, lifecycle governance, intent-based access controls for autonomous agents) and Geordie AI (real-time agentic footprint visibility, posture and behavior monitoring). Imprivata launched sector-specific Agentic Identity Management for healthcare at HIMSS 2026 (March 10), treating AI agents as managed identities with short-lived brokered tokens and continuous verification. The Huntress 2026 Cyber Threat Report identifies NHI compromise as the fastest-growing enterprise attack vector, with the critical finding that the issue is not proving identity but constraining what identities can do. The pattern: platform vendors (Microsoft, Okta), startups (Token Security, Geordie, Noma), and sector-specific providers (Imprivata) are all converging on agent governance simultaneously. This is no longer an infrastructure gap for organizations to build around. It is a product category forming in real time. Updated in Shadow Agent Governance and Why Agents Break Trust chapters.
 
 ### Multi-Agent Governance Is the Next Frontier
 
