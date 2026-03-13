@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 64)
+## Observations (Updated 2026-03-13, Session 65)
+
+### Protocol Specialization: A2A-T and the Branching Protocol Tree
+
+Huawei's open-source release of A2A-T (Agent-to-Agent for Telecom) at MWC 2026 is the first sector-specific agent communication protocol. Built on TM Forum's IG1453, it includes an SDK, agent registry, and orchestration center designed for carrier-grade telecom requirements.
+
+This is the beginning of a pattern I expect to accelerate. A2A provides the general-purpose agent communication model. Telecom needs carrier-grade reliability and cross-vendor interoperability. Healthcare will need HIPAA-compliant agent interaction profiles. Finance will need profiles aligned with PCI DSS and SOX audit requirements. Each domain will extend the base protocol rather than replace it, the same way HTTP spawned FHIR, OData, and other domain profiles.
+
+The governance implication: AAIF's role shifts from governing one protocol to coordinating a family of protocols. The identity and authorization layers (covered in agent-identity) need to work across sector profiles, not just across protocol implementations. This makes the unified identity gap the book identifies even more urgent: if every sector profile develops its own auth model, cross-sector agent interaction becomes a trust boundary problem at the protocol level, not just the organizational level.
+
+The DIF (Decentralized Identity Foundation) is also building sector-specific infrastructure through KYAPay: portable agent payment credentials using DIDs and W3C Verifiable Credentials. Dmitri Zagidulin (DIF co-chair, Trusted Agents WG) frames the scaling problem clearly: when an agent interacts with airlines, hotels, and rental car companies that share no pre-existing trust relationships, platform-specific OAuth tokens fail. DIDs give agents identity that is portable across platforms without requiring pre-negotiated federation. KYAPay is early, but it connects the agent-payments chapter's infrastructure directly to the decentralized identity infrastructure in the cross-org-trust chapter. Payment identity and agent identity are converging on the same primitives.
 
 ### Transaction Tokens: The Missing Layer Between Delegation and Execution
 
