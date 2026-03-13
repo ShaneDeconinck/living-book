@@ -6,7 +6,7 @@ Salesforce's 2026 Connectivity Benchmark found that organizations already run an
 
 ## The Delegation Problem
 
-Shane has been precise about this from the start: agents do not forward intent, they create it.[^3] In a single-agent system, that creation happens once. The agent interprets a user's instruction and acts. The delegation chain is short: human to agent to action.
+Agents do not forward intent, they create it.[^3] In a single-agent system, that creation happens once. The agent interprets a user's instruction and acts. The delegation chain is short: human to agent to action.
 
 In a multi-agent system, delegation chains lengthen. A planning agent delegates a subtask to a research agent, which queries a data agent, which calls a tool agent. Each hop creates new intent. Each hop attenuates (or should attenuate) authority. Each hop crosses a trust boundary, even within the same organization.
 
@@ -68,7 +68,7 @@ But the total system exposure tells a different story. AgentLeak identifies seve
 
 Four of the seven channels are internal to the multi-agent system: inter-agent messages, shared memory writes, tool call arguments, and internal reasoning traces. Standard output-level auditing catches at most three. Organizations monitoring multi-agent systems at the output level, which is what most observability tools provide, have visibility into less than half of the actual leakage surface.
 
-The implication connects directly to this chapter's architectural patterns. Trust boundaries between agents are not just about preventing cascading decision failures. They are about controlling information flow through internal channels. The Firewalled Agent Networks architecture described below addresses this: the Information Firewall strips task-irrelevant content from inter-agent messages before they cross boundaries. AgentLeak quantifies what happens without that control: 68.9% total exposure despite lower output-level leakage. The defense is the same: structural enforcement at communication boundaries, not output-level inspection after the fact.
+Trust boundaries between agents are not just about preventing cascading decision failures. They are about controlling information flow through internal channels. The Firewalled Agent Networks architecture described below addresses this: the Information Firewall strips task-irrelevant content from inter-agent messages before they cross boundaries. AgentLeak quantifies what happens without that control: 68.9% total exposure despite lower output-level leakage. The defense is the same: structural enforcement at communication boundaries, not output-level inspection after the fact.
 
 ### Emergent Offensive Cooperation
 
