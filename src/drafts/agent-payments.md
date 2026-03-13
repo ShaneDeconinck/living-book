@@ -18,7 +18,7 @@ Agents break every one of these assumptions:
 
 **Machine-to-machine identity.** Payment processors verify the identity of human customers. When the customer is an agent acting on behalf of a human, the payment system needs to answer a different question: who authorized this agent to spend, and within what bounds?
 
-These are not edge cases. As agents move beyond coding assistants into business operations, purchasing, and cross-organizational workflows, payment becomes a core infrastructure requirement, not an afterthought.
+These are not edge cases. McKinsey projects agentic commerce will reach $1 trillion in US B2C retail by 2030, with $3 to $5 trillion globally.[^mckinsey-commerce] As agents move beyond coding assistants into purchasing and cross-organizational workflows, payment becomes a core infrastructure requirement, not an afterthought.
 
 ## Payment as Trust Signal
 
@@ -318,3 +318,4 @@ The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Goo
 [^worldpay-trulioo]: Worldpay, "Worldpay and Trulioo Collaborate to Embed Trust in the Agentic Commerce Era," businesswire.com, August 14, 2025. KYA framework with Digital Agent Passport for merchant-side agent verification.
 [^prove-verified]: Prove, "Prove Launches Verified Agent Solution to Secure the $1.7 Trillion Agentic Commerce Revolution," businesswire.com, October 23, 2025. Cryptographic chain of custody binding agent actions to verified humans. AP2 support at launch.
 [^prove-crisis]: Prove, "The Crisis of Identity, Part 1: Why Agentic Commerce Needs a KYA Roadmap," prove.com/blog, 2026.
+[^mckinsey-commerce]: McKinsey & Company, "The agentic commerce opportunity: How AI agents are ushering in a new era for consumers and merchants," October 2025. Projections: up to $1 trillion in US B2C retail by 2030, $3-5 trillion globally.
