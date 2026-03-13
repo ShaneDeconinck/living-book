@@ -2,7 +2,33 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 105)
+## Observations (Updated 2026-03-13, Session 107)
+
+### Supply Chain Security: Proactive Verification
+
+Session 107 proactively verified supply-chain-security.md. 25+ external claims checked across OpenClaw/ClawHub incidents, CVEs, model supply chain, AI-BOMs, standards bodies, and Shane's blog posts. Six issues found and fixed.
+
+**What was verified and found correct:**
+- OpenClaw/ClawHub: 100K stars (fastest), 10,700+ skills, 1,184 malicious, 335 ClawHavoc campaign, Koi Security/Oren Yomtov. SecurityScorecard: 135,000+ exposed instances, 82 countries. CVE-2026-25253 ClawJacked: Oasis Security, CVSS 8.8, patched v2026.2.25. CCB SafeOnWeb advisory confirmed.
+- BlueRock: 7,000+ MCP servers, 36.7% SSRF-vulnerable, Markitdown PoC. CVE-2026-27896 MCP Go SDK case-insensitive JSON bypass, fixed v1.3.1.
+- Training data poisoning: Anthropic/UK AISI/Turing, 250 documents, near-constant regardless of model size. arXiv:2510.07192.
+- DOD Anthropic supply-chain risk: confirmed from CNN, NPR, CNBC, TechCrunch. Mass surveillance and autonomous weapons refusal. OpenAI contract. Lawsuit March 2026.
+- CVE-2025-59536 Claude Code: Check Point Research, CVSS 8.7 (v4.0), hooks exploitation, MCP consent bypass.
+- RoguePilot: Orca Security, February 2026, GitHub Copilot HTML comment injection, repository takeover.
+- Five AI malware families: FRUITSHELL, PROMPTFLUX, PROMPTSTEAL (APT28/GRU), PROMPTLOCK, QUIETVAULT.
+- OWASP AI-BOM Initiative, SPDX 3.0.1 AI profiles, CycloneDX ML-BOM, CSA ATF. All confirmed.
+
+**What was changed:**
+1. RSP 3.0 date: "January 2026" → "February 2026" (effective February 24, 2026). Significant.
+2. Training data poisoning footnote: "2026" → "October 2025" with arXiv citation.
+3. mcp-remote "supply chain backdoor" → "supply chain vulnerability" (same fix as agent-communication).
+4. SecurityScorecard RCE: 50,000 → 15,200 (initial finding; 50K was later update).
+5. ERC-8004 "12+ chains" → "Ethereum mainnet and multiple EVM-compatible chains."
+6. RSP 3.0 footnote date corrected.
+
+**Pattern:** The training data poisoning footnote year error (2026 vs October 2025) matches the LangChain date error from context-infrastructure (Session 103): sources from late 2025 get rounded to "2026" because chapters were written in 2026. The mcp-remote "backdoor" error appeared in two chapters (agent-communication and supply-chain-security), suggesting it was in the mental model during initial writing.
+
+Verified chapters: 6 of 18 (introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security).
 
 ### Agent Communication: Proactive Verification
 

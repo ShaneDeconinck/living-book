@@ -1,5 +1,74 @@
 # Session Log
 
+## 2026-03-13 (Session 107)
+
+THOUGHT: Session 107. Pre-RSAC plateau session 42. Verifying supply-chain-security.md. 25+ claims to check across OpenClaw, CVEs, model supply chain, AI-BOMs, CSA ATF.
+THOUGHT: Found issues. RSP 3.0 is February 24, not January 2026. SecurityScorecard RCE number needs checking. Continuing verification.
+THOUGHT: Verification nearly complete. Found 1 significant issue (RSP 3.0 date) and several minor issues. Preparing fixes.
+THOUGHT: All fixes applied. Supply-chain-security.md verified: 25+ claims, 6 issues (1 significant, 5 minor). None fabricated.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 2 published (introduction.md, why-agents-break-trust.md). Read Chop Pop's feedback patterns for introduction (8 patterns) and why-agents-break-trust (5 patterns). Read A2A messages: Sapere Aude's re-verification of introduction.md (near-clean, 2 remaining fixes), Sapere Aude's why-agents-break-trust verification (8 issues), Chop Pop's edited why-agents-break-trust handoff (all 8 issues addressed).
+- **Fixed introduction.md remaining issues.** Added Microsoft Agent 365 footnote (Microsoft Security Blog, March 9, 2026). Corrected Kiro footnote date from February 21 to February 20. Introduction.md is now clean per Sapere Aude's re-verification.
+- Step 6 reassessment: pre-RSAC plateau continues into session 107 (42 consecutive sessions). RSAC March 23-26, 10 days out. Supply-chain-security.md is next for verification per session 105 priorities. Proceeding.
+- **Proactively verified supply-chain-security.md claims.** 25+ external claims checked. Found six issues.
+
+**What I verified and found correct:**
+- OpenClaw/ClawHub: fastest GitHub repo to 100K stars, 10,700+ skills, 1,184 malicious, 335 from ClawHavoc campaign, Koi Security/Oren Yomtov. All confirmed from Koi Security blog, The Hacker News, CyberPress, SC Media.
+- SecurityScorecard: 135,000+ exposed instances across 82 countries. Confirmed from SecurityScorecard STRIKE team blog and multiple secondary sources.
+- CVE-2026-25253 ClawJacked: Oasis Security, CVSS 8.8, WebSocket origin validation bypass, token theft, sandbox escape, host RCE. Patched in v2026.2.25. CCB SafeOnWeb advisory confirmed. All confirmed.
+- WhatsApp MCP tool poisoning: Invariant Labs, April 2025. Previously verified.
+- MCPTox benchmark: previously verified in agent-communication.
+- BlueRock: 7,000+ MCP servers, 36.7% SSRF-vulnerable, Markitdown proof of concept, AWS IAM credential retrieval. Confirmed from bluerock.io.
+- CVE-2026-26118 Azure MCP SSRF: previously verified.
+- CVE-2025-49596 MCP Inspector: previously verified.
+- 30 MCP CVEs in 60 days: previously verified.
+- CVE-2026-27896 MCP Go SDK: case-insensitive JSON parsing, Unicode folding bypass, fixed in v1.3.1. Confirmed from GitLab advisory, GitHub GHSA, dev.to analysis.
+- Training data poisoning: Anthropic, UK AISI, Alan Turing Institute, 250 documents, near-constant regardless of model size. Confirmed from Anthropic research blog, arXiv:2510.07192, Turing Institute blog, Dark Reading, Fortune.
+- DOD Anthropic supply-chain risk designation: confirmed from CNN, NPR, CNBC, TechCrunch, Fortune. Anthropic refused mass surveillance and autonomous weapons use. OpenAI took the contract. Anthropic sued March 2026. Amicus brief with 30+ employees, open letter with 875+ employees. All confirmed.
+- CVE-2025-59536 Claude Code: Check Point Research, CVSS 8.7 (v4.0), hooks exploitation, MCP consent bypass. Patched September 22, 2025, CVE published October 3, 2025. Confirmed.
+- RoguePilot: Orca Security, February 2026, GitHub Copilot, HTML comment prompt injection in Issues, GITHUB_TOKEN exfiltration, repository takeover. Patched by Microsoft. Confirmed.
+- Five AI malware families: FRUITSHELL, PROMPTFLUX, PROMPTSTEAL, PROMPTLOCK, QUIETVAULT. Google Threat Intelligence. PROMPTFLUX rewrites source code hourly via Gemini. PROMPTSTEAL used by APT28 against Ukraine. All confirmed.
+- NVIDIA AI Red Team configuration file guidance. Previously referenced.
+- OWASP AI-BOM Initiative: under GenAI Security Project, completeness scoring methodology, open-source tooling. Confirmed from genai.owasp.org.
+- SPDX 3.0.1 AI and Dataset profiles: confirmed from spdx.dev, Linux Foundation guide. JSON-LD serialization confirmed.
+- CycloneDX ML-BOM: confirmed from cyclonedx.org.
+- CSA Agentic Trust Framework: February 2, 2026. Confirmed previously.
+- Shane's blog references: all verified in prior sessions.
+
+**What I changed:**
+1. **RSP 3.0 date (significant).** Changed "In January 2026" to "In February 2026." RSP 3.0's effective date is February 24, 2026, per Anthropic's own page. The chapter had the wrong month.
+2. **Training data poisoning footnote date (minor).** Changed "2026" to "October 2025" with arXiv citation (arXiv:2510.07192). The research was published October 8, 2025, not 2026.
+3. **mcp-remote "supply chain backdoor" (minor).** Changed to "supply chain vulnerability (CVE-2025-6514, a command injection in its OAuth proxy)." Same error corrected in agent-communication chapter in Session 105: the vulnerability was a command injection, not an intentionally planted backdoor.
+4. **SecurityScorecard RCE number (minor).** Changed "more than 50,000 exploitable via remote code execution" to "over 15,000 directly vulnerable to remote code execution and more than 53,000 correlated with prior breach activity." The initial STRIKE finding was 15,200 RCE-vulnerable; the 50,000 figure appeared in later updates. The footnote was also corrected.
+5. **ERC-8004 "12+ chains" (minor).** Changed footnote from "deployed across 12+ chains" to "deployed on Ethereum mainnet and multiple EVM-compatible chains." The 12+ figure could not be verified; deployments are confirmed on Ethereum mainnet, Base, and testnet chains.
+6. **RSP 3.0 footnote date (minor).** Changed "January 2026" to "effective February 24, 2026" in the footnote.
+
+**What I considered but did not do:**
+- Verifying the exact SPDX "36 fields" count. This requires reading the SPDX 3.0.1 specification directly to count AI Profile and Dataset Profile fields. The profiles exist and are well-documented; the exact field count is not critical to the chapter's argument. Left for future verification if needed.
+- Checking whether PROMPTSTEAL is better described as a "data miner" (Google's characterization) rather than generating "credential-theft commands" (the chapter's framing). The chapter's characterization is within the range of what the malware does (queries LLMs to generate commands targeting Ukrainian systems). The distinction is minor.
+- Rewriting the SecurityScorecard section to explain the number growth over time (15,200 → 50,000). The corrected text uses the initial, well-sourced figure. The later growth is documented in the footnote.
+
+**What I noticed:**
+- The RSP 3.0 date error follows a familiar pattern: the chapter says "January" when the actual date is February 24. This may stem from Anthropic's initial announcement or discussion happening in January, with the formal publication in February.
+- The mcp-remote "backdoor" error is the same one corrected in agent-communication (Session 105). The same incorrect framing ("backdoor" for what was actually a command injection vulnerability) appeared in two chapters. This suggests the error was present in the source material or mental model during initial writing.
+- The training data poisoning footnote year error (2026 vs October 2025) matches the exact pattern found in context-infrastructure (Session 103): a source from late 2025 gets rounded to "2026" because the chapter was written in 2026.
+- Supply-chain-security.md is a strong chapter overall. The OpenClaw crisis narrative is well-sourced and accurate. The five-layer attack taxonomy (tool/plugin, tool poisoning, MCP servers, model supply chain, memory poisoning) is well-organized. The AI-BOM coverage is comprehensive. No fabricated claims found.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security (6 of 18). Remaining: pac-framework, why-agents-break-trust (awaiting Sapere Aude re-verification of edited version).
+
+**Sources used:**
+- Web searches: OpenClaw ClawHub ClawHavoc Koi Security, SecurityScorecard OpenClaw 135000 instances, CVE-2026-25253 ClawJacked Oasis Security, Anthropic RSP 3.0 date, Pentagon DOD Anthropic supply chain risk, training data poisoning 250 documents Anthropic Turing, BlueRock MCP Trust Registry SSRF Markitdown, SPDX 3.0.1 AI profiles, OWASP AI-BOM Initiative, CVE-2026-27896 MCP Go SDK, ERC-8004 deployed chains, PROMPTFLUX PROMPTSTEAL Google AI malware, CVE-2025-59536 CVSS Claude Code, CCB SafeOnWeb OpenClaw advisory, RoguePilot Orca Security GitHub Copilot.
+- Shane's blog posts: OpenClaw/Moltbook analysis (February 17, 2026), trust inversion (February 2026).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session deadline March 20 (7 days): track outcomes.
+4. Continue proactive verification: pac-framework.md next.
+5. Await Sapere Aude's re-verification of edited why-agents-break-trust.md.
+
 ## 2026-03-13 (Session 105)
 
 THOUGHT: Session 105. Pre-RSAC plateau session 40. Verifying agent-communication.md. 40+ footnotes, MCP/A2A security incidents, protocol landscape, WebMCP, AG-UI, A2UI.
