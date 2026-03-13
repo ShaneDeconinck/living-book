@@ -1,5 +1,76 @@
 # Session Log
 
+## 2026-03-13 (Session 121)
+
+THOUGHT: Session 121. No new blog posts, PAC unchanged. Pipeline stalled 13 sessions. 2 unverified drafts remain (building-the-edge, gaps). Verifying building-the-edge.md: 169 lines, 26 footnotes, heavy claim density. Already see $165M composite fabrication on line 95.
+THOUGHT: Verifying building-the-edge.md. Found 5 issues: (1) $165M composite fabrication AGAIN (significant), (2) Kai date March 11 should be March 10 (minor), (3) Token Security SC Awards categories wrong (significant), (4) Galileo 87% unqualified twice (significant), (5) Gartner guardian prediction wording imprecise (minor).
+THOUGHT: All fixes applied plus timeline reordering and 'rapidly' cut. building-the-edge.md verified: 26 footnotes, 5 issues (3 significant, 2 minor). No fabricated claims beyond the composite figure pattern.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's feedback patterns for all published chapters plus shadow-agent-governance pre-edit notes. Read A2A messages: no new messages since Session 120. Pipeline still stalled 13 sessions.
+- Step 6 reassessment: RSAC March 23-26, 10 days out. Pipeline bottleneck continues. 2 unverified drafts remain (building-the-edge, gaps). Picked building-the-edge.md: 169 lines, the capstone chapter, high claim density across market events, funding rounds, standards timelines, and product launches.
+- **Proactively verified building-the-edge.md claims.** 26 footnotes checked across 20+ sources. Found five issues.
+
+**What I verified and found correct:**
+- Shane's "When Intelligence Becomes Commodity" blog post [^1]: confirmed in /opt/blog-source.
+- Shane's "AI Agents Need the Inverse of Human Trust" blog post [^8]: confirmed in /opt/blog-source.
+- Shane's "Trusted AI Agents by Design" blog post [^9]: confirmed in /opt/blog-source.
+- Shane's "The Work That's Leaving" blog post [^15]: confirmed in /opt/blog-source.
+- Gravitee State of AI Agent Security 2026 [^2]: 88% security incidents, 14.4% full security approval. Confirmed.
+- Cisco State of AI Security 2026 [^cisco-edge]: 83% plan agentic AI, only 29% ready securely. Confirmed.
+- Forrester 2026 predictions [^forrester-prediction]: first public agentic AI breach with employee dismissals. Paddy Harrington: cascading multi-agent failures. Confirmed via Infosecurity Magazine, Forrester blog.
+- Palo Alto Networks/CyberArk [^panw-cyberark]: $25B acquisition completed February 11, 2026. Largest in security industry history. CyberArk SPIFFE SVIDs for agent identities. $45.00 cash + 2.2005 shares per share. Confirmed via Palo Alto press release, CSO Online, GovCon Wire.
+- Gartner Market Guide for Guardian Agents [^gartner-guardian-edge]: February 2026, Avivah Litan and Daryl Plummer. 80% unauthorized transactions from internal violations through 2028. Representative vendors: PlainID, NeuralTrust, Wayfound, Holistic AI, Opsin. All confirmed.
+- White House national cybersecurity strategy: Pillar 5 names agentic AI as strategic priority. First national strategy globally to do so. Confirmed via Forrester, Mayer Brown, Zenity analyses.
+- Singapore IMDA agentic AI governance framework: launched January 22, 2026 at WEF Davos. Four dimensions. World's first. Confirmed via IMDA press release, Computer Weekly, Baker McKenzie.
+- Mastercard Verifiable Intent [^vi-partners]: open-sourced with Google. Partners: Fiserv, IBM, Checkout.com, Basis Theory, Getnet. Reference implementation at verifiableintent.dev. Confirmed via Mastercard, PYMNTS, The Paypers.
+- OpenAI Codex Security [^codex-security-edge]: March 6, 2026. 1.2 million commits scanned. 792 critical, 10,561 high-severity findings. OpenSSH, GnuTLS, PHP, Chromium. Confirmed via OpenAI, The Hacker News, SecurityWeek.
+- CrowdStrike RSAC 2026 [^crowdstrike-rsac]: George Kurtz keynote March 24. "Most organizations deploy AI agents with less governance than they'd give an intern." AI Operational Reality Manifesto. Confirmed via CrowdStrike event page, X post.
+- RSAC Innovation Sandbox [^rsac-sandbox]: all 10 finalists confirmed (Charm Security, Clearly AI, Crash Override, Fig Security, Geordie AI, Glide Identity, Humanix, Realm Labs, Token Security, ZeroPath). $5M per finalist. 100+ acquisitions, $17.8B in historical funding. Confirmed via RSAC press release, prnewswire.
+- Onyx Security [^onyx-funding]: $40M, March 12, 2026. Conviction and Cyberstarts. 70+ employees. Fortune 500 customers. Confirmed via BusinessWire, SecurityWeek.
+- Amazon Kiro incident [^kiro-edge]: deleted production AWS Cost Explorer, 13-hour outage. FT reported February 20, Amazon responded February 21. Inherited engineer's elevated permissions, bypassed two-person approval. Confirmed via Financial Times reporting, multiple analyses.
+- Microsoft Agent 365 [^agent365]: GA May 1, 2026. $15/user/month standalone, $99/user/month in E7. Agent registry, shadow agent discovery, Agent IDs, least-privilege, audit trails. Confirmed via Microsoft Security Blog, VentureBeat, AdminDroid.
+- PAC Framework references [^6][^policy-arch][^durability][^iterative]: all correctly attributed to trustedagentic.ai. Content confirmed.
+- Domain attribution: all correct. Shane blog posts on shanedeconinck.be. PAC Framework on trustedagentic.ai. No misattributions.
+
+**What I changed:**
+1. **$165M composite fabrication (significant).** Removed "Two stealth-mode companies raising $165 million combined in 48 hours" and replaced with "The two rounds illustrate adjacent but distinct bets: Kai on autonomous defense at machine speed, Onyx on governance infrastructure for the agents themselves." This is the THIRD instance of this exact fabrication pattern (previously in introduction.md and shadow-agent-governance.md). The individual facts are real; the composite narrative figure is invention.
+2. **Kai date: March 11 → March 10 (minor).** Text said "March 11" but the prnewswire press release [^kai-funding] is dated March 10, 2026. Fixed to match the primary source. "Follows the next day" changed to "Two days later" since Onyx announced March 12.
+3. **Token Security SC Awards categories (significant).** Footnote [^token-sc-awards] said "Best Identity Security Solution and Best AI Security Solution." The actual categories per the GlobeNewsWire press release (March 4, 2026) are "Most Promising Early-Stage Startup and Best Emerging Technology." Fixed.
+4. **Galileo 87% stat softened (significant).** The specific "87% downstream decision poisoning within four hours" figure appeared twice (lines 47 and 73), unqualified. This stat's primary source (Galileo AI, December 2025) has been flagged as unverifiable across multiple chapters. In multi-agent-trust.md it carries an epistemic caveat; in why-agents-break-trust.md it was softened entirely. Softened both instances here to describe the finding directionally without the specific percentage.
+5. **Gartner guardian prediction wording (minor).** Changed "incumbent AI security systems" to "incumbent security systems protecting AI agent activities" to match Gartner's actual prediction scope more precisely.
+6. **Timeline reordering (minor).** Moved "April 2, 2026: NIST comment period" before "April 2026: NIST CAISI workshops" and before "May 1, 2026: Microsoft Agent 365" to restore chronological order.
+7. **"Rapidly" cut (minor).** Closing line "The intelligence is rapidly becoming commodity" lost "rapidly" per Chop Pop's feedback pattern #5 from introduction.md: the word adds nothing when the entire chapter establishes urgency.
+
+**What I considered but did not do:**
+- Removing "the largest funding round to date for an agentic AI security company" from the Kai description. This superlative was already cut during the composite figure fix. The unsourced superlative pattern (Chop Pop feedback) was resolved by the restructuring.
+- Updating the RSAC section tense. The bullet uses mixed tense: "Kurtz's keynote frames" (present) vs "Kurtz will unveil" (future). Since RSAC hasn't happened yet (March 23-26 vs today March 13), the tense is inconsistent. However, the content comes from pre-event announcements, and the book will be read after RSAC. Left for post-RSAC revision when actual event details can replace pre-event marketing.
+- Checking whether Microsoft Agent 365's "first major platform vendor" claim is an unsourced superlative. The Microsoft Security Blog (March 9, 2026) does frame it this way, and no prior equivalent product exists from AWS, Google, or other major platform vendors. Defensible as sourced from Microsoft's own positioning.
+- Verifying the Galileo primary source (December 2025 research). The stat has been flagged across 4+ chapters. The correct approach, applied here, is to soften the claim rather than assert it. If the primary source becomes available, the specific figure can be restored.
+
+**What I noticed:**
+- building-the-edge.md is a strong capstone chapter. 26 footnotes verified, 5 issues found (3 significant, 2 minor). The $165M composite figure is the most concerning: this is the third time this exact pattern appeared. The fabrication instinct is specifically tied to funding round narratives.
+- Verified chapters now: 16 of 18. Only gaps.md remains unverified.
+- Domain attribution is correct throughout. The Chop Pop feedback has been fully internalized in this chapter.
+- The convergence timeline is well-sourced and all claims check out. The RSAC section will need updating after March 26.
+- The Galileo 87% stat has now been softened in building-the-edge.md, matching the treatment across all other chapters.
+
+**Web search developments:**
+- No new developments beyond what was verified. All claims in the chapter confirmed against current sources.
+
+**Sources used:**
+- Web searches: Palo Alto CyberArk $25B February 2026, Microsoft Agent 365 May 2026, CrowdStrike RSAC 2026 Kurtz keynote, RSAC Innovation Sandbox 2026 finalists, Forrester 2026 agentic AI breach prediction, Cisco State of AI Security 2026, OpenAI Codex Security March 2026, Mastercard Verifiable Intent March 2026, Amazon Kiro incident, Gartner Market Guide Guardian Agents, White House cybersecurity strategy Pillar 5 agentic AI, Singapore IMDA agentic AI governance Davos, Kai $125M funding March 2026, Onyx Security $40M, Token Security SC Awards 2026, CyberArk SPIFFE SVID.
+- Shane's blog posts: when-intelligence-becomes-commodity, agent-trust-inversion, the-work-thats-leaving, lfdt-meetup-trust-ecosystems-authority-continuity.
+- Chop Pop feedback: all published chapter patterns, shadow-agent-governance pre-edit notes. Key pattern applied: composite funding fabrication (#2).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md RSAC section with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Last unverified draft: gaps.md. Lower priority as it is the "full freedom" chapter.
+4. Await Sapere Aude's verifications (10 items in queue).
+5. NIST CAISI: Agent Identity concept document comment period closes April 2.
+
 ## 2026-03-13 (Session 120)
 
 THOUGHT: Session 120. No new blog posts, PAC unchanged. Pipeline stalled 12 sessions. 3 unverified drafts remain (agent-payments, building-the-edge, gaps). Picking agent-payments.md: 300 lines, 19 footnotes, high claim density.
@@ -4861,3 +4932,6 @@ Shadow Agent Governance has been the #1 priority for three consecutive sessions.
 3. Revisit the introduction structure: with 11 chapters, the chapter listing is getting long. Consider grouping by theme (Foundation, Infrastructure, Governance, Operations).
 THOUGHT: Session 117. No new blog posts, PAC unchanged. Pipeline stalled. Picking reliability-evaluation.md for proactive verification (5 unverified remain).
 THOUGHT: Verifying reliability-evaluation.md. 279 lines, 23 footnotes. Found 2 issues: fabricated author name on reliability science paper (significant), Dynatrace report date wrong (minor).
+THOUGHT: Session 121. No new blog posts, PAC unchanged. Pipeline stalled 13 sessions. 2 unverified drafts remain (building-the-edge, gaps). Verifying building-the-edge.md: 169 lines, 26 footnotes, heavy claim density. Already see $165M composite fabrication on line 95.
+THOUGHT: Verifying building-the-edge.md. Found 5 issues: (1) $165M composite fabrication AGAIN (significant), (2) Kai date March 11 should be March 10 (minor), (3) Token Security SC Awards categories wrong (significant), (4) Galileo 87% unqualified twice (significant), (5) Gartner guardian prediction wording imprecise (minor).
+THOUGHT: All fixes applied plus timeline reordering and 'rapidly' cut. building-the-edge.md verified: 26 footnotes, 5 issues (3 significant, 2 minor). No fabricated claims beyond the composite figure pattern.
