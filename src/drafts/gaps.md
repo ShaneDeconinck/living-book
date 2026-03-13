@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 61)
+## Observations (Updated 2026-03-13, Session 62)
+
+### The Book Covers the Full OWASP Agentic Attack Surface
+
+The OWASP Top 10 for Agentic Applications (December 2025, 100+ researchers) is the industry's first standardized risk taxonomy for autonomous agents. Mapping the book's chapters against all 10 risks confirms full coverage: every OWASP risk category is addressed in at least one chapter, and most are covered from multiple angles. The mapping is now explicit in the why-agents-break-trust chapter.
+
+What the mapping reveals is structural: the OWASP taxonomy organizes by attack surface (what can go wrong), while the PAC Framework organizes by governance response (what infrastructure prevents it). The two are complementary, not competing. A practitioner needs both: OWASP to understand the threat landscape, PAC to understand what to build.
+
+The most interesting alignment: OWASP's "Least-Agency" principle (agents should receive minimum autonomy, not just minimum permissions) maps directly to the PAC Agent Profiler's autonomy dial. The most interesting gap: OWASP treats "Human-Agent Trust Exploitation" (ASI09) as a risk, which the book covers through the complacency trap (grounded in 40 years of human factors research from Bainbridge, Norman, and aviation). The book's treatment goes substantially deeper than the taxonomy because it connects over-trust to infrastructure design: the solution is not training humans to be more vigilant but building infrastructure that does not depend on sustained vigilance.
 
 ### Agent Security Tooling Has a Systematic Blind Spot
 

@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13 20:30 UTC: OWASP Agentic Risk Mapping and Book Assessment (Session 62)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new changes since Sessions 60-61.
+- Read current book state: all 15 chapters assessed by line count and content. Strongest chapters: agent-communication (501), gaps (401), multi-agent-trust (355), shadow-agent-governance (345), agent-identity (345), regulatory-landscape (335), cross-org-trust (311). All chapters substantive and well-sourced.
+- Read PAC Framework fresh from trustedagentic: 19 questions, three pillars, six governance dimensions. Unchanged since March 7.
+- Read Shane's blog posts. Found two posts published since the last logged session (59): EUDI Credential Formats Crash Course (March 9) and Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity (March 11). Both are already integrated into the cross-org-trust chapter by Sessions 60-61 (which did not write log entries).
+- Read src/feedback/: no feedback files exist yet.
+- Step 5 reassessment: all chapters solid. Shane's latest posts already integrated. No weak chapters requiring urgent strengthening. Web searched for recent developments: Singapore IMDA framework (already in regulatory chapter), OWASP Top 10 for Agentic Applications (referenced in passing but not systematically mapped), International AI Safety Report 2026 (Bengio, 100+ experts, 30+ countries; findings already covered in book's technical chapters), NIST CAISI RFI (already covered). No major new developments missed.
+- Identified the OWASP Top 10 for Agentic Applications (December 2025, 100+ researchers) as the most impactful addition: the industry standard risk taxonomy that the book should explicitly engage with. Mapped all 10 risks to book chapters; confirmed the book covers all 10 in depth.
+
+**What I changed:**
+- **why-agents-break-trust.md**: Added new section "The OWASP Agentic Risk Taxonomy" (approximately 25 lines including table) between the trust infrastructure section and "The Shape of This Book" section. Maps all 10 OWASP risks (ASI01-ASI10) to specific book chapters. Notes two OWASP principles (Least-Agency, Strong Observability) and their PAC equivalents. Concludes that OWASP organizes by attack surface while PAC organizes by governance response: complementary frameworks. Added one footnote.
+- **gaps.md**: Updated session number to 62. Added observation "The Book Covers the Full OWASP Agentic Attack Surface" noting the structural alignment between OWASP and PAC, and highlighting that the book's treatment of human-agent trust exploitation (ASI09) goes substantially deeper than the taxonomy through its grounding in human factors research.
+
+**What I considered but did not do:**
+- Adding the International AI Safety Report 2026 (Bengio, 100+ experts, 30+ countries, February 2026) to the regulatory-landscape chapter. The report is significant as multilateral scientific consensus, but its key findings about agents (reliability concerns, autonomous risk, evaluation gaming) are already covered in the book's technical chapters. The regulatory chapter is already 335 lines and comprehensive. Would be duplicative.
+- Adding the OWASP Top 10 mapping to the introduction instead of why-agents-break-trust. The introduction already has a book structure section. The why-agents-break-trust chapter is the better home because it establishes the risk landscape that the rest of the book addresses.
+- Strengthening the context-infrastructure chapter (231 lines). On review, it is solid: covers Shane's context infrastructure post, Claude Code and Manus case studies, five dimensions of context infrastructure, ICAM convergence, and PAC mapping. Length is appropriate for the chapter's scope.
+- Strengthening the building-the-edge chapter (167 lines). Previous sessions noted it is a synthesis chapter and the current length is appropriate. Adding content would require genuinely new synthesis.
+- Adding recent RSAC 2026 preview content (Bedrock Data, Confidencial). These are pre-conference announcements, not outcomes. Better covered post-RSAC.
+- Reconstructing log entries for Sessions 60-61. These sessions made commits but did not write to log.md. The commit messages provide sufficient record: Session 60 cleaned up the gaps chapter and added soul.md identity guidance; Session 61 added AgentShield benchmark findings to the reliability-evaluation chapter.
+
+**What I noticed:**
+- The book now has explicit engagement with three major risk/governance frameworks: PAC (organizing spine), OWASP Top 10 for Agentic Applications (attack surface taxonomy), and CSA Agentic Trust Framework (zero trust governance specification). These three are complementary: PAC is strategic (what to build), OWASP is tactical (what to defend against), CSA ATF is operational (how to implement zero trust for agents).
+- Sessions 60 and 61 did not write to log.md. This is a process gap: the git commits record what changed, but the reasoning behind those changes is lost. Future sessions should always log.
+- The pre-RSAC plateau is real. The last several sessions have been finding increasingly marginal additions. The book is as comprehensive as it can be without RSAC outcomes, and new additions risk diluting rather than strengthening. Post-RSAC (after March 26) will be the next high-impact period: Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+
+**Sources used:**
+- OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025. 100+ researchers. Ten risk categories: Agent Goal Hijack, Tool Misuse, Identity and Privilege Abuse, Supply Chain Vulnerabilities, Insecure Runtime Execution, Insecure Inter-Agent Communication, Memory Poisoning, Cascading Planning Failures, Human-Agent Trust Exploitation, Rogue Agents.
+- International AI Safety Report 2026, internationalaisafetyreport.org, February 2026. Led by Yoshua Bengio, 100+ experts, 30+ countries (checked: findings already covered in book).
+- Shane's blog (checked: March 9 EUDI post and March 11 TSP+PIC meetup post already integrated by Sessions 60-61).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
+6. Monitor AAP draft progression: if it gains IETF working group adoption, it could become the definitive agent authorization extension.
+
 ## 2026-03-13 17:00 UTC: OAuth Agent Authorization Standards Acceleration (Session 59)
 
 **What I did:**

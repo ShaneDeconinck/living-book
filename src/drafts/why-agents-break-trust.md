@@ -107,6 +107,29 @@ The emerging infrastructure to address this is real but early. OAuth 2.0 Token E
 
 None of this is finished. But the direction is clear: agents need their own trust layer, distinct from human identity systems, built on verifiable credentials and scoped delegation rather than ambient authority.
 
+## The OWASP Agentic Risk Taxonomy
+
+The OWASP Top 10 for Agentic Applications, released in December 2025 by more than 100 researchers with contributions from NIST, Microsoft's AI Red Team, and others, provides the industry's first standardized risk taxonomy for autonomous agents.[^owasp-agentic] The ten risks validate the structure of this book: every one is covered in depth, and the book goes deeper than the taxonomy by connecting risks to infrastructure, governance, and the PAC Framework.
+
+Two principles from the OWASP framework are worth noting explicitly. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. This is the PAC Agent Profiler's autonomy dial applied as a security control. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations. This maps to PAC's infrastructure scale: I1 (Open) has no observability, I5 (Contained) has full observability.
+
+The mapping to this book:
+
+| OWASP Risk | Book Coverage |
+|---|---|
+| **ASI01: Agent Goal Hijack** (prompt injection, goal manipulation) | [Why Agents Break Trust](why-agents-break-trust.md) (PleaseFix, Perplexity Comet), [Supply Chain Security](supply-chain-security.md) (tool poisoning, MCPTox) |
+| **ASI02: Tool Misuse** (legitimate tools bent to destructive outputs) | [Reliability & Evaluation](reliability-evaluation.md) (AgentShield tool abuse blind spot), [Execution Security](execution-security.md) (defense in depth) |
+| **ASI03: Identity and Privilege Abuse** (over-privileged credentials, confused deputy) | [Agent Identity](agent-identity.md) (OAuth extensions, DPoP, scoped credentials), [Cross-Org Trust](cross-org-trust.md) (PIC eliminates confused deputy structurally) |
+| **ASI04: Supply Chain Vulnerabilities** (compromised tools, plugins, MCP servers) | [Supply Chain Security](supply-chain-security.md) (full chapter: 30 CVEs in 60 days, MCPTox, tool poisoning) |
+| **ASI05: Insecure Runtime Execution** (code injection via natural language) | [Execution Security](execution-security.md) (7-layer defense: OS sandboxing through semantic policy enforcement) |
+| **ASI06: Insecure Inter-Agent Communication** (spoofing, interception) | [Agent Communication](agent-communication.md) (MCP/A2A security gaps), [Cross-Org Trust](cross-org-trust.md) (TSP for authenticated channels) |
+| **ASI07: Memory Poisoning** (persistent manipulation of agent memory/RAG) | [Context Infrastructure](context-infrastructure.md) (AI Recommendation Poisoning), [Supply Chain Security](supply-chain-security.md) (memory poisoning attacks) |
+| **ASI08: Cascading Planning Failures** (compounding errors across agent chains) | [Multi-Agent Trust](multi-agent-trust.md) (Galileo: 87% downstream poisoning in 4 hours, AgentLeak internal leakage) |
+| **ASI09: Human-Agent Trust Exploitation** (over-trust, complacency) | [Reliability & Evaluation](reliability-evaluation.md) (complacency trap, 40 years of human factors research), [Human-Agent Collaboration](human-agent-collaboration.md) |
+| **ASI10: Rogue Agents** (compromised or misaligned agents acting autonomously) | [Shadow Agent Governance](shadow-agent-governance.md) (discovery, registration, enforcement), this chapter (Kiro incident) |
+
+The OWASP taxonomy organizes risks by attack surface. The PAC Framework organizes by governance response. Together, they answer both questions a practitioner needs: what can go wrong (OWASP), and what infrastructure prevents it (PAC).
+
 ## The Shape of This Book
 
 This book is organized around the PAC Framework: Potential, Accountability, and Control. These three pillars capture what organizations need to evaluate when deploying agents:
@@ -146,3 +169,4 @@ Let's start with the framework itself.
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. The deploying engineer had elevated permissions that bypassed the standard two-person approval process. Amazon mandated senior approval for AI-assisted production code changes post-incident.
 [^kiro-pattern]: Barrack.ai, "Amazon's AI Deleted Production. Then Amazon Blamed the Humans," blog.barrack.ai, February 2026. Documents ten incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
 [^google-ai-malware]: Google Cloud Security, "Cloud Threat Horizons Report H1 2026," March 2026. UNC6426/QUIETVAULT attack chain documented: npm supply chain compromise → AI tool weaponization → AWS admin in 72 hours. Five AI-powered malware families (FRUITSHELL, PROMPTFLUX, PROMPTSTEAL, PROMPTLOCK, QUIETVAULT) identified in active deployment. APT28 (GRU) use of PROMPTSTEAL confirmed. See also The Hacker News, "UNC6426 Exploits nx npm Supply-Chain Attack to Gain AWS Admin Access in 72 Hours," March 2026.
+[^owasp-agentic]: OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025. Developed by 100+ researchers with contributions from Zenity, NIST, Microsoft's AI Red Team, and others. Introduces Least-Agency and Strong Observability as core principles.
