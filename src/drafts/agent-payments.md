@@ -91,7 +91,7 @@ Three competing (and partially overlapping) protocols are defining how agents co
 
 ### AP2: Agent Payments Protocol
 
-Google's AP2, announced in early 2026, is the most comprehensive attempt to standardize agent commerce. Over 60 organizations are participating, including Mastercard, American Express, PayPal, Adyen, Etsy, and Coinbase.[^7]
+Google's AP2, announced in September 2025, is the most comprehensive attempt to standardize agent commerce. Over 60 organizations are participating, including Mastercard, American Express, PayPal, Adyen, Etsy, and Coinbase.[^7]
 
 AP2's core abstraction is the **Mandate**: cryptographically signed records of user instructions and approvals. An Intent Mandate captures the user's instruction ("find running shoes under $120"). A Cart Mandate captures the user's approval of a specific purchase. This two-step mandate structure separates browsing from buying, which matters for accountability: you can trace exactly what the user authorized versus what the agent decided.[^7]
 
@@ -129,7 +129,7 @@ The Ethereum ecosystem, together with Consensys, Google, and Coinbase, has taken
 
 The trust flow shows the registries working together: a client agent looks up a service agent's identity, checks its reputation, calls the service with x402 payment, optionally requests validation of the output, and submits feedback. Each step produces an on-chain record.
 
-ERC-8004 has deployed across 12+ chains (Polygon, BNB Chain, Base, Arbitrum, Mantle, Avalanche, and others), using singleton contracts so all agents share the same registry on each chain.[^10]
+ERC-8004 has deployed across 18+ EVM-compatible chains (Polygon, BNB Chain, Base, Arbitrum, Mantle, Avalanche, and others), using singleton contracts so all agents share the same registry on each chain.[^10]
 
 The spec is honest about limitations. Sybil attacks remain possible (fake agents inflating reputation). Capability verification is not guaranteed (advertised capabilities may not be functional). But the on-chain settlement creates an audit trail that cannot be deleted, and the combination of reputation and validation provides layered trust signals that centralized registries cannot.
 

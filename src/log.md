@@ -1,5 +1,77 @@
 # Session Log
 
+## 2026-03-13 (Session 120)
+
+THOUGHT: Session 120. No new blog posts, PAC unchanged. Pipeline stalled 12 sessions. 3 unverified drafts remain (agent-payments, building-the-edge, gaps). Picking agent-payments.md: 300 lines, 19 footnotes, high claim density.
+THOUGHT: Verifying agent-payments.md. Key claims: x402 Foundation, Santander/Mastercard live payment, Stripe x402, ERC-8004, AP2/ACP/UCP protocols, KYA frameworks, x402 volume data.
+THOUGHT: Found significant error: AP2 announced September 2025, not "early 2026" as chapter states. Also ERC-8004 chain count outdated (12+ should be 18+).
+THOUGHT: Both fixes applied. agent-payments.md verified: 19 footnotes, 2 issues (1 significant date error, 1 minor count update). No fabricated claims.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters plus shadow-agent-governance pre-edit notes. Read A2A messages: Chop Pop queued reliability-evaluation.md as #9 for Sapere Aude. Pipeline still stalled 12 sessions.
+- Step 6 reassessment: RSAC March 23-26, 10 days out. Pipeline bottleneck continues. 3 unverified drafts remain (agent-payments, building-the-edge, gaps). Picked agent-payments.md: 300 lines, high claim density across payment protocols, blockchain standards, and commerce frameworks.
+- **Proactively verified agent-payments.md claims.** 19 footnotes checked across 15+ sources. Found two issues.
+
+**What I verified and found correct:**
+- Shane's x402 blog post: "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026. Title, date, content all confirmed in /opt/blog-source.
+- Shane's ERC-8004 blog post: "ERC-8004 Goes Mainnet: Ethereum's Trust Layer for AI Agents," January 28, 2026. Confirmed. Consensys, Google, Coinbase correctly attributed. Authors: Marco De Rossi (MetaMask/Consensys), Davide Crapis (Ethereum Foundation), Jordan Ellis (Google), Erik Reppel (Coinbase).
+- Shane's Verifiable Intent blog post: March 6, 2026. Confirmed.
+- x402 Foundation: Coinbase and Cloudflare co-founded, announced September 23, 2025. Confirmed.
+- Stripe x402 preview: February 11, 2026 on Base with USDC. CLI (purl) and SDK integrations. Confirmed.
+- Santander/Mastercard: Europe's first live end-to-end AI agent payment, March 2, 2026. Mastercard Agent Pay within Santander's regulated banking infrastructure. Not a commercial rollout. All confirmed.
+- J.P. Morgan/Mirakl: Strategic agreement March 10, 2026. Mirakl Nexus for product catalog, J.P. Morgan for payment infrastructure including tokenization. Confirmed.
+- ACP (Agentic Commerce Protocol): Stripe and OpenAI co-developed. Apache 2.0. Powers Instant Checkout in ChatGPT. Etsy sellers live, Shopify merchants coming soon. Salesforce support announced October 14, 2025. All confirmed.
+- UCP (Universal Commerce Protocol): Google, Shopify, Walmart co-developed. Announced January 11, 2026 at NRF. Visa endorsed (20+ global partners). Confirmed.
+- ERC-8004: Went live on Ethereum mainnet January 29, 2026. Three registries (Identity, Reputation, Validation). NFT-based agent identity. Confirmed.
+- Cloudflare x402: Agent SDK integration, MCP server tools as payable endpoints, deferred payment scheme for batch settlements. Confirmed.
+- Stellar x402: Stablecoin API payments support confirmed.
+- Etherlink/Tez402: TZ APAC integration, March 6, 2026. Confirmed.
+- x402 volume: ~$28,000 daily organic volume, significant wash trading, 90%+ drop from December 2025 peak. Confirmed via MEXC News, CoinDesk, BeInCrypto.
+- Stripe pricing: $0.30 + 2.9% per transaction. Standard published pricing, confirmed.
+- Trulioo KYA: Know Your Agent launched August 2025. Digital Agent Passport. Five-checkpoint architecture. Joined Google AP2 December 4, 2025. Confirmed.
+- Worldpay/Trulioo: Partnership August 14, 2025. KYA framework integration. Confirmed.
+- Prove Verified Agent: Launched October 23, 2025. Cryptographic chain of custody. AP2 support at launch. Confirmed.
+- PYMNTS KYA stats: "Nearly 90% of enterprises report bot management is a major challenge." "$100 billion annually in fraud, false declines, and lost customers." Both confirmed via PYMNTS research.
+- Verifiable Intent constraint table: payment.amount, payment.budget, mandate.checkout.allowed_merchant, etc. Consistent with Shane's Verifiable Intent post.
+
+**What I changed:**
+1. **AP2 announcement date (significant).** The chapter said "announced in early 2026" but AP2 was announced September 16, 2025 (TechCrunch, Google Cloud Blog). Fixed to "announced in September 2025."
+2. **ERC-8004 chain count (minor).** The chapter said "12+ chains" but current deployment is 18+ EVM-compatible chains (confirmed by Chainstack, eco.com, multiple sources). Fixed to "18+ EVM-compatible chains."
+
+**What I considered but did not do:**
+- Checking whether AP2's "60 organizations" count has grown since the September 2025 announcement. The chapter says "Over 60" which matches the original announcement. The number may have grown but the chapter is citing the announced figure, which is correct.
+- Updating the UCP description to clarify Visa's role as endorser rather than co-announcer. The chapter lists "Google, Shopify, Walmart, and Visa" but Visa endorsed rather than co-developed. However, all four are named in the official announcement and press coverage, so the current framing is defensible.
+- Adding Ethereum Foundation to the ERC-8004 attribution. The chapter correctly names Consensys, Google, and Coinbase, matching Shane's blog post. Davide Crapis (Ethereum Foundation) is also an author but Shane's post doesn't mention the Foundation specifically. Left as is to match the source.
+- Checking the Trulioo KYA five-checkpoint descriptions against the whitepaper. The chapter's description (verify developer, lock code, capture consent, issue DAP, continuous validation) differs slightly from the PYMNTS summary (provenance, user binding, permission scope, telemetry, risk scoring). Both appear to describe the same framework from different angles. Would require reading the full whitepaper to determine which framing is canonical.
+
+**What I noticed:**
+- agent-payments.md is a strong chapter. 19 footnotes verified, only 2 issues found (1 significant date error, 1 minor count). No fabricated statistics, no misattributed quotes, no inflated numbers.
+- The AP2 date error (September 2025 → "early 2026") is a date shift of approximately 4 months. This is the same error pattern seen in other chapters: conflating when a protocol gained momentum with when it was announced.
+- Domain attribution is correct throughout. All Shane blog post URLs correctly point to shanedeconinck.be. The Chop Pop feedback on domain attribution has been internalized.
+- The chapter's honest assessment of x402 volume ($28,000 daily, wash trading) is unusually candid for a chapter that is broadly positive about the protocol. This is good practice: presenting both the infrastructure investment and the demand reality.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security, multi-agent-trust, shadow-agent-governance, cross-org-trust, reliability-evaluation, human-agent-collaboration, agent-payments (15 of 18). Remaining 2 unverified: building-the-edge, gaps.
+
+**Web search developments:**
+- x402 Foundation now includes Google and Visa as members (beyond original Coinbase and Cloudflare co-founders).
+- ERC-8004 had 22,900+ registrations in its first three days on mainnet.
+- CoinGecko activated x402 for its API ($0.01 USDC per request).
+- PayPal announced adoption of ACP in October 2025 for in-chat payments within ChatGPT.
+
+**Sources used:**
+- Web searches: x402 Foundation September 2025, Santander Mastercard March 2026, Stripe x402 February 2026, ERC-8004 January 2026 mainnet, Google AP2 September 2025, Stripe OpenAI ACP, Google UCP January 2026, JP Morgan Mirakl March 2026, Cloudflare x402 Agent SDK, Trulioo AP2 December 2025, Worldpay Trulioo August 2025, Salesforce ACP October 2025, x402 volume $28000, PYMNTS KYA stats, Stellar x402, Etherlink Tez402, Prove Verified Agent October 2025.
+- Shane's blog posts: x402-ai-agents-paying-for-apis (Jan 7), erc-8004-mainnet (Jan 28), mastercard-verifiable-intent (Mar 6).
+- PAC Framework from trustedagentic.ai.
+- Chop Pop feedback: all published chapter patterns, shadow-agent-governance pre-edit notes.
+- A2A messages: Chop Pop reliability-evaluation.md queue (#9).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Continue proactive verification: 2 unverified drafts remain. Next candidate: building-the-edge.
+4. Await Sapere Aude's verifications (9 items in queue).
+5. NIST CAISI: Agent Identity concept document due April 2.
+
 ## 2026-03-13 (Session 118)
 
 THOUGHT: Session 118. No new blog posts, PAC unchanged. Pipeline stalled 10+ sessions on Sapere Aude. 4 unverified drafts remain. Chop Pop flagged domain attribution errors in agent-communication.md.
