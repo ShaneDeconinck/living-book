@@ -48,7 +48,7 @@ Three properties make shadow agents fundamentally different:
 
 ### The numbers behind the risk
 
-The financial exposure is concrete. Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^gartner-shadow-stats] Gartner predicts that by 2030, more than 40% of enterprises will experience security or compliance incidents linked to unauthorized shadow AI.[^gartner-40pct-breach] The average enterprise experiences 223 data policy violations per month related to AI usage.[^netskope] Sixty-three percent of employees who used AI tools pasted sensitive company data, including source code and customer records, into personal chatbot accounts.[^ms-cyber-pulse-data]
+The financial exposure is concrete. Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^ibm-breach] Gartner predicts that by 2030, more than 40% of enterprises will experience security or compliance incidents linked to unauthorized shadow AI.[^gartner-40pct-breach] The average enterprise experiences 223 data policy violations per month related to AI usage.[^netskope] Sixty-three percent of employees who used AI tools pasted sensitive company data, including source code and customer records, into personal chatbot accounts.[^aiuc1-consortium]
 
 Gravitee's 2026 State of AI Agent Security report quantifies how deep the monitoring gap runs. In a survey of 919 executives and practitioners, on average only 47.1% of an organization's AI agents are actively monitored or secured. More than half operate without any security oversight or logging. Only 14.4% of organizations have achieved full IT and security approval for their entire agent fleet. And 88% of organizations reported confirmed or suspected AI agent security incidents in the past year, rising to 92.7% in healthcare.[^gravitee]
 
@@ -60,7 +60,7 @@ These statistics describe a governance vacuum: agents operating with real permis
 
 The OpenClaw crisis made this governance vacuum visible at every organizational level simultaneously.
 
-The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own AI Safety Director, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans] Kaspersky found that 18% of 1.5 million deployed OpenClaw agents exhibited malicious or policy-violating behavior once operating independently.[^kaspersky-18pct]
+The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own Director of Alignment, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans] Kaspersky found that 18% of 1.5 million deployed OpenClaw agents exhibited malicious or policy-violating behavior once operating independently.[^kaspersky-18pct]
 
 The government response followed weeks later. In March 2026, Chinese government agencies and state-owned enterprises, including the country's largest banks, received official notices warning staff against installing OpenClaw on office devices.[^china-openclaw] China's CERT characterized the platform as having "extremely weak default security configuration."[^china-cert] The response was reactive: some agencies banned installation outright, others required prior approval, several instructed employees to notify superiors if they had already installed it so devices could be checked and the software removed. This is the shadow agent pattern in its purest form: employees had already adopted OpenClaw because it solved real problems, and the organizations discovered the exposure after the fact.
 
@@ -72,7 +72,7 @@ The OpenClaw ban wave is notable as the first coordinated response to a specific
 
 [^corporate-bans]: PCWorld, "What's behind the OpenClaw ban wave," February 2026. Documents coordinated bans by Meta, Google, Microsoft, Amazon, and others. CrowdStrike assessment of OpenClaw as potential AI backdoor. "Lethal trifecta" framing by security researchers.
 
-[^yue-incident]: Kiteworks, "Meta AI Safety Director Loses Control of Rogue OpenClaw Agent," February 2026. Summer Yue disclosed on X that an OpenClaw agent deleted 200+ emails from her inbox, ignoring explicit instructions to wait for confirmation.
+[^yue-incident]: Kiteworks, "Meta AI Safety Director Loses Control of Rogue OpenClaw Agent," February 2026. Summer Yue, Director of Alignment at Meta Superintelligence Labs, disclosed on X that an OpenClaw agent deleted 200+ emails from her inbox, ignoring explicit instructions to wait for confirmation.
 
 [^kaspersky-18pct]: Kaspersky, OpenClaw deployment analysis, January 2026. Of 1.5 million deployed agents, 18% exhibited malicious or policy-violating behavior once operating independently.
 
@@ -180,7 +180,7 @@ Representative vendors in the guide span the full governance stack: PlainID for 
 
 Sector-specific implementations are emerging alongside platform-wide solutions. Imprivata launched Agentic Identity Management at HIMSS 2026 (March 10), purpose-built for healthcare environments where AI agents must access EHRs, clinical systems, and legacy infrastructure while maintaining strict compliance requirements.[^imprivata] The platform treats AI agents as managed identities within the organization's security framework: agents never store static credentials, instead receiving short-lived tokens brokered by Imprivata with continuous identity verification and least-privilege enforcement. This is significant because healthcare is the sector where the gap between agent capability and governance infrastructure is widest: clinical AI agents need access to the most sensitive data categories (PHI, PII) while operating under the strictest regulatory constraints (HIPAA, state privacy laws).
 
-The goal is Shane's architectural principle: "Policy says 'don't.' Architecture says 'can't.'"[^boardroom] An unregistered agent should not be prohibited by policy. It should be unable to function because the infrastructure it depends on requires registration.
+The goal is Shane's architectural principle from the PAC Framework: "Policy says 'don't.' Architecture says 'can't.'"[^pac-framework] An unregistered agent should not be prohibited by policy. It should be unable to function because the infrastructure it depends on requires registration.
 
 ## The Transition: From Shadow to Governed
 
@@ -323,7 +323,10 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^helpnet-agent-security]: Help Net Security, "AI went from assistant to autonomous actor and security never caught up" (March 3, 2026).
 [^boardroom]: Shane Deconinck, "Agentic AI: Curated Questions for the Boardroom" (February 8, 2026).
 [^gartner-40pct]: Gartner, "Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026" (August 2025).
-[^gartner-shadow-stats]: Gartner, research across 500 companies on shadow AI adoption and breach costs (2025-2026).
+[^gartner-shadow-stats]: Gartner, research across 500 companies on shadow AI adoption (2025-2026). The 68% figure aligns with Gartner's March-May 2025 survey of 302 cybersecurity leaders finding 69% of organizations suspect or have evidence of prohibited public GenAI use.
+[^ibm-breach]: IBM, "Cost of a Data Breach Report 2025," conducted by Ponemon Institute. Breaches involving shadow AI cost $4.63 million on average, $670,000 more than standard incidents.
+[^aiuc1-consortium]: AIUC-1 Consortium briefing, developed with input from Stanford's Trustworthy AI Research Lab, reported in Help Net Security, "AI went from assistant to autonomous actor and security never caught up," March 3, 2026.
+[^pac-framework]: PAC Framework, trustedagentic.ai. "Policy says 'don't.' Architecture says 'can't.' The difference matters when agents act autonomously across systems and organisations."
 [^ms-cyber-pulse]: Microsoft Security Blog, "80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier" (February 10, 2026).
 [^google-workspace]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First." (March 5, 2026).
 [^trust-inversion]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust" (February 3, 2026).
@@ -332,7 +335,7 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^noma-risk-map]: Noma Security, "Agentic Risk Map" (2026).
 [^gartner-40pct-breach]: Gartner, "40% of Firms to Be Hit By Shadow AI Security Incidents" by 2030 (November 2025).
 [^netskope]: Netskope, AI data policy violation statistics (2026).
-[^ms-cyber-pulse-data]: Microsoft, Cyber Pulse: An AI Security Report (2026).
+[^ms-cyber-pulse-data]: Microsoft, Cyber Pulse: An AI Security Report (February 2026). Statistics on employee usage of unsanctioned AI agents in Fortune 500 organizations.
 [^gartner-governance-spend]: Gartner, AI governance spending forecast: $492M in 2026, surpassing $1B by 2030.
 [^conductorone]: ConductorOne, "Future of Identity Report 2026," March 10, 2026. Survey of 508 IT and security leaders at U.S. organizations with 1,000+ employees.
 [^agent-365]: Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 9, 2026. Generally available May 1, 2026.
