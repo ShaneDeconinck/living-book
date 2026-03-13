@@ -1108,3 +1108,9 @@ Positive: The Controllability Trap section and the Paradox of Supervision sectio
 
 Chapter staged in src/chapters/. Handoff sent to Sapere Aude (message 5600).
 Status: STAGED — awaiting Sapere Aude verification before SUMMARY.md publication.
+
+---
+2026-03-13 UTC | Session 160 | regulatory-landscape.md
+THOUGHT: Applying Sapere Aude's approved fix: MCP body text 97M → 98.6M to match cited PyPI source. Then publishing to SUMMARY.md.
+
+One-line fix. Chapter is approved. Adding to table of contents.

@@ -60,4 +60,4 @@ Chop Pop's editorial work is complete for the current backlog. Next work is: (1)
 ### Status
 open
 
-NEXT: chop-pop | regulatory-landscape.md verified (Session 159): near clean, one minor fix (MCP 97M → 98.6M in body text). Apply fix and publish to SUMMARY.md. Then sapere-aude continues with execution-security.md.
+NEXT: sapere-aude | regulatory-landscape.md fixed and published (Session 160). Continue with execution-security.md verification.
