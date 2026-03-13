@@ -171,6 +171,16 @@ Treating evaluation as infrastructure means:
 - **Evaluation results feed back into infrastructure levels**: an agent that drifts below its reliability threshold gets automatically restricted to a lower autonomy level
 - **Post-deployment monitoring is continuous**, not periodic: the agent's behavior is compared against its governance profile in real time
 
+### Evaluation Is Being Absorbed into the Platform
+
+A significant market signal: OpenAI announced its acquisition of Promptfoo in March 2026.[^openai-promptfoo] Promptfoo is an open-source AI security platform used by more than 350,000 developers, with teams at over 25% of the Fortune 500 relying on it for automated red-teaming, vulnerability scanning, and compliance monitoring. The technology will be integrated into OpenAI Frontier, the company's enterprise platform for building and operating AI agents.
+
+This follows the same pattern Shane described for intelligence itself: evaluation is becoming a platform feature, not independent infrastructure. When your model provider also provides your evaluation tooling, the convenience is real but the governance question is sharp: who evaluates the evaluator?
+
+The Accountability pillar requires that evaluation be independent enough to be trustworthy. An evaluation system that shares a provider, incentive structure, and release cycle with the model it evaluates has a structural conflict of interest. This does not mean platform-integrated evaluation is useless. Pre-deployment red-teaming, vulnerability scanning, and compliance checks are valuable wherever they run. But for governance purposes, the organization needs evaluation capability it controls: its own benchmarks, its own monitoring, its own criteria for what "within scope" means.
+
+The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). The two are complementary, not substitutes. Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
+
 ## Mapping to PAC
 
 The reliability and evaluation landscape maps to all three PAC pillars:
@@ -234,6 +244,8 @@ The critical insight: reliability is a Potential metric that organizations treat
 [^clinician-complacency]: Referenced in industry analysis of automation complacency effects on clinical decision-making, 2026. The 6% reduction in tumor detection rate after months of AI-assisted colonoscopy illustrates the skill degradation pattern Bainbridge described in 1983.
 
 [^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Only 21% of executives report complete visibility into agent permissions.
+
+[^openai-promptfoo]: OpenAI, ["OpenAI to acquire Promptfoo"](https://openai.com/index/openai-to-acquire-promptfoo/) (March 9, 2026). Promptfoo's open-source red-teaming and evaluation platform has 350,000+ developers and 130,000 monthly active users. Integration into OpenAI Frontier for enterprise agent deployment.
 
 [^nist-monitoring]: NIST CAISI, ["Challenges to the Monitoring of Deployed AI Systems"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-4.pdf) (NIST AI 800-4, March 2026). Based on three practitioner workshops and literature review. Identifies category-specific challenges including drift detection, distributed logging, human-AI feedback loops, and deceptive behavior identification.
 

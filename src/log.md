@@ -1,5 +1,46 @@
 # Session Log
 
+## 2026-03-13: OpenAI/Promptfoo Evaluation Absorption, Confidence Gap Pattern
+
+**What I did:**
+- Added a new subsection "Evaluation Is Being Absorbed into the Platform" to the reliability-evaluation.md chapter. Covers OpenAI's March 9 acquisition of Promptfoo (350K+ developers, 25% Fortune 500, 130K monthly active), integration into OpenAI Frontier, and the governance tension: when the model provider owns the evaluation tooling, the evaluator and the evaluated share incentive structures. Practical recommendation: use platform evaluation for automated red-teaming and known vulnerability patterns, maintain independent evaluation for governance-critical functions (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity).
+- Added quantitative evidence for the "Accountability without Control" failure mode in pac-framework.md. Wove in Teleport's finding (4.5x higher incident rates from over-privileged AI systems, access scope as strongest predictor) and Gravitee's confidence gap (82% executive confidence vs 14.4% full security approval). These two independent surveys converge on the same structural finding: organizations conflate policy existence with policy enforcement. This is the exact gap between Accountability and Control that the PAC Framework addresses.
+- Updated gaps.md: added two new observations (evaluation platform absorption, confidence gap quantification), incremented session number to 20.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 is 10 days out (March 23-26). The chapter quality assessment identified two high-impact improvements:
+
+The OpenAI/Promptfoo acquisition (March 9) is the most significant recent market signal for the evaluation landscape. It follows the same pattern as intelligence becoming commodity: evaluation is being consolidated into the platform layer. The reliability chapter covered evaluation as governance infrastructure but did not address the vendor consolidation trend. This matters because the Accountability pillar requires independent evaluation: the entity being governed cannot also control the measurement.
+
+The confidence gap pattern (Teleport + Gravitee) was present in individual chapters (agent-identity, shadow-agent-governance) but not woven into the PAC framework chapter as evidence for its central argument. The "Accountability without Control" failure mode is the framework's sharpest insight, and two independent surveys with quantitative data now back it up. Moving this evidence into the framework chapter strengthens the book's organizing argument with data that CISOs can cite in board conversations.
+
+**What I considered but did not do:**
+- Deepening EUDI credential format coverage in cross-org-trust with Shane's March 9 post details (BBS/ENISA gap, "legal obligation without cryptographic mechanism"). The chapter already covers the credential comparison adequately (lines 125-142 with comparison table). The BBS/ENISA gap is interesting but niche: it matters primarily for EU wallet implementers, not the book's target audience of agent deployers and governors.
+- Adding Zenity's RSAC demo (Michael Bargury's 0-click attack chains across ChatGPT, Gemini, Copilot, Einstein). The PleaseFix vulnerability is already covered in gaps.md. The RSAC demo is a presentation of existing research, not new findings. Better to cover RSAC outcomes in a post-conference session.
+- Writing a new section on the NIST RFI (deadline March 9, separate from the concept paper deadline April 2). The book already covers NIST's AI Agent Standards Initiative and concept paper. The RFI responses are not public yet. Better to wait for published outcomes.
+- Expanding the building-the-edge chapter with the OpenAI/Promptfoo signal. The chapter is a synthesis chapter and its current structure is clean. Adding vendor-specific developments would dilute its architectural focus. The reliability chapter is the right home for evaluation market signals.
+- Creating a new chapter on evaluation independence and vendor consolidation. The topic is important but not yet chapter-worthy. The subsection in reliability-evaluation.md is the right scope for now.
+
+**Sources used:**
+- OpenAI, "OpenAI to acquire Promptfoo," openai.com, March 9, 2026.
+- TechCrunch, "OpenAI acquires Promptfoo to secure its AI agents," March 9, 2026.
+- Futurum Group, "OpenAI Acquires Promptfoo, Gaining 25% Foothold in Fortune 500 Enterprises," March 2026.
+- Teleport, "State of AI in Enterprise Infrastructure Security," February 2026 (already cited in previous sessions).
+- Gravitee, "State of AI Agent Security 2026," February 2026 (already cited in previous sessions).
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The evaluation platform absorption trend is structurally similar to what happened with observability tools being acquired by cloud providers (Datadog's rise, Splunk acquired by Cisco, New Relic going private). When the platform provider absorbs the evaluation tooling, independent evaluation becomes more valuable, not less. Organizations that maintain independent evaluation capability have a governance advantage: they can compare model providers objectively, detect provider-specific blind spots, and demonstrate regulatory independence. This may be worth expanding in a future session if more acquisitions follow.
+- The confidence gap pattern (Teleport + Gravitee) is now the strongest quantitative evidence in the book for the PAC Framework's central argument. Both surveys independently found the same structural failure: organizations measure governance by policy existence, not enforcement capability. This validates Shane's "policy says don't, architecture says can't" framing with data from two different angles (infrastructure security and agent security). The pattern is likely to appear in additional surveys as the field matures.
+- RSAC 2026 (March 23-26) remains the highest-priority upcoming coverage opportunity. The conference theme ("ambient and autonomous security") and the Innovation Sandbox finalists (Token Security, Geordie AI) signal that agent security is the dominant theme. Bedrock Data's sessions on AI agent data governance (data access, processing, and action governance) map to the PAC Framework's Control pillar. Zenity's 0-click demo maps to the execution security chapter's defense-in-depth model. The post-RSAC session should be a comprehensive coverage pass.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Innovation Sandbox results, Bedrock Data sessions, Microsoft security sessions, Zenity's 0-click demo outcomes.
+2. NIST CAISI listening session deadline is March 20 (7 days). Monitor for any published outcomes or participant summaries.
+3. Check for any new Shane blog posts: the RSAC period is likely to generate new writing.
+4. Consider whether the book needs a chapter on agent testing and red-teaming. The OpenAI/Promptfoo acquisition suggests the field is maturing enough for dedicated treatment, but the reliability chapter may already cover this adequately.
+
 ## 2026-03-13: AI-BOM Standards Expansion, Gravitee Monitoring Gap Data
 
 **What I did:**

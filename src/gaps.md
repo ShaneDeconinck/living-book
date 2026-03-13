@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 19)
+## Observations (Updated 2026-03-13, Session 20)
 
 ### Agent Identity Is Becoming a Platform Feature, and a Product Category
 
@@ -53,6 +53,14 @@ Mastercard and Google open-sourced Verifiable Intent on March 5, 2026: a three-l
 ### CSA IAM Framework Validates the DID+VC Architecture
 
 The Cloud Security Alliance's "Agentic AI Identity & Access Management" framework proposes Agent Naming Service (ANS) for capability-based agent discovery, Zero-Knowledge Proofs for privacy-preserving compliance verification, and unified session management with instant revocation propagation. This is the first major industry framework that builds explicitly on DIDs, VCs, and ZKPs for agent IAM. The ANS concept bridges identity infrastructure (Agent Identity chapter) and communication protocols (Agent Communication chapter): agents query for capabilities and compliance requirements, receiving cryptographically signed responses with DIDs and endpoints. The CSA framework, the NIST concept paper, and the OpenID AIIM group are now all converging on the same architectural stack. Added to the Agent Identity chapter.
+
+### Evaluation Is Being Absorbed into the Platform Layer
+
+OpenAI's acquisition of Promptfoo (March 9, 2026) signals that evaluation and red-teaming are following the same path as intelligence itself: becoming platform features rather than independent infrastructure. Promptfoo has 350,000+ developers, 130,000 monthly active users, and teams at 25%+ of the Fortune 500. Integration into OpenAI Frontier means automated red-teaming, vulnerability scanning, and compliance monitoring will ship alongside the model provider's enterprise agent platform. The governance tension is structural: when the model provider owns the evaluation tooling, the evaluator and the evaluated share incentive structures. For the Accountability pillar, independent evaluation capability remains essential. Platform evaluation handles known vulnerability patterns and compliance checklists well. Independent evaluation handles what governance actually requires: domain-specific benchmarks, organizational policy compliance, cross-provider comparison, and audit trail integrity. The two are complementary. The practical concern is that convenience will drive organizations toward platform-only evaluation, creating a blind spot where the entity being governed also controls the measurement. Updated in the Reliability, Evaluation chapter.
+
+### The Confidence Gap Is Quantified Across Independent Surveys
+
+Two independent surveys in early 2026 converge on the same finding: organizations conflate policy existence with policy enforcement. Teleport's research found over-privileged AI systems drive 4.5x higher incident rates (76% vs 17%), with access scope as the strongest predictor of outcomes, not AI sophistication. Gravitee's survey (919 respondents) found 82% of executives feel confident their policies protect against agent misuse, but only 14.4% have full security approval for their agent fleet. This pattern is structurally identical across both datasets: organizations overestimate their governance posture because they measure policy documentation, not runtime enforcement. This is the gap between "policy says don't" and "infrastructure says can't" that the PAC Framework's Control pillar addresses. The data is now integrated into the PAC Framework chapter as quantitative evidence for the "Accountability without Control" failure mode.
 
 ### NIST Is Building the Evaluation Standards Stack
 

@@ -168,6 +168,8 @@ The three pillars are not independent. The framework explicitly maps the failure
 
 **Accountability without Control**: governance on paper. You have policies, risk assessments, and liability chains documented, but no infrastructure to enforce them. The policies say agents need scoped credentials. The agents have admin tokens.
 
+Two independent surveys in early 2026 quantify this failure mode precisely. Teleport's research found that over-privileged AI systems drive 4.5x higher incident rates: 76% of organizations with broadly scoped agent access reported security incidents, versus 17% of those with tightly scoped access.[^teleport] The predictor was not AI sophistication or model capability. It was access scope. Gravitee's survey of 919 executives and practitioners found that 82% of executives feel confident their policies protect against agent misuse, yet only 14.4% have full security approval for their agent deployments.[^gravitee] The confidence rests on policy documentation, not runtime enforcement. This is the exact gap between Accountability and Control: organizations believe they are governed because policies exist, while the infrastructure to enforce those policies does not.
+
 **Control without Potential**: infrastructure without mandate. You build sophisticated identity, delegation, and sandboxing infrastructure, but the business does not see enough value to fund it. The project dies from lack of adoption.
 
 The framework works when all three pillars inform each other iteratively. Your infrastructure level constrains your autonomy level. Your autonomy level determines your blast radius. Your blast radius sets your governance threshold. Your governance threshold drives your infrastructure requirements.
@@ -203,3 +205,5 @@ Each chapter connects back to this framework. The goal is not to memorize the le
 [^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act enforcement timeline per European Commission.
 [^6]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," trustedagentic.ai, February 2026.
 [^7]: Shane Deconinck, PAC Framework, trustedagentic.ai, updated March 2026. The implementation architecture composability model, error margin emphasis, and the distinction between enumerable and open-ended failure modes are from the March 2026 framework revision.
+[^teleport]: Teleport, "State of AI in Enterprise Infrastructure Security" (February 2026). Survey finding: over-privileged AI systems drive 4.5x higher incident rates. Access scope, not AI sophistication, is the strongest predictor of security outcomes.
+[^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control" (February 2026). Survey of 919 executives and practitioners. 82% executive confidence vs. 14.4% full security approval.
