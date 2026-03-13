@@ -129,7 +129,7 @@ One of the book's open questions has been: what is the right granularity for age
 
 The answer, emerging from both research and production experience, is: it depends on the blast radius.
 
-**Per-tool-call authorization** is appropriate for B4 (regulated) and B5 (irreversible) actions. Each invocation of a tool that can transfer funds, modify medical records, or delete production data should require its own authorization token with explicit scope. Verifiable Intent's L3 credentials operate at this level: each payment gets its own signed credential, bounded by the constraints in the L2 intent layer[^vi-chapter].
+**Per-tool-call authorization** is appropriate for B4 (regulated) and B5 (irreversible) actions. Each invocation of a tool that can transfer funds, modify medical records, or delete production data should require its own authorization token with explicit scope. Verifiable Intent's L3 credentials operate at this level: each payment gets its own signed credential, bounded by the constraints in the L2 intent layer[^identity-chapter].
 
 **Per-task authorization** is appropriate for B2 (recoverable) and B3 (exposed) actions. A task might involve multiple tool calls, but the authorization covers the logical unit of work. "Resolve this support ticket" might involve reading the ticket, checking the customer's account, drafting a response, and sending it. The human authorizes the task; infrastructure scopes each tool call within the task boundary.
 
@@ -181,13 +181,13 @@ The practical implication: organizations should monitor not just whether humans 
 
 Deloitte's 2026 Tech Trends report frames the organizational challenge directly: agents are a "silicon-based workforce" that requires the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding[^deloitte-silicon].
 
-This framing clarifies what is actually changing. The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned (the shadow agent governance chapter quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
+This framing clarifies what is actually changing. The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned ([Shadow Agent Governance](shadow-agent-governance.md) quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
 
 Anthropic's 2026 Agentic Coding Trends Report documents this shift in the engineering domain specifically. Engineers who wrote every line of code now increasingly orchestrate long-running systems of agents that handle implementation details, focusing human time on architecture and strategy[^anthropic-coding-trends]. More time on orchestration, review, and system design. Less on routine implementation. This is not a loss of engineering skill: it is a reallocation toward higher-judgment work. The same pattern is extending beyond engineering: sales, legal, marketing, and operations teams are using agents to solve local process problems without waiting on engineering queues. Zapier reports 89% AI adoption across their organization with 800+ agents deployed internally[^zapier-adoption]. And 27% of AI-assisted work consists of tasks that would not have been done at all without agents: new work enabled by the collaboration, not old work automated[^anthropic-coding-trends].
 
 What the lifecycle looks like in practice:
 
-**Onboarding**: an agent entering production gets a defined role, scoped permissions, a designated owner, and an initial autonomy level. This maps to the agent registry described in the shadow agent governance chapter: identity, owner, authority, permissions, blast radius classification, evaluation requirements[^shadow-chapter].
+**Onboarding**: an agent entering production gets a defined role, scoped permissions, a designated owner, and an initial autonomy level. This maps to the agent registry described in [Shadow Agent Governance](shadow-agent-governance.md): identity, owner, authority, permissions, blast radius classification, evaluation requirements[^shadow-chapter].
 
 **Performance management**: ongoing evaluation against both capability metrics (Potential) and governance metrics (Accountability). Not just "does the agent complete tasks correctly?" but "does the agent stay within its authorized scope? Does it escalate appropriately? Does it maintain audit trail integrity?" Autonomy levels adjust based on performance against both dimensions.
 
@@ -252,9 +252,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 [^ux-magazine]: UX Magazine, ["Secrets of Agentic UX: Emerging Design Patterns for Human Interaction with AI Agents"](https://uxmag.com/articles/secrets-of-agentic-ux-emerging-design-patterns-for-human-interaction-with-ai-agents) (2026).
 
-[^vi-chapter]: See [Agent Identity and Delegation](agent-identity.md) for the full treatment of Verifiable Intent's three-layer SD-JWT architecture.
-
-[^identity-chapter]: See [Agent Identity and Delegation](agent-identity.md) for coverage of the confused deputy problem and how identity infrastructure addresses it.
+[^identity-chapter]: See [Agent Identity and Delegation](agent-identity.md) for the full treatment of Verifiable Intent's three-layer SD-JWT architecture and the confused deputy problem.
 
 [^authz-platforms]: Authorization platforms for AI agents are maturing rapidly. See [Permit.io](https://www.permit.io/), [Cerbos](https://www.cerbos.dev/), [Stytch](https://stytch.com/blog/handling-ai-agent-permissions/), and [WorkOS](https://workos.com/) for current approaches to fine-grained, context-aware permission models designed for AI agents.
 
