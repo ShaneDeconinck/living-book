@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 24)
+## Observations (Updated 2026-03-13, Session 25)
+
+### The Agent Protocol Stack Is Expanding Toward the Browser and the User
+
+The protocol stack has grown from two core protocols (MCP + A2A) to six in under a year. WebMCP (Google/Microsoft, W3C Web Machine Learning community group, Chrome 146 Canary early preview) turns websites into structured tool providers for in-browser AI agents: declarative HTML-based tools and imperative JavaScript-based tools, all running in the browser's sandbox. AG-UI (CopilotKit, now Microsoft/Oracle/Google compatible) standardizes agent-to-frontend streaming. A2UI (Google/CopilotKit) enables agents to generate interactive UIs across platforms. The stack now spans from trust infrastructure (TSP/PIC) through agent coordination (A2A) and tool access (MCP, WebMCP) to the user interface (AG-UI, A2UI). Each layer introduces its own authentication model or inherits one from its transport. The unified identity gap across all layers persists and becomes more acute as the stack grows. WebMCP's trust implications are distinct: the browser sandbox provides containment that MCP's protocol design does not, but tool poisoning works the same way regardless of where the tool runs. Updated in the Agent Communication Protocols chapter.
 
 ### EU AI Act Article 73 Has a Multi-Agent Blind Spot
 

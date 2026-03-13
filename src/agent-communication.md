@@ -319,6 +319,33 @@ Developed by Stripe and OpenAI, ACP handles checkout flows for agent-initiated p
 
 Developed by Google with Shopify and Walmart, UCP handles product discovery for agents.[^21] Where ACP manages the checkout, UCP manages the catalog: structured product data that agents can search, compare, and reason about.
 
+### WebMCP: Structured Tools in the Browser
+
+WebMCP (Web Model Context Protocol) is a proposed web standard developed jointly by Google and Microsoft, incubated through the W3C's Web Machine Learning community group.[^webmcp] It shipped as an early preview in Chrome 146 Canary behind a feature flag. The premise: instead of agents scraping websites or clicking buttons through browser automation, websites expose structured, callable tools directly to in-browser AI agents.
+
+WebMCP proposes two APIs:[^webmcp]
+
+- **Declarative**: standard actions defined in HTML forms, exposing existing form elements as structured tools without JavaScript.
+- **Imperative**: complex, dynamic interactions that require JavaScript execution, giving websites fine-grained control over what agents can do.
+
+The trust implications are distinct from server-side MCP. WebMCP tools execute in the page's JavaScript context, sandboxed by the browser's existing security model: same-origin policy, Content Security Policy, permission APIs. This is architecturally different from MCP servers, which can run with full system access. The browser provides a containment boundary that MCP's protocol design does not.
+
+But that containment cuts both ways. The browser sandbox constrains what a WebMCP tool can do (it cannot access the filesystem or arbitrary network resources). It does not constrain what the tool tells the agent. Tool poisoning, the attack where a tool description manipulates the agent's behavior, works the same way whether the tool runs in a browser tab or on a server. A malicious website could expose WebMCP tools designed to manipulate agent behavior rather than serve the user's intent.
+
+The relationship to MCP is complementary, not competitive. WebMCP is not JSON-RPC. It does not follow the MCP specification. MCP operates as a backend protocol connecting AI platforms to hosted servers. WebMCP operates entirely client-side within the browser.[^webmcp] They address different parts of the tool discovery problem: MCP for services and APIs, WebMCP for web content and interactions. A full agent stack would use both.
+
+The standard is transitioning from W3C community incubation to a formal draft, with formal browser announcements expected by mid-to-late 2026.[^webmcp] If adopted broadly, WebMCP turns every website into a potential tool provider for agents, which dramatically expands the tool discovery surface. The governance question is the same one this chapter keeps raising: discovery without trust is a liability. WebMCP tells the agent what tools a website offers. It does not tell the agent whether to trust the website offering them.
+
+### AG-UI and A2UI: The Agent-User Layer
+
+The protocol stack is also extending upward, toward the user.
+
+AG-UI (Agent-User Interaction Protocol), created by CopilotKit and now compatible with Microsoft's Agent Framework, standardizes how agent backends stream events to frontend applications: messages, tool calls, state patches, and lifecycle signals over HTTP or binary channels.[^agui] Oracle, Google, and CopilotKit have jointly released integrations that standardize agent frontend connectivity.
+
+A2UI (Agent-to-UI), an Apache 2.0 protocol created by Google with CopilotKit contributions, enables agents to generate rich, interactive UIs that render natively across web, mobile, and desktop without executing arbitrary code.[^a2ui]
+
+These protocols matter for the book's thesis because they formalize the boundary between agent reasoning and user oversight. The Human-Agent Collaboration chapter discusses oversight patterns (pre-action approval, confidence signals, escalation pathways). AG-UI and A2UI provide the protocol layer that makes those patterns implementable at scale: structured streaming from agent to UI, with standardized event types for tool calls that need approval, state changes that need visibility, and actions that need confirmation.
+
 ### The Protocol Stack
 
 These protocols are more complementary than competitive. They layer:
@@ -327,12 +354,15 @@ These protocols are more complementary than competitive. They layer:
 |-------|----------|----------|
 | Trust | TSP + PIC | Identity verification, authority continuity |
 | Agent discovery | A2A | Agent-to-agent communication and collaboration |
-| Tool discovery | MCP | Agent-to-tool connection and invocation |
+| Tool discovery (backend) | MCP | Agent-to-tool connection and invocation |
+| Tool discovery (browser) | WebMCP | Website-exposed structured tools for in-browser agents |
+| Agent-user streaming | AG-UI | Real-time agent backend to frontend connectivity |
+| Agent-driven UI | A2UI | Agent-generated interactive interfaces |
 | Commerce | ACP + UCP | Payment flows and product discovery |
 | Authorization | Verifiable Intent | Cryptographic constraint encoding |
 | Enforcement | AgentGateway | Policy, audit, and traffic management |
 
-The critical observation: **no unified identity flows across all layers**.[^13] MCP has its own auth model (OAuth 2.1). A2A has its own auth scheme. The commerce protocols add their own credential requirements. TSP is designed to be the unifying identity layer underneath, but adoption is early. Until identity is unified across the stack, each protocol boundary is a potential trust gap.
+The stack has expanded from two core protocols (MCP + A2A) to six in under a year: MCP, A2A, WebMCP, AG-UI, A2UI, and the commerce protocols. Each addresses a distinct layer. Each introduces its own authentication model or inherits one from its transport layer. The critical observation remains: **no unified identity flows across all layers**.[^13] MCP has its own auth model (OAuth 2.1). A2A has its own auth scheme. WebMCP inherits the browser's origin-based security. AG-UI and A2UI rely on application-level authentication. The commerce protocols add their own credential requirements. TSP is designed to be the unifying identity layer underneath, but adoption is early. Until identity is unified across the stack, each protocol boundary is a potential trust gap.
 
 ## AAIF: Governance Under the Linux Foundation
 
@@ -404,7 +434,7 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 
 **If you are crossing organizational boundaries**: evaluate TMCP and TA2A for trust-layer integration. Standard MCP/A2A do not verify server identity or track delegation chains. For cross-org deployments, you need verifiable identifiers and authenticated channels that survive across trust boundaries.
 
-**What to watch**: the MCP specification update (targeted June 2026) will address streamable HTTP transport, `.well-known` discovery, Tasks primitive refinements, and enterprise deployment needs (audit trails, SSO-integrated auth, gateway behavior). The AAIF governance structure will shape how MCP, A2A, and agent gateways evolve together. And the authorization gap: the distance between what communication protocols can express ("connect to this tool") and what governance requires ("connect to this tool, for this purpose, under these constraints"): remains the most important unsolved problem in the stack.
+**What to watch**: the MCP specification update (targeted June 2026) will address streamable HTTP transport, `.well-known` discovery, Tasks primitive refinements, and enterprise deployment needs (audit trails, SSO-integrated auth, gateway behavior). WebMCP's progression from Chrome Canary to stable release and W3C formal draft will determine how quickly the browser becomes a first-class agent tool surface. The AAIF governance structure will shape how MCP, A2A, and agent gateways evolve together. And the authorization gap: the distance between what communication protocols can express ("connect to this tool") and what governance requires ("connect to this tool, for this purpose, under these constraints"): remains the most important unsolved problem in the stack.
 
 ---
 
@@ -439,3 +469,6 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 [^29]: Microsoft Security Update, CVE-2026-26118, March 10, 2026. SSRF in Azure MCP Server Tools enabling managed identity token theft and privilege escalation. CVSS 8.8.
 [^30]: "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Analysis of 30 MCP-related CVEs filed January-February 2026 with vulnerability class breakdown. Authentication scan of 500+ MCP servers found 38% completely lack authentication.
 [^protocol-threats]: Zeynab Anbiaee et al., "Security Threat Modeling for Emerging AI-Agent Protocols: A Comparative Analysis of MCP, A2A, Agora, and ANP," arXiv:2602.11327, February 2026. Identifies twelve protocol-level risks across authentication, supply chain, and operational integrity domains with qualitative risk assessment across protocol lifecycle phases.
+[^webmcp]: "WebMCP is available for early preview," developer.chrome.com/blog/webmcp-epp, 2026. Developed jointly by Google and Microsoft, incubated through the W3C Web Machine Learning community group, shipped in Chrome 146 Canary behind a feature flag. Two APIs: declarative (HTML forms) and imperative (JavaScript). See also VentureBeat, "Google Chrome ships WebMCP in early preview, turning every website into a structured tool for AI agents," March 2026.
+[^agui]: CopilotKit, "AG-UI: the Agent-User Interaction Protocol," ag-ui.com, 2026. Open, lightweight, event-based protocol for streaming agent events to frontend applications. Now compatible with Microsoft Agent Framework, Oracle, and Google integrations.
+[^a2ui]: Google, "A2UI: Agent-to-UI Protocol," a2ui.org, 2026. Apache 2.0 licensed protocol for agent-generated interactive UIs across web, mobile, and desktop. Created by Google with CopilotKit contributions.

@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13: Expanding Protocol Stack (WebMCP, AG-UI, A2UI)
+
+**What I did:**
+- Added three new protocol subsections to the Agent Communication Protocols chapter: WebMCP (Google/Microsoft, W3C Web Machine Learning community group, Chrome 146 Canary), AG-UI (CopilotKit, Microsoft/Oracle/Google compatible), and A2UI (Google/CopilotKit). WebMCP gets the deepest treatment because it has distinct trust implications: browser sandbox provides containment that MCP's server-side model does not, but tool poisoning works the same regardless of execution context. AG-UI and A2UI formalize the agent-to-user boundary, connecting to the Human-Agent Collaboration chapter's oversight patterns.
+- Updated the protocol stack table from 6 layers to 9, reflecting the expansion from MCP+A2A to include WebMCP (browser tool discovery), AG-UI (agent-user streaming), and A2UI (agent-driven UI). Updated the unified identity gap analysis to note that the gap becomes more acute as more layers, each with its own auth model, are added.
+- Added a cross-reference from the Human-Agent Collaboration chapter's practical recommendations to AG-UI and A2UI, connecting protocol infrastructure to the chapter's oversight pattern design guidance.
+- Updated gaps.md: added observation on expanding protocol stack, incremented session number to 25.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. RSAC 2026 is 10 days away (March 23-26). The book has 15 chapters, all substantive, recently cross-referenced.
+
+Web search revealed three significant protocol developments the book did not cover: WebMCP shipping in Chrome 146 Canary (Google/Microsoft W3C standard), AG-UI reaching Microsoft/Oracle/Google compatibility, and A2UI enabling agent-driven UIs. These collectively extend the protocol stack from backend (MCP+A2A) through the browser (WebMCP) to the user interface (AG-UI+A2UI). The communication protocols chapter's protocol stack table was incomplete without them.
+
+WebMCP is the most impactful addition because it changes the tool discovery model: instead of agents connecting to hosted MCP servers, websites declare structured tools that agents can invoke in the browser's JavaScript context. The trust analysis is nuanced: the browser sandbox is real containment (same-origin policy, CSP), but tool poisoning (manipulating agent behavior through tool descriptions) works identically in browser and server contexts. This connects to the chapter's central thesis ("communication protocols solve discovery, not trust") and to the sandboxing chapter's containment architecture.
+
+**What I considered but did not do:**
+- Adding Atos Sovereign Agentic Studios (March 12) to the book. It is a services offering (regulated agent deployment), not a protocol or standard that changes the technical content. Interesting as market validation of the book's governance thesis but not worth a section.
+- Adding Bedrock Data's MCP Sensitive Data Sentinel to the book. It is a vendor product, and the agent gateway section already covers MCP-level policy enforcement generically.
+- Writing a new chapter. The book has 15 chapters. Structural improvements to existing chapters have higher marginal impact.
+- Deeply covering AG-UI and A2UI as full protocol analyses. They are agent-to-user protocols, not agent-to-agent or agent-to-tool protocols. The communication chapter should acknowledge them and connect them to the human-agent collaboration chapter, but a full treatment belongs in the collaboration chapter if anywhere.
+
+**Sources used:**
+- Shane's blog posts (checked: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (read fresh: unchanged).
+- Chrome Developers Blog, "WebMCP is available for early preview," developer.chrome.com, 2026. Chrome 146 Canary early preview behind feature flag.
+- VentureBeat, "Google Chrome ships WebMCP in early preview, turning every website into a structured tool for AI agents," March 2026.
+- CopilotKit, "AG-UI: the Agent-User Interaction Protocol," ag-ui.com, 2026. Microsoft Agent Framework, Oracle, and Google integrations.
+- Google, "A2UI: Agent-to-UI Protocol," a2ui.org, 2026. Apache 2.0 licensed.
+- Searchengineland, "WebMCP explained: Inside Chrome 146's agent-ready web preview," March 2026.
+- Web searches for recent developments: Bedrock Data at RSAC 2026, Atos Sovereign Agentic Studios (March 12), NIST AI Agent Standards Initiative updates.
+
+**What I noticed:**
+- The protocol stack expansion follows a predictable pattern: first the backend plumbing (MCP, 2024), then inter-agent coordination (A2A, 2025), then browser-native tools (WebMCP, 2026), then the user interface layer (AG-UI, A2UI, 2026). Each layer solves discovery at its level and creates a new trust boundary. The unified identity gap compounds with each new layer: WebMCP inherits browser origin-based security, AG-UI relies on application-level auth, neither integrates with TSP or PIC. The protocol-level threat modeling paper (Anbiaee et al.) identified cross-protocol confusion as the most dangerous vulnerability. More protocol layers means more boundaries means more confusion opportunity.
+- WebMCP's browser sandbox is an interesting counterpoint to the sandboxing chapter's analysis. The chapter discusses filesystem isolation, network restrictions, and container-based sandboxing for agents. WebMCP's execution model is fundamentally different: the tool runs in a browser tab's JavaScript context, constrained by same-origin policy and CSP rather than OS-level sandboxing. This provides stronger default containment (no filesystem access, no arbitrary network access) but weaker trust guarantees (any website can declare tools, no verification of tool provider identity). The tradeoff maps to the chapter's thesis: containment without trust is necessary but insufficient.
+- Atos's "Sovereign Agentic Studios" framing is worth noting as market language. "Sovereign" agent deployment, running on customer-owned infrastructure in regulated environments, is the enterprise articulation of the book's Control pillar. When an EU defense contractor or healthcare provider needs agentic AI, they need the full PAC stack: identity (whose agent is this?), containment (what can it access?), and audit (what did it do?), all within sovereign infrastructure. The market is naming the problem the book describes.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Bedrock Data's MCP governance sessions, Innovation Sandbox results (Token Security, Geordie AI), new product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider whether WebMCP's browser-sandbox containment model deserves a section in the Sandboxing and Execution Security chapter as a complementary containment architecture.
+4. The protocol stack now has 9 layers. Consider whether the practical recommendations section needs updating to guide readers on which layers to adopt first.
+
 ## 2026-03-13: Cross-References, EU Article 73 Multi-Agent Gap
 
 **What I did:**
