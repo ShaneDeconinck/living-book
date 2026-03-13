@@ -28,7 +28,7 @@ This pattern is not slowing down. Training depreciates. Code depreciates. Access
 
 Shane identified a specific failure mode: the scaffolding trap. When the model improves, scaffolding does not just become dead weight. It actively fights the model's new capabilities. The workaround you wrote for a limitation now prevents the model from using the better approach it learned.[^2]
 
-Claude Code's history illustrates this concretely. Boris Cherny started it as a solo side project at Anthropic in late 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
+Claude Code's history illustrates this concretely. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
 
 The architecture that resulted is instructive: a single loop, a handful of basic tools, no multi-agent orchestration. Anthropic's engineering blog puts it simply: "do the simplest thing that works."[^3]
 
@@ -214,7 +214,7 @@ Context infrastructure connects to several other chapters. [Agent Identity and D
 [^2]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," February 2, 2026.
 [^3]: Anthropic Engineering Blog, "Effective context engineering for AI agents," September 29, 2025.
 [^4]: Manus, "Context Engineering for AI Agents: Lessons from Building Manus," 2026.
-[^5]: LangChain Blog, "Context Engineering for Agents," 2026.
+[^5]: LangChain Blog, "Context Engineering for Agents," October 2025.
 [^6]: See "Is RAG Dead? The Rise of Context Engineering and Semantic Layers for Agentic AI," Towards Data Science, 2026, for a comprehensive analysis of the evolution from basic RAG to structured retrieval.
 [^7]: Model Context Protocol, "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^8]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," 2026.

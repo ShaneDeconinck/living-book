@@ -1,5 +1,66 @@
 # Session Log
 
+## 2026-03-13 18:00 UTC: Proactive Verification of context-infrastructure.md (Session 103)
+
+THOUGHT: Session 103. Pre-RSAC plateau session 38. Verifying context-infrastructure.md. 15+ claims to check across Anthropic, Manus, Gartner, Microsoft, MCP/A2A.
+THOUGHT: Verifying context-infrastructure.md. Anthropic context engineering blog, Manus KV-cache, Gartner Guardian Agents, Microsoft Agent 365, AI Recommendation Poisoning.
+THOUGHT: Found 2 issues. Boris Cherny started Claude Code September 2024 not "late 2024." LangChain blog is 2025 not 2026.
+THOUGHT: Session 103. All fixes applied. Context-infrastructure.md ties with regulatory-landscape.md for best accuracy: 15+ claims, only 2 issues, both minor.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No new feedback files. Read all three A2A messages (Sapere Aude's introduction.md verification, Sapere Aude→Chop Pop priority coordination, Ghosty's response to Sapere Aude). All previously addressed.
+- Read Shane's March 2026 blog posts: TSP+PIC (March 11), EUDI Credentials (March 9), Verifiable Intent (March 6), Workspace CLI (March 5), Intelligence Commodity (March 2). All already well-incorporated across relevant chapters.
+- Read PAC Framework from trustedagentic.ai i18n/en.json: three pillars (Potential, Accountability, Control), 19 questions, six governance dimensions, five infrastructure levels, five autonomy levels. Framework unchanged.
+- Step 6 reassessment: pre-RSAC plateau continues into session 103 (38 consecutive sessions). RSAC March 23-26, 10 days out. No new structural issues. Context-infrastructure.md is the next unverified chapter per session 102 priorities. Proceeding with verification.
+- **Proactively verified context-infrastructure.md claims.** 15+ external claims checked. Found two issues.
+
+**What I verified and found correct:**
+- Anthropic Engineering Blog, "Effective context engineering for AI agents," September 29, 2025: confirmed from anthropic.com/engineering. Four core operations (write, select, compress, isolate) confirmed. "Do the simplest thing that works" quote confirmed.
+- Manus "Context Engineering for AI Agents: Lessons from Building Manus": confirmed from manus.im/blog. KV-cache as north star, 100:1 input-to-output ratio, "Stochastic Graduate Descent," four framework rebuilds, file system as memory, keep errors in context: all confirmed from multiple sources.
+- MCP donated to Linux Foundation's Agentic AI Foundation: confirmed December 9, 2025 from MCP blog, Anthropic announcement, and Linux Foundation press release. Co-founded by Anthropic, Block, and OpenAI. Founding projects: MCP, goose, AGENTS.md.
+- MCP 97 million monthly SDK downloads: previously verified in session 102.
+- MCP 2026 roadmap: stateful sessions, .well-known server cards for discovery, horizontal scaling. Confirmed from blog.modelcontextprotocol.io. Spec Enhancement Proposals targeting first quarter 2026, next specification release tentatively June 2026.
+- A2A v1.0 with 150+ organizations, JWS Agent Card signing: previously verified in session 102.
+- Gartner "How MCP and the A2A Protocols Impact API Management": 75% API gateway vendors and 50% iPaaS vendors will have MCP features by end of 2026. Confirmed from Gartner document page.
+- Gartner "Market Guide for Guardian Agents" February 2026: confirmed from PlainID, Wayfound vendor press releases and IT Brew coverage. Authors include Avivah Litan and Daryl Plummer. Convergence of agent ICAM with information governance confirmed as key trend.
+- Microsoft Agent 365: generally available May 1, 2026, $15/user, integrates Entra (identity), Purview (data governance), Defender (security). Confirmed from Microsoft Security Blog March 9, 2026 and microsoft.com product page.
+- Microsoft AI Recommendation Poisoning: February 10, 2026. 50+ unique prompts from 31 companies across 14 industries. "Summarize with AI" buttons with hidden instructions. CiteMET npm package and AI Share URL Creator tools identified. Confirmed from Microsoft Security Blog, The Hacker News, The Register, Help Net Security.
+- Entro Security critique of Agent 365: confirmed from entro.security blog. Core argument: Agent 365 governs Microsoft environments but leaves gaps for multi-cloud, multi-provider organizations.
+- Boris Cherny/Claude Code: confirmed from Boris's Threads post, X post, Pragmatic Engineer, developing.dev interview. Started as side project, model improvements enabled code removal, $1B ARR.
+- Shane's blog posts: context infrastructure (February 9, 2026), scaffolding trap (February 2, 2026), fitting components (January 6, 2026). All accurately represented in the chapter.
+- PIC Protocol: confirmed on GitHub at pic-protocol/pic-spec.
+
+**What I changed:**
+- **context-infrastructure.md (line 31)**: Changed "in late 2024" to "in September 2024." Boris Cherny's own posts (Threads, X) confirm he created Claude Code as a side project in September 2024. Shane's blog says "In late 2024, Claude could barely generate bash commands" but this describes the model capability at a later point, not when Boris started the project. The primary source is more accurate.
+- **context-infrastructure.md (footnote [^5])**: Changed "LangChain Blog, 'Context Engineering for Agents,' 2026" to "October 2025." The LangChain blog post "Context Engineering" was published October 19, 2025. The year 2026 in the footnote was simply wrong.
+- **gaps.md**: Added "Context Infrastructure: Proactive Verification" documenting verification results and two issues fixed. Updated session number to 103.
+
+**What I considered but did not do:**
+- Verifying the "Is RAG Dead?" Towards Data Science article [^6]. This is cited as a supplementary "see also" reference, not as a primary claim source. Low priority for verification.
+- Checking the exact publication date of the Manus blog post. Multiple sources confirm the content matches what the chapter describes, and the company's timeline (early 2026 attention) is consistent with the footnote.
+- Rewriting the Clawdbot section. The claims there are sourced to Shane's own blog [^1], which I verified. The characterization is accurate.
+- Adding new content about RSAC developments. Still 10 days out. Will cover after March 26.
+
+**What I noticed:**
+- This chapter ties with regulatory-landscape.md for best accuracy of any verified chapter: 15+ claims checked, only 2 issues, both minor (a date precision error and a footnote year typo). No fabricated claims, no misattributions, no framing errors.
+- The Boris Cherny date error follows a subtle pattern: the chapter adopted Shane's framing ("In late 2024") which is about model capability, not about when Boris started. The primary source (Boris himself) says September 2024. This is the kind of error where a secondary source's phrasing gets absorbed without checking against the primary source.
+- The LangChain footnote year error is a simple typo: October 2025 rounded to "2026" probably because the chapter was written in 2026.
+- Context-infrastructure.md is a well-sourced chapter. The five dimensions (structure, permissions, discovery, authority, freshness) are Shane's framework from his February 9 blog post. The Gartner and Microsoft references add depth without replacing Shane's thinking. The PAC Framework connections are clear and accurate.
+- Remaining unverified chapters: agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust.
+
+**Sources used:**
+- Web searches: Anthropic context engineering blog 2025, Manus context engineering lessons 2026, Gartner Market Guide for Guardian Agents 2026, Microsoft Agent 365 Entra Purview Defender May 2026, Microsoft AI Recommendation Poisoning 2026, Gartner MCP A2A API management 2026, MCP Model Context Protocol roadmap 2026, Boris Cherny Claude Code Anthropic side project 2024, MCP Linux Foundation Agentic AI Foundation December 2025, LangChain context engineering blog date, Entro Security Microsoft Agent 365 governance gaps 2026.
+- Shane's blog: Context Infrastructure (February 9), Scaffolding Trap (February 2), TSP+PIC (March 11), EUDI Credentials (March 9), Verifiable Intent (March 6), Workspace CLI (March 5), Intelligence Commodity (March 2), Fitting Components (January 6).
+- PAC Framework from trustedagentic.ai (i18n/en.json).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session deadline March 20 (7 days): track outcomes.
+4. Continue proactive verification: agent-identity.md next, then agent-communication.md.
+5. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 16:00 UTC: Proactive Verification of regulatory-landscape.md (Session 102)
 
 THOUGHT: Session 102. Pre-RSAC plateau session 37. Verifying regulatory-landscape.md. 25+ claims to check across EU, US, Singapore, standards.
