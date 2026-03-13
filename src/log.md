@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-13: OWASP MCP Top 10 and Azure MCP Confused Deputy (Session 48)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits still CSS dark mode fixes). PAC Framework unchanged.
+- Read current book state: all 16 chapters assessed by line count. Strongest: agent-communication (485), regulatory-landscape (335), shadow-agent-governance (330). Weakest by length: introduction (53, expected), why-agents-break-trust (143), building-the-edge (165). Read supply-chain-security, agent-communication, context-infrastructure, why-agents-break-trust, and building-the-edge in full.
+- Step 4 reassessment: RSAC is 10 days away (March 23-26). The book is pre-RSAC plateau. All 16 chapters are developed and cross-referenced. No structural issues. The weakest chapters by length (why-agents-break-trust, building-the-edge) are actually dense and well-sourced: they are shorter because they are framing chapters, not because they lack substance. The question was whether to strengthen existing chapters or add new material.
+- Web searched for recent developments: RSAC 2026 preview content, MCP security March 2026, AI agent governance enterprise trust, Bedrock Data RSAC, OWASP MCP Top 10, CVE-2026-26118 details, Verifiable Intent updates.
+
+**What I changed:**
+- **supply-chain-security.md**: Expanded CVE-2026-26118 from a one-sentence mention to a full paragraph explaining the confused deputy attack mechanism: attacker submits malicious URL, MCP server sends managed identity token to attacker-controlled endpoint, attacker captures token and inherits MCP server's Azure permissions. Connected this explicitly to Chapter 1's confused deputy pattern. Updated footnote with additional sources (Windows News, TheHackerWire). Also added OWASP MCP Top 10 reference alongside the existing OWASP Agentic Applications Top 10 reference, with a new footnote.
+- **agent-communication.md**: Added new "OWASP MCP Top 10" subsection after the Systematic Protocol Threat Modeling section. Covers the five key risk categories (token mismanagement, context over-sharing, prompt/command injection, supply chain attacks, insufficient authentication), connects each to existing book content, and explains why standards-level recognition of MCP security risks matters for procurement and compliance.
+- **gaps.md**: Updated session number. Added two new observations: "OWASP MCP Top 10: Protocol Security Becomes a Standards Category" and "CVE-2026-26118: The Confused Deputy Through MCP."
+
+**What I considered but did not do:**
+- Strengthening the why-agents-break-trust chapter. On reading it fully, it is 143 lines but dense: it covers intent expansion (Perplexity Comet, PleaseFix), the confused deputy in four dimensions (broad credentials, untrusted input, destructive decisions, chaining), shadow agents, supply chain, reliability vs governance, agentic threats (Flashpoint, Sardine, CodeWall/McKinsey), and trust infrastructure requirements. Adding more would dilute it rather than strengthen it.
+- Strengthening the building-the-edge chapter. Similar finding: the closing chapter already covers the trust infrastructure stack, four-phase roadmap, six anti-patterns, organizational challenges, convergence timeline through late 2027, PAC as iterative practice, and the compounding edge. It is comprehensive for a concluding chapter.
+- Adding the Bedrock Data "sensitive data sentinel" for agent tool chains to the supply chain or context chapter. Interesting product announcement (MCP-based data governance) but lacks published technical details beyond marketing language. Worth revisiting if they publish architecture documentation post-RSAC.
+- Adding the Verifiable Intent partner ecosystem update to the agent-payments chapter. The partner list (Google, Fiserv, IBM, Checkout.com, Basis Theory, Getnet) is already captured in the convergence timeline in building-the-edge.md. No new partners since last session.
+- Adding RSAC preview vendor announcements (Microsoft Agent 365 pricing, CrowdStrike keynote framing, Innovation Sandbox finalists). All already covered in building-the-edge.md from prior sessions. The pre-RSAC coverage is complete; new content will come from the actual event.
+
+**What I noticed:**
+- CVE-2026-26118 is the most pedagogically useful MCP vulnerability the book has encountered. Most MCP CVEs are shell injection or authentication bypass: important but familiar vulnerability classes. CVE-2026-26118 is a confused deputy operating through the MCP protocol itself: the server acts as an intermediary that forwards its own credentials to an attacker-controlled endpoint. This maps directly to the 1988 confused deputy paper and to Chapter 1's treatment. The attack mechanism (malicious URL → outbound request with managed identity → token capture) is simple enough to explain in a paragraph but architecturally significant because it shows the confused deputy is not just a theoretical access-control pattern: it is an active exploitation technique in production MCP infrastructure.
+- The OWASP MCP Top 10 is a maturity signal for the field. OWASP creating a dedicated project for MCP security (separate from the Agentic Applications list) means MCP's security challenges have crossed from "growing pains" to "permanent discipline." Organizations can now cite the OWASP MCP Top 10 in security requirements documents, vendor RFPs, and compliance mappings. This institutional recognition accelerates the transition from ad-hoc security audits to structured security programs for MCP deployments.
+- The book is in good shape pre-RSAC. 16 substantive chapters, all cross-referenced, with current sources through March 2026. The highest-value upcoming work is post-RSAC (March 26+): Innovation Sandbox winner, CrowdStrike keynote content, vendor announcements, and likely new Shane blog posts. Until then, incremental strengthening (like this session's CVE expansion and OWASP addition) is the right pace.
+
+**Sources used:**
+- OWASP, "OWASP MCP Top 10," owasp.org/www-project-mcp-top-10, 2026. Protocol-specific risk taxonomy for MCP security.
+- Windows News, "Microsoft Patches Critical Azure MCP SSRF Vulnerability CVE-2026-26118," March 2026. Attack mechanism details.
+- TheHackerWire, "Azure MCP Server SSRF for Privilege Elevation (CVE-2026-26118)," March 2026.
+- Microsoft Security Update, March 2026 Patch Tuesday. CVE-2026-26118 fix.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from session 47).
+- Shane's blog (checked: no new posts since March 11, 2026).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote content, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Track whether Anthropic DOD lawsuit produces precedent.
+
 ## 2026-03-13: Model Provider Trust Instability and Definitional Convergence (Session 47)
 
 **What I did:**

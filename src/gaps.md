@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 47)
+## Observations (Updated 2026-03-13, Session 48)
+
+### OWASP MCP Top 10: Protocol Security Becomes a Standards Category
+
+OWASP launched a dedicated MCP Top 10 project in 2026, distinct from their Top 10 for Agentic Applications. Where the Agentic Applications list covers agent-level risks (goal hijacking, excessive agency, memory poisoning), the MCP Top 10 targets protocol-level risks: token mismanagement, context over-sharing, prompt/command injection, supply chain attacks, and insufficient authentication. The significance is not the individual risks (which the book already covers through incident analysis and academic threat modeling) but the standardization itself. When OWASP creates a dedicated risk taxonomy for a protocol, it signals that the protocol's security challenges are permanent, not growing pains. Organizations can now reference the MCP Top 10 in procurement requirements, vendor assessments, and compliance documentation, the same way they reference the OWASP Web Application Top 10. This is institutional recognition that MCP security is a discipline, not a checklist. Added to the Agent Communication Protocols chapter.
+
+### CVE-2026-26118: The Confused Deputy Through MCP
+
+The Azure MCP Server SSRF vulnerability (CVE-2026-26118, CVSS 8.8, patched March 2026) is the clearest real-world example yet of the confused deputy problem operating through MCP infrastructure. The attack: submit a malicious URL where an Azure resource identifier is expected, the MCP server sends an outbound request with its managed identity token attached, the attacker captures the token and inherits the server's Azure permissions. This is not a theoretical confused deputy scenario: it is Microsoft's own first-party MCP server acting as the confused deputy, sending its own credentials to an attacker because input validation did not prevent it. The CVE validates the book's argument that the confused deputy problem is not just an access-control pattern from 1988 but an active, recurring vulnerability class in modern agent infrastructure. Expanded in the Supply Chain Security chapter with the full attack mechanism.
 
 ### Model Provider Trust Is Not Infrastructure
 

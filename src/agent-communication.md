@@ -160,6 +160,22 @@ The comparative security assessment is instructive. ANP, which builds on W3C Dec
 
 The paper's central conclusion aligns with this chapter's thesis: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. This is why the trust layer integrations (TMCP, TA2A) described later in this chapter matter: they provide the unified identity and verification layer that individual protocols lack.
 
+### OWASP MCP Top 10
+
+The incident timeline and academic threat models are now complemented by an industry risk taxonomy. OWASP launched the MCP Top 10 project in 2026: a dedicated security framework for Model Context Protocol risks, distinct from the OWASP Top 10 for Agentic Applications.[^owasp-mcp] Where the Agentic Applications list addresses agent-level risks (goal hijacking, excessive agency, memory poisoning), the MCP Top 10 focuses specifically on protocol-level risks in the MCP lifecycle.
+
+The MCP Top 10 identifies risks across the full interaction surface:
+
+- **Token mismanagement and secret exposure**: hard-coded credentials, long-lived tokens, and secrets persisted in model memory or protocol logs. The Azure MCP SSRF (CVE-2026-26118) is a concrete example: the server's managed identity token leaked through an SSRF because input validation did not prevent the server from sending authenticated requests to attacker-controlled URLs.
+- **Context over-sharing**: shared, persistent, or insufficiently scoped context windows that leak sensitive information across tasks, users, or agents. This is the protocol-level instantiation of the context integrity problem the [Context Infrastructure](context-infrastructure.md) chapter identifies.
+- **Prompt injection and command injection**: agents constructing system commands or API calls from untrusted input without validation. The 43% exec()/shell injection rate in the 30-CVE analysis confirms this is the dominant vulnerability class.
+- **Software supply chain attacks and dependency tampering**: compromised packages, connectors, and plugins altering agent behavior or introducing backdoors. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this attack surface in depth.
+- **Insufficient authentication and authorization**: MCP servers, tools, or agents failing to verify identities or enforce access controls. The 38% of servers accepting unauthenticated connections is the baseline measurement.
+
+The OWASP MCP Top 10 matters for two reasons. First, it provides a shared vocabulary for MCP security risks that organizations can reference in procurement, vendor assessment, and compliance documentation. Second, it confirms that MCP's security challenges are now recognized at the same standards level as the OWASP Top 10 for web applications: not niche, not temporary, but a permanent feature of the protocol's attack surface that requires ongoing attention.
+
+[^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org/www-project-mcp-top-10, 2026. Developed through industry collaboration with researchers and practitioners. Designed as a living document evolving alongside MCP capabilities.
+
 ## A2A: Connecting Agents to Agents
 
 If MCP is how agents find tools, A2A (Agent-to-Agent) is how agents find each other. Created by Google in April 2025 and donated to the Linux Foundation in June 2025, A2A standardizes agent discovery, communication, and collaboration.[^10]
