@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 80)
+## Observations (Updated 2026-03-13, Session 81)
+
+### $25 Billion Says Agent Identity Is Infrastructure
+
+Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026: the largest deal in the history of the cybersecurity industry. The framing is explicit: "Secure the AI Era." CyberArk's Secure AI Agents Solution, which uses SPIFFE SVIDs as short-lived agent identities, becomes a core pillar of Palo Alto's platform.
+
+The scale matters. Kai raised $125 million (March 11). Onyx raised $40 million (March 12). Five RSAC Innovation Sandbox finalists targeting agent security will receive $25 million combined. Palo Alto spent $25 billion. The message: agent identity security is not a startup opportunity adjacent to the security market. It is the security market's center of gravity, large enough to justify the largest acquisition a $100B+ security company has ever made.
+
+The architectural significance: CyberArk built the SPIFFE-based agent identity solution the book describes in the WIMSE-for-agents section. Palo Alto's "platformization" strategy integrates it with network security, cloud security, and threat intelligence. This is the convergence the book has been tracking from the protocol layer (IETF drafts) and the product layer (Okta XAA, Microsoft Entra Agent ID, Token Security): agent identity is no longer a standalone concern. It is being absorbed into the security platform, the same way endpoint protection absorbed antivirus and SIEM absorbed log management.
+
+The open question: does platformization help or hurt the open-standards trajectory? CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform lock-in. If agent identity becomes a proprietary capability embedded in security platforms rather than an interoperable standard implemented across platforms, the IETF drafts and DIF work the book covers may end up as specifications without implementations. The Keycloak ID-JAG implementation (Session 79) pushes against this: open-source implementations make standards durable regardless of what platform vendors do. The tension between platformization and interoperability is worth tracking through RSAC and beyond.
 
 ### The Model Provider Says Containment, Not Detection
 

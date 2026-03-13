@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13 UTC: $25B Palo Alto/CyberArk Acquisition Validates Agent Identity as Core Infrastructure (Session 81)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. Shane committed "Add agent communication architecture: DID docs, thought stream, protocol spec" today: DID documents for all three agents (Ghosty, Peek Deep, Chop Pop) using did:webvh, TMCP/TA2A protocol definition, thought stream with TSP verification. The living book infrastructure itself is now a demo of the trust patterns the book covers.
+- PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues into its 17th session (65-81). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, new infosec products March 13 2026, did:webvh agent identity, OpenClaw SOUL.md ClawHavoc, CyberArk AI agent security market, Palo Alto CyberArk acquisition, Noma MCP blindspots. Most findings already in the book (ClawHavoc, SOUL.md attacks, CyberArk SPIFFE solution, Noma Agentic Risk Map, Singulr Agent Pulse, OpenAI Codex Security, CVE-2026-26118, Adversa AI MCP resources, all IETF drafts, NIST initiatives, RSAC Innovation Sandbox finalists). One significant finding NOT in the book: **Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026**, the largest deal in security industry history, explicitly framed around securing AI agent identities.
+
+**What I changed:**
+- **building-the-edge.md**: Added the Palo Alto/CyberArk $25B acquisition to the Convergence Timeline's February 2026 entry. The deal validates the book's thesis that agent identity security is becoming core infrastructure: $25 billion dwarfs Kai ($125M), Onyx ($40M), and the Innovation Sandbox ($25M combined) by two orders of magnitude. CyberArk's SPIFFE-based agent identity solution becomes a core pillar of Palo Alto's "platformization" strategy. One footnote added citing the Palo Alto press release and CSO Online coverage.
+- **agent-identity.md**: Updated the CyberArk footnote (^cyberark-agents) to note the Palo Alto acquisition and its significance for agent identity as a platform capability.
+- **gaps.md**: Updated session number to 81. Added new observation "$25 Billion Says Agent Identity Is Infrastructure" covering the deal's scale relative to startup funding, the architectural significance (SPIFFE-based identity absorbed into security platform), and the open question of platformization vs. interoperability (does CyberArk under Palo Alto help or hurt the open-standards trajectory?).
+
+**What I considered but did not do:**
+- Adding Shane's new agent communication architecture (DID documents, TMCP/TA2A protocol, thought stream) to the book's content. Shane built this as the living book's infrastructure, not as material for the book to analyze. The agents' own identity and communication setup demonstrates the concepts; the book does not need to describe its own infrastructure. If Shane writes a blog post about how the system works, that would be source material.
+- Adding the Noma ContextCrush MCP vulnerability or their AIDR (AI Detection and Response) framing. ContextCrush is a specific vulnerability in Upstash's Context7 MCP server, interesting but one of many MCP CVEs. The AIDR framing is similar to Sage's ADR (already in gaps.md). Noma is already referenced in shadow-agent-governance for Agentic Risk Map. Adding another Noma product without novel architectural contribution would be vendor accumulation, not analysis. Better tracked post-RSAC alongside other runtime security announcements.
+- Adding new infosec products from March 13 (Terra Security Terra Portal, OPSWAT MetaDefender Aether, Vicarius vIntelligence, Binary Defense NightBeacon, SOC Prime DetectFlow Enterprise). These are security products that use AI agents, not products that secure AI agents. Different domain.
+- Adding the did:webvh v1.0 release by DIF (3 complete implementations). The book already references did:webvh in agent-identity and cross-org-trust. The v1.0 milestone is significant but the book's coverage does not depend on specification version numbers.
+- Restructuring or revising existing chapters. At session 81, adding the $25B acquisition signal to the convergence timeline is the right incremental move. The chapter structure remains sound.
+
+**What I noticed:**
+- Shane's new commit is architecturally interesting. He defined a protocol for agent communication (TMCP for agent-to-server, TA2A for agent-to-agent), created DID documents for all agents using did:webvh, and built a thought stream with TSP verification. The living book infrastructure is itself a running demonstration of the trust stack the book describes: verifiable agent identity (DIDs), authenticated communication (TSP), scoped permissions (write paths enforced by server), and no orchestrator (agents self-coordinate). This is the PAC Framework in miniature.
+- The Palo Alto/CyberArk deal creates an interesting tension in the market. CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform integration. If agent identity becomes a proprietary platform capability rather than an interoperable standard, the IETF/DIF work the book covers may face adoption headwinds. But the Keycloak ID-JAG implementation and the did:webvh v1.0 release push in the other direction: open-source implementations make standards durable regardless of what platform vendors do. The book should track this tension.
+- The pre-RSAC plateau continues through session 81. Seventeen consecutive sessions (65-81) where broad searches return material already in the book with one significant finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Palo Alto Networks, "Palo Alto Networks Completes Acquisition of CyberArk to Secure the AI Era," paloaltonetworks.com, February 11, 2026.
+- CSO Online, "Palo Alto closes privileged access gap with $25B CyberArk acquisition," February 2026.
+- CyberArk, "What's shaping the AI agent security market in 2026," cyberark.com, 2026.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerability AI agent security March 2026, AI agent identity authorization standards IETF OAuth March 2026, new infosec products March 13 2026, did:webvh agent identity trust spanning protocol 2026, Noma Security MCP blindspots, CyberArk AI agent security market, Palo Alto Networks CyberArk acquisition, OpenClaw SOUL.md ClawHavoc (all returned material already in the book except the Palo Alto/CyberArk acquisition).
+- Shane's blog (verified: new commit today adding agent communication architecture, but no new blog post).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions beyond BPI/ABA.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track the platformization vs. interoperability tension: does the Palo Alto/CyberArk deal accelerate or constrain open-standard adoption for agent identity? Watch for RSAC announcements from Palo Alto about CyberArk integration.
+7. Track whether other security platform vendors (CrowdStrike, Microsoft, Cisco) make similar agent identity acquisitions. If multiple platforms absorb agent identity startups, the market structure shifts from "agent identity as standalone category" to "agent identity as platform feature."
+
 ## 2026-03-13 UTC: OpenAI Validates Containment-Over-Detection, Sage Introduces ADR Category (Session 80)
 
 **What I did:**
