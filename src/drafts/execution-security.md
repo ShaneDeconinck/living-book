@@ -293,5 +293,3 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.
 
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
-
-[^pcas]: Palumbo, Choudhary, Choi, Chalasani, Christodorescu, and Jha, "Policy Compiler for Secure Agentic Systems," arXiv:2602.16708, February 2026. Reference monitor using a Datalog-derived policy language over dependency graphs. Tested on customer service tasks across GPT-4o, Claude 3.5 Sonnet, and Llama 3.1 70B. Without enforcement: 48% policy compliance. With PCAS: 93% compliance, zero violations in fully instrumented runs.

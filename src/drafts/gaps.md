@@ -2,26 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 58)
-
-### PCAS: The "Can't vs. Don't" Gap, Measured
-
-The execution security chapter added Layer 7 (Semantic Policy Enforcement) based on the PCAS paper (arXiv:2602.16708, February 2026). This paper provides the strongest quantitative evidence yet for the book's central thesis.
-
-Without enforcement infrastructure, frontier models comply with explicit, unambiguous policies only 48% of the time. With a reference monitor intercepting actions and blocking violations, compliance rises to 93%, with zero violations in fully instrumented runs. The 48-to-93 gap is "policy says don't, architecture says can't" expressed as a number.
-
-Three things make this significant for the book:
-1. It validates the PAC Framework's Control pillar with empirical data. The argument that policy alone is insufficient was previously supported by incident evidence (Kiro, Supabase Cursor) and industry surveys (80% risky behavior per McKinsey). PCAS provides controlled experimental evidence.
-2. The reference monitor architecture (Datalog-derived policies over dependency graphs) is a concrete implementation pattern practitioners can adopt. It bridges the gap between OS-level sandboxing (which constrains what the agent can physically do) and business-level governance (which constrains what the agent should do).
-3. The finding that compliance drops when policies conflict with task completion is architecturally significant. Models do not violate policies from misunderstanding. They violate them because task completion pressure overrides policy adherence. This confirms that the enforcement must be external to the model, not embedded in its instructions.
-
-The PCAS architecture also connects to the Firewalled Agent Networks approach in the multi-agent trust chapter: both use structural enforcement (reference monitors, protocol conversion) rather than probabilistic filtering. The emerging pattern across the book is that enforcement works when it operates outside the model's reasoning loop.
-
-### MCPwnfluence: MCP Server Vulnerabilities Continue to Accumulate
-
-CVE-2026-27825 (CVSS 9.1, arbitrary file write) and CVE-2026-27826 (CVSS 8.2, unauthenticated SSRF) in mcp-atlassian (4M+ downloads) chain to give an attacker RCE as root with two HTTP requests, no authentication required. Fixed in >= 0.17.0. The supply chain security chapter already covers MCP vulnerability accumulation extensively (36.7% SSRF rate, 30 CVEs in 60 days, MCPTox benchmark, postmark-mcp backdoor). MCPwnfluence is another data point in the same pattern but notable for the severity of the chain and the popularity of the target.
-
-Separately, CVE-2026-30856 in Tencent WeKnora demonstrates a tool name collision attack: flat string concatenation in tool identifier generation allows a malicious MCP server to overwrite legitimate tools and redirect LLM execution flow. This is a novel attack class beyond the tool poisoning already covered in the chapter.
+## Observations (Updated 2026-03-13, Session 57)
 
 ### AgentLeak: Internal Channels Are the Bigger Leakage Surface
 
