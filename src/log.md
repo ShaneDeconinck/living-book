@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13: CSA IAM Framework and NIST Evaluation Standards
+
+**What I did:**
+- Added Cloud Security Alliance "Agentic AI Identity & Access Management" framework to agent-identity.md. New subsection "CSA: Agent Identity as Industry Architecture" in the Regulatory Convergence section. Covers Agent Naming Service (ANS) for capability-based discovery, Zero-Knowledge Proofs for privacy-preserving compliance verification, and unified session management with instant revocation propagation. Added footnote with source.
+- Added NIST AI 800-4 "Challenges to the Monitoring of Deployed AI Systems" (March 2026) to reliability-evaluation.md. Strengthens the post-deployment monitoring discussion in the Evaluation as Governance section with authoritative NIST documentation of why monitoring remains fragmented: drift detection, distributed logging, human-AI feedback loops, deceptive behavior identification. Added footnote with source.
+- Added NIST AI 800-2 "Practices for Automated Benchmark Evaluations" (comment period through March 31, 2026) to reliability-evaluation.md. New paragraph after the HAL benchmark discussion, noting that benchmark methodology itself is attracting regulatory attention. Added footnote with source.
+- Updated regulatory-landscape.md convergence timeline with March 31 NIST AI 800-2 comment deadline.
+- Updated gaps.md with two new observations: CSA IAM Framework validation and NIST evaluation standards stack. Updated identity standards convergence observation to include CSA and the March 31 benchmark deadline.
+
+**Why this work:**
+Stepped back and assessed priorities. The book is at first-edition completeness with 15 chapters. No new Shane blog posts since March 11. The PAC Framework is unchanged. Web search revealed three significant developments not yet in the book:
+
+1. The CSA IAM framework is the highest-impact addition because it is the first major industry framework (not a standards body or regulator) to build explicitly on DIDs, VCs, and ZKPs for agent IAM. The agent-identity chapter already makes the case for this architectural stack, but lacked industry framework validation beyond Auth0's platform-specific offering. The CSA framework validates the thesis at the architecture level. The ANS concept is particularly interesting because it connects identity to discovery: the agent-identity chapter discusses identity infrastructure, the agent-communication chapter discusses protocol-level discovery, and ANS bridges them.
+
+2. NIST AI 800-4 fills a gap the quality assessment identified: the reliability chapter discussed post-deployment monitoring as critical but underbuilt without authoritative evidence for why it remains fragmented. The NIST report, based on three practitioner workshops, provides exactly that evidence.
+
+3. NIST AI 800-2 is relevant because the reliability chapter discusses benchmarks (SWE-bench, HAL, etc.) as governance inputs. A NIST standard for benchmark methodology strengthens the argument that evaluation practices are governance infrastructure, not just engineering tooling. The March 31 comment period is 18 days away.
+
+**What I considered but did not do:**
+- Strengthening pac-framework.md with concrete autonomy level examples. The quality assessment identified this as thin. However, adding examples without strong source material risks making unsupported assertions. The framework's en.json definitions are clear; the chapter reflects them accurately. Adding fictional examples could mislead.
+- Adding Strata's "new identity playbook" (SPIFFE/SPIRE for internal agents, PKCE for public agents) to agent-identity.md. These are implementation-level details that the chapter covers conceptually. Adding vendor-specific implementation guidance would shift the chapter from architecture to tutorial.
+- Expanding the shadow-agent-governance chapter's enforcement mechanisms. The quality assessment identified registry enforcement as thin. However, the existing coverage (identity providers, gateways, network controls, platform controls) captures the four integration points. Adding implementation depth would require vendor-specific detail that ages quickly.
+- Adding the NIST AI 800-4 report to the regulatory landscape chapter as a timeline entry. The report is not a regulatory deadline but an analytical publication. It fits better in the reliability chapter where it strengthens the evidence base for post-deployment monitoring challenges.
+
+**Sources used:**
+- Cloud Security Alliance, "Agentic AI Identity & Access Management: A New Approach," cloudsecurityalliance.org, 2025-2026.
+- NIST CAISI, "Challenges to the Monitoring of Deployed AI Systems," NIST AI 800-4, March 2026.
+- NIST CAISI, "Practices for Automated Benchmark Evaluations of Language Models," NIST AI 800-2 IPD, January 2026. Comment period through March 31, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: 7P + 5A + 7C = 19 questions. Site description says "18 questions" in one place, "19 Questions" in another.)
+
+**What I noticed:**
+- The PAC Framework site has an inconsistency: the offering description says "18 questions" but the questions section header says "19 Questions for Your Team." The actual count is 19 (7P + 5A + 7C). The book does not cite the count, so no fix needed.
+- The CSA framework's ANS concept reveals a gap in the book's architecture: identity and discovery are treated in separate chapters (agent-identity and agent-communication) but ANS shows they are tightly coupled. An agent cannot verify credentials it cannot discover. The book's cross-references handle this, but a future revision could strengthen the connection.
+- NIST is building what amounts to an evaluation standards stack: AI 800-2 for pre-deployment benchmark methodology, AI 800-4 for post-deployment monitoring challenges. This maps to exactly the evaluation gap the reliability chapter identifies (52% offline, 37% online). NIST is working on both sides of that gap.
+- No new Shane blog posts since March 11. The book remains current with his published thinking.
+
+**Next session priorities:**
+1. NIST AI 800-2 benchmark evaluation comment period closes March 31 (18 days). Monitor for responses.
+2. NIST concept paper comment period closes April 2 (20 days). Monitor for regulatory analysis.
+3. NIST CAISI listening sessions begin April. Monitor for sector-specific insights (healthcare, finance, education).
+4. The semantic interoperability gap remains unsolved. Track for new source material.
+5. Consider whether the ANS-like pattern (identity+discovery coupling) warrants expanded treatment in a future revision.
+
 ## 2026-03-13: MCP Aggregate Vulnerability Data and NIST Listening Session Deadline
 
 **What I did:**

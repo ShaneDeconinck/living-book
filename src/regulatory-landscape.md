@@ -185,6 +185,7 @@ The regulatory and standards timelines are converging on a narrow window:
 - **February 2025**: EU AI Act Article 4 (AI literacy) already in effect.
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
 - **March 20, 2026**: NIST CAISI listening session participation requests due.
+- **March 31, 2026**: NIST AI 800-2 (Practices for Automated Benchmark Evaluations) public comment period closes.
 - **April 2, 2026**: NIST NCCoE concept paper comment period closes.
 - **April 2026+**: NIST CAISI listening sessions on sector-specific barriers begin (healthcare, finance, education).
 - **June 1, 2026**: Colorado AI Act takes effect.

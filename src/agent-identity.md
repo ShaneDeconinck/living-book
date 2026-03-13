@@ -192,6 +192,18 @@ The group identifies gaps that existing standards do not cover:
 
 While the Community Group will not develop protocols directly, it is laying groundwork for standards development within OpenID or through liaison partnerships. The calls happen weekly (Thursdays, 9am Pacific) and are open to anyone.
 
+### CSA: Agent Identity as Industry Architecture
+
+The Cloud Security Alliance published "Agentic AI Identity & Access Management: A New Approach," proposing a purpose-built IAM framework for agent systems built explicitly on DIDs, VCs, and Zero Trust principles.[^csa] The framework validates the architectural direction described earlier in this chapter and introduces three elements worth noting.
+
+**Agent Naming Service (ANS).** The framework specifies a discovery mechanism where agents query for specific capabilities, compliance requirements, and protocol preferences. The ANS returns cryptographically signed responses containing target agent DIDs, service endpoints, and relevant attestations (such as SOX compliance certifications). This connects agent identity to agent discovery: you cannot verify an agent's credentials if you cannot find the agent. ANS addresses the gap between identity infrastructure (covered here) and communication protocols (covered in [Agent Communication Protocols](agent-communication.md)).
+
+**Zero-Knowledge Proofs for compliance.** The framework specifies ZKPs to enable privacy-preserving attribute disclosure: an agent can prove it meets specific compliance requirements or holds a particular certification without revealing the underlying data. This matters for cross-organizational trust because it allows agents to satisfy verification requirements without over-disclosing. A financial services agent can prove SOX compliance without revealing its internal audit documentation.
+
+**Unified session management.** A global policy enforcement layer that propagates revocations instantly across heterogeneous multi-agent systems. When an agent's authority is revoked, the revocation takes effect at every interaction point simultaneously, not at the next token refresh. This addresses a practical gap in current implementations where revocation latency creates windows of unauthorized action.
+
+The CSA framework, the NIST concept paper, and the OpenID AIIM group are converging on the same architectural conclusion: agents need identity infrastructure purpose-built for autonomy, ephemerality, and delegation. The building blocks (DIDs, VCs, scoped tokens) exist. The remaining work is integration and operational maturity.
+
 ### eIDAS 2.0 and EUDI Wallets
 
 The European Digital Identity framework (eIDAS 2.0) is building the infrastructure for digital identity wallets that could extend to agents. EUDI wallets give citizens and businesses cryptographic credentials that work across the EU. The same infrastructure, DIDs, VCs, and trust registries, is directly applicable to agent identity.
@@ -255,3 +267,4 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^13]: NIST NCCoE, "Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization," February 5, 2026.
 [^14]: OpenID Foundation, "Identity Management for Agentic AI," Artificial Intelligence Identity Management Community Group whitepaper, 2025.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
+[^csa]: Cloud Security Alliance, "Agentic AI Identity & Access Management: A New Approach," cloudsecurityalliance.org, 2025-2026. Framework proposing DID+VC+ZKP-based IAM for multi-agent systems.

@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 14)
+## Observations (Updated 2026-03-13, Session 15)
 
 ### Multi-Agent Governance Is the Next Frontier
 
@@ -44,9 +44,17 @@ Mastercard and Google open-sourced Verifiable Intent on March 5, 2026: a three-l
 
 98% of organizations report unsanctioned AI use. 80% of Fortune 500 companies have active AI agents built on low-code/no-code platforms. 1,200 unofficial AI applications per enterprise on average, with 86% reporting no visibility into AI data flows. The governance gap is not theoretical: shadow AI breaches already cost $670K more than standard incidents, and Gartner predicts 40%+ of enterprises will face shadow AI security or compliance incidents by 2030. The most important insight for the book: shadow agents prove where value exists. Discovery is simultaneously a governance exercise and a product research exercise. The highest-value shadow agents reveal the use cases the organization should invest in governing, not prohibiting.
 
+### CSA IAM Framework Validates the DID+VC Architecture
+
+The Cloud Security Alliance's "Agentic AI Identity & Access Management" framework proposes Agent Naming Service (ANS) for capability-based agent discovery, Zero-Knowledge Proofs for privacy-preserving compliance verification, and unified session management with instant revocation propagation. This is the first major industry framework that builds explicitly on DIDs, VCs, and ZKPs for agent IAM. The ANS concept bridges identity infrastructure (Agent Identity chapter) and communication protocols (Agent Communication chapter): agents query for capabilities and compliance requirements, receiving cryptographically signed responses with DIDs and endpoints. The CSA framework, the NIST concept paper, and the OpenID AIIM group are now all converging on the same architectural stack. Added to the Agent Identity chapter.
+
+### NIST Is Building the Evaluation Standards Stack
+
+Two new NIST CAISI publications: AI 800-4 "Challenges to the Monitoring of Deployed AI Systems" (March 2026) documents why post-deployment monitoring remains fragmented (drift detection, distributed logging, human-AI feedback loops, deceptive behavior identification). AI 800-2 "Practices for Automated Benchmark Evaluations" (comment period through March 31, 2026) standardizes how benchmarks are constructed and reported. Together, NIST is building a standards stack for AI evaluation from pre-deployment through post-deployment. Both added to the Reliability, Evaluation chapter.
+
 ### The Identity Standards Landscape Is Converging Fast
 
-Between NIST's concept paper (Feb 2026), OpenID's AIIM Community Group, the IETF draft for OBO with AI agents, and Verifiable Intent, the standards bodies are all moving on agent identity simultaneously. The window for shaping these standards is narrow (NIST comment period closes April 2). This convergence validates the PAC Framework's emphasis on building on emerging standards rather than proprietary solutions.
+Between NIST's concept paper (Feb 2026), OpenID's AIIM Community Group, the IETF draft for OBO with AI agents, Verifiable Intent, and now the CSA IAM framework, the standards and industry bodies are all converging on agent identity simultaneously. The window for shaping these standards is narrow (NIST concept paper comment period closes April 2, benchmark evaluations comment period closes March 31). This convergence validates the PAC Framework's emphasis on building on emerging standards rather than proprietary solutions.
 
 ### Agent Payments Infrastructure Is Moving Faster Than Expected
 

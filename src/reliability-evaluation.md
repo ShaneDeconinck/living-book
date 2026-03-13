@@ -39,6 +39,8 @@ The industry has built a growing set of benchmarks to measure agent capability. 
 
 **The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench, GAIA, τ-bench, and other benchmarks into a unified view[^hal]. Its existence reflects a recognition that no single benchmark captures reliability across the dimensions that matter.
 
+Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
+
 The pattern is clear: agents perform well on structured, repeatable tasks (coding with clear specs and test suites) and struggle on open-ended, interactive, multi-step tasks. Shane's analysis of Anthropic's data showed the same thing: software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
 
 ## The Evaluation Gap
@@ -156,7 +158,7 @@ Current evaluation approaches sit at two levels:
 
 **Pre-deployment evaluation** (offline evals, benchmarks, test sets) answers the question: is this agent capable enough? This is a Potential question. Important, but not sufficient.
 
-**Post-deployment evaluation** (online monitoring, anomaly detection, compliance auditing) answers the question: is this agent behaving within its authority? This is an Accountability question. Critical, and underbuilt.
+**Post-deployment evaluation** (online monitoring, anomaly detection, compliance auditing) answers the question: is this agent behaving within its authority? This is an Accountability question. Critical, and underbuilt. NIST's March 2026 report "Challenges to the Monitoring of Deployed AI Systems" (NIST AI 800-4) documents exactly why: detecting drift, logging across distributed infrastructure, capturing human-AI feedback loops, and identifying deceptive behavior are all unsolved at scale[^nist-monitoring]. The report, based on three practitioner workshops and an extensive literature review, confirms that post-deployment monitoring for AI systems remains "a vast and fragmented space."
 
 The gap between these two levels is where the complacency trap lives. Teams invest heavily in pre-deployment evaluation because it is familiar (it looks like software testing) and because it answers the question leadership asks first ("does it work?"). They underinvest in post-deployment evaluation because it is less familiar, harder to build, and answers questions nobody wants to ask until something goes wrong ("what did it do, and who authorized it?").
 
@@ -232,3 +234,7 @@ The critical insight: reliability is a Potential metric that organizations treat
 [^clinician-complacency]: Referenced in industry analysis of automation complacency effects on clinical decision-making, 2026. The 6% reduction in tumor detection rate after months of AI-assisted colonoscopy illustrates the skill degradation pattern Bainbridge described in 1983.
 
 [^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Only 21% of executives report complete visibility into agent permissions.
+
+[^nist-monitoring]: NIST CAISI, ["Challenges to the Monitoring of Deployed AI Systems"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-4.pdf) (NIST AI 800-4, March 2026). Based on three practitioner workshops and literature review. Identifies category-specific challenges including drift detection, distributed logging, human-AI feedback loops, and deceptive behavior identification.
+
+[^nist-benchmarks]: NIST CAISI, ["Practices for Automated Benchmark Evaluations of Language Models"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf) (NIST AI 800-2, Initial Public Draft, January 2026). Public comment period through March 31, 2026.
