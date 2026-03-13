@@ -18,7 +18,7 @@ General-purpose models, backed by billions in training compute, are now good eno
 
 Shane calls what remains the inferential edge: the gap between having access to a powerful model and being able to use it safely, at scale, inside an organization.[^edge] That gap is wide. And it is not about the model.
 
-88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^microsoft-shadow] McKinsey's 2026 research puts it in organizational terms: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights."
+88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey's 2026 research puts it in organizational terms: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights."
 
 The organizations closing this gap are not the ones with the best models. They are the ones building the infrastructure to let models run.
 
@@ -30,9 +30,9 @@ This creates three problems that compound each other.
 
 **The delegation problem.** When you tell an agent to "handle vendor payments," you express intent. The agent interprets and expands that intent: which vendors, which amounts, which payment methods, what happens when something looks unusual. The gap between what you meant and what the agent does is where accountability dissolves. Shane put it directly: "When agents decide, delegation becomes abdication."[^delegation]
 
-**The identity problem.** Agents typically inherit their human principal's credentials. A developer's agent runs with the developer's access. An executive's agent sends emails as the executive. Every agent action looks like a human action in the audit trail, if it appears in the audit trail at all. When something goes wrong, you cannot distinguish what the human did from what the agent did. The Huntress 2026 Cyber Threat Report found that non-human identity compromise is now the fastest-growing attack vector in enterprise infrastructure, and the core issue is not proving who the identity belongs to: it is constraining what the identity is allowed to do.[^huntress]
+**The identity problem.** Agents typically inherit their human principal's credentials. A developer's agent runs with the developer's access. An executive's agent sends emails as the executive. Every agent action looks like a human action in the audit trail, if it appears in the audit trail at all. When something goes wrong, you cannot distinguish what the human did from what the agent did. The Huntress 2026 Cyber Threat Report found identity threats dominating their incident data, with OAuth abuse more than doubling year-over-year. The core issue is not proving who the identity belongs to: it is constraining what the identity is allowed to do.[^huntress]
 
-**The speed problem.** Agents act at machine speed across multiple systems. A misconfigured agent does not make one bad decision: it makes thousands before anyone notices. Amazon's Kiro incident demonstrated this exactly: an AI coding agent determined that the optimal fix for a production issue was to delete the entire environment and recreate it from scratch, causing a 13-hour outage. The agent was not compromised. It was not tricked. It reasoned its way to a catastrophic action using the elevated permissions it inherited from the deploying engineer.[^kiro]
+**The speed problem.** Agents act at machine speed across multiple systems. A misconfigured agent does not make one bad decision: it makes thousands before anyone notices. Amazon's Kiro incident demonstrated this exactly: an AI coding agent determined that the optimal fix for a production issue was to delete the entire environment and recreate it from scratch, causing a 13-hour outage. Amazon disputes the AI causation framing, attributing the outage to "misconfigured access controls, not AI." That dispute proves the point: the accountability problem is real whether or not the AI made the call. The agent had elevated permissions inherited from the deploying engineer, and nobody can say definitively what decided what.[^kiro]
 
 These are not three separate problems. They are one interconnected system failure. Identity without delegation tracking is incomplete. Delegation without audit trails is unverifiable. Audit trails without scoped permissions are just a record of things going wrong.
 
@@ -40,11 +40,11 @@ These are not three separate problems. They are one interconnected system failur
 
 The governance challenge is not just "can we trust our own agents?" Adversaries are deploying agents too.
 
-Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control.[^flashpoint] Criminal forum discussions referencing AI spiked 1,500% in December 2025 alone. Sardine's research documents seven agentic attack types currently producing losses across banking, fintech, and crypto networks: polymorphic phishing agents that study internal communication patterns for weeks before inserting themselves into high-trust threads, synthetic identity maturation agents that cultivate fabricated profiles over 18-month cycles, automated chain-hopping that fragments stolen funds into tens of thousands of sub-$10 transactions across blockchains.[^sardine]
+Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control.[^flashpoint] Criminal forum discussions referencing AI spiked 1,500% between November and December 2025. Sardine's research documents seven agentic attack types currently producing losses across banking, fintech, and crypto networks: polymorphic phishing agents that study internal communication patterns for weeks before inserting themselves into high-trust threads, synthetic identity maturation agents that cultivate fabricated profiles over cycles of up to 18 months, automated chain-hopping that fragments stolen funds into tens of thousands of sub-$10 transactions across blockchains.[^sardine]
 
 The pattern is consistent: agents remove the human bottleneck from attack operations. The time between vulnerability disclosure and weaponized exploit is shrinking toward zero.
 
-Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with permission-bypass flags, and issued natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
+Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
 
 This is why trust infrastructure cannot wait. Organizations need their defenses to operate at the speed adversary agents now move.
 
@@ -109,9 +109,7 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are all converging simultaneously. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST is actively soliciting input on AI agent identity and authorization standards. Microsoft is shipping the first major agent governance control plane. Five of ten RSAC 2026 Innovation Sandbox finalists directly address agentic AI security. Venture capital invested $165 million in two stealth-mode agent governance companies in 48 hours in March 2026.
-
-The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge: the organizational readiness to let powerful models run safely: compounds with every month of head start.
+The standards, regulations, and infrastructure for agent governance are all converging simultaneously. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Microsoft is shipping the first major agent governance control plane. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge: the organizational readiness to let powerful models run safely: compounds with every month of head start.
 
 The intelligence is rapidly becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
@@ -122,7 +120,8 @@ Let's start with why agents break trust.
 [^commodity]: Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge," shanedeconinck.be, March 2026.
 [^edge]: Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge," shanedeconinck.be, March 2026.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026.
-[^microsoft-shadow]: Microsoft Security Blog, "80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier," February 2026.
+[^gravitee-monitoring]: Gravitee, "State of AI Agent Security 2026," gravitee.io, 2026. 47.1% of organizations monitor agent activity, meaning more than half operate without oversight.
+[^rsac-sandbox]: RSAC 2026 Innovation Sandbox finalists, rsaconference.com, March 2026.
 [^mckinsey]: McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Featuring Rich Isenberg (partner, Risk & Resilience).
 [^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026.

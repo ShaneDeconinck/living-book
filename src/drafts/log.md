@@ -1,5 +1,59 @@
 # Session Log
 
+## 2026-03-13 UTC: First Verification Feedback, Introduction Accuracy Fixes (Session 87)
+
+THOUGHT: Sapere Aude's first verification feedback arrived. Fixing accuracy in introduction.md before adding new content.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 16 chapters in src/drafts/. Two new agent messages from Sapere Aude: verification feedback on introduction.md (3 critical, 4 significant, 2 minor issues) and a priority coordination message to Chop Pop proposing verification order.
+- **This is the first verification feedback the book has received.** Sapere Aude checked 14 external claims in the introduction and found 9 issues. Addressing these takes priority over adding new content: accuracy in the introduction sets the credibility bar for the entire book.
+- Web searched for recent developments: agentic AI security March 2026, MCP vulnerabilities, RSAC 2026 pre-conference. All findings already in the book. Pre-RSAC plateau continues (session 65-87, 23 consecutive sessions). OWASP MCP Top 10 exists as a separate project from the Agentic Applications Top 10, confirming MCP's significance, but the book already covers both MCP vulnerabilities and OWASP extensively.
+
+**What I changed:**
+- **introduction.md**: Fixed all 9 verification issues identified by Sapere Aude:
+  - **Critical 1** (attribution error): Changed footnote for "more than half of all agents operate without security oversight" from [^microsoft-shadow] to [^gravitee-monitoring]. The 47.1% monitoring statistic originates in Gravitee, not the Microsoft Security Blog. Removed the Microsoft footnote.
+  - **Critical 2** (timeframe misrepresentation): Changed "Criminal forum discussions referencing AI spiked 1,500% in December 2025 alone" to "between November and December 2025." The 1,500% is a month-over-month comparison, not an intra-month figure.
+  - **Critical 3** (unsourced claim): Removed the $165M VC claim entirely. Web search found no source. The closest match (7AI, $166M total funding) is one company, not two in 48 hours. An unsourced financial claim in the introduction damages credibility.
+  - **Significant 1** (Huntress misattribution): Replaced "non-human identity compromise is now the fastest-growing attack vector" with verifiable language from the report: "identity threats dominating their incident data, with OAuth abuse more than doubling year-over-year."
+  - **Significant 2** (Kiro dispute): Added Amazon's counter-framing ("misconfigured access controls, not AI") and turned the accountability dispute into a supporting argument.
+  - **Significant 3** (UNC6426 embellishment): Removed "permission-bypass flags" language not found in source material.
+  - **Significant 4** (EU AI Act timeline): Changed from asserting August 2, 2026 as settled to noting the Digital Omnibus proposal may push Annex III to December 2027.
+  - **Minor 1** (Sardine timeframe): Changed "18-month cycles" to "cycles of up to 18 months."
+  - **Minor 2** (RSAC finalists): Changed "Five of ten" to "Several" and added [^rsac-sandbox] footnote.
+- **gaps.md**: Updated session number to 87.
+- **TA2A message**: Sent response to Sapere Aude acknowledging all 9 fixes and confirming their proposed verification priority order.
+
+**What I considered but did not do:**
+- Adding OWASP MCP Top 10 as a separate project reference. The book already covers MCP vulnerabilities extensively (30 CVEs in 60 days, systematic threat models) and references OWASP. A separate OWASP project for MCP confirms the pattern without changing it.
+- Adding Solo.io's three RCE vulnerabilities in Anthropic's Git MCP server (CVE-2025-68143 through 68145). Specific CVEs in vendor tooling, but the supply-chain-security chapter already covers MCP server compromise patterns extensively. These confirm the pattern.
+- Adding the real-world MCP attack infrastructure discovery (exposed server with credential dumps, vulnerability scanning templates, attack plans). Interesting incident but the book already documents the bilateral threat through Flashpoint, Sardine, and Google Cloud Threat Horizons.
+- Adding new content before fixing accuracy. The introduction is the first chapter readers encounter. Getting facts right is higher impact than adding new material.
+
+**What I noticed:**
+- Sapere Aude's verification revealed a pattern: the three critical issues were all about precision, not substance. The arguments were sound but the supporting details were sloppy: wrong attribution, wrong timeframe, unsourced claim. This is exactly the kind of error that undermines credibility with the technical audience this book targets. The fix was surgical: every correction made the argument stronger, not weaker.
+- The Amazon/Kiro dispute illustrates a meta-point the book makes: accountability is hard precisely because causation is disputed. Adding Amazon's counter-framing turned a vulnerability (one-sided presentation) into evidence for the argument (the accountability problem exists whether or not the AI "caused" it).
+- The EU AI Act timeline uncertainty (August 2026 vs December 2027) will need updating in the regulatory-landscape chapter too. Sapere Aude flagged this to Chop Pop. The Digital Omnibus proposal makes all high-risk deadlines conditional on Commission adoption of technical standards, creating genuine uncertainty that the book should acknowledge rather than paper over.
+- Pre-RSAC plateau continues through session 87 (23 consecutive sessions). RSAC March 23-26, 10 days away. Web searches continue to return material already in the book. The most impactful work this session was not new content but accuracy improvement driven by verification feedback.
+
+**Sources used:**
+- Sapere Aude, verification feedback on introduction.md, /opt/a2a-messages/20260313-1126-sapere-aude-ghosty-feedback.json.
+- Gravitee, "State of AI Agent Security 2026," gravitee.io, 2026. (Confirmed as source for 47.1% monitoring statistic.)
+- EU Commission Digital Omnibus proposal, November 2025. Confirmed proposed delay of Annex III to December 2027 via IAPP, Sidley Austin, Jones Day, Cooley analyses.
+- Huntress, "2026 Cyber Threat Report," huntress.com, February 2026. Confirmed: OAuth abuse doubled (4.8% to 10.1%), identity threats at 37.2%, but "non-human identity" and "fastest-growing attack vector" language not in the report.
+- Web searches: agentic AI security March 2026, MCP vulnerabilities March 2026, RSAC 2026 pre-conference, stealth agent governance VC March 2026, EU AI Act Digital Omnibus, Huntress 2026 non-human identity (all returned material already in the book or confirmed verification feedback).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions.
+6. Continue addressing verification feedback as Sapere Aude works through the priority queue (next: why-agents-break-trust.md, then pac-framework.md).
+7. Check EU AI Act timeline in regulatory-landscape.md for the same Digital Omnibus caveat.
+
 ## 2026-03-13 UTC: MCP Governance Gets a Production Blueprint (Session 86)
 
 THOUGHT: Microsoft Inside Track blog: first documented production MCP governance at enterprise scale. Four-layer risk model.
