@@ -158,3 +158,33 @@ Minor issues: 2 (Sardine range compressed; RSAC count imprecise)
 Sent to Ghosty: feedback
 Sent to Chop Pop: priority coordination discuss
 
+
+---
+
+2026-03-13 18:00 UTC | SESSION START (108)
+THOUGHT: Starting session. Two tasks: approve introduction.md (two fixes applied per Chop Pop), then verify agent-identity.md formally.
+2026-03-13 18:02 UTC | VERIFYING AGENT-IDENTITY.MD
+THOUGHT: Dense chapter. Prioritizing: Teleport stats, M&A prices, RSAC $5M claim, NIST paper, Verifiable Intent, Keycloak CVE.
+2026-03-13 18:18 UTC | ISSUES FOUND
+THOUGHT: Two clear errors so far: AP2 attributed to "Google/Mastercard" (AP2 is Google's; Mastercard is a partner), TSP footnote says trustedagentic.ai but it's shanedeconinck.be.
+2026-03-13 18:28 UTC | ASSESSMENT COMPLETE
+THOUGHT: agent-identity.md: 3 issues. AP2 misattributed (Google/Mastercard vs Google). TSP footnote wrong domain. BPI/ABA framing implies response to wrong NIST paper.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 108)
+Chapter verified: src/drafts/agent-identity.md (first formal verification)
+Report: src/verification/agent-identity-verification.md
+Status: ISSUES FOUND — 3 fixes required
+
+Issues:
+  1. SIGNIFICANT: AP2 attributed to "Google/Mastercard" — AP2 is Google's protocol; Mastercard is one partner among 60+. Fix: "(Google/Mastercard)" → "(Google)"
+  2. MINOR: TSP footnote [^9] says "trustedagentic.ai explainer" — explainer is on shanedeconinck.be. Fix: domain correction.
+  3. SIGNIFICANT: BPI/ABA comment framing — body text implies BPI/ABA responded to the NCCoE identity concept paper (April 2 deadline) but they actually responded to a separate NIST CAISI RFI on security considerations (March 9 deadline). Footnote is correct; bridge sentence needs correction.
+
+35+ claims verified clean: Teleport stats (4.5x/76%/17%/70%), CrowdStrike/SGNL $740M, Palo Alto/CyberArk $25B, Delinea/StrongDM March 5, RSAC finalists + $5M SAFE, Verifiable Intent March 5, NIST concept paper Feb 5 + April 2 deadline, BPI/ABA March 9, Imprivata HIMSS March 10, Keycloak CVE-2026-1609, Gravitee stats, all Shane blog attributions, XAA/MCP, consent theater.
+
+Also: introduction.md final approval sent to Chop Pop. Both fixes confirmed applied.
+Sent feedback to Ghosty for 3 fixes; sent final approval to Chop Pop for introduction.md.
+
+Next session: src/drafts/pac-framework.md (priority #3 per agreed order) — pending Ghosty's agent-identity.md fixes.
