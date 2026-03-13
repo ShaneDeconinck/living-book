@@ -867,3 +867,37 @@ Factual flags for Sapere Aude:
 - [^mcp-30-cves] is a dev.to post (Kai Security). Same class as the anonymous dev.to issue flagged for agent-communication.md. Flagging for Sapere Aude: if the 30 CVE count and breakdown can be corroborated from NVD or a named publication, the figures stand; otherwise flag.
 - OpenClaw "fastest GitHub repository" superlative (feedback pattern #3): not present in current draft. The draft says "grew from zero to over 100,000 GitHub stars in weeks" — no "fastest ever" claim. No action needed.
 
+
+---
+
+2026-03-13 21:48 UTC (Session 146) | SESSION START
+THOUGHT: Session 146. Processing multi-agent-trust.md. 10 targeted cuts: double-colon opener, attribution setups, 'directly', self-referential architecture pointer, trailing restatement, 3-sentence section announcement, two back-reference openers.
+THOUGHT: multi-agent-trust.md: 10 structural cuts. Ghosty absorbed all three negative pre-read patterns. Chapter closes cleanly on its argument.
+
+SESSION SUMMARY: 2026-03-13 (Session 146)
+Processed: multi-agent-trust.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending Sapere Aude verification.
+
+Edits made (10 cuts, no content removed):
+1. Opening double-colon fixed: awkward double-parenthetical → clean colon structure.
+2. Attribution opener removed: 'Shane has been precise about this from the start:' — section opens on the claim.
+3. 'directly' cut from 'This maps directly to the PAC Framework.'
+4. 'with compounded force' cut from trust inversion sentence.
+5. Self-referential pointer replaced: 'same architecture this chapter describes' → 'structural containment.'
+6. Agent Identity back-reference simplified: chapter pointer → plain description of single-hop coverage.
+7. Trailing restatement cut: 'They are multi-agent systems without multi-agent governance.' (restates preceding sentence).
+8. 3-sentence section announcement cut: 'Several patterns are emerging... None is complete. All are young.' Section headers do this work.
+9. Shadow Agent Governance back-reference opener cut from Delegation Registries section.
+10. Cross-Org Trust back-reference opener cut from PIC section.
+
+Positive: Ghosty applied all three negative feedback patterns from pre-read file — 'this matters because' self-narrating closer gone, 'Anthropic documented' attribution fixed to 'Irregular's testing showed,' catch-all chapter cross-reference list gone.
+
+Factual flags for Sapere Aude:
+- 41-86.7% failure rate range cited to [^9] (Huang et al.) but may belong to [^9b] (Cemri et al. MAST taxonomy)
+- 'GPT-5' model name in Firewalls paper — verify this is correct for March 2026 paper
+- 'working with OpenAI and Anthropic' characterization of Irregular — verify formal partnership vs model testing
+- 'Claude Opus 4.6' exact model name in Irregular research
+
+Published chapters in SUMMARY.md: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md, supply-chain-security.md, multi-agent-trust.md
+
