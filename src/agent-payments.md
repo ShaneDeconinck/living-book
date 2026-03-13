@@ -225,6 +225,8 @@ For organizations building agent systems today:
 
 The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now. The organizations that understand payment as trust infrastructure, not just financial plumbing, will be better positioned to deploy agents that can operate autonomously within governed bounds.
 
+Payment infrastructure connects to several other layers of the trust stack. [Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture, the foundation for payment authorization constraints. [Cross-Organization Trust](cross-org-trust.md) addresses the harder problem: what happens when agents pay across organizational boundaries, where shared OAuth tokens are insufficient. [Agent Communication Protocols](agent-communication.md) covers the discovery layer (MCP, A2A) through which agents find payable services, and why discovery without trust creates the consent theater problem that payment authorization must solve.
+
 [^1]: Stripe pricing: 2.9% + $0.30 per successful card charge, as of March 2026.
 [^2]: Shane Deconinck, "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026.
 [^3]: x402 specification, https://www.x402.org/.

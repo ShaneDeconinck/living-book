@@ -53,15 +53,25 @@ For systems that fall into the high-risk category, the Act demands:
 - **Record-keeping and traceability** (Article 12): automatic logging of events relevant to identifying risks and substantial modifications.
 - **Human oversight by design** (Article 14): not as an afterthought. The system must allow deployers to implement meaningful human oversight.
 - **Accuracy, robustness, and cybersecurity** (Article 15): appropriate safeguards throughout the system's lifecycle.
-- **Incident reporting**: 72-hour initial notification and 15-day detailed report to authorities.
+- **Incident reporting** (Article 73): 72-hour initial notification and 15-day detailed report to authorities.
 
 Penalties for non-compliance reach 35 million euros or 7% of global annual turnover, whichever is higher.[^penalties]
+
+### The Multi-Agent Incident Gap
+
+Article 73's incident reporting guidelines, which become binding in August 2026, have a structural blind spot: they assume single-agent, single-occurrence failures.[^article73gap] When an incident results from the interaction of multiple AI systems, the current framework provides no mechanism to attribute accountability across the chain.
+
+This matters for three reasons. First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence: 87% downstream decision poisoning within four hours from a single compromised agent.[^galileo] Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
+
+The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
 None of these are abstract requirements. They map directly to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
 
 ### The Commission's February 2026 Guidelines
 
 The Commission was required to publish, by February 2, 2026, guidelines specifying practical implementation of Article 6 alongside a comprehensive list of practical examples of use cases that are and are not high-risk.[^commissionguidelines] These guidelines are significant for agent builders because they operationalize the classification rules, but they were written with traditional AI in mind. The multi-purpose problem, where an agent's use case is not fixed at deployment, remains an open interpretation challenge.
+
+As of March 2026, fifteen months after the AI Act entered force, the European AI Office has published no guidance specifically addressing AI agents, autonomous tool use, or runtime behavior.[^futuresociety] The Act applies to agents, but the operational details of how to classify, monitor, and report on autonomous agent behavior remain unspecified. This creates a compliance gap: organizations must meet August 2026 obligations for high-risk systems, but the guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance to build the infrastructure. The requirements (risk management, traceability, human oversight) are clear. How to implement them for agents is an engineering problem, not a regulatory ambiguity.
 
 ## NIST: Agent Identity and Authorization
 
@@ -281,6 +291,10 @@ The gap between what agents can do and what regulation requires is an infrastruc
 [^imda]: Singapore IMDA, ["Model AI Governance Framework for Agentic AI"](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf), January 22, 2026.
 
 [^ietfdraft]: IETF, [draft-klrc-aiagent-auth-00: AI Agent Authentication and Authorization](https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/).
+
+[^article73gap]: Natàlia Fernández Ashman, Usman Anwar, and Marta Bieńkiewicz, ["EU Regulations Are Not Ready for Multi-Agent AI Incidents"](https://www.techpolicy.press/eu-regulations-are-not-ready-for-multiagent-ai-incidents/), TechPolicy.Press, January 13, 2026.
+
+[^galileo]: Galileo AI, "Multi-Agent AI System Failures and Prevention," research findings December 2025. 87% downstream decision poisoning within four hours from a single compromised agent.
 
 [^openidaiim]: OpenID Foundation, ["OIDF Responds to NIST on AI Agent Security"](https://openid.net/oidf-responds-to-nist-on-ai-agent-security/), March 2026.
 

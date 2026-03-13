@@ -148,7 +148,7 @@ Concretely, this means:
 
 **Audit trails over trust**: record everything, review selectively. The audit trail exists whether or not anyone looks at it today. When an incident occurs (and it will), the record is complete.
 
-This maps to the PAC infrastructure levels. Moving from I2 (Logged) to I4 (Authorized) is not primarily about technology. It is about shifting the burden from human attention to architectural constraint.
+This maps to the PAC infrastructure levels. Moving from I2 (Logged) to I4 (Authorized) is not primarily about technology. It is about shifting the burden from human attention to architectural constraint. [Sandboxing and Execution Security](execution-security.md) covers the containment layer: the architectural constraints that bound what an agent can do when reliability fails. [Shadow Agent Governance](shadow-agent-governance.md) addresses why evaluation matters organizationally: ungoverned agents bypass evaluation entirely, making reliability unmeasurable.
 
 ## Evaluation as Governance
 

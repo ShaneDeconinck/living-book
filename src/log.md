@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-13: Cross-References, EU Article 73 Multi-Agent Gap
+
+**What I did:**
+- Added cross-reference paragraphs to five isolated chapters (reliability-evaluation.md, agent-payments.md, multi-agent-trust.md, supply-chain-security.md, context-infrastructure.md). Each paragraph connects the chapter forward to 3-4 related chapters with specific explanations of why each connection matters. This transforms the book from a collection of standalone chapters into an interconnected web where readers can navigate between related topics.
+- Added a new subsection "The Multi-Agent Incident Gap" to regulatory-landscape.md. Covers the EU AI Act Article 73 blind spot identified by Fernández Ashman, Anwar, and Bieńkiewicz (TechPolicy.Press, January 13, 2026): incident reporting guidelines assume single-agent failures, provide no mechanism for multi-agent accountability attribution, and lack third-party/whistleblower reporting pathways. Connected to the multi-agent-trust.md chapter's evidence on cascading failures (87% downstream poisoning within four hours).
+- Added a paragraph on the European AI Office guidance gap to the Commission guidelines section: fifteen months after the Act entered force, no guidance specifically addressing AI agents, autonomous tool use, or runtime behavior has been published. The enforcement model assumes human decision-making timescales.
+- Updated gaps.md: added two new observations (EU Article 73 multi-agent blind spot, chapter cross-referencing), incremented session number to 24.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged (description says "18 questions" in frontmatter but "19 Questions" in the actual questions label, a discrepancy on the trustedagentic.ai site itself). RSAC 2026 is 10 days out (March 23-26). The book has 15 chapters, all substantive.
+
+An analysis of cross-references revealed the book's biggest structural weakness: ~40% of chapters had zero forward links to other chapters. The introduction and building-the-edge chapters serve as navigation hubs, but readers entering through an individual chapter (linked from the PAC Framework's 19 questions, for instance) would find no path to related content. This undermines the book's central thesis that trust infrastructure is interconnected. Cross-referencing is the highest-impact work that does not require new content.
+
+The EU Article 73 multi-agent gap is new material for the regulatory landscape chapter. The finding (incident reporting assumes single-agent failures) directly validates the book's multi-agent trust chapter and creates a regulatory urgency argument: even though the regulation does not yet require multi-agent incident tracing, the infrastructure should support it because the gap will close.
+
+**What I considered but did not do:**
+- Writing a new chapter. The book has 15 substantive chapters covering the full landscape. Structural improvements (cross-referencing, navigation) have higher marginal impact than adding a 16th chapter right now.
+- Adding the EU AI Office guidance gap as a standalone section. It fits better as context within the existing Commission guidelines discussion: the guidelines were published but were written for traditional AI, and no agent-specific guidance has followed.
+- Fetching the full Future Society analysis ("Ahead of the Curve: Governing AI Agents Under the EU AI Act"). The page did not render its content properly. The key finding (no agent-specific guidance 15 months after the Act entered force) was confirmed through multiple search results.
+- Adding RSAC 2026 pre-conference details. The Innovation Sandbox finalists (Token Security, Geordie AI) are already covered in the book's agent identity observations. The conference itself (March 23-26) has not happened yet. Post-conference coverage in the next session will be more valuable.
+- Converting textual chapter references ("the Identity chapter") to markdown links throughout all chapters. This would improve consistency but touches many files for small gains. The new cross-reference paragraphs at chapter endings are higher impact.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: "19 Questions" label confirmed, "18 questions" in frontmatter description is a minor discrepancy).
+- Shane's blog posts (checked: no new posts since March 11).
+- Fernández Ashman, Anwar, and Bieńkiewicz, "EU Regulations Are Not Ready for Multi-Agent AI Incidents," TechPolicy.Press, January 13, 2026. Article 73 single-agent assumption, missing multi-agent accountability, no third-party reporting.
+- The Future Society, "Ahead of the Curve: Governing AI Agents Under the EU AI Act." Key finding: no agent-specific guidance from European AI Office 15 months after Act entered force.
+- Web searches for recent developments: RSAC 2026 Innovation Sandbox (Token Security, Geordie AI, Charm Security), NIST deadlines (RFI closed March 9, concept paper April 2), Trend Micro (492 MCP servers with zero auth), 83% cloud breaches start with identity (Security Boulevard).
+
+**What I noticed:**
+- The cross-referencing exercise revealed the book's structure more clearly than reading individual chapters. The most connected chapters (agent-identity, cross-org-trust, execution-security) form a natural "infrastructure core." The most isolated chapters (agent-payments, supply-chain-security, reliability-evaluation) tend to be application-specific. This suggests the book has two layers: a core trust infrastructure stack and application-specific chapters that build on it.
+- The EU AI Act's assumption of single-agent failures is structurally identical to the identity gap Shane identifies: systems built for humans, not agents. The Act's enforcement model assumes human timescales and single-system architectures. The multi-agent gap is the regulatory manifestation of the same problem the book addresses technically.
+- The PAC Framework's description discrepancy ("18 questions" in frontmatter vs "19 Questions" in label) is minor but worth flagging to Shane. The actual questions number 19 (7P + 5A + 7C).
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Innovation Sandbox results, new product announcements, research disclosures.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider whether existing textual chapter references throughout the book should be converted to markdown links for consistency.
+4. The regulatory landscape chapter now has the multi-agent gap but could benefit from a forward-looking section on what agent-specific regulatory guidance should address.
+
 ## 2026-03-13: PAC Questions, McKinsey Governance Validation
 
 **What I did:**

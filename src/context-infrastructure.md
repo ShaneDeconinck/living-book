@@ -194,6 +194,8 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 
 The organizations that invest in context infrastructure now will not just be ready for today's agents. They will be ready for every generation that follows. The general trajectory is clear: models keep getting more capable. The context infrastructure you build today is positioned to benefit from every improvement that follows.[^1]
 
+Context infrastructure connects to several other chapters. [Agent Identity and Delegation](agent-identity.md) covers OBO tokens and Verifiable Intent, the identity layer that determines what context an agent can access. [Agent Communication Protocols](agent-communication.md) covers MCP and A2A in depth: the discovery and transport layer through which agents access context. [The Regulatory Landscape](regulatory-landscape.md) maps the compliance requirements (EU AI Act Article 10 data governance, Article 12 traceability) that context infrastructure must satisfy. [Agent Supply Chain Security](supply-chain-security.md) addresses the trust problem in discovery: an unverified MCP server is a supply chain risk, not just a context source.
+
 ---
 
 [^1]: Shane Deconinck, "AI Agents: Why Context Infrastructure May Be Your Best Long-Term Investment," February 9, 2026.

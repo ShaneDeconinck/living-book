@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 23)
+## Observations (Updated 2026-03-13, Session 24)
+
+### EU AI Act Article 73 Has a Multi-Agent Blind Spot
+
+The EU AI Act's Article 73 incident reporting guidelines, binding from August 2026, assume single-agent, single-occurrence failures (Fernández Ashman et al., TechPolicy.Press, January 13, 2026). When incidents result from interactions between multiple AI systems, the framework provides no mechanism to attribute accountability across the chain. The draft guidelines also lack third-party and whistleblower reporting pathways. Meanwhile, the European AI Office has published no guidance specifically addressing AI agents, autonomous tool use, or runtime behavior, fifteen months after the Act entered force. The enforcement model assumes human decision-making timescales, but agentic operations outpace human oversight. This validates the book's emphasis on infrastructure-first governance: organizations should not wait for agent-specific regulatory guidance to build the traceability, containment, and multi-agent incident response infrastructure they will need. Updated in the Regulatory Landscape chapter.
+
+### Chapter Cross-Referencing Strengthens the Book's Cohesion
+
+An analysis of cross-references across all 15 chapters revealed that ~40% of chapters (reliability-evaluation, agent-payments, multi-agent-trust, supply-chain-security, context-infrastructure) had zero forward links to other chapters. The introduction and building-the-edge serve as navigation hubs, but readers entering through individual chapters had no way to discover related content. Adding targeted cross-reference paragraphs to each isolated chapter creates a navigable web: every chapter now connects forward to 3-4 related chapters, reinforcing the book's thesis that trust infrastructure is interconnected. The cross-references are not generic: each connection explains why the linked chapter matters for the current topic.
 
 ### McKinsey Validates the Governance-First Thesis
 

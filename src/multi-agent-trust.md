@@ -282,6 +282,8 @@ The gap between I1 (where most organizations are) and I3 (where regulated indust
 
 **Plan for the graph, not the tree.** Real multi-agent interactions form graphs with cycles, shared resources, and dynamic topology. Design governance infrastructure that handles cycles (Agent A delegates to Agent B, which calls back to Agent A with different authority) and shared state (multiple agents writing to the same memory or database). Hierarchical models are a starting point, not the destination.
 
+Multi-agent trust connects to several other chapters in this book. [Cross-Organization Trust](cross-org-trust.md) covers PIC and TSP, the identity and authority infrastructure that makes cross-boundary delegation verifiable. [Human-Agent Collaboration Patterns](human-agent-collaboration.md) addresses how oversight models scale when the system is not one agent but a chain: the autonomy dial applies at each delegation hop, not just the first. [Agent Communication Protocols](agent-communication.md) covers MCP and A2A, the transport layer multi-agent systems run on, and the protocol composition risks that emerge when agents chain across protocol boundaries. [The Regulatory Landscape](regulatory-landscape.md) maps how current EU AI Act enforcement assumes single-agent incidents, creating accountability gaps for multi-agent failures.
+
 [^1]: Salesforce, "Connectivity Benchmark Report 2026" (in collaboration with Vanson Bourne and Deloitte Digital, February 2026). Survey of 1,050 IT leaders across nine countries.
 
 [^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026, potentially $45 billion by 2030 with effective orchestration.
