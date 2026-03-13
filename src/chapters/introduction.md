@@ -109,7 +109,7 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Microsoft is building agent governance controls into its enterprise platform. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge compounds with every month of head start. That edge is organizational readiness: the ability to let powerful models run safely.
+The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Microsoft is building agent governance controls into its enterprise platform.[^microsoft-agent365] Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge compounds with every month of head start. That edge is organizational readiness: the ability to let powerful models run safely.
 
 The intelligence is becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
@@ -125,7 +125,8 @@ Let's start with why agents break trust.
 [^mckinsey]: McKinsey, "Trust in the Age of Agents," The McKinsey Podcast, March 2026. Featuring Rich Isenberg (partner, Risk & Resilience).
 [^delegation]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," trustedagentic.ai, January 2026. Shane credits this framing to Lewin Wanzer, discussed on Identerati #165.
 [^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026.
-[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026.
+[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 20, 2026.
+[^microsoft-agent365]: Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," microsoft.com/security/blog, March 9, 2026. Microsoft Agent 365, announced with the Frontier Suite (M365 E7), is described as "a unified control plane for agents" for enterprise governance.
 [^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 2026.
 [^sardine]: Sardine, "AI-driven fraud vectors: 7 agentic attacks now live in 2026," sardine.ai, March 2026.
 [^google-threats]: Google Cloud Security, "Cloud Threat Horizons Report H1 2026," March 2026.
