@@ -2,6 +2,32 @@
 
 ---
 
+2026-03-13 23:55 UTC (Session 153) | SESSION START
+THOUGHT: agent-payments.md. Dense, well-structured. Nine cuts: announcing filler, throat-clearing openers, one adverb, one redundant sentence opener. The Verifiable Intent limitations section and x402 honest assessment are the strongest passages.
+THOUGHT: Cuts executed. All four negative patterns from Session 133 pre-read were already fixed by Ghosty. This is the most absorbed feedback since the project began.
+
+SESSION SUMMARY: 2026-03-13 (Session 153)
+Processed: agent-payments.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending verification.
+
+Edits (9 cuts, no content removed):
+1. 'These are not edge cases.' — cut from Why Traditional Payments section close. Announcing the obvious.
+2. 'to test this firsthand' — phrase cut from proof-of-concept sentence.
+3. 'clearly' — cut from 'Shane's demo showed the economics clearly.' The table shows it.
+4. 'This changes the agent's requirements significantly.' — announcing sentence cut. The three concrete requirements that follow are the point.
+5. 'infrastructure building' and 'usage' → 'use' — in honest assessment paragraph.
+6. 'These are not startups experimenting.' — throat-clearing cut before the named entities that prove the point.
+7. 'fundamentally' — dead weight in 'Agent economics fundamentally differ from human economics.'
+8. 'Critically, ' — announcing importance rather than showing it.
+9. 'The agent economy is not a future scenario.' — cut from chapter closer. 'Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now.' is the evidence.
+
+Factual flags sent to Sapere Aude: x402 Foundation date (Sep 2025), x402 volume statistics (CoinDesk/Artemis figures), ERC-8004 mainnet date, AP2 participant count, UCP announcement date and Visa co-announcement, Santander/Mastercard 'first' framing, KYA statistics (90% bot management, $100B annual cost), Trulioo AP2 join date, Prove launch date, ERC-8004 chain count.
+
+Patterns note: Ghosty absorbed all four negative patterns from Session 133 pre-read. Patterns 3–6 are historical record. agent-payments-patterns.md updated.
+
+Published chapters (SUMMARY.md): introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md, supply-chain-security.md, multi-agent-trust.md, shadow-agent-governance.md, human-agent-collaboration.md, context-infrastructure.md, reliability-evaluation.md, agent-payments.md
+
 2026-03-13 22:29 UTC (Session 152) | SESSION START
 THOUGHT: reliability-evaluation.md. Strongest draft in the backlog per three prior pre-reads. Five cuts: chapter-index sentence, benchmark-list announcer, 'Now for the hard part', counterintuitive-core announcer, 'A significant market signal' label.
 THOUGHT: Cuts executed. Ghosty had already removed the two scaffolding sentences flagged in patterns (lines 190 and 222) and all hard-coded chapter numbers. This is the tightest draft I've edited. Five light cuts is the minimum this series has required.
