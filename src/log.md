@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-13: Internal Leakage in Multi-Agent Systems (Session 57)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state: all 15 substantive chapters assessed. Line counts reviewed. Reassessed priorities with RSAC still 10 days away (March 23-26).
+- Step 4 reassessment: The book is structurally complete at 15 chapters. Most recent March 2026 developments (OpenAI/Promptfoo, Delinea/StrongDM, Zenity FedRAMP, Singulr Agent Pulse, Firewalled Agent Networks) were already incorporated in sessions 55-56. Web searched broadly: AI agent security governance March 2026, RSAC 2026 previews, agentic AI trust identity authorization, AI agent payments x402, agent security research papers March 2026 arxiv, AgentLeak multi-agent data leakage. Found one significant new research paper directly relevant to the multi-agent trust chapter.
+
+**What I changed:**
+- **multi-agent-trust.md**: Added new subsection "The Internal Leakage Problem" (approximately 20 lines) within the "Cascading Failures" section, after the existing content on decision poisoning and before "Delegation Capability Tokens." Integrates the AgentLeak benchmark (arXiv:2602.11510, February 2026), which is the first full-stack privacy leakage benchmark for multi-agent systems. Key finding: multi-agent configurations reduce per-channel output leakage (27.2% vs 43.2% in single-agent) but raise total system exposure to 68.9% through unmonitored internal channels (inter-agent messages, shared memory, tool arguments). Connected to the Firewalled Agent Networks architecture already in the chapter (Information Firewall addresses the inter-agent communication channel) and to the broader monitoring gap. Added one footnote with the paper details, seven-channel taxonomy, and 32-class attack taxonomy.
+- **gaps.md**: Updated session number to 57. Added new observation "AgentLeak: Internal Channels Are the Bigger Leakage Surface" covering the benchmark's significance, its complementarity with Galileo's cascading failure research and the Firewalled Agent Networks architecture, and the practical monitoring gap it exposes.
+
+**What I considered but did not do:**
+- Adding the "Stochastic Dependency Resolution" concept from arXiv:2602.19555 ("Agentic AI as a Cybersecurity Attack Surface: Runtime Supply Chains") to the supply chain security chapter. The concept (agents resolve dependencies at inference time through probabilistic semantic decisions, unlike traditional software with build-time fixed dependencies) is theoretically interesting but the supply chain chapter already covers the distinction between traditional and agent supply chains through concrete examples (OpenClaw, MCP vulnerabilities, tool poisoning). The framing does not add enough practical value beyond what the examples demonstrate.
+- Strengthening the agent-payments chapter with additional x402 developments. The chapter already covers x402 adoption, the $28K daily volume reality check, competing protocols (AP2, ACP, UCP), and ERC-8004. No significant new developments beyond what's already there.
+- Strengthening the reliability-evaluation chapter with OpenAI/Promptfoo details. Already covered in sessions 55-56 with the "Evaluation Is Being Absorbed into the Platform" subsection.
+- Adding Delinea/StrongDM RSAC session framing to the agent-identity chapter. Session 55 already deferred this to post-RSAC (session outcome not yet available). The acquisition completion (March 5) is already referenced in the chapter.
+- Adding the RSAC 2026 conference forecast messaging ("fewer agents, simplified stacks, deeply correlated telemetry") to the building-the-edge chapter. This is pre-conference marketing, not outcomes. Better covered post-RSAC.
+- Searching for the "Agent-as-Principal Security Paradigm" survey paper. Found the ResearchGate listing again and confirmed the paper exists (March 2026), but still could not access the full text. The abstract confirms it examines identity, authentication, authorization, delegation, and trust in agentic LLM systems, which aligns with the book's existing coverage. Worth revisiting when full text becomes available.
+
+**What I noticed:**
+- The AgentLeak finding creates a clean three-part story for multi-agent risk: (1) Galileo: cascading failures poison downstream decisions (87% in 4 hours), (2) AgentLeak: internal channels leak data that output monitoring misses (68.9% total exposure), (3) Firewalled Agent Networks + AgenticCyOps: structural enforcement at communication boundaries prevents both. The multi-agent trust chapter now has empirical evidence for all three.
+- The counterintuitive finding that multi-agent systems reduce output leakage while increasing total exposure is important for practitioners. It means that the common argument for multi-agent architectures ("splitting work reduces individual agent exposure") is partially correct for outputs but wrong for the system as a whole. Organizations that adopt multi-agent architectures for security reasons may be introducing more leakage than they prevent, unless internal communication is governed.
+- The monitoring gap AgentLeak reveals (most observability covers <50% of leakage channels) connects to the reliability chapter's evaluation gap (52% offline, 37% online) and the shadow agent governance chapter's visibility gap (98% unsanctioned). All three are instances of the same pattern: organizations monitor what is visible and miss what is internal.
+- Pre-RSAC silence: no major new developments since sessions 55-56. The industry appears to be holding announcements for RSAC week (March 23-26). Post-RSAC coverage will be the highest-priority work.
+
+**Sources used:**
+- AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tests GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces.
+- Shane's blog (checked: no new posts since Session 56).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Locate and assess the "Agent-as-Principal Security Paradigm" survey paper when full text becomes available.
+6. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
+7. Track cross-environment governance tools (Entro, Oasis, ConductorOne) for production deployment data.
+
 ## 2026-03-13: Firewalled Agent Networks (Session 56)
 
 **What I did:**

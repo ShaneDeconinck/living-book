@@ -60,6 +60,18 @@ This failure pattern has three properties that make it harder than cascading fai
 
 Broader studies document failure rates of 41% to 86.7% in multi-agent systems without proper orchestration.[^9] The gap between "works in a demo" and "works in production" is primarily a governance gap, not a capability gap.
 
+### The Internal Leakage Problem
+
+Cascading failures poison decisions. A less visible problem: multi-agent systems leak data through channels that output-level monitoring never inspects.
+
+AgentLeak, the first full-stack privacy leakage benchmark for multi-agent systems, tested five frontier models across 1,000 scenarios spanning healthcare, finance, legal, and corporate domains.[^agentleak] The finding is counterintuitive. Multi-agent configurations reduce per-channel output leakage compared to single-agent systems: 27.2% versus 43.2%. Splitting tasks across agents means no single agent handles all sensitive data, so external outputs expose less.
+
+But the total system exposure tells a different story. AgentLeak identifies seven leakage channels and classifies attacks into a 32-class taxonomy. When leakage is measured across all channels, including inter-agent messages, shared memory, and tool call arguments, OR-aggregated exposure rises to 68.9%. The agents leaked less through their outputs and more through their internal communication.
+
+Four of the seven channels are internal to the multi-agent system: inter-agent messages, shared memory writes, tool call arguments, and internal reasoning traces. Standard output-level auditing catches at most three. Organizations monitoring multi-agent systems at the output level, which is what most observability tools provide, have visibility into less than half of the actual leakage surface.
+
+The implication connects directly to this chapter's architectural patterns. Trust boundaries between agents are not just about preventing cascading decision failures. They are about controlling information flow through internal channels. The Firewalled Agent Networks architecture described below addresses this: the Information Firewall strips task-irrelevant content from inter-agent messages before they cross boundaries. AgentLeak quantifies what happens without that control: 68.9% total exposure despite lower output-level leakage. The defense is the same: structural enforcement at communication boundaries, not output-level inspection after the fact.
+
 ## Delegation Capability Tokens
 
 How do you encode trust across multi-hop delegation chains? The [Agent Identity and Delegation](agent-identity.md) chapter covers the single-hop case: OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent. Multi-hop delegation requires a different mechanism. The DeepMind paper proposes Delegation Capability Tokens (DCTs) based on macaroons.[^4]
@@ -337,5 +349,7 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 [^agenticcyops]: AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations, arXiv:2603.09134, March 10, 2026. Formalizes five defensive principles for multi-agent systems, applied to SOC workflow with MCP as structural basis. Trust boundary analysis: 200 boundaries in flat MAS reduced to 56 (72%) with phase-scoped architecture and verified execution.
 
 [^forrester]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Senior analyst Paddy Harrington: "When you tie multiple agents together and you allow them to take action based on each other, one fault somewhere is going to cascade and expose systems."
+
+[^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (shared memory), C4 (tool arguments), C5 (internal reasoning), C6 (log files), C7 (external API calls). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
 
 [^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026. Microsoft Research. Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Privacy attack success reduction: GPT-5 from 84% to 10%, Claude 3.7 Sonnet from 74% to 6%. Security attack success reduction: from 60% to 3%.

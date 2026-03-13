@@ -2,7 +2,20 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 56)
+## Observations (Updated 2026-03-13, Session 57)
+
+### AgentLeak: Internal Channels Are the Bigger Leakage Surface
+
+The multi-agent trust chapter focused on cascading failures (decision poisoning) and trust boundary enforcement (Firewalled Agent Networks, AgenticCyOps). AgentLeak (arXiv:2602.11510, February 2026) reveals a complementary problem: multi-agent systems leak data primarily through internal channels that output-level monitoring does not inspect.
+
+The key finding is counterintuitive: multi-agent configurations reduce per-channel output leakage (27.2% vs 43.2% in single-agent systems), but introduce unmonitored internal channels that raise total system exposure to 68.9%. The 7-channel taxonomy (final output, inter-agent messages, shared memory, tool arguments, internal reasoning, log files, external API calls) and 32-class attack taxonomy provide the first systematic measurement of where data actually escapes in multi-agent systems.
+
+Three things make this significant:
+1. It provides the privacy leakage complement to Galileo's decision poisoning research. Together they establish that multi-agent systems have two distinct failure modes: corrupted reasoning (cascading failures) and uncontrolled information flow (internal leakage).
+2. It validates the Firewalled Agent Networks approach from a different angle: the Information Firewall's outbound data minimization directly addresses the inter-agent message channel that AgentLeak identifies as the primary internal leakage path.
+3. It exposes a monitoring gap: most enterprise agent observability focuses on output inspection, covering at most three of the seven leakage channels. Organizations that believe they have visibility into their multi-agent systems' data handling are monitoring less than half of the actual leakage surface.
+
+The practical implication: trust boundaries between agents need to enforce data minimization on internal communication, not just validate outputs. This connects to the ICAM-information governance convergence already noted in the context infrastructure chapter: the information governance layer needs to follow data through inter-agent channels, not just at system boundaries.
 
 ### Firewalled Agent Networks: Trust Boundaries Get Empirical Validation
 
