@@ -26,7 +26,7 @@ The Amazon Kiro incident (December 2025) demonstrates this precisely. An AI codi
 
 Containment means restricting what an agent can do regardless of what it tries to do. The restrictions are structural, not advisory. An agent inside a properly configured sandbox cannot exfiltrate SSH keys, not because it has been told not to, but because the sandbox prevents filesystem access to `~/.ssh/` at the operating system level.
 
-The alternative, filtering dangerous commands through denylists, does not work. CVE-2026-2256 in ModelScope's MS-Agent framework demonstrated this in March 2026.[^ms-agent] The framework's Shell tool used a `check_safe()` method with regex-based denylist filtering to block unsafe commands. Attackers bypassed it with alternative encodings, shell syntax variations, and command obfuscation, achieving arbitrary remote code execution rated CVSS 9.8. The pattern is general: any denylist-based approach assumes you can enumerate everything dangerous. Agents, by design, generate novel command sequences. A denylist that blocks `rm -rf /` does not block the creative reformulation an agent or an attacker produces. Containment must be structural, not lexical.
+The alternative, filtering dangerous commands through denylists, does not work. CVE-2026-2256 in ModelScope's MS-Agent framework demonstrated this in March 2026.[^ms-agent] The framework's Shell tool used a `check_safe()` method with regex-based denylist filtering to block unsafe commands. Attackers bypassed it with alternative encodings, shell syntax variations, and command obfuscation, achieving arbitrary remote code execution rated CVSS 6.5. The pattern is general: any denylist-based approach assumes you can enumerate everything dangerous. Agents, by design, generate novel command sequences. A denylist that blocks `rm -rf /` does not block the creative reformulation an agent or an attacker produces. Containment must be structural, not lexical.
 
 Shane draws the distinction clearly[^sandbox-post]:
 
@@ -84,9 +84,9 @@ Docker Desktop uses this approach when running Docker sandboxes on macOS and Win
 
 Performance characteristics are modest compared to containers but still fast: Firecracker boots in approximately 125ms with under 5MB of memory overhead per VM, supporting 150 VMs per second per host. Kata Containers provide a similar architecture with Kubernetes-native orchestration, booting in roughly 200ms[^northflank].
 
-The NVIDIA AI Red Team recommends full VM isolation over kernel-sharing solutions for production agentic workloads[^nvidia-sandbox]:
+The NVIDIA AI Red Team recommends full virtualization over kernel-sharing solutions for production agentic workloads[^nvidia-sandbox]:
 
-> Use full VM isolation, Kata containers, or microVMs rather than kernel-sharing solutions to prevent kernel exploits.
+> Run agentic tools within a fully virtualized environment isolated from the host kernel at all times, including VMs, unikernels, or Kata containers.
 
 The overhead introduced by virtualization is, as they note, "frequently modest compared to that induced by LLM calls."[^nvidia-sandbox] When an agent spends seconds waiting for model inference, 125ms of VM boot time is noise.
 
@@ -152,7 +152,7 @@ Before an agent processes content, that content should be filtered for known inj
 
 OpenAI's own engineering guidance, published March 2026, makes this explicit: the most effective prompt injection attacks "increasingly resemble social engineering more than simple prompt overrides."[^openai-pi] Detecting a malicious input becomes equivalent to detecting a lie or misinformation, often without necessary context. OpenAI recommends three complementary mechanisms: Instruction Hierarchy (training models to distinguish trusted system instructions from untrusted external content), structured outputs between agent nodes (using enums, fixed schemas, and required field names to eliminate freeform channels attackers can exploit), and system-level containment to limit damage when attacks succeed. The model provider itself is saying what this chapter argues: containment matters more than detection. "AI firewalling" approaches are limited because they try to solve the detection problem. The defense that works is designing systems so that the impact of manipulation is constrained even if some attacks succeed.
 
-OpenAI also employs an RL-trained automated attacker that discovers vulnerabilities by "steering an agent into executing sophisticated, long-horizon harmful workflows that unfold over tens or even hundreds of steps." This is red-teaming at a complexity level that manual testing cannot match, and it connects to the evaluation gap described in [Reliability, Evaluation](reliability-evaluation.md): if your prompt injection testing only covers single-turn attacks, you are testing the wrong threat model.
+Separately, OpenAI's December 2025 work on hardening ChatGPT Atlas describes an RL-trained automated attacker that discovers vulnerabilities by "steering an agent into executing sophisticated, long-horizon harmful workflows that unfold over tens or even hundreds of steps."[^openai-pi] This is red-teaming at a complexity level that manual testing cannot match, and it connects to the evaluation gap described in [Reliability, Evaluation](reliability-evaluation.md): if your prompt injection testing only covers single-turn attacks, you are testing the wrong threat model.
 
 ### Layer 2: Sandboxed Execution
 
@@ -166,7 +166,7 @@ A subtle but critical layer. Agents that can modify configuration files can achi
 
 The NVIDIA guidance is unambiguous[^nvidia-sandbox]:
 
-> Application-specific configuration files must be protected from any modification by the agent, with no user approval.
+> Application-specific configuration files, including those located within the current workspace, must be protected from any modification by the agent, with no user approval of such actions.
 
 This is a non-negotiable control. Configuration files are the bridge between the sandboxed environment and the host system. Protecting them closes the persistence vector.
 
@@ -192,7 +192,7 @@ The six layers above operate at the system level: they constrain what the agent 
 
 The Policy Compiler for Secure Agentic Systems (PCAS), published in February 2026, addresses this gap with a reference monitor that intercepts all agent actions and validates them against policy before execution.[^pcas] The architecture is straightforward: policies are expressed in a Datalog-derived language over dependency graphs that capture the relationships between agents, tools, data, and actions. Before an agent executes any action, the reference monitor checks the action against the active policy set. Violations are blocked before they occur.
 
-The results quantify the "can't vs. don't" gap precisely. Without enforcement, frontier models (GPT-4o, Claude 3.5 Sonnet, Llama 3.1 70B) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They simply do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
+The results quantify the "can't vs. don't" gap precisely. Without enforcement, frontier models (Claude Opus 4.5, GPT-5.2, Gemini 3 Pro) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They simply do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
 
 The 48-to-93 gap is the core argument of this book, measured. Policy alone ("don't share customer data") fails more than half the time. Infrastructure enforcement ("the reference monitor blocks any action that would share customer data") approaches perfect compliance. The remaining gap between 93% and 100% comes from runs where the policy compiler's dependency graph did not fully cover the action space, which is an engineering problem, not a fundamental limitation.
 
@@ -294,7 +294,7 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^norman]: Don Norman, "The 'Problem' of Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation,'" *Philosophical Transactions of the Royal Society* B327 (1990): 585-593.
 
-[^anthropic-sandbox]: Anthropic Engineering, "Making Claude Code More Secure and Autonomous," anthropic.com, 2026.
+[^anthropic-sandbox]: Anthropic Engineering (David Dworken and Oliver Weller-Davies), "Beyond Permission Prompts: Making Claude Code More Secure and Autonomous," anthropic.com/engineering/claude-code-sandboxing, 2026.
 
 [^codex-security]: OpenAI, "Codex Security," developers.openai.com, 2026.
 
@@ -308,10 +308,10 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
 
-[^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Reframes prompt injection as social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. Also describes RL-trained automated attackers for multi-step vulnerability discovery. See also CybersecurityAsia, "Prompt Injection Isn't Going Away—and OpenAI Knows It," March 2026.
+[^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Draws parallels between prompt injection and social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. The RL-trained automated attacker for multi-step vulnerability discovery is described in a separate publication: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," openai.com, December 22, 2025.
 
-[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.
+[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 6.5 (Medium). Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations, shell syntax alternatives, and unblocked interpreters (python3, perl, ruby, node). At the time of disclosure, no vendor patch was available.
 
-[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
+[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 20, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
 
-[^google-mariner]: Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026. Five-layer security architecture for browser agents: User Alignment Critic (intent verification via separate Gemini model shielded from web content), Agent Origin Sets (task-scoped browsing boundaries), prompt injection classification (per-page scanning), mandatory human oversight (payments, credentials, social media), and pre-launch security testing. See also Google Security Blog, "Multi-Layered Security Architecture for Chrome's Agentic AI Features," December 2025.
+[^google-mariner]: Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026. Five-layer security architecture for browser agents: User Alignment Critic (intent verification via separate Gemini model shielded from web content), Agent Origin Sets (task-scoped browsing boundaries), prompt injection classification (per-page scanning), mandatory human oversight (payments, credentials, social media), and pre-launch security testing. See also Google Security Blog, "Architecting Security for Agentic Capabilities in Chrome," December 8, 2025.

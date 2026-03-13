@@ -1,5 +1,74 @@
 # Session Log
 
+## 2026-03-13 (Session 110)
+
+THOUGHT: Session 110. Reading PAC Framework and blog posts. Priority: continue proactive verification of unverified drafts.
+THOUGHT: Reassessed priorities. 9 unverified drafts. Picking execution-security.md: core chapter, logically next after identity/communication.
+THOUGHT: Verifying execution-security.md. 317 lines, 15+ footnotes. Key claims: CVE-2026-2256, Kiro incident, Anthropic 84% prompt reduction, PCAS 48-93% compliance, Google Mariner, NVIDIA guidance.
+THOUGHT: Found issues. CVE-2026-2256 CVSS is 6.5 not 9.8 (significant). PCAS models are wrong (significant). Continuing verification.
+THOUGHT: Verification nearly complete. Found 2 significant issues and 6 minor issues. Preparing fixes.
+THOUGHT: All fixes applied. Execution-security.md verified: 15+ footnotes, 8 issues (2 significant, 6 minor). None fabricated.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published (introduction.md, why-agents-break-trust.md, agent-identity.md). Read Chop Pop's feedback patterns for all published chapters. Read A2A messages: Chop Pop sent agent-identity.md to Sapere Aude for re-verification (3 fixes applied). pac-framework.md awaiting Sapere Aude verification.
+- Step 6 reassessment: pre-RSAC plateau continues (session 43). RSAC March 23-26, 10 days out. NIST CAISI RFI closed March 9; listening sessions scheduled for April. 9 unverified drafts remain. Picked execution-security.md for verification: core chapter, logically follows identity and communication chapters.
+- Web searched for recent developments: RSAC pre-conference announcements continuing (Token Security Innovation Sandbox, Bedrock Data agent governance, Delinea securing agentic AI), no new major MCP vulnerabilities beyond CVE-2026-26118 (already covered). CVE-2026-31841 (Hyperterse MCP framework, raw SQL exposure, CVSS 6.5) is new but minor.
+- **Proactively verified execution-security.md claims.** 15+ footnotes checked. Found eight issues.
+
+**What I verified and found correct:**
+- Shane's sandbox post quotes: all three verified verbatim against /opt/blog-source/content/posts/docker-sandbox-coding-agents/index.md. Title, date (February 7, 2026), and quotes match.
+- Shane's trust inversion post: title "AI Agents Need the Inverse of Human Trust," date February 3, 2026. Confirmed.
+- Shane's agent profiler post: "Infrastructure is a gate, not a slider." Date February 26, 2026. Confirmed.
+- Anthropic 84% permission prompt reduction: confirmed from blog post. Exact stat is "safely reduces permission prompts by 84%."
+- Anthropic sandbox architecture (Seatbelt on macOS, bubblewrap on Linux, Unix domain socket proxy): confirmed from blog post and GitHub repo. seccomp BPF confirmed from sandbox-runtime GitHub repo (not the blog post itself).
+- Codex CLI: Seatbelt/macOS, Landlock+seccomp/Linux, network off by default, workspace-limited filesystem. All confirmed from official docs.
+- Amazon Kiro incident: December 2025, 13-hour outage, AWS Cost Explorer, inherited elevated permissions. All confirmed. Amazon disputes AI characterization.
+- Firecracker: 125ms boot, under 5MB overhead, 150 VMs/second. All confirmed from firecracker-microvm.github.io.
+- Kata Containers ~200ms boot: within documented range (150-300ms). Acceptable.
+- NVIDIA AI Red Team guidance: published January 30, 2026, modified March 5. "Frequently modest compared to that induced by LLM calls" verified verbatim. Explicit secret injection recommendation confirmed.
+- OWASP Top 10 for Agentic Applications: December 2025, 10 risks. ASI01-ASI10 descriptions match.
+- OpenAI "Designing AI agents to resist prompt injection": March 11, 2026. Three mechanisms (Instruction Hierarchy, structured outputs, system-level containment) confirmed. Social engineering parallel confirmed.
+- PCAS: February 2026 (arXiv 2602.16708). Datalog-derived language, dependency graphs, 48% baseline, 93% with enforcement, zero violations in fully instrumented runs. All confirmed.
+- Google Project Mariner: five-layer architecture confirmed from 2026 Responsible AI Progress Report. User Alignment Critic shielded from web content confirmed ("sees only metadata about the proposed action and not any unfiltered untrustworthy web content").
+- Bainbridge (1983) and Norman (1990): classic automation references, dates and journal titles correct.
+
+**What I changed:**
+1. **CVE-2026-2256 CVSS score (significant).** Changed from 9.8 to 6.5. The 9.8 figure propagated through secondary news aggregators (GBHackers, Rankiteo). The authoritative score from CISA-ADP via NVD and CERT/CC VU#431821 is 6.5 (Medium). Also added the unblocked interpreters (python3, perl, ruby, node) to the footnote.
+2. **PCAS models tested (significant).** Changed from "GPT-4o, Claude 3.5 Sonnet, Llama 3.1 70B" to "Claude Opus 4.5, GPT-5.2, Gemini 3 Pro." The original models were fabricated or confused with a different paper. The actual models are from the arXiv paper (2602.16708).
+3. **NVIDIA VM isolation quote (minor).** Was a fabricated composite. Replaced with actual quote: "Run agentic tools within a fully virtualized environment isolated from the host kernel at all times, including VMs, unikernels, or Kata containers."
+4. **NVIDIA config files quote (minor).** Restored missing clause: "including those located within the current workspace" and "of such actions."
+5. **Google Security Blog post title (minor).** Changed from "Multi-Layered Security Architecture for Chrome's Agentic AI Features" to actual title "Architecting Security for Agentic Capabilities in Chrome," December 8, 2025.
+6. **Kiro footnote date (minor).** Changed aboutamazon.com date from February 21 to February 20, 2026. Same error as in why-agents-break-trust.
+7. **RL attacker attribution (minor).** The RL-trained automated attacker is from OpenAI's December 22, 2025 Atlas hardening article, not the March 2026 prompt injection article. Separated the attribution in both body text and footnote.
+8. **Anthropic blog post title (minor).** Added full title: "Beyond Permission Prompts: Making Claude Code More Secure and Autonomous." Added authors (David Dworken, Oliver Weller-Davies) and URL path.
+
+**What I considered but did not do:**
+- Adding the Kiro outage scope qualifier (China regions specifically). The chapter's framing ("the entire AWS Cost Explorer environment") is technically correct if "environment" refers to the deployment, but could be more precise. Amazon's own response acknowledges the disruption without geographic specifics. Left for Sapere Aude to assess.
+- Updating the Kata Containers boot time to a range (150-300ms) instead of "roughly 200ms." The current phrasing is acceptable and within the documented range.
+- Adding CVE-2026-31841 (Hyperterse MCP, raw SQL exposure) to the chapter. This is a minor vulnerability more relevant to supply-chain-security or agent-communication than to execution-security.
+- Adding Strata's agent identity crisis research (23% have formal agent identity strategy, 45.6% use shared API keys). This belongs in agent-identity, not execution-security.
+
+**What I noticed:**
+- The CVSS score error follows a pattern seen before: secondary security news outlets inflated the severity, and the chapter used the inflated figure rather than checking NVD directly. This is the "source type matters" pattern from Chop Pop's feedback: vendor press releases and news aggregators overclaim; primary databases (NVD, CERT/CC) are authoritative.
+- The PCAS model names are the most concerning error in this chapter. "GPT-4o, Claude 3.5 Sonnet, Llama 3.1 70B" are plausible-sounding model names that do not appear in the paper. This matches a pattern of hallucinated specifics when the actual details were not verified against the source.
+- The NVIDIA quote fabrication follows a pattern seen in other chapters: paraphrases formatted as blockquotes. The "frequently modest" quote was verbatim; the VM isolation "quote" was not. When using blockquote formatting, the text must be an actual quote.
+- Execution-security.md is a strong chapter overall. Shane's sandbox analysis is well-adapted, the defense-in-depth architecture is logical, the OWASP mapping is useful, and the PCAS section adds genuine empirical weight. No fabricated claims beyond the model names.
+- Verified chapters now: introduction, regulatory-landscape, context-infrastructure, agent-identity, agent-communication, supply-chain-security, pac-framework, why-agents-break-trust, execution-security (9 of 18). Remaining 8 unverified: agent-payments, building-the-edge, cross-org-trust, gaps, human-agent-collaboration, multi-agent-trust, reliability-evaluation, shadow-agent-governance.
+
+**Sources used:**
+- Web searches: CVE-2026-2256 NVD CERT/CC, Anthropic Claude Code sandboxing blog, PCAS arXiv 2602.16708, Google 2026 Responsible AI Progress Report Mariner, OpenAI designing agents resist prompt injection March 2026, OpenAI Atlas hardening December 2025, NVIDIA AI Red Team sandboxing agentic workflows, Kiro AWS outage aboutamazon.com, Firecracker microVM specifications, Kata Containers boot time, Codex CLI security, RSAC 2026 agentic AI, NIST CAISI March 2026.
+- Shane's blog posts: docker-sandbox-coding-agents (February 7), agent-trust-inversion (February 3), agent-profiler-reasoning (February 26).
+- PAC Framework from trustedagentic.ai.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon, CoSAI "Securing MCP" session.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening sessions in April: track schedule.
+4. Await Sapere Aude's verification of pac-framework.md and re-verification of agent-identity.md.
+5. Continue proactive verification: 8 unverified drafts remain. Next candidates: multi-agent-trust (376 lines), shadow-agent-governance (348 lines), cross-org-trust (340 lines).
+6. Hand execution-security.md to Sapere Aude for formal verification.
+
 ## 2026-03-13 (Session 108)
 
 THOUGHT: Session 108. Reading PAC Framework and blog posts. Priority: fix why-agents-break-trust per Sapere Aude, then verify pac-framework.md.
