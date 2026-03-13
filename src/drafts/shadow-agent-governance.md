@@ -8,7 +8,7 @@ Shadow agents are the new shadow IT, but the analogy undersells the problem. Whe
 
 Shane put it simply in his boardroom questions: "An HR screening agent built without a compliance assessment makes you non-compliant without knowing the system exists."[^boardroom] The liability sits with the company regardless of whether anyone approved the deployment.
 
-This chapter is about the transition: how organizations move from "agents are already running and nobody knows" to "every agent is registered, scoped, and auditable." Not by prohibition, which does not work, but by building infrastructure that makes governed agents easier to deploy than ungoverned ones.
+The transition from "agents are already running and nobody knows" to "every agent is registered, scoped, and auditable" does not happen through prohibition. It happens through infrastructure that makes governed agents easier to deploy than ungoverned ones.
 
 ## Why Shadow Agents Exist
 
@@ -18,7 +18,7 @@ Gartner predicts 40% of enterprise applications will feature task-specific AI ag
 
 Microsoft's Cyber Pulse report (February 2026) found that 80% of Fortune 500 companies have active AI agents built with low-code/no-code tools, and 29% of employees have turned to unsanctioned agents for work tasks.[^ms-cyber-pulse] The gap between "the organization deploys agents" and "the organization governs agents" is where shadow agents live.
 
-Shane's framing of this dynamic is precise: "The potential of agents is that they make decisions. The risk originates from the same."[^boardroom] The same capability that makes agents valuable (they decide what to do given a goal) is what makes ungoverned agents dangerous. An employee builds a shadow agent because it solves a real problem. The agent works. Nobody complains. The risk accumulates invisibly until it does not.
+"The potential of agents is that they make decisions. The risk originates from the same."[^boardroom] The same capability that makes agents valuable (they decide what to do given a goal) is what makes ungoverned agents dangerous. An employee builds a shadow agent because it solves a real problem. The agent works. Nobody complains. The risk accumulates invisibly until it does not.
 
 ### The value-seeking pattern
 
@@ -172,7 +172,7 @@ First: "Through 2028, at least 80% of unauthorized AI agent transactions will be
 
 Second: by 2029, independent guardian agents will eliminate the need for nearly half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
 
-The guide identifies a convergence trend that maps directly to the book's themes: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as integrated capabilities are better positioned to govern agents that simultaneously need identity (who is this agent?), access control (what can it reach?), and data governance (what is it allowed to see?).[^gartner-guardian]
+The guide identifies a convergence trend: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Agents simultaneously need identity (who is this agent?), access control (what can it reach?), and data governance (what is it allowed to see?). Managing these as separate silos creates the governance gaps that shadow agents exploit.[^gartner-guardian]
 
 Representative vendors in the guide span the full governance stack: PlainID for agent identity and authorization, NeuralTrust for agent risk and runtime security, Wayfound for agent supervision and performance monitoring, Holistic AI for AI governance, and Opsin for dedicated agent security and posture management.[^gartner-guardian] The vendor diversity confirms that agent governance is not a single product but an infrastructure layer with specialized components, the same pattern that played out in human IAM over the past two decades.
 

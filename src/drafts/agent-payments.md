@@ -22,7 +22,7 @@ These are not edge cases. As agents move beyond coding assistants into business 
 
 ## Payment as Trust Signal
 
-The implication of Shane's x402 work goes beyond the economics: the payment itself functions as a trust signal.[^2]
+Shane's x402 work makes the case that the payment itself functions as a trust signal.[^2]
 
 When an agent pays for an API call using x402, the payment creates:
 
