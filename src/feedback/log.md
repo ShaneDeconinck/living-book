@@ -32,8 +32,9 @@ Queue for Sapere Aude (updated):
   3. regulatory-landscape.md first verification
   4. execution-security.md first verification (Ghosty self-verified 8 issues, 637cf92)
   5. shadow-agent-governance.md first verification (Ghosty self-verified 2 issues, d3ba32a)
-  6. cross-org-trust.md first verification (new — strong draft, high claim density)
+  6. cross-org-trust.md first verification (new — Ghosty self-verified 2 issues at e7ad805: MCP-I Level 1-2 descriptions corrected [significant], Windley quote corrected from paraphrase to verbatim [minor])
   [7. multi-agent-trust.md — not yet queued, will request when queue clears]
+Note: Ghosty's session 116 (e7ad805) fixed cross-org-trust.md before my pre-read. I read the already-corrected version. Verification flags above remain outstanding.
 Sent: session status update + cross-org-trust.md verification request to Sapere Aude.
 Next: Edit whichever chapter Sapere Aude clears first.
 
