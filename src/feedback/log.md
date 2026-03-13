@@ -901,3 +901,43 @@ Factual flags for Sapere Aude:
 Published chapters in SUMMARY.md: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
 Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md, supply-chain-security.md, multi-agent-trust.md
 
+
+2026-03-13 22:10 UTC
+THOUGHT: Starting shadow-agent-governance.md. Dense chapter, solid bones. Main issues: stat dumps, redundant bridges, cliché opener. 12 surgical cuts planned.
+
+THOUGHT: shadow-agent-governance.md done. 13 cuts: stat dumps gone, cliché opener gone, bridge sentences gone. Prose now starts every section on its argument.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 148)
+Chapter edited: src/drafts/shadow-agent-governance.md → src/chapters/shadow-agent-governance.md
+Status: STAGED — awaiting Sapere Aude verification before SUMMARY.md publication
+
+Cuts applied (13 total, no content removed):
+1. Opening stat cluster: removed "1,200 unofficial AI applications / 86% no visibility" sentence. One stat (98%) is enough.
+2. Redundant math: "That is an eight-fold increase in one year" cut after "up from under 5%."
+3. ConductorOne stat wall: three trailing sentences cut (80% breach, 87% urgent, 91% spending). Key finding (95%/47%/22%) retained.
+4. Cliché opener: "You cannot govern what you cannot see" cut. Section starts on substance.
+5. Filler adverb: "rapidly" removed from "market is crystallizing."
+6. Bridge sentence: "The funding signals reinforce the market thesis" cut. Onyx paragraph stands alone.
+7. Editorialism: "The instinct to ban... is understandable and counterproductive" reframed. Fact makes the argument.
+8. Amnesty restatement: "The amnesty model works because it respects..." cut. "The amnesty model treats shadow agent creators as early adopters, not policy violators" is the better opener.
+9. Duplication: "It channels their energy into the governed system rather than fighting it" cut.
+10. Filler: "directly" removed from "This connects to the PAC Framework's Potential pillar."
+11. PAC quote restatement: "When IT, security, compliance, and business units each assume..." cut after PAC quote already said this.
+12. Bridge sentence: "Microsoft's Cyber Pulse report identifies the challenge" cut. Section starts on the speed asymmetry.
+13. Back-reference: "The Reliability chapter's discussion of observability applies here:" cut. Sentence stands without the pointer.
+14. Orphaned footnote: [^helpnet-agent-security] removed (no longer cited).
+
+Factual flags for Sapere Aude:
+- Vectra 98% stat ([^vectra-shadow])
+- Microsoft Cyber Pulse figures: 80% Fortune 500, 29% employees unsanctioned agents ([^ms-cyber-pulse])
+- IBM shadow AI breach premium $670K ([^ibm-breach])
+- Gravitee survey figures: 47.1% monitored, 21.9% independent identities, 82% confidence ([^gravitee])
+- Kaspersky 18% of 1.5M OpenClaw agents policy-violating ([^kaspersky-18pct])
+- ConductorOne: 95%/47%/22% stats ([^conductorone])
+- Gartner: 40% apps 2026 prediction, 68% unauthorized use ([^gartner-40pct], [^gartner-shadow-stats])
+- Gartner Guardian Agents guide: 80% unauthorized transactions from internal violations through 2028; 2029 50% security system elimination ([^gartner-guardian])
+- Gartner AI governance spend: $492M 2026, $1B by 2030 ([^gartner-governance-spend])
+- CSA/Strata survey: 28%/21%/80%/40% figures ([^csa-strata-traceability])
+- Summer Yue / OpenClaw 200+ emails incident ([^yue-incident])

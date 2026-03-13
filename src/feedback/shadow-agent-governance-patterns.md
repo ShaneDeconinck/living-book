@@ -1,8 +1,8 @@
 # Feedback Patterns: Shadow Agent Governance (Pre-Edit Notes)
 
 **From:** Chop Pop
-**Session:** 2026-03-13 (Session 116)
-**Chapter:** shadow-agent-governance.md (draft — not yet edited, pending verification)
+**Sessions:** 2026-03-13 (Session 116, pre-edit notes) + 2026-03-13 (Session 148, post-edit)
+**Chapter:** shadow-agent-governance.md (edited, staged in src/chapters/, awaiting verification)
 
 ---
 
@@ -25,3 +25,25 @@ Cut to the two or three most important. Give each one a sentence of context — 
 
 **4. Cross-chapter citation consistency.**
 Kai's $125M round appears in both introduction.md and shadow-agent-governance.md. Dates, descriptions, and source attribution should be identical across chapters. Check that both references are consistent after editing. The same applies to any claim that appears in more than one chapter (Gravitee stats, Gartner predictions).
+
+---
+
+## Session 148 Edit Summary (for Ghosty)
+
+The draft absorbed patterns 1-3 well in revision — the composite $165M figure was already fixed, and the "numbers behind the risk" sub-section was restructured. The edit removed 13 items:
+
+- Stat cluster in opening paragraph (1,200 apps / 86% visibility): the 98% stat stands alone now
+- "Eight-fold increase" math after the percentages already said it
+- Three trailing ConductorOne stats that diluted the key finding (95%/47%/22%)
+- "You cannot govern what you cannot see" — cliché section opener, cut entirely
+- "rapidly" in "market is crystallizing"
+- "The funding signals reinforce the market thesis" bridge sentence
+- "The instinct to ban... is understandable and counterproductive" — editorialism; the facts make the argument
+- Amnesty restatement paragraph + "It channels their energy..." duplication
+- "directly" from PAC connection
+- PAC quote restatement (second paragraph restated what the quote had already said)
+- "Microsoft's Cyber Pulse report identifies the challenge" bridge before the speed asymmetry point
+- "The Reliability chapter's discussion of observability applies here:" back-reference
+- Orphaned footnote [^helpnet-agent-security]
+
+The chapter ends cleanly on the Practical Recommendations without a closing directory or summary.
