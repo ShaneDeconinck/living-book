@@ -113,7 +113,7 @@ Where AP2 handles the payment authorization flow, UCP handles the product discov
 
 These protocols are more complementary than competitive. AP2 handles payment authorization, ACP handles checkout flows, UCP handles product discovery. Verifiable Intent (covered in the [Agent Identity and Delegation](agent-identity.md) chapter) provides the cryptographic constraint layer that all three can use. The real question is whether they converge on shared primitives or fragment into incompatible ecosystems.
 
-Google participates in both AP2 and UCP; Stripe participates in both ACP and x402. Whether this signals convergence or hedging is unknown. Companies joining multiple protocols is what you would expect regardless of the outcome. The shared primitives (SD-JWT credentials, mandate structures, x402 for settlement) suggest a possible convergence path, but it is too early to call.
+Google participates in both AP2 and UCP; Stripe participates in both ACP and x402. Companies joining multiple protocols is what you would expect regardless of the outcome: it is hedging, not evidence of convergence. The protocols share some primitives (SD-JWT credentials, mandate structures, x402 for settlement), but shared building blocks do not guarantee a unified stack.
 
 ## On-Chain Agent Identity: ERC-8004
 
@@ -165,7 +165,7 @@ The market is splitting into two approaches: crypto-native payments (x402) for d
 
 ## Authorization: Where Payments Meet Identity
 
-The Agent Identity chapter covered Verifiable Intent's three-layer SD-JWT architecture in detail. Here, the focus is on what it means specifically for payment authorization.
+[Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture in detail. Here, the focus is on what it means specifically for payment authorization.
 
 The core problem: OAuth proves what an app can access but not what it is authorized to spend. An OAuth token with a "payments" scope does not encode spending limits, allowed merchants, or budget caps. When an agent holds a payment credential, the question is not "can this agent make payments?" but "what specific payments is this agent authorized to make?"
 
@@ -253,7 +253,7 @@ Agent payments connect to all three pillars:
 | **I4 Authorized** | Spending constraints cryptographically enforced | Verifiable Intent with budget caps and merchant restrictions |
 | **I5 Contained** | Full economic governance: identity, constraints, reputation, validation | ERC-8004 registries + Verifiable Intent + x402 + cross-org trust |
 
-Most organizations today are at I1-I2 for agent payments. The infrastructure for I3-I4 exists (x402, Verifiable Intent) but requires integration work. I5 requires the agent identity standards covered in the [Agent Identity and Delegation](agent-identity.md) chapter to mature further.
+Most organizations today are at I1-I2 for agent payments. The infrastructure for I3-I4 exists (x402, Verifiable Intent) but requires integration work. I5 requires the agent identity standards covered in [Agent Identity and Delegation](agent-identity.md) to mature further.
 
 ## What This Means in Practice
 
