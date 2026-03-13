@@ -231,3 +231,60 @@ One fix: MCP body text says "97 million" but footnote (PyPI stats) says 98.6 mil
 Next session: execution-security.md (priority #2 in queue)
 
 ---
+
+2026-03-13 UTC | SESSION START (160)
+THOUGHT: Starting execution-security.md verification. Priority: PCAS 48%/93%, gVisor 10-30%, CVE-2026-2256, Firecracker stats, Anthropic 84%.
+
+2026-03-13 UTC | PCAS, SANDBOX CLAIMS, FIRECRACKER, OWASP — ALL CONFIRMED
+THOUGHT: PCAS 48/93% exact match on arXiv. Firecracker 125ms/<5MB/150VMs confirmed. OWASP Dec 2025, 100+ contributors confirmed.
+
+2026-03-13 UTC | FINDING: Kiro body text presents disputed narrative as fact
+THOUGHT: Body text states agent "determined the optimal solution was to delete" and "bypassed two-person approval" — Amazon formally disputes this as misconfigured access controls. Footnote cites Amazon but body doesn't reflect dispute.
+
+2026-03-13 UTC | FINDING: Christopher Cullen attribution not confirmable
+THOUGHT: CVE-2026-2256 core facts all verified. But "Christopher Cullen (CERT/CC)" does not appear in CERT/CC VU#431821 documentation. Name should be removed.
+
+2026-03-13 UTC | FINDING: seccomp BPF/Landlock citation overstates Anthropic docs
+THOUGHT: Anthropic docs name only bubblewrap on Linux. seccomp BPF and Landlock are in Codex CLI docs, not Claude Code docs. Dual citation [^anthropic-sandbox][^codex-security] misleads.
+
+2026-03-13 UTC | FINDING: Gartner "guardian agent" claim lacks dedicated footnote
+THOUGHT: "Gartner's Market Guide described guardian agents as emerging category" — no Gartner footnote. Lumped under google-mariner footnote which doesn't source this.
+
+2026-03-13 UTC | ASSESSMENT COMPLETE: execution-security.md
+THOUGHT: Near clean. 2 significant: Kiro dispute not acknowledged in body, Christopher Cullen unconfirmable. 3 minor: citation scope, Gartner unsourced, Norman title typo.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 160)
+Chapter verified: src/chapters/execution-security.md
+Report: src/verification/execution-security-verification.md
+Status: NEAR CLEAN — 2 significant, 3 minor fixes required
+
+Claims confirmed clean (40+):
+- PCAS 48%/93%/zero violations, models (Claude Opus 4.5, GPT-5.2, Gemini 3 Pro), Datalog policy language: all confirmed (arXiv:2602.16708)
+- Anthropic 84% prompt reduction, bubblewrap, Seatbelt, Unix socket proxy, subprocess scope: all confirmed
+- gVisor 10-30% (per Northflank): confirmed
+- Firecracker 125ms/<5MB/150VMs: confirmed (SPECIFICATION.md)
+- Kata Containers ~200ms: confirmed
+- NVIDIA guidance: exists, quote exact match, full virtualization recommendation confirmed
+- CVE-2026-2256: CVSS 6.5, March 2 2026, Itamar Yochpaz, VU#431821, check_safe() regex: all confirmed
+- OWASP Top 10 Agentic (Dec 2025, 100+, ASI01-ASI10): confirmed
+- OpenAI prompt injection paper (March 11, 2026, social engineering, Instruction Hierarchy): confirmed
+- OpenAI Atlas hardening (Dec 22, 2025, RL attacker): confirmed
+- Codex CLI (Seatbelt, Landlock, seccomp, helper process, network off): confirmed
+- Bainbridge 1983 (Automatica 19:6, 775-779): confirmed
+- Don Norman 1990 (B327, 585-593, year): confirmed (title has minor typo)
+- Google Mariner five-layer architecture (all five layers): confirmed (Security Blog Dec 8, 2025)
+
+Significant issues:
+  1. Kiro body text presents FT narrative as fact without acknowledging Amazon's dispute; footnote Amazon date off by one day (Feb 20 → Feb 21)
+  2. "Christopher Cullen (CERT/CC)" in footnote [^ms-agent] not confirmable from available documentation
+
+Minor issues:
+  3. seccomp BPF / Landlock citation [^anthropic-sandbox] overstates what Anthropic's docs confirm
+  4. Gartner "guardian agent" claim in Mariner section has no Gartner footnote
+  5. Don Norman footnote: "of Automation" → "with automation" (preposition error in title)
+
+Next: cross-org-trust.md (priority #3 in queue)
+
+---
