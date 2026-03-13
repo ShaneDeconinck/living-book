@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-13: Agent Oversight Failure Mechanisms (Session 55)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
+- Read current book state: all 15 substantive chapters assessed. Line counts: agent-communication (501), gaps (352+), shadow-agent-governance (345), regulatory-landscape (335), agent-identity (329), multi-agent-trust (321), cross-org-trust (311), pac-framework (301), supply-chain-security (294), execution-security (283), reliability-evaluation (258), agent-payments (247), human-agent-collaboration (221), context-infrastructure (231), building-the-edge (167), why-agents-break-trust (148), introduction (132).
+- Step 4 reassessment: Still pre-RSAC (March 23-26). No new external developments in the blog-source or PAC framework since Session 54 (same day). Web searched broadly: AI agent security governance March 2026, RSAC 2026 previews, human-AI collaboration oversight patterns 2026, OpenAI Promptfoo acquisition, Delinea StrongDM acquisition, Controllability Trap ICLR 2026. Found three significant new academic/industry sources that strengthen the human-agent-collaboration chapter, which was the weakest technical chapter not recently revised at 221 lines.
+- Read Shane's blog posts and PAC Framework fresh. Confirmed the chapter's infrastructure-in-the-loop advocacy aligns with Shane's "can't vs. don't" framing.
+
+**What I changed:**
+- **human-agent-collaboration.md**: Added a new section "Why Agents Resist Correction" (approximately 40 lines) between the Three Oversight Models section and the Autonomy Dial section. The section integrates the Controllability Trap paper (ICLR 2026 Workshop on Agents in the Wild, arXiv:2603.03515), which identifies six governance failures specific to agentic AI capabilities: Interpretive Divergence, Correction Absorption, Belief Resistance, Commitment Irreversibility, State Divergence, and Cascade Severance. Each failure mechanism is described concretely and connected to the case for infrastructure-in-the-loop: the section closes by mapping each failure to a specific infrastructure response. Added two footnotes citing the Controllability Trap paper and the Galileo cascade research.
+- **gaps.md**: Updated session number to 55. Added new observation "The Controllability Trap: Oversight Needs a Richer Vocabulary" covering the Controllability Trap paper, the INCOSE/Singh taxonomy of human-AI loop architectures (Systems Engineering, 2026), and Red Hat's 10-pattern classification. Notes that the field is outgrowing the simple HITL/HOTL distinction and that the book's infrastructure-in-the-loop framing benefits from the richer vocabulary.
+
+**What I considered but did not do:**
+- Adding the INCOSE/Singh taxonomy in full detail to the human-agent-collaboration chapter. The taxonomy (in/on/over/under/along/before/behind-the-loop) is academically rigorous but risks making the chapter more complex without adding practical value. The chapter's three-model framing (HITL, HOTL, infrastructure-in-the-loop) is clearer for practitioners. The taxonomy is noted in the gaps chapter for potential future use.
+- Adding Delinea/StrongDM acquisition (completed March 5) to the agent-identity chapter. The acquisition is significant (PAM + runtime authorization for agentic AI) and their RSAC session "Agentic on Trial: Human Identity or Machine Identity?" directly maps to the book's agent identity discussion. However, this is pre-RSAC marketing and better covered post-RSAC when session outcomes are available. Noted for post-RSAC integration.
+- Expanding the "Human Control Is the Anchor, Not the Answer" paper (arXiv:2602.09286) into the chapter. The paper's finding that oversight needs diverge by role (action-risk in deployment communities vs. meaning-risk in interaction communities) is interesting but niche. The chapter already covers per-task autonomy rather than per-role oversight, which is the more actionable framing.
+- Adding the Red Hat 10-pattern classification of human-AI interaction to the chapter. The patterns (before-the-loop, behind-the-loop, etc.) provide useful vocabulary but would require restructuring the Three Oversight Models section significantly. The current three-model structure with the new six-failure-mechanism section provides better practical guidance. The richer vocabulary is noted in gaps.md for potential future revision.
+
+**What I noticed:**
+- The human-agent-collaboration chapter was the right target for this session. It had strong practical content (autonomy dial, UX patterns, permission granularity, self-aware agent, organizational shift) but lacked a rigorous analysis of WHY agents specifically resist traditional oversight. The complacency research (Bainbridge, Norman) in the reliability chapter explains why humans are bad monitors. The Controllability Trap explains why agents are particularly hard to monitor. The new section bridges this gap.
+- The Controllability Trap paper's three pillars (Preventive, Detective, Corrective) map remarkably well to the PAC Framework's infrastructure levels: Preventive at I4 (Authorized), Detective at I3 (Verified), Corrective at I5 (Contained). This is noted in the chapter text. The military context of the paper is explicitly acknowledged but the universality of the failure mechanisms is emphasized: every one applies to enterprise agent deployments.
+- The reliability chapter already has the OpenAI/Promptfoo acquisition (the "Evaluation Is Being Absorbed into the Platform" section). No duplicate needed.
+- The field's vocabulary for human-AI collaboration is expanding rapidly. Three independent sources (ICLR workshop, INCOSE Systems Engineering journal, Red Hat blog) all published richer taxonomies in February-March 2026. This suggests the simple HITL/HOTL distinction is becoming insufficient for practitioners. The book's infrastructure-in-the-loop framing sidesteps this by focusing on where the enforcement happens rather than where the human sits, which remains the right architectural decision.
+
+**Sources used:**
+- "The Controllability Trap: A Governance Framework for Military AI Agents," ICLR 2026 Workshop on Agents in the Wild, arXiv:2603.03515, March 2026.
+- Singh et al., "Architecting Human-AI Systems for Effective Collaboration and Oversight: Making Sense of Human/AI-in/on/Over/Under/Along-the-Loop," INCOSE Systems Engineering 29(2), 2026.
+- Red Hat, "Classifying human-AI agent interaction," redhat.com/en/blog, March 2026.
+- "Human Control Is the Anchor, Not the Answer: Early Divergence of Oversight in Agentic AI Communities," arXiv:2602.09286, February 2026.
+- Galileo AI, multi-agent system failure research, December 2025.
+- OpenAI, "OpenAI to acquire Promptfoo," openai.com, March 9, 2026.
+- Delinea, "Delinea Completes StrongDM Acquisition to Secure AI Agents with Continuous Identity Authorization," globenewswire.com, March 5, 2026.
+- Shane's blog (checked: no new posts since Session 54).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements. Delinea "Agentic on Trial" session outcome for agent identity chapter.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
+6. Track cross-environment governance tools (Entro, Oasis, ConductorOne) for production deployment data.
+7. Monitor for Google and AWS equivalents to Agent 365 (agent governance control planes from other hyperscalers).
+8. Consider adopting the richer oversight taxonomy (over/under/along/before/behind-the-loop) if a consensus emerges post-RSAC.
+
 ## 2026-03-13: Introduction Rewrite (Session 54)
 
 **What I did:**

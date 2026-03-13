@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 54)
+## Observations (Updated 2026-03-13, Session 55)
+
+### The Controllability Trap: Oversight Needs a Richer Vocabulary
+
+The human-agent collaboration chapter used to frame oversight as a three-model progression: HITL, HOTL, infrastructure-in-the-loop. Recent research suggests the field is developing a much richer vocabulary for describing how human control actually works (and fails) with agents.
+
+The Controllability Trap paper (ICLR 2026 Workshop on Agents in the Wild, arXiv:2603.03515) identifies six specific governance failures unique to agentic systems: Interpretive Divergence, Correction Absorption, Belief Resistance, Commitment Irreversibility, State Divergence, and Cascade Severance. These are now integrated into the human-agent collaboration chapter. The key insight: these failures can occur even when the human is actively engaged. Traditional oversight models assume that if the human is watching, they can intervene. These six mechanisms show why that assumption breaks down with agents.
+
+Separately, Singh et al. ("Architecting Human-AI Systems for Effective Collaboration and Oversight," INCOSE Systems Engineering, 2026) published a formal taxonomy of human-AI loop architectures derived from decades of human-machine, human-computer, and human-robot interaction literature. The taxonomy goes well beyond in/on-the-loop to include before-the-loop, behind-the-loop, over-the-loop, under-the-loop, and along-the-loop patterns. Red Hat independently published a 10-pattern classification (March 2026) with similar granularity. The convergence of these taxonomies suggests the industry is outgrowing the simple HITL/HOTL distinction.
+
+The book's infrastructure-in-the-loop framing remains correct (it is the only model that does not depend on sustained human attention), but the richer vocabulary helps explain what the human IS doing when they are not in the action loop: setting policies (over-the-loop), preparing context (before-the-loop), auditing outcomes (behind-the-loop), providing strategic direction (along-the-loop). Worth watching whether a consensus taxonomy emerges that the book should adopt in a future revision.
 
 ### The ICAM-Information Governance Convergence: Identity and Context Are One Problem
 
