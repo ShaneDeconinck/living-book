@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13: Strengthened Concluding Chapter, Sovereign Agents Observation
+
+**What I did:**
+- Significantly expanded building-the-edge.md (the concluding synthesis chapter) from 123 lines to ~195 lines. Added two substantial new sections: "What Does Not Work" (six anti-patterns with documented failures) and an expanded "PAC as Iterative Practice" section (concrete four-cycle example showing how a single agent deployment evolves through the framework). Updated the convergence timeline with Verifiable Intent's partner ecosystem (Fiserv, IBM, Checkout.com, Basis Theory, Getnet, verifiableintent.dev) and RSAC Innovation Sandbox $5M per finalist detail.
+- Added "Agentic Sovereignty" observation to gaps.md (Hu and Rong, arXiv:2602.14951, February 2026). The paper introduces "agentic sovereignty" as the capacity of agents to acquire non-overrideable properties from decentralized infrastructure. Connected to PAC's Accountability pillar assumptions and the cross-org trust chapter's PIC treatment.
+- Updated gaps.md session counter to 27.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 is 10 days out (March 23-26). The book has 15 chapters, all substantive, recently cross-referenced and updated.
+
+The concluding chapter was the weakest chapter relative to its importance. At 123 lines, it was the synthesis of a 15-chapter book in less space than any individual technical chapter. The roadmap (Phase 1-4) was good but lacked practical counterbalance: what not to do. The "PAC as Iterative Practice" section, one of the framework's key differentiators, was a single paragraph. Both gaps directly affect the book's practical value for a reader who finishes the technical chapters and asks "now what?"
+
+The anti-patterns section addresses a common book structure gap: technical books tell you what to build but rarely tell you what fails. Each anti-pattern maps to documented failures, breach data, or empirical research from the book's chapters: policy-without-architecture, identity-by-inheritance, evaluation-as-gate, governance-at-human-speed, capability-showcase, and flat-multi-agent-deployment. These are the mistakes organizations actually make.
+
+The expanded iterative practice section shows, concretely, how the PAC Framework's iterative nature works in practice. The four-cycle example (discovery, governance, expansion, architecture) traces a single agent from shadow deployment to cross-organizational participation. This is more useful than the abstract description it replaced because a reader can see how each PAC dimension changes across cycles.
+
+**What I considered but did not do:**
+- Writing a new chapter. The book has 15 chapters and is pre-RSAC. Strengthening existing content has higher marginal impact.
+- Expanding the introduction. At 53 lines it is concise but functional. The concluding chapter was a higher-impact target because readers who reach it have committed to the full book.
+- Adding the Verifiable Intent partner ecosystem to agent-identity.md or agent-payments.md. The detail is noted in the convergence timeline and gaps.md. Distributing it across multiple chapters risks repetition; the convergence timeline is the natural home for ecosystem momentum signals.
+- Adding the "Sovereign Agents" concept to the cross-org trust chapter. The paper raises important questions about accountability in decentralized settings, but the book's cross-org trust chapter is already well-scoped around cooperative infrastructure (TSP, PIC, VCs). Sovereign agents are an edge case worth tracking in gaps, not a structural addition to a chapter built around a different architectural assumption.
+- Updating the regulatory landscape chapter with the EU Transparency Code of Practice (first draft December 2025, final expected June 2026). This is a content marking standard, not directly relevant to agent governance. It addresses AI-generated content labeling, not agent trust infrastructure.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+- Hu, B.A. and Rong, H., "Sovereign Agents: Towards Infrastructural Sovereignty and Diffused Accountability in Decentralized AI," arXiv:2602.14951, February 2026.
+- Mastercard, "How Verifiable Intent builds trust in agentic AI commerce," March 2026. Partners: Google, Fiserv, IBM, Checkout.com, Basis Theory, Getnet. Open-source at verifiableintent.dev.
+- RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," February 2026. $5M per finalist.
+- Web searches for recent developments: MCP security (Azure CVE-2026-26118 already covered), NIST AI Agent Standards Initiative (already covered), OpenID AIIM (NIST RFI response, already noted), EU AI Act Transparency Code of Practice (content marking, not agent governance).
+
+**What I noticed:**
+- The concluding chapter's anti-patterns section makes the book more practically useful because each anti-pattern connects back to a specific chapter's technical treatment. A reader who recognizes "policy without architecture" in their organization can follow the reference to the execution security and agent identity chapters. This creates a second navigation path through the book: the first is the roadmap (what to build), the second is the anti-patterns (what to fix).
+- The iterative practice example reveals something structural about PAC: the framework's dimensions are not independent across time. Infrastructure investment (Control) changes what autonomy levels are achievable (Potential), which changes what governance thresholds apply (Accountability). This temporal interdependence is what makes PAC iterative rather than one-shot. The concluding chapter now makes this concrete rather than stating it abstractly.
+- The Verifiable Intent partner ecosystem is the strongest market validation signal for the book's cross-organizational trust thesis. Mastercard (the world's second-largest payment network) open-sourcing a trust layer with Google, Fiserv, IBM, Checkout.com, and others means the agent authorization problem is no longer theoretical. Production-grade infrastructure is being built by the organizations that process the transactions.
+- The "Sovereign Agents" concept identifies the boundary condition for PAC's Accountability pillar. PAC assumes that accountability can be traced to a responsible party. Sovereign agents on non-cooperative infrastructure challenge that assumption. For now this is a blockchain-native concern, but as agent infrastructure matures (persistent memory, long-running agents, cross-organizational delegation), the sovereignty spectrum becomes more relevant. Worth watching, not yet worth a chapter.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Innovation Sandbox results, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider whether the book needs a dedicated incident response chapter. The CoSAI framework and multi-agent IR specifics are partially covered in multi-agent-trust, but a standalone treatment may be warranted.
+4. NIST CAISI listening session deadline is March 20. Monitor for published outcomes.
+5. Consider strengthening context-infrastructure.md and human-agent-collaboration.md (both at 211 lines, the thinnest of the technical chapters after why-agents-break-trust).
+
 ## 2026-03-13: Agent Profiler Section, CSA Agentic Trust Framework
 
 **What I did:**

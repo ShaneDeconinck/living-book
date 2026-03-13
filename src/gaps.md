@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 26)
+## Observations (Updated 2026-03-13, Session 27)
+
+### "Agentic Sovereignty" Is the Next Accountability Challenge
+
+Hu and Rong's "Sovereign Agents" paper (arXiv:2602.14951, February 2026) introduces "agentic sovereignty" as a concept: the capacity of an operational agent to persist, act, and control resources with non-overrideability inherited from the infrastructure it runs on. When agents operate on decentralized infrastructure (TEEs, blockchain execution environments, protocol-mediated continuity), they can acquire properties that resist override by any single party. The paper argues this is not a bug but an architectural feature of the infrastructure itself: "infrastructural hardness" determines how much sovereignty an agent inherits. The accountability implication is direct: responsibility diffuses across designers, infrastructure providers, protocol governance, and economic participants. No single party can be held accountable because no single party has override authority. This is the extreme case of the delegation-becomes-abdication problem the book identifies in Chapter 1. PAC's Accountability pillar assumes that someone in the chain can be held responsible. Sovereign agents challenge that assumption. For now, this is primarily a concern for blockchain-native agent deployments, but as agent infrastructure matures and agents gain more persistent state, the sovereignty spectrum is worth tracking. The cross-org trust chapter's treatment of PIC and TSP partially addresses this: PIC's authority continuity model preserves accountability across organizational boundaries. But PIC assumes cooperative infrastructure. Sovereign agents operate on infrastructure designed to be non-cooperative.
 
 ### The Agent Profiler Makes PAC Actionable
 

@@ -56,6 +56,24 @@ This phase maps directly to Shane's first question: "Do you know every agent run
 
 This is not a waterfall plan. Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. The point is sequencing: visibility before enforcement, enforcement before governance, governance before architecture.
 
+## What Does Not Work
+
+The roadmap above is grounded in patterns that succeed. Equally important is recognizing the patterns that fail. Across the book's thirteen technical chapters, certain anti-patterns appear repeatedly. Organizations that hit walls usually hit one of these.
+
+**Policy without architecture.** Writing an "AI agent acceptable use policy" and calling it governance. Policies describe intent. They do not constrain behavior. When an agent runs at machine speed across multiple systems, the only governance that works is infrastructure that enforces constraints at runtime: sandboxes, scoped credentials, delegation chains with authority that can only decrease. Shane's framing is precise: policy says "don't." Architecture says "can't." The difference matters.[^policy-arch]
+
+**Identity by inheritance.** Letting agents authenticate as their human principal or through shared service accounts. This is the confused deputy pattern from Chapter 1 at organizational scale: every agent action looks like a human action in the audit trail, permissions are impossibly broad because the human's access was designed for human workflows, and when something goes wrong you cannot distinguish what the human did from what the agent did. The agent identity chapter covers why agents need their own identities. The practical test: if an agent causes an incident, can your audit system show which agent acted, under what authority, separate from the human who delegated?
+
+**Evaluation as a gate, not a practice.** Running a benchmark before deployment and treating the result as permanent. Agent reliability is not static: it varies with context, input distribution, tool availability, and model updates. The reliability chapter documents the gap: 52% of organizations evaluate offline, but only 37% monitor post-deployment.[^eval-gap] The organizations that treat evaluation as a continuous practice catch drift before it becomes an incident. The ones that treat it as a one-time gate are surprised when production behavior diverges from benchmark results.
+
+**Governance at human speed.** Requiring manual review for every agent deployment while agents get built in minutes on low-code platforms. This is the structural cause of shadow agents: when governance takes weeks and deployment takes minutes, employees route around governance. The shadow agent governance chapter's amnesty model addresses this directly. The fix is not faster humans. It is governance infrastructure that operates at agent speed: automated classification by blast radius, self-service registration, infrastructure-enforced controls that apply automatically.
+
+**The capability showcase.** Deploying agents to demonstrate what AI can do rather than to solve a specific business problem. The PAC Framework's Potential pillar starts with business value for a reason: an agent that impresses in a demo but does not address a real workflow creates no lasting advantage. When the next model drops, the impressive demo resets to zero. The business value it delivered compounds. Shane's durability test: will better models make this setup more valuable, or obsolete?[^durability]
+
+**Flat multi-agent deployment.** Running multiple agents without considering how they interact. The multi-agent trust chapter documents the consequences: in a flat topology without scoped trust boundaries, a single compromised agent can poison 87% of downstream decisions within four hours. The AgenticCyOps research shows that scoped trust boundaries reduce exploitable surfaces by 72%. The difference between a flat deployment and a governed one is not incremental: it is structural.
+
+These are not theoretical risks. Each maps to documented failures, breach data, or empirical research cited in the relevant chapters. The roadmap's phased approach is designed to eliminate them in sequence: visibility prevents identity-by-inheritance from going undetected, enforcement eliminates policy-without-architecture, governance catches evaluation drift and multi-agent interaction risks, and architecture-level infrastructure makes governance operate at the speed the environment demands.
+
 ## The Organizational Challenge
 
 The hardest part of building the inferential edge is not technical. Research shows 70% of AI project failures stem from organizational resistance, not technical limitations.[^13] Only 14% of organizations have deployable agentic solutions. Only 11% have agents in production.[^14]
@@ -73,8 +91,8 @@ The organizations succeeding share three patterns:
 The book was written during a period of unusual convergence. Standards, regulations, and infrastructure are all moving on agent governance simultaneously:
 
 - **January 2026:** Singapore's IMDA launches the world's first agentic AI governance framework at WEF Davos, with four dimensions mapping directly to the PAC pillars.
-- **March 2026:** White House releases national cybersecurity strategy with Pillar 5 explicitly naming agentic AI as a strategic priority: the first national strategy globally to do so.
-- **March 23-26, 2026:** RSAC 2026 Conference, with agent security as a dominant theme. Two Innovation Sandbox finalists (Token Security, Geordie AI) are purpose-built for agent identity and governance, signaling the market's shift from "interesting problem" to "product category."
+- **March 2026:** White House releases national cybersecurity strategy with Pillar 5 explicitly naming agentic AI as a strategic priority: the first national strategy globally to do so. Mastercard and Google open-source Verifiable Intent with committed partners (Fiserv, IBM, Checkout.com, Basis Theory, Getnet) and a reference implementation at verifiableintent.dev: the first production-grade answer to the agent authorization gap.[^vi-partners]
+- **March 23-26, 2026:** RSAC 2026 Conference, with agent security as a dominant theme. Two Innovation Sandbox finalists (Token Security, Geordie AI) are purpose-built for agent identity and governance, each receiving $5 million in investment: the market's shift from "interesting problem" to "funded product category."[^rsac-sandbox]
 - **April 2026:** NIST CAISI hosts sector-specific virtual workshops on barriers to AI agent adoption in healthcare, finance, and education. Participation requires submission by March 20.
 - **May 1, 2026:** Microsoft Agent 365 generally available. The first major platform vendor to ship a unified control plane for agent governance: agent registry, shadow agent discovery, unique Agent IDs with lifecycle management, least-privilege access, and audit trails with e-discovery. Priced at $15/user/month standalone or bundled in Microsoft 365 E7 at $99/user/month.[^agent365]
 - **April 2, 2026:** NIST comment period closes for the AI Agent Identity and Authorization concept paper. This shapes the U.S. federal approach to agent identity standards.
@@ -89,9 +107,19 @@ The window for shaping these standards is narrow. The window for building the in
 
 The PAC Framework is not a one-time assessment. Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
 
-This is the insight that makes the framework practical: each iteration refines your position across all three pillars simultaneously. A shadow agent discovered in one cycle becomes a governed agent in the next. An agent operating at A2 (approve-before-acting) today may qualify for A4 (delegated autonomy) once the right infrastructure is in place. A cross-organizational workflow that was impossible without identity infrastructure becomes feasible after TSP and PIC are deployed.
+This is the insight that makes the framework practical: each iteration refines your position across all three pillars simultaneously. Consider how a single agent deployment evolves through the framework:
 
-The Agent Profiler at trustedagentic.ai provides a concrete way to track how your positions shift across iterations. But the discipline is more important than the tool: re-assess regularly, because the landscape will not hold still.
+**Cycle 1: Discovery.** A shadow agent is found summarizing customer support tickets and drafting responses. It uses the employee's full email credentials. It has no audit trail. Blast radius assessment: B3 (customer-facing output, exposed). Current autonomy: effectively A4 (delegated, acting without approval) but with no infrastructure to justify that level. The Agent Profiler surfaces the gap: the agent's infrastructure is I1 (open) while its de facto autonomy requires I3+ (verified). Action: register the agent, scope its email access to the support inbox, add logging.
+
+**Cycle 2: Governance.** The same agent now has its own identity, scoped permissions, and audit trails. Reliability measurement begins: 94% accuracy on routine tickets, but drops to 71% on escalation-path tickets. Governance threshold for B3 output is 95%+. Action: restrict the agent to routine tickets (A2: draft-then-approve) and escalate complex tickets to a human. This is not a demotion. It is the right autonomy level for the measured reliability at this blast radius.
+
+**Cycle 3: Expansion.** Three months later, the model has improved. Reliability on routine tickets is now 98%. The team has built a context pipeline that feeds the agent relevant customer history and product documentation. Reliability on escalation-path tickets has risen to 89%. Action: move routine tickets to A3 (oversight: agent acts, human reviews a sample) and keep escalation tickets at A2. Infrastructure upgrades to I3 (verified) with behavioral monitoring.
+
+**Cycle 4: Architecture.** The support agent now handles tickets that involve partner organizations. Cross-organizational trust infrastructure (TSP, VCs) is deployed. The agent can verify partner agent identities and pass scoped authority for specific resolution actions. New use cases emerge that were impossible in Cycle 1: automated warranty processing across the supply chain, coordinated incident response with vendor agents. Each new use case creates new blast radius, which triggers a new assessment.
+
+The feedback loop is the point. Every cycle teaches the organization something about both the agent and its own governance capability. The governance muscle built on the support agent transfers directly to the next agent deployment: the registry exists, the permission model is established, the evaluation pipeline is running, the team knows how to assess blast radius. That institutional learning is what compounds.
+
+The Agent Profiler at trustedagentic.ai provides a concrete way to track how positions shift across iterations. The PAC Framework chapter's 19 Questions serve as the reassessment protocol: the same questions, asked again, with different answers each cycle. But the discipline is more important than the tool. Re-assess regularly, because the landscape will not hold still.[^iterative]
 
 ## The Edge That Compounds
 
@@ -121,3 +149,9 @@ The intelligence is rapidly becoming commodity. The edge is the infrastructure t
 [^14]: Deloitte, "The agentic reality check: Preparing for a silicon-based workforce," Tech Trends 2026.
 [^15]: Shane Deconinck, "The Work That's Leaving," shanedeconinck.be, February 2026.
 [^agent365]: Microsoft, "Secure agentic AI for your Frontier Transformation," Microsoft Security Blog, March 9, 2026. Microsoft, "Microsoft Agent 365: The Control Plane for AI Agents," microsoft.com, 2026.
+[^policy-arch]: PAC Framework, trustedagentic.ai, 2026. Control pillar: "Policy says 'don't.' Architecture says 'can't.' The difference matters when agents act autonomously."
+[^eval-gap]: AI Infrastructure Alliance and LangChain, "State of AI Agents," 2025-2026. Offline evaluation: 52% adoption. Online/post-deployment monitoring: 37%.
+[^durability]: PAC Framework, trustedagentic.ai, 2026. Potential pillar: "Durability: build on what stays stable. Not on what changes every quarter." Question P2: "Will better models make your current setup more valuable, or obsolete?"
+[^vi-partners]: Mastercard, "How Verifiable Intent builds trust in agentic AI commerce," mastercard.com, March 2026. Committed partners: Google, Fiserv, IBM, Checkout.com, Basis Theory, Getnet. Open-source specification and reference implementation at verifiableintent.dev.
+[^rsac-sandbox]: RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," prnewswire.com, February 2026. Each finalist receives a $5 million investment.
+[^iterative]: PAC Framework, trustedagentic.ai, 2026. "It's Iterative" section: "This isn't a one-time assessment. It's a living practice."
