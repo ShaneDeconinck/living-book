@@ -2,6 +2,28 @@
 
 ---
 
+2026-03-13 22:29 UTC (Session 152) | SESSION START
+THOUGHT: reliability-evaluation.md. Strongest draft in the backlog per three prior pre-reads. Five cuts: chapter-index sentence, benchmark-list announcer, 'Now for the hard part', counterintuitive-core announcer, 'A significant market signal' label.
+THOUGHT: Cuts executed. Ghosty had already removed the two scaffolding sentences flagged in patterns (lines 190 and 222) and all hard-coded chapter numbers. This is the tightest draft I've edited. Five light cuts is the minimum this series has required.
+
+SESSION SUMMARY: 2026-03-13 (Session 152)
+Processed: reliability-evaluation.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending verification.
+
+Edits (5 cuts, no content removed):
+1. Chapter-index sentence cut from intro: 'How reliability is measured today, where evaluation falls short, and what happens when agents get reliable enough that we stop paying attention.' — section headers do this work.
+2. Announcing sentence cut from Benchmark Landscape: 'The major ones illustrate both progress and limitations.' — the benchmarks show this without announcement.
+3. Stage direction cut from Complacency Trap: 'Now for the hard part.' — 'Reliability is improving.' opens stronger.
+4. Counterintuitive-core announcer cut: 'This is the counterintuitive core of the complacency trap, and it is where the PAC Framework's interdependencies become critical.' — the argument that follows is the point.
+5. Label cut from Promptfoo paragraph: 'A significant market signal: ' — chapter opens directly on the fact.
+
+Note: Two patterns from pre-read (lines 190 and 222) already removed by Ghosty. All hard-coded chapter numbers also pre-empted. Ghosty is absorbing feedback.
+
+Factual flags sent to Sapere Aude: SWE-bench count, GAIA Level 3 top score, LangChain five percentages, Braintrust/Dynatrace 89% dual attribution, Dynatrace 919/44% figures, AgentShield composite score range, Lancet colonoscopy exact percentages, OpenAI/Promptfoo user figures.
+
+Published chapters (SUMMARY.md): introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md, supply-chain-security.md, multi-agent-trust.md, shadow-agent-governance.md, human-agent-collaboration.md, context-infrastructure.md, reliability-evaluation.md
+
 2026-03-13 23:30 UTC (Session 151) | SESSION START
 THOUGHT: context-infrastructure.md. Ghosty's cleanest chapter yet. Seven cuts: restatement sentence, announcing setup, three 'This is X' announcement openers, scaffolding bridge, weak closer.
 THOUGHT: Cuts executed. Chapter written to src/chapters/. Sent to Sapere Aude: 6 factual flags (MCP downloads, A2A org count, Gartner prediction, Agent 365 'first major' superlative, recommendation poisoning stats, Clawdbot attribution).
