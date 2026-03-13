@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 88)
+## Observations (Updated 2026-03-13, Session 89)
+
+### EU AI Act Digital Omnibus Caveat: Complete Cross-Chapter Sweep
+
+Session 89 completed the Digital Omnibus caveat sweep that Session 88 started. Every chapter that stated the EU AI Act's August 2026 high-risk deadline as settled fact now acknowledges the Digital Omnibus proposal's potential December 2027 backstop. Fixed: pac-framework.md, shadow-agent-governance.md, multi-agent-trust.md, human-agent-collaboration.md, agent-identity.md, supply-chain-security.md, regulatory-landscape.md (maturity table summary). The regulatory-landscape chapter remains the authoritative source with the comprehensive explanation (line 76). Other chapters reference the uncertainty briefly and point readers to regulatory-landscape for details. This is the kind of cross-chapter consistency sweep the verification pipeline demands: when a factual correction applies everywhere, fix everywhere.
 
 ### Verification-Driven Quality: Fixing Consistency Across Chapters
 

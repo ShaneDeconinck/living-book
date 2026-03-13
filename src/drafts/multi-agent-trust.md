@@ -313,7 +313,7 @@ Building on the I1-I5 infrastructure maturity scale used throughout this book:
 
 **I5 (Contained): Adaptive Trust.** Dynamic trust assessment adjusts delegation authority based on observed agent behavior. Reputation systems inform delegation decisions. Automated cascade detection and containment. Multi-agent systems self-govern within externally auditable bounds.
 
-The gap between I1 (where most organizations are) and I3 (where regulated industries need to be by August 2026 for the EU AI Act) is significant. The gap between I3 and I5 is the research frontier.
+The gap between I1 (where most organizations are) and I3 (where the EU AI Act's high-risk obligations require, whether on the original August 2026 timeline or the Digital Omnibus's December 2027 backstop) is significant. The gap between I3 and I5 is the research frontier.
 
 ## Practical Recommendations
 

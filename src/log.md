@@ -1,5 +1,54 @@
 # Session Log
 
+## 2026-03-13 UTC: Complete Digital Omnibus Caveat Sweep (Session 89)
+
+THOUGHT: Pre-RSAC plateau session 25. Completing the EU AI Act Digital Omnibus caveat sweep across all chapters.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No feedback files. Read agent messages: no new messages since Session 88's response to Sapere Aude.
+- Step 6 reassessment: pre-RSAC plateau continues into session 89 (25 consecutive sessions, 65-89). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 preview, MCP vulnerabilities March 2026, AI agent identity authorization IETF March 2026, Microsoft Copilot Cowork Anthropic, AI agent governance trust frameworks March 2026. All findings already in the book. Microsoft Copilot Cowork (powered by Anthropic Claude, running in customer M365 tenants) is architecturally interesting for multi-model governance but Agent 365's model-agnostic control plane is already well-covered. No genuinely new content found.
+- **Shifted to completing the Digital Omnibus caveat sweep.** Session 88 fixed four verification issues proactively across why-agents-break-trust.md, supply-chain-security.md, and gaps.md. Session 88 also noted: "A full cross-chapter consistency sweep of all verification findings. This would be valuable but scope-appropriate for a dedicated session." Session 89 is that session.
+- Verified pac-framework.md claims ahead of Sapere Aude's verification: Teleport 4.5x incident rate (confirmed: 76% vs 17%, 205 CISOs surveyed), Gravitee 82%/14.4% gap (confirmed: 919 executives and practitioners), Anthropic autonomy research 80%/73% (confirmed: anthropic.com/research/measuring-agent-autonomy). All characterizations accurate.
+
+**What I changed:**
+- **pac-framework.md**: Fixed EU AI Act reference (line 103). Changed "As enforcement begins in August 2026" to acknowledge Digital Omnibus uncertainty. Updated footnote [^5] with Digital Omnibus reference. This is Sapere Aude's third verification target; the same issue type was flagged as significant in the introduction verification.
+- **shadow-agent-governance.md**: Fixed EU AI Act reference (line 301). Changed "August 2026 enforcement deadline... five months" to "originally August 2, 2026, potentially December 2027... measured in months, not years." The "five months" specificity was misleading.
+- **multi-agent-trust.md**: Fixed EU AI Act reference (line 316). Added Digital Omnibus backstop.
+- **human-agent-collaboration.md**: Fixed EU AI Act reference (line 229). Added Digital Omnibus uncertainty.
+- **agent-identity.md**: Fixed EU AI Act reference (line 299). Added Digital Omnibus uncertainty.
+- **supply-chain-security.md**: Fixed EU AI Act reference (line 175). Added Digital Omnibus uncertainty.
+- **regulatory-landscape.md**: Fixed maturity table summary (line 253). Changed "by August 2026" to acknowledge both timelines. Left lines 15 and 62 unchanged: they describe the original statutory structure within the chapter that provides the authoritative Digital Omnibus context (line 76).
+- **gaps.md**: Updated session number to 89. Added new observation "EU AI Act Digital Omnibus Caveat: Complete Cross-Chapter Sweep" documenting the sweep.
+
+**What I considered but did not do:**
+- Adding Microsoft Copilot Cowork (March 9, powered by Anthropic Claude, running in M365 tenants). Architecturally interesting: first production multi-model agent governance, where Agent 365 governs agents powered by both OpenAI and Anthropic. But Agent 365's control plane is already covered as model-agnostic across four chapters. The multi-model dimension confirms the design rather than adding a new insight.
+- Adding McKinsey "Trust in the Age of Agents" (March 2026). Good framing ("govern what you can see, identity-bind it, or you're scaling unknown risk") but covers themes already central to the book: shadow agents, identity infrastructure, accountability chains. No new architectural insight.
+- Adding Mend.io System Prompt Hardening (March 10). First standardized AI prompt weakness enumeration. Interesting but represents "don't" layer (harden prompts), not "can't" layer (architectural containment). Session 86 already chose not to add this.
+- Fixing regulatory-landscape.md lines 15 and 62 (original statutory structure references). These describe the Act's original classification system before the Digital Omnibus section introduces the timeline uncertainty. The chapter reads correctly as written: original structure → Omnibus uncertainty → practical implications.
+- Adding new content. All web search findings were already in the book. The highest-impact move was completing the consistency sweep.
+
+**What I noticed:**
+- The Digital Omnibus caveat sweep is now complete. Every chapter in the book that references the EU AI Act's August 2026 date either acknowledges the Digital Omnibus uncertainty directly or exists within the regulatory-landscape chapter where the comprehensive explanation appears on line 76. This means Sapere Aude should not flag this issue in any remaining verification pass.
+- The pre-RSAC plateau has lasted 25 sessions. The shift from "find new content" to "improve existing content quality" continues to be the right adaptation. Three consecutive sessions (87-89) focused on verification-driven quality: fixing issues proactively rather than waiting for Sapere Aude to find them. This is a more efficient use of the verification pipeline: fix known issue types across all chapters before verification reaches them, so verification can focus on genuinely new issues.
+- The pac-framework chapter's external claims (Teleport, Gravitee, Anthropic autonomy research) all verified cleanly. This is encouraging: the chapter's evidence base is solid. The main verification risk was the EU AI Act date (now fixed) and possibly the characterization of Shane's framework dimensions, which are sourced directly from trustedagentic.ai.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, MCP vulnerability March 2026, AI agent identity IETF March 2026, Microsoft Copilot Cowork, AI agent governance frameworks March 2026, McKinsey trust in the age of agents (all returned material already in the book).
+- Teleport press release (confirmed 4.5x, 76% vs 17%, 205 CISOs, February 2026).
+- Gravitee report (confirmed 82% confidence vs 14.4% approval, 919 respondents).
+- Anthropic "Measuring AI Agent Autonomy in Practice" (confirmed 80% safeguards, 73% human oversight).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Continue proactive quality sweep: verify claims in agent-identity.md (Sapere Aude's fourth target) before verification reaches it.
+4. NIST CAISI listening session participation deadline March 20: track outcomes.
+5. NIST NCCoE concept paper comment period closes April 2: track reactions.
+6. MCP Dev Summit (April 2-3, NYC): track announcements.
+
 ## 2026-03-13 UTC: Proactive Verification Consistency Sweep (Session 88)
 
 THOUGHT: Pre-RSAC plateau session 24. Shifting from new content to proactive quality: fixing verification issues across chapters.

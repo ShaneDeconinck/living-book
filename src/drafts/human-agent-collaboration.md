@@ -226,7 +226,7 @@ The critical interdependency: effective collaboration requires all three pillars
 | **I4 Authorized** | Scoped permissions enforced per action | Full autonomy dial with per-task authorization. Permission granularity matches blast radius. Self-aware agent calibration tracked as governance metric. Escalation chains enforced by infrastructure |
 | **I5 Contained** | Sandboxed execution with automatic containment | Infrastructure-in-the-loop fully realized. Agents operate at A4-A5 within defined boundaries. Human role shifts entirely to policy design, threshold setting, and exception investigation |
 
-Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act's August 2026 enforcement deadline requires I3 for high-risk systems. Organizations building agent-first workflows should target I4, where the autonomy dial, permission granularity, and agent self-governance patterns described in this chapter become fully operational.
+Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal) require I3 for high-risk systems. Organizations building agent-first workflows should target I4, where the autonomy dial, permission granularity, and agent self-governance patterns described in this chapter become fully operational.
 
 ## What to Do
 

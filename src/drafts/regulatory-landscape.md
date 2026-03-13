@@ -250,7 +250,7 @@ The PAC Framework's infrastructure scale (I1-I5) provides a practical readiness 
 | I4 (Authorized) | Fine-grained, context-aware authorization. Meets Article 14 human oversight requirements. Satisfies ISO 42001 management system expectations. |
 | I5 (Contained) | Full containment with cross-organizational trust. Compliant with EU AI Act, NIST, and ISO 42001 requirements. Ready for eIDAS 2.0 interoperability. |
 
-Most organizations today operate at I1-I2 for their agent deployments. Regulatory timelines demand I3 or higher by August 2026 for any high-risk use cases.
+Most organizations today operate at I1-I2 for their agent deployments. Regulatory timelines demand I3 or higher for high-risk use cases, whether on the original August 2026 schedule or the Digital Omnibus backstop of December 2027.
 
 ## The Convergence Timeline
 

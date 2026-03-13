@@ -298,7 +298,7 @@ The PAC Framework's infrastructure levels (I1-I5) map to specific shadow agent g
 | **I4: Authorized** | Registry enforcement through infrastructure (identity providers, gateways, network controls). Delegation chains captured and auditable. Automated risk classification based on PAC dimensions. |
 | **I5: Contained** | Unregistered agents structurally unable to operate. Full delegation chains from human intent through agent action. Anomaly detection for behavioral drift. Automated containment for scope violations. Cryptographic proof of authorization at every step. |
 
-Most organizations are at I1-I2. The EU AI Act's August 2026 enforcement deadline and the NIST standards work both require I3+ for high-risk agent deployments. The gap between "where organizations are" and "where regulation requires them to be" is five months.
+Most organizations are at I1-I2. The EU AI Act's high-risk obligations (originally August 2, 2026, potentially December 2027 under the Digital Omnibus proposal) and the NIST standards work both require I3+ for high-risk agent deployments. The gap between "where organizations are" and "where regulation requires them to be" is measured in months, not years.
 
 ## Practical Recommendations
 

@@ -296,7 +296,7 @@ In February 2026, NIST released "Accelerating the Adoption of Software and Artif
 - **Access delegation:** linking user identities to AI agents
 - **Logging and transparency:** linking agent actions to their non-human entity
 
-The comment period runs through April 2, 2026, nearly the same time as the EU AI Act's high-risk obligations begin enforcement (August 2026). This is not a coincidence. Both the US and EU regulatory apparatus are recognizing that agent identity is a foundational governance requirement.
+The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal). This is not a coincidence. Both the US and EU regulatory apparatus are recognizing that agent identity is a foundational governance requirement.
 
 ### Industry Response: The Agent Transparency Label
 

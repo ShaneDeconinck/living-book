@@ -100,7 +100,7 @@ Audit trails for agents are not application logs. They are compliance artifacts.
 
 Application logs tell you what happened technically: which API was called, what the response code was, how long it took. Compliance audit trails need to answer different questions: who authorized this action, what information did the agent have when it decided, was the decision within the agent's granted authority, and can you demonstrate this to a regulator?
 
-The EU AI Act requires transparency, human oversight, and record-keeping for high-risk AI systems. As enforcement begins in August 2026, organizations deploying agents in regulated contexts need audit trails that were designed for this purpose, not repurposed server logs.[^5]
+The EU AI Act requires transparency, human oversight, and record-keeping for high-risk AI systems. High-risk obligations are originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027 (see [The Regulatory Landscape](regulatory-landscape.md) for the full timeline). Either way, organizations deploying agents in regulated contexts need audit trails that were designed for this purpose, not repurposed server logs.[^5]
 
 ### Liability Chains
 
@@ -292,7 +292,7 @@ Each chapter connects back to this framework. The goal is not to memorize the le
 [^2]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," trustedagentic.ai, February 2026.
 [^3]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," trustedagentic.ai, February 2026. The Claude Code scaffolding deletion example is cited directly.
 [^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," trustedagentic.ai, January 2026. Also: "Auth for Agent Builders: A Crash Course," January 2026.
-[^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act enforcement timeline per European Commission.
+[^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," trustedagentic.ai, January-March 2026. EU AI Act enforcement timeline per European Commission. The Digital Omnibus proposal (November 2025) may defer Annex III high-risk obligations to December 2027; see the Regulatory Landscape chapter for details.
 [^6]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," trustedagentic.ai, February 2026.
 [^7]: Shane Deconinck, PAC Framework, trustedagentic.ai, updated March 2026. The implementation architecture composability model, error margin emphasis, and the distinction between enumerable and open-ended failure modes are from the March 2026 framework revision.
 [^teleport]: Teleport, "State of AI in Enterprise Infrastructure Security" (February 2026). Survey finding: over-privileged AI systems drive 4.5x higher incident rates. Access scope, not AI sophistication, is the strongest predictor of security outcomes.
