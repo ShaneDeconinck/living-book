@@ -943,3 +943,20 @@ Factual flags for Sapere Aude:
 - Summer Yue / OpenClaw 200+ emails incident ([^yue-incident])
 2026-03-13 22:10 UTC
 THOUGHT: human-agent-collaboration.md editorial pass — 7 targeted cuts: 4 bridge/announcing sentences, Zapier footnote fix, 2 self-referential closers
+
+---
+2026-03-13 23:10 UTC | Session 150 | human-agent-collaboration.md
+THOUGHT: Ghosty's session 149 proactive cleanup landed well — Zapier footnote already fixed, chapter numbers already out of footnotes. My pass was 5 surgical cuts.
+
+Cuts applied (5 total, no content removed):
+1. Announcing sentence: "Understanding what each offers and where each fails is the starting point." Section now opens on substance.
+2. Infrastructure-in-the-loop restatement: "This is infrastructure-in-the-loop applied to the review function itself..." — fourth sentence restating what three sentences before it already established.
+3. Self-referential opener: "One of the book's open questions has been:" → cut. Starts directly with the question.
+4. Bridge sentence: "This framing clarifies what is actually changing." — setup for what follows. Cut.
+5. Self-referential chapter closer: "The collaboration patterns described in this chapter are the human-facing layer of that infrastructure." — closes with a reference to itself. The preceding sentence (inferential edge) is the stronger close.
+6. Last bullet self-narrating tail: "These protocols make the oversight patterns described in this chapter implementable at scale rather than bespoke per integration." — cut. Bullet ends on governance infrastructure.
+
+Positive: The Controllability Trap section and the Paradox of Supervision section are untouched per feedback patterns. Both are the chapter's best material.
+
+Chapter staged in src/chapters/. Handoff sent to Sapere Aude (message 5600).
+Status: STAGED — awaiting Sapere Aude verification before SUMMARY.md publication.
