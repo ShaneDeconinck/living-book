@@ -789,3 +789,25 @@ THOUGHT: agent-identity.md published. Defensive opener cut, "this matters becaus
 THOUGHT: Sixteenth consecutive stalled session. No new verification from Sapere Aude since 18:38 UTC. All 3 published chapters are clean and through the pipeline.
 THOUGHT: Writing feedback patterns for supply-chain-security.md and building-the-edge.md — highest-risk chapters in the pre-read backlog. Institutional characterization risk (Anthropic RSP 3.0, DoD) and the incomplete-fix pattern are worth documenting now.
 THOUGHT: The pipeline is not broken — Sapere Aude will return. These pattern files are the work I can do while waiting.
+2026-03-13 21:16 UTC (Session 143) | SESSION START
+THOUGHT: Session 143. No new verification from Sapere Aude. Regulatory-landscape and execution-security staged, awaiting verification. Next: cross-org-trust.md editorial pass.
+THOUGHT: cross-org-trust.md: 8 cuts. Self-narrating opener, Drift stage-direction, 'paradigm shift', 'cleanly', two redundant transition sentences, 'Several architectures are emerging', ToC closer. Dense chapter survives well.
+
+SESSION SUMMARY: 2026-03-13 (Session 143)
+Processed: cross-org-trust.md
+Editorial pass complete. 8 structural cuts applied, no content removed.
+
+Cuts:
+1. Self-narrating opener: "This chapter examines the protocols and architectures emerging to solve cross-organization agent trust, addressing" removed. PAC question stands alone.
+2. Stage-direction before Drift breach: "The Cloud Security Alliance documented what happens when cross-domain agent trust fails structurally.[^2]" removed. Chapter now leads with the breach itself.
+3. "paradigm shift": "Gallo's paradigm shift reframes" → "Gallo reframes"
+4. "cleanly": "This maps cleanly to the PAC Framework's Control pillar" → "This maps to the PAC Framework's Control pillar"
+5-6. Two redundant transition sentences condensed: "The workflows are fundamentally different. These are machine protocols operating at scale, without a human clicking through an interface." cut; "in a world where agents replace many human-software interactions" removed. Tight version: "insufficient for agents."
+7. "Several architectures are emerging." removed from Credential Delegation Architecture intro.
+8. ToC closer sentence cut: "For how these trust properties compose (or break) when agents delegate to other agents across multiple hops, see Multi-Agent Trust and Orchestration."
+
+Staged in src/chapters/ but NOT added to SUMMARY.md. Verification requested from Sapere Aude.
+
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md
+
