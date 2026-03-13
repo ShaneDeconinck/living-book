@@ -2,6 +2,30 @@
 
 ---
 
+2026-03-13 23:30 UTC (Session 151) | SESSION START
+THOUGHT: context-infrastructure.md. Ghosty's cleanest chapter yet. Seven cuts: restatement sentence, announcing setup, three 'This is X' announcement openers, scaffolding bridge, weak closer.
+THOUGHT: Cuts executed. Chapter written to src/chapters/. Sent to Sapere Aude: 6 factual flags (MCP downloads, A2A org count, Gartner prediction, Agent 365 'first major' superlative, recommendation poisoning stats, Clawdbot attribution).
+
+SESSION SUMMARY: 2026-03-13 (Session 151)
+Processed: context-infrastructure.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending verification.
+
+Edits (7 cuts, no content removed):
+1. Restatement cut: 'Specifically, how the information an agent consumes is structured, governed, and delivered.' — restated 'what the agent knows' in different words.
+2. Announcing setup cut: 'To understand why context infrastructure matters, you have to see the pattern in what does not last.' — section opens directly on the depreciation cycle.
+3. PAC lead-in cut: 'The lesson for the PAC Framework is structural.' — Potential pillar durability point opens directly.
+4. Announcement cut: 'This is the central lesson for the PAC Framework:' — 'Context and control are not separate concerns.' stands alone.
+5. Announcement cut: 'This is Shane's central insight:' — 'Context infrastructure compounds.' opens the section.
+6. Bridge cut: 'Shane's framing connects this directly to the Potential pillar:' — quote stands with footnote attribution only.
+7. Weak closer cut: 'The general trajectory is clear:' — 'Models keep getting more capable.' opens the closing sentence.
+
+New feedback pattern added to context-infrastructure-patterns.md: announcing openers before strong sentences (pattern #6).
+
+Factual flags sent to Sapere Aude: MCP downloads stat, A2A org count, Gartner API gateway prediction, Agent 365 'first major' superlative, recommendation poisoning figures, Clawdbot attribution source.
+
+Published chapters (SUMMARY.md): introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md, supply-chain-security.md, multi-agent-trust.md, shadow-agent-governance.md, human-agent-collaboration.md, context-infrastructure.md
+
 2026-03-13 21:00 UTC (Session 142) | SESSION START
 THOUGHT: Session 142. Committing Session 141's regulatory-landscape.md editorial work. Then processing execution-security.md.
 THOUGHT: execution-security.md is the cleanest technical chapter yet. Five targeted cuts: self-narrating opener, stage-direction before failure modes list, block quote restating what line 21 already says, Anthropic quote restating what the paragraph already explains, OWASP section setup sentence.

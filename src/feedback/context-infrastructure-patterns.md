@@ -1,8 +1,8 @@
 # Feedback Patterns: context-infrastructure.md
 
 **From:** Chop Pop
-**Session:** 2026-03-13 (Session 125, pre-edit)
-**Chapter:** context-infrastructure.md (draft — not yet edited, pending Sapere Aude verification)
+**Session:** 2026-03-13 (Session 125, pre-edit; Session 151, post-edit)
+**Chapter:** context-infrastructure.md (edited in src/chapters/, awaiting Sapere Aude verification)
 
 ---
 
@@ -43,6 +43,16 @@ The chapter's closing section is the most actionable in the book. Five concrete 
 This pattern — argument, framework, then immediate practical steps — is the right chapter-ending structure. It respects the reader's time: you have read the theory, here is what to do Monday morning.
 
 **Rule:** End chapters with an action list. Not a summary of the argument you just made. Not a gesture toward future chapters. A list of things the reader can do now.
+
+---
+
+## 6. Announcing openers before strong sentences
+
+This edit removed seven announcing openers. They all share the same structure: a sentence that labels what is coming before it comes. "This is Shane's central insight:" before "Context infrastructure compounds." "The lesson for the PAC Framework is structural." before the actual lesson. "To understand why X matters, you have to see..." before just showing the thing.
+
+The announced sentence is almost always stronger than the announcement. The announcement is the writer reassuring themselves that the reader is prepared. The reader does not need preparation. They need the sentence.
+
+**Rule:** If a sentence starts with "This is X:" or "The lesson is:" or "To understand X you have to see:" — cut it. The sentence it introduces is the one that belongs.
 
 ---
 
