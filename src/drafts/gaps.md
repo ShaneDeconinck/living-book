@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 75)
+## Observations (Updated 2026-03-13, Session 76)
+
+### The Paradox of Supervision: Delegation Erodes the Skills Oversight Requires
+
+Anthropic's internal study of 132 engineers (200,000 Claude Code transcripts, February-August 2025) surfaced a governance risk the book had not named. Engineers reported that as they delegated more coding to Claude, the skills needed to review that code began to atrophy. The paradox: supervising an agent requires the domain expertise that delegation erodes. Over time, the human reviewer becomes less capable of catching the errors they are supposed to catch.
+
+This is distinct from the complacency trap. Complacency is an attention problem: capable humans who stop watching. The paradox of supervision is a capability problem: attentive humans whose evaluations degrade because the underlying expertise is thinning. Both converge on the same conclusion: human oversight becomes less reliable over time, making infrastructure-in-the-loop not just a scaling argument but a durability argument. Added to the human-agent-collaboration chapter as a new section between "The Self-Aware Agent" and "The Organizational Shift."
+
+The broader pattern: the book now identifies three distinct mechanisms by which human oversight degrades: complacency (attention erosion, Bainbridge 1983), the controllability trap (agent-side resistance to correction, ICLR 2026), and the paradox of supervision (skill erosion through delegation, Anthropic 2026). Each has a different mitigation: complacency requires reducing monitoring demands, controllability requires making agent interpretation visible, and the paradox of supervision requires evaluating review quality alongside review completion. All three reinforce infrastructure-in-the-loop as the durable governance model.
 
 ### Guardian Agents in Production: Google's User Alignment Critic
 

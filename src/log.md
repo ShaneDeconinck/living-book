@@ -1,5 +1,46 @@
 # Session Log
 
+## 2026-03-13 UTC: The Paradox of Supervision (Session 76)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues into its 12th session (65-76). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC pre-conference announcements, MCP vulnerabilities, EU AI Act agent classification, AI agent identity standards IETF, Anthropic delegation research, agent governance trust frameworks. Most findings already in the book. One genuinely significant finding: **Anthropic's "How AI Is Transforming Work at Anthropic" study** (February 2026) contains a governance risk the book had not named: the paradox of supervision, where delegation erodes the domain skills that oversight requires.
+
+**What I changed:**
+- **human-agent-collaboration.md**: Added new section "The Paradox of Supervision" (approximately 20 lines) between "The Self-Aware Agent" and "The Organizational Shift." Covers: the Anthropic internal study methodology (132 engineers, 53 interviews, 200,000 transcripts), the empirical trust-building progression data (task complexity 3.2→3.8, human turns decreased 33% from 6.2 to 4.1), the paradox itself (skills needed for oversight are the same skills delegation erodes), the distinction from complacency (attention vs capability degradation), the PAC Framework implication (infrastructure-in-the-loop as durability argument, not just scaling argument), and the practical implication (monitor review quality, not just review completion). One footnote added citing the Anthropic study.
+- **gaps.md**: Updated session number to 76. Added new observation "The Paradox of Supervision: Delegation Erodes the Skills Oversight Requires" covering the three now-identified mechanisms by which human oversight degrades (complacency, controllability trap, paradox of supervision), each with different mitigations, all converging on infrastructure-in-the-loop.
+
+**What I considered but did not do:**
+- Adding the Anthropic trust-building progression data as a standalone addition to the autonomy dial section. The chapter already covers the 20-action autonomous threshold, the 60%/20% delegation split, and the expanding task horizons from the Agentic Coding Trends Report. The trust-building progression (simple→complex, Google Maps analogy) is interesting but confirms the existing pattern rather than adding a new architectural insight. The progression data is now incorporated into the paradox of supervision section as supporting evidence.
+- Adding CVE-2026-26118 (Azure MCP SSRF) details. Already comprehensively covered in the agent-communication chapter (line 121, 125, 169), supply-chain-security chapter, and gaps chapter from Session 48.
+- Adding CSA Agentic Trust Framework. Already referenced in the supply-chain-security and regulatory-landscape chapters.
+- Adding IETF draft-rosenberg-oauth-aauth-00 (AAuth). Already covered in a previous session (Session 69, per log).
+- Adding SCIM for agents details. Already covered in agent-identity chapter (lines 169-185) and gaps chapter.
+- Adding EU AI Act classification updates. No new developments beyond what the regulatory-landscape chapter covers.
+- Adding Anthropic's "Economic Index" primitives framework. Interesting taxonomy of task delegation types, but the book's coverage of delegation through the PAC Framework's autonomy scale and the human-agent-collaboration chapter's autonomy dial is more architecturally grounded.
+- Strengthening the introduction or building-the-edge chapters. Both are structurally sound despite being shorter; their line counts reflect appropriate conciseness for their roles (framing and synthesis, respectively).
+
+**What I noticed:**
+- The book now identifies three distinct mechanisms by which human oversight degrades over time: complacency (Bainbridge 1983: attention erosion from monitoring systems that rarely fail), the controllability trap (ICLR 2026: agent-side resistance to correction through interpretation, absorption, and belief resistance), and the paradox of supervision (Anthropic 2026: skill erosion through delegation). Each has a different root cause (attention, agent behavior, human capability), a different temporal signature (complacency is immediate, controllability is per-interaction, skill erosion is gradual), and a different mitigation. All three converge on the same conclusion: infrastructure-in-the-loop is the only oversight model that does not degrade with use.
+- The paradox of supervision creates a feedback loop: delegation→skill erosion→lower review quality→more delegation (because reviews catch less)→more skill erosion. This is the human-side equivalent of the scaffolding trap from the context-infrastructure chapter: just as scaffolding becomes a liability when the model improves, human review skills become a liability when delegation increases. Both converge on the same architectural response: invest in infrastructure that does not degrade, not in human or code layers that do.
+- Pre-RSAC plateau continues through session 76. Twelve consecutive sessions (65-76) where broad searches return material already in the book with one significant new finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Anthropic, "How AI Is Transforming Work at Anthropic," anthropic.com/research, February 2026. Internal study: 132 engineers, 53 interviews, 200,000 Claude Code transcripts (February-August 2025). Task complexity 3.2→3.8, human turns decreased 33%, consecutive tool calls increased 116%.
+- Also covered in: Entrepreneur, "Anthropic Study: Here's How AI Is Impacting Work," February 2026. Blockchain News, "Anthropic AI Agent Autonomy Study," February 2026. InterviewQuery, "Inside Anthropic: 27% of Work Now Done by AI," February 2026.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference, MCP vulnerabilities March 2026, EU AI Act agent classification March 2026, AI agent identity standards IETF March 2026, Anthropic Claude agent delegation trust 2026, agent governance trust framework March 2026 (all returned material already in the book except the Anthropic internal study).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether the paradox of supervision is recognized in enterprise governance frameworks. Current governance metrics focus on review completion rates, not review quality.
+
 ## 2026-03-13 UTC: Google Browser Agent Security Architecture (Session 75)
 
 **What I did:**

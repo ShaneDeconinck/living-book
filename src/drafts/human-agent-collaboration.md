@@ -165,6 +165,20 @@ The design implication: treat agent uncertainty signals as first-class governanc
 
 This connects to an open question in the gaps chapter: auditing agent reasoning, not just actions. If chain-of-thought is a compliance artifact, then the agent's decision to escalate or proceed is itself auditable evidence of governance in action.
 
+## The Paradox of Supervision
+
+The complacency trap describes humans who stop watching. There is a second, less visible degradation: humans who cannot evaluate effectively even when they watch.
+
+Anthropic studied their own engineering team: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts analyzed over six months.[^anthropic-work] The productivity data confirmed the patterns described above: task complexity increased from 3.2 to 3.8 on a five-point scale, average human turns per session decreased 33% (from 6.2 to 4.1), and engineers described a trust progression analogous to adopting navigation software: starting with unfamiliar routes, then using it for everything.
+
+But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. One engineer described the paradox directly: supervising Claude requires the coding skills that may weaken from overreliance on AI.[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
+
+This is a distinct governance risk from complacency. Complacency is an attention problem: the human is capable of evaluating but stops doing so. The paradox of supervision is a capability problem: the human watches, reviews, and approves, but the evaluation is less rigorous than it appears because the underlying expertise is degrading. The approval still happens. It just means less.
+
+For the PAC Framework, this reinforces the case for infrastructure-in-the-loop. If human oversight degrades in both attention (complacency) and capability (skill erosion), governance that depends on human evaluation is doubly unreliable over time. Structural enforcement: sandboxes, scoped permissions, delegation chains, behavioral monitoring: does not degrade with use. Agent self-governance (the uncertainty recognition from the previous section) provides a complementary layer that improves with model capability rather than degrading with it.
+
+The practical implication: organizations should monitor not just whether humans are reviewing agent output, but whether those reviews are substantive. Review quality metrics (time spent per review, corrections made, escalation rates) matter more than review completion rates. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires the continuous evaluation infrastructure described in the [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter.
+
 ## The Organizational Shift
 
 Deloitte's 2026 Tech Trends report frames the organizational challenge directly: agents are a "silicon-based workforce" that requires the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding[^deloitte-silicon].
@@ -259,3 +273,5 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 [^cascade-severance]: Galileo AI, multi-agent system failure research, December 2025. Also cited in Chapter 13, "Multi-Agent Trust and Orchestration."
 
 [^okta-series]: Okta / Cloud Security Alliance, "AI Agent Security Series," okta.com/blog/ai, 2026. Seven-part series mapping identity failures in agentic AI. Part 6 ("When Agents Serve Shared Workspaces, Authorization Must Follow the Audience") identifies the permission intersection gap. Part 7 ("Identity and Authorization: The Operating System for AI Security") maps six failure modes including four CVSS 9.3+ vulnerabilities exploiting the retrieval-vs-audience authorization gap across Anthropic MCP, Microsoft Copilot, ServiceNow Now Assist, and Salesforce.
+
+[^anthropic-work]: Anthropic, ["How AI Is Transforming Work at Anthropic"](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) (February 2026). Internal study: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts analyzed from February-August 2025. Task complexity increased from 3.2 to 3.8 (five-point scale), human turns decreased 33% (6.2 to 4.1), consecutive autonomous tool calls increased 116%. Engineers reported skill erosion concerns alongside productivity gains.
