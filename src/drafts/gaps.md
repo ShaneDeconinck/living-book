@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 65)
+## Observations (Updated 2026-03-13, Session 66)
+
+### MCP-I: The Identity Layer MCP Was Missing
+
+Vouched's donation of MCP-I (Model Context Protocol - Identity) to the DIF Trusted AI Agents Working Group (March 5, 2026) is the clearest signal yet that the identity community is stepping in to fix MCP's authentication gap. Where TMCP (MCP over TSP) solves the trust problem from the transport layer, MCP-I solves it from the protocol layer: agents must present a DID, a user authorization VC, and a scoped delegation credential before any MCP call proceeds.
+
+The three conformance levels (Level 1: DIDs alongside legacy OIDC; Level 2: mandatory DID verification; Level 3: enterprise credential lifecycle) are a pragmatic concession to production reality. Most organizations deploying MCP today are at Level 0: no identity verification at all (38% of servers). MCP-I gives them a migration path that does not require ripping out existing infrastructure.
+
+Architecturally, MCP-I completes a picture the book has been assembling across chapters. The agent-identity chapter covers OAuth extensions for establishing delegation. The cross-org-trust chapter covers TSP and PIC for cross-boundary trust. MCP-I sits at the intersection: it applies decentralized identity primitives (DIDs, VCs) to the specific problem of MCP server-agent authentication. Together with TMCP (transport trust) and the OWASP MCP Top 10 (threat taxonomy), MCP-I closes the loop between "what can go wrong" and "how to verify."
+
+The institutional story matters too. MCP's protocol governance is under AAIF (Linux Foundation). MCP-I's identity layer is under DIF. TSP's trust layer is under ToIP/LFDT. Three foundations, three layers, all under the Linux Foundation umbrella. This is either coordinated layering or accidental convergence. Either way, the stack is forming: AAIF governs the protocol, DIF governs the identity semantics, ToIP governs the trust transport.
 
 ### Protocol Specialization: A2A-T and the Branching Protocol Tree
 

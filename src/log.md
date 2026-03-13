@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13 24:00 UTC: MCP-I Protocol-Level Identity (Session 66)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 15 chapters, line counts assessed. No feedback files exist.
+- Read PAC Framework fresh from trustedagentic. Confirmed unchanged since March 7.
+- Step 5 reassessment: still pre-RSAC (March 23-26, 10 days out). Searched broadly: RSAC 2026 agentic AI security, MCP CVEs March 2026, IETF agent authorization, NIST NCCoE updates, OpenID Foundation agentic identity, DIF agentic economy, Adversa AI MCP Security TOP 25. Most findings already in the book. One genuinely new finding: **MCP-I (Model Context Protocol - Identity)** donated by Vouched to the DIF Trusted AI Agents Working Group on March 5, 2026.
+
+**What I changed:**
+- **cross-org-trust.md**: Added new subsection "MCP-I: Protocol-Level Identity for MCP" (approximately 14 lines) after the TMCP/TA2A discussion within the Trust Spanning Protocol section. MCP-I extends MCP with a complete identity and delegation layer using DIDs and VCs. Agents present three proofs: their own DID (agent identity), a user authorization VC (principal verification), and a scoped delegation credential (permission boundaries). Three conformance levels provide graduated adoption: Level 1 (DIDs alongside legacy OIDC), Level 2 (mandatory DID verification at request time), Level 3 (enterprise credential lifecycle and immutable audit trails). Key architectural point: MCP-I and TMCP are complementary, not competing. TMCP provides the trusted channel (transport), MCP-I provides the identity semantics (protocol). Together they address all three of Shane's MCP trust gaps. Updated PAC mapping table to include MCP-I. Updated practical recommendations to reference MCP-I's conformance levels as a migration path. Added one footnote.
+- **gaps.md**: Updated session number to 66. Added new observation "MCP-I: The Identity Layer MCP Was Missing" covering the architectural significance (protocol-level identity complementing transport-level trust), the three conformance levels as migration path, the cross-chapter integration (agent-identity + cross-org-trust + agent-communication), and the institutional layering (AAIF governs protocol, DIF governs identity, ToIP governs trust transport, all under Linux Foundation).
+
+**What I considered but did not do:**
+- Adding the Adversa AI MCP Security TOP 25 to the supply-chain-security chapter. The book already has comprehensive MCP vulnerability coverage through the 11-incident timeline, 30 CVEs analysis, MCPTox benchmark, and OWASP MCP Top 10. Another taxonomy would be duplicative.
+- Adding the three ToIP/DIF Working Groups (DTGWG, AIMWG, TAIAWG) as a standalone section to the cross-org-trust chapter. These were announced September 2025, not recent. The book already references DIF's Trusted AI Agents Working Group (via Nicola Gallo and KYAPay). The MCP-I donation to TAIAWG is the concrete new contribution, and it is already covered.
+- Adding NIST NCCoE concept paper commentary to the regulatory-landscape chapter. The comment period closes April 2. No public comments or reactions yet. Better to track outcomes after the deadline.
+- Adding the AAIF MCP Dev Summit schedule (April 2-3, NYC, 95+ sessions) to agent-communication. Pre-event schedule, not outcomes. Better covered post-summit.
+- Strengthening the introduction (132 lines) or building-the-edge (167 lines). Both remain solid and appropriately sized. Previous sessions assessed them as complete for their scope.
+
+**What I noticed:**
+- The institutional layering around MCP identity is now three deep: AAIF (protocol governance), DIF TAIAWG (identity specifications, MCP-I), and ToIP (trust transport, TSP). All three are under the Linux Foundation umbrella. This is an unusual degree of institutional coordination for a protocol that is barely two years old. The OAuth ecosystem took a decade to develop comparable institutional depth. MCP's identity infrastructure is forming in months.
+- MCP-I's conformance levels mirror the PAC Framework's infrastructure scale (I1-I5). Level 1 roughly corresponds to I2 (logged, basic identity alongside legacy credentials). Level 2 corresponds to I3 (verified, mandatory DID verification). Level 3 approaches I4 (authorized, enterprise credential lifecycle with audit trails). This alignment suggests the book's infrastructure maturity model can be used to assess MCP-I deployments.
+- The pre-RSAC plateau continues. 66 sessions of accumulated content. MCP-I was the only genuinely new finding across eight search categories. The institutional infrastructure story (working groups, donations, governance) is now more active than the technical specification story. Post-RSAC (after March 26) and post-MCP Dev Summit (after April 3) remain the next high-impact periods.
+
+**Sources used:**
+- Vouched / DIF, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 5, 2026.
+- MCP-I Specification, modelcontextprotocol-identity.io, 2026.
+- ToIP / DIF, "ToIP and DIF Announce Three New Working Groups for Trust in the Age of AI," lfdecentralizedtrust.org, September 15, 2025 (checked: working groups already referenced via TAIAWG in previous sessions).
+- Web searches: RSAC 2026 agent security, MCP CVEs March 2026, IETF agent authorization, NIST NCCoE agent identity, OpenID Foundation agentic identity, Adversa AI MCP Security TOP 25, DIF agentic economy (all returned material already in the book except MCP-I).
+- Shane's blog (checked: no new posts since Session 58).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. NIST CAISI listening session participation deadline was March 20: track outcomes.
+5. MCP Dev Summit (April 2-3, NYC) outcomes, including MCP-I adoption signals.
+6. Monitor MCP-I conformance level adoption: whether enterprises adopt at Level 1 or push directly to Level 2.
+7. Monitor A2A v1.0 adoption: whether the breaking changes slow or accelerate enterprise rollouts.
+8. Track MCP Server Cards (SEP-1649) progress: closing the signing gap with A2A.
+
 ## 2026-03-13 23:30 UTC: Transaction Tokens for Agents (Session 64)
 
 **What I did:**

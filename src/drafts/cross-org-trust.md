@@ -104,6 +104,16 @@ Replacing MCP's transport layer with TSP and introducing a wallet and identifier
 
 This is a direct answer to the cross-organization problem. Today, if your agent needs to call a new API, someone has to register OAuth credentials, exchange secrets, establish mutual TLS, or add the endpoint to an allowlist. With TSP, the agent resolves the counterparty's DID, verifies their credentials, and establishes an authenticated channel at runtime. No pre-registration. No shared infrastructure. No manual onboarding.
 
+### MCP-I: Protocol-Level Identity for MCP
+
+TMCP wraps MCP in TSP's transport trust. A complementary approach works from the other direction: adding identity semantics directly to the protocol. MCP-I (Model Context Protocol - Identity), developed by Vouched and donated to the Decentralized Identity Foundation's Trusted AI Agents Working Group in March 2026, extends MCP with a complete identity and delegation layer using DIDs and Verifiable Credentials.[^12]
+
+Where TMCP replaces the transport, MCP-I defines what agents must prove at the protocol level. An agent approaching a service presents three things: its own DID (agent identity), a VC from its human principal (user authorization), and a delegation credential scoping what the agent is permitted to do (not binary access, but structured policy). The verifier, typically an edge proxy, validates all three before the MCP call proceeds.
+
+MCP-I defines three conformance levels. Level 1 bridges legacy: basic DID issuance alongside existing OIDC or JWT identifiers. Level 2 requires DID verification and delegation credential validation at request time. Level 3 adds enterprise-tier credential lifecycle management and immutable audit trails. This graduated approach is pragmatic: organizations can start at Level 1 without rebuilding their identity infrastructure, then tighten as their agent deployments mature.[^12]
+
+The architectural significance: MCP-I and TMCP are not competing. TMCP provides the trusted channel (how messages travel securely). MCP-I provides the identity semantics (what the agent must prove before acting). Together, they address all three of Shane's MCP trust gaps: server identity (DID verification), capability proof (delegation credentials with scoped permissions), and delegation chains (VC chain from human principal through agent to service).[^1]
+
 ## Where TSP and PIC Meet
 
 The Q&A at the LFDT meetup revealed how these approaches complement each other:[^1]
@@ -258,7 +268,7 @@ Cross-organization trust touches all three pillars, but the distribution is dist
 | **Control: Delegation chains** | PIC's monotonic authority (can only decrease, never expand) |
 | **Control: Cross-org trust** | TSP + PIC + VCs: the complete stack for cross-boundary agent governance |
 | **Control: Confused deputy** | PIC eliminates it structurally; TSP prevents impersonation |
-| **Control: Standards** | TSP (ToIP/LFDT), PIC (DIF), VCs (W3C), EUDI (eIDAS 2.0), Verifiable Intent (Mastercard/Google) |
+| **Control: Standards** | TSP (ToIP/LFDT), PIC (DIF), MCP-I (DIF), VCs (W3C), EUDI (eIDAS 2.0), Verifiable Intent (Mastercard/Google) |
 
 The Control pillar carries the most weight here because cross-organization trust is primarily an infrastructure problem. But the Potential argument is what justifies the investment: without cross-org trust, agent value is capped at what a single organization can achieve internally. And the Accountability argument is what makes it governable: without verifiable delegation chains and audit trails that survive across boundaries, cross-org agent interactions are liability black holes.
 
@@ -286,7 +296,7 @@ Start with OBO token exchange (RFC 8693) for delegation tracking within federate
 
 **If you are planning cross-organization agent capabilities:**
 
-Track TSP and the TA2A/TMCP work. When your agents need to interact with previously unknown counterparties, DID-based identity verification will replace manual OAuth credential registration. Evaluate whether your credential infrastructure can issue and verify VCs.
+Track TSP, TA2A/TMCP, and MCP-I. When your agents need to interact with previously unknown counterparties, DID-based identity verification will replace manual OAuth credential registration. MCP-I's conformance levels provide a migration path: start with Level 1 (DIDs alongside existing OIDC) and progress as your agent deployments mature. Evaluate whether your credential infrastructure can issue and verify VCs.
 
 **If you are in the EU:**
 
@@ -309,3 +319,4 @@ The cross-domain challenge is not optional. Every agent that calls an external A
 [^9]: Mastercard, "How Verifiable Intent builds trust in agentic AI commerce," 2026. See also the Agent Payments chapter of this book.
 [^10]: Phil Windley, "Cross-Domain Delegation in a Society of Agents," Technometria, 2026.
 [^11]: European Commission, European Digital Identity (eIDAS 2.0), Regulation (EU) 2024/1183. EUDI Wallet implementation timeline: December 2026 for Member State availability.
+[^12]: Vouched, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 5, 2026. MCP-I specification at modelcontextprotocol-identity.io. Three conformance levels for graduated adoption.
