@@ -188,6 +188,28 @@ Where DCTs encode what authority an agent has, PIC verifies that the chain of de
 
 PIC's mathematical elimination of the confused deputy problem becomes critical in multi-agent systems where the confused deputy risk multiplies with every hop. At delegation depth three, there are three potential confused deputy scenarios. At depth five, there are five. PIC's proof of continuity addresses all of them structurally.
 
+### Defense-in-Depth with Measured Results: AgenticCyOps
+
+The patterns above are architectural principles. A March 2026 paper, AgenticCyOps, provides the first concrete evidence that they work when composed, with metrics.[^agenticcyops]
+
+The authors built a multi-agent Security Operations Center (SOC) workflow using MCP as the structural basis. Four phase-scoped agent servers (Monitor, Analyze, Admin, Report) each handle one stage of incident response, with an independent Memory Management Agent mediating access to organizational knowledge. The architecture applies five defensive principles derived from systematic analysis of documented multi-agent attack vectors:
+
+1. **Authorized Interface**: cryptographic tool provenance via signed manifests and registry-based discovery, preventing tool hijacking and identity forgery
+2. **Capability Scoping**: least-privilege access per task context, tracking instruction flows to prevent privilege escalation
+3. **Verified Execution**: verify-first, execute-later with consensus validation loops and blockchain-anchored commitments before irreversible actions
+4. **Memory Integrity and Synchronization**: write-boundary filtering, consensus-validated retrieval, and append-only ledgers preventing poisoning
+5. **Access-Controlled Data Isolation**: hierarchical role-based memory tiers constraining data to necessity-based retrieval
+
+The key finding: these five principles reduce to two integration surfaces that account for all documented multi-agent attack vectors: **tool orchestration and memory management**. Every attack chain the authors traced, from tool redirection to memory poisoning to confused deputy via forged MCP to cross-phase escalation, entered through one of these two surfaces.
+
+The results are concrete. Compared to a flat multi-agent system (where every agent can reach every tool and every memory store), the AgenticCyOps architecture reduces exploitable trust boundaries by 72%: from 200 trust boundaries to 56. Agent-to-tool boundaries drop from 64 to 16 (75% reduction). Agent-to-memory boundaries drop from 48 to 16 (67%). Agent-to-agent boundaries drop from 12 to 4 (67%). The remaining 56 boundaries are not unprotected: each undergoes active verification through signed manifests, consensus validation, or write filtering.[^agenticcyops]
+
+Attack path tracing showed that three of four representative attack chains were intercepted within the first two steps. The partial exception was cross-phase escalation, where the architecture contained but did not fully prevent lateral movement between SOC phases. This maps to the circuit breaker pattern described above: the trust boundaries between agent groups limit blast radius even when one boundary is breached.
+
+The paper also maps each defensive principle to compliance standards: Authorized Interface to NIST SP 800-207 (Zero Trust), Capability Scoping to NIST AC-6 (least privilege) and OWASP LLM08 (excessive agency), Verified Execution to ISO 27001 A.10 (non-repudiation) and EU AI Act Article 12 (logging), Memory Integrity to NIST SI-7 (data integrity) and EU AI Act traceability requirements, and Access-Controlled Data Isolation to NIST AC-2/3 (RBAC/ABAC) and GDPR Article 5 (data minimization).[^agenticcyops]
+
+This matters for the book's argument because it demonstrates that the architectural patterns described in this chapter, when composed with discipline, produce measurable security improvements. The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle from the PAC Framework's Control pillar, applied to multi-agent systems with quantified results.
+
 ### Cross-Boundary Multi-Agent Delegation
 
 Multi-agent systems within a single organization can rely on shared infrastructure: the same identity provider, the same policy engine, the same audit system. The harder problem is multi-agent delegation across organizational boundaries, where Agent A in one organization delegates to Agent B in another.
@@ -291,3 +313,5 @@ The gap between I1 (where most organizations are) and I3 (where regulated indust
 [^tsp]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Wenjing Chu (Futurewei/Trust over IP), Trust Spanning Protocol presentation at LFDT Belgium meetup, March 3, 2026. TSP specification: trustoverip.github.io/tswg-tsp-specification.
 
 [^vi]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026. Verifiable Intent specification, Draft v0.1, verifiableintent.dev. L3 terminal limitation: "The chain stops at L3: the agent cannot delegate further."
+
+[^agenticcyops]: AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations, arXiv:2603.09134, March 10, 2026. Formalizes five defensive principles for multi-agent systems, applied to SOC workflow with MCP as structural basis. Trust boundary analysis: 200 boundaries in flat MAS reduced to 56 (72%) with phase-scoped architecture and verified execution.

@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 21)
+## Observations (Updated 2026-03-13, Session 22)
 
 ### Agent Identity Is Becoming a Platform Feature, and a Product Category
 
@@ -25,6 +25,14 @@ The AAIF formation (December 2025) puts MCP, goose, and AGENTS.md under Linux Fo
 ### MCP Security Maturity Lags Adoption
 
 97 million monthly SDK downloads against a timeline of serious security incidents (GitHub prompt injection, supply-chain backdoors via mcp-remote, Smithery path traversal leaking 3,000+ server tokens) illustrates a familiar pattern: adoption outpaces security maturity. The MCPTox benchmark finding that more capable models are more vulnerable to tool poisoning (because attacks exploit instruction-following ability) is counterintuitive and important. The MCP specification's June 2026 update targeting stateless transport and `.well-known` discovery is a maturity improvement, but the authorization gap (communication protocols solve discovery, not trust) remains structural.
+
+### Protocol Composition Is an Attack Surface
+
+The first systematic security threat model across agent communication protocols (Anbiaee et al., arXiv:2602.11327, February 2026) identifies twelve protocol-level risks and finds that the most dangerous vulnerabilities emerge at protocol boundaries during composition, not within individual protocols. The cross-protocol confusion attack is the most novel finding: when agents compose MCP and A2A, an attacker can exploit the lack of unified identity across the protocol stack to redirect tool invocations to the wrong provider. This validates the chapter's emphasis on TMCP/TA2A as necessary trust layers: individual protocols cannot secure their own boundaries. The comparative assessment (ANP with DIDs strongest, MCP weakest) also reinforces the architectural direction toward decentralized identity for agent protocols. Updated in the Agent Communication Protocols chapter.
+
+### Multi-Agent Defense-in-Depth Has Measurable Results
+
+AgenticCyOps (arXiv:2603.09134, March 10, 2026) provides the first concrete metrics for multi-agent security architecture. A SOC workflow using MCP-based phase-scoped agents reduces exploitable trust boundaries by 72% (200 to 56) compared to a flat multi-agent system. Three of four representative attack chains are intercepted within the first two steps. The paper's most important finding for the book: all documented multi-agent attack vectors reduce to two integration surfaces: tool orchestration and memory management. This gives practitioners a focused defense strategy: if you secure how agents access tools and how agents access shared memory, you address the documented threat landscape. The five defensive principles (authorized interface, capability scoping, verified execution, memory integrity, access-controlled data isolation) map to existing compliance standards (NIST, ISO 27001, GDPR, EU AI Act), making the architecture auditable. Updated in the Multi-Agent Trust and Orchestration chapter.
 
 ### Cross-Organization Trust Is the Book's Most Original Assembly
 

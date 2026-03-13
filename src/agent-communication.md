@@ -138,6 +138,22 @@ Shane identifies three trust gaps that MCP does not address:[^1]
 
 These gaps are precisely what the identity infrastructure from [Chapter 3](agent-identity.md) and the trust layer integrations later in this chapter are designed to fill.
 
+### Systematic Protocol Threat Modeling
+
+The incident timeline and Shane's trust gap analysis describe what has gone wrong and what is missing. A February 2026 paper by Anbiaee et al. provides the first systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
+
+The twelve risks cluster into three categories:
+
+**Authentication and access control risks**: replay attacks, token scope escalation, privilege escalation, identity forgery and impersonation, Sybil attacks, and cross-vendor trust boundary exploitation. These are familiar from traditional API security but amplified by agents' autonomous decision-making: a replayed token in an agent context triggers autonomous actions, not just data access.
+
+**Supply chain and ecosystem risks**: supply-chain compromise, protocol document spoofing and repository poisoning, protocol fragmentation, version rollback attacks, and onboarding exploitation. Version rollback is worth highlighting: an attacker forces a downgrade to an older protocol version with known vulnerabilities. Agent protocols evolve fast, and not all implementations track the latest security patches. The MCP ecosystem's 30 CVEs in 60 days illustrate the attack surface that version fragmentation creates.
+
+**Operational integrity risks**: cross-protocol interaction risks, cross-protocol confusion attacks, context explosion and resource exhaustion, intent deception, collusion and free-riding, and semantic drift exploitation. Cross-protocol confusion is the most novel finding: when agents compose MCP and A2A (as described later in this chapter), an attacker can exploit the boundary between protocols. A malicious A2A agent can direct a client to invoke an MCP tool at the wrong provider, exploiting the lack of unified identity across the protocol stack. The paper calls this "wrong-provider tool execution": the agent thinks it is calling Tool X at Provider A, but the request is routed to Provider B. Without end-to-end identity verification across protocol boundaries, the composition itself is an attack surface.
+
+The comparative security assessment is instructive. ANP, which builds on W3C Decentralized Identifiers with end-to-end encryption, has the strongest security posture. A2A, with OAuth 2.0 mutual authentication and JWT signing, is second. MCP and Agora are weakest: MCP lacks authentication in its core design (relying on transport-layer OAuth that 38% of servers do not implement), and Agora's trustless validation model lacks strong cryptographic binding.[^protocol-threats]
+
+The paper's central conclusion aligns with this chapter's thesis: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. This is why the trust layer integrations (TMCP, TA2A) described later in this chapter matter: they provide the unified identity and verification layer that individual protocols lack.
+
 ## A2A: Connecting Agents to Agents
 
 If MCP is how agents find tools, A2A (Agent-to-Agent) is how agents find each other. Created by Google in April 2025 and donated to the Linux Foundation in June 2025, A2A standardizes agent discovery, communication, and collaboration.[^10]
@@ -422,3 +438,4 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 [^28]: CVE-2026-30861, March 2026. Command injection in WeKnora MCP stdio configuration validation.
 [^29]: Microsoft Security Update, CVE-2026-26118, March 10, 2026. SSRF in Azure MCP Server Tools enabling managed identity token theft and privilege escalation. CVSS 8.8.
 [^30]: "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, March 2026. Analysis of 30 MCP-related CVEs filed January-February 2026 with vulnerability class breakdown. Authentication scan of 500+ MCP servers found 38% completely lack authentication.
+[^protocol-threats]: Zeynab Anbiaee et al., "Security Threat Modeling for Emerging AI-Agent Protocols: A Comparative Analysis of MCP, A2A, Agora, and ANP," arXiv:2602.11327, February 2026. Identifies twelve protocol-level risks across authentication, supply chain, and operational integrity domains with qualitative risk assessment across protocol lifecycle phases.

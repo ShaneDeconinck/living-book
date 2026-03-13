@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-13: Protocol Threat Modeling, Multi-Agent Defense Metrics
+
+**What I did:**
+- Added a new subsection "Systematic Protocol Threat Modeling" to agent-communication.md. Covers the first academic security threat model across four agent protocols (MCP, A2A, Agora, ANP) from Anbiaee et al. (arXiv:2602.11327, February 2026). The paper identifies twelve protocol-level risks across three domains (authentication/access control, supply chain/ecosystem, operational integrity) and evaluates security posture across protocol lifecycle phases. Key finding for the book: the most dangerous vulnerabilities emerge at protocol composition boundaries, not within individual protocols. Cross-protocol confusion attacks (wrong-provider tool execution when MCP and A2A compose without unified identity) are a novel risk category. Comparative assessment: ANP (W3C DIDs, E2E encryption) strongest, A2A (OAuth mutual auth, JWT signing) second, MCP and Agora weakest. This strengthens the chapter's security section beyond incident anecdotes into systematic risk framework, and validates the emphasis on TMCP/TA2A as necessary trust layers.
+- Added a new subsection "Defense-in-Depth with Measured Results: AgenticCyOps" to multi-agent-trust.md. Covers the AgenticCyOps framework (arXiv:2603.09134, March 10, 2026): a multi-agent SOC workflow using MCP as structural basis with five defensive principles (authorized interface, capability scoping, verified execution, memory integrity & synchronization, access-controlled data isolation). The paper's central finding: all documented multi-agent attack vectors reduce to two integration surfaces (tool orchestration and memory management). Concrete results: 72% reduction in exploitable trust boundaries (200 to 56) through phase-scoped architecture, 3 of 4 attack chains intercepted within first two steps, compliance-mapped to NIST/ISO 27001/GDPR/EU AI Act. This is the first quantified evidence that multi-agent defense-in-depth architecture works, with specific metrics.
+- Updated gaps.md: added two new observations (protocol composition as attack surface, multi-agent defense-in-depth metrics), incremented session number to 22.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 is 10 days out (March 23-26). The book has 13 technical chapters, all substantive. The question was: what improves the book most right now?
+
+The agent-communication chapter had strong coverage of MCP security incidents (eleven in twelve months, 30 CVEs in 60 days, 38% of servers lacking auth) and Shane's three trust gaps. But it lacked a systematic threat framework. The Anbiaee et al. paper provides exactly that: twelve risks across three domains, evaluated across protocol lifecycle phases, with comparative security posture assessment. More importantly, it identifies cross-protocol composition as the most dangerous attack surface, which is a risk the chapter discusses architecturally (MCP + A2A composition) but did not previously identify as a security concern. The protocol threat model validates the chapter's central argument (communication protocols solve discovery, not trust) with academic rigor and extends it: even when individual protocols have reasonable security, their composition creates new attack surfaces that only unified identity (TMCP/TA2A) can address.
+
+The multi-agent trust chapter had strong architectural patterns (hierarchical delegation, circuit breakers, delegation registries, PIC) but no evidence they work in practice. AgenticCyOps provides that evidence. The 72% trust boundary reduction is not aspirational: it is measured against a concrete SOC workflow. The finding that all attack vectors reduce to two surfaces (tool orchestration, memory management) gives practitioners a focused defense strategy rather than a sprawling risk landscape. The compliance mapping (NIST, ISO 27001, GDPR, EU AI Act) makes the architecture auditable, connecting to the regulatory landscape chapter.
+
+**What I considered but did not do:**
+- Zenity's RSAC demo (March 23, 0-click vulnerabilities across ChatGPT, Gemini, Copilot, Einstein). Extends PleaseFix already covered in the book. Worth covering post-RSAC when actual demo results are available, not pre-conference announcements.
+- Bedrock Data's RSAC sessions on MCP-Sensitive Data Sentinel and MCP server hardening. Interesting for the data governance layer but better covered post-RSAC with session content.
+- CSA NIST analysis paper (March 11, 2026) on CAISI compliance implications. Already have NIST coverage in regulatory landscape chapter. The analysis confirms existing positions without adding new technical substance.
+- Restructuring the introduction or adding chapter groupings (Foundation/Infrastructure/Governance/Operations). The introduction is functional at 53 lines. Grouping adds navigation value but not content value. Better deferred until after RSAC when the book may grow.
+- Adding the MCPShield paper (arXiv:2602.14281) on adaptive trust calibration for MCP agents. A security cognition layer concept. Interesting but early-stage and narrower than the Anbiaee threat model which covers the full protocol landscape.
+- Creating a new chapter on agent protocol security. The material is better integrated into the existing communication protocols chapter, which already has the strongest security treatment in the book. A separate chapter would fragment the narrative.
+
+**Sources used:**
+- Zeynab Anbiaee et al., "Security Threat Modeling for Emerging AI-Agent Protocols: A Comparative Analysis of MCP, A2A, Agora, and ANP," arXiv:2602.11327, February 2026.
+- AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations, arXiv:2603.09134, March 10, 2026.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The protocol threat modeling paper's comparative assessment (ANP strongest with DIDs, MCP weakest without auth) provides an interesting data point for the book's architectural argument. The protocols building on decentralized identity (ANP with W3C DIDs) have structurally better security postures than those relying on transport-layer security (MCP with optional OAuth). This is consistent with the cross-organization trust chapter's emphasis on DIDs and VCs as the foundation for agent trust, and with Shane's position that identity infrastructure must be baked in, not bolted on.
+- The AgenticCyOps "two integration surfaces" finding (tool orchestration and memory management) is a useful simplification. The multi-agent threat landscape can feel overwhelming (cascading failures, confused deputies, authority amplification, semantic propagation, feedback amplification). Knowing that all documented vectors trace back to two surfaces gives defenders a focused strategy. Secure how agents access tools. Secure how agents access shared state. Everything else is a variant.
+- The 72% trust boundary reduction metric deserves scrutiny. It compares a phase-scoped architecture against a flat MAS where every agent can reach everything. The flat MAS is the worst case, not the typical deployment. Organizations already using orchestration frameworks (LangGraph, CrewAI) have some implicit boundaries. The real-world improvement over existing orchestration patterns would be smaller than 72%. Still, the paper demonstrates that explicit architectural boundaries provide measurable security improvement over implicit ones.
+- Pre-RSAC positioning from Zenity (0-click demo), Bedrock Data (MCP data governance), Token Security (Innovation Sandbox finalist for NHI), and Geordie AI (Innovation Sandbox finalist for agent governance) confirms that RSAC 2026 will be heavily oriented around agentic AI security. The post-RSAC session will likely be the most content-rich of any session so far.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Innovation Sandbox results, Zenity 0-click demo outcomes, Bedrock Data MCP governance sessions, Microsoft sessions, any new product announcements or research disclosures.
+2. NIST CAISI listening session submission deadline is March 20 (7 days). Monitor for published participant lists or pre-session materials.
+3. Check for any new Shane blog posts. The RSAC period is likely to generate new writing.
+4. Consider whether the book needs stronger cross-referencing. The protocol threat modeling paper's cross-protocol composition risk connects agent-communication.md to agent-identity.md (DIDs as the stronger security foundation) and cross-org-trust.md (unified identity across protocol boundaries). These connections could be made more explicit.
+
 ## 2026-03-13: Multi-Agent Cross-Boundary Trust, Agentic Fraud Taxonomy
 
 **What I did:**
