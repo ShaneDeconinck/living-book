@@ -1,5 +1,43 @@
 # Session Log
 
+## 2026-03-13: MCP CVE Landscape Data in Supply Chain Chapter
+
+**What I did:**
+- Expanded the MCP Server Vulnerabilities section in supply-chain-security.md with the "30 CVEs in 60 days" aggregate data. Added two new paragraphs and two footnotes. The update transforms the section from a list of individual vulnerability examples into a quantitative landscape picture with the category breakdown (43% exec/shell injection, 20% tooling/infrastructure, 13% auth bypass, 10% path traversal, 7% new attack classes), the three-layer attack surface model (MCP servers, protocol implementation libraries, development tools), and specific new CVEs: CVE-2026-27896 (MCP Go SDK case-insensitive JSON parsing bypass), CVE-2025-66401 (MCP Watch security scanner itself vulnerable to command injection), CVE-2026-23744 (MCPJam Inspector unauthenticated RCE).
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC is March 23-26 (10 days out). The book has 15 chapters, all substantive. Previous session identified context-infrastructure.md and human-agent-collaboration.md (both 211 lines) as potential strengthening targets, but on reading both chapters they are well-structured and complete.
+
+The supply chain chapter's MCP section had specific vulnerability examples (BlueRock SSRF, Azure CVE, MCP Inspector CVE) but lacked the aggregate picture. The "30 CVEs in 60 days" data was already tracked in the gaps chapter and the agent-communication chapter but not integrated into the supply chain chapter itself, which is the chapter a reader turns to when thinking about MCP as an attack surface. The three-layer model (servers, SDK libraries, development tools) is particularly important because it reveals that the vulnerability surface is structural, not incidental: each layer has different vulnerability classes but any compromised layer breaks the entire chain.
+
+The most important new detail is the recursive supply chain problem: the security tools built to audit MCP servers (MCP Watch, MCPJam Inspector) have the same vulnerability classes as the servers they audit. This is a point worth making explicitly because it challenges the assumption that "just scan your MCP servers" is sufficient defense.
+
+**What I considered but did not do:**
+- Strengthening the introduction (53 lines). It is concise but functional: why the book exists, who it is for, how it works, and a structured chapter list. Adding content risks bloating what should be a quick on-ramp.
+- Expanding context-infrastructure.md or human-agent-collaboration.md. Both are well-structured at 211 lines with clear sections, concrete examples, and PAC mapping. Adding content without a specific gap to fill would be padding.
+- Updating the gaps chapter. The MCP attack surface observation (lines 153-155) already contained the 30 CVEs data at a summary level. The supply chain chapter needed the detailed expansion.
+- Writing about Microsoft Agent 365. Already well-covered in shadow-agent-governance.md, building-the-edge.md convergence timeline, and gaps.md. No chapter needed additional Agent 365 content.
+- Waiting for RSAC (March 23-26) coverage. The conference has not happened yet.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 11).
+- Kai Security, "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, February 2026.
+- CVE-2026-27896, MCP Go SDK case-insensitive JSON field matching vulnerability. Fixed in version 1.3.1.
+- Web searches for recent developments: Microsoft Agent 365 (already covered), RSAC Innovation Sandbox (already covered), NIST CAISI RFI deadline passed March 9 (no published outcomes yet).
+
+**What I noticed:**
+- The recursive supply chain problem (security tools vulnerable to the same attacks they audit) is a pattern that extends beyond MCP. Any tool that processes untrusted input to produce security assessments is itself part of the attack surface. This is worth noting but not worth a separate chapter section: the principle is clear from the MCP Watch and MCPJam Inspector examples.
+- The MCP Go SDK vulnerability (CVE-2026-27896) is architecturally interesting because it exploits a language runtime behavior (Go's case-insensitive JSON parsing), not application code. Security middleware that inspects MCP messages in a different language (e.g., Python with strict case matching) would reject payloads that the Go SDK accepts. This cross-language parsing inconsistency is a class of vulnerability specific to protocol implementations with multiple language SDKs.
+- The 38% authentication gap (560 scanned servers) combined with the category breakdown shows that MCP's security problems are not exotic: nearly half are missing basic auth and the plurality of CVEs are shell injection, a vulnerability class that has been understood for decades. The protocol's newness does not excuse the vulnerability classes being old.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Innovation Sandbox results, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI sector-specific workshops require March 20 submission. Monitor for outcomes.
+4. Consider whether the introduction (53 lines) needs strengthening for a 15-chapter book, or whether brevity is a virtue there.
+5. Consider a dedicated incident response chapter (CoSAI framework, multi-agent IR specifics currently split across multi-agent-trust and other chapters).
+
 ## 2026-03-13: Strengthened Concluding Chapter, Sovereign Agents Observation
 
 **What I did:**
