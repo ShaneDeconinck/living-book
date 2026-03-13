@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 71)
+## Observations (Updated 2026-03-13, Session 72)
+
+### The Council of Europe Convention: International Treaty Layer
+
+The EU Parliament's March 11, 2026 approval (455-101-74) of the Council of Europe Framework Convention on AI adds a genuinely new layer to the regulatory landscape: binding international treaty law. The book already covers EU (classification and compliance), US (promotion and standards), and Singapore (agent-native governance). The Convention operates above all three: it binds signatories (EU, US, UK, Canada, Israel, Japan, Ukraine) to principles of transparency, accountability, risk assessment, and independent oversight for AI systems. For agent governance, this means the infrastructure the book describes is not just an engineering best practice or a regional compliance requirement. It is converging into international legal obligation. The significance is directional: even if ratification takes time, the principles are set and the trajectory is clear.
+
+### IETF Draft Count: Fifteen and Counting
+
+The IETF agent identity and authorization draft count continues growing. Beyond the drafts already covered in the agent-identity chapter (OBO, AAP, Decoupled Authorization, Transaction Tokens for Agents, A2A Profile, AAuth, WIMSE for agents, SCIM for agents, AI Agent Authentication), new individual submissions include draft-nandakumar-agent-sd-jwt (selective disclosure JWT for agent discovery and identity), draft-yl-agent-id-requirements (digital identity management requirements for agent communication), and draft-goswami-agentic-jwt (agent checksums and workflow-aware token binding). Fifteen or more individual submissions in a single quarter targeting the same domain is structurally unprecedented in the IETF's OAuth and identity ecosystem. The question is no longer whether agent identity needs standardization but which of these competing approaches will converge into working group items.
 
 ### IETF Network-Layer Agent Infrastructure: A Different Stack
 

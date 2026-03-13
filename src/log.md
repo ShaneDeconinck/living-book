@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13 UTC: Council of Europe AI Convention, IETF Draft Count Update (Session 72)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. PAC Framework confirmed unchanged. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues (RSAC March 23-26, 10 days out). Searched broadly across seven categories: RSAC 2026 agentic, MCP vulnerabilities, NIST agent updates, agent identity OAuth, EU AI Act March 2026, agentic AI security, Shane's blog. Most findings already in the book. One genuinely significant development: the **Council of Europe Framework Convention on AI** was approved by the EU Parliament on March 11, 2026 (455-101-74). This is the first legally binding international treaty on AI governance. Also found three additional IETF drafts not in the book (SD-JWT for agents, agent ID requirements, Agentic JWT).
+
+**What I changed:**
+- **regulatory-landscape.md**: Added new section "The Council of Europe Framework Convention: First Binding International Treaty" (approximately 20 lines) between the Singapore section and Standards Convergence. Covers: the March 11 EU Parliament approval, the Convention's scope (binding international principles for transparency, accountability, risk assessment, independent oversight), its signatories (EU, US, UK, Canada, Israel, Japan, Ukraine), three specific provisions relevant to agent governance (AI interaction transparency, accountability and remedies for harm, independent oversight mechanisms), ratification requirements, and the significance for organizations building agent trust infrastructure. Added to the convergence timeline. Updated the convergence summary paragraph to include the Convention's role. One footnote added citing the Convention text, EU Parliament recommendation, and FEBIS analysis.
+- **agent-identity.md**: Updated IETF draft count from "seven or more" to "a dozen or more" with expanded scope description (WIMSE, SCIM, SD-JWT, agent identity requirements) to reflect the current state of Q1 2026 standardization activity.
+- **gaps.md**: Updated session number to 72. Added two new observations: (1) "The Council of Europe Convention: International Treaty Layer" on the significance of binding international treaty law for agent governance infrastructure. (2) "IETF Draft Count: Fifteen and Counting" on the continued growth of individual submissions and the convergence question.
+
+**What I considered but did not do:**
+- Adding new MCP CVEs (CVE-2026-29787 info disclosure in mcp-memory-service, CVE-2026-32112 XSS in ha-mcp OAuth). Both are medium severity. Session 71 explicitly chose not to add medium-severity MCP CVEs as the vulnerability narrative is already well-established (30+ CVEs, CVE-2026-26118, MCPTox, OWASP MCP Top 10). These two confirm the pattern without changing it.
+- Adding Agentic JWT (draft-goswami-agentic-jwt-00) to the agent-identity chapter. Session 70 explicitly chose not to add it: revision 00, overlaps with Verifiable Intent, not mature enough for chapter content. Noted in gaps.md for tracking.
+- Adding draft-nandakumar-agent-sd-jwt-02 or draft-yl-agent-id-requirements-00 to the agent-identity chapter. Both are early-stage individual submissions. The chapter already covers the architectural pattern (SD-JWT via Verifiable Intent, identity requirements via the chapter's own analysis). Added to gaps.md draft count.
+- Adding OWASP Agentic Top 10 finalized ASI risk identifiers. The book already covers OWASP extensively (why-agents-break-trust has the full mapping table, execution-security has detailed coverage, multiple chapters reference specific ASI codes). The finalization with specific ASI01-ASI10 identifiers does not change the substance.
+- Restructuring or adding new chapters. At 16 chapters, the book covers the landscape comprehensively. RSAC outcomes (after March 26) will determine what needs structural changes.
+
+**What I noticed:**
+- The Council of Europe Convention adds a genuinely new layer to the regulatory landscape that the book was missing. The chapter previously described four approaches: EU (classify and restrict), US (promote and secure), Singapore (govern by design), and standards bodies (technical convergence). The Convention adds a fifth: binding international treaty law. This is the first time the regulatory landscape for AI has included treaty obligations alongside domestic regulation. For agent governance, it means the infrastructure the book describes is not just engineering best practice, regulatory compliance, or standards adoption: it is converging into international legal obligation.
+- The IETF draft count is now at fifteen or more. To put this in context: the entire OAuth 2.0 specification (RFC 6749) went through a single multi-year process with one working group. Fifteen concurrent individual submissions targeting agent identity in a single quarter, across multiple working groups (OAuth, WIMSE, SCIM), from different organizations (Amazon, CyberArk, China Mobile, Cisco, individual researchers), suggests the problem is universally recognized but the solution space is fragmented. The convergence question (which drafts become working group items vs. which are abandoned) will likely be resolved at IETF 122 and subsequent meetings.
+- The pre-RSAC plateau continues through session 72. Eight consecutive sessions (65-72) where broad web searches return material already in the book, with one significant new finding per session. The book's pre-RSAC coverage is essentially complete.
+- No new Shane blog posts since March 11. RSAC week (March 23-26) and the training programme launch (April 8) will likely generate new writing.
+
+**Sources used:**
+- Council of Europe, "Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law" (CETS No. 225), September 2024.
+- European Parliament, Recommendation A10-0007/2026, March 11, 2026 (455-101-74 vote).
+- FEBIS, "EU Endorses First International Treaty on AI Governance: What It Means for the Future of Trusted AI," March 12, 2026.
+- Council of Europe, "EU Parliament backs EU conclusion of the Council of Europe Framework Convention on Artificial Intelligence," coe.int, March 2026.
+- IETF, draft-nandakumar-agent-sd-jwt-02, draft-yl-agent-id-requirements-00, draft-goswami-agentic-jwt-00.
+- Web searches: RSAC 2026 agentic AI, MCP vulnerability March 2026, NIST AI agent March 2026, agent identity OAuth 2026, EU AI Act agent governance March 2026, agentic AI security March 2026, Shane Deconinck blog (all returned material already in the book except CoE Convention and IETF drafts).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Track Council of Europe Convention ratification progress: five ratifications needed (three CoE members) for entry into force.
+7. Monitor IETF convergence: which agent identity drafts gain working group adoption at IETF 122+.
+
 ## 2026-03-13 27:00 UTC: EUDI Wallets as Agent Infrastructure, IETF Network-Layer Drafts (Session 71)
 
 **What I did:**

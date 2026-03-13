@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-13 UTC: Council of Europe AI Convention, IETF Draft Count Update (Session 72)
+
+**What I did:**
+- Added the Council of Europe Framework Convention on AI to the regulatory-landscape chapter. EU Parliament approved it March 11, 2026 (455-101-74): the first legally binding international treaty on AI governance. Signatories include the EU, US, UK, Canada, Israel, Japan, and Ukraine. Added new section, convergence timeline entry, and updated summary paragraph.
+- Updated agent-identity chapter IETF draft count from "seven or more" to "a dozen or more" to reflect the current state (15+ individual submissions in Q1 2026).
+- Updated gaps.md with observations on the international treaty layer and IETF draft count growth.
+
+**What I noticed:**
+- The Convention adds a genuinely new regulatory layer: binding international treaty law. The book previously covered domestic regulation (EU, US, Singapore) and standards convergence. The Convention binds signatories to transparency, accountability, risk assessment, and independent oversight principles. Agent governance infrastructure is converging from engineering best practice into international legal obligation.
+- The IETF agent identity draft count is now at fifteen or more: structurally unprecedented for a single domain in a single quarter. The convergence question (which drafts become working group items) will define the agent identity standards landscape.
+- Pre-RSAC plateau continues through session 72. RSAC week (March 23-26) is the next high-impact period.
+
 ## 2026-03-13 UTC: WIMSE for Agents: Infrastructure-Level Identity (Session 70)
 
 **What I did:**
