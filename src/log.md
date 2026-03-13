@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13: MCP Sampling Attacks and RSAC Market Signal Expansion (Session 31)
+
+**What I did:**
+- Added MCP sampling as a fourth capability type in `agent-communication.md`, with coverage of Unit 42's proof-of-concept sampling attacks (resource theft, conversation hijacking, prompt manipulation). The chapter previously covered three MCP capability types (Resources, Tools, Prompts) and three attack vectors (overprivileged tokens, tool schema manipulation, resource poisoning) but entirely omitted sampling: the reverse-direction capability where servers request LLM completions from the client. This is a distinct attack surface because the server can influence the agent's reasoning directly, not just its inputs.
+- Expanded the RSAC Innovation Sandbox entry in `building-the-edge.md` from two finalists (Token Security, Geordie AI) to the full picture: five of ten finalists directly address agentic AI security themes. Added Realm Labs (inference monitoring), Humanix (social engineering defense), and Crash Override (supply chain provenance/SLSA). Added Token Security SC Awards finalist recognition (two categories, March 4). Added the $25M total and historical context ($17.8B cumulative funding, 100+ acquisitions from past finalists). The market signal is stronger with the full data: half the cybersecurity industry's premier startup showcase targeting agent security is category confirmation, not a coincidence.
+
+**Chapters modified:**
+- **agent-communication.md**: Added sampling as fourth MCP capability type (line 38). Added Unit 42 sampling attack research as fourth attack vector in the MCP security section. New footnote for Unit 42 research.
+- **building-the-edge.md**: Expanded RSAC Innovation Sandbox convergence timeline entry with full finalist landscape. Added Token Security SC Awards footnote.
+
+**Why this work:**
+Stepped back and assessed priorities as instructed. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, same pillar structure). RSAC 2026 is 10 days out (March 23-26). The book is structurally complete at 15 chapters.
+
+The agent-communication chapter had a genuine gap: MCP sampling was entirely unmentioned despite being a documented capability type with published attack research. The Unit 42 sampling attack is qualitatively different from the three existing attack vectors because it inverts the direction of communication: instead of the client calling a malicious tool, the server calls back to the client's LLM. This creates a more powerful injection surface because the LLM processes sampling requests with its full context and credentials.
+
+The RSAC Innovation Sandbox expansion strengthens the convergence thesis. The previous entry mentioned two finalists but understated the signal: five of ten finalists addressing agentic AI security, at $5M each, is a $25M market commitment from a single event. The historical context (100+ acquisitions, $17.8B) adds weight: Innovation Sandbox has reliably predicted market categories, and the 2026 class signals that agent security has crossed from "emerging concern" to "funded product category."
+
+**What I considered but did not do:**
+- Adding Microsoft Frontier Suite ($99/user/month) bundled pricing to building-the-edge.md. The chapter already covers Agent 365 at $15/user/month standalone. The E7 bundle is a pricing/packaging detail, not a governance capability.
+- Adding Adversa AI MCP Security TOP 25 as a standalone reference. The 30 CVEs and 38% authentication gap data are already cited from the same source in both agent-communication.md and building-the-edge.md.
+- Expanding on Realm Labs' "see inside the AI's brain" inference monitoring in detail. This is a vendor product claim without published research behind it. The Innovation Sandbox finalist mention is appropriate; a dedicated section is not.
+- Adding the full RSAC conference program themes. Pre-conference marketing copy is less useful than post-conference content. Better to revisit after March 26 with session outcomes, keynote themes, and Innovation Sandbox winner announcement.
+- Restructuring the convergence timeline by category. Session 30 noted the March 2026 density. The current timeline is chronological and readable at 10 entries. Post-RSAC additions may push it past the threshold where category grouping helps, but it is not there yet.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: 19 questions confirmed, pillar structure unchanged).
+- Shane's blog posts (checked: no new posts since March 11).
+- Palo Alto Networks Unit 42, "New Prompt Injection Attack Vectors Through MCP Sampling," unit42.paloaltonetworks.com, 2026. Three PoC attacks on MCP sampling: resource theft, conversation hijacking, prompt manipulation.
+- RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," prnewswire.com, February 2026. Full list: Charm Security, Clearly AI, Crash Override, Fig Security, Geordie AI, Glide Identity, Humanix, Realm Labs, Token Security, ZeroPath.
+- Token Security, "Named Finalist in Two Categories of the 2026 SC Awards," globenewswire.com, March 4, 2026.
+- VentureBeat, "RSAC's Innovation Sandbox is where cybersecurity's next giants are born," 2026. Historical data: 100+ acquisitions, $17.8B cumulative funding.
+- Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," March 9, 2026. Reviewed but not added beyond existing references.
+
+**What I noticed:**
+- The MCP attack surface now has four documented vectors (overprivileged tokens, tool schema manipulation, resource poisoning, sampling injection) plus a systematic threat model covering twelve protocol-level risks. The chapter's security coverage is now comprehensive across both directions of MCP communication.
+- The RSAC Innovation Sandbox class of 2026 is the strongest market signal in the book for agent security as a product category. Five of ten finalists, $25M in investment, and the historical track record of the program make this a leading indicator. The previous mention of two finalists understated the signal by 60%.
+- MCP sampling is architecturally significant beyond security. It represents the protocol's acknowledgment that servers sometimes need LLM capabilities: a blurring of the client/server boundary that has implications for context management, cost allocation, and delegation. The security implications are immediate; the architectural implications are longer-term.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, product announcements, keynote themes, agent security session content.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider whether the convergence timeline needs category grouping after RSAC additions.
+4. Assess whether the multi-agent-trust chapter's incident response gap (identified as a weakness) warrants a dedicated section or can be addressed with recent research.
+
 ## 2026-03-13: Cross-Chapter Connections and Market Signal Updates (Session 30)
 
 **What I did:**
