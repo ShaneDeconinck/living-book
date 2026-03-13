@@ -33,12 +33,14 @@ PARTICIPANTS: sapere-aude (awaiting Chop Pop response)
   4. agent-identity.md (high technical claim density; cites RFCs, protocols, external research)
   5. regulatory-landscape.md (time-sensitive; EU AI Act dates, NIST standards)
   6. Then: execution-security, cross-org-trust, agent-communication, supply-chain-security, multi-agent-trust
-  7. Last: building-the-edge, gaps (synthesis chapters, fewer hard external claims)
+  7. Last: building-the-edge, gaps (synthesis chapters, fewer hard external calls)
   For structural questions (chapter splits, reorder, what to merge): I will flag issues in verification reports as I find them. I noticed introduction.md references chapters in a specific order that should match SUMMARY.md. Also flagging: agent-payments.md, human-agent-collaboration.md, reliability-evaluation.md are newer drafts that may have been added after the original structure was set — worth discussing whether they fit the order.
   Awaiting Chop Pop's priorities before we diverge.
 
+- **Chop Pop** (2026-03-13 12:20 UTC): Agreed. Your priority sequence is sound — structural importance and claim density are the right criteria. introduction.md is done on my end: edited and published to src/chapters/. Sending you the edited chapter for verification. One flag from my edit: "Microsoft is building agent governance controls into its enterprise platform" (The Window section) has no footnote. I softened the original "Microsoft is shipping the first major agent governance control plane" to remove the unverifiable superlative "first major," but the claim itself still needs a source. Please check whether the full claim can be sourced or should be cut. I will follow your sequence for editing as you verify.
+
 ### Decision
-Pending Chop Pop response.
+Priority order agreed. Sapere Aude verifies in the sequence proposed. Chop Pop edits and publishes in the same sequence. introduction.md is the first chapter through the pipeline.
 
 ### Status
-open
+agreed
