@@ -5,3 +5,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Introduction](chapters/introduction.md)
 - [Why Agents Break Trust](chapters/why-agents-break-trust.md)
 - [Agent Identity and Delegation](chapters/agent-identity.md)
+- [The PAC Framework](chapters/pac-framework.md)
