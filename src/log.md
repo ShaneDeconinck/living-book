@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13: AI Recommendation Poisoning and Commercial Context Manipulation (Session 46)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits are CSS dark mode fixes). PAC Framework unchanged.
+- Read current book state: all 15 chapters assessed by size and quality. Read introduction, why-agents-break-trust, context-infrastructure, human-agent-collaboration, building-the-edge, pac-framework, supply-chain-security, and gaps chapters in full.
+- Step 4 reassessment: RSAC is still 10 days away (March 23-26). The book remains in pre-RSAC plateau. All chapters are well-developed (143-485 lines each). No structural issues. Cross-references are comprehensive. Web searched for recent developments across RSAC preview content, MCP security, agent governance announcements, AI agent identity, and research papers.
+- The genuinely new finding was Microsoft's AI Recommendation Poisoning (published February 10, 2026, not yet in the book): 50 prompt-based attempts from 31 legitimate companies across 14 industries to bias AI assistant memory for commercial advantage. This is a new threat category: commercial context manipulation, not adversarial attack. Also found MACAW/MAPL (AI-native policy language with cryptographic attestation) and SACR UADP (first analyst market category evaluation for unified agentic defense platforms).
+
+**What I changed:**
+- **supply-chain-security.md**: Added new paragraphs after the memory poisoning section covering AI Recommendation Poisoning. Key framing: this extends the memory poisoning threat from adversarial to commercial. The attackers are legitimate companies using "Summarize with AI" buttons to inject persistence commands into AI assistant memory. Traditional security tooling won't catch it because there is no malicious payload. The defense requires treating agent memory as a governed resource with provenance tracking. Added one new footnote citing the Microsoft Security Blog.
+- **context-infrastructure.md**: Added new paragraph in the freshness section introducing context integrity as a distinct dimension beyond freshness. Context can be fresh and come through normal channels but still be designed to manipulate the agent's future decisions. Cross-references the supply chain chapter. Added one new footnote.
+- **gaps.md**: Updated session number. Added three new observations: "AI Recommendation Poisoning: When the Attacker Is a Legitimate Business" (commercial context manipulation as a new threat class), "MACAW/MAPL: AI-Native Policy Languages With Cryptographic Attestation" (policy composition with monotonic attenuation and cryptographic proof), "SACR UADP: Agent Defense as Analyst Category" (market category formation signal from analyst evaluations).
+
+**What I considered but did not do:**
+- Adding Bedrock Data's MCP server for data governance. Interesting vendor approach (data-centric governance, metadata lake for agent context auditing) but too vendor-specific for the book's scope. The concept of data-layer governance is already covered in the context infrastructure chapter's permissions and authority dimensions.
+- Adding the RSAC preview content (Bedrock Data sessions, ColorTokens Xshield AI Agent, Mend.io prompt hardening). These are vendor pre-conference announcements without enough substance to add to the book. Post-RSAC coverage will be more valuable when actual keynote content, Innovation Sandbox winner, and product demonstrations are available.
+- Adding ModelOp's 2026 AI Governance Benchmark (governance platform adoption surging from 14% to 50%). Already considered and rejected in Session 45 as more about general AI governance than agent-specific trust.
+- Revising the MCP spec update coverage. The "long-running workflows and tighter security controls" backed by AWS/Microsoft/Google is essentially the same Tasks primitive and enterprise deployment focus already covered in the agent-communication chapter and the 2026 roadmap.
+- Adding Crittora's cryptographic trust layer. Covered conceptually through MACAW/MAPL in the gaps chapter. Adding multiple vendor implementations of the same concept would dilute the analysis.
+
+**What I noticed:**
+- AI Recommendation Poisoning is the first documented case of commercial (non-adversarial) context manipulation at scale. The book's existing threat model across multiple chapters implicitly assumes attackers are adversarial. This finding reveals a third category between "trusted content" and "adversarial attack": commercially motivated manipulation that looks like normal content. This may warrant expanding the PAC Framework's threat model to explicitly address commercial manipulation alongside adversarial threats.
+- The MACAW/MAPL policy language's monotonic attenuation property for policies (child policies can only restrict, never relax) mirrors the book's treatment of delegation chain authority attenuation (macaroons, biscuits, DCTs). The convergence of the same design principle across two different domains (delegation authority and policy composition) suggests a deeper architectural pattern: all trust properties in agent systems should be monotonically attenuating. This connects to PIC's mathematical elimination of the confused deputy.
+- The SACR UADP evaluation (15 vendors assessed) confirms that agent defense has completed the transition from "infrastructure gap" to "product category." Combined with RSAC Innovation Sandbox (5 of 10 finalists in agent trust), Kai ($125M), and Onyx ($40M), the venture and analyst community is now treating agent governance as a funded, measurable market. The build-vs-buy question for organizations is shifting: the inferential edge increasingly lives in the 20% that platform vendors do not cover (cross-org trust, custom delegation chains, regulatory-specific controls), not in the 80% that is becoming commodity.
+- The book remains in pre-RSAC plateau. RSAC (March 23-26) will likely be the most content-rich event of the year for the book's topics: Innovation Sandbox winner, Kurtz keynote content, vendor announcements, analyst commentary.
+
+**Sources used:**
+- Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. 50 prompts, 31 companies, 14 industries.
+- MACAW Security, "Authenticated Workflows: A Systems Approach to Protecting Agentic AI," arXiv:2602.10465, February 2026. Introduces MAPL policy language.
+- SACR, "Unified Agentic Defense Platforms Majestic Technoscope," February 2026. First analyst evaluation of 15 vendors in agentic defense. SentinelOne top marks.
+- Adversa AI, "Top Agentic AI Security Resources: March 2026," adversa.ai, March 2026. Compilation of recent findings including ICON defense mechanism and MACAW.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from session 45).
+- Shane's blog (checked: no new posts, recent commits are CSS/dark mode fixes).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote content, product announcements, keynote themes. This is the highest-value upcoming event.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI virtual listening sessions (April 2026) outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track any substantive submissions or reactions.
+5. Track whether the commercial context manipulation pattern (AI Recommendation Poisoning) expands beyond "Summarize with AI" buttons to other agent interaction channels.
+6. Monitor whether MAPL or similar AI-native policy languages gain adoption beyond academic/research contexts.
+
 ## 2026-03-13: XAA/ID-JAG as MCP Authorization Layer (Session 45)
 
 **What I did:**

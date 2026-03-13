@@ -138,6 +138,8 @@ This dimension is often underestimated. Organizations focus on getting informati
 
 Freshness is not just about updating data. It is about the agent knowing what it does not know: metadata that says "this was last verified on date X" or "this source may have changed since retrieval." Without freshness signals, the agent has no way to calibrate its confidence.
 
+There is a related dimension that freshness alone does not cover: context integrity. Microsoft's discovery of AI Recommendation Poisoning showed that 31 legitimate companies across 14 industries were embedding hidden instructions in "Summarize with AI" buttons to bias AI assistant memory toward their products.[^rec-poison] This is not adversarial attack in the traditional sense: it is commercial manipulation of agent context at scale. The context the agent consumed was fresh and came through a normal interaction channel. It was simply designed to corrupt the agent's future decision-making for commercial advantage. Defending against this requires treating context provenance and integrity as governed properties, not just freshness. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this as part of the broader memory poisoning threat.
+
 ## The Compounding Effect
 
 This is Shane's central insight: context infrastructure compounds. When a better model arrives, an organization with mature context infrastructure captures more value instantly. Less code needed, more capability unlocked. Permission boundaries are already enforced. The upgrade is frictionless.[^1]
@@ -208,4 +210,6 @@ Context infrastructure connects to several other chapters. [Agent Identity and D
 [^8]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," 2026.
 [^9]: PIC Protocol, github.com/pic-protocol/pic-spec.
 [^10]: Gartner, via multiple industry analyses of agent gateway adoption, 2026.
+[^rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. 50 unique prompts from 31 companies across 14 industries identified over 60 days.
+
 [^11]: Shane Deconinck, "Fitting Agentic AI Components in a Mental Model," January 6, 2026.

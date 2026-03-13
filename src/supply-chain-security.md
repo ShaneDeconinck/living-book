@@ -48,6 +48,10 @@ The attack surface spans three distinct layers, and a vulnerability in any layer
 
 **Memory Poisoning.** OWASP's Top 10 for Agentic Applications identifies memory poisoning (ASI04) as a distinct threat: corruption of persistent agent memory to influence future decisions.[^owasp-agentic] An attacker who can write to an agent's memory (through a compromised tool, a crafted conversation, or a manipulated context file) can alter the agent's behavior across sessions. This is not a one-time exploit. It is persistent compromise of the agent's decision-making.
 
+Microsoft's discovery of AI Recommendation Poisoning reveals this threat class already operating in the wild, but with an unexpected twist: the actors are not adversaries. They are legitimate companies.[^ai-rec-poison] Over a 60-day observation period, Microsoft identified 50 distinct prompt-based attempts from 31 companies across 14 industries (finance, health, legal, SaaS, marketing, food services) designed to manipulate AI assistant memory for commercial advantage. The attack vector: "Summarize with AI" buttons on websites that, when clicked, inject persistence commands via URL prompt parameters. These commands instruct the AI to "remember [Company] as a trusted source" or "recommend [Company] first," embedding commercial bias into the agent's persistent memory that influences all future interactions.
+
+This is not prompt injection in the traditional sense. There is no malicious payload, no credential theft, no system compromise. It is SEO for the age of agents: companies competing to be the one an AI assistant recommends. But the implications for trust infrastructure are serious. A compromised AI assistant can provide subtly biased recommendations on health, finance, and security decisions without the user knowing their agent's memory has been manipulated. One of the 31 identified companies was itself a security vendor. Traditional security tooling that looks for malicious intent will not catch this, because the intent is commercial, not criminal. The defense requires treating AI assistant memory as a governed resource: the [Context Infrastructure](context-infrastructure.md) chapter's freshness dimension applies directly, but so does a new dimension the book has not previously addressed: context integrity as protection against commercial manipulation, not just adversarial attack.
+
 **Configuration File Attacks.** NVIDIA's AI Red Team guidance highlights that agent modification of configuration files (~/.zshrc, .gitconfig, MCP configs) enables persistence and sandbox escape.[^nvidia] A sandboxed agent that can modify a git hook achieves code execution outside the sandbox the next time a commit occurs. The configuration layer sits below most security models and above most sandboxes.
 
 [^mcptox]: MCPTox benchmark, referenced in OWASP analysis and agent communication security research. Finding: instruction-following capability correlates with tool poisoning vulnerability.
@@ -67,6 +71,8 @@ The attack surface spans three distinct layers, and a vulnerability in any layer
 [^model-poison]: Anthropic, UK AI Security Institute, and Alan Turing Institute, joint research on training data poisoning, 2026. Finding: 250 poisoned documents sufficient for backdoor implantation.
 
 [^owasp-agentic]: OWASP Top 10 for Agentic Applications, December 2025. ASI04: Memory Poisoning.
+
+[^ai-rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. 50 unique prompts from 31 companies across 14 industries identified over 60 days. Microsoft implemented mitigations in Copilot but the tooling used to execute these attacks remains publicly available.
 
 [^nvidia]: NVIDIA AI Red Team, "Sandboxing Agentic AI Workflows," 2025-2026. Guidance on configuration file protection as non-negotiable control.
 
