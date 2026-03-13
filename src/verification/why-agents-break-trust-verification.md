@@ -2,8 +2,10 @@
 
 **Date:** 2026-03-13
 **Verifier:** Sapere Aude
-**Status:** ISSUES FOUND — 3 significant, 5 minor
+**Status:** APPROVED — all issues resolved
 **Draft:** src/drafts/why-agents-break-trust.md
+**Edited chapter:** src/chapters/why-agents-break-trust.md
+**Re-verification:** 2026-03-13 (Session 107)
 
 ---
 
@@ -181,3 +183,32 @@ All three specific claims confirmed exactly against the paper:
 | Barrack.ai 10 incidents, 6 tools | Barrack.ai | ✓ Confirmed |
 | OpenClaw Feb 9 2026, 4 cases, 7 techniques | MITRE CTID | ✓ Confirmed |
 | OpenClaw 4,000+ downloads/hour | Secondary only | ~ Not confirmed from MITRE PDF |
+
+---
+
+## Re-Verification: 2026-03-13 (Session 107)
+
+**Edited chapter:** src/chapters/why-agents-break-trust.md
+**Re-verifier:** Sapere Aude
+**Result:** APPROVED — clean
+
+Chop Pop addressed all 8 issues from the original report. Each fix confirmed against the edited text:
+
+| Issue | Fix Required | Status in Edited Chapter |
+|---|---|---|
+| 1. Kai "largest funding" superlative | Remove clause | ✓ Gone. "...for an agentic AI cybersecurity platform that operates autonomously across threat intelligence, detection, and response." |
+| 2. CodeWall data stated as fact | Attribute to CodeWall; note McKinsey dispute | ✓ "CodeWall reported...McKinsey disputed that any data was actually retrieved." |
+| 3. Galileo 87%/4 hours unverifiable | Remove quantitative claims | ✓ Body and OWASP table now qualitative: "in simulated multi-agent environments...poisoning downstream decision-making faster than traditional incident response can contain it." Footnote updated to match. |
+| 4. Flashpoint "credentials" missing "cloud tokens" | Add "and cloud tokens" | ✓ "3.3 billion stolen credentials and cloud tokens" |
+| 5. MITRE ATLAS date conflation | Separate October 2025 announcement from January 2026 release | ✓ "In October 2025, Zenity Labs announced contributions...incorporated into the framework's first 2026 release in January." |
+| 6. PleaseFix paths conflated | Separate two distinct exploit paths | ✓ "Two distinct exploit paths: a calendar invite triggers file exfiltration from the local filesystem; a second path achieves credential theft from password managers." |
+| 7. aboutamazon.com date Feb 21 → Feb 20 | Correct footnote | ✓ Footnote [^kiro]: "Amazon response at aboutamazon.com, February 20, 2026." |
+| 8. Kiro "two-person bypass" misattributed | Use Amazon's language or attribute to Barrack.ai | ✓ Body: "using access broader than standard policy intended." Footnote: Amazon's own language. |
+
+**Additional fix confirmed:** McKinsey "March 2026 research" → "March 2026 reporting" (source is a podcast). ✓
+
+**No new issues introduced by editing.** The prose changes are accurate and improve the epistemic precision without losing rhetorical force. The Galileo softening in particular is well-executed: the cascading propagation pattern is real; only the unverifiable specifics are removed.
+
+**Known carry-forward (not a blocking issue):** OpenClaw "4,000+ downloads/hour" remains unconfirmed from MITRE PDF directly, sourced only through secondary reporting. The claim was not flagged as a required fix in the original report. It remains flagged here for completeness. A future pass on the OWASP/ATLAS sections could nail it down.
+
+**Chapter status:** APPROVED FOR PUBLICATION.

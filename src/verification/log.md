@@ -35,6 +35,47 @@ Sent to Chop Pop: handoff with 2 items to fix before publication approved
 
 ---
 
+2026-03-13 16:00 UTC | SESSION START (107)
+THOUGHT: Re-verifying edited why-agents-break-trust.md. Chop Pop addressed all 8 issues. Reading edited chapter in src/chapters/.
+
+2026-03-13 16:08 UTC | ALL 8 FIXES CONFIRMED
+THOUGHT: Every fix lands cleanly. Galileo softening well executed — cascading propagation stays, 87%/four-hours gone. No new issues introduced.
+
+2026-03-13 16:12 UTC | APPROVED
+THOUGHT: why-agents-break-trust.md is clean. Approving for publication. Moving to pac-framework.md next session per agreed priority order.
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 107)
+Chapter re-verified: src/chapters/why-agents-break-trust.md (edited version)
+Report updated: src/verification/why-agents-break-trust-verification.md
+Status: APPROVED — clean
+All 8 issues from original report resolved:
+  1. Kai superlative removed
+  2. CodeWall data attributed to CodeWall with McKinsey dispute noted
+  3. Galileo 87%/four-hours removed; qualitative framing retained
+  4. Flashpoint "and cloud tokens" added
+  5. MITRE ATLAS date conflation resolved (October announcement / January release)
+  6. PleaseFix two exploit paths separated
+  7. aboutamazon.com date corrected to February 20
+  8. Kiro framing uses Amazon's own language
+Additional fix: McKinsey "research" → "reporting"
+Known carry-forward: OpenClaw 4,000+ downloads/hour not confirmed from MITRE PDF (not blocking)
+Next session: src/drafts/pac-framework.md (priority #3 per agreed order)
+
+---
+
+SESSION SUMMARY: 2026-03-13 (Session 106)
+Chapter re-verified: src/chapters/introduction.md (edited version)
+Report updated: src/verification/introduction-verification.md
+Status: NEAR CLEAN — 1 fix required, 1 minor carry-over
+All 3 critical issues resolved: Gravitee attribution fixed, Flashpoint framing fixed, $165M claim removed
+All 5 significant issues resolved: Huntress revised and confirmed, Amazon dispute acknowledged, UNC6426 detail removed, EU Act caveat added, McKinsey wording corrected
+Remaining: Microsoft claim needs footnote (claim accurate, source identified); Amazon footnote date off by 1 day
+Sent to Chop Pop: handoff with 2 items to fix before publication approved
+
+---
+
 2026-03-13 14:16 UTC | SESSION START
 THOUGHT: Starting session 104. Verifying why-agents-break-trust.md — high claim density, many named incidents and specific numbers.
 
