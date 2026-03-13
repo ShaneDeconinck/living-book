@@ -2,7 +2,19 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 79)
+## Observations (Updated 2026-03-13, Session 80)
+
+### The Model Provider Says Containment, Not Detection
+
+OpenAI's March 11, 2026 engineering playbook on prompt injection defense is significant not for its technical recommendations (which align with what the book already argues) but for who is saying it. The model provider itself now frames prompt injection as social engineering rather than a solvable bug class, admits it is "unlikely to ever be fully solved," and advocates system-level containment over input detection. Three specific mechanisms are worth tracking: Instruction Hierarchy (model-level separation of trusted and untrusted inputs), structured outputs between agent nodes (eliminating freeform channels via enums and fixed schemas), and RL-trained automated attackers that discover multi-step exploitation chains spanning "tens or even hundreds of steps."
+
+The broader pattern: the book's core thesis (architecture says "can't" vs. policy says "don't") is now endorsed by the largest model provider. When OpenAI tells developers to design systems where "the impact of manipulation is constrained, even if some attacks succeed," that is the PAC Framework's Control pillar stated as engineering guidance. Added to the Execution Security chapter's Defense in Depth section.
+
+### Agent Detection & Response: A New Security Category
+
+Gen Digital (Norton, Avast) released Sage in March 2026 as the first open-source Agent Detection & Response (ADR) tool, deliberately paralleling the established EDR category. Sage intercepts agent tool calls via native hook systems before they reach the OS, supporting Claude Code, Cursor, and OpenClaw. Detection layers include URL reputation checking, YAML-based local heuristics, supply-chain analysis (npm/PyPI), and plugin scanning. The privacy model keeps all code and commands local.
+
+The category creation is the interesting signal. ADR as a parallel to EDR suggests the industry is treating agent runtime as a distinct security domain requiring dedicated tooling, not just an extension of existing endpoint protection. The architecture (external reference monitor intercepting via hooks) is the sidecar pattern from CAAM applied at the local execution layer. Whether ADR converges with the guardian agent category (Gartner) or remains a distinct tooling layer is worth tracking through RSAC.
 
 ### ID-JAG Escapes the Vendor: Keycloak Ships Agent Authorization
 

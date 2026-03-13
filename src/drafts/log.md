@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 UTC: OpenAI Validates Containment-Over-Detection, Sage Introduces ADR Category (Session 80)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues into its 16th session (65-80). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, OpenAI agent security March 2026, Sage ADR, NIST CAISI listening sessions. Most findings already in the book (CVE-2026-26118, Adversa AI MCP TOP 25, Bedrock Data RSAC, NIST CAISI listening sessions, all IETF drafts, Codex Security/Aardvark, Innovation Sandbox finalists). Two genuinely new findings: **OpenAI's prompt injection defense playbook** (March 11, 2026) and **Sage Agent Detection & Response** (Gen Digital, March 9, 2026).
+
+**What I changed:**
+- **execution-security.md**: Added two paragraphs to the Defense in Depth section, Layer 1 (Input Validation). Covers: OpenAI reframing prompt injection as social engineering (an ongoing adversarial challenge, not a solvable bug class), three recommended mechanisms (Instruction Hierarchy for trusted/untrusted input separation, structured outputs between agent nodes to eliminate freeform channels, system-level containment), and the RL-trained automated attacker for multi-step vulnerability discovery. Cross-referenced the reliability-evaluation chapter's evaluation gap. One footnote added citing the OpenAI blog post and CybersecurityAsia coverage. The significance: the model provider validates the chapter's core thesis (containment over detection) and the PAC Framework's Control pillar argument (architecture says "can't" rather than policy says "don't").
+- **gaps.md**: Updated session number to 80. Added two new observations: "The Model Provider Says Containment, Not Detection" (OpenAI's playbook as validation of the book's thesis, with specific mechanisms to track) and "Agent Detection & Response: A New Security Category" (Sage as first open-source ADR tool, sidecar pattern at the local execution layer, category creation paralleling EDR).
+
+**What I considered but did not do:**
+- Adding Sage to the execution-security chapter's Real-World Architectures section. Sage is a product implementing the sidecar/reference monitor pattern, which the chapter already covers through PCAS, CAAM, and Google's User Alignment Critic. The ADR category name is interesting but the architecture is not novel enough for a dedicated subsection. Noted in gaps.md instead.
+- Adding more detail about OpenAI's Instruction Hierarchy approach. The research paper (OpenAI, "The Instruction Hierarchy," 2024) predates the March 2026 playbook. The playbook's significance is not the Instruction Hierarchy itself but OpenAI framing it within a containment-first defense strategy. The chapter references the mechanism without deep-diving the research.
+- Adding the OpenAI RL-trained attacker to the reliability-evaluation chapter. It is an evaluation methodology worth tracking, but the current mention in execution-security (with cross-reference to reliability-evaluation) is sufficient. If OpenAI publishes more detail on the methodology, it would warrant dedicated coverage.
+- Adding Bedrock Data's MCP "sensitive data sentinel" approach. Vendor product without novel architectural contribution.
+- Adding NIST CAISI listening session details (April 2026 workshops, March 20 participation deadline). Already tracked in previous session priorities. No new information.
+- Revising or restructuring existing chapters. At session 80, adding the OpenAI validation is the right incremental move.
+
+**What I noticed:**
+- The pre-RSAC plateau continues through session 80. Sixteen consecutive sessions (65-80) where broad searches return material already in the book, with one or two significant findings per session. RSAC (March 23-26) will break this pattern.
+- OpenAI's containment-first framing creates an interesting alignment across model providers. Google's Project Mariner uses application-level defense-in-depth with the User Alignment Critic. Anthropic's Claude Code uses OS-level sandboxing. OpenAI now advocates structured containment plus model-level Instruction Hierarchy. All three major model providers have converged on "containment over detection" as the defense strategy for agent prompt injection, through different architectural approaches. This convergence validates the book's seven-layer defense-in-depth model.
+- The ADR category (Agent Detection & Response) paralleling EDR is a market formation signal. EDR took years to mature from a concept to a multi-billion dollar market. If ADR follows the same trajectory, the execution-security chapter's defense-in-depth model will become the architectural reference for an entire product category. Worth tracking whether ADR remains a niche open-source tool or gets adopted/acquired by enterprise security vendors.
+- The "structured outputs between agent nodes" recommendation from OpenAI is architecturally significant beyond prompt injection defense. If every inter-node communication uses enums and fixed schemas rather than freeform text, it eliminates an entire class of attacks (freeform channel exploitation) at the cost of reduced flexibility. This is the same tradeoff Microsoft Research's Firewalled Agent Networks made with Language Converter Firewalls: convert messages to a closed structured protocol where malicious patterns are inexpressible. Two independent research groups arriving at the same recommendation strengthens the case.
+
+**Sources used:**
+- OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026.
+- CybersecurityAsia, "Prompt Injection Isn't Going Away—and OpenAI Knows It," March 2026.
+- Help Net Security, "Open-source tool Sage puts a security layer between AI agents and the OS," March 9, 2026.
+- Gen Digital, "Introducing Sage: Safety for Agents," gendigital.com, March 2026.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, OpenAI agent security March 13 2026, NIST CAISI listening session March 2026, AI agent delegation OAuth IETF draft March 2026, CVE-2026-26118 Azure MCP SSRF, Bedrock Data RSAC 2026, Adversa AI MCP security March 2026, Sage open source AI agent security (all returned material already in the book except OpenAI playbook and Sage ADR).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions beyond BPI/ABA.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether ADR (Agent Detection & Response) gains traction as a category at RSAC. If multiple vendors launch ADR products, the execution-security chapter may need a dedicated section.
+7. Track whether OpenAI publishes more detail on the RL-trained automated attacker methodology. If reproducible, it would warrant coverage in the reliability-evaluation chapter.
+
 ## 2026-03-13 UTC: Keycloak Ships ID-JAG: Agent Authorization Becomes Open Infrastructure (Session 79)
 
 **What I did:**

@@ -152,6 +152,10 @@ Execution security is not just sandboxing. It is a layered architecture where ea
 
 Before an agent processes content, that content should be filtered for known injection patterns. Instruction overrides, identity attacks, encoding evasion, and delimiter injection are all documented attack techniques[^prompt-injection]. No filter is perfect: prompt injection remains an unsolved problem at the model level. But filtering reduces the attack surface and catches the obvious attempts.
 
+OpenAI's own engineering guidance, published March 2026, makes this explicit: the most effective prompt injection attacks "increasingly resemble social engineering more than simple prompt overrides."[^openai-pi] Detecting a malicious input becomes equivalent to detecting a lie or misinformation, often without necessary context. OpenAI recommends three complementary mechanisms: Instruction Hierarchy (training models to distinguish trusted system instructions from untrusted external content), structured outputs between agent nodes (using enums, fixed schemas, and required field names to eliminate freeform channels attackers can exploit), and system-level containment to limit damage when attacks succeed. The model provider itself is saying what this chapter argues: containment matters more than detection. "AI firewalling" approaches are limited because they try to solve the detection problem. The defense that works is designing systems so that the impact of manipulation is constrained even if some attacks succeed.
+
+OpenAI also employs an RL-trained automated attacker that discovers vulnerabilities by "steering an agent into executing sophisticated, long-horizon harmful workflows that unfold over tens or even hundreds of steps." This is red-teaming at a complexity level that manual testing cannot match, and it connects to the evaluation gap described in [Reliability, Evaluation](reliability-evaluation.md): if your prompt injection testing only covers single-turn attacks, you are testing the wrong threat model.
+
 ### Layer 2: Sandboxed Execution
 
 The core containment boundary. Filesystem isolation, network isolation, and syscall filtering as described above. Treat all agent-generated code as potentially malicious[^nvidia-sandbox]. Every command the agent executes should pass through the sandbox, including scripts, subprocesses, hooks, and MCP-spawned processes.
@@ -307,6 +311,8 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^owasp]: OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025.
 
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
+
+[^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Reframes prompt injection as social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. Also describes RL-trained automated attackers for multi-step vulnerability discovery. See also CybersecurityAsia, "Prompt Injection Isn't Going Away—and OpenAI Knows It," March 2026.
 
 [^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 9.8. Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations and shell syntax alternatives. At the time of disclosure, no vendor patch was available.
 
