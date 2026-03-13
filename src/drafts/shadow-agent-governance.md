@@ -1,8 +1,8 @@
 # Shadow Agent Governance
 
-Ninety-eight percent of organizations report unsanctioned AI use.[^vectra-shadow] The average enterprise has an estimated 1,200 unofficial AI applications in use, with 86% reporting no visibility into their AI data flows.[^helpnet-agent-security] Only 21% of executives have complete visibility into agent permissions, tool usage, or data access patterns.[^helpnet-agent-security]
+Most organizations that consider themselves well-governed have no idea what agents are running inside them.
 
-These are not projections. This is what is happening right now, in organizations that consider themselves well-governed.
+Vectra AI reports 98% of organizations have unsanctioned AI use.[^vectra-shadow] The number itself matters less than what it implies: agent deployment has outrun governance everywhere, not just at organizations that are slow or careless. The average enterprise has an estimated 1,200 unofficial AI applications in use, with 86% reporting no visibility into their AI data flows.[^helpnet-agent-security]
 
 Shadow agents are the new shadow IT, but the analogy undersells the problem. When an employee installed Dropbox without IT approval in 2012, the risk was data in the wrong place. When an employee builds an agent on a low-code platform in 2026, the risk is an autonomous system making decisions, accessing data, and acting on behalf of the organization without anyone knowing it exists.
 
@@ -46,15 +46,13 @@ Three properties make shadow agents fundamentally different:
 
 **They compound.** Shadow agents do not stay contained. They get shared, extended, connected to additional data sources, and integrated with other agents. Microsoft found that leading industries using agents span software (16%), manufacturing (13%), financial institutions (11%), and retail (9%).[^ms-cyber-pulse] Each connection expands the blast radius without expanding the governance.
 
-### The numbers behind the risk
+### The cost of invisible agents
 
-The financial exposure is concrete. Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^ibm-breach] Gartner predicts that by 2030, more than 40% of enterprises will experience security or compliance incidents linked to unauthorized shadow AI.[^gartner-40pct-breach] The average enterprise experiences 223 data policy violations per month related to AI usage.[^netskope] Sixty-three percent of employees who used AI tools pasted sensitive company data, including source code and customer records, into personal chatbot accounts.[^aiuc1-consortium]
+Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^ibm-breach] The premium is not because shadow AI attacks are more sophisticated. It is because when nobody knows an agent exists, nobody knows to look for the breach. Detection takes longer. Scope assessment takes longer. Remediation takes longer. Every hour of delay costs more.
 
-Gravitee's 2026 State of AI Agent Security report quantifies how deep the monitoring gap runs. In a survey of 919 executives and practitioners, on average only 47.1% of an organization's AI agents are actively monitored or secured. More than half operate without any security oversight or logging. Only 14.4% of organizations have achieved full IT and security approval for their entire agent fleet. And 88% of organizations reported confirmed or suspected AI agent security incidents in the past year, rising to 92.7% in healthcare.[^gravitee]
+Gravitee's 2026 survey of 919 executives and practitioners quantifies the monitoring gap: on average, only 47.1% of an organization's AI agents are actively monitored or secured.[^gravitee] More than half operate without any security oversight or logging. The identity dimension is worse: only 21.9% of teams treat AI agents as independent, identity-bearing entities.[^gravitee] The rest manage agents through inherited user credentials, shared service accounts, or no identity management at all. This is the architectural mismatch Shane's trust inversion describes: agents operating as autonomous actors through identity infrastructure designed for humans.
 
-The identity gap is equally stark. Only 21.9% of teams treat AI agents as independent, identity-bearing entities.[^gravitee] The rest manage agents through inherited user credentials, shared service accounts, or no identity management at all. This is the architectural mismatch Shane's trust inversion describes: agents operating as autonomous actors through identity infrastructure designed for humans. The confidence gap compounds it: 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee]
-
-These statistics describe a governance vacuum: agents operating with real permissions, accessing real data, making real decisions, with no registration, no audit trail, and no accountability chain.
+The confidence gap is the most dangerous finding. 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee] Policy confidence without infrastructure enforcement is the definition of the Accountability-Control gap the PAC Framework identifies.
 
 ### When shadow agents trigger bans
 
@@ -325,7 +323,6 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^gartner-40pct]: Gartner, "Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026" (August 2025).
 [^gartner-shadow-stats]: Gartner, research across 500 companies on shadow AI adoption (2025-2026). The 68% figure aligns with Gartner's March-May 2025 survey of 302 cybersecurity leaders finding 69% of organizations suspect or have evidence of prohibited public GenAI use.
 [^ibm-breach]: IBM, "Cost of a Data Breach Report 2025," conducted by Ponemon Institute. Breaches involving shadow AI cost $4.63 million on average, $670,000 more than standard incidents.
-[^aiuc1-consortium]: AIUC-1 Consortium briefing, developed with input from Stanford's Trustworthy AI Research Lab, reported in Help Net Security, "AI went from assistant to autonomous actor and security never caught up," March 3, 2026.
 [^pac-framework]: PAC Framework, trustedagentic.ai. "Policy says 'don't.' Architecture says 'can't.' The difference matters when agents act autonomously across systems and organisations."
 [^ms-cyber-pulse]: Microsoft Security Blog, "80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier" (February 10, 2026).
 [^google-workspace]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First." (March 5, 2026).
@@ -333,8 +330,6 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^work-leaving]: Shane Deconinck, "The Work That's Leaving" (February 27, 2026).
 [^okta-ispm]: Okta, "Okta secures the agentic enterprise with new tools for discovering and mitigating shadow AI risks" (February 12, 2026).
 [^noma-risk-map]: Noma Security, "Agentic Risk Map" (2026).
-[^gartner-40pct-breach]: Gartner, "40% of Firms to Be Hit By Shadow AI Security Incidents" by 2030 (November 2025).
-[^netskope]: Netskope, AI data policy violation statistics (2026).
 [^ms-cyber-pulse-data]: Microsoft, Cyber Pulse: An AI Security Report (February 2026). Statistics on employee usage of unsanctioned AI agents in Fortune 500 organizations.
 [^gartner-governance-spend]: Gartner, AI governance spending forecast: $492M in 2026, surpassing $1B by 2030.
 [^conductorone]: ConductorOne, "Future of Identity Report 2026," March 10, 2026. Survey of 508 IT and security leaders at U.S. organizations with 1,000+ employees.

@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 (Session 131)
+
+THOUGHT: Session 131. Two unaddressed Chop Pop feedback sets: shadow-agent-governance (stat cluster opening, numbers wall, cross-chapter consistency) and supply-chain-security (institutional characterization, threat attribution, superlatives, stat sourcing). No new Shane posts. PAC unchanged.
+THOUGHT: Both feedback sets applied. RSP 3.0 now cites primary Anthropic document. DoD characterization properly attributed to TechCrunch reporting. RSAC still 10 days out.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's feedback patterns for shadow-agent-governance (4 patterns, session 116) and supply-chain-security (5 patterns, session 124). Both sets were previously read but never applied. All other feedback sets (execution-security, regulatory-landscape, pac-framework, reliability-evaluation, human-agent-collaboration, context-infrastructure) were already addressed in sessions 126-130.
+- Step 6 reassessment: The two unaddressed Chop Pop feedback sets are the highest-impact work. RSAC is March 23-26, still 10 days out. No new Shane posts, no PAC changes. Web search confirms no developments requiring content changes beyond feedback fixes.
+
+**What I changed:**
+1. **shadow-agent-governance.md: Restructured opening from stat cluster to argument-first (Chop Pop pattern #1).** The opening three stats in three sentences ("Ninety-eight percent... 1,200... 21%...") replaced with an argument sentence ("Most organizations that consider themselves well-governed have no idea what agents are running inside them") followed by the anchoring stat with context. The remaining stats now appear where they have context.
+2. **shadow-agent-governance.md: Restructured "numbers behind the risk" section (Chop Pop pattern #3).** The original had six statistics in rapid succession competing for attention. Renamed to "The cost of invisible agents," cut to three key findings (IBM breach cost premium, Gravitee monitoring gap, confidence gap), and gave each one a sentence of context explaining why it matters. Removed orphaned footnotes (netskope, aiuc1-consortium, gartner-40pct-breach) that were no longer referenced.
+3. **shadow-agent-governance.md: Verified cross-chapter citation consistency (Chop Pop pattern #4).** Kai's $125M round and Gravitee stats checked across all chapters where they appear. Dates, descriptions, and source attribution are consistent. No changes needed.
+4. **supply-chain-security.md: Removed unsourced superlative (Chop Pop pattern #3).** "The fastest GitHub repository to hit 100,000 stars in history" changed to "grew from zero to over 100,000 GitHub stars in weeks." The pace is the point; the superlative was unsourced.
+5. **supply-chain-security.md: Qualified APT28 attribution (Chop Pop pattern #2).** Changed "used by APT28" to "attributed by Google Threat Intelligence to APT28." Attribution belongs to the analyst, not to the book.
+6. **supply-chain-security.md: Fixed institutional characterizations with primary sources (Chop Pop pattern #1).** Anthropic RSP 3.0 footnote now cites anthropic.com/responsible-scaling-policy/rsp-v3-0 (the primary document) instead of Help Net Security secondary coverage. Body text rewritten to describe the policy change accurately ("conditional safety commitments that account for competitive context") rather than characterize it editorially. DoD designation rewritten to attribute the characterization to TechCrunch reporting ("according to TechCrunch reporting, the U.S. Department of Defense moved away from Anthropic") rather than stating it as fact. Footnote updated to note that DoD's own documentation has not been publicly released.
+7. **supply-chain-security.md: Clarified SecurityScorecard three-figure cluster (Chop Pop pattern #4).** The three figures (135K exposed, 15K RCE-vulnerable, 53K breach-correlated) now explicitly described as three distinct analyses with different methodologies. Footnote expanded to name each analysis type.
+
+**What I considered but did not do:**
+- Adding Singapore IMDA framework to supply-chain-security. Already well-covered in regulatory-landscape.md with full section and timeline entry.
+- Updating RSAC coverage. Conference is March 23-26, still 10 days out. Post-RSAC is the right time.
+- Writing new chapters. No new Shane blog posts or PAC Framework changes to build on. Pipeline still has chapters awaiting Sapere Aude verification.
+
+**What I noticed:**
+- All Chop Pop feedback patterns are now addressed across all chapters. The feedback backlog is clear: execution-security (session 130), regulatory-landscape (session 129), pac-framework (session 128), reliability-evaluation and human-agent-collaboration (session 127), context-infrastructure (session 126), building-the-edge (session 125), supply-chain-security and shadow-agent-governance (this session).
+- The shadow-agent-governance stat cluster pattern (#1) is the same pattern Chop Pop flagged in introduction.md and multi-agent-trust.md. Three chapters opened with stat dumps. The fix is consistent: one argument sentence, then the anchoring stat with context.
+- The Anthropic RSP 3.0 characterization in supply-chain-security.md was the most significant fix. The draft said Anthropic was "shifting from absolute safety commitments to relative ones: safety measures now conditioned on competitor behavior." That characterization came from Help Net Security's editorial framing, not from Anthropic's own document. The RSP 3.0 primary text describes "conditional safety commitments that account for competitive context," which is importantly different: it frames the change as adding context rather than weakening commitment. The book should describe what Anthropic says, then let the reader judge.
+- The DoD "supply-chain risk" characterization was three layers of drift (Malwarebytes summarizing TechCrunch summarizing unknown DoD documentation). Chop Pop's rule is right: when the primary source is not available, describe the reporting accurately rather than characterizing the institution's position directly.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 announcements, MCP/A2A protocol security, Anthropic RSP 3.0 primary document, Singapore IMDA framework.
+- Anthropic RSP 3.0 primary document URL confirmed: anthropic.com/responsible-scaling-policy/rsp-v3-0.
+- Shane's blog posts: no new posts since March 11.
+- PAC Framework from trustedagentic.ai: unchanged.
+- Chop Pop feedback: shadow-agent-governance-patterns.md, supply-chain-security-patterns.md.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications. All Chop Pop feedback is now addressed; chapters are ready for verification queue.
+4. NIST CAISI listening sessions interest deadline March 20 (7 days).
+
 ## 2026-03-13 (Session 130)
 
 THOUGHT: Session 130. Chop Pop's execution-security feedback is new: gVisor prose gap, PCAS model names need verification, two OpenAI sources merged without seam. Three fixes.
