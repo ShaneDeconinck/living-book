@@ -4,7 +4,7 @@ Humans are bad at monitoring systems that rarely fail. The solution is not to re
 
 ## Three Oversight Models
 
-The industry has evolved through three distinct approaches to human-agent oversight. Understanding what each offers and where each fails is the starting point.
+The industry has evolved through three distinct approaches to human-agent oversight, each solving one problem while creating another.
 
 ### Human-in-the-Loop (HITL)
 
@@ -197,7 +197,7 @@ What the lifecycle looks like in practice:
 
 The critical insight from Deloitte is that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
 
-This aligns with Shane's framing of the inferential edge: the competitive advantage is not having access to better models but having the infrastructure to deploy them effectively. The collaboration patterns described in this chapter are the human-facing layer of that infrastructure[^inferential-edge].
+This aligns with Shane's framing of the inferential edge: the competitive advantage is not having access to better models but having the infrastructure to deploy them effectively. These collaboration patterns are the human-facing layer of that infrastructure[^inferential-edge].
 
 ## Mapping to PAC
 
@@ -224,7 +224,7 @@ The critical interdependency: effective collaboration requires all three pillars
 | **I4 Authorized** | Scoped permissions enforced per action | Full autonomy dial with per-task authorization. Permission granularity matches blast radius. Self-aware agent calibration tracked as governance metric. Escalation chains enforced by infrastructure |
 | **I5 Contained** | Sandboxed execution with automatic containment | Infrastructure-in-the-loop fully realized. Agents operate at A4-A5 within defined boundaries. Human role shifts entirely to policy design, threshold setting, and exception investigation |
 
-Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal) require I3 for high-risk systems. Organizations building agent-first workflows should target I4, where the autonomy dial, permission granularity, and agent self-governance patterns described in this chapter become fully operational.
+Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal) require I3 for high-risk systems. Organizations building agent-first workflows should target I4, where the autonomy dial, permission granularity, and agent self-governance patterns become fully operational.
 
 ## What to Do
 
@@ -238,7 +238,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 **Onboard agents like employees.** Defined role, scoped permissions, designated owner, documented escalation paths, initial autonomy level, evaluation criteria, and offboarding plan. If you cannot answer "who is responsible for this agent?" the agent should not be in production.
 
-**Invest in the interface, not just the model.** A well-designed collaboration interface with a capable model will outperform a frontier model with a poor interface. The interface determines whether governance is effective or performative. Explainable rationale, scope indicators, undo capability, and escalation pathways are not UX polish: they are governance infrastructure[^smashing-patterns]. The protocol layer for building these interfaces is maturing: AG-UI standardizes how agent backends stream events (tool calls, state changes, lifecycle signals) to frontends, and A2UI enables agents to generate interactive UIs natively across platforms. Both are covered in the [Agent Communication Protocols](agent-communication.md) chapter. These protocols make the oversight patterns described in this chapter implementable at scale rather than bespoke per integration.
+**Invest in the interface, not just the model.** A well-designed collaboration interface with a capable model will outperform a frontier model with a poor interface. The interface determines whether governance is effective or performative. Explainable rationale, scope indicators, undo capability, and escalation pathways are not UX polish: they are governance infrastructure[^smashing-patterns]. The protocol layer for building these interfaces is maturing: AG-UI standardizes how agent backends stream events (tool calls, state changes, lifecycle signals) to frontends, and A2UI enables agents to generate interactive UIs natively across platforms. Both are covered in [Agent Communication Protocols](agent-communication.md). These protocols make the oversight patterns implementable at scale rather than bespoke per integration.
 
 [^complacency-chapter]: See [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) for the full treatment of automation complacency research from Bainbridge (1983) and Don Norman (1990).
 
