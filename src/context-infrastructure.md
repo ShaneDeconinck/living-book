@@ -172,9 +172,9 @@ The infrastructure maturity scale applies here as well:
 
 **I2 (Logged):** Agent access to information is logged, but not scoped. You can see what the agent accessed after the fact, but you cannot prevent inappropriate access.
 
-**I3 (Governed):** Information access is scoped to the agent's delegation. OBO tokens determine not just what services the agent calls but what information those services return. Structure is sufficient for agents to reason correctly.
+**I3 (Verified):** Information access is scoped to the agent's delegation. OBO tokens determine not just what services the agent calls but what information those services return. Structure is sufficient for agents to reason correctly.
 
-**I4 (Controlled):** Fine-grained, purpose-scoped information access. Discovery protocols (MCP, A2A) are in place. Agent gateways enforce access at the infrastructure level.
+**I4 (Authorized):** Fine-grained, purpose-scoped information access. Discovery protocols (MCP, A2A) are in place. Agent gateways enforce access at the infrastructure level.
 
 **I5 (Contained):** Full context governance: structured, permissioned, discoverable, authority-scoped, and fresh. The agent operates in a complete information environment where it can access exactly what it needs and nothing more.
 

@@ -42,7 +42,7 @@ OAuth is the backbone of modern API authorization, and its limitations with agen
 
 OAuth is possession-based. If you have a valid token, you can act. This was fine when a human initiated every session and the token lived for minutes. With agents, the token might live for months (via refresh tokens), the human is long gone, and the agent is making autonomous decisions about which scopes to exercise.
 
-Shane's example of Google Workspace illustrates the gap precisely: a user intends "help me find one email from last week" but the OAuth scope grants `gmail.readonly`, which means access to every email since account creation. The user's mental model of what they authorized and what the agent can actually do are wildly different. Shane calls this consent theater.[^3]
+Shane's example of Google Workspace illustrates the gap precisely: a user intends "help me find one email from last week" but the OAuth scope grants `gmail.readonly`, which means access to every email since account creation. The user's mental model of what they authorized and what the agent can actually do diverge wildly. Shane calls this consent theater.[^3]
 
 The problems compound with agents:
 
@@ -200,7 +200,7 @@ When an agent operating in the EU needs to prove its organizational affiliation,
 
 Agent identity is where all three pillars of the PAC Framework intersect:
 
-**Potential.** Identity infrastructure determines what agents can do. Without proper delegation, agents are limited to single-system, single-organization tasks. With verifiable identity and cross-organizational trust, agents can operate across boundaries, unlocking higher-value use cases (V3 and V4 in the business value tiers).
+**Potential.** Identity infrastructure determines what agents can do. Without proper delegation, agents are limited to single-system, single-organization tasks. With verifiable identity and cross-organizational trust, agents can operate across boundaries, unlocking higher-value use cases (V3 Strategic and V4 Transformative in the PAC [business value scale](pac-framework.md)).
 
 **Accountability.** Every identity decision creates or breaks an audit trail. OBO tokens track who delegated. Verifiable Intent proves what was authorized. DID-signed actions prove who acted. Without this infrastructure, the liability chain dissolves the moment an agent makes an autonomous decision.
 
@@ -212,8 +212,8 @@ The infrastructure scale from the PAC Framework maps directly to identity maturi
 |---|---|
 | I1 (Open) | No agent identity; acts under user credentials |
 | I2 (Logged) | Agent actions logged but not identity-scoped |
-| I3 (Governed) | OBO delegation, scoped credentials, audit trails |
-| I4 (Controlled) | Verifiable identity, cross-org trust, purpose encoding |
+| I3 (Verified) | OBO delegation, scoped credentials, audit trails |
+| I4 (Authorized) | Verifiable identity, cross-org trust, purpose encoding |
 | I5 (Contained) | Full delegation chains, verifiable intent, sandboxed execution |
 
 Most organizations are between I1 and I2 today. The standards described in this chapter provide the path to I3 through I5.

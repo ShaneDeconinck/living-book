@@ -2,9 +2,9 @@
 
 Within a single organization, extending existing IAM to handle agents is tractable. You control the identity provider, the authorization server, the policy engine, and the audit system. You can add OBO token exchange, scope your OAuth grants tighter, build agent registries, and enforce sandboxing. It is hard, but it is one team's hard problem.
 
-The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable: shared identity provider, centralized policy enforcement, common audit infrastructure: disappears at the organizational boundary.
+The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
-This chapter examines the protocols and architectures emerging to solve cross-organization agent trust, and maps them to the PAC Framework's Control pillar dimension that the PAC Framework explicitly calls out: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
+This chapter examines the protocols and architectures emerging to solve cross-organization agent trust, addressing the PAC Framework's Control pillar question directly: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
 
 ## The Problem Is Structural
 
@@ -100,7 +100,7 @@ Agent protocols like MCP and A2A can run on top of TSP:[^5]
 - **TA2A (A2A over TSP)**: the Agent-to-Agent Protocol handles discovery and task semantics, while TSP handles identity verification and message encryption.
 - **TMCP (MCP over TSP)**: the Model Context Protocol runs over TSP's trust layer, enabling agents to connect to previously unknown tool servers with cryptographic verification instead of pre-established API keys.
 
-Replace MCP's transport layer with TSP, introduce a wallet and identifiers, and you get the same JSON-RPC calls, but now every interaction is authenticated, signed, and traceable. The higher layers become simpler because the foundation handles identity and trust.[^1]
+Replacing MCP's transport layer with TSP and introducing a wallet and identifiers gives you the same JSON-RPC calls, but now every interaction is authenticated, signed, and traceable. The higher layers become simpler because the foundation handles identity and trust.[^1]
 
 This is a direct answer to the cross-organization problem. Today, if your agent needs to call a new API, someone has to register OAuth credentials, exchange secrets, establish mutual TLS, or add the endpoint to an allowlist. With TSP, the agent resolves the counterparty's DID, verifies their credentials, and establishes an authenticated channel at runtime. No pre-registration. No shared infrastructure. No manual onboarding.
 
@@ -176,7 +176,7 @@ This maps to the PAC Framework's accountability requirements: the delegation is 
 
 ### Verifiable Intent as Operational Envelope
 
-Mastercard and Google's Verifiable Intent specification, discussed in the Agent Payments chapter, provides a concrete implementation of what the CSA calls "operational envelopes": cryptographic constraints that travel with the authorization.[^9]
+Mastercard and Google's Verifiable Intent specification, discussed in the [Agent Payments](agent-payments.md) chapter, provides a concrete implementation of what the CSA calls "operational envelopes": cryptographic constraints that travel with the authorization.[^9]
 
 The three-layer SD-JWT architecture binds user intent to agent actions:
 

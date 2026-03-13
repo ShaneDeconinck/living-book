@@ -222,15 +222,15 @@ The key PAC insight for multi-agent systems: **governance cost scales with deleg
 
 Building on the I1-I5 infrastructure maturity scale used throughout this book:
 
-**I1: Ad Hoc.** Multi-agent systems exist but delegation is implicit. Agents call other agents as tools without authority tracking. No delegation audit trail. Failure in one agent is debugged as a standalone issue. This is where most organizations are today.
+**I1 (Open): Ad Hoc.** Multi-agent systems exist but delegation is implicit. Agents call other agents as tools without authority tracking. No delegation audit trail. Failure in one agent is debugged as a standalone issue. This is where most organizations are today.
 
-**I2: Basic Coordination.** Orchestration frameworks manage task assignment. Basic logging of which agent did what. No authority attenuation. Blast radius of agent failure is understood qualitatively but not enforced technically.
+**I2 (Logged): Basic Coordination.** Orchestration frameworks manage task assignment. Basic logging of which agent did what. No authority attenuation. Blast radius of agent failure is understood qualitatively but not enforced technically.
 
-**I3: Governed Delegation.** Delegation registries track authorized agent-to-agent relationships. Authority attenuation (DCTs or equivalent) ensures permissions decrease at each hop. Circuit breakers between agent trust boundaries. Unified audit trails across delegation chains. Incident response playbooks address multi-agent failures.
+**I3 (Verified): Governed Delegation.** Delegation registries track authorized agent-to-agent relationships. Authority attenuation (DCTs or equivalent) ensures permissions decrease at each hop. Circuit breakers between agent trust boundaries. Unified audit trails across delegation chains. Incident response playbooks address multi-agent failures.
 
-**I4: Verified Composition.** Authority provenance is cryptographically verifiable across delegation chains (PIC or equivalent). Runtime semantic verification catches cascading errors before propagation. Delegation policies are machine-enforceable, not advisory. Cross-organization delegation chains are supported with end-to-end trust verification.
+**I4 (Authorized): Verified Composition.** Authority provenance is cryptographically verifiable across delegation chains (PIC or equivalent). Runtime semantic verification catches cascading errors before propagation. Delegation policies are machine-enforceable, not advisory. Cross-organization delegation chains are supported with end-to-end trust verification.
 
-**I5: Adaptive Trust.** Dynamic trust assessment adjusts delegation authority based on observed agent behavior. Reputation systems inform delegation decisions. Automated cascade detection and containment. Multi-agent systems self-govern within externally auditable bounds.
+**I5 (Contained): Adaptive Trust.** Dynamic trust assessment adjusts delegation authority based on observed agent behavior. Reputation systems inform delegation decisions. Automated cascade detection and containment. Multi-agent systems self-govern within externally auditable bounds.
 
 The gap between I1 (where most organizations are) and I3 (where regulated industries need to be by August 2026 for the EU AI Act) is significant. The gap between I3 and I5 is the research frontier.
 

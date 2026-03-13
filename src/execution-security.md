@@ -225,9 +225,9 @@ The infrastructure maturity scale (I1-I5) maps to execution security capabilitie
 | Level | Execution Security Capabilities |
 |---|---|
 | **I1: Open** | No sandbox. Agent runs with user-level permissions. Permission prompts as only control. |
-| **I2: Tracked** | Basic filesystem restrictions. Execution logging. No network isolation. |
-| **I3: Governed** | Full sandbox with filesystem and network isolation. Configuration file protection. Credential scoping. |
-| **I4: Verified** | MicroVM isolation. Ephemeral sandboxes. Behavioral monitoring. Automated containment. |
+| **I2: Logged** | Basic filesystem restrictions. Execution logging. No network isolation. |
+| **I3: Verified** | Full sandbox with filesystem and network isolation. Configuration file protection. Credential scoping. |
+| **I4: Authorized** | MicroVM isolation. Ephemeral sandboxes. Behavioral monitoring. Automated containment. |
 | **I5: Contained** | Hardware-enforced isolation. Defense-in-depth across all six layers. Continuous anomaly detection. Cross-agent isolation boundaries. |
 
 Shane's agent profiler makes infrastructure a gate, not a slider[^profiler-post]. At Level 4 (Delegated autonomy), sandboxing is required. At Level 5 (Autonomous), sandboxing plus anomaly detection and automated containment are required. These are binary prerequisites: you either have them or the agent cannot operate at that autonomy level.
