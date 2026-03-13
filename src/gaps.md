@@ -2,7 +2,13 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 28)
+## Observations (Updated 2026-03-13, Session 32)
+
+### Forrester's PAC-Shaped RSAC Expectations
+
+Forrester's pre-RSAC 2026 analysis asks for "agent security with a realistic definition that includes identity, policy, and runtime security capabilities." That is PAC: identity is Control, policy is Accountability, runtime security is Control. They also want "agent actions included as an input to detection and response," which is the audit trail infrastructure the book argues for throughout. The fact that the industry's leading analyst firm independently arrived at a framework that maps to PAC's three pillars is validation. Worth revisiting post-RSAC to see whether vendor offerings align with this framing or fragment into narrower capability claims.
+
+Separately, Forrester's 2026 Predictions report predicts the first public agentic AI breach with employee dismissals. Senior analyst Paddy Harrington identifies cascading multi-agent failures as the primary mechanism. This is the Galileo research (87% downstream poisoning) translated into an analyst prediction with organizational consequences. Added to building-the-edge.md and multi-agent-trust.md.
 
 ### "Agentic Sovereignty" Is the Next Accountability Challenge
 

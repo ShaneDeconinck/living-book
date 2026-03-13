@@ -105,7 +105,7 @@ Both approaches enforce what the PAC Framework calls decreasing authority in del
 
 ## The Orchestration Governance Gap
 
-Deloitte's 2026 prediction is stark: only one in five companies has a mature governance model for agentic AI, even as 75% plan to invest in it by year's end.[^2] For multi-agent orchestration, the governance gap is wider still.
+Deloitte's 2026 prediction is stark: only one in five companies has a mature governance model for agentic AI, even as 75% plan to invest in it by year's end.[^2] Forrester goes further: an agentic AI deployment will cause a public breach leading to employee dismissals in 2026, with cascading multi-agent failures as the primary mechanism.[^forrester] For multi-agent orchestration, the governance gap is wider still.
 
 Current orchestration frameworks (LangGraph, CrewAI, AutoGen, and their successors) focus on capability: how to decompose tasks, assign agents, and combine results. They are good at the Potential pillar. They are thin on Accountability and Control.
 
@@ -317,3 +317,5 @@ Multi-agent trust connects to several other chapters in this book. [Cross-Organi
 [^vi]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026. Verifiable Intent specification, Draft v0.1, verifiableintent.dev. L3 terminal limitation: "The chain stops at L3: the agent cannot delegate further."
 
 [^agenticcyops]: AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations, arXiv:2603.09134, March 10, 2026. Formalizes five defensive principles for multi-agent systems, applied to SOC workflow with MCP as structural basis. Trust boundary analysis: 200 boundaries in flat MAS reduced to 56 (72%) with phase-scoped architecture and verified execution.
+
+[^forrester]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Senior analyst Paddy Harrington: "When you tie multiple agents together and you allow them to take action based on each other, one fault somewhere is going to cascade and expose systems."

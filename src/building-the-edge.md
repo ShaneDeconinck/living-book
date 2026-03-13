@@ -8,7 +8,7 @@ Now the question is: what do you actually build first?
 
 Shane calls it the inferential edge: the gap between having access to a powerful model and being able to use it safely, at scale, inside an organization.[^1] That gap is wide, and it is not about model capability. Intelligence is commodity. Any business can access frontier models through an API call. Open-weight alternatives are closing the gap on standard benchmarks. The barrier to building an agent has never been lower.
 
-But 88% of organizations report confirmed or suspected security incidents involving AI agents.[^2] Only 14.4% have full security approval for their agent deployments.[^2] More than half of all agents operate without any security oversight or logging.[^3] Gartner projects over 1,000 legal claims for AI agent harm by the end of 2026.[^4]
+But 88% of organizations report confirmed or suspected security incidents involving AI agents.[^2] Only 14.4% have full security approval for their agent deployments.[^2] More than half of all agents operate without any security oversight or logging.[^3] Gartner projects over 1,000 legal claims for AI agent harm by the end of 2026.[^4] Forrester's 2026 Predictions are more specific: an agentic AI deployment will cause a public breach leading to employee dismissals this year.[^forrester-prediction] Senior analyst Paddy Harrington identifies cascading failures as the primary mechanism: "When you tie multiple agents together and you allow them to take action based on each other, one fault somewhere is going to cascade and expose systems." The Galileo research cited in the [Multi-Agent Trust](multi-agent-trust.md) chapter quantifies this: 87% downstream decision poisoning within four hours from a single compromised agent.
 
 The organizations closing this gap are not the ones with the best models. They are the ones building the infrastructure to let models run.
 
@@ -137,6 +137,7 @@ The intelligence is rapidly becoming commodity. The edge is the infrastructure t
 [^2]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026.
 [^3]: Microsoft Security Blog, "80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier," February 2026.
 [^4]: Gartner, reported in Gravitee State of AI Agent Security 2026.
+[^forrester-prediction]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Predicts the first public agentic AI breach with employee dismissals. Paddy Harrington (senior analyst) identifies cascading multi-agent failures as the primary risk mechanism.
 [^5]: CYE, "Shadow AI: The Hidden Threat to Enterprise Security," 2025. Noma Security, "State of Shadow AI," 2025.
 [^6]: PAC Framework, trustedagentic.ai, 2026. Question A1: "Do you know every agent running in your organisation?"
 [^7]: NIST NCCoE, "Accelerating the Adoption of Software and AI Agent Identity and Authorization," concept paper, February 2026. Comment period closes April 2, 2026.
