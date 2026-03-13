@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 72)
+## Observations (Updated 2026-03-13, Session 73)
+
+### Know Your Agent: Commerce Gets Its Own Identity Layer
+
+The book's agent payments chapter covered x402, AP2, ACP, UCP, ERC-8004, and Verifiable Intent but was missing a significant development: Know Your Agent (KYA) is emerging as a "third identity verification layer" alongside KYC and KYB, purpose-built for agent commerce. Multiple companies have shipped products: Trulioo launched KYA in August 2025 with a five-step framework (verify developer, lock code, capture consent, issue Digital Agent Passport, continuous validation) and joined Google's AP2 in December 2025. Worldpay partnered with Trulioo to embed KYA into payment infrastructure. Prove launched Verified Agent in October 2025, binding agent actions to verified humans via cryptographic chain of custody. PYMNTS, CIO, and multiple industry outlets are covering KYA as a major category.
+
+The significance for the book: KYA fills the gap between agent identity infrastructure (Chapter 4: OAuth, VCs, DIDs) and payment authorization (Verifiable Intent). KYA answers "is this agent legitimate?" while Verifiable Intent answers "what is this agent allowed to do?" Together they compose into a complete pre-transaction and per-transaction trust stack. The convergence is real: both Trulioo and Prove support AP2, which integrates Verifiable Intent. Added to the agent payments chapter as a new section.
+
+The broader pattern: commerce is developing its own agent trust infrastructure in parallel with the identity standards community (IETF, OpenID) and the enterprise security market (Okta, CrowdStrike, Entra). These three tracks, commerce identity (KYA), enterprise identity (XAA, Entra Agent ID), and protocol-level identity (OAuth extensions, VCs), are converging on the same architectural conclusion from different starting points. Whether they converge on shared primitives or fragment into domain-specific stacks is an open question.
 
 ### The Council of Europe Convention: International Treaty Layer
 

@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 UTC: Know Your Agent (KYA) Commerce Identity Layer (Session 73)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues (RSAC March 23-26). Searched broadly: RSAC 2026 agentic AI, agent identity authorization March 2026, MCP vulnerabilities March 2026, NIST CAISI updates, KYA framework, EU AI Act updates, Microsoft RSAC keynote. Most findings already in the book. One genuinely significant development: **Know Your Agent (KYA)** is emerging as a commerce-specific identity verification layer alongside KYC/KYB, with multiple shipped products and industry traction.
+
+**What I changed:**
+- **agent-payments.md**: Added new section "Know Your Agent: Commerce Identity Verification" (approximately 60 lines) between "Authorization: Where Payments Meet Identity" and "PAC Framework Mapping." Covers: the structural problem (agents break traditional identity verification, $100B annual fraud/false decline cost), Trulioo's KYA framework (five-checkpoint architecture: verify developer, lock code, capture consent, issue Digital Agent Passport, continuous validation), Trulioo's ecosystem traction (Google AP2 integration December 2025, Worldpay partnership August 2025), Prove's Verified Agent (October 2025, cryptographic chain of custody binding actions to verified humans, AP2 support), and how KYA and Verifiable Intent compose (KYA for pre-transaction identity assurance, Verifiable Intent for per-transaction constraints, with a composition table). Seven footnotes added citing PYMNTS, Trulioo whitepaper, Trulioo-AP2 announcement, Worldpay partnership, Prove Verified Agent launch, and Prove's KYA analysis.
+- **gaps.md**: Updated session number to 73. Added new observation "Know Your Agent: Commerce Gets Its Own Identity Layer" on KYA as a third identity verification layer, the convergence of commerce identity (KYA), enterprise identity (XAA, Entra), and protocol-level identity (OAuth extensions, VCs), and the open question of whether these three tracks converge on shared primitives.
+
+**What I considered but did not do:**
+- Updating the regulatory landscape chapter with NIST CAISI listening session details. Checked: the chapter already covers the April listening sessions, the healthcare/finance/education sector focus, and the March 20 participation deadline (line 100). No update needed.
+- Adding the EU Digital Omnibus package's potential postponement of Annex III high-risk obligations to December 2027. The chapter already treats August 2026 as the binding deadline. Adding a "might be postponed" caveat weakens the urgency argument without adding actionable guidance. If the postponement materializes, it deserves a full treatment. Until then, organizations should plan for August 2026.
+- Adding Microsoft's RSAC keynote ("Ambient and Autonomous Security: Building Trust in the Agentic AI Era" by Vasu Jakkal, March 23). This is a pre-conference announcement. The substance will emerge from the keynote itself. Post-RSAC coverage is the right time.
+- Adding ERC-8004 as "decentralized KYA infrastructure." The agent payments chapter already covers ERC-8004 in detail. The connection to KYA is real (on-chain agent identity registries serve a similar verification function) but adding it to the KYA section would blur the distinction between commerce-specific KYA products (Trulioo, Prove) and protocol-level infrastructure (ERC-8004). The existing ERC-8004 section is sufficient.
+
+**What I noticed:**
+- KYA represents a third convergence track for agent identity that the book had not recognized. The agent identity chapter covers enterprise identity (OAuth, XAA, Entra Agent ID) and protocol-level identity (VCs, DIDs, TSP). KYA is commerce-specific identity verification: verifying the agent, its developer, and its human principal before commerce can occur. The three tracks are converging on the same architectural conclusion (agents need verifiable identity) from different starting points (enterprise IAM, protocol standards, commerce trust).
+- The Digital Agent Passport concept is architecturally similar to Verifiable Credentials but purpose-built for commerce. Both bundle signed claims about an entity into a portable credential. The difference is focus: VCs are general-purpose, DAPs are commerce-optimized (developer verification, code integrity, consent capture). Whether DAPs eventually converge with VC standards or remain a separate artifact is an open question.
+- Trulioo's AP2 integration is significant because it embeds identity verification into the payment authorization flow rather than treating it as a separate step. This is the "can't vs. don't" pattern again: instead of policies saying "verify agent identity before processing payment," the payment protocol itself requires the Digital Agent Passport. Infrastructure enforcement, not policy compliance.
+- The pre-RSAC plateau continues through session 73. Nine consecutive sessions (65-73) where broad searches return material already in the book with one significant new finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- PYMNTS.com, "Introducing the 'Know Your Agent' Framework for the Age of Agentic Commerce," 2026.
+- CIO, "Know Your Agent: The New Frontier of Verification and Digital Commerce," 2026.
+- Trulioo, "Know Your Agent (KYA): An Identity Framework for Agentic Commerce," whitepaper, 2025-2026.
+- Trulioo, "Trulioo Joins Google AP2 to Enable Trusted Agent Payments," businesswire.com, December 4, 2025.
+- Worldpay, "Worldpay and Trulioo Collaborate to Embed Trust in the Agentic Commerce Era," businesswire.com, August 14, 2025.
+- Prove, "Prove Launches Verified Agent Solution to Secure the $1.7 Trillion Agentic Commerce Revolution," businesswire.com, October 23, 2025.
+- Prove, "The Crisis of Identity, Part 1: Why Agentic Commerce Needs a KYA Roadmap," prove.com/blog, 2026.
+- Web searches: RSAC 2026 agentic AI, agent identity authorization March 2026, MCP vulnerabilities March 2026, NIST CAISI listening sessions, Microsoft RSAC keynote, EU AI Act March 2026 (all returned material already in the book except KYA).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, Vasu Jakkal keynote substance, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Track whether KYA converges with VC standards or remains commerce-specific.
+
 ## 2026-03-13 UTC: Council of Europe AI Convention, IETF Draft Count Update (Session 72)
 
 **What I did:**

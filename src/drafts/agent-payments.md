@@ -186,6 +186,50 @@ Critically, these constraints are enforced at the network level, not at the agen
 
 This is the Control pillar in action: policy says "don't spend more than $300"; architecture says "can't spend more than $300."
 
+## Know Your Agent: Commerce Identity Verification
+
+Verifiable Intent constrains what an agent can do once authorized. But a prior question remains: how do you know the agent is legitimate in the first place? Traditional commerce has KYC (Know Your Customer) and KYB (Know Your Business). Agent commerce needs a third layer: KYA, Know Your Agent.[^kya-pymnts]
+
+The problem is structural. Nearly 90% of enterprises report that bot management is a major challenge, and outdated digital identity controls cost businesses nearly $100 billion annually in fraud, false declines, and lost customers.[^kya-pymnts] When the "customer" is an AI agent, existing verification breaks down: agents spin up and disappear instantly, share models or keys, run on edge or cloud, and can be delegated vast spending authority. The identity systems we use today were never designed to authenticate a participant that may not be human.[^prove-crisis]
+
+### Trulioo's KYA Framework and the Digital Agent Passport
+
+Trulioo, a global identity verification platform, launched Know Your Agent in August 2025 and published a whitepaper defining a five-checkpoint architecture for agent commerce trust.[^trulioo-kya] At its center is the **Digital Agent Passport (DAP)**: a tamper-proof credential bundle that enables merchants to assess whether an AI agent is legitimate, authorized, and acting with proper consent.
+
+The five checkpoints weave through the agent's lifecycle:
+
+1. **Verify the developer.** Standard KYB/KYC on the entity that built the agent. If you cannot verify who made it, nothing downstream matters.
+2. **Lock the code.** Cryptographic attestation that the agent's code has not been tampered with since verification. Code integrity as a trust prerequisite.
+3. **Capture user consent.** Explicit, verifiable authorization from the human principal. Not an OAuth scope: a recorded consent event binding the agent to a specific set of permissions.
+4. **Issue the Digital Agent Passport.** The DAP bundles the verified developer identity, code attestation, and user consent into a portable credential that merchants and payment networks can validate at machine speed.
+5. **Continuous validation.** Ongoing monitoring of agent behavior, risk profile, and authorization status. If code changes, consent is revoked, or suspicious activity arises, the passport is invalidated in real time.[^trulioo-kya]
+
+KYA is not a one-time check. It is a living system where every agent remains under continuous scrutiny.
+
+The framework is gaining traction in the payment ecosystem. Trulioo joined Google's AP2 initiative in December 2025, integrating the Digital Agent Passport as a verifiable trust layer within AP2's payment authorization flow.[^trulioo-ap2] Worldpay partnered with Trulioo in August 2025 to embed KYA into its payment infrastructure, enabling merchants to verify agent identity before processing transactions.[^worldpay-trulioo]
+
+### Prove's Verified Agent
+
+Prove, an identity verification company with over a decade of infrastructure behind phone-centric identity, launched Verified Agent in October 2025 as a complementary approach.[^prove-verified] Where Trulioo starts from developer verification, Prove starts from the human: creating a persistent digital identity anchor that binds attributes (phone numbers, national IDs, payment credentials) to verified humans and businesses, then issues signed digital credentials to their authorized agents.
+
+The principle: agentic commerce cannot scale without a foundational trust layer that binds every agent action back to a verified human and a verified authorization event.[^prove-crisis] Prove's solution launched with AP2 support and is expanding to be protocol-agnostic, ensuring interoperability across future commerce standards.
+
+### Where KYA Meets Verifiable Intent
+
+KYA and Verifiable Intent solve different halves of the same problem. KYA answers: is this agent legitimate, who made it, and who authorized it? Verifiable Intent answers: what specific actions is this agent authorized to perform, and within what constraints?
+
+Together they compose into a complete trust stack for agent commerce:
+
+| Layer | What It Proves | Who Enforces |
+|---|---|---|
+| KYA (Digital Agent Passport) | Agent is legitimate, code is intact, human consented | Merchant, payment network |
+| Verifiable Intent (SD-JWT) | Spending limits, merchant restrictions, line items | Payment network |
+| Settlement (x402, card networks) | Payment was authorized and funds transferred | Settlement infrastructure |
+
+This layering matters because neither layer alone is sufficient. An agent with a valid Digital Agent Passport but no spending constraints can still overspend. An agent with tight Verifiable Intent constraints but no identity verification could be a spoofed copy. The combination provides both identity assurance and behavioral enforcement.
+
+The convergence is already happening: Trulioo and Prove both support AP2, which integrates Verifiable Intent. The infrastructure is assembling into a stack where KYA provides the pre-transaction trust layer and Verifiable Intent provides the per-transaction constraint layer.
+
 ## PAC Framework Mapping
 
 Agent payments connect to all three pillars:
@@ -245,3 +289,9 @@ Payment infrastructure connects to several other layers of the trust stack. [Age
 [^11]: Mastercard Newsroom, "Santander and Mastercard complete Europe's first live end-to-end payment executed by an AI agent," March 2, 2026.
 [^12]: J.P. Morgan Payments, "Mirakl Nexus & J.P. Morgan Payments Enable AI Agent Checkout," March 10, 2026.
 [^13]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," March 6, 2026.
+[^kya-pymnts]: PYMNTS.com, "Introducing the 'Know Your Agent' Framework for the Age of Agentic Commerce," 2026. See also CIO, "Know Your Agent: The New Frontier of Verification and Digital Commerce," 2026.
+[^trulioo-kya]: Trulioo, "Know Your Agent (KYA): An Identity Framework for Agentic Commerce," whitepaper, 2025-2026. Five-step framework: verify developer, lock code, capture consent, issue Digital Agent Passport, continuous validation.
+[^trulioo-ap2]: Trulioo, "Trulioo Joins Google AP2 to Enable Trusted Agent Payments," businesswire.com, December 4, 2025. Digital Agent Passport integrated as verifiable trust layer within AP2 framework.
+[^worldpay-trulioo]: Worldpay, "Worldpay and Trulioo Collaborate to Embed Trust in the Agentic Commerce Era," businesswire.com, August 14, 2025. KYA framework with Digital Agent Passport for merchant-side agent verification.
+[^prove-verified]: Prove, "Prove Launches Verified Agent Solution to Secure the $1.7 Trillion Agentic Commerce Revolution," businesswire.com, October 23, 2025. Cryptographic chain of custody binding agent actions to verified humans. AP2 support at launch.
+[^prove-crisis]: Prove, "The Crisis of Identity, Part 1: Why Agentic Commerce Needs a KYA Roadmap," prove.com/blog, 2026.
