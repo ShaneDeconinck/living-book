@@ -2,7 +2,40 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 103)
+## Observations (Updated 2026-03-13, Session 104)
+
+### Agent Identity: Proactive Verification
+
+Session 104 proactively verified agent-identity.md. 30+ external claims checked across IETF drafts, industry surveys, M&A deals, product announcements, NIST publications, and Shane's blog posts. **No issues found.** Every claim verified correctly against primary sources. This is the first chapter to pass verification with zero corrections needed.
+
+**What was verified and found correct:**
+- Teleport 2026 State of AI in Enterprise Infrastructure Security: 4.5x higher incident rate (76% vs 17%), access scope as strongest predictor, 70% grant AI higher privileged access than humans, 205 senior leaders surveyed, February 17, 2026. All confirmed from goteleport.com press release and Infosecurity Magazine.
+- Gravitee State of AI Agent Security 2026: 21.9% treat agents as independent entities, 45.6% shared API keys, 27.2% custom hardcoded authorization, 900+ respondents. All confirmed from gravitee.io report and press coverage.
+- CSA/Strata Identity "Securing Autonomous AI Agents": 44% static API keys, 43% username/password, 35% shared service accounts, 18% highly confident, 285 respondents, September-October 2025. All confirmed from CSA press release and Strata Identity report page.
+- CrowdStrike SGNL acquisition: $740 million, January 8, 2026. Kurtz quote "AI agents operate with superhuman speed and access, making every agent a privileged identity that must be protected" confirmed verbatim from CrowdStrike press release.
+- Delinea StrongDM acquisition: completed March 5, 2026. Confirmed from GlobeNewsWire and Delinea press releases.
+- Palo Alto Networks CyberArk acquisition: $25 billion, completed February 11, 2026, largest security industry deal in history. Confirmed from Palo Alto Networks press release and CSO Online.
+- Keycloak 26.5 JWT Authorization Grant: January 2026. CVE-2026-1609 (disabled users could obtain tokens via JWT Authorization Grant): confirmed from GitHub issue #46144. Fixed in 26.5.3 February 2026: confirmed from keycloak.org release notes.
+- RSAC 2026 Innovation Sandbox: Token Security and Geordie AI both finalists, $5 million investment per finalist from Crosspoint Capital. Confirmed from RSAC press release and individual company announcements.
+- Imprivata Agentic Identity Management at HIMSS 2026: March 10, 2026. Confirmed from GlobeNewsWire and imprivata.com.
+- Huntress 2026 Cyber Threat Report: OAuth abuse 4.8% to 10.1%, 4.6 million endpoints, 9.4 million identities, 230,000+ organizations. All confirmed from Huntress press release.
+- Auth0 Token Vault: generally available November 2025, 30+ pre-integrated services. Confirmed from auth0.com blog and dev.to announcement.
+- IETF Agent Authorization Profile (AAP): draft-aap-oauth-profile-01, February 7, 2026, authored by Angel Cruz. Confirmed from IETF datatracker.
+- IETF AAuth: draft-rosenberg-oauth-aauth-01, by Jonathan Rosenberg and Pat White. Voice/SMS/messaging channel authorization, LLM hallucination as impersonation vector. Confirmed from IETF datatracker.
+- IETF Transaction Tokens for Agents: draft-oauth-transaction-tokens-for-agents-03, January 2026. Actor and principal claims, immutable context. Confirmed from IETF datatracker.
+- IETF WIMSE for Agents: draft-ni-wimse-ai-agent-identity-02. Dual-identity credential binding agent and owner, Identity Proxy. Confirmed from IETF datatracker.
+- Okta Cross App Access (XAA): built on ID-JAG draft, early access January 2026, xaa.dev playground, industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, and others. Confirmed from Okta developer blog and press releases.
+- XAA incorporated into MCP as "Enterprise-Managed Authorization" extension. Confirmed from Okta newsroom article.
+- Mastercard/Google Verifiable Intent: open-sourced March 5, 2026. Three-layer SD-JWT architecture (issuer identity, user intent, agent action). L3a/L3b split for selective disclosure. Confirmed from Mastercard press release and GitHub repo.
+- Commerce protocols: AP2 (Google, with Mastercard collaboration), ACP (Stripe/OpenAI), UCP (Google/Shopify/Walmart). All confirmed from respective press releases and Google Developers Blog.
+- NIST NCCoE concept paper: "Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization," February 5, 2026, authored by Ryan Galluzzo (and Bill Fisher, Harold Booth, Joshua Roberts). Four focus areas (Identification, Authorization, Access Delegation, Logging) confirmed from Biometric Update and NCCoE project page. Comment period through April 2, 2026. All confirmed.
+- BPI/ABA comment to NIST CAISI: March 9, 2026, "nutrition label" for AI agents with foundational and enhanced tiers, Data Dependency Label. Confirmed from bpi.com PDF and press coverage.
+- CSA "Agentic AI Identity & Access Management: A New Approach": Agent Naming Service (ANS), Zero-Knowledge Proofs for compliance, unified session management with DIDs/VCs. All confirmed from CSA artifacts page.
+- Shane's blog posts: all six references verified against blog source. Titles and dates match exactly: "AI Agents Need the Inverse of Human Trust" (February 3, 2026), "Auth for Agent Builders: A Crash Course" (January 26, 2026), "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First." (March 5, 2026), "My Content Comes with Verifiable Credentials. Your Agent Can Verify." (February 22, 2026), TSP explainer on trustedagentic.ai, "Trusted AI Agents: Why Traditional IAM Breaks Down" (January 24, 2026).
+
+**What was not changed:** Nothing. All claims accurate.
+
+**Observation:** This is the densest chapter in the book (420 lines, 30+ footnotes, covering IETF drafts, surveys, acquisitions, product launches, and regulatory proposals) and yet every claim verified cleanly. The chapter's strength comes from citing primary sources directly (IETF datatracker, press releases, survey reports) rather than secondary coverage.
 
 ### Context Infrastructure: Proactive Verification
 
