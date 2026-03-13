@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 78)
+## Observations (Updated 2026-03-13, Session 79)
+
+### ID-JAG Escapes the Vendor: Keycloak Ships Agent Authorization
+
+Session 45 tracked whether non-Okta identity providers would implement ID-JAG, validating the standard-vs-vendor question. The answer arrived in January 2026: Keycloak 26.5 shipped JWT Authorization Grant support implementing the ID-JAG draft, combined with existing Token Exchange (RFC 8693) support to enable full OAuth Identity and Authorization Chaining Across Domains.
+
+This is architecturally significant for two reasons. First, Keycloak is the most widely deployed open-source identity platform. When Keycloak implements a standard, it becomes available to any organization without vendor dependency. ID-JAG is no longer "Okta's XAA": it is an open standard with at least two independent implementations (Okta, Keycloak), plus WorkOS and Descope building explainers and tooling. This crosses the threshold from proprietary capability to ecosystem infrastructure.
+
+Second, the implementation immediately produced CVE-2026-1609: disabled user accounts could still obtain tokens through the JWT Authorization Grant flow. This is the zombie identity problem the SCIM-for-agents section predicts. When agent authorization infrastructure ships without lifecycle management integration, disabled humans can still authorize agents. The vulnerability was fixed in 26.5.3, but the pattern generalizes: every new agent authorization protocol creates new lifecycle edge cases. Authorization without lifecycle is authorization without revocation.
 
 ### The Ghost Token Pattern: Authorization Isolation as Infrastructure
 

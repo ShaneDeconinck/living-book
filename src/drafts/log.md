@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-13 UTC: Keycloak Ships ID-JAG: Agent Authorization Becomes Open Infrastructure (Session 79)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 16 chapters, all substantive. No feedback files exist.
+- Step 5 reassessment: pre-RSAC plateau continues into its 15th session (65-79). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, Anthropic Claude agent news March 2026, Google DeepMind delegation framework, OWASP MCP Top 10, Cisco State of AI Security 2026, Forrester RSAC predictions, Keycloak AI agent authorization. Most findings already in the book (OpenAI Codex Security, OWASP Agentic Top 10, OWASP MCP Top 10, Cisco report, Forrester breach prediction, Pentagon/Anthropic supply chain designation, Google DeepMind Intelligent Delegation, PleaseFix/PerplexedBrowser, all IETF drafts, XAA/ID-JAG, CSA "Who Vouches" article). One finding that answers a tracked question: **Keycloak 26.5 shipped JWT Authorization Grant (ID-JAG) support** in January 2026.
+
+**What I changed:**
+- **agent-identity.md**: Added two paragraphs after the XAA complementarity paragraph (between XAA coverage and "The Platform Response: Auth0 for AI Agents"). Covers: Keycloak 26.5 implementing ID-JAG via RFC 7523 profile plus Token Exchange (RFC 8693) for cross-domain identity chaining, the significance for the standard-vs-vendor question (open-source implementation validates ID-JAG as ecosystem infrastructure, not proprietary capability), CVE-2026-1609 (disabled users could obtain tokens via JWT Authorization Grant, fixed in 26.5.3), and the connection to SCIM-based lifecycle deprovisioning (zombie identities arise when authorization ships without lifecycle management). One footnote added citing the Keycloak blog post and CVEs.
+- **gaps.md**: Updated session number to 79. Added new observation "ID-JAG Escapes the Vendor: Keycloak Ships Agent Authorization" covering the tracked question resolution, two-implementation threshold for standard validation, the zombie identity CVE as a pattern (authorization without lifecycle is authorization without revocation), and the connection to the SCIM-for-agents coverage.
+
+**What I considered but did not do:**
+- Adding the Pentagon/Anthropic supply chain risk designation (March 5-12) as a new section. Already referenced in supply-chain-security.md (footnote ^dod-anthropic, line 103). The designation is politically significant but does not introduce a new architectural pattern. The supply chain chapter already covers the risk of embedded model policies as a trust surface.
+- Adding Google DeepMind Intelligent Delegation Framework (arXiv:2602.11865). Already extensively covered in multi-agent-trust.md (DCTs, macaroons, contract-first decomposition) from earlier sessions.
+- Adding OWASP MCP Top 10 details. Already covered in agent-communication.md (lines 163-177) and supply-chain-security.md.
+- Adding Cisco State of AI Security 2026 (83% plan agentic AI, 29% feel ready). Already covered in reliability-evaluation.md and building-the-edge.md.
+- Adding Forrester breach prediction. Already referenced in building-the-edge.md and gaps.md.
+- Adding OpenAI Codex Security/Aardvark details. Already covered in execution-security.md and building-the-edge.md.
+- Adding PleaseFix/PerplexedBrowser browser agent vulnerabilities. Already covered in why-agents-break-trust.md.
+- Adding Auth0 OWASP Agentic Applications analysis or Descope OWASP Agentic Top 10 identity analysis. These are vendor perspectives on already-covered material. The book's OWASP mapping in why-agents-break-trust.md and execution-security.md is more comprehensive.
+- Revising or restructuring existing chapters. At session 79, with RSAC 10 days away, adding the one tracked-question resolution is the right incremental move.
+
+**What I noticed:**
+- ID-JAG now has at least two independent implementations (Okta XAA, Keycloak 26.5), plus WorkOS and Descope building tooling around the standard. This crosses the threshold from "vendor feature" to "ecosystem standard." The book tracked this question explicitly in Session 45. The XAA/ID-JAG section of the agent-identity chapter was written when Okta was the only implementer. The Keycloak implementation validates the book's framing of ID-JAG as the open standard, not XAA as the vendor product.
+- CVE-2026-1609 demonstrates a pattern the book has been building toward: every new agent authorization protocol creates new lifecycle edge cases. The JWT Authorization Grant flow did not validate user disabled status, meaning an offboarded employee's agent could still obtain authorization tokens. This is the zombie identity problem: authorization infrastructure ships faster than lifecycle infrastructure. The SCIM-for-agents section of agent-identity explicitly addresses this, and the Keycloak CVE is now a concrete example of what happens without it.
+- The broader trend: agent authorization infrastructure is moving from research (IETF drafts) through proprietary implementation (Okta XAA) to open-source availability (Keycloak). This is the classic standards adoption curve. The book's coverage now tracks all three stages.
+- Pre-RSAC plateau continues through session 79. Fifteen consecutive sessions (65-79) where broad searches return material already in the book with one significant finding per session. RSAC (March 23-26) will break this pattern.
+
+**Sources used:**
+- Keycloak, "JWT Authorization Grant and Identity Chaining in Keycloak 26.5," keycloak.org, January 2026.
+- Keycloak, "Keycloak 26.5.0 released," keycloak.org, January 2026.
+- GitHub, "CVE-2026-1609: Disabled users can still obtain tokens via JWT Authorization Grant," keycloak/keycloak#46144, February 2026.
+- GitHub, "CVE-2026-1486: Logic Bypass in JWT Authorization Grant Allows Authentication via Disabled Identity Providers," keycloak/keycloak#46146, February 2026.
+- Web searches: agentic AI security March 2026, RSAC 2026 pre-conference announcements, MCP vulnerabilities March 2026, AI agent identity authorization standards March 2026, Anthropic Claude agent news March 2026, NIST CAISI March 2026, OWASP MCP Top 10, Google DeepMind intelligent delegation, Cisco state of AI security 2026, Forrester RSAC 2026, Keycloak JWT authorization grant AI agents (all returned material already in the book except Keycloak ID-JAG implementation).
+- Shane's blog (verified: no new posts since March 11).
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions beyond BPI/ABA.
+5. MCP Dev Summit (April 2-3, NYC): 95+ sessions covering protocol evolution, conformance testing, security research, deployment lessons.
+6. Track whether other open-source identity platforms (e.g., Ory, Authelia) follow Keycloak in implementing ID-JAG. Two implementations validates the standard; three makes it infrastructure.
+
 ## 2026-03-13 UTC: CAAM Authorization Mesh and Ghost Token Pattern (Session 78)
 
 **What I did:**
