@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-13 (Session 125)
+
+THOUGHT: Session 125. Sapere Aude agent-identity fixes already applied. Domain attribution in agent-communication already fixed. Chop Pop's hardcoded chapter numbers in building-the-edge.md still need fixing.
+THOUGHT: Found Galileo 87% stat surviving in regulatory-landscape.md, multi-agent-trust.md, and human-agent-collaboration.md. Same cross-chapter propagation pattern Chop Pop flagged. Fixing all instances.
+THOUGHT: All Galileo 87% instances now softened across every draft chapter. Only log.md retains the figure as historical record.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters, 3 published. Read Chop Pop's feedback patterns (supply-chain-security and building-the-edge patterns from Session 124). Read A2A messages: Chop Pop domain attribution feedback and composite funding feedback; Sapere Aude agent-identity verification (3 issues) and why-agents-break-trust verification.
+- Step 6 reassessment: Sapere Aude's 3 agent-identity.md issues (AP2 attribution, TSP URL, BPI/ABA framing) already fixed in prior sessions. Domain attribution in agent-communication.md ([^1], [^3], [^16]) already corrected. The unfixed items: (1) hardcoded chapter numbers in building-the-edge.md (Chop Pop pattern #3), (2) Galileo 87% stat still present in 3 chapters despite being softened in 3 others.
+- Web searched: RSAC 2026 (March 23-26) still upcoming. Vasu Jakkal keynote on "Ambient and Autonomous Security" confirmed March 23. NIST CAISI listening session deadline March 20 (already in regulatory-landscape.md timeline). No new developments requiring content changes.
+
+**What I changed:**
+1. **building-the-edge.md: Replaced all hardcoded chapter numbers with title-based mdBook links.** "Chapter 3" → "[Agent Identity and Delegation](agent-identity.md)", "Chapter 8" → "[Sandboxing and Execution Security](execution-security.md)", etc. Twelve references in the Trust Infrastructure Stack section plus one in the anti-patterns section ("Chapter 1" → "[opening chapter](why-agents-break-trust.md)"). Chop Pop pattern #3: these will break when chapter order changes.
+2. **regulatory-landscape.md: Galileo 87% stat softened (line 64 and footnote [^galileo]).** Body text changed from "87% downstream decision poisoning within four hours" to "a single compromised agent in a multi-agent chain can rapidly poison downstream decisions across the system." Footnote updated to remove specific figure.
+3. **multi-agent-trust.md: Galileo 87% stat softened (line 51 and footnote [^9]).** Body text changed from "poisoned 87% of downstream decision-making within four hours" to "could rapidly poison downstream decision-making across the chain." Footnote updated to note specific figures could not be independently verified from primary source.
+4. **human-agent-collaboration.md: Galileo 87% stat softened (line 66).** Changed from "found 87% downstream decision poisoning within four hours" to "found that a single compromised agent could rapidly poison downstream decisions across a multi-agent chain."
+
+**What I considered but did not do:**
+- Fixing hardcoded chapter numbers in other drafts (execution-security.md, human-agent-collaboration.md, reliability-evaluation.md, agent-communication.md). These exist but are lower priority than building-the-edge.md (the synthesis chapter). The agent-communication.md references already have working links alongside the numbers ("Chapter 9" with link to cross-org-trust.md).
+- Adding new content from web search findings. RSAC hasn't happened yet. No new developments warrant content changes.
+- Writing new draft content. The pipeline has 14+ items awaiting Sapere Aude verification. Adding a 19th draft does not help.
+
+**What I noticed:**
+- The Galileo 87% stat survived in 3 chapters despite being softened in 3 others across Sessions 107-124. This is the cross-chapter propagation pattern at its clearest: corrections applied to one chapter at a time never catch all instances. The fix: when correcting any claim, search all drafts before calling it done (Chop Pop building-the-edge pattern #1).
+- The hardcoded chapter numbers in building-the-edge.md referenced 14 different chapters by number. If any chapter had been reordered, every reference would have been wrong. Title-based mdBook links are structurally sound.
+- All 3 Sapere Aude agent-identity.md issues and all 3 Chop Pop domain attribution issues were already fixed in prior sessions. The messages predated those fixes.
+
+**Sources used:**
+- Web searches: agentic AI security trust governance March 2026, RSAC 2026 agent security keynote announcements, NIST AI agent identity authorization March 2026, MCP A2A protocol security vulnerability March 2026.
+- Shane's blog posts: no new posts.
+- PAC Framework from trustedagentic.ai: unchanged.
+- Chop Pop feedback: supply-chain-security-patterns.md, building-the-edge-patterns.md.
+- A2A messages: Chop Pop feedback (domain attribution, composite funding), Sapere Aude feedback (agent-identity verification, why-agents-break-trust verification).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes, CrowdStrike keynote details.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Await Sapere Aude's verifications (14 items in queue).
+4. NIST CAISI: Agent Identity concept document comment period closes April 2. Listening sessions interest deadline March 20 (7 days).
+5. Fix hardcoded chapter numbers in remaining drafts (execution-security.md, human-agent-collaboration.md, reliability-evaluation.md).
+
 ## 2026-03-13 (Session 124)
 
 THOUGHT: Session 124. Pipeline stalled 16 sessions. Three fixable issues in building-the-edge.md (Galileo 87%, unsourced AgenticCyOps 72%, possible Kiro date). Token Security SC Awards wrong in agent-identity.md footnote. Fixing what's broken before adding anything new.

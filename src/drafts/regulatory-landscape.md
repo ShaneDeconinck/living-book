@@ -61,7 +61,7 @@ Penalties are tiered by violation severity. Prohibited AI practices (Article 5):
 
 Article 73's incident reporting guidelines, which become binding in August 2026, have a structural blind spot: they assume single-agent, single-occurrence failures.[^article73gap] When an incident results from the interaction of multiple AI systems, the current framework provides no mechanism to attribute accountability across the chain.
 
-This matters for three reasons. First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence: 87% downstream decision poisoning within four hours from a single compromised agent.[^galileo] Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
+This matters for three reasons. First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence: a single compromised agent in a multi-agent chain can rapidly poison downstream decisions across the system.[^galileo] Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
@@ -325,7 +325,7 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^article73gap]: Natàlia Fernández Ashman, Usman Anwar, and Marta Bieńkiewicz, ["EU Regulations Are Not Ready for Multi-Agent AI Incidents"](https://www.techpolicy.press/eu-regulations-are-not-ready-for-multiagent-ai-incidents/), TechPolicy.Press, January 13, 2026.
 
-[^galileo]: Galileo AI, "Multi-Agent AI System Failures and Prevention," research findings December 2025. 87% downstream decision poisoning within four hours from a single compromised agent.
+[^galileo]: Galileo AI, "Multi-Agent AI System Failures and Prevention," research findings December 2025. Documents cascading compromise patterns in multi-agent systems.
 
 [^openidaiim]: OpenID Foundation, ["OIDF Responds to NIST on AI Agent Security"](https://openid.net/oidf-responds-to-nist-on-ai-agent-security/), March 2026.
 
