@@ -2,7 +2,14 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 96)
+## Observations (Updated 2026-03-13, Session 97)
+
+### Agent Payments: Proactive Verification
+
+Session 97 proactively verified agent-payments.md. 15+ external claims checked. Most verified cleanly: x402 Foundation September 2025 (Coinbase + Cloudflare), Stripe x402 February 2026, AP2 60+ organizations (confirmed from Google Cloud Blog), ACP by Stripe/OpenAI with Instant Checkout in ChatGPT (confirmed), UCP January 11, 2026 (Google, Shopify, Walmart, Visa), ERC-8004 mainnet January 2026 across 12+ chains (now 18+), Santander/Mastercard first European AI agent payment March 2, 2026, J.P. Morgan/Mirakl strategic agreement March 10, 2026, x402 daily volume ~$28,000 with 92%+ drop from December peak (confirmed via MEXC, CoinDesk, Artemis), Trulioo KYA five-checkpoint framework August 2025 (confirmed exact match), Prove Verified Agent October 23, 2025, Worldpay/Trulioo August 2025, nearly 90% enterprises bot management challenge and $100 billion annually (confirmed from PYMNTS research), Stripe pricing $0.30 + 2.9%, EIP-3009 TransferWithAuthorization mechanics (confirmed exact match with Shane's demo), ERC-8004 Shane quote "A2A and MCP solve discovery... but assume usage within trust boundaries" (confirmed exact language).
+
+Two issues found and fixed. (1) Attribution: "Shane's insight on agent payments is worth stating directly: the payment itself is a trust signal" attributed a specific conceptual framing to Shane that he never used. Searched all Shane blog posts for "trust signal": zero matches. His x402 post focuses on economics and technical mechanics, not trust framing. Rephrased to: "The implication of Shane's x402 work goes beyond the economics: the payment itself functions as a trust signal." This makes clear the trust signal concept is the book's synthesis of Shane's work, not Shane's stated insight. Same recurring pattern as Sessions 87-96. (2) Incomplete constraint table: listed 6 of 8 Verifiable Intent constraint types from Shane's blog. Added missing `payment.agent_recurrence` and `payment.reference`.
+
 
 ### Execution Security: Quote Attribution Fix
 

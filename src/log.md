@@ -1,5 +1,69 @@
 # Session Log
 
+## 2026-03-13 20:00 UTC: Proactive Verification of agent-payments.md (Session 97)
+
+THOUGHT: Session 97. Pre-RSAC plateau session 32. No new developments. Proceeding with agent-payments.md verification.
+THOUGHT: Verifying agent-payments.md. 15+ external claims to check. Starting with x402 volume, AP2 participants, commerce milestones.
+THOUGHT: Found two issues in agent-payments.md. "Payment as trust signal" attribution to Shane, and incomplete constraint table. Verifying details.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged.
+- Read current book state: 18 draft chapters. No feedback files. Agent messages unchanged since Session 90.
+- Step 6 reassessment: pre-RSAC plateau continues into session 97 (32 consecutive sessions, 65-97). RSAC March 23-26, 10 days out. Searched broadly: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI March 2026. All findings already in the book. CVE-2026-26118 (Azure MCP SSRF, patched March 10) already covered. Singulr AI Agent Pulse (agent governance control plane) already mentioned. No genuinely new content found.
+- **Proactively verified agent-payments.md claims.** 15+ external claims checked. Found one attribution issue and one incomplete table.
+
+**What I verified and found correct:**
+- x402 Foundation co-founded by Coinbase and Cloudflare, September 23, 2025: Confirmed via Cloudflare press release and Coinbase blog.
+- Stripe x402 integration on Base, February 2026: Confirmed via Stripe documentation and The Block.
+- AP2: 60+ organizations including Mastercard, AmEx, PayPal, Adyen, Etsy, Coinbase: Confirmed from Google Cloud Blog.
+- ACP: Stripe and OpenAI, powers Instant Checkout in ChatGPT, Etsy sellers, million+ Shopify merchants coming: Confirmed from Stripe newsroom and OpenAI announcement.
+- UCP: Google, Shopify, Walmart, Visa, January 11, 2026: Confirmed from Google Developers Blog and TechCrunch.
+- ERC-8004 mainnet, 12+ chains (now 18+): Confirmed from EIP page, CoinDesk, and chain-specific deployment announcements.
+- Santander/Mastercard Europe's first live AI agent payment, March 2, 2026: Confirmed from Mastercard Newsroom and Santander press room.
+- J.P. Morgan/Mirakl strategic agreement, March 10, 2026: Confirmed from J.P. Morgan Payments newsroom and Mirakl.
+- x402 daily volume ~$28,000, 92%+ drop from December 2025 peak, wash trading: Confirmed from MEXC News, CoinDesk, Artemis analytics.
+- Trulioo KYA five-checkpoint framework (verify developer, lock code, capture consent, issue DAP, continuous validation): Exact match confirmed from Trulioo whitepaper and blog.
+- Prove Verified Agent launched October 23, 2025: Confirmed from BusinessWire press release.
+- Worldpay/Trulioo partnership August 14, 2025: Confirmed from Worldpay press release.
+- Nearly 90% enterprises report bot management as major challenge, $100 billion annually: Confirmed from PYMNTS.com research (survey of 350 global risk/compliance/fraud leaders, Aug-Sep 2025).
+- Stripe pricing $0.30 + 2.9%: Standard published pricing, confirmed.
+- EIP-3009 TransferWithAuthorization mechanics: Exact match with Shane's x402 demo blog post.
+- Shane's ERC-8004 quote "A2A and MCP solve discovery and communication but assume usage within trust boundaries": Confirmed from Shane's blog post (via Marco De Rossi quote and Shane's framing).
+- Cloudflare deferred payment scheme for x402: Confirmed from Cloudflare blog.
+- Verifiable Intent constraint types: 8 constraint types confirmed from Shane's blog. Book originally listed only 6.
+
+**What I changed:**
+- **agent-payments.md (line 27)**: Rephrased "Shane's insight on agent payments is worth stating directly: the payment itself is a trust signal" to "The implication of Shane's x402 work goes beyond the economics: the payment itself functions as a trust signal." Shane never uses "trust signal" in any blog post (searched all .md files in blog-source). His x402 post focuses on economics and technical mechanics. The trust signal framing is the book's synthesis, not Shane's stated insight.
+- **agent-payments.md (line 183-184)**: Added two missing Verifiable Intent constraint types: `payment.agent_recurrence` (multi-transaction authorization within bounds) and `payment.reference` (binds payment to a conditional transaction ID). Shane's blog lists 8 constraints; the book previously showed only 6.
+- **gaps.md**: Added new observation "Agent Payments: Proactive Verification" documenting the verification results. Updated session number to 97.
+
+**What I considered but did not do:**
+- Updating "12+ chains" to "18+" for ERC-8004 deployment count. The number has grown since the chapter was written, but "12+" is still technically correct (12 < 18). The source footnote points to Shane's blog which doesn't specify a count. Would need a new footnote to justify a change.
+- Adding Singulr AI Agent Pulse as an example of agent governance control planes. The chapter focuses on payments, not general governance platforms. Microsoft Agent 365 is already mentioned in other chapters.
+- Adding CVE-2026-26118 (Azure MCP SSRF) to the agent-payments chapter. While the vulnerability involves token theft from MCP server tools, it's a supply-chain/communication security issue, not a payment issue. Already covered in supply-chain-security and agent-communication chapters.
+
+**What I noticed:**
+- The "payment as trust signal" attribution is the same recurring pattern found in Sessions 87-96: Ghosty synthesizes a conceptual framing and attributes it to Shane. In this case it wasn't a blockquote but still said "Shane's insight." The x402 post is about building a demo and showing the economics work. The trust signal framing is a valid synthesis but it's the book's contribution, not Shane's explicit statement.
+- The agent-payments chapter is well-sourced overall. 15+ claims verified cleanly. The technical details (x402 flow, EIP-3009, Verifiable Intent constraints, ERC-8004 registries) all match their sources precisely. The commerce milestones (Santander/Mastercard, J.P. Morgan/Mirakl) are confirmed from primary sources.
+- The incomplete constraint table is a milder issue than the attribution problem. It's not wrong, just incomplete: 6 of 8 constraints shown without noting the omission. Adding the two missing constraints makes the table match Shane's definitive blog post.
+- Remaining unverified chapters: reliability-evaluation, human-agent-collaboration, shadow-agent-governance, multi-agent-trust, regulatory-landscape, context-infrastructure.
+
+**Sources used:**
+- Web searches: agentic AI security March 2026, RSAC 2026 preview, MCP security March 2026, NIST CAISI March 2026, x402 protocol daily transaction volume, Google AP2 participants, Santander Mastercard AI agent payment, ERC-8004 chains, Stripe OpenAI ACP, UCP Google Shopify, Trulioo KYA whitepaper, Prove Verified Agent, CVE-2026-26118 Azure MCP SSRF, x402 Foundation September 2025.
+- Shane's blog: "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026. "ERC-8004 Goes Mainnet: Ethereum's Trust Layer for AI Agents," January 28, 2026. "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," March 6, 2026.
+- All Shane blog .md files searched for "trust signal": zero matches.
+- PAC Framework from trustedagentic.ai (confirmed unchanged).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC): track announcements.
+6. Track SEP-1932 and SEP-1933 progress: will they ship in the June 2026 MCP specification release?
+7. Continue proactive verification: reliability-evaluation.md next.
+8. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
+
 ## 2026-03-13 18:00 UTC: Proactive Verification of execution-security.md (Session 96)
 
 THOUGHT: Session 96. Pre-RSAC plateau session 31. No new developments found. Continuing proactive verification: execution-security.md.

@@ -24,7 +24,7 @@ These are not edge cases. As agents move beyond coding assistants into business 
 
 ## Payment as Trust Signal
 
-Shane's insight on agent payments is worth stating directly: the payment itself is a trust signal.[^2]
+The implication of Shane's x402 work goes beyond the economics: the payment itself functions as a trust signal.[^2]
 
 When an agent pays for an API call using x402, the payment creates:
 
@@ -181,6 +181,8 @@ Verifiable Intent answers this with machine-enforceable constraints:[^13]
 | `payment.recurrence` | Subscription parameters |
 | `mandate.checkout.allowed_merchant` | Which merchants the agent can buy from |
 | `mandate.checkout.line_items` | What the agent can purchase |
+| `payment.agent_recurrence` | Multi-transaction authorization within bounds |
+| `payment.reference` | Binds payment to a conditional transaction ID |
 
 Critically, these constraints are enforced at the network level, not at the agent level. The payment network maintains state across transactions (tracking budget caps, enforcing recurrence limits). The agent cannot bypass its own limits because enforcement happens outside the agent's control perimeter.
 
