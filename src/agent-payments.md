@@ -79,9 +79,11 @@ Layer 2 networks make micro-payments viable. Ethereum mainnet does not. This is 
 
 ### x402 Adoption
 
-The protocol has moved well beyond proof-of-concept. The x402 Foundation, co-founded by Coinbase and Cloudflare, was announced in September 2025 to establish x402 as a universal standard for agent payments.[^4] Stripe launched x402 integration on Base in February 2026, enabling developers to bill AI agents in USDC using Stripe's existing infrastructure.[^5] On Solana, x402 has processed over 35 million transactions and $10 million in volume.[^6]
+The infrastructure investment behind x402 is substantial. The x402 Foundation, co-founded by Coinbase and Cloudflare, was announced in September 2025 to establish x402 as a universal standard for agent payments.[^4] Stripe launched x402 integration on Base in February 2026.[^5] Cloudflare integrated x402 directly into its Agent SDK and MCP server infrastructure, so agents built on Cloudflare can pay for resources natively and MCP servers can expose tools as payable endpoints.[^cloudflare-x402] Stellar added x402 support for stablecoin-based API payments.[^stellar-x402] The protocol has expanded across a dozen chains including Base, Solana, Polygon, Stellar, and Etherlink.[^6]
 
-The pattern is clear: major payment infrastructure providers are treating agent payments as a first-class use case, not an experiment.
+Cloudflare is also proposing a **deferred payment scheme** for x402: batch settlements at the end of each day rather than per-request on-chain transactions.[^cloudflare-x402] This is architecturally significant because it makes x402 payment-rail-agnostic. The cryptographic trust (intent capture, authorization verification) is established immediately via the x402 handshake, but financial settlement can happen through traditional payment methods, stablecoins, or both. The deferred scheme directly addresses the adoption friction the book identified: most organizations do not hold USDC. With deferred settlement, they do not need to.
+
+The honest assessment: infrastructure investment is ahead of organic demand. Despite major backing from Stripe, Coinbase, Cloudflare, and Stellar, x402's daily organic volume sits around $28,000 as of early 2026, with significant wash trading inflating cumulative transaction counts.[^x402-volume] Daily transactions dropped over 90% from a December 2025 peak. This is not unusual for early infrastructure protocols: TCP/IP, email, and HTTP itself took years of infrastructure building before organic usage caught up. The pattern of major infrastructure providers treating agent payments as a first-class use case suggests the bet is on the infrastructure being ready when demand arrives, not on demand having already arrived.
 
 ## The Three Commerce Protocols
 
@@ -232,7 +234,10 @@ Payment infrastructure connects to several other layers of the trust stack. [Age
 [^3]: x402 specification, https://www.x402.org/.
 [^4]: Coinbase Blog, "Coinbase and Cloudflare Will Launch the x402 Foundation," September 23, 2025.
 [^5]: Stripe Documentation, "x402 payments," February 2026; The Block, "Stripe adds x402 integration for USDC agent payments on Base," February 11, 2026.
-[^6]: Solana, "What is x402? Payment Protocol for AI Agents on Solana," 2026.
+[^6]: Solana, "What is x402? Payment Protocol for AI Agents on Solana," 2026. Multi-chain expansion: Etherlink (TZ APAC's Tez402, March 2026), Stellar (stablecoin API payments), Polygon, Arbitrum, and others.
+[^cloudflare-x402]: Cloudflare, "Launching the x402 Foundation with Coinbase, and support for x402 transactions," blog.cloudflare.com, 2026. Agent SDK and MCP server integration, deferred payment scheme proposal for batch settlements via traditional payment methods or stablecoins.
+[^stellar-x402]: Stellar, x402 support announcement, 2026. Enables AI agents to pay for APIs and digital services through direct stablecoin transactions on Stellar.
+[^x402-volume]: MEXC News, "Analysis: The x402 protocol's average daily transaction volume is only $28,000," March 2026. Daily transactions dropped over 92% from December 2025 peak of ~731,000 to ~57,000 in February 2026, with approximately half attributed to wash trading.
 [^7]: Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)," 2026.
 [^8]: Stripe Blog, "Developing an open standard for agentic commerce," 2026; OpenAI, "Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol," 2026.
 [^9]: Google Developers Blog, "Under the Hood: Universal Commerce Protocol (UCP)," 2026.

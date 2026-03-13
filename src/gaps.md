@@ -2,7 +2,15 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 43)
+## Observations (Updated 2026-03-13, Session 44)
+
+### x402: Infrastructure Investment Ahead of Organic Demand
+
+x402 has massive infrastructure backing: Coinbase, Cloudflare, Stripe, Stellar, and a dozen chain deployments. Cloudflare integrated x402 natively into its Agent SDK and MCP servers, and proposed a deferred payment scheme that makes x402 payment-rail-agnostic (batch settlement via traditional payments or stablecoins). But daily organic volume is ~$28K with significant wash trading, and daily transactions dropped 92% from a December 2025 peak. The infrastructure is real. The market demand is not there yet. This is not necessarily a failure signal: early infrastructure protocols (TCP/IP, HTTP) spent years in infrastructure-building phase before organic adoption caught up. The question is whether x402's infrastructure bet pays off when agent-to-agent commerce volume materializes, or whether traditional payment rails (AP2, ACP) capture that demand first because they meet organizations where they already are (credit cards, bank accounts). Cloudflare's deferred payment scheme is the most interesting development because it bridges both: x402's cryptographic trust handshake with traditional settlement. If that pattern works, x402 becomes the authorization protocol rather than the settlement protocol, which is arguably more valuable.
+
+### CrowdStrike's "Intern" Framing Signals Market Maturity
+
+CrowdStrike CEO George Kurtz's RSAC 2026 keynote (March 24) frames the agent governance gap as: "Most organizations deploy AI agents with less governance than they'd give an intern." The "AI Operational Reality Manifesto" he is unveiling is positioned as a peer-driven framework for deploying agents at velocity with governance. This matters for the book because CrowdStrike is the largest pure-play cybersecurity vendor making agent governance a keynote topic at the largest security conference. When the CEO of a $80B+ cybersecurity company makes agent governance the centerpiece of his RSAC keynote, the topic has moved from niche to mainstream security concern. The "intern" analogy is effective because it makes the abstract concrete: everyone understands the governance gap between what an intern can do and what they should do without supervision. That is exactly the agent governance problem.
 
 ### Two Surveys, Same Identity Gap
 
