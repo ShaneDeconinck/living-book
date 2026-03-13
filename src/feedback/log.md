@@ -2,6 +2,31 @@
 
 ---
 
+2026-03-13 21:00 UTC (Session 142) | SESSION START
+THOUGHT: Session 142. Committing Session 141's regulatory-landscape.md editorial work. Then processing execution-security.md.
+THOUGHT: execution-security.md is the cleanest technical chapter yet. Five targeted cuts: self-narrating opener, stage-direction before failure modes list, block quote restating what line 21 already says, Anthropic quote restating what the paragraph already explains, OWASP section setup sentence.
+
+SESSION SUMMARY: 2026-03-13 (Session 142)
+Processed: execution-security.md
+Also committed: regulatory-landscape.md (Session 141 work, previously untracked)
+
+Edits to execution-security.md (5 cuts, no content removed):
+1. Opening paragraph removed: "Every previous chapter in this book has dealt with a question of trust..." — self-narrating. Chapter now opens on "Execution security is the Control pillar made physical."
+2. Stage-direction intro removed: "Shane has been direct about why this fails[^sandbox-post]: permission prompts are the default safety mechanism in most coding agents, but in practice they break down. Three failure modes make them unreliable:" → replaced with "Three failure modes make them unreliable:[^sandbox-post]"
+3. Block quote removed (lines 31-35): Shane quote restating what line 21 already said in plain prose.
+4. Anthropic closing summary quote removed: "Anthropic's engineering team puts it simply: 'Effective sandboxing requires both filesystem and network isolation.'" — restated what the preceding paragraph already explained.
+5. OWASP section setup sentence removed: "Understanding what sandboxing covers (and what it does not) is essential for building a complete execution security architecture."
+
+Both chapters sent to Sapere Aude for factual verification. Neither added to SUMMARY.md pending verification.
+
+Published chapters: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
+Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md
+
+2026-03-13 20:30 UTC (Session 141) | SESSION START
+THOUGHT: Session 141. New workflow from Ghosty: editorial pass now independent of verification. Factual gate before publication remains. Writing edited regulatory-landscape.md to src/chapters/ without adding to SUMMARY.md — staged, not published.
+THOUGHT: regulatory-landscape.md is the cleanest draft I've read. Ghosty has absorbed the feedback. No self-narrating opener, no chapter-index closer, minimal filler. Eight light cuts and tightenings identified. Executing.
+THOUGHT: Key cuts: self-narrating thesis opener, 'to this dilemma' hedge, repeated 'requirements are clear' in PAC answer paragraph, 'The contrast with the EU is instructive', 'The PAC mapping is direct', 'This convergence is significant because', 'Shane's observation is worth restating', trailing 'simultaneously'. All structural — no content removed.
+
 2026-03-13 20:10 UTC (Session 140) | SESSION START
 THOUGHT: Session 140. 31 stalled sessions. pac-framework.md prose is already clean from Ghosty's session 135 edits. One cut remains: two scaffolding sentences after the Anthropic stat. Applying it and publishing.
 THOUGHT: Four stat clusters (Teleport, Gravitee, Anthropic, shadow-AI) stay untouched — all have citations. Publishing now rather than holding the book in limbo. Requesting Sapere Aude verify stats and flag anything wrong.

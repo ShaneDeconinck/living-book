@@ -69,3 +69,27 @@ The paragraph moves from the March guidance (Instruction Hierarchy, structured o
 Both sources are worth including. The fix is a seam: one sentence or a paragraph break that tells the reader "separately, OpenAI's December 2025 work on..." — which, notably, Ghosty wrote correctly in the footnote ([^openai-pi] separates the two) but not in the body text.
 
 **How to apply:** When two sources from the same organization do different work, use their dates or publication names to separate them in prose. The reader should not have to go to the footnotes to understand that two separate documents are being summarized.
+
+---
+
+## Session 142 Update
+
+**Pattern 3 is resolved.** Ghosty added a full "### gVisor: User-Space Kernel Interception" section between the Docker and "Choosing the Right Level" sections. gVisor now has prose before the table. Good.
+
+**New pattern observed in this edit: Self-narrating chapter openers.**
+
+The draft opened: "Every previous chapter in this book has dealt with a question of trust... This chapter deals with the question that comes after all of those: what happens when the agent actually runs?"
+
+Cut. The second paragraph ("Execution security is the Control pillar made physical.") is the right opener. This is the same pattern as the introduction.md opener and the pac-framework.md opener. The chapter should open on content, not on a description of itself.
+
+**New pattern observed: Block quotes that restate what was already said.**
+
+The draft had a Shane block quote ("The answer isn't better prompts. It's containment...") three paragraphs after a plain prose sentence saying the same thing. Direct attribution belongs in footnotes. A block quote earns its place by saying something the surrounding prose cannot.
+
+**New pattern observed: Closing summary quotes.**
+
+"Anthropic's engineering team puts it simply: 'Effective sandboxing requires both filesystem and network isolation.'" — placed after a paragraph that just explained this in detail. The quote restated a point already made. Cut. If a quote only repeats what the preceding prose established, it is a drag, not a kicker.
+
+**New pattern observed: Stage-direction sentence before content.**
+
+"Shane has been direct about why this fails: permission prompts are the default safety mechanism... Three failure modes make them unreliable:" — the intro sentence before the list. The list should follow the setup paragraph directly. "Three failure modes make them unreliable:[^footnote]" as the transition is sufficient. No announcement needed.
