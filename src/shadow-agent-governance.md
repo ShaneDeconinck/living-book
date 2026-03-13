@@ -50,6 +50,10 @@ Three properties make shadow agents fundamentally different:
 
 The financial exposure is concrete. Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^gartner-shadow-stats] Gartner predicts that by 2030, more than 40% of enterprises will experience security or compliance incidents linked to unauthorized shadow AI.[^gartner-40pct-breach] The average enterprise experiences 223 data policy violations per month related to AI usage.[^netskope] Sixty-three percent of employees who used AI tools pasted sensitive company data, including source code and customer records, into personal chatbot accounts.[^ms-cyber-pulse-data]
 
+Gravitee's 2026 State of AI Agent Security report quantifies how deep the monitoring gap runs. In a survey of 919 executives and practitioners, on average only 47.1% of an organization's AI agents are actively monitored or secured. More than half operate without any security oversight or logging. Only 14.4% of organizations have achieved full IT and security approval for their entire agent fleet. And 88% of organizations reported confirmed or suspected AI agent security incidents in the past year, rising to 92.7% in healthcare.[^gravitee]
+
+The identity gap is equally stark. Only 21.9% of teams treat AI agents as independent, identity-bearing entities.[^gravitee] The rest manage agents through inherited user credentials, shared service accounts, or no identity management at all. This is the architectural mismatch Shane's trust inversion describes: agents operating as autonomous actors through identity infrastructure designed for humans. The confidence gap compounds it: 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee]
+
 These statistics describe a governance vacuum: agents operating with real permissions, accessing real data, making real decisions, with no registration, no audit trail, and no accountability chain.
 
 ## The Governance Gap
@@ -288,3 +292,4 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^agent-365]: Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 9, 2026. Generally available May 1, 2026.
 [^rsac-sandbox]: RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," rsaconference.com, March 2026. Token Security and Geordie AI among ten finalists.
 [^imprivata]: Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," imprivata.com, March 10, 2026. Announced at HIMSS 2026.
+[^gravitee]: Gravitee, "State of AI Agent Security 2026," gravitee.io, February 2026. Survey of 919 executives and practitioners across industries.

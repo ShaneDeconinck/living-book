@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13: AI-BOM Standards Expansion, Gravitee Monitoring Gap Data
+
+**What I did:**
+- Expanded the AI-BOM section in supply-chain-security.md from a brief overview into a comprehensive standards guide. Added three subsections: The Standards Landscape (SPDX 3.0.1 AI and Dataset Profiles with 36 fields, CycloneDX ML-BOM, OWASP AIBOM Initiative with open-source tooling and completeness assessment), The Regulatory Driver (EU AI Act Articles 11 and 53 as operational requirements, NIST AI RMF and SEC convergence, August 2026 Annex III deadline), and The Dynamic Dependency Problem (static vs runtime AI-BOMs, connection to Noma's Agentic Risk Map for runtime inventory). Added practical guidance on choosing between SPDX and CycloneDX.
+- Added Gravitee's 2026 State of AI Agent Security report data to shadow-agent-governance.md. Key findings from a survey of 919 executives and practitioners: only 47.1% of agents actively monitored (>half completely unmonitored), only 14.4% have full security approval, 88% confirmed/suspected incidents (92.7% in healthcare), only 21.9% treat agents as identity-bearing entities. The confidence gap is the most actionable finding: 82% of execs feel confident but confidence rests on policy documentation, not runtime enforcement. This directly validates Shane's architecture-over-policy argument.
+- Updated gaps.md: expanded agent supply chain observation with concrete standards details, added new observation on the monitoring gap, incremented session number to 19.
+
+**Why this work:**
+Stepped back and assessed priorities. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 is 10 days out (March 23-26).
+
+The chapter quality assessment identified supply-chain-security.md's AI-BOM section and shadow-agent-governance.md's quantitative grounding as the two highest-impact improvement areas. The AI-BOM section was the weakest part of an otherwise strong chapter: it mentioned SPDX and OWASP but lacked enough detail for a practitioner to act on. Now it distinguishes between standards, explains when to choose each, and connects to the regulatory timeline that makes AI-BOM generation urgent. The shadow agent chapter was strong conceptually but the new Gravitee data adds the monitoring gap dimension: not just "agents exist ungoverned" but "more than half of known agents are completely unmonitored." The confidence gap (82% exec confidence vs 14.4% actual security approval) is the kind of data point CISOs can use in board conversations.
+
+**What I considered but did not do:**
+- Adding Gravitee data to the agent-identity chapter. The 21.9% identity-bearing finding is relevant to identity, but it fits better in shadow agent governance where the monitoring gap is the organizing theme. Cross-referencing would scatter the data without adding clarity.
+- Writing a new section on the OWASP Top 10 for Agentic Applications 2026. The execution security chapter already maps OWASP risks to sandboxing coverage. The 2026 version (released December 2025) adds Agent Behavior Hijacking, Tool Misuse and Exploitation, and Identity and Privilege Abuse as top threats, but these are already covered across multiple chapters. A dedicated OWASP section would duplicate existing coverage.
+- Expanding the building-the-edge chapter. The chapter assessment flagged it as brief, but its brevity is part of its strength as a synthesis chapter. Expanding it before RSAC (which may provide new data for the convergence timeline) would be premature.
+- Adding Bedrock Data's RSAC sessions to the book. They are presenting on AI agent governance (data access, processing, action governance), but their sessions have not happened yet. Worth covering in the post-RSAC session.
+- Adding a CycloneDX vs SPDX comparison table. The current prose explanation is sufficient and less likely to go stale. A detailed feature comparison would require deeper technical research into tooling support for each standard.
+
+**Sources used:**
+- Gravitee, "State of AI Agent Security 2026," gravitee.io, February 2026. Survey of 919 executives and practitioners.
+- Security Boulevard, "The 'Invisible Risk': 1.5 Million Unmonitored AI Agents Threaten Corporate Security," February 2026.
+- SPDX Specification 3.0.1, AI and Dataset Profiles. spdx.dev.
+- Linux Foundation, "Implementing AI Bill of Materials (AI BOM) with SPDX 3.0," 2025. arXiv:2504.16743.
+- CycloneDX, "Machine Learning Bill of Materials (ML-BOM)," cyclonedx.org.
+- OWASP AI SBOM Initiative, genai.owasp.org, 2026.
+- Palo Alto Networks, "What Is an AI-BOM?," 2026.
+- Wiz, "AI-BOM: Building an AI Bill of Materials," 2026.
+- EU AI Act, Articles 11 and 53.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from previous session).
+- Shane's blog posts (checked: no new posts since March 11).
+
+**What I noticed:**
+- The AI-BOM standards landscape is more mature than the chapter previously suggested. SPDX 3.0.1's 36 fields and JSON-LD serialization are not a proposal: they are a published specification with implementation guides. CycloneDX ML-BOM is similarly production-ready. The gap is not in standards but in agent-specific tooling: neither standard has native support for enumerating MCP server connections, tool registrations, or prompt templates. This is the agent-specific extension that the OWASP AIBOM Initiative is best positioned to address.
+- The Gravitee confidence gap (82% exec confidence vs 14.4% security approval) is structurally similar to the Teleport finding (access scope, not AI sophistication, predicts outcomes). In both cases, organizations overestimate their governance posture because they conflate policy existence with policy enforcement. The book's central argument (infrastructure says can't, policy says don't) has quantitative backing from two independent surveys.
+- The dynamic dependency problem for agent AI-BOMs is the most architecturally interesting finding. Traditional SBOMs are build-time artifacts. Agent AI-BOMs need to be runtime artifacts because agents change their dependency trees continuously. This connects the supply chain chapter to the shadow agent chapter: both require runtime inventory (Noma, Okta ISPM, Agent 365) rather than periodic scanning.
+- RSAC 2026 (March 23-26) is 10 days out. Bedrock Data is presenting on AI agent governance (data access and action governance). Token Security and Geordie AI present in the Innovation Sandbox. Microsoft has security sessions. The post-RSAC session should be the highest-priority upcoming work.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference session. Innovation Sandbox results, Bedrock Data sessions, Microsoft security sessions.
+2. NIST CAISI listening session deadline is March 20 (7 days). Monitor for any published outcomes.
+3. Consider whether the building-the-edge chapter should be expanded with the convergence of AI-BOM standards and the Gravitee monitoring gap data as implementation guideposts.
+4. The confidence gap pattern (Teleport + Gravitee) could be a cross-cutting theme worth adding to the introduction or pac-framework chapter.
+
 ## 2026-03-13: Teleport 4.5x Research, Flashpoint Bilateral Threat, Colorado Date Fix
 
 **What I did:**

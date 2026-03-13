@@ -2,7 +2,7 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 18)
+## Observations (Updated 2026-03-13, Session 19)
 
 ### Agent Identity Is Becoming a Platform Feature, and a Product Category
 
@@ -80,7 +80,11 @@ ERC-8004's deployment across 12+ chains with singleton contracts is interesting 
 
 ### Agent Supply Chain Is the Newest Attack Surface
 
-The OpenClaw ClawHavoc campaign (1,184 malicious skills on ClawHub), BlueRock's finding that 36.7% of 7,000 MCP servers are vulnerable to SSRF, and the Azure MCP SSRF (CVE-2026-26118) demonstrate that agent supply chain attacks are not theoretical. They combine familiar patterns (typosquatting, dependency confusion, maintainer takeover) with agent-specific amplification: compromised components inherit the agent's full authority, credentials, and decision-making context. The AI-BOM concept (extending SBOMs to cover model versions, tool registrations, prompt templates, and guardrail configurations) is emerging via OWASP and SPDX 3.0.1 but tooling lags. The CSA Agentic Trust Framework applies Zero Trust to agents, but only 21% of organizations maintain a real-time agent inventory. Now covered in the Agent Supply Chain Security chapter.
+The OpenClaw ClawHavoc campaign (1,184 malicious skills on ClawHub), BlueRock's finding that 36.7% of 7,000 MCP servers are vulnerable to SSRF, and the Azure MCP SSRF (CVE-2026-26118) demonstrate that agent supply chain attacks are not theoretical. They combine familiar patterns (typosquatting, dependency confusion, maintainer takeover) with agent-specific amplification: compromised components inherit the agent's full authority, credentials, and decision-making context. The AI-BOM standards landscape is now concrete: SPDX 3.0.1 defines 36 fields across AI and Dataset profiles with JSON-LD serialization, CycloneDX offers ML-BOM with vulnerability tracking integration, and the OWASP AIBOM Initiative (launched 2026) provides open-source tooling with completeness assessment. The EU AI Act Articles 11 and 53 make AI-BOM generation an operational requirement, not a best practice, with the August 2026 Annex III enforcement deadline creating urgency. The remaining gap is the dynamic dependency problem: agents change their dependency trees at runtime (discovering new MCP servers, receiving new tools), so static AI-BOMs capture a snapshot, not the reality. Runtime inventory tools (Noma's Agentic Risk Map) are emerging to close this gap. Updated in the Agent Supply Chain Security chapter.
+
+### The Monitoring Gap Is Quantified
+
+Gravitee's 2026 State of AI Agent Security report (919 executives and practitioners) provides the most granular data yet on the governance gap. Only 47.1% of an organization's AI agents are actively monitored or secured. Only 14.4% have full IT and security approval for their entire fleet. 88% reported confirmed or suspected security incidents (92.7% in healthcare). And only 21.9% treat agents as identity-bearing entities, meaning most agents operate through inherited user credentials or no identity management at all. The confidence gap is the most concerning finding: 82% of executives feel confident their policies protect against agent misuse, but this confidence rests on policy documentation, not runtime enforcement. This is the gap between "policy says don't" and "infrastructure says can't" that Shane's architecture-over-policy argument targets. Updated in the Shadow Agent Governance chapter.
 
 ### MCP 2026 Roadmap Is More Specific Than Expected
 

@@ -80,9 +80,23 @@ There is no standard for tool attestation. A Verifiable Credential can prove who
 
 Traditional SBOMs (Software Bills of Materials) enumerate software dependencies. They were never designed for AI systems. An AI agent's dependency tree includes components that SBOMs do not cover: model versions, prompt templates, tool registrations, embedding models, guardrail configurations, and the training data that shapes model behavior.[^aibom]
 
-The AI Bill of Materials (AI-BOM) extends the SBOM concept to cover these components. SPDX 3.0.1 defines official AI and Dataset Profiles for schema structure. The OWASP AI-BOM Initiative advances standardized approaches to AI supply chain transparency. The EU AI Act (Article 53, effective August 2025) requires a complete AI component inventory, but no existing SBOM tool fully covers AI-specific components.[^eu-ai-act-sbom]
+The AI Bill of Materials (AI-BOM) extends the SBOM concept to cover these components. The distinction matters: a traditional SBOM tracks code dependencies, but the components that shape AI behavior (training data, model weights, retraining pipelines, tool descriptions) live outside the code dependency graph entirely. An AI-BOM is a continuously updated, machine-readable inventory of AI assets across the full lifecycle: models, datasets, prompts, dependencies, and controls.[^aibom]
 
-For agents specifically, an AI-BOM needs to enumerate:
+### The Standards Landscape
+
+Two competing standards have emerged for encoding AI-BOMs, each extending an existing SBOM format:
+
+**SPDX 3.0.1 AI and Dataset Profiles.** The Software Package Data Exchange specification (maintained by the Linux Foundation) added formal AI and Dataset profiles in version 3.0.1. The AI Profile describes a component's capabilities for a specific system: domain, model type, industry standards, training methods, data handling, explainability, and energy consumption. The Dataset Profile describes a dataset's core aspects: type, size, collection method, access method, preprocessing, and noise handling. Together they define 36 fields that extend the traditional SBOM model to describe machine learning components in a consistent, machine-readable format using JSON-LD serialization.[^spdx-ai] The Linux Foundation published a comprehensive implementation guide demonstrating how to construct AI-BOMs with these profiles, including schema validation and alignment with automation pipelines.[^spdx-guide]
+
+**CycloneDX ML-BOM.** The OWASP CycloneDX standard takes a complementary approach with its Machine Learning Bill of Materials (ML-BOM). Where SPDX focuses on provenance and licensing, CycloneDX emphasizes vulnerability tracking and risk analysis. CycloneDX supports enumerating model components alongside traditional software dependencies in a single document, which simplifies toolchain integration for organizations already using CycloneDX for software SBOMs.[^cyclonedx]
+
+**OWASP AIBOM Initiative.** The OWASP AI Bill of Materials project launched formally in 2026 under the OWASP GenAI Security Project. It transforms AI-BOM from a theoretical framework into a practical, community-driven implementation with open-source tooling and measurable completeness assessment. The initiative provides a completeness scoring methodology: organizations can assess how much of their AI supply chain is actually captured in their AI-BOM, identifying blind spots before they become vulnerabilities.[^owasp-aibom]
+
+For organizations choosing between standards: SPDX 3.0.1 is the stronger choice if provenance, licensing, and regulatory compliance (particularly EU AI Act) are the primary drivers. CycloneDX is the stronger choice if integration with existing vulnerability management tooling is the priority. Both are machine-readable and interoperable to a degree, but tooling maturity varies.
+
+### What an Agent AI-BOM Must Cover
+
+For agents specifically, an AI-BOM needs to enumerate components that neither standard fully addresses yet:
 
 | Component | Traditional SBOM | Agent AI-BOM |
 |---|---|---|
@@ -96,11 +110,29 @@ For agents specifically, an AI-BOM needs to enumerate:
 | Training data provenance | No | Recommended |
 | Guardrail configurations | No | Required |
 
+### The Regulatory Driver
+
+The EU AI Act makes AI-BOMs an operational requirement, not a best practice. Article 11 requires technical documentation that traces every component influencing AI system behavior. Article 53 (effective August 2025) requires a complete AI component inventory. The August 2026 Annex III enforcement deadline for high-risk systems means organizations deploying agents in regulated use cases need AI-BOM generation capabilities now, not when the tooling matures.[^eu-ai-act-sbom] Without an AI-BOM, you cannot assess supply chain risk in your AI stack, demonstrate regulatory compliance, or respond accurately to an AI security incident.
+
+NIST's AI RMF and the SEC's AI risk materiality guidance create additional traceability requirements that AI-BOMs directly satisfy. The convergence of regulatory drivers across jurisdictions means building AI-BOM infrastructure is not jurisdiction-specific: it pays off everywhere.
+
+### The Dynamic Dependency Problem
+
 The practical challenge is that agent dependency trees are dynamic. A traditional application's SBOM changes when code is deployed. An agent's effective dependency tree changes at runtime: it discovers new MCP servers, receives new tools, loads new context. Static enumeration captures a snapshot, not the reality.
+
+This means AI-BOMs for agents need a runtime component: continuous inventory that tracks not just what was deployed, but what the agent is actually using at any given moment. The gap between the static AI-BOM (what was configured) and the runtime dependency graph (what is actually connected) is where supply chain risk hides. Noma Security's Agentic Risk Map (described in the Shadow Agent Governance chapter) is one approach to closing this gap: it automatically discovers every MCP server, toolset, and agent-to-agent relationship, building the runtime dependency graph that a static AI-BOM cannot capture.
 
 [^aibom]: OWASP AI-BOM Initiative; Palo Alto Networks, "What Is an AI-BOM?"; Wiz, "AI Bill of Materials," 2026. Multiple sources converging on the need for AI-specific supply chain transparency.
 
-[^eu-ai-act-sbom]: EU AI Act, Article 53. Requirement for AI component inventory that no existing SBOM tooling fully addresses.
+[^spdx-ai]: SPDX Specification 3.0.1, AI and Dataset Profiles. 36 fields across AI and Dataset profiles using JSON-LD serialization. spdx.dev.
+
+[^spdx-guide]: Linux Foundation, "Implementing AI Bill of Materials (AI BOM) with SPDX 3.0: A Comprehensive Guide," 2025. Also published as arXiv:2504.16743.
+
+[^cyclonedx]: CycloneDX, "Machine Learning Bill of Materials (ML-BOM)," cyclonedx.org, 2025-2026.
+
+[^owasp-aibom]: OWASP AI SBOM Initiative, genai.owasp.org, 2026. Open-source tooling and completeness assessment methodology for AI supply chain transparency.
+
+[^eu-ai-act-sbom]: EU AI Act, Articles 11 and 53. Technical documentation and AI component inventory requirements. Annex III high-risk enforcement deadline August 2, 2026.
 
 ## Defense Patterns
 
