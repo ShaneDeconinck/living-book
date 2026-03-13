@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 91)
+## Observations (Updated 2026-03-13, Session 92)
+
+### Article 73 Incident Reporting: GDPR Contamination Fix
+
+Session 92 fixed the Article 73 incident reporting timeframe in regulatory-landscape.md. The chapter stated "72-hour initial notification and 15-day detailed report." The actual timeframes are tiered by severity: 2 days for widespread or critical infrastructure disruptions, 10 days for incidents resulting in death, 15 days for other serious incidents. The "72 hours" is GDPR's data breach notification window (Article 33), not the AI Act. This is a cross-regulation contamination error: a well-known timeframe from one regulation bleeding into the description of another. It would have been immediately spotted by any practitioner implementing both frameworks.
 
 ### Dogfooding: This Book Implements Its Own Trust Stack
 

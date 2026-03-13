@@ -53,7 +53,7 @@ For systems that fall into the high-risk category, the Act demands:
 - **Record-keeping and traceability** (Article 12): automatic logging of events relevant to identifying risks and substantial modifications.
 - **Human oversight by design** (Article 14): not as an afterthought. The system must allow deployers to implement meaningful human oversight.
 - **Accuracy, robustness, and cybersecurity** (Article 15): appropriate safeguards throughout the system's lifecycle.
-- **Incident reporting** (Article 73): 72-hour initial notification and 15-day detailed report to authorities.
+- **Incident reporting** (Article 73): tiered by severity. Two days for widespread or critical infrastructure disruptions. Ten days for incidents resulting in death. Fifteen days for other serious incidents. Initial incomplete reports are permitted, with complete reports to follow.
 
 Penalties are tiered by violation severity. Prohibited AI practices (Article 5): up to 35 million euros or 7% of global annual turnover, whichever is higher. Non-compliance with high-risk obligations: up to 15 million euros or 3%. Supplying incorrect information to authorities: up to 7.5 million euros or 1%. For SMEs and startups, the "whichever is lower" criterion applies instead.[^penalties]
 
