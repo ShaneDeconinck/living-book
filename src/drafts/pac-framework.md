@@ -55,8 +55,6 @@ A common mistake is treating workflows, agent loops, and autonomous agents as ex
 
 A workflow can contain an agent loop step that delegates to an autonomous sub-agent. The outer layer sets the reliability floor and tightens the error margin. The inner layer raises the quality ceiling. A customer service system might use a deterministic workflow for routing and compliance checks, an agent loop for understanding the customer's problem, and an autonomous sub-agent for searching knowledge bases and drafting responses. Each layer has a different reliability profile, and the composition determines the overall system's governance requirements.
 
-A composed system inherits the reliability floor of its outer layer while gaining the capability ceiling of its inner layer. The architecture choice is not about capability. It is about how confidently you can govern the result.[^7]
-
 ### Durability: Build on What Stays Stable
 
 Models improve. Scaffolding becomes obsolete. What lasts?
@@ -263,10 +261,6 @@ The framework distills each pillar into concrete questions designed for stakehol
 18. **Does your agent setup work when agents need to cross trust boundaries?** [Cross-Organization Trust](cross-org-trust.md) is the hard problem. TSP, PIC, Verifiable Credentials, and EUDI wallets compose into the infrastructure for agents operating across organizational boundaries.
 
 19. **What happens when an agent wanders into a use case you didn't anticipate?** [Sandboxing](execution-security.md) and [supply chain security](supply-chain-security.md) contain the blast radius. But the deeper answer is the autonomy-infrastructure gate: agents operating at higher autonomy levels (A4-A5) require higher infrastructure levels (I4-I5), which structurally constrain the space of possible actions.
-
-These questions are not theoretical. They surface the gaps between policy intention and infrastructure reality. The subsequent chapters provide the technical depth to answer each one.
-
-## Applying the Framework
 
 The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
 

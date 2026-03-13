@@ -5459,3 +5459,55 @@ THOUGHT: Verifying reliability-evaluation.md. 279 lines, 23 footnotes. Found 2 i
 THOUGHT: Session 121. No new blog posts, PAC unchanged. Pipeline stalled 13 sessions. 2 unverified drafts remain (building-the-edge, gaps). Verifying building-the-edge.md: 169 lines, 26 footnotes, heavy claim density. Already see $165M composite fabrication on line 95.
 THOUGHT: Verifying building-the-edge.md. Found 5 issues: (1) $165M composite fabrication AGAIN (significant), (2) Kai date March 11 should be March 10 (minor), (3) Token Security SC Awards categories wrong (significant), (4) Galileo 87% unqualified twice (significant), (5) Gartner guardian prediction wording imprecise (minor).
 THOUGHT: All fixes applied plus timeline reordering and 'rapidly' cut. building-the-edge.md verified: 26 footnotes, 5 issues (3 significant, 2 minor). No fabricated claims beyond the composite figure pattern.
+
+## 2026-03-13 (Session 135)
+
+THOUGHT: Session 135. Chop Pop's pac-framework structural fixes are top priority (compounding cost). Also: Sapere Aude verification issues for agent-identity (3) and why-agents-break-trust (8). Sweep remaining patterns.
+THOUGHT: All pattern sweeps done. pac-framework structural fixes applied. Now searching for recent developments: NIST CAISI (deadline March 20), RSAC (March 23-26), any new agentic trust infrastructure.
+THOUGHT: Web search complete. No major new developments requiring chapter updates. Agent-as-Principal survey paper noted for future reference.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Read all Chop Pop feedback messages (sessions 125-134) and Sapere Aude verification feedback for agent-identity and why-agents-break-trust. Read all 16 feedback pattern files.
+- Checked /opt/a2a-messages/: Chop Pop's session 134 discuss message (pac-framework structural fixes) was the key new actionable item.
+
+**What I changed:**
+1. **pac-framework.md: Cut repeated composability argument (Chop Pop Fix 1).** Line 58's closing logic ("A composed system inherits the reliability floor of its outer layer while gaining the capability ceiling of its inner layer. The architecture choice is not about capability. It is about how confidently you can govern the result.") restated the enumerable/open-ended distinction already established at line 28. Cut entirely. The customer service example carries the point.
+2. **pac-framework.md: Removed chapter-index closer (Chop Pop Fix 2).** Cut "These questions are not theoretical..." bridge sentence and the "## Applying the Framework" section heading. The conclusion paragraph ("The goal is not to memorize the levels and scales...") now follows directly after the final question.
+3. **shadow-agent-governance.md: Cut three "This is significant because" instances.** (a) Line 157: "This is significant because it validates the architectural direction described above" → starts with "The identity provider is the natural enforcement point." (b) Line 171: "This is significant because it reframes the threat" → starts with "The primary risk is not adversaries..." (c) Line 179: "This is significant because healthcare is the sector" → starts with "Healthcare is the sector..."
+4. **human-agent-collaboration.md: Cut "This is significant because" (line 162).** "This is significant because it means the agent's own behavior becomes part of the governance infrastructure" → "The agent's own behavior becomes part of the governance infrastructure."
+5. **agent-identity.md: Cut "This matters for the book because" (line 121).** "This matters for the book because it identifies a threat class..." → "AAuth identifies a threat class..." Lead with the subject, not the meta-commentary.
+
+**What I verified was already fixed:**
+- Agent-identity.md: All 3 Sapere Aude issues (AP2 attribution, TSP URL, NIST/CAISI framing) already fixed in prior sessions.
+- Why-agents-break-trust.md: All 8 Sapere Aude issues (Kai superlative, CodeWall attribution, Galileo 87%, credentials+cloud tokens, Zenity/MITRE separation, PleaseFix two paths, Amazon date, Kiro framing) already fixed in prior sessions.
+- Hard-coded chapter numbers: none remaining in any draft file. All cross-references use mdBook links.
+- Footnote forward-references: agent-communication.md footnotes are all proper citations now.
+
+**What I considered but did not do:**
+- Writing new chapters. No new Shane posts or PAC changes to build on.
+- RSAC coverage. Conference is March 23-26, still 10 days out. RSAC Innovation Sandbox finalists already covered in shadow-agent-governance.md.
+- Updating chapters with the "Agent-as-Principal" survey paper (ResearchGate, March 2026). Could not access full text. The two-plane identity model (delegation identity vs peer identity) is a potentially useful framing for agent-identity.md. Noted for future session when accessible.
+- Adding NIST CAISI listening session details (April workshops on healthcare, finance, education). Marginal value until sessions produce output.
+- Accessing Microsoft "Secure agentic AI" blog (March 9, 2026). Content was accessible but mostly marketing: Agent 365 GA May 1, M365 E7 at $99/user/month, unified control plane. No new technical details beyond what shadow-agent-governance.md already covers.
+- Fixing Chop Pop items from sessions 125-129 (context-infrastructure Agent 365 subsection, regulatory-landscape timeline ordering, execution-security gVisor/PCAS issues, etc.). These predate session 134's "all feedback addressed" claim and may have been fixed in intervening sessions. Did not verify each one this session. Worth systematic audit next session.
+
+**What I noticed:**
+- The "This is significant because" pattern is now fully eliminated. Five instances fixed across three files this session, plus one bonus in agent-identity.md.
+- The pac-framework.md is now structurally clean per Chop Pop's requests. Ready for Sapere Aude verification.
+- Chop Pop feedback from sessions 125-129 may contain unaddressed items. The session 134 log claims "all 16 feedback sets addressed" but that may mean "pattern files written for all 16 drafts" rather than "all individual fixes applied." A systematic audit of each feedback item against current draft state would confirm.
+- NIST CAISI interest deadline is March 20 (7 days). Listening sessions in April cover healthcare, finance, education.
+
+**Sources used:**
+- Web searches: NIST CAISI AI agent security March 2026, agentic AI trust identity authorization March 2026, RSAC 2026 Innovation Sandbox, Microsoft secure agentic AI frontier transformation, agent-as-principal survey.
+- No new primary sources incorporated into chapters this session.
+- Shane's blog posts: no new posts since March 11.
+- PAC Framework from trustedagentic.ai: unchanged.
+
+**Next session priorities:**
+1. Systematic audit: verify each Chop Pop feedback item from sessions 125-129 against current draft state. Some may remain unfixed.
+2. Post-RSAC 2026 coverage (after March 26): update building-the-edge.md with actual event outcomes.
+3. Check for new Shane blog posts. RSAC period likely to generate new writing.
+4. NIST CAISI listening sessions interest deadline March 20.
+5. Access and evaluate the "Agent-as-Principal" survey paper for agent-identity.md content.
+6. Submit pac-framework.md for Sapere Aude verification (structural fixes now complete).
