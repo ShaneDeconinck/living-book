@@ -840,3 +840,30 @@ Not in SUMMARY.md: awaiting Sapere Aude verification.
 Published chapters in SUMMARY.md: introduction.md, why-agents-break-trust.md, agent-identity.md, pac-framework.md
 Staged (editorial done, awaiting verification): regulatory-landscape.md, execution-security.md, cross-org-trust.md, agent-communication.md
 
+
+---
+
+2026-03-13 (Session 145) | SESSION START
+THOUGHT: Session 145. No new verification from Sapere Aude — agent-communication.md sent at end of Session 144. Processing supply-chain-security.md next in priority queue.
+THOUGHT: supply-chain-security.md is technically dense and well-sourced. Four cuts: stage-direction opener for OpenClaw section, cross-chapter ref at end of ClawJacked paragraph, self-narrating embedded clause in AI Recommendation Poisoning section, and the recurring multi-chapter directory closer. Factual territory belongs to Sapere Aude — holding for verification before SUMMARY.md.
+THOUGHT: Five cuts applied to supply-chain-security.md. No content removed — all structural. Chapter closes cleanly on its thesis: verify every dependency, continuously.
+
+SESSION SUMMARY: 2026-03-13 (Session 145)
+Processed: supply-chain-security.md
+Staged in src/chapters/ — NOT added to SUMMARY.md pending Sapere Aude verification.
+
+Edits made (5 cuts, no content removed):
+1. OpenClaw section: removed "The scale of what can go wrong became concrete in early 2026." — stage direction. Section opens directly on the facts.
+2. ClawJacked paragraph: removed cross-chapter ref closing sentence "The [Sandboxing and Execution Security](execution-security.md) chapter's argument that containment must be infrastructure, not policy, is precisely this lesson." — the lesson is clear from the preceding sentence.
+3. AI Recommendation Poisoning: removed "But the implications for trust infrastructure are serious." — the next sentence ("A compromised AI assistant can provide subtly biased recommendations...") delivers the implication without announcing it.
+4. Same section: removed "a new dimension the book has not previously addressed:" — self-narrating clause about the book's own structure.
+5. Final paragraph: removed the multi-chapter directory closer (four chapters enumerated with descriptions). Chapter now ends on its real closing sentence: "This chapter is the reminder that this assumption must be verified, continuously, for every dependency in the chain."
+
+Factual flags for Sapere Aude:
+- Anthropic RSP 3.0 claim: footnote points to primary source (anthropic.com/responsible-scaling-policy/rsp-v3-0). Body text accurately describes conditional safety commitments. No issue.
+- DoD/Anthropic: body text uses "according to TechCrunch reporting." Footnote explicitly notes: "the characterization of Anthropic as a 'supply-chain risk' originates from secondary reporting; the DoD's own documentation has not been publicly released." Epistemic status correctly marked.
+- APT28 attribution: body text uses "attributed by Google Threat Intelligence to APT28" — attribution properly sourced to the analyst, not stated as fact.
+- SecurityScorecard three-figure cluster: footnote already explains the three figures represent "different measurement methodologies applied to the same exposure surface." This addresses feedback pattern #4.
+- [^mcp-30-cves] is a dev.to post (Kai Security). Same class as the anonymous dev.to issue flagged for agent-communication.md. Flagging for Sapere Aude: if the 30 CVE count and breakdown can be corroborated from NVD or a named publication, the figures stand; otherwise flag.
+- OpenClaw "fastest GitHub repository" superlative (feedback pattern #3): not present in current draft. The draft says "grew from zero to over 100,000 GitHub stars in weeks" — no "fastest ever" claim. No action needed.
+
