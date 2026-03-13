@@ -118,9 +118,9 @@ Enforcement requires integration with the infrastructure layers the agent depend
 
 **Identity providers.** Agent credentials should only be issuable through the registry. If an agent cannot obtain OAuth tokens, API keys, or service credentials without being registered, unregistered agents cannot authenticate to organizational resources.
 
-**API gateways and agent gateways.** As discussed in the Agent Communication Protocols chapter, agent gateways (like AgentGateway with Cedar policies) can enforce that only registered agents with valid credentials can invoke tools and access resources. Every MCP server connection, every A2A task request, and every API call passes through infrastructure that checks registration status.
+**API gateways and agent gateways.** As discussed in the [Agent Communication Protocols](agent-communication.md) chapter, agent gateways (like AgentGateway with Cedar policies) can enforce that only registered agents with valid credentials can invoke tools and access resources. Every MCP server connection, every A2A task request, and every API call passes through infrastructure that checks registration status.
 
-**Network controls.** Agents that cannot reach external services without passing through a governed proxy cannot exfiltrate data or connect to unauthorized APIs. This is the network isolation dimension from the Sandboxing chapter applied at the organizational level.
+**Network controls.** Agents that cannot reach external services without passing through a governed proxy cannot exfiltrate data or connect to unauthorized APIs. This is the network isolation dimension from the [Sandboxing and Execution Security](execution-security.md) chapter applied at the organizational level.
 
 **Platform controls.** Low-code platforms that support agent building (Copilot Studio, Agentforce, etc.) should be configured to require registration as a deployment prerequisite. If the platform cannot enforce this natively, the gateway layer provides the enforcement point.
 
@@ -201,7 +201,7 @@ Shane's boardroom question is direct: "When an agent makes a consequential decis
 
 The audit trail requirements for agents differ from both human and application audit trails:
 
-**Delegation chain.** Who authorized this agent to act? The human who delegated, the system that issued credentials, and every intermediate delegation. As the Agent Identity chapter discusses, audit logs that show "alice@company.com" are insufficient when Alice delegated to an agent three months ago.
+**Delegation chain.** Who authorized this agent to act? The human who delegated, the system that issued credentials, and every intermediate delegation. As the [Agent Identity and Delegation](agent-identity.md) chapter discusses, audit logs that show "alice@company.com" are insufficient when Alice delegated to an agent three months ago.
 
 **Intent capture.** What was the agent asked to do? Not just the final action, but the goal that triggered the action chain. This connects to the Verifiable Intent architecture from the Cross-Organization Trust chapter: if the user's intent is cryptographically captured at delegation time, the audit trail can prove what was authorized versus what was executed.
 
@@ -238,7 +238,7 @@ Shadow agent governance touches all three pillars:
 | **Accountability: Regulatory Landscape** | The EU AI Act requires documentation of AI systems. Shadow agents are undocumented by definition. The registry is the compliance artifact. |
 | **Control: Infrastructure as Gate** | Registry enforcement through identity providers, gateways, and network controls makes governance structural, not advisory. |
 | **Control: Agent Identity** | Registered agents get verified identities. Unregistered agents cannot authenticate. Identity is the enforcement mechanism. |
-| **Control: Delegation Chains** | The registry captures who authorized each agent. Combined with infrastructure from the Agent Identity chapter, delegation is traceable and revocable. |
+| **Control: Delegation Chains** | The registry captures who authorized each agent. Combined with infrastructure from the [Agent Identity and Delegation](agent-identity.md) chapter, delegation is traceable and revocable. |
 
 ## Infrastructure Maturity for Shadow Agent Governance
 

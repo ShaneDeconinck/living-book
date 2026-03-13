@@ -62,7 +62,7 @@ Broader studies document failure rates of 41% to 86.7% in multi-agent systems wi
 
 ## Delegation Capability Tokens
 
-How do you encode trust across multi-hop delegation chains? The DeepMind paper proposes a specific technical mechanism: Delegation Capability Tokens (DCTs) based on macaroons.[^4]
+How do you encode trust across multi-hop delegation chains? The [Agent Identity and Delegation](agent-identity.md) chapter covers the single-hop case: OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent. Multi-hop delegation requires a different mechanism. The DeepMind paper proposes Delegation Capability Tokens (DCTs) based on macaroons.[^4]
 
 Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps naturally to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
 
@@ -156,7 +156,7 @@ The challenge: circuit breakers in traditional systems trip on measurable signal
 
 ### Delegation Registries
 
-An extension of the agent registry pattern from the Shadow Agent Governance chapter. A delegation registry does not just track which agents exist but which delegation relationships are authorized, with what scope, and under what conditions.
+An extension of the agent registry pattern from the [Shadow Agent Governance](shadow-agent-governance.md) chapter. A delegation registry does not just track which agents exist but which delegation relationships are authorized, with what scope, and under what conditions.
 
 ```json
 {
@@ -182,7 +182,7 @@ This makes delegation an auditable, queryable infrastructure concern rather than
 
 ### PIC for Multi-Agent Chains
 
-The Cross-Organization Trust chapter covered PIC (Provenance, Identity, Continuity) as a mechanism for cross-boundary trust. PIC's value compounds in multi-agent systems because it answers the question that tokens cannot: can this authority validly continue through this chain?[^13]
+The [Cross-Organization Trust](cross-org-trust.md) chapter covered PIC (Provenance, Identity, Continuity) as a mechanism for cross-boundary trust. PIC's value compounds in multi-agent systems because it answers the question that tokens cannot: can this authority validly continue through this chain?[^13]
 
 Where DCTs encode what authority an agent has, PIC verifies that the chain of delegation that produced that authority is unbroken. A downstream agent does not just check "does this token have the right caveats?" but "can I verify that each delegation in this chain was performed by an agent with the authority to delegate?"
 
@@ -270,7 +270,7 @@ The gap between I1 (where most organizations are) and I3 (where regulated indust
 
 ## Practical Recommendations
 
-**Start with delegation visibility.** Before governing multi-agent delegation, you need to see it. Instrument orchestration frameworks to log delegation events: who delegated to whom, with what scope, and what the outcome was. This is the multi-agent equivalent of the agent registry in the Shadow Agent Governance chapter.
+**Start with delegation visibility.** Before governing multi-agent delegation, you need to see it. Instrument orchestration frameworks to log delegation events: who delegated to whom, with what scope, and what the outcome was. This is the multi-agent equivalent of the agent registry in the [Shadow Agent Governance](shadow-agent-governance.md) chapter.
 
 **Enforce authority attenuation.** Implement DCTs or equivalent mechanisms that make authority expansion impossible at the token level. If your orchestration framework does not support this, add a delegation gateway that validates authority scope at every hop.
 

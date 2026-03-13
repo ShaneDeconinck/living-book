@@ -1,5 +1,56 @@
 # Session Log
 
+## 2026-03-13: Cross-Reference Revision Pass (Session 29)
+
+**What I did:**
+- Systematic cross-reference revision pass across 10 chapters, adding 21 new markdown links between chapters. This was the most consistently identified improvement across sessions 26-28, deferred each time in favor of content additions. With the book structurally complete at 15 chapters and all recent developments captured, this was the right session for it.
+
+**Chapters modified and links added:**
+- **cross-org-trust.md** (3 links): Added links to agent-identity (opening paragraph on IAM extensions), agent-communication (TA2A/TMCP section), and regulatory-landscape (EUDI wallet section).
+- **multi-agent-trust.md** (4 links): Added link to agent-identity (DCT section introduction), two links to shadow-agent-governance (delegation registries, practical recommendations), and link to cross-org-trust (PIC section).
+- **agent-communication.md** (1 link): Added link to execution-security (authorization gap section, connecting coarse OAuth scopes to containment).
+- **supply-chain-security.md** (1 link): Added link to regulatory-landscape (AI-BOM regulatory driver section).
+- **shadow-agent-governance.md** (4 links): Converted plain-text references to linked references for agent-communication (gateway enforcement), execution-security (network isolation), and agent-identity (audit trails and PAC table).
+- **agent-payments.md** (2 links): Converted plain-text "Agent Identity chapter" references to links (commerce protocol convergence, infrastructure maturity).
+- **regulatory-landscape.md** (3 links): Converted plain-text reference to agent-identity link (NIST section), updated footnotes with links to context-infrastructure and agent-communication.
+- **agent-identity.md** (1 link): Added closing link to shadow-agent-governance for registry enforcement.
+- **context-infrastructure.md** (1 link): Converted plain-text "identity chapter" to linked reference (authority dimension).
+- **building-the-edge.md** (1 link): Converted plain-text "execution security chapter" to linked reference (sandboxing recommendation).
+
+**Why this work:**
+Stepped back and assessed priorities as instructed. No new Shane blog posts since March 11. PAC Framework unchanged. RSAC 2026 (March 23-26) still 10 days out. Web searches confirmed all recent developments (CVE-2026-26118, Imprivata, AgenticCyOps, OIDC-A) are already captured in the book.
+
+The cross-reference audit revealed the book's connectivity gap:
+- Three chapters had zero inbound links (execution-security, agent-payments, context-infrastructure)
+- cross-org-trust had only 2 outbound links despite covering PIC, TSP, VCs, and eIDAS
+- regulatory-landscape was rarely linked from other chapters despite being referenced by topic in many
+- Multiple chapters used plain-text references like "the Agent Identity chapter" instead of markdown links
+
+The 21 new links improve reader navigation without changing any content. Readers hitting a topic discussed elsewhere now have a clickable path to the deeper treatment.
+
+**What I considered but did not do:**
+- Adding new content. Extensive web searching found no significant unreported developments. Everything newsworthy (CVE-2026-26118, Imprivata HIMSS launch, AgenticCyOps, OIDC-A, EU AI Act classification guidelines timeline, NIST CAISI listening sessions) was already in the book.
+- Strengthening the introduction (53 lines). It remains concise and functional. Expanding it risks diluting the clear framing.
+- Linking every textual chapter reference in gaps.md and log.md. These are internal documentation, not reader-facing chapters. The benefit of linking them is minimal.
+- Adding cross-chapter summary paragraphs at the end of each chapter. context-infrastructure.md already has this pattern (line 197). It works well but adding it to all 12 chapters is a larger effort best done in a dedicated session.
+
+**Sources used:**
+- PAC Framework from trustedagentic.ai (read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 11).
+- Web searches: agentic AI security March 2026, MCP/A2A protocol updates, NIST AI agent identity, OIDC-A, EU AI Act Article 6 guidelines, Imprivata agentic identity, CVE-2026-26118, AgenticCyOps paper. All already captured.
+
+**What I noticed:**
+- The book's cross-reference topology had a hub-and-spoke pattern: shadow-agent-governance (8 inbound) and agent-identity (7 inbound) were hubs, while execution-security, agent-payments, and context-infrastructure were isolated. The pass addressed the isolation but the hub pattern is natural: identity and governance are the connective tissue of the book.
+- The context-infrastructure chapter already has a best-in-class cross-reference approach: a closing paragraph that explicitly maps connections to four other chapters with brief explanations of each link. This could be a template for other chapters in a future session.
+- Plain-text chapter references ("the Agent Identity chapter") appeared in 6 chapters. These were presumably written before the chapters existed as files. Converting them to links is a low-effort, high-value cleanup.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26) post-conference coverage. Innovation Sandbox results, product announcements, keynote themes.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. Consider adding cross-reference summary paragraphs to chapter endings (following context-infrastructure.md's pattern).
+4. NIST CAISI listening session submissions due March 20. Monitor for published responses or analysis.
+5. NIST concept paper comment period closes April 2. Monitor for published responses.
+
 ## 2026-03-13: McKinsey Lilli Hack and MS-Agent CVE Integration (Session 28)
 
 **What I did:**

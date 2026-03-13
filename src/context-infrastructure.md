@@ -122,7 +122,7 @@ For the PAC Framework, discovery is a Potential dimension: agents cannot leverag
 
 ### 4. Authority
 
-Access scoped to the delegating user's authority. This connects directly to the delegation chains covered in the identity chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
+Access scoped to the delegating user's authority. This connects directly to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
 
 For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 

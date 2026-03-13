@@ -111,7 +111,7 @@ Where AP2 handles the payment authorization flow, UCP handles the product discov
 
 ### Convergence
 
-These protocols are more complementary than competitive. AP2 handles payment authorization, ACP handles checkout flows, UCP handles product discovery. Verifiable Intent (covered in the Agent Identity chapter) provides the cryptographic constraint layer that all three can use. The real question is whether they converge on shared primitives or fragment into incompatible ecosystems.
+These protocols are more complementary than competitive. AP2 handles payment authorization, ACP handles checkout flows, UCP handles product discovery. Verifiable Intent (covered in the [Agent Identity and Delegation](agent-identity.md) chapter) provides the cryptographic constraint layer that all three can use. The real question is whether they converge on shared primitives or fragment into incompatible ecosystems.
 
 The fact that Google participates in both AP2 and UCP, while Stripe participates in both ACP and x402, suggests convergence is more likely than fragmentation. But it is early.
 
@@ -207,7 +207,7 @@ Agent payments connect to all three pillars:
 | **I4 Authorized** | Spending constraints cryptographically enforced | Verifiable Intent with budget caps and merchant restrictions |
 | **I5 Contained** | Full economic governance: identity, constraints, reputation, validation | ERC-8004 registries + Verifiable Intent + x402 + cross-org trust |
 
-Most organizations today are at I1-I2 for agent payments. The infrastructure for I3-I4 exists (x402, Verifiable Intent) but requires integration work. I5 requires the agent identity standards covered in the Agent Identity chapter to mature further.
+Most organizations today are at I1-I2 for agent payments. The infrastructure for I3-I4 exists (x402, Verifiable Intent) but requires integration work. I5 requires the agent identity standards covered in the [Agent Identity and Delegation](agent-identity.md) chapter to mature further.
 
 ## What This Means in Practice
 

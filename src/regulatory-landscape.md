@@ -79,7 +79,7 @@ While the EU focuses on risk classification and compliance obligations, NIST is 
 
 The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision? Existing identity frameworks must evolve to address this shift, because systems that autonomously access tools, query databases, and execute operations on behalf of users require clear mechanisms for identification, authentication, and authorization.
 
-Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. This pragmatic approach validates the thesis from the Agent Identity chapter: the building blocks exist. The assembly is what is missing.
+Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. This pragmatic approach validates the thesis from the [Agent Identity and Delegation](agent-identity.md) chapter: the building blocks exist. The assembly is what is missing.
 
 The public comment period closes April 2, 2026. For organizations shaping their agent infrastructure, this is the window for input.[^nistcomment]
 
@@ -318,8 +318,8 @@ The gap between what agents can do and what regulation requires is an infrastruc
 
 [^verifiableintent]: Covered in detail in the Agent Identity and Delegation chapter. See Shane Deconinck, ["Verifiable Intent: Mastercard and Google Open-Source Agent Authorization"](https://shanedeconinck.be/posts/verifiable-intent-mastercard-google-agent-authorization/).
 
-[^mcp]: MCP adoption figures and governance as of March 2026. See the Context Infrastructure chapter for details.
+[^mcp]: MCP adoption figures and governance as of March 2026. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
 
-[^a2a]: A2A v0.3 with 150+ organizations. See the Context Infrastructure chapter for details.
+[^a2a]: A2A v0.3 with 150+ organizations. See the [Context Infrastructure](context-infrastructure.md) and [Agent Communication Protocols](agent-communication.md) chapters for details.
 
 [^csaatf]: Cloud Security Alliance, ["The Agentic Trust Framework: Zero Trust Governance for AI Agents"](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents), February 2, 2026. Open governance specification published under Creative Commons. ATF GitHub repository and specification at [github.com/CSA-AI/ATF](https://github.com/CSA-AI/ATF).

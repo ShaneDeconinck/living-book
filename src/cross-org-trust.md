@@ -1,6 +1,6 @@
 # Cross-Organization Trust
 
-Within a single organization, extending existing IAM to handle agents is tractable. You control the identity provider, the authorization server, the policy engine, and the audit system. You can add OBO token exchange, scope your OAuth grants tighter, build agent registries, and enforce sandboxing. It is hard, but it is one team's hard problem.
+Within a single organization, extending existing IAM to handle agents is tractable. You control the identity provider, the authorization server, the policy engine, and the audit system. You can add OBO token exchange, scope your OAuth grants tighter, build agent registries, and enforce sandboxing, as the [Agent Identity and Delegation](agent-identity.md) chapter covers in depth. It is hard, but it is one team's hard problem.
 
 The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
@@ -95,7 +95,7 @@ The verifiable identifiers are long-term and durable, supporting key rotation wi
 
 TSP is designed as a spanning layer, analogous to IP in networking. It does not care about transport (HTTPS, WebSocket, Bluetooth), identifiers (DIDs, KERI, X.509), or encoding (JSON, CBOR). This makes it composable with existing infrastructure rather than a replacement for it.
 
-Agent protocols like MCP and A2A can run on top of TSP:[^5]
+Agent protocols like MCP and A2A can run on top of TSP (the [Agent Communication Protocols](agent-communication.md) chapter covers MCP and A2A architecture in detail):[^5]
 
 - **TA2A (A2A over TSP)**: the Agent-to-Agent Protocol handles discovery and task semantics, while TSP handles identity verification and message encryption.
 - **TMCP (MCP over TSP)**: the Model Context Protocol runs over TSP's trust layer, enabling agents to connect to previously unknown tool servers with cryptographic verification instead of pre-established API keys.
@@ -213,7 +213,7 @@ This model matters because it acknowledges that cross-domain delegation cannot r
 
 ## The EUDI Wallet Infrastructure
 
-The European Digital Identity Wallet, mandated by eIDAS 2.0, is building the credential infrastructure that cross-organization agent trust requires at continental scale.[^6][^11]
+The European Digital Identity Wallet, mandated by eIDAS 2.0, is building the credential infrastructure that cross-organization agent trust requires at continental scale (the [Regulatory Landscape](regulatory-landscape.md) chapter covers the broader regulatory context, including the EU AI Act timeline).[^6][^11]
 
 By December 2026, every EU Member State must offer an EUDI Wallet, interoperable across 27 countries and 450 million citizens. The wallet stores government-verified credentials (identity documents, professional qualifications, educational certificates) and enables selective presentation: share only what is needed for a specific interaction.
 

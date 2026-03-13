@@ -268,7 +268,7 @@ The standards are landing but not yet universal. For teams deploying agents toda
 
 The identity layer for agents is being built right now, in IETF drafts, W3C specifications, and open-source implementations. The organizations that adopt this infrastructure early will have accountable, auditable agent deployments. The ones that wait will be explaining to regulators why they cannot trace what their agents did.
 
-For how identity extends across organizational boundaries, see [Cross-Organization Trust](cross-org-trust.md). For how delegation chains compose (and break) in multi-agent systems, see [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
+For how identity extends across organizational boundaries, see [Cross-Organization Trust](cross-org-trust.md). For how delegation chains compose (and break) in multi-agent systems, see [Multi-Agent Trust and Orchestration](multi-agent-trust.md). For how agent identity integrates with registry enforcement and shadow agent discovery, see [Shadow Agent Governance](shadow-agent-governance.md).
 
 ---
 

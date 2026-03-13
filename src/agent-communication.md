@@ -233,7 +233,7 @@ Shane calls this **consent theater**: the user's mental model is "help me find t
 | "Reply to that customer thread" | One reply, to one thread | Send as you, to anyone, about anything |
 | "Find the Q4 report in Drive" | One specific file | Read every file in your Drive |
 
-This is not a fixable bug. Coarse scopes are intentional OAuth design. You cannot express conditional access without new protocols. The authorization model is the bottleneck keeping agents out of production, not the capability layer.[^3]
+This is not a fixable bug. Coarse scopes are intentional OAuth design. You cannot express conditional access without new protocols. The authorization model is the bottleneck keeping agents out of production, not the capability layer. The [Sandboxing and Execution Security](execution-security.md) chapter covers the containment side of this problem: what happens when an agent with broad credentials encounters untrusted input.[^3]
 
 The responses to this gap are emerging at multiple layers:
 

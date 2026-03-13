@@ -40,7 +40,7 @@ This phase maps directly to Shane's first question: "Do you know every agent run
 
 - *Identity infrastructure.* Agents get their own identities, distinct from their human principals. OAuth extensions (OBO, DPoP) handle single-domain delegation. The NIST concept paper on AI agent identity and authorization, with its comment period closing April 2, 2026, signals where standards are heading.[^7] If your agents are using shared service accounts with broad static permissions, this is where that changes.
 - *Permission scoping.* Move from blocklists ("don't do this") to allowlists ("can only do this"). Shane's trust inversion: humans are restricted in what they cannot do; agents must be restricted to what they can, for each task.[^8] Match permission granularity to blast radius: per-tool-call for B4-B5, per-task for B2-B3, per-session for B1.
-- *Sandboxing.* Filesystem isolation, network restrictions, configuration file protection. The execution security chapter covers the full isolation spectrum from native OS sandboxing to microVMs. This is not optional for any agent that touches production systems.
+- *Sandboxing.* Filesystem isolation, network restrictions, configuration file protection. The [Sandboxing and Execution Security](execution-security.md) chapter covers the full isolation spectrum from native OS sandboxing to microVMs. This is not optional for any agent that touches production systems.
 
 **Phase 3: Governance (I3 to I4).** Enforcement contains individual agents. Governance manages the system:
 
