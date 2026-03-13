@@ -2,7 +2,19 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 46)
+## Observations (Updated 2026-03-13, Session 47)
+
+### Model Provider Trust Is Not Infrastructure
+
+The Anthropic RSP shift is the first concrete case study in model provider trust instability. In January 2026, Anthropic moved from absolute safety commitments (maintained regardless of competitor behavior) to relative ones (conditioned on what other labs do). Weeks later, the DOD designated Anthropic a "supply-chain risk" for refusing military use, then contracted with OpenAI, which initially said it would honor the same restrictions but later admitted otherwise. The trust instability runs in both directions: competitive pressure to relax, political pressure to conform. This validates the book's thesis more directly than any technical vulnerability could: if the company positioned as the safety leader can shift its commitments, safety-by-vendor-promise is not a governance model. It is a hope. The Control pillar's answer (constraints enforced by infrastructure, not promises) is the only stable ground. Added to the Supply Chain Security chapter as a new "Model Provider Trust" section.
+
+### CSIS: The Definition Problem PAC Already Solves
+
+CSIS published "Lost in Definition: How Confusion Over Agentic AI Risks Governance" (March 2026), arguing that the lack of a shared definition of "agentic AI" is creating three governance failures: evaluation frameworks that miss organizational impact, procurement processes where vendors provide incomparable systems, and accountability gaps when governance frameworks designed for narrow applications encounter autonomous agents. Their recommendation: adopt a "relational, capability-based taxonomy" capturing workflow position, authority delegation, teaming structures, and accountability mapping. This is essentially what the PAC Framework already provides: business value tiers, autonomy levels, blast radius scales, and infrastructure gates that compose into a multi-dimensional assessment rather than a binary "is it agentic?" classification. The convergence is notable because CSIS arrived at the same conclusion (capability-based taxonomy, not definitional boundary) from a policy analysis perspective, while PAC arrived from an engineering perspective. Neither requires defining what "agentic AI" is. Both focus on what the system does, how much authority it has, and what infrastructure governs it.
+
+### MCP 2026 Roadmap: Security on the Horizon, Not the Priority
+
+The MCP 2026 roadmap confirms what the book has documented: MCP's security gaps are being addressed, but slowly. DPoP (SEP-1932) and Workload Identity Federation (SEP-1933) are listed as "on the horizon" items that "welcome community-formed working groups" but lack "active core maintainer leadership this cycle." The four priority areas are transport scalability, agent communication, governance maturation, and enterprise readiness (audit trails, SSO-integrated auth, gateway behavior, configuration portability). This is telling: enterprise readiness is a priority but deeper security and authorization work is not. The gap between what enterprises need (verified agent identity, scoped authorization, DPoP-bound tokens) and what the protocol prioritizes (transport, discovery, governance structure) is exactly the gap that XAA/ID-JAG (covered in the agent identity chapter) and third-party security overlays (Kai, Noma, BlueRock) are filling. MCP may eventually close the gap natively, but the market is not waiting.
 
 ### AI Recommendation Poisoning: When the Attacker Is a Legitimate Business
 

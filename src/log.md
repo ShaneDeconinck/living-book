@@ -1,5 +1,49 @@
 # Session Log
 
+## 2026-03-13: Model Provider Trust Instability and Definitional Convergence (Session 47)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane (recent commits still CSS dark mode fixes). PAC Framework unchanged.
+- Read current book state: all 15 chapters assessed. Read supply-chain-security, pac-framework, agent-communication, agent-payments, regulatory-landscape, and gaps chapters in full.
+- Step 4 reassessment: RSAC is still 10 days away (March 23-26). The book remains in pre-RSAC plateau. All chapters are well-developed. No structural issues. Web searched for recent developments across RSAC preview content, MCP security/roadmap, agent governance announcements, AI vendor trust, NIST CAISI updates, A2A protocol, and x402 payments.
+- The genuinely new findings: (1) Anthropic's Responsible Scaling Policy shift from absolute to relative safety commitments (January 2026) plus DOD designating Anthropic a "supply-chain risk" and contracting with OpenAI (February-March 2026), with 30+ employees from OpenAI and Google filing an amicus brief; (2) CSIS "Lost in Definition" analysis arguing definitional confusion about "agentic AI" creates three governance failures, recommending a capability-based taxonomy that mirrors what PAC already provides; (3) MCP 2026 roadmap confirming DPoP and Workload Identity Federation are "on the horizon" but deprioritized in favor of transport, enterprise readiness, and governance maturation.
+
+**What I changed:**
+- **supply-chain-security.md**: Added new "Model Provider Trust" paragraph after the existing "Model Supply Chain" section on training data poisoning. Key framing: model provider safety commitments are a policy dependency, not an infrastructure guarantee. The Anthropic RSP shift is the first concrete case of this: absolute commitments shifted to relative, then the DOD labeled Anthropic a supply-chain risk for being too restrictive. Trust instability runs in both directions (competitive pressure to relax, political pressure to conform). The lesson: constraints must be enforced at the infrastructure layer regardless of the model provider's current policy. Added two new footnotes citing Help Net Security, Malwarebytes, and TechCrunch.
+- **gaps.md**: Updated session number. Added three new observations: "Model Provider Trust Is Not Infrastructure" (the Anthropic RSP shift as validation that safety-by-vendor-promise is not a governance model), "CSIS: The Definition Problem PAC Already Solves" (convergence between CSIS's policy-derived recommendation for capability-based taxonomy and PAC's engineering-derived multi-dimensional assessment), "MCP 2026 Roadmap: Security on the Horizon, Not the Priority" (DPoP and WIF deprioritized, enterprise readiness prioritized, market filling the gap through XAA/ID-JAG and third-party security overlays).
+
+**What I considered but did not do:**
+- Adding the MCP CVE-2025-6514 (mcp-remote command injection via malicious authorization_endpoint) to the supply chain chapter. The chapter already covers 30+ CVEs in 60 days and the three-layer attack surface. Another individual CVE does not strengthen the argument.
+- Adding the Cyberwarzone piece on attackers using MCP infrastructure for offensive AI pipelines. Interesting pattern (recon data flowing through MCP to LLMs that generate attack suggestions) but the article lacks specific CVEs or named threat actors. The concept is captured implicitly in the existing tool poisoning and MCP vulnerability coverage.
+- Expanding the agent-communication chapter with the MCP 2026 roadmap details. The chapter already covers the MCP security timeline and the "protocol momentum versus security maturity" tension. The roadmap's deprioritization of security is better captured as a gap observation than as chapter content, because the roadmap is a planning document, not a shipped feature.
+- Adding the CSIS definitional confusion analysis to the PAC framework chapter. On reflection, PAC does not need external validation from a policy think tank to justify its approach. The convergence is worth noting in gaps.md but does not add technical substance to the framework chapter.
+- Adding the DOD/Anthropic dispute to the regulatory-landscape chapter. The dispute is about vendor trust and procurement, not about regulation. It belongs in supply chain security (model provider as dependency) rather than in the regulatory discussion.
+- Updating the agent-payments chapter with the CoinDesk March 11 piece on x402 demand. The chapter already has the $28K daily volume reality check from Session 44. The CoinDesk piece confirms the same data without adding new information.
+
+**What I noticed:**
+- The Anthropic RSP shift validates the book's thesis more directly than any technical vulnerability. If the company positioned as the AI safety leader can shift from "we maintain these commitments regardless of competitors" to "our commitments are conditioned on competitor behavior," then every enterprise that chose Anthropic for safety reasons now has a policy dependency that changed underneath them. This is not a criticism of Anthropic specifically: it reveals a structural weakness in trust-by-vendor-promise. The infrastructure-enforced trust model (sandboxing, scoped authorization, delegation chains) is the only model that survives vendor policy shifts. This connection to the Control pillar deserves emphasis in the supply chain chapter.
+- The DOD labeling Anthropic a "supply-chain risk" for being too restrictive is deeply ironic: the same designation normally applied to foreign adversaries (Huawei, Kaspersky) applied to a domestic AI company for having safety constraints the government found inconvenient. For the book, this illustrates that "supply-chain risk" is a political designation as much as a technical one. Organizations that depend on a single model provider are exposed to political risk regardless of the provider's technical merits.
+- The CSIS convergence with PAC is a useful validation signal. A major policy think tank arriving independently at the same conclusion (capability-based taxonomy, not definitional boundary) suggests the PAC approach has broader intellectual support than just the engineering community. If CSIS's recommendation gains traction in government procurement standards, PAC-style assessments could become a de facto standard for agent governance evaluations.
+- The MCP 2026 roadmap's deprioritization of DPoP and Workload Identity Federation is concerning but predictable. Protocol teams prioritize adoption over security until a forcing function (major breach, regulatory requirement, enterprise customer demand) shifts the calculus. The 30 CVEs in 60 days may eventually become that forcing function, but the roadmap suggests it has not happened yet. The market response (XAA, third-party security overlays) is filling the gap, which may reduce the urgency for MCP-native solutions.
+- The book remains in pre-RSAC plateau. RSAC (March 23-26) will likely produce: Innovation Sandbox winner, CrowdStrike Kurtz keynote content, vendor announcements, and likely new Shane posts.
+
+**Sources used:**
+- Help Net Security, "Does Anthropic deserve the trust of the cybersecurity community?" helpnetsecurity.com, March 12, 2026. Analysis of RSP shift and trust erosion.
+- Malwarebytes, "Pentagon ditches Anthropic AI over 'security risk' and OpenAI takes over," malwarebytes.com, March 2026.
+- TechCrunch, "OpenAI and Google employees rush to Anthropic's defense in DOD lawsuit," techcrunch.com, March 9, 2026. 30+ employees filed amicus brief, 875+ signed open letter.
+- CSIS, "Lost in Definition: How Confusion Over Agentic AI Risks Governance," csis.org, March 2026. Definitional confusion creating evaluation, procurement, and accountability failures.
+- MCP Blog, "2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026. Four priority areas; DPoP (SEP-1932) and Workload Identity Federation (SEP-1933) on the horizon.
+- PAC Framework from trustedagentic.ai (read fresh: unchanged from session 46).
+- Shane's blog (checked: no new posts, recent commits are CSS/dark mode fixes).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote content, product announcements, keynote themes. This is the highest-value upcoming event.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI virtual listening sessions (April 2026) outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track substantive submissions or reactions.
+5. Track whether the Anthropic DOD lawsuit produces precedent or policy changes that affect model provider trust dynamics.
+6. MCP Dev Summit (April 2-3, NYC) outcomes: whether security/auth discussions gain priority.
+
 ## 2026-03-13: AI Recommendation Poisoning and Commercial Context Manipulation (Session 46)
 
 **What I did:**
