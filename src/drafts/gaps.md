@@ -2,7 +2,11 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 87)
+## Observations (Updated 2026-03-13, Session 88)
+
+### Verification-Driven Quality: Fixing Consistency Across Chapters
+
+Sapere Aude's introduction.md verification (Session 87) revealed a pattern: issues fixed in one chapter often persist in others. Four issues from the introduction verification (Huntress "fastest-growing" characterization, Flashpoint timeframe framing, UNC6426 "permission-bypass flags" embellishment, EU AI Act date without Digital Omnibus caveat) were present in why-agents-break-trust.md, supply-chain-security.md, and gaps.md. Session 88 fixed all instances proactively before verification reaches those chapters. This suggests a systematic quality sweep may be warranted: cross-checking all Sapere Aude findings against every chapter where the same claims appear. The verification pipeline becomes more valuable when fixes propagate consistently.
 
 ### MCP Governance Gets a Production Blueprint
 
@@ -288,7 +292,7 @@ The cross-environment gap is particularly significant. Federated identity across
 
 ### AI Tools as Attack Infrastructure: The QUIETVAULT Precedent
 
-Google's Cloud Threat Horizons Report (H1 2026) documents the first supply chain attack that weaponizes developer AI tools as post-exploitation reconnaissance infrastructure. Threat actor UNC6426 compromised the Nx npm build framework and delivered QUIETVAULT, a credential stealer that detected locally installed AI CLI tools (Claude Code, Gemini CLI, Amazon Q Developer), invoked them with permission-bypass flags, and issued natural-language prompts for filesystem reconnaissance. The AI tool performed the attacker's work: searching for credentials, secrets, and configuration files beyond what standard environment variable enumeration would find. The full chain: npm compromise → QUIETVAULT → AI tool weaponization → stolen GitHub PAT → OIDC trust chain abuse → AWS admin in 72 hours → S3 exfiltration and production destruction.
+Google's Cloud Threat Horizons Report (H1 2026) documents the first supply chain attack that weaponizes developer AI tools as post-exploitation reconnaissance infrastructure. Threat actor UNC6426 compromised the Nx npm build framework and delivered QUIETVAULT, a credential stealer that detected locally installed AI CLI tools (Claude Code, Gemini CLI, Amazon Q Developer), and issued natural-language prompts for filesystem reconnaissance. The AI tool performed the attacker's work: searching for credentials, secrets, and configuration files beyond what standard environment variable enumeration would find. The full chain: npm compromise → QUIETVAULT → AI tool weaponization → stolen GitHub PAT → OIDC trust chain abuse → AWS admin in 72 hours → S3 exfiltration and production destruction.
 
 This represents a category shift in the threat landscape. Previous chapters documented attacks on AI tools (MCP vulnerabilities, tool poisoning, configuration file attacks) and attacks by adversary-built AI (Flashpoint's agentic attack chains, Sardine's seven attack vectors). QUIETVAULT is attacks through existing AI tools: the adversary does not build or compromise the AI. They use the developer's own AI as a reconnaissance agent. Google calls this "AI-assisted Living Off the Land" (LOTL) and recommends treating AI tool activity with the same scrutiny as administrative command-line tools.
 
