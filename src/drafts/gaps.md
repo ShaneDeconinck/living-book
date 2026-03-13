@@ -2,7 +2,17 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 63)
+## Observations (Updated 2026-03-13, Session 64)
+
+### Transaction Tokens: The Missing Layer Between Delegation and Execution
+
+The agent-identity chapter now covers five categories of OAuth extension for agents: OBO (delegation tracking), AAP (purpose encoding), Transaction Tokens for Agents (identity propagation), DPoP (token binding), and XAA (connection establishment). Each solves a distinct problem; together they cover the full lifecycle of an agent authorization flow.
+
+Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents-03, January 2026) fill the gap between delegation establishment and runtime execution. When an agent calls Service A, which calls Service B, which calls Service C, the original access token should not propagate: every hop that sees it is a theft vector. Transaction Tokens replace the access token with a short-lived, signed JWT carrying immutable actor (agent) and principal (human initiator) claims. No service in the chain holds the original credential, but every service knows who is acting and on whose behalf.
+
+The companion A2A Profile for Transaction Tokens (draft-liu-oauth-a2a-profile) applies this pattern to agent-to-agent communication, where delegation context needs to flow across A2A protocol interactions. This creates a clean architectural layer: A2A handles discovery and communication, Transaction Tokens handle identity propagation through the call chain.
+
+The IETF draft count for agent authorization is now at least six: OBO extension, AAP, KLRC (AI Agent Authentication and Authorization), Decoupled A2A Authorization (China Mobile), Transaction Tokens for Agents, and A2A Transaction Token Profile. Plus the Song draft (OAuth Extension for AI Agent: Authorization on Target). This is an unusually dense convergence: more individual submissions targeting agent authorization appeared in Q1 2026 than the total number of OAuth extension drafts in most full calendar years. The standards community is building an agent authorization stack in parallel, not sequentially.
 
 ### A2A v1.0: The Agent Communication Protocol Gets a Security Layer
 

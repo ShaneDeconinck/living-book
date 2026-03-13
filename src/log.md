@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-13 23:30 UTC: Transaction Tokens for Agents (Session 64)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 15 chapters, line counts assessed. Strongest: agent-communication (508), gaps (419+), multi-agent-trust (355), agent-identity (345+), shadow-agent-governance (345). Weakest by length: introduction (132), building-the-edge (167), why-agents-break-trust (172). All chapters are solid; shorter chapters are appropriately sized for their scope.
+- Read PAC Framework fresh from trustedagentic (en.json). Confirmed unchanged since March 7.
+- Read src/feedback/: no feedback files exist.
+- Step 5 reassessment: still pre-RSAC (March 23-26, 10 days out). Searched broadly: RSAC 2026 agentic AI security, MCP CVEs March 2026, IETF agent authorization OAuth 2026, OpenID Foundation agentic identity, NIST CAISI listening sessions, Mastercard Verifiable Intent, "Authenticating AI Agents" preprint, EU AI Act enforcement update. Most findings already in the book. One significant new finding: **Transaction Tokens for Agents** (draft-oauth-transaction-tokens-for-agents-03, January 20, 2026).
+
+**What I changed:**
+- **agent-identity.md**: Added new subsection "Transaction Tokens for Agents" (approximately 16 lines) between the AAP section and the DPoP section within "OAuth Extensions for Agents." The draft (version 03, January 2026) extends the OAuth Transaction Tokens framework with `actor` and `principal` claims for agent identity propagation through distributed call chains. Key architectural contribution: replaces access token forwarding (credential leakage risk at every hop) with short-lived, signed JWTs carrying immutable actor/principal context. Each service in the chain can verify who the agent is and who initiated the action, without holding the original access token. Also noted the companion A2A Profile (draft-liu-oauth-a2a-profile) for agent-to-agent delegation context propagation. Updated the IETF draft count from "four concurrent efforts" to "five or more." Added two footnotes.
+- **gaps.md**: Updated session number to 64. Added observation "Transaction Tokens: The Missing Layer Between Delegation and Execution" covering the architectural gap filled, the companion A2A profile, and the growing IETF draft count (now at least six individual submissions targeting agent authorization in Q1 2026).
+
+**What I considered but did not do:**
+- Adding the EU AI Act Transparency Code of Practice second draft (March 5, 2026). Content labeling requirements, not agent governance. Previously assessed and rejected in Session 56.
+- Adding the "Authenticating AI Agents in a World of..." preprint (March 3, 2026). Non-peer-reviewed preprint combining KYA (Know Your Agent) concepts with deepfake detection. Interesting framing but not rigorous enough for the book's standards. The book already covers KYA-equivalent concepts through Verifiable Intent, agent registries, and identity infrastructure.
+- Adding draft-song-oauth-ai-agent-authorization-00 (OAuth Extension for AI Agent: Authorization on Target) to the agent-identity chapter. Previously considered (Session 56 log) and assessed as part of the fragmentation angle. The `target_id` parameter is a narrower contribution than Transaction Tokens' actor/principal propagation. Noted in gaps.md as part of the draft count.
+- Strengthening the introduction (132 lines). Read it in full: it is well-structured and appropriately sized. The $47K opening, bilateral threat section, PAC summary, and book structure guide are all solid. Adding content risks diluting the introduction's impact.
+- Strengthening building-the-edge (167 lines). Also solid on review: the phased roadmap (I1-I5), anti-patterns, convergence timeline, and PAC iterative practice sections are comprehensive for a synthesis chapter.
+- Adding RSAC 2026 pre-conference content. RSAC hasn't happened yet (March 23-26). Pre-conference announcements from CrowdStrike, Microsoft, and others are already referenced in the building-the-edge convergence timeline. Outcomes will be the high-impact addition post-conference.
+
+**What I noticed:**
+- The agent-identity chapter's OAuth extensions section now covers five distinct categories: OBO (delegation tracking), AAP (purpose encoding), Transaction Tokens (identity propagation), DPoP (token binding), and XAA (connection establishment). Each solves a different problem; together they form a complete agent authorization lifecycle. This is architecturally clean: the section progresses from "who delegated" through "what was authorized" to "how identity flows" to "how tokens are secured" to "how connections are established."
+- The IETF draft count for agent authorization is now at least six individual submissions in Q1 2026 alone. This is unusually dense. For comparison, the OAuth 2.0 core specification (RFC 6749) went through a single multi-year process. The agent authorization space has more competing drafts in one quarter than most OAuth extensions see in their entire lifecycle. This suggests the problem is well-understood but the solution space is fragmented: everyone agrees agents need richer authorization, but there is no consensus on the right abstraction.
+- The pre-RSAC plateau continues. 64 sessions of accumulated content. Web searches consistently return material already in the book. The Transaction Tokens draft was the only genuinely new finding across eight broad search categories. Post-RSAC (after March 26) remains the next high-impact period.
+
+**Sources used:**
+- IETF, "Transaction Tokens For Agents," draft-oauth-transaction-tokens-for-agents-03, January 20, 2026.
+- IETF, "Agent-to-Agent (A2A) Profile for OAuth Transaction Tokens," draft-liu-oauth-a2a-profile-00, 2026.
+- Web searches: RSAC 2026 agent security, MCP CVEs March 2026, IETF agent authorization, OpenID Foundation agentic identity, NIST CAISI, Mastercard Verifiable Intent, "Authenticating AI Agents" preprint, EU AI Act enforcement (all returned material already in the book except Transaction Tokens for Agents).
+- Shane's blog (checked: no new posts since Session 58).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. NIST CAISI listening session participation deadline is March 20.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Monitor Transaction Tokens for Agents draft progression: if it gains IETF working group adoption alongside the base Transaction Tokens draft, it could become the standard approach to agent identity propagation in microservice architectures.
+7. Monitor A2A v1.0 adoption: whether the breaking changes slow or accelerate enterprise rollouts.
+8. Track MCP Server Cards (SEP-1649) progress: closing the signing gap with A2A.
+
 ## 2026-03-13 22:00 UTC: A2A v1.0 Security Hardening (Session 63)
 
 **What I did:**

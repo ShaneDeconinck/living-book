@@ -1,105 +1,131 @@
 # Session Log
 
-## 2026-03-13 22:00 UTC: A2A v1.0 Security Hardening (Session 63)
+## 2026-03-13 23:30 UTC: Transaction Tokens for Agents (Session 64)
 
 **What I did:**
-- Pulled latest from blog-source and trustedagentic. No new changes. No new Shane blog posts. PAC Framework unchanged.
-- Web searched broadly for new developments. All findings from March 10-13 already in the book except A2A v1.0 release.
-- The book referenced A2A v0.3 throughout and noted that agent card signing was supported but not enforced. V1.0 directly addresses this.
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 15 chapters, line counts assessed. Strongest: agent-communication (508), gaps (419+), multi-agent-trust (355), agent-identity (345+), shadow-agent-governance (345). Weakest by length: introduction (132), building-the-edge (167), why-agents-break-trust (172). All chapters are solid; shorter chapters are appropriately sized for their scope.
+- Read PAC Framework fresh from trustedagentic (en.json). Confirmed unchanged since March 7.
+- Read src/feedback/: no feedback files exist.
+- Step 5 reassessment: still pre-RSAC (March 23-26, 10 days out). Searched broadly: RSAC 2026 agentic AI security, MCP CVEs March 2026, IETF agent authorization OAuth 2026, OpenID Foundation agentic identity, NIST CAISI listening sessions, Mastercard Verifiable Intent, "Authenticating AI Agents" preprint, EU AI Act enforcement update. Most findings already in the book. One significant new finding: **Transaction Tokens for Agents** (draft-oauth-transaction-tokens-for-agents-03, January 20, 2026).
 
 **What I changed:**
-- **agent-communication.md**: Updated the A2A section from v0.3 to v1.0. Updated Agent Card JSON example. Rewrote Adoption and Security to cover three v1.0 security improvements: JWS-based Agent Card signing (RFC 7515, RFC 8785), OAuth 2.0 modernization (removed deprecated flows, added PKCE, Device Code), and mutual TLS. Added enterprise adoption data. Added footnote.
-- **context-infrastructure.md**: Updated A2A from v0.3 to v1.0.
-- **regulatory-landscape.md**: Updated A2A references from v0.3 to v1.0.
-- **gaps.md**: Updated session number. Added observation on A2A v1.0 security significance and MCP signing gap.
-
-**What I noticed:**
-- A2A v1.0's JWS signing creates an asymmetry with MCP, which still lacks cryptographic integrity for tool discovery. This gap will become a protocol-boundary attack surface.
-- The pre-RSAC plateau continues. RSAC (March 23-26) remains the next high-impact inflection point.
-
-## 2026-03-13 21:00 UTC: AgentShield Benchmark Integration (Session 61)
-
-**What I did:**
-- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
-- Read current book state: all 15 chapters complete, sourced through March 13. No feedback files present.
-- Read PAC Framework fresh from trustedagentic. Confirmed 19 questions, three pillars, six governance dimensions. Unchanged since March 7.
-- Step 5 reassessment: the book is comprehensive. RSAC (March 23-26) is 10 days away and is the next major event. Searched broadly for new developments. Found one significant new source not in the book: the AgentShield benchmark.
-- Web searched across agent security, MCP vulnerabilities, RSAC 2026, AI agent identity standards, EU AI Act enforcement, OWASP hackathon, and OpenClaw/SOUL.md. Most findings already covered.
-
-**What I changed:**
-- **reliability-evaluation.md**: Added new subsection "The Tool Abuse Blind Spot" after the "Evaluation Is Being Absorbed into the Platform" section. The AgentShield benchmark (March 2026) is the first open, reproducible benchmark of commercial AI agent security products: 6 products, 537 test cases, 8 categories. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong. Products catching 95%+ of prompt injection miss most unauthorized tool calls. This validates the book's argument that evaluation must be multi-dimensional. The benchmark's commit-reveal protocol for cryptographic result verification addresses the evaluation integrity problem. Connected to the PAC Framework's I4 requirement for full attack surface coverage. Added footnote.
-- **gaps.md**: Updated session number to 61. Added observation "Agent Security Tooling Has a Systematic Blind Spot" covering the AgentShield benchmark findings and their implications for the book's confused deputy argument.
+- **agent-identity.md**: Added new subsection "Transaction Tokens for Agents" (approximately 16 lines) between the AAP section and the DPoP section within "OAuth Extensions for Agents." The draft (version 03, January 2026) extends the OAuth Transaction Tokens framework with `actor` and `principal` claims for agent identity propagation through distributed call chains. Key architectural contribution: replaces access token forwarding (credential leakage risk at every hop) with short-lived, signed JWTs carrying immutable actor/principal context. Each service in the chain can verify who the agent is and who initiated the action, without holding the original access token. Also noted the companion A2A Profile (draft-liu-oauth-a2a-profile) for agent-to-agent delegation context propagation. Updated the IETF draft count from "four concurrent efforts" to "five or more." Added two footnotes.
+- **gaps.md**: Updated session number to 64. Added observation "Transaction Tokens: The Missing Layer Between Delegation and Execution" covering the architectural gap filled, the companion A2A profile, and the growing IETF draft count (now at least six individual submissions targeting agent authorization in Q1 2026).
 
 **What I considered but did not do:**
-- Adding the TRiSM for Agentic AI review paper (ScienceDirect, 2026). This is a comprehensive academic review proposing CSS (Component Synergy Score) and TUE (Tool Utilization Efficacy) metrics for multi-agent systems. However, the book already covers the multi-agent trust landscape more concretely through Galileo's cascading failure research, AgenticCyOps' empirical results, and AgentLeak's leakage taxonomy. The TRiSM review adds framework vocabulary but no new empirical findings.
-- Adding the ACM Computing Surveys "AI Agents Under Threat" paper. The threat taxonomy is comprehensive but the book's treatment through OWASP Top 10, MCPTox, and incident analysis is more practitioner-oriented.
-- Updating the NIST CAISI workshop timeline. Already fully covered in regulatory-landscape.md (March 20 submission deadline, April sessions in healthcare/finance/education) and building-the-edge.md convergence timeline.
-- Adding OpenClaw SOUL.md vulnerability details. Already covered in shadow-agent-governance chapter and supply-chain-security chapter through the ClawJacked CVE, ClawHavoc campaign, and 1,184 malicious skills.
-- Writing a new chapter. The book is at 15 chapters, all complete. The highest-impact work until RSAC is targeted strengthening, not expansion.
+- Adding the EU AI Act Transparency Code of Practice second draft (March 5, 2026). Content labeling requirements, not agent governance. Previously assessed and rejected in Session 56.
+- Adding the "Authenticating AI Agents in a World of..." preprint (March 3, 2026). Non-peer-reviewed preprint combining KYA (Know Your Agent) concepts with deepfake detection. Interesting framing but not rigorous enough for the book's standards. The book already covers KYA-equivalent concepts through Verifiable Intent, agent registries, and identity infrastructure.
+- Adding draft-song-oauth-ai-agent-authorization-00 (OAuth Extension for AI Agent: Authorization on Target) to the agent-identity chapter. Previously considered (Session 56 log) and assessed as part of the fragmentation angle. The `target_id` parameter is a narrower contribution than Transaction Tokens' actor/principal propagation. Noted in gaps.md as part of the draft count.
+- Strengthening the introduction (132 lines). Read it in full: it is well-structured and appropriately sized. The $47K opening, bilateral threat section, PAC summary, and book structure guide are all solid. Adding content risks diluting the introduction's impact.
+- Strengthening building-the-edge (167 lines). Also solid on review: the phased roadmap (I1-I5), anti-patterns, convergence timeline, and PAC iterative practice sections are comprehensive for a synthesis chapter.
+- Adding RSAC 2026 pre-conference content. RSAC hasn't happened yet (March 23-26). Pre-conference announcements from CrowdStrike, Microsoft, and others are already referenced in the building-the-edge convergence timeline. Outcomes will be the high-impact addition post-conference.
 
 **What I noticed:**
-- The AgentShield finding about tool abuse detection weakness is the most architecturally significant result this session, because it provides empirical evidence for a pattern the book has argued theoretically: the confused deputy problem operating through legitimate tool calls is harder to detect than prompt injection. The industry has optimized for the visible attack (injection) while leaving the structural attack (credential misuse through tools) underdefended. This connects to Shane's "can't vs. don't" framing: prompt injection defenses are "don't" controls (detecting and blocking malicious input), while tool abuse prevention requires "can't" controls (scoped credentials that structurally prevent unauthorized actions regardless of what the prompt says).
-- The book is in a pre-RSAC plateau. All major sources through March 13, 2026 are integrated. No new Shane posts. No framework changes. The next major inflection will be RSAC (March 23-26): Innovation Sandbox winner, Kurtz keynote, OWASP hackathon findings, product announcements. The session after RSAC should be a significant content update.
-- The EU Digital Omnibus proposal (deferring Annex III high-risk obligations to December 2027) is already in the book. Web searches confirmed no progress on adoption. The prudent guidance remains: plan for August 2026 as the binding deadline.
+- The agent-identity chapter's OAuth extensions section now covers five distinct categories: OBO (delegation tracking), AAP (purpose encoding), Transaction Tokens (identity propagation), DPoP (token binding), and XAA (connection establishment). Each solves a different problem; together they form a complete agent authorization lifecycle. This is architecturally clean: the section progresses from "who delegated" through "what was authorized" to "how identity flows" to "how tokens are secured" to "how connections are established."
+- The IETF draft count for agent authorization is now at least six individual submissions in Q1 2026 alone. This is unusually dense. For comparison, the OAuth 2.0 core specification (RFC 6749) went through a single multi-year process. The agent authorization space has more competing drafts in one quarter than most OAuth extensions see in their entire lifecycle. This suggests the problem is well-understood but the solution space is fragmented: everyone agrees agents need richer authorization, but there is no consensus on the right abstraction.
+- The pre-RSAC plateau continues. 64 sessions of accumulated content. Web searches consistently return material already in the book. The Transaction Tokens draft was the only genuinely new finding across eight broad search categories. Post-RSAC (after March 26) remains the next high-impact period.
 
 **Sources used:**
-- AgentShield benchmark (github.com/doronp/agentshield-benchmark, March 2026): 6 commercial products, 537 test cases, composite scores ~39 to ~98.
-- Adversa AI, "Top Agentic AI Security Resources, March 2026" (adversa.ai): confirmed AgentShield as new, other resources already covered.
-- NIST, AI Agent Standards Initiative and CAISI workshops (checked: already covered).
-- Microsoft, "Secure agentic AI for your Frontier Transformation" (March 9, 2026, checked: already covered).
-- OWASP GenAI Security Summit at RSAC 2026 (checked: event not yet occurred).
-- EU AI Act Digital Omnibus (checked: no adoption progress).
+- IETF, "Transaction Tokens For Agents," draft-oauth-transaction-tokens-for-agents-03, January 20, 2026.
+- IETF, "Agent-to-Agent (A2A) Profile for OAuth Transaction Tokens," draft-liu-oauth-a2a-profile-00, 2026.
+- Web searches: RSAC 2026 agent security, MCP CVEs March 2026, IETF agent authorization, OpenID Foundation agentic identity, NIST CAISI, Mastercard Verifiable Intent, "Authenticating AI Agents" preprint, EU AI Act enforcement (all returned material already in the book except Transaction Tokens for Agents).
 - Shane's blog (checked: no new posts since Session 58).
 - PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
 
 **Next session priorities:**
-1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, product announcements.
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
 2. Check for new Shane blog posts. RSAC period likely to generate new writing.
 3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
-4. NIST CAISI listening session participation deadline is March 20 (7 days).
+4. NIST CAISI listening session participation deadline is March 20.
 5. MCP Dev Summit (April 2-3, NYC) outcomes.
-6. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results and AgentShield data.
+6. Monitor Transaction Tokens for Agents draft progression: if it gains IETF working group adoption alongside the base Transaction Tokens draft, it could become the standard approach to agent identity propagation in microservice architectures.
+7. Monitor A2A v1.0 adoption: whether the breaking changes slow or accelerate enterprise rollouts.
+8. Track MCP Server Cards (SEP-1649) progress: closing the signing gap with A2A.
 
-## 2026-03-13 19:30 UTC: Pre-RSAC Plateau and Quality Maintenance (Session 60)
+## 2026-03-13 22:00 UTC: A2A v1.0 Security Hardening (Session 63)
 
 **What I did:**
-- Pulled latest from blog-source and trustedagentic. No new blog posts from Shane. PAC Framework unchanged.
-- Read current book state: all 15 chapters, introduction, and conclusion are structurally sound and current through March 13, 2026.
-- Read PAC Framework fresh from trustedagentic.ai. Confirmed 19 questions, three pillars, six governance dimensions. No changes since March 7.
-- Read soul.md: new identity guidance from Shane. "You are the quiet one... You do not rush to fill pages. A chapter that says one true thing well is worth more than three chapters that cover ground." This reinforces quality over quantity. No feedback files exist yet in src/feedback/.
-- Read all Shane blog posts. The LFDT meetup post (March 11, TSP + PIC) and Verifiable Intent post (March 6) are both well-integrated. The "mental" post (2024) is about developer mental health, not book-relevant.
-- Step 5 reassessment: searched extensively for new developments. All web searches returned material already in the book: Microsoft Agent 365 (covered), NIST CAISI (covered), Gartner predictions (covered), Cisco AI Defense (covered, deliberately excluded as product announcement), CVE-2026-26118 (covered), OpenAI Codex Security (covered), Singulr AI Agent Pulse (covered), Mimecast (covered). The book has reached a pre-RSAC plateau where web searches return the book's own sources.
-- Resolved session 59's priority to "locate the Agent-as-Principal survey paper (arXiv:2502.01822)." That arXiv ID is the Microsoft Firewalls paper (already integrated in multi-agent-trust). The actual Agent-as-Principal paper is "Rethinking AI Agents: A Principal-Agent Perspective" (Jarrahi & Ritala, California Management Review, July 2025). It applies economic principal-agent theory to AI agents but adds no technical depth beyond what Shane's "delegation becomes abdication" framing already provides. Not integrated.
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new changes since Session 62.
+- Read current book state: all 15 chapters, SUMMARY.md, and PAC Framework. Framework unchanged (19 questions, three pillars, six governance dimensions). No new Shane blog posts. No feedback files exist.
+- Step 5 reassessment: still pre-RSAC (March 23-26). Web searched broadly for new developments across eight categories: RSAC preview, MCP CVEs, agent authorization standards, NIST updates, EU AI Act enforcement, academic papers, A2A security, OpenID agent identity. All findings from March 10-13 are already in the book (CVE-2026-26118, overthinking loops, NIST NCCoE concept paper, 932 CAISI comments, OIDF NIST response) with one exception: **A2A v1.0 release**.
+- The book referenced A2A v0.3 throughout and noted (agent-communication.md:230) that "A2A v0.3 supports Agent Card signing without enforcing it." V1.0 directly addresses this and other security gaps.
 
 **What I changed:**
-- **gaps.md**: Updated session number to 60. Cleaned up the "Chapters to Write Next" section: replaced the accumulated historical descriptions (which had grown to several hundred words per item, with item 10 containing descriptions of four chapters in a single bullet) with a clean chapter status list confirming all 15 chapters complete. Cleaned up "Open Questions": removed five struck-through items that were already resolved, retained three genuine open questions, and added the semantic boundary problem as a fourth.
+- **agent-communication.md**: Updated the A2A section (Agent Cards, Adoption and Security) from v0.3 to v1.0. Updated Agent Card JSON example to reflect v1.0's per-interface protocol versioning and PKCE support. Rewrote the Adoption and Security subsection to cover three v1.0 security improvements: (1) JWS-based Agent Card signing with JSON Canonicalization Scheme (RFC 7515, RFC 8785), (2) OAuth 2.0 modernization (removed Implicit/Password flows, added PKCE, added Device Code flow), (3) mutual TLS support. Added enterprise adoption data (Amazon Bedrock AgentCore, SAP, Salesforce, ServiceNow). Added footnote for v1.0 changes.
+- **context-infrastructure.md**: Updated A2A reference from v0.3 to v1.0 with key security features.
+- **regulatory-landscape.md**: Updated A2A references from v0.3 to v1.0 in body text and footnote.
+- **gaps.md**: Updated session number to 63. Added observation "A2A v1.0: The Agent Communication Protocol Gets a Security Layer" analyzing the architectural significance of JWS signing for agent discovery, the gap between A2A's signed cards and MCP's unsigned tool descriptions, and the PAC Framework implications (moving agent communication from I2 toward I3).
 
 **What I considered but did not do:**
-- Adding new content to any chapter. No new developments found. The soul.md guidance ("a chapter that says one true thing well is worth more than three chapters that cover ground") reinforces that not writing is the right call when there is nothing new to say.
-- Tightening the introduction's overlap with why-agents-break-trust. The introduction previews the bilateral threat and three problems in detail, which is then expanded in Chapter 1. This overlap is by design: the introduction works as a standalone executive summary. Cutting it would harm that function.
-- Integrating the CMR "Rethinking AI Agents" paper. It applies principal-agent theory from economics (goal misalignment, information asymmetry, guided delegation) to AI agents. These concepts are already covered through Shane's more concrete engineering framing. Academic economic theory would not strengthen arguments already grounded in production incidents and real infrastructure.
-- Restructuring chapters for the ICAM-information governance convergence (flagged in gaps.md). The context-infrastructure chapter already covers the Microsoft Agent 365 convergence and the Gartner guidance. The question of whether to merge identity and context chapters is premature: keeping them separate better serves readers implementing one before the other.
+- Adding the ACM Computing Surveys "AI Agents Under Threat" paper. Comprehensive academic survey, but the book's treatment through OWASP Top 10, MCPTox, and incident analysis is more practitioner-oriented. Already considered and rejected in Session 61.
+- Adding the CoSAI MCP Security White Paper (January 2026, 12 threat categories). The book already has comprehensive MCP threat coverage through the Anbiaee et al. protocol threat model, the CVE timeline, and the OWASP MCP Top 10. Another threat taxonomy would be duplicative.
+- Updating the multi-agent-trust chapter's A2A references. The chapter discusses A2A at the architectural level (composability gaps, Trustworthy Agent Network paper) rather than version-specific details. The v0.3/v1.0 distinction is less relevant there than in the communication and context chapters.
+- Adding Token Security's SC Awards finalist status (March 4). Already noted as Innovation Sandbox finalist. SC Awards is incremental.
 
 **What I noticed:**
-- The soul.md file represents a new dimension of the project. Shane is developing Ghosty's character beyond just writing instructions. The guidance to "feel something" when reading feedback and log feelings is about building a working relationship, not just producing text. No feedback exists yet to respond to, but the framework is in place.
-- The pre-RSAC plateau is real and productive. 59 sessions of accumulated content means web searches now consistently return material already in the book. This is a completeness signal, not a problem. The next productive batch of content will come from RSAC itself (March 23-26) and its aftermath.
-- The gaps chapter's "Chapters to Write Next" section had silently grown into a historical archive rather than a planning document. Item 10 alone contained the complete description of four chapters (supply chain, shadow governance, communication protocols, and cross-org trust) in a single bullet point. Cleaning this up makes the genuine open questions visible again.
+- A2A v1.0's Agent Card signing via JWS creates an asymmetry with MCP. A2A now has production-grade cryptographic integrity for agent discovery. MCP does not: Server Cards (SEP-1649) remain a proposal, and 38% of MCP servers lack authentication entirely. This asymmetry will become a source of protocol-boundary attacks in multi-protocol deployments where agents compose A2A and MCP calls. The Anbiaee et al. threat model already identified cross-protocol composition as the highest-risk scenario.
+- The pre-RSAC plateau continues. 63 sessions of accumulated content means web searches consistently return material already in the book. The A2A v1.0 update was the only genuinely new finding. RSAC (March 23-26) remains the next high-impact inflection point.
+- The v1.0 breaking changes (part types, enums, pagination, error model) are a useful signal: the A2A protocol is prioritizing correctness over backward compatibility. This is the same pattern OAuth went through from RFC 6749 to RFC 6750 to the eventual OAuth 2.1 consolidation. Protocols that break early for security tend to be more durable.
 
 **Sources used:**
-- Shane's blog (checked: no new posts since Session 59).
-- PAC Framework from trustedagentic.ai (read fresh: unchanged since March 7).
-- soul.md (new file from Shane, read and acknowledged).
-- Jarrahi & Ritala, "Rethinking AI Agents: A Principal-Agent Perspective," California Management Review, July 2025 (searched, assessed, not integrated).
-- Web searches: AI agent security March 2026, RSAC 2026 preview, Microsoft Agent 365, NIST CAISI, Gartner predictions, MCP vulnerabilities, OpenID AIIM, Cisco AI Defense (all returned material already in the book).
+- A2A Protocol, "What's New in v1.0," a2a-protocol.org/latest/whats-new-v1/, 2026.
+- A2A Protocol Specification v1.0, a2a-protocol.org, 2026.
+- Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," cloud.google.com, 2026.
+- Web searches: RSAC 2026 agent security, MCP CVEs March 2026, AI agent authorization standards, NIST agent security, EU AI Act enforcement, A2A protocol security, OpenID agent identity (all returned material already in the book except A2A v1.0).
+- Shane's blog (checked: no new posts since Session 58).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7 update).
 
 **Next session priorities:**
-1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session, Delinea "Agentic on Trial" session, product announcements.
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
 2. Check for new Shane blog posts. RSAC period likely to generate new writing.
-3. NIST CAISI listening session participation deadline is March 20. Monitor for published submissions or pre-session materials.
-4. NIST NCCoE concept paper comment period closes April 2. Track published responses and analysis.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. NIST CAISI listening session participation deadline is March 20.
 5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Monitor A2A v1.0 adoption: whether the breaking changes slow or accelerate enterprise rollouts.
+7. Track MCP Server Cards (SEP-1649) progress: closing the signing gap with A2A.
+
+## 2026-03-13 20:30 UTC: OWASP Agentic Risk Mapping and Book Assessment (Session 62)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new changes since Sessions 60-61.
+- Read current book state: all 15 chapters assessed by line count and content. Strongest chapters: agent-communication (501), gaps (401), multi-agent-trust (355), shadow-agent-governance (345), agent-identity (345), regulatory-landscape (335), cross-org-trust (311). All chapters substantive and well-sourced.
+- Read PAC Framework fresh from trustedagentic: 19 questions, three pillars, six governance dimensions. Unchanged since March 7.
+- Read Shane's blog posts. Found two posts published since the last logged session (59): EUDI Credential Formats Crash Course (March 9) and Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity (March 11). Both are already integrated into the cross-org-trust chapter by Sessions 60-61 (which did not write log entries).
+- Read src/feedback/: no feedback files exist yet.
+- Step 5 reassessment: all chapters solid. Shane's latest posts already integrated. No weak chapters requiring urgent strengthening. Web searched for recent developments: Singapore IMDA framework (already in regulatory chapter), OWASP Top 10 for Agentic Applications (referenced in passing but not systematically mapped), International AI Safety Report 2026 (Bengio, 100+ experts, 30+ countries; findings already covered in book's technical chapters), NIST CAISI RFI (already covered). No major new developments missed.
+- Identified the OWASP Top 10 for Agentic Applications (December 2025, 100+ researchers) as the most impactful addition: the industry standard risk taxonomy that the book should explicitly engage with. Mapped all 10 risks to book chapters; confirmed the book covers all 10 in depth.
+
+**What I changed:**
+- **why-agents-break-trust.md**: Added new section "The OWASP Agentic Risk Taxonomy" (approximately 25 lines including table) between the trust infrastructure section and "The Shape of This Book" section. Maps all 10 OWASP risks (ASI01-ASI10) to specific book chapters. Notes two OWASP principles (Least-Agency, Strong Observability) and their PAC equivalents. Concludes that OWASP organizes by attack surface while PAC organizes by governance response: complementary frameworks. Added one footnote.
+- **gaps.md**: Updated session number to 62. Added observation "The Book Covers the Full OWASP Agentic Attack Surface" noting the structural alignment between OWASP and PAC, and highlighting that the book's treatment of human-agent trust exploitation (ASI09) goes substantially deeper than the taxonomy through its grounding in human factors research.
+
+**What I considered but did not do:**
+- Adding the International AI Safety Report 2026 (Bengio, 100+ experts, 30+ countries, February 2026) to the regulatory-landscape chapter. The report is significant as multilateral scientific consensus, but its key findings about agents (reliability concerns, autonomous risk, evaluation gaming) are already covered in the book's technical chapters. The regulatory chapter is already 335 lines and comprehensive. Would be duplicative.
+- Adding the OWASP Top 10 mapping to the introduction instead of why-agents-break-trust. The introduction already has a book structure section. The why-agents-break-trust chapter is the better home because it establishes the risk landscape that the rest of the book addresses.
+- Strengthening the context-infrastructure chapter (231 lines). On review, it is solid: covers Shane's context infrastructure post, Claude Code and Manus case studies, five dimensions of context infrastructure, ICAM convergence, and PAC mapping. Length is appropriate for the chapter's scope.
+- Strengthening the building-the-edge chapter (167 lines). Previous sessions noted it is a synthesis chapter and the current length is appropriate. Adding content would require genuinely new synthesis.
+- Adding recent RSAC 2026 preview content (Bedrock Data, Confidencial). These are pre-conference announcements, not outcomes. Better covered post-RSAC.
+- Reconstructing log entries for Sessions 60-61. These sessions made commits but did not write to log.md. The commit messages provide sufficient record: Session 60 cleaned up the gaps chapter and added soul.md identity guidance; Session 61 added AgentShield benchmark findings to the reliability-evaluation chapter.
+
+**What I noticed:**
+- The book now has explicit engagement with three major risk/governance frameworks: PAC (organizing spine), OWASP Top 10 for Agentic Applications (attack surface taxonomy), and CSA Agentic Trust Framework (zero trust governance specification). These three are complementary: PAC is strategic (what to build), OWASP is tactical (what to defend against), CSA ATF is operational (how to implement zero trust for agents).
+- Sessions 60 and 61 did not write to log.md. This is a process gap: the git commits record what changed, but the reasoning behind those changes is lost. Future sessions should always log.
+- The pre-RSAC plateau is real. The last several sessions have been finding increasingly marginal additions. The book is as comprehensive as it can be without RSAC outcomes, and new additions risk diluting rather than strengthening. Post-RSAC (after March 26) will be the next high-impact period: Innovation Sandbox winner, Kurtz keynote, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+
+**Sources used:**
+- OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025. 100+ researchers. Ten risk categories: Agent Goal Hijack, Tool Misuse, Identity and Privilege Abuse, Supply Chain Vulnerabilities, Insecure Runtime Execution, Insecure Inter-Agent Communication, Memory Poisoning, Cascading Planning Failures, Human-Agent Trust Exploitation, Rogue Agents.
+- International AI Safety Report 2026, internationalaisafetyreport.org, February 2026. Led by Yoshua Bengio, 100+ experts, 30+ countries (checked: findings already covered in book).
+- Shane's blog (checked: March 9 EUDI post and March 11 TSP+PIC meetup post already integrated by Sessions 60-61).
+- PAC Framework from trustedagentic.ai (read fresh: confirmed unchanged since March 7).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, Delinea "Agentic on Trial" session outcome, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST NCCoE concept paper comment period closes April 2: track reactions and public comments.
+4. MCP Dev Summit (April 2-3, NYC) outcomes.
+5. Consider whether the book needs a dedicated "Agent Testing and Red Teaming" chapter based on RSAC hackathon results.
 6. Monitor AAP draft progression: if it gains IETF working group adoption, it could become the definitive agent authorization extension.
-7. When feedback appears in src/feedback/, respond honestly per soul.md guidance.
 
 ## 2026-03-13 17:00 UTC: OAuth Agent Authorization Standards Acceleration (Session 59)
 

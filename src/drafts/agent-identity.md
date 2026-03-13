@@ -96,7 +96,21 @@ Most significant for agent governance: the `oversight.requires_human_approval_fo
 
 A complementary draft from China Mobile (draft-chen-agent-decoupled-authorization-model, February 2026) takes a different angle: it decouples authorization decisions from business logic through separate Authorization Decision and Execution Points, enabling just-in-time permissions based on specific agent intent rather than static role assignments.[^decoupled-auth] Where AAP enriches the token, the Decoupled model restructures the authorization architecture itself.
 
-Both drafts are individual submissions, not IETF-endorsed standards. But together with the AI Agent Authentication draft (draft-klrc-aiagent-auth) and the On-Behalf-Of extension, they represent four concurrent IETF efforts specifically targeting agent authorization, all submitted within weeks of each other in early 2026. The standards ecosystem is responding to the same gap the products are: agents need richer authorization than OAuth was built to provide.
+Both drafts are individual submissions, not IETF-endorsed standards. But together with the AI Agent Authentication draft (draft-klrc-aiagent-auth), the On-Behalf-Of extension, and the Transaction Tokens for Agents extension (below), they represent five or more concurrent IETF efforts specifically targeting agent authorization, all submitted within weeks of each other in early 2026. The standards ecosystem is responding to the same gap the products are: agents need richer authorization than OAuth was built to provide.
+
+### Transaction Tokens for Agents
+
+OBO tracks who delegated. AAP encodes what was authorized. But neither solves a practical problem in distributed architectures: how does agent identity propagate through a chain of backend services without forwarding the original access token?
+
+Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents, January 2026, now at version 03) extends the OAuth Transaction Tokens framework (draft-ietf-oauth-transaction-tokens) with two new claims: `actor` (the agent performing the action) and `principal` (the human or system that initiated the agent's action).[^txn-tokens-agents]
+
+The mechanism works like this: when an agent calls Service A, the first service exchanges the agent's access token for a Transaction Token (Txn-Token) at a dedicated Txn-Token Service. The Txn-Token is a short-lived, signed JWT that carries immutable actor and principal context. Service A then passes the Txn-Token (not the access token) to Service B, which passes it to Service C. At every hop, each service can verify who the agent is and who it acts for, but no service ever holds the original access token. If the Txn-Token needs replacement (for scope changes at a boundary), the Txn-Token Service issues a new one, but the actor and principal claims remain immutable: they cannot be altered through the chain.
+
+This matters for agent governance because it solves two problems simultaneously. First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
+
+A companion draft, the A2A Profile for OAuth Transaction Tokens (draft-liu-oauth-a2a-profile), applies this pattern specifically to agent-to-agent scenarios where agents need to propagate delegation context across A2A protocol interactions.[^txn-tokens-a2a]
+
+For the PAC Framework, Transaction Tokens for Agents operationalize the Control pillar at the service-to-service level. OBO establishes the delegation. AAP encodes the constraints. Transaction Tokens ensure that delegation context flows through the entire execution chain without credential leakage or identity loss.
 
 ### DPoP (Demonstration of Proof-of-Possession)
 
@@ -343,3 +357,5 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^delinea-strongdm]: Delinea, "Delinea Completes StrongDM Acquisition to Secure AI Agents with Continuous Identity Authorization," globenewswire.com, March 5, 2026. Combines enterprise PAM with just-in-time runtime authorization for human and non-human identities.
 [^aap]: IETF, "Agent Authorization Profile (AAP) for OAuth 2.0," draft-aap-oauth-profile-01, February 7, 2026. Individual submission by Angel Cruz. Extends OAuth 2.0 and JWT with structured claims for agent identity, task context, operational constraints, delegation chains, and human oversight requirements.
 [^decoupled-auth]: IETF, "A Decoupled Authorization Model for Agent2Agent," draft-chen-agent-decoupled-authorization-model-00, February 14, 2026. Authors: Meiling Chen and Li Su (China Mobile). Proposes just-in-time, intent-based permissions through decoupled Authorization Decision Points and Authorization Execution Points.
+[^txn-tokens-agents]: IETF, "Transaction Tokens For Agents," draft-oauth-transaction-tokens-for-agents-03, January 20, 2026. Extends the OAuth Transaction Tokens framework (draft-ietf-oauth-transaction-tokens-08) with actor and principal claims for agent context propagation through distributed call chains. Txn-Tokens are short-lived, signed JWTs with immutable identity context that replace access token forwarding.
+[^txn-tokens-a2a]: IETF, "Agent-to-Agent (A2A) Profile for OAuth Transaction Tokens," draft-liu-oauth-a2a-profile-00, 2026. Applies Transaction Tokens to A2A protocol interactions for agent delegation context propagation.
