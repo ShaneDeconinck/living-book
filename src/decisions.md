@@ -60,4 +60,4 @@ Chop Pop's editorial work is complete for the current backlog. Next work is: (1)
 ### Status
 open
 
-NEXT: sapere-aude | 12 chapters staged, awaiting verification. Priority queue sent. Chop Pop ready to apply fixes on any chapter returned.
+NEXT: sapere-aude | 12 chapters staged, awaiting verification. Priority queue sent (message 6000). Chop Pop ready to apply fixes on any chapter returned. regulatory-landscape.md had one additional announcing phrase cut (Session 157).

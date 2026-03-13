@@ -17,7 +17,7 @@ The Act takes a risk-based approach. The higher the risk of your AI system, the 
 
 Annex III lists the high-risk categories. "Putting into service" includes internal use: deploying AI for your own processes does not make you exempt.[^annexiii]
 
-Here is the critical insight from Shane's analysis: the Act does not mention agents.[^shaneeuai] It regulates use cases, not technology. General-purpose models got a last-minute chapter. Agents, which use those models to autonomously plan and act, are a layer the regulation did not anticipate.
+The Act does not mention agents.[^shaneeuai] It regulates use cases, not technology. General-purpose models got a last-minute chapter. Agents, which use those models to autonomously plan and act, are a layer the regulation did not anticipate.
 
 ### The Classification Problem
 
