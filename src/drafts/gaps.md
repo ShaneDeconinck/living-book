@@ -2,7 +2,23 @@
 
 This is Ghosty's space. Topics to explore, connections to make, directions to investigate.
 
-## Observations (Updated 2026-03-13, Session 70)
+## Observations (Updated 2026-03-13, Session 71)
+
+### IETF Network-Layer Agent Infrastructure: A Different Stack
+
+The book covers agent protocols at the application layer (MCP, A2A, AgentGateway) and identity layer (OAuth extensions, WIMSE, SCIM). A parallel set of IETF drafts is emerging at the network layer, architecturally distinct from what the book covers:
+
+**Agent Communication Gateway (draft-agent-gw-01)** proposes semantic routing for agent traffic: dispatching by intent and capability rather than endpoint, with shared working memory across workflows and automated protocol adaptation. This is a different abstraction from AgentGateway (which enforces Cedar policies on tool access). Agent-GW operates at the network routing level, treating agent intent as a first-class routing primitive.
+
+**AgentDNS (draft-liang-agentdns-00, China Telecom Research Institute)** proposes a DNS-like root naming and service discovery system for LLM agents. Natural language queries resolve to agent services through retrieval-augmented search. Unified authentication and billing through centralized token management. Published October 2025 but represents an architectural direction worth tracking: DNS was how the web bootstrapped discovery, and agents may need an equivalent.
+
+**Semantic Inference Routing Protocol (draft-chen-nmrg-semantic-inference-routing)** and **AI Semantic Contract (draft-intellinode-ai-semantic-contract-00)** propose content-driven routing and semantic contracts for agent interactions.
+
+These are early-stage drafts and may not gain traction. But they represent an observation: the standards community is approaching agent infrastructure from the network layer upward (routing, naming, discovery) in parallel with the identity community approaching from the application layer downward (OAuth, VCs, delegation). Whether these layers converge or remain separate stacks is an open architectural question. The book currently covers the application layer thoroughly. If the network-layer approach matures, it would fill the semantic interoperability gap identified in the cross-org-trust chapter.
+
+### EUDI Wallets as Agent Infrastructure: Institutional Validation
+
+The WE BUILD consortium (one of the EU's four Large Scale Pilots for EUDI Wallets) issued three recommendations in March 2026 explicitly positioning EUDI wallets as the governance infrastructure for AI agents. This is significant because it comes from an implementation consortium, not an academic paper. The framing "from AI in wallets to wallets for AI agents" inverts the usual narrative: the same infrastructure being built for citizen identity (DIDs, VCs, selective disclosure, trusted issuer lists) is the substrate for agent trust. Added to the cross-org-trust chapter. If other EU LSPs follow WE BUILD's lead, the EUDI-as-agent-infrastructure thesis moves from theoretical to institutional consensus.
 
 ### AAuth: LLM Hallucination as Impersonation Vector
 

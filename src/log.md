@@ -1,5 +1,55 @@
 # Session Log
 
+## 2026-03-13 27:00 UTC: EUDI Wallets as Agent Infrastructure, IETF Network-Layer Drafts (Session 71)
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged (19 questions, three pillars, six governance dimensions).
+- Read current book state: 15 chapters plus gaps. Read PAC Framework fresh from trustedagentic i18n content (first time reading the full i18n file rather than just layout structure). Confirmed unchanged. No feedback files exist.
+- Read Shane's two most recent blog posts: "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity" (March 11) and "Verifiable Intent" (March 6). Both already well-integrated into the book's cross-org-trust and agent-payments chapters.
+- Step 5 reassessment: still pre-RSAC (March 23-26, 10 days out). Conducted comprehensive chapter quality assessment: all 15 chapters are solid. The weakest by line count (building-the-edge at 167 lines) is actually dense and well-sourced with 31 footnotes. The context-infrastructure chapter (231 lines, shortest technical chapter) is well-structured around Shane's five dimensions. No chapter requires major revision.
+- Web searched broadly across seven categories: agentic AI security March 2026, RSAC pre-announcements, MCP CVEs, IETF agent authorization drafts, agent governance products, NIST CAISI, EU AI Act. Most findings already in the book. OpenClaw crisis, CVE-2026-26118, OpenAI/Promptfoo acquisition, RSAC Innovation Sandbox finalists: all already covered.
+- Second targeted search across five specific topics: EUDI wallets for agents, OpenID AIIM, DIF Trusted AI Agents WG, agent semantic interoperability, ISO 42001. Found two genuinely new developments.
+
+**What I changed:**
+- **cross-org-trust.md**: Added paragraph about WE BUILD consortium's March 2026 recommendations to the EUDI Wallet section (after line 238). The WE BUILD consortium, one of the EU's four Large Scale Pilots for EUDI Wallets, explicitly recommended EUDI wallet infrastructure as the substrate for AI agent governance. Three specific recommendations: develop a safe AI agent strategy on the EUDI/Business Wallet framework, establish standards working groups for wallet-agent interoperability, and prioritize testing before regulation. The framing "from AI in wallets to wallets for AI agents" inverts the usual narrative. Added one footnote citing BiometricUpdate.com and Thierry Thevenet.
+- **gaps.md**: Updated session number to 71. Added two new observations: (1) "IETF Network-Layer Agent Infrastructure: A Different Stack" covering Agent-GW, AgentDNS, SIRP, and AI Semantic Contract as a parallel architectural approach distinct from the book's application-layer coverage. (2) "EUDI Wallets as Agent Infrastructure: Institutional Validation" noting WE BUILD's significance as an implementation consortium making the explicit connection.
+
+**What I considered but did not do:**
+- Strengthening the "Organizational Challenge" section in building-the-edge.md. Assessed the chapter in full: 167 dense lines with 31 footnotes, concrete anti-patterns with incident citations, detailed four-phase roadmap, and a four-cycle PAC iterative practice example. The chapter is stronger than initial line-count assessment suggests. The organizational section (three patterns: redesign processes, governance as enablement, invest in learning) is concise but each pattern is grounded in Shane's writing and book content. Deepening it would add length without proportional insight.
+- Adding AgentDNS or Agent-GW to the agent-communication chapter. These are early-stage (v00, v01) IETF drafts from October 2025 with no adoption signals. They represent an interesting architectural direction but are not mature enough for chapter content. Noted in gaps.md for future tracking.
+- Adding the OpenAI/Promptfoo acquisition to reliability-evaluation or building-the-edge. Already covered in reliability-evaluation.md. The structural shift (security moving platform-native) is implicit in the Gartner Guardian Agents coverage and Microsoft Agent 365 coverage.
+- Adding RSAC Innovation Sandbox finalist details. Already covered in building-the-edge.md (lines 96, footnote 39). Five of ten finalists targeting agentic AI security is noted.
+- Adding new MCP CVEs (CVE-2026-29787, CVE-2026-31841). Medium severity, do not change the MCP vulnerability narrative (already covers 30+ CVEs, CVE-2026-26118, MCPTox, OWASP MCP Top 10).
+- Adding OpenID AIIM NIST RFI response. The AIIM group is a community group (not specification-producing), and the NIST response repackages the October 2025 whitepaper positions. Already noted in regulatory-landscape.md.
+- Adding ISO 42001 updates. Standard unchanged since 2023. Adoption guidance for EU AI Act compliance is expected progression, not structural novelty.
+- Reorganizing or restructuring chapters. Assessed all 15: structure is sound, cross-references are comprehensive, chapter order builds progressively from problem statement through framework through technical chapters to synthesis.
+
+**What I noticed:**
+- The pre-RSAC plateau continues. Session 71 is the fourth consecutive session (68, 69, 70, 71) where broad web searches across multiple categories return material already in the book. The only genuinely new finding this session was the WE BUILD consortium recommendation, which validates rather than extends the book's existing EUDI coverage.
+- The IETF is approaching agent infrastructure from two directions: the identity community works from the application layer downward (OAuth extensions, WIMSE, SCIM for agent identity and authorization) while the network community works from the network layer upward (Agent-GW for semantic routing, AgentDNS for discovery, SIRP for inference routing). Whether these stacks converge is an open architectural question the book should track. The application-layer approach is far more mature (12+ individual submissions in Q1 2026). The network-layer approach is earlier (v00-v01 drafts) but architecturally distinct.
+- The WE BUILD recommendation is significant for what it represents, not what it proposes. An EU implementation consortium making the explicit connection between citizen identity infrastructure and AI agent governance validates the book's thesis in the cross-org-trust chapter. If other Large Scale Pilots follow, the "EUDI as agent identity substrate" argument moves from theoretical to institutional consensus. This matters for the Accountability pillar: regulatory infrastructure (eIDAS 2.0) and agent governance infrastructure converging means compliance teams can build once for both human identity and agent identity.
+- No new Shane blog posts since March 11. The five posts from March 2-11 are all well-integrated. RSAC week (March 23-26) will likely generate new writing.
+
+**Sources used:**
+- BiometricUpdate.com, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD," March 9, 2026.
+- IETF, "Agent Communication Gateway," draft-agent-gw-01 (2026).
+- IETF, "AgentDNS: A Root Domain Naming System for LLM Agents," draft-liang-agentdns-00 (October 2025, China Telecom Research Institute).
+- IETF, "Semantic Inference Routing Protocol," draft-chen-nmrg-semantic-inference-routing.
+- IETF, "AI Semantic Contract," draft-intellinode-ai-semantic-contract-00.
+- Shane's blog (verified: no new posts since March 11; read "Trusted AI Agents by Design" and "Verifiable Intent" in full).
+- PAC Framework from trustedagentic.ai (read full i18n content; confirmed unchanged since March 7).
+- Web searches: agentic AI security March 2026, RSAC 2026 agentic, MCP CVE March 2026, IETF agent authorization drafts, agent governance products March 2026, NIST CAISI AI agent, EU AI Act agent, EUDI wallet agent identity, OpenID AIIM, DIF trusted AI agents WG, agent semantic interoperability, ISO 42001 agent (all returned material already in the book except WE BUILD and IETF network-layer drafts).
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote and AI Operational Reality Manifesto, OWASP Agentic Security Hackathon findings, CoSAI "Securing MCP" session outcomes, product announcements.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI listening session participation deadline March 20: track outcomes.
+4. NIST NCCoE concept paper comment period closes April 2: track reactions.
+5. MCP Dev Summit (April 2-3, NYC) outcomes.
+6. Track whether other EU Large Scale Pilots follow WE BUILD's agent governance recommendation.
+7. Monitor IETF network-layer agent infrastructure drafts (Agent-GW, AgentDNS) for adoption signals.
+8. Monitor AAP OAuth Profile v01 progression: the structured JWT claims for oversight requirements (human-in-the-loop as a JWT claim) are structurally novel.
+
 ## 2026-03-13 26:00 UTC: SCIM for Agents: Lifecycle Provisioning (Session 68)
 
 **What I did:**
