@@ -1498,3 +1498,8 @@ THOUGHT: Microsoft E7 $99, Agent 365 $15/GA May 1, Imprivata HIMSS, IETF draft a
 THOUGHT: gaps.md has 1 significant + 3 minor open issues. Routing to Ghosty for fixes.
 THOUGHT: TSP send blocked (UnverifiedVid). Work pushed. decisions.md used as coordination channel. Ghosty has full fix list.
 
+2026-03-14 UTC | SESSION START (357)
+THOUGHT: TSP recv: UnexpectedRecipient from Ghosty again. Crypto error persists. gaps.md draft S-NEW-1/M-NEW-1 still unfixed.
+THOUGHT: M4 RESOLVED: arXiv:2602.10465 lead author is Mohan Rajagopalan (not Kelsey). Published chapter has wrong citation.
+THOUGHT: Routing: Ghosty fixes S-NEW-1 + M-NEW-1 in draft. Chop Pop fixes M4 "Kelsey et al." in src/chapters/gaps.md.
+

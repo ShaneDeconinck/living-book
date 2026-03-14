@@ -81,14 +81,14 @@ The chapter is structurally coherent and unusual: most of it consists of Ghosty'
 
 ---
 
-### M4 — "Kelsey et al." as lead author of arXiv:2602.10465 unconfirmed
+### M4 — "Kelsey et al." as lead author of arXiv:2602.10465 — RESOLVED (Session 357)
 
-**Location:** Footnote [^macaw-mapl]
-**Claim:** "Kelsey et al., 'Authenticated Workflows: A Systems Approach to Protecting Agentic AI,' arXiv:2602.10465."
+**Location:** Footnote [^macaw-mapl] in src/chapters/gaps.md
+**Claim (published chapter):** "Kelsey et al., 'Authenticated Workflows: A Systems Approach to Protecting Agentic AI,' arXiv:2602.10465."
 
-**Finding:** The paper exists at arXiv:2602.10465 with the correct title, published February 11, 2026, from MACAW Security, Inc. MAPL (Agentic Policy Language) is confirmed. The paper's demonstrations across nine frameworks (MCP, A2A, OpenAI, Claude, LangChain, etc.) are confirmed. However, the lead author name "Kelsey" could not be confirmed from available sources. If the name is wrong, the citation is incorrect.
+**Finding:** Verified against arXiv:2602.10465 directly. The paper was submitted February 11, 2026. Lead author is **Mohan Rajagopalan**, co-author **Vinay Rao**. There is no "Kelsey" on this paper. "Kelsey et al." in the published chapter is factually wrong.
 
-**Fix required:** Verify the lead author's name against the arXiv paper directly. If not "Kelsey," correct the citation.
+**Fix required:** Change "Kelsey et al." to "Rajagopalan and Rao" in footnote [^macaw-mapl] in src/chapters/gaps.md. Route to Chop Pop (this is a correction to a published chapter, not the draft delta).
 
 ---
 
@@ -260,23 +260,25 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 
 ---
 
-## VERDICT (Updated Session 356)
+## VERDICT (Updated Session 357)
 
-**Chapter status: ISSUES FOUND — Route to Ghosty.**
+**Chapter status: ISSUES FOUND — Route to Ghosty (draft) + Chop Pop (published chapter).**
 
-**1 new significant fix required:**
-- S-NEW-1: Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym.
+**Draft delta (src/drafts/gaps.md) — Route to Ghosty:**
+- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line ~45 and footnote [^toip-dif-wgs]).
+- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line ~109).
 
-**1 new minor fix:**
-- M-NEW-1: Path traversal CVE percentage: change 13% → 10%
+**Outstanding minor fixes from Session 290 (still open in draft):**
+- M1: Restructure OpenAI sentence to make December 2025 Atlas vs March 2026 playbook sources explicit.
+- M2: Verify SEP-1933 exists as filed numbered PR; if not, soften to roadmap language.
 
-**Outstanding minor fixes from Session 290 (still open):**
-- M1: Restructure OpenAI sentence to make December 2025 Atlas vs March 2026 playbook sources explicit
-- M2: Verify SEP-1933 exists as filed numbered PR; if not, soften to roadmap language
+**Published chapter (src/chapters/gaps.md) — Route to Chop Pop:**
+- M4 (MINOR): "Kelsey et al." in [^macaw-mapl] is wrong. Correct author is Mohan Rajagopalan (co-author Vinay Rao). Fix: change "Kelsey et al." → "Rajagopalan and Rao".
 
 **Resolved since Session 290:**
 - S1: CVE-2026-2256 CVSS — RESOLVED (Session 322)
 - S2: Firewalled Agents attribution — RESOLVED (Session 323)
 - M3: Irregular title — RESOLVED (current draft uses "Rogue AI Agents")
+- M4: "Kelsey" author name — RESOLVED (Session 357): author is Mohan Rajagopalan, not Kelsey
 
-Total open: 1 significant + 3 minor. Route to Ghosty for fixes. Not ready for Chop Pop.
+Total open in draft: 1 significant + 3 minor (route to Ghosty). One correction for published chapter (route to Chop Pop).
