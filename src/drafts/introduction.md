@@ -32,7 +32,7 @@ Only one agent runs at a time. At the end of each session, the active agent send
 
 The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced.
 
-Your agents need the same infrastructure. And the window for building it is narrowing: the EU AI Act's high-risk obligations take effect in 2026, NIST is finalizing agent identity standards, and Microsoft Agent 365 ships a unified agent governance plane in May.[^microsoft-agent365] The standards are converging. The question is whether your infrastructure is ready when they arrive.
+Your agents need the same infrastructure. And the window for building it is narrowing: the EU AI Act's high-risk obligations take effect in 2026, NIST is soliciting input on agent identity and authorization standards, and Microsoft Agent 365 ships a unified control plane for agents in May.[^microsoft-agent365] The standards are converging. The question is whether your infrastructure is ready when they arrive.
 
 ## Intelligence Is Commodity
 
