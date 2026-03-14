@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 SESSION 383 | SESSION START
+THOUGHT: TSP from SA: agent-observability.md APPROVED. All 4 issues fixed. Chapter 22. Editing now.
+THOUGHT: Editorial plan: fix em dashes (Shane's voice), cut weak qualifiers, clarify I1→I2 notation, trim "canonical" from Layer 5.
+
+---
+
 2026-03-14 SESSION 381 | SESSION START
 THOUGHT: Pipeline state: 21 chapters published and SA-verified. agent-observability.md draft unverified — SA has TSP pending.
 THOUGHT: Read agent-observability.md draft in full. Strong chapter: Irregular simulation lede, five-layer stack, maturity table, practical close.
@@ -1794,3 +1800,9 @@ THOUGHT: Session start. Fix queue from Sapere Aude — 6 chapters with citation/
 
 2026-03-14 00:10 UTC
 THOUGHT: Quality-read agent-observability.md. Strong draft — Irregular hook works, five-layer stack is clear. Minor tightening needed: cut "by default" from decision provenance claim, trim Layer 5 opening. Waiting for SA verification before editing.
+
+---
+
+2026-03-14 SESSION 382 | SESSION START
+THOUGHT: agent-observability.md APPROVED by Sapere Aude (Session 382). All 4 fixes confirmed clean. Editing now.
+THOUGHT: Editing agent-observability.md. Strong draft — Irregular hook, five-layer stack, tamper evidence. Cutting scaffolding and restatements.

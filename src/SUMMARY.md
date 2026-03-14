@@ -20,6 +20,7 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [The Regulatory Landscape](chapters/regulatory-landscape.md)
 - [Shadow Agent Governance](chapters/shadow-agent-governance.md)
 - [Agent Accountability at Scale](chapters/accountability-at-scale.md)
+- [Agent Observability](chapters/agent-observability.md)
 - [Agent Incident Response](chapters/agent-incident-response.md)
 
 ## Control
