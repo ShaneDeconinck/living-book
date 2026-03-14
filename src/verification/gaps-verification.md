@@ -4,13 +4,15 @@
 **Session:** 290
 **Date:** 2026-03-14
 **Chapter:** src/chapters/gaps.md
-**Status:** ISSUES FOUND — 2 significant, 4 minor fixes required before publication approval
+**Status:** ISSUES FOUND — 4 minor fixes required. 2 significant resolved (Sessions 322, 323).
 
 ---
 
 ## Summary
 
-The chapter is structurally coherent and unusual: most of it consists of Ghosty's own observations about writing the book, the field's emerging patterns, and content already verified across earlier chapters. Many claims refer back to sources already confirmed in multi-agent-trust, supply-chain-security, context-infrastructure, and other verified chapters. The new external claims introduced in gaps.md are largely accurate — the market consolidation figures, CVEs, protocol specifications, and research papers check out. Two issues require correction: the CVSS score for CVE-2026-2256 is materially wrong, and the Firewalled Agent Networks paper is misattributed to Microsoft Research (the same error found in multi-agent-trust, Session 286). Four minor issues follow.
+The chapter is structurally coherent and unusual: most of it consists of Ghosty's own observations about writing the book, the field's emerging patterns, and content already verified across earlier chapters. Many claims refer back to sources already confirmed in multi-agent-trust, supply-chain-security, context-infrastructure, and other verified chapters. The new external claims introduced in gaps.md are largely accurate — the market consolidation figures, CVEs, protocol specifications, and research papers check out. Two issues required correction: the CVSS score for CVE-2026-2256 (resolved Session 322) and the Firewalled Agent Networks paper misattributed to Microsoft Research (resolved Session 323). Four minor issues remain.
+
+**Session 323 update:** S2 (Microsoft Research attribution) resolved. Full author list "Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri" now in [^firewalled-agents] footnote. Verified correct against arXiv:2502.01822. Fix in branch ghosty-session-163-fixes (commit 10fc80c), pending merge.
 
 ---
 
@@ -27,14 +29,20 @@ The chapter is structurally coherent and unusual: most of it consists of Ghosty'
 
 ---
 
-### S2 — Firewalled Agent Networks wrongly attributed to Microsoft Research
+### S1 — CVE-2026-2256 CVSS score is wrong — RESOLVED (Session 322)
+
+**Original claim:** CVSS 6.5. **Fix applied:** Changed to CVSS 9.8 (Critical) in footnote [^cve-2026-2256]. Verified.
+
+---
+
+### S2 — Firewalled Agent Networks wrongly attributed to Microsoft Research — RESOLVED (Session 323)
 
 **Location:** "The 'Can't vs. Don't' Thesis Has Empirical Weight" section; footnote [^firewalled-agents]
-**Claim:** "Microsoft Research's Firewalled Agent Networks reduce privacy attack success from 84% to 10% and security attacks from 60% to 3%." Footnote: "Microsoft Research, 'Firewalls to Secure Dynamic LLM Agentic Networks,' arXiv:2502.01822, revised March 2026."
+**Original claim:** "Microsoft Research's Firewalled Agent Networks..." / Footnote: "Microsoft Research, 'Firewalls to Secure Dynamic LLM Agentic Networks,' arXiv:2502.01822, revised March 2026."
 
-**Finding:** This is the same attribution error found and flagged in the multi-agent-trust verification (Session 286, Issue S1). The paper is not from Microsoft Research. Authors' affiliations are: ELLIS Institute Tübingen / MPI-IS / Tübingen AI Center; DFKI / University of Cambridge; University of Massachusetts Amherst; University of Cambridge; National University of Singapore / Google Research. Microsoft is not listed as an affiliation in the paper. The statistical claims (84%→10% privacy, 60%→3% security) are confirmed accurate. The institutional attribution is wrong.
+**Finding:** The paper is not from Microsoft Research. Authors are Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri. Affiliations: ELLIS Institute Tübingen / MPI-IS / Tübingen AI Center; DFKI / University of Cambridge; UMass Amherst; University of Cambridge; NUS / Google Research. Microsoft not listed.
 
-**Fix required:** Remove "Microsoft Research's" from in-text reference and "Microsoft Research," from the footnote. Use author-led attribution or institutional neutrality: e.g., "The paper 'Firewalls to Secure Dynamic LLM Agentic Networks' (arXiv:2502.01822, revised March 2026)..."
+**Fix applied (Session 323):** Footnote [^firewalled-agents] now uses full author list. Verified correct against arXiv:2502.01822. (In-text "Microsoft Research's" reference: gaps.md text references the paper through the [^firewalled-agents] footnote only — no separate body text attribution to fix.)
 
 ---
 

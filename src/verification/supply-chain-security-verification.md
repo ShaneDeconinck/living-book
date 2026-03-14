@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** ISSUES FOUND — 1 critical, 2 significant, 4 minor fixes required before re-approval
+**Status:** ISSUES FOUND — 2 significant, 4 minor fixes required. 1 critical resolved (Session 323).
 
 ---
 
@@ -12,22 +12,24 @@
 
 The chapter is structurally sound and covers a critical topic with good source density. Most technical claims, CVE details, and vendor figures check out. However, one set of figures is critically inflated — the SecurityScorecard breach-linked count is 100x the actual reported figure — and two other significant errors require correction: the RSP 3.0 framing misrepresents the document's structure, and the SPDX 3.0.1 claim contains two errors.
 
+**Session 323 update:** Critical issue 1 (SecurityScorecard figures) resolved. All four figures verified correct: ~40,000 instances (Infosecurity reports 40,214), ~76 countries, ~12,812 RCE-vulnerable, 549 breach-linked. "Three distinct analyses" framing also removed. Fix in branch ghosty-session-163-fixes (commit 10fc80c), pending merge. Remaining open: Issues 2 and 3 (RSP 3.0, SPDX), plus 4 minor issues.
+
 **Confirmed clean:** BlueRock SSRF rate (36.7%, 7,000+ servers), arXiv:2510.07192 (250 poisoned documents, all three institutions), CSA ATF (Feb 2, 2026), CSA+Strata survey (21%/84%), AAIF membership (8 platinum, Dec 9 2025), Invariant Labs WhatsApp MCP (April 2025), arXiv:2504.16743 (Linux Foundation AI-BOM guide), MCPTox benchmark (previously verified), Anthropic RSP 3.0 date (Feb 24, 2026), Anthropic lawsuit (March 2026), 30+ employees amicus brief, JSON-LD serialization in SPDX.
 
 ---
 
 ## Critical Issues
 
-### 1. SecurityScorecard STRIKE Team figures are wrong across all four metrics
+### 1. SecurityScorecard STRIKE Team figures are wrong across all four metrics — RESOLVED (Session 323)
 
 **Location:** Lines 17 and footnote [^securityscorecard]
 
-**What the chapter claims:**
+**What the chapter originally claimed:**
 > "SecurityScorecard's STRIKE Team conducted three distinct analyses of the OpenClaw exposure surface: a scan identifying over 135,000 publicly exposed instances across 82 countries, a vulnerability assessment finding over 15,000 directly vulnerable to remote code execution, and a threat intelligence correlation linking more than 53,000 to prior breach activity."
 
 **What the SecurityScorecard report actually says:**
 
-| Metric | Chapter claims | Actual (per Infosecurity Magazine, SiliconANGLE, STRIKE Team) |
+| Metric | Chapter claimed | Actual (per Infosecurity Magazine, SiliconANGLE, STRIKE Team) |
 |---|---|---|
 | Total exposed instances | 135,000+ | ~40,000+ (~40,214) |
 | Countries | 82 | ~76 |
@@ -36,9 +38,9 @@ The chapter is structurally sound and covers a critical topic with good source d
 
 The breach-linked figure is the most severe error: 53,000+ in the chapter versus 549 in the source. This is a 100x inflation, not a rounding difference.
 
-**Also wrong:** The chapter describes "three distinct analyses" as a structured methodology. The SecurityScorecard source describes a single continuous scanning operation with a live dashboard (declawed.io), not three discrete studies. The three-part framing is the chapter's own editorial structure, not how the report describes its methodology.
+**Also wrong:** The chapter describes "three distinct analyses" as a structured methodology. The SecurityScorecard source describes a single continuous scanning operation with a live dashboard (declawed.io), not three discrete studies.
 
-**Fix required:** Replace all four figures with the correct values. Remove "three distinct analyses" framing or rephrase to accurately describe a single scanning operation with multiple metrics. The footnote [^securityscorecard] body also states the three-figure structure as fact — revise to match the actual report.
+**Fix applied (Session 323):** All four figures corrected. Text now reads: "SecurityScorecard's STRIKE Team scanned the OpenClaw exposure surface and found approximately 40,000 publicly exposed instances across roughly 76 countries, with around 12,812 directly vulnerable to remote code execution and 549 linked to prior breach activity." "Three distinct analyses" framing removed. Footnote updated to match. All four corrected figures verified independently against Infosecurity Magazine and SiliconANGLE coverage.
 
 **Sources consulted:**
 - SecurityScorecard STRIKE Team, "How Exposed OpenClaw Deployments Turn Agentic AI Into an Attack Surface," securityscorecard.com, February 2026

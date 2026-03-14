@@ -4,7 +4,7 @@
 **Session:** 286
 **Date:** 2026-03-14
 **Chapter:** src/chapters/multi-agent-trust.md
-**Status:** ISSUES FOUND — 1 critical, 3 significant, 4 minor fixes required before publication approval
+**Status:** ISSUES FOUND — 1 significant, 4 minor fixes required. 1 critical and 2 significant resolved (Session 323).
 
 ---
 
@@ -12,42 +12,44 @@
 
 The chapter is structurally sound and most of its empirical claims are well-sourced. The Salesforce, Deloitte, AgentLeak, AgenticCyOps, and OWASP claims all check out. Four issues require correction before this chapter can be approved: one critical (fabricated quote), three significant (wrong institutional affiliation, sourcing error on Claude finding, unverified conference venue). Four minor issues follow.
 
+**Session 323 update:** Three issues resolved — C1 (fabricated DeepMind quote replaced with accurate paraphrase, verified against arXiv:2602.11865), S1 (Microsoft Research's removed from body text, correct), S2 (GitHub URL corrected to github.com/amrgomaaelhady/Firewall-Agentic-Networks, verified). Fixes are in branch ghosty-session-163-fixes (commit 10fc80c), pending merge to main. Remaining open: S3 (Anthropic token attribution) and S4 (ICML venue), plus 4 minor issues.
+
 ---
 
 ## CRITICAL ISSUES
 
-### C1 — DeepMind quote does not appear in the paper
+### C1 — DeepMind quote does not appear in the paper — RESOLVED (Session 323)
 
 **Location:** End of "The Delegation Problem" section
-**Claim:** "without formal rules for authority, accountability and trust, that shift could introduce systemic risks as serious as any model error" — attributed to arXiv:2602.11865 via [^4]
+**Original claim:** "without formal rules for authority, accountability and trust, that shift could introduce systemic risks as serious as any model error" — attributed to arXiv:2602.11865 via [^4]
 
 **Finding:** This quote does not appear in the paper. The exact sentence was not found in arXiv:2602.11865. The paper discusses authority, accountability, and trust, but not in this formulation. The phrase "systemic risks as serious as any model error" does not appear. This is a fabricated quote — not paraphrase, not approximate, but a sentence that does not exist in the cited source.
 
-**Fix required:** Remove the quotation marks and rephrase as a paraphrase of the paper's argument, or find and cite the actual sentence that appears in the paper. If no equivalent claim can be found, remove the attribution entirely.
+**Fix applied (Session 323):** Replaced with: "The paper argues that as agents take on more autonomous roles, the absence of formal authority structures and accountability mechanisms makes the resulting systems fragile in ways that compound across the delegation chain." Verified: this paraphrase accurately represents the paper's argument. The paper discusses accountability vacuums, authority gradient problems, and compounding risks across delegation chains. No quote marks used — correctly presented as paraphrase.
 
 ---
 
 ## SIGNIFICANT ISSUES
 
-### S1 — Firewalls paper wrongly attributed to Microsoft Research
+### S1 — Firewalls paper wrongly attributed to Microsoft Research — RESOLVED (Session 323)
 
 **Location:** "Firewalled Agent Networks" section, opening sentence
-**Claim:** "Microsoft Research's 'Firewalls to Secure Dynamic LLM Agentic Networks' (arXiv:2502.01822, revised March 2026)"
+**Original claim:** "Microsoft Research's 'Firewalls to Secure Dynamic LLM Agentic Networks' (arXiv:2502.01822, revised March 2026)"
 
 **Finding:** The paper is not from Microsoft Research. The authors' affiliations are: ELLIS Institute Tübingen / MPI-IS / Tübingen AI Center; DFKI / University of Cambridge; University of Massachusetts Amherst; University of Cambridge; National University of Singapore / Google Research. Microsoft is not mentioned in the paper. This is a factual attribution error.
 
-**Fix required:** Remove "Microsoft Research's" from the attribution. Rephrase as: "The paper 'Firewalls to Secure Dynamic LLM Agentic Networks' (arXiv:2502.01822, revised March 2026) provides..."
+**Fix applied (Session 323):** "Microsoft Research's" removed from opening sentence. Now reads: "'Firewalls to Secure Dynamic LLM Agentic Networks' (arXiv:2502.01822, revised March 2026) provides..." Verified correct.
 
 **Note:** All numerical claims from this paper (864 attacks, GPT-5 84.68%→10.20%, Claude Sonnet 4 72.89%→16.77%, security 60%→3%) are confirmed accurate against the paper's content.
 
-### S2 — GitHub URL for Firewalls paper is wrong
+### S2 — GitHub URL for Firewalls paper is wrong — RESOLVED (Session 323)
 
 **Location:** Footnote [^firewalls]
-**Claim:** "Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks"
+**Original claim:** "Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks"
 
 **Finding:** The actual repository is at `github.com/amrgomaaelhady/Firewall-Agentic-Networks` — under a personal account, not a Microsoft organization account, and the repo name is "Firewall-Agentic-Networks" (not "Firewalled-Agentic-Networks").
 
-**Fix required:** Correct the GitHub URL in footnote [^firewalls] to `github.com/amrgomaaelhady/Firewall-Agentic-Networks`.
+**Fix applied (Session 323):** URL corrected to `github.com/amrgomaaelhady/Firewall-Agentic-Networks`. "Microsoft Research." attribution also removed from footnote. Both verified against arXiv page and live GitHub repository.
 
 ### S3 — Claude Opus 4.6 authentication token finding is mis-attributed to Irregular
 
