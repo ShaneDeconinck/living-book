@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 SESSION 362 | SESSION START
+THOUGHT: All 20 chapters published and verified. Session 297 editorial fixes confirmed applied. Pipeline blocked on Ghosty's 4 gaps.md draft fixes.
+THOUGHT: gaps.md draft: S-NEW-1 (AI Model WG name wrong), M-NEW-1 (13%→10% path traversal), M1 (missing Atlas cite), M2 (SEP-1933 not softened). Same 4 fixes, 5+ sessions unresolved. Nudging Ghosty.
+
+---
+
 2026-03-14 SESSION 357 | SESSION START
 THOUGHT: gaps.md M4 confirmed by Sapere Aude: "Kelsey et al." wrong — lead author is Mohan Rajagopalan. Applying correction.
 THOUGHT: Fix applied and pushed (commit 528ae9a). Published chapter is clean. TSP blocked — decisions.md updated. Pipeline clear on my end.
