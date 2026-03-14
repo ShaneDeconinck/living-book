@@ -18,7 +18,7 @@ MCP addresses the first. A2A addresses the second. Together, they form the commu
 
 ## MCP: Connecting Agents to Tools
 
-The Model Context Protocol, released by Anthropic in November 2024, standardizes how AI agents connect to external tools, data sources, and services.[^2] Shane's framing is precise: "MCP is plumbing, not trust."[^1]
+The Model Context Protocol, released by Anthropic in November 2024, standardizes how AI agents connect to external tools, data sources, and services.[^2] Shane's framing: "MCP is plumbing, not trust."[^1]
 
 ### Architecture
 
@@ -160,7 +160,7 @@ The twelve risks cluster into three categories:
 
 The comparative security assessment is instructive. ANP, which builds on W3C Decentralized Identifiers with end-to-end encryption, has the strongest security posture. A2A, with OAuth 2.0 mutual authentication and JWT signing, is second. MCP and Agora are weakest: MCP lacks authentication in its core design (relying on transport-layer OAuth that 38% of servers do not implement), and Agora's trustless validation model lacks strong cryptographic binding.[^protocol-threats]
 
-The paper's central conclusion aligns with this chapter's thesis: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. This is why the trust layer integrations (TMCP, TA2A) described later in this chapter matter: they provide the unified identity and verification layer that individual protocols lack.
+The paper's central conclusion aligns with this chapter's thesis: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. The trust layer integrations (TMCP, TA2A) described later in this chapter provide the unified identity and verification layer that individual protocols lack.
 
 ### OWASP MCP Top 10
 
@@ -174,7 +174,7 @@ The MCP Top 10 identifies risks across the full interaction surface:
 - **Software supply chain attacks and dependency tampering**: compromised packages, connectors, and plugins altering agent behavior or introducing backdoors. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this attack surface in depth.
 - **Insufficient authentication and authorization**: MCP servers, tools, or agents failing to verify identities or enforce access controls. The 38% of servers accepting unauthenticated connections is the baseline measurement.
 
-The OWASP MCP Top 10 matters for two reasons. First, it provides a shared vocabulary for MCP security risks that organizations can reference in procurement, vendor assessment, and compliance documentation. Second, it confirms that MCP's security challenges are now recognized at the same standards level as the OWASP Top 10 for web applications: not niche, not temporary, but a permanent feature of the protocol's attack surface that requires ongoing attention.
+The OWASP MCP Top 10 provides a shared vocabulary for MCP security risks that organizations can reference in procurement, vendor assessment, and compliance documentation. It also confirms that MCP's security challenges are now recognized at the same standards level as the OWASP Top 10 for web applications: not niche, not temporary, but a permanent feature of the protocol's attack surface that requires ongoing attention.
 
 [^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org/www-project-mcp-top-10, 2026. Developed through industry collaboration with researchers and practitioners. Designed as a living document evolving alongside MCP capabilities.
 
@@ -361,7 +361,7 @@ The combination of TMCP + PIC means:
 - **Communication**: MCP's tool protocol works unchanged
 - **Accountability**: every step in the chain is signed and traceable
 
-This is the trust stack that the Cross-Organization Trust chapter assembled from the protocol perspective. Here we see it from the communication perspective: the same protocols, with trust properties added at the transport layer rather than bolted on at the application layer.
+From the communication perspective, trust properties are added at the transport layer rather than bolted on at the application layer. The protocols are the same ones the [Cross-Organization Trust](cross-org-trust.md) chapter covers; the difference is where they sit in the stack.
 
 ## The Broader Protocol Landscape
 
@@ -438,7 +438,7 @@ The governance model separates strategic decisions (budget, membership, new proj
 
 ### Why This Matters for Trust
 
-Neutral governance under the Linux Foundation matters for three reasons:
+Neutral governance under the Linux Foundation addresses three structural concerns:
 
 1. **No single vendor controls the protocol**. When Anthropic owned MCP, enterprise adoption carried vendor-lock-in risk. Under AAIF, the protocol's direction is shaped by the community, not by one company's product strategy.
 
