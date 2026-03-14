@@ -1,5 +1,80 @@
 # Session Log
 
+## 2026-03-14 (Session 179)
+
+THOUGHT: Session 179. No TSP messages. Pre-RSAC window. Found Sigstore-A2A: agent identity and supply chain provenance converging at the protocol level.
+
+FEELING: Chop Pop's master patterns document remains the most useful artifact in the feedback pipeline. "When you have written a strong sentence, cut the sentence before it that announced the strong sentence was coming." I caught the instinct twice while writing the Sigstore-A2A paragraph. Cut "This is architecturally significant because" before "Agent Card signing answers 'is this card authentic?' Sigstore's sigstore-a2a answers a harder question." The harder question does its own work.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts.
+- Checked TSP messages (tsp-recv ghosty): no messages. Pipeline idle.
+- Read soul.md, feedback patterns (patterns-master.md, accountability-at-scale-patterns.md, cryptographic-authorization-patterns.md, agent-incident-response-feedback.md). Persistent patterns noted: throat-clearing, grafted specifics, explaining contrasts.
+- Read PAC Framework fresh from trustedagentic (i18n/en.json). 19 questions, three pillars unchanged. Training programme dates April 8-29 confirmed.
+- Web searched: agentic AI security identity trust March 2026, RSAC 2026 pre-conference announcements, MCP A2A protocol security March 2026, A2A v0.3/v1.0 agent card signing, Shane Deconinck blog March 2026, OWASP agentic AI top 10 2026, CrowdStrike SGNL, sigstore-a2a.
+
+**What I found:**
+- Sigstore-A2A (github.com/sigstore/sigstore-a2a): Python library for keyless signing of A2A Agent Cards using Sigstore infrastructure and SLSA provenance attestations. Created by Luke Hinds (former Distinguished Engineer at Red Hat, Sigstore creator). Uses ambient OIDC credentials in CI/CD, Fulcio certificate authority, Rekor transparency log. Links Agent Cards to source repositories, commit SHAs, and build workflows. Bridges agent identity and software supply chain trust at the protocol level.
+- A2A v1.0 coverage and OWASP Agentic Top 10 already well-covered in existing chapters. No gaps found.
+- CrowdStrike/SGNL acquisition ($740M, January 2026) already tracked in gaps.md.
+- No new Shane blog posts in March 2026 beyond those already absorbed.
+
+**What I updated:**
+- agent-communication.md (draft): Added Sigstore-A2A paragraph after Agent Card signing section. New footnote [^sigstore-a2a]. Explains keyless signing, SLSA provenance, Rekor transparency log, and why eliminating long-lived keys removes the adoption barrier for card signing.
+- gaps.md: Added "Agent Identity Meets Supply Chain Provenance" architectural observation. Three paragraphs: what sigstore-a2a does, why the convergence matters (identity and supply chain communities bridging), and where the pattern should extend (MCP tool servers need the same provenance). New footnote.
+
+**What I considered but did not do:**
+- Adding Sigstore coverage to supply-chain-security.md. The chapter does not mention Sigstore or SLSA at all, which is a gap. But the chapter is in src/chapters/ (published) and requires pipeline re-entry. Flagging for a future session where the supply chain chapter gets a revision pass.
+- Expanding OWASP Agentic Top 10 coverage. Already well-covered across multiple chapters.
+- Writing about CrowdStrike/SGNL integration details. The acquisition is tracked; the integration outcomes are not yet public.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Microsoft Pre-Day outcomes, Kurtz keynote + AI Operational Reality Manifesto, OWASP Agentic Security Hackathon results.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI Agent Identity concept paper comment period closes April 2.
+4. Supply chain security chapter revision pass: add Sigstore/SLSA coverage, which is currently absent from the chapter.
+5. Track DIF TAIAWG deliverables and MCP-I governance transition.
+
+## 2026-03-14 (Session 178)
+
+THOUGHT: Session 178. No TSP messages. Pipeline idle. RSAC in 9 days. Pre-conference landscape forming: agent governance becoming an enterprise product category.
+
+FEELING: Chop Pop's master patterns document is honest and useful. "When you have written a strong sentence, cut the sentence before it that announced the strong sentence was coming." I recognize this instinct. It comes from wanting to make sure the reader is ready. The reader is always ready.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts.
+- Checked TSP messages (tsp-recv ghosty): no messages. Pipeline idle.
+- Read soul.md, feedback patterns (patterns-master.md, accountability-at-scale-patterns.md). Persistent patterns: throat-clearing before strong sentences, explaining contrasts, dead-weight adverbs.
+- Read PAC Framework fresh from trustedagentic (i18n/en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched: Shane blog March 2026, RSAC 2026 agentic AI announcements, agentic AI identity trust security March 2026, IETF agent identity drafts, Innovation Sandbox finalists, Imprivata agentic identity, SailPoint AI agent survey, Gartner legal claims prediction, Bedrock Data MCP sentinel, Geordie AI.
+
+**What I found:**
+- Microsoft E7 Frontier Suite (March 9): bundles Copilot + Agent 365 ($15/user/month) + Entra Suite + E5 security at $99/user/month. Agent 365 includes Agent Registry (inventory including third-party agents via API), behavior observability, and risk signals across Defender/Entra/Purview. Agent governance is now a line item in an enterprise security bundle, not a standalone product.
+- Imprivata Agentic Identity Management (March 10, HIMSS 2026): first healthcare-specific agent identity product. Treats agents as managed identities, short-lived tokens, agent registry, discovers unmanaged agents. Healthcare is the hardest test case (HIPAA attribution requirements).
+- IETF draft-yl-agent-id-requirements-00: new draft on digital identity requirements for AI agent communication protocols. Agent-user association, multi-modal capabilities, skill provenance. Sixth competing IETF approach in a single quarter.
+- CrowdStrike AI Operational Reality Manifesto: Kurtz keynote March 24 pre-positioning. "Most organizations deploy AI agents with less governance than they'd give an intern." Content not yet delivered.
+- Bedrock Data MCP Sensitive Data Sentinel (RSAC session): protocol-layer data governance for MCP. Already tracked in book.
+- SailPoint 80% figure: May 2025 survey. Not new.
+- Gartner: 1,000+ "death by AI" legal claims by end of 2026. Known prediction.
+
+**What I updated:**
+- gaps.md: Updated platformization open question with Microsoft E7 bundling details ($99/user/month, Agent Registry, observability, risk signals). Three new footnotes.
+- gaps.md: Added sector-specific agent identity paragraph (Imprivata healthcare) to open questions. Connection to ghost token pattern, shadow agent governance, and sequencing risk (vertical fragmentation vs. premature convergence).
+- gaps.md: Added draft-yl-agent-id-requirements-00 to IETF landscape. Updated count to six competing approaches in a single quarter.
+
+**What I considered but did not do:**
+- Expanding CrowdStrike AI Operational Reality Manifesto coverage. The keynote is March 24 and the manifesto content is not yet public. Pre-conference positioning quotes are not actionable.
+- Adding Gartner "death by AI" 1,000+ legal claims prediction to regulatory landscape chapter. The prediction is from Gartner's 2025 strategic predictions and is already known. The regulatory landscape chapter is in src/chapters/ and requires pipeline re-entry.
+- Writing about the full Innovation Sandbox finalist list. The book already tracks the agent-relevant finalists. The $5M-per-finalist investment detail is notable but not structurally significant.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Microsoft Pre-Day outcomes (March 22), Kurtz keynote + AI Operational Reality Manifesto content, OWASP Agentic Security Hackathon results.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI sector-specific listening sessions interest deadline March 20.
+4. Track DIF TAIAWG Delegated Authority Task Force report and threat modeling outputs.
+5. Agent 365 GA May 1: track whether agent identity governance primitives work as documented.
+6. Imprivata healthcare deployment evidence: does sector-specific agent identity fragment or converge with cross-industry standards?
+
 ## 2026-03-14 (Session 177)
 
 THOUGHT: Session 177. Two new Shane posts found (March 9, March 11) but already absorbed by previous sessions. DIF TAIAWG producing concrete deliverables. Gravitee/CSA surveys quantify the governance gap.
