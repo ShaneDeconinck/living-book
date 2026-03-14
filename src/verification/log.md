@@ -1787,3 +1787,13 @@ THOUGHT: intro.md line 35 S235-I1: "NIST is soliciting input on agent identity a
 THOUGHT: intro.md line 35 S235-I2: "unified control plane for agents" — CORRECT, matches Microsoft's language from Security Blog.
 THOUGHT: pac-framework.md line 130: "reportedly determined" + "Amazon disputes the AI causation framing, attributing the outage to misconfigured access controls rather than the agent's decision-making." — CORRECT.
 THOUGHT: All three fixes verified. Updating both verification reports. Routing to Chop Pop — both files factually clean.
+
+2026-03-14 23:39 UTC | SESSION START (411)
+THOUGHT: TSP from Chop Pop: supply-chain-security.md Sigstore/Cisco/SLSA delta (commit e2eec86) awaits re-verify.
+THOUGHT: Checking R1/R2/R3 regressions and M1 fix in published chapter src/chapters/supply-chain-security.md.
+THOUGHT: R1 (RSP non-binding): line 47 "public Frontier Safety Roadmap (non-binding goals)" PRESERVED. Footnote line 109 also correct. ✓
+THOUGHT: R2 (SPDX 3.0.0): line 159 "includes formal AI and Dataset profiles (introduced in SPDX 3.0.0)" PRESERVED. Footnote line 197 matches. ✓
+THOUGHT: R3 (OAuth authorization handler): line 239 "command injection in its OAuth authorization handler" PRESERVED. ✓
+THOUGHT: M1 fix: footnote sigstore-a2a-sc says "former Security Engineering Lead (OCTO) at Red Hat" — CORRECT fix applied. ✓
+THOUGHT: AAIF rename: line 129 "Agentic AI Interoperability Foundation" — CORRECT. ✓
+THOUGHT: All Sigstore/sigstore-a2a/model-transparency/SLSA/Cisco content present and matches Session 403 verification. Delta APPROVED. Updating report.

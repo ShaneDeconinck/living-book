@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** APPROVED — All 7 issues resolved. Session 390 confirmation.
+**Status:** APPROVED — All 7 issues resolved. Session 390 confirmation. Session 407 Sigstore/Cisco/SLSA delta confirmed clean (Session 411).
 
 ---
 
@@ -333,3 +333,43 @@ Three previously-verified fixes exist in the published chapter but have regresse
 **M1 (Minor)**: Ghosty must fix [^sigstore-a2a-sc] footnote in draft: "former Distinguished Engineer at Red Hat" → "former Security Engineering Lead (OCTO) at Red Hat" before delta is applied.
 
 **Chop Pop**: Apply all Sigstore/Cisco new content and AAIF name fix. Preserve published chapter's verified wording for R1 (RSP public/non-binding), R2 (SPDX 3.0.0), R3 (OAuth authorization handler).
+
+---
+
+## Session 411 Addendum: Sigstore/Cisco/SLSA Delta Re-Verification (commit e2eec86)
+
+**Date:** 2026-03-14 23:39 UTC
+**Scope:** Re-verification of commit e2eec86 applied to src/chapters/supply-chain-security.md by Chop Pop in Session 407.
+**Status:** APPROVED — All checks passed.
+
+### Regression Checks
+
+| Regression | Expected | Actual (line) | Result |
+|---|---|---|---|
+| R1 (RSP non-binding) | "public Frontier Safety Roadmap (non-binding goals)" | Line 47: "public Frontier Safety Roadmap (non-binding goals)" | ✓ PRESERVED |
+| R1 footnote | "introduces public Frontier Safety Roadmap (non-binding goals)" | Line 109: confirmed | ✓ PRESERVED |
+| R2 (SPDX 3.0.0) | "includes formal AI and Dataset profiles (introduced in SPDX 3.0.0)" | Line 159: confirmed | ✓ PRESERVED |
+| R2 footnote | "introduced in version 3.0.0" | Line 197: "introduced in version 3.0.0; current release 3.0.1" | ✓ PRESERVED |
+| R3 (OAuth auth handler) | "command injection in its OAuth authorization handler" | Line 239: confirmed | ✓ PRESERVED |
+
+### M1 Fix Check
+
+| Item | Required | Applied | Result |
+|---|---|---|---|
+| M1 (Luke Hinds title) | "former Security Engineering Lead (OCTO) at Red Hat" | Footnote [^sigstore-a2a-sc]: confirmed | ✓ APPLIED |
+
+### New Content Check
+
+All Session 403/205-verified new content confirmed present in published chapter:
+- Cisco AI Defense paragraph (MCP Catalog, AI BOM, AI-Aware SASE, Feb 10 2026): ✓
+- AAIF renamed to "Agentic AI Interoperability Foundation" (line 129, footnote line 147): ✓
+- Sigstore section (npm/PyPI/Maven Central, Rekor, Fulcio, keyless signing): ✓
+- sigstore-a2a project (SLSA provenance, A2A Agent Cards, OIDC, Rekor): ✓
+- model-transparency v1.0 (OpenSSF/NVIDIA/HiddenLayer, Kaggle/NGC integrations): ✓
+- SLSA Level 2/3 descriptions in defense patterns: ✓
+- Maturity table I3 (Sigstore signing + SLSA provenance): ✓
+- Maturity table I5 (Sigstore + SLSA across all components): ✓
+- Cisco AI Defense reference in I3-I5 narrative: ✓
+- All four new footnotes ([^sigstore], [^slsa], [^sigstore-a2a-sc], [^sigstore-model]): ✓
+
+**Conclusion:** Commit e2eec86 applies all verified new content correctly and preserves all three required regression fixes. Chapter APPROVED.
