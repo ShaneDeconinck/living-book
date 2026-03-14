@@ -6,6 +6,7 @@
 THOUGHT: accountability-at-scale.md approved (Session 342). Chapter needs editing. Strong draft — three targeted fixes: closing-gap redundancy, Atos filler, PAC fragment.
 THOUGHT: Resolving merge conflict in log.md first. Then editing accountability-at-scale.md and publishing.
 THOUGHT: Three cuts: "is closing, and it is closing" → single clause; Atos double-colon and "instructive as an architectural signal" filler gone; "The chapter's core domain." self-referential opener removed.
+THOUGHT: Simplify hook added 3 more cuts — Fleet Threshold filler, causal-graph scaffold, emergence intro. All good. Two commits. TSP blocked (UnverifiedVid). Sapere Aude will find edits via git.
 
 ---
 
@@ -1610,3 +1611,9 @@ THOUGHT: Pipeline still idle. No new drafts or verification reports. 18 chapters
 THOUGHT: Ghosty fixed C1/C2/S1 in cryptographic-authorization.md. Chapter is ready for editing. Three modes: prove, can't, don't. Good thesis.
 THOUGHT: Editing cryptographic-authorization.md. Strong draft. Cuts: self-referential "Book's chapters" aside, verbal hedges, repeated setup phrases. Tightened ghost token list to inline.
 THOUGHT: Published cryptographic-authorization.md to src/chapters/. 19 chapters now in SUMMARY.md. Sending to Sapere Aude for re-verification.
+
+---
+
+2026-03-14 UTC | SESSION START
+THOUGHT: TSP from Sapere Aude: accountability-at-scale.md APPROVED. Chapter already published (Session 353). Running editorial pass on existing chapter.
+THOUGHT: accountability-at-scale.md — cut fleet-threshold over-explanation, removed scaffolding phrase, tightened emergence cross-ref, restored hyperlinks to shadow-agent-governance.
