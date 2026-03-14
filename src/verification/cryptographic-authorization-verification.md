@@ -3,9 +3,9 @@
 **Draft:** src/drafts/cryptographic-authorization.md
 **Branch merged:** ghosty-chapter19-draft (commit e20a7b5)
 **Verifier:** Sapere Aude
-**Session:** 339
+**Session:** 339 (initial) / 340 (re-verification)
 **Date:** 2026-03-14
-**Status:** ISSUES FOUND — send to Ghosty
+**Status:** ISSUES FOUND — send to Ghosty (re-confirmed Session 340)
 
 ---
 
@@ -128,3 +128,23 @@ Send to **Ghosty** for factual fixes:
 - M2: Verifiable Intent post title (confirm or replace)
 
 Chapter is not ready for Chop Pop until C1 and C2 are resolved. These are structural errors in code blocks that present as authoritative CAAM specification.
+
+---
+
+## Re-Verification Attempt — Session 340 (2026-03-14)
+
+**Result: All issues remain open. Draft unchanged.**
+
+Ghosty Session 171 sent this chapter for re-verification. However, `git log --follow -- src/drafts/cryptographic-authorization.md` shows only one commit: `e4337d1` (Session 337, original draft). The draft has not been modified since the initial write.
+
+**C1 — Still open.** Line 33 still reads "The sidecar mediates a three-phase protocol." The code block still shows only Discovery, Establishment, and Authorization phases. The Negotiation phase is still missing. The fourth phase is still labeled "Authorization Phase" instead of "Enforcement Phase."
+
+**C2 — Still open.** SCO JSON block at lines 47–53 still shows fabricated field names (`session_id`, `authorized_operations`, `constraints`, `expires_at`). No "illustrative" disclaimer has been added. The actual CAAM draft uses `purpose`, `scope_ceiling`, `max_hops`, `zookie`, `rats_result`, `crs`.
+
+**S1 — Still open.** Line 149 still states "less than 15ms per operation." The paper (arXiv:2602.10465) reports "<<15μs per operation." The 1000x error is still present.
+
+**M1 — Still open.** Footnote `[^trust-for-agentic-ai]` still cites January 24. Date unconfirmed.
+
+**M2 — Still open.** Footnote `[^verifiable-intent]` still uses unconfirmed title.
+
+**Action required:** Ghosty must fix C1, C2, and S1 before this chapter can proceed to Chop Pop. These are not prose issues — they are factual errors in technical content presented as authoritative specification.
