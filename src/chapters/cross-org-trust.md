@@ -36,8 +36,6 @@ These requirements map directly to the Control pillar. Verifiable delegation is 
 
 ## The Token Model's Structural Limit
 
-To understand why cross-organization agent trust is hard, you need to understand the fundamental limitation of the model we have been using.
-
 Nicola Gallo, co-chair of the Trusted AI Agents working group at the Decentralized Identity Foundation, framed this precisely at the LFDT Belgium meetup: we treat authority as an object.[^1] We create tokens, store them, transfer them, consume them. Whoever holds the token can exercise the authority. A stolen token works. A replayed token works. A token used in an unintended context works. Possession equals authority.
 
 This works within a perimeter. Within a single organization, you control the token issuer, the token validator, and the enforcement points between them. You can add short expiry, audience restrictions, DPoP binding. The token model's weaknesses are mitigated by the infrastructure around it.
@@ -89,7 +87,7 @@ The protocol flow:
 3. **Cryptographic Operations.** Sign messages with private keys (authentication) and encrypt with recipient's public key (confidentiality).
 4. **TSP Envelope.** Messages travel in a signed and encrypted container. Who said what to whom is preserved for accountability, while content and metadata stay protected.
 
-The verifiable identifiers are long-term and durable, supporting key rotation with pre-commits so agents can build verifiable history over time. This is significant: it enables something like reputation, where an agent's track record becomes a verifiable property rather than just a database entry.[^1]
+The verifiable identifiers are long-term and durable, supporting key rotation with pre-commits so agents can build verifiable history over time. This enables something like reputation: an agent's track record becomes a verifiable property rather than just a database entry.[^1]
 
 ### The Thin Waist Architecture
 
@@ -142,7 +140,7 @@ CAAM is an early individual draft, not yet adopted by an IETF working group. But
 
 ## Verifiable Credentials as the Trust Carrier
 
-The protocols above establish how to communicate trust across boundaries. Verifiable Credentials are the format for carrying it. The question for cross-organization agent trust is which credential format, and that choice determines what can travel across boundaries.
+For cross-organization agent trust, credential format determines what can travel across boundaries.
 
 Shane's EUDI credential formats crash course walks through the four formats the European Digital Identity Wallet supports: X.509, mdoc, SD-JWT VC, and W3C VC.[^6] Each has different strengths:
 
@@ -208,7 +206,7 @@ The three-layer SD-JWT architecture binds user intent to agent actions:
 
 Each layer is cryptographically chained. The agent cannot present Layer 3 (action proof) without a valid Layer 2 (intent constraints), which requires a valid Layer 1 (user identity). The constraints are not advisory: they are enforced by the cryptographic structure.
 
-This is significant for cross-organization trust because the operational envelope travels with the request. When Agent A calls Service B with a Verifiable Intent credential, Service B can verify not just "is this request authenticated?" but "what was this agent authorized to do, by whom, and does this specific action fall within those constraints?" Without contacting Agent A's organization.
+The operational envelope travels with the request. When Agent A calls Service B with a Verifiable Intent credential, Service B can verify not just "is this request authenticated?" but "what was this agent authorized to do, by whom, and does this specific action fall within those constraints?" Without contacting Agent A's organization.
 
 ## A Society of Agents
 
@@ -231,7 +229,7 @@ The interaction sequence for cross-domain delegation:
 5. The delegating agent observes outcomes through system signals or cryptographic receipts
 6. The delegating agent updates reputation records based on observed behavior
 
-This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across systems. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
+Cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across systems. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
 
 ## The EUDI Wallet Infrastructure
 
