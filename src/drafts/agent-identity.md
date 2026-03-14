@@ -2,7 +2,7 @@
 
 The previous chapters established why agents break trust and introduced the PAC Framework. This chapter goes deep on the technical problem at the center of the Control pillar: how do you know who an agent is, who it acts for, and what authority it carries?
 
-This is not an abstract design question. Every time an agent calls an API, sends a message, or makes a purchase, something needs to answer: who authorized this? Traditional identity systems were not built for that question. The standards landing now are.
+Every time an agent calls an API, sends a message, or makes a purchase, something needs to answer: who authorized this? Traditional identity systems were not built for that question. The standards landing now are.
 
 ## The Trust Inversion
 
@@ -62,17 +62,13 @@ Shane identified this gap clearly: an agent usually acts on behalf of a user but
 
 The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] A second independent survey by the Cloud Security Alliance and Strata Identity (285 IT and security professionals) corroborates the same picture: 44% use static API keys, 43% use username and password combinations, and 35% rely on shared service accounts for agent authentication. Only 18% say they are "highly confident" their current IAM systems can manage agent identities effectively.[^csa-strata-auth] Two independent surveys, different respondent pools, same finding: nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005. Shared API keys cannot carry delegation semantics, enforce scope attenuation, or create auditable accountability chains. The identity stack described in the rest of this chapter exists to close that gap.
 
-This gap is what the rest of this chapter addresses: the infrastructure emerging to close it.
-
 ## OAuth Extensions for Agents
 
 The identity community is not starting from scratch. The first wave of solutions extends OAuth to handle agent-specific patterns.
 
 ### On-Behalf-Of (RFC 8693)
 
-OAuth 2.0 Token Exchange (RFC 8693) enables an entity to exchange one token for another, explicitly tracking the delegation. The resulting token encodes two identities: the user (the resource owner who delegated) and the agent (the acting party).[^4]
-
-The resulting token preserves the delegation chain. When Agent A uses OBO to get a token for calling Service X, the token says: "User Alice authorized Agent A to act on her behalf, with these specific scopes." If Agent A then delegates to Agent B, a second exchange can capture that hop too.
+OAuth 2.0 Token Exchange (RFC 8693) enables an entity to exchange one token for another, explicitly tracking the delegation. The resulting token encodes two identities: the user (the resource owner who delegated) and the agent (the acting party).[^4] This preserves the delegation chain. When Agent A uses OBO to get a token for calling Service X, the token says: "User Alice authorized Agent A to act on her behalf, with these specific scopes." If Agent A then delegates to Agent B, a second exchange can capture that hop too.
 
 In practice, the token request includes:
 
@@ -106,7 +102,7 @@ Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents, Januar
 
 The mechanism works like this: when an agent calls Service A, the first service exchanges the agent's access token for a Transaction Token (Txn-Token) at a dedicated Txn-Token Service. The Txn-Token is a short-lived, signed JWT that carries immutable actor and principal context. Service A then passes the Txn-Token (not the access token) to Service B, which passes it to Service C. At every hop, each service can verify who the agent is and who it acts for, but no service ever holds the original access token. If the Txn-Token needs replacement (for scope changes at a boundary), the Txn-Token Service issues a new one, but the actor and principal claims remain immutable: they cannot be altered through the chain.
 
-This matters for agent governance because it solves two problems simultaneously. First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
+It solves two problems simultaneously. First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
 
 A companion draft, the A2A Profile for OAuth Transaction Tokens (draft-liu-oauth-a2a-profile), applies this pattern specifically to agent-to-agent scenarios where agents need to propagate delegation context across A2A protocol interactions.[^txn-tokens-a2a]
 

@@ -1,6 +1,6 @@
 # Multi-Agent Trust and Orchestration
 
-Trust for a single agent: one identity, one delegation chain, one set of permissions: is already hard. But it is not where the industry is heading.
+Trust for a single agent is already hard: one identity, one delegation chain, one set of permissions. But it is not where the industry is heading.
 
 Salesforce's 2026 Connectivity Benchmark found that organizations already run an average of 12 agents, with adoption projected to surge 67% by 2027.[^1] Deloitte predicts as many as 75% of companies may invest in agentic AI by end of 2026, fueling an autonomous agent market worth $8.5 billion.[^2] The problem: 50% of those agents operate in isolated silos.[^1] They do not compose. They do not share trust context. They do not fail gracefully when one goes wrong.
 
@@ -18,9 +18,9 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 4. **Scalable market coordination**: market-like mechanisms for matching tasks to agents at scale
 5. **Systemic resilience**: preventing single-point failures from cascading through the network
 
-The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). The paper's framework treats delegation as a sequence of decisions that must incorporate explicit transfer of authority, responsibility, and accountability, with clear role boundaries and mechanisms for establishing trust between parties.[^4] Current systems lack most of these properties.
+The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely).
 
-This maps directly to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
+This maps to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
 
 ## Trust Does Not Compose By Default
 
@@ -34,11 +34,11 @@ But the composition introduces problems that neither agent alone creates:
 
 **Accountability gaps.** When the $5,200 charge appears, who is responsible? Agent A exceeded its budget. Agent B executed the transaction. The human who authorized Agent A never authorized Agent B. The audit trail shows each agent acted within its own constraints, but the system-level outcome violated the human's intent.
 
-**Trust transitivity.** Agent A trusts Agent B. Agent B trusts Agent C (a third-party pricing API). Does Agent A therefore trust Agent C? In most current implementations, yes, implicitly. This transitive trust is exactly the pattern that caused the Drift breach: one compromised integration inherited trust across 700 organizations.[^5]
+**Trust transitivity.** Agent A trusts Agent B. Agent B trusts Agent C (a third-party pricing API). Does Agent A therefore trust Agent C? In most current implementations, yes, implicitly. This transitive trust is exactly the pattern that caused the Drift breach: one compromised integration inherited trust across 700 organizations.
 
 The IACR paper "Trustworthy Agent Network" published in March 2026 argues that this composability gap is fundamental, not incidental.[^6] The authors contend that trustworthiness of agent-to-agent networks "cannot be fully guaranteed via retrofitting on existing protocols that are largely designed for individual agents. Instead, it must be architected from the very beginning of the A2A coordination framework."[^6]
 
-Shane's trust inversion applies here with compounded force.[^7] A single agent requires the inverse of human trust: restricted to what it can do, not what it cannot. A multi-agent system requires trust inversion at every boundary, with the additional constraint that the trust envelope must be verifiable end-to-end across agents that may not share infrastructure, identity providers, or even organizational affiliation.
+Shane's trust inversion applies here.[^7] A single agent requires the inverse of human trust: restricted to what it can do, not what it cannot. A multi-agent system requires trust inversion at every boundary, with the additional constraint that the trust envelope must be verifiable end-to-end across agents that may not share infrastructure, identity providers, or even organizational affiliation.
 
 ## Cascading Failures
 
@@ -46,7 +46,7 @@ When trust breaks in a single-agent system, the blast radius is bounded by that 
 
 OWASP's Top 10 for Agentic Applications identifies cascading failures as ASI08: "a single fault, such as a hallucination, prompt injection, or corrupted data, propagates across multiple autonomous AI agents, amplifying into system-wide harm."[^8] Unlike traditional software errors that stay contained by error boundaries and circuit breakers, agentic cascading failures multiply through agent-to-agent communication, shared memory, and feedback loops.
 
-Peer-reviewed research confirms this pattern empirically. Huang et al. (ICML 2025) measured how faulty agents degrade multi-agent system performance, finding drops of up to 23.7% depending on system architecture, with hierarchical structures more resilient than flat ones.[^9] The mechanism: one specialized agent begins hallucinating or is compromised, feeds corrupted data to downstream agents, and those downstream agents, trusting the input, make flawed decisions that amplify the error across the system. The chain of reasoning is opaque: you see the final bad decision but cannot easily rewind to find which agent introduced the corruption. A taxonomy study of 1,600+ failure traces across seven multi-agent frameworks found the same pattern: "failures are not isolated events but may have cascading effects that influence other failure categories."[^9b]
+Peer-reviewed research confirms this pattern empirically. Huang et al. measured how faulty agents degrade multi-agent system performance, finding drops of up to 23.7% depending on system architecture, with hierarchical structures more resilient than flat ones.[^9] The mechanism: one specialized agent begins hallucinating or is compromised, feeds corrupted data to downstream agents, and those downstream agents, trusting the input, make flawed decisions that amplify the error across the system. The chain of reasoning is opaque: you see the final bad decision but cannot easily rewind to find which agent introduced the corruption. A taxonomy study of 1,600+ failure traces across seven multi-agent frameworks found the same pattern: failures are not isolated events but may have cascading effects that influence other failure categories.[^9b]
 
 This failure pattern has three properties that make it harder than cascading failures in traditional distributed systems:
 
@@ -56,7 +56,7 @@ This failure pattern has three properties that make it harder than cascading fai
 
 **Opacity.** Traditional distributed systems have deterministic control flow. You can trace a request through a service mesh and identify where it went wrong. Multi-agent systems have non-deterministic control flow because agents decide what to do next. The delegation chain is not predetermined: it emerges from the agents' reasoning. Debugging requires reconstructing decisions, not just tracing function calls.
 
-Broader studies document failure rates of 41% to 86.7% in multi-agent systems without proper orchestration.[^9] The gap between "works in a demo" and "works in production" is primarily a governance gap, not a capability gap.
+Broader studies document failure rates of 41% to 86.7% in multi-agent systems without proper orchestration.[^9b] The gap between "works in a demo" and "works in production" is primarily a governance gap, not a capability gap.
 
 ### The Internal Leakage Problem
 
@@ -66,9 +66,9 @@ AgentLeak, the first full-stack privacy leakage benchmark for multi-agent system
 
 But the total system exposure tells a different story. AgentLeak identifies seven leakage channels and classifies attacks into a 32-class taxonomy. When leakage is measured across all channels, including inter-agent messages, shared memory, and tool call arguments, OR-aggregated exposure rises to 68.9%. The agents leaked less through their outputs and more through their internal communication.
 
-Four of the seven channels are internal to the multi-agent system: inter-agent messages, shared memory writes, tool call arguments, and internal reasoning traces. Standard output-level auditing catches at most three. Organizations monitoring multi-agent systems at the output level, which is what most observability tools provide, have visibility into less than half of the actual leakage surface.
+Four of the seven channels are internal to the multi-agent system: inter-agent messages, tool call arguments, tool output data, and agent memory state. Standard output-level auditing catches at most three. Organizations monitoring multi-agent systems at the output level, which is what most observability tools provide, have visibility into less than half of the actual leakage surface.
 
-Trust boundaries between agents are not just about preventing cascading decision failures. They are about controlling information flow through internal channels. The Firewalled Agent Networks architecture described below addresses this: the Information Firewall strips task-irrelevant content from inter-agent messages before they cross boundaries. AgentLeak quantifies what happens without that control: 68.9% total exposure despite lower output-level leakage. The defense is the same: structural enforcement at communication boundaries, not output-level inspection after the fact.
+The implication connects directly to this chapter's architectural patterns. Trust boundaries between agents are not just about preventing cascading decision failures. They are about controlling information flow through internal channels. The Firewalled Agent Networks architecture described below addresses this: the Information Firewall strips task-irrelevant content from inter-agent messages before they cross boundaries. AgentLeak quantifies what happens without that control: 68.9% total exposure despite lower output-level leakage. The defense is the same: structural enforcement at communication boundaries, not output-level inspection after the fact.
 
 ### Emergent Offensive Cooperation
 
@@ -81,15 +81,13 @@ Irregular, a frontier AI security lab working with OpenAI and Anthropic, publish
 - **Credential forgery.** Agents forged authentication credentials to access resources beyond their authorized scope.
 - **Inter-agent social engineering.** Agents put "peer pressure" on other agents to circumvent safety checks: one agent persuading another to relax its constraints, not through technical exploitation but through conversational manipulation.
 
-Separately, Anthropic's own system card for Claude Opus 4.6 documented the model acquiring authentication tokens from its environment, including one it knew belonged to a different user.[^anthropic-opus-systemcard] This is the confused deputy through environment: the agent did not receive credentials through a delegation flow. It found them and used them.
-
 Irregular emphasized that these behaviors were not model-specific: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system." The implication for multi-agent trust is structural. Cascading failures assume agents are passive conduits that propagate errors. Internal leakage assumes agents are careless with data. Emergent offensive cooperation shows agents can be active adversaries within a multi-agent system, discovering and exploiting vulnerabilities that no human anticipated, and recruiting other agents to help.
 
-The defense is the same architecture this chapter describes: structural containment that makes bypass impossible, not advisory controls that agents can creatively circumvent. The Firewalled Agent Networks' Language Converter Firewall is specifically designed for this: by converting inter-agent messages to a closed structured protocol, it makes peer pressure and social engineering between agents structurally inexpressible. The AgenticCyOps trust boundaries prevent the privilege escalation paths the Irregular agents exploited. The "can't vs. don't" distinction from the PAC Framework is the precise framing: every "don't" control (DLP, antivirus, safety checks) was bypassed through emergent behavior. Only "can't" controls (structural isolation, protocol conversion, authority attenuation) would have held.
+The defense is structural containment: make bypass impossible, not trust advisory controls that agents can creatively circumvent. The Firewalled Agent Networks' Language Converter Firewall is specifically designed for this: by converting inter-agent messages to a closed structured protocol, it makes peer pressure and social engineering between agents structurally inexpressible. The AgenticCyOps trust boundaries prevent the privilege escalation paths the Irregular agents exploited. The "can't vs. don't" distinction from the PAC Framework is the precise framing: every "don't" control (DLP, antivirus, safety checks) was bypassed through emergent behavior. Only "can't" controls (structural isolation, protocol conversion, authority attenuation) would have held.
 
 ## Delegation Capability Tokens
 
-How do you encode trust across multi-hop delegation chains? The [Agent Identity and Delegation](agent-identity.md) chapter covers the single-hop case: OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent. Multi-hop delegation requires a different mechanism. The DeepMind paper proposes Delegation Capability Tokens (DCTs) based on macaroons.[^4]
+How do you encode trust across multi-hop delegation chains? OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent address the single-hop case. Multi-hop delegation requires a different mechanism. The DeepMind paper proposes Delegation Capability Tokens (DCTs) based on macaroons.[^4]
 
 Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps naturally to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
 
@@ -126,8 +124,6 @@ A DCT for a multi-agent delegation chain works like this:
 
 Each delegation hop can only add restrictions. Agent A cannot give Agent B a $10,000 budget from a $5,000 authorization. The token is self-verifying: any party in the chain can confirm that the caveats were added by authorized holders without contacting the original issuer. This is offline verification, critical for multi-agent systems where round-trips to an authentication server at every hop would be prohibitively slow.
 
-The related Biscuit token format extends macaroons with Datalog-based attenuation, allowing richer policy expressions.[^4] Where macaroons support simple key-value caveats, biscuits can express policies like "may read any file in /data/ but may only write to /data/drafts/ and only if the request originated from a planning agent."
-
 Both approaches enforce what the PAC Framework calls decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
 
 ## The Orchestration Governance Gap
@@ -155,11 +151,9 @@ The orchestration framework manages task assignment and result collection. But g
 
 **Where does liability sit?** When a multi-agent system makes a consequential error, the liability question is harder than for a single agent. The EU AI Act's provider/deployer distinction was designed for individual AI systems, not for chains of agents from different providers executing delegated authority.[^12]
 
-The Salesforce data makes the organizational dimension concrete: 50% of agents operate in silos.[^1] That means half of enterprise agents are already multi-agent systems in practice (they interact with other agents through shared databases, APIs, or workflows) without any of the governance infrastructure to manage that interaction. They are multi-agent systems without multi-agent governance.
+The Salesforce data makes the organizational dimension concrete: 50% of agents operate in silos.[^1] Half of enterprise agents are already multi-agent systems in practice (they interact with other agents through shared databases, APIs, or workflows) without any of the governance infrastructure to manage that interaction.
 
 ## Architectural Patterns for Multi-Agent Trust
-
-Several patterns are emerging for making multi-agent systems governable. None is complete. All are young.
 
 ### Hierarchical Delegation with Authority Attenuation
 
@@ -201,7 +195,7 @@ The practical limitation is domain specificity. Each domain (travel booking, fin
 
 ### Delegation Registries
 
-An extension of the agent registry pattern from the [Shadow Agent Governance](shadow-agent-governance.md) chapter. A delegation registry does not just track which agents exist but which delegation relationships are authorized, with what scope, and under what conditions.
+A delegation registry does not just track which agents exist but which delegation relationships are authorized, with what scope, and under what conditions.
 
 ```json
 {
@@ -227,7 +221,7 @@ This makes delegation an auditable, queryable infrastructure concern rather than
 
 ### PIC for Multi-Agent Chains
 
-The [Cross-Organization Trust](cross-org-trust.md) chapter covered PIC (Provenance, Identity, Continuity) as a mechanism for cross-boundary trust. PIC's value compounds in multi-agent systems because it answers the question that tokens cannot: can this authority validly continue through this chain?[^13]
+PIC's value compounds in multi-agent systems because it answers the question that tokens cannot: can this authority validly continue through this chain?[^13]
 
 Where DCTs encode what authority an agent has, PIC verifies that the chain of delegation that produced that authority is unbroken. A downstream agent does not just check "does this token have the right caveats?" but "can I verify that each delegation in this chain was performed by an agent with the authority to delegate?"
 
@@ -269,7 +263,7 @@ This composition is not yet implemented end-to-end. But the pieces are designed 
 
 ## When Agents Fail: Incident Response for Multi-Agent Systems
 
-The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories.
+The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories including prompt injection, data poisoning, and unauthorized agent behaviors such as excessive agency and tool misuse.
 
 For multi-agent systems, incident response differs from single-agent failures in three ways:
 
@@ -315,7 +309,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 ## Practical Recommendations
 
-**Start with delegation visibility.** Before governing multi-agent delegation, you need to see it. Instrument orchestration frameworks to log delegation events: who delegated to whom, with what scope, and what the outcome was. This is the multi-agent equivalent of the agent registry in the [Shadow Agent Governance](shadow-agent-governance.md) chapter.
+**Start with delegation visibility.** Before governing multi-agent delegation, you need to see it. Instrument orchestration frameworks to log delegation events: who delegated to whom, with what scope, and what the outcome was. This is the multi-agent equivalent of the agent registry in the Shadow Agent Governance chapter.
 
 **Enforce authority attenuation.** Implement DCTs or equivalent mechanisms that make authority expansion impossible at the token level. If your orchestration framework does not support this, add a delegation gateway that validates authority scope at every hop.
 
@@ -329,13 +323,11 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^1]: Salesforce, "Connectivity Benchmark Report 2026" (in collaboration with Vanson Bourne and Deloitte Digital, February 2026). Survey of 1,050 IT leaders across nine countries.
 
-[^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026, potentially $45 billion by 2030 with effective orchestration.
+[^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026; base case $35 billion by 2030, with an upside scenario of $45 billion by 2030 if enterprises orchestrate agents effectively.
 
 [^3]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 24, 2026.
 
 [^4]: Nenad Tomašev, Matija Franklin, and Simon Osindero, "Intelligent AI Delegation," Google DeepMind, arXiv:2602.11865, February 12, 2026.
-
-[^5]: Cloud Security Alliance, "AI Agents Have Outgrown Their Credentials: Why Drift's Breach Changes Everything," CSA Research, 2026.
 
 [^6]: Yixiang Yao et al., "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On," IACR ePrint Archive 2026/497, March 2026.
 
@@ -343,7 +335,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^8]: OWASP, "Top 10 for Agentic Applications," ASI08: Cascading Failures, December 2025.
 
-[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), arXiv:2408.00989. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
+[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), arXiv:2408.00989, submitted August 2024, revised May 2025. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
 
 [^9b]: Mert Cemri et al., ["Why Do Multi-Agent LLM Systems Fail?"](https://arxiv.org/abs/2503.13657), March 2025. MAST-Data: 1,600+ annotated failure traces across 7 multi-agent frameworks.
 
@@ -355,7 +347,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^13]: Nicola Gallo, PIC (Provenance, Identity, Continuity) paradigm, presented at LFDT Belgium meetup, March 2026.
 
-[^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework," OASIS Open Project, 2026. Pre-release available on GitHub (cosai-oasis/ws2-defenders); formal V1.0 approval pending. Includes CACAO-standard playbooks for AI-specific incident categories.
+[^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework," OASIS Open Project, 2025. V1.0 released November 2025. Available on GitHub (cosai-oasis/ws2-defenders). Includes CACAO-standard playbooks for AI-specific incident categories.
 
 [^tsp]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Wenjing Chu (Futurewei/Trust over IP), Trust Spanning Protocol presentation at LFDT Belgium meetup, March 3, 2026. TSP specification: trustoverip.github.io/tswg-tsp-specification.
 
@@ -365,12 +357,10 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^forrester]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Senior analyst Paddy Harrington: "When you tie multiple agents together and you allow them to take action based on each other, at some point, one fault somewhere is going to cascade and expose systems."
 
-[^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (shared memory), C4 (tool arguments), C5 (internal reasoning), C6 (log files), C7 (external API calls). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
+[^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (tool arguments to external APIs), C4 (data returned from tools), C5 (agent memory state), C6 (telemetry and system logs), C7 (persistent artifacts such as generated files). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
 
 [^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026 (v6). Open-source implementation: github.com/amrgomaaelhady/Firewall-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Cross-domain average privacy attack success reduction: GPT-5 from 84.68% to 10.20%, Claude Sonnet 4 from 72.89% to 16.77%. Security attack success reduction: from 60% to 3%.
 
 [^deloitte-stateofai]: Deloitte, "State of AI in the Enterprise, 2026" (surveyed 3,000+ business and IT leaders). The 21% governance maturity figure comes from this report, not the TMT Predictions. The 75% investment plan and $8.5 billion market figure are from the TMT Predictions [^2].
 
-[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, Securiti, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
-
-[^anthropic-opus-systemcard]: Anthropic, Claude Opus 4.6 System Card, anthropic.com, 2026. Documents Claude Opus 4.6 acquiring authentication tokens from its environment, including tokens belonging to other users.
+[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."

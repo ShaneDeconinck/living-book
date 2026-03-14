@@ -2,7 +2,7 @@
 
 Communication protocols are the plumbing of the agent ecosystem. They determine how agents discover tools, talk to other agents, and traverse organizational boundaries. Get the plumbing right, and agents can compose into systems that create value no single agent could deliver. Get it wrong, and every integration is bespoke, every boundary a wall, every tool connection a security risk.
 
-The critical insight, and the one Shane has been making since his first explainers on these protocols: **communication protocols solve discovery, not trust**.[^1] MCP tells an agent what tools exist. A2A tells an agent what other agents can do. Neither tells the agent whether to trust what it finds. That gap is where the rest of this book's infrastructure: identity, delegation, authority, and governance: becomes load-bearing.
+The critical insight: **communication protocols solve discovery, not trust**.[^1] MCP tells an agent what tools exist. A2A tells an agent what other agents can do. Neither tells the agent whether to trust what it finds. That gap is where the rest of this book's infrastructure: identity, delegation, authority, and governance: becomes load-bearing.
 
 ## The Discovery Problem
 
@@ -79,7 +79,7 @@ MCP supports two transport mechanisms:
 | **stdio** | Local, subprocess | Inherits host environment |
 | **HTTP + SSE** | Remote services | OAuth 2.1 |
 
-The stdio transport is how most developers encounter MCP today: a local process that the host spawns and communicates with over standard input/output. It inherits whatever credentials the host process has. This is simple but has a consequence Shane identified in his Google Workspace CLI analysis: "The agent simply inherits whatever credentials the host process has."[^3] There is no network boundary to enforce policy at.
+The stdio transport is how most developers encounter MCP today: a local process that the host spawns and communicates with over standard input/output. Shane identified the consequence in his Google Workspace CLI analysis: "The agent simply inherits whatever credentials the host process has."[^3] There is no network boundary to enforce policy at.
 
 The HTTP transport enables remote MCP servers, which is where production deployments live. The 2025-11-25 specification requires OAuth 2.1 with PKCE (S256 mandatory), RFC 9728 for Protected Resource Metadata, and RFC 8707 for Resource Indicators.[^4] Remote servers expose a `.well-known/oauth-protected-resource` endpoint for authorization server discovery.
 
@@ -98,11 +98,10 @@ These are infrastructure maturity improvements. They move MCP from "works in dev
 
 Beyond the four priority areas, the roadmap lists security and authorization as "on the horizon": not yet a top priority, but with sponsored work already underway. Two SEPs are notable. SEP-1932 brings DPoP (Demonstration of Proof-of-Possession) to MCP, binding tokens to cryptographic keys so stolen tokens are useless without the private key.[^mcp-dpop] SEP-1933 adds Workload Identity Federation, enabling agents to authenticate using platform-issued identities (cloud workload credentials) rather than static client secrets.[^mcp-wif] Both are pull requests in the MCP specification repository, not proposals waiting for attention. The roadmap also targets finer-grained least-privilege scopes, OAuth mix-up attack guidance, and a community-driven vulnerability disclosure program routed through the Linux Foundation.
 
-DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md) chapter as critical infrastructure for preventing token theft. Workload Identity Federation connects to the WIMSE (Workload Identity in Multi-System Environments) work discussed in the same chapter. MCP adopting both confirms the trajectory: the identity layer and the communication layer are converging. Communication protocols that started as "plumbing, not trust" are adding trust infrastructure because production deployments cannot function without it.
-
+DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md) chapter as critical infrastructure for preventing token theft. Workload Identity Federation connects to the WIMSE (Workload Identity in Multi-System Environments) work discussed in the same chapter. MCP adopting both confirms the trajectory: the identity layer and the communication layer are converging.
 ### Adoption
 
-The adoption numbers are striking. By February 2026, MCP crossed 97 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
+The adoption numbers are striking. By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
 
 ### Security: MCP Is Plumbing, Not Trust
 
@@ -148,7 +147,7 @@ These gaps are precisely what the identity infrastructure from [Agent Identity a
 
 ### Systematic Protocol Threat Modeling
 
-The incident timeline and Shane's trust gap analysis describe what has gone wrong and what is missing. A February 2026 paper by Anbiaee et al. provides the first systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
+A February 2026 paper by Anbiaee et al. provides the first systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
 
 The twelve risks cluster into three categories:
 
@@ -164,7 +163,7 @@ The paper's central conclusion aligns with this chapter's thesis: no single prot
 
 ### OWASP MCP Top 10
 
-The incident timeline and academic threat models are now complemented by an industry risk taxonomy. OWASP launched the MCP Top 10 project in 2026: a dedicated security framework for Model Context Protocol risks, distinct from the OWASP Top 10 for Agentic Applications.[^owasp-mcp] Where the Agentic Applications list addresses agent-level risks (goal hijacking, excessive agency, memory poisoning), the MCP Top 10 focuses specifically on protocol-level risks in the MCP lifecycle.
+OWASP launched the MCP Top 10 project in 2026: a dedicated security framework for Model Context Protocol risks, distinct from the OWASP Top 10 for Agentic Applications.[^owasp-mcp] Where the Agentic Applications list addresses agent-level risks (goal hijacking, excessive agency, memory poisoning), the MCP Top 10 focuses specifically on protocol-level risks in the MCP lifecycle.
 
 The MCP Top 10 identifies risks across the full interaction surface:
 
@@ -180,7 +179,7 @@ The OWASP MCP Top 10 matters for two reasons. First, it provides a shared vocabu
 
 ### MCP Governance in Production
 
-The incident timeline, threat models, and risk taxonomies describe what can go wrong. Microsoft's internal MCP deployment provides the first documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
+Microsoft's internal MCP deployment provides the first documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
 
 Microsoft organizes MCP risk into four layers: **applications and agents** (the top, where business logic and tool calls originate), **AI platform** (the orchestration and model layer), **data** (what agents access and produce), and **infrastructure** (the compute, network, and identity substrate). Each layer has distinct failure modes and distinct controls. Mapping mitigations to where failures actually happen, rather than applying a single security model across the stack, is the practical insight.
 

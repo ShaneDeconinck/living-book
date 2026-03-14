@@ -18,7 +18,7 @@ Agents break every one of these assumptions:
 
 **Machine-to-machine identity.** Payment processors verify the identity of human customers. When the customer is an agent acting on behalf of a human, the payment system needs to answer a different question: who authorized this agent to spend, and within what bounds?
 
-These are not edge cases. McKinsey projects agentic commerce will reach $1 trillion in US B2C retail by 2030, with $3 to $5 trillion globally.[^mckinsey-commerce] As agents move beyond coding assistants into purchasing and cross-organizational workflows, payment becomes a core infrastructure requirement, not an afterthought.
+As agents move beyond coding assistants into business operations, purchasing, and cross-organizational workflows, payment becomes a core infrastructure requirement, not an afterthought.
 
 ## Payment as Trust Signal
 
@@ -37,7 +37,7 @@ This is why payment infrastructure and trust infrastructure are converging. The 
 
 HTTP 402 "Payment Required" has existed since 1997 but never had a payment layer behind it. Coinbase and Cloudflare are building one: x402, an open standard that embeds payment directly into HTTP workflows.[^3]
 
-Shane built a proof-of-concept to test this firsthand: a real estate API where an AI agent queries property data, gets a 402 response with payment instructions, signs a stablecoin authorization, and receives the data. No human in the loop.[^2]
+Shane built a proof-of-concept: a real estate API where an AI agent queries property data, gets a 402 response with payment instructions, signs a stablecoin authorization, and receives the data. No human in the loop.[^2]
 
 The flow works like this:
 
@@ -61,11 +61,11 @@ The flow works like this:
 
 The key technical innovation is **EIP-3009 TransferWithAuthorization**: a standard supported by USDC that enables gasless payments. The agent signs an authorization using EIP-712 typed data, but never sends a blockchain transaction. The server settles the payment on-chain and pays the gas.[^2]
 
-This changes the agent's requirements significantly. The agent needs a signing key, not ETH for gas. It needs USDC in its wallet, not a full blockchain client. The private key management is still a custody concern, but the operational complexity is dramatically reduced.
+The agent needs a signing key, not ETH for gas. It needs USDC in its wallet, not a full blockchain client. The private key management is still a custody concern, but the operational complexity is dramatically reduced.
 
 ### The Economics of L2 Settlement
 
-The viability of x402 depends entirely on where you settle. Shane's demo showed the economics clearly:[^2]
+The viability of x402 depends entirely on where you settle. Shane's demo showed the economics:[^2]
 
 | Query Price | Base L2 Gas (~$0.002) | Server Overhead | Mainnet Gas (~$15) | Server Overhead |
 |---|---|---|---|---|
@@ -79,9 +79,9 @@ Layer 2 networks make micro-payments viable. Ethereum mainnet does not. This is 
 
 The infrastructure investment behind x402 is substantial. The x402 Foundation, co-founded by Coinbase and Cloudflare, was announced in September 2025 to establish x402 as a universal standard for agent payments.[^4] Stripe launched x402 integration on Base in February 2026.[^5] Cloudflare integrated x402 directly into its Agent SDK and MCP server infrastructure, so agents built on Cloudflare can pay for resources natively and MCP servers can expose tools as payable endpoints.[^cloudflare-x402] Stellar added x402 support for stablecoin-based API payments.[^stellar-x402] The protocol has expanded across a dozen chains including Base, Solana, Polygon, Stellar, and Etherlink.[^6]
 
-Cloudflare is also proposing a **deferred payment scheme** for x402: batch settlements at the end of each day rather than per-request on-chain transactions.[^cloudflare-x402] This is architecturally significant because it makes x402 payment-rail-agnostic. The cryptographic trust (intent capture, authorization verification) is established immediately via the x402 handshake, but financial settlement can happen through traditional payment methods, stablecoins, or both. The deferred scheme directly addresses the adoption friction the book identified: most organizations do not hold USDC. With deferred settlement, they do not need to.
+Cloudflare is also proposing a **deferred payment scheme** for x402: batch settlements at the end of each day rather than per-request on-chain transactions.[^cloudflare-x402] The deferred scheme makes x402 payment-rail-agnostic: cryptographic trust (intent capture, authorization verification) is established immediately via the x402 handshake, but financial settlement can happen through traditional payment methods, stablecoins, or both. The main adoption barrier: most organizations do not hold USDC. With deferred settlement, they do not need to.
 
-The honest assessment: infrastructure investment is ahead of organic demand. Despite major backing from Stripe, Coinbase, Cloudflare, and Stellar, x402's daily organic volume sits around $28,000 as of early March 2026, with roughly half of observed transactions reflecting artificial activity (self-dealing and wash trading) according to Artemis on-chain analytics.[^x402-volume] Daily transactions dropped over 92% from a December 2025 peak of approximately 731,000 to about 57,000 in February 2026. This is not unusual for early infrastructure protocols: TCP/IP, email, and HTTP itself took years of infrastructure building before organic usage caught up. The pattern of major infrastructure providers treating agent payments as a first-class use case suggests the bet is on the infrastructure being ready when demand arrives, not on demand having already arrived.
+The honest assessment: infrastructure investment is ahead of organic demand. Despite major backing from Stripe, Coinbase, Cloudflare, and Stellar, x402's daily organic volume sits around $28,000 as of early March 2026, with roughly half of observed transactions reflecting artificial activity (self-dealing and wash trading) according to Artemis on-chain analytics.[^x402-volume] Daily transactions dropped over 92% from a December 2025 peak of approximately 731,000 to about 57,000 in February 2026. This is not unusual for early infrastructure protocols: TCP/IP, email, and HTTP itself took years before organic use caught up. The pattern of major infrastructure providers treating agent payments as a first-class use case suggests the bet is on the infrastructure being ready when demand arrives, not on demand having already arrived.
 
 ## The Four Commerce Protocols
 
@@ -105,7 +105,7 @@ The specification is maintained by OpenAI and Stripe (Apache 2.0), with Salesfor
 
 ### UCP: Universal Commerce Protocol
 
-Google, Shopify, Walmart, and Visa announced UCP in January 2026 as an open-source standard for the next generation of agentic commerce. UCP focuses on making product catalogs discoverable and transactable by AI agents, with compatibility with AP2 for secure payment handling.[^9]
+Google, Shopify, and Walmart co-announced UCP in January 2026 as an open-source standard for the next generation of agentic commerce, with Visa among more than 20 endorsing partners. UCP focuses on making product catalogs discoverable and transactable by AI agents, with compatibility with AP2 for secure payment handling.[^9]
 
 Where AP2 handles the payment authorization flow, UCP handles the product discovery and catalog layer: ensuring agents can access accurate product information, inventory, and pricing across merchants.
 
@@ -135,7 +135,7 @@ Google participates in both AP2 and UCP; Stripe participates in ACP, x402, and T
 
 ## On-Chain Agent Identity: ERC-8004
 
-The Ethereum ecosystem, together with Consensys, Google, and Coinbase, has taken a different approach to agent trust: on-chain registries. ERC-8004, which went live on Ethereum mainnet on January 29, 2026, adds three registries for agent identity, reputation, and validation.[^10]
+The Ethereum Foundation, together with Consensys, Google, and Coinbase, has taken a different approach to agent trust: on-chain registries. ERC-8004, which went live on Ethereum mainnet on January 29, 2026, adds three registries for agent identity, reputation, and validation.[^10]
 
 **Identity Registry.** Each agent gets an NFT (ERC-721) linking to flexible endpoints: A2A agent cards, MCP servers, ENS names, DIDs, wallets on any chain. The NFT is the global identifier. As Shane notes, A2A and MCP solve discovery and communication but assume usage within trust boundaries. When agents cross organizational boundaries, DNS and TLS are not enough.[^10]
 
@@ -159,11 +159,11 @@ The theory is being tested in production. Three milestones from early 2026 show 
 
 **J.P. Morgan and Mirakl** announced a strategic agreement on March 10, 2026 to power agentic commerce at enterprise scale. Mirakl's Nexus platform provides the product catalog layer (optimized for AI agent discovery), while J.P. Morgan provides payment infrastructure including tokenization that enables agents to transact safely.[^12]
 
-These are not startups experimenting. These are the largest payment processors, banks, and commerce platforms in the world building agent payment infrastructure.
+These are the largest payment processors, banks, and commerce platforms in the world building agent payment infrastructure.
 
 ## The Micro-Transaction Problem
 
-Agent economics fundamentally differ from human economics. A human might make a few purchases per day. An agent orchestrating a workflow might make hundreds of API calls per hour, each requiring payment.
+Agent economics differ from human economics. A human might make a few purchases per day. An agent orchestrating a workflow might make hundreds of API calls per hour, each requiring payment.
 
 Traditional payment infrastructure cannot handle this:
 
@@ -200,7 +200,7 @@ Verifiable Intent answers this with machine-enforceable constraints:[^13]
 | `payment.agent_recurrence` | Multi-transaction authorization within bounds |
 | `payment.reference` | Binds payment to a conditional transaction ID |
 
-Critically, these constraints are enforced at the network level, not at the agent level. The payment network maintains state across transactions (tracking budget caps, enforcing recurrence limits). The agent cannot bypass its own limits because enforcement happens outside the agent's control perimeter.
+These constraints are enforced at the network level, not at the agent level. The payment network maintains state across transactions (tracking budget caps, enforcing recurrence limits). The agent cannot bypass its own limits because enforcement happens outside the agent's control perimeter.
 
 This is the Control pillar in action: policy says "don't spend more than $300"; architecture says "can't spend more than $300."
 
@@ -313,7 +313,7 @@ For organizations building agent systems today:
 
 **On-chain versus off-chain.** ERC-8004's on-chain registries provide censorship resistance and composability with DeFi primitives. Off-chain registries (A2A agent cards, MCP servers) provide lower latency and simpler integration. Most organizations will use both: on-chain for cross-organizational trust, off-chain for internal operations.
 
-The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now. The constraint layer that makes it governable lives in [Agent Identity and Delegation](agent-identity.md): the SD-JWT architecture that encodes spending limits, merchant restrictions, and recurrence parameters at the credential level.
+Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now. The constraint layer that makes it governable lives in [Agent Identity and Delegation](agent-identity.md): the SD-JWT architecture that encodes spending limits, merchant restrictions, and recurrence parameters at the credential level.
 
 [^1]: Stripe pricing: 2.9% + $0.30 per successful card charge, as of March 2026.
 [^2]: Shane Deconinck, "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026.
@@ -323,8 +323,8 @@ The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Goo
 [^6]: Solana, "What is x402? Payment Protocol for AI Agents on Solana," 2026. Multi-chain expansion: Etherlink (TZ APAC's Tez402, March 2026), Stellar (stablecoin API payments), Polygon, Arbitrum, and others.
 [^cloudflare-x402]: Cloudflare, "Launching the x402 Foundation with Coinbase, and support for x402 transactions," blog.cloudflare.com, 2026. Agent SDK and MCP server integration, deferred payment scheme proposal for batch settlements via traditional payment methods or stablecoins.
 [^stellar-x402]: Stellar, x402 support announcement, 2026. Enables AI agents to pay for APIs and digital services through direct stablecoin transactions on Stellar.
-[^x402-volume]: Sam Reynolds, "Coinbase-backed AI payments protocol wants to fix micropayment but demand is just not there yet," CoinDesk, March 11, 2026. Data sourced from Artemis on-chain analytics. Approximately 131,000 daily transactions generating ~$28,000 in volume; roughly half reflect artificial activity (self-dealing and wash trading). Daily transactions dropped over 92% from December 2025 peak.
-[^7]: Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)," 2026.
+[^x402-volume]: Artemis, on-chain analytics, March 2026. Daily transactions dropped over 92% from a December 2025 peak of approximately 731,000 to about 57,000 in February 2026; daily organic volume approximately $28,000 as of early March 2026; roughly half of observed transactions reflect artificial activity (self-dealing and wash trading). See also: Sam Reynolds, "Coinbase-backed AI payments protocol wants to fix micropayment but demand is just not there yet," CoinDesk, March 11, 2026.
+[^7]: Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)," September 2025.
 [^8]: Stripe Blog, "Developing an open standard for agentic commerce," 2026; OpenAI, "Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol," 2026.
 [^9]: Google Developers Blog, "Under the Hood: Universal Commerce Protocol (UCP)," 2026.
 [^10]: Shane Deconinck, "ERC-8004 Goes Mainnet: Ethereum's Trust Layer for AI Agents," January 28, 2026.
@@ -340,4 +340,3 @@ The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Goo
 [^tap]: Visa, "Visa Introduces Trusted Agent Protocol: An Ecosystem-Led Framework for AI Commerce," investor.visa.com, October 2025. Open-sourced on GitHub: github.com/visa/trusted-agent-protocol. Apache 2.0 license.
 [^tap-spec]: Visa Developer Center, "Trusted Agent Protocol Specifications," developer.visa.com. Built on RFC 9421 HTTP Message Signatures, Ed25519 or PS256 algorithms, 8-minute signature validity, JWKS-based public key distribution.
 [^tap-transactions]: Visa, "Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026," usa.visa.com, 2026. Over 100 partners, hundreds of controlled real-world transactions. Early adopters include Nuvei, Adyen, Stripe, Skyfire, Nekuda, PayOS, and Ramp.
-[^mckinsey-commerce]: McKinsey & Company, "The agentic commerce opportunity: How AI agents are ushering in a new era for consumers and merchants," October 2025. Projections: up to $1 trillion in US B2C retail by 2030, $3-5 trillion globally.

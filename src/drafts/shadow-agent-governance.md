@@ -2,7 +2,7 @@
 
 Most organizations that consider themselves well-governed have no idea what agents are running inside them.
 
-Vectra AI reports 98% of organizations have unsanctioned AI use.[^vectra-shadow] The number itself matters less than what it implies: agent deployment has outrun governance everywhere, not just at organizations that are slow or careless. The average enterprise has an estimated 1,200 unofficial AI applications in use, with 86% reporting no visibility into their AI data flows.[^helpnet-agent-security]
+Varonis reports 98% of employees have unsanctioned AI use.[^varonis-shadow] The number itself matters less than what it implies: agent deployment has outrun governance everywhere, not just at organizations that are slow or careless.
 
 Shadow agents are the new shadow IT, but the analogy undersells the problem. When an employee installed Dropbox without IT approval in 2012, the risk was data in the wrong place. When an employee builds an agent on a low-code platform in 2026, the risk is an autonomous system making decisions, accessing data, and acting on behalf of the organization without anyone knowing it exists.
 
@@ -14,7 +14,7 @@ The transition from "agents are already running and nobody knows" to "every agen
 
 Shadow agents do not emerge from malice. They emerge from the gap between what people need to get done and what the organization's approved tools can do.
 
-Gartner predicts 40% of enterprise applications will feature task-specific AI agents by end of 2026, up from under 5% in 2025.[^gartner-40pct] That is an eight-fold increase in one year. IT governance processes designed for quarterly vendor reviews cannot absorb that velocity. The result: 68% of employees use unauthorized AI tools at work, up from 41% in 2023.[^gartner-shadow-stats]
+Gartner predicts 40% of enterprise applications will feature task-specific AI agents by end of 2026, up from under 5% in 2025.[^gartner-40pct] IT governance processes designed for quarterly vendor reviews cannot absorb that velocity. The result: 69% of organizations suspect or have evidence of prohibited public GenAI use.[^gartner-shadow-stats]
 
 Microsoft's Cyber Pulse report (February 2026) found that 80% of Fortune 500 companies have active AI agents built with low-code/no-code tools, and 29% of employees have turned to unsanctioned agents for work tasks.[^ms-cyber-pulse] The gap between "the organization deploys agents" and "the organization governs agents" is where shadow agents live.
 
@@ -58,8 +58,7 @@ The confidence gap is the most dangerous finding. 82% of executives feel confide
 
 The OpenClaw crisis made this governance vacuum visible at every organizational level simultaneously.
 
-The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own Director of Alignment, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans] Kaspersky found that 18% of 1.5 million deployed OpenClaw agents exhibited malicious or policy-violating behavior once operating independently.[^kaspersky-18pct]
-
+The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own Director of Alignment, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans]
 The government response followed weeks later. In March 2026, Chinese government agencies and state-owned enterprises, including the country's largest banks, received official notices warning staff against installing OpenClaw on office devices.[^china-openclaw] China's CERT characterized the platform as having "extremely weak default security configuration."[^china-cert] The response was reactive: some agencies banned installation outright, others required prior approval, several instructed employees to notify superiors if they had already installed it so devices could be checked and the software removed. This is the shadow agent pattern in its purest form: employees had already adopted OpenClaw because it solved real problems, and the organizations discovered the exposure after the fact.
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are genuinely useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
@@ -71,8 +70,6 @@ The OpenClaw ban wave is notable as the first coordinated response to a specific
 [^corporate-bans]: PCWorld, "What's behind the OpenClaw ban wave," February 2026. Documents coordinated bans by Meta, Google, Microsoft, Amazon, and others. CrowdStrike assessment of OpenClaw as potential AI backdoor. "Lethal trifecta" framing by security researchers.
 
 [^yue-incident]: Kiteworks, "Meta AI Safety Director Loses Control of Rogue OpenClaw Agent," February 2026. Summer Yue, Director of Alignment at Meta Superintelligence Labs, disclosed on X that an OpenClaw agent deleted 200+ emails from her inbox, ignoring explicit instructions to wait for confirmation.
-
-[^kaspersky-18pct]: Kaspersky, OpenClaw deployment analysis, January 2026. Of 1.5 million deployed agents, 18% exhibited malicious or policy-violating behavior once operating independently.
 
 [^openai-hire]: TrendingTopics.eu, "Meta and Others Restrict OpenClaw While Some Startups Embrace the Controversial AI Tool," February 2026. OpenAI hired OpenClaw creator Peter Steinberger on February 15 and committed to maintaining the project.
 
@@ -92,7 +89,7 @@ The core problem is structural. Organizations have invested decades in identity 
 
 **Neither model assumes autonomous decision-making.** Both human and application IAM assume that the entity follows instructions. Agents create intent. They decide what to do given a goal. This is the trust inversion: "Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task."[^trust-inversion]
 
-The scale of this mismatch is quantifiable. ConductorOne's 2026 Future of Identity Report found that 95% of enterprises now run AI agents that autonomously perform IT or security tasks, and 47% of organizations report more non-human identities than human users, yet only 22% have full visibility into those identities.[^conductorone] Eighty percent experienced at least one identity-related breach in the past year. Eighty-seven percent rate non-human identity risk as moderately to extremely urgent. And 91% increased IAM spending in response, signaling that identity security is becoming a foundational control as autonomous systems expand.[^conductorone]
+The scale of this mismatch is quantifiable. ConductorOne's 2026 Future of Identity Report found that 95% of enterprises now run AI agents that autonomously perform IT or security tasks, and 47% of organizations report more non-human identities than human users, yet only 22% have full visibility into those identities.[^conductorone]
 
 The governance gap is not a tooling gap. It is an architectural mismatch. Organizations cannot govern shadow agents by extending the models designed for humans and applications. They need new infrastructure designed for actors that operate autonomously, inherit authority through delegation, and cross system boundaries at machine speed.
 
@@ -152,15 +149,15 @@ Enforcement requires integration with the infrastructure layers the agent depend
 
 ### Vendor implementations are arriving
 
-Microsoft Agent 365 (generally available May 1, 2026) is the first major vendor to ship a purpose-built agent registry and governance platform. Each agent gets its own Microsoft Entra Agent ID with lifecycle management: creation, rotation, and decommissioning governed by the same entitlement management processes used for human identities. The platform includes a centralized catalog of both sanctioned and shadow agents, bridging discovery and enforcement in a single product.[^agent-365] At $15 per user per month standalone (or bundled in Microsoft 365 E7 at $99), Microsoft is pricing agent governance as a platform feature, not an enterprise add-on. Microsoft's own internal deployment validates the scale: the company has visibility into more than 500,000 agents across its organization, with the most widely used focused on research, coding, sales intelligence, customer triage, and HR self-service.[^agent-365] That is not a pilot. It is an organization governing half a million agents through the same platform it is shipping to customers.
+Microsoft Agent 365 (generally available May 1, 2026) is a purpose-built agent registry and governance platform. Each agent gets its own Microsoft Entra Agent ID with lifecycle management: creation, rotation, and decommissioning governed by the same entitlement management processes used for human identities. The platform includes a centralized catalog of both sanctioned and shadow agents, bridging discovery and enforcement in a single product.[^agent-365] At $15 per user per month standalone (or bundled in Microsoft 365 E7 at $99), Microsoft is pricing agent governance as a platform feature, not an enterprise add-on. Microsoft's own internal deployment validates the scale: the company has visibility into more than 500,000 agents across its organization, with the most widely used focused on research, coding, sales intelligence, customer triage, and HR self-service.[^agent-365] That is not a pilot. It is an organization governing half a million agents through the same platform it is shipping to customers.
 
 The identity provider is the natural enforcement point for agent registration. An agent that cannot get an Entra Agent ID cannot authenticate to Microsoft 365 resources. The registry is not advisory. It is the prerequisite for identity, and identity is the prerequisite for access.
 
 The limitation is scope: Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-organizational trust infrastructure described in [Cross-Organization Trust](cross-org-trust.md). But for the 80% of Fortune 500 organizations already running agents on Microsoft platforms,[^ms-cyber-pulse] this is a significant step from I1 to I3.
 
-The market is rapidly crystallizing beyond Microsoft. At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance: Token Security provides continuous discovery, lifecycle governance, and intent-based access controls specifically for AI agents that "think, learn, and act autonomously," and Geordie AI offers a security and governance platform that gives enterprises real-time visibility into their agentic footprint with posture and behavior monitoring.[^rsac-sandbox] That agent identity and governance attracted two Innovation Sandbox finalists in the same year signals that the market has moved from "interesting problem" to "fundable product category."
+The market is crystallizing beyond Microsoft. At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance: Token Security provides continuous discovery, lifecycle governance, and intent-based access controls specifically for AI agents that "think, learn, and act autonomously," and Geordie AI offers a security and governance platform that gives enterprises real-time visibility into their agentic footprint with posture and behavior monitoring.[^rsac-sandbox] That agent identity and governance attracted two Innovation Sandbox finalists in the same year signals that the market has moved from "interesting problem" to "fundable product category."
 
-The funding signals reinforce the market thesis. Onyx Security emerged from stealth on March 12, 2026, with $40 million to build what it calls the "Secure AI Control Plane": continuous agent discovery, reasoning-step monitoring, and real-time policy enforcement.[^onyx] Two days earlier, Kai raised $125 million for an agentic AI cybersecurity platform that uses AI agents for threat intelligence, detection, and incident response.[^kai-funding-ref] The two rounds illustrate adjacent but distinct bets: Onyx on governing agents, Kai on deploying agents for security operations. Venture capital is pricing agent trust as a category.
+Onyx Security emerged from stealth on March 12, 2026, with $40 million to build what it calls the "Secure AI Control Plane": continuous agent discovery, reasoning-step monitoring, and real-time policy enforcement.[^onyx] Two days earlier, Kai raised $125 million for an agentic AI cybersecurity platform that uses AI agents for threat intelligence, detection, and incident response.[^kai-funding-ref] The two rounds illustrate adjacent but distinct bets: Onyx on governing agents, Kai on deploying agents for security operations. Venture capital is pricing agent trust as a category.
 
 ### Gartner formalizes the category
 
@@ -170,13 +167,17 @@ Two findings from the guide deserve attention.
 
 First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. This is exactly the gap between Accountability and Control that the PAC Framework identifies: organizations have policies (Accountability) but lack the infrastructure to enforce them (Control). The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
 
-Second: by 2029, independent guardian agents will eliminate the need for nearly half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
+Second: by 2029, independent guardian agents will eliminate the need for almost half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
 
 The guide identifies a convergence trend: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Agents simultaneously need identity (who is this agent?), access control (what can it reach?), and data governance (what is it allowed to see?). Managing these as separate silos creates the governance gaps that shadow agents exploit.[^gartner-guardian]
 
 Representative vendors in the guide span the full governance stack: PlainID for agent identity and authorization, NeuralTrust for agent risk and runtime security, Wayfound for agent supervision and performance monitoring, Holistic AI for AI governance, and Opsin for dedicated agent security and posture management.[^gartner-guardian] The vendor diversity confirms that agent governance is not a single product but an infrastructure layer with specialized components, the same pattern that played out in human IAM over the past two decades.
 
 Sector-specific implementations are emerging alongside platform-wide solutions. Imprivata launched Agentic Identity Management at HIMSS 2026 (March 10), purpose-built for healthcare environments where AI agents must access EHRs, clinical systems, and legacy infrastructure while maintaining strict compliance requirements.[^imprivata] The platform treats AI agents as managed identities within the organization's security framework: agents never store static credentials, instead receiving short-lived tokens brokered by Imprivata with continuous identity verification and least-privilege enforcement. Healthcare is the sector where the gap between agent capability and governance infrastructure is widest: clinical AI agents need access to the most sensitive data categories (PHI, PII) while operating under the strictest regulatory constraints (HIPAA, state privacy laws).
+
+A different model is emerging in digital advertising. IAB Tech Lab launched an operational cross-vendor agent registry on February 26, 2026, as part of its Agentic Advertising Management Protocols (AAMP) framework.[^iab-registry] The registry requires each agent entry to be associated with a GPP (Global Privacy Protocol) ID and IAB TCF (Transparency & Consent Framework) GVL ID, tying agent registration to existing regulatory compliance infrastructure.[^iab-registry] Within two weeks, ten agents were registered from companies including Amazon, PubMatic, Equativ, and Optable, with a three-tier deployment classification: Remote (cloud-hosted, 9 entries), Local (downloadable, 0), and Private (on-premise, 1).[^iab-registry-10] All ten entries use MCP as their protocol standard.
+
+The IAB Tech Lab registry is architecturally distinct from vendor-specific solutions like Agent 365 or Imprivata. It is an industry consortium registry: no single vendor controls it, registration is free and open to non-members, and the verification is tied to compliance identifiers the industry already uses. This is how registries scale across organizational boundaries. A vendor registry governs agents within one platform. A consortium registry governs agents across an ecosystem. The advertising industry reached this point because it already had the compliance infrastructure (GPP, TCF) to build on. Other sectors will need to build or adopt equivalent foundations.
 
 The goal is Shane's architectural principle from the PAC Framework: "Policy says 'don't.' Architecture says 'can't.'"[^pac-framework] An unregistered agent should not be prohibited by policy. It should be unable to function because the infrastructure it depends on requires registration.
 
@@ -186,7 +187,7 @@ Discovery reveals the shadow agents. The registry defines the target state. The 
 
 ### Why prohibition fails
 
-The instinct to ban shadow agents is understandable and counterproductive. Organizations that respond to shadow agent discovery with blanket prohibitions consistently find that employees route around the ban. They use personal devices, personal accounts, and external services that the organization cannot monitor at all. The shadow gets deeper, not shallower.
+Organizations that respond to shadow agent discovery with blanket prohibitions drive adoption underground: employees route to personal devices, personal accounts, and external services the organization cannot monitor. The shadow gets deeper, not shallower.
 
 Shane's framing in "The Work That's Leaving" explains why: "The work that was only human because nothing else could do it" is being automated.[^work-leaving] Employees building shadow agents are responding to real productivity pressure. If the organization does not provide a governed path to agent-assisted work, employees will find an ungoverned one.
 
@@ -211,19 +212,19 @@ The most effective transition follows an amnesty pattern:
 
 ### What makes this work
 
-The amnesty model works because it respects the value that drove shadow agent creation while establishing the governance infrastructure the organization needs. It treats shadow agent creators as early adopters, not policy violators. It channels their energy into the governed system rather than fighting it.
+The amnesty model treats shadow agent creators as early adopters, not policy violators.
 
-This connects directly to the PAC Framework's Potential pillar. Shane asks: "How much value are you leaving on the table by over-constraining? Agents that need human approval for every action aren't agents: they're suggestion engines."[^boardroom] The governance system must enable agent autonomy within safe boundaries, not prevent it.
+This connects to the PAC Framework's Potential pillar. Shane asks: "How much value are you leaving on the table by over-constraining? Agents that need human approval for every action aren't agents: they're suggestion engines."[^boardroom] The governance system must enable agent autonomy within safe boundaries, not prevent it.
 
 ## Who Owns Agent Governance?
 
 The PAC Framework's Accountability pillar asks: "Who owns AI governance? If no one owns it, everyone assumes someone else does."
 
-Shadow agents thrive in organizational gaps. When IT, security, compliance, and business units each assume someone else is handling agent governance, nobody is.
+Shadow agents thrive in organizational gaps.
 
 ### The ownership problem
 
-Microsoft's Cyber Pulse report identifies the challenge: organizations are deploying agents faster than they can establish controls.[^ms-cyber-pulse] The speed of agent creation (minutes on a low-code platform) vastly exceeds the speed of governance review (weeks for a typical vendor assessment). This asymmetry guarantees shadow agents unless governance is redesigned for agent-speed deployment.
+The speed of agent creation (minutes on a low-code platform) vastly exceeds the speed of governance review (weeks for a typical vendor assessment). This asymmetry guarantees shadow agents unless governance is redesigned for agent-speed deployment.
 
 Three organizational models have emerged:
 
@@ -249,7 +250,7 @@ The audit trail requirements for agents differ from both human and application a
 
 **Intent capture.** What was the agent asked to do? Not just the final action, but the goal that triggered the action chain. This connects to the Verifiable Intent architecture from the Cross-Organization Trust chapter: if the user's intent is cryptographically captured at delegation time, the audit trail can prove what was authorized versus what was executed.
 
-**Action trace.** What did the agent actually do? Every tool call, every data access, every decision point. The Reliability chapter's discussion of observability applies here: governance-grade audit trails need structured, queryable records, not debug logs.
+**Action trace.** What did the agent actually do? Every tool call, every data access, every decision point. Governance-grade audit trails need structured, queryable records, not debug logs.
 
 **Scope verification.** Did the agent stay within its authorized scope? This requires comparing the agent's actions against its registered permissions. Infrastructure-level enforcement (agent gateways, sandboxing) can prevent scope violations in real time; audit trails provide the post-hoc verification.
 
@@ -317,11 +318,10 @@ Make the governed path easier than the shadow path. If building a compliant agen
 
 ---
 
-[^vectra-shadow]: Vectra AI, "Shadow AI explained: risks, costs, and enterprise governance" (2026).
-[^helpnet-agent-security]: Help Net Security, "AI went from assistant to autonomous actor and security never caught up" (March 3, 2026).
+[^varonis-shadow]: Varonis, "State of Data Security Report 2025," varonis.com (2025).
 [^boardroom]: Shane Deconinck, "Agentic AI: Curated Questions for the Boardroom" (February 8, 2026).
 [^gartner-40pct]: Gartner, "Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026" (August 2025).
-[^gartner-shadow-stats]: Gartner, research across 500 companies on shadow AI adoption (2025-2026). The 68% figure aligns with Gartner's March-May 2025 survey of 302 cybersecurity leaders finding 69% of organizations suspect or have evidence of prohibited public GenAI use.
+[^gartner-shadow-stats]: Gartner, March-May 2025 survey of 302 cybersecurity leaders. 69% of organizations suspect or have evidence of prohibited public GenAI use.
 [^ibm-breach]: IBM, "Cost of a Data Breach Report 2025," conducted by Ponemon Institute. Breaches involving shadow AI cost $4.63 million on average, $670,000 more than standard incidents.
 [^pac-framework]: PAC Framework, trustedagentic.ai. "Policy says 'don't.' Architecture says 'can't.' The difference matters when agents act autonomously across systems and organisations."
 [^ms-cyber-pulse]: Microsoft Security Blog, "80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier" (February 10, 2026).
@@ -336,6 +336,8 @@ Make the governed path easier than the shadow path. If building a compliant agen
 [^agent-365]: Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, March 9, 2026. Generally available May 1, 2026.
 [^rsac-sandbox]: RSAC, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," rsaconference.com, March 2026. Token Security and Geordie AI among ten finalists.
 [^imprivata]: Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," imprivata.com, March 10, 2026. Announced at HIMSS 2026.
+[^iab-registry]: IAB Tech Lab, "Introducing the IAB Tech Lab Agent Registry," iabtechlab.com, February 26, 2026. Part of the Agentic Advertising Management Protocols (AAMP) framework. Free registration via Tools Portal, open to members and non-members.
+[^iab-registry-10]: PPC.land, "IAB Tech Lab's agent registry hits 10 with Amazon and new deployment types," March 11, 2026. Ten entries from Amazon, PubMatic, Equativ, Optable, Burt Corp, HyperMindZ, Dstillery, Mixpeek, and IAB Tech Lab. Three-tier deployment classification: Remote, Local, Private.
 [^onyx]: Onyx Security, "Onyx Security Launches with $40M in Funding to Build the Secure AI Control Plane for the Agentic Era," businesswire.com, March 12, 2026. Backed by Conviction and Cyberstarts. 70+ employees, already engaged with Fortune 500 customers.
 [^kai-funding-ref]: Kai, "Kai Emerges from Stealth with $125M," prnewswire.com, March 10, 2026.
 [^gravitee]: Gravitee, "State of AI Agent Security 2026," gravitee.io, February 2026. Survey of 919 executives and practitioners across industries.

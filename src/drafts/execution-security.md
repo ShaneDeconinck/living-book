@@ -6,7 +6,7 @@ Execution security is the Control pillar made physical. Identity and delegation 
 
 Most agent tools today rely on permission prompts as their primary security mechanism. The agent wants to run a command, edit a file, or make a network request. A prompt appears. The user clicks "yes."
 
-Shane has been direct about why this fails[^sandbox-post]: permission prompts are the default safety mechanism in most coding agents, but in practice they break down. Three failure modes make them unreliable:
+Three failure modes make them unreliable:[^sandbox-post]
 
 **Approval fatigue.** A coding agent might request dozens of file operations per minute. After the fifth prompt, most users switch to auto-approve. The twentieth prompt, the one that matters, gets the same reflexive "yes" as all the others.
 
@@ -18,7 +18,7 @@ This is the trust inversion principle applied to execution[^trust-inversion]: hu
 
 The answer is not better prompts. The answer is containment by design.
 
-The Amazon Kiro incident (December 2025) demonstrates this precisely. An AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage. The agent inherited the deploying engineer's elevated permissions and bypassed the standard two-person approval. No sandbox limited what the agent could do to production infrastructure.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
+The Amazon Kiro incident (December 2025) demonstrates this precisely. According to Financial Times reporting, an AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage — a characterization Amazon disputes, attributing the event to misconfigured access controls rather than AI behavior. Whatever the cause, the agent had access to production infrastructure with no sandbox to limit what it could do.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
 
 ## Containment by Design
 
@@ -26,19 +26,13 @@ Containment means restricting what an agent can do regardless of what it tries t
 
 The alternative, filtering dangerous commands through denylists, does not work. CVE-2026-2256 in ModelScope's MS-Agent framework demonstrated this in March 2026.[^ms-agent] The framework's Shell tool used a `check_safe()` method with regex-based denylist filtering to block unsafe commands. Attackers bypassed it with alternative encodings, shell syntax variations, and command obfuscation, achieving arbitrary remote code execution rated CVSS 6.5. The pattern is general: any denylist-based approach assumes you can enumerate everything dangerous. Agents, by design, generate novel command sequences. A denylist that blocks `rm -rf /` does not block the creative reformulation an agent or an attacker produces. Containment must be structural, not lexical.
 
-Shane draws the distinction clearly[^sandbox-post]:
-
-> The answer isn't better prompts. It's containment: restricting what the agent *can* do, regardless of what it *tries* to do.
-
-The damage, as he puts it, "is contained by architecture, not by user vigilance."
-
 A sandbox needs two boundaries[^anthropic-sandbox]:
 
 **Filesystem isolation.** The agent can read and write within its working directory. Everything else is restricted. System files, credentials, configuration files, other projects: all inaccessible. This prevents a compromised agent from stealing secrets, modifying system configuration, or affecting other workloads.
 
 **Network isolation.** The agent cannot make arbitrary network connections. Outbound traffic goes through a proxy that enforces domain restrictions and requires explicit approval for new destinations. This prevents data exfiltration, command-and-control communication, and downloading of malicious payloads.
 
-You need both. Filesystem isolation without network isolation means an agent could still exfiltrate secrets by reading them from disk and sending them to a remote server (it just needs to find a way around the filesystem restrictions first). Network isolation without filesystem isolation means an agent could steal SSH keys, modify shell configuration, or plant malicious binaries in system paths. Anthropic's engineering team puts it simply[^anthropic-sandbox]: "Effective sandboxing requires both filesystem and network isolation."
+You need both. Filesystem isolation without network isolation means an agent could still exfiltrate secrets by reading them from disk and sending them to a remote server (it just needs to find a way around the filesystem restrictions first). Network isolation without filesystem isolation means an agent could steal SSH keys, modify shell configuration, or plant malicious binaries in system paths.
 
 A correctly sandboxed agent can operate more autonomously, not less. Anthropic reports that sandboxing reduces permission prompts by 84%[^anthropic-sandbox]. The sandbox removes the need for most permission checks because the dangerous operations are structurally impossible. The agent can run freely within its boundaries.
 
@@ -50,7 +44,7 @@ Not all sandboxes are equal. The strength of isolation depends on where the boun
 
 Native sandboxing uses operating system security primitives to restrict a process without creating a separate execution environment. The agent runs as a regular process on the host, but the OS kernel enforces restrictions on what that process can access.
 
-On macOS, this means Seatbelt: the same sandbox mechanism that isolates iOS apps. On Linux, it is a combination of technologies: bubblewrap for filesystem namespace isolation, seccomp BPF for syscall filtering, and Landlock for filesystem access control[^anthropic-sandbox][^codex-security].
+On macOS, this means Seatbelt: the same sandbox mechanism that isolates iOS apps. On Linux, it is a combination of technologies: bubblewrap for filesystem namespace isolation, seccomp BPF for syscall filtering, and Landlock for filesystem access control[^codex-security].
 
 Claude Code uses this approach on both platforms. The sandbox restricts filesystem access to the working directory and routes network traffic through a proxy running outside the sandbox. Critically, the restrictions apply not just to the agent process but to any scripts, programs, or subprocesses it spawns[^anthropic-sandbox].
 
@@ -107,7 +101,7 @@ The PAC Framework's blast radius scale (B1-B5) maps directly to isolation requir
 
 ## The OWASP Top 10 for Agentic Applications
 
-In December 2025, OWASP released the Top 10 for Agentic Applications: a peer-reviewed framework identifying the most critical security risks for autonomous AI systems, developed with input from over 100 security researchers and practitioners[^owasp]. Understanding what sandboxing covers (and what it does not) is essential for building a complete execution security architecture.
+In December 2025, OWASP released the Top 10 for Agentic Applications: a peer-reviewed framework identifying the most critical security risks for autonomous AI systems, developed with input from over 100 security researchers and practitioners[^owasp].
 
 The ten risks are:
 
@@ -246,7 +240,7 @@ The architecture has five layers, each addressing a distinct threat:
 
 **Pre-launch testing.** All five layers were built before the capability shipped, not in response to incidents. The framing matters: security as a prerequisite for launch, not a patch applied after deployment.
 
-The Google architecture complements the OS-level approaches (Claude Code, Codex CLI, Docker) rather than competing with them. OS-level sandboxing constrains system resources: files, network, syscalls. Google's application-level architecture constrains agent behavior: intent alignment, task scope, action classification. A fully governed browser agent would use both: OS-level containment to prevent system exploitation, and application-level oversight to prevent the agent from acting outside its mandate. The User Alignment Critic is the most concrete production implementation of the "guardian agent" pattern that Gartner's Market Guide described as an emerging category: a secondary AI system whose sole purpose is governing a primary AI system's behavior.
+The Google architecture complements the OS-level approaches (Claude Code, Codex CLI, Docker) rather than competing with them. OS-level sandboxing constrains system resources: files, network, syscalls. Google's application-level architecture constrains agent behavior: intent alignment, task scope, action classification. A fully governed browser agent would use both: OS-level containment to prevent system exploitation, and application-level oversight to prevent the agent from acting outside its mandate. The User Alignment Critic is the most concrete production implementation of the guardian agent pattern: a secondary AI system whose sole purpose is governing a primary AI system's behavior.
 
 ## Connecting to PAC
 
@@ -294,7 +288,7 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^bainbridge]: Lisanne Bainbridge, "Ironies of Automation," *Automatica* 19, no. 6 (1983): 775-779.
 
-[^norman]: Don Norman, "The 'Problem' of Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation,'" *Philosophical Transactions of the Royal Society* B327 (1990): 585-593.
+[^norman]: Don Norman, "The 'Problem' with Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation,'" *Philosophical Transactions of the Royal Society* B327 (1990): 585-593.
 
 [^anthropic-sandbox]: Anthropic Engineering (David Dworken and Oliver Weller-Davies), "Beyond Permission Prompts: Making Claude Code More Secure and Autonomous," anthropic.com/engineering/claude-code-sandboxing, 2026.
 
@@ -312,8 +306,10 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Draws parallels between prompt injection and social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. The RL-trained automated attacker for multi-step vulnerability discovery is described in a separate publication: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," openai.com, December 22, 2025.
 
-[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 6.5 (Medium). Reported by Itamar Yochpaz, documented by Christopher Cullen (CERT/CC VU#431821), March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations, shell syntax alternatives, and unblocked interpreters (python3, perl, ruby, node). At the time of disclosure, no vendor patch was available.
+[^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 6.5 (Medium). Reported by Itamar Yochpaz, CERT/CC VU#431821, March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations, shell syntax alternatives, and unblocked interpreters (python3, perl, ruby, node). At the time of disclosure, no vendor patch was available.
 
-[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 20, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
+[^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
 
 [^google-mariner]: Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026. Five-layer security architecture for browser agents: User Alignment Critic (intent verification via separate Gemini model shielded from web content), Agent Origin Sets (task-scoped browsing boundaries), prompt injection classification (per-page scanning), mandatory human oversight (payments, credentials, social media), and pre-launch security testing. See also Google Security Blog, "Architecting Security for Agentic Capabilities in Chrome," December 8, 2025.
+
+[^pcas]: Policy Compiler for Secure Agentic Systems (PCAS), February 2026. Reference monitor architecture with Datalog-derived policy language. Tested on frontier models: Claude Opus 4.5, GPT-5.2, Gemini 3 Pro. Baseline compliance: 48% on customer service tasks with explicit policy statements. With PCAS enforcement: 93% compliance across all tested models, zero violations in fully instrumented runs.

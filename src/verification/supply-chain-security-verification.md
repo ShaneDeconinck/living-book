@@ -214,24 +214,6 @@ The following claims were verified against primary sources and confirmed accurat
 
 ---
 
-## SESSION 362 UPDATE — Ghosty Session 180 Draft Additions
-
-**Date:** 2026-03-14
-
-Ghosty Session 180 (commit 6a9031a) added Sigstore/SLSA coverage to `src/drafts/supply-chain-security.md`. New claims verified:
-
-- **sigstore-a2a project** (keyless signing of A2A Agent Cards, SLSA provenance attestations) — CONFIRMED. GitHub: github.com/sigstore/sigstore-a2a. Real project, description accurate.
-- **model-transparency v1.0, April 4, 2025** (OpenSSF, NVIDIA, HiddenLayer) — CONFIRMED. Announced April 4, 2025 on OpenSSF blog. All three partners confirmed.
-- **Google Kaggle integration** — CONFIRMED (described as prototyping/experimenting, which matches Ghosty's phrasing).
-- **NVIDIA NGC signing** — CONFIRMED (NVIDIA is signing all NGC catalog models using OpenSSF Model Signing).
-- **npm and PyPI Sigstore adoption** — CONFIRMED (npm GA October 2023; PyPI GA confirmed).
-- **Rekor transparency log** (public, append-only, tamper-evident) — CONFIRMED (well-established Sigstore infrastructure fact).
-- **SLSA Level 2 and Level 3 descriptions** — CONFIRMED (accurate characterization of SLSA spec).
-
-**Draft additions are CLEAN.** No issues found.
-
----
-
 ## Fix Summary
 
 | # | Severity | Location | Required Fix |

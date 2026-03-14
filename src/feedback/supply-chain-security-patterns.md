@@ -55,16 +55,6 @@ These three figures all come from the same source but are different measurements
 
 ---
 
-## 6. Sigstore/SLSA additions — Session 363 (2026-03-14)
-
-The Sigstore/SLSA section was clean and technically well-grounded. The sigstore-a2a paragraph was the most valuable addition: concrete, specific, actionable. The model-transparency section properly distinguished what signing prevents (tampering) from what it does not prevent (training data poisoning). The "What is still missing" section made the right distinction between provenance (who built this, from what source) and behavior attestation (what does it actually do). This is precise, and it matters.
-
-One recurring pattern cut again: "(covered in the defense patterns above)" at the end of the "What is still missing" paragraph. This is a scaffolding note — you reminding yourself where the defense section is. Readers do not need it. Trust the reader to find the next section. When a sentence's only function is internal navigation, cut it.
-
-**Rule:** Do not end sections with parenthetical cross-references to other sections in the same chapter. If the connection is important enough to make, make it explicitly in prose. If it is not, cut it.
-
----
-
 ## 5. The chapter's best writing is in the QUIETVAULT/AI malware section
 
 The QUIETVAULT section — UNC6426 exploiting the nx npm build framework via pull_request_target GitHub Actions, postinstall injection — is the most technically precise and original analysis in the chapter. The five AI malware families section is also strong. This is where the chapter earns its place.

@@ -1,16 +1,12 @@
 # Context Infrastructure
 
-The previous chapters covered identity: who the agent is and what authority it carries. This chapter addresses the other half of the equation: what the agent knows. Specifically, how the information an agent consumes is structured, governed, and delivered.
+The previous chapters covered identity: who the agent is and what authority it carries. This chapter addresses the other half of the equation: what the agent knows.
 
 Shane's argument is that context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
 
 This is not a claim about prompt engineering or RAG pipelines. It is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable. And it connects directly to the PAC Framework: context is where Potential meets Control.
 
 ## Everything Else Depreciates
-
-To understand why context infrastructure matters, you have to see the pattern in what does not last.
-
-### The Depreciation Cycle
 
 Every wave of applied AI brought a layer of investment that the next wave made obsolete:[^1]
 
@@ -34,7 +30,7 @@ The architecture that resulted is instructive: a single loop, a handful of basic
 
 Manus, the AI agent that gained widespread attention in early 2026, learned the same lesson independently. Their team rebuilt the agent framework four times, each time after discovering a better way to shape context rather than adding more scaffolding. They describe the process as "Stochastic Graduate Descent": an experimental science of context optimization.[^4]
 
-The lesson for the PAC Framework is structural. In the Potential pillar, durability is a key dimension: will what you build today still compound in a year, or become dead weight when the next model drops? Scaffolding fails the durability test. Context infrastructure passes it.
+In the Potential pillar, durability is a key dimension: will what you build today still compound in a year, or become dead weight when the next model drops? Scaffolding fails the durability test. Context infrastructure passes it.
 
 ## What Context Means Here
 
@@ -58,7 +54,7 @@ Claude Code uses no vector databases, no embeddings. Just raw files and search. 
 
 This is context infrastructure in action: simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
 
-Anthropic's engineering blog expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^3]
+Lance Martin expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^5]
 
 ### Manus: KV-Cache as North Star
 
@@ -80,7 +76,7 @@ The Clawdbot case is instructive in a different way. Its entire personality, goa
 
 But what went wrong with Clawdbot was not the soul file or the model. It was the missing constraints. Context without proper access management is a liability. Rich context made Clawdbot compelling. Missing access controls made it dangerous.[^1]
 
-This is the central lesson for the PAC Framework: context and control are not separate concerns. They are the same infrastructure problem viewed from different angles.
+Context and control are not separate concerns. They are the same infrastructure problem viewed from different angles.
 
 ## Five Dimensions of Context Infrastructure
 
@@ -112,7 +108,7 @@ Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend th
 
 The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what the PAC Framework requires at I4 and above.
 
-Microsoft Agent 365 (generally available May 1, 2026) is the first major implementation of this pattern, integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos.[^agent-365-convergence]
+Microsoft Agent 365 (generally available May 1, 2026) represents this pattern in production, integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos.[^agent-365-convergence]
 
 The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-environment governance that no single vendor provides today.[^entro-critique] This is the same cross-organizational trust problem the [Cross-Organization Trust](cross-org-trust.md) chapter addresses for identity, now extended to information governance. The agent that queries your Azure SQL database through one identity and your AWS S3 bucket through another has two sets of information policies that do not talk to each other. Solving this requires not just federated identity (which standards like TSP and EUDI address) but federated information governance: portable, verifiable policies that travel with the agent's context across trust boundaries.
 
@@ -120,7 +116,7 @@ The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem
 
 Agents need to find what they need. Two protocols are emerging as the standard discovery layer:
 
-**MCP (Model Context Protocol)** handles tool and resource discovery for agents. Originally released by Anthropic in November 2024, MCP has evolved rapidly. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation. OpenAI adopted it across the Agents SDK, Responses API, and ChatGPT desktop. Google DeepMind confirmed support in Gemini models. The protocol now sees 97 million monthly SDK downloads across Python and TypeScript.[^7]
+**MCP (Model Context Protocol)** handles tool and resource discovery for agents. Originally released by Anthropic in November 2024, MCP has evolved rapidly. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation. OpenAI adopted it across the Agents SDK, Responses API, and ChatGPT desktop. Google DeepMind confirmed support in Gemini models. The protocol now sees 98.6 million monthly SDK downloads across Python and TypeScript.[^7]
 
 MCP's 2026 roadmap addresses the gaps that production use surfaced: stateful sessions that fight with load balancers, horizontal scaling that requires workarounds, and no standard way for a registry or crawler to learn what a server does without connecting to it. The planned solution includes evolving the transport model so servers can scale without holding state, and a standard metadata format served via `.well-known` for discoverable server capabilities.[^7]
 
@@ -136,7 +132,7 @@ Access scoped to the delegating user's authority. This connects directly to the 
 
 For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
-The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner calls agent gateways the "missing layer" for secure AI integration, predicting that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026.[^10]
+The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10]
 
 But agent gateways introduce new questions. How do they interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
 
@@ -152,11 +148,11 @@ There is a related dimension that freshness alone does not cover: context integr
 
 ## The Compounding Effect
 
-This is Shane's central insight: context infrastructure compounds. When a better model arrives, an organization with mature context infrastructure captures more value instantly. Less code needed, more capability unlocked. Permission boundaries are already enforced. The upgrade is frictionless.[^1]
+Context infrastructure compounds. When a better model arrives, an organization with mature context infrastructure captures more value instantly. Less code needed, more capability unlocked. Permission boundaries are already enforced. The upgrade is frictionless.[^1]
 
 An organization without that infrastructure gets a more capable model running on the same mess. Same silos, same ungoverned data, same unclear authority chains. Faster, more autonomous, and with the wrong context or goals: more dangerous.
 
-Shane's framing connects this directly to the Potential pillar: "When the next model drops, you're not rewriting orchestration. You're plugging it into infrastructure that's already there."[^1]
+"When the next model drops, you're not rewriting orchestration. You're plugging it into infrastructure that's already there."[^1]
 
 The agentic component model from Shane's earlier post maps the layers:[^11]
 
@@ -204,7 +200,7 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 
 **Treat freshness as a feature.** Add timestamps, version numbers, and staleness signals to information that agents consume. An agent that knows "this was last verified three months ago" can make better decisions than one that treats everything as current.
 
-The organizations that invest in context infrastructure now will not just be ready for today's agents. They will be ready for every generation that follows. The general trajectory is clear: models keep getting more capable. The context infrastructure you build today is positioned to benefit from every improvement that follows.[^1]
+The organizations that invest in context infrastructure now will not just be ready for today's agents. They will be ready for every generation that follows. Models keep getting more capable. The context infrastructure you build today benefits from every improvement that follows.[^1]
 
 ---
 
@@ -212,12 +208,12 @@ The organizations that invest in context infrastructure now will not just be rea
 [^2]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," February 2, 2026.
 [^3]: Anthropic Engineering Blog, "Effective context engineering for AI agents," September 29, 2025.
 [^4]: Manus, "Context Engineering for AI Agents: Lessons from Building Manus," 2026.
-[^5]: LangChain Blog, "Context Engineering for Agents," October 2025.
+[^5]: Lance Martin, "Context Engineering for Agents," rlancemartin.github.io, June 23, 2025.
 [^7]: Model Context Protocol, "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^8]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," 2026.
 [^9]: PIC Protocol, github.com/pic-protocol/pic-spec.
-[^10]: Gartner, "How MCP and the A2A Protocols Impact API Management," gartner.com, 2026. Predicts 75% of API gateway vendors and 50% of iPaaS vendors will have MCP features by end of 2026.
-[^rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. 50 unique prompts from 31 companies across 14 industries identified over 60 days.
+[^10]: Gartner, "Innovation Insight: MCP Gateways," gartner.com, 2026. Predicts 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by end of 2026. The "missing layer" framing appears in this Innovation Insight, not in the API Management research note.
+[^rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. over 50 unique prompts from 31 companies across 14 industries identified over 60 days.
 
 [^11]: Shane Deconinck, "Fitting Agentic AI Components in a Mental Model," January 6, 2026.
 
@@ -225,4 +221,4 @@ The organizations that invest in context infrastructure now will not just be rea
 
 [^agent-365-convergence]: Microsoft, "Secure agentic AI for your Frontier Transformation," Microsoft Security Blog, March 9, 2026. Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, 2026. Agent 365 integrates Entra (identity), Purview (data governance), and Defender (security) into a unified agent control plane. Generally available May 1, 2026.
 
-[^entro-critique]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026. Argues that Agent 365 governs Microsoft environments but leaves gaps for organizations using multiple cloud providers. See also Oasis Security, "Agent 365 & Entra Agent ID vs. Oasis: AI Agent Governance for Hybrid Environments," oasis.security, March 2026.
+[^entro-critique]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026. Argues that Agent 365 governs Microsoft environments but leaves gaps for organizations using multiple cloud providers. See also Oasis Security, "Agent 365, Entra Agent ID, and Oasis: Completing the Picture for AI Agent Governance," oasis.security, originally published November 24, 2025 (updated March 2026).

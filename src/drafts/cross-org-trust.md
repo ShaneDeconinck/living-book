@@ -4,6 +4,8 @@ Within a single organization, extending existing IAM to handle agents is tractab
 
 The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
+The PAC Framework's Control pillar question is direct: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
+
 ## The Problem Is Structural
 
 Cross-organization trust for agents is not a new version of API federation. It is a fundamentally different problem because agents create intent rather than forwarding it.
@@ -20,13 +22,13 @@ Agents break this model in three ways.
 
 ### What the Drift Breach Revealed
 
-The Cloud Security Alliance documented what happens when cross-domain agent trust fails structurally.[^2] The Salesloft Drift AI chat agent breach exposed over 700 companies in ten days via stolen OAuth tokens. When Drift's OAuth integration was compromised, attackers inherited access across more than 700 independent trust domains: Google Workspace, Cloudflare, Heap, and hundreds more.
+The Salesloft Drift AI chat agent breach exposed over 700 companies in ten days via stolen OAuth tokens.[^2] When Drift's OAuth integration was compromised, attackers inherited access across more than 700 independent trust domains: Google Workspace, Cloudflare, Heap, and hundreds more.
 
 The deeper failure was not the token theft itself. It was that each domain validated credentials in isolation. No domain knew what the agent was authorized to do in other domains. No domain could revoke access across the others. No domain could detect that the same compromised credential was being exercised simultaneously across 700 organizations.
 
 The CSA identified three requirements that current infrastructure lacks:[^2]
 
-- **Verifiable delegation**: tokens that explicitly differentiate user identity from agent identity and carry verifiable proof of the delegation chain
+- **Delegation proof**: tokens that explicitly differentiate user identity from agent identity and carry verifiable proof of the delegation chain
 - **Operational envelopes**: cryptographic constraints that travel with the token and define what an agent can do, not just what resources it can access
 - **Coordinated revocation**: shared, real-time risk signals between providers so revocation in one domain invalidates access in others
 
@@ -50,7 +52,7 @@ The industry workaround is service accounts and access keys that create authorit
 
 ## From Possession to Continuity: PIC
 
-Gallo's paradigm shift reframes the structural elements of authorization:[^1][^3]
+Gallo reframes the structural elements of authorization:[^1][^3]
 
 - **Identity**: represents a subject
 - **Intent**: the desired action of that subject
@@ -66,7 +68,7 @@ An important nuance: to continue authority, a workload does not need its own ide
 
 Under this model, the confused deputy is not detected or mitigated. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability, not an accidental confused deputy.
 
-This maps cleanly to the PAC Framework's Control pillar: "Can authority only decrease?" PIC answers yes, and proves it mathematically. The monotonic property (authority can only decrease through a delegation chain) is not a policy aspiration but a structural guarantee.
+This maps to the PAC Framework's Control pillar: "Can authority only decrease?" PIC answers yes, and proves it mathematically. The monotonic property (authority can only decrease through a delegation chain) is not a policy aspiration but a structural guarantee.
 
 Gallo also demonstrated that performance is not a blocker: executing a continuity chain takes microseconds, comparable to a token exchange call.[^1] The overhead is a deployment concern, not an architectural one.
 
@@ -87,7 +89,7 @@ The protocol flow:
 3. **Cryptographic Operations.** Sign messages with private keys (authentication) and encrypt with recipient's public key (confidentiality).
 4. **TSP Envelope.** Messages travel in a signed and encrypted container. Who said what to whom is preserved for accountability, while content and metadata stay protected.
 
-The verifiable identifiers are long-term and durable, supporting key rotation with pre-commits so agents can build verifiable history over time. An agent's track record becomes a verifiable property rather than a database entry: something like reputation, rooted in cryptography.[^1]
+The verifiable identifiers are long-term and durable, supporting key rotation with pre-commits so agents can build verifiable history over time. This is significant: it enables something like reputation, where an agent's track record becomes a verifiable property rather than just a database entry.[^1]
 
 ### The Thin Waist Architecture
 
@@ -120,7 +122,7 @@ The Q&A at the LFDT meetup revealed how these approaches complement each other:[
 
 **PIC solves the authority propagation problem.** Once you are inside a system, how do you ensure that the permission scope does not expand as work passes between agents, APIs, and workloads?
 
-Both share a conviction: existing web protocols (HTTP, OAuth, TLS) are mature and valuable, but insufficient for a world where agents replace many human-software interactions. The workflows are fundamentally different. These are machine protocols operating at scale, without a human clicking through an interface. And unlike human employees whose roles change occasionally, agents perform diverse, one-off tasks that cannot be pre-categorized into static permission sets. Authorization needs to be dynamic, fine-grained, and task-specific.
+Both share a conviction: existing web protocols (HTTP, OAuth, TLS) are mature and valuable, but insufficient for agents. Unlike human employees whose roles change occasionally, agents perform diverse, one-off tasks that cannot be pre-categorized into static permission sets. Authorization needs to be dynamic, fine-grained, and task-specific.
 
 Both are designed to work with existing infrastructure, not replace it. PIC can use OAuth as a federated backbone, embedding its causal authority in custom claims. TSP is agnostic to identifier types, making it compatible with systems like EUDI wallets and verifiable credentials.
 
@@ -182,7 +184,7 @@ It is also fragile. It only happened because the prompt said "verify." Without s
 
 ## The Credential Delegation Architecture
 
-For agents specifically, the delegation chain needs to be carried in credentials, not just tokens. Several architectures are emerging.
+For agents, the delegation chain needs to be carried in credentials, not just tokens.
 
 ### The Three-Layer Chain
 
@@ -206,7 +208,7 @@ The three-layer SD-JWT architecture binds user intent to agent actions:
 
 Each layer is cryptographically chained. The agent cannot present Layer 3 (action proof) without a valid Layer 2 (intent constraints), which requires a valid Layer 1 (user identity). The constraints are not advisory: they are enforced by the cryptographic structure.
 
-The operational envelope travels with the request. When Agent A calls Service B with a Verifiable Intent credential, Service B can verify not just "is this request authenticated?" but "what was this agent authorized to do, by whom, and does this specific action fall within those constraints?" Without contacting Agent A's organization.
+This is significant for cross-organization trust because the operational envelope travels with the request. When Agent A calls Service B with a Verifiable Intent credential, Service B can verify not just "is this request authenticated?" but "what was this agent authorized to do, by whom, and does this specific action fall within those constraints?" Without contacting Agent A's organization.
 
 ## A Society of Agents
 
@@ -229,11 +231,11 @@ The interaction sequence for cross-domain delegation:
 5. The delegating agent observes outcomes through system signals or cryptographic receipts
 6. The delegating agent updates reputation records based on observed behavior
 
-This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across domains. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
+This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across systems. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
 
 ## The EUDI Wallet Infrastructure
 
-The European Digital Identity Wallet, mandated by eIDAS 2.0, is building the credential infrastructure that cross-organization agent trust requires at continental scale (the [Regulatory Landscape](regulatory-landscape.md) chapter covers the broader regulatory context, including the EU AI Act timeline).[^6][^11]
+The European Digital Identity Wallet, mandated by eIDAS 2.0, is building the credential infrastructure that cross-organization agent trust requires at continental scale.[^6][^11]
 
 By December 2026, every EU Member State must offer an EUDI Wallet, interoperable across 27 countries and 450 million citizens. The wallet stores government-verified credentials (identity documents, professional qualifications, educational certificates) and enables selective presentation: share only what is needed for a specific interaction.
 
@@ -249,9 +251,9 @@ The EUDI Wallet is not designed for agents specifically. But the infrastructure 
 
 The EU is starting to make this connection explicitly. In March 2026, the WE BUILD consortium, one of the EU's Large Scale Pilots for EUDI Wallets, issued three recommendations: develop a safe AI agent strategy built on the EUDI framework and Business Wallet infrastructure, establish standards working groups for interoperability between EUDI wallets and AI agents, and prioritize testing and pilots before regulation.[^we-build] The framing inverts the usual narrative: not "AI in wallets" (using AI to improve wallet UX) but "wallets for AI agents" (using wallet infrastructure to govern autonomous systems). The specific capabilities they identify map directly to the cross-org trust requirements: mutual authentication between agents and merchants, verification of the relationship between a human and their agent, confirmation of counterparty legitimacy, and digital signatures to distinguish authentic from AI-generated content. This is the first EU pilot consortium to explicitly recommend EUDI infrastructure as the substrate for AI agent governance.
 
-Shane's analysis of the EUDI credential formats identified a significant gap: W3C VC, the format best suited for cross-border semantic interoperability, has de jure inclusion but de facto exclusion in the current implementing regulations.[^6] The operational scaffolding (PID encoding tables, presentation profiles, issuance protocol specifications) exists only for mdoc and SD-JWT VC. More than half the substantive contributions to a recent public consultation converged on this diagnosis. Whether and when this gap closes will determine how effectively the EUDI infrastructure serves cross-border agent trust.
+Shane's analysis of the EUDI credential formats identified a significant gap: W3C VC, the format best suited for cross-border semantic interoperability, has de jure inclusion but de facto exclusion in the current implementing regulations.[^6] The operational scaffolding (PID encoding tables, presentation profiles, issuance protocol specifications) exists only for mdoc and SD-JWT VC. A significant share of substantive contributions to a recent public consultation converged on this diagnosis. Whether and when this gap closes will determine how effectively the EUDI infrastructure serves cross-border agent trust.
 
-There is also a cryptographic contradiction. Article 5a(16)(b) of the regulation requires unlinkability where identification is not needed, but the only format that delivers it cryptographically (W3C VC with BBS signatures) uses a curve (BLS12-381) that is not on ENISA's approved list.[^6] A legal obligation without a cryptographic mechanism. For agents operating across borders with privacy requirements, this is a constraint worth tracking.
+There is also a cryptographic contradiction. Article 5a(16)(b) of the regulation requires unlinkability where identification is not needed, but the only format that delivers it cryptographically (W3C VC with BBS signatures) uses a curve (BLS12-381) that is not on the SOG-IS/ECCG Agreed Cryptographic Mechanisms list.[^6] A legal obligation without a cryptographic mechanism. For agents operating across borders with privacy requirements, this is a constraint worth tracking.
 
 ## The Semantic Boundary Problem
 
@@ -318,7 +320,7 @@ The EUDI Wallet timeline (December 2026) creates both an opportunity and an obli
 
 Design delegation as credentials, not just tokens. A token expires and is gone. A credential can be revoked, audited, and verified long after the interaction. Build your agent authorization to produce verifiable artifacts, because cross-organization trust requires proof that survives across boundaries.
 
-The cross-domain challenge is not optional. Every agent that calls an external API, processes third-party data, or delegates to another organization's service is operating across trust boundaries. The question is not whether your agents will cross those boundaries, but whether they will do so with verifiable identity, bounded authority, and accountable delegation chains, or without. For how these trust properties compose (or break) when agents delegate to other agents across multiple hops, see [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
+The cross-domain challenge is not optional. Every agent that calls an external API, processes third-party data, or delegates to another organization's service is operating across trust boundaries. The question is not whether your agents will cross those boundaries, but whether they will do so with verifiable identity, bounded authority, and accountable delegation chains, or without.
 
 [^1]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," March 11, 2026. LFDT Belgium meetup reflections on TSP and PIC.
 [^2]: Cloud Security Alliance / Okta, "AI Security Across Domains: Who Vouches?" March 11, 2026. Part of a seven-part series on identity security as AI security. Documents the Salesloft Drift breach and three requirements for cross-domain agent trust.
@@ -332,5 +334,5 @@ The cross-domain challenge is not optional. Every agent that calls an external A
 [^10]: Phil Windley, "Cross-Domain Delegation in a Society of Agents," Technometria, 2026.
 [^11]: European Commission, European Digital Identity (eIDAS 2.0), Regulation (EU) 2024/1183. EUDI Wallet implementation timeline: December 2026 for Member State availability.
 [^12]: Vouched, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 5, 2026. MCP-I specification at modelcontextprotocol-identity.io. Three conformance levels for graduated adoption.
-[^we-build]: WE BUILD consortium, reported in BiometricUpdate.com, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD," March 9, 2026. WE BUILD is one of the EU's four Large Scale Pilots for EUDI Wallet implementation. See also Thierry Thevenet, "From AI in Wallets to Wallet for AI Agents," Medium, March 2026.
+[^we-build]: WE BUILD consortium, reported in BiometricUpdate.com, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD," March 9, 2026. WE BUILD is one of the EU's Large Scale Pilots for EUDI Wallet implementation. See also Thierry Thevenet, "From AI in Wallets to Wallet for AI Agents," Medium, March 2026.
 [^caam]: IETF, "Contextual Agent Authorization Mesh (CAAM)," draft-barney-caam-00, February 24, 2026. Authors: Jonathan M. Barney, Roberto Pioli, Darron Watson. Individual draft, expires August 28, 2026. Defines sidecar-based authorization mediator for post-discovery, pre-execution authorization with Session Context Objects, Ghost Token Pattern, and Contextual Risk Scoring.
