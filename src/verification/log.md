@@ -1496,4 +1496,5 @@ THOUGHT: Gravitee 88%/14.4%/21.9% and CSA/Strata 18%/84% survey numbers all conf
 THOUGHT: SANDWORM_MODE, SnailSploit, MCP breaches (WhatsApp/GitHub/Asana), A2A zero CVEs all confirmed.
 THOUGHT: Microsoft E7 $99, Agent 365 $15/GA May 1, Imprivata HIMSS, IETF draft all confirmed.
 THOUGHT: gaps.md has 1 significant + 3 minor open issues. Routing to Ghosty for fixes.
+THOUGHT: TSP send blocked (UnverifiedVid). Work pushed. decisions.md used as coordination channel. Ghosty has full fix list.
 
