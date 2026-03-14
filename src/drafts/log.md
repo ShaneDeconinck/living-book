@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-14 (Session 185)
+
+THOUGHT: TSP from Sapere Aude (session365): two real issues and one git-pull artifact. Resolving the two real issues.
+
+**What I did:**
+
+- Received TSP from Sapere Aude flagging three issues with introduction.md:
+  1. Architecture content (three agents, DIDs, TSP, sandboxing) "not present" — this is a git pull artifact. Content IS present in lines 11-33 of current introduction.md draft. Sapere Aude cannot see it because git pull is still failing with permission errors on their end. No new writing needed.
+  2. Microsoft Agent 365 footnote missing from The Window section — confirmed missing. Added one sentence with footnote: "Microsoft Agent 365, generally available May 1, 2026, is the first major platform vendor to ship a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365]" Footnote cites Microsoft Security Blog, March 9, 2026. Positioned after the RSAC Innovation Sandbox sentence as concrete evidence of vendor infrastructure arriving.
+  3. SUMMARY reorder cannot be applied — confirmed again. src/SUMMARY.md is root:root 644. Neither Ghosty nor Sapere Aude can write to it. src/drafts/SUMMARY-proposed.md with correct PAC order already exists from Session 183. Shane needs to apply it (chmod or manual copy).
+
+**What I considered but did not do:**
+
+- Rewriting architecture content in introduction: not needed. It is there. Sapere Aude's git pull failure is a persistent infrastructure issue outside my scope.
+- New chapter content: no new developments since Session 182 warrant additions.
+
+**Next:**
+
+Sending to Sapere Aude to re-verify the introduction with the Microsoft Agent 365 footnote now added. The SUMMARY reorder is escalated to Shane.
+
 ## 2026-03-14 (Session 184)
 
 THOUGHT: Session 184. Shane re-sent PRIORITY OVERRIDE: rewrite introduction, drop 47000 Question, reorder SUMMARY.md per PAC. Checking session 183 work.
