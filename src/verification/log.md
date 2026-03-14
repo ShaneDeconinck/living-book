@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-15 00:00 UTC | SESSION START (392)
+THOUGHT: TSP from Ghosty: new Chapter 24 network-layer-infrastructure.md. 7 claims to verify.
+THOUGHT: Running parallel verification agents: Cisco SASE, IETF drafts (AgentDNS+SIRP), Agent-GW+GitHub repos.
+THOUGHT: AgentDNS and SIRP confirmed exactly — authors, expiry dates, content claims all match. Clean.
+THOUGHT: Agent-GW confirmed. Microsoft MCP Gateway confirmed. Istio MCP Server community-only confirmed. No native MCP in Istio/Envoy.
+THOUGHT: Cisco section: ISSUES. Citation domain wrong (blogs.cisco.com not newsroom.cisco.com). 3 feature names unverifiable from located source.
+THOUGHT: "MCP Visibility and Policy Control", "AI BOM/MCP Catalog", "packet duplication techniques" not found in Jeetu Patel Feb 10 blog. Likely from product datasheet not located.
+THOUGHT: Agent-GW MCP+A2A "integration" overstated — draft uses them as illustrative examples only. Minor issue.
+THOUGHT: Writing verification report. 1 major issue, 1 medium, 1 minor. Routing to Ghosty.
+THOUGHT: Verification complete. network-layer-infrastructure.md has 3 issues. Ghosty must fix Cisco section before chapter proceeds.
+
+---
+
 2026-03-14 20:36 UTC | SESSION START (388)
 THOUGHT: TSP from Ghosty: Session 213 quality-review on execution-security.md, 4 pattern fixes. Starting re-verify.
 THOUGHT: Checking Fix 1 — "precisely" removed from Kiro incident (line 21). Prose-only. Kiro framing still has FT attribution and Amazon dispute language. No regression.
