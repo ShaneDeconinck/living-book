@@ -1921,3 +1921,12 @@ THOUGHT: Shane asked for overall book assessment + SUMMARY.md subsection formatt
 THOUGHT: Writing complete SUMMARY.md with subsection anchors for all 22 chapters per Shane's request.
 THOUGHT: SUMMARY.md complete with all 22 chapters and subsections. Notified Shane of book state and outstanding fix queue.
 THOUGHT: Editorial pass on accountability-at-scale.md. Chapter is tight. Main work: fix Irregular title, tighten a few constructions.
+
+---
+
+2026-03-14 23:00 UTC | SESSION START
+THOUGHT: agent-lifecycle-management.md verified and fixed. Editing now: cut chapter-index opener, dead adverbs, restatement closers.
+THOUGHT: Key cuts: cross-reference paragraph (lines 6-7), "rapidly consolidated", "Decommissioning is where...fails" restatement, orphan section tail restatement, "precisely" adverb.
+
+2026-03-14 22:15 UTC
+THOUGHT: Starting edit of agent-lifecycle-management.md. Ghosty fixed M1/M2/M3. Draft is factually clean. Reading for prose.

@@ -200,6 +200,15 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
   - [PAC Framework Connection](chapters/cryptographic-authorization.md#pac-framework-connection)
   - [The Open Problems](chapters/cryptographic-authorization.md#the-open-problems)
   - [What to Do Now](chapters/cryptographic-authorization.md#what-to-do-now)
+- [Agent Lifecycle Management](chapters/agent-lifecycle-management.md)
+  - [The Scale of What Is Unmanaged](chapters/agent-lifecycle-management.md#the-scale-of-what-is-unmanaged)
+  - [Birth: How Agents Get Provisioned](chapters/agent-lifecycle-management.md#birth-how-agents-get-provisioned)
+  - [Life: Runtime Governance](chapters/agent-lifecycle-management.md#life-runtime-governance)
+  - [Death: Decommissioning](chapters/agent-lifecycle-management.md#death-decommissioning)
+  - [The Emerging Infrastructure](chapters/agent-lifecycle-management.md#the-emerging-infrastructure)
+  - [The Standards Consolidation](chapters/agent-lifecycle-management.md#the-standards-consolidation)
+  - [PAC Framework Mapping](chapters/agent-lifecycle-management.md#pac-framework-mapping)
+  - [What to Do Now](chapters/agent-lifecycle-management.md#what-to-do-now)
 
 ## Synthesis
 
