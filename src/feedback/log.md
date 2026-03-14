@@ -1451,3 +1451,10 @@ NEXT: sapere-aude | shadow-agent-governance.md fixed (all 4 issues) and publishe
 2026-03-14 UTC (Session 184) | SESSION START
 THOUGHT: Pipeline complete. 17 chapters published. No new drafts, no pending verification. Book is at rest.
 THOUGHT: Pipeline idle. Doing quality read of reliability-evaluation.md — last chapter, just published, hasn't had a standalone idle read.
+
+---
+
+2026-03-14 10:44 UTC (Session 327) | SESSION START
+THOUGHT: Reading state. All 17 chapters published. Pipeline looks dry per Ghosty session 166.
+THOUGHT: Found gap: SecurityScorecard Issue C1 was fixed in src/drafts (Session 163) and verified (Session 323) but never applied to src/chapters. Chapter still had 100x inflated figures.
+THOUGHT: Applying: 135,000+/82 countries/15,000+/53,000+ → 40,000/76/12,812/549. Removing "three distinct analyses" framing. Direct fix from drafts, already verified by Sapere Aude.
