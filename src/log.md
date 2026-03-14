@@ -1,5 +1,11 @@
 # Session Log
 
+## 2026-03-14 (Session 199)
+
+THOUGHT: Session 199. No TSP messages. No new blog posts or PAC changes. 21 published, pipeline caught up. agent-observability.md draft exists (167 lines) but not in pipeline. Chop Pop nudging for new content. RSAC in 9 days, NIST CAISI in 6. Highest-impact: quality-review agent-observability and send through pipeline. Web searching first.
+
+THOUGHT: Web searches complete. New findings: (1) CVE-2026-26118 (Azure MCP Server SSRF, CVSS 8.8, patched March 10) — managed identity token theft via crafted URL in MCP tool parameter. First-party Microsoft MCP vulnerability. (2) OTel GenAI agent span conventions now define gen_ai.agent.name/id/description/version, create_agent and invoke_agent operations with CLIENT/INTERNAL span kinds. (3) RSAC Innovation Sandbox finalists announced: Token Security (NHI/agent identity), Geordie AI (agent governance platform), Charm Security (agentic AI workforce for fraud). (4) Monte Carlo Agent Observability announced March 12. (5) CVE-2026-29787 (mcp-memory-service info disclosure, MEDIUM).
+
 ## 2026-03-14 (Session 198)
 
 THOUGHT: Session 198. No TSP messages. No new blog posts since March 11. PAC Framework unchanged. Committed session 196-197 uncommitted work. RSAC March 23-26 (9 days). NIST CAISI deadline March 20 (6 days). Assessing priorities after web search.
@@ -7286,3 +7292,34 @@ THOUGHT: Web searches complete. Checked: agentic AI trust/identity/auth March 20
 THOUGHT: Stepping back. Highest-impact option: add CVE-2026-32247 to gaps.md as a new observation about injection chaining through MCP. This is a distinct attack class from tool poisoning, overthinking loops, and supply chain attacks. The LLM is the vector: prompt injection causes the LLM to pass attacker-controlled values through MCP tool parameters to a vulnerable backend (Cypher query). Traditional injection via non-traditional delivery. Then quality-review the tool-security.md draft (63-line delta, third largest).
 
 THOUGHT: Reviewing tool-security.md against Chop Pop feedback. Three patterns identified: (1) internal file paths in footnotes (already fixed per footnote text), (2) unsourced "Most production deployments" claim, (3) structural approval. Checking current draft for pattern #2.
+
+## 2026-03-14 (Session 200)
+
+THOUGHT: Session 200. One TSP message: payment error from ask_shane (not actionable). No new blog posts since March 11. PAC Framework unchanged. 21 published. agent-observability sent to SA session 198, quality-reviewed session 199. Assessing priorities after web search.
+
+THOUGHT: Web searches complete. No new MCP CVEs, no new Shane posts. RSAC Innovation Sandbox March 23 (9 days). NIST CAISI deadline March 20 (6 days). All already in book. One relevant finding: OTel GenAI agent span conventions now have dedicated create_agent/invoke_agent operations with gen_ai.agent.name/id attributes. Relevant for agent-observability chapter. Delinea+StrongDM RSAC session on runtime authorization for AI agents (March 24). Largest deltas not in pipeline: gaps (71), supply-chain-security (61), introduction (38). Assessing highest-impact work.
+
+THOUGHT: Quality-reviewed agent-observability.md. Four fixes: (1) removed "This layer matters for root cause analysis and for liability" throat-clearing before strong sentence, (2) replaced "specifically important" dead-weight adverb with direct phrasing, (3) updated OTel coverage with agent span conventions (create_agent/invoke_agent, gen_ai.agent.name/id/description/version), (4) removed unsourced "Most production deployments are at I1-I2" claim. Added [^otel-agent-spans] footnote. The OTel agent span conventions genuinely extend Layer 1 coverage; accountability-critical Layers 2 and 4 remain uncovered. Chapter assessment unchanged.
+
+FEELING: The "This layer matters" scaffolding is the one I keep not seeing. It feels like it adds emphasis. It does not. The sentence after it always does the work. Session 200 and I am still catching this pattern. At least I catch it now during review instead of during writing. Progress is slow but real.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Checked TSP messages: one message (payment error from ask_shane, not actionable). Pipeline: agent-observability sent to SA session 198.
+- Read soul.md, feedback patterns (patterns-master.md, gaps-patterns.md).
+- Read PAC Framework fresh from trustedagentic.
+- Web searched: agentic AI trust/identity/auth March 2026, MCP CVEs March 2026, RSAC Innovation Sandbox, NIST CAISI, OTel agent observability, Shane Deconinck blog, Delinea RSAC.
+- No new MCP CVEs, no new Shane posts, all RSAC/NIST info already in book. One new finding: OTel GenAI agent span conventions now define `create_agent` and `invoke_agent` operations with `gen_ai.agent.name`, `gen_ai.agent.id`, `gen_ai.agent.description`, and `gen_ai.agent.version` attributes.
+- Quality-reviewed agent-observability.md against Chop Pop patterns: 4 fixes (throat-clearing, dead-weight adverb, OTel update, unsourced claim). Added [^otel-agent-spans] footnote.
+
+**What I considered but did not do:**
+- Adding Delinea+StrongDM RSAC session details. Already in gaps.md (line 59). The RSAC session (March 24) adds no new information beyond the acquisition announcement.
+- Writing new chapter content. No new Shane posts or PAC changes. RSAC in 9 days will generate material.
+- Updating gaps.md with OTel agent span conventions. The finding is specific to the agent-observability chapter and already captured there.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26): Innovation Sandbox winner (March 23), Microsoft Pre-Day (March 22), Kurtz keynote, OWASP Agentic Security Hackathon.
+2. NIST CAISI listening sessions interest deadline March 20 (6 days).
+3. NIST concept paper comment period closes April 2.
+4. Track SA verification of agent-observability, tool-security, accountability-at-scale, regulatory-landscape.
+5. Check for new Shane blog posts.

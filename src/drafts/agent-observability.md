@@ -55,7 +55,7 @@ Every logged action gets its authorization context appended:
 
 RFC 8693 On-Behalf-Of tokens make this concrete: the OBO token records both the human who delegated and the agent who acted.[^rfc-8693] Structured audit logs that record the token as part of every action make the delegation chain auditable. Without this layer, logs show what happened but not whether the agent was authorized to do it — and the $47,000 audit trail remains incomplete.
 
-The `token_expiry` field is specifically important. A delegation granted three months ago may have been appropriate at grant time and inappropriate at execution time — without the timestamp, that dimension is invisible.
+The `token_expiry` field captures a dimension other fields miss. A delegation granted three months ago may have been appropriate at grant time and inappropriate at execution time. Without the timestamp, that gap is invisible.
 
 ### Layer 3: Decision Context
 
@@ -72,7 +72,7 @@ The agent's state at decision time:
 
 When a model version update changes agent behavior, `model_id` and `model_version` are the difference between "the agent misbehaved" and "version 20260301 handles budget edge cases differently from 20260115." When a system prompt change produces unexpected decisions, `system_prompt_hash` connects the decision to the prompt change in the change management record.
 
-This layer matters for root cause analysis and for liability. An organization that cannot name which model made a decision and under which system prompt cannot assign accountability for that decision.
+An organization that cannot name which model made a decision and under which system prompt cannot assign accountability for that decision.
 
 ### Layer 4: Causal Correlation
 
@@ -110,7 +110,7 @@ This layer does not require behavioral AI or anomaly detection models to be usef
 
 ## What Current Standards Cover
 
-**OpenTelemetry GenAI semantic conventions** cover Layers 1 and 3 partially.[^otel-genai] LLM span attributes for model, request parameters, token counts, and completion content are standardized. What they do not cover: Layer 2 (no attributes for delegation chain or token scope), Layer 4 (no agent-specific trace propagation for semantic causality), Layer 5 (no fleet aggregation specification).
+**OpenTelemetry GenAI semantic conventions** cover Layers 1 and 3 partially.[^otel-genai] LLM span attributes for model, request parameters, token counts, and completion content are standardized. The agent span conventions extend this with `create_agent` and `invoke_agent` operations, plus `gen_ai.agent.name`, `gen_ai.agent.id`, `gen_ai.agent.description`, and `gen_ai.agent.version` attributes: agent identity at the telemetry level.[^otel-agent-spans] What they do not cover: Layer 2 (no attributes for delegation chain or token scope), Layer 4 (no agent-specific trace propagation for semantic causality), Layer 5 (no fleet aggregation specification). The agent span conventions move OTel closer to full Layer 1 coverage for agent operations, but the accountability-critical layers remain outside the specification.
 
 **W3C PROV-DM** defines a formal provenance model with three entity types: Agent (the entity responsible), Activity (what happened), and Entity (what was produced or used).[^prov-dm] The model is expressive enough to capture agent decision chains. It is not adopted in practice in agent frameworks — the gap is adoption, not expressiveness.
 
@@ -140,7 +140,7 @@ An agent that is right 99.9% of the time without Layers 2-3 in place is less acc
 | **I4 — Managed** | Cross-agent trace IDs propagated; semantic causality captured across multi-agent workflows | Full delegation chain auditable from human principal to acting agent; token expiry logged | Fleet-level behavioral aggregation; coordination pattern detection operational |
 | **I5 — Optimized** | Behavioral baselines per agent type; drift detection automated; fleet patterns reviewed against authorized behavior | Append-only log stores with cryptographic sealing; tamper detection operational | Real-time anomaly signals with human-in-the-loop escalation for threshold breaches |
 
-Most production deployments are at I1-I2. Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent — present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
+Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent — present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
 
 ## What to Do Now
 
@@ -156,6 +156,7 @@ Most production deployments are at I1-I2. Layer 1 is increasingly available thro
 
 [^trust-for-agentic-ai]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 24, 2026.
 [^otel-genai]: OpenTelemetry, "GenAI Semantic Conventions," opentelemetry.io/docs/specs/semconv/gen-ai/. Standardized attributes for LLM spans including gen_ai.system, gen_ai.request.model, gen_ai.usage.input_tokens, gen_ai.usage.output_tokens, and completion content. Enables correlation of LLM calls across agents using standard distributed tracing infrastructure.
+[^otel-agent-spans]: OpenTelemetry, "Semantic Conventions for GenAI agent and framework spans," opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/. Defines `create_agent` and `invoke_agent` span operations with `gen_ai.agent.name`, `gen_ai.agent.id`, `gen_ai.agent.description`, and `gen_ai.agent.version` attributes. Extends general GenAI conventions with agent-specific identity and lifecycle telemetry.
 [^rfc-8693]: RFC 8693, "OAuth 2.0 Token Exchange," January 2020. The On-Behalf-Of token type (`urn:ietf:params:oauth:token-type:jwt`) records both the actor (the delegating entity) and the subject (the original principal). See the [Agent Identity and Delegation](agent-identity.md) chapter for implementation patterns.
 [^opentelemetry]: OpenTelemetry, "Distributed Tracing," opentelemetry.io. Trace context propagation (W3C Trace Context standard) links downstream spans to upstream spans across service boundaries through `traceparent` and `tracestate` headers.
 [^prov-dm]: W3C, "PROV-DM: The PROV Data Model," W3C Recommendation, April 30, 2013, www.w3.org/TR/prov-dm/. The Agent/Activity/Entity provenance model is expressive enough to represent delegation chains and causal relationships across multi-agent workflows.
