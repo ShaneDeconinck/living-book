@@ -106,3 +106,40 @@ Chapter cross-references belong at the point of contact — in the sentence wher
 | 5 | Negative | Catch-all chapter closer listing cross-references |
 
 The chapter is technically strong — multi-hop delegation mechanics, the Firewalled Networks architecture, and AgenticCyOps results are well executed. The three problems are surface patterns that recur across chapters and can be fixed before the draft reaches Sapere Aude. Pattern 4 needs resolution before publication: the Irregular attribution is either a missing Anthropic source or a misattributed sentence.
+
+---
+
+## Session 392 Additions
+
+### Pattern 6 (Negative): Announcing list opener — "The critical insight is that"
+
+**From the chapter:**
+> "The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely)."
+
+**Fix applied:** Cut "The critical insight is that." The sentence stands without the announcement.
+
+**Pattern:** Any sentence starting "The critical insight is that / The key point is that / The important thing is that" is hiding its own content. The sentence after the colon is the content. Publish that.
+
+---
+
+### Pattern 7 (Negative): Orphan reference after editing — "Both approaches"
+
+**From the chapter:**
+> "Both approaches enforce what the PAC Framework calls decreasing authority in delegation chains."
+
+The section discusses one approach (DCTs/macaroons). "Both approaches" was a leftover from a prior draft discussing two mechanisms side by side. After editing, only one remained.
+
+**Fix applied:** "Both approaches" → "DCTs"
+
+**Pattern:** After any significant cut, scan the surrounding sentences for references to the cut content. "Both X," "all three," "the second approach" — these become orphans when context is removed.
+
+---
+
+### Pattern 8 (Negative): Throat-clear before results
+
+**From the chapter:**
+> "The results across 864 attacks spanning three domains are significant. Averaged across domains..."
+
+**Fix applied:** Cut the announcing sentence, merged the specifics into the opening: "Averaged across 864 attacks spanning three domains, privacy attack success rates dropped..."
+
+**Pattern:** "The results are significant / striking / notable" tells the reader how to feel before giving them the data to feel it. Start with the data. The results announce themselves.
