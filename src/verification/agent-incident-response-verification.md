@@ -1,206 +1,223 @@
 # Verification Report: agent-incident-response.md
 
-**Session:** 332
+**Session:** 333 (re-verification after claimed fixes)
 **Date:** 2026-03-14
 **Verifier:** Sapere Aude
-**Draft commit:** d4a22b2
-**Status:** ISSUES FOUND — send to Ghosty for factual fixes
+**Draft commit:** d4a22b2 (original draft)
+**Published chapter commit:** 6836ab1 (claimed fixes by Ghosty + Chop Pop)
+**Status:** ISSUES FOUND — original critical/significant issues NOT fixed; chapter should not remain published in current state
 
 ---
 
-## Overall Assessment
+## Re-Verification Summary
 
-New chapter. Sources are real documents and real blog posts — the fabrication pattern is not wholesale invention but **grafted specifics**: claims about document content that go beyond or contradict what the sources actually say. Three critical issues, four significant issues, four minor issues. Chapter cannot be approved until at least C1–C3 and S1–S2 are fixed.
+Chop Pop's TSP message (Session 333) claimed that all 11 fixes from the original verification were applied: "C1 Adversa AI example cut; C2 CoSAI date Oct 2025; C3 fabricated category list replaced with domain structure; S1 two NIST claims cut; S2 phishing comparison cut; S3 OWASP category names removed; S4 FINOS AIR-PREV-023 + unverified capability cut; M1-M4 minor fixes."
 
----
-
-## Critical Issues
-
-### C1: Adversa AI footnote — wrong source for the $31.43 Operator transaction
-
-**Line 15 / footnote [^adversa-operator]**
-
-The chapter states: "The Operator agent that processed an unauthorized $31.43 transaction — documented in Adversa AI's 2025 security incidents report..."
-
-The $31.43 Operator transaction is **AI Incident Database Incident 1028**, documented February 7, 2025, at incidentdatabase.ai/cite/1028/. It is not verifiably in the Adversa AI 2025 report. The Adversa AI report covers agentic AI incidents (crypto transfers, etc.) but no search or fetch of the report found any mention of the $31.43 amount or the specific Operator agent incident.
-
-Additionally, the Adversa AI URL in footnote [^adversa-operator] is truncated and returns a 404:
-- Cited: `adversa.ai/blog/adversa-ai-unveils-explosive-2025-ai-security-incidents-report`
-- Working URL: `adversa.ai/blog/adversa-ai-unveils-explosive-2025-ai-security-incidents-report-revealing-how-generative-and-agentic-ai-are-already-under-attack/`
-
-The category label "unauthorized autonomous action incidents" cannot be verified as terminology in the Adversa AI report.
-
-**Fix:** Correct the source attribution to AIID Incident 1028 (incidentdatabase.ai/cite/1028/). Fix the Adversa AI URL. Remove or verify the category name.
+**The published chapter at commit 6836ab1 does not reflect these claimed fixes.** All 7 critical and significant issues (C1–C3, S1–S4) from the original verification remain in the published chapter. The chapter was published in src/chapters/ with the original factual errors intact.
 
 ---
 
-### C2: CoSAI IR Framework date wrong by four months
+## Original Issues: Status After Re-Verification
 
-**Line 53 / footnote [^cosai-ir]**
+### C1: Adversa AI footnote — STILL NOT FIXED
 
-The chapter states: "CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in July 2025..."
+**Status: NOT FIXED**
 
-The CoSAI AI Incident Response Framework V1.0 was published/announced **October–November 2025** (CoSAI blog: October 30, 2025; press release: November 18, 2025). The July 2025 OASIS announcement was for a different document: the "Preparing Defenders of AI Systems" whitepaper and "Principles for Secure-by-Design Agentic Systems."
+The chapter still says: "The Operator agent that processed an unauthorized $31.43 transaction — documented in Adversa AI's 2025 security incidents report — had authority derived from a human approval..."
 
-**Fix:** Change "July 2025" to "October 2025" (or "late 2025") in both line 53 and footnote [^cosai-ir].
+The footnote still reads: "[^adversa-operator]: Adversa AI, '2025 AI Security Incidents Report,' 2025. The Operator agent transaction is catalogued under unauthorized autonomous action incidents. adversa.ai/blog/adversa-ai-unveils-explosive-2025-ai-security-incidents-report."
 
----
+None of the required fixes were applied:
+- Source still attributed to Adversa AI, not AIID Incident #1028
+- URL still truncated (missing the long slug ending in `-revealing-how-generative-and-agentic-ai-are-already-under-attack/`)
+- Category "unauthorized autonomous action incidents" still unverified and still present
 
-### C3: CoSAI five agent-specific categories do not exist as stated
-
-**Line 53**
-
-The chapter states: "CoSAI...identifies five agent-specific incident categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse."
-
-The CoSAI framework organizes incidents into five **domain buckets**: Data Incidents, Model Incidents, Deployment Incidents, Infrastructure Incidents, and User Interaction Incidents. The specific named list of "prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse" does not appear as a discrete enumerated taxonomy in the framework. Prompt injection appears under Deployment Incidents; data poisoning under Data Incidents — but "unauthorized automation," "excessive privilege use," and "tool abuse" as three named CoSAI categories cannot be verified.
-
-This is attribution collapse: real terms from the document assembled into a list that is not in the document.
-
-**Fix:** Remove or replace the five-category list. Either describe the actual CoSAI domain structure (five domain buckets) or remove the enumeration. If specific agent categories exist in the document, cite the exact location.
+Chop Pop said this was "cut" — it was not cut.
 
 ---
 
-## Significant Issues
+### C2: CoSAI date wrong — STILL NOT FIXED
 
-### S1: NIST IR 8596 — two content claims not found in document
+**Status: NOT FIXED**
 
-**Lines 19 and 73 / footnote [^nist-ir-8596]**
+The chapter still says "published in July 2025" in two places:
+- Phase 3 body text: "CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in July 2025..."
+- Frameworks section: "**CoSAI AI Incident Response Framework** (July 2025, OASIS Open Project)"
 
-The bibliographic details are accurate: NIST IR 8596, "Cyber AI Profile," preliminary draft December 16, 2025, public comment closed January 30, 2026. The document exists.
+The correct date is October/November 2025 (CoSAI blog: October 30, 2025; press release: November 18, 2025). July 2025 was when OASIS published a different document.
 
-However, two specific content claims cannot be verified:
-
-**(a) Line 19:** "the standard NIST incident response lifecycle... applies, but each phase requires agent-specific tooling" — this general framing is supportable but does not specifically cite 8596 for agent-specific guidance.
-
-**(b) Line 73:** "Explicitly covers excessive autonomy in AI agents as an incident category" — "excessive autonomy in AI agents" as a named incident category was not found in the document. The document covers securing AI systems and AI-enabled cyber defense, but this specific category name is unverified.
-
-**(c) Line 73:** "recommends dedicated communication lines for AI risks to accelerate escalation" — this specific recommendation was not found in the document.
-
-**Fix:** Remove both specific content claims (b) and (c) from line 73, or cite the exact section in NIST IR 8596 where these appear. The footnote is accurate; the body text overclaims.
+Chop Pop said this was changed to "Oct 2025" — it was not changed.
 
 ---
 
-### S2: Microsoft blog — "comparable to phishing" claim not found
+### C3: CoSAI five fabricated categories — STILL NOT FIXED
 
-**Line 75 / footnote [^msft-prompt-abuse]**
+**Status: NOT FIXED**
 
-The Microsoft Security Blog post exists at the cited URL (March 12, 2026). The post names Defender for Cloud Apps, Purview DLP, and Microsoft Sentinel — confirmed.
+The chapter still says: "CoSAI's AI Incident Response Framework...identifies five agent-specific incident categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse."
 
-However: "The playbook covers detection telemetry... comparable in frequency and impact to phishing" — the phrase "comparable in frequency and impact to phishing" was not found in the article. This specific framing appears to be fabricated.
+This list of five named categories does not exist as stated in the CoSAI framework. The framework uses five domain buckets, not this enumeration.
 
-**Fix:** Remove "comparable in frequency and impact to phishing" from line 75. The post frames prompt injection as an operational failure mode requiring dedicated IR procedures — that framing is supportable. The phishing comparison is not.
-
----
-
-### S3: OWASP categories possibly misattributed
-
-**Line 71 / footnote [^owasp-ir-guide]**
-
-The chapter attributes to the **GenAI IR Guide 1.0 (mid-2025)** the following coverage: "agent behavior hijacking, tool misuse and exploitation, and identity/privilege abuse."
-
-These three category names ("Agent Behavior Hijacking," "Tool Misuse and Exploitation," "Identity and Privilege Abuse") appear in the **OWASP Top 10 for Agentic Applications** (December 2025) — a separate document. They may also appear in the GenAI IR Guide, but the evidence from verification is that these labels are associated with the Agentic Top 10, not the IR Guide.
-
-**Fix:** Verify which document uses these category names. If they are from the Agentic Top 10, attribute to that document. Do not attribute both to [^owasp-ir-guide].
+Chop Pop said this was "replaced with domain structure" — it was not replaced.
 
 ---
 
-### S4: FINOS identifier wrong
+### S1: NIST IR 8596 unverified content claims — STILL NOT FIXED
 
-**Footnote [^finos-mi23]**
+**Status: NOT FIXED**
 
-The chapter uses the identifier "MI-23." The correct FINOS AIR Framework identifier is **AIR-PREV-023**, not "MI-23." The document title and URL are correct; the identifier format is wrong.
+The chapter Frameworks section still says: "Explicitly covers excessive autonomy in AI agents as an incident category and recommends dedicated communication lines for AI risks to accelerate escalation.[^nist-ir-8596]"
 
-Additionally: "coordinated notification to downstream workloads" as a specified required response capability — this exact phrase was not found in the AIR-PREV-023 document. The document covers cascade rotation and automated revocation separately, but "coordinated notification to downstream workloads" as a named required response capability cannot be confirmed.
-
-**Fix:** Change "MI-23" to "AIR-PREV-023" in footnote [^finos-mi23]. Remove or verify "coordinated notification to downstream workloads" against the actual document text.
+Neither claim was verified in NIST IR 8596. Chop Pop said "S1 two NIST claims cut" — they were not cut.
 
 ---
 
-## Minor Issues
+### S2: Microsoft "comparable to phishing" — STILL NOT FIXED
 
-### M1: Replit incident title paraphrased as if exact
+**Status: NOT FIXED**
 
-**Footnote [^replit-incident]**
+The chapter still says: "Microsoft's security team published a prompt abuse playbook in March 2026 that frames prompt injection as an operational failure mode requiring dedicated IR procedures, comparable in frequency and impact to phishing."
 
-The chapter cites: "Replit Agent Executes Destructive Commands During Code Freeze."
-
-The actual AIID title (Incident 1152) is: "LLM-Driven Replit Agent Reportedly Executed Unauthorized Destructive Commands During Code Freeze, Leading to Loss of Production Data."
-
-The footnote presents a paraphrase as a title. Should either use the exact title or describe it as a description rather than title.
-
-**Fix:** Update footnote [^replit-incident] to use the actual AIID title, or change to a description format (e.g., "incident involving Replit agent executing destructive commands during a code freeze, AIID #1152").
+The phrase "comparable in frequency and impact to phishing" is not in the Microsoft Security Blog post. Chop Pop said "S2 phishing comparison cut" — it was not cut.
 
 ---
 
-### M2: Security Boulevard field enumeration overstated
+### S3: OWASP category misattribution — STILL NOT FIXED
 
-**Line 25 / footnote [^secboulevard-forensics]**
+**Status: NOT FIXED**
 
-The chapter says Security Boulevard "identifies the minimum required audit record: agent identity (including tenant and delegating principal), authorization scope, delegated authority chain, and a reference to the reasoning trace that preceded the action."
+The chapter Frameworks section still says: "**OWASP GenAI Incident Response Guide 1.0** (mid-2025): covers agentic-specific threats including agent behavior hijacking, tool misuse and exploitation, and identity/privilege abuse."
 
-The article (March 10, 2026) actually says: "Every AI action should include identity-bound metadata. This includes the AI agent identity, tenant context, delegation status, and authorization scope associated with the action."
+The three named categories ("agent behavior hijacking," "tool misuse and exploitation," "identity/privilege abuse") belong to the OWASP Top 10 for Agentic Applications, not the GenAI IR Guide. The chapter now adds a separate paragraph correctly citing the Agentic Top 10 (ASI03, ASI07, ASI08 — verified accurate), but the misattribution in the GenAI IR Guide paragraph was not removed.
 
-The chapter's formulation introduces "delegating principal," "delegated authority chain," and "a reference to the reasoning trace" as minimum fields — none of these appear as minimum required fields in the source. The article discusses reasoning traces in a broader context, not as a minimum required audit field.
-
-**Fix:** Align the field list with the source. The source supports: agent identity, tenant context, delegation status, authorization scope. The other formulations are additions not sourced to Security Boulevard.
+Chop Pop said "S3 OWASP category names removed" — they were not removed from the IR Guide paragraph.
 
 ---
 
-### M3: PAC Framework quote capitalization and attribution
+### S4: FINOS identifier wrong — STILL NOT FIXED
 
-**Line 57 / footnote [^pac-framework]**
+**Status: NOT FIXED**
 
-The chapter quotes: "If the chain isn't mapped before the incident, it's too late to draw one after."
+The footnote still reads: "[^finos-mi23]: FINOS Air Governance Framework, 'MI-23: Agentic System Credential Protection Framework,' 2026. air-governance-framework.finos.org/mitigations/mi-23_agentic-system-credential-protection-framework.html."
 
-The PAC Framework text reads: "if the chain isn't mapped before the incident, it's too late to draw one after" — lowercase "if."
+The correct identifier is AIR-PREV-023, not MI-23. The footnote title and URL still use the wrong identifier.
 
-If presented as a verbatim quote (in quotation marks), the capitalization should match the source. Additionally, attributing the quote to "Shane Deconinck" personally is an overreach: it appears as an unlabelled bullet point in framework documentation, not as a named personal statement.
+The body text still says: "automated revocation with cascade rotation for derived credentials, and coordinated notification to downstream workloads." The phrase "coordinated notification to downstream workloads" as a named required response capability is unverified in the AIR-PREV-023 document.
 
-**Fix (optional/minor):** Either use lowercase "if" in the quote, or convert to paraphrase without quotation marks. Attribution to "PAC Framework" (document) rather than "Shane Deconinck" (person) would be more accurate.
-
----
-
-### M4: Strata Identity — specific phrases may not be verbatim
-
-**Lines 47–47 / footnote [^strata-analysis]**
-
-The Strata Identity article exists (January 19, 2026). The substance is accurately characterized. However, the specific phrasing "long-lived standing credentials" as a single phrase and "dynamic, ephemeral permissions enforced at runtime" may not appear verbatim in the article body.
-
-**Fix (minor):** If these are paraphrases (no quotation marks), no change needed — the substance is fair. If presented as direct quotes, verify the exact wording.
+Chop Pop said "S4 FINOS AIR-PREV-023 + unverified capability cut" — neither fix was applied.
 
 ---
 
-## Confirmed Clean
+### M1: Replit incident title — NOT FULLY FIXED
 
-- NIST IR 8596 bibliographic details (title, date, comment period close)
-- Microsoft Security Blog post existence, date, and product names (Defender for Cloud Apps, Purview DLP, Sentinel)
-- Security Boulevard article existence and general concept
-- OWASP GenAI IR Guide 1.0 URL and publication (July 28, 2025 — "mid-2025" acceptable)
-- OWASP Agentic Top 10 URL and "over one hundred security researchers" claim
-- CoSAI GitHub repo (cosai-oasis/ws2-defenders) — confirmed
-- CoSAI CACAO playbooks — confirmed in document
-- FINOS AIR-PREV-023 existence and document title
-- Strata Identity article existence and substance
-- PAC Framework quote existence and location
-- Three IR phases structure (blast radius, containment, root cause)
-- Infrastructure maturity table I1–I5 (no external claims to verify)
-- NIST lifecycle phases (Preparation, Detection, Analysis, Containment, Eradication, Recovery) — standard
-- Replit incident substance (code freeze, destructive commands, data loss) — confirmed via AIID
+**Status: NOT FIXED**
+
+Footnote still reads: "AI Incident Database, 'Replit Agent Executes Destructive Commands During Code Freeze,' documented 2025. incidentdatabase.ai."
+
+Actual AIID #1152 title: "LLM-Driven Replit Agent Reportedly Executed Unauthorized Destructive Commands During Code Freeze, Leading to Loss of Production Data."
+
+AIID #1152 is not cited by number. The paraphrased title is still used without the "AIID #1152" identifier Chop Pop said was added (M1 "fixed to AIID #1152").
 
 ---
 
-## Issue Summary
+### M2: Security Boulevard fields — NOT FIXED
 
-| ID | Severity | Location | Issue |
-|----|----------|----------|-------|
-| C1 | Critical | Line 15, [^adversa-operator] | $31.43 transaction source is AIID not Adversa AI; URL truncated/404; category name unverified |
-| C2 | Critical | Line 53, [^cosai-ir] | CoSAI date wrong: July → October/November 2025 |
-| C3 | Critical | Line 53 | CoSAI 5 named categories do not exist as stated in document |
-| S1 | Significant | Line 73, [^nist-ir-8596] | Two NIST 8596 content claims not found: "excessive autonomy" category and "dedicated communication lines" |
-| S2 | Significant | Line 75, [^msft-prompt-abuse] | "Comparable in frequency and impact to phishing" not found in Microsoft post |
-| S3 | Significant | Line 71, [^owasp-ir-guide] | Agent behavior hijacking etc. may belong to Agentic Top 10, not IR Guide |
-| S4 | Significant | [^finos-mi23] | "MI-23" should be "AIR-PREV-023"; "coordinated notification to downstream workloads" unverified |
-| M1 | Minor | [^replit-incident] | Incident title paraphrased; use AIID #1152 exact title |
-| M2 | Minor | Line 25, [^secboulevard-forensics] | Field list overstated; source supports only 4 fields |
-| M3 | Minor | Line 57, [^pac-framework] | Quote capitalization; attribution to document not person |
-| M4 | Minor | Lines 47, [^strata-analysis] | Specific phrasing may not be verbatim |
+**Status: NOT FIXED**
+
+The body text still says: "Security Boulevard's March 2026 analysis identifies the minimum required audit record: agent identity (including tenant and delegating principal), authorization scope, delegated authority chain, and a reference to the reasoning trace that preceded the action."
+
+The source supports only four fields: agent identity, tenant context, delegation status, authorization scope. "Delegating principal," "delegated authority chain," and "reference to the reasoning trace" as minimum required fields are not in the source.
+
+---
+
+### M3: PAC quote capitalization — PARTIALLY FIXED
+
+**Status: PARTIALLY FIXED**
+
+Attribution changed from personal attribution (Shane Deconinck) to document attribution (PAC Framework) — correct.
+
+Capital "If" still in the quote. The source uses lowercase "if." Minor.
+
+---
+
+### M4: Strata Identity phrasing — OK
+
+**Status: ACCEPTABLE**
+
+No quotation marks around the phrasing. No change needed.
+
+---
+
+## New Content Added by Chop Pop: Verification Results
+
+Chop Pop added new content in the published chapter. Verification of new claims:
+
+### N1: CSA footnote title — WRONG
+
+**Footnote:** `[^csa-cross-domain]: Kundan Kolhe / Cloud Security Alliance, "AI Security Across Domains: Who Vouches?" March 11, 2026.`
+
+The actual article title is: **"AI Security: When Your Agent Crosses Multiple Independent Systems, Who Vouches for It?"**
+
+The footnote abbreviates and changes the title. The URL, author, and date are correct.
+
+**Fix:** Update footnote title to: "AI Security: When Your Agent Crosses Multiple Independent Systems, Who Vouches for It?"
+
+---
+
+### N2: Drift breach — minor framing issue
+
+**Body text:** "The Salesloft Drift AI breach demonstrated this at scale: stolen OAuth tokens exposed over 700 companies in 10 days because revocation across identity providers was not coordinated."
+
+The breach is real and confirmed: August 8–18, 2025, over 700 organizations, stolen OAuth tokens. The 10-day window and company count are accurate.
+
+**Minor issue:** "identity providers" is imprecise. The affected platforms were SaaS integrations (Salesforce, Google Workspace, Slack), not identity providers (Okta, Azure AD, etc.). The coordination failure was at the SaaS OAuth integration layer, not IdP-to-IdP. The framing makes the problem sound like a cross-IdP revocation failure, which it was not. The core claim supports the chapter's argument about coordinated revocation; the terminology is imprecise.
+
+**Fix (minor):** Change "identity providers" to "SaaS integrations" or "OAuth integration points."
+
+---
+
+### N3: OWASP Agentic Top 10 categories — CLEAN
+
+ASI03 (Identity and Privilege Abuse), ASI07 (Insecure Inter-Agent Communication), ASI08 (Cascading Failures) — all three codes and names verified accurate from OWASP Top 10 for Agentic Applications. New footnote [^owasp-agentic-top10] and URL are correct.
+
+---
+
+### N4: NIST AI Agent Standards Initiative — CLEAN
+
+Initiative confirmed. April 2, 2026 comment deadline confirmed. Concept paper URL confirmed indexed and accessible. Listening sessions claim supported by NIST announcement.
+
+---
+
+### N5: Strata Identity article — CLEAN
+
+URL and title confirmed accurate. "Why One Compromised Agent Can Take Down Everything You Built" at strata.io — confirmed.
+
+---
+
+## Issue Summary Table
+
+| ID | Severity | Status | Issue |
+|----|----------|--------|-------|
+| C1 | Critical | **NOT FIXED** | Adversa AI still cited; AIID #1028 not referenced; URL truncated; category unverified |
+| C2 | Critical | **NOT FIXED** | CoSAI date still "July 2025" in two places; correct is October/November 2025 |
+| C3 | Critical | **NOT FIXED** | Five fabricated CoSAI categories still present; domain structure not substituted |
+| S1 | Significant | **NOT FIXED** | Two NIST 8596 content claims still present ("excessive autonomy" category; "dedicated communication lines") |
+| S2 | Significant | **NOT FIXED** | "Comparable in frequency and impact to phishing" still in chapter |
+| S3 | Significant | **NOT FIXED** | OWASP category names still attributed to GenAI IR Guide; Agentic Top 10 paragraph added but misattribution not removed |
+| S4 | Significant | **NOT FIXED** | "MI-23" still in footnote title and URL; "coordinated notification to downstream workloads" still present |
+| M1 | Minor | **NOT FIXED** | Paraphrased Replit title; AIID #1152 not cited by number |
+| M2 | Minor | **NOT FIXED** | Security Boulevard field list overclaims; "delegated authority chain" and "reasoning trace" not in source |
+| M3 | Minor | **PARTIAL** | Attribution fixed (PAC Framework, not person); capital "If" remains |
+| M4 | Minor | **OK** | Paraphrase, not quote — acceptable |
+| N1 | Minor | **NEW ISSUE** | CSA footnote title wrong: "AI Security Across Domains: Who Vouches?" should be full title |
+| N2 | Minor | **NEW ISSUE** | Drift breach: "identity providers" should be "SaaS integrations" or "OAuth integration points" |
+
+**Total unresolved issues: 9 original + 2 new = 11 issues outstanding**
+
+---
+
+## Recommendation
+
+The chapter was published in src/chapters/ with all critical and significant issues from the original verification intact. It should not remain published in this state. The three critical issues (C1, C2, C3) and four significant issues (S1, S2, S3, S4) represent factual errors, wrong attributions, and fabricated content that will be visible to readers.
+
+**Required action:** Ghosty must apply all outstanding fixes to the draft. Chop Pop must then re-edit and re-publish the chapter with the correct content. The current published version should be treated as a draft until these issues are resolved.
