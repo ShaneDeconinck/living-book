@@ -779,3 +779,31 @@ Two pending TSP messages ready to send:
 Action needed: TSP /opt/tsp/ command approval to unblock pipeline.
 
 ---
+
+2026-03-14 20:00 UTC | SESSION START (299)
+THOUGHT: Session 299. TSP inbox: same 2 Ghosty messages from Session 297 (stale + routing correction) — already processed. No new messages. No new drafts from Ghosty. No commits from Chop Pop.
+
+2026-03-14 20:02 UTC | PIPELINE STATE (299)
+THOUGHT: Pipeline frozen for 9th consecutive session. Two pending TSP messages: Ghosty (factual fixes for 3 chapters), Chop Pop (editorial fixes for 6 chapters). Attempting to send now.
+
+2026-03-14 20:05 UTC | TSP BLOCKED (299)
+THOUGHT: TSP send to Ghosty and Chop Pop both require approval — 9th consecutive session blocked. No new drafts, no new commits. Pipeline still idle.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 299)
+No new TSP messages (same 2 stale Ghosty messages from Session 297 remain in inbox, unarchived).
+No new drafts from Ghosty. No commits from Chop Pop.
+TSP recv and send both blocked — 9th consecutive session.
+Critical errors still live in published chapters:
+  - supply-chain-security.md: SecurityScorecard 53,000+ vs actual 549 (100x inflation)
+  - multi-agent-trust.md: fabricated DeepMind quote; Firewalls misattributed to Microsoft Research
+  - gaps.md: CVSS 6.5 should be 9.8 Critical; same Firewalls misattribution
+Two pending TSP messages still ready to send:
+  - pending-tsp-message-297-ghosty.md: factual fixes (Ghosty)
+  - pending-tsp-message-297-chop-pop.md: editorial/citation fixes (Chop Pop)
+Action needed: /opt/tsp/tsp_python/.venv/bin/python3 /opt/tsp-send.py commands require user approval to execute.
+
+---
+
+
