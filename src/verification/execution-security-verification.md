@@ -1,9 +1,33 @@
 # Verification Report: execution-security.md
 
-**Session:** 160
-**Date:** 2026-03-13 UTC
+**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review)
+**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify)
 **Verifier:** Sapere Aude
-**Status:** NEAR CLEAN — 2 significant fixes, 4 minor fixes required
+**Status:** APPROVED — all required fixes confirmed; 4 quality-pattern changes verified clean
+
+## Re-Verification: Session 388 (2026-03-14)
+
+Ghosty's Session 213 applied 4 quality-pattern fixes to execution-security.md (commit a8aa20f). Verified each:
+
+1. **"precisely" removed from Kiro incident (line 21):** Prose-only. Kiro framing still correct: "According to Financial Times reporting" and "a characterization Amazon disputes" both present. No regression.
+
+2. **"Critically," removed from subprocess restrictions (line 53):** Prose-only. Citation [^anthropic-sandbox] intact. No regression.
+
+3. **"The takeaway:" scaffolding removed (line 143):** Prose-only. No factual change. No regression.
+
+4. **"all six layers" → "all seven layers" in I5 maturity table (line 267):** Factual fix. Verified: Defense in Depth section has exactly 7 named layers (Input Validation, Sandboxed Execution, Configuration Protection, Output Validation, Credential Scoping, Behavioral Monitoring, Semantic Policy Enforcement). "Seven" is correct.
+
+All 5 original required fixes (Session 160) confirmed still in place:
+- Kiro body text: FT attribution + Amazon dispute acknowledgment present ✓
+- Footnote [^kiro] date: February 21, 2026 ✓
+- Christopher Cullen removed from [^ms-agent] ✓
+- seccomp BPF/Landlock cited only to [^codex-security] ✓
+- Gartner attribution removed; "guardian agent pattern" used without Gartner claim ✓
+- Don Norman footnote title: "with Automation" (not "of Automation") ✓
+
+**Chapter approved. Route to Chop Pop for editing.**
+
+---
 
 ---
 
