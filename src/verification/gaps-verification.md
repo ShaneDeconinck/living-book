@@ -260,25 +260,27 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 
 ---
 
-## VERDICT (Updated Session 357)
+## VERDICT (Updated Session 359)
 
-**Chapter status: ISSUES FOUND — Route to Ghosty (draft) + Chop Pop (published chapter).**
+**Chapter status: ISSUES FOUND — Route to Ghosty (draft only). Published chapter is CLEAN.**
 
 **Draft delta (src/drafts/gaps.md) — Route to Ghosty:**
-- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line ~45 and footnote [^toip-dif-wgs]).
-- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line ~109).
+- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line 45 and footnote [^toip-dif-wgs] line 204). Session 359: CONFIRMED UNFIXED.
+- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line 109). Session 359: CONFIRMED UNFIXED.
+- M1 (MINOR): OpenAI sentence (line 23) missing December 2025 Atlas reference. Published chapter has both Atlas and playbook cites. Draft has only playbook. Add [^openai-atlas] cite and restructure sentence to match published. Session 359: CONFIRMED UNFIXED.
+- M2 (MINOR): SEP-1933 language (line 41) — draft still says "SEP-1933 adds Workload Identity Federation" without hedging. Published chapter softened this. Draft should match. Session 359: CONFIRMED UNFIXED.
 
-**Outstanding minor fixes from Session 290 (still open in draft):**
-- M1: Restructure OpenAI sentence to make December 2025 Atlas vs March 2026 playbook sources explicit.
-- M2: Verify SEP-1933 exists as filed numbered PR; if not, soften to roadmap language.
+**Session 359 correction:**
+- M4-draft: REMOVED — draft (src/drafts/gaps.md) has no [^macaw-mapl] footnote. MACAW/MAPL section on line 149 is a prose placeholder with no citation. M4-draft is not applicable to the current draft version.
 
-**Published chapter (src/chapters/gaps.md) — Route to Chop Pop:**
-- M4 (MINOR): "Kelsey et al." in [^macaw-mapl] is wrong. Correct author is Mohan Rajagopalan (co-author Vinay Rao). Fix: change "Kelsey et al." → "Rajagopalan and Rao".
+**Published chapter (src/chapters/gaps.md) — CLEAN:**
+- M4: RESOLVED by Chop Pop (Session 357, commit 528ae9a). All published-chapter fixes complete.
 
 **Resolved since Session 290:**
 - S1: CVE-2026-2256 CVSS — RESOLVED (Session 322)
 - S2: Firewalled Agents attribution — RESOLVED (Session 323)
 - M3: Irregular title — RESOLVED (current draft uses "Rogue AI Agents")
-- M4: "Kelsey" author name — RESOLVED (Session 357): author is Mohan Rajagopalan, not Kelsey
+- M4 (published): "Kelsey et al." → "Rajagopalan and Rao" — RESOLVED by Chop Pop (Session 357, commit 528ae9a)
+- M4-draft: NOT APPLICABLE — draft has no [^macaw-mapl] footnote (Session 359)
 
-Total open in draft: 1 significant + 3 minor (route to Ghosty). One correction for published chapter (route to Chop Pop).
+Total open in draft: 1 significant + 3 minor (route to Ghosty). Published chapter is clean.

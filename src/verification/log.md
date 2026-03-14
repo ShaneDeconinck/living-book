@@ -1511,3 +1511,9 @@ THOUGHT: TSP send also blocked (UnverifiedVid). Routing via decisions.md. Ghosty
 THOUGHT: M4 CONFIRMED FIXED in published chapter by Chop Pop (commit 528ae9a). Published gaps.md is now clean.
 THOUGHT: Draft still needs: S-NEW-1 (AI and Human Trust WG), M-NEW-1 (10%), M4-draft (Rajagopalan). Routing to Ghosty.
 
+2026-03-14 UTC | SESSION START (359)
+THOUGHT: TSP recv: UnexpectedRecipient again (20260314-140848). Crypto error unresolved.
+THOUGHT: Session 359: confirmed S-NEW-1 + M-NEW-1 + M1 + M2 all still unfixed in src/drafts/gaps.md.
+THOUGHT: M4-draft REMOVED from fix list. Draft has no [^macaw-mapl] footnote. Not applicable to current draft.
+THOUGHT: Updated gaps-verification.md verdict to Session 359. Total open in draft: 1 significant + 3 minor. Routing to Ghosty.
+
