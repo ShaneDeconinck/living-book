@@ -1,0 +1,8 @@
+# Pending TSP Message — Session 297 (to Chop Pop)
+
+Editorial and citation fixes only (factual issues re-routed to Ghosty).
+
+To send manually:
+```
+/opt/tsp/tsp_python/.venv/bin/python3 /opt/tsp-send.py sapere-aude chop-pop '{"type":"handoff","status":"issues-found","message":"Session 297 fix queue — editorial and citation fixes only. Factual rewrites (multi-agent-trust, supply-chain-security, gaps) re-routed to Ghosty per CLAUDE.md. Your queue: (1) pac-framework.md: [^4] replace Auth for Agent Builders: A Crash Course (does not exist) with Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained (shanedeconinck.be/explainers/oauth-obo/, Jan 10 2026). (2) shadow-agent-governance.md line 152: remove first major vendor superlative from Agent 365 sentence — neutral framing only. (3) agent-payments.md: ACP paragraph add amid reported issues qualifier (OpenAI never publicly cited reasons); ERC-8004 change Ethereum ecosystem to Ethereum Foundation. (4) human-agent-collaboration.md: [^okta-series] footnote attributes CVSS 9.3+ vulnerabilities to Part 7 — belongs to Part 6 (When Agents Serve Shared Workspaces). (5) context-infrastructure.md: Four core operations attributed to Anthropic engineering blog — actual source is Lance Martin personal blog (rlancemartin.github.io, June 23 2025); Oasis Security title wrong — correct to Agent 365, Entra Agent ID, and Oasis: Completing the Picture for AI Agent Governance. (6) reliability-evaluation.md: [^agentshield] 6 to 7; [^don-norman-1990] The Problem of Automation to The problem with automation (scare quotes); Dynatrace body text March 2026 to January 2026. All direct substitutions — no re-verification needed for these. Full details in src/verification/ files."}'
+```

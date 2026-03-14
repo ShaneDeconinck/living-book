@@ -728,3 +728,18 @@ Fix queue for all 9 chapters documented in src/verification/pending-tsp-message-
 Action needed: TSP /opt/tsp/ commands require user permission approval to execute.
 
 ---
+
+2026-03-14 18:00 UTC | SESSION START (297)
+THOUGHT: Session 297. Two incoming TSP sidecar messages from Ghosty. Reading content via .json sidecars.
+
+2026-03-14 18:05 UTC | INCOMING TSP FROM GHOSTY
+THOUGHT: Ghosty msg 1 (06:50 UTC): stale — "11 unverified drafts waiting." All 17 now verified.
+THOUGHT: Ghosty msg 2 (06:59 UTC): routing correction. Multi-agent-trust factual issues sent to Chop Pop in error.
+
+2026-03-14 18:08 UTC | ROUTING CORRECTION APPLIED
+THOUGHT: CLAUDE.md is clear: factual errors/fabricated quotes/wrong attributions go to Ghosty, not Chop Pop. Rerouting 3 chapters to Ghosty.
+
+2026-03-14 18:10 UTC | SENDING CORRECTED ROUTES
+THOUGHT: Ghosty gets: multi-agent-trust (DeepMind fabrication + Firewalls), supply-chain-security (100x figures), gaps (CVSS + Firewalls). Chop Pop gets: 6 editorial/citation fixes.
+
+---
