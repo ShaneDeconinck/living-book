@@ -77,7 +77,7 @@ Agents are already making decisions in your organization. Some you deployed deli
 
 The framework confronts a reality most governance models ignore: shadow agents exist. Employees are building agents using low-code tools, browser extensions, and LLM APIs without going through compliance review. These agents use the employee's credentials, operate without audit trails, and the organization does not know they exist.
 
-You cannot govern what you cannot see. The first accountability question is not "who is responsible for this agent?" It is "do you know every agent running in your organization?"
+The first accountability question is not "who is responsible for this agent?" It is "do you know every agent running in your organization?"
 
 ### Delegation Becomes Abdication
 
@@ -236,7 +236,7 @@ The framework distills each pillar into concrete questions designed for stakehol
 
 ### Accountability
 
-8. **Do you know every agent running in your organization?** The [Shadow Agent Governance](shadow-agent-governance.md) chapter is built around this question. 98% of organizations report employees using unsanctioned apps, and 78% of employees bring their own AI tools to work regardless of company policy.[^shadow-ai] You cannot govern what you cannot see.
+8. **Do you know every agent running in your organization?** The [Shadow Agent Governance](shadow-agent-governance.md) chapter is built around this question. 98% of organizations report employees using unsanctioned apps, and 78% of employees bring their own AI tools to work regardless of company policy.[^shadow-ai]
 
 9. **If an agent causes harm, is the liability chain clear?** Liability chains must be mapped before the incident (this chapter, above). Who owns the agent, who authorized it, who is responsible when it fails, and what is the escalation path?
 

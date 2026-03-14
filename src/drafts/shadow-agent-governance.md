@@ -98,7 +98,7 @@ The governance gap is not a tooling gap. It is an architectural mismatch. Organi
 
 ## Discovery: Seeing What Exists
 
-You cannot govern what you cannot see. The first step in shadow agent governance is discovery: building a complete inventory of every agent operating in the organization, sanctioned or not.
+The first step in shadow agent governance is discovery: building a complete inventory of every agent operating in the organization, sanctioned or not.
 
 ### How discovery works today
 

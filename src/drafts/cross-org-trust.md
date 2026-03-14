@@ -87,7 +87,7 @@ The protocol flow:
 3. **Cryptographic Operations.** Sign messages with private keys (authentication) and encrypt with recipient's public key (confidentiality).
 4. **TSP Envelope.** Messages travel in a signed and encrypted container. Who said what to whom is preserved for accountability, while content and metadata stay protected.
 
-The verifiable identifiers are long-term and durable, supporting key rotation with pre-commits so agents can build verifiable history over time. This is significant: it enables something like reputation, where an agent's track record becomes a verifiable property rather than just a database entry.[^1]
+The verifiable identifiers are long-term and durable, supporting key rotation with pre-commits so agents can build verifiable history over time. An agent's track record becomes a verifiable property rather than a database entry: something like reputation, rooted in cryptography.[^1]
 
 ### The Thin Waist Architecture
 
@@ -206,7 +206,7 @@ The three-layer SD-JWT architecture binds user intent to agent actions:
 
 Each layer is cryptographically chained. The agent cannot present Layer 3 (action proof) without a valid Layer 2 (intent constraints), which requires a valid Layer 1 (user identity). The constraints are not advisory: they are enforced by the cryptographic structure.
 
-This is significant for cross-organization trust because the operational envelope travels with the request. When Agent A calls Service B with a Verifiable Intent credential, Service B can verify not just "is this request authenticated?" but "what was this agent authorized to do, by whom, and does this specific action fall within those constraints?" Without contacting Agent A's organization.
+The operational envelope travels with the request. When Agent A calls Service B with a Verifiable Intent credential, Service B can verify not just "is this request authenticated?" but "what was this agent authorized to do, by whom, and does this specific action fall within those constraints?" Without contacting Agent A's organization.
 
 ## A Society of Agents
 

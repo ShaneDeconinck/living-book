@@ -51,7 +51,7 @@ These shadow agents are not malicious. They are people trying to be more product
 - **No audit trail.** Their actions are logged as the employee's actions, if logged at all.
 - **No blast radius assessment.** Nobody evaluated what happens when these agents fail.
 
-The EU AI Act's high-risk system obligations, originally set for August 2, 2026 (though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027), require organizations to maintain transparency, human oversight, and risk management for AI systems. Shadow agents make compliance nearly impossible, because you cannot govern what you cannot see. The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers how to transition from ungoverned to governed: discovery, registration, the amnesty model, and infrastructure enforcement.[^3]
+The EU AI Act's high-risk system obligations, originally set for August 2, 2026 (though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027), require organizations to maintain transparency, human oversight, and risk management for AI systems. Shadow agents make compliance nearly impossible: unregistered agents have no audit trails, no risk assessments, and no human oversight documentation. The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers how to transition from ungoverned to governed: discovery, registration, the amnesty model, and infrastructure enforcement.[^3]
 
 ## The Supply Chain You Cannot See
 

@@ -38,7 +38,7 @@ Three convergences are happening simultaneously, and they are reshaping the land
 
 The agent protocol stack grew from two core protocols (MCP + A2A) to six in under a year. MCP handles tool access. A2A handles agent-to-agent coordination. WebMCP extends tool access to browser-based agents. AG-UI and A2UI standardize agent-to-frontend communication. Each layer introduces its own authentication model or inherits one from its transport. The unified identity gap across all layers persists and becomes more acute as the stack grows.
 
-The most significant protocol development: MCP's own roadmap is adopting the identity primitives the book advocates. SEP-1932 brings DPoP (token binding) and SEP-1933 adds Workload Identity Federation. MCP started as "plumbing, not trust" (Shane's framing). Communication protocols and identity protocols are converging. But DPoP and WIF are listed as "on the horizon" items, not priorities. The gap between what enterprises need and what the protocol prioritizes is exactly the gap that XAA/ID-JAG and third-party security overlays are filling. MCP may close the gap natively, but the market is not waiting.
+The most significant protocol development: MCP's own roadmap is adopting the identity primitives the book advocates. SEP-1932 brings DPoP (token binding) and SEP-1933 adds Workload Identity Federation. MCP started as "plumbing, not trust" (Shane's framing). Communication protocols and identity protocols are converging. Security and authorization sit "on the horizon" in the 2026 roadmap: not a top priority, but with sponsored work already underway on both SEPs. The gap between what enterprises need and what the protocol ships is narrowing, but third-party security overlays (XAA/ID-JAG, TMCP) are filling it faster. MCP may close the gap natively, but the market is not waiting.
 
 The institutional story matters: AAIF governs MCP (Linux Foundation). MCP-I's identity layer is under DIF. TSP's trust layer is under ToIP/LFDT. Three foundations, three layers, all under the Linux Foundation umbrella. The stack is forming, whether by coordination or convergence.
 
@@ -158,7 +158,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-20 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 179. Sigstore-A2A supply chain provenance observation added Session 179.
+20 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 180. Protocol convergence section corrected: SEP-1932/1933 status updated from "on the horizon, not priorities" to "on the horizon, with sponsored work underway."
 
 **Published (src/chapters/):**
 1. Introduction
