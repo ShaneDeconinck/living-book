@@ -8,7 +8,7 @@ The accountability problem does not scale linearly. It changes in kind.
 
 ## The Fleet Threshold
 
-Most organizations building agent systems today are in the single-digit range. A coding assistant, a support triage agent, maybe an internal knowledge bot. Governance at this scale is manageable: a human reviews the agent's setup, monitors its behavior, intervenes when something looks wrong. The shadow agent governance chapter documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
+Most organizations building agent systems today are in the single-digit range. A coding assistant, a support triage agent, maybe an internal knowledge bot. Governance at this scale is manageable: a human reviews the agent's setup, monitors its behavior, intervenes when something looks wrong. [Shadow Agent Governance](shadow-agent-governance.md) documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
 
 The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between "we have a few agents" and "we have a fleet" is closing, and it is closing before the accountability infrastructure is ready.
 
@@ -18,7 +18,7 @@ Singapore's Model AI Governance Framework for Agentic AI, launched in January 20
 
 ### Decision Attribution Across Agent Graphs
 
-Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. The [Agent Identity and Delegation](agent-identity.md) chapter covers these patterns.
+Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. [Agent Identity and Delegation](agent-identity.md) covers these patterns.
 
 The unsolved problem is attribution across agent interactions. When Agent A delegates to Agent B, which delegates to Agent C, the delegation chain is traceable if each step uses OBO or equivalent. But agents do not only delegate. They also coordinate: Agent A reads a recommendation from Agent B's output and acts on it, without any formal delegation. Agent C queries a shared data store that Agent D populated an hour earlier. The causal graph of a decision may span agents that never directly communicated.
 
@@ -32,7 +32,7 @@ Building this requires two capabilities that most agent deployments lack:
 
 ### Aggregate Behavior and Emergent Risk
 
-Individual agents can each behave correctly while the fleet behaves dangerously. This is the scale-specific version of the emergence pattern documented in the [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter.
+Individual agents can each behave correctly while the fleet behaves dangerously. This is the scale-specific version of the emergence pattern documented in [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
 
 Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Individually, each agent's decisions are reasonable: offering a discount here, waiving a fee there, escalating a complaint to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
@@ -42,7 +42,7 @@ Monitoring individual agents catches individual failures. Catching fleet-level e
 
 ### Regulatory Compliance at Volume
 
-The EU AI Act's Article 73 requires providers to report serious incidents to national authorities: within two days for widespread infringements or serious and irreversible disruption of critical infrastructure (Art 3(49)(b)), ten days for incidents resulting in death, fifteen days for other serious incidents.[^eu-ai-act-73] The [Regulatory Landscape](regulatory-landscape.md) chapter covers these timelines.
+The EU AI Act's Article 73 requires providers to report serious incidents to national authorities: within two days for widespread infringements or serious and irreversible disruption of critical infrastructure (Art 3(49)(b)), ten days for incidents resulting in death, fifteen days for other serious incidents.[^eu-ai-act-73] [Regulatory Landscape](regulatory-landscape.md) covers these timelines.
 
 Article 73 was written for single AI systems. When an organization operates hundreds of agents, three assumptions break:
 
@@ -54,7 +54,7 @@ Article 73 was written for single AI systems. When an organization operates hund
 
 ## Fleet Governance Infrastructure
 
-The shadow agent governance chapter identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] The gap between the second and third is where most organizations currently sit, and it is where accountability at scale fails.
+[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] The gap between the second and third is where most organizations currently sit, and it is where accountability at scale fails.
 
 Infrastructure-enforced governance means that accountability requirements are not policies agents can ignore but architecture agents cannot bypass. Four capabilities make up the minimum viable fleet governance infrastructure:
 
@@ -62,15 +62,15 @@ Infrastructure-enforced governance means that accountability requirements are no
 
 Every agent in the organization has a registered identity linked to a human sponsor, a department, an authorization scope, and a lifecycle state (active, suspended, deprecated, retired). The registry is the single source of truth for "what agents are running and who is responsible for them."
 
-SCIM for agents, covered in the [Agent Identity and Delegation](agent-identity.md) chapter, provides the provisioning protocol. Microsoft's Entra Agent ID and similar platforms provide the identity backend. The registry is not a spreadsheet: it is a system of record integrated with the organization's identity infrastructure, with the same lifecycle management discipline applied to human accounts. When a human sponsor leaves the organization, their agents are suspended, not orphaned.
+SCIM for agents, covered in [Agent Identity and Delegation](agent-identity.md), provides the provisioning protocol. Microsoft's Entra Agent ID and similar platforms provide the identity backend. The registry is not a spreadsheet: it is a system of record integrated with the organization's identity infrastructure, with the same lifecycle management discipline applied to human accounts. When a human sponsor leaves the organization, their agents are suspended, not orphaned.
 
-Singapore's framework requires this explicitly: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements simultaneously.
+Singapore's framework requires this explicitly: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements.
 
 ### Delegation Chain Forensics
 
 When an incident occurs, the organization must reconstruct the chain of authorization from the human who initiated the delegation to the agent action that caused harm. At fleet scale, this reconstruction must be automated.
 
-The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] The [Cryptographic Authorization Governance](cryptographic-authorization.md) chapter covers these patterns in depth.
+The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns in depth.
 
 What is missing is the forensic layer: tooling that takes these building blocks and produces, on demand, a human-readable reconstruction of who authorized what, through which agents, with what constraints, at what time. This is the "explain to a regulator" capability that PAC's Accountability pillar demands. At single-agent scale, a human can read the logs. At fleet scale, the reconstruction must be automated, and the automation itself must be auditable.
 
@@ -90,7 +90,7 @@ With a fleet of agents operating in high-risk domains, the organization will gen
 
 Triage infrastructure sits between fleet monitoring and incident response. It classifies events into operational noise (log and learn), governance review (human assessment needed), and reportable incident (regulatory notification required). The classification criteria must be defined in advance, documented, and themselves auditable, because a regulator may ask not just "what incidents did you report?" but "what incidents did you classify as non-reportable, and on what basis?"
 
-This is where the Atos "Sovereign Agentic Studios" model is instructive, not as a specific product endorsement but as an architectural signal. Atos's March 2026 whitepaper frames the problem as one of "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems simultaneously.[^atos-sas] The word "sovereign" matters because it implies that the organization, not the model provider and not the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating accountability infrastructure to a vendor is delegating accountability itself.
+This is where the Atos "Sovereign Agentic Studios" model is instructive, not as a specific product endorsement but as an architectural signal. Atos's March 2026 whitepaper frames the problem as one of "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems simultaneously.[^atos-sas] "Sovereign" here means the organization, not the model provider and not the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating accountability infrastructure to a vendor is delegating accountability itself.
 
 ## The PAC Mapping
 
