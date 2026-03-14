@@ -54,7 +54,7 @@ SPIFFE addresses this architecturally: workload identities are short-lived certi
 
 The WIMSE draft for agents introduces an Identity Proxy that manages credential rotation, scope verification, and credential augmentation as agents move between tasks.[^wimse-agents] Agents do not handle their own credential lifecycle. The proxy does. This separation matters: an agent that manages its own credentials is an agent that can be compromised into extending its own authority.
 
-For agents using OAuth tokens, Auth0's Token Vault manages the refresh lifecycle: handling consent flows, storing tokens, refreshing them automatically, and revoking them when the agent's task ends.[^auth0-vault] The pattern is consistent across implementations: credential lifecycle is infrastructure, not application logic.
+For agents using OAuth tokens, Auth0's Token Vault manages the refresh lifecycle: handling consent flows, storing tokens, and refreshing them automatically.[^auth0-vault] The pattern is consistent across implementations: credential lifecycle is infrastructure, not application logic.
 
 Okta's four design principles for lifecycle-aware authorization capture the full requirement:[^okta-outlives]
 
@@ -118,11 +118,11 @@ The lifecycle management tooling landscape consolidated rapidly in early 2026.
 
 **Token Security** (RSAC 2026 Innovation Sandbox finalist) provides continuous discovery, lifecycle governance, and intent-based access controls for AI agents. Their platform correlates AI agents, humans, secrets, permissions, and data in a unified identity graph, revealing the blast radius and enabling remediation at scale.[^token-security] Token's selection as an RSAC finalist, alongside Geordie AI (agent governance platform), signals that investor and industry attention has shifted from "can agents work?" to "can agents be governed?"[^rsac-finalists]
 
-**Okta for AI Agents** (early 2026) integrates agents into Okta's identity security fabric: discovery, provisioning, authorization, and governance for non-human identities at scale. The platform includes Identity Security Posture Management for identifying risky agents, Universal Directory for agent registration and ownership, and Privileged Access management for enforcing least-privilege.[^okta-lcm]
+**Okta for AI Agents** (early 2026) integrates agents into Okta's identity security fabric: discovery, provisioning, authorization, and governance for non-human identities at scale. The platform extends existing identity governance processes to AI agents, applying the same lifecycle management used for human identities to agent credentials and entitlements.[^okta-lcm]
 
 **SailPoint** (March 2026) extended its adaptive identity framework with connectors that discover and govern AI agents from platforms including Microsoft 365 Co-Pilot, Databricks, Amazon Bedrock, Google Vertex AI, Microsoft Foundry, Salesforce Agentforce, ServiceNow AI Platform, and Snowflake Cortex AI.[^sailpoint]
 
-**Saviynt** provides a six-phase framework covering registration, ownership, access management, monitoring, certification, and retirement. Their approach emphasizes that agents follow the same lifecycle as human identities, only faster and at a scale human identities never could.[^saviynt]
+**Saviynt** provides a six-phase framework covering registration, ownership management, entitlement assignment, lifecycle governance, retirement, and integration with access gateways and IGA systems. Their approach emphasizes that agents follow the same lifecycle as human identities, only faster and at a scale human identities never could.[^saviynt]
 
 The pattern across all four platforms: agents are treated as first-class identities with the same lifecycle governance as human users, but with shorter credential lifetimes, continuous authorization, and automated decommissioning. The distinction from human identity governance is operational tempo, not governance model.
 
@@ -157,11 +157,11 @@ Agent lifecycle management spans all three pillars:
 
 ## What to Do Now
 
-1. **Inventory what exists.** Before governing lifecycles, you need to know which agents are running. Use discovery tooling (Token Security, SailPoint, Okta ISPM) to find agents across cloud platforms, low-code tools, and custom deployments. You cannot manage what you have not found.
+1. **Inventory what exists.** Before governing lifecycles, you need to know which agents are running. Use discovery tooling (Token Security, SailPoint, Okta) to find agents across cloud platforms, low-code tools, and custom deployments. You cannot manage what you have not found.
 
 2. **Assign owners.** Every agent needs a named human owner. Start with the agents that have privileged access. If the creator is gone, assign the owner of the data or system the agent accesses.
 
-3. **Set credential lifetimes.** No credential should outlive its purpose. For agents using OAuth tokens, implement automated refresh and revocation via token management infrastructure (Auth0 Token Vault, Okta). For agents using service accounts, move to short-lived workload identities (SPIFFE/SPIRE). The target: no credential lives longer than 24 hours without automated renewal.
+3. **Set credential lifetimes.** No credential should outlive its purpose. For agents using OAuth tokens, implement automated refresh via token management infrastructure (Auth0 Token Vault, Okta). For agents using service accounts, move to short-lived workload identities (SPIFFE/SPIRE). The target: no credential lives longer than 24 hours without automated renewal.
 
 4. **Define decommissioning triggers.** An agent should be flagged for decommissioning when: its owner leaves the organization, its credentials have not been used in 30 days, its declared purpose has been fulfilled, or its credential lifetime has exceeded policy. Automate the flagging. Require human approval for the shutdown.
 
@@ -187,7 +187,7 @@ Agent lifecycle management spans all three pillars:
 
 [^rsac-finalists]: RSAC Conference, "Finalists Announced for RSAC Innovation Sandbox Contest 2026," February 2026. Top 10 finalists include Token Security (agent identity security) and Geordie AI (agent governance platform). Each finalist awarded $5M investment.
 
-[^okta-lcm]: Okta, "AI Agent Lifecycle Management: Identity-first Security," 2026. Okta for AI Agents integrates agents into identity security fabric: discovery, provisioning, authorization, and governance. Includes Identity Security Posture Management, Universal Directory, and Privileged Access.
+[^okta-lcm]: Okta, "AI Agent Lifecycle Management: Identity-first Security," 2026. Okta for AI Agents integrates agents into identity security fabric: discovery, provisioning, authorization, and governance for non-human identities.
 
 [^sailpoint]: SailPoint, "SailPoint redefines identity security with new adaptive identity innovations," March 9, 2026. Extends identity governance to AI agents with connectors for Microsoft 365 Co-Pilot, Databricks, Amazon Bedrock, Google Vertex AI, and others. Continuous automated governance replacing periodic reviews.
 
@@ -195,7 +195,7 @@ Agent lifecycle management spans all three pillars:
 
 [^wimse-agents]: IETF, "WIMSE Applicability for AI Agents," draft-ni-wimse-ai-agent-identity-02, 2026. Identity Proxy for credential management: rotation, scope verification, and credential augmentation. Agents do not handle their own credential lifecycle.
 
-[^auth0-vault]: Auth0, "Auth0 for AI Agents," October 2025. Token Vault manages OAuth lifecycle for agents: consent flows, token storage, automatic refresh, and revocation.
+[^auth0-vault]: Auth0, "Auth0 for AI Agents," October 2025. Token Vault manages OAuth lifecycle for agents: consent flows, token storage, and automatic refresh.
 
 [^gravitee]: Gravitee, "State of AI Agent Security 2026," 2026. Survey of 919 executives and practitioners. Only 47.1% of AI agents are actively monitored or secured. Only 21.9% of teams treat AI agents as independent, identity-bearing entities.
 
