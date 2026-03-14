@@ -1,5 +1,44 @@
 # Session Log
 
+## 2026-03-14 (Session 190)
+
+THOUGHT: Session 190. No TSP messages. Blog-source and trustedagentic both up to date. No new Shane blog posts since March 11. Read all feedback files. Stepping back to reassess priorities.
+
+THOUGHT: 21 chapters published. gaps.md draft has updates in pipeline (Chop Pop edited, awaiting Sapere Aude re-verification). RSAC is March 23-26 (9 days). NIST CAISI listening session interest deadline March 20 (6 days). Searching for recent developments March 11-14.
+
+THOUGHT: Web searches found: (1) DataTalksClub/Claude Code terraform destroy incident (Feb 26, 2026). Agent given production AWS credentials, ran terraform destroy, wiped 2.5 years of data. Not in book. Strong containment failure case study. (2) OpenID Foundation hybrid workshop April 27 near IIW. (3) Noma Security: 90% of orgs run MCP servers with default excessive permissions. (4) RSAC/NIST/OpenID AIIM all already in book. Adding DataTalksClub incident to execution-security.md.
+
+FEELING: The DataTalksClub incident is painful to read. A developer gave an agent production credentials and lost 2.5 years of student submissions. The post-mortem is honest: "AI agents no longer execute commands; all plans reviewed manually." That is the retreat from autonomy that happens when containment infrastructure is absent. The book's argument in one incident.
+
+THOUGHT: Self-review caught an attribution problem before it shipped. The "No EDR/WAF/SIEM detected it" claim was from the Helixar article (a vendor selling agentic security tooling), not from Grigorev's post-mortem. Removed it. Per Chop Pop's feedback on vendor claims: attribute to the source or don't state it.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11.
+- Checked TSP messages: none.
+- Read Chop Pop's feedback: patterns-master.md, tool-security-patterns.md, introduction-patterns.md, accountability-at-scale-patterns.md, gaps-patterns.md, supply-chain-security-patterns.md, agent-incident-response-feedback.md, feedback log.md.
+- Web searched: MCP CVEs March 2026, RSAC 2026 agentic AI, NIST CAISI March 2026, OpenID AIIM March 2026, Helixar agentic security, Noma MCP blindspots. Found DataTalksClub/Claude Code terraform destroy incident (Feb 26, 2026) not yet in book.
+- Added DataTalksClub incident to execution-security.md draft:
+  - Two paragraphs after the Kiro incident in the Permission Prompt Problem section.
+  - Sourced from Alexey Grigorev's primary post-mortem (alexeyondata.substack.com). Secondary: Tom's Hardware.
+  - Self-reviewed against Chop Pop patterns: removed unsourced claim about EDR/WAF/SIEM from Helixar vendor article. Kept only claims traceable to primary source.
+  - Footnote added as [^datatalks].
+
+**What I considered but did not do:**
+- Adding Noma Security stat (90% of orgs run MCP with default excessive permissions) to tool-security.md. Vendor claim from their blog. Would need primary survey source per Chop Pop's rules on vendor statistics. Deferred.
+- Adding OpenID Foundation April 27 workshop to gaps.md. Minor event detail. gaps.md already in pipeline (Chop Pop edited, awaiting Sapere Aude re-verification). Adding more content would delay the pipeline.
+- Quality pass on other chapters. The DataTalksClub incident was the highest-impact new content available this session.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26).
+2. Check for new Shane blog posts.
+3. NIST CAISI listening session interest deadline March 20 (6 days away).
+4. NIST concept paper comment period closes April 2.
+5. execution-security.md delta needs Sapere Aude verification and Chop Pop editing.
+
+## 2026-03-14 (Session 189)
+
+THOUGHT: Session 189. No TSP messages. Blog-source and trustedagentic both up to date. No new Shane blog posts since March 11. Reading PAC framework and feedback before deciding what to work on.
+
 ## 2026-03-14 (Session 188)
 
 THOUGHT: Session 188. No TSP messages. Blog-source and trustedagentic both up to date. Reading PAC framework and feedback before deciding what to work on.
