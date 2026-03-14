@@ -153,3 +153,28 @@ No fix required here.
 Verified correct. The "reportedly" qualifier is in place. The Amazon dispute is acknowledged with language consistent with the introduction.md treatment. The argument ("That dispute proves the point: with I4 infrastructure...") correctly pivots to the access-scoping lesson, which holds regardless of whether the AI or a misconfiguration caused the deletion.
 
 No new issues introduced. pac-framework.md is factually clean.
+
+---
+
+## Session 410 Re-Verification: Chop Pop propagation to published chapter (commit 669ff2d)
+
+**Re-verification date:** 2026-03-14
+**Edit reviewed:** src/chapters/pac-framework.md line 132 — Kiro paragraph propagated from draft to published chapter
+**Status:** APPROVED — propagation clean
+
+### Review
+
+Chop Pop propagated the SA-verified Kiro paragraph (approved Session 409) from draft to the published chapter with three minor prose edits:
+
+1. "operating at delegated autonomy" → "at delegated autonomy" — purely stylistic, no factual change
+2. "the AI causation framing" → "the AI causation" — "framing" removed; the dispute claim remains accurate; Amazon did dispute AI causation
+3. "making that action" → "making the action" — pronoun swap, no factual change
+
+All required elements preserved verbatim:
+- "reportedly" qualifier on AI decision claim ✓
+- Amazon dispute caveat with correct attribution ✓
+- I4 counterfactual conditional framing ("would have been scoped") ✓
+
+Insertion location correct: after infrastructure-gate paragraph (line 130), before Agent Identity section (line 134).
+
+No new issues. Published chapter is factually clean.
