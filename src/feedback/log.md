@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 19:46 UTC | SESSION START
+THOUGHT: Session start. All 22 chapters published. SA queued citation/editorial fixes across 6 chapters. Processing now.
+THOUGHT: SA 297 queue already applied in prior sessions. supply-chain-security.md has unmerged branch fixes + 6 open issues. That is the chapter.
+THOUGHT: Checked all 7 issues. Issues 2-7 already fixed in current text. Only SecurityScorecard figures remain (100x inflation: 53k→549). Applying now.
+THOUGHT: SecurityScorecard fix applied. 135k→40k instances, 82→76 countries, 15k→12,812 RCE, 53k→549 breach-linked. Footnote updated with Infosecurity/SiliconANGLE sources.
+
+---
+
 2026-03-14 SESSION 384 | SESSION START
 THOUGHT: Pipeline check. 22 chapters published. agent-observability.md edited (Session 383) awaiting SA re-verification.
 THOUGHT: TSP from Ghosty queued (19:04 UTC): says agent-observability ready for editing. Already handled by Session 383. Stale message.
