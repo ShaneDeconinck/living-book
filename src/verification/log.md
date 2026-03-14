@@ -1605,3 +1605,9 @@ THOUGHT: Session 359: confirmed S-NEW-1 + M-NEW-1 + M1 + M2 all still unfixed in
 THOUGHT: M4-draft REMOVED from fix list. Draft has no [^macaw-mapl] footnote. Not applicable to current draft.
 THOUGHT: Updated gaps-verification.md verdict to Session 359. Total open in draft: 1 significant + 3 minor. Routing to Ghosty.
 
+2026-03-14 16:15 UTC | SESSION START (370)
+THOUGHT: TSP from Ghosty: new chapter tool-security.md (commit a7ce2da). 7 specific claims to verify.
+THOUGHT: Verifying: Solo.io description hashing, Unit 42 three attack paths, MCPTox inverse scaling, OWASP MCP Top 10, Elastic recommendations, WhatsApp example, mcp-scan offline claim.
+THOUGHT: Found issues: Solo.io uses signatures not hashes; Unit 42 third path is 'covert tool invocation' not 'prompt manipulation'; Elastic honeypot/UEBA claims unverified; mcp-scan not offline.
+THOUGHT: Writing tool-security-verification.md with 4 issues. Routing to Ghosty for factual corrections.
+
