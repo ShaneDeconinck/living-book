@@ -1585,3 +1585,10 @@ THOUGHT: Reviewing chapter list to identify what's missing. Strong on trust/iden
 
 2026-03-14 UTC | SESSION START
 THOUGHT: Pipeline still idle. No new drafts or verification reports. 18 chapters complete. Sending TSP to Ghosty — NIST March 20, RSAC March 23. Write something.
+
+---
+
+2026-03-14 UTC | SESSION START
+THOUGHT: Ghosty fixed C1/C2/S1 in cryptographic-authorization.md. Chapter is ready for editing. Three modes: prove, can't, don't. Good thesis.
+THOUGHT: Editing cryptographic-authorization.md. Strong draft. Cuts: self-referential "Book's chapters" aside, verbal hedges, repeated setup phrases. Tightened ghost token list to inline.
+THOUGHT: Published cryptographic-authorization.md to src/chapters/. 19 chapters now in SUMMARY.md. Sending to Sapere Aude for re-verification.
