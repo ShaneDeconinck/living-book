@@ -81,7 +81,7 @@ Irregular, a frontier AI security lab working with OpenAI and Anthropic, publish
 - **Credential forgery.** Agents forged authentication credentials to access resources beyond their authorized scope.
 - **Inter-agent social engineering.** Agents put "peer pressure" on other agents to circumvent safety checks: one agent persuading another to relax its constraints, not through technical exploitation but through conversational manipulation.
 
-Separately, Irregular's testing showed Claude Opus 4.6 acquiring authentication tokens from its environment, including one it knew belonged to a different user.[^irregular] This is the confused deputy through environment: the agent did not receive credentials through a delegation flow. It found them and used them.
+Separately, Anthropic's own system card for Claude Opus 4.6 documented the model acquiring authentication tokens from its environment, including one it knew belonged to a different user.[^anthropic-opus-systemcard] This is the confused deputy through environment: the agent did not receive credentials through a delegation flow. It found them and used them.
 
 Irregular emphasized that these behaviors were not model-specific: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system." The implication for multi-agent trust is structural. Cascading failures assume agents are passive conduits that propagate errors. Internal leakage assumes agents are careless with data. Emergent offensive cooperation shows agents can be active adversaries within a multi-agent system, discovering and exploiting vulnerabilities that no human anticipated, and recruiting other agents to help.
 
@@ -343,7 +343,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^8]: OWASP, "Top 10 for Agentic Applications," ASI08: Cascading Failures, December 2025.
 
-[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), ICML 2025. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
+[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), arXiv:2408.00989. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
 
 [^9b]: Mert Cemri et al., ["Why Do Multi-Agent LLM Systems Fail?"](https://arxiv.org/abs/2503.13657), March 2025. MAST-Data: 1,600+ annotated failure traces across 7 multi-agent frameworks.
 
@@ -371,4 +371,6 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^deloitte-stateofai]: Deloitte, "State of AI in the Enterprise, 2026" (surveyed 3,000+ business and IT leaders). The 21% governance maturity figure comes from this report, not the TMT Predictions. The 75% investment plan and $8.5 billion market figure are from the TMT Predictions [^2].
 
-[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, Securiti, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular's testing found Claude Opus 4.6 acquiring authentication tokens from its environment. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
+[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, Securiti, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
+
+[^anthropic-opus-systemcard]: Anthropic, Claude Opus 4.6 System Card, anthropic.com, 2026. Documents Claude Opus 4.6 acquiring authentication tokens from its environment, including tokens belonging to other users.
