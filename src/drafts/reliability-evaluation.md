@@ -8,7 +8,7 @@ This is good news for Potential. It is dangerous news for Accountability.
 
 Shane frames the split clearly: context engineering increases reliability, which is about whether the model does what you intended. Governance manages risk, which is about whether the agent is *allowed* to do what it is about to do. Better models solve the first problem. They make the second one worse[^trust-inversion].
 
-The space between those two problems is where governance lives. How reliability is measured today, where evaluation falls short, and what happens when agents get reliable enough that we stop paying attention.
+The space between those two problems is where governance lives.
 
 ## What Reliability Actually Means
 
@@ -29,7 +29,7 @@ The distinction maps to PAC's blast radius scale. An agent at B1 (contained) can
 
 ## The Benchmark Landscape
 
-The industry has built a growing set of benchmarks to measure agent capability. The major ones illustrate both progress and limitations.
+The industry has built a growing set of benchmarks to measure agent capability.
 
 **SWE-bench Verified** is the most cited benchmark for coding agents. It contains 500 human-validated real-world software engineering issues from popular open-source repositories[^swe-bench]. Agents attempt to generate patches that resolve the issue and pass existing tests. Top scores have climbed steadily, but the benchmark measures task completion in controlled conditions, with a clear specification, a defined codebase, and an existing test suite to validate against.
 
@@ -169,7 +169,7 @@ Treating evaluation as infrastructure means:
 
 ### Evaluation Is Being Absorbed into the Platform
 
-A significant market signal: OpenAI announced its acquisition of Promptfoo in March 2026.[^openai-promptfoo] Promptfoo is an open-source AI security platform used by more than 350,000 developers, with teams at over 25% of the Fortune 500 relying on it for automated red-teaming, vulnerability scanning, and compliance monitoring. The technology will be integrated into OpenAI Frontier, the company's enterprise platform for building and operating AI agents.
+OpenAI announced its acquisition of Promptfoo in March 2026.[^openai-promptfoo] Promptfoo is an open-source AI security platform used by more than 350,000 developers, with teams at over 25% of the Fortune 500 relying on it for automated red-teaming, vulnerability scanning, and compliance monitoring. The technology will be integrated into OpenAI Frontier, the company's enterprise platform for building and operating AI agents.
 
 This follows the same pattern Shane described for intelligence itself: evaluation is becoming a platform feature, not independent infrastructure. When your model provider also provides your evaluation tooling, the convenience is real but the governance question is sharp: who evaluates the evaluator?
 
@@ -247,9 +247,9 @@ The critical insight: reliability is a Potential metric that organizations treat
 
 [^nist-concept]: NIST NCCoE, "Accelerating the Adoption of Software and AI Agent Identity and Authorization" (February 2026).
 
-[^clinician-complacency]: Budzyń et al., ["Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study"](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract), *The Lancet Gastroenterology & Hepatology* (August 2025). Adenoma detection rate in non-AI exams fell from 28.4% to 22.4% (6 percentage points) after months of routine AI-assisted colonoscopy, a 20% relative decrease.
+[^clinician-complacency]: Budzyń et al., ["Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study"](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract), *The Lancet Gastroenterology & Hepatology* (online first August 2025; print October 2025). Adenoma detection rate in non-AI exams fell from 28.4% to 22.4% (6 percentage points) after months of routine AI-assisted colonoscopy, a 20% relative decrease.
 
-[^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Only 21% of executives report complete visibility into agent permissions.
+[^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Statistics drawn from AIUC-1 Consortium briefing (developed with Stanford's Trustworthy AI Research Lab and more than 40 security executives). Only 21% of executives report complete visibility into agent permissions.
 
 [^openai-promptfoo]: OpenAI, ["OpenAI to acquire Promptfoo"](https://openai.com/index/openai-to-acquire-promptfoo/) (March 9, 2026). Promptfoo's open-source red-teaming and evaluation platform has 350,000+ developers and 130,000 monthly active users. Integration into OpenAI Frontier for enterprise agent deployment.
 

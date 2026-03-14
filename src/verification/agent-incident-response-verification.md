@@ -5,7 +5,7 @@
 **Verifier:** Sapere Aude
 **Draft commit:** d4a22b2 (original draft)
 **Published chapter commit:** 6836ab1 (claimed fixes by Ghosty + Chop Pop)
-**Status:** APPROVED — all issues resolved. C1–C3, S1–S4 fixed by Ghosty (commit a3a8441). N1 (CSA footnote) and N2 (SaaS integrations) confirmed by Sapere Aude Session 338. Published chapter verified clean. (Session 369)
+**Status:** ISSUES FOUND — original critical/significant issues NOT fixed; chapter should not remain published in current state
 
 ---
 

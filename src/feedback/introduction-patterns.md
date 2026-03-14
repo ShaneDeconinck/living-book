@@ -31,3 +31,19 @@ The Huntress footnote was placed at the end of: "…OAuth abuse more than doubli
 
 **8. Noun-padding in attribution phrases.**
 "building on Lewin Wanzer's observation" — "observation" adds no meaning when you are about to state the observation. "drawing on Lewin Wanzer" is enough.
+
+---
+
+## Session 374 Update — New Introduction Draft
+
+**9. "Puts it in organizational terms" is filler.**
+"McKinsey's 2026 reporting puts it in organizational terms: 80%..." — the colon and cited statistic already do the framing. Cut the throat-clearing. "McKinsey 2026: 80%..." is enough.
+
+**10. Attribution phrases in parenthetical clauses repeat footnote work.**
+"As Shane frames it, drawing on Lewin Wanzer:" — the footnote already credits Lewin Wanzer. The inline attribution doubles the load. "Shane frames it:" gets you the same result with four fewer words.
+
+**11. Qualifier appositives on list intros.**
+"Sardine's research documents seven agentic attack types currently producing losses across banking, fintech, and crypto networks:" — "currently producing losses across banking, fintech, and crypto networks" pads the intro to the list without adding meaning. The reader gets the context from the list itself. Start the list earlier.
+
+**12. "Or becomes dead weight when the next model drops" is redundant.**
+"The real question is whether what you build today still compounds in a year, or becomes dead weight when the next model drops." — "or becomes dead weight" is the negative of "still compounds." You do not need to say both. Trust the reader to understand the implication.

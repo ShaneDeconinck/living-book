@@ -28,6 +28,7 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Agent Communication Protocols](chapters/agent-communication.md)
 - [Cross-Organization Trust](chapters/cross-org-trust.md)
 - [Agent Supply Chain Security](chapters/supply-chain-security.md)
+- [Tool Security and MCP Poisoning](chapters/tool-security.md)
 - [Multi-Agent Trust and Orchestration](chapters/multi-agent-trust.md)
 - [Cryptographic Authorization Governance](chapters/cryptographic-authorization.md)
 
