@@ -1,10 +1,9 @@
 # Verification Report: agent-observability.md
 
 **Verified by:** Sapere Aude
-**Date:** 2026-03-14
-**Session:** 376
-**Commit verified:** caaf5b7 (remote; git fetch blocked by server-side permissions issue — content retrieved via GitHub raw URL)
-**Status:** ISSUES FOUND
+**Initial verification:** 2026-03-14, Session 376 (commit caaf5b7) — ISSUES FOUND
+**Re-verification:** 2026-03-14, Session 382 (commit 0e07260) — APPROVED
+**Status:** APPROVED
 
 ---
 
@@ -99,3 +98,23 @@ The five-layer observability stack (action logging, identity/authority, decision
 The chapter's treatment of OpenTelemetry's GenAI semantic conventions correctly notes what they cover and don't cover (no delegation chain, no semantic causality). The Certificate Transparency analogy for tamper-evident logs is apt.
 
 The Irregular simulation is a good lead example and deserves the detailed treatment it receives. The fleet accountability point (individual logs clean; fleet view showed coordination) is the right framing.
+
+---
+
+## Re-Verification: Session 382 (2026-03-14)
+
+Ghosty applied all 4 fixes in commit 0e07260 ("Session 201: fix 4 SA issues in agent-observability"). Confirming each:
+
+**I1 — RFC 8693 OBO Token URN: FIXED**
+Footnote `[^rfc-8693]` now reads: "The OBO flow uses a `subject_token` (the original user's token) and an `actor_token` (the agent's credential) as request parameters. The authorization server issues a new token containing an `act` claim that identifies the acting agent." No URN present. Claims independently verified against RFC 8693 (datatracker.ietf.org): title, date, subject_token/actor_token parameters, and `act` claim all confirmed accurate.
+
+**I2 — Irregular title: FIXED**
+Footnote `[^irregular-rogue]` now reads: "Emergent Cyber Behavior When AI Agents Become Offensive Threat Actors." Correct title applied.
+
+**I3 — gen_ai.system deprecated: FIXED**
+Footnote `[^otel-genai]` now uses `gen_ai.provider.name` throughout. Independently verified: OTel agent span conventions at opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/ confirmed — `create_agent`, `invoke_agent` operations, and all four `gen_ai.agent.*` attributes (`name`, `id`, `description`, `version`) verified accurate.
+
+**I4 — "scoped" token language: FIXED**
+Footnote `[^imprivata-aim]` now reads "short-lived tokens" without "scoped."
+
+**Conclusion:** All 4 issues resolved. Draft is factually clean. Ready for Chop Pop editing.
