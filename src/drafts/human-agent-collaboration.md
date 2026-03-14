@@ -22,7 +22,7 @@ The evolution: agents act, humans monitor. The human is not in the decision path
 
 HOTL unlocks speed. An agent responding to cybersecurity threats needs to isolate a compromised endpoint immediately, not wait for approval. An agent managing inventory needs to reorder supplies in real time. The decision velocity of these tasks exceeds human reaction time[^hotl-evolution].
 
-HOTL fails when monitoring is passive. The same complacency dynamics apply: a human watching a dashboard of an agent that almost always behaves correctly will stop watching. Bainbridge's 1983 insight about automation irony applies directly: the operator becomes a monitor who no longer has the contextual understanding to intervene effectively when intervention is needed[^complacency-chapter].
+HOTL fails when monitoring is passive. The same complacency dynamics apply: a human watching a dashboard of an agent that almost always behaves correctly will stop watching. Bainbridge's 1983 insight about automation irony applies: the operator becomes a monitor who no longer has the contextual understanding to intervene effectively when intervention is needed[^complacency-chapter].
 
 The distinction between HITL and HOTL is often presented as a maturity progression: start with HITL, graduate to HOTL as confidence builds. This framing misses the point. Neither model solves the fundamental problem, which is that human attention is a depletable resource being deployed against a system that operates at machine speed.
 
@@ -30,7 +30,7 @@ The distinction between HITL and HOTL is often presented as a maturity progressi
 
 The model this book advocates: infrastructure enforces governance. Humans design policies and boundaries. Machines enforce them continuously.
 
-Shane frames this as the difference between "don't" and "can't." Policy says the agent should not access production databases without authorization. Infrastructure makes it so the agent *cannot* access production databases without authorization. The difference matters because "don't" depends on the agent's compliance and the human's vigilance. "Can't" depends on neither[^pac-framework].
+Shane frames this as the difference between "don't" and "can't." Policy says the agent should not access production databases without authorization. Infrastructure makes it so the agent *cannot* access production databases without authorization. "Don't" depends on the agent's compliance and the human's vigilance. "Can't" depends on neither[^pac-framework].
 
 Infrastructure-in-the-loop does not remove humans from governance. It moves them from enforcement to design. Humans define the authorization boundaries, set the blast radius thresholds, configure the anomaly detection rules, and investigate flagged incidents. These are high-value activities that play to human strengths: judgment, context, and strategic thinking. What humans no longer do is watch a stream of agent actions and approve each one. That is the task they were failing at.
 
@@ -61,7 +61,7 @@ A waypoint-following drone cannot misinterpret instructions. A pre-programmed ta
 
 **State divergence.** The agent's internal representation of the world drifts from the actual state. In multi-step operations, each action changes the environment. If the agent's world model does not update fully, its subsequent actions are based on stale assumptions. The human operator, who may be monitoring at a summary level, does not see the growing gap between what the agent believes and what is real.
 
-**Cascade severance.** In multi-agent systems, a governance failure in one agent propagates through delegation chains before the human can intervene. By the time the human detects the issue, the downstream effects are already in motion. This connects directly to multi-agent failure research: faulty or compromised agents degrade downstream decision-making across chains, with empirically measured performance drops of up to 23.7%[^cascade-severance].
+**Cascade severance.** In multi-agent systems, a governance failure in one agent propagates through delegation chains before the human can intervene. By the time the human detects the issue, the downstream effects are already in motion. This connects to multi-agent failure research: faulty or compromised agents degrade downstream decision-making across chains, with empirically measured performance drops of up to 23.7%[^cascade-severance].
 
 The paper's proposed solution is a continuous Control Quality Score: a real-time metric that quantifies the degree of human control rather than treating it as a binary state. When the score degrades below threshold, infrastructure triggers graduated responses: increased logging, reduced autonomy, or automatic containment. The framework's three pillars (Preventive, Detective, Corrective) map directly to the PAC Framework's Control infrastructure levels: preventive controls at I4 (Authorized), detective controls at I3 (Verified), corrective controls at I5 (Contained)[^controllability-trap].
 
@@ -89,7 +89,7 @@ The autonomy dial pattern implements this. Instead of a single autonomy level pe
 
 **Full Autonomy (A5)**: the agent acts within defined boundaries with no per-action reporting. Governance is entirely infrastructure-enforced: authorization scope, budget limits, audit trails. Appropriate only when I4+ infrastructure is in place and the blast radius is well-understood.
 
-The key insight is that the dial should be set per task type, not per agent, and it should be dynamic. An email agent might operate at A4 for internal scheduling but A2 for client-facing communications. A coding agent might operate at A5 for test generation but A2 for production deployments. The mapping between task type and autonomy level is the governance artifact that organizations need to create and maintain.
+The dial should be set per task type, not per agent, and it should be dynamic. An email agent might operate at A4 for internal scheduling but A2 for client-facing communications. A coding agent might operate at A5 for test generation but A2 for production deployments. The mapping between task type and autonomy level is the governance artifact that organizations need to create and maintain.
 
 The pace of change in these settings is measurable. Anthropic reports that coding agents now complete 20 actions autonomously before requiring human input, double what was possible six months earlier[^anthropic-coding-trends]. Task horizons are expanding from minutes to days or weeks, with agents building full systems autonomously and pausing only for strategic human checkpoints. This expansion is not unchecked: organizations that succeed are expanding autonomy incrementally, matching each increase to demonstrated reliability at the current blast radius.
 
@@ -137,7 +137,7 @@ The answer, emerging from both research and production experience, is: it depend
 
 The technical implementation is maturing. Authorization platforms like Permit.io and Cerbos now offer fine-grained, context-aware permission models designed for AI agents[^authz-platforms]. These platforms support attribute-based access control (ABAC) where permissions depend not just on who the agent is but on what it is doing, for whom, and in what context. An agent might have `read_calendar` permission broadly but `send_email` permission only for internal recipients during business hours.
 
-The critical design principle: permission granularity should match blast radius, not convenience. Organizations consistently err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is exactly the pattern that makes the confused deputy attack possible[^identity-chapter].
+Permission granularity should match blast radius, not convenience. Organizations consistently err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is exactly the pattern that makes the confused deputy attack possible[^identity-chapter].
 
 ### The Permission Intersection Problem
 
@@ -151,7 +151,7 @@ For the PAC Framework, this maps to the Control pillar's infrastructure enforcem
 
 ## The Self-Aware Agent
 
-One of the most significant findings from Anthropic's autonomy research is that agents can participate in their own governance. Not through hard-coded rules but through learned behavior: recognizing uncertainty and requesting human input.
+Anthropic's autonomy research shows that agents can participate in their own governance. Not through hard-coded rules but through learned behavior: recognizing uncertainty and requesting human input.
 
 The data is striking. On complex tasks in Claude Code, the model initiates clarification requests in 16.4% of turns. Humans interrupt in only 7.1% of turns. The agent is recognizing its own uncertainty more than twice as often as the human recognizes it[^anthropic-autonomy].
 
@@ -195,7 +195,7 @@ What the lifecycle looks like in practice:
 
 **Offboarding**: when an agent is deprecated, its credentials are revoked, its outstanding authorizations are cancelled, its audit trails are archived, and its delegated authorities are reclaimed. This is the lifecycle management that most organizations lack for their human-to-agent delegation chains.
 
-The critical insight from Deloitte is that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
+Deloitte reports that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
 
 This aligns with Shane's framing of the inferential edge: the competitive advantage is not having access to better models but having the infrastructure to deploy them effectively[^inferential-edge].
 

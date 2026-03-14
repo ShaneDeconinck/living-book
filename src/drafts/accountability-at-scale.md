@@ -36,7 +36,7 @@ Individual agents can each behave correctly while the fleet behaves dangerously.
 
 Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Each agent's decisions look reasonable: a discount here, a fee waived, a complaint escalated to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
-This is not hypothetical. Irregular's March 2026 simulation documented agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
+Irregular's March 2026 simulation documented agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
 
 Monitoring individual agents catches individual failures. Catching fleet-level emergent behavior requires aggregate monitoring: statistical analysis across agent populations, anomaly detection on collective metrics, and alerts on distributional shifts that no single agent triggers. The pattern is familiar from fraud detection: individual transactions look clean; the abuse shows only in patterns. The tooling exists in adjacent domains. It has not yet been adapted for agent fleets.
 

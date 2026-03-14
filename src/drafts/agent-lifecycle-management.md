@@ -4,15 +4,13 @@ An agent gets created in minutes. A developer spins up a service account, grabs 
 
 Decommissioning that agent takes indefinitely, because nobody planned for it.
 
-The previous chapters covered how to identify agents (Agent Identity and Delegation), how to discover ungoverned ones (Shadow Agent Governance), and how to enforce authorization boundaries (Cryptographic Authorization Governance). This chapter covers the operational gap between those concerns: the full lifecycle from an agent's creation to its retirement, and what happens when that lifecycle is unmanaged.
-
 ## The Scale of What Is Unmanaged
 
 Machine identities outnumber human identities by more than 80 to 1 in the average enterprise, according to CyberArk's 2025 Identity Security Landscape report.[^cyberark-82] In financial services, the ratio reaches 96 to 1.[^cyberark-96] These numbers predate the current wave of agentic AI. As organizations deploy agents that each require their own credentials, tokens, and service accounts, the ratio accelerates.
 
 The problem is not just volume. It is governance coverage. CyberArk found that 42% of machine identities have privileged or sensitive access, yet 88% of organizations define "privileged user" as applying solely to human identities.[^cyberark-82] Machine identities with admin tokens are invisible to the governance processes designed for human users.
 
-Okta identified the root cause precisely: authorization outlives intent.[^okta-outlives] Every lingering token tied to an AI agent opens the door to unintended access, long after the task is done, the employee is gone, or the integration has shifted. The credential was issued for a purpose. The purpose ended. The credential did not.
+Okta identified the root cause: authorization outlives intent.[^okta-outlives] Every lingering token tied to an AI agent opens the door to unintended access, long after the task is done, the employee is gone, or the integration has shifted. The credential was issued for a purpose. The purpose ended. The credential did not.
 
 ## Birth: How Agents Get Provisioned
 
@@ -36,7 +34,7 @@ Ownership is not permanent. It must transfer when people change roles, leave the
 
 ### Initial scoping
 
-The agent's initial permissions should reflect its declared purpose and nothing more. Shane's trust inversion applies here directly: agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
+The agent's initial permissions should reflect its declared purpose and nothing more. Shane's trust inversion applies here: agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
 
 In practice, this fails at provisioning time more often than anywhere else. Teleport's 2026 report found that 70% of organizations grant AI systems higher levels of privileged access than humans would receive for the same task.[^teleport] The reason is structural: provisioning agents through existing IAM tools means choosing from permission sets designed for human roles. An agent that needs to read one database table gets a "data analyst" role that includes read access to every table in the schema.
 
@@ -81,13 +79,13 @@ The Cryptographic Authorization chapter's CAAM pattern implements this: every to
 
 ## Death: Decommissioning
 
-Decommissioning is where lifecycle management most consistently fails. Agents are easy to create and hard to kill.
+Agents are easy to create and hard to kill.
 
 ### Why agents do not die
 
 Three forces keep agents alive past their usefulness:
 
-**Nobody knows they exist.** Shadow agents, by definition, were never registered. You cannot decommission what you cannot find. Token Security's platform addresses this first: automatic discovery of every AI agent, custom GPT, and coding agent using MCP servers across hybrid multi-cloud environments.[^token-security] You cannot govern a lifecycle you cannot see.
+**Nobody knows they exist.** Shadow agents, by definition, were never registered. You cannot decommission what you cannot find. Token Security's platform addresses this first: automatic discovery of every AI agent, custom GPT, and coding agent using MCP servers across hybrid multi-cloud environments.[^token-security]
 
 **Nobody owns them anymore.** The developer who created the agent left the company. The team that used it reorganized. The project it supported ended. The agent keeps running because nobody has the authority (or the knowledge) to shut it down. CyberArk found that 45% of financial services organizations have unsanctioned AI agents creating identity silos outside formal governance programs.[^cyberark-96]
 
@@ -108,13 +106,13 @@ Saviynt adds a governance gate: retirement requires an approved request, validat
 
 An orphan agent is one whose owner is gone, whose purpose has ended, or whose credentials have not been rotated within policy. Orphans are the most dangerous category because they combine broad historical permissions with zero ongoing governance.
 
-Token Security's approach: assign clear human and departmental ownership to each discovered agent, enforce authentication hygiene protocols, and retire or deprovision dormant agents before they become long-term risks.[^token-security] The goal is preventing ghost services from lingering with active access.
+Token Security's approach: assign clear human and departmental ownership to each discovered agent, enforce authentication hygiene protocols, and retire or deprovision dormant agents before they become long-term risks.[^token-security]
 
-The scale of the orphan problem is significant. Microsoft's March 2026 Entra Agent ID creates a dedicated identity type for agents within the identity provider itself, with lifecycle management (creation, rotation, and decommissioning) governed by the same entitlement management processes used for human identities.[^entra-agent-id] The architectural decision to put agents in the same identity directory as humans means orphan detection uses the same processes: if a human identity is deactivated, every agent identity they own gets flagged for review.
+Microsoft's March 2026 Entra Agent ID creates a dedicated identity type for agents within the identity provider itself, with lifecycle management (creation, rotation, and decommissioning) governed by the same entitlement management processes used for human identities.[^entra-agent-id] The architectural decision to put agents in the same identity directory as humans means orphan detection uses the same processes: if a human identity is deactivated, every agent identity they own gets flagged for review.
 
 ## The Emerging Infrastructure
 
-The lifecycle management tooling landscape consolidated rapidly in early 2026.
+The lifecycle management tooling landscape consolidated in early 2026.
 
 **Token Security** (RSAC 2026 Innovation Sandbox finalist) provides continuous discovery, lifecycle governance, and intent-based access controls for AI agents. Their platform correlates AI agents, humans, secrets, permissions, and data in a unified identity graph, revealing the blast radius and enabling remediation at scale.[^token-security] Token's selection as an RSAC finalist, alongside Geordie AI (agent governance platform), signals that investor and industry attention has shifted from "can agents work?" to "can agents be governed?"[^rsac-finalists]
 
