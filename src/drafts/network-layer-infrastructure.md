@@ -23,17 +23,17 @@ Neither layer alone is sufficient. The application-layer gateway can be bypassed
 
 ## What the Network Layer Can Now See
 
-Cisco's AI-Aware SASE, announced in February 2026 as the most significant expansion of its AI Defense platform since its January 2025 launch, is the first major evidence that the network-security industry is addressing this gap.[^cisco-sase-2026]
+Cisco's AI-Aware SASE, announced in February 2026, is the first major evidence that the network-security industry is addressing this gap.[^cisco-sase-2026]
 
 Four capabilities are relevant:
 
-**MCP Visibility and Policy Control.** Cisco's AI-Aware SASE can now discover and govern MCP communications with in-path controls and inspection outcomes, managing agent-to-tool connectivity at the network layer. An agent connecting to a Gmail MCP server is no longer just HTTPS traffic: the SASE platform can see the protocol, identify the tool, and apply policy to the connection.
+**MCP inspection.** Cisco Secure Firewall can inspect MCP communications, giving the network layer visibility into agent-to-tool traffic that previously looked identical to generic HTTPS. An agent connecting to a Gmail MCP server is no longer just HTTPS traffic: the security platform can observe the protocol in use and apply policy to the connection.
 
 **Intent-Aware Inspection.** The platform combines rapid detection with cloud-based analysis to evaluate the intent behind agentic messages and actions. This is a materially different capability than signature-based inspection: instead of matching known-bad patterns, it reasons about what the agent is attempting to do. A request to read emails is different from a request to delete emails, even if both use the same API endpoint and OAuth scope.
 
-**AI Bill of Materials and MCP Catalog.** The platform provides centralized visibility and governance for MCP servers and third-party dependencies. An AI BOM at the network layer means the security team can inventory which MCP servers agents are connecting to, assess their supply chain risk, and enforce allowlists — independent of how the application layer is configured. The MCP Catalog discovers and manages risk across MCP servers on both public and private platforms.[^cisco-ai-bom]
+**AI Bill of Materials.** The platform provides centralized visibility and governance for MCP servers and third-party dependencies. An AI BOM at the network layer means the security team can inventory which MCP servers agents are connecting to, assess their supply chain risk, and enforce allowlists — independent of how the application layer is configured.[^cisco-ai-bom]
 
-**AI Traffic Optimization.** The platform detects AI traffic and applies packet duplication techniques to maintain reliable, low-latency interactions during agentic workload bursts. Agent traffic has different characteristics than human web traffic: bursty, latency-sensitive, and often long-lived. Network infrastructure that cannot distinguish AI traffic from browser traffic cannot optimize for it.
+**AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts. Agent traffic has different characteristics than human web traffic: bursty, latency-sensitive, and often long-lived. Network infrastructure that cannot distinguish AI traffic from browser traffic cannot optimize for it.
 
 The significance of Cisco's approach is architectural, not just commercial. When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 — application developers building gateways, network teams enforcing generic HTTPS policies — is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
 
@@ -103,7 +103,7 @@ The practical implication for architects: design both layers. Gateway at the app
 
 **Potential.** Agent infrastructure at the network layer enables what application-layer-only deployments cannot provide: reliable, optimized, and governed agent traffic at enterprise scale. Cisco's AI traffic optimization addresses the operational reality that agentic workloads have different traffic characteristics than human browsing: bursty, latency-sensitive, long-lived sessions. Network infrastructure that cannot distinguish and optimize for AI traffic introduces unpredictable performance degradation during workload spikes. The standard-setting activity (AgentDNS, SIRP) represents a bet on Potential: that the agent ecosystem is worth investing in dedicated naming and routing infrastructure.
 
-**Accountability.** Intent-aware inspection at the network layer creates audit records that exist independent of application-layer configuration. If an application-layer gateway is misconfigured or bypassed, the network layer can still record what the agent connected to and what intent was inferred. The AI BOM and MCP Catalog capabilities provide an inventory of tool dependencies at a layer that developers cannot easily tamper with. Both properties support the traceability claims PAC's Accountability pillar requires.
+**Accountability.** Intent-aware inspection at the network layer creates audit records that exist independent of application-layer configuration. If an application-layer gateway is misconfigured or bypassed, the network layer can still record what the agent connected to and what intent was inferred. The AI BOM capability provides an inventory of tool dependencies at a layer that developers cannot easily tamper with. Both properties support the traceability claims PAC's Accountability pillar requires.
 
 **Control.** Network-layer enforcement gives security teams a control point that does not depend on developer adoption of application-layer gateways. An enterprise that mandates SASE egress controls can enforce agent traffic policies through standard network security operations, without requiring each development team to deploy and configure AgentGateway. This is "infrastructure in the loop" applied at the network layer: the control does not depend on the agent's cooperation.
 
@@ -127,7 +127,7 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 
 **Enforce destination allowlists at the network layer.** Application-layer gateway coverage is incomplete by design: shadow agents and developer tools bypass it. A network-layer allowlist of permitted MCP server domains operates independently of application-layer configuration. Any agent connecting to an unknown MCP endpoint fails the network-layer check before reaching any application-layer policy.
 
-**Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Evaluate whether its AI BOM, MCP Catalog, and intent inspection capabilities address your threat model. The product is February 2026 vintage; operational characteristics at enterprise scale are not yet well-documented.
+**Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Evaluate whether its AI BOM and intent inspection capabilities address your threat model. The product is February 2026 vintage; operational characteristics at enterprise scale are not yet well-documented.
 
 **Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics — governance of root servers, key management, namespace arbitration — are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
 
@@ -139,8 +139,8 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 [^microsoft-mcp-gw]: Microsoft, "MCP Gateway," github.com/microsoft/mcp-gateway, 2026. Reverse proxy for MCP servers with session-aware stateful routing in Kubernetes.
 [^traefik-hub]: Traefik Hub, "MCP Gateway Best Practices," doc.traefik.io/traefik-hub/mcp-gateway/guides/mcp-gateway-best-practices, 2026.
 [^lasso-mcp]: Lasso Security, "Security for Agentic AI: Unveiling MCP Gateway and MCP Risk Assessment," prompt.security/blog, 2026.
-[^cisco-sase-2026]: Jeetu Patel, "Redefining Security for the Agentic Era," blogs.cisco.com/security/redefining-security-for-the-agentic-era, February 10, 2026. Described as the most significant expansion of Cisco AI Defense since its January 2025 launch.
-[^cisco-ai-bom]: Cisco, "Know Your AI Stack: Introducing AI BOM in Cisco AI Defense," blogs.cisco.com/ai/know-your-ai-stack-introducing-ai-bom-in-cisco-ai-defense, 2026. Covers AI BOM and MCP Catalog capabilities for supply chain visibility.
+[^cisco-sase-2026]: Peter Bailey, "Redefining Security for the Agentic Era," blogs.cisco.com/security/redefining-security-for-the-agentic-era, February 10, 2026.
+[^cisco-ai-bom]: Cisco, "Know Your AI Stack: Introducing AI BOM in Cisco AI Defense," blogs.cisco.com/ai/know-your-ai-stack-introducing-ai-bom-in-cisco-ai-defense, 2026. Covers AI BOM capabilities for supply chain visibility of AI and MCP dependencies.
 [^agentdns-draft]: Liang et al., "AgentDNS: A Root Domain Naming System for LLM Agents," draft-liang-agentdns-00, datatracker.ietf.org. Filed 2026; expires April 12, 2026.
 [^sandworm-mode]: SnailSploit, "MCP vs A2A Attack Surface: Every Trust Boundary Mapped," snailsploit.com, March 2026. Documents SANDWORM_MODE: 19 typosquatting npm packages targeting MCP server infrastructure.
 [^sirp-draft]: H. Chen (Red Hat), L. Jalil (Verizon), "Semantic Inference Routing Protocol (SIRP)," draft-chen-nmrg-semantic-inference-routing-00, datatracker.ietf.org. Filed 2026; expires April 3, 2026.
