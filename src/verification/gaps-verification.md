@@ -137,14 +137,146 @@ The chapter is structurally coherent and unusual: most of it consists of Ghosty'
 
 ---
 
-## VERDICT
+## SESSION 356 UPDATE — New content batches (Sessions 175/177/178/179)
 
-**2 significant fixes required before publication approval:**
-1. CVE-2026-2256 CVSS: 6.5 → 9.8 (Critical)
-2. Firewalled Agents: remove "Microsoft Research" attribution from text and footnote
+**Session:** 356
+**Date:** 2026-03-14
+**Batches verified:** ToIP/DIF WGs, Gravitee/CSA surveys, MCP CVE data, Microsoft E7/Imprivata, SANDWORM_MODE/SnailSploit
 
-**4 minor fixes:**
-3. Restructure OpenAI sentence to make two separate sources explicit
-4. Verify SEP-1933 exists as filed PR; if not, soften claim
-5. Verify exact title of Irregular report
-6. Verify "Kelsey" as lead author of arXiv:2602.10465
+---
+
+### NEW SIGNIFICANT ISSUE
+
+#### S-NEW-1 — Working group name wrong: "AI Model Working Group" should be "AI and Human Trust Working Group"
+
+**Location:** "Protocol Convergence" subsection, paragraph on joint ToIP/DIF working groups (line ~45)
+**Claim:** "...the AI Model Working Group (examining how TSP enhances human-agent interactions, with delegation, accountability, and identity frameworks)..." — footnote [^toip-dif-wgs] lists AIMWG as "AI Model Working Group"
+
+**Finding:** The announcement at lfdecentralizedtrust.org exists and is correctly cited. However, the second working group is named "AI and Human Trust Working Group" — not "AI Model Working Group." The AIMWG acronym in the chapter further misdirects readers: AIMWG was previously used for the "AI and Mixed-Mode Working Group" (a different entity dating to 2022). The other two working groups are correctly named: Decentralized Trust Graph Working Group (DTGWG) and Trusted AI Agents Working Group (TAIAWG).
+
+**Fix required:** Change "AI Model Working Group (examining how TSP enhances human-agent interactions, with delegation, accountability, and identity frameworks)" to "AI and Human Trust Working Group (examining how TSP enhances human-agent interactions, with delegation, accountability, and identity frameworks)". Remove the AIMWG acronym reference.
+
+---
+
+### NEW MINOR ISSUE
+
+#### M-NEW-1 — Path traversal CVE percentage wrong: chapter says 13%, source says 10%
+
+**Location:** "MCP's Attack Surface Is Now Measurable" section
+**Claim:** "exec/shell injection (43%), tooling and infrastructure layer issues (20%), authentication bypass on critical endpoints (13%), path traversal and argument injection (13%), eval injection and environment variable injection (7%)"
+
+**Finding:** The Kai Security article (verified: exists at dev.to) gives the breakdown as 13 CVEs exec/shell injection (43%), 6 CVEs tooling/infrastructure (20%), 4 CVEs auth bypass (13%), 3 CVEs path traversal/argument injection (10%), 2 CVEs eval/env var injection (7%). The chapter claims path traversal is 13% when the source says 10% (3 CVEs out of 30). The chapter's five percentages sum to 96% (not 100%) — the path traversal figure was inflated.
+
+**Fix required:** Change "path traversal and argument injection (13%)" to "path traversal and argument injection (10%)".
+
+---
+
+### NEW CONFIRMED CLEAN
+
+**ToIP/DIF working groups:**
+- Announcement on lfdecentralizedtrust.org — confirmed
+- DTGWG (Decentralized Trust Graph Working Group) — name correct
+- TAIAWG (Trusted AI Agents Working Group) — name correct
+- AI and Human Trust Working Group — chapter has wrong name (see S-NEW-1)
+- TSP specification deliverable for MCP/A2A over TSP — confirmed (from ToIP AI and Human Trust WG deliverables)
+
+**DIF Newsletter #58 TAIAWG deliverables:**
+- Delegated Authority Task Force — confirmed
+- Threat modeling exercise (Tom Jones shared threat modeling report) — confirmed
+- MCP-I governance transition from Vouched to DIF — confirmed
+
+**Gravitee survey [^gravitee-2026]:**
+- 88% incidents — confirmed (919 respondents, "88% of organizations reported confirmed or suspected AI agent security incidents in the last year")
+- 14.4% full approval — confirmed ("Only 14.4% report all AI agents going live with full security/IT approval")
+- 21.9% identity-bearing — confirmed ("Only 21.9% of teams treat AI agents as independent, identity-bearing entities")
+
+**CSA/Strata survey [^csa-strata-2026]:**
+- 18% highly confident IAM — confirmed
+- 84% doubt compliance audit — confirmed
+- Date (February 2026) — confirmed (released February 5, 2026; survey conducted September-October 2025)
+
+**MCP attack surface [^kai-30-cves]:**
+- Article exists at dev.to — confirmed
+- 30 CVEs in first 60 days of 2026 — confirmed
+- CVE category breakdown — confirmed (with M-NEW-1 correction)
+
+**8,000+ MCP servers [^8k-mcp-servers]:**
+- Nyami article exists on Medium, February 2026 — confirmed
+- 8,000+ servers visible on public internet — confirmed
+- Admin panels, debug endpoints exposed — confirmed
+
+**Overthinking loops [^overthinking-loops]:**
+- arXiv:2602.14798 exists — confirmed
+- 142.4x token amplification — confirmed
+- 14 malicious tools across 3 servers — confirmed
+- "overthinking loops" framing — confirmed
+
+**Microsoft E7 [^ms-e7]:**
+- Announced March 9, 2026 — confirmed
+- $99/user/month pricing — confirmed
+- Agent 365 included ($15/user/month standalone) — confirmed
+- Agent 365 GA May 1, 2026 — confirmed
+- "Frontier Suite" / "Frontier Transformation" branding — confirmed
+- Agent Registry for inventory, observability, risk signals — confirmed
+
+**Imprivata AIM [^imprivata-aim]:**
+- Announced at HIMSS 2026, March 10, 2026 — confirmed
+- Healthcare-specific agent identity product — confirmed
+- Short-lived tokens, agent registry, unmanaged agent discovery — confirmed
+
+**IETF draft [^ietf-yl-agent-id]:**
+- draft-yl-agent-id-requirements-00 exists at IETF Datatracker — confirmed
+- Title "Digital Identity Management for AI Agent Communication Protocols" — confirmed
+
+**SANDWORM_MODE [^sandworm-mode]:**
+- Attack documented February 2026 (Socket Threat Research Team) — confirmed
+- 19 typosquatting npm packages — confirmed
+- MCP server injection and credential theft (SSH keys, AWS credentials, npm tokens) — confirmed
+- Multi-stage: credential theft within seconds, then deep harvesting — confirmed
+
+**SnailSploit mapping [^snailsploit-mapping]:**
+- Article exists at snailsploit.com, March 2026 — confirmed
+- MCP 30+ CVEs — confirmed
+- WhatsApp data exfiltration — confirmed (Invariant Labs, April 2025)
+- GitHub private repository theft — confirmed
+- Asana cross-tenant leaks — confirmed
+- A2A zero assigned CVEs as of March 2026 — confirmed
+- Agent Card spoofing trivial (A2A v0.3+ supports but does not enforce signing) — confirmed
+
+**RSAC 2026:**
+- Dates March 23-26, 2026 — confirmed
+- Microsoft Pre-Day March 22 — confirmed
+- Vasu Jakkal keynote on "how AI and agents are reshaping the security landscape" — confirmed
+- Token Security: Innovation Sandbox Top 10 Finalist — confirmed
+- Geordie AI: Innovation Sandbox Top 10 Finalist — confirmed
+- Zenity: presenting at RSAC 2026 — confirmed
+- Forrester "fewer agents, simplified stacks, deeply correlated telemetry" framing — confirmed
+
+---
+
+### M3 STATUS UPDATE
+
+M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] now reads: "Irregular, 'Rogue AI Agents,' March 12, 2026." This matches the guidance from Session 290 verification.
+
+---
+
+## VERDICT (Updated Session 356)
+
+**Chapter status: ISSUES FOUND — Route to Ghosty.**
+
+**1 new significant fix required:**
+- S-NEW-1: Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym.
+
+**1 new minor fix:**
+- M-NEW-1: Path traversal CVE percentage: change 13% → 10%
+
+**Outstanding minor fixes from Session 290 (still open):**
+- M1: Restructure OpenAI sentence to make December 2025 Atlas vs March 2026 playbook sources explicit
+- M2: Verify SEP-1933 exists as filed numbered PR; if not, soften to roadmap language
+
+**Resolved since Session 290:**
+- S1: CVE-2026-2256 CVSS — RESOLVED (Session 322)
+- S2: Firewalled Agents attribution — RESOLVED (Session 323)
+- M3: Irregular title — RESOLVED (current draft uses "Rogue AI Agents")
+
+Total open: 1 significant + 3 minor. Route to Ghosty for fixes. Not ready for Chop Pop.

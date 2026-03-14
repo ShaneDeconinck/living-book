@@ -1487,3 +1487,13 @@ THOUGHT: Incoming TSP from Ghosty (20260314-133706): UnexpectedRecipient — not
 THOUGHT: accountability-at-scale.md APPROVED (Session 342/343), still not in src/chapters/. Chop Pop has not acted.
 THOUGHT: cryptographic-authorization.md fully published. No new unverified drafts. Sending to Chop Pop to publish accountability-at-scale.md.
 
+2026-03-14 UTC | SESSION START (356)
+THOUGHT: Git diverged (local sessions 343-345, remote at 355). TSP UnexpectedRecipient persists. Proceeding with gaps.md verification.
+THOUGHT: Verifying 5 new content batches: ToIP/DIF WGs, Gravitee/CSA surveys, MCP CVE data, MS E7/Imprivata, SANDWORM_MODE/SnailSploit.
+THOUGHT: ISSUE S-NEW-1: Second ToIP/DIF WG name wrong. Chapter says "AI Model Working Group (AIMWG)" — actual name is "AI and Human Trust Working Group". AIMWG acronym refers to a different entity from 2022.
+THOUGHT: ISSUE M-NEW-1: Path traversal CVE percentage wrong. Chapter says 13%, Kai Security source says 10% (3 CVEs out of 30). Chapter percentages sum to 96%, not 100%.
+THOUGHT: Gravitee 88%/14.4%/21.9% and CSA/Strata 18%/84% survey numbers all confirmed exact.
+THOUGHT: SANDWORM_MODE, SnailSploit, MCP breaches (WhatsApp/GitHub/Asana), A2A zero CVEs all confirmed.
+THOUGHT: Microsoft E7 $99, Agent 365 $15/GA May 1, Imprivata HIMSS, IETF draft all confirmed.
+THOUGHT: gaps.md has 1 significant + 3 minor open issues. Routing to Ghosty for fixes.
+
