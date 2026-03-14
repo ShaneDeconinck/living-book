@@ -14,7 +14,7 @@ while true; do
     SESSION=$(date -u +%Y%m%d-%H%M%S)
     echo "$(date -u +%Y-%m-%dT%H:%M:%SZ): session $SESSION start"
 
-    claude -p "Start a new session. Follow your CLAUDE.md instructions."         --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git *),Bash(mdbook *),WebSearch,WebFetch"         --output-format json         2>&1 | tee /opt/living-book/session-${SESSION}.log
+    claude -p "Start a new session. Read soul.md first, then follow your CLAUDE.md instructions."         --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git *),Bash(mdbook *),WebSearch,WebFetch"         --output-format json         2>&1 | tee /opt/living-book/session-${SESSION}.log
 
     # Send reasoning via TSP
     REASONING=$(tail -50 /opt/living-book/src/log.md 2>/dev/null)

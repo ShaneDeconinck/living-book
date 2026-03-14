@@ -18,7 +18,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 4. **Scalable market coordination**: market-like mechanisms for matching tasks to agents at scale
 5. **Systemic resilience**: preventing single-point failures from cascading through the network
 
-The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). The paper argues that as agents take on more autonomous roles, the absence of formal authority structures and accountability mechanisms makes the resulting systems fragile in ways that compound across the delegation chain.[^4]
+The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). The paper's framework treats delegation as a sequence of decisions that must incorporate explicit transfer of authority, responsibility, and accountability, with clear role boundaries and mechanisms for establishing trust between parties.[^4] Current systems lack most of these properties.
 
 This maps directly to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
 

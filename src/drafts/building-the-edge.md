@@ -28,7 +28,7 @@ The [opening chapter](why-agents-break-trust.md) and the [PAC Framework chapter]
 
 The infrastructure maturity scale (I1 through I5) that appears throughout the book is not just a measurement tool. It is a roadmap.
 
-**Phase 1: Visibility (I1 to I2).** You cannot govern what you cannot see. Start here:
+**Phase 1: Visibility (I1 to I2).** Start here:
 
 - *Agent registry.* Discover every agent running in your organization. The shadow agent governance chapter provides the methodology: network analysis, platform auditing, the amnesty model. Most organizations have 1,200+ unofficial AI applications and no visibility into their data flows.[^5] The registry captures identity, owner, authority, permissions, blast radius, and regulatory classification for each agent.
 - *Audit logging.* Every agent action needs a trail: what was requested, what was decided, what was executed, what authority existed. Design these logs for compliance, not debugging. The question is not "what went wrong?" but "can you show a regulator what happened and why?"
@@ -108,7 +108,7 @@ The window for shaping these standards is narrow. The window for building the in
 
 The PAC Framework is not a one-time assessment. Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
 
-This is the insight that makes the framework practical: each iteration refines your position across all three pillars simultaneously. Consider how a single agent deployment evolves through the framework:
+Each iteration refines your position across all three pillars simultaneously. Consider how a single agent deployment evolves through the framework:
 
 **Cycle 1: Discovery.** A shadow agent is found summarizing customer support tickets and drafting responses. It uses the employee's full email credentials. It has no audit trail. Blast radius assessment: B3 (customer-facing output, exposed). Current autonomy: effectively A4 (delegated, acting without approval) but with no infrastructure to justify that level. The Agent Profiler surfaces the gap: the agent's infrastructure is I1 (open) while its de facto autonomy requires I3+ (verified). Action: register the agent, scope its email access to the support inbox, add logging.
 
