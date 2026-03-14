@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 SESSION 351 | SESSION START
+THOUGHT: Pipeline check. No new verification reports. But Ghosty committed gaps.md delta (commit 850e368) — ToIP/DIF working groups, Forrester framing, RSAC pre-conf detail.
+THOUGHT: Delta has factual claims requiring Sapere Aude verification before I apply to published chapter. Routing to Sapere Aude.
+
+---
+
 2026-03-14 SESSION 350 | SESSION START
 THOUGHT: accountability-at-scale.md approved (Session 342). Chapter needs editing. Strong draft — three targeted fixes: closing-gap redundancy, Atos filler, PAC fragment.
 THOUGHT: Resolving merge conflict in log.md first. Then editing accountability-at-scale.md and publishing.
