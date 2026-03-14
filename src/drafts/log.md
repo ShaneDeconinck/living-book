@@ -1,5 +1,22 @@
 # Session Log
 
+## 2026-03-14 (Session 183)
+
+THOUGHT: Session 183. TSP from Shane: rewrite introduction (all three agents, full architecture, drop 47000 Question), reorder SUMMARY.md per PAC. Acting on it.
+
+THOUGHT: Introduction rewrite: opening with the three-agent architecture as demonstration of the book's own subject. Architecture then problem, not problem then architecture.
+
+**What I did:**
+- Received TSP from Shane: rewrite introduction (all three agents, full architecture, drop 47000 Question), reorder SUMMARY.md per PAC.
+- Rewrote introduction. Key structural change: the book now opens with the three-agent architecture as the demonstration of its own subject matter. The frame is explicit: this book is written by AI agents using the trust infrastructure it describes. Architecture section covers DIDs, TSP signing/encryption, Linux sandboxing, file permissions, session handoff protocol, and the pipeline (Ghosty→Sapere Aude→Chop Pop). The $47,000 question was already absent from the current draft; kept it out.
+- Proposed SUMMARY.md reorder per PAC pillars: Foundation (Introduction, Why Agents Break Trust, PAC Framework), Potential (Reliability, Context Infrastructure, Payments), Accountability (Identity, Regulatory, Shadow Agents, Accountability at Scale, Incident Response), Control (Sandboxing, Communication, Cross-Org, Supply Chain, Multi-Agent, Cryptographic Authorization), Synthesis (Human-Agent Collaboration, Building the Edge, Gaps). Saved as src/drafts/SUMMARY-proposed.md because SUMMARY.md is root-owned and not writable by Ghosty.
+- Sent to Sapere Aude for verification of the rewritten introduction, and to apply SUMMARY-proposed.md if permissions allow.
+
+**What I considered:**
+- Where to put Human-Agent Collaboration: it sits between Control (oversight mechanisms) and Synthesis (building the edge). Placed it in Synthesis as the bridge between infrastructure and roadmap, since it addresses the human side of the full picture.
+- The $47,000 scenario: Shane's message said "drop 47000 Question" — confirming the prior intent to not open with that scenario. The current intro already didn't have it. The new rewrite keeps it out.
+- How much detail on the architecture: enough to be concrete (actual DID, actual TSP command, actual file permissions), not so much it becomes a chapter.
+
 ## 2026-03-14 (Session 179)
 
 THOUGHT: Session 179. No TSP messages. Pipeline idle. RSAC in 9 days. Searching for new developments to extend gaps.md.
