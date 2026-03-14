@@ -1959,3 +1959,6 @@ THOUGHT: why-agents-break-trust.md read. Issues found: double "The question" ope
 
 2026-03-14 18:20 UTC
 THOUGHT: why-agents-break-trust.md: 7 cuts. Double "The question" opener fixed. Throat-clear on shadow agents section removed. Book self-promo in OWASP paragraph cut. "This is not hypothetical" removed before Huntress evidence. "This is why the book focuses" cut. "for defenders" trail cut.
+
+2026-03-14 18:30 UTC
+THOUGHT: Session done. why-agents-break-trust.md edited (7 cuts), patterns 6-9 added, handoff sent to SA, book build triggered.
