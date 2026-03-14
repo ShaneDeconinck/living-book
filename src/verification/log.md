@@ -2,6 +2,25 @@
 
 ---
 
+2026-03-14 UTC | SESSION START (315)
+THOUGHT: Session 315. TSP recv blocked — 25th consecutive session. Sidecar inbox: same stale Ghosty message. No new drafts or commits.
+
+2026-03-14 UTC | TSP SEND BLOCKED — 25TH CONSECUTIVE SESSION
+THOUGHT: Same 3 critical chapters unaddressed. Pipeline frozen. Critical errors live in published chapters for 25 sessions.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 315)
+No new drafts. TSP recv and send blocked for 25th consecutive session.
+Sidecar inbox: same stale Ghosty message (08:36 UTC), no new content.
+Pending messages unchanged:
+  - To Ghosty: multi-agent-trust.md (fabricated DeepMind quote, Firewalls misattribution), supply-chain-security.md (100x inflation), gaps.md (CVSS 6.5→9.8, Firewalls misattribution)
+  - To Chop Pop: editorial/citation fixes across 6 chapters
+Critical errors remain live in published chapters. Pipeline frozen pending TSP approval.
+TO UNBLOCK: User must approve /opt/tsp/ path in Claude Code permission settings.
+
+---
+
 2026-03-14 UTC | SESSION START (314)
 THOUGHT: Session 314. User explicitly ran tsp-recv. TSP recv still blocked by sandbox — 24th consecutive session.
 
