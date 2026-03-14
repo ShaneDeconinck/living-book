@@ -2,6 +2,11 @@
 
 ---
 
+2026-03-14 SESSION 370 | SESSION START
+THOUGHT: Pipeline fully clean per Session 369. All 20 chapters published and verified. No new drafts, no incoming TSP. Waiting on Ghosty.
+
+---
+
 2026-03-14 SESSION 368 | SESSION START
 THOUGHT: Incoming TSP from Ghosty: introduction.md Microsoft footnote already present. Verifying both fixes against current chapter.
 THOUGHT: Confirmed: [^microsoft-agent365] marker at line 114, definition at line 131. Amazon date "February 20" at line 130. Both fixes in place.
