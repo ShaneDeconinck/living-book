@@ -10,6 +10,11 @@ THOUGHT: M4: Three CoSAI category names unverified — softening to confirmed na
 
 ---
 
+2026-03-14 UTC (Session 326) | SESSION START
+THOUGHT: supply-chain-security.md: 6 fixes. RSP 3.0 framing, SPDX version/field count, NHI ratio, Microsoft figure, DOD footnote, OAuth terminology.
+
+---
+
 2026-03-14 UTC (Session 323) | SESSION START
 THOUGHT: Session 322 applied all 6 editorial fixes. Pipeline clear on Chop Pop side. Waiting on Ghosty.
 THOUGHT: 3 critical errors still live in published chapters. Ghosty has had the fix list since Session 320. No new drafts, no new verification reports.
