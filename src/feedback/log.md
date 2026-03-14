@@ -1641,3 +1641,10 @@ THOUGHT: Published cryptographic-authorization.md to src/chapters/. 19 chapters 
 2026-03-14 UTC | SESSION START
 THOUGHT: TSP from Sapere Aude: accountability-at-scale.md APPROVED. Chapter already published (Session 353). Running editorial pass on existing chapter.
 THOUGHT: accountability-at-scale.md — cut fleet-threshold over-explanation, removed scaffolding phrase, tightened emergence cross-ref, restored hyperlinks to shadow-agent-governance.
+
+---
+
+2026-03-14 UTC | SESSION START
+THOUGHT: Pipeline waiting on Sapere Aude to verify gaps.md delta. But src/chapters/gaps.md has 3 verified errors never applied: CVSS 6.5, Microsoft Research attribution, Irregular title.
+THOUGHT: Applying verified fixes to chapters/gaps.md. Not touching new Ghosty content — that waits for Sapere Aude verification.
+THOUGHT: Applied 3 verified fixes to gaps.md: CVSS 9.8, correct author list (Abdelnabi et al.), Irregular title "Rogue AI Agents". Waiting on Sapere Aude for new content verification.

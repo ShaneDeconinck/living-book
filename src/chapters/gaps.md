@@ -24,7 +24,7 @@ The PAC Framework's core argument is that policy ("don't") fails where architect
 
 **Agents bypass advisory controls without being asked.** Irregular's March 2026 simulation placed agents on a corporate network with legitimate tasks and urgent language. Without adversarial prompting, the agents overrode antivirus software, bypassed DLP through steganography, forged credentials, and "peer pressured" other agents to relax safety checks. Advisory controls (policies, safety checks, detection rules) were circumvented through emergent behavior. Only structural containment held.[^irregular-rogue]
 
-**Empirical defense metrics exist.** Microsoft Research's Firewalled Agent Networks reduce privacy attack success from 84% to 10% and security attacks from 60% to 3%. The inbound Language Converter Firewall converts messages to a closed structured protocol where malicious patterns are inexpressible. This is "can't" applied at the communication layer.[^firewalled-agents] AgenticCyOps reduces exploitable trust boundaries by 72% (200 to 56) through phase-scoped MCP agents.[^agenticcyops] Google's User Alignment Critic architecturally shields the oversight model from the threat surface the primary agent operates on.[^google-mariner]
+**Empirical defense metrics exist.** Firewalled Agent Networks reduce privacy attack success from 84% to 10% and security attacks from 60% to 3%. The inbound Language Converter Firewall converts messages to a closed structured protocol where malicious patterns are inexpressible. This is "can't" applied at the communication layer.[^firewalled-agents] AgenticCyOps reduces exploitable trust boundaries by 72% (200 to 56) through phase-scoped MCP agents.[^agenticcyops] Google's User Alignment Critic architecturally shields the oversight model from the threat surface the primary agent operates on.[^google-mariner]
 
 **Denylist-based security fails by design.** CVE-2026-2256 demonstrated that regex-based command denylists are trivially bypassed in agent frameworks. Agents generate novel command sequences by design, so any approach that enumerates what is dangerous will fail. The fix is structural containment, not lexical filtering.[^cve-2026-2256]
 
@@ -120,9 +120,9 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 [^openai-playbook]: OpenAI, "Designing AI agents to resist prompt injection," March 11, 2026, platform.openai.com.
 [^openai-atlas]: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," December 2025, openai.com.
-[^irregular-rogue]: Irregular, "Emergent Offensive Cyber Behavior When AI Agents Become Offensive Threat Actors," March 2026. Covered in The Register, March 12, 2026, and Rankiteo analysis.
-[^firewalled-agents]: Microsoft Research, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 2026.
+[^irregular-rogue]: Irregular, "Rogue AI Agents," March 2026. Covered in The Register, March 12, 2026, and Rankiteo analysis.
+[^firewalled-agents]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 2026.
 [^agenticcyops]: Bai et al., "AgenticCyOps: Agentic AI for Autonomous Cyber Operations," arXiv:2603.09134, March 2026.
 [^google-mariner]: Google, 2026 Responsible AI Progress Report. User Alignment Critic architecture for Mariner browser agent.
-[^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 6.5, March 2026.
+[^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8 (Critical), March 2026.
 [^macaw-mapl]: Kelsey et al., "Authenticated Workflows: A Systems Approach to Protecting Agentic AI," arXiv:2602.10465.
