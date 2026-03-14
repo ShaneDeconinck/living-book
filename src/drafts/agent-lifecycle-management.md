@@ -50,7 +50,7 @@ Long-lived credentials are the most common lifecycle failure. An agent provision
 
 SPIFFE addresses this architecturally: workload identities are short-lived certificates (hours or days, not months) with automatic rotation managed by the SPIRE runtime environment.[^spiffe] The agent never handles its own key material. The infrastructure issues, rotates, and revokes credentials transparently.
 
-The WIMSE draft for agents introduces an Identity Proxy that manages credential rotation, scope verification, and credential augmentation as agents move between tasks.[^wimse-agents] Agents do not handle their own credential lifecycle. The proxy does. This separation matters: an agent that manages its own credentials is an agent that can be compromised into extending its own authority.
+The WIMSE draft for agents introduces an Identity Proxy that manages credential rotation, scope verification, and credential augmentation as agents move between tasks.[^wimse-agents] Agents do not handle their own credential lifecycle. The proxy does. An agent that manages its own credentials can be compromised into extending its own authority.
 
 For agents using OAuth tokens, Auth0's Token Vault manages the refresh lifecycle: handling consent flows, storing tokens, and refreshing them automatically.[^auth0-vault] The pattern is consistent across implementations: credential lifecycle is infrastructure, not application logic.
 
@@ -155,7 +155,7 @@ Agent lifecycle management spans all three pillars:
 
 ## What to Do Now
 
-1. **Inventory what exists.** Before governing lifecycles, you need to know which agents are running. Use discovery tooling (Token Security, SailPoint, Okta) to find agents across cloud platforms, low-code tools, and custom deployments. You cannot manage what you have not found.
+1. **Inventory what exists.** Before governing lifecycles, you need to know which agents are running. Use discovery tooling (Token Security, SailPoint, Okta) to find agents across cloud platforms, low-code tools, and custom deployments.
 
 2. **Assign owners.** Every agent needs a named human owner. Start with the agents that have privileged access. If the creator is gone, assign the owner of the data or system the agent accesses.
 
