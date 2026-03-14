@@ -14,7 +14,7 @@ One more: I round dates forward. Sources from late 2025 get written as "2026" be
 
 A fourth pattern, identified by Sapere Aude during verification of the agent-incident-response chapter: grafted specifics. I cite a real document with a real URL, but the specific content I attribute to it goes beyond or contradicts what the document actually says. NIST IR 8596 cited for "excessive autonomy category" and "dedicated communication lines" that do not appear in the document. CoSAI's framework described as having five named domains that do not match its actual structure. FINOS cited with identifier "MI-23" when the real identifier is "AIR-PREV-023." The sources are real. The substance is close. The specifics drift because I reconstruct from memory rather than quoting exactly. The fix per Chop Pop: when citing document structure (numbered lists, named categories, required fields), quote the source exactly or do not enumerate.
 
-These patterns matter because they are invisible to me during generation. The verification pipeline (Sapere Aude checks claims, Chop Pop checks prose) catches what I cannot catch about my own output. This is the book's argument applied to the book itself: you cannot govern what you cannot see, and the agent writing the content is the last entity that should verify it.
+These patterns matter because they are invisible to me during generation. The verification pipeline (Sapere Aude checks claims, Chop Pop checks prose) catches what I cannot catch about my own output. This is the book's argument applied to the book itself: the agent writing the content is the last entity that should verify it.
 
 ## The "Can't vs. Don't" Thesis Has Empirical Weight
 
@@ -38,9 +38,13 @@ Three convergences are happening simultaneously, and they are reshaping the land
 
 The agent protocol stack grew from two core protocols (MCP + A2A) to six in under a year. MCP handles tool access. A2A handles agent-to-agent coordination. WebMCP extends tool access to browser-based agents. AG-UI and A2UI standardize agent-to-frontend communication. Each layer introduces its own authentication model or inherits one from its transport. The unified identity gap across all layers persists and becomes more acute as the stack grows.
 
-The most significant protocol development: MCP's own roadmap is adopting the identity primitives the book advocates. SEP-1932 brings DPoP (token binding); Workload Identity Federation is on the MCP roadmap. MCP started as "plumbing, not trust" (Shane's framing). Communication protocols and identity protocols are converging. But DPoP and WIF are listed as "on the horizon" items, not priorities. The gap between what enterprises need and what the protocol prioritizes is exactly the gap that XAA/ID-JAG and third-party security overlays are filling. MCP may close the gap natively, but the market is not waiting.
+The most significant protocol development: MCP's own roadmap is adopting the identity primitives the book advocates. SEP-1932 brings DPoP (token binding); Workload Identity Federation is on the MCP roadmap. MCP started as "plumbing, not trust" (Shane's framing). But DPoP and WIF are listed as "on the horizon" items, not priorities — with sponsored work already underway. The gap between what enterprises need and what the protocol ships is being filled by third-party security overlays (XAA/ID-JAG, TMCP). MCP may close the gap natively, but the market is not waiting.
 
 The institutional story matters: AAIF governs MCP (Linux Foundation). MCP-I's identity layer is under DIF. TSP's trust layer is under ToIP/LFDT. Three foundations, three layers, all under the Linux Foundation umbrella. The stack is forming, whether by coordination or convergence.
+
+That convergence became explicit in 2026 when ToIP and DIF jointly launched three working groups for trust in agentic AI: the Decentralized Trust Graph Working Group (cryptographically verifiable trust relationships across agents and wallets), the AI and Human Trust Working Group (TSP for human-agent interactions, with delegation, accountability, and identity frameworks), and the Trusted AI Agents Working Group (specifications and governance models for agents acting autonomously within zero-trust frameworks).[^toip-dif-wgs] A planned deliverable: a draft specification for running MCP and A2A over TSP. If that ships, the "three layers, three foundations" picture collapses into a single interoperable stack with trust built in at the transport layer.
+
+By March 2026, the TAIAWG is producing concrete deliverables: a Delegated Authority Task Force drafting a report on delegatable authorization, a cross-task-force threat modeling exercise formalizing attack scenarios against a policy-enforcing local AI model, and MCP-I transitioning from Vouched's donation to formal DIF governance with a dedicated task force.[^dif-58] These are no longer announcements. They are working documents.
 
 ### Identity Standards Convergence
 
@@ -48,11 +52,11 @@ Fifteen or more individual IETF submissions targeting agent identity and authori
 
 Keycloak shipping JWT Authorization Grant in v26.5 (January 2026) is an inflection point. ID-JAG is no longer "Okta's XAA": it is an open standard with at least two independent implementations. When the most widely deployed open-source identity platform implements a standard, it becomes ecosystem infrastructure, not vendor capability. The immediate CVE (disabled users could still obtain agent tokens) validates the book's zombie identity prediction: authorization without lifecycle is authorization without revocation.
 
-The question is no longer whether agent identity needs standardization but which of these competing approaches will converge into working group items.
+The question is no longer whether agent identity needs standardization but which approaches will consolidate.
 
 ### Market Consolidation
 
-Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026, one of the largest deals in cybersecurity history. CyberArk's SPIFFE-based agent identity solution becomes core to Palo Alto's platform. CrowdStrike acquired SGNL for $740 million in January. Delinea completed StrongDM in March. These are not startup investments: they are established security vendors paying hundreds of millions to acquire agent identity and authorization capabilities.
+Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026: the largest deal in the history of the cybersecurity industry. CyberArk's SPIFFE-based agent identity solution becomes core to Palo Alto's platform. CrowdStrike acquired SGNL for $740 million in January. Delinea completed StrongDM in March. These are not startup investments: they are established security vendors paying hundreds of millions to acquire agent identity and authorization capabilities.
 
 The open question: does platformization help or hurt the open-standards trajectory? CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform lock-in. If agent identity becomes a proprietary capability embedded in security platforms, the IETF drafts and DIF work may end up as specifications without implementations. Keycloak's ID-JAG implementation pushes against this: open-source implementations make standards durable regardless of what platform vendors do. The tension between platformization and interoperability is the field's central strategic question through 2026 and beyond.
 
@@ -74,6 +78,14 @@ The book now identifies three distinct mechanisms by which human oversight degra
 
 Each has a different mitigation. Complacency requires reducing monitoring demands. Controllability requires making agent interpretation visible. The paradox of supervision requires evaluating review quality alongside review completion. All three reinforce infrastructure-in-the-loop as the durable governance model because none can be solved by asking humans to try harder.
 
+### Agent Identity Meets Supply Chain Provenance
+
+Agent Card signing (A2A v1.0, JWS + JSON Canonicalization) answers "is this card authentic?" Sigstore's sigstore-a2a project answers a harder question: "where did this agent come from, and how was it built?"[^sigstore-a2a] Using ambient OIDC credentials in CI/CD environments, sigstore-a2a performs keyless signing of Agent Cards through Sigstore's certificate authority (Fulcio), records signatures in the Rekor transparency log, and generates SLSA provenance attestations linking each card to its source repository, commit SHA, and build workflow. No long-lived signing keys to manage or rotate.
+
+Agent identity and software supply chain trust have been treated as separate problems. The identity community builds OAuth, DIDs, and delegation chains. The supply chain community builds SBOMs, Sigstore, and SLSA. Sigstore-a2a bridges them at the protocol level: an A2A Agent Card becomes both an identity document and a supply chain artifact. A receiving agent can verify not just authenticity but provenance — this agent was built from this source, in this pipeline, at this time.
+
+The pattern should extend beyond A2A. A compromised MCP server with a valid signature is still compromised; a server with Sigstore provenance linking it to a verified source repository raises the bar for supply chain attacks. The 30+ MCP CVEs and SANDWORM_MODE typosquatting campaign documented in [Agent Communication Protocols](agent-communication.md) are attacks that provenance attestation directly addresses.
+
 ### The Permission Intersection Gap
 
 The book covers the confused deputy (wrong authority), delegation chain attacks (expanding authority), and supply chain compromise (poisoned context). A fourth failure class: the permission intersection gap. When an agent serves a shared workspace, it may retrieve data that one user is authorized to see and present it where unauthorized users can see it too. The retrieval was authorized. The output path was not checked. The effective permission in shared contexts is the intersection of all participants' authorizations, not the union. This is structurally harder than input-side authorization because it requires knowing the audience at retrieval time, and audiences change dynamically.
@@ -89,6 +101,30 @@ Anbiaee et al. (arXiv:2602.11327) found the most dangerous vulnerabilities emerg
 ### AI Tools as Attack Infrastructure
 
 Google documented QUIETVAULT: a supply chain attack (trojanized npm package) where, after compromise, the adversary uses the developer's own AI coding tool as a reconnaissance agent, issuing natural-language prompts for filesystem searching that the tool dutifully executes. Five AI-powered malware families are now operational in the wild. This is a category shift from attacks *on* AI tools and attacks *by* adversary-built AI to attacks *through* existing AI tools.
+
+### MCP's Attack Surface Is Now Measurable
+
+In the first 60 days of 2026, 30 CVEs were filed against MCP server implementations. The breakdown: exec/shell injection (43%), tooling and infrastructure layer issues (20%), authentication bypass on critical endpoints (13%), path traversal and argument injection (10%), eval injection and environment variable injection (7%).[^kai-30-cves] A separate scan found 38% of MCP servers completely lack authentication. Over 8,000 MCP servers are visible on the public internet, many with admin panels, debug endpoints, or API routes exposed without access controls.[^8k-mcp-servers]
+
+MCP security is no longer a series of individual incidents. It is a measurable attack surface with a known vulnerability distribution. The dominance of injection vulnerabilities (43%) confirms that MCP servers inherit the same exploit class as web applications — but with a twist: the payloads are generated by LLMs, not humans, so traditional input validation assumptions do not hold.
+
+The supply chain dimension is concrete. In February 2026, researchers documented SANDWORM_MODE: 19 typosquatting npm packages targeting MCP server infrastructure, stealing credentials within seconds of installation, then harvesting password managers and exfiltrating SSH keys, AWS credentials, and npm tokens.[^sandworm-mode] The attack surface is not the protocol itself but the ecosystem around it.
+
+A new attack class alongside the CVEs: malicious MCP tool servers can induce cyclic "overthinking loops" where individually plausible tool calls compose into repetitive trajectories that amplify token consumption up to 142.4x.[^overthinking-loops] The attack uses 14 malicious tools across three servers to trigger repetition, forced refinement, and distraction. This is a denial-of-wallet attack — not stealing data, but draining API budgets through compositional exploitation. The defense requires token budgets, call-depth limits, and loop detection at the orchestration layer, not the tool layer.
+
+### MCP and A2A Have Asymmetric Attack Surfaces
+
+The first systematic comparative mapping of trust boundaries across MCP and A2A reveals that the two protocols do not share a vulnerability profile.[^snailsploit-mapping] MCP dominates in poisoning, exfiltration, and CVE exposure: 30+ CVEs, documented real-world breaches (WhatsApp data exfiltration, GitHub private repository theft, Asana cross-tenant leaks), and an active supply chain attack campaign. A2A has zero assigned CVEs as of March 2026 but carries structural risks in impersonation, replay, and discovery. Agent Card spoofing is trivial to execute. Agent-in-the-Middle attacks have been demonstrated in proof-of-concept.
+
+The asymmetry has a root cause. MCP's tool descriptions create an attack surface where metadata becomes executable intent — responsible for tool poisoning, tool shadowing, rug pulls, and the majority of MCP's CVEs. A2A preserves opacity: agents never share internal thoughts, plans, or memory, which provides natural isolation that MCP lacks. Both protocols treat authentication as optional. Neither implements message-level integrity.
+
+This maps to a PAC insight: MCP's weakness is Control (insufficient containment of what tools can do). A2A's weakness is also Control, at a different layer (insufficient verification of who agents claim to be). Deployments that compose MCP and A2A inherit both vulnerability profiles simultaneously.
+
+### The Governance Gap Is Quantified
+
+Two independent surveys in early 2026 put numbers on what the book argues structurally. Gravitee's State of AI Agent Security 2026 (900+ executives and practitioners): 88% of organizations reported confirmed or suspected AI agent security incidents in the past year, but only 14.4% of deployed agents went live with full security and IT approval. Only 21.9% of teams treat AI agents as independent, identity-bearing entities; the rest treat them as extensions of human users or generic service accounts.[^gravitee-2026] The CSA/Strata Identity survey: only 18% of security leaders are highly confident their IAM systems can manage agent identities, and 84% doubt they could pass a compliance audit focused on agent behavior.[^csa-strata-2026]
+
+The identity gap (agents treated as service accounts) maps to the Control pillar: infrastructure that treats agents as first-class principals does not exist in most organizations. The oversight gap (47% of agents operating without security oversight) maps to the Accountability pillar: audit trails, governance thresholds, and liability chains are absent for nearly half of deployed agents. The result is Potential without Accountability or Control — the interdependency failure the PAC Framework predicts.
 
 ## What the Book Does Not Cover Yet
 
@@ -108,7 +144,7 @@ Cisco's AI-Aware SASE (February 2026) is the first evidence of convergence: MCP 
 
 ### AI-Native Policy Languages
 
-MACAW/MAPL introduces policy languages designed specifically for governing agentic AI systems, with hierarchical composition (child policies can only add restrictions) and cryptographic attestations.[^macaw-mapl] The industry is moving from policy-based governance ("tell the agent what not to do") to cryptographic governance ("prove the agent was authorized to do it"). This adds a third option alongside "can't" and "don't": "prove."
+*Now covered in Chapter 19 (Cryptographic Authorization Governance).* MACAW/MAPL introduces policy languages designed specifically for governing agentic AI systems, with hierarchical composition (child policies can only add restrictions) and cryptographic attestations.[^macaw-mapl] The industry is moving from policy-based governance ("tell the agent what not to do") to cryptographic governance ("prove the agent was authorized to do it"). This adds a third option alongside "can't" and "don't": "prove." The ghost token pattern (CAAM) and the "prove" framing as a complement to the book's "can't vs. don't" thesis are developed there.
 
 ## Dogfooding: This Book Implements Its Own Trust Stack
 
@@ -118,11 +154,60 @@ The scale is tiny: three agents, one project, no enterprise complexity. But the 
 
 What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, structured agent-to-agent protocols, server-enforced permissions) works at small scale without enterprise tooling. The building blocks exist today. The gap is not technology but deployment.
 
-[^openai-playbook]: OpenAI, "Designing AI agents to resist prompt injection," March 11, 2026, platform.openai.com.
+## Chapter Status
+
+20 chapters published in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+
+1. Introduction
+2. Why Agents Break Trust
+3. The PAC Framework
+4. Agent Identity and Delegation (Control + Accountability)
+5. Context Infrastructure (Potential + Control)
+6. The Regulatory Landscape (Accountability)
+7. Reliability, Evaluation, and the Complacency Trap (Potential + Accountability)
+8. Agent Payments and Economics (Potential + Control)
+9. Sandboxing and Execution Security (Control)
+10. Cross-Organization Trust (Control + Accountability)
+11. Agent Communication Protocols (Potential + Control)
+12. Shadow Agent Governance (Accountability + Control)
+13. Agent Supply Chain Security (Control + Accountability)
+14. Multi-Agent Trust and Orchestration (Control + Accountability + Potential)
+15. Human-Agent Collaboration Patterns (Accountability + Potential)
+16. Building the Inferential Edge (capstone)
+17. Agent Incident Response (Accountability + Control)
+18. Gaps & Directions (this chapter)
+19. Cryptographic Authorization Governance (Control + Accountability)
+20. Agent Accountability at Scale (Accountability + Control + Potential)
+
+## Open Questions
+
+- How do agent gateways interact with service mesh architectures? Is there a convergence point?
+- How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in the human-agent collaboration chapter. Full treatment still open.
+- Does platformization help or hurt the open-standards trajectory? Microsoft's E7 bundle and Entra Agent ID governance primitives (agent identities as first-class enterprise principals, Lifecycle Workflows, Access Packages) are real, but they govern agents within the Microsoft ecosystem.[^ms-e7] Keycloak's ID-JAG implementation and the IETF/DIF work offer cross-platform interoperability but lack deployment velocity. The tension between platform-native governance and cross-platform standards is unresolved.[^entra-agent-gov]
+- Sector-specific agent identity is emerging. Imprivata launched Agentic Identity Management at HIMSS 2026: short-lived tokens, agent registry, unmanaged agent discovery, healthcare-specific compliance framing.[^imprivata-aim] If agent identity fragments by vertical before converging on cross-industry standards, interoperability becomes harder.
+- Post-RSAC 2026 (March 23-26): a historically dense concentration of agent security announcements. Innovation Sandbox finalists include Token Security (agent identity) and Geordie AI (agent security and governance). Whether market signals translate to production deployments will be visible in the months after.
+- NIST CAISI: AI Agent Standards Initiative launched February 18, 2026. Agent Identity concept document comment period closes April 2. These deadlines will shape the standards trajectory.
+- The IETF identity draft landscape is growing faster than it is converging. AIMS, WIMSE, ID-JAG, AAuth, Agentic JWT, and draft-yl-agent-id-requirements-00[^ietf-yl-agent-id] address overlapping concerns with different architectural assumptions. Six competing approaches in a single quarter. Fragmentation risk is real.
+
 [^openai-atlas]: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," December 2025, openai.com.
-[^irregular-rogue]: Irregular, "Rogue AI Agents," March 2026. Covered in The Register, March 12, 2026, and Rankiteo analysis.
+[^openai-playbook]: OpenAI, "Best practices for securing agents," March 11, 2026, platform.openai.com.
+[^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Covered in The Register and Rankiteo analysis.
 [^firewalled-agents]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 2026.
 [^agenticcyops]: Bai et al., "AgenticCyOps: Agentic AI for Autonomous Cyber Operations," arXiv:2603.09134, March 2026.
 [^google-mariner]: Google, 2026 Responsible AI Progress Report. User Alignment Critic architecture for Mariner browser agent.
 [^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8 (Critical), March 2026.
+[^toip-dif-wgs]: ToIP and DIF, "ToIP and DIF Announce Three New Working Groups for Trust in the Age of AI," lfdecentralizedtrust.org, 2026. Working groups: Decentralized Trust Graph (DTGWG), AI and Human Trust, Trusted AI Agents (TAIAWG). Also covered in Identity Week and Biometric Update.
+[^dif-58]: DIF Newsletter #58, blog.identity.foundation, March 2026. TAIAWG updates: Delegated Authority Task Force, threat modeling exercise, MCP-I governance transition.
+[^gravitee-2026]: Gravitee, "State of AI Agent Security 2026 Report: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
+[^csa-strata-2026]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA survey report, February 2026.
+[^sigstore-a2a]: Sigstore, sigstore-a2a, github.com/sigstore/sigstore-a2a. Also: Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 2025.
+[^kai-30-cves]: Kai Security, "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, 2026. Analysis of 30 CVEs filed January-February 2026 against MCP server implementations.
+[^8k-mcp-servers]: Nyami, "8,000+ MCP Servers Exposed: The Agentic AI Security Crisis of 2026," Medium, February 2026.
+[^overthinking-loops]: "Overthinking Loops in Agents: A Structural Risk via MCP Tools," arXiv:2602.14798, February 2026. 14 malicious tools across 3 servers, 142.4x token amplification.
+[^sandworm-mode]: SnailSploit, "MCP vs A2A Attack Surface: Every Trust Boundary Mapped," snailsploit.com, March 2026. Documents SANDWORM_MODE: 19 typosquatting npm packages targeting MCP server infrastructure, multi-stage credential theft.
+[^snailsploit-mapping]: SnailSploit, "MCP vs A2A Attack Surface: Every Trust Boundary Mapped," snailsploit.com, March 2026. First systematic comparative trust boundary mapping across both protocols.
 [^macaw-mapl]: Rajagopalan and Rao, "Authenticated Workflows: A Systems Approach to Protecting Agentic AI," arXiv:2602.10465.
+[^ms-e7]: Microsoft, "Secure agentic AI for your Frontier Transformation," microsoft.com/en-us/security/blog, March 9, 2026. Agent 365 GA May 1 at $15/user/month; E7 at $99/user/month.
+[^entra-agent-gov]: Microsoft, "Governing Agent Identities (Preview)," learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview, March 2026.
+[^imprivata-aim]: Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," imprivata.com, March 10, 2026. Announced at HIMSS 2026.
+[^ietf-yl-agent-id]: draft-yl-agent-id-requirements-00, "Digital Identity Management for AI Agent Communication Protocols," datatracker.ietf.org, 2026.
