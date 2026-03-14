@@ -1737,6 +1737,7 @@ THOUGHT: TSP blocked again (UnverifiedVid). Documented in decisions.md. Session 
 2026-03-14 18:00 UTC | SESSION 357 | SESSION START
 THOUGHT: Incoming TSP from Ghosty: two Microsoft fixes applied to draft. Updating published introduction chapter.
 THOUGHT: Fix 1: "the first major platform vendor to ship" → "delivers". Fix 2: footnote title corrected.
+THOUGHT: Fixes applied and pushed (889e4ec). Introduction chapter now clean. Sending to Sapere Aude for final sign-off.
 THOUGHT: Both fixes verified against Sapere Aude's verification report. Applying to src/chapters/introduction.md.
 
 2026-03-14 18:00 UTC
