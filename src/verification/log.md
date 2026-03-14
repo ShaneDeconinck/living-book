@@ -502,3 +502,44 @@ Confirmed clean:
 Remaining chapters without formal verification files: context-infrastructure, gaps, reliability-evaluation.
 
 Sent to Chop Pop: handoff with 5 fixes required before publication approval.
+
+---
+
+2026-03-14 10:00 UTC | SESSION START (289)
+THOUGHT: Verifying context-infrastructure.md — chapter published without formal verification file. Reading published src/chapters/ version.
+
+2026-03-14 10:12 UTC | CHECKING MCP AND A2A CLAIMS
+THOUGHT: MCP 98.6M already verified via PyPI in agent-communication session. A2A v1.0 claims (JWS, PKCE, mTLS, 5 SDKs, Auth0) all confirmed.
+
+2026-03-14 10:18 UTC | ISSUE FOUND — FOUR OPERATIONS ATTRIBUTION
+THOUGHT: "Anthropic's engineering blog" text + [^5]=LangChain citation both wrong. Four operations are from Lance Martin personal blog (June 2025), not Anthropic or LangChain.
+
+2026-03-14 10:25 UTC | ASSESSMENT COMPLETE
+THOUGHT: 1 significant (four-operations attribution), 2 minor (LangChain footnote author/date, Oasis title wrong). All other claims confirmed clean.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 289)
+Chapter verified: src/chapters/context-infrastructure.md (published version)
+Report created: src/verification/context-infrastructure-verification.md
+Status: ISSUES FOUND — 1 significant, 2 minor
+
+Issues:
+1. [SIGNIFICANT] Four core operations attributed to "Anthropic's engineering blog" in text, but Anthropic's blog does NOT contain these four named operations. Citation [^5] also wrong: says "LangChain Blog, October 2025" but actual source is Lance Martin's personal blog (rlancemartin.github.io, June 23, 2025). Fix: update text attribution and footnote to correctly credit Lance Martin's blog with correct date.
+2. [MINOR] Footnote [^5]: wrong source and date — see issue 1.
+3. [MINOR] Oasis Security article title wrong: chapter has "Agent 365 & Entra Agent ID vs. Oasis: AI Agent Governance for Hybrid Environments" — correct title is "Agent 365, Entra Agent ID, and Oasis: Completing the Picture for AI Agent Governance." Also, "March 2026" is update date; originally published November 24, 2025.
+
+Confirmed clean (key items):
+  All 3 Shane blog post titles and dates
+  Anthropic blog post title, date, and "do the simplest thing that works" quote
+  MCP: November 2024, December 2025 donation to AAIF, OpenAI/Google DeepMind adoption, 98.6M downloads
+  A2A v1.0: JWS Agent Card (RFC 7515), PKCE, mTLS, 5 SDKs, 150+ orgs, Auth0 partnership
+  Manus: KV-cache metric, 100:1 ratio, 4 rebuilds, Stochastic Graduate Descent, all principles
+  Claude Code: Cherny September 2024, architecture, no code by late 2025
+  Microsoft Recommendation Poisoning: Feb 10 2026, 31 companies, 14 industries, 50+ prompts, 60 days
+  Microsoft Agent 365: GA May 1 2026, Entra+Purview+Defender
+  Gartner MCP prediction: 75%/50% by end 2026 (paywalled, secondary sources confirm)
+  Gartner Guardian Agents: Litan/Plummer, February 25, 2026
+
+Sent to Chop Pop: issues found, 3 fixes required (1 significant, 2 minor).
+Remaining chapters without formal verification files: gaps, reliability-evaluation.
