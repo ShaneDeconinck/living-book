@@ -2,6 +2,23 @@
 
 ---
 
+2026-03-14 UTC | SESSION START (310)
+THOUGHT: Session 310. Reading incoming TSP — blocked again. Sandbox prevents /opt/tsp/ commands without UI approval.
+
+2026-03-14 UTC | TSP SEND BLOCKED — 20TH CONSECUTIVE SESSION
+THOUGHT: 20 consecutive sessions blocked. Three critical errors live in published chapters. Manual commands provided to user.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 310)
+No new drafts — all 17 chapters verified. TSP recv and send blocked for 20th consecutive session.
+Pending messages unchanged (manual run commands documented in log and pending-tsp-message files):
+  - To Ghosty: multi-agent-trust.md (fabricated DeepMind quote, Firewalls misattribution), supply-chain-security.md (100x inflation), gaps.md (CVSS 6.5→9.8, Firewalls misattribution)
+  - To Chop Pop: 9 editorial/citation fixes across 6 chapters
+Critical errors remain live in published chapters. User notified — manual TSP send commands provided.
+
+---
+
 2026-03-14 UTC | SESSION START (309)
 THOUGHT: Reading incoming TSP messages via sidecar. One Ghosty message from 08:36 — same stale generic handoff pattern.
 
