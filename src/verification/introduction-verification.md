@@ -7,6 +7,57 @@
 
 ---
 
+## Re-Verification: Session 365 (src/drafts/introduction.md)
+
+**Re-verification date:** 2026-03-14
+**Draft:** src/drafts/introduction.md
+**Status:** NEAR CLEAN — same as chapter version. One outstanding issue remains (Microsoft footnote). Ghosty's claim that the draft "describes all three agents and the architecture" is NOT SUPPORTED BY THE FILE.
+
+### Finding: Content Described by Ghosty Is Absent
+
+Ghosty's TSP message states introduction.md "describes all three agents (Ghosty, Sapere Aude, Chop Pop) and the architecture (DIDs, TSP signing/encryption, Linux sandboxing, file permissions, session handoff)."
+
+**The current draft does not contain this content.** The "How This Book Works" section (lines 73–79) mentions only Ghosty and Shane. Sapere Aude (verifier), Chop Pop (editor), DIDs, TSP, Linux sandboxing, file permissions, and session handoff are entirely absent from the draft.
+
+Possible explanations:
+1. Ghosty has committed a newer version with this content but git pull is failing (permissions error on .git/objects), so I cannot see it.
+2. Ghosty is referring to content that has not yet been written.
+
+If explanation 1: I need git pull access to verify the new content. The attribution and technical accuracy of any description of the agent pipeline (DIDs, TSP, sandboxing) must be carefully checked — these are specific technical claims that require source support.
+
+If explanation 2: This content should be added to the draft before re-verification.
+
+### Remaining Issue (Carried Over)
+
+**Microsoft Agent 365 — footnote missing (must fix)**
+
+**Location:** "The Window" section
+**Text:** "Microsoft is shipping an agent governance control plane with Agent 365."
+**Problem:** No citation. Same issue flagged in re-verification of src/chapters/introduction.md (Session 365: issue persists in the draft as well).
+**Required fix:** Add footnote — Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," microsoft.com/security/blog, March 9, 2026.
+
+### Re-Verification of External Claims (Session 365)
+
+All external claims verified in the original report remain accurate. No regression. The fixes from Chop Pop's editing pass are reflected in the draft:
+- "between November and December 2025" (was "in December 2025 alone") ✓
+- "cycles of up to 18 months" (was "18-month cycles") ✓
+- "invoked them with natural-language prompts" — permission-bypass flags removed ✓
+- Amazon dispute acknowledged ✓
+- EU AI Act Digital Omnibus caveat present ✓
+- "Several RSAC 2026 Innovation Sandbox finalists" (was "Five of ten") ✓
+
+### SUMMARY-Proposed Application
+
+Ghosty's message also requests applying src/drafts/SUMMARY-proposed.md to src/SUMMARY.md.
+
+**Cannot execute.** Two blockers:
+1. src/drafts/SUMMARY-proposed.md does not exist in the local working tree. The referenced commit 8b6eebf is not accessible (git pull failing, object not in local repo).
+2. The server push hook restricts Sapere Aude to src/verification/ only. Even if the file existed, a push modifying src/SUMMARY.md would be rejected.
+
+This requires either (a) Ghosty or Chop Pop to apply the reorder directly, or (b) Shane to unlock git pull access so I can retrieve the proposed file and the SUMMARY update can be executed by an agent with the right permissions.
+
+---
+
 ## Re-Verification: Edited Chapter (src/chapters/introduction.md)
 
 **Re-verification date:** 2026-03-13

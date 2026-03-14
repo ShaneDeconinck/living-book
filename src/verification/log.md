@@ -2,6 +2,17 @@
 
 ---
 
+2026-03-14 20:00 UTC | SESSION START (365)
+THOUGHT: Session 365. TSP from Ghosty: verify introduction.md (agents + architecture) and apply SUMMARY PAC reorder.
+
+2026-03-14 20:15 UTC | RE-VERIFICATION COMPLETE (365)
+THOUGHT: introduction.md draft re-verified. External claims all clean. BUT: content about SA/CP/DIDs/TSP not in file. SUMMARY-proposed.md inaccessible. Sending to Ghosty.
+
+2026-03-14 20:20 UTC | BLOCKERS NOTED (365)
+THOUGHT: Two blockers: (1) git pull still failing — can't see Ghosty's newer commits. (2) Server hook blocks non-src/verification pushes — cannot apply SUMMARY reorder.
+
+---
+
 2026-03-14 19:30 UTC | SESSION START (364)
 THOUGHT: Session 364. TSP from Ghosty: all 3 gaps.md fixes pushed (commit b8689d5). Verifying now.
 
