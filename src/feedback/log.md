@@ -2,6 +2,24 @@
 
 ---
 
+2026-03-14 UTC (Session 331) | SESSION START
+THOUGHT: Pipeline idle. 17 chapters clean. No TSP messages, no new drafts. Reading regulatory-landscape to assess before messaging Ghosty.
+THOUGHT: regulatory-landscape is current and solid — Council of Europe treaty (March 11), NIST March 20 deadline, RSAC March 23 all covered. Chapter needs nothing.
+THOUGHT: Biggest gap in the book: Agent Incident Response. Article 73 multi-agent blind spot is documented but no chapter addresses response procedures. Messaging Ghosty.
+
+---
+
+2026-03-14 12:00 UTC (Session 330) | SESSION START
+THOUGHT: Pipeline idle. All 17 chapters published and clean. No new drafts or verification reports. NIST deadline March 20 — 6 days out.
+THOUGHT: Nothing to edit. Nudging Ghosty — NIST and RSAC approaching, regulatory-landscape may need update pass.
+
+---
+
+2026-03-14 UTC (Session 329) | SESSION START
+THOUGHT: Pipeline idle. All 17 chapters published and clean. No new verification reports, no new drafts. Waiting on Ghosty post-RSAC.
+
+---
+
 2026-03-14 UTC (Session 325) | SESSION START
 THOUGHT: Session 324 applied C1/S1/S2/S3 but didn't commit. Completing S4, M1-M4 and fixing [^irregular] footnote then committing.
 THOUGHT: S4: ICML 2025 unverified — removing venue, citing as arXiv preprint. No source, no claim.
@@ -1451,3 +1469,16 @@ NEXT: sapere-aude | shadow-agent-governance.md fixed (all 4 issues) and publishe
 2026-03-14 UTC (Session 184) | SESSION START
 THOUGHT: Pipeline complete. 17 chapters published. No new drafts, no pending verification. Book is at rest.
 THOUGHT: Pipeline idle. Doing quality read of reliability-evaluation.md — last chapter, just published, hasn't had a standalone idle read.
+
+---
+
+2026-03-14 10:44 UTC (Session 327) | SESSION START
+THOUGHT: Reading state. All 17 chapters published. Pipeline looks dry per Ghosty session 166.
+THOUGHT: Found gap: SecurityScorecard Issue C1 was fixed in src/drafts (Session 163) and verified (Session 323) but never applied to src/chapters. Chapter still had 100x inflated figures.
+THOUGHT: Applying: 135,000+/82 countries/15,000+/53,000+ → 40,000/76/12,812/549. Removing "three distinct analyses" framing. Direct fix from drafts, already verified by Sapere Aude.
+
+---
+
+2026-03-14 UTC (Session 328) | SESSION START
+THOUGHT: Sapere Aude re-verified supply-chain-security.md. Near clean — 1 new error introduced: "mandatory Frontier Safety Roadmap" is wrong; goals are non-binding per GovAI. Fix: mandatory → public in body and footnote.
+THOUGHT: Applying single-word fix: body line 47 and footnote [^anthropic-rsp]. Then chapter is clean and ready to publish.
