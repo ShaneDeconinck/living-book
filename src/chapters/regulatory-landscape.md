@@ -2,7 +2,7 @@
 
 Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. The White House released a national cybersecurity strategy naming agentic AI as a strategic priority in March 2026. Singapore launched the world's first agentic AI governance framework in January 2026. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
 
-The thesis: organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
+Organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
 
 ## The EU AI Act: Risk That Won't Sit Still
 
@@ -39,7 +39,7 @@ One wrinkle worth noting: open-weight models that cross the systemic risk thresh
 
 Low-code platforms create a governance blind spot. When employees build agents on Power Platform or Copilot Studio, the company is still the deployer. An employee builds an HR screening agent without a compliance assessment, and the company is non-compliant without knowing the system exists.
 
-This is why Article 4 (AI literacy) matters. It requires organizations to ensure adequate AI literacy among staff and contractors operating AI systems. This provision took effect in February 2025: it is already enforceable.[^article4] Staff need to understand what makes something high-risk, because the company is liable regardless of who built the system.
+Article 4 (AI literacy) requires organizations to ensure adequate AI literacy among staff and contractors operating AI systems. This provision took effect in February 2025: it is already enforceable.[^article4] Staff need to understand what makes something high-risk, because the company is liable regardless of who built the system.
 
 As Shane puts it: just like shadow IT before it, shadow agents will be one of the harder governance challenges to solve.[^shaneeuai] The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers the practical path: discovery, registration, the amnesty model, and infrastructure enforcement.
 
@@ -61,7 +61,7 @@ Penalties are tiered by violation severity. Prohibited AI practices (Article 5):
 
 Article 73's incident reporting guidelines, which become binding in August 2026, have a structural blind spot: they assume single-agent, single-occurrence failures.[^article73gap] When an incident results from the interaction of multiple AI systems, the current framework provides no mechanism to attribute accountability across the chain.
 
-This matters for three reasons. First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. Research on LLM-based multi-agent systems confirms the pattern: faulty or compromised agents degrade downstream decision-making across the chain, with performance drops of up to 23.7% depending on system structure.[^cascading-mas] The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence in detail. Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
+Multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Cascading failures compound across agent chains: faulty or compromised agents degrade downstream decision-making, with performance drops of up to 23.7% depending on system structure.[^cascading-mas] The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence in detail. And the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
@@ -69,7 +69,7 @@ None of these are abstract requirements. They map directly to infrastructure you
 
 ### The Commission's February 2026 Guidelines
 
-The Commission was required to publish, by February 2, 2026, guidelines specifying practical implementation of Article 6 alongside a comprehensive list of practical examples of use cases that are and are not high-risk.[^commissionguidelines] These guidelines are significant for agent builders because they operationalize the classification rules, but they were written with traditional AI in mind. The multi-purpose problem, where an agent's use case is not fixed at deployment, remains an open interpretation challenge.
+The Commission was required to publish, by February 2, 2026, guidelines specifying practical implementation of Article 6 alongside a comprehensive list of practical examples of use cases that are and are not high-risk.[^commissionguidelines] The guidelines operationalize the classification rules, but they were written with traditional AI in mind. The multi-purpose problem, where an agent's use case is not fixed at deployment, remains an open interpretation challenge.
 
 As of March 2026, nineteen months after the AI Act entered force, the European AI Office has published no guidance specifically addressing AI agents, autonomous tool use, or runtime behavior.[^futuresociety] The Act applies to agents, but the operational details of how to classify, monitor, and report on autonomous agent behavior remain unspecified.
 
@@ -83,7 +83,7 @@ While the EU focuses on risk classification and compliance obligations, NIST is 
 
 The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision? Existing identity frameworks must evolve to address this shift, because systems that autonomously access tools, query databases, and execute operations on behalf of users require clear mechanisms for identification, authentication, and authorization.
 
-Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. This pragmatic approach validates the thesis from the [Agent Identity and Delegation](agent-identity.md) chapter: the building blocks exist. The assembly is what is missing.
+Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. The building blocks exist. The [Agent Identity and Delegation](agent-identity.md) chapter covers the assembly.
 
 The public comment period closes April 2, 2026. For organizations shaping their agent infrastructure, this is the window for input.[^nistcomment]
 
@@ -156,7 +156,7 @@ Compliance is voluntary, but organizations remain legally accountable for their 
 
 Risk bounding is Potential: assess blast radius, reliability, and autonomy level before deploying. Human accountability is Accountability: delegation chains, audit trails, clear ownership. Technical controls are Control: infrastructure as gate, policy enforced through architecture not just documentation. End-user responsibility connects to PAC's shadow agent problem: when employees deploy agents without governance review, accountability breaks down.
 
-What makes Singapore's framework notable is not just that it was first, but that it starts from the right premise: agents are different from traditional AI systems. The EU AI Act's risk classification was designed for fixed-purpose systems. Singapore's framework assumes agents are autonomous, multi-step, and capable of reaching use cases not anticipated at deployment. That is the classification problem the EU is still working through in implementation guidelines.
+Singapore's framework starts from the right premise: agents are different from traditional AI systems. The EU AI Act's risk classification was designed for fixed-purpose systems. Singapore's framework assumes agents are autonomous, multi-step, and capable of reaching use cases not anticipated at deployment. That is the classification problem the EU is still working through in implementation guidelines.
 
 ## The Council of Europe Framework Convention: First Binding International Treaty
 
