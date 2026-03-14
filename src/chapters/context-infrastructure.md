@@ -54,7 +54,7 @@ Claude Code uses no vector databases, no embeddings. Just raw files and search. 
 
 This is context infrastructure in action: simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
 
-Anthropic's engineering blog expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^3]
+Anthropic's engineering blog expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^5]
 
 ### Manus: KV-Cache as North Star
 
@@ -132,7 +132,7 @@ Access scoped to the delegating user's authority. This connects directly to the 
 
 For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
-The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner calls agent gateways the "missing layer" for secure AI integration, predicting that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026.[^10]
+The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10]
 
 But agent gateways introduce new questions. How do they interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
 
@@ -212,8 +212,8 @@ The organizations that invest in context infrastructure now will not just be rea
 [^7]: Model Context Protocol, "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^8]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," 2026.
 [^9]: PIC Protocol, github.com/pic-protocol/pic-spec.
-[^10]: Gartner, "How MCP and the A2A Protocols Impact API Management," gartner.com, 2026. Predicts 75% of API gateway vendors and 50% of iPaaS vendors will have MCP features by end of 2026.
-[^rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. 50 unique prompts from 31 companies across 14 industries identified over 60 days.
+[^10]: Gartner, "Innovation Insight: MCP Gateways," gartner.com, 2026. Predicts 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by end of 2026. The "missing layer" framing appears in this Innovation Insight, not in the API Management research note.
+[^rec-poison]: Microsoft Security Blog, "Manipulating AI memory for profit: The rise of AI Recommendation Poisoning," microsoft.com, February 10, 2026. over 50 unique prompts from 31 companies across 14 industries identified over 60 days.
 
 [^11]: Shane Deconinck, "Fitting Agentic AI Components in a Mental Model," January 6, 2026.
 

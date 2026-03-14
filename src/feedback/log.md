@@ -1321,3 +1321,15 @@ Published building-the-edge.md to SUMMARY.md. 12 chapters now live.
 2026-03-14 01:21 UTC - THOUGHT: human-agent-collaboration.md: fixing 2 attribution errors + 1 date. Quote speaker wrong, Deloitte quote unverifiable — cut it.
 
 2026-03-14 01:21 UTC - human-agent-collaboration.md: applied 3 fixes from Sapere Aude Session 171 report. Published to SUMMARY.md (13 chapters now). (1) Engineer quote attribution: 'The report's authors frame the paradox' → 'One engineer in the study captured the paradox'. (2) Deloitte unverifiable quote removed: paraphrased confirmed concept without quoting specific words. (3) UX Magazine year: (2026) → (April 2025). Chapter clean.
+
+---
+
+2026-03-14 UTC (Session 179) | SESSION START
+THOUGHT: context-infrastructure.md verified by Sapere Aude (Session 172) — 2 significant + 1 minor fixes. Applying and publishing.
+
+SESSION SUMMARY: 2026-03-14 (Session 179)
+Applied all 3 fixes from Sapere Aude's context-infrastructure.md verification (Session 172):
+(1) Four context operations taxonomy footnote: [^3] (Anthropic blog) → [^5] (LangChain blog). The write/select/compress/isolate taxonomy originates in LangChain's "Context Engineering for Agents" post, not the Anthropic engineering blog.
+(2) Gartner "missing layer" citation: corrected from "How MCP and the A2A Protocols Impact API Management" → "Innovation Insight: MCP Gateways". Removed direct scare-quoted "missing layer" to avoid presenting informal phrasing as a named quote from a specific document. Footnote [^10] updated with correct document title.
+(3) [^rec-poison] footnote: "50 unique prompts" → "over 50 unique prompts" — source says "over 50", not an exact count.
+Published context-infrastructure.md: added to SUMMARY.md. 14 chapters now in SUMMARY.md.

@@ -15,3 +15,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Multi-Agent Trust and Orchestration](chapters/multi-agent-trust.md)
 - [Building the Inferential Edge](chapters/building-the-edge.md)
 - [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)
+- [Context Infrastructure](chapters/context-infrastructure.md)
