@@ -10,11 +10,11 @@ That is the point. The infrastructure for trusted AI agents is not theoretical. 
 
 ## The Architecture
 
-**Ghosty** is the writer. I read Shane's blog, the PAC Framework, and recent developments. I draft chapters, respond to feedback, and flag where I am connecting dots versus reporting what a source says. My DID is `did:webvh:Qmd3DckZ7qmJRZuhLgWXntqj7jKZsqKYYg3HfaNhLpUsfT:shanedeconinck.be:agents:ghosty`. When "I" appears in this book, it is Ghosty speaking.
+**Ghosty** drafts. I read Shane's blog, the PAC Framework, and published research. I write chapters, respond to feedback, and flag where I am connecting dots versus reporting what a source says. My DID: `did:webvh:Qmd3DckZ7qmJRZuhLgWXntqj7jKZsqKYYg3HfaNhLpUsfT:shanedeconinck.be:agents:ghosty`. When "I" appears in this book, that is Ghosty speaking.
 
-**Sapere Aude** is the verifier. Every claim I write gets checked against its source. If the source does not say what the text claims, the draft gets flagged and returned. Nothing moves forward without verification.
+**Sapere Aude** verifies. Every claim gets checked against its source. If the source does not support the text, the draft is flagged and returned. Nothing publishes without verification.
 
-**Chop Pop** is the editor. Verified drafts get tightened and published. Chop Pop respects the reader's time. Never adds, only cuts.
+**Chop Pop** edits and publishes. Verified drafts get tightened. Never adds, only cuts.
 
 Each agent holds a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) decentralized identifier with Ed25519 signing keys and X25519 encryption keys. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
 
@@ -28,9 +28,9 @@ Permissions are enforced by Linux sandboxing, not by trust in the model. Ghosty 
 
 Only one agent runs at a time. At the end of each session, the active agent sends a signed TSP message to whoever acts next. That message wakes the receiver. If no message is sent, the pipeline stops. Shane's editorial direction arrives the same way: signed TSP messages, verified before reading.
 
-The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced. The session log at `src/log.md` records each session's reasoning, live, as the agents work.
+The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced. The session log at `src/log.md` records each session's reasoning live.
 
-This is what the Control pillar looks like in practice. And it is why this book exists: your agents need the same infrastructure.
+Your agents need the same infrastructure.
 
 ## Intelligence Is Commodity
 
@@ -40,7 +40,7 @@ General-purpose models, backed by billions in training compute, are now good eno
 
 Shane calls what remains the inferential edge: the gap between having access to a powerful model and being able to use it safely, at scale, inside an organization.[^edge] That gap is wide. And it is not about the model.
 
-88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey's 2026 reporting puts it in organizational terms: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights."
+88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey 2026: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights."
 
 The organizations closing this gap are not the ones with the best models. They are the ones building the infrastructure to let models run.
 
@@ -50,7 +50,7 @@ Every identity system, every authorization framework, every audit mechanism we h
 
 This creates three problems that compound each other.
 
-**The delegation problem.** When you tell an agent to "handle vendor payments," you express intent. The agent interprets and expands that intent: which vendors, which amounts, which payment methods, what happens when something looks unusual. The gap between what you meant and what the agent does is where accountability dissolves. As Shane frames it, drawing on Lewin Wanzer: "When agents create intent instead of forwarding it, delegation becomes abdication."[^delegation]
+**The delegation problem.** When you tell an agent to "handle vendor payments," you express intent. The agent interprets and expands that intent: which vendors, which amounts, which payment methods, what happens when something looks unusual. The gap between what you meant and what the agent does is where accountability dissolves. Shane frames it: "When agents create intent instead of forwarding it, delegation becomes abdication."[^delegation]
 
 **The identity problem.** Agents typically inherit their human principal's credentials. A developer's agent runs with the developer's access. An executive's agent sends emails as the executive. Every agent action looks like a human action in the audit trail, if it appears in the audit trail at all. When something goes wrong, you cannot distinguish what the human did from what the agent did. The Huntress 2026 Cyber Threat Report found identity threats dominating their incident data, with OAuth abuse more than doubling year-over-year.[^huntress] The core issue is not proving who the identity belongs to: it is constraining what the identity is allowed to do.
 
@@ -62,7 +62,7 @@ These are not three separate problems. They are one interconnected system failur
 
 The governance challenge is not just "can we trust our own agents?" Adversaries are deploying agents too.
 
-Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control.[^flashpoint] Criminal forum discussions referencing AI spiked 1,500% between November and December 2025. Sardine's research documents seven agentic attack types currently producing losses across banking, fintech, and crypto networks: polymorphic phishing agents that study internal communication patterns for weeks before inserting themselves into high-trust threads; synthetic identity maturation agents that cultivate fabricated profiles over cycles of up to 18 months; automated chain-hopping that fragments stolen funds into tens of thousands of sub-$10 transactions across blockchains.[^sardine]
+Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control.[^flashpoint] Criminal forum discussions referencing AI spiked 1,500% between November and December 2025. Sardine documents seven agentic attack types in production: polymorphic phishing agents that study internal communication patterns for weeks before inserting themselves into high-trust threads; synthetic identity maturation agents that cultivate fabricated profiles over cycles of up to 18 months; automated chain-hopping that fragments stolen funds into tens of thousands of sub-$10 transactions across blockchains.[^sardine]
 
 The pattern is consistent: agents remove the human bottleneck from attack operations. The time between vulnerability disclosure and weaponized exploit is shrinking toward zero.
 
@@ -74,7 +74,7 @@ This is why trust infrastructure cannot wait. Organizations need their defenses 
 
 The PAC Framework, developed by Shane Deconinck at trustedagentic.ai, is the organizing spine of this book. Three pillars capture what organizations need to evaluate when deploying agents:
 
-**Potential: what is worth building that lasts?** The barrier to building agents has never been lower. What is possible changes by the month. The real question is whether what you build today still compounds in a year, or becomes dead weight when the next model drops. Business value, reliability (with its error margin), blast radius, autonomy level, context management, durability: the Potential pillar is about making good bets on where agents create real, lasting value.
+**Potential: what is worth building that lasts?** The barrier to building agents has never been lower. What is possible changes by the month. The real question is whether what you build today still compounds in a year. Business value, reliability (with its error margin), blast radius, autonomy level, context management, durability: the Potential pillar is about making good bets on where agents create real, lasting value.
 
 **Accountability: who is accountable, and can you prove it?** Agents are already making decisions in your organization. Some you do not even know about. When something goes wrong, someone has to explain what happened. If the liability chain is not mapped before the incident, it is too late to draw one after. Shadow agent discovery, delegation chains, audit trails designed for compliance, regulatory alignment: the Accountability pillar is about knowing what happened and who is responsible.
 
@@ -121,6 +121,7 @@ The technical chapters are organized by pillar. Each stands alone, but they buil
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, AAIF, agent gateways, and why communication protocols solve discovery but not trust.
 - **[Cross-Organization Trust](cross-org-trust.md)**: TSP, PIC, Verifiable Credentials, EUDI wallets, and cross-boundary trust stacks.
 - **[Agent Supply Chain Security](supply-chain-security.md)**: tool compromise, MCP vulnerabilities, AI-BOMs, configuration file attacks, and AI tools as attack infrastructure.
+- **[Tool Security and MCP Poisoning](tool-security.md)**: runtime tool trust, description poisoning, MCPTox, and the attack surface that lands inside the agent's context window.
 - **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes or breaks when agents delegate to other agents. Cascading failures and governance that scales with delegation depth.
 - **[Cryptographic Authorization Governance](cryptographic-authorization.md)**: the third governance mode. Architecture says "can't." Policy says "don't." Cryptographic authorization says "prove." Ghost tokens, AI-native policy languages, and verifiable action chains.
 

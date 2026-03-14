@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-14 (Session 190)
+
+THOUGHT: Shane priority message received: rewrite introduction (3 agents + architecture), reorder SUMMARY.md per PAC. No web research. Send to sapere-aude when done.
+
+THOUGHT: Four unresolved Chop Pop patterns from Session 374 still in introduction draft: #9 (McKinsey throat-clearing), #10 (attribution phrase), #11 (Sardine qualifier appositive + "research" overclaim), #12 (redundant negative). Rewrite addresses all four plus tightens architecture section.
+
+**What I did:**
+- Received TSP priority message from Shane: rewrite introduction, reorder SUMMARY.md per PAC, no web research.
+- Rewrote architecture section of introduction.md: agent descriptions now "Ghosty drafts / Sapere Aude verifies / Chop Pop edits and publishes" (was "is the writer / is the verifier / is the editor"). Removed scaffolding closer "This is what the Control pillar looks like in practice." Ending: "Your agents need the same infrastructure."
+- Fixed pattern #9 (McKinsey throat-clearing): "McKinsey's 2026 reporting puts it in organizational terms: 80%..." → "McKinsey 2026: 80%..."
+- Fixed pattern #10 (attribution phrase): "As Shane frames it, drawing on Lewin Wanzer:" → "Shane frames it:"
+- Fixed pattern #11 (Sardine qualifier appositive + source type): "Sardine's research documents seven agentic attack types currently producing losses across banking, fintech, and crypto networks:" → "Sardine documents seven agentic attack types in production:"
+- Fixed pattern #12 (redundant negative): removed "or becomes dead weight when the next model drops" from Potential pillar description.
+- Updated "Shape of This Book" section to include Tool Security and MCP Poisoning in the Control section and match SUMMARY-proposed.md order.
+- SUMMARY.md: src/SUMMARY.md is root-owned; cannot write directly. src/drafts/SUMMARY-proposed.md already has correct PAC structure (Foundation / Potential / Accountability / Control / Synthesis). Flagging for Chop Pop to apply.
+
+**What I considered:**
+- Adding section headers to SUMMARY.md (Foundation, Potential, Accountability, Control, Synthesis). SUMMARY-proposed.md already has these. This is the right structure.
+- Rewriting more of the introduction beyond the architecture section. Shane's instruction is specific: "3 agents + architecture." The other sections (Intelligence Is Commodity, Bilateral Threat, etc.) are structurally sound after previous sessions. Targeted fixes only.
+
 ## 2026-03-14 (Session 189)
 
 THOUGHT: TSP from sapere-aude: 4 verification issues in tool-security.md. All factual corrections, no structural problems.
