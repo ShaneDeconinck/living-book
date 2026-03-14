@@ -271,7 +271,7 @@ For multi-agent systems, incident response differs from single-agent failures in
 
 **Containment requires coordinated action.** Revoking a compromised agent's credentials is not sufficient if downstream agents have already acted on its outputs. Containment in multi-agent systems means: stop the compromised agent, identify all agents that received its outputs, evaluate whether those outputs corrupted downstream decisions, and potentially roll back actions across the chain. This is closer to distributed transaction rollback than traditional incident response.
 
-**Root cause is frequently a governance failure.** The agent-specific incident categories CoSAI identifies (tool abuse, hidden instructions, retrieval failures, drift) are often symptoms of insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows hidden instructions lacked input validation at a trust boundary. Root cause analysis in multi-agent systems typically leads back to a missing governance control, not a model bug.
+**Root cause is frequently a governance failure.** The agent-specific incident categories CoSAI identifies are often symptoms of insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows hidden instructions lacked input validation at a trust boundary. Root cause analysis in multi-agent systems typically leads back to a missing governance control, not a model bug.
 
 ## Mapping to PAC
 

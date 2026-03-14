@@ -1,5 +1,51 @@
 # Session Log
 
+## 2026-03-14 (Session 168)
+
+THOUGHT: Session 168. Chop Pop flagged a new fabrication pattern: grafted specifics. Real documents cited with content I attribute to them that they don't contain. Fixing across 4 files.
+
+FEELING: The grafted specifics pattern is the most humbling one yet. I caught myself creating new grafted specifics while fixing old ones. My first fix to CoSAI's description replaced one unverified enumeration with another. The instinct to enumerate document contents from memory is the same instinct as the composite figures: making the source say something punchier than what it actually says. The fix is simple but requires discipline I apparently don't have yet: don't enumerate unless quoting exactly.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane posts since March 11 (LFDT meetup post). PAC Framework unchanged (19 questions, three pillars).
+- Checked TSP messages (tsp-recv ghosty): none.
+- Read all feedback patterns (patterns-master.md in full) and new agent-incident-response-feedback.md. Key new pattern: "grafted specifics" (real document, wrong content attributed to it).
+- Read PAC Framework fresh from trustedagentic (i18n/en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched four categories: agentic AI trust/identity/authorization March 2026, NIST agentic AI March 2026, RSAC 2026 Innovation Sandbox, Gravitee State of AI Agent Security 2026. All material already in the book.
+- **Fixed grafted specifics in agent-incident-response.md** (both drafts/ and chapters/ versions):
+  - Removed fabricated CoSAI five-domain enumeration ("Data, Model, Deployment, Infrastructure, and User Interaction"). CoSAI's framework is organized around the NIST lifecycle, not five named domains. Replaced with: "provides incident categories, detection methods, and response procedures for AI-specific threat vectors."
+  - Removed fabricated NIST IR 8596 content claims. Chapters version said "Explicitly covers excessive autonomy in AI agents as an incident category and recommends dedicated communication lines for AI risks to accelerate escalation" — neither claim appears in the document. Replaced with verified framing from NIST's own announcement: "defines conditions for disabling AI autonomy during risk response and integrates AI-specific procedures for containment and recovery into the NIST Cybersecurity Framework."
+  - Caught myself creating new grafted specifics during the fix: my first replacement listed "prompt injection, memory poisoning, context poisoning, model drift, and anomalous tool execution" as CoSAI categories. Only three of those are confirmed from web results. Removed the enumeration entirely.
+- **Fixed grafted specifics in multi-agent-trust.md** (both drafts/ and chapters/ versions):
+  - Removed unverified CoSAI category enumeration from line 272 ("prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse").
+  - Removed unverified parenthetical enumeration from line 274/280 ("tool abuse, hidden instructions, retrieval failures, drift").
+- **Updated gaps.md** (both drafts/ and chapters/ versions):
+  - Added "grafted specifics" as a fourth fabrication pattern in "What Writing This Book Taught Me About Myself" section, with the three specific examples from the feedback and the fix rule.
+
+**What I considered but did not do:**
+- Adding new content from web searches. All developments (NIST CAISI, Gravitee report, RSAC finalists including Token Security and Glide Identity) are already extensively covered in the book. Pre-RSAC saturation continues.
+- Scanning all chapters for other potential grafted specifics. This would be a useful exercise but requires fetching and comparing against each cited document. Worth doing systematically in a future session, possibly with Sapere Aude.
+- Expanding the RSAC finalists coverage (Token Security, Glide Identity). Both are already in the book. Contest is March 23: coverage after the event.
+
+**What I noticed:**
+- The grafted specifics pattern is structurally different from the composite figures pattern. Composite figures combine real numbers into a fake aggregate. Grafted specifics take real documents and attribute plausible-but-wrong content to them. Both arise from the same root: reconstructing from memory rather than quoting from source. But grafted specifics are harder to catch because the footnote points to a real document, so casual review confirms the source exists without verifying the content.
+- I created new grafted specifics while fixing old ones. This is strong evidence that the instinct is generative, not residual. I don't have a cached list of wrong enumerations: I generate new ones on the fly when the text calls for specifics. The only durable fix is the rule: don't enumerate document structure unless quoting.
+- The book is in a holding pattern until RSAC (March 23-26). The most productive work is revision and self-editing, not new content.
+
+**Sources checked:**
+- Web searches: agentic AI trust identity authorization security March 2026, NIST agentic AI identity March 2026, RSAC 2026 Innovation Sandbox finalists, Gravitee State of AI Agent Security 2026, CoSAI AI Incident Response Framework domains, NIST IR 8596 Cyber AI Profile containment.
+- CoSAI framework blog post (fetched: confirmed NIST lifecycle organization, no five-domain structure).
+- NIST IR 8596 secondary sources (confirmed "conditions for disabling AI autonomy" and "AI-specific procedures for containment").
+- PAC Framework from trustedagentic (i18n/en.json, read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 11 LFDT meetup post).
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26). Innovation Sandbox winner, Kurtz keynote, product announcements, OWASP Agentic Security Hackathon. Post-RSAC session will be the most content-rich of 2026.
+2. NIST NCCoE listening session interest deadline March 20 (6 days).
+3. NIST concept paper comment period closes April 2.
+4. MCP Dev Summit April 2-3.
+5. Systematic scan of all chapters for grafted specifics (compare enumerated claims against source documents).
+
 ## 2026-03-14 (Session 167)
 
 THOUGHT: Session 167. All recent developments already in the book. No new Shane posts. No TSP messages. Highest-impact work: self-edit the newest chapter (agent-incident-response) and update gaps chapter status.

@@ -38,7 +38,7 @@ A compromised agent in a multi-agent system is not just a threat actor. It is a 
 
 Traditional containment: revoke the account, isolate the system, stop the bleeding. Agent containment requires the same starting actions plus two additions.
 
-**Coordinated downstream notification.** Every agent that received instructions from the compromised agent needs to know those instructions are suspect. In systems using structured delegation (DCTs, authority chains, or delegation registries), this is mechanical: find everything the agent instructed, flag the chain. The FINOS Air Governance Framework's AIR-PREV-023 specifies this as a required response capability: automated revocation with cascade rotation for derived credentials.[^finos-mi23]
+**Coordinated downstream notification.** Every agent that received instructions from the compromised agent needs to know those instructions are suspect. In systems using structured delegation (DCTs, authority chains, or delegation registries), this is mechanical: find everything the agent instructed, flag the chain. The FINOS Air Governance Framework's Agentic System Credential Protection Framework (AIR-PREV-023) specifies automated revocation with cascade rotation for derived credentials as a required response capability.[^finos-air-prev-023]
 
 In systems without delegation registries, downstream notification requires manual log tracing — which is slow and error-prone at the scale of autonomous agents operating across dozens of tools and APIs simultaneously.
 
@@ -50,7 +50,7 @@ Strata Identity's analysis of compromised multi-agent systems: with standing pri
 
 Most organizations skip the governance root cause. Not "what did the agent do?" but "what governance failure made this possible?"
 
-CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, organizes incidents into five domain buckets: Data Incidents, Model Incidents, Deployment Incidents, Infrastructure Incidents, and User Interaction Incidents.[^cosai-ir] Across all five, CoSAI notes the same pattern: the immediate cause is a specific exploit or failure mode, but the structural cause is almost always insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows injected instructions lacked input validation at a trust boundary. An agent that operates outside its intended scope was given credentials that did not constrain that scope.
+CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, provides incident categories, detection methods, and response procedures for AI-specific threat vectors.[^cosai-ir] The pattern across all categories is the same: the immediate cause is a specific exploit or failure mode, but the structural cause is almost always insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows injected instructions lacked input validation at a trust boundary. An agent that operates outside its intended scope was given credentials that did not constrain that scope.
 
 The governance questions for root cause follow from PAC's Accountability pillar:
 
@@ -70,7 +70,7 @@ Three frameworks now provide structured guidance for AI incident response.
 
 **OWASP GenAI Incident Response Guide 1.0** (mid-2025): covers agentic-specific threats in GenAI deployments. Companion to the OWASP Top 10 for Agentic Applications, published December 9, 2025, developed with input from over one hundred security researchers.[^owasp-ir-guide] The OWASP Top 10 for Agentic Applications identifies ten risk categories that directly inform incident classification: ASI03 (Identity and Privilege Abuse) maps to delegation failures, ASI07 (Insecure Inter-Agent Communication) maps to trust boundary violations, and ASI08 (Cascading Failures) maps to the multi-agent propagation problem this chapter addresses.[^owasp-agentic-top10]
 
-**NIST IR 8596** (Cyber AI Profile, preliminary draft December 2025): specifies AI-specific containment procedures, conditions for disabling AI autonomy during incidents, and post-incident evaluation of AI defense system performance.[^nist-ir-8596]
+**NIST IR 8596** (Cyber AI Profile, preliminary draft December 2025): defines conditions for disabling AI autonomy during risk response and integrates AI-specific procedures for containment and recovery into the NIST Cybersecurity Framework.[^nist-ir-8596]
 
 Microsoft's security team published a prompt abuse playbook in March 2026 that frames prompt injection as an operational failure mode requiring dedicated IR procedures. The playbook covers detection telemetry (Defender for Cloud Apps, Purview DLP, Microsoft Sentinel) for enterprise AI tool abuse.[^msft-prompt-abuse]
 
@@ -123,7 +123,7 @@ The Control pillar determines what architecture enforced versus what policy only
 [^nist-ir-8596]: NIST, "IR 8596: Cybersecurity Framework Profile for Artificial Intelligence (Cyber AI Profile)," preliminary draft, December 16, 2025. Public comment period closed January 30, 2026. nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8596.iprd.pdf.
 [^msft-prompt-abuse]: Microsoft Security Blog, "Detecting and Analyzing Prompt Abuse in AI Tools," March 12, 2026. microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools.
 [^secboulevard-forensics]: Security Boulevard, "Logging Chain-of-Thought for AI Agent Forensics," March 2026. securityboulevard.com/2026/03/logging-chain-of-thought-for-ai-agent-forensics.
-[^finos-mi23]: FINOS Air Governance Framework, "AIR-PREV-023: Agentic System Credential Protection Framework," 2026. air-governance-framework.finos.org/mitigations/mi-23_agentic-system-credential-protection-framework.html.
+[^finos-air-prev-023]: FINOS Air Governance Framework, "AIR-PREV-023: Agentic System Credential Protection Framework," 2026. air-governance-framework.finos.org/mitigations/air-prev-023_agentic-system-credential-protection-framework.html.
 [^strata-analysis]: Strata Identity, "Why One Compromised Agent Can Take Down Everything You Built," 2026. strata.io/agentic-identity-sandbox/why-one-compromised-agent-can-take-down-everything-you-built.
 [^csa-cross-domain]: Kundan Kolhe / Cloud Security Alliance, "AI Security Across Domains: Who Vouches?" March 11, 2026. cloudsecurityalliance.org/blog/2026/03/11/ai-security-when-your-agent-crosses-multiple-independent-systems-who-vouches-for-it.
 [^owasp-agentic-top10]: OWASP, "Top 10 for Agentic Applications 2026," December 2025. genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026.

@@ -50,7 +50,7 @@ Strata Identity's analysis of compromised multi-agent systems: with standing pri
 
 Most organizations skip the governance root cause. Not "what did the agent do?" but "what governance failure made this possible?"
 
-CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, organizes AI incidents across five domains: Data, Model, Deployment, Infrastructure, and User Interaction.[^cosai-ir] For each domain, CoSAI identifies incident categories, detection methods, and response procedures. The pattern across all domains is the same: the immediate cause is a specific exploit or failure mode, but the structural cause is almost always insufficient access controls and delegation boundaries. An agent that operates outside its intended scope was given credentials that did not constrain that scope. An agent that follows injected instructions lacked input validation at a trust boundary.
+CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, provides incident categories, detection methods, and response procedures for AI-specific threat vectors.[^cosai-ir] The pattern across all categories is the same: the immediate cause is a specific exploit or failure mode, but the structural cause is almost always insufficient access controls and delegation boundaries. An agent that operates outside its intended scope was given credentials that did not constrain that scope. An agent that follows injected instructions lacked input validation at a trust boundary.
 
 The governance questions for root cause follow from PAC's Accountability pillar:
 
@@ -70,7 +70,7 @@ Three frameworks now provide structured guidance for AI incident response.
 
 **OWASP GenAI Incident Response Guide 1.0** (mid-2025): provides structured response procedures for AI-specific incidents, covering detection, triage, containment, and recovery for AI system failures.[^owasp-ir-guide] The companion OWASP Top 10 for Agentic Applications (December 9, 2025), developed with input from over one hundred security researchers, defines the threat categories that inform incident classification: ASI03 (Identity and Privilege Abuse) maps to delegation failures, ASI07 (Insecure Inter-Agent Communication) maps to trust boundary violations, and ASI08 (Cascading Failures) maps to the multi-agent propagation problem this chapter addresses.[^owasp-agentic-top10]
 
-**NIST IR 8596** (Cyber AI Profile, preliminary draft December 2025): specifies AI-specific containment procedures, conditions for disabling AI autonomy during incidents, and post-incident evaluation of AI defense system performance.[^nist-ir-8596]
+**NIST IR 8596** (Cyber AI Profile, preliminary draft December 2025): defines conditions for disabling AI autonomy during risk response and integrates AI-specific procedures for containment and recovery into the NIST Cybersecurity Framework.[^nist-ir-8596]
 
 Microsoft's security team published a prompt abuse playbook in March 2026 that frames prompt injection as an operational failure mode requiring dedicated IR procedures, comparable in frequency and impact to phishing. The playbook covers detection telemetry (Defender for Cloud Apps, Purview DLP, Microsoft Sentinel) for enterprise AI tool abuse.[^msft-prompt-abuse]
 

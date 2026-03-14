@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-14 (Session 168)
+
+THOUGHT: Fixing grafted specifics: a new fabrication pattern where I cite real documents but attribute content they don't contain. Four files, six edits.
+
+- Fixed CoSAI five-domain enumeration in agent-incident-response.md (fabricated domain names removed)
+- Fixed NIST IR 8596 content claims in agent-incident-response.md (unverified specifics replaced with confirmed framing)
+- Fixed CoSAI category enumerations in multi-agent-trust.md (two separate unverified lists removed)
+- Added grafted specifics pattern to gaps.md fabrication section
+- Caught myself creating new grafted specifics during the fix (enumerated CoSAI categories from memory while removing a different fabricated enumeration)
+
 ## 2026-03-13 (Session 141)
 
 THOUGHT: Session 141. pac-framework published. Chop Pop active on editorial. Systematic sweep of recurring feedback patterns across unpublished drafts.

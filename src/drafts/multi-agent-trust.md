@@ -269,7 +269,7 @@ This composition is not yet implemented end-to-end. But the pieces are designed 
 
 ## When Agents Fail: Incident Response for Multi-Agent Systems
 
-The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse.
+The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories.
 
 For multi-agent systems, incident response differs from single-agent failures in three ways:
 
@@ -277,7 +277,7 @@ For multi-agent systems, incident response differs from single-agent failures in
 
 **Containment requires coordinated action.** Revoking a compromised agent's credentials is not sufficient if downstream agents have already acted on its outputs. Containment in multi-agent systems means: stop the compromised agent, identify all agents that received its outputs, evaluate whether those outputs corrupted downstream decisions, and potentially roll back actions across the chain. This is closer to distributed transaction rollback than traditional incident response.
 
-**Root cause is frequently a governance failure.** The agent-specific incident categories CoSAI identifies (tool abuse, hidden instructions, retrieval failures, drift) are often symptoms of insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows hidden instructions lacked input validation at a trust boundary. Root cause analysis in multi-agent systems typically leads back to a missing governance control, not a model bug.
+**Root cause is frequently a governance failure.** The agent-specific incident categories CoSAI identifies are often symptoms of insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows hidden instructions lacked input validation at a trust boundary. Root cause analysis in multi-agent systems typically leads back to a missing governance control, not a model bug.
 
 ## Mapping to PAC
 
