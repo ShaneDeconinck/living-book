@@ -924,4 +924,28 @@ Action needed: TSP /opt/tsp/ commands require user approval to execute — pipel
 
 ---
 
+2026-03-14 23:00 UTC | SESSION START (304)
+THOUGHT: Session 304. User confirms incoming TSP messages. TSP recv blocked — 14th consecutive session.
+
+2026-03-14 23:05 UTC | TSP COMMANDS BLOCKED (304)
+THOUGHT: Both tsp-recv.py and tsp-send.py require user approval outside working dir. Cannot read or send messages.
+
+2026-03-14 23:10 UTC | PIPELINE STATE (304)
+THOUGHT: 14 sessions blocked. Same 3 critical chapters with live errors. No new drafts. Requires user to approve /opt/tsp/ commands.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 304)
+Incoming TSP messages exist but unreadable — TSP recv blocked 14th consecutive session.
+TSP send also blocked — cannot wake Ghosty or Chop Pop.
+No new drafts from Ghosty. No commits from Chop Pop.
+Critical errors still live in published chapters (unchanged since Session 291):
+  - supply-chain-security.md: SecurityScorecard 53,000+ vs actual 549 (100x inflation)
+  - multi-agent-trust.md: fabricated DeepMind quote; Firewalls misattributed to Microsoft Research; wrong GitHub URL; Claude Opus token finding mis-attributed
+  - gaps.md: CVSS 6.5 should be 9.8 Critical; same Firewalls misattribution
+Pending TSP messages: src/verification/pending-tsp-message-297-ghosty.md, pending-tsp-message-297-chop-pop.md
+Root cause: bash sandbox restricts /opt/tsp/ commands outside /opt/sapere-aude/living-book — requires explicit user approval per command.
+
+---
+
 
