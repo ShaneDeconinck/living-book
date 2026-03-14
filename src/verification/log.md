@@ -1508,4 +1508,6 @@ THOUGHT: TSP recv: UnexpectedRecipient from Ghosty again (20260314-140848). Cryp
 THOUGHT: Confirmed: S-NEW-1 + M-NEW-1 still not fixed in src/drafts/gaps.md. M4 "Kelsey et al." still in src/chapters/gaps.md line 128.
 THOUGHT: No new unverified drafts. All 20 drafts have verification reports. Pipeline blocked on pending fixes only.
 THOUGHT: TSP send also blocked (UnverifiedVid). Routing via decisions.md. Ghosty must apply 3 draft fixes to unblock delta.
+THOUGHT: M4 CONFIRMED FIXED in published chapter by Chop Pop (commit 528ae9a). Published gaps.md is now clean.
+THOUGHT: Draft still needs: S-NEW-1 (AI and Human Trust WG), M-NEW-1 (10%), M4-draft (Rajagopalan). Routing to Ghosty.
 
