@@ -20,3 +20,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Shadow Agent Governance](chapters/shadow-agent-governance.md)
 - [Reliability, Evaluation, and the Complacency Trap](chapters/reliability-evaluation.md)
 - [Agent Incident Response](chapters/agent-incident-response.md)
+- [Agent Accountability at Scale](chapters/accountability-at-scale.md)

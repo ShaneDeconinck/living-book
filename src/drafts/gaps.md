@@ -120,7 +120,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-18 chapters published in src/chapters/. Chapter 19 in pipeline. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+18 chapters published in src/chapters/. Chapters 19 and 20 in pipeline. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -144,6 +144,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 **In pipeline (src/drafts/):**
 19. Cryptographic Authorization Governance (Control + Accountability) — written 2026-03-14, awaiting verification
+20. Agent Accountability at Scale (Accountability + Control + Potential) — written 2026-03-14, awaiting verification
 
 ## Open Questions
 
@@ -152,7 +153,8 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 - The semantic boundary problem: identity, delegation, and authority propagation are advancing fast, but semantic interoperability (what do actions mean across organizational boundaries?) remains unsolved. Worth tracking for a future chapter.
 - Does platformization (Palo Alto/CyberArk, Microsoft Agent 365) help or hurt the open-standards trajectory? The tension between vendor lock-in and interoperable standards will define whether the trust infrastructure described in this book becomes universal or fragmented.
 - Post-RSAC 2026 (March 23-26): Innovation Sandbox winner, Kurtz keynote outcomes, OWASP Agentic Security Hackathon findings. The real test of whether market signals translate to production deployments.
-- NIST CAISI: Agent Identity concept document comment period closes April 2. Sector-specific listening sessions interest deadline March 20. These deadlines will shape the standards trajectory.
+- NIST CAISI: AI Agent Standards Initiative launched February 18, 2026. RFI on agent security closed March 9. Agent Identity concept document comment period closes April 2. Sector-specific listening sessions interest deadline March 20. These deadlines will shape the standards trajectory.
+- The IETF identity draft landscape continues to grow. draft-klrc-aiagent-auth-00 (March 2, 2026, authors from Defakto, AWS, Zscaler, Ping Identity) introduces the Agent Identity Management System (AIMS) conceptual model, consolidating how SPIFFE, WIMSE, OAuth, and OpenID SSF apply to agents. draft-goswami-agentic-jwt-00 introduces "Agentic JWT" for zero-trust drift in nondeterministic agent workflows. The density of IETF activity confirms the identity standards convergence the book tracks, but the risk of fragmentation also grows: AIMS, WIMSE, ID-JAG, AAuth, and Agentic JWT all address overlapping concerns with different architectural assumptions.
 
 [^openai-playbook]: OpenAI, "Best practices for securing agents," March 11, 2026, platform.openai.com.
 [^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Covered in The Register and Rankiteo analysis.

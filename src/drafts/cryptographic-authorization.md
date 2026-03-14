@@ -24,7 +24,7 @@ The three modes address different failure scenarios:
 
 Long-lived credentials are the opposite of cryptographic authorization. An agent that holds an admin token has authority as a side effect of possession, not as a result of verified authorization. The token proves identity, not intent.
 
-CAAM (Contextual Agent Authorization Mesh), an IETF draft, introduces the ghost token pattern to address this directly.[^caam-draft] The pattern separates credential possession from credential use.
+CAAM (Contextual Agent Authorization Mesh), an IETF draft, introduces the ghost token pattern to address this.[^caam-draft] The pattern separates credential possession from credential use.
 
 In the traditional model: agent receives token → agent holds token → agent presents token to act. The agent possesses real authority for as long as the token lives, regardless of what it intends to do with it.
 
@@ -136,9 +136,9 @@ The "prove" mode maps onto all three pillars, but differently than "can't" and "
 
 **Control** (can the right infrastructure enforce limits?): Cryptographic authorization makes enforcement verifiable. A policy that says "max $500" is enforceable. A ghost token that encodes `"amount": 247` with a signature from a trusted sidecar is verifiably enforced. The resource server does not need to consult a policy engine at runtime—the proof travels with the request.
 
-**Authorization** (is what the agent is doing aligned with what was actually approved?): This is where "prove" most directly extends the PAC Framework. Shane's framing in the trust-for-agentic-ai analysis is that traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds a third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the "who made this decision?" question with verifiable evidence.
+**Authorization** (is what the agent is doing aligned with what was actually approved?): "Prove" extends the PAC Framework where it matters most. Shane's framing in the trust-for-agentic-ai analysis: traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds a third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the "who made this decision?" question with verifiable evidence.
 
-**Potential** (what can agents safely do, and at what scale?): Organizations expand the scope of what they delegate to agents when the authorization infrastructure gives them confidence that the delegation is verifiable. A company that cannot verify after the fact that an agent's action was authorized will set conservative limits before the fact. A company that has cryptographic proof of authorization at every step can expand those limits. The PAC Potential pillar connects directly to the maturity of the authorization infrastructure.
+**Potential** (what can agents safely do, and at what scale?): Organizations expand the scope of what they delegate to agents when the authorization infrastructure gives them confidence that the delegation is verifiable. A company that cannot verify after the fact that an agent's action was authorized will set conservative limits before the fact. A company that has cryptographic proof of authorization at every step can expand those limits. The PAC Potential pillar connects to the maturity of the authorization infrastructure.
 
 The I4/I5 maturity levels in the PAC maturity framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain—identity, constraints, intent, and action—is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
 

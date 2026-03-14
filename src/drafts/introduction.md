@@ -99,6 +99,9 @@ The technical chapters apply the framework across the full landscape of agent tr
 - **Governance** ([Shadow Agent Governance](shadow-agent-governance.md)): discovery, registration, the amnesty model, and why infrastructure enforcement beats prohibition.
 - **Orchestration** ([Multi-Agent Trust](multi-agent-trust.md)): how trust composes or breaks when agents delegate to other agents. Cascading failures and governance that scales with delegation depth.
 - **Collaboration** ([Human-Agent Collaboration](human-agent-collaboration.md)): oversight that does not depend on sustained human vigilance. The autonomy dial and agent self-governance.
+- **Incident response** ([Agent Incident Response](agent-incident-response.md)): what changes when an AI agent is involved. Blast radius assessment, containment infrastructure, and why agent incidents need their own response procedures.
+- **Cryptographic authorization** ([Cryptographic Authorization Governance](cryptographic-authorization.md)): the third governance mode. Architecture says "can't." Policy says "don't." Cryptographic authorization says "prove." Ghost tokens, AI-native policy languages, and verifiable action chains.
+- **Accountability at scale** ([Agent Accountability at Scale](accountability-at-scale.md)): what changes when you operate hundreds of agents. Decision attribution across agent graphs, fleet-level monitoring, and the governance infrastructure required for fleet-scale deployment.
 
 The book closes with synthesis:
 
