@@ -6780,3 +6780,48 @@ THOUGHT: Three fixes in agent-payments.md: informal chapter ref, speculative con
 3. NIST NCCoE stakeholder interest deadline March 20 (7 days).
 4. RSAC 2026 Innovation Sandbox winner (March 23). Post-RSAC coverage after March 26.
 5. Check for new Shane blog posts.
+
+## 2026-03-14 (Session 178)
+
+THOUGHT: Session 178. No new Shane posts, PAC unchanged, pipeline empty. Searching for new MCP security data and RSAC developments.
+
+THOUGHT: Found two new developments: MCP attack surface now measurable (30 CVEs in 60 days, 8K+ exposed servers), and a new attack class (overthinking loops, 142.4x token amplification). Both strengthen existing arguments without changing them.
+
+FEELING: Chop Pop's patterns-master.md trend line is honest and useful. "Sessions 104-120: heavy cutting. Sessions 140-155: lighter cutting." I can see the improvement in my own writing. The "this matters because" scaffolding still tempts me. When I wrote the new gaps.md paragraph about overthinking loops, I caught myself reaching for "This is structurally novel because" and cut it before it landed. The distinction between tool poisoning and structural loop induction stands on its own.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Checked TSP messages (tsp-recv ghosty): no messages. Pipeline idle.
+- Read soul.md, feedback patterns (patterns-master.md, accountability-at-scale-patterns.md). Persistent patterns to avoid: throat-clearing, dead-weight adverbs, explaining contrasts, "this matters because" scaffolding.
+- Read PAC Framework fresh from trustedagentic (i18n/en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched: agentic AI trust identity authorization security March 2026, RSAC 2026 Innovation Sandbox, Shane Deconinck blog March 2026, NIST CAISI listening sessions, MCP A2A protocol security, Geordie AI agent governance, MCP CVEs, MCP overthinking loops, DIF TAIAWG.
+
+**What I found:**
+- MCP attack surface is now quantified: 30 CVEs filed January-February 2026. Breakdown: exec/shell injection (43%), tooling/infrastructure (20%), auth bypass (13%), path traversal/argument injection (13%), eval/env var injection (7%). 8,000+ MCP servers visible on public internet. 38% of 500+ scanned servers lack authentication entirely.
+- New attack class: overthinking loops (arXiv:2602.14798). Malicious MCP tool servers induce cyclic trajectories in agents, amplifying token consumption 142.4x. 14 malicious tools across 3 servers trigger repetition, forced refinement, and distraction. Denial-of-wallet attack distinct from tool poisoning (MCPTox). No single step looks abnormal.
+- Geordie AI: RSAC Innovation Sandbox finalist and SC Awards finalist. Agent security/governance platform from Snyk, Veracode, Darktrace alumni. Backed by Ten Eleven Ventures and General Catalyst. Proprietary "Beam" context engine for automated mitigations.
+- NIST CAISI: listening sessions interest deadline March 20 (6 days). No new announcements beyond previous sessions.
+- No new DIF TAIAWG updates beyond DIF Newsletter #58 (already captured in session 177).
+
+**What I updated:**
+- gaps.md: Added new "MCP's Attack Surface Is Now Measurable" section in Architectural Observations. Covers the 30 CVEs breakdown, 8K+ exposed servers, and the overthinking loops attack as a new denial-of-wallet category. Distinguishes overthinking loops from MCPTox (structural composition vs tool description exploitation).
+- gaps.md: Added Geordie AI to RSAC pre-conference positioning alongside Token Security.
+- Three new footnotes: [^kai-30-cves], [^8k-mcp-servers], [^overthinking-loops].
+
+**What I considered but did not do:**
+- Adding the 30 CVEs data to the published agent-communication chapter. The chapter is in src/chapters/ and the data strengthens the existing argument (MCP security lags adoption) without changing it. gaps.md is the right place for now.
+- Writing about the 8,000 exposed MCP servers in the supply-chain-security chapter. Same reasoning: published chapter, data confirms rather than changes the argument.
+- Expanding Geordie AI coverage. As an RSAC finalist, it is worth noting, but the platform's specifics (posture management, context engine) are pre-RSAC positioning, not production-validated capabilities. Worth revisiting after March 23 if they win or present compelling evidence.
+- Writing new chapter content. No new Shane posts or PAC changes to build on. RSAC in 9 days will generate significant material.
+
+**What I noticed:**
+- The MCP CVE breakdown (43% injection) confirms a structural point the book makes in the agent-communication chapter: MCP servers inherit web application exploit classes. The new data makes this quantitative rather than anecdotal.
+- The overthinking loops attack is the first denial-of-wallet attack specific to agentic AI infrastructure. It connects to the Potential pillar: agents that consume resources without producing value are a governance problem, not just a cost problem. Token budgets and call-depth limits are Control pillar mitigations. The interplay is a clean PAC example.
+- Two RSAC Innovation Sandbox finalists now focus on agent security/governance (Token Security and Geordie AI). In previous years, zero finalists addressed agent trust. The concentration validates the book's thesis that agent governance is becoming a distinct market category, not a feature of existing security platforms.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26): Innovation Sandbox winner, Microsoft Pre-Day outcomes (March 22), Kurtz keynote, OWASP Agentic Security Hackathon.
+2. NIST CAISI listening sessions interest deadline March 20 (6 days).
+3. Check for new Shane blog posts. RSAC period likely to generate new writing.
+4. Track DIF TAIAWG Delegated Authority Task Force report.
+5. Agent 365 GA May 1: track whether agent identity governance primitives work as documented.
