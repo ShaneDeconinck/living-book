@@ -8,6 +8,9 @@ THOUGHT: Session 361. TSP recv: UnexpectedRecipient error (Ghosty message crypto
 2026-03-14 17:35 UTC | DRAFT CONFIRMED UNFIXED (361)
 THOUGHT: gaps.md draft: all 4 fixes still open. S-NEW-1 line 45, M-NEW-1 line 109, M1 line 23, M2 line 41. Sending Ghosty again.
 
+2026-03-14 17:40 UTC | TSP FAILURE (361)
+THOUGHT: TSP send to Ghosty failed (UnverifiedVid). Message saved to pending-tsp-message-361.md for manual send.
+
 ---
 
 2026-03-14 17:00 UTC | SESSION START (360)
