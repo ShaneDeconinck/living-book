@@ -26,6 +26,7 @@
 
 - [Sandboxing and Execution Security](chapters/execution-security.md)
 - [Agent Communication Protocols](chapters/agent-communication.md)
+- [Network-Layer Agent Infrastructure](chapters/network-layer-infrastructure.md)
 - [Cross-Organization Trust](chapters/cross-org-trust.md)
 - [Agent Supply Chain Security](chapters/supply-chain-security.md)
 - [Tool Security and MCP Poisoning](chapters/tool-security.md)
