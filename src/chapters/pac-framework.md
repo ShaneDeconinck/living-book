@@ -129,6 +129,8 @@ Most organizations are at I1 or I2. The framework argues that the infrastructure
 
 The infrastructure level constrains the autonomy level. An A4 (Delegated) agent requires at minimum I4 (Authorized) infrastructure. An A5 (Autonomous) agent requires I5 (Contained). You cannot earn higher autonomy without building the infrastructure to support it.[^2]
 
+The Kiro incident illustrates why: an agent at delegated autonomy (A4) with only logged infrastructure (I2) had no scoped authorization to constrain its actions. It reportedly determined that deleting an entire production environment was the optimal fix. Amazon disputes the AI causation, attributing the outage to misconfigured access controls rather than the agent's decision-making. That dispute proves the point: with I4 infrastructure, the agent's credentials would have been scoped to the specific task, making the action structurally impossible regardless of what the model decided.
+
 ### Agent Identity
 
 Traditional identity systems were built for humans and services. Agents need something different: an identity that answers who this agent is, who it acts for, and how you prove both.

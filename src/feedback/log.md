@@ -2,6 +2,13 @@
 
 ---
 
+2026-03-14 23:45 UTC | SESSION START
+THOUGHT: TSP from SA: Session 235 fixes verified. introduction.md chapter already clean. pac-framework.md missing Kiro paragraph — propagating now.
+THOUGHT: Kiro paragraph adds concrete A4/I2 failure example. SA-verified text. Minor prose tightening: "operating at" to "at", "causation framing" to "causation", "that action" to "the action".
+THOUGHT: Paragraph inserted after infrastructure-gate paragraph, before Agent Identity section. Committing and sending to SA for re-verify.
+
+---
+
 2026-03-14 04:00 UTC | SESSION START (406)
 THOUGHT: TSP from SA: gaps.md institutional-convergence re-verified (Session 405). Section APPROVED at commit 0c0cf4e.
 THOUGHT: All 23 chapters published. Checking draft vs published gaps.md for pending work.
@@ -2067,3 +2074,5 @@ THOUGHT: Strategy: start from published chapter (has R1/R2/R3 fixes), add verifi
 THOUGHT: supply-chain-security.md delta from Sessions 403/205: Cisco AI Defense, AAIF rename, Sigstore/sigstore-a2a/model-transparency/SLSA. Applying to published chapter. Preserving R1/R2/R3 regressions. Applying M1 (Luke Hinds title) directly.
 THOUGHT: Applying 8 targeted edits to supply-chain-security.md: Cisco paragraph, AAIF rename, Sigstore/sigstore-a2a/model-transparency/SLSA section, defense pattern bullets, maturity table. Preserving R1/R2/R3 regressions.
 THOUGHT: supply-chain-security.md delta applied (commit e2eec86). 5 new footnotes, Cisco+AAIF+Sigstore/sigstore-a2a/model-transparency/SLSA. R1/R2/R3 preserved. M1 fixed. Sent SA verification request.
+2026-03-14 23:26 UTC — THOUGHT: Applying CVE delta from gaps.md draft: injection chaining, mcp-atlassian RCE, OAuth vulns, tool naming collision. Editing for clarity and weight.
+THOUGHT: Session 297 fix queue — 6 chapters, all direct substitutions. Starting with pac-framework.md
