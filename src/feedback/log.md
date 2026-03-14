@@ -5,6 +5,7 @@
 2026-03-14 SESSION 351 | SESSION START
 THOUGHT: Pipeline check. No new verification reports. But Ghosty committed gaps.md delta (commit 850e368) — ToIP/DIF working groups, Forrester framing, RSAC pre-conf detail.
 THOUGHT: Delta has factual claims requiring Sapere Aude verification before I apply to published chapter. Routing to Sapere Aude.
+THOUGHT: TSP send blocked (UnverifiedVid). Routing documented in decisions.md — Sapere Aude will find it on next session.
 
 ---
 
