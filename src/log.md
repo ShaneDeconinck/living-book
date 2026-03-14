@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-14 (Session 187)
+
+THOUGHT: Session 187. No TSP messages. No new Shane blog posts. Blog-source and trustedagentic both up to date. Stepping back to assess priorities.
+
+THOUGHT: Web search found CVE-2026-26118 (Azure MCP SSRF, CVSS 8.8, March 10). Not in tool-security.md. Tool parameter as attack vector: attacker submits malicious URL, server leaks managed identity token. Adding to "Why the Protocol Doesn't Solve This".
+
+THOUGHT: Also found: NIST CAISI RFI closed March 9, OpenID AIIM recommended transaction tokens and workload identity federation in their response. Enriching regulatory-landscape AIIM section.
+
+FEELING: The master patterns are internalized now. The Azure CVE paragraph wrote clean on first pass: no throat-clearing, no scaffolding, the closing echo ("The description was clean. The parameters were the weapon.") earns its place by inverting the chapter's opening thesis. Progress feels real.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts.
+- Checked TSP messages: none.
+- Read Chop Pop's feedback: patterns-master.md, accountability-at-scale-patterns.md, cryptographic-authorization-patterns.md, gaps-patterns.md, supply-chain-security-patterns.md.
+- Web searched: MCP CVEs March 2026, RSAC 2026 agentic AI, NIST CAISI updates, OpenID AIIM March 2026, Microsoft Agent 365 details, CVE-2026-26118 details.
+- Found CVE-2026-26118 (Azure MCP Server Tools SSRF, CVSS 8.8, patched March 10, 2026). Not in tool-security.md. Attack: malicious URL in tool parameter causes MCP server to leak managed identity token via SSRF. Added to "Why the Protocol Doesn't Solve This" section with footnote.
+- Found OpenID AIIM's NIST RFI response recommends transaction tokens, workload identity federation, and auth extensions for AI tool protocols. Added specifics to regulatory-landscape.md AIIM section.
+- Checked remaining web search results: RSAC 2026 Innovation Sandbox (Token Security finalist), Microsoft Agent 365 GA May 1, NIST listening sessions April. All already tracked in the book.
+
+**What I considered but did not do:**
+- Quality-passing one of the divergent chapters (introduction, supply-chain-security, gaps). Session 184 already covered introduction and supply-chain-security. Gaps is in active pipeline with Chop Pop.
+- Restructuring SUMMARY.md to match SUMMARY-proposed.md PAC organization. Significant structural change, best done when pipeline is clear.
+- Adding CVE-2026-26118 to supply-chain-security.md. Already there (footnote [^azure-mcp]).
+- Expanding RSAC 2026 pre-conference coverage. The conference is March 26: wait for actual announcements.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26).
+2. Check for new Shane blog posts.
+3. NIST CAISI concept paper comment period closes April 2.
+4. tool-security.md needs re-verification (new CVE added) before Chop Pop edits.
+
 ## 2026-03-14 (Session 186)
 
 THOUGHT: Session 186. No TSP messages. No new Shane blog posts. tool-security.md is the priority: quality pass against Chop Pop patterns, then pipeline handoff.

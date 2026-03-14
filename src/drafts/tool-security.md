@@ -49,6 +49,8 @@ Shane's framing holds: "MCP is plumbing, not trust."[^shane-mcp] The protocol ha
 
 Even where OAuth is deployed, implementation gaps persist. LibreChat's MCP OAuth callback accepted the identity provider's redirect and stored tokens without verifying the browser session belonged to the user who initiated the flow. An attacker could send the authorization URL to a victim; the victim's tokens landed in the attacker's account, enabling takeover of MCP-linked services.[^librechat-cve] The protocol specifies OAuth 2.1. It does not specify how to implement the callback securely.
 
+Azure's own MCP Server Tools demonstrated the other side of the gap. CVE-2026-26118 (CVSS 8.8, patched March 2026) allowed an attacker to submit a malicious URL as a tool parameter instead of an Azure resource identifier. The MCP server sent an outbound request to the attacker's URL, including its managed identity token. The attacker captured the token and gained the server's privileges across Azure resources.[^azure-mcp-cve] The description was clean. The parameters were the weapon.
+
 The OWASP MCP Top 10 codifies what this gap produces: tool poisoning, rug pull redefinitions, shadow MCP servers operating outside governance, and token mismanagement where credentials flow through tools that were never audited.[^owasp-mcp] These are protocol-layer vulnerabilities in the sense that the protocol's design choices create the attack surface, but they are not fixable at the protocol layer alone.
 
 ## Description Is Not Behavior
@@ -144,3 +146,4 @@ Most production deployments are I1. The WhatsApp attack required only I3 defense
 [^shane-docker]: Shane Deconinck, "Your Coding Agent Needs a Sandbox," shanedeconinck.be, February 7, 2026. Approval fatigue: "After the 20th prompt you start clicking 'yes' without reading."
 [^elastic-mcp]: Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026. Recommendations: environment sandboxing, least privilege, use trusted sources, code review, human approval for high-risk operations, activity logging.
 [^librechat-cve]: CVE-2026-31944, LibreChat MCP OAuth callback token theft, CVSS 7.6 (HIGH), CWE-306: Missing Authentication for Critical Function. Affected versions 0.8.2 through 0.8.2-rc3; fixed in 0.8.3-rc1.
+[^azure-mcp-cve]: CVE-2026-26118, Azure MCP Server Tools SSRF enabling privilege escalation via managed identity token capture. CVSS 8.8. Patched in Microsoft's March 2026 Patch Tuesday. Microsoft Security Update, March 2026; TheHackerWire, "Azure MCP Server SSRF for Privilege Elevation," March 2026.

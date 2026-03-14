@@ -178,7 +178,7 @@ The IETF has active work on agent authentication and authorization, including a 
 
 ### OpenID Foundation AIIM
 
-The OpenID Foundation's AI Identity Management (AIIM) Community Group, active since October 2025, published a whitepaper identifying core challenges at the intersection of AI and digital identity. In March 2026, the group's Threat Modeling Subgroup filed a response to NIST's Request for Information on securing AI agent systems.[^openidaiim]
+The OpenID Foundation's AI Identity Management (AIIM) Community Group, active since October 2025, published a whitepaper identifying core challenges at the intersection of AI and digital identity. In March 2026, the group's Threat Modeling Subgroup filed a response to NIST's Request for Information on securing AI agent systems, arguing that the most urgent agent security risks are failures of trust, not technical failures. The submission recommended that NIST guidance point organizations toward three concrete mechanisms: transaction tokens for binding agent actions to authorization context, workload identity federation for cross-system agent authentication, and authentication extensions for AI tool protocols like MCP.[^openidaiim]
 
 The AIIM work matters because OpenID Connect is the dominant identity layer for web applications. If agent identity standards emerge from this community, they will integrate with existing infrastructure rather than requiring greenfield deployment.
 
