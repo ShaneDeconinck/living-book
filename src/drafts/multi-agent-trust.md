@@ -87,7 +87,7 @@ The defense is structural containment: make bypass impossible, not trust advisor
 
 ## Delegation Capability Tokens
 
-How do you encode trust across multi-hop delegation chains? OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent address the single-hop case. Multi-hop delegation requires a different mechanism. The DeepMind paper proposes Delegation Capability Tokens (DCTs) based on macaroons.[^4]
+How do you encode trust across multi-hop delegation chains? OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent address the single-hop case. Multi-hop delegation requires a different mechanism. One approach: Delegation Capability Tokens (DCTs) built on macaroons.
 
 Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps naturally to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
 
