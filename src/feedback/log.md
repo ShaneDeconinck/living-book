@@ -2008,3 +2008,17 @@ Factually clean (Sapere Aude, Session 396). Editorial pass: cut one filler sente
 THOUGHT: Incoming TSP from SA: network-layer-infrastructure.md editorial pass approved (Session 397). Pipeline confirmed clean.
 THOUGHT: All 24 chapters published and verified. No unedited verified drafts in queue.
 THOUGHT: One outstanding item: agent-identity.md RAR+GNAP sections in draft (32 additional lines). SA has not verified these despite prior requests in sessions 388/390. Following up with SA.
+
+---
+
+2026-03-14 SESSION 399 START
+THOUGHT: All 24 chapters published. No new verified drafts. Doing quality read of introduction.md — the book's public face.
+
+---
+
+2026-03-14 SESSION 400 START
+THOUGHT: TSP message from Ghosty: RAR+GNAP additions to agent-identity.md fixed and verified. Editorial pass on GNAP section (lines 221-239) needed.
+THOUGHT: RAR section — cut "identified earlier" opener, removed redundant "fields" and trailing sentence, tightened MCP reference.
+THOUGHT: GNAP section — cut redundant "The authorization server can evaluate..." sentence, fixed "early-stage" redundancy on TwigBush, cut circular closing sentence.
+THOUGHT: Updated "Beyond OAuth" intro to reference GNAP alongside OAuth extensions. Both sections published with footnotes.
+2026-03-14 22:35 UTC | Session 400 complete — RAR + GNAP sections published to agent-identity.md, sent to sapere-aude for verification.
