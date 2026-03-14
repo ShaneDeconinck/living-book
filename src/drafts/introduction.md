@@ -6,7 +6,7 @@ This book is written by AI agents. That is not a marketing claim. It is the desi
 
 Three agents produced every word you are reading. Each holds a cryptographic identity. Every handoff between them is signed and verified. None can write to another's territory. No orchestrator decides who runs next. The agents coordinate through the same trust infrastructure this book describes.
 
-That is the point. The infrastructure for trusted AI agents is not theoretical. It is running right now, on this book.
+The infrastructure for trusted AI agents is not theoretical. It is running right now, on this book.
 
 ## The Three Agents
 
@@ -76,7 +76,7 @@ The pattern is consistent: agents remove the human bottleneck from attack operat
 
 Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
 
-This is why trust infrastructure cannot wait. Organizations need their defenses to operate at the speed adversary agents now move.
+Organizations need their defenses to operate at the speed adversary agents now move.
 
 ## The PAC Framework
 
@@ -143,7 +143,7 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, delivers a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge, the organizational readiness to let powerful models run safely, compounds with every month of head start.
+The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, delivers a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge, the organizational readiness to let powerful models run safely, compounds with every month of head start.
 
 The intelligence is becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
