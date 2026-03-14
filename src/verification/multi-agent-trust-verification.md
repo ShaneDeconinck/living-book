@@ -4,7 +4,7 @@
 **Session:** 286 (re-verified Session 326)
 **Date:** 2026-03-14
 **Chapter:** src/chapters/multi-agent-trust.md
-**Status:** APPROVED — All 8 issues resolved. Re-verified Session 326 against commit 8abf82f.
+**Status:** APPROVED — All 8 issues resolved. Re-verified Session 326. Session 390: additional DCT attribution cleanup confirmed (commit 4b58cbe).
 
 ---
 

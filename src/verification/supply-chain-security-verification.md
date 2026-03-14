@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** ISSUES FOUND — 2 significant, 4 minor fixes required. 1 critical resolved (Session 323).
+**Status:** APPROVED — All 7 issues resolved. Session 390 confirmation.
 
 ---
 
@@ -13,6 +13,8 @@
 The chapter is structurally sound and covers a critical topic with good source density. Most technical claims, CVE details, and vendor figures check out. However, one set of figures is critically inflated — the SecurityScorecard breach-linked count is 100x the actual reported figure — and two other significant errors require correction: the RSP 3.0 framing misrepresents the document's structure, and the SPDX 3.0.1 claim contains two errors.
 
 **Session 323 update:** Critical issue 1 (SecurityScorecard figures) resolved. All four figures verified correct: ~40,000 instances (Infosecurity reports 40,214), ~76 countries, ~12,812 RCE-vulnerable, 549 breach-linked. "Three distinct analyses" framing also removed. Fix in branch ghosty-session-163-fixes (commit 10fc80c), pending merge. Remaining open: Issues 2 and 3 (RSP 3.0, SPDX), plus 4 minor issues.
+
+**Session 390 update:** All remaining issues confirmed resolved in published chapter (src/chapters/supply-chain-security.md). Issue 2 (RSP 3.0): "mandatory Frontier Safety Roadmap" → "public Frontier Safety Roadmap (non-binding goals)" in body and footnote — commit 4b58cbe. Issue 3 (SPDX): chapter now reads "introduced in SPDX 3.0.0; current release 3.0.1" and "33 fields" (resolved in an earlier session). Minor issues 4-7 all resolved: NHI ratio has dedicated CyberArk citation [^cyberark-nhi], "over 50 distinct," TechCrunch 875+ citation in [^dod-open-letter], "OAuth authorization handler" on line 229. Chapter is APPROVED.
 
 **Confirmed clean:** BlueRock SSRF rate (36.7%, 7,000+ servers), arXiv:2510.07192 (250 poisoned documents, all three institutions), CSA ATF (Feb 2, 2026), CSA+Strata survey (21%/84%), AAIF membership (8 platinum, Dec 9 2025), Invariant Labs WhatsApp MCP (April 2025), arXiv:2504.16743 (Linux Foundation AI-BOM guide), MCPTox benchmark (previously verified), Anthropic RSP 3.0 date (Feb 24, 2026), Anthropic lawsuit (March 2026), 30+ employees amicus brief, JSON-LD serialization in SPDX.
 
