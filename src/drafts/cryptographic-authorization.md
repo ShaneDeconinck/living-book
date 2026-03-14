@@ -30,7 +30,7 @@ In the traditional model: agent receives token → agent holds token → agent p
 
 In the CAAM model: authorization sidecar holds all real credentials → agent never sees them → when the agent needs to act, the sidecar synthesizes a JIT scoped token (the "ghost token") bound to the specific action and the specific session.
 
-The sidecar mediates a three-phase protocol:
+The sidecar mediates a four-phase protocol:
 
 ```
 Discovery Phase:
@@ -42,17 +42,28 @@ Discovery Phase:
       "inference_boundary_hash": "sha256:abc123..."
     }
 
+Negotiation Phase:
+  Client → Sidecar: propose policy profile + session constraints
+  Sidecar → Client: accepted profile + applicable credential schema
+    {
+      "agreed_policy": "MAPL-v0.3",
+      "constraint_schema": "procurement-v2"
+    }
+
 Establishment Phase:
   Client ↔ Sidecar: mutual attestation (SPIFFE SVIDs + RATS Evidence)
   Sidecar → Client: Session Context Object (SCO)
+    // illustrative — field names from draft-barney-caam-00
     {
-      "session_id": "sess-8f2a3b",
-      "authorized_operations": ["read:procurement", "write:purchase_orders"],
-      "constraints": { "amount_ceiling": 500, "approved_vendors": [...] },
-      "expires_at": "2026-03-14T12:00:00Z"
+      "purpose": "procurement-session",
+      "scope_ceiling": ["read:procurement", "write:purchase_orders"],
+      "max_hops": 2,
+      "zookie": "zk-8f2a3b4c",
+      "rats_result": "pass",
+      "crs": "sha256:procurement-policy-chain-v2"
     }
 
-Authorization Phase:
+Enforcement Phase:
   Agent requests action → Sidecar validates against SCO
   Sidecar → Agent: JIT Scoped Token (Ghost Token)
     {
@@ -146,7 +157,7 @@ The I4/I5 maturity levels in the PAC maturity framework require this layer. At I
 
 Three things limit current deployments.
 
-**Performance overhead.** Cryptographic operations add latency. A ghost token requires a round-trip to the sidecar. MAPL chain verification requires signature checks at each layer. For agents operating at machine speed—thousands of tool invocations per session—the overhead compounds. The Authenticated Workflows paper's reference implementation added less than 15ms per operation in testing, but production deployments at scale have not been characterized.[^authenticated-workflows] This is an engineering problem, not a conceptual one, but it is unsolved.
+**Performance overhead.** Cryptographic operations add latency. A ghost token requires a round-trip to the sidecar. MAPL chain verification requires signature checks at each layer. For agents operating at machine speed—thousands of tool invocations per session—the overhead compounds. The Authenticated Workflows paper's reference implementation added less than 15µs per operation in testing, but production deployments at scale have not been characterized.[^authenticated-workflows] This is an engineering problem, not a conceptual one, but it is unsolved.
 
 **Standardization.** CAAM is an IETF draft (draft-barney-caam-00) at early stage. MAPL exists as research code and a single vendor's implementation. Verifiable Intent is a draft specification backed by Mastercard, Google, and major payment networks, with a reference implementation—but it addresses only the payment context. The full "prove" stack does not yet exist as a standards body product. Organizations building on these primitives today are building on unstable foundations. The question of which pieces will reach IETF working group status and which will remain vendor-specific is open.
 
