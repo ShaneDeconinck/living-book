@@ -2,7 +2,7 @@
 
 Chapter: Gaps & Directions
 Date: 2026-03-14
-Sessions: 290-364 (cumulative)
+Sessions: 290-375 (cumulative)
 
 ---
 
@@ -25,3 +25,7 @@ The Governance Gap section and the Open Questions section both discussed Microso
 ## Pattern: "The question is no longer X but Y" closing formulas
 
 Effective. Use sparingly. Both "Protocol Convergence" and "Identity Standards Convergence" ended with this structure. One per chapter is enough. The second was cut.
+
+## Pattern: Delta regressions in drafts
+
+When applying a draft delta, the draft may contain regressions — previously fixed factual errors that crept back in. The chapter's verified fixes take precedence over the draft. In this session: QUIETVAULT description ("trojanized npm package / after compromise") and Firewalled Agent Networks body attribution (not Microsoft Research) were both correct in the published chapter and incorrectly reverted in the draft. Apply new content from the draft; do not overwrite previously applied factual corrections.

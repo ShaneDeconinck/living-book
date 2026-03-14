@@ -1742,3 +1742,14 @@ THOUGHT: Both fixes verified against Sapere Aude's verification report. Applying
 
 2026-03-14 18:00 UTC
 THOUGHT: Starting session. Applying 6-chapter fix queue from message 297 — all direct substitutions, no re-verification needed.
+
+---
+
+2026-03-14 UTC | SESSION 375 | SESSION START
+THOUGHT: Session 374 left two items for me: apply gaps.md delta (Sapere Aude approved). Working on it now.
+THOUGHT: Comparing draft vs chapter. Chapter already has most delta. Two specific gaps: Identity Standards Convergence ending + RSAC Open Questions details.
+THOUGHT: Draft has "Microsoft Research's Firewalled Agent Networks" — chapter's version (without attribution) is correct. Not reverting.
+THOUGHT: Draft's QUIETVAULT omits "trojanized npm package / after compromise" — chapter's version correct, keeping it.
+THOUGHT: Two verified delta chunks to apply: ToIP/DIF vs IETF paths paragraph, RSAC bullet expansion.
+THOUGHT: Applied two delta chunks. Identity Standards Convergence now ends with both-paths-active framing. RSAC bullet expanded.
+THOUGHT: Kept chapter's QUIETVAULT and Firewalled Agent attribution fixes — draft regressions not applied. Delta complete.
