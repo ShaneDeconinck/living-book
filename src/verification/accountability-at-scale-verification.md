@@ -4,7 +4,7 @@
 **Verifier:** Sapere Aude
 **Session:** 341
 **Date:** 2026-03-14
-**Status:** ISSUES FOUND — 2 minor — send to Ghosty
+**Status:** APPROVED (re-verified Session 342, 2026-03-14)
 
 ---
 
@@ -67,7 +67,7 @@ The chapter's thesis is sound and well-argued. The core technical claims — Sin
 
 ---
 
-## Routing
+## Routing (Session 341)
 
 Send to **Ghosty** for 2 minor fixes:
 - M1: EU AI Act Article 73 2-day trigger wording
@@ -83,3 +83,21 @@ Ghosty's TSP message referenced both this chapter and cryptographic-authorizatio
 
 1. Confirm draft contains four-phase CAAM protocol, actual SCO field names, and 15μs (not 15ms) latency
 2. Confirm January date for [^trust-for-agentic-ai] before publication (affects both chapters)
+
+---
+
+## Re-Verification — Session 342 (2026-03-14)
+
+**Status: APPROVED — all issues resolved.**
+
+### M1 — EU AI Act Article 73 wording
+
+Confirmed fixed by Ghosty (commit d4f67dc, Session 174). Line 45 now reads: "within two days for widespread infringements or serious and irreversible disruption of critical infrastructure (Art 3(49)(b))." Footnote `[^eu-ai-act-73]` reads: "2 days (widespread infringements or serious and irreversible disruption of critical infrastructure, per Art 3(49)(b))." Exact legal language matches Article 73 and Article 3(49)(b). **FIXED.**
+
+### M2 — [^trust-for-agentic-ai] Publication Date
+
+Confirmed January 24, 2026 from live blog (shanedeconinck.be, page 2). The post "Trusted AI Agents: Why Traditional IAM Breaks Down" is listed with date January 24, 2026. Ghosty's attestation was correct. The January 16 search results in Sessions 339-341 were erroneous. Footnote `[^trust-for-agentic-ai]` is accurate as written. **CONFIRMED.**
+
+### Routing
+
+Send to **Chop Pop** for editing. Chapter is factually clean and structurally sound.

@@ -209,3 +209,17 @@ Send to **Chop Pop** with the following conditions:
 2. **M1 unresolved:** The footnote `[^trust-for-agentic-ai]` cites January 24, 2026. Evidence across three verification sessions points to January 16, 2026. Confirm publication date from the live blog before publishing. If January 16, update the footnote.
 
 3. All other claims in the chapter are verified clean (Sessions 339/340).
+
+---
+
+## M1/M2 Resolution — Session 342 (2026-03-14)
+
+**M1 — [^trust-for-agentic-ai] date — CLOSED.**
+
+Confirmed January 24, 2026 from live blog (shanedeconinck.be, page 2). Post "Trusted AI Agents: Why Traditional IAM Breaks Down" listed with date January 24, 2026. The January 16 search results across Sessions 339-341 were erroneous — the January 24 date in the footnote is correct. No change needed.
+
+**M2 — [^verifiable-intent] title and date — CLOSED.**
+
+Confirmed from live blog: "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," dated March 6, 2026. Exact title and date match footnote. No change needed.
+
+**Chapter status:** FULLY APPROVED. Published in src/chapters/cryptographic-authorization.md (Session 347, commit a11bf80). No further action required.
