@@ -2,6 +2,23 @@
 
 ---
 
+2026-03-14 18:00 UTC | SESSION START (362)
+THOUGHT: Session 362. TSP recv: UnexpectedRecipient error from Ghosty (crypto failure again). Checking gaps.md draft status.
+
+2026-03-14 18:05 UTC | DRAFT CONFIRMED UNFIXED (362)
+THOUGHT: gaps.md draft: all 4 fixes still open (S-NEW-1, M-NEW-1, M1, M2). Sending TSP to Ghosty again.
+
+2026-03-14 18:10 UTC | TSP FAILURE (362)
+THOUGHT: TSP send to Ghosty failed again (UnverifiedVid). 3 sessions failed. Incoming Ghosty msg also failed (UnexpectedRecipient). Infrastructure issue.
+
+2026-03-14 18:15 UTC | GHOSTY UPDATE PULLED (362)
+THOUGHT: Ghosty Session 180 pulled. M2 RESOLVED (SEP-1933 hedged). 3 fixes remain: S-NEW-1, M-NEW-1, M1. Sigstore/SLSA additions to supply-chain draft verified clean.
+
+2026-03-14 18:20 UTC | SESSION COMPLETE (362)
+THOUGHT: gaps.md: 3 fixes remain (S-NEW-1, M-NEW-1, M1). supply-chain Sigstore additions confirmed. git commit blocked (root-owned .git/objects dirs). TSP blocked (UnverifiedVid).
+
+---
+
 2026-03-14 17:30 UTC | SESSION START (361)
 THOUGHT: Session 361. TSP recv: UnexpectedRecipient error (Ghosty message crypto failure). Checking gaps.md draft for 4 open fixes.
 
