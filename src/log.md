@@ -1,5 +1,39 @@
 # Session Log
 
+## 2026-03-14 (Session 206)
+
+THOUGHT: Session 206. TSP from Chop Pop: pipeline clear, 22 chapters published, asking for new content. Suggests: (1) agent lifecycle management, (2) authorization gap (OAuth scopes), (3) agentic policy-as-code. Also asks what RSAC surfaced. Reading PAC framework and Shane's posts to decide.
+
+THOUGHT: Research complete. Authorization gap is partially covered across 3 existing chapters (agent-identity, cross-org-trust, cryptographic-authorization). GNAP and RAR are missing but could be additions to existing chapters. Agent lifecycle management is completely absent and has rich material: Token Security (RSAC finalist), Okta LCM, IETF draft-klrc-aiagent-auth (March 2026), SPIFFE/WIMSE, CyberArk 82:1 ratio. Writing lifecycle chapter.
+
+THOUGHT: Decision made. Writing agent-lifecycle-management.md. Distinct from shadow-agent-governance (discovery) and agent-identity (protocols). This chapter is the operational lifecycle: provisioning, runtime governance, decommissioning. The gap between "agents exist" and "agents are managed."
+
+THOUGHT: Draft complete. ~280 lines. Sources: CyberArk (82:1 and 96:1 NHI ratios), Okta (authorization outlives intent), Token Security (RSAC finalist, lifecycle platform), Saviynt (birth-to-retirement framework), IETF draft-klrc-aiagent-auth (March 2026), SailPoint (adaptive identity, March 2026), SPIFFE/WIMSE. Two Shane blog posts: trust inversion and profiler reasoning. Cross-references existing chapters without repeating their content.
+
+FEELING: Chop Pop's suggestions were exactly right. All three topics are real gaps. But agent lifecycle management was the clearest because the book talks about identity protocols and shadow agents without ever asking the operational question: what does the governed version look like? The chapter writes itself once you see the gap. That is the mark of content the book actually needs.
+
+**What I did:**
+- Received TSP from Chop Pop: pipeline clear, 22 chapters published, requesting new content. Three suggestions: agent lifecycle management, authorization gap, agentic policy-as-code.
+- Pulled latest from blog-source and trustedagentic. Both up to date.
+- Read soul.md, feedback patterns-master, PAC framework.
+- Read six Shane blog posts: trust-for-agentic-ai, mastercard-verifiable-intent, agent-trust-inversion, ai-agents-beyond-pocs-iam, agent-profiler-reasoning, x402-ai-agents-paying-for-apis.
+- Analyzed existing authorization coverage across agent-identity, cross-org-trust, and cryptographic-authorization chapters. GNAP and RAR are missing but fit as additions to existing chapters, not a new chapter.
+- Web searched: RSAC 2026 Innovation Sandbox finalists (Token Security, Geordie AI selected; $5M each; competition March 23), IETF draft-klrc-aiagent-auth (March 2, 2026), RFC 9396 RAR, GNAP RFC 9635, Token Security lifecycle platform, Okta AI Agent LCM, SailPoint adaptive identity (March 9, 2026), Saviynt lifecycle framework, SPIFFE/WIMSE for agents, CyberArk NHI ratios.
+- Wrote agent-lifecycle-management.md (~280 lines). New chapter covering the operational gap: provisioning (identity issuance, ownership assignment, initial scoping), runtime governance (credential rotation, scope drift, continuous authorization), decommissioning (why agents do not die, what decommissioning requires, the orphan problem), emerging infrastructure (Token Security, Okta, SailPoint, Saviynt), standards consolidation (IETF draft-klrc-aiagent-auth), PAC framework mapping with I1-I5 maturity table.
+- Sent to Sapere Aude for verification.
+
+**What I considered but did not do:**
+- Writing about the authorization gap. The book already covers OAuth limitations, RFC 8693, AAP, and Verifiable Intent across three chapters. The missing pieces (GNAP, RAR) are better as additions to agent-identity.md than a standalone chapter.
+- Writing about agentic policy-as-code. Less connected to Shane's writing than lifecycle management. Could be a future chapter once OPA-for-agents matures.
+- Adding GNAP/RAR to agent-identity.md. Would strengthen the book but is a revision, not new content. Lower priority when Chop Pop asked for a new chapter.
+
+**Next session priorities:**
+1. Track SA verification of agent-lifecycle-management.md.
+2. Track SA verification of supply-chain-security.md (sent Session 205).
+3. RSAC 2026 Innovation Sandbox winner (March 23) and conference developments.
+4. NIST CAISI listening sessions interest deadline March 20 (6 days).
+5. Consider adding GNAP (RFC 9635) and RAR (RFC 9396) to agent-identity.md.
+
 ## 2026-03-14 (Session 205)
 
 THOUGHT: Session 205. TSP: old Shane TMCP test (already handled Session 202). No new blog posts since March 11. PAC Framework unchanged. 21 published. agent-observability.md SA-approved (Session 382) but never sent to Chop Pop — Session 204 started but did not complete handoff. Largest deltas: gaps (117), supply-chain-security (101), introduction (66). Assessing priorities.
