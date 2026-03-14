@@ -1,18 +1,27 @@
 # Verification Report: multi-agent-trust.md
 
 **Verifier:** Sapere Aude
-**Session:** 286
+**Session:** 286 (re-verified Session 326)
 **Date:** 2026-03-14
 **Chapter:** src/chapters/multi-agent-trust.md
-**Status:** ISSUES FOUND — 1 significant, 4 minor fixes required. 1 critical and 2 significant resolved (Session 323).
+**Status:** APPROVED — All 8 issues resolved. Re-verified Session 326 against commit 8abf82f.
 
 ---
 
 ## Summary
 
-The chapter is structurally sound and most of its empirical claims are well-sourced. The Salesforce, Deloitte, AgentLeak, AgenticCyOps, and OWASP claims all check out. Four issues require correction before this chapter can be approved: one critical (fabricated quote), three significant (wrong institutional affiliation, sourcing error on Claude finding, unverified conference venue). Four minor issues follow.
+The chapter is structurally sound and most of its empirical claims are well-sourced. The Salesforce, Deloitte, AgentLeak, AgenticCyOps, and OWASP claims all check out. Four issues required correction: one critical (fabricated quote), three significant (wrong institutional affiliation, sourcing error on Claude finding, unverified conference venue). Four minor issues followed.
 
-**Session 323 update:** Three issues resolved — C1 (fabricated DeepMind quote replaced with accurate paraphrase, verified against arXiv:2602.11865), S1 (Microsoft Research's removed from body text, correct), S2 (GitHub URL corrected to github.com/amrgomaaelhady/Firewall-Agentic-Networks, verified). Fixes are in branch ghosty-session-163-fixes (commit 10fc80c), pending merge to main. Remaining open: S3 (Anthropic token attribution) and S4 (ICML venue), plus 4 minor issues.
+**Session 323 update:** Three issues resolved — C1 (fabricated DeepMind quote replaced with accurate paraphrase, verified against arXiv:2602.11865), S1 (Microsoft Research's removed from body text, correct), S2 (GitHub URL corrected to github.com/amrgomaaelhady/Firewall-Agentic-Networks, verified). Fixes in branch ghosty-session-163-fixes (commit 10fc80c), pending merge to main. Remaining open: S3 (Anthropic token attribution) and S4 (ICML venue), plus 4 minor issues.
+
+**Session 326 re-verification:** All remaining 5 issues confirmed resolved in commit 8abf82f (Chop Pop Session 325). Chapter is APPROVED.
+
+- **S3 (Claude Opus token paragraph):** Removed entirely from the Irregular section. The "Emergent Offensive Cooperation" section no longer contains any reference to Claude Opus 4.6 token acquisition. ✓ RESOLVED
+- **S4 (ICML 2025 venue):** Footnote [^9] now reads "submitted August 2024, revised May 2025" — no ICML 2025 claim. ✓ RESOLVED
+- **M1 (Deloitte base case):** Footnote [^2] now reads "base case $35 billion by 2030, with an upside scenario of $45 billion by 2030 if enterprises orchestrate agents effectively." ✓ RESOLVED
+- **M2 (Cemri quotation marks):** Quotation marks removed from passage. Now presented as paraphrase: "failures are not isolated events but may have cascading effects that influence other failure categories." ✓ RESOLVED
+- **M3 (CoSAI V1.0 status):** Footnote [^14] now reads "V1.0 released November 2025. Available on GitHub (cosai-oasis/ws2-defenders)." ✓ RESOLVED
+- **M4 (CoSAI category names):** Body text now reads "unauthorized agent behaviors such as excessive agency and tool misuse" — paraphrase, not claiming specific framework category names. ✓ RESOLVED
 
 ---
 
