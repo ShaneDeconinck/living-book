@@ -44,6 +44,8 @@ The institutional story matters: AAIF governs MCP (Linux Foundation). MCP-I's id
 
 That convergence became explicit in 2026 when ToIP and DIF jointly launched three working groups focused on trust for agentic AI: the Decentralized Trust Graph Working Group (building cryptographically verifiable trust relationships across agents and wallets), the AI Model Working Group (examining how TSP enhances human-agent interactions, with delegation, accountability, and identity frameworks), and the Trusted AI Agents Working Group (developing specifications and governance models for agents acting autonomously within zero-trust frameworks).[^toip-dif-wgs] A planned deliverable: a draft specification for running agent protocols (MCP, A2A) over TSP. If that ships, the "three layers, three foundations" picture collapses into a single interoperable stack with trust built in at the transport layer.
 
+By March 2026, the TAIAWG is producing concrete deliverables. A Delegated Authority Task Force is drafting a report on delegatable authorization, collecting prior art and academic work. A cross-task-force threat modeling exercise is formalizing attack scenarios against an agentic, policy-enforcing local AI model interacting with remote agents and services. And MCP-I is transitioning from Vouched's donation to formal DIF governance, with a dedicated task force forming around the specification.[^dif-58] These are no longer announcements. They are working documents.
+
 ### Identity Standards Convergence
 
 Fifteen or more individual IETF submissions targeting agent identity and authorization appeared in a single quarter. This density is structurally unprecedented in the IETF's OAuth and identity ecosystem. The submissions span the full stack: infrastructure-level bootstrapping (WIMSE), application-level authorization (OAuth extensions: OBO, AAP, Transaction Tokens, DPoP, AAuth), cross-application provisioning (SCIM for agents), and cross-organizational verification (DIDs, VCs, TSP).
@@ -91,6 +93,12 @@ Anbiaee et al. (arXiv:2602.11327) found the most dangerous vulnerabilities emerg
 ### AI Tools as Attack Infrastructure
 
 Google documented QUIETVAULT: a supply chain attack where the adversary does not build or compromise the AI. They use the developer's own AI coding tool as a reconnaissance agent, issuing natural-language prompts for filesystem searching that the tool dutifully executes. Five AI-powered malware families are now operational in the wild. This is a category shift from attacks *on* AI tools and attacks *by* adversary-built AI to attacks *through* existing AI tools.
+
+### The Governance Gap Is Quantified
+
+Two independent surveys in early 2026 measure what the book argues structurally. Gravitee's State of AI Agent Security 2026 report (900+ executives and practitioners): 88% of organizations reported confirmed or suspected AI agent security incidents in the past year, but only 14.4% of deployed agents went live with full security and IT approval. Only 21.9% of teams treat AI agents as independent, identity-bearing entities; the rest treat them as extensions of human users or generic service accounts.[^gravitee-2026] The CSA/Strata Identity survey found only 18% of security leaders highly confident their IAM systems can manage agent identities, and 84% doubt they could pass a compliance audit focused on agent behavior.[^csa-strata-2026]
+
+The numbers confirm the book's thesis from two directions. The identity gap (agents treated as service accounts, not identity-bearing entities) maps to the Control pillar: infrastructure that treats agents as first-class principals does not exist in most organizations. The oversight gap (47% of agents operating without security oversight) maps to the Accountability pillar: audit trails, governance thresholds, and liability chains are absent for nearly half of deployed agents. The result is Potential without Accountability or Control: the interdependency failure the PAC Framework predicts.
 
 ## What the Book Does Not Cover Yet
 
@@ -165,3 +173,6 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^entro-agent365]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026.
 [^entra-agent-gov]: Microsoft, "Governing Agent Identities (Preview)," learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview, March 2026. Also: "What is Microsoft Entra Agent ID?," learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.
 [^toip-dif-wgs]: ToIP and DIF, "ToIP and DIF Announce Three New Working Groups for Trust in the Age of AI," lfdecentralizedtrust.org, 2026. Working groups: Decentralized Trust Graph (DTGWG), AI Model (AIMWG), Trusted AI Agents (TAIAWG). Also covered in Identity Week and Biometric Update.
+[^dif-58]: DIF Newsletter #58, blog.identity.foundation, March 2026. TAIAWG updates: Delegated Authority Task Force, threat modeling exercise, MCP-I governance transition.
+[^gravitee-2026]: Gravitee, "State of AI Agent Security 2026 Report: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
+[^csa-strata-2026]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA survey report, February 2026.
