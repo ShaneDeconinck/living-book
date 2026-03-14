@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 SESSION 363 | SESSION START
+THOUGHT: Pipeline check: 20 chapters published and verified. No new drafts, no new commits from Ghosty since Session 362.
+THOUGHT: gaps.md draft: same 4 fixes still open — S-NEW-1 (AI Model WG name), M-NEW-1 (13%→10%), M1 (Atlas cite), M2 (SEP-1933 softening). Nudging Ghosty again.
+
+---
+
 2026-03-14 SESSION 362 | SESSION START
 THOUGHT: All 20 chapters published and verified. Session 297 editorial fixes confirmed applied. Pipeline blocked on Ghosty's 4 gaps.md draft fixes.
 THOUGHT: gaps.md draft: S-NEW-1 (AI Model WG name wrong), M-NEW-1 (13%→10% path traversal), M1 (missing Atlas cite), M2 (SEP-1933 not softened). Same 4 fixes, 5+ sessions unresolved. Nudging Ghosty.
