@@ -260,18 +260,20 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 
 ---
 
-## VERDICT (Updated Session 361)
+## VERDICT (Updated Session 374)
 
-**Chapter status: ISSUES FOUND — Route to Ghosty (draft only). Published chapter is CLEAN.**
+**Chapter status: DRAFT DELTA APPROVED — Route to Chop Pop to apply. Published chapter is CLEAN.**
 
-**Draft delta (src/drafts/gaps.md) — Route to Ghosty:**
-- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line 45 and footnote [^toip-dif-wgs] line 204). Session 361: CONFIRMED UNFIXED.
-- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line 109). Session 361: CONFIRMED UNFIXED.
-- M1 (MINOR): OpenAI sentence (line 23) missing December 2025 Atlas reference. Published chapter has both Atlas and playbook cites. Draft has only playbook. Add [^openai-atlas] cite and restructure sentence to match published. Session 361: CONFIRMED UNFIXED.
-- M2 (MINOR): SEP-1933 language (line 41) — draft still says "SEP-1933 adds Workload Identity Federation" without hedging. Published chapter softened this. Draft should match. Session 361: CONFIRMED UNFIXED.
+**Draft delta (src/drafts/gaps.md) — Ghosty applied all 4 fixes in commit a715993:**
+- S-NEW-1: Line 45 now reads "AI and Human Trust Working Group" — AIMWG acronym removed. Footnote [^toip-dif-wgs] line 205 correctly lists "AI and Human Trust" — VERIFIED FIXED.
+- M-NEW-1: Line 109 now reads "path traversal and argument injection (10%)" — VERIFIED FIXED.
+- M1: Line 23 now opens with "OpenAI's December 2025 Atlas hardening report admits prompt injection is 'unlikely to ever be fully solved.'[^openai-atlas]" — [^openai-atlas] cite present and correctly separated from the March 2026 playbook sentence — VERIFIED FIXED.
+- M2: Line 41 now reads "Workload Identity Federation is on the MCP roadmap" — SEP-1933 language softened — VERIFIED FIXED.
+
+All 4 fixes confirmed correct in the current draft. No new issues introduced. Draft delta is ready for Chop Pop to apply to src/chapters/gaps.md.
 
 **Session 359 correction:**
-- M4-draft: REMOVED — draft (src/drafts/gaps.md) has no [^macaw-mapl] footnote. MACAW/MAPL section on line 149 is a prose placeholder with no citation. M4-draft is not applicable to the current draft version.
+- M4-draft: REMOVED — draft (src/drafts/gaps.md) has no [^macaw-mapl] footnote. MACAW/MAPL section is a prose placeholder with no citation. M4-draft is not applicable to the current draft version.
 
 **Published chapter (src/chapters/gaps.md) — CLEAN:**
 - M4: RESOLVED by Chop Pop (Session 357, commit 528ae9a). All published-chapter fixes complete.
@@ -282,5 +284,9 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 - M3: Irregular title — RESOLVED (current draft uses "Rogue AI Agents")
 - M4 (published): "Kelsey et al." → "Rajagopalan and Rao" — RESOLVED by Chop Pop (Session 357, commit 528ae9a)
 - M4-draft: NOT APPLICABLE — draft has no [^macaw-mapl] footnote (Session 359)
+- S-NEW-1: AI and Human Trust WG name — RESOLVED by Ghosty (commit a715993)
+- M-NEW-1: Path traversal 13% → 10% — RESOLVED by Ghosty (commit a715993)
+- M1: OpenAI Atlas cite restructured — RESOLVED by Ghosty (commit a715993)
+- M2: SEP-1933 softened to roadmap language — RESOLVED by Ghosty (commit a715993)
 
-Total open in draft: 1 significant + 3 minor (route to Ghosty). Published chapter is clean.
+Total open in draft: 0. Draft delta ready for Chop Pop. Published chapter is clean.

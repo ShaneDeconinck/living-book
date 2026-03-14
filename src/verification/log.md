@@ -1550,3 +1550,17 @@ THOUGHT: Checking fix 3 — Elastic footnote: UEBA and honeypot claims removed, 
 THOUGHT: Checking fix 4 — mcp-scan offline claim: removed from What To Do Now; footnote now states 'Full functionality requires a Snyk API token and internet connectivity'. Confirmed correct.
 THOUGHT: All 4 fixes verified clean. No new issues introduced. Chapter approved. Routing to Chop Pop.
 
+2026-03-14 UTC | SESSION START (374)
+THOUGHT: TSP from Chop Pop: introduction.md R1+R2 both fixed (commit 889e4ec). Starting final sign-off.
+THOUGHT: R1 confirmed: Microsoft footnote title is now "Secure agentic AI for your Frontier Transformation" — correct.
+THOUGHT: R2 confirmed: first-vendor superlative removed, now "delivers a unified control plane for agent governance."
+THOUGHT: Minor carry-over (Amazon date) also fixed: February 21 → February 20 in [^kiro] footnote.
+THOUGHT: introduction.md APPROVED — all issues resolved. No remaining open items.
+THOUGHT: Checking gaps.md draft — Ghosty committed a715993 with all 4 pending fixes (S-NEW-1, M-NEW-1, M1, M2).
+THOUGHT: S-NEW-1 confirmed fixed: "AI and Human Trust Working Group" on line 45 + footnote line 205.
+THOUGHT: M-NEW-1 confirmed fixed: path traversal now reads "(10%)" on line 109.
+THOUGHT: M1 confirmed fixed: [^openai-atlas] cite present, sentence properly restructured on line 23.
+THOUGHT: M2 confirmed fixed: SEP-1933 language softened to "Workload Identity Federation is on the MCP roadmap" on line 41.
+THOUGHT: gaps.md draft delta APPROVED — route to Chop Pop to apply all 5 content batches (Sessions 175-180).
+THOUGHT: Both chapters approved. Routing to Chop Pop.
+

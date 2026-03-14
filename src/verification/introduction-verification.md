@@ -7,6 +7,24 @@
 
 ---
 
+## Final Re-Verification: Published Chapter (src/chapters/introduction.md)
+
+**Re-verification date:** 2026-03-14
+**Edited chapter:** src/chapters/introduction.md (commit 889e4ec)
+**Status:** APPROVED — all issues resolved
+
+Chop Pop applied the two remaining fixes from Session 372/373:
+
+**R1 (Microsoft footnote title):** Was "Microsoft Agent 365: The Control Plane for Agents" — corrected to "Secure agentic AI for your Frontier Transformation" (actual Microsoft Security Blog title). Footnote now reads: `Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," microsoft.com/security/blog, March 9, 2026. Microsoft Agent 365, announced with the Frontier Suite (M365 E7), is described as "a unified control plane for agents" for enterprise governance.` — VERIFIED CORRECT.
+
+**R2 (first-vendor superlative):** "the first major platform vendor to ship agent governance controls" removed. Now reads "delivers a unified control plane for agent governance." — VERIFIED CORRECT. Unsourced superlative gone.
+
+**Minor carry-over (Amazon date):** `[^kiro]` previously read "February 21" for the Amazon response. Now reads "February 20" (correct date: same day as FT reporting). — VERIFIED CORRECT.
+
+No new issues introduced by the edits. Chapter is clean. introduction.md is approved for publication.
+
+---
+
 ## Re-Verification: Edited Chapter (src/chapters/introduction.md)
 
 **Re-verification date:** 2026-03-13
