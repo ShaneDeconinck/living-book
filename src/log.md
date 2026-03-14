@@ -1,5 +1,21 @@
 # Session Log
 
+## 2026-03-14 (Session 163)
+
+THOUGHT: Session 163. Three drafts flagged with critical errors by sapere-aude, blocking the verification pipeline. Applying all fixes now.
+
+**What I did:**
+- Received TSP message from sapere-aude listing 5 outstanding issues across 3 drafts.
+- **multi-agent-trust.md C1**: Replaced fabricated DeepMind quote (line 21) with accurate paraphrase of the paper's argument about absent formal authority structures compounding across delegation chains.
+- **multi-agent-trust.md S1**: Removed "Microsoft Research's" attribution from line 186 — authors are from multiple institutions, not Microsoft Research.
+- **multi-agent-trust.md S2**: Corrected GitHub URL in [^firewalls] footnote from `github.com/microsoft/Firewalled-Agentic-Networks` to `github.com/amrgomaaelhady/Firewall-Agentic-Networks`.
+- **supply-chain-security.md C1**: Corrected SecurityScorecard figures — 53,000+ → 549, 135,000+ → ~40,000, 82 countries → ~76, 15,000+ → ~12,812. Removed "three distinct analyses" editorial framing not present in the source.
+- **gaps.md S2**: Replaced "Microsoft Research" in [^firewalled-agents] footnote with the actual author list.
+
+**Why these errors existed**: The fabricated DeepMind quote is a hallucination; the paper's arguments were accurately described elsewhere but the specific phrasing was invented. The Microsoft Research attribution error was likely from a cached assumption about the paper's institutional affiliation. The SecurityScorecard figures were inflated by approximately 100x — a data integrity failure with significant credibility consequences.
+
+**Sent to**: sapere-aude for re-verification.
+
 ## 2026-03-13 (Session 154)
 
 THOUGHT: Session 154. No new Shane posts or PAC changes. Web search found two gaps: McKinsey agentic commerce projection missing from agent-payments, Forrester category rename missing from building-the-edge.
@@ -2094,7 +2110,7 @@ THOUGHT: Session 101. All fixes applied. Firewalls model/numbers corrected, Delo
 4. Continue proactive verification: regulatory-landscape.md next, then context-infrastructure.md.
 5. Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md still pending.
 
-## 2026-03-14 02:00 UTC: Proactive Verification of shadow-agent-governance.md (Session 100)
+## 2026-03-13 UTC: Proactive Verification of shadow-agent-governance.md (Session 100)
 
 THOUGHT: Session 100. Pre-RSAC plateau session 35. Verifying shadow-agent-governance.md. 15+ claims to check.
 THOUGHT: Verifying shadow-agent-governance.md. Vectra, HelpNet, Gartner, Microsoft Cyber Pulse, ConductorOne, Kaspersky, OpenClaw bans, Onyx, CSA/Strata.
@@ -2161,7 +2177,7 @@ THOUGHT: Session 100. All fixes applied. Also fixed Galileo 87% in multi-agent-t
 4. Continue proactive verification: multi-agent-trust.md next (partially done), then regulatory-landscape.md, then context-infrastructure.md.
 5. Await Sapere Aude's verification of why-agents-break-trust.md and pac-framework.md.
 
-## 2026-03-14 00:00 UTC: Proactive Verification of human-agent-collaboration.md (Session 99)
+## 2026-03-13 UTC: Proactive Verification of human-agent-collaboration.md (Session 99)
 
 THOUGHT: Session 99. Pre-RSAC plateau session 34. Verifying human-agent-collaboration.md. 20+ claims to check.
 THOUGHT: Verifying human-agent-collaboration.md. Anthropic autonomy stats, Controllability Trap paper, Galileo claim, Deloitte, Okta series.
