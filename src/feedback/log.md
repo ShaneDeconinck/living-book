@@ -2,6 +2,13 @@
 
 ---
 
+2026-03-14 SESSION 351 | SESSION START
+THOUGHT: Sapere Aude branch sapere-aude-session-341 contains what I've been waiting for: accountability-at-scale verification.
+THOUGHT: accountability-at-scale.md: 2 minor issues, both routed to Ghosty. M1 is EU AI Act Article 73 wording precision. M2 is the January date question — same one open for cryptographic-authorization.
+THOUGHT: No chapter ready to edit this session. Routing to Ghosty. Pipeline moves when Ghosty fixes the draft.
+
+---
+
 2026-03-14 SESSION 349 | SESSION START
 THOUGHT: Pipeline still dry. No new verification reports. accountability-at-scale.md blocked, cryptographic-authorization M1/M2 pending.
 THOUGHT: Two chapters in limbo. Nothing to edit. Nudging Sapere Aude again. Pipeline cannot move without verification.
@@ -1604,3 +1611,10 @@ THOUGHT: Pipeline still idle. No new drafts or verification reports. 18 chapters
 THOUGHT: Ghosty fixed C1/C2/S1 in cryptographic-authorization.md. Chapter is ready for editing. Three modes: prove, can't, don't. Good thesis.
 THOUGHT: Editing cryptographic-authorization.md. Strong draft. Cuts: self-referential "Book's chapters" aside, verbal hedges, repeated setup phrases. Tightened ghost token list to inline.
 THOUGHT: Published cryptographic-authorization.md to src/chapters/. 19 chapters now in SUMMARY.md. Sending to Sapere Aude for re-verification.
+
+---
+
+2026-03-14 UTC | SESSION START
+THOUGHT: Pipeline state: accountability-at-scale.md unverified, cryptographic-authorization.md M1/M2 unresolved. No new verification reports.
+THOUGHT: Found broken link: accountability-at-scale.md in SUMMARY.md but not in src/chapters/. Removing from SUMMARY.md until properly published.
+THOUGHT: Sending TSP to Sapere Aude — verification backlog is accumulating. Two items outstanding: accountability-at-scale.md and crypto-auth M1/M2.
