@@ -34,7 +34,7 @@ Ownership is not permanent. It must transfer when people change roles, leave the
 
 ### Initial scoping
 
-The agent's initial permissions should reflect its declared purpose and nothing more. Shane's trust inversion applies here directly: agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
+The agent's initial permissions should reflect its declared purpose and nothing more. Shane's trust inversion applies here: agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
 
 In practice, this fails at provisioning time more often than anywhere else. Teleport's 2026 report found that 70% of organizations grant AI systems higher levels of privileged access than humans would receive for the same task.[^teleport] The reason is structural: provisioning agents through existing IAM tools means choosing from permission sets designed for human roles. An agent that needs to read one database table gets a "data analyst" role that includes read access to every table in the schema.
 
@@ -50,7 +50,7 @@ Long-lived credentials are the most common lifecycle failure. An agent provision
 
 SPIFFE addresses this architecturally: workload identities are short-lived certificates (hours or days, not months) with automatic rotation managed by the SPIRE runtime environment.[^spiffe] The agent never handles its own key material. The infrastructure issues, rotates, and revokes credentials transparently.
 
-The WIMSE draft for agents introduces an Identity Proxy that manages credential rotation, scope verification, and credential augmentation as agents move between tasks.[^wimse-agents] Agents do not handle their own credential lifecycle. The proxy does. This separation matters: an agent that manages its own credentials is an agent that can be compromised into extending its own authority.
+The WIMSE draft for agents introduces an Identity Proxy that manages credential rotation, scope verification, and credential augmentation as agents move between tasks.[^wimse-agents] Agents do not handle their own credential lifecycle. The proxy does. An agent that manages its own credentials can be compromised into extending its own authority.
 
 For agents using OAuth tokens, Auth0's Token Vault manages the refresh lifecycle: handling consent flows, storing tokens, and refreshing them automatically.[^auth0-vault] The pattern is consistent across implementations: credential lifecycle is infrastructure, not application logic.
 
@@ -155,7 +155,7 @@ Agent lifecycle management spans all three pillars:
 
 ## What to Do Now
 
-1. **Inventory what exists.** Before governing lifecycles, you need to know which agents are running. Use discovery tooling (Token Security, SailPoint, Okta) to find agents across cloud platforms, low-code tools, and custom deployments. You cannot manage what you have not found.
+1. **Inventory what exists.** Before governing lifecycles, you need to know which agents are running. Use discovery tooling (Token Security, SailPoint, Okta) to find agents across cloud platforms, low-code tools, and custom deployments.
 
 2. **Assign owners.** Every agent needs a named human owner. Start with the agents that have privileged access. If the creator is gone, assign the owner of the data or system the agent accesses.
 
