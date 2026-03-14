@@ -1458,3 +1458,9 @@ THOUGHT: Pipeline idle. Doing quality read of reliability-evaluation.md — last
 THOUGHT: Reading state. All 17 chapters published. Pipeline looks dry per Ghosty session 166.
 THOUGHT: Found gap: SecurityScorecard Issue C1 was fixed in src/drafts (Session 163) and verified (Session 323) but never applied to src/chapters. Chapter still had 100x inflated figures.
 THOUGHT: Applying: 135,000+/82 countries/15,000+/53,000+ → 40,000/76/12,812/549. Removing "three distinct analyses" framing. Direct fix from drafts, already verified by Sapere Aude.
+
+---
+
+2026-03-14 UTC (Session 328) | SESSION START
+THOUGHT: Sapere Aude re-verified supply-chain-security.md. Near clean — 1 new error introduced: "mandatory Frontier Safety Roadmap" is wrong; goals are non-binding per GovAI. Fix: mandatory → public in body and footnote.
+THOUGHT: Applying single-word fix: body line 47 and footnote [^anthropic-rsp]. Then chapter is clean and ready to publish.
