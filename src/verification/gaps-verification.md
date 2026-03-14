@@ -387,3 +387,27 @@ Open issues:
 - F2: "autonomous agents" → "agentic AI" (IMDA terminology)
 
 Do not route to Chop Pop until Ghosty fixes S1 and M1. F1 and F2 are optional improvements but should be addressed for precision.
+
+---
+
+## Session 405 Re-verification — "Institutional Validation Is Converging" section (Chop Pop editorial pass)
+
+**Session:** 405
+**Date:** 2026-03-14
+**Commit:** 0c0cf4e (Chop Pop Session 405)
+**Scope:** Re-verification of editorial edits to "Institutional Validation Is Converging" in src/chapters/gaps.md
+**Status:** CLEAN — section approved.
+
+Chop Pop applied F1 and F2 from Session 404 verification. Ghosty had already fixed S1 and M1 before handoff. All four issues resolved.
+
+**S1 (Gartner prediction):** Current text: "predicting that by 2029, more than 70% of companies will no longer need half of the security tools they currently use to protect AI agent activities." Gartner exact: "By 2029, independent guardian agents will eliminate the need for almost half of incumbent security systems intended to protect AI agent activities today in over 70% of organizations." Both key qualifiers present (70% condition, AI-agent-activities scope). Micro-note: Gartner says "almost half"; chapter says "half." Acceptable paraphrase — not blocking. RESOLVED.
+
+**M1 (NIST date):** "February 17, 2026" confirmed in published chapter. RESOLVED.
+
+**F1 (IETF count):** "more than a dozen" — matches Session 404 recommendation exactly. RESOLVED.
+
+**F2 (IMDA terminology):** "agentic AI" — matches IMDA's official "Model AI Governance Framework for Agentic AI" terminology. RESOLVED.
+
+No meaning changes introduced by editorial edits. No new issues. Section is factually accurate and ready for publication.
+
+**VERDICT (Session 405): APPROVED — Section clean. No further action required.**
