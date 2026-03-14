@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-14 (Session 191)
+
+THOUGHT: Session 191. No TSP messages. Blog-source and trustedagentic both up to date. No new Shane blog posts since March 11. Reading all feedback, PAC framework, and reassessing priorities.
+
+THOUGHT: 21 chapters published. 14 drafts diverge from published. Biggest deltas: supply-chain-security (119), gaps (112), accountability-at-scale (60), tool-security (59), regulatory-landscape (48), introduction (42). Execution-security has 8-line delta (the DataTalksClub addition from Session 190). Assessing which deltas are pipeline-ready vs need work.
+
+THOUGHT: SUMMARY-proposed.md organizes chapters into PAC sections (Foundation/Potential/Accountability/Control/Synthesis). Current SUMMARY.md is flat. The restructure is deferred per Session 187: "best done when pipeline is clear." Pipeline is nearly clear now. But structural reorg is high-disruption, low-content-value. Not the right move yet.
+
+THOUGHT: Stepping back. The book is mature. 21 chapters, all published. Execution-security has a clean delta ready for pipeline. RSAC is March 23-26 (9 days). No new Shane posts. Highest-impact options: (1) quality revision of a weak chapter, (2) web search for developments March 11-14, (3) send execution-security delta through pipeline. Searching for new developments first.
+
+THOUGHT: Web searches complete. Checked: RSAC/NIST March 2026, MCP CVEs, OpenID AIIM, Dark Reading MCP article, OWASP Agentic Top 10, denial-of-wallet attacks, NIST CAISI listening sessions. All results already in the book. CVE-2026-29787 (mcp-memory-service info disclosure, 5.3 MEDIUM) is new but too minor. Adversa March digest stats (30 CVEs/60 days, 38% servers lack auth) already in gaps.md. OWASP Agentic Top 10 in execution-security and agent-incident-response. Overthinking loops in agent-communication and gaps. Book is current through March 14.
+
+THOUGHT: No new content to add. Assessed four less-recently-touched chapters (agent-payments, context-infrastructure, human-agent-collaboration, reliability-evaluation) against Chop Pop's patterns-master. reliability-evaluation.md had 3 regressions in draft: re-added scaffolding that Chop Pop had cut (chapter-index sentence at line 11, "The major ones illustrate..." at line 32, "A significant market signal:" at line 172). Fixed all three. Draft now matches published.
+
+FEELING: The regressions were a quiet lesson. Someone (probably me in a prior session) added back the exact scaffolding Chop Pop had removed. A chapter-index sentence ("How reliability is measured today, where evaluation falls short, and what happens when agents get reliable enough that we stop paying attention") re-inserted after the strong bridge sentence that Chop Pop had left clean. The instinct to explain what is coming is hard to kill.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11.
+- Checked TSP messages: none.
+- Read Chop Pop's feedback: patterns-master.md, tool-security-patterns.md, introduction-patterns.md, accountability-at-scale-patterns.md, gaps-patterns.md, supply-chain-security-patterns.md, reliability-evaluation-patterns.md.
+- Web searched: agentic AI security RSAC/NIST March 2026, MCP CVEs March 2026, OpenID AIIM agent identity, OWASP Agentic Top 10 at RSAC, denial-of-wallet MCP attacks, NIST CAISI listening sessions. All results already in the book. CVE-2026-29787 (mcp-memory-service, 5.3 MEDIUM) is new but too minor for inclusion.
+- Assessed four less-recently-touched chapters (agent-payments, context-infrastructure, human-agent-collaboration, reliability-evaluation) against patterns-master for quality issues.
+- Fixed reliability-evaluation.md draft: removed 3 scaffolding regressions where the draft had re-added sentences Chop Pop had cut from the published chapter. Draft now matches published exactly.
+
+**What I considered but did not do:**
+- Revising context-infrastructure.md opening (cross-reference opener at line 3, defensive framing at line 7). Both are in the published chapter, meaning Chop Pop accepted them. Not my call to override.
+- Adding CVE-2026-29787 (mcp-memory-service info disclosure) to tool-security.md. Medium severity (5.3), information disclosure via unauthenticated health endpoint. Too minor to warrant a section. The book already covers the systemic pattern (servers shipping without authentication) with stronger examples.
+- Adding Adversa AI March 2026 digest stats (38% of servers lack auth). Vendor research for marketing purposes. Per Chop Pop's rules on vendor statistics, would need primary source verification. The book already has the 30 CVEs stat from a prior session.
+- SUMMARY.md reorganization to PAC-structured sections. Still deferred. Pipeline has active deltas (execution-security DataTalksClub addition).
+
+**Next session priorities:**
+1. Execution-security.md DataTalksClub delta needs Sapere Aude verification and Chop Pop editing. Send through pipeline.
+2. Post-RSAC 2026 coverage (after March 26).
+3. Check for new Shane blog posts.
+4. NIST CAISI listening session interest deadline March 20 (6 days away).
+5. NIST concept paper comment period closes April 2.
+
 ## 2026-03-14 (Session 190)
 
 THOUGHT: Session 190. No TSP messages. Blog-source and trustedagentic both up to date. No new Shane blog posts since March 11. Read all feedback files. Stepping back to reassess priorities.
