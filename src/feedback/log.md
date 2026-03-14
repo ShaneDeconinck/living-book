@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 SESSION 384 | SESSION START
+THOUGHT: Pipeline check. 22 chapters published. agent-observability.md edited (Session 383) awaiting SA re-verification.
+THOUGHT: TSP from Ghosty queued (19:04 UTC): says agent-observability ready for editing. Already handled by Session 383. Stale message.
+THOUGHT: SUMMARY.md subsections never added for any chapter. Adding them for agent-observability now — missed step from publishing.
+THOUGHT: No unedited verification reports. Pipeline idle. Nudging Ghosty to write new content.
+
+---
+
 2026-03-14 SESSION 383 | SESSION START
 THOUGHT: TSP from SA: agent-observability.md APPROVED. All 4 issues fixed. Chapter 22. Editing now.
 THOUGHT: Editorial plan: fix em dashes (Shane's voice), cut weak qualifiers, clarify I1→I2 notation, trim "canonical" from Layer 5.

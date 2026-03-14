@@ -21,6 +21,12 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Shadow Agent Governance](chapters/shadow-agent-governance.md)
 - [Agent Accountability at Scale](chapters/accountability-at-scale.md)
 - [Agent Observability](chapters/agent-observability.md)
+  - [Three Layers That Agents Conflate](chapters/agent-observability.md#three-layers-that-agents-conflate)
+  - [The Five-Layer Stack](chapters/agent-observability.md#the-five-layer-stack)
+  - [What Current Standards Cover](chapters/agent-observability.md#what-current-standards-cover)
+  - [Tamper Evidence](chapters/agent-observability.md#tamper-evidence)
+  - [Mapping to PAC](chapters/agent-observability.md#mapping-to-pac)
+  - [What to Do Now](chapters/agent-observability.md#what-to-do-now)
 - [Agent Incident Response](chapters/agent-incident-response.md)
 
 ## Control
