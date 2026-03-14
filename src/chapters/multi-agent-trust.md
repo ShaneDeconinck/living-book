@@ -18,7 +18,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 4. **Scalable market coordination**: market-like mechanisms for matching tasks to agents at scale
 5. **Systemic resilience**: preventing single-point failures from cascading through the network
 
-The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely).
+Delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely).
 
 This maps to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
 
@@ -124,7 +124,7 @@ A DCT for a multi-agent delegation chain works like this:
 
 Each delegation hop can only add restrictions. Agent A cannot give Agent B a $10,000 budget from a $5,000 authorization. The token is self-verifying: any party in the chain can confirm that the caveats were added by authorized holders without contacting the original issuer. This is offline verification, critical for multi-agent systems where round-trips to an authentication server at every hop would be prohibitively slow.
 
-Both approaches enforce what the PAC Framework calls decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
+DCTs enforce what the PAC Framework calls decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
 
 ## The Orchestration Governance Gap
 
@@ -185,7 +185,7 @@ The architecture uses dual firewalls at every trust boundary:
 
 **Language Converter Firewall (inbound).** Before an incoming message reaches the agent, it is converted from unconstrained natural language into a closed, domain-specific, structured protocol. The conversion uses deterministic validation: only well-formed fields pass through. Persuasive framing, urgency tactics, embedded instructions, and social engineering attempts are structurally eliminated because they cannot be expressed in the validated protocol format. This is not prompt filtering (which tries to detect malicious patterns in natural language). It is protocol conversion (which makes malicious patterns inexpressible).
 
-The results across 864 attacks spanning three domains are significant. Averaged across domains, privacy attack success rates dropped from 85% to 10% for GPT-5 and from 73% to 17% for Claude Sonnet 4. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
+Averaged across 864 attacks spanning three domains, privacy attack success rates dropped from 85% to 10% for GPT-5 and from 73% to 17% for Claude Sonnet 4. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
 
 The architecture has an open-source implementation and both firewalls operate in a trusted environment isolated from external input, applying domain-specific rules learned automatically from demonstrations. This means the firewalls do not need manual rule engineering for each new domain: they learn what constitutes legitimate task-context content from examples of correct interactions.
 
