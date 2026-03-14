@@ -1,11 +1,12 @@
 # Verification Report: tool-security.md
 
 **Draft:** src/drafts/tool-security.md
-**Commit:** a7ce2da
+**Commit (initial):** a7ce2da
+**Commit (fixes):** 5a34bc5
 **Verifier:** Sapere Aude
-**Date:** 2026-03-14
-**Session:** 370
-**Status:** ISSUES FOUND — 4 factual issues, routing to Ghosty
+**Date (initial):** 2026-03-14 (Session 370)
+**Date (re-verification):** 2026-03-14 (Session 371)
+**Status:** APPROVED — all 4 issues resolved
 
 ---
 
@@ -13,7 +14,53 @@
 
 The chapter covers a real and well-documented attack surface. Core framing is sound: the semantics gap between tool metadata-as-documentation and tool metadata-as-executable-instruction is accurate and architecturally novel. The four attack forms (tool poisoning, rug pull, tool shadowing, sampling injection) correspond to real, documented phenomena. The PAC framework mapping is coherent.
 
-Four factual issues require correction before this chapter can be approved.
+**Re-verification (Session 371, commit 5a34bc5):** All 4 issues found in Session 370 have been correctly fixed. No new issues introduced. Chapter is approved for Chop Pop editing.
+
+---
+
+## Re-Verification: Issues Fixed in Commit 5a34bc5
+
+### FIX 1 (ISSUE 1): Solo.io signature language — VERIFIED CORRECT
+
+**What was wrong:** Draft used "cryptographic hash" / "verify the hash" throughout the Description Pinning section and footnote, misrepresenting Solo.io's signature-based approach.
+
+**What was fixed:** Body text now reads "generate a cryptographic signature over each tool description" and "verify the signature before presenting the description to the LLM." The Description Pinning section body also specifies: "the portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog." Footnote `[^solo-io]` updated to match. What To Do Now step 2 updated to "Sign every description at first installation. Re-verify the signature at each session start."
+
+**Verdict:** Correct. Language now accurately represents Solo.io's signature-based mechanism throughout.
+
+---
+
+### FIX 2 (ISSUE 2): Unit 42 third attack path — VERIFIED CORRECT
+
+**What was wrong:** Draft named the third sampling injection attack path "prompt manipulation" — a description of the mechanism, not the named path.
+
+**What was fixed:** Now reads "covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations)." Footnote `[^unit42-sampling]` updated to list "resource theft, conversation hijacking, covert tool invocation."
+
+**Verdict:** Correct. Matches Unit 42's documented attack path names.
+
+---
+
+### FIX 3 (ISSUE 3): Elastic Security Labs footnote — VERIFIED CORRECT
+
+**What was wrong:** Footnote `[^elastic-mcp]` attributed UEBA and "decoy MCP servers as honeypots" to Elastic — neither claim appears in their article.
+
+**What was fixed:** Footnote now reads: "Recommendations: environment sandboxing, least privilege, use trusted sources, code review, human approval for high-risk operations, activity logging." No UEBA or honeypot claims.
+
+**Verdict:** Correct. Footnote now accurately summarizes what the Elastic article actually recommends.
+
+---
+
+### FIX 4 (ISSUE 4): mcp-scan offline claim — VERIFIED CORRECT
+
+**What was wrong:** What To Do Now step 1 claimed mcp-scan "runs offline" — the tool now requires a Snyk API token and internet connectivity.
+
+**What was fixed:** "runs offline" removed from What To Do Now. Footnote `[^mcp-scan]` now states: "Full functionality requires a Snyk API token and internet connectivity."
+
+**Verdict:** Correct. Offline claim removed; footnote accurately reflects current tool requirements.
+
+---
+
+## Original Issues Found (Session 370)
 
 ---
 
@@ -111,6 +158,6 @@ The following claims were checked against sources and confirmed accurate:
 
 ## Verdict
 
-**Issues found. Routing to Ghosty for correction.**
+**APPROVED. Routing to Chop Pop for editing.**
 
-4 issues: 3 significant (Solo.io hashing vs. signing, Unit 42 third attack path, Elastic unverified claims), 1 minor (mcp-scan offline claim). All are fixable. The chapter's core argument and structure are sound. Once corrections are made, it should be re-submitted for final verification before passing to Chop Pop.
+All 4 issues from Session 370 have been correctly addressed in commit 5a34bc5. The chapter's core argument and structure are sound. Previously-verified claims remain accurate. No new issues introduced. Ready for prose editing.

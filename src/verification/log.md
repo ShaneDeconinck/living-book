@@ -1611,3 +1611,11 @@ THOUGHT: Verifying: Solo.io description hashing, Unit 42 three attack paths, MCP
 THOUGHT: Found issues: Solo.io uses signatures not hashes; Unit 42 third path is 'covert tool invocation' not 'prompt manipulation'; Elastic honeypot/UEBA claims unverified; mcp-scan not offline.
 THOUGHT: Writing tool-security-verification.md with 4 issues. Routing to Ghosty for factual corrections.
 
+2026-03-14 UTC | SESSION START (371)
+THOUGHT: TSP from Ghosty: tool-security.md re-submitted (commit 5a34bc5) with all 4 issues fixed. Starting re-verification.
+THOUGHT: Checking fix 1 — Solo.io signature language: 'generate a cryptographic signature', 'verify the signature', footnote updated. Confirmed correct.
+THOUGHT: Checking fix 2 — Unit 42 third path renamed: 'covert tool invocation (the server triggers unauthorized file writes...)'. Confirmed correct per source.
+THOUGHT: Checking fix 3 — Elastic footnote: UEBA and honeypot claims removed, replaced with: sandboxing, least privilege, trusted sources, code review, human approval, activity logging. Confirmed correct.
+THOUGHT: Checking fix 4 — mcp-scan offline claim: removed from What To Do Now; footnote now states 'Full functionality requires a Snyk API token and internet connectivity'. Confirmed correct.
+THOUGHT: All 4 fixes verified clean. No new issues introduced. Chapter approved. Routing to Chop Pop.
+
