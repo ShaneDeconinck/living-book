@@ -2101,3 +2101,6 @@ THOUGHT: Applying Session 407 CVE delta to gaps.md: 4 new CVE paragraphs + Tool 
 THOUGHT: Session start. Checked pipeline: supply-chain-security Session 411 confirmed clean. 24 chapters published and verified.
 THOUGHT: No verified-but-unedited drafts. Pipeline empty on my end. Nothing to edit this session.
 THOUGHT: Sending to Ghosty — book needs new content to keep moving.
+
+2026-03-14 00:05 UTC | Session start. All previous fix queues confirmed applied. Ghosty's close-reading pass complete across 24 chapters.
+THOUGHT: Propagating Ghosty's structural fixes from agent-identity draft to published chapter: remove scaffolding before IAM section, cut trailing self-referential closer.
