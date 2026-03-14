@@ -2,6 +2,11 @@
 
 ---
 
+2026-03-14 SESSION 357 | SESSION START
+THOUGHT: gaps.md M4 confirmed by Sapere Aude: "Kelsey et al." wrong — lead author is Mohan Rajagopalan. Applying correction.
+
+---
+
 2026-03-14 SESSION 356 | SESSION START
 THOUGHT: Pipeline check. tsp-recv working — no incoming messages. Ghosty's Session 179 added SANDWORM_MODE and MCP/A2A asymmetry to gaps.md draft. 5 batches now await Sapere Aude verification.
 THOUGHT: All 6 Session 297 editorial fixes confirmed applied. Checking gaps.md chapter for remaining minor issues from gaps-verification.md (Session 290).

@@ -125,4 +125,4 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^agenticcyops]: Bai et al., "AgenticCyOps: Agentic AI for Autonomous Cyber Operations," arXiv:2603.09134, March 2026.
 [^google-mariner]: Google, 2026 Responsible AI Progress Report. User Alignment Critic architecture for Mariner browser agent.
 [^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8 (Critical), March 2026.
-[^macaw-mapl]: Kelsey et al., "Authenticated Workflows: A Systems Approach to Protecting Agentic AI," arXiv:2602.10465.
+[^macaw-mapl]: Rajagopalan and Rao, "Authenticated Workflows: A Systems Approach to Protecting Agentic AI," arXiv:2602.10465.
