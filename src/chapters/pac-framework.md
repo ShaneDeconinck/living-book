@@ -269,7 +269,7 @@ The goal is not to memorize the levels and scales. It is to internalize the rela
 [^1]: Shane Deconinck, PAC Framework, trustedagentic.ai. The framework and its dimensions are the source for this entire chapter.
 [^2]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," shanedeconinck.be, February 2026.
 [^3]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2026. The Claude Code scaffolding deletion example is cited directly.
-[^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026. Also: "Auth for Agent Builders: A Crash Course," January 2026.
+[^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026. Also: "Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained," shanedeconinck.be/explainers/oauth-obo/, January 10, 2026.
 [^5]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," shanedeconinck.be, January-March 2026. EU AI Act enforcement timeline per European Commission. The Digital Omnibus proposal (November 2025) may defer Annex III high-risk obligations to December 2027; see the Regulatory Landscape chapter for details.
 [^6]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 2026.
 [^7]: Shane Deconinck, PAC Framework, trustedagentic.ai, updated March 2026. The implementation architecture composability model, error margin emphasis, and the distinction between enumerable and open-ended failure modes are from the March 2026 framework revision.

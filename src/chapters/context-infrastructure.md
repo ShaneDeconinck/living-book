@@ -54,7 +54,7 @@ Claude Code uses no vector databases, no embeddings. Just raw files and search. 
 
 This is context infrastructure in action: simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
 
-Anthropic's engineering blog expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^5]
+Lance Martin expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^5]
 
 ### Manus: KV-Cache as North Star
 
@@ -208,7 +208,7 @@ The organizations that invest in context infrastructure now will not just be rea
 [^2]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," February 2, 2026.
 [^3]: Anthropic Engineering Blog, "Effective context engineering for AI agents," September 29, 2025.
 [^4]: Manus, "Context Engineering for AI Agents: Lessons from Building Manus," 2026.
-[^5]: LangChain Blog, "Context Engineering for Agents," October 2025.
+[^5]: Lance Martin, "Context Engineering for Agents," rlancemartin.github.io, June 23, 2025.
 [^7]: Model Context Protocol, "The 2026 MCP Roadmap," blog.modelcontextprotocol.io, 2026.
 [^8]: Google Cloud Blog, "Agent2Agent protocol (A2A) is getting an upgrade," 2026.
 [^9]: PIC Protocol, github.com/pic-protocol/pic-spec.
@@ -221,4 +221,4 @@ The organizations that invest in context infrastructure now will not just be rea
 
 [^agent-365-convergence]: Microsoft, "Secure agentic AI for your Frontier Transformation," Microsoft Security Blog, March 9, 2026. Microsoft, "Microsoft Agent 365: The Control Plane for Agents," microsoft.com, 2026. Agent 365 integrates Entra (identity), Purview (data governance), and Defender (security) into a unified agent control plane. Generally available May 1, 2026.
 
-[^entro-critique]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026. Argues that Agent 365 governs Microsoft environments but leaves gaps for organizations using multiple cloud providers. See also Oasis Security, "Agent 365 & Entra Agent ID vs. Oasis: AI Agent Governance for Hybrid Environments," oasis.security, March 2026.
+[^entro-critique]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026. Argues that Agent 365 governs Microsoft environments but leaves gaps for organizations using multiple cloud providers. See also Oasis Security, "Agent 365, Entra Agent ID, and Oasis: Completing the Picture for AI Agent Governance," oasis.security, originally published November 24, 2025 (updated March 2026).

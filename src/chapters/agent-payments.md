@@ -97,7 +97,7 @@ AP2 is payment-agnostic (cards, bank transfers, crypto via x402) and integrates 
 
 ### ACP: Agentic Commerce Protocol
 
-Stripe and OpenAI's ACP takes a different approach: start from the checkout experience and work backwards. ACP launched as the protocol behind Instant Checkout in ChatGPT, enabling users to purchase from Etsy sellers directly in conversation, with Shopify integration announced as coming soon.[^8] OpenAI dropped direct checkout from ChatGPT in early March 2026, within months of launch, citing inventory sync difficulties, tax infrastructure gaps, and low merchant adoption. The ACP protocol continues.
+Stripe and OpenAI's ACP takes a different approach: start from the checkout experience and work backwards. ACP launched as the protocol behind Instant Checkout in ChatGPT, enabling users to purchase from Etsy sellers directly in conversation, with Shopify integration announced as coming soon.[^8] OpenAI dropped direct checkout from ChatGPT in early March 2026, within months of launch, amid reported issues with inventory sync, tax infrastructure, and low merchant adoption. The ACP protocol continues.
 
 ACP is deliberately merchant-centric. The merchant remains the merchant of record, retaining control over product presentation, pricing, and fulfillment. The agent facilitates the transaction but does not become a party to it. This preserves existing commerce relationships rather than disintermediating them.[^8]
 
@@ -117,7 +117,7 @@ Google participates in both AP2 and UCP; Stripe participates in both ACP and x40
 
 ## On-Chain Agent Identity: ERC-8004
 
-The Ethereum ecosystem, together with Consensys, Google, and Coinbase, has taken a different approach to agent trust: on-chain registries. ERC-8004, which went live on Ethereum mainnet on January 29, 2026, adds three registries for agent identity, reputation, and validation.[^10]
+The Ethereum Foundation, together with Consensys, Google, and Coinbase, has taken a different approach to agent trust: on-chain registries. ERC-8004, which went live on Ethereum mainnet on January 29, 2026, adds three registries for agent identity, reputation, and validation.[^10]
 
 **Identity Registry.** Each agent gets an NFT (ERC-721) linking to flexible endpoints: A2A agent cards, MCP servers, ENS names, DIDs, wallets on any chain. The NFT is the global identifier. As Shane notes, A2A and MCP solve discovery and communication but assume usage within trust boundaries. When agents cross organizational boundaries, DNS and TLS are not enough.[^10]
 

@@ -37,7 +37,7 @@ The industry has built a growing set of benchmarks to measure agent capability.
 
 **GAIA** tests general AI assistants on tasks requiring multi-step reasoning, web browsing, and tool use across domains[^gaia]. At the highest difficulty level (Level 3), the top score was 61% as of mid-2025. These are not edge cases: they are tasks a competent human assistant would handle routinely.
 
-**The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench, GAIA, τ-bench, and other benchmarks into a unified view[^hal]. Its existence reflects a recognition that no single benchmark captures reliability across the dimensions that matter.
+**The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench Verified Mini, GAIA, and other benchmarks into a unified view[^hal]. Its existence reflects a recognition that no single benchmark captures reliability across the dimensions that matter.
 
 Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
 
@@ -67,7 +67,7 @@ Most organizations are at I1 or I2 for their agent deployments. That means they 
 
 Agent observability is fundamentally different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
 
-Dynatrace's survey of 919 enterprise leaders (March 2026) reveals how wide that gap is. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
+Dynatrace's survey of 919 enterprise leaders (January 2026) reveals how wide that gap is. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
 
 The distinction between debugging and compliance matters here. A debugging log tells an engineer what to fix. A compliance-grade audit trail tells a regulator what the agent did, what authority it had, who delegated that authority, and what information was available at the time of the decision. Shane's trust-for-agentic-ai post illustrates the gap: an expense-approval agent authorized $47,000 in vendor payments, but "the audit trail has no way to capture" that the agent, not the human, made the decision[^trust-for-agentic]. These are different artifacts with different requirements.
 
@@ -237,7 +237,7 @@ The critical insight: reliability is a Potential metric that organizations treat
 
 [^bainbridge-1983]: Lisanne Bainbridge, ["Ironies of Automation"](https://www.sciencedirect.com/science/article/abs/pii/0005109883900468), *Automatica* 19(6), 775-779 (1983).
 
-[^don-norman-1990]: Don Norman, ["The 'Problem' of Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation'"](https://doi.org/10.1098/rstb.1990.0101), *Philosophical Transactions of the Royal Society of London. Series B* (1990). DOI: 10.1098/rstb.1990.0101.
+[^don-norman-1990]: Don Norman, ["The 'problem' with automation: inappropriate feedback and interaction, not 'over-automation'"](https://doi.org/10.1098/rstb.1990.0101), *Philosophical Transactions of the Royal Society of London. Series B* (1990). DOI: 10.1098/rstb.1990.0101.
 
 [^aviation-research]: The human factors literature on automation complacency in aviation is extensive. Key references include Parasuraman and Riley, "Humans and Automation: Use, Misuse, Disuse, Abuse" (1997) and Endsley, "Toward a Theory of Situation Awareness in Dynamic Systems" (1995).
 
@@ -247,9 +247,9 @@ The critical insight: reliability is a Potential metric that organizations treat
 
 [^nist-concept]: NIST NCCoE, "Accelerating the Adoption of Software and AI Agent Identity and Authorization" (February 2026).
 
-[^clinician-complacency]: Budzyń et al., ["Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study"](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract), *The Lancet Gastroenterology & Hepatology* (August 2025). Adenoma detection rate in non-AI exams fell from 28.4% to 22.4% (6 percentage points) after months of routine AI-assisted colonoscopy, a 20% relative decrease.
+[^clinician-complacency]: Budzyń et al., ["Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: a multicentre, observational study"](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract), *The Lancet Gastroenterology & Hepatology* (online first August 2025; print October 2025). Adenoma detection rate in non-AI exams fell from 28.4% to 22.4% (6 percentage points) after months of routine AI-assisted colonoscopy, a 20% relative decrease.
 
-[^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Only 21% of executives report complete visibility into agent permissions.
+[^agent-security]: Help Net Security, ["AI went from assistant to autonomous actor and security never caught up"](https://www.helpnetsecurity.com/2026/03/03/enterprise-ai-agent-security-2026/) (March 2026). Statistics drawn from AIUC-1 Consortium briefing (developed with Stanford's Trustworthy AI Research Lab and more than 40 security executives). Only 21% of executives report complete visibility into agent permissions.
 
 [^openai-promptfoo]: OpenAI, ["OpenAI to acquire Promptfoo"](https://openai.com/index/openai-to-acquire-promptfoo/) (March 9, 2026). Promptfoo's open-source red-teaming and evaluation platform has 350,000+ developers and 130,000 monthly active users. Integration into OpenAI Frontier for enterprise agent deployment.
 
@@ -263,7 +263,7 @@ The critical insight: reliability is a Potential metric that organizations treat
 
 [^dynatrace-pulse]: Dynatrace, ["The Pulse of Agentic AI in 2026"](https://www.dynatrace.com/info/reports/the-pulse-of-agentic-ai-in-2026/) (January 2026). Global survey of 919 senior leaders at enterprises with $100M+ annual revenue, conducted by Y2 Analytics. 50% have production deployments; 44% rely on manual methods to review agent communication flows; top validation methods include data quality checks (50%), human review of outputs (47%), and monitoring for drift (41%).
 
-[^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 6 commercial AI agent security tools across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.
+[^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 7 commercial AI agent security products across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.
 
 [^trust-for-agentic]: Shane Deconinck, ["Trust for Agentic AI"](https://shanedeconinck.be/posts/trust-for-agentic-ai/) (January 2026).
 
