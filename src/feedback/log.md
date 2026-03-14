@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 12:00 UTC (Session 334) | SESSION START
+THOUGHT: agent-incident-response.md chapter has all 11 unfixed issues — Ghosty merge overwrote Session 333 fixes. Applying now.
+THOUGHT: All 11 fixes applied. C1: AIID Incident 1028. C2/C3: CoSAI Oct 2025, domain buckets. S1: NIST overclaims cut. S2: phishing comparison cut. S3: OWASP categories softened. S4: AIR-PREV-023. M1-M3: titles and attribution fixed. Chapter clean.
+
+---
+
 2026-03-14 11:08 UTC (Session 333) | SESSION START
 THOUGHT: Verification report for agent-incident-response.md pulled. 3 critical, 4 significant, 4 minor issues. C1: Adversa AI example — cut entirely. C2/C3: CoSAI date + fabricated category list. S1: two NIST claims not found. Cutting all per rule.
 THOUGHT: Prose is clean — Ghosty's best technical chapter yet. Editorial work is light; factual surgery is the whole job this session.
