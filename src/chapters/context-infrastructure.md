@@ -36,7 +36,7 @@ In the Potential pillar, durability is a key dimension: will what you build toda
 
 Context is not just "the prompt." Shane defines it as two things working together: well-curated information and well-managed access to it. Supplying the right information at the right time, aligned with policy.[^1]
 
-This distinction matters. The industry conversation about "context engineering" has exploded in 2026, with Anthropic, Manus, LangChain, and others all publishing frameworks for managing what goes into the context window.[^3][^4][^5] That work is valuable but focused on the runtime question: how do you select, compress, and structure tokens at inference time?
+The industry conversation about "context engineering" has exploded in 2026, with Anthropic, Manus, LangChain, and others all publishing frameworks for managing what goes into the context window.[^3][^4][^5] That work is valuable but focused on the runtime question: how do you select, compress, and structure tokens at inference time?
 
 Shane's argument is broader. The runtime optimization matters, but the lasting investment is in what sits behind the runtime: the organizational knowledge that any context engineering pipeline draws from. If that knowledge is scattered, duplicated, stale, or ungoverned, no amount of clever context window management will fix the problem. An agent reasoning over bad information reasons confidently and incorrectly.
 
@@ -200,7 +200,7 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 
 **Treat freshness as a feature.** Add timestamps, version numbers, and staleness signals to information that agents consume. An agent that knows "this was last verified three months ago" can make better decisions than one that treats everything as current.
 
-The organizations that invest in context infrastructure now will not just be ready for today's agents. They will be ready for every generation that follows. Models keep getting more capable. The context infrastructure you build today benefits from every improvement that follows.[^1]
+The organizations that invest in context infrastructure now will be ready for every generation that follows. Models keep getting more capable. The infrastructure you build today benefits from every improvement.[^1]
 
 ---
 
