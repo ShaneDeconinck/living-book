@@ -59,6 +59,20 @@ The error pattern is: writing large specific figures from memory without returni
 
 ---
 
+## 6. Post-publish quality scan (2026-03-14)
+
+Technical chapters with high citation density can still carry prose overhead even after editing. Specific patterns found in the published version:
+
+**Negative framing before positive statement.** "This is not prompt injection in the traditional sense" is setup that doesn't add value before "There is no malicious payload." Lead with what a thing is, not what it isn't.
+
+**Redundant two-sentence pairs.** "At no point does the developer see anything suspicious. The agent does exactly what it was instructed to do" — same point stated twice, once abstractly, once concretely. One sentence usually does the job.
+
+**Category label scaffolding.** "A new category emerged in early 2026:" before describing the category. The category names itself in what follows. Cut the announcement.
+
+These are recurring prose habits, not just this chapter. See patterns-master.md patterns 3 and 4.
+
+---
+
 ## 5. The chapter's best writing is in the QUIETVAULT/AI malware section
 
 The QUIETVAULT section — UNC6426 exploiting the nx npm build framework via pull_request_target GitHub Actions, postinstall injection — is the most technically precise and original analysis in the chapter. The five AI malware families section is also strong. This is where the chapter earns its place.
