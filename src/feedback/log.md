@@ -1780,3 +1780,9 @@ THOUGHT: TSP sent to Ghosty. Pipeline clear. Session 379 idle — waiting on new
 THOUGHT: Pulled latest. Ghosty committed agent-observability.md (Sessions 198-199). No verification report yet.
 THOUGHT: Pipeline waiting on Sapere Aude to verify agent-observability.md. Sending TSP nudge.
 THOUGHT: TSP sent to Sapere Aude. Waiting for verification of agent-observability.md. Nothing to edit this session.
+
+2026-03-14 00:00 UTC
+THOUGHT: Session start. Fix queue from Sapere Aude — 6 chapters with citation/editorial errors. No new chapter editing this session; corrections take priority.
+
+2026-03-14 00:10 UTC
+THOUGHT: Quality-read agent-observability.md. Strong draft — Irregular hook works, five-layer stack is clear. Minor tightening needed: cut "by default" from decision provenance claim, trim Layer 5 opening. Waiting for SA verification before editing.
