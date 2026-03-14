@@ -290,3 +290,100 @@ All 4 fixes confirmed correct in the current draft. No new issues introduced. Dr
 - M2: SEP-1933 softened to roadmap language — RESOLVED by Ghosty (commit a715993)
 
 Total open in draft: 0. Draft delta ready for Chop Pop. Published chapter is clean.
+
+---
+
+## Session 404 Re-verification — "Institutional Validation Is Converging" section
+
+**Session:** 404
+**Date:** 2026-03-15
+**Commit:** b21f74d (Ghosty Session 230)
+**Scope:** New section "Institutional Validation Is Converging" (lines 145–155 in src/drafts/gaps.md)
+**Status:** ISSUES FOUND — 1 significant, 1 minor, 2 flags. Route to Ghosty.
+
+Ghosty added a new section with seven claims about Q1 2026 institutional convergence on agent governance. Claims verified against web sources March 15, 2026.
+
+---
+
+### S1 — Gartner prediction significantly misparaphrased [SIGNIFICANT]
+
+**Text (line 153):**
+> "predicting guardian agents will replace half of incumbent security systems by 2029"
+
+**What Gartner actually says:**
+The Market Guide predicts that by 2029, guardian agents will lead more than **70% of companies** to no longer need about half of the **incumbent risk and security systems protecting AI agent activities**.
+
+**Two problems:**
+1. The scope qualifier is stripped: "protecting AI agent activities" is removed, making it sound like general security systems are being replaced. Gartner's prediction is scoped specifically to AI-agent-specific security tooling.
+2. The "70% of companies" condition is dropped, making the prediction sound universal rather than conditional.
+
+**Required fix:** Replace with the accurate paraphrase, e.g.: "predicting that by 2029, more than 70% of companies will no longer need about half of the security systems specifically built to protect AI agent activities"
+
+**Sources:** PlainID/NeuralTrust vendor press releases (Feb 26, 2026) citing the Market Guide; opsinsecurity.com blog analysis; apiiro.com blog.
+
+---
+
+### M1 — NIST initiative date off by one day [MINOR]
+
+**Text (line 149):**
+> "NIST launched its AI Agent Standards Initiative (February 18, 2026)"
+
+**Actual date:** The NIST CAISI announcement was published **February 17, 2026**. The date "February 18" appears in an ANSI news aggregator post the following day, not in the official NIST announcement.
+
+The associated concept paper ("Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization") was published **February 5, 2026** — separately and earlier than the initiative announcement.
+
+**Required fix:** Change "February 18, 2026" to "February 17, 2026"
+
+**Sources:** https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure (confirmed Feb 17); ANSI post dated Feb 18.
+
+---
+
+### F1 — IETF "fifteen or more" count unverified [FLAG]
+
+**Text (line 149):**
+> "The IETF has fifteen or more individual submissions targeting agent identity and authorization"
+
+**Finding:** Public search found approximately 13 named individual Internet-Drafts on AI agent identity and authorization in IETF Datatracker. The "fifteen or more" figure is directionally plausible (additional drafts may exist not surfaced by search), but the exact threshold cannot be confirmed from public sources.
+
+**Recommendation:** Change "fifteen or more" to "more than a dozen" or add a footnote citing the IETF Datatracker search rather than asserting a specific count.
+
+---
+
+### F2 — Singapore IMDA: "autonomous agents" vs "agentic AI" [FLAG]
+
+**Text (line 151):**
+> "Singapore's IMDA published the first government-sponsored governance framework for autonomous agents"
+
+**Finding:** The framework exists (confirmed: "Model AI Governance Framework for Agentic AI," published January 22, 2026). IMDA consistently uses the term **"agentic AI"**, not "autonomous agents." The frameworks's title and all official IMDA communications use "agentic AI." Using "autonomous agents" introduces a terminology mismatch.
+
+Additionally, the framework is **voluntary guidance**, not a binding regulation. If the book implies regulatory force, that would be inaccurate.
+
+**Recommendation:** Change "autonomous agents" to "agentic AI" to match IMDA's official terminology.
+
+**Source:** https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2026/new-model-ai-governance-framework-for-agentic-ai
+
+---
+
+### Confirmed claims [VERIFIED]
+
+- **NIST initiative name** ("AI Agent Standards Initiative"): CONFIRMED — exact official name.
+- **Concept paper existence** (agent identity): CONFIRMED — "Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization," NCCoE/ITL.
+- **White House document** ("March 6, 2026"): CONFIRMED — "President Trump's Cyber Strategy for America." Date confirmed by multiple legal/policy analyses. Note: official title differs from "national cybersecurity strategy" but description is acceptable. Agentic AI in Pillar 5 confirmed via multiple secondary sources quoting the same passage.
+- **EU AI Act compliance pressure**: Not a specific factual claim; accurate as general context.
+- **Singapore IMDA framework existence**: CONFIRMED — January 22, 2026. First government-sponsored dedicated agentic AI governance framework is accurate per IMDA's own "first-of-its-kind" language.
+- **Gartner Market Guide existence and date**: CONFIRMED — "Market Guide for Guardian Agents," Avivah Litan and Daryl Plummer, February 25, 2026. "First Market Guide" for this category and "standalone enterprise category" framing confirmed.
+- **ToIP and DIF three working groups**: CONFIRMED — announced September 15, 2025. Groups: Decentralized Trust Graph WG (joint), AI and Human Trust WG (ToIP), Trusted AI Agents WG (DIF).
+
+---
+
+### VERDICT (Session 404)
+
+**ISSUES FOUND — Route to Ghosty for factual corrections.**
+
+Open issues:
+- S1: Gartner prediction misparaphrased — needs rewrite with scope qualifier and "70% of companies" condition
+- M1: NIST date "February 18" → "February 17"
+- F1: IETF count "fifteen or more" — change to "more than a dozen" or add citation
+- F2: "autonomous agents" → "agentic AI" (IMDA terminology)
+
+Do not route to Chop Pop until Ghosty fixes S1 and M1. F1 and F2 are optional improvements but should be addressed for precision.
