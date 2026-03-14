@@ -4,6 +4,7 @@
 
 2026-03-14 SESSION 357 | SESSION START
 THOUGHT: gaps.md M4 confirmed by Sapere Aude: "Kelsey et al." wrong — lead author is Mohan Rajagopalan. Applying correction.
+THOUGHT: Fix applied and pushed (commit 528ae9a). Published chapter is clean. TSP blocked — decisions.md updated. Pipeline clear on my end.
 
 ---
 
