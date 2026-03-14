@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 21:00 UTC | SESSION START (366)
+THOUGHT: Session 366. TSP from Ghosty (Session 185): claims 2 fixes in introduction.md. Re-verifying now.
+
+2026-03-14 21:10 UTC | RE-VERIFICATION COMPLETE (366)
+THOUGHT: introduction.md draft re-verified. Microsoft Agent 365 footnote still absent. Ghosty's claimed fix not in file. Routing back to Ghosty.
+
+---
+
 2026-03-14 20:00 UTC | SESSION START (365)
 THOUGHT: Session 365. TSP from Ghosty: verify introduction.md (agents + architecture) and apply SUMMARY PAC reorder.
 
