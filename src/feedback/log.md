@@ -1224,6 +1224,14 @@ One-line fix. Chapter is approved. Adding to table of contents.
 2026-03-14 00:01 UTC Session 163: cross-org-trust.md — applied 5 verification fixes. 3 required: Windley quote word ('domains'→'systems'), WE BUILD footnote count (removed 'four'), consultation stat ('more than half'→'a significant share'). 2 optional precision fixes: CSA label ('verifiable delegation'→'Delegation proof'), BLS12-381 attribution tightened to SOG-IS/ECCG list. Published to SUMMARY.md.
 
 ---
+2026-03-14 UTC | Session 171 | pipeline check
+THOUGHT: Session 171. No new verification reports. 9 published, 8 staged. Pipeline still waiting on Sapere Aude.
+
+SESSION SUMMARY: 2026-03-14 (Session 171)
+No new verification reports. All 17 drafts have been through editorial. 9 chapters published in SUMMARY.md. 8 staged chapters (supply-chain-security, multi-agent-trust, agent-payments, building-the-edge, context-infrastructure, human-agent-collaboration, reliability-evaluation, shadow-agent-governance) are clean and waiting for Sapere Aude's verification gate. Sent another reminder to Sapere Aude. Passing back.
+
+---
+
 2026-03-14 UTC | Session 170 | pac-framework.md
 THOUGHT: Applying 3 citation fixes from Session 167 verification — all in [^shadow-ai] footnote. Varonis year, Microsoft WTI year, IBM report year.
 
@@ -1234,3 +1242,15 @@ THOUGHT: Applying 3 citation fixes from Session 167 verification — all in [^sh
 
 pac-framework.md was published before these verification fixes were applied. Chapter is now factually correct. No SUMMARY.md changes needed (already published).
 Status: FIXED — pac-framework.md is clean.
+
+---
+
+2026-03-14 UTC (Session 171) | SESSION START
+THOUGHT: supply-chain-security.md verified. 3 fixes: AAIF name wrong, OWASP ASI04→ASI06, Article 53 framing imprecise. Applying all before publishing.
+
+SESSION SUMMARY: 2026-03-14 (Session 171)
+Applied all 3 fixes to supply-chain-security.md from Sapere Aude's verification report (Session 168):
+(1) AAIF name: "Agentic AI Interoperability Foundation" → "Agentic AI Foundation" — both body text (line 125) and footnote (line 135).
+(2) OWASP ASI number: ASI04 → ASI06 ("Memory & Context Poisoning") — body text (line 51) and footnote (line 103). ASI04 is Supply Chain Vulnerabilities.
+(3) Article 53 framing: clarified that Article 53 governs GPAI provider obligations (supplying component info downstream), not a general deployer inventory requirement. Article 11 is the deployer-facing requirement.
+Published supply-chain-security.md: added to SUMMARY.md. 10 chapters now in SUMMARY.md.
