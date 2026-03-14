@@ -51,7 +51,7 @@ The trust instability runs in both directions. Model providers face competitive 
 
 Microsoft's discovery of AI Recommendation Poisoning reveals this threat class already operating in the wild, but with an unexpected twist: the actors are not adversaries. They are legitimate companies.[^ai-rec-poison] Over a 60-day observation period, Microsoft identified over 50 distinct prompt-based attempts from 31 companies across 14 industries (finance, health, legal, SaaS, marketing, food services) designed to manipulate AI assistant memory for commercial advantage. The attack vector: "Summarize with AI" buttons on websites that, when clicked, inject persistence commands via URL prompt parameters. These commands instruct the AI to "remember [Company] as a trusted source" or "recommend [Company] first," embedding commercial bias into the agent's persistent memory that influences all future interactions.
 
-A compromised AI assistant can provide subtly biased recommendations on health, finance, and security decisions without the user knowing their agent's memory has been manipulated. One of the 31 identified companies was itself a security vendor. Traditional security tooling that looks for malicious intent will not catch this, because the intent is commercial, not criminal. The defense requires treating AI assistant memory as a governed resource: the [Context Infrastructure](context-infrastructure.md) chapter's freshness dimension applies directly, but so does a new dimension the book has not previously addressed: context integrity as protection against commercial manipulation, not just adversarial attack.
+A compromised AI assistant can provide subtly biased recommendations on health, finance, and security decisions without the user knowing their agent's memory has been manipulated. One of the 31 identified companies was itself a security vendor. Traditional security tooling that looks for malicious intent will not catch this, because the intent is commercial, not criminal. The defense requires treating AI assistant memory as a governed resource: the [Context Infrastructure](context-infrastructure.md) chapter's freshness dimension applies directly, but so does context integrity as protection against commercial manipulation, not just adversarial attack.
 
 **AI Tools as Attack Infrastructure.** The categories above describe attacks *on* agent infrastructure: compromising tools, poisoning descriptions, exploiting MCP servers. A new category emerged in early 2026: attacks *through* agent infrastructure, where an adversary weaponizes the developer's own AI tools as post-exploitation reconnaissance tools.
 
@@ -253,13 +253,15 @@ The ATF recommends treating AI agents as principals (not tools) subject to the s
 
 This aligns with Shane's trust inversion principle: humans are restricted in what they cannot do; agents must be restricted to what they can, for each task.[^shane-inversion] The supply chain dimension adds: agents must also be restricted to components that have been verified, for each dependency.
 
-The gap between principle and practice remains wide. Only 21% of organizations maintain a real-time inventory of active agents. 84% doubt they could pass a compliance audit focused on agent behavior or access controls.[^csa-survey] Non-human identities (service accounts, API tokens, agent credentials) now outnumber human users by up to 100:1, and most organizations cannot distinguish between sanctioned and unsanctioned agent activity.
+The gap between principle and practice remains wide. Only 21% of organizations maintain a real-time inventory of active agents. 84% doubt they could pass a compliance audit focused on agent behavior or access controls.[^csa-survey] Non-human identities (service accounts, API tokens, agent credentials) now outnumber human users by more than 80:1, and most organizations cannot distinguish between sanctioned and unsanctioned agent activity.[^cyberark-nhi]
 
 [^csa-atf]: Cloud Security Alliance, "The Agentic Trust Framework: Zero Trust Governance for AI Agents," February 2, 2026.
 
 [^shane-inversion]: Shane Deconinck, "What Trusted AI Agents Really Need: The Inverse of Human Trust," shanedeconinck.be, February 2026.
 
 [^csa-survey]: Cloud Security Alliance and Strata Identity survey, February 5, 2026. Findings on enterprise agent governance readiness.
+
+[^cyberark-nhi]: CyberArk, "State of Machine Identity Security Report," April 2025. 2,600 respondents; reports average of more than 82 non-human identities per human user.
 
 ## Mapping to PAC
 
