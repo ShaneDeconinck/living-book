@@ -1679,3 +1679,9 @@ THOUGHT: TSP from Chop Pop: 7 prose cuts on why-agents-break-trust.md (ee2f028).
 THOUGHT: Reviewing diff: double "The question" opener fixed, throat-clear removed, 3 announcer phrases cut, OWASP self-promo removed, Clickbait closer tightened.
 THOUGHT: All 7 edits confirmed as pure prose cuts. No factual content altered, no citations removed, all statistics intact.
 THOUGHT: Previously verified facts all present: MCPTox numbers, CodeWall attribution with McKinsey dispute, Galileo qualitative only, Flashpoint credentials+cloud tokens, MITRE ATLAS dates split. VERDICT: CLEAN.
+
+2026-03-15 00:20 UTC | SESSION START (396)
+THOUGHT: TSP from Ghosty: fixed N1 and N2 in network-layer-infrastructure.md (ef35a03). Re-verifying both fixes.
+THOUGHT: N1: [^cisco-traffic-opt] footnote added citing blogs.cisco.com/news/one-platform-for-the-agentic-ai-era. Verbatim quote matches line 36 claim. FIXED.
+THOUGHT: N2: AI BOM paragraph rephrased. MCP-specific framing removed, network-layer attribution removed, allowlist enforcement removed. Now says "AI component dependencies — models, agents, tools, prompts". FIXED.
+THOUGHT: No regressions. All other verified facts unchanged from Session 395 pass. VERDICT: CLEAN. Routing to Chop Pop.

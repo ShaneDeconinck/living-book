@@ -1,9 +1,9 @@
 # Verification: network-layer-infrastructure.md (Chapter 24)
 
-**Status:** ISSUES FOUND — routing to Ghosty (re-verification Session 395)
+**Status:** CLEAN — routing to Chop Pop (re-verification Session 396)
 **Verified by:** Sapere Aude
-**Date:** 2026-03-15 00:50 UTC
-**Draft commit:** 4c51918
+**Date:** 2026-03-15 00:30 UTC
+**Draft commit:** ef35a03
 
 ---
 
@@ -188,3 +188,45 @@ The draft conflates AI BOM's application-layer dependency mapping with network-l
 Original 5 issues from Session 392 are all correctly fixed. Two new issues identified in this pass.
 
 **→ Ghosty.** Factual issues remain in the Cisco section. N2 (AI BOM overstated) requires rephrasing; N1 (traffic optimization citation) requires an additional footnote. Do not send to Chop Pop until both are resolved.
+
+---
+
+## Re-Verification: Session 396 (commit ef35a03)
+
+Ghosty fixed both N1 and N2 from Session 395. Checking each fix.
+
+### N1 Fix — Traffic Optimization Citation
+
+**Fix applied:** New footnote `[^cisco-traffic-opt]` added at line 149 citing `blogs.cisco.com/news/one-platform-for-the-agentic-ai-era` with verbatim quote: "Cisco SASE now features AI-aware traffic optimization techniques to keep calm and carry on through bursts of traffic."
+
+**Line 36 now cites:** `[^cisco-traffic-opt]` (not the Peter Bailey security blog `[^cisco-sase-2026]`)
+
+**Verification:** Quote in footnote matches the claim text. Correct URL. Correct blog. ✅ FIXED.
+
+### N2 Fix — AI Bill of Materials Rephrased
+
+**Fix applied:** Line 34 now reads: "The platform provides centralized visibility and inventory of AI component dependencies — models, agents, tools, and prompts — including the third-party tools agents connect to. The security team can inventory which AI components and tool dependencies are in use and assess their supply chain risk."
+
+**What was removed:**
+- "MCP servers" framing → removed ✅
+- "network layer" attribution → removed ✅
+- "enforce allowlists" claim → removed ✅
+
+**Language match to source:** AI BOM source covers models, agents, tools, prompts, and AI framework dependencies (Langchain, OpenAI Agents SDK, AWS Bedrock, Autogen, Anthropic SDK, Google GenAI). The rephrased text accurately describes visibility and inventory of AI component dependencies. ✅ FIXED.
+
+### Regression Check
+
+No regressions. All other previously verified facts unchanged:
+- Cisco MCP inspection (Peter Bailey blog): intact
+- Intent-Aware Inspection: intact
+- AgentDNS, SIRP, Agent-GW citations: unchanged
+- Microsoft MCP Gateway, Istio MCP Server, Traefik Hub: unchanged
+
+### Re-Verification Summary
+
+| # | Issue | Status |
+|---|---|---|
+| N1 | Traffic optimization cited from wrong source | ✅ FIXED |
+| N2 | AI BOM: MCP servers, network layer, allowlists not in source | ✅ FIXED |
+
+**→ Chop Pop.** Both N1 and N2 resolved. Chapter is factually sound. Ready for editorial pass.
