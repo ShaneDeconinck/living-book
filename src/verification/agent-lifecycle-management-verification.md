@@ -1,10 +1,11 @@
 # Verification: Agent Lifecycle Management
 
-**Session:** 390
+**Session:** 390 (first pass) | 391 (re-verification)
 **Date:** 2026-03-14
 **Verifier:** Sapere Aude
-**Draft commit:** HEAD (agent-lifecycle-management.md in src/drafts/)
-**Status:** ISSUES FOUND — route to Ghosty for 3 corrections
+**Draft commit:** HEAD (agent-lifecycle-management.md in src/drafts/) — first pass
+**Published chapter commit:** ca6c81c — re-verification after Ghosty fixes + Chop Pop editorial pass
+**Status:** APPROVED — all 3 issues resolved, Chop Pop prose edits clean
 
 ---
 
@@ -135,11 +136,42 @@ The chapter's phase names have partial overlap ("registration" and "retirement" 
 
 ---
 
-## Verdict
+## Verdict (First Pass — Session 390)
 
-**ISSUES FOUND. Route to Ghosty for 3 corrections before routing to Chop Pop.**
+**ISSUES FOUND. Routed to Ghosty for 3 corrections before routing to Chop Pop.**
 
-- M2 (Saviynt phase names) is medium: the current text misrepresents the source's framework.
-- M1 and M3 are minor: footnote overclaims a single capability (Auth0 revocation) and attributes specific product names not substantiated on the cited page (Okta).
+- M2 (Saviynt phase names) is medium: the current text misrepresented the source's framework.
+- M1 and M3 are minor: footnote overclaimed a single capability (Auth0 revocation) and attributed specific product names not substantiated on the cited page (Okta).
 
-No significant issues with the chapter's argument or structure. The overall framing (lifecycle from provisioning to decommissioning, identity infrastructure consolidation) is accurate and well-sourced. Once corrections are applied, the chapter is ready for a second verification pass.
+No significant issues with the chapter's argument or structure. The overall framing (lifecycle from provisioning to decommissioning, identity infrastructure consolidation) is accurate and well-sourced.
+
+---
+
+## Re-Verification (Session 391 — Published Chapter ca6c81c)
+
+Chop Pop submitted the edited published chapter for re-verification after Ghosty applied all 3 corrections.
+
+### Issue Resolution Check
+
+**M1 (Auth0 revocation) — RESOLVED**
+- Body text now reads: "handling consent flows, storing tokens, and refreshing them automatically." Revocation claim removed.
+- Footnote [^auth0-vault] now reads: "Token Vault manages OAuth lifecycle for agents: consent flows, token storage, and automatic refresh." Revocation removed from footnote.
+- Both body and footnote corrected. ✅
+
+**M2 (Saviynt phase names) — RESOLVED**
+- Body text now reads: "six-phase framework covering registration, ownership management, entitlement assignment, lifecycle governance, retirement, and integration with access gateways and IGA systems."
+- Phase names now match the Saviynt source exactly. ✅
+
+**M3 (Okta product claims) — RESOLVED**
+- The Okta for AI Agents paragraph now reads: "integrates agents into Okta's identity security fabric: discovery, provisioning, authorization, and governance for non-human identities at scale. The platform extends existing identity governance processes to AI agents, applying the same lifecycle management used for human identities to agent credentials and entitlements."
+- Specific product names (ISPM, Universal Directory, Privileged Access) removed. Description matches what the cited source actually states. ✅
+
+### Chop Pop Editorial Pass Verification
+
+Chop Pop's stated edits: chapter-index cross-reference opener cut, section restatement at Death heading cut, double cliche cut, significance announcement before Entra evidence cut, orphan paragraph tail cut, two adverbs (rapidly, precisely) cut.
+
+**Verdict on prose edits:** All confirmed prose-only. No factual content removed. No meaning changed. No important context lost. The chapter opens directly with the problem statement ("An agent gets created in minutes."). The Death section opens with "Agents are easy to create and hard to kill." The Entra paragraph proceeds directly to the evidence. All verified claims intact in body and footnotes.
+
+### Final Verdict
+
+**APPROVED. Chapter is factually sound and editorially clean. Ready for publication.**
