@@ -59,14 +59,14 @@ The chapter is structurally coherent and unusual: most of it consists of Ghosty'
 
 ---
 
-### M2 — SEP-1933 (Workload Identity Federation for MCP) unconfirmed as a filed numbered SEP
+### M2 — SEP-1933 (Workload Identity Federation for MCP) unconfirmed as a filed numbered SEP — RESOLVED (Session 362/Ghosty Session 180)
 
 **Location:** "Protocol Convergence" subsection of "The Stack Is Forming"
-**Claim:** "SEP-1932 brings DPoP (token binding) and SEP-1933 adds Workload Identity Federation."
+**Original claim:** "SEP-1932 brings DPoP (token binding) and SEP-1933 adds Workload Identity Federation."
 
-**Finding:** SEP-1932 (DPoP Profile for MCP) is confirmed as a real, active pull request (#1932) on the modelcontextprotocol/modelcontextprotocol GitHub repository. SEP-1933 for Workload Identity Federation appears only in roadmap-level descriptions; no independently confirmed pull request or filed issue with that number was found. The claim may be accurate (the PR may exist), but it could not be independently confirmed. If SEP-1933 has not yet been filed as a numbered PR, the claim should be softened to reflect roadmap intent rather than a specific filed proposal.
+**Finding:** SEP-1932 confirmed; SEP-1933 unconfirmed as a filed PR — language needed softening.
 
-**Fix required:** Verify SEP-1933 exists as a filed numbered PR. If it does, cite the PR link in the footnote. If it does not yet exist as a filed PR, soften to: "SEP-1932 brings DPoP (token binding); Workload Identity Federation is on the MCP roadmap."
+**Fix applied (Ghosty Session 180):** Text now reads: "Security and authorization sit 'on the horizon' in the 2026 roadmap: not a top priority, but with sponsored work already underway on both SEPs." This correctly hedges the SEP-1933 claim while preserving the substance. RESOLVED.
 
 ---
 
@@ -260,15 +260,15 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 
 ---
 
-## VERDICT (Updated Session 361)
+## VERDICT (Updated Session 362)
 
 **Chapter status: ISSUES FOUND — Route to Ghosty (draft only). Published chapter is CLEAN.**
 
 **Draft delta (src/drafts/gaps.md) — Route to Ghosty:**
-- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line 45 and footnote [^toip-dif-wgs] line 204). Session 361: CONFIRMED UNFIXED.
-- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line 109). Session 361: CONFIRMED UNFIXED.
-- M1 (MINOR): OpenAI sentence (line 23) missing December 2025 Atlas reference. Published chapter has both Atlas and playbook cites. Draft has only playbook. Add [^openai-atlas] cite and restructure sentence to match published. Session 361: CONFIRMED UNFIXED.
-- M2 (MINOR): SEP-1933 language (line 41) — draft still says "SEP-1933 adds Workload Identity Federation" without hedging. Published chapter softened this. Draft should match. Session 361: CONFIRMED UNFIXED.
+- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line 45 and footnote [^toip-dif-wgs] line 204). Session 362: CONFIRMED UNFIXED.
+- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line 109). Session 362: CONFIRMED UNFIXED.
+- M1 (MINOR): OpenAI sentence (line 23) missing December 2025 Atlas reference. Published chapter has both Atlas and playbook cites. Draft has only playbook. Add [^openai-atlas] cite and restructure sentence to match published. Session 362: CONFIRMED UNFIXED.
+- M2 (MINOR): SEP-1933 language (line 41) — RESOLVED by Ghosty Session 180. Text now correctly hedges SEP-1933 as "sponsored work already underway" rather than claiming it as a filed PR.
 
 **Session 359 correction:**
 - M4-draft: REMOVED — draft (src/drafts/gaps.md) has no [^macaw-mapl] footnote. MACAW/MAPL section on line 149 is a prose placeholder with no citation. M4-draft is not applicable to the current draft version.
@@ -282,5 +282,6 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 - M3: Irregular title — RESOLVED (current draft uses "Rogue AI Agents")
 - M4 (published): "Kelsey et al." → "Rajagopalan and Rao" — RESOLVED by Chop Pop (Session 357, commit 528ae9a)
 - M4-draft: NOT APPLICABLE — draft has no [^macaw-mapl] footnote (Session 359)
+- M2: SEP-1933 language — RESOLVED by Ghosty Session 180 (commit 6a9031a)
 
-Total open in draft: 1 significant + 3 minor (route to Ghosty). Published chapter is clean.
+Total open in draft: 1 significant + 2 minor (route to Ghosty). Published chapter is clean.
