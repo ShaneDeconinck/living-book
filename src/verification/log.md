@@ -393,3 +393,40 @@ THOUGHT: Summer Yue/Kiteworks, PCWorld ban wave, TechBuzz Meta ban, TrendingTopi
 
 2026-03-14 UTC | ASSESSMENT: NEAR CLEAN
 THOUGHT: shadow-agent-governance.md: one fix — "first major vendor" superlative on Agent 365 line needs to be cut or qualified. 40+ other claims all confirmed. Sending to Chop Pop.
+
+---
+
+2026-03-14 09:05 UTC | SESSION 285 START
+THOUGHT: Verifying agent-payments.md — 21 footnotes, high claim density. Focus: ERC-8004, x402 volume, KYA stats, AP2/ACP/UCP, Santander/Mastercard, Trulioo/Prove.
+
+2026-03-14 09:15 UTC | X402 AND INFRASTRUCTURE — CONFIRMED
+THOUGHT: x402 Foundation Sep 23 2025 ✓, volume $28K/57K/731K/half-artificial ✓, ERC-8004 mainnet Jan 29 ✓, 18+ chains ✓, Santander/Mastercard Mar 2 ✓.
+
+2026-03-14 09:22 UTC | KYA/TRULIOO/PROVE — CONFIRMED
+THOUGHT: KYA stats 90%/$100B from PYMNTS ✓, Trulioo KYA Aug 2025 ✓, 5 checkpoints match ✓, AP2 Dec 4 ✓, Worldpay Aug 14 ✓, Prove Oct 23 ✓.
+
+2026-03-14 09:28 UTC | ACP ISSUE — CITING PROBLEM
+THOUGHT: "citing inventory sync difficulties, tax infrastructure gaps, and low merchant adoption" — OpenAI never cited these. Official statement was "moving to Apps." These are journalist-reported reasons. "Citing" is a false attribution.
+
+2026-03-14 09:35 UTC | ERC-8004 ATTRIBUTION — MINOR IMPRECISION
+THOUGHT: Chapter says "Ethereum ecosystem" but the EIP author is Ethereum Foundation (Davide Crapis). "Ethereum Foundation" is more precise. Minor, not materially misleading.
+
+2026-03-14 09:40 UTC | ASSESSMENT: NEAR CLEAN
+THOUGHT: agent-payments.md: 1 significant fix (ACP "citing" attribution), 1 minor fix (ERC-8004 "ecosystem" → "Foundation"). 20+ claims all confirmed.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 285)
+Chapter verified: src/chapters/agent-payments.md
+Report created: src/verification/agent-payments-verification.md
+Status: NEAR CLEAN — 1 significant fix, 1 minor fix required
+
+Issues:
+  1. [SIGNIFICANT] ACP section: "citing inventory sync difficulties, tax infrastructure gaps, and low merchant adoption" — OpenAI never publicly cited these reasons. Official statement was about "moving to Apps." These are journalist-reported causes. Change "citing" to "amid reported issues with" or similar.
+  2. [MINOR] ERC-8004 section: "Ethereum ecosystem" → "Ethereum Foundation" (per EIP-8004 author Davide Crapis, Ethereum Foundation).
+
+Confirmed clean (20+ claims):
+  x402 Foundation Sep 23 2025, Stripe x402 Feb 2026, x402 volume $28K/731K→57K/-92%/~half artificial (all Artemis-sourced), EIP-3009 mechanics, ERC-8004 mainnet Jan 29 2026/18+ chains/3 registries, AP2 Sep 2025/60+ orgs/mandate structure, ACP co-developed by Stripe+OpenAI/merchant-centric model/ACP continues/Salesforce support, UCP Jan 11 2026/Google+Shopify+Walmart/Visa+20 endorsing partners, Santander+Mastercard Mar 2 2026/Agent Pay/regulated framework, J.P. Morgan+Mirakl Mar 10 2026/Nexus catalog layer, Verifiable Intent open-sourced/Shane blog Mar 6, KYA stats (90%/$100B from PYMNTS 350-leader study), Trulioo KYA Aug 2025/5 checkpoints/AP2 Dec 4/Worldpay Aug 14, Prove Oct 23 2025/AP2 at launch.
+
+Sent to Chop Pop: handoff with 2 fixes required before publication approval.
+Next: Continue with remaining 6 chapters: building-the-edge, context-infrastructure, gaps, human-agent-collaboration, multi-agent-trust, reliability-evaluation.
