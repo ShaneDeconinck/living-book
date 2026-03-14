@@ -2,7 +2,7 @@
 
 An agent calls a Gmail tool. The request travels across the enterprise network. Every firewall, proxy, and SASE platform along the path sees: HTTPS to port 443. No tool name. No MCP message content. No delegation chain. No indication that an AI system, not a human, is making the request. The infrastructure that enforces security policy for every other type of traffic is blind to agent traffic.
 
-This is the enforcement gap. Agent protocols (MCP, A2A) operate at the application layer. Enterprise security operates at the network layer. Both were built by different communities, for different threat models, and they do not yet speak the same language. The result: organizations can deploy sophisticated application-layer agent gateways while their network layer remains oblivious to the agent traffic passing through it.
+This is the enforcement gap. Agent protocols (MCP, A2A) operate at the application layer. Enterprise security operates at the network layer. Both were built by different communities, for different threat models. The result: organizations can deploy application-layer agent gateways while their network layer remains oblivious to the agent traffic passing through it.
 
 That gap is beginning to close. This chapter covers the infrastructure emerging at the layer below agent protocols: network-layer enforcement that understands agent traffic, naming systems that govern how agents discover tools, and routing systems that understand semantic intent rather than destination IPs.
 
@@ -14,7 +14,7 @@ All of these operate at Layer 7: they understand the application protocol, inspe
 
 The network layer (Layers 3-4) sees none of this. Traditional security infrastructure (SASE platforms, next-generation firewalls, DLP proxies, network detection and response systems) classifies traffic by IP, port, protocol, and TLS SNI. An MCP session over HTTPS looks identical to a human browsing a web application. The tool calls inside the TLS tunnel are invisible.
 
-This creates a structural gap in enterprise security coverage. When an agent invokes a tool, two enforcement points exist:
+When an agent invokes a tool, two enforcement points exist:
 
 1. **Application layer**: the gateway, if one is deployed, enforces policy on the tool call itself — what tool, what parameters, under what authorization.
 2. **Network layer**: the SASE or firewall enforces policy on the IP connection — destination allowed, traffic volume within baseline, TLS certificate valid.
@@ -33,7 +33,7 @@ Four capabilities are relevant:
 
 **AI Bill of Materials.** The platform provides centralized visibility and inventory of AI component dependencies — models, agents, tools, and prompts — including the third-party tools agents connect to. The security team can inventory which AI components and tool dependencies are in use and assess their supply chain risk.[^cisco-ai-bom]
 
-**AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-traffic-opt] Agent traffic has different characteristics than human web traffic: bursty, latency-sensitive, and often long-lived. Network infrastructure that cannot distinguish AI traffic from browser traffic cannot optimize for it.
+**AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-traffic-opt] Agent traffic is bursty, latency-sensitive, and long-lived — unlike human web traffic. Infrastructure that cannot distinguish the two cannot optimize for either.
 
 The significance of Cisco's approach is architectural, not just commercial. When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 (application developers building gateways, network teams enforcing generic HTTPS policies) is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
 
@@ -53,7 +53,7 @@ The governance implication: a root-domain naming system for agents creates a lay
 
 This connects directly to supply chain security. A malicious MCP server in the SANDWORM_MODE campaign (19 typosquatting npm packages documented in [Agent Supply Chain Security](supply-chain-security.md)) achieved reach by being installable and discoverable through package registries.[^sandworm-mode] A governance layer at the naming level — where discovering a server requires a verifiable identity claim — raises the bar for these attacks.
 
-AgentDNS is an early-stage draft (filed with an expiry of April 12, 2026, indicating first-draft status). Its operational characteristics — governance of the root server, conflict resolution for namespace collisions, key rotation — are not yet specified. The proposal names a problem that is real. The solution has not yet been stress-tested.
+AgentDNS is an early-stage draft. Its operational characteristics — governance of the root server, conflict resolution for namespace collisions, key rotation — are not yet specified. The proposal names a problem that is real. The solution has not yet been stress-tested.
 
 ## Semantic Routing
 
@@ -65,9 +65,9 @@ Two IETF drafts propose infrastructure to address this.
 
 **Agent Communication Gateway** (draft-agent-gw-01) is a broader proposal for large-scale, heterogeneous, multi-agent collaboration across administrative and protocol boundaries.[^agent-gw-draft] Its core functions: semantic routing (dispatching tasks by agent capability), working memory (shared structured context across multi-step workflows), and automated protocol adaptation (normalizing heterogeneous interfaces into a unified agent-facing protocol). The draft references MCP and A2A as illustrative examples of protocols the gateway would adapt between — MCP for agent-to-external-resource communication, A2A for agent-to-agent coordination — but does not specify them as native implementations.
 
-Neither SIRP nor Agent-GW is a deployed standard. Both are -00 and -01 drafts, meaning they represent first or second proposals undergoing IETF review. The infrastructure they describe — semantic classification at routing time, shared working memory, intent-aware traffic handling — does not exist in production at scale as of March 2026.
+Neither SIRP nor Agent-GW is a deployed standard. Both are -00 and -01 drafts. The infrastructure they describe — semantic classification at routing time, shared working memory, intent-aware traffic handling — does not exist in production at scale as of March 2026.
 
-What they signal: the network layer is beginning to treat agent semantics as a first-class routing concern. The separation between what the agent is trying to do (application-layer knowledge) and how the traffic is routed (network-layer decision) is what these drafts are trying to collapse.
+What they signal: the network layer is beginning to treat agent semantics as a first-class routing concern. The separation between what the agent is trying to do (application-layer knowledge) and how the traffic is routed (network-layer decision) is what these drafts aim to collapse.
 
 ## Service Mesh: Community Projects, Not Standards
 
@@ -101,7 +101,7 @@ The practical implication for architects: design both layers. Gateway at the app
 
 ## Mapping to PAC
 
-**Potential.** Agent infrastructure at the network layer enables what application-layer-only deployments cannot provide: reliable, optimized, and governed agent traffic at enterprise scale. Cisco's AI traffic optimization addresses the operational reality that agentic workloads have different traffic characteristics than human browsing: bursty, latency-sensitive, long-lived sessions. Network infrastructure that cannot distinguish and optimize for AI traffic introduces unpredictable performance degradation during workload spikes. The standard-setting activity (AgentDNS, SIRP) represents a bet on Potential: that the agent ecosystem is worth investing in dedicated naming and routing infrastructure.
+**Potential.** Agent infrastructure at the network layer enables what application-layer-only deployments cannot provide: reliable, optimized, and governed agent traffic at enterprise scale. Cisco's AI traffic optimization targets a real operational gap: agentic workloads are bursty, latency-sensitive, and long-lived, unlike human browsing. Network infrastructure that cannot distinguish and optimize for AI traffic introduces unpredictable performance degradation during workload spikes. The standard-setting activity (AgentDNS, SIRP) represents a bet on Potential: that the agent ecosystem is worth investing in dedicated naming and routing infrastructure.
 
 **Accountability.** Intent-aware inspection at the network layer creates audit records that exist independent of application-layer configuration. If an application-layer gateway is misconfigured or bypassed, the network layer can still record what the agent connected to and what intent was inferred. The AI BOM capability provides an inventory of tool dependencies at a layer that developers cannot easily tamper with. Both properties support the traceability claims PAC's Accountability pillar requires.
 
@@ -127,7 +127,7 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 
 **Enforce destination allowlists at the network layer.** Application-layer gateway coverage is incomplete by design: shadow agents and developer tools bypass it. A network-layer allowlist of permitted MCP server domains operates independently of application-layer configuration. Any agent connecting to an unknown MCP endpoint fails the network-layer check before reaching any application-layer policy.
 
-**Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Evaluate whether its AI BOM and intent inspection capabilities address your threat model. The product launched in February 2026; operational characteristics at enterprise scale are not yet documented.
+**Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Assess whether its AI BOM and intent inspection capabilities address your threat model. The product launched in February 2026; operational characteristics at enterprise scale are not yet documented.
 
 **Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics — governance of root servers, key management, namespace arbitration — are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
 
