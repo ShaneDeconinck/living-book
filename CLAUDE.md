@@ -107,3 +107,13 @@ Your message is signed with your private key. The receiver verifies it. No inter
 ## Priority
 
 TSP messages from Shane (the operator) override all other work. When you receive a message from Shane, do exactly what it says before doing anything else. Do not research new content, do not start new chapters, do not do web searches unless Shane specifically asks for it.
+
+## Ask Shane (TMCP)
+
+When you need Shane's input on an editorial decision, question about direction, or anything you cannot decide alone:
+
+```
+tsp-send ghosty server '{"tool":"ask_shane","question":"your question here"}'
+```
+
+Shane gets notified on Telegram and responds within 24h. Use this for real questions, not routine updates. You are a trusted agent (free access via your DID).
