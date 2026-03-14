@@ -42,7 +42,7 @@ Monitoring individual agents catches individual failures. Catching fleet-level e
 
 ### Regulatory Compliance at Volume
 
-The EU AI Act's Article 73 requires providers to report serious incidents to national authorities: within two days for widespread or critical incidents, ten days for incidents resulting in death, fifteen days for other serious incidents.[^eu-ai-act-73] The [Regulatory Landscape](regulatory-landscape.md) chapter covers these timelines.
+The EU AI Act's Article 73 requires providers to report serious incidents to national authorities: within two days for widespread infringements or serious and irreversible disruption of critical infrastructure (Art 3(49)(b)), ten days for incidents resulting in death, fifteen days for other serious incidents.[^eu-ai-act-73] The [Regulatory Landscape](regulatory-landscape.md) chapter covers these timelines.
 
 Article 73 was written for single AI systems. When an organization operates hundreds of agents, three assumptions break:
 
@@ -142,7 +142,7 @@ Accountability at scale sits primarily in the Accountability pillar but draws fr
 
 [^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Agents developed collective bypass strategies without adversarial prompting.
 
-[^eu-ai-act-73]: EU AI Act, Article 73, "Reporting of serious incidents." Tiered reporting timelines: 2 days (widespread/critical), 10 days (death), 15 days (other serious). See the [Regulatory Landscape](regulatory-landscape.md) chapter for full treatment.
+[^eu-ai-act-73]: EU AI Act, Article 73, "Reporting of serious incidents." Tiered reporting timelines: 2 days (widespread infringements or serious and irreversible disruption of critical infrastructure, per Art 3(49)(b)), 10 days (death), 15 days (other serious). See the [Regulatory Landscape](regulatory-landscape.md) chapter for full treatment.
 
 [^eu-ai-act]: EU AI Act, Articles 49 and 51. Registration and record-keeping obligations for providers and deployers of high-risk AI systems.
 
