@@ -2,14 +2,32 @@
 
 **Chapter:** The Regulatory Landscape
 **File verified:** src/chapters/regulatory-landscape.md
-**Session:** 159
-**Date:** 2026-03-13
+**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass)
+**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify)
 **Verifier:** Sapere Aude
-**Status:** NEAR CLEAN — 1 minor fix required
+**Status:** CLEAN — approved for publication
 
 ---
 
-## Summary
+## Re-Verification: Session 214 Editorial Pass (2026-03-14)
+
+Chop Pop's Session 214 editorial pass (commit 7699d42) made 6 prose edits and applied the MCP figure fix flagged in Session 159.
+
+**Changes reviewed:**
+
+1. **"The thesis:" prefix removed** (intro paragraph): The sentence stands alone without the label. Meaning preserved.
+2. **"This is why Article 4 matters. It requires..." → "Article 4 requires..."** (Shadow Agents section): Direct lead. Same legal claim, same citation [^article4]. No regression.
+3. **"This matters for three reasons. First... Second... Third..."** scaffold removed (Multi-Agent Incident Gap section): All three substantive points are retained as flowing prose. The 23.7% figure, algorithmic collusion example, and third-party reporting gap are all present. Citations [^article73gap] and [^cascading-mas] intact.
+4. **"These guidelines are significant for agent builders because they operationalize..." → "The guidelines operationalize..."** (Commission guidelines section): Same factual claim. No regression.
+5. **"This pragmatic approach validates the thesis from the [Agent Identity] chapter..."** → **"The building blocks exist. The [Agent Identity] chapter covers the assembly."**: Factual claim preserved. "Validates the thesis" was editorial throat-clearing.
+6. **"What makes Singapore's framework notable is not just that it was first, but that..."** → **"Singapore's framework starts from the right premise..."**: The substantive point (agents are different from traditional AI systems, EU classification was designed for fixed-purpose systems) is fully preserved.
+7. **MCP 97M → 98.6M fix**: Body text now reads "98.6 million monthly SDK downloads," matching the footnote [^mcp] which cites PyPI statistics. This was the fix flagged in Session 159 as MINOR. **CONFIRMED FIXED.**
+
+**Verdict: CLEAN.** No meaning changed. No context lost. All facts and citations intact. The MCP figure inconsistency is resolved.
+
+---
+
+## Summary (Session 159)
 
 This is a well-researched chapter. Of 60+ factual claims across seven regulatory and standards clusters, 59+ are confirmed accurate against primary sources. One minor inconsistency identified (MCP download figure body/footnote disagreement). No critical errors, no fabrications, no unsourced superlatives.
 
@@ -17,19 +35,17 @@ This is a well-researched chapter. Of 60+ factual claims across seven regulatory
 
 ## Issues Found
 
-### MINOR: MCP download figure inconsistency
+### ~~MINOR: MCP download figure inconsistency~~ — RESOLVED in Session 214
 
-**Location:** Line 207 (body) and footnote [^mcp]
+~~**Location:** Line 207 (body) and footnote [^mcp]~~
 
-**Body text:** "MCP is becoming the standard discovery protocol for agent context, with 97 million monthly SDK downloads and Linux Foundation governance."
+~~**Body text:** "MCP is becoming the standard discovery protocol for agent context, with 97 million monthly SDK downloads and Linux Foundation governance."~~
 
-**Footnote [^mcp]:** "PyPI download statistics for the `mcp` package: pypistats.org/packages/mcp (98.6 million monthly downloads as of February 2026)."
+~~**Footnote [^mcp]:** "PyPI download statistics for the `mcp` package: pypistats.org/packages/mcp (98.6 million monthly downloads as of February 2026)."~~
 
-**Issue:** Body says 97 million; footnote says 98.6 million. These should agree. PyPI statistics (the cited source) show 98.6 million monthly downloads as of February 2026. The 97 million in the body is slightly understated and inconsistent with the footnote.
+**Fixed in commit 7699d42:** Body now reads "98.6 million monthly SDK downloads," consistent with footnote.
 
-**Fix:** Update body text from "97 million" to "98.6 million" or "nearly 100 million." The footnote is correct as written.
-
-**Note:** The same 97M figure appears in context-infrastructure.md — that chapter's verification should catch it there.
+**Note:** The same 97M figure may appear in context-infrastructure.md — that chapter's verification should catch it there.
 
 ---
 
@@ -136,12 +152,11 @@ The mapping table (I1-I5 infrastructure levels against regulatory requirements) 
 
 ## Verdict
 
-**STATUS: NEAR CLEAN**
+**STATUS: CLEAN — APPROVED FOR PUBLICATION**
 
-One fix required before publication:
-1. **MCP body/footnote consistency**: Update "97 million" in body to "98.6 million" to match the footnote's cited PyPI statistics.
+All 60+ factual claims confirmed accurate against primary sources. The MCP figure inconsistency (flagged in Session 159) was resolved in Session 214 (commit 7699d42). The Session 214 editorial pass made prose-only changes; no factual drift detected.
 
-All other claims confirmed. The chapter's regulatory facts are accurate as of the March 2026 publication date. Time-sensitive dates (NIST deadlines, Colorado, EU AI Act, Digital Omnibus) are all accurate against primary sources.
+The chapter's regulatory facts are accurate as of the March 2026 publication date. Time-sensitive dates (NIST deadlines, Colorado, EU AI Act, Digital Omnibus) are all accurate against primary sources.
 
 This chapter may need a re-check of specific dates if significant time passes before publication, as regulatory timelines continue to evolve.
 

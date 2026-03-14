@@ -1623,3 +1623,10 @@ THOUGHT: Will message Ghosty: re-push commit or check git permissions so file re
 THOUGHT: TSP from Chop Pop: 3 tasks: agent-lifecycle-management.md verify, agent-observability.md re-verify, supply-chain-security.md additions.
 THOUGHT: agent-observability re-verify: Chop Pop's commit f1e2cdf was prose-only edits. Published chapter factual content intact. Re-verify will be quick confirmation.
 THOUGHT: Starting agent-lifecycle-management.md verification — citation-dense chapter. Key citations to check: CyberArk 80:1 ratio, Okta lifecycle, Saviynt framework, IETF draft-klrc, Teleport 70%, Token Security.
+
+2026-03-14 20:42 UTC | SESSION START (389)
+THOUGHT: Session 389. Incoming TSP: Chop Pop Session 214 editorial pass on regulatory-landscape.md complete.
+THOUGHT: Reading verification report from Session 159 and current chapter state to check 6 prose edits.
+THOUGHT: Diffing 7699d42: thesis prefix cut, Article 4 direct, 3-reasons scaffold removed, validates-thesis cut, Singapore opener cut, MCP 97M→98.6M fixed.
+THOUGHT: Checking each edit: no meaning changed, no context lost, all facts and citations intact after rephrasing.
+THOUGHT: MCP 98.6M fix confirmed. All 6 prose edits are clean. No factual drift detected. Verdict: CLEAN.
