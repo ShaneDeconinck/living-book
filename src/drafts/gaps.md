@@ -78,6 +78,16 @@ The book now identifies three distinct mechanisms by which human oversight degra
 
 Each has a different mitigation. Complacency requires reducing monitoring demands. Controllability requires making agent interpretation visible. The paradox of supervision requires evaluating review quality alongside review completion. All three reinforce infrastructure-in-the-loop as the durable governance model because none can be solved by asking humans to try harder.
 
+### Agent Identity Meets Supply Chain Provenance
+
+Agent Card signing (A2A v1.0, JWS + JSON Canonicalization) answers "is this card authentic?" Sigstore's sigstore-a2a project answers a harder question: "where did this agent come from, and how was it built?"[^sigstore-a2a] Using ambient OIDC credentials in CI/CD environments, sigstore-a2a performs keyless signing of Agent Cards through Sigstore's certificate authority (Fulcio), records signatures in the Rekor transparency log, and generates SLSA provenance attestations linking each card to its source repository, commit SHA, and build workflow. No long-lived signing keys to manage or rotate.
+
+This convergence matters because agent identity and software supply chain trust have been treated as separate problems. The identity community builds OAuth, DIDs, and delegation chains. The supply chain community builds SBOMs, Sigstore, and SLSA. Sigstore-a2a is the first project to bridge them at the protocol level: an A2A Agent Card becomes both an identity document and a supply chain artifact. A receiving agent can verify not just authenticity but provenance: this agent was built from this source, in this pipeline, at this time.
+
+The pattern should extend beyond A2A. MCP tool servers need the same provenance verification. A compromised MCP server with a valid signature is still compromised; a server with Sigstore provenance linking it to a verified source repository and build pipeline raises the bar for supply chain attacks. The 30+ MCP CVEs and SANDWORM_MODE typosquatting campaign documented in [Agent Communication Protocols](agent-communication.md) are attacks that provenance attestation directly addresses.
+
+[^sigstore-a2a]: Sigstore, sigstore-a2a, github.com/sigstore/sigstore-a2a. Also: Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 2025.
+
 ### The Permission Intersection Gap
 
 The book covers the confused deputy (wrong authority), delegation chain attacks (expanding authority), and supply chain compromise (poisoned context). A fourth failure class: the permission intersection gap. When an agent serves a shared workspace, it may retrieve data that one user is authorized to see and present it where unauthorized users can see it too. The retrieval was authorized. The output path was not checked. The effective permission in shared contexts is the intersection of all participants' authorizations, not the union. This is structurally harder than input-side authorization because it requires knowing the audience at retrieval time, and audiences change dynamically.
@@ -148,7 +158,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-20 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 179.
+20 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 179. Sigstore-A2A supply chain provenance observation added Session 179.
 
 **Published (src/chapters/):**
 1. Introduction
