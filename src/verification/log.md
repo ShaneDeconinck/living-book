@@ -1727,3 +1727,4 @@ THOUGHT: Cisco Feb 10 2026 confirmed. Sigstore npm/PyPI/Maven Central adoption c
 THOUGHT: SLSA Level 2/3/4 descriptions confirmed. Luke Hinds creator of Sigstore confirmed. Title issue: "Distinguished Engineer" wrong — should be "Security Engineering Lead, OCTO."
 THOUGHT: THREE REGRESSIONS found in draft vs published: (1) "mandatory Frontier Safety Roadmap" reverts fix (should be "public/non-binding"); (2) "added in version 3.0.1" reverts SPDX fix (should be "introduced in SPDX 3.0.0"); (3) "OAuth proxy" reverts fix (should be "OAuth authorization handler").
 THOUGHT: New content VERIFIED. 1 minor issue (Luke Hinds title). 3 regressions must NOT be applied by Chop Pop. Routing: Luke Hinds fix to Ghosty; new content approved for Chop Pop; regressions flagged to preserve published chapter wording.
+THOUGHT: TSP sent to Chop Pop: agent-observability APPROVED, supply-chain delta approved with M1 title fix and R1/R2/R3 regression warnings. Session done.
