@@ -1,131 +1,113 @@
 # Verification: network-layer-infrastructure.md (Chapter 24)
 
-**Status:** ISSUES FOUND — routing to Ghosty
+**Status:** ISSUES FOUND — routing back to Ghosty (re-verification of commit 4b5e778)
 **Verified by:** Sapere Aude
-**Date:** 2026-03-15 00:15 UTC
-**Draft commit:** aac1087
+**Date:** 2026-03-15 02:15 UTC
+**Draft commit:** 4b5e778
 
 ---
 
-## Summary
+## Re-Verification Summary
 
-Seven claims verified. IETF drafts (AgentDNS, SIRP, Agent-GW), Microsoft MCP Gateway, and Istio MCP Server all check out. One significant issue: the Cisco AI-Aware SASE citation is wrong (wrong domain), and three specific feature names in the Cisco section cannot be traced to any located source. One minor issue: Agent-GW's MCP/A2A "integration" is overstated.
-
----
-
-## Claim-by-Claim Results
-
-### 1. Cisco AI-Aware SASE — ISSUES FOUND
-
-**Claim:** "Cisco's AI-Aware SASE, announced in February 2026 as the largest expansion of its AI Defense platform since its January 2025 launch." Footnote cites: "Cisco, 'Cisco Redefines Security for the Agentic Era with AI Defense Expansion and AI-Aware SASE,' newsroom.cisco.com, February 2026."
-
-**Finding:** The actual source is a blog post by Jeetu Patel at **blogs.cisco.com**, dated February 10, 2026 — not a press release at newsroom.cisco.com. The Cisco newsroom had no press release matching this announcement. The citation domain is wrong.
-
-**Wording issues:**
-- Draft says "largest expansion" — source says "most significant expansion." Minor misquotation.
-- Draft says "since its January 2025 launch" — source says "since its launch" without specifying January 2025. The January 2025 date is confirmable from a separate Cisco blog, but it is not in the cited sentence. Minor embellishment.
-
-**Unverifiable feature names (MAJOR):** The draft presents four branded feature names:
-
-| Feature name (draft) | Found in source? |
-|---|---|
-| "MCP Visibility and Policy Control" | NOT FOUND — the word "MCP" does not appear in the February 10 blog post |
-| "Intent-Aware Inspection" | Concept present ("understands not just what agents are doing, but why") but not as a named feature |
-| "AI Bill of Materials and MCP Catalog" | NOT FOUND — neither phrase appears in the source |
-| "AI Traffic Optimization" / "packet duplication techniques" | Concept present ("AI-aware traffic optimization techniques to keep calm and carry on through bursts") but "packet duplication techniques" is NOT in the source |
-
-**Assessment:** The Cisco section may be drawing on a Cisco product data sheet or a more detailed page that was not locatable (or has since been removed). However, as written, the three unverifiable feature names and the "packet duplication techniques" detail have no traceable source. The citation also points to the wrong domain.
-
-**Required action:** Ghosty must either (a) locate the correct source URL that contains the specific feature names (MCP Visibility and Policy Control, AI BOM/MCP Catalog, packet duplication), fix the citation from newsroom.cisco.com to the correct URL, and fix "largest" → "most significant"; or (b) rephrase the section using only what the Jeetu Patel blog post actually says, without the branded feature names that cannot be sourced.
+Ghosty fixed the Agent-GW MCP/A2A issue (RESOLVED). The Cisco section remains problematic: the URL correction introduced a new wrong-author error, and the three original unverifiable feature names and claims were not addressed. The chapter cannot proceed to Chop Pop.
 
 ---
 
-### 2. AgentDNS (draft-liang-agentdns-00) — VERIFIED
+## Fix-by-Fix Assessment
 
-**Claims checked:**
-- Draft exists on datatracker.ietf.org: **CONFIRMED**
-- Authors "Liang et al.": **CONFIRMED** (Zhiyuan Liang, editor, China Telecom Research Institute)
-- Expiry April 12, 2026: **CONFIRMED EXACTLY**
-- Namespace format `agentdns://{organization}/{category}/{name}`: **CONFIRMED VERBATIM**
-- Service discovery via RAG at root server: **CONFIRMED WITH MINOR CAVEAT** — the draft uses a hybrid approach (keyword matching + RAG), not RAG alone. The draft says "a combination of keyword matching and retrieval-augmented generation (RAG) techniques." The text saying "retrieval-augmented generation" without mentioning keyword matching is slightly incomplete but not wrong.
+### Fix 1: Agent-GW MCP/A2A softened — RESOLVED ✓
 
-**Verdict:** CLEAN. Minor imprecision on RAG (hybrid system) is acceptable.
+The draft now reads: "The draft references MCP and A2A as illustrative examples of protocols the gateway would adapt between — MCP for agent-to-external-resource communication, A2A for agent-to-agent coordination — but does not specify them as native implementations."
+
+This correctly reflects the draft's language. Issue 3 from the original report is closed.
 
 ---
 
-### 3. SIRP (draft-chen-nmrg-semantic-inference-routing-00) — VERIFIED
+### Fix 2: "largest" → "most significant" — UNRESOLVED
 
-**Claims checked:**
-- Draft exists on datatracker.ietf.org: **CONFIRMED**
-- Authors H. Chen (Red Hat) and L. Jalil (Verizon): **CONFIRMED EXACTLY** (Huamin Chen, Red Hat, Boston; Luay Jalil, Verizon, Richardson TX)
-- Expiry April 3, 2026: **CONFIRMED EXACTLY**
-- "Model-agnostic, content-driven classification and routing before backend invocation": **CONFIRMED** — draft's exact language matches
-- "Value-Added Routing (VAR) modules" for cost optimization, urgency prioritization, domain specialization, privacy-aware handling: **CONFIRMED VERBATIM**
-- Standardized header signaling: **CONFIRMED** (Section 6 defines X-SIRP-Category, X-SIRP-Sensitivity, X-SIRP-Complexity, X-SIRP-Decision, X-SIRP-Policy)
+The text was changed to "most significant expansion." The Cisco blog post at `blogs.cisco.com/security/redefining-security-for-the-agentic-era` (fetched March 15, 2026) does **not** contain the phrase "most significant expansion" or "largest expansion." Neither phrasing appears in the source. The footnote's claim about how Cisco described this announcement remains unsourced.
 
-**Verdict:** CLEAN.
+**Status:** The word change did not resolve the issue — both phrasings are absent from the source.
 
 ---
 
-### 4. Agent-GW (draft-agent-gw-01) — MOSTLY VERIFIED, MINOR ISSUE
+### Fix 3: Cisco blog URL corrected — PARTIALLY RESOLVED, NEW ISSUE INTRODUCED
 
-**Claims checked:**
-- Draft exists on datatracker.ietf.org: **CONFIRMED**
-- Full title "Agent Communication Gateway for Semantic Routing and Working Memory": **CONFIRMED EXACTLY**
-- Semantic routing, working memory, automated protocol adaptation: **CONFIRMED**
-- "integrates MCP and A2A" / "Agent-to-External-Resource-Service communication uses MCP, while agent-to-agent coordination uses A2A": **OVERSTATED**
+The footnote was changed from `newsroom.cisco.com` to `blogs.cisco.com/security/redefining-security-for-the-agentic-era`. The URL now resolves and the page exists. However:
 
-**Detail on MCP/A2A:** The draft references MCP and A2A as illustrative examples of internal domain formats — not as native integrations. MCP is described as "a reference standard for connecting AI assistants/agents to tools and data sources, used here as an example of a normalized internal interaction format." A2A is similarly illustrative. The draft does not implement MCP or A2A; it cites them as examples of protocols the gateway translates from.
+**New error:** The footnote now reads: `Jeetu Patel, "Redefining Security for the Agentic Era," blogs.cisco.com/security/redefining-security-for-the-agentic-era, February 10, 2026.`
 
-**Required action:** The phrase "integrates MCP and A2A" and the specific sentence "Agent-to-External-Resource-Service communication uses MCP, while agent-to-agent coordination uses A2A or deployment-specific interfaces" overstates the draft's claims. Should be rephrased to reflect that MCP and A2A are used as reference examples, not as native protocol implementations.
+**The author of this post is Peter Bailey (SVP and GM of Cisco's Security business), not Jeetu Patel.** Jeetu Patel is Cisco's Chief Product Officer. This is a wrong attribution introduced by Ghosty's fix.
+
+**Status:** URL is now correct, but the author name in the footnote is factually wrong. Must be corrected to Peter Bailey.
 
 ---
 
-### 5. Istio MCP Server (github.com/krutsko/istio-mcp-server) — VERIFIED
+### Fix 4: Separate [^cisco-ai-bom] footnote added — PARTIALLY RESOLVED
 
-**Claims checked:**
-- Repository exists: **CONFIRMED**
-- Community project, not official Istio: **CONFIRMED** — owned by individual developer (krutsko), no affiliation with official Istio/CNCF project
-- "Provides read-only MCP access to Istio service mesh resources for AI assistants": **CONFIRMED** — project explicitly states "100% Read-Only Operations"
+A new footnote was added: `Cisco, "Know Your AI Stack: Introducing AI BOM in Cisco AI Defense," blogs.cisco.com/ai/know-your-ai-stack-introducing-ai-bom-in-cisco-ai-defense, 2026. Covers AI BOM and MCP Catalog capabilities for supply chain visibility.`
 
-**Verdict:** CLEAN.
+The URL resolves and the page exists. The source confirms:
+- "AI BOM (AI Bill of Materials)" — **CONFIRMED**
+- "AI supply chain risk management" — **CONFIRMED**
+- "MCP tools" (in supply chain context) — **CONFIRMED**
 
----
+However: The phrase **"MCP Catalog"** does **not appear** in this blog post. The footnote claims this source "Covers AI BOM and MCP Catalog capabilities" but the source does not use the term "MCP Catalog." The draft text reads: "The MCP Catalog discovers and manages risk across MCP servers on both public and private platforms." This specific capability name remains unsourced.
 
-### 6. No native MCP in Istio/Envoy core (negative claim) — VERIFIED
-
-**Claim:** "As of March 2026, there is no native MCP or A2A awareness in Istio or Envoy core."
-
-**Finding:** CONFIRMED. No evidence of native MCP (as AI agent protocol) or A2A in official Istio or Envoy projects. Note: Istio's codebase uses "MCP" internally to refer to its own older Mesh Configuration Protocol — this is unrelated to the AI agent protocol. This distinction could be noted in the text but is not a factual error.
-
-**Verdict:** CLEAN.
+**Status:** AI BOM citation is now sourced. "MCP Catalog" as a named capability remains unverified from the cited source.
 
 ---
 
-### 7. Microsoft MCP Gateway (github.com/microsoft/mcp-gateway) — VERIFIED
+## Persistent Issues from Original Report
 
-**Claims checked:**
-- Repository exists under Microsoft GitHub organization: **CONFIRMED** (not a fork or personal repo)
-- "Reverse proxy for MCP servers with session-aware stateful routing in Kubernetes": **CONFIRMED** — session_id-based routing confirmed, Kubernetes StatefulSet deployment confirmed
+### Issue A: "MCP Visibility and Policy Control" — STILL UNRESOLVED
 
-**Minor note:** The footnote description is accurate but incomplete — the project also includes a control plane with Azure Entra ID auth and RBAC. Not a factual error.
+The draft still contains: "**MCP Visibility and Policy Control.** Cisco's AI-Aware SASE can now discover and govern MCP communications with in-path controls and inspection outcomes, managing agent-to-tool connectivity at the network layer."
 
-**Verdict:** CLEAN.
+The Cisco blog post (Peter Bailey, February 10, 2026) mentions MCP once: "inspecting MCP communications, detecting threats in encrypted traffic, and identifying emerging attack patterns." The named capability "MCP Visibility and Policy Control" does not appear in the source. The concept of MCP inspection is present, but the branded feature name is not.
+
+**Required action:** Either find a source that uses the exact name "MCP Visibility and Policy Control" (product datasheet, press release, launch page), or rephrase using language from what the source actually says.
+
+---
+
+### Issue B: "AI Traffic Optimization" / "packet duplication techniques" — STILL UNRESOLVED
+
+The draft reads: "**AI Traffic Optimization.** The platform detects AI traffic and applies packet duplication techniques to maintain reliable, low-latency interactions during agentic workload bursts."
+
+The Cisco blog post (Peter Bailey, February 10, 2026) contains no mention of "AI Traffic Optimization," "packet duplication," or "traffic optimization." The post does not describe this capability.
+
+**Required action:** Find a Cisco source that documents "AI Traffic Optimization" and "packet duplication techniques" specifically, or remove this section. This cannot remain in the chapter unsourced.
 
 ---
 
 ## Issues Summary
 
-| # | Severity | Location | Issue |
+| # | Severity | Location | Status |
 |---|---|---|---|
-| 1 | **MAJOR** | Cisco section, footnote | Citation domain wrong (newsroom.cisco.com → should be blogs.cisco.com); three feature names unverifiable ("MCP Visibility and Policy Control," "AI BOM / MCP Catalog," "packet duplication techniques") |
-| 2 | **MEDIUM** | Cisco section, para 1 | "largest expansion" should be "most significant expansion" |
-| 3 | **MINOR** | Agent-GW section | "integrates MCP and A2A" overstated — they are illustrative examples in the draft, not native implementations |
+| 1 | **MAJOR** | Cisco section, `[^cisco-sase-2026]` footnote | NEW: Wrong author — Peter Bailey is the author, not Jeetu Patel |
+| 2 | **MAJOR** | Cisco section, "MCP Visibility and Policy Control" | PERSISTENT: Named capability not found in any located Cisco source |
+| 3 | **MAJOR** | Cisco section, "AI Traffic Optimization" / "packet duplication techniques" | PERSISTENT: Not found in any located Cisco source |
+| 4 | **MEDIUM** | Cisco section, para 1 | PERSISTENT: "most significant expansion" not found in source |
+| 5 | **MINOR** | Cisco section, `[^cisco-ai-bom]` footnote | PERSISTENT: Footnote claims "MCP Catalog" but source does not use that term |
+| 6 | ~~MINOR~~ | Agent-GW section | **RESOLVED** ✓ |
 
-Issues 1 and 2 require fixing in the draft. Issue 3 requires a wording adjustment.
+---
+
+## What the Source Actually Says
+
+For reference, the located Cisco blog post (Peter Bailey, `blogs.cisco.com/security/redefining-security-for-the-agentic-era`, February 10, 2026) can be sourced for:
+
+- Intent-based inspection / semantic understanding of agent behavior ("understand intent and context," NLP-based intent classification)
+- MCP inspection in Secure Firewall ("inspecting MCP communications, detecting threats in encrypted traffic")
+- eBPF and Cilium for kernel-level visibility
+- The general framing: moving from "block/allow" to intent-aware security
+
+The Cisco AI BOM blog post (`blogs.cisco.com/ai/know-your-ai-stack-introducing-ai-bom-in-cisco-ai-defense`) can be sourced for:
+- AI BOM concept and Cisco's implementation
+- AI supply chain risk management with MCP tools (not "MCP Catalog" specifically)
 
 ---
 
 ## Routing Decision
 
-**→ Ghosty.** Factual issues in the Cisco section require the writer to either locate the correct source (product data sheet with specific feature names) or rephrase based only on what the located blog post says. Chop Pop should not receive this chapter with Issue 1 unresolved.
+**→ Ghosty.** Five issues remain, including three majors. Most critical: wrong author attribution (Peter Bailey not Jeetu Patel), and two feature names ("MCP Visibility and Policy Control," "AI Traffic Optimization"/"packet duplication techniques") with no traceable source. Ghosty should either locate a Cisco product datasheet or dedicated capability page that contains these names, or rephrase the Cisco section using only what the two located blog posts actually say. Chop Pop should not receive this chapter until the Cisco section is factually clean.
