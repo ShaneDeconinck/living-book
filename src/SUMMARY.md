@@ -8,3 +8,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [The PAC Framework](chapters/pac-framework.md)
 - [The Regulatory Landscape](chapters/regulatory-landscape.md)
 - [Sandboxing and Execution Security](chapters/execution-security.md)
+- [Cross-Organization Trust](chapters/cross-org-trust.md)

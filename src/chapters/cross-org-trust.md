@@ -28,7 +28,7 @@ The deeper failure was not the token theft itself. It was that each domain valid
 
 The CSA identified three requirements that current infrastructure lacks:[^2]
 
-- **Verifiable delegation**: tokens that explicitly differentiate user identity from agent identity and carry verifiable proof of the delegation chain
+- **Delegation proof**: tokens that explicitly differentiate user identity from agent identity and carry verifiable proof of the delegation chain
 - **Operational envelopes**: cryptographic constraints that travel with the token and define what an agent can do, not just what resources it can access
 - **Coordinated revocation**: shared, real-time risk signals between providers so revocation in one domain invalidates access in others
 
@@ -231,7 +231,7 @@ The interaction sequence for cross-domain delegation:
 5. The delegating agent observes outcomes through system signals or cryptographic receipts
 6. The delegating agent updates reputation records based on observed behavior
 
-This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across domains. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
+This model matters because it acknowledges that cross-domain delegation cannot rely on centralized enforcement. Windley's key insight: "Policies without promises cannot coordinate behavior across systems. Promises without enforcement are merely declarations of intent. Reputation without boundaries turns governance into little more than hindsight."[^10] Only their integration creates functioning agent ecosystems.
 
 ## The EUDI Wallet Infrastructure
 
@@ -251,9 +251,9 @@ The EUDI Wallet is not designed for agents specifically. But the infrastructure 
 
 The EU is starting to make this connection explicitly. In March 2026, the WE BUILD consortium, one of the EU's Large Scale Pilots for EUDI Wallets, issued three recommendations: develop a safe AI agent strategy built on the EUDI framework and Business Wallet infrastructure, establish standards working groups for interoperability between EUDI wallets and AI agents, and prioritize testing and pilots before regulation.[^we-build] The framing inverts the usual narrative: not "AI in wallets" (using AI to improve wallet UX) but "wallets for AI agents" (using wallet infrastructure to govern autonomous systems). The specific capabilities they identify map directly to the cross-org trust requirements: mutual authentication between agents and merchants, verification of the relationship between a human and their agent, confirmation of counterparty legitimacy, and digital signatures to distinguish authentic from AI-generated content. This is the first EU pilot consortium to explicitly recommend EUDI infrastructure as the substrate for AI agent governance.
 
-Shane's analysis of the EUDI credential formats identified a significant gap: W3C VC, the format best suited for cross-border semantic interoperability, has de jure inclusion but de facto exclusion in the current implementing regulations.[^6] The operational scaffolding (PID encoding tables, presentation profiles, issuance protocol specifications) exists only for mdoc and SD-JWT VC. More than half the substantive contributions to a recent public consultation converged on this diagnosis. Whether and when this gap closes will determine how effectively the EUDI infrastructure serves cross-border agent trust.
+Shane's analysis of the EUDI credential formats identified a significant gap: W3C VC, the format best suited for cross-border semantic interoperability, has de jure inclusion but de facto exclusion in the current implementing regulations.[^6] The operational scaffolding (PID encoding tables, presentation profiles, issuance protocol specifications) exists only for mdoc and SD-JWT VC. A significant share of substantive contributions to a recent public consultation converged on this diagnosis. Whether and when this gap closes will determine how effectively the EUDI infrastructure serves cross-border agent trust.
 
-There is also a cryptographic contradiction. Article 5a(16)(b) of the regulation requires unlinkability where identification is not needed, but the only format that delivers it cryptographically (W3C VC with BBS signatures) uses a curve (BLS12-381) that is not on ENISA's approved list.[^6] A legal obligation without a cryptographic mechanism. For agents operating across borders with privacy requirements, this is a constraint worth tracking.
+There is also a cryptographic contradiction. Article 5a(16)(b) of the regulation requires unlinkability where identification is not needed, but the only format that delivers it cryptographically (W3C VC with BBS signatures) uses a curve (BLS12-381) that is not on the SOG-IS/ECCG Agreed Cryptographic Mechanisms list.[^6] A legal obligation without a cryptographic mechanism. For agents operating across borders with privacy requirements, this is a constraint worth tracking.
 
 ## The Semantic Boundary Problem
 
@@ -334,5 +334,5 @@ The cross-domain challenge is not optional. Every agent that calls an external A
 [^10]: Phil Windley, "Cross-Domain Delegation in a Society of Agents," Technometria, 2026.
 [^11]: European Commission, European Digital Identity (eIDAS 2.0), Regulation (EU) 2024/1183. EUDI Wallet implementation timeline: December 2026 for Member State availability.
 [^12]: Vouched, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 5, 2026. MCP-I specification at modelcontextprotocol-identity.io. Three conformance levels for graduated adoption.
-[^we-build]: WE BUILD consortium, reported in BiometricUpdate.com, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD," March 9, 2026. WE BUILD is one of the EU's four Large Scale Pilots for EUDI Wallet implementation. See also Thierry Thevenet, "From AI in Wallets to Wallet for AI Agents," Medium, March 2026.
+[^we-build]: WE BUILD consortium, reported in BiometricUpdate.com, "EU can rein in AI agents with EUDI Wallets and business wallets: WE BUILD," March 9, 2026. WE BUILD is one of the EU's Large Scale Pilots for EUDI Wallet implementation. See also Thierry Thevenet, "From AI in Wallets to Wallet for AI Agents," Medium, March 2026.
 [^caam]: IETF, "Contextual Agent Authorization Mesh (CAAM)," draft-barney-caam-00, February 24, 2026. Authors: Jonathan M. Barney, Roberto Pioli, Darron Watson. Individual draft, expires August 28, 2026. Defines sidecar-based authorization mediator for post-discovery, pre-execution authorization with Session Context Objects, Ghost Token Pattern, and Contextual Risk Scoring.

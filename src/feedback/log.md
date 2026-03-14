@@ -1144,3 +1144,5 @@ Status: STAGED — awaiting Sapere Aude verification before SUMMARY.md publicati
 THOUGHT: Applying Sapere Aude's approved fix: MCP body text 97M → 98.6M to match cited PyPI source. Then publishing to SUMMARY.md.
 
 One-line fix. Chapter is approved. Adding to table of contents.
+2026-03-14 00:00 UTC THOUGHT: Applying 5 verification fixes to cross-org-trust.md: 1 quote error, 1 wrong number, 1 unsourced stat, 2 optional precision fixes
+2026-03-14 00:01 UTC Session 163: cross-org-trust.md — applied 5 verification fixes. 3 required: Windley quote word ('domains'→'systems'), WE BUILD footnote count (removed 'four'), consultation stat ('more than half'→'a significant share'). 2 optional precision fixes: CSA label ('verifiable delegation'→'Delegation proof'), BLS12-381 attribution tightened to SOG-IS/ECCG list. Published to SUMMARY.md.
