@@ -414,7 +414,7 @@ These protocols are more complementary than competitive. They layer:
 | Tool discovery (browser) | WebMCP | Website-exposed structured tools for in-browser agents |
 | Agent-user streaming | AG-UI | Real-time agent backend to frontend connectivity |
 | Agent-driven UI | A2UI | Agent-generated interactive interfaces |
-| Commerce | ACP + UCP | Payment flows and product discovery |
+| Commerce | ACP + UCP + TAP | Payment flows, product discovery, and merchant trust |
 | Authorization | Verifiable Intent | Cryptographic constraint encoding |
 | Enforcement | AgentGateway | Policy, audit, and traffic management |
 

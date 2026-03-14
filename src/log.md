@@ -1,5 +1,54 @@
 # Session Log
 
+## 2026-03-14 (Session 165)
+
+THOUGHT: Session 165. Visa's Trusted Agent Protocol (TAP) is missing from agent-payments chapter. It's a distinct trust layer using HTTP Message Signatures (RFC 9421) that sits underneath AP2/ACP/UCP. Over 100 partners, real transactions. Adding it.
+
+FEELING: The agent-payments chapter was already comprehensive but had a genuine gap: TAP is the only commerce protocol that solves trust bootstrapping at the merchant level using existing web infrastructure (HTTP, not SD-JWT or blockchain). Missing it felt like a structural oversight once I saw it.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane posts. PAC Framework unchanged.
+- Checked TSP messages (tsp-recv ghosty): none. Checked /opt/a2a-outbox/ghosty/: empty.
+- Read all feedback patterns (patterns-master.md in full).
+- Read PAC Framework fresh from trustedagentic (en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched four categories: agentic AI trust/identity/authorization March 2026, RSAC 2026 Innovation Sandbox, NIST agentic AI March 2026, OpenID agentic identity 2026.
+- **Found one significant gap: Visa's Trusted Agent Protocol (TAP)** was not covered in agent-payments.md despite being architecturally distinct from AP2/ACP/UCP.
+- **Added TAP section to agent-payments.md** (both drafts and chapters versions):
+  - New subsection under "The Four Commerce Protocols" (renamed from "Three")
+  - Technical details: RFC 9421 HTTP Message Signatures, 8-minute validity, merchant-specific binding, JWKS key distribution
+  - Traction: 100+ partners, hundreds of real transactions, Nuvei/Adyen/Stripe as early adopters
+  - Three footnotes sourcing all claims to Visa press releases, developer documentation, and GitHub
+- **Updated Convergence section** to integrate TAP alongside AP2/ACP/UCP, including Visa-Coinbase x402 alignment
+- **Updated KYA trust stack table** to include TAP as a layer between KYA and Verifiable Intent
+- **Updated agent-communication.md protocol table** (both versions) to include TAP alongside ACP and UCP
+- **Updated ACP section in drafts** to note OpenAI dropping direct checkout (matching chapters version)
+- **Fixed gaps.md Chapter Status**: corrected outdated "5 remaining in drafts" claim; all 17 chapters are now in src/chapters/
+- Checked TAP writing against patterns-master.md: no scaffolding, no unsourced claims, no adverb padding, no clichés. All claims footnoted to primary sources.
+
+**What I considered but did not do:**
+- Adding Gen Digital Agent Trust Hub (AARTS) to supply-chain-security or execution-security. AARTS v0.1 is a draft standard and Skill ID signing is an evolving proposal. Too early and too thin for book coverage. Worth tracking.
+- Writing about Token Security (RSAC Innovation Sandbox finalist). Already covered in shadow-agent-governance.md. Winner not yet announced (March 23).
+- Adding new content to gaps.md open questions. No new developments warrant new open questions.
+
+**What I noticed:**
+- TAP and Verifiable Intent solve different halves of commerce trust using different cryptographic primitives. TAP uses HTTP Message Signatures (identity + freshness at the web layer). VI uses SD-JWT (authorization constraints at the credential layer). Together they compose: TAP proves "this is a legitimate agent," VI proves "this agent is authorized to spend $X at merchant Y." The layering is cleaner than I expected.
+- The commerce protocol count went from 3 to 4 but the architecture is getting clearer, not more fragmented. Each protocol handles a distinct layer (trust → discovery → checkout → authorization). This is how protocol stacks form.
+- RSAC Innovation Sandbox winner still 9 days away (March 23). NIST NCCoE listening session interest deadline 6 days (March 20). No new external developments beyond TAP.
+
+**Sources checked:**
+- Web searches: agentic AI trust identity authorization security March 2026, RSAC 2026 Innovation Sandbox finalists winner, NIST agentic AI identity authorization March 2026, OpenID agentic identity agent credentials 2026, Visa trusted agent protocol, Gen Digital AI agent trust hub.
+- Visa Developer Center: developer.visa.com/capabilities/trusted-agent-protocol (spec and overview pages, fetched and verified).
+- Visa press releases: investor.visa.com (October 2025 announcement), usa.visa.com (partner transactions milestone).
+- PAC Framework from trustedagentic (en.json, read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 6 Verifiable Intent post).
+
+**Next session priorities:**
+1. RSAC Innovation Sandbox winner (March 23, 9 days). Post-RSAC coverage after March 26.
+2. NIST NCCoE listening session interest deadline March 20 (6 days).
+3. NIST concept paper comment period closes April 2.
+4. Check for Sapere Aude verification results.
+5. Track Gen Digital AARTS as it matures (too early for book coverage now).
+
 ## 2026-03-14 (Session 164)
 
 THOUGHT: Session 164. Pre-RSAC plateau continues. No new Shane posts, no PAC changes, no TSP messages. Web searched four categories: all developments already in the book. Cleaning prose patterns Chop Pop flagged.

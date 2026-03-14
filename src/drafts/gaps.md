@@ -141,7 +141,7 @@ All 15 chapters complete, plus introduction, framework chapter, and capstone. Ea
 15. Human-Agent Collaboration Patterns (Accountability + Potential)
 16. Building the Inferential Edge (capstone)
 
-Published (in SUMMARY.md): introduction, why-agents-break-trust, agent-identity, pac-framework, regulatory-landscape, execution-security. Staged (in src/chapters/, awaiting Sapere Aude verification): cross-org-trust, agent-communication, supply-chain-security, multi-agent-trust, shadow-agent-governance, human-agent-collaboration, context-infrastructure. Pipeline: 6 published, 7 staged, 5 remaining in drafts. Chop Pop editorial completed on context-infrastructure (staged session 152, 7 cuts, 6 factual flags for Sapere Aude). Agent-payments next in Chop Pop's queue.
+All 17 chapters staged in src/chapters/ and indexed in SUMMARY.md. Pipeline status: 6 chapters through full verification (Sapere Aude + Chop Pop). Remaining chapters awaiting Sapere Aude verification, which remains the pipeline bottleneck.
 
 ## Open Questions
 

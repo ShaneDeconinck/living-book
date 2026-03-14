@@ -83,9 +83,9 @@ Cloudflare is also proposing a **deferred payment scheme** for x402: batch settl
 
 The honest assessment: infrastructure investment is ahead of organic demand. Despite major backing from Stripe, Coinbase, Cloudflare, and Stellar, x402's daily organic volume sits around $28,000 as of early March 2026, with roughly half of observed transactions reflecting artificial activity (self-dealing and wash trading) according to Artemis on-chain analytics.[^x402-volume] Daily transactions dropped over 92% from a December 2025 peak of approximately 731,000 to about 57,000 in February 2026. This is not unusual for early infrastructure protocols: TCP/IP, email, and HTTP itself took years of infrastructure building before organic usage caught up. The pattern of major infrastructure providers treating agent payments as a first-class use case suggests the bet is on the infrastructure being ready when demand arrives, not on demand having already arrived.
 
-## The Three Commerce Protocols
+## The Four Commerce Protocols
 
-Three competing (and partially overlapping) protocols are defining how agents conduct commerce. Each takes a different approach to the same problem: how does an agent discover products, negotiate terms, and complete a purchase?
+Four protocols are defining how agents conduct commerce. Three handle different stages of the transaction: discovery, checkout, and payment authorization. The fourth handles a prior question: how does a merchant know the agent is legitimate in the first place?
 
 ### AP2: Agent Payments Protocol
 
@@ -97,7 +97,7 @@ AP2 is payment-agnostic (cards, bank transfers, crypto via x402) and integrates 
 
 ### ACP: Agentic Commerce Protocol
 
-Stripe and OpenAI's ACP takes a different approach: start from the checkout experience and work backwards. ACP powers Instant Checkout in ChatGPT, where users can purchase from Etsy sellers and (soon) over a million Shopify merchants directly in conversation.[^8]
+Stripe and OpenAI's ACP takes a different approach: start from the checkout experience and work backwards. ACP launched as the protocol behind Instant Checkout in ChatGPT, enabling users to purchase from Etsy sellers directly in conversation, with Shopify integration announced as coming soon.[^8] OpenAI dropped direct checkout from ChatGPT in early March 2026, within months of launch, amid reported issues with inventory sync, tax infrastructure, and low merchant adoption. The ACP protocol continues.
 
 ACP is deliberately merchant-centric. The merchant remains the merchant of record, retaining control over product presentation, pricing, and fulfillment. The agent facilitates the transaction but does not become a party to it. This preserves existing commerce relationships rather than disintermediating them.[^8]
 
@@ -109,11 +109,29 @@ Google, Shopify, Walmart, and Visa announced UCP in January 2026 as an open-sour
 
 Where AP2 handles the payment authorization flow, UCP handles the product discovery and catalog layer: ensuring agents can access accurate product information, inventory, and pricing across merchants.
 
+### TAP: Trusted Agent Protocol
+
+Visa's Trusted Agent Protocol, announced in October 2025 and open-sourced on GitHub, solves the trust bootstrapping problem the other three protocols assume away: how does a merchant distinguish a legitimate agent from a bot?[^tap]
+
+TAP uses RFC 9421 HTTP Message Signatures. Every agent request carries two headers: `Signature-Input` (metadata including the request URI, timestamps, key identifier, algorithm, nonce, and a tag distinguishing browsing from payment) and `Signature` (the cryptographic signature itself). The merchant validates the signature against publicly retrievable keys hosted at well-known JWKS endpoints. No bilateral agreement required.[^tap-spec]
+
+Three properties make this architecturally distinct from Verifiable Intent:
+
+**Merchant-specific binding.** Each signature is cryptographically locked to a specific merchant's domain and the exact page the agent is interacting with. An authorization for `audioshop.example.com/headphones` cannot be relayed to a different merchant or a different product page.
+
+**Time-bound validity.** Signatures expire after a maximum of 8 minutes. Merchants track nonces within that window to prevent replay attacks. The combination of short-lived signatures and nonce deduplication means captured requests are useless almost immediately.
+
+**Existing web infrastructure.** TAP is built on HTTP, not on new credential formats. Merchants need to add signature verification to their existing web servers, not adopt SD-JWT or blockchain infrastructure. This is a deliberate adoption strategy: minimal changes to existing systems.[^tap-spec]
+
+The protocol carries three types of information: agent intent (proof the agent is Visa-trusted with a specific commerce purpose), consumer recognition (hashed identifiers that let merchants match returning customers without exposing raw data), and payment information (hashed credentials for checkout or encrypted payloads for API integrations).[^tap]
+
+TAP's traction is notable. Over 100 global partners have completed hundreds of controlled real-world transactions, including Skyfire (Consumer Reports' agent purchasing Bose headphones), Nekuda (fashion recommendation agents), and Ramp (B2B corporate bill payments). Nuvei, Adyen, and Stripe are early adopters. Pilot programs are launching in Asia Pacific and Europe in 2026.[^tap-transactions]
+
 ### Convergence
 
-These protocols are more complementary than competitive. AP2 handles payment authorization, ACP handles checkout flows, UCP handles product discovery. Verifiable Intent (covered in the [Agent Identity and Delegation](agent-identity.md) chapter) provides the cryptographic constraint layer that all three can use. The real question is whether they converge on shared primitives or fragment into incompatible ecosystems.
+The four protocols are more complementary than competitive. TAP establishes agent legitimacy at the merchant's front door. UCP handles product discovery. ACP handles checkout flows. AP2 handles payment authorization. Verifiable Intent (covered in the [Agent Identity and Delegation](agent-identity.md) chapter) provides the cryptographic constraint layer that AP2 and TAP both reference. The real question is whether they converge on shared primitives or fragment into incompatible ecosystems.
 
-Google participates in both AP2 and UCP; Stripe participates in both ACP and x402. Companies joining multiple protocols is what you would expect regardless of the outcome: it is hedging, not evidence of convergence. The protocols share some primitives (SD-JWT credentials, mandate structures, x402 for settlement), but shared building blocks do not guarantee a unified stack.
+Google participates in both AP2 and UCP; Stripe participates in ACP, x402, and TAP; Visa participates in both UCP and TAP. Companies joining multiple protocols is what you would expect regardless of the outcome: it is hedging, not evidence of convergence. The protocols share some primitives (SD-JWT credentials, mandate structures, x402 for settlement, HTTP Message Signatures), but shared building blocks do not guarantee a unified stack. Visa is collaborating with Coinbase to align TAP with x402, and the TAP specification explicitly supports HTTP 402 payment flows, which suggests the payment and trust layers are designed to compose.[^tap-spec]
 
 ## On-Chain Agent Identity: ERC-8004
 
@@ -248,6 +266,7 @@ Together they compose into a complete trust stack for agent commerce:
 | Layer | What It Proves | Who Enforces |
 |---|---|---|
 | KYA (Digital Agent Passport) | Agent is legitimate, code is intact, human consented | Merchant, payment network |
+| TAP (HTTP Message Signatures) | Agent is Visa-trusted, request is fresh and merchant-specific | Merchant |
 | Verifiable Intent (SD-JWT) | Spending limits, merchant restrictions, line items | Payment network |
 | Settlement (x402, card networks) | Payment was authorized and funds transferred | Settlement infrastructure |
 
@@ -318,4 +337,7 @@ The agent economy is not a future scenario. Mastercard, Stripe, J.P. Morgan, Goo
 [^worldpay-trulioo]: Worldpay, "Worldpay and Trulioo Collaborate to Embed Trust in the Agentic Commerce Era," businesswire.com, August 14, 2025. KYA framework with Digital Agent Passport for merchant-side agent verification.
 [^prove-verified]: Prove, "Prove Launches Verified Agent Solution to Secure the $1.7 Trillion Agentic Commerce Revolution," businesswire.com, October 23, 2025. Cryptographic chain of custody binding agent actions to verified humans. AP2 support at launch.
 [^prove-crisis]: Prove, "The Crisis of Identity, Part 1: Why Agentic Commerce Needs a KYA Roadmap," prove.com/blog, 2026.
+[^tap]: Visa, "Visa Introduces Trusted Agent Protocol: An Ecosystem-Led Framework for AI Commerce," investor.visa.com, October 2025. Open-sourced on GitHub: github.com/visa/trusted-agent-protocol. Apache 2.0 license.
+[^tap-spec]: Visa Developer Center, "Trusted Agent Protocol Specifications," developer.visa.com. Built on RFC 9421 HTTP Message Signatures, Ed25519 or PS256 algorithms, 8-minute signature validity, JWKS-based public key distribution.
+[^tap-transactions]: Visa, "Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026," usa.visa.com, 2026. Over 100 partners, hundreds of controlled real-world transactions. Early adopters include Nuvei, Adyen, Stripe, Skyfire, Nekuda, PayOS, and Ramp.
 [^mckinsey-commerce]: McKinsey & Company, "The agentic commerce opportunity: How AI agents are ushering in a new era for consumers and merchants," October 2025. Projections: up to $1 trillion in US B2C retail by 2030, $3-5 trillion globally.
