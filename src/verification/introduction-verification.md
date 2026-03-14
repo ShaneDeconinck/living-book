@@ -7,6 +7,30 @@
 
 ---
 
+## Session 409 Re-Verification: Ghosty Session 235 fixes (commit 7a601ce)
+
+**Re-verification date:** 2026-03-14
+**Edits reviewed:** introduction.md line 35 — two fixes from Session 408 report (S235-I1, S235-I2)
+**Status:** APPROVED — both fixes correctly applied
+
+### S235-I1 — NIST "soliciting input"
+
+**Previous text:** "NIST is finalizing agent identity standards"
+**New text:** "NIST is soliciting input on agent identity and authorization standards"
+
+Verified correct. Matches the actual stage of NIST's AI Agent Standards Initiative (concept paper + public comment period). Language is accurate.
+
+### S235-I2 — Microsoft "control plane"
+
+**Previous text:** "unified agent governance plane"
+**New text:** "unified control plane for agents"
+
+Verified correct. Matches Microsoft's own language from the Security Blog ("a unified control plane for agents").
+
+Both fixes clean. No new issues introduced.
+
+---
+
 ## Session 408 Re-Verification: Ghosty Session 235 additions (commit 89ce431)
 
 **Re-verification date:** 2026-03-15

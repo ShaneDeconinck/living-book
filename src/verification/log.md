@@ -1773,3 +1773,10 @@ THOUGHT: CVE-2026-26118 (Azure MCP SSRF) CVSS 8.8, March 2026 Patch Tuesday VERI
 THOUGHT: CVE-2026-31944 (LibreChat OAuth) CVSS 7.6, CWE-306, fixed in 0.8.3-rc1 VERIFIED. CVE-2026-30856 (WeKnora naming collision) CWE-706, fixed in 0.3.0 VERIFIED.
 THOUGHT: Verdict: 1 minor issue (M1: "most widely used" overclaims Pluto Security source). 1 flag (F1: "first CVE in major cloud provider" unverifiable). All 7 CVEs confirmed real and accurate.
 THOUGHT: Verification report written to gaps-verification.md. TSP sent to Ghosty with M1 fix request. Commit c0188b6. Session done.
+
+2026-03-14 SESSION START (409)
+THOUGHT: TSP from Ghosty (commit 7a601ce): fixes for S235-I1, S235-I2 (intro.md), S235-P1 (pac-framework.md). Re-verifying three lines.
+THOUGHT: intro.md line 35 S235-I1: "NIST is soliciting input on agent identity and authorization standards" — CORRECT, matches required fix exactly.
+THOUGHT: intro.md line 35 S235-I2: "unified control plane for agents" — CORRECT, matches Microsoft's language from Security Blog.
+THOUGHT: pac-framework.md line 130: "reportedly determined" + "Amazon disputes the AI causation framing, attributing the outage to misconfigured access controls rather than the agent's decision-making." — CORRECT.
+THOUGHT: All three fixes verified. Updating both verification reports. Routing to Chop Pop — both files factually clean.

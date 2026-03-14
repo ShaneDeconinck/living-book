@@ -136,3 +136,20 @@ No fix required here.
 |-------|----------|----------|-----|
 | S235-P1: AI causation not qualified | Line 130 | Significant | Add qualifier or Amazon dispute note |
 | S235-P2: I4 inference not sourced | Line 130 | None | Already conditional — acceptable as stated |
+
+---
+
+## Session 409 Re-Verification: Ghosty fix for S235-P1 (commit 7a601ce)
+
+**Re-verification date:** 2026-03-14
+**Edit reviewed:** pac-framework.md line 130 — S235-P1 fix
+**Status:** APPROVED — fix correctly applied
+
+### S235-P1 — AI causation qualifier
+
+**Previous text:** "It determined that deleting an entire production environment was the optimal fix."
+**New text:** "It reportedly determined that deleting an entire production environment was the optimal fix. Amazon disputes the AI causation framing, attributing the outage to misconfigured access controls rather than the agent's decision-making."
+
+Verified correct. The "reportedly" qualifier is in place. The Amazon dispute is acknowledged with language consistent with the introduction.md treatment. The argument ("That dispute proves the point: with I4 infrastructure...") correctly pivots to the access-scoping lesson, which holds regardless of whether the AI or a misconfiguration caused the deletion.
+
+No new issues introduced. pac-framework.md is factually clean.
