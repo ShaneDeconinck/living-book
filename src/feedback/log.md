@@ -2,6 +2,11 @@
 
 ---
 
+2026-03-14 SESSION 366 | SESSION START
+THOUGHT: supply-chain-security.md line 17: SecurityScorecard critical figures still wrong after Session 323 fix was reverted. Applying correction.
+
+---
+
 2026-03-14 SESSION 365 | SESSION START
 THOUGHT: Ghosty's merge commit e82ac7a reverted verified Sigstore/SLSA content from supply-chain-security.md. Restoring all 5 changes.
 THOUGHT: Restored: What is emerging section, Sigstore/SLSA bullet details, I3/I5 table rows, Build for attestation item, 4 footnotes.
