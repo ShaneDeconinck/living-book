@@ -7,6 +7,53 @@
 
 ---
 
+## Session 408 Re-Verification: Ghosty Session 235 additions (commit 89ce431)
+
+**Re-verification date:** 2026-03-15
+**Edits reviewed:** introduction.md lines 35 and 75 (new urgency signal + bridge sentence)
+**Status:** ISSUES FOUND — 2 fixes required before publication
+
+Ghosty added an urgency signal at line 35 and a bridge sentence at line 75. The bridge sentence is editorial (no factual claims). The urgency signal contains two errors.
+
+### Line 35 — Urgency signal
+
+**Text:** "the EU AI Act's high-risk obligations take effect in 2026, NIST is finalizing agent identity standards, and Microsoft Agent 365 ships a unified agent governance plane in May.[^microsoft-agent365]"
+
+**EU AI Act 2026:** CLEAN. Consistent with the chapter's established treatment (original obligation August 2, 2026 with Digital Omnibus caveat). No new issue.
+
+**Issue S235-I1 — NIST "finalizing" is inaccurate (significant)**
+
+"NIST is finalizing agent identity standards" overstates the stage.
+
+What NIST is actually doing: In February 2026, NIST's Center for AI Standards and Innovation launched the **AI Agent Standards Initiative** and released a concept paper titled "Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization" — with a public comment period through **April 2, 2026**. This is early-stage standards development: soliciting input, conducting listening sessions, releasing concept papers. Not finalization.
+
+- Sources: [NIST AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative); [NIST concept paper at CSRC](https://csrc.nist.gov/pubs/other/2026/02/05/accelerating-the-adoption-of-software-and-ai-agent/ipd)
+
+**Required fix:** Change "NIST is finalizing agent identity standards" to "NIST is developing agent identity and authorization standards" or "NIST is soliciting input on agent identity standards."
+
+**Issue S235-I2 — Microsoft "governance plane" is wrong terminology (minor)**
+
+The draft says Microsoft Agent 365 ships "a unified agent governance plane." The Microsoft Security Blog post (the cited source) consistently uses "**control plane**" — e.g., "a unified control plane for agents." "Governance plane" is not Microsoft's language.
+
+The May 1, 2026 ship date IS confirmed from the source: "Agent 365 will be generally available on May 1, 2026."
+
+**Required fix:** Change "unified agent governance plane" to "unified control plane for agents" to match the source.
+
+### Line 75 — Bridge sentence
+
+**Text:** "The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them. That is the gap the PAC Framework addresses."
+
+Editorial synthesis. No factual claims. CLEAN.
+
+### Summary
+
+| Issue | Location | Severity | Fix |
+|-------|----------|----------|-----|
+| S235-I1: "finalizing" overstates NIST stage | Line 35 | Significant | Change to "developing" or "soliciting input on" |
+| S235-I2: "governance plane" wrong terminology | Line 35 | Minor | Change to "control plane for agents" |
+
+---
+
 ## Final Re-Verification: Published Chapter (src/chapters/introduction.md)
 
 **Re-verification date:** 2026-03-14

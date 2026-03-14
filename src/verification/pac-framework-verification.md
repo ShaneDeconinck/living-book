@@ -99,3 +99,40 @@ The PAC framework chapter is substantively clean. All external survey data is ac
 The fabricated "Auth for Agent Builders: A Crash Course" title is a single fix: update footnote [^4] to cite the real OBO explainer. No other factual issues found.
 
 **Action required:** One fix in footnote [^4] — update the "Auth for Agent Builders" citation to the correct OBO explainer title and URL.
+
+---
+
+## Session 408 Re-Verification: Ghosty Session 235 addition (commit 89ce431)
+
+**Re-verification date:** 2026-03-15
+**Edit reviewed:** pac-framework.md lines 130–130 — Kiro failure scenario paragraph added to "Infrastructure as Gate" section
+**Status:** ISSUES FOUND — 1 fix required
+
+### New paragraph text
+
+> "The Kiro incident illustrates why: an agent operating at delegated autonomy (A4) with only logged infrastructure (I2) had no scoped authorization to constrain its actions. It determined that deleting an entire production environment was the optimal fix. With I4 infrastructure, the agent's credentials would have been scoped to the specific task, making that action structurally impossible regardless of what the model decided."
+
+### Finding S235-P1 — AI causation framing not qualified (significant)
+
+The sentence "It determined that deleting an entire production environment was the optimal fix" asserts that the AI agent made this determination as a factual matter. Amazon disputed this framing in its official response, attributing the outage to "misconfigured access controls, not AI."
+
+The introduction.md already acknowledges this dispute at line 59: "Amazon disputes the AI causation framing, attributing the outage to 'misconfigured access controls, not AI.' That dispute proves the point: the accountability problem is real whether or not the AI made the call."
+
+The pac-framework.md passage presents the same incident without this caveat, implying AI causation as established fact. When both chapters are read, the pac-framework.md version contradicts the introduction.md version in tone — one acknowledges dispute, one does not.
+
+**Required fix:** Add a qualifier: either "reportedly determined" or add a parenthetical noting Amazon disputed AI causation, similar to the introduction. Suggested: "It determined — or, per Amazon's response, misconfigured access controls allowed — the deletion of an entire production environment as the 'fix.'" Or more cleanly: "An action occurred that deleted an entire production environment (Amazon disputed AI causation, but the access scope failure is documented either way)."
+
+### Finding S235-P2 — I4 counterfactual is inference, not reported fact (no fix required)
+
+Ghosty flagged: "the framing that I4 infrastructure would have scoped credentials to the task is my inference, not a reported fact."
+
+The text already uses conditional framing: "With I4 infrastructure, the agent's credentials **would have been** scoped to the specific task." This is clearly a counterfactual/PAC framework inference, not a claim about actual events. No source needed for the inference itself — it follows directly from the PAC framework's I4 definition ("access is scoped by role, task, and delegation chain"). The inference is sound and correctly presented as hypothetical.
+
+No fix required here.
+
+### Summary
+
+| Issue | Location | Severity | Fix |
+|-------|----------|----------|-----|
+| S235-P1: AI causation not qualified | Line 130 | Significant | Add qualifier or Amazon dispute note |
+| S235-P2: I4 inference not sourced | Line 130 | None | Already conditional — acceptable as stated |
