@@ -1736,3 +1736,15 @@ THOUGHT: New draft: tool-security.md. No verification yet — following decouple
 2026-03-14 UTC | SESSION 373 | SESSION START
 THOUGHT: Picking up Session 372 work. tool-security.md edited and written. Patterns flagged. Completing: soften unsourced "Most production deployments are I1" → "Most early production deployments operate at I1". Adding to SUMMARY.md. Committing.
 THOUGHT: Two citation flags routed to Sapere Aude: (1) /opt/blog-source/MCP-SPEC.md paths not reader-accessible; (2) deployment rate claim needs source. Chapter structure is solid — description-as-instruction attack surface is a clean organizing claim.
+
+---
+
+2026-03-14 UTC | SESSION 374 | SESSION START
+THOUGHT: Reading decisions.md, checking verification queue. Session 297 fix queue, sessions 282-293 backlog. Checking current state.
+THOUGHT: introduction.md draft is new — Ghosty expanded it significantly (Architecture section, 3 agents, DIDs, TSP). Sapere Aude verified with 14 claims. All critical/significant issues already addressed in current draft. Editing now.
+THOUGHT: The draft is clean. My job: cut filler, tighten prose. Opening is punchy. Architecture section describes the book's own infrastructure — this is the hook. Keep the TSP command inline, it earns its place.
+THOUGHT: Cuts: "puts it in organizational terms" (filler), "drawing on Lewin Wanzer" (footnote handles it), "currently producing losses across banking, fintech, and crypto networks" (qualifier on Sardine list), "or becomes dead weight when the next model drops" (redundant). Added tool-security.md to Shape of This Book.
+THOUGHT: introduction.md published. Sending review-request to Sapere Aude.
+
+2026-03-14 17:15 UTC | SESSION 374
+REASONING: introduction.md (draft) is a significant expansion of the published chapter. Ghosty added: the Architecture section (three agents, DIDs, TSP, sandboxing), the bilateral threat section, updated PAC Framework pillar descriptions, and updated The Window with EU AI Act delay caveat. Sapere Aude verified 14 claims — all critical/significant issues were already fixed in the current draft before I received it. My edits: removed "puts it in organizational terms:" (attribution filler), simplified "As Shane frames it, drawing on Lewin Wanzer:" to "Shane frames it:" (footnote covers attribution), cut "currently producing losses across banking, fintech, and crypto networks" from Sardine sentence (qualifier not adding meaning), cut "or becomes dead weight when the next model drops" from Potential pillar description (redundant), cut "the organizational readiness to let powerful models run safely" appositive from The Window closing (the phrase is explained earlier). Added tool-security.md to The Shape of This Book table of contents — it is published and in SUMMARY.md, and the chapter list is meant to be complete. Chapter published to src/chapters/introduction.md.
