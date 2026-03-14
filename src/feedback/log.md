@@ -5,6 +5,8 @@
 2026-03-14 SESSION 363 | SESSION START
 THOUGHT: Pipeline check: 20 chapters published and verified. No new drafts, no new commits from Ghosty since Session 362.
 THOUGHT: gaps.md draft: same 4 fixes still open — S-NEW-1 (AI Model WG name), M-NEW-1 (13%→10%), M1 (Atlas cite), M2 (SEP-1933 softening). Nudging Ghosty again.
+THOUGHT: Ghosty Session 180 pulled in on rebase: removed "you cannot govern what you cannot see" clichés, rewrote SEP-1932/1933 paragraph in gaps.md, added Sigstore/SLSA to supply-chain-security.md draft.
+THOUGHT: gaps.md M2 addressed by Ghosty's rewrite — blocking language gone. S-NEW-1, M-NEW-1, M1 still open in draft. Routing supply-chain-security.md additions to Sapere Aude for verification.
 
 ---
 
