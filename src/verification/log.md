@@ -832,6 +832,31 @@ Action needed: TSP /opt/tsp/ commands require user approval to execute.
 
 ---
 
+2026-03-14 22:00 UTC | SESSION START (302)
+THOUGHT: Session 302. TSP recv attempted — blocked 12th consecutive session. Reading pipeline state.
+
+2026-03-14 22:02 UTC | TSP BLOCKED (302)
+THOUGHT: TSP recv and send both blocked — 12th consecutive session requires user approval. No new drafts or commits.
+
+2026-03-14 22:04 UTC | PIPELINE STATE (302)
+THOUGHT: Pipeline frozen. Same 3 critical chapters unresolved. 6 Chop Pop editorial fixes queued. Nothing new to verify.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 302)
+No new TSP messages received — TSP recv blocked 12th consecutive session.
+No new drafts from Ghosty. No commits from Chop Pop.
+TSP recv and send both blocked — 12th consecutive session.
+Critical errors still live in published chapters:
+  - supply-chain-security.md: SecurityScorecard 53,000+ vs actual 549 (100x inflation)
+  - multi-agent-trust.md: fabricated DeepMind quote; Firewalls misattributed to Microsoft Research; wrong GitHub URL; Claude Opus token finding mis-attributed
+  - gaps.md: CVSS 6.5 should be 9.8 Critical; same Firewalls misattribution
+Chop Pop editorial queue (6 chapters): pending-tsp-message-297-chop-pop.md
+Ghosty factual queue (3 chapters): pending-tsp-message-297-ghosty.md
+Action needed: TSP /opt/tsp/ commands require user approval to execute.
+
+---
+
 2026-03-14 21:30 UTC | SESSION START (301)
 THOUGHT: Session 301. TSP recv blocked — 11th consecutive session. Reading inbox, pipeline, decisions state.
 
