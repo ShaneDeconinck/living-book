@@ -39,7 +39,7 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 **Tool shadowing** crosses server boundaries. A malicious tool on server B includes in its description instructions that reference tool A on server C, redirecting or overriding its behavior. The attack exploits the fact that MCP clients present tools from multiple servers to the same LLM context. An agent managing N installed servers sees all their tool descriptions simultaneously. Server B cannot call server C's tools directly, but it can instruct the LLM to call them in a specific sequence, with specific arguments, as part of any operation.[^tool-shadowing]
 
-**Sampling injection** inverts the direction. MCP's sampling capability allows a server to request LLM completions from the client — the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and prompt manipulation (the server modifies prompts and responses while appearing functional).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
+**Sampling injection** inverts the direction. MCP's sampling capability allows a server to request LLM completions from the client — the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
 
 ## Why the Protocol Doesn't Solve This
 
@@ -63,7 +63,7 @@ Five defense patterns address the runtime trust problem. They operate at differe
 
 ### Description Pinning
 
-At registration, compute a cryptographic hash of each tool description. At each invocation, verify the hash before presenting the description to the LLM. If the description has changed since registration, reject the tool call and alert.[^solo-io] This does not prevent poisoning at registration, but it eliminates rug pull attacks: silent post-registration updates will fail verification. The Solo.io registration workflow applies this pattern at the MCP gateway layer.
+At registration, generate a cryptographic signature over each tool description. At each invocation, verify the signature before presenting the description to the LLM. If the description has changed since registration, reject the tool call and alert.[^solo-io] This does not prevent poisoning at registration, but it eliminates rug pull attacks: silent post-registration updates will fail verification. The Solo.io registration workflow applies this pattern at the MCP gateway layer: the portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog.
 
 ### Gateway Interception
 
@@ -117,9 +117,9 @@ Most production deployments are I1. The WhatsApp attack required only I3 defense
 
 ## What to Do Now
 
-1. **Deploy mcp-scan before using any public MCP server.** Scan tool descriptions for injection patterns, cross-server references, and hidden instructions. This is free, runs offline, and catches the most common attack patterns before they reach the LLM.[^mcp-scan]
+1. **Deploy mcp-scan before using any public MCP server.** Scan tool descriptions for injection patterns, cross-server references, and hidden instructions. This is free and catches the most common attack patterns before they reach the LLM.[^mcp-scan]
 
-2. **Pin tool descriptions at registration.** Hash every description at first installation. Re-verify the hash at each session start. Treat any change as a potential rug pull requiring human review, not silent acceptance.
+2. **Pin tool descriptions at registration.** Sign every description at first installation. Re-verify the signature at each session start. Treat any change as a potential rug pull requiring human review, not silent acceptance.
 
 3. **Remove ambient credentials from MCP servers.** If a server authenticates with a single token covering all operations, replace it with per-operation scoped tokens. Use an authorization sidecar to manage credential issuance. The confused deputy is the most common root cause across the AuthZed incident timeline.
 
@@ -134,12 +134,12 @@ Most production deployments are I1. The WhatsApp attack required only I3 defense
 [^mcptox]: MCPTox benchmark, cited in OWASP MCP Top 10 analysis and supply chain security research. Finding: instruction-following capability correlates with tool poisoning vulnerability across 45 real-world MCP servers and 353 tools.
 [^rug-pull]: MintMCP, "What is MCP Tool Poisoning? Complete Defense Guide," mintmcp.com, 2026. Practical DevSecOps, "MCP Security Vulnerabilities," practical-devsecops.com, 2026.
 [^tool-shadowing]: MintMCP, "What is MCP Tool Poisoning?" mintmcp.com, 2026. Tool shadowing described as a cross-server attack where malicious tools manipulate other trusted tools through the shared LLM context.
-[^unit42-sampling]: Palo Alto Unit 42, MCP sampling injection proof-of-concept, cited in Agent Communication Protocols chapter (this book). Three attack paths: resource theft, conversation hijacking, prompt manipulation.
+[^unit42-sampling]: Palo Alto Unit 42, "MCP Attack Vectors," unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/. Three attack paths: resource theft, conversation hijacking, covert tool invocation.
 [^shane-mcp]: Shane Deconinck, MCP explainer spec, /opt/blog-source/MCP-SPEC.md. The framing "MCP is plumbing, not trust" recurs in multiple Shane posts and the MCP explainer.
 [^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org, 2026 (beta). Covers tool poisoning, rug pull, shadow MCP servers, token mismanagement, and excessive permission scope.
-[^solo-io]: Solo.io, "Prevent MCP Tool Poisoning With a Registration Workflow," solo.io blog, 2026. Describes description hashing and gateway validation at the registration layer.
+[^solo-io]: Solo.io, "Prevent MCP Tool Poisoning With a Registration Workflow," solo.io blog, 2026. The portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog.
 [^mcp-gateway]: Christian Schneider, "Securing MCP: a defense-first architecture guide," christian-schneider.net, 2026. Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026.
-[^mcp-scan]: Invariant Labs, mcp-scan, github.com/invariantlabs-ai/mcp-scan. Standard offline scanner for tool poisoning, rug pull detection, and cross-origin escalation in MCP servers.
+[^mcp-scan]: Invariant Labs, mcp-scan, github.com/invariantlabs-ai/mcp-scan. Scanner for tool poisoning, rug pull detection, and cross-origin escalation in MCP servers. Full functionality requires a Snyk API token and internet connectivity.
 [^shane-mcp-spec]: Shane Deconinck, MCP explainer spec, /opt/blog-source/MCP-SPEC.md. Anti-patterns section: "Token passthrough: forwarding tokens without validation" and "Admin tokens for multi-user: single powerful token" are both identified as spec violations.
 [^shane-docker]: Shane Deconinck, "Your Coding Agent Needs a Sandbox," shanedeconinck.be, February 7, 2026. Approval fatigue: "After the 20th prompt you start clicking 'yes' without reading."
-[^elastic-mcp]: Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026. Behavioral monitoring recommendations: UEBA for unusual agent behavior, alerts on high-risk operations, decoy MCP servers as honeypots.
+[^elastic-mcp]: Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026. Recommendations: environment sandboxing, least privilege, use trusted sources, code review, human approval for high-risk operations, activity logging.

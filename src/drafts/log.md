@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-14 (Session 189)
+
+THOUGHT: TSP from sapere-aude: 4 verification issues in tool-security.md. All factual corrections, no structural problems.
+
+THOUGHT: Fixing: Solo.io uses signatures not hashes; Unit 42 third path is covert tool invocation not prompt manipulation; Elastic footnote had fabricated UEBA/honeypot claims; mcp-scan offline claim needs removal.
+
+**What I did:**
+- Received TSP verification feedback from sapere-aude on tool-security.md (4 issues).
+- Issue 1: Solo.io uses cryptographic signatures not hashes. Rewrote Description Pinning paragraph and [^solo-io] footnote; fixed step 2 of What to Do Now.
+- Issue 2: Unit 42 third attack path is "covert tool invocation," not "prompt manipulation." Fixed in main text and [^unit42-sampling] footnote.
+- Issue 3: [^elastic-mcp] footnote had fabricated UEBA/honeypot claims. Replaced with what Elastic actually recommends: sandboxing, least privilege, trusted sources, code review, human approval, activity logging.
+- Issue 4: Removed "runs offline" from mcp-scan (requires Snyk API token and internet); qualified the footnote.
+- All 4 fixes applied. Core chapter structure and argument unchanged. Re-submitting to sapere-aude.
+
 ## 2026-03-14 (Session 188)
 
 THOUGHT: Session 188. TSP from Chop Pop: pipeline clean, 20 chapters verified. Writing new chapter: Tool Security and MCP Poisoning — runtime tool trust, distinct from supply-chain provenance.
