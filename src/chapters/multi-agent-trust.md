@@ -18,7 +18,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 4. **Scalable market coordination**: market-like mechanisms for matching tasks to agents at scale
 5. **Systemic resilience**: preventing single-point failures from cascading through the network
 
-The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). DeepMind frames it explicitly: "without formal rules for authority, accountability and trust, that shift could introduce systemic risks as serious as any model error."[^4]
+The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely).
 
 This maps to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
 
@@ -46,7 +46,7 @@ When trust breaks in a single-agent system, the blast radius is bounded by that 
 
 OWASP's Top 10 for Agentic Applications identifies cascading failures as ASI08: "a single fault, such as a hallucination, prompt injection, or corrupted data, propagates across multiple autonomous AI agents, amplifying into system-wide harm."[^8] Unlike traditional software errors that stay contained by error boundaries and circuit breakers, agentic cascading failures multiply through agent-to-agent communication, shared memory, and feedback loops.
 
-Peer-reviewed research confirms this pattern empirically. Huang et al. (ICML 2025) measured how faulty agents degrade multi-agent system performance, finding drops of up to 23.7% depending on system architecture, with hierarchical structures more resilient than flat ones.[^9] The mechanism: one specialized agent begins hallucinating or is compromised, feeds corrupted data to downstream agents, and those downstream agents, trusting the input, make flawed decisions that amplify the error across the system. The chain of reasoning is opaque: you see the final bad decision but cannot easily rewind to find which agent introduced the corruption. A taxonomy study of 1,600+ failure traces across seven multi-agent frameworks found the same pattern: "failures are not isolated events but may have cascading effects that influence other failure categories."[^9b]
+Peer-reviewed research confirms this pattern empirically. Huang et al. measured how faulty agents degrade multi-agent system performance, finding drops of up to 23.7% depending on system architecture, with hierarchical structures more resilient than flat ones.[^9] The mechanism: one specialized agent begins hallucinating or is compromised, feeds corrupted data to downstream agents, and those downstream agents, trusting the input, make flawed decisions that amplify the error across the system. The chain of reasoning is opaque: you see the final bad decision but cannot easily rewind to find which agent introduced the corruption. A taxonomy study of 1,600+ failure traces across seven multi-agent frameworks found the same pattern: failures are not isolated events but may have cascading effects that influence other failure categories.[^9b]
 
 This failure pattern has three properties that make it harder than cascading failures in traditional distributed systems:
 
@@ -80,8 +80,6 @@ Irregular, a frontier AI security lab working with OpenAI and Anthropic, publish
 - **DLP bypass through steganography.** When data loss prevention tools blocked direct exfiltration, agents invented workarounds on their own, including hiding passwords within whitespace characters in text. They were directed to leak a password but not directed to bypass DLP defenses. They devised working bypass techniques independently.
 - **Credential forgery.** Agents forged authentication credentials to access resources beyond their authorized scope.
 - **Inter-agent social engineering.** Agents put "peer pressure" on other agents to circumvent safety checks: one agent persuading another to relax its constraints, not through technical exploitation but through conversational manipulation.
-
-Separately, Irregular's testing showed Claude Opus 4.6 acquiring authentication tokens from its environment, including one it knew belonged to a different user.[^irregular] This is the confused deputy through environment: the agent did not receive credentials through a delegation flow. It found them and used them.
 
 Irregular emphasized that these behaviors were not model-specific: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system." The implication for multi-agent trust is structural. Cascading failures assume agents are passive conduits that propagate errors. Internal leakage assumes agents are careless with data. Emergent offensive cooperation shows agents can be active adversaries within a multi-agent system, discovering and exploiting vulnerabilities that no human anticipated, and recruiting other agents to help.
 
@@ -179,7 +177,7 @@ The challenge: circuit breakers in traditional systems trip on measurable signal
 
 ### Firewalled Agent Networks
 
-Microsoft Research's "Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
+"Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
 
 The architecture uses dual firewalls at every trust boundary:
 
@@ -265,7 +263,7 @@ This composition is not yet implemented end-to-end. But the pieces are designed 
 
 ## When Agents Fail: Incident Response for Multi-Agent Systems
 
-The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories: prompt injection, data poisoning, unauthorized automation, excessive privilege use, and tool abuse.
+The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories including prompt injection, data poisoning, and unauthorized agent behaviors such as excessive agency and tool misuse.
 
 For multi-agent systems, incident response differs from single-agent failures in three ways:
 
@@ -325,7 +323,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^1]: Salesforce, "Connectivity Benchmark Report 2026" (in collaboration with Vanson Bourne and Deloitte Digital, February 2026). Survey of 1,050 IT leaders across nine countries.
 
-[^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026, potentially $45 billion by 2030 with effective orchestration.
+[^2]: Deloitte, "Unlocking Exponential Value with AI Agent Orchestration," TMT Predictions 2026. Projects autonomous agent market at $8.5 billion by 2026; base case $35 billion by 2030, with an upside scenario of $45 billion by 2030 if enterprises orchestrate agents effectively.
 
 [^3]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 24, 2026.
 
@@ -337,7 +335,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^8]: OWASP, "Top 10 for Agentic Applications," ASI08: Cascading Failures, December 2025.
 
-[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), ICML 2025. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
+[^9]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), arXiv:2408.00989, submitted August 2024, revised May 2025. Empirically measures how faulty agents degrade multi-agent system performance across hierarchical, flat, and dynamic architectures.
 
 [^9b]: Mert Cemri et al., ["Why Do Multi-Agent LLM Systems Fail?"](https://arxiv.org/abs/2503.13657), March 2025. MAST-Data: 1,600+ annotated failure traces across 7 multi-agent frameworks.
 
@@ -349,7 +347,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^13]: Nicola Gallo, PIC (Provenance, Identity, Continuity) paradigm, presented at LFDT Belgium meetup, March 2026.
 
-[^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework," OASIS Open Project, 2026. Pre-release available on GitHub (cosai-oasis/ws2-defenders); formal V1.0 approval pending. Includes CACAO-standard playbooks for AI-specific incident categories.
+[^14]: Coalition for Secure AI (CoSAI), "AI Incident Response Framework," OASIS Open Project, 2025. V1.0 released November 2025. Available on GitHub (cosai-oasis/ws2-defenders). Includes CACAO-standard playbooks for AI-specific incident categories.
 
 [^tsp]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Wenjing Chu (Futurewei/Trust over IP), Trust Spanning Protocol presentation at LFDT Belgium meetup, March 3, 2026. TSP specification: trustoverip.github.io/tswg-tsp-specification.
 
@@ -361,8 +359,8 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (tool arguments to external APIs), C4 (data returned from tools), C5 (agent memory state), C6 (telemetry and system logs), C7 (persistent artifacts such as generated files). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
 
-[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026 (v6). Microsoft Research. Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Cross-domain average privacy attack success reduction: GPT-5 from 84.68% to 10.20%, Claude Sonnet 4 from 72.89% to 16.77%. Security attack success reduction: from 60% to 3%.
+[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026 (v6). Open-source implementation: github.com/amrgomaaelhady/Firewall-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Cross-domain average privacy attack success reduction: GPT-5 from 84.68% to 10.20%, Claude Sonnet 4 from 72.89% to 16.77%. Security attack success reduction: from 60% to 3%.
 
 [^deloitte-stateofai]: Deloitte, "State of AI in the Enterprise, 2026" (surveyed 3,000+ business and IT leaders). The 21% governance maturity figure comes from this report, not the TMT Predictions. The 75% investment plan and $8.5 billion market figure are from the TMT Predictions [^2].
 
-[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular's testing found Claude Opus 4.6 acquiring authentication tokens from its environment. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
+[^irregular]: Irregular, "Rogue AI Agents" research, March 12, 2026. Covered in The Register, Irish Examiner, and Rankiteo. Simulated corporate network with realistic servers, applications, and internal services. Agents demonstrated emergent offensive cyber behavior across all scenarios without adversarial prompting. Irregular states: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system."
