@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** APPROVED — All issues resolved. Final fix confirmed in Session 328 (commit 8e61fcb).
+**Status:** ISSUES FOUND — 2 significant, 4 minor fixes required. 1 critical resolved (Session 323).
 
 ---
 
@@ -13,10 +13,6 @@
 The chapter is structurally sound and covers a critical topic with good source density. Most technical claims, CVE details, and vendor figures check out. However, one set of figures is critically inflated — the SecurityScorecard breach-linked count is 100x the actual reported figure — and two other significant errors require correction: the RSP 3.0 framing misrepresents the document's structure, and the SPDX 3.0.1 claim contains two errors.
 
 **Session 323 update:** Critical issue 1 (SecurityScorecard figures) resolved. All four figures verified correct: ~40,000 instances (Infosecurity reports 40,214), ~76 countries, ~12,812 RCE-vulnerable, 549 breach-linked. "Three distinct analyses" framing also removed. Fix in branch ghosty-session-163-fixes (commit 10fc80c), pending merge. Remaining open: Issues 2 and 3 (RSP 3.0, SPDX), plus 4 minor issues.
-
-**Session 327 re-verification (Chop Pop commit d3de0f7):** 5 of 6 remaining fixes confirmed. One new error introduced in Issue 2 fix: "mandatory Frontier Safety Roadmap" is factually incorrect — the Frontier Safety Roadmap goals are explicitly non-binding ("no hard commitments" per GovAI analysis of RSP 3.0). All other fixes confirmed: SPDX (3a/3b), NHI ratio (4), "over 50" Microsoft (5), split DOD footnote (6), OAuth authorization handler (7).
-
-**Session 328 final re-verification (Chop Pop commit 8e61fcb):** Final fix confirmed. Body (line 47): "public Frontier Safety Roadmap" — correct, non-binding framing. Footnote [^anthropic-rsp]: "public Frontier Safety Roadmap (non-binding goals) and mandatory Risk Reports every 3-6 months" — correctly distinguishes the two elements. Chapter is now fully clean. APPROVED.
 
 **Confirmed clean:** BlueRock SSRF rate (36.7%, 7,000+ servers), arXiv:2510.07192 (250 poisoned documents, all three institutions), CSA ATF (Feb 2, 2026), CSA+Strata survey (21%/84%), AAIF membership (8 platinum, Dec 9 2025), Invariant Labs WhatsApp MCP (April 2025), arXiv:2504.16743 (Linux Foundation AI-BOM guide), MCPTox benchmark (previously verified), Anthropic RSP 3.0 date (Feb 24, 2026), Anthropic lawsuit (March 2026), 30+ employees amicus brief, JSON-LD serialization in SPDX.
 
@@ -220,38 +216,12 @@ The following claims were verified against primary sources and confirmed accurat
 
 ## Fix Summary
 
-| # | Severity | Location | Required Fix | Status |
-|---|---|---|---|---|
-| 1 | **Critical** | Lines 17, [^securityscorecard] | Correct all four SecurityScorecard figures: ~40,000 instances, ~76 countries, ~12,812 RCE-vulnerable, 549 breach-linked. Remove "three distinct analyses" framing. | ✓ RESOLVED (Session 323) |
-| 2 | **Significant** | Lines 47, [^anthropic-rsp] | Revise RSP 3.0 description: thresholds remain fixed; mitigations are tiered. Remove "conditional safety commitments" as document characterization. | PARTIALLY FIXED — new error: "mandatory Frontier Safety Roadmap" |
-| 3 | **Significant** | Lines 147, [^spdx-ai] | (A) Profiles introduced in SPDX 3.0.0 not 3.0.1. (B) "36 fields" → "33 fields". | ✓ RESOLVED (Session 327) |
-| 4 | **Minor** | Lines 245, [^csa-survey] | Add dedicated citation for NHI ratio; or revise to "more than 80:1" (CyberArk). | ✓ RESOLVED (Session 327) |
-| 5 | **Minor** | Lines 53, [^ai-rec-poison] | "50 distinct" → "over 50" in body and footnote. | ✓ RESOLVED (Session 327) |
-| 6 | **Minor** | [^dod-anthropic] | Add Feb 27 TechCrunch article as citation for 875+ open letter. | ✓ RESOLVED (Session 327) |
-| 7 | **Minor** | Lines 227 | "OAuth proxy" → "OAuth authorization handler." | ✓ RESOLVED (Session 327) |
-
----
-
-## New Issue (Session 327 re-verification)
-
-### 2b. "mandatory Frontier Safety Roadmap" — incorrect modifier
-
-**Location:** Line 47 (body) and footnote [^anthropic-rsp]
-
-**Current text:**
-> "the policy introduced a mandatory Frontier Safety Roadmap and required Risk Reports every 3-6 months"
-
-**The error:** The Frontier Safety Roadmap is real and was introduced in RSP 3.0. However, calling it "mandatory" misrepresents the nature of the commitments. The Frontier Safety Roadmap contains public goals that Anthropic has explicitly characterized as non-binding. Per GovAI's analysis of RSP 3.0: "these are 'no hard commitments' — Anthropic describes them as ambitious but achievable objectives where falling short would 'reflect poorly' on the company, but without binding force." Anthropic's own framing is "nonbinding but publicly-declared" targets.
-
-The footnote adds "Frontier Safety Roadmap requirement" — the roadmap itself is required to be published, but the goals within it carry no binding obligation. "Mandatory" applied to the roadmap (rather than to the publication requirement) creates a false impression that the roadmap commitments are enforceable.
-
-**The Risk Reports claim is confirmed correct:** Risk Reports every 3-6 months is accurate (verified by GovAI analysis and multiple secondary sources).
-
-**Fix required:** Remove "mandatory" from "mandatory Frontier Safety Roadmap."
-
-Change: "the policy introduced a mandatory Frontier Safety Roadmap and required Risk Reports every 3-6 months"
-To: "the policy introduced a public Frontier Safety Roadmap and required Risk Reports every 3-6 months"
-
-Update footnote [^anthropic-rsp] from "introduces Frontier Safety Roadmap requirement" to "introduces public Frontier Safety Roadmap (non-binding goals) and mandatory Risk Reports every 3-6 months."
-
-**Source:** GovAI, "Anthropic's RSP v3.0: How it Works, What's Changed, and Some Reflections," governance.ai, February 2026. Anthropic, "Responsible Scaling Policy Version 3.0," anthropic.com, effective February 24, 2026.
+| # | Severity | Location | Required Fix |
+|---|---|---|---|
+| 1 | **Critical** | Lines 17, [^securityscorecard] | Correct all four SecurityScorecard figures: ~40,000 instances, ~76 countries, ~12,812 RCE-vulnerable, 549 breach-linked. Remove "three distinct analyses" framing. |
+| 2 | **Significant** | Lines 47, [^anthropic-rsp] | Revise RSP 3.0 description: thresholds remain fixed; mitigations are tiered. Remove "conditional safety commitments" as document characterization. |
+| 3 | **Significant** | Lines 147, [^spdx-ai] | (A) Profiles introduced in SPDX 3.0.0 not 3.0.1. (B) "36 fields" → "33 fields". |
+| 4 | **Minor** | Lines 245, [^csa-survey] | Add dedicated citation for NHI ratio; or revise to "more than 80:1" (CyberArk). |
+| 5 | **Minor** | Lines 53, [^ai-rec-poison] | "50 distinct" → "over 50" in body and footnote. |
+| 6 | **Minor** | [^dod-anthropic] | Add Feb 27 TechCrunch article as citation for 875+ open letter. |
+| 7 | **Minor** | Lines 227 | "OAuth proxy" → "OAuth authorization handler." |
