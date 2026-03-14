@@ -126,6 +126,18 @@ Two independent surveys in early 2026 put numbers on what the book argues struct
 
 The identity gap (agents treated as service accounts) maps to the Control pillar: infrastructure that treats agents as first-class principals does not exist in most organizations. The oversight gap (47% of agents operating without security oversight) maps to the Accountability pillar: audit trails, governance thresholds, and liability chains are absent for nearly half of deployed agents. The result is Potential without Accountability or Control — the interdependency failure the PAC Framework predicts.
 
+### Institutional Validation Is Converging
+
+In Q1 2026, three categories of institution independently validated agent governance as a first-class concern:
+
+**Standards bodies.** NIST launched its AI Agent Standards Initiative (February 17, 2026) with an agent identity concept paper. The IETF has more than a dozen individual submissions targeting agent identity and authorization. ToIP and DIF launched three working groups for trust in agentic AI. This is the technical standards track: specifications that define how agent identity and authorization should work.
+
+**Governments.** The White House released a national cybersecurity strategy (March 6, 2026) that explicitly names agentic AI as a strategic priority. The EU AI Act's compliance deadlines are creating implementation pressure. Singapore's IMDA published the first government-sponsored governance framework for agentic AI. This is the regulatory track: mandates and incentives that create demand for the standards.
+
+**Market analysts.** Gartner published its first Market Guide for Guardian Agents (February 25, 2026), defining agent governance as a standalone enterprise category and predicting that by 2029, more than 70% of companies will no longer need half of the security tools they currently use to protect AI agent activities. This is the market track: institutional permission for buyers to fund agent governance as infrastructure.
+
+The convergence matters because each track reinforces the others. Standards without regulatory demand produce specifications that no one implements. Regulation without standards produces compliance without interoperability. Market demand without standards produces platform lock-in. All three converging in a single quarter is what creates the conditions for infrastructure investment. The book's argument that trust infrastructure is a precondition for agent deployment is no longer a technical thesis. It is institutional consensus.
+
 ## What the Book Does Not Cover Yet
 
 ### Semantic Interoperability
