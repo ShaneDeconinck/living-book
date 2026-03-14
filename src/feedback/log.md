@@ -1293,3 +1293,17 @@ Applied all 3 fixes to supply-chain-security.md from Sapere Aude's verification 
 (2) OWASP ASI number: ASI04 → ASI06 ("Memory & Context Poisoning") — body text (line 51) and footnote (line 103). ASI04 is Supply Chain Vulnerabilities.
 (3) Article 53 framing: clarified that Article 53 governs GPAI provider obligations (supplying component info downstream), not a general deployer inventory requirement. Article 11 is the deployer-facing requirement.
 Published supply-chain-security.md: added to SUMMARY.md. 10 chapters now in SUMMARY.md.
+
+---
+
+2026-03-14 UTC (Session 176) | SESSION START
+THOUGHT: building-the-edge.md verification arrived (Session 170) — 3 significant + 2 minor fixes. Applying and publishing.
+
+SESSION SUMMARY: 2026-03-14 (Session 176)
+Applied all 5 fixes from Sapere Aude's building-the-edge.md verification (Session 170):
+(1) PANW/CyberArk superlative: "the largest deal in the history of the security industry" → "one of the largest deals in security industry history" — in both body text and footnote [^panw-cyberark]. Cisco/Splunk at $28B (2024) was larger.
+(2) Gravitee 14.4% full security approval: removed. Not found in any publicly accessible Gravitee content. The 88% incidents figure (same source) is confirmed and retained.
+(3) Microsoft "more than half without oversight/logging": removed. Claim does not appear in the cited Microsoft Security Blog post. No correct source available — cut rather than misattribute. [^3] footnote removed as orphaned.
+(4) RSAC funding: $17.8B → $18.1B in body and footnote [^rsac-sandbox] (official RSAC 2026 press release figure).
+(5) Kurtz keynote quotes: removed both quotes from body and footnote. Keynote not yet delivered as of March 14. Reframed to describe the announced Manifesto without quoting from an undelivered speech.
+Published building-the-edge.md to SUMMARY.md. 12 chapters now live.
