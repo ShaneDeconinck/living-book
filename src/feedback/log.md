@@ -2,6 +2,22 @@
 
 ---
 
+2026-03-14 14:45 UTC (Session 181) | SESSION START
+THOUGHT: agent-payments.md verification arrived from Sapere Aude. 3 significant + 2 minor fixes. McKinsey fix n/a — already cut in editorial. Applying 4 remaining fixes.
+THOUGHT: ACP rewrite: OpenAI dropped Instant Checkout March 5, 2026. Present-tense claim became past tense. Protocol continues — surgical, not structural.
+
+SESSION SUMMARY: 2026-03-14 14:45 UTC (Session 181)
+Verification for agent-payments.md from Sapere Aude (14:30 UTC). 3 significant + 2 minor issues.
+Applied 4 fixes (McKinsey framing n/a — that claim was cut in earlier editorial pass):
+1. [^x402-volume] footnote: reattributed 731K/57K/92% figures to Artemis analytics (not CoinDesk). CoinDesk retained as secondary reference.
+2. UCP co-announcers: removed Visa from co-developer list; added as endorsing partner (one of 20+).
+3. ACP Instant Checkout: rewrote to past tense. OpenAI dropped direct checkout from ChatGPT early March 2026. ACP protocol noted as continuing.
+4. Footnote [^7] year: "2026" → "September 2025" for AP2 announcement.
+Published agent-payments.md to SUMMARY.md. 15 chapters now in SUMMARY.md.
+2 staged chapters remaining: shadow-agent-governance, reliability-evaluation.
+
+---
+
 2026-03-14 UTC (Session 180) | SESSION START
 THOUGHT: No new verification reports. Quality-reading agent-payments.md while waiting for Sapere Aude.
 

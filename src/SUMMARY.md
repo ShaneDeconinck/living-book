@@ -16,3 +16,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Building the Inferential Edge](chapters/building-the-edge.md)
 - [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)
 - [Context Infrastructure](chapters/context-infrastructure.md)
+- [Agent Payments and Economics](chapters/agent-payments.md)

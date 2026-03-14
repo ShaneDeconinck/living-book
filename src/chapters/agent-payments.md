@@ -97,7 +97,7 @@ AP2 is payment-agnostic (cards, bank transfers, crypto via x402) and integrates 
 
 ### ACP: Agentic Commerce Protocol
 
-Stripe and OpenAI's ACP takes a different approach: start from the checkout experience and work backwards. ACP powers Instant Checkout in ChatGPT, where users can purchase from Etsy sellers and (soon) over a million Shopify merchants directly in conversation.[^8]
+Stripe and OpenAI's ACP takes a different approach: start from the checkout experience and work backwards. ACP launched as the protocol behind Instant Checkout in ChatGPT, enabling users to purchase from Etsy sellers directly in conversation, with Shopify integration announced as coming soon.[^8] OpenAI dropped direct checkout from ChatGPT in early March 2026, within months of launch, citing inventory sync difficulties, tax infrastructure gaps, and low merchant adoption. The ACP protocol continues.
 
 ACP is deliberately merchant-centric. The merchant remains the merchant of record, retaining control over product presentation, pricing, and fulfillment. The agent facilitates the transaction but does not become a party to it. This preserves existing commerce relationships rather than disintermediating them.[^8]
 
@@ -105,7 +105,7 @@ The specification is maintained by OpenAI and Stripe (Apache 2.0), with Salesfor
 
 ### UCP: Universal Commerce Protocol
 
-Google, Shopify, Walmart, and Visa announced UCP in January 2026 as an open-source standard for the next generation of agentic commerce. UCP focuses on making product catalogs discoverable and transactable by AI agents, with compatibility with AP2 for secure payment handling.[^9]
+Google, Shopify, and Walmart co-announced UCP in January 2026 as an open-source standard for the next generation of agentic commerce, with Visa among more than 20 endorsing partners. UCP focuses on making product catalogs discoverable and transactable by AI agents, with compatibility with AP2 for secure payment handling.[^9]
 
 Where AP2 handles the payment authorization flow, UCP handles the product discovery and catalog layer: ensuring agents can access accurate product information, inventory, and pricing across merchants.
 
@@ -304,8 +304,8 @@ Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastru
 [^6]: Solana, "What is x402? Payment Protocol for AI Agents on Solana," 2026. Multi-chain expansion: Etherlink (TZ APAC's Tez402, March 2026), Stellar (stablecoin API payments), Polygon, Arbitrum, and others.
 [^cloudflare-x402]: Cloudflare, "Launching the x402 Foundation with Coinbase, and support for x402 transactions," blog.cloudflare.com, 2026. Agent SDK and MCP server integration, deferred payment scheme proposal for batch settlements via traditional payment methods or stablecoins.
 [^stellar-x402]: Stellar, x402 support announcement, 2026. Enables AI agents to pay for APIs and digital services through direct stablecoin transactions on Stellar.
-[^x402-volume]: Sam Reynolds, "Coinbase-backed AI payments protocol wants to fix micropayment but demand is just not there yet," CoinDesk, March 11, 2026. Data sourced from Artemis on-chain analytics. Approximately 131,000 daily transactions generating ~$28,000 in volume; roughly half reflect artificial activity (self-dealing and wash trading). Daily transactions dropped over 92% from December 2025 peak.
-[^7]: Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)," 2026.
+[^x402-volume]: Artemis, on-chain analytics, March 2026. Daily transactions dropped over 92% from a December 2025 peak of approximately 731,000 to about 57,000 in February 2026; daily organic volume approximately $28,000 as of early March 2026; roughly half of observed transactions reflect artificial activity (self-dealing and wash trading). See also: Sam Reynolds, "Coinbase-backed AI payments protocol wants to fix micropayment but demand is just not there yet," CoinDesk, March 11, 2026.
+[^7]: Google Cloud Blog, "Announcing Agent Payments Protocol (AP2)," September 2025.
 [^8]: Stripe Blog, "Developing an open standard for agentic commerce," 2026; OpenAI, "Buy it in ChatGPT: Instant Checkout and the Agentic Commerce Protocol," 2026.
 [^9]: Google Developers Blog, "Under the Hood: Universal Commerce Protocol (UCP)," 2026.
 [^10]: Shane Deconinck, "ERC-8004 Goes Mainnet: Ethereum's Trust Layer for AI Agents," January 28, 2026.
