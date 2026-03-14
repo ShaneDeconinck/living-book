@@ -2,7 +2,7 @@
 
 Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. The White House released a national cybersecurity strategy naming agentic AI as a strategic priority in March 2026. Singapore launched the world's first agentic AI governance framework in January 2026. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
 
-This chapter maps the regulatory landscape to the PAC Framework. The thesis: organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
+The thesis: organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
 
 ## The EU AI Act: Risk That Won't Sit Still
 
@@ -17,7 +17,7 @@ The Act takes a risk-based approach. The higher the risk of your AI system, the 
 
 Annex III lists the high-risk categories. "Putting into service" includes internal use: deploying AI for your own processes does not make you exempt.[^annexiii]
 
-Here is the critical insight from Shane's analysis: the Act does not mention agents.[^shaneeuai] It regulates use cases, not technology. General-purpose models got a last-minute chapter. Agents, which use those models to autonomously plan and act, are a layer the regulation did not anticipate.
+The Act does not mention agents.[^shaneeuai] It regulates use cases, not technology. General-purpose models got a last-minute chapter. Agents, which use those models to autonomously plan and act, are a layer the regulation did not anticipate.
 
 ### The Classification Problem
 
@@ -75,7 +75,7 @@ As of March 2026, nineteen months after the AI Act entered force, the European A
 
 The timeline itself is now uncertain. In late 2025, the European Commission proposed the Digital Omnibus package, which would defer high-risk AI obligations for Annex III systems until compliance support measures (harmonized standards, common specifications, and Commission guidelines) are confirmed available, with a backstop deadline of December 2, 2027: sixteen months later than the original August 2, 2026 date.[^digital-omnibus] The rationale is pragmatic: the standards and guidance that organizations need to comply are not yet ready. But the Omnibus is a legislative proposal, not yet adopted. Organizations face a familiar dilemma: plan for August 2026 and potentially over-invest, or plan for December 2027 and risk non-compliance if the Omnibus fails or narrows.
 
-The PAC Framework's answer to this dilemma is clear: build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations that build trust infrastructure for agents are not building to a regulatory deadline. They are building to operational necessity. The guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity to build the infrastructure. The requirements are clear. How to implement them for agents is an engineering problem, not a regulatory ambiguity.
+The PAC Framework's answer is clear: build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. They are building to operational necessity. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
 
 ## NIST: Agent Identity and Authorization
 
@@ -114,7 +114,7 @@ For agent deployments specifically, ISO 42001 matters because it formalizes the 
 - **Roles and responsibilities**: who approves deployment, who monitors performance, who handles incidents. This is where shadow agent governance gets formalized.
 - **Continual improvement**: feedback loops that capture operational experience and feed it back into governance.
 
-ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate. An organization with ISO 42001 certification has the governance structure. What it needs is the infrastructure to enforce it.
+ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate. An organization with ISO 42001 certification has the governance structure.
 
 ## The U.S. Federal Response: Promote and Secure
 
@@ -131,7 +131,7 @@ The strategy's six pillars have implications for agent trust infrastructure:
 
 The practical regulatory work is happening through NIST. The strategy provides the policy umbrella; NIST's AI Agent Standards Initiative and NCCoE concept paper provide the technical substance. SP 800-53 COSAiS (Controls Overlay for Secure AI Systems) adapts the federal government's foundational security control catalog to both single-agent and multi-agent use cases.[^cosais] Together, these create a U.S. approach that is standards-driven rather than compliance-driven: build the right infrastructure and compliance follows, rather than comply with mandates and hope the infrastructure catches up.
 
-The contrast with the EU is instructive. The EU AI Act creates compliance obligations that force infrastructure investment. The U.S. approach creates standards and guidelines that incentivize it. For organizations operating in both jurisdictions, building to the EU's requirements satisfies the U.S. standards. The reverse is not necessarily true.
+The EU AI Act creates compliance obligations that force infrastructure investment. The U.S. approach creates standards and guidelines that incentivize it. For organizations operating in both jurisdictions, building to the EU's requirements satisfies the U.S. standards. The reverse is not necessarily true.
 
 ## The U.S. State Landscape
 
@@ -154,7 +154,7 @@ Where the EU AI Act regulates AI broadly and mentions agents only by implication
 
 Compliance is voluntary, but organizations remain legally accountable for their agents' behaviors and actions. IMDA describes the framework as a living document, inviting feedback and case studies demonstrating responsible agentic AI deployment.
 
-The PAC mapping is direct. Risk bounding is Potential: assess blast radius, reliability, and autonomy level before deploying. Human accountability is Accountability: delegation chains, audit trails, clear ownership. Technical controls are Control: infrastructure as gate, policy enforced through architecture not just documentation. End-user responsibility connects to PAC's shadow agent problem: when employees deploy agents without governance review, accountability breaks down.
+Risk bounding is Potential: assess blast radius, reliability, and autonomy level before deploying. Human accountability is Accountability: delegation chains, audit trails, clear ownership. Technical controls are Control: infrastructure as gate, policy enforced through architecture not just documentation. End-user responsibility connects to PAC's shadow agent problem: when employees deploy agents without governance review, accountability breaks down.
 
 What makes Singapore's framework notable is not just that it was first, but that it starts from the right premise: agents are different from traditional AI systems. The EU AI Act's risk classification was designed for fixed-purpose systems. Singapore's framework assumes agents are autonomous, multi-step, and capable of reaching use cases not anticipated at deployment. That is the classification problem the EU is still working through in implementation guidelines.
 
@@ -170,7 +170,7 @@ The Convention needs five ratifications (including at least three Council of Eur
 
 ## Standards Convergence
 
-Beyond regulation, the standards bodies shaping agent protocols are converging on agent trust infrastructure simultaneously. This convergence is significant because it means the technical building blocks for compliance are being standardized, not proprietary.
+Beyond regulation, the standards bodies shaping agent protocols are converging on agent trust infrastructure simultaneously. The building blocks for compliance are being standardized, not proprietary.
 
 ### IETF and OAuth Extensions
 
@@ -274,7 +274,7 @@ Upcoming:
 - **August 2, 2026**: EU AI Act high-risk system obligations originally take effect (subject to potential delay under the Digital Omnibus proposal; backstop December 2, 2027).
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
-Shane's observation is worth restating: NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts (Accountability pillar). The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards (Control pillar). Singapore governs by design, with a framework built for agents from the ground up across all three PAC pillars. The Council of Europe Convention establishes binding international principles that cut across all three pillars. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
+NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts (Accountability pillar). The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards (Control pillar). Singapore governs by design, with a framework built for agents from the ground up across all three PAC pillars. The Council of Europe Convention establishes binding international principles that cut across all three pillars. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
 
 ## What This Means in Practice
 
@@ -284,7 +284,7 @@ The regulatory landscape leads to practical conclusions:
 
 **For organizations with shadow agents**: Article 4 is already enforceable. AI literacy is not optional. If your employees are building agents on low-code platforms without governance review, you have a compliance exposure today, not in August.
 
-**For infrastructure teams**: the NIST concept paper describes the agent identity infrastructure you should be building anyway. Start with I2 (logging everything) and work toward I3 (verified agent identity, tracked delegation). These investments satisfy regulatory requirements and improve engineering quality simultaneously.
+**For infrastructure teams**: the NIST concept paper describes the agent identity infrastructure you should be building anyway. Start with I2 (logging everything) and work toward I3 (verified agent identity, tracked delegation). These investments satisfy regulatory requirements and improve engineering quality.
 
 **For organizations operating across jurisdictions**: a unified governance framework (like PAC) becomes more valuable as regulation fragments across the EU, U.S. states, and sector-specific requirements. Building to the highest common standard is simpler than maintaining jurisdiction-specific compliance.
 

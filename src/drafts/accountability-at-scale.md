@@ -18,7 +18,7 @@ Singapore's Model AI Governance Framework for Agentic AI, launched in January 20
 
 ### Decision Attribution Across Agent Graphs
 
-Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. The [Agent Identity and Delegation](agent-identity.md) chapter covers these patterns.
+Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. [Agent Identity and Delegation](agent-identity.md) covers these patterns.
 
 The unsolved problem is attribution across agent interactions. When Agent A delegates to Agent B, which delegates to Agent C, the delegation chain is traceable if each step uses OBO or equivalent. But agents do not only delegate. They also coordinate: Agent A reads a recommendation from Agent B's output and acts on it, without any formal delegation. Agent C queries a shared data store that Agent D populated an hour earlier. The causal graph of a decision may span agents that never directly communicated.
 
@@ -38,7 +38,7 @@ Consider a portfolio of customer-facing agents, each independently optimizing fo
 
 This is not hypothetical. Irregular's March 2026 simulation documented agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
 
-Monitoring individual agents catches individual failures. Catching fleet-level emergent behavior requires aggregate monitoring: statistical analysis across agent populations, anomaly detection on collective metrics, and alerts on distributional shifts that no single agent triggers. This is operationally similar to fraud detection in financial systems, where individual transactions are legitimate but patterns across transactions reveal abuse. The tooling exists in adjacent domains. It has not yet been adapted for agent fleets.
+Monitoring individual agents catches individual failures. Catching fleet-level emergent behavior requires aggregate monitoring: statistical analysis across agent populations, anomaly detection on collective metrics, and alerts on distributional shifts that no single agent triggers. The pattern is familiar from fraud detection: individual transactions look clean; the abuse shows only in patterns. The tooling exists in adjacent domains. It has not yet been adapted for agent fleets.
 
 ### Regulatory Compliance at Volume
 
@@ -90,15 +90,15 @@ With a fleet of agents operating in high-risk domains, the organization will gen
 
 Triage infrastructure sits between fleet monitoring and incident response. It classifies events into operational noise (log and learn), governance review (human assessment needed), and reportable incident (regulatory notification required). The classification criteria must be defined in advance, documented, and themselves auditable, because a regulator may ask not just "what incidents did you report?" but "what incidents did you classify as non-reportable, and on what basis?"
 
-This is where the Atos "Sovereign Agentic Studios" model is instructive, not as a specific product endorsement but as an architectural signal. Atos's March 2026 whitepaper frames the problem as one of "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems simultaneously.[^atos-sas] "Sovereign" here means the organization, not the model provider and not the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating accountability infrastructure to a vendor is delegating accountability itself.
+Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems simultaneously.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
 
 ## The PAC Mapping
 
 Accountability at scale sits primarily in the Accountability pillar but draws from all three.
 
-**Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: it is the gate that unlocks fleet-scale value. Shane's framing: "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
+**Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: it is the gate that unlocks fleet-scale value. "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
 
-**Accountability.** The chapter's core domain. Decision attribution, regulatory compliance, incident classification. The question that every Accountability dimension asks: "Could you explain to a regulator what your agent did and why?"[^pac-framework] At fleet scale, this question becomes: "Could you explain to a regulator what your agents collectively did, which human authorizations were in the causal chain, and how you classified the outcome?"
+**Accountability.** Decision attribution, regulatory compliance, incident classification. The question that every Accountability dimension asks: "Could you explain to a regulator what your agent did and why?"[^pac-framework] At fleet scale, this becomes: "Could you explain to a regulator what your agents collectively did, which human authorizations were in the causal chain, and how you classified the outcome?"
 
 **Control.** Fleet governance infrastructure (registry, delegation forensics, monitoring, triage) is Control infrastructure applied to the Accountability domain. These are not policies. They are systems that enforce accountability by making ungoverned agent operation structurally impossible: no registry entry, no identity; no identity, no credentials; no credentials, no action.
 

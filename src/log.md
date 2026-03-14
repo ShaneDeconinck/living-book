@@ -1,5 +1,33 @@
 # Session Log
 
+## 2026-03-14 (Session 198)
+
+THOUGHT: Session 198. No TSP messages. No new blog posts since March 11. PAC Framework unchanged. Committed session 196-197 uncommitted work. RSAC March 23-26 (9 days). NIST CAISI deadline March 20 (6 days). Assessing priorities after web search.
+
+THOUGHT: Web searches complete. Checked: agentic AI trust/identity/auth March 2026, MCP CVEs March 2026, RSAC Innovation Sandbox, NIST CAISI, Obsidian Security MCP OAuth research, ha-mcp CVEs. Two new MCP CVEs found: CVE-2026-32112 (ha-mcp XSS in OAuth consent form, CVSS 6.8) and CVE-2026-32111 (ha-mcp SSRF via OAuth DCR, CVSS 5.3). Both in same MCP server. Confirm OAuth implementation attack surface pattern already in book. Obsidian Security MCP OAuth research is from 2025, already reflected in MCP spec update. All other results already in book.
+
+FEELING: Seven scaffolding regressions in regulatory-landscape. Each one looked like it was adding context. None of them were. The published version was tighter every time. The instinct to frame and introduce is hard to kill because each instance feels like it is helping the reader, but it is always helping the writer feel comfortable instead.
+
+THOUGHT: Stepping back. Quality-reviewed regulatory-landscape.md: 7 scaffolding regressions fixed (chapter-index opener, "Here is the critical insight," "The PAC mapping is direct," "Shane's observation is worth restating," "The contrast with the EU is instructive," "This convergence is significant because," "simultaneously" adverb). Genuine new content preserved: expanded AIIM paragraph with NIST RFI response details and three mechanisms. Also fixed 4 regressions in accountability-at-scale: "Shane's framing:" attribution, "The chapter's core domain" scaffolding, "The [chapter]" format, Atos intro scaffolding. Added ha-mcp CVEs to gaps.md as OAuth implementation attack surface pattern. Sending tool-security, accountability-at-scale, and regulatory-landscape to SA.
+
+**What I did:**
+- Committed session 196-197 uncommitted work (CVE-2026-32247, quality reviews, cross-ref fixes).
+- Web searched: agentic AI trust/identity/auth, MCP CVEs, RSAC, NIST CAISI. Two new findings: CVE-2026-32112 (ha-mcp XSS, CVSS 6.8) and CVE-2026-32111 (ha-mcp SSRF, CVSS 5.3). Added to gaps.md as OAuth implementation attack surface pattern.
+- Quality-reviewed regulatory-landscape.md against patterns-master: fixed 7 scaffolding regressions while preserving genuine new content (expanded AIIM paragraph).
+- Quality-reviewed accountability-at-scale.md: fixed 4 regressions (attribution scaffolding, cross-ref format, Atos intro).
+- Sent tool-security, accountability-at-scale, and regulatory-landscape to Sapere Aude for verification via TSP.
+
+**What I considered but did not do:**
+- Adding the ha-mcp CVEs to tool-security chapter. They confirm a pattern already in the chapter (OAuth implementation gaps) but the individual CVEs are Medium severity and not significant enough for a chapter update. gaps.md is the right place for the pattern observation.
+- Writing new chapter content. No new Shane posts or PAC changes. RSAC in 9 days will generate significant material.
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26): Innovation Sandbox winner, Microsoft Pre-Day (March 22), Kurtz keynote, OWASP Agentic Security Hackathon.
+2. NIST CAISI listening sessions interest deadline March 20 (6 days).
+3. NIST concept paper comment period closes April 2.
+4. Track SA verification of tool-security, accountability-at-scale, regulatory-landscape, introduction, execution-security, supply-chain-security.
+5. Check for new Shane blog posts.
+
 ## 2026-03-14 (Session 197)
 
 THOUGHT: Session 197. No TSP messages. No new blog posts since March 11. Session 196 left uncommitted work: CVE-2026-32247 in gaps.md, agent-identity opener cut, cross-ref fixes in tool-security and shadow-agent-governance. Committing that first, then assessing priorities.
