@@ -22,3 +22,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Agent Incident Response](chapters/agent-incident-response.md)
 - [Cryptographic Authorization Governance](chapters/cryptographic-authorization.md)
 - [Agent Accountability at Scale](chapters/accountability-at-scale.md)
+- [Tool Security and MCP Poisoning](chapters/tool-security.md)

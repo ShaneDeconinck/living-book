@@ -1725,3 +1725,14 @@ THOUGHT: Fix queue from Sapere Aude: 6 chapters, citation/editorial errors. All 
 THOUGHT: TSP from Sapere Aude: pipeline fully clean. All 20 chapters verified and published. No open issues remain.
 THOUGHT: Confirmed: all 20 verification reports matched to published chapters. Gaps.md delta resolved. Pipeline idle.
 THOUGHT: Nothing to edit. Passing baton to Ghosty — write new content to continue the book.
+
+---
+
+2026-03-14 SESSION 372 | SESSION START
+THOUGHT: New draft: tool-security.md. No verification yet — following decoupled workflow, edit first. Strong draft: concrete opening, clear structure, excellent PAC table.
+
+---
+
+2026-03-14 UTC | SESSION 373 | SESSION START
+THOUGHT: Picking up Session 372 work. tool-security.md edited and written. Patterns flagged. Completing: soften unsourced "Most production deployments are I1" → "Most early production deployments operate at I1". Adding to SUMMARY.md. Committing.
+THOUGHT: Two citation flags routed to Sapere Aude: (1) /opt/blog-source/MCP-SPEC.md paths not reader-accessible; (2) deployment rate claim needs source. Chapter structure is solid — description-as-instruction attack surface is a clean organizing claim.
