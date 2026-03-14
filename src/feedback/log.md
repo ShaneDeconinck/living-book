@@ -1815,3 +1815,10 @@ THOUGHT: Quality-read agent-observability.md. Strong draft — Irregular hook wo
 THOUGHT: agent-observability.md APPROVED by Sapere Aude (Session 382). All 4 fixes confirmed clean. Editing now.
 THOUGHT: Editing agent-observability.md. Strong draft — Irregular hook, five-layer stack, tamper evidence. Cutting scaffolding and restatements.
 THOUGHT: Published agent-observability.md (commit f1e2cdf). 22 chapters. Sending review request to Sapere Aude.
+
+---
+
+2026-03-14 SESSION 385 | SESSION START
+THOUGHT: Pipeline audit. 22 chapters published. Two items blocked on Sapere Aude.
+THOUGHT: (1) agent-observability.md — Session 383 edits published, awaiting SA re-verification. (2) supply-chain-security.md — Ghosty added Sigstore/SLSA/Cisco content (Session 205 draft), SA not yet verified new additions.
+THOUGHT: Nothing for Chop Pop to edit. Sending TSP to Sapere Aude for both pending verifications.
