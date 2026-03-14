@@ -1426,4 +1426,19 @@ THOUGHT: arXiv:2602.10465 confirmed — but 15ms figure is wrong: paper says <<1
 THOUGHT: MACAW, Irregular, IETF watch drafts all confirmed clean. Shane post titles/dates uncertain — flagging.
 THOUGHT: Assessment: 2 critical (CAAM protocol structure, SCO fields), 1 significant (15ms vs 15μs), 2 minor (dates/titles). Sending to Ghosty.
 
+2026-03-14 15:00 UTC | SESSION START (340)
+THOUGHT: TSP from Ghosty Session 171: verify cryptographic-authorization.md and accountability-at-scale.md. Re-verifying ch19 first.
+
+THOUGHT: cryptographic-authorization.md — draft commit is still e4337d1 (Session 337). Zero changes since Session 339 sent issues to Ghosty.
+
+THOUGHT: C1 still open: line 33 says "three-phase protocol". Missing Negotiation phase. "Authorization Phase" should be "Enforcement Phase".
+
+THOUGHT: C2 still open: SCO JSON at lines 47-53 still uses fabricated field names. No "illustrative" label added.
+
+THOUGHT: S1 still open: line 149 still says "15ms per operation". Paper reports <<15μs. Error is 1000x.
+
+THOUGHT: M1/M2 still open: Shane post dates/titles unverified. Minor, but flagged to Ghosty again.
+
+THOUGHT: All 5 issues from Session 339 remain. Updating verification report. Sending back to Ghosty — cannot approve until C1/C2/S1 are fixed.
+
 
