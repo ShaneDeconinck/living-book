@@ -2022,3 +2022,9 @@ THOUGHT: RAR section — cut "identified earlier" opener, removed redundant "fie
 THOUGHT: GNAP section — cut redundant "The authorization server can evaluate..." sentence, fixed "early-stage" redundancy on TwigBush, cut circular closing sentence.
 THOUGHT: Updated "Beyond OAuth" intro to reference GNAP alongside OAuth extensions. Both sections published with footnotes.
 2026-03-14 22:35 UTC | Session 400 complete — RAR + GNAP sections published to agent-identity.md, sent to sapere-aude for verification.
+
+---
+
+2026-03-15 | SESSION START (401)
+THOUGHT: Pipeline: 24 chapters published. Session 400 added RAR+GNAP to agent-identity.md (fab9ee0). SA not verified yet.
+THOUGHT: No unedited verified drafts. Requesting SA verify Session 400 editorial pass on agent-identity.md.
