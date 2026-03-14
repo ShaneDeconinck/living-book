@@ -35,9 +35,9 @@ The industry has built a growing set of benchmarks to measure agent capability. 
 
 **τ-bench** (Tau-bench), built by Sierra, tests agents in dynamic settings with real-time user interaction and tool use[^tau-bench]. It exposed a critical gap: agents built with standard constructs like function calling or ReAct performed poorly even on relatively simple tasks when the environment was interactive and unpredictable. Static benchmarks did not predict this.
 
-**GAIA** tests general AI assistants on tasks requiring multi-step reasoning, web browsing, and tool use across domains[^gaia]. At the highest difficulty level (Level 3), the top score is 61%. These are not edge cases: they are tasks a competent human assistant would handle routinely.
+**GAIA** tests general AI assistants on tasks requiring multi-step reasoning, web browsing, and tool use across domains[^gaia]. At the highest difficulty level (Level 3), the top score was 61% as of mid-2025. These are not edge cases: they are tasks a competent human assistant would handle routinely.
 
-**The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench, GAIA, τ-bench, and other benchmarks into a unified view[^hal]. Its existence reflects a recognition that no single benchmark captures reliability across the dimensions that matter.
+**The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench Verified Mini, GAIA, and other benchmarks into a unified view[^hal]. Its existence reflects a recognition that no single benchmark captures reliability across the dimensions that matter.
 
 Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
 
@@ -51,7 +51,7 @@ LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and
 
 - 52% run offline evaluations on test sets before deployment
 - 37% run online evaluations monitoring real-world performance
-- 60% rely on human review for high-stakes situations
+- 60% rely on human review
 - 53% use LLM-as-judge approaches to scale quality assessment
 - 23% of organizations with agents in production report not evaluating at all
 
@@ -65,19 +65,15 @@ Most organizations are at I1 or I2 for their agent deployments. That means they 
 
 ## The Observability Shift
 
-Agent observability is fundamentally different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution[^observability]. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed.
+Agent observability is fundamentally different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
 
-The observability ecosystem has matured rapidly. By 2026, 89% of organizations report having implemented some form of observability for their agents[^observability]. But the purpose of that observability matters. There is a difference between observability for debugging (finding what went wrong after an incident) and observability for governance (proving what happened and why, for compliance purposes).
-
-Dynatrace's survey of 919 enterprise leaders (March 2026) reveals the quality gap behind that 89% headline. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
+Dynatrace's survey of 919 enterprise leaders (January 2026) reveals how wide that gap is. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
 
 The distinction between debugging and compliance matters here. A debugging log tells an engineer what to fix. A compliance-grade audit trail tells a regulator what the agent did, what authority it had, who delegated that authority, and what information was available at the time of the decision. Shane's trust-for-agentic-ai post illustrates the gap: an expense-approval agent authorized $47,000 in vendor payments, but "the audit trail has no way to capture" that the agent, not the human, made the decision[^trust-for-agentic]. These are different artifacts with different requirements.
 
 The EU AI Act Article 12 requires "automatic recording of events" for high-risk AI systems, with logs capable of supporting post-market monitoring[^regulatory-landscape]. NIST's concept paper emphasizes traceability of agent actions to their authorizing principals[^nist-concept]. Neither is satisfied by a debugging log. Both require structured observability at I3 or above.
 
 ## The Complacency Trap
-
-Now for the hard part.
 
 Reliability is improving. Evaluation is maturing. Observability is being built. All of these are necessary. None of them address the most dangerous failure mode: the one where everything works, until it does not, and nobody is watching.
 
@@ -114,11 +110,9 @@ The complacency pattern for agents has specific characteristics:
 
 Recent evidence reinforces this pattern beyond AI. A multicentre study in The Lancet found that clinicians' adenoma detection rate during colonoscopy dropped by 6 percentage points (a 20% relative decrease) after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
 
-Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report, surveying 650 global CISOs, confirms the tension: 82% believe agentic AI will increase their teams' detection and response speed, but 83% cite hallucination impacts (missed alerts, false positives) as their greatest concern for agentic AI, and 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
+Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report, surveying 650 global CISOs, shows the same confidence gap: 82% believe agentic AI will increase their teams' detection and response speed, while 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
 
 ## Why Better Models Make Governance Harder
-
-This is the counterintuitive core of the complacency trap, and it is where the PAC Framework's interdependencies become critical.
 
 Potential and Accountability are supposed to reinforce each other. Higher business value (Potential) justifies investment in governance (Accountability). Better governance enables greater autonomy, which unlocks more value. The virtuous cycle.
 
@@ -185,7 +179,7 @@ The practical recommendation: use platform evaluation tools for what they are go
 
 ### The Tool Abuse Blind Spot
 
-The AgentShield benchmark, released in March 2026 as the first open, reproducible evaluation of commercial AI agent security products, exposes a systematic gap in the security tooling layer itself.[^agentshield] Testing six commercial products across 537 test cases in eight categories, the benchmark found composite scores ranging from approximately 39 to 98: a wide spread that reflects genuine capability differences. But the most important finding cuts across all products: tool abuse detection is weak across the board. Several products that catch over 95% of prompt injection attempts miss most unauthorized tool calls.
+The AgentShield benchmark, released in March 2026 as the first open, reproducible evaluation of commercial AI agent security products, exposes a systematic gap in the security tooling layer itself.[^agentshield] Testing seven commercial products across 537 test cases in eight categories, the benchmark found composite scores ranging from approximately 39 to 98: a wide spread that reflects genuine capability differences. But the most important finding cuts across all products: tool abuse detection is weak across the board. Several products that catch over 95% of prompt injection attempts miss most unauthorized tool calls.
 
 The industry has built increasingly sophisticated defenses against prompt injection: the attack vector that dominates the threat taxonomy. But agents do not just process prompts. They invoke tools. An agent that is fully protected against prompt injection but not against unauthorized tool use is protected against one attack vector while leaving the more operationally dangerous one open: the confused deputy operating through legitimate tool calls with legitimate credentials.
 
@@ -241,11 +235,9 @@ The critical insight: reliability is a Potential metric that organizations treat
 
 [^langchain-report]: LangChain, ["State of AI Agents"](https://www.langchain.com/state-of-agent-engineering) (2026). Survey of 1,300+ industry professionals.
 
-[^observability]: Braintrust, ["AI observability tools: A buyer's guide to monitoring AI agents in production"](https://www.braintrust.dev/articles/best-ai-observability-tools-2026) (2026).
-
 [^bainbridge-1983]: Lisanne Bainbridge, ["Ironies of Automation"](https://www.sciencedirect.com/science/article/abs/pii/0005109883900468), *Automatica* 19(6), 775-779 (1983).
 
-[^don-norman-1990]: Don Norman, ["The 'Problem' of Automation: Inappropriate Feedback and Interaction, Not 'Over-Automation'"](https://jnd.org/the-human-side-of-automation/) (1990). Also see: Don Norman, ["The Human Side of Automation"](https://jnd.org/the-human-side-of-automation/).
+[^don-norman-1990]: Don Norman, ["The 'problem' with automation: inappropriate feedback and interaction, not 'over-automation'"](https://doi.org/10.1098/rstb.1990.0101), *Philosophical Transactions of the Royal Society of London. Series B* (1990). DOI: 10.1098/rstb.1990.0101.
 
 [^aviation-research]: The human factors literature on automation complacency in aviation is extensive. Key references include Parasuraman and Riley, "Humans and Automation: Use, Misuse, Disuse, Abuse" (1997) and Endsley, "Toward a Theory of Situation Awareness in Dynamic Systems" (1995).
 
@@ -271,7 +263,7 @@ The critical insight: reliability is a Potential metric that organizations treat
 
 [^dynatrace-pulse]: Dynatrace, ["The Pulse of Agentic AI in 2026"](https://www.dynatrace.com/info/reports/the-pulse-of-agentic-ai-in-2026/) (January 2026). Global survey of 919 senior leaders at enterprises with $100M+ annual revenue, conducted by Y2 Analytics. 50% have production deployments; 44% rely on manual methods to review agent communication flows; top validation methods include data quality checks (50%), human review of outputs (47%), and monitoring for drift (41%).
 
-[^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 6 commercial AI agent security tools across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.
+[^agentshield]: AgentShield, ["AgentShield Benchmark: AI Agent Security Product Comparison"](https://github.com/doronp/agentshield-benchmark) (March 2026). Open-source benchmark of 7 commercial AI agent security products across 537 test cases in 8 categories. Composite scores range from ~39 to ~98. Key finding: tool abuse detection is weak across the board even when prompt injection detection is strong.
 
 [^trust-for-agentic]: Shane Deconinck, ["Trust for Agentic AI"](https://shanedeconinck.be/posts/trust-for-agentic-ai/) (January 2026).
 
