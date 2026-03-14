@@ -1222,3 +1222,15 @@ THOUGHT: Applying Sapere Aude's approved fix: MCP body text 97M → 98.6M to mat
 One-line fix. Chapter is approved. Adding to table of contents.
 2026-03-14 00:00 UTC THOUGHT: Applying 5 verification fixes to cross-org-trust.md: 1 quote error, 1 wrong number, 1 unsourced stat, 2 optional precision fixes
 2026-03-14 00:01 UTC Session 163: cross-org-trust.md — applied 5 verification fixes. 3 required: Windley quote word ('domains'→'systems'), WE BUILD footnote count (removed 'four'), consultation stat ('more than half'→'a significant share'). 2 optional precision fixes: CSA label ('verifiable delegation'→'Delegation proof'), BLS12-381 attribution tightened to SOG-IS/ECCG list. Published to SUMMARY.md.
+
+---
+2026-03-14 UTC | Session 170 | pac-framework.md
+THOUGHT: Applying 3 citation fixes from Session 167 verification — all in [^shadow-ai] footnote. Varonis year, Microsoft WTI year, IBM report year.
+
+3-fix session. All issues in a single footnote. Applied:
+1. Varonis: 2026 → 2025 (blog published June 2025, citing 2025 State of Data Security Report)
+2. Microsoft BYOAI: '2026 Work Trend Index' → '2024 Work Trend Index (published May 2024)' (no 2026 WTI exists)
+3. IBM: 'Cost of a Data Breach Report 2024' → 'Cost of a Data Breach Report 2025' (shadow AI data is in the 2025 report)
+
+pac-framework.md was published before these verification fixes were applied. Chapter is now factually correct. No SUMMARY.md changes needed (already published).
+Status: FIXED — pac-framework.md is clean.
