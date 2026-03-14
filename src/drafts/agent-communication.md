@@ -2,7 +2,7 @@
 
 Communication protocols are the plumbing of the agent ecosystem. They determine how agents discover tools, talk to other agents, and traverse organizational boundaries. Get the plumbing right, and agents can compose into systems that create value no single agent could deliver. Get it wrong, and every integration is bespoke, every boundary a wall, every tool connection a security risk.
 
-The critical insight: **communication protocols solve discovery, not trust**.[^1] MCP tells an agent what tools exist. A2A tells an agent what other agents can do. Neither tells the agent whether to trust what it finds. That gap is where the rest of this book's infrastructure: identity, delegation, authority, and governance: becomes load-bearing.
+**Communication protocols solve discovery, not trust.**[^1] MCP tells an agent what tools exist. A2A tells an agent what other agents can do. Neither tells the agent whether to trust what it finds. That gap is where the rest of this book's infrastructure: identity, delegation, authority, and governance: becomes load-bearing.
 
 ## The Discovery Problem
 
@@ -143,7 +143,7 @@ Shane identifies three trust gaps that MCP does not address:[^1]
 2. **Capability proof**: the server says it can access Salesforce. Can it prove that?
 3. **Delegation chains**: User → Agent → MCP Server → API. Who authorized what at each step?
 
-These gaps are precisely what the identity infrastructure from [Agent Identity and Delegation](agent-identity.md) and the trust layer integrations later in this chapter are designed to fill. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This directly addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
+The identity infrastructure from [Agent Identity and Delegation](agent-identity.md) and the trust layer integrations described below are designed to fill these gaps. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This directly addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
 
 ### Systematic Protocol Threat Modeling
 
@@ -159,7 +159,7 @@ The twelve risks cluster into three categories:
 
 The comparative security assessment is instructive. ANP, which builds on W3C Decentralized Identifiers with end-to-end encryption, has the strongest security posture. A2A, with OAuth 2.0 mutual authentication and JWT signing, is second. MCP and Agora are weakest: MCP lacks authentication in its core design (relying on transport-layer OAuth that 38% of servers do not implement), and Agora's trustless validation model lacks strong cryptographic binding.[^protocol-threats]
 
-The paper's central conclusion aligns with this chapter's thesis: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. The trust layer integrations (TMCP, TA2A) described later in this chapter provide the unified identity and verification layer that individual protocols lack.
+The paper's central conclusion: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. The trust layer integrations (TMCP, TA2A) described later in this chapter provide the unified identity and verification layer that individual protocols lack.
 
 ### OWASP MCP Top 10
 
@@ -324,7 +324,7 @@ AgentGateway's key capabilities:
 
 Shane identifies AgentGateway's structural limitation:[^3] it operates at the tool level. It can say "this agent may call the Gmail API" or "this agent may not call the Calendar API." What it cannot yet express is: "this agent may read emails from support@customer.com but not from hr@company.com" or "this agent may send replies but only using approved templates."
 
-The policies map onto the same coarse OAuth scopes underneath. AgentGateway is real progress: instead of "the agent has a token, therefore it can do anything the token allows," you get a policy layer that can restrict and audit tool access. But it is a governance layer on top of an authorization model that was not designed for agents. The deeper fix requires the shift from possession-based to proof-based authorization.[^3]
+The policies map onto the same coarse OAuth scopes underneath. With AgentGateway, instead of "the agent has a token, therefore it can do anything the token allows," you get a policy layer that can restrict and audit tool access. But it is a governance layer on top of an authorization model that was not designed for agents. The deeper fix requires the shift from possession-based to proof-based authorization.[^3]
 
 Gartner predicts that 75% of API gateway vendors will integrate MCP capabilities by the end of 2026.[^19] Early participation in AgentGateway's community meetings includes AWS, Microsoft, Red Hat, IBM, Cisco, and Shell.[^18] The pattern is converging fast. What remains unclear is whether these implementations will address the authorization gap or merely replicate it at a new layer.
 
@@ -391,7 +391,7 @@ But that containment cuts both ways. The browser sandbox constrains what a WebMC
 
 The relationship to MCP is complementary, not competitive. WebMCP is not JSON-RPC. It does not follow the MCP specification. MCP operates as a backend protocol connecting AI platforms to hosted servers. WebMCP operates entirely client-side within the browser.[^webmcp] They address different parts of the tool discovery problem: MCP for services and APIs, WebMCP for web content and interactions. A full agent stack would use both.
 
-The standard is transitioning from W3C community incubation to a formal draft, with formal browser announcements expected by mid-to-late 2026.[^webmcp] If adopted broadly, WebMCP turns every website into a potential tool provider for agents, which dramatically expands the tool discovery surface. The governance question is the same one this chapter keeps raising: discovery without trust is a liability. WebMCP tells the agent what tools a website offers. It does not tell the agent whether to trust the website offering them.
+The standard is transitioning from W3C community incubation to a formal draft, with formal browser announcements expected by mid-to-late 2026.[^webmcp] If adopted broadly, WebMCP turns every website into a potential tool provider for agents, which expands the tool discovery surface. The governance question is the same one this chapter keeps raising: discovery without trust is a liability. WebMCP tells the agent what tools a website offers. It does not tell the agent whether to trust the website offering them.
 
 ### AG-UI and A2UI: The Agent-User Layer
 

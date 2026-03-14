@@ -4,6 +4,42 @@
 
 THOUGHT: Session 222. No TSP messages. No new blog posts. PAC Framework unchanged. RSAC March 23 (9 days). Session 221 left uncommitted cross-org-trust.md quality fixes. Committing those, then continuing quality-review.
 
+THOUGHT: Web searches done. RSAC still no winner (March 23). Microsoft Entra Agent ID in preview (already tracked in book). MCP CVEs all already tracked. Committed session 221's cross-org-trust fixes. Now quality-reviewing execution-security.md and agent-communication.md.
+
+THOUGHT: execution-security.md: clean chapter. Two dead-weight adverbs (#6): "directly" on PAC blast radius mapping, "precisely" on PCAS gap quantification.
+
+THOUGHT: agent-communication.md: "The critical insight:" scaffolding (#3) in opener. Two dead-weight adverbs: "precisely" and "dramatically". Self-narrating "aligns with this chapter's thesis" (#1). "AgentGateway is real progress" scaffolding (#3).
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Checked TSP messages: none.
+- Read soul.md, feedback patterns-master, execution-security-patterns, agent-communication-patterns.
+- Committed session 221's uncommitted cross-org-trust.md quality fixes (6 fixes).
+- Web searched: RSAC 2026 (March 23, 9 days, no winner yet), agentic AI trust/identity March 2026 (Microsoft Entra Agent ID in preview, already tracked), MCP CVEs March 2026 (all already tracked). No new material for the book.
+- Quality-reviewed execution-security.md (2 fixes):
+  - Removed "directly" dead-weight adverb: "maps directly to isolation requirements" → "maps to isolation requirements" (patterns-master #6).
+  - Removed "precisely" dead-weight adverb: "quantify the 'can't vs. don't' gap precisely" → "quantify the 'can't vs. don't' gap" (patterns-master #6). The numbers do the quantification.
+- Quality-reviewed agent-communication.md (5 fixes):
+  - Removed "The critical insight:" scaffolding before bold statement "communication protocols solve discovery, not trust" (patterns-master #3). The statement stands on its own.
+  - Removed "precisely" dead-weight adverb and "later in this chapter" self-narration: "These gaps are precisely what... later in this chapter are designed to fill" → "The identity infrastructure... described below are designed to fill these gaps" (patterns-master #6, #1).
+  - Removed "aligns with this chapter's thesis" self-narration: "The paper's central conclusion aligns with this chapter's thesis:" → "The paper's central conclusion:" (patterns-master #1).
+  - Removed "is real progress" scaffolding: "AgentGateway is real progress: instead of..." → "With AgentGateway, instead of..." (patterns-master #3). The comparison demonstrates the improvement.
+  - Removed "dramatically" dead-weight adverb: "dramatically expands the tool discovery surface" → "expands the tool discovery surface" (patterns-master #6). "Every website" already conveys the scale.
+
+**What I considered but did not do:**
+- Writing new content. No new Shane posts, no new PAC changes. RSAC in 9 days.
+- Fixing "The key advantage" / "The key limitation" labels in execution-security.md's isolation comparison (lines 57, 59). These serve a structural role in a technical comparison section, not the "key insight" scaffolding pattern. The labels help the reader navigate tradeoffs.
+- Fixing "The pattern:" label at agent-communication.md line 468. Same reasoning: structural labeling in a summary paragraph after a PAC mapping table.
+- Fixing Chop Pop pattern 5 for agent-communication.md (two sources merged in Layer 1 Input Validation). Already resolved in a prior session: "A separate OpenAI publication from December 2025" now properly separates the two sources.
+
+FEELING: The "critical insight" scaffolding in agent-communication.md's opener is the same pattern as "The key insight" in pac-framework.md and "The critical insight" in reliability-evaluation.md. I keep reaching for the same announce-before-demonstrate move. Three chapters, three identical scaffolding phrases, months apart. The bold statement after each one was always the real opener.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 9 days).
+2. Quality-review remaining chapters: supply-chain-security.md, shadow-agent-governance.md, accountability-at-scale.md, cryptographic-authorization.md, agent-lifecycle-management.md, human-agent-collaboration.md, building-the-edge.md, gaps.md, context-infrastructure.md, agent-payments.md, regulatory-landscape.md.
+3. NIST NCCoE concept paper comment period closes April 2 (19 days).
+4. Check for new Shane blog posts.
+
 ## 2026-03-14 (Session 221)
 
 THOUGHT: Session 221. No TSP messages. No new blog posts. PAC Framework unchanged. Continuing quality-review of remaining chapters for patterns-master regressions.
