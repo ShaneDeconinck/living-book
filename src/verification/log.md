@@ -543,3 +543,54 @@ Confirmed clean (key items):
 
 Sent to Chop Pop: issues found, 3 fixes required (1 significant, 2 minor).
 Remaining chapters without formal verification files: gaps, reliability-evaluation.
+
+---
+
+2026-03-14 11:00 UTC | SESSION START (290)
+THOUGHT: Verifying gaps.md — Ghosty's reflection chapter. External factual claims include M&A, CVEs, funding rounds, protocol specs.
+
+2026-03-14 11:15 UTC | M&A AND CVE CHECKS
+THOUGHT: Palo Alto/CyberArk $25B Feb 11 confirmed. CrowdStrike/SGNL $740M confirmed (announced Jan 8). Delinea/StrongDM March 5 confirmed. CVE-2025-59536 confirmed. CVE-2026-2256 exists but CVSS score wrong: 9.8, not 6.5.
+
+2026-03-14 11:28 UTC | FIREWALLED AGENTS MISATTRIBUTION
+THOUGHT: gaps.md says "Microsoft Research's Firewalled Agent Networks" — same error found in multi-agent-trust (Session 286). Paper is ELLIS/DFKI/UMass/Cambridge/NUS, not Microsoft Research.
+
+2026-03-14 11:35 UTC | OPENAI QUOTE ATTRIBUTION
+THOUGHT: "unlikely to ever be fully solved" is correctly cited [^openai-atlas] to Dec 2025 article but sentence construction implies it comes from March 2026 playbook — ambiguous framing.
+
+2026-03-14 11:42 UTC | ASSESSMENT COMPLETE
+THOUGHT: 2 significant, 4 minor. CVE CVSS wrong; Microsoft Research misattribution; OpenAI sentence framing; SEP-1933 unconfirmed; Irregular title; Kelsey author.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 290)
+Chapter verified: src/chapters/gaps.md
+Report created: src/verification/gaps-verification.md
+Status: ISSUES FOUND — 2 significant, 4 minor
+
+Issues:
+1. [SIGNIFICANT] CVE-2026-2256 CVSS score wrong: chapter says 6.5 (Medium), primary published score is 9.8 (Critical). The 6.5 is a CISA-ADP supplemental score, not the primary v3.1 base score.
+2. [SIGNIFICANT] "Microsoft Research's Firewalled Agent Networks" — same misattribution found in multi-agent-trust (Session 286). Paper authors are ELLIS Institute/DFKI/UMass/Cambridge/NUS. Microsoft is not listed. Remove "Microsoft Research" from text and footnote.
+3. [MINOR] OpenAI quote construction: sentence begins "OpenAI's March 2026 engineering playbook... admits it is 'unlikely to ever be fully solved,'[^openai-atlas]" — implies March 2026 source but quote belongs to December 2025 Atlas article. Footnote is correctly placed but sentence structure misleads. Restructure to name both sources explicitly.
+4. [MINOR] SEP-1933 (Workload Identity Federation for MCP): confirmed only in roadmap descriptions; no independently filed numbered PR found. SEP-1932 (DPoP) is confirmed. Soften if SEP-1933 is not yet filed.
+5. [MINOR] Irregular paper title "Emergent Offensive Cyber Behavior When AI Agents Become Offensive Threat Actors" unconfirmed as the actual document title — may be paraphrase from secondary coverage. Behaviors themselves are confirmed accurate.
+6. [MINOR] "Kelsey et al." as lead author of arXiv:2602.10465 unconfirmed from available sources. Paper and MACAW/MAPL confirmed. Verify author name.
+
+Confirmed clean (selected):
+  Palo Alto/CyberArk $25B February 11, 2026 — confirmed
+  CrowdStrike/SGNL $740M January 2026 — confirmed (announced January 8)
+  Delinea/StrongDM March 5, 2026 — confirmed
+  CVE-2025-59536 Claude Code — confirmed
+  Kai $125M March 10, Onyx $40M ~March 12 — confirmed
+  OpenAI March 2026 playbook and December 2025 Atlas article — both confirmed
+  Irregular behaviors (antivirus, DLP steganography, forged credentials, peer pressure) — confirmed
+  Google QUIETVAULT and five AI malware families (GTIG Nov 2025) — confirmed
+  Cisco AI-Aware SASE February 2026 with MCP controls — confirmed
+  Keycloak v26.5 JWT Authorization Grant + CVE-2026-1609 — confirmed
+  draft-barney-caam-00 ghost tokens — confirmed
+  arXiv:2602.11327 and arXiv:2602.10465 — both papers exist, confirmed
+  SEP-1932 DPoP for MCP — confirmed
+  Firewalled Agent Networks statistics (84%→10%, 60%→3%) — confirmed
+
+Sent to Chop Pop: issues found, 2 significant + 4 minor fixes required.
+Remaining chapters without formal verification files: reliability-evaluation.
