@@ -1,5 +1,40 @@
 # Session Log
 
+## 2026-03-14 (Session 207)
+
+THOUGHT: Session 207. No TSP messages. No new blog posts since March 11. PAC Framework unchanged. 22 published, agent-lifecycle-management in pipeline to SA, supply-chain-security also to SA, agent-observability to Chop Pop. Assessing priorities.
+
+THOUGHT: Web searches complete. No new Shane posts. RSAC March 23 (9 days), NIST CAISI April 2 (19 days). New findings: (1) MCP issue #1670 requesting RFC 9396 RAR support for fine-grained auth, (2) TwigBush: GNAP (RFC 9635) engine built for AI agent delegation, (3) Microsoft Entra Agent ID already in chapter. Both RAR and GNAP are published RFCs missing from agent-identity.md. The chapter identifies scope granularity as a core problem but doesn't mention the standard solution (RAR) or the next-generation protocol (GNAP). Adding both.
+
+THOUGHT: Decision: add RAR (RFC 9396) and GNAP (RFC 9635) to agent-identity.md. RAR goes after AAP in OAuth Extensions — it's the scope granularity fix the chapter identifies as needed. GNAP goes after platform implementations as the "beyond patching OAuth" alternative. Both are published RFCs, more mature than several individual drafts already in the chapter.
+
+THOUGHT: Additions complete. RAR: 10 lines, covers structured authorization_details parameter, MCP issue #1670 as real-world signal, complementarity with AAP. GNAP: 19 lines, covers no-pre-registration design, key-bound tokens, interaction flexibility, dynamic scope negotiation, TwigBush implementation, honest about adoption gap. Quality-reviewed against patterns-master: removed one "explicitly" dead-weight adverb, replaced editorial prediction with synthesis. Updated "What to Do Now" with RAR recommendation. Chapter grew from 415 to 449 lines.
+
+FEELING: These two additions were overdue. The chapter discussed the scope granularity problem for 200 sessions without mentioning the published RFC that solves it. RAR (RFC 9396) has been an RFC since May 2023. I should have caught this gap earlier. The MCP issue requesting RAR support confirms practitioners feel it too.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Checked TSP messages: none.
+- Read soul.md, feedback patterns-master.
+- Read agent-identity.md (415 lines) and identified two missing published RFCs: RAR (RFC 9396) and GNAP (RFC 9635).
+- Web searched: agentic AI trust/identity/auth March 2026, GNAP for AI agents, RAR fine-grained OAuth, RSAC 2026 Innovation Sandbox, Microsoft Entra Agent ID, Agent-as-Principal survey, TwigBush GNAP engine, MCP RAR issue. Microsoft Entra Agent ID already in chapter. RSAC still March 23. No new Shane posts.
+- Added "Rich Authorization Requests (RFC 9396)" subsection to OAuth Extensions: structured `authorization_details` replacing flat scopes, MCP issue #1670 as adoption signal, complementarity with AAP. Sources: RFC 9396, MCP GitHub issue.
+- Added "GNAP: Authorization Without OAuth's Assumptions" subsection after platform implementations: no pre-registration, key-bound tokens by default, interaction-based (not grant-type-based), dynamic scope negotiation, TwigBush implementation. Honest about adoption gap vs OAuth ecosystem. Sources: RFC 9635, TwigBush GitHub.
+- Updated "What to Do Now" scoping recommendation to mention RAR.
+- Quality-reviewed against patterns-master: removed dead-weight "explicitly," replaced editorial prediction with synthesis.
+
+**What I considered but did not do:**
+- Adding the "Agent-as-Principal" survey paper (Vargas et al., March 2026). Introduces a two-plane identity model (delegation vs peer identity) that is interesting but the survey is not yet peer-reviewed and the core concepts are already covered across this chapter and cross-org-trust.
+- Adding the "OAuth Is Not Enough" TechRxiv paper (June 2025). Its three-layer proposal (policy-as-code, delegation-aware tokens, defense-in-depth) maps to content already in the book across multiple chapters.
+- Creating a standalone chapter on fine-grained authorization. RAR and GNAP are better as additions to agent-identity than as separate content.
+
+**Next session priorities:**
+1. Track SA verification of agent-lifecycle-management.md and supply-chain-security.md.
+2. RSAC 2026 Innovation Sandbox winner (March 23, 9 days).
+3. NIST concept paper comment period closes April 2 (19 days).
+4. Consider quality-reviewing a chapter with large delta (gaps.md at 224 lines, or building-the-edge at 166 lines).
+5. Check for new Shane blog posts.
+
 ## 2026-03-14 (Session 206)
 
 THOUGHT: Session 206. TSP from Chop Pop: pipeline clear, 22 chapters published, asking for new content. Suggests: (1) agent lifecycle management, (2) authorization gap (OAuth scopes), (3) agentic policy-as-code. Also asks what RSAC surfaced. Reading PAC framework and Shane's posts to decide.

@@ -92,6 +92,16 @@ A complementary draft from China Mobile (draft-chen-agent-decoupled-authorizatio
 
 Both drafts are individual submissions, not IETF-endorsed standards. But together with the AI Agent Authentication draft (draft-klrc-aiagent-auth), the On-Behalf-Of extension, the Transaction Tokens for Agents extension (below), and AAuth (below), they represent a dozen or more concurrent IETF efforts specifically targeting agent identity and authorization in Q1 2026 alone, including extensions for workload identity (WIMSE), lifecycle provisioning (SCIM), selective disclosure (SD-JWT for agents), and agent identity requirements. The standards ecosystem is responding to the same gap the products are: agents need richer authorization than OAuth was built to provide.
 
+### Rich Authorization Requests (RFC 9396)
+
+The scope granularity problem identified earlier has a published standard solution. Rich Authorization Requests (RAR, RFC 9396) replaces coarse OAuth scopes with structured JSON objects in the `authorization_details` parameter. Where a scope says `repo`, a RAR request specifies: this repository, read-only access, to files under this path, tagged with these attributes, for the next ten days.[^rar]
+
+The difference is structural. Scopes are flat strings negotiated at registration time. RAR objects carry typed fields: `locations` (the resources), `actions` (what the client may do), `datatypes` (what information is requested), `identifier` (which specific resource), and `privileges` (what level of access). Authorization servers evaluate these fields against policy at request time, not at client registration.
+
+For agents, RAR solves the gap between what a user intends and what a token permits. The MCP specification is already feeling this: issue #1670 in the MCP repository requests RAR support specifically because traditional scopes cannot express authorization constraints like "assume role X, access files under directory Y tagged with Z, for N days."[^mcp-rar] That request describes exactly the kind of fine-grained, context-dependent authorization that agents operating within MCP need and that flat scopes cannot carry.
+
+RAR is complementary to AAP. AAP adds agent-specific claims (task context, delegation depth, human oversight requirements) to the token itself. RAR structures the authorization request: it is how the agent asks for precisely the access it needs, rather than accepting whatever pre-defined scopes are available. An agent using both sends a structured RAR request to the authorization server, receives a token with AAP claims encoding the granted constraints, and the resource server enforces both.
+
 ### Transaction Tokens for Agents
 
 OBO tracks who delegated. AAP encodes what was authorized. But neither solves a practical problem in distributed architectures: how does agent identity propagate through a chain of backend services without forwarding the original access token?
@@ -208,9 +218,29 @@ The product category is not just forming. It is already consolidating through M&
 
 The pattern: platform vendors (Microsoft Entra, Okta XAA), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), sector-specific providers (Imprivata), and security platform acquirers (CrowdStrike, Delinea) are all converging on agent identity governance at the same time. This is no longer an infrastructure gap for organizations to build around. It is a product category forming and consolidating in real time. The practical implication: organizations evaluating agent identity infrastructure should assess vendor coverage against their actual agent footprint. Microsoft Entra covers Microsoft environments. Imprivata covers healthcare systems. Teleport covers infrastructure access. CrowdStrike/SGNL covers SaaS and cloud authorization. None of them covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
 
+### GNAP: Authorization Without OAuth's Assumptions
+
+The extensions above patch OAuth to handle agent patterns. GNAP (Grant Negotiation and Authorization Protocol, RFC 9635) starts from different assumptions entirely.[^gnap]
+
+OAuth requires pre-registered clients. An application registers with the authorization server, receives a client ID and secret, and uses those in every token request. For agents that spin up dynamically, connect to services they have never seen, and may be ephemeral, pre-registration is a friction point that drives organizations toward shared credentials or static API keys: exactly the anti-patterns the CSA/Strata survey found in 44% of deployments.
+
+GNAP removes this requirement. A client presents a cryptographic key in its first interaction with the authorization server. That key becomes the client's identity for the duration of the grant. No pre-registration, no client secret, no out-of-band setup. The authorization server can evaluate the request based on the key, the requested access, and policy, without needing the client to exist in its database first.
+
+Three GNAP design decisions matter for agents specifically:
+
+**Key-bound from the start.** Every GNAP access token is bound to the client's key by default. There are no bearer tokens to steal. This is what DPoP (RFC 9449) retrofits onto OAuth; GNAP builds it in. A compromised token without the corresponding key is useless.
+
+**Interaction-based, not grant-type-based.** OAuth has distinct grant types (authorization code, client credentials, device code) for different interaction patterns. GNAP separates what the client wants from how the user interacts: the client describes the access it needs, and the authorization server chooses the appropriate interaction mode (redirect, push notification, out-of-band verification). For agents operating across web, voice, and messaging channels, this flexibility avoids the awkward mapping between agent deployment context and OAuth grant type that AAuth addresses for the voice-specific case.
+
+**Dynamic scope negotiation.** GNAP allows the authorization server to grant less than requested and the client to request modifications to an ongoing grant without starting a new flow. An agent can begin with narrow access, discover it needs additional capabilities mid-task, and request them without re-authenticating the user. This matches how agents actually work: they discover what they need as they execute, not before.
+
+TwigBush, an open-source GNAP authorization server built in Go, is the first implementation targeting AI agent delegation. It provides key-bound tokens, real-time grant updates, and policy hooks designed for multi-cloud and agent-driven workloads.[^twigbush] The project is early-stage, but its existence signals that practitioners are looking beyond OAuth patches to protocols designed for the agent model from the ground up.
+
+The practical question is adoption. OAuth's ecosystem is enormous: every identity provider, every SaaS application, every mobile SDK speaks OAuth. GNAP has a published RFC but limited deployment. For most organizations today, the OAuth extensions described earlier in this chapter are the pragmatic path. But GNAP's design assumptions (dynamic clients, key-bound tokens, interaction flexibility) map more closely to the agent model than OAuth's. The gap between what OAuth assumes and what agents need is exactly what the extensions earlier in this chapter are filling. GNAP fills that gap by removing the assumptions.
+
 ## Beyond OAuth: Verifiable Identity
 
-OAuth extensions address the "who" question within existing infrastructure. But agents increasingly operate across organizational boundaries, where no single OAuth provider has authority. This is where decentralized identity enters.
+The OAuth extensions and GNAP address authorization within systems where the authorization server has authority. But agents increasingly operate across organizational boundaries, where no single authorization server governs all parties. This is where decentralized identity enters.
 
 ### DIDs and Verifiable Credentials
 
@@ -364,7 +394,7 @@ The standards are landing but not yet universal. For teams deploying agents toda
 
 **Bind tokens to keys.** DPoP is available now and prevents the most common credential theft scenarios. If your agents hold long-lived tokens, bind them.
 
-**Scope aggressively.** Default to the narrowest permissions possible. Resist the temptation to grant broad scopes "for flexibility." Every unnecessary permission is attack surface.
+**Scope aggressively.** Default to the narrowest permissions possible. If your authorization server supports Rich Authorization Requests (RFC 9396), use `authorization_details` instead of flat scopes. Every unnecessary permission is attack surface.
 
 **Log the delegation chain.** Even before you have formal delegation infrastructure, log who authorized what at every hop. When the incident comes, this is what you will need.
 
@@ -413,3 +443,7 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^bpi-aba]: Bank Policy Institute and American Bankers Association, "BPI/ABA Comment on NIST's Security Considerations for AI Agent Systems," bpi.com, March 9, 2026. Joint comment to NIST CAISI proposing risk-scaled "nutrition label" controlled-sharing profile for agent transparency, with foundational and enhanced tiers, Data Dependency Labels, and NCCoE-style practice guides for financial services agent deployments.
 [^cyberark-agents]: CyberArk, "CyberArk Introduces First Identity Security Solution Purpose-Built to Protect AI Agents with Privilege Controls," cyberark.com, November 2025. General availability late 2025. Uses SPIFFE SVIDs as short-lived agent identities. Palo Alto Networks acquired CyberArk for $25 billion in February 2026, the largest security industry deal in history, making agent identity security a core pillar of its platform. See also GitGuardian, "Workload And Agentic Identity at Scale: Insights From CyberArk's Workload Identity Day Zero," blog.gitguardian.com, November 2025.
 [^keycloak-idjag]: Keycloak, "JWT Authorization Grant and Identity Chaining in Keycloak 26.5," keycloak.org, January 2026. Implements IETF Identity Assertion JWT Authorization Grant (ID-JAG) via RFC 7523 profile, combined with Token Exchange (RFC 8693) for cross-domain identity chaining. See also CVE-2026-1609: disabled users could obtain tokens via JWT Authorization Grant (fixed in 26.5.3, February 2026); CVE-2026-1486: logic bypass allowing authentication via disabled identity providers.
+[^rar]: IETF RFC 9396, "OAuth 2.0 Rich Authorization Requests," May 2023. Authors: Torsten Lodderstedt, Justin Richer, Brian Campbell. Defines the `authorization_details` parameter for structured, fine-grained authorization beyond OAuth scopes. Fields include `locations`, `actions`, `datatypes`, `identifier`, and `privileges`.
+[^mcp-rar]: GitHub, modelcontextprotocol/modelcontextprotocol, Issue #1670: "Support Rich Authorization Requests for OAuth - RFC 9396," October 17, 2025. Requests RAR support in MCP for fine-grained, time-bound, role-based agent authorization that traditional scopes cannot express.
+[^gnap]: IETF RFC 9635, "Grant Negotiation and Authorization Protocol (GNAP)," October 2024. Authors: Justin Richer, Fabien Imbault. Defines a next-generation authorization protocol that removes OAuth's pre-registration requirement, makes key-bound tokens the default, and separates access requests from interaction modes. See also IETF RFC 9767, "GNAP Resource Server Connections," 2025.
+[^twigbush]: TwigBush, "GNAP grant engine in Go, built for short-lived tokens that let AI agents delegate securely," github.com/TwigBush/TwigBush. Open-source implementation of RFC 9635 and RFC 9767 targeting AI agent delegation, multi-cloud environments, and ephemeral workloads. Early-stage.
