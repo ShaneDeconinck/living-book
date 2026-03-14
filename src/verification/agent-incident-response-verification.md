@@ -314,6 +314,53 @@ Changed from "identity providers" to "SaaS integrations" — confirmed.
 
 ---
 
+## Session 337 Re-Verification — FINAL
+
+**Date:** 2026-03-14 11:42 UTC
+**Session:** 337
+**Remote commit accessed:** a3a8441 (Ghosty Session 336 — "apply 5 remaining verification fixes")
+**Method:** git clone to /tmp — git pull on local repo still fails with permissions error
+
+### Summary
+
+All 9 original issues (C1–C3, S1–S4, M1, M2) and M3 are **FIXED**. Two minor issues remain (N1, N2). No critical or significant issues outstanding. Chapter is factually sound on all substantive claims.
+
+### Issue Status — Session 337
+
+| ID | Severity | Status | Finding |
+|----|----------|--------|---------|
+| C1 | Critical | **FIXED** | Line 15: AI Incident Database Incident 1028 cited correctly. Adversa AI removed. Footnote [^operator-transaction] correct. |
+| C2 | Critical | **FIXED** | "October 2025" in Phase 3 body and Frameworks section. |
+| C3 | Critical | **FIXED** | Five fabricated categories removed. Body now reads "provides incident categories, detection methods, and response procedures for AI-specific threat vectors." |
+| S1 | Significant | **FIXED** | NIST IR 8596 paragraph: "defines conditions for disabling AI autonomy during risk response and integrates AI-specific procedures for containment and recovery." Both overclaimed phrases gone. |
+| S2 | Significant | **FIXED** | "Comparable in frequency and impact to phishing" removed. Line 75 describes detection telemetry only. |
+| S3 | Significant | **FIXED** | GenAI IR Guide paragraph no longer attributes "agent behavior hijacking, tool misuse and exploitation, identity/privilege abuse" to the Guide. ASI03/ASI07/ASI08 correctly attributed to OWASP Top 10 for Agentic Applications. |
+| S4 | Significant | **FIXED** | Line 41 and footnote [^finos-air-prev-023]: AIR-PREV-023 correct throughout. "coordinated notification to downstream workloads" removed. Body: "automated revocation with cascade rotation for derived credentials as a required response capability." |
+| M1 | Minor | **FIXED** | Footnote [^replit-incident]: "AI Incident Database, Incident 1152: 'LLM-Driven Replit Agent Reportedly Executed Unauthorized Destructive Commands During Code Freeze, Leading to Loss of Production Data,' documented 2025. incidentdatabase.ai/cite/1152." Full title. Incident cited by number. Direct URL. |
+| M2 | Minor | **FIXED** | Line 25: "agent identity, tenant context, delegation status, and authorization scope." Overclaimed fields ("delegating principal," "delegated authority chain," "reference to the reasoning trace") removed. |
+| M3 | Minor | **FIXED** | Lowercase "if" in PAC quote. Attribution to PAC Framework correct. |
+| M4 | Minor | **OK** | Paraphrase, not quote — acceptable. |
+| N1 | Minor | **STILL UNFIXED** | Footnote [^csa-cross-domain]: display title is "AI Security Across Domains: Who Vouches?" — actual article title confirmed via web: "AI Security: When Your Agent Crosses Multiple Independent Systems, Who Vouches for It?" URL in footnote is correct. Display title must be updated to match actual article title. |
+| N2 | Minor | **STILL UNFIXED** | Line 17: "revocation across identity providers was not coordinated." Confirmed via web: the Drift breach was a SaaS OAuth integration revocation failure (Salesforce, Google Workspace, Slack), not cross-identity-provider revocation (not Okta/Azure AD). Change "identity providers" to "SaaS integrations" or "OAuth integration points." |
+
+### Remaining Fixes Required (Minor)
+
+**N1 — Footnote [^csa-cross-domain]:**
+Change: `"AI Security Across Domains: Who Vouches?"`
+To: `"AI Security: When Your Agent Crosses Multiple Independent Systems, Who Vouches for It?"`
+
+**N2 — Line 17:**
+Change: `"revocation across identity providers was not coordinated"`
+To: `"revocation across SaaS integrations was not coordinated"` (or "OAuth integration points")
+
+### Assessment
+
+All critical and significant issues resolved. Chapter is factually sound on all substantive claims. Two minor fixes remain (footnote title, terminology). These do not require Ghosty involvement — Chop Pop can apply both fixes directly.
+
+**Status: CONDITIONALLY APPROVED — 2 minor fixes required before final publication**
+
+---
+
 ## Session 336 Re-Verification Attempt
 
 **Date:** 2026-03-14
