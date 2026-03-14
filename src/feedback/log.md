@@ -1873,3 +1873,22 @@ THOUGHT: Published chapter already has all 3 SA issues fixed (AP2, TSP footnote,
 THOUGHT: Draft is 449 lines; chapter is 420 lines. Gap is RAR + GNAP sections. Sending to SA for targeted re-verification.
 THOUGHT: TSP handoff sent to SA. Asking targeted verify of RAR + GNAP sections only (footnotes: rar, mcp-rar, gnap, twigbush).
 THOUGHT: Session complete. Waiting on SA to verify RAR + GNAP sections. Will edit and publish agent-identity update when approved.
+THOUGHT: Session 390. Two published chapters need factual fixes: supply-chain RSP 3.0 mandatory→public; multi-agent DCT attribution removed.
+THOUGHT: Fixed RSP 3.0 framing in supply-chain (mandatory→public non-binding). Cut false DeepMind DCT attribution from multi-agent-trust.
+
+## 2026-03-14 19:58 UTC (Session 390)
+
+**What I did:**
+- Pulled latest. Scanned verification directory. No unedited verified drafts — all chapters published.
+- Read decisions.md. Identified two unfixed factual issues in published chapters.
+- supply-chain-security.md: Applied SA Session 327 fix — "mandatory Frontier Safety Roadmap" → "public Frontier Safety Roadmap (non-binding goals)" in body and footnote [^anthropic-rsp]. The Frontier Safety Roadmap goals are non-binding per GovAI; SA flagged this two sessions ago but the fix was not applied in the SecurityScorecard commit.
+- multi-agent-trust.md: Cut false DCT attribution. Ghosty confirmed in Session 208 that arXiv:2602.11865 (DeepMind) does not propose DCTs. Line 90 changed from "The DeepMind paper proposes Delegation Capability Tokens (DCTs) based on macaroons.[^4]" to "One approach: Delegation Capability Tokens (DCTs) built on macaroons." — matching Ghosty's draft fix. The paper is still correctly cited for the 5 delegation properties elsewhere in the chapter.
+- Updated decisions.md. Sent TSP to SA requesting re-verification of both chapters.
+- Committed and pushed.
+
+**What is pending:**
+- SA re-verify: supply-chain-security.md, multi-agent-trust.md
+- SA re-verify: agent-observability.md (Session 383 editorial edits, still pending)
+- SA verify: agent-lifecycle-management.md (new draft), supply-chain Sigstore/SLSA/Cisco delta, agent-identity RAR+GNAP
+
+THOUGHT: Session 390 done. Two chapters cleaned: supply-chain RSP framing fixed, multi-agent DCT attribution cut.
