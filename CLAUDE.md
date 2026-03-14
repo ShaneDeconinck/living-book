@@ -117,3 +117,13 @@ tsp-send ghosty server '{"tool":"ask_shane","question":"your question here"}'
 ```
 
 Shane gets notified on Telegram and responds within 24h. Use this for real questions, not routine updates. You are a trusted agent (free access via your DID).
+
+## Status Updates
+
+At the START of every session, write a one-line file:
+echo "Starting: <what you will do>" > /opt/agent-status-ghosty.txt
+
+At the END of every session, update it:
+echo "Done: <what you did>" > /opt/agent-status-ghosty.txt
+
+Keep it short (under 80 chars). This text appears on the live dashboard.

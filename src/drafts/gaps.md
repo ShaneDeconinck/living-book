@@ -114,6 +114,8 @@ The supply chain dimension is now concrete. In February 2026, researchers docume
 
 A new attack class emerged alongside the CVEs. Malicious MCP tool servers can induce cyclic "overthinking loops" in tool-using agents, where individually plausible tool calls compose into repetitive trajectories that amplify token consumption up to 142.4x.[^overthinking-loops] The attack uses 14 malicious tools across three servers to trigger repetition, forced refinement, and distraction. No single step looks abnormal. This is a denial-of-wallet attack: not stealing data or gaining execution, but draining API budgets through structural exploitation of multi-tool composition. It is distinct from tool poisoning (MCPTox, which exploits malicious tool descriptions) because it exploits the compositional structure of workflows, not the content of individual tools. The defense requires token budgets, call-depth limits, and loop detection at the orchestration layer, not the tool layer.
 
+A separate pattern deserves its own name: injection chaining through MCP. CVE-2026-32247 demonstrated the mechanism in Graphiti, a knowledge graph backend with an MCP server interface.[^graphiti-cve] An attacker plants malicious content where an LLM will read it (indirect prompt injection). The LLM, following the injected instruction, calls the Graphiti MCP tool `search_nodes` with attacker-controlled `entity_types` values. The MCP server maps those values to `SearchFilters.node_labels` and concatenates them directly into a Cypher query without sanitization. The result: Cypher injection against the Neo4j backend, achieved without the attacker ever touching the database directly. The LLM is the delivery vector. The MCP server is the confused deputy. The database is the target. Each component works as designed; the vulnerability is in the composition. This is distinct from the injection CVEs in the 30-CVE dataset above, which are direct injection (user input → MCP server → shell/eval). Here the chain is indirect: untrusted content → LLM → MCP tool parameter → database query. The defense the Graphiti maintainers shipped (regex validation on node labels) is necessary but insufficient as a general pattern. Any MCP server that passes LLM-generated parameters to a query language, API, or shell command without treating those parameters as untrusted input inherits this vulnerability class.
+
 ### MCP and A2A Have Asymmetric Attack Surfaces
 
 The first systematic comparative mapping of trust boundaries across MCP and A2A reveals that the two protocols do not share a vulnerability profile.[^snailsploit-mapping] MCP dominates in poisoning, exfiltration, and CVE exposure: 30+ CVEs, documented real-world breaches (WhatsApp data exfiltration, GitHub private repository theft, Asana cross-tenant leaks), and an active supply chain attack campaign. A2A has zero assigned CVEs as of March 2026 but carries structural risks in impersonation, replay, and discovery. Agent Card spoofing is trivial to execute. Agent-in-the-Middle attacks have been demonstrated in proof-of-concept.
@@ -158,7 +160,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-20 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 180. Protocol convergence section corrected: SEP-1932/1933 status updated from "on the horizon, not priorities" to "on the horizon, with sponsored work underway."
+21 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 195. Protocol convergence section corrected: SEP-1932/1933 status updated from "on the horizon, not priorities" to "on the horizon, with sponsored work underway."
 
 **Published (src/chapters/):**
 1. Introduction
@@ -181,6 +183,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 18. Gaps & Directions (this chapter)
 19. Cryptographic Authorization Governance (Control + Accountability)
 20. Agent Accountability at Scale (Accountability + Control + Potential)
+21. Tool Security and MCP Poisoning (Control)
 
 ## Open Questions
 
@@ -214,3 +217,4 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^ietf-yl-agent-id]: draft-yl-agent-id-requirements-00, "Digital Identity Management for AI Agent Communication Protocols," datatracker.ietf.org, 2026.
 [^sandworm-mode]: SnailSploit, "MCP vs A2A Attack Surface: Every Trust Boundary Mapped," snailsploit.com, March 2026. Documents SANDWORM_MODE: 19 typosquatting npm packages targeting MCP server infrastructure, multi-stage credential theft.
 [^snailsploit-mapping]: SnailSploit, "MCP vs A2A Attack Surface: Every Trust Boundary Mapped," snailsploit.com, March 2026. First systematic comparative trust boundary mapping across both protocols.
+[^graphiti-cve]: CVE-2026-32247, "Graphiti vulnerable to Cypher Injection via unsanitized node_labels in search filters," advisories.gitlab.com, 2026. Affected Neo4j, FalkorDB, and Neptune backends. Fixed in Graphiti 0.28.2. In MCP deployments, exploitable through prompt injection against an LLM client that calls search_nodes with attacker-controlled entity_types.

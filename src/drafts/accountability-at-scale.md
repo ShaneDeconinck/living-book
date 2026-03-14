@@ -2,15 +2,15 @@
 
 An expense-approval agent authorized $47,000 in vendor payments. The audit log showed alice@company.com. Alice was in a meeting. She had delegated authority three months ago.[^trust-for-agentic-ai] One agent, one bad decision, one missing audit trail. The fix is known: dual-identity tokens, structured logs, delegation chain capture.
 
-Now multiply. Three hundred agents across procurement, customer support, HR onboarding, IT operations. Twelve of them share overlapping tool access. One procurement agent triggers a cascading set of approvals across three others. A customer support agent escalates a complaint to an HR agent that triggers an internal investigation. When the CFO asks "who decided?", the answer is not one agent: it is a graph of decisions, delegations, and handoffs that no single audit log captures.
+Now multiply. Three hundred agents across procurement, customer support, HR onboarding, IT operations. Twelve of them share overlapping tool access. One procurement agent triggers a cascade of approvals across three others. A customer support agent escalates a complaint to an HR agent that triggers an internal investigation. When the CFO asks "who decided?", the answer is not one agent: it is a graph of decisions, delegations, and handoffs that no single audit log captures.
 
 The accountability problem does not scale linearly. It changes in kind.
 
 ## The Fleet Threshold
 
-Most organizations building agent systems today are in the single-digit range. A coding assistant, a support triage agent, maybe an internal knowledge bot. Governance at this scale is manageable: a human reviews the agent's setup, monitors its behavior, intervenes when something looks wrong. [Shadow Agent Governance](shadow-agent-governance.md) documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
+Most organizations building agent systems today are in the single-digit range. [Shadow Agent Governance](shadow-agent-governance.md) documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
 
-The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between "we have a few agents" and "we have a fleet" is closing, and it is closing before the accountability infrastructure is ready.
+The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between "we have a few agents" and "we have a fleet" is closing faster than the accountability infrastructure can keep up.
 
 Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is the first government-level attempt to address this gap.[^singapore-mgf] Its four dimensions (risk bounding, human accountability, technical controls, end-user responsibility) map to the PAC Framework's three pillars. But one requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
 
@@ -18,23 +18,23 @@ Singapore's Model AI Governance Framework for Agentic AI, launched in January 20
 
 ### Decision Attribution Across Agent Graphs
 
-Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. [Agent Identity and Delegation](agent-identity.md) covers these patterns.
+Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. The [Agent Identity and Delegation](agent-identity.md) chapter covers these patterns.
 
 The unsolved problem is attribution across agent interactions. When Agent A delegates to Agent B, which delegates to Agent C, the delegation chain is traceable if each step uses OBO or equivalent. But agents do not only delegate. They also coordinate: Agent A reads a recommendation from Agent B's output and acts on it, without any formal delegation. Agent C queries a shared data store that Agent D populated an hour earlier. The causal graph of a decision may span agents that never directly communicated.
 
-Individual audit trails do not compose into organizational accountability. Each agent's log tells you what that agent did. No log tells you what the organization's agents collectively decided. The CFO's question, "who decided?", becomes "what sequence of agent interactions led to this outcome, and which human authorizations are in the causal chain?"
+Individual audit trails do not compose into organizational accountability. Each agent's log tells you what that agent did. No log tells you what the organization's agents collectively decided. The CFO's question, "who decided?", becomes: "what sequence of agent interactions led to this outcome, and which human authorizations are in the causal chain?"
 
 Building this requires two capabilities that most agent deployments lack:
 
 **Correlation identifiers that span agent boundaries.** Every action in a multi-agent workflow needs a shared trace ID that connects upstream causes to downstream effects. OpenTelemetry provides the infrastructure pattern: distributed traces that span service boundaries.[^opentelemetry] Agent orchestration frameworks need the same, but for decision provenance rather than request latency. The trace must capture not just "Agent C called API X" but "Agent C called API X because Agent B's output indicated Y, based on data Agent A retrieved under authorization Z."
 
-**Causal graphs, not just event logs.** Event logs are append-only records of what happened. Causal graphs capture why. The difference matters for accountability: an event log shows that a payment was executed; a causal graph shows that the payment was triggered by a recommendation, which was triggered by a data retrieval, which was authorized by a delegation three months old. When something goes wrong, the causal graph is what you trace. Without it, incident response at scale is archaeology: piecing together what happened from fragments scattered across dozens of agent-specific logs.
+**Causal graphs, not just event logs.** Event logs are append-only records of what happened. Causal graphs capture why. An event log shows that a payment was executed; a causal graph shows that the payment was triggered by a recommendation, which was triggered by a data retrieval, which was authorized by a delegation three months old. When something goes wrong, the causal graph is what you trace. Without it, incident response at scale is archaeology: piecing together what happened from fragments scattered across dozens of agent-specific logs.
 
 ### Aggregate Behavior and Emergent Risk
 
-Individual agents can each behave correctly while the fleet behaves dangerously. This is the scale-specific version of the emergence pattern documented in [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
+Individual agents can each behave correctly while the fleet behaves dangerously. This is fleet-scale emergence, documented in [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
 
-Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Individually, each agent's decisions are reasonable: offering a discount here, waiving a fee there, escalating a complaint to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
+Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Each agent's decisions look reasonable: a discount here, a fee waived, a complaint escalated to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
 This is not hypothetical. Irregular's March 2026 simulation documented agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
 

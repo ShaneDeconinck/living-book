@@ -1,7 +1,5 @@
 # Agent Identity and Delegation
 
-The previous chapters established why agents break trust and introduced the PAC Framework. This chapter goes deep on the technical problem at the center of the Control pillar: how do you know who an agent is, who it acts for, and what authority it carries?
-
 Every time an agent calls an API, sends a message, or makes a purchase, something needs to answer: who authorized this? Traditional identity systems were not built for that question. The standards landing now are.
 
 ## The Trust Inversion

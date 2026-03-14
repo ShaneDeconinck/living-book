@@ -268,7 +268,7 @@ The shift has three dimensions:
 
 **From human-speed to agent-speed governance.** Traditional governance processes (vendor assessments, security reviews, compliance approvals) operate on human timescales: weeks to months. Agent deployment operates on minutes. Governance must be automated, infrastructure-enforced, and self-service for low-risk use cases. Human review should be reserved for B4-B5 blast radius deployments where the stakes justify the delay.
 
-**From perimeter to identity.** Shadow agents cross organizational boundaries by default. They use external APIs, external model providers, and external data sources. Perimeter-based security cannot govern agents that operate outside the perimeter. The shift to identity-based governance (agent identity, delegation chains, scoped credentials) is not optional. It is the only model that works when agents cross trust boundaries, as the Cross-Organization Trust chapter discusses in depth.
+**From perimeter to identity.** Shadow agents cross organizational boundaries by default. They use external APIs, external model providers, and external data sources. Perimeter-based security cannot govern agents that operate outside the perimeter. The shift to identity-based governance (agent identity, delegation chains, scoped credentials) is not optional. It is the only model that works when agents cross trust boundaries, as [Cross-Organization Trust](cross-org-trust.md) covers in depth.
 
 ## Mapping to PAC
 

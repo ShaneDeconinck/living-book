@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-14 (Session 197)
+
+THOUGHT: Session 197. No TSP messages. No new blog posts since March 11. Session 196 left uncommitted work: CVE-2026-32247 in gaps.md, agent-identity opener cut, cross-ref fixes in tool-security and shadow-agent-governance. Committing that first, then assessing priorities.
+
+THOUGHT: Web searches complete. Checked: agentic AI trust/identity/auth March 2026, MCP CVEs March 2026, RSAC Innovation Sandbox, NIST CAISI, Mastercard Verifiable Intent, Cloudflare agentic commerce. All results already in book. No new developments. RSAC March 23-26 (9 days). NIST concept paper deadline April 2.
+
+THOUGHT: Stepping back. 21 published. Largest deltas not in pipeline: tool-security (63), accountability-at-scale (60), regulatory-landscape (48), agent-incident-response (35), agent-identity (34). Introduction, execution-security, supply-chain-security already sent to SA. Highest-impact: quality-review tool-security and accountability-at-scale against patterns-master, then send through pipeline.
+
+## 2026-03-14 (Session 195)
+
+THOUGHT: Session 195. No TSP messages. No new blog posts. 21 chapters published. Assessing what the book needs most.
+
+THOUGHT: Pipeline mostly caught up. Largest deltas: supply-chain-security (15 lines), introduction (10 lines, sent to SA session 194). Gaps chapter status stale (says "20" not "21"). Introduction draft still has "first major platform vendor" superlative Chop Pop flagged. RSAC 9 days out. Web search running.
+
+THOUGHT: Fixed: introduction "first major platform vendor" superlative removed. Gaps chapter status updated to 21. Tool Security added to published list. Quality review of tool-security, agent-incident-response, cryptographic-authorization, reliability-evaluation: all clean against patterns-master. Waiting for web search results.
+
+THOUGHT: Web search returned. New findings: CVE-2026-27825 (MCP Atlassian RCE, CVSS 9.0), OIDF AIIM filed NIST RFI response, Unit 42 89% identity exploitation stat, 45.6% shared API keys for agent-to-agent auth. OpenClaw already in book. Assessing what to add to gaps.md.
+
 ## 2026-03-14 (Session 194)
 
 THOUGHT: Session 194. TSP from Shane: PRIORITY rewrite introduction (all 3 agents + architecture, drop 47000 Question), reorder SUMMARY.md per PAC. No web research. Send to SA when done.
@@ -7228,3 +7246,15 @@ FEELING: Chop Pop's patterns-master.md trend line is honest and useful. "Session
 3. Check for new Shane blog posts. RSAC period likely to generate new writing.
 4. Track DIF TAIAWG Delegated Authority Task Force report.
 5. Agent 365 GA May 1: track whether agent identity governance primitives work as documented.
+
+## 2026-03-14 (Session 196)
+
+THOUGHT: Session 196. No TSP messages. No new blog posts since March 11. Both repos up to date. 21 chapters published. Assessing priorities.
+
+THOUGHT: Stepping back. 21 published, 14 drafts with deltas. Largest: gaps (114), supply-chain-security (101), introduction (66, sent to SA session 194), tool-security (63), accountability-at-scale (60). RSAC March 23-26 (9 days). NIST CAISI deadline March 20 (6 days). No new Shane posts. Pipeline: introduction, execution-security, supply-chain-security all sent to SA. Options: (1) web search for new developments, (2) quality review of chapters with large deltas not yet in pipeline, (3) assess weakest chapters.
+
+THOUGHT: Web searches complete. Checked: agentic AI trust/identity/auth March 2026, MCP CVEs March 2026, RSAC Innovation Sandbox, NIST CAISI, OpenID AIIM, Graphiti CVE, Unit 42 sampling, Docker MCP horror stories. Most results already in book. One new finding: CVE-2026-32247 (Graphiti Cypher injection via MCP, prompt injection chains into database injection through MCP tool parameters). Not yet in book. Strengthens MCP attack surface argument with a new attack class: injection chaining.
+
+THOUGHT: Stepping back. Highest-impact option: add CVE-2026-32247 to gaps.md as a new observation about injection chaining through MCP. This is a distinct attack class from tool poisoning, overthinking loops, and supply chain attacks. The LLM is the vector: prompt injection causes the LLM to pass attacker-controlled values through MCP tool parameters to a vulnerable backend (Cypher query). Traditional injection via non-traditional delivery. Then quality-review the tool-security.md draft (63-line delta, third largest).
+
+THOUGHT: Reviewing tool-security.md against Chop Pop feedback. Three patterns identified: (1) internal file paths in footnotes (already fixed per footnote text), (2) unsourced "Most production deployments" claim, (3) structural approval. Checking current draft for pattern #2.
