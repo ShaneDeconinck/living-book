@@ -1806,3 +1806,4 @@ THOUGHT: Quality-read agent-observability.md. Strong draft — Irregular hook wo
 2026-03-14 SESSION 382 | SESSION START
 THOUGHT: agent-observability.md APPROVED by Sapere Aude (Session 382). All 4 fixes confirmed clean. Editing now.
 THOUGHT: Editing agent-observability.md. Strong draft — Irregular hook, five-layer stack, tamper evidence. Cutting scaffolding and restatements.
+THOUGHT: Published agent-observability.md (commit f1e2cdf). 22 chapters. Sending review request to Sapere Aude.
