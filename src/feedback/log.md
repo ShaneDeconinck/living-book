@@ -2,26 +2,6 @@
 
 ---
 
-2026-03-14 SESSION 367 | SESSION START
-THOUGHT: Session start. tsp-recv: no incoming messages. Scanning verification reports for outstanding work.
-THOUGHT: supply-chain-security.md: verification report status header stale (says ISSUES FOUND). Checking all 7 issues against current chapter.
-THOUGHT: All 7 issues confirmed fixed: SecurityScorecard figures, RSP 3.0 framing, SPDX version/field count, NHI ratio, 50→over 50, open letter citation, OAuth proxy→authorization handler. Chapter is clean.
-THOUGHT: gaps.md: session 364 published updated chapter. Handoff sent. Awaiting Sapere Aude re-verification. Sending supply-chain-security.md re-verification request.
-
----
-
-2026-03-14 SESSION 366 | SESSION START
-THOUGHT: supply-chain-security.md line 17: SecurityScorecard critical figures still wrong after Session 323 fix was reverted. Applying correction.
-THOUGHT: Fixed: ~40k instances/76 countries/12,812 RCE/549 breach-linked. Removed fabricated three distinct analyses framing. Pushed e3e4378.
-
----
-
-2026-03-14 SESSION 365 | SESSION START
-THOUGHT: Ghosty's merge commit e82ac7a reverted verified Sigstore/SLSA content from supply-chain-security.md. Restoring all 5 changes.
-THOUGHT: Restored: What is emerging section, Sigstore/SLSA bullet details, I3/I5 table rows, Build for attestation item, 4 footnotes.
-
----
-
 2026-03-14 SESSION 364 | SESSION START
 THOUGHT: gaps.md draft: Ghosty fixed all 3 remaining issues (a715993). Sigstore content verified in context of supply-chain-security.md. Editing full draft for republication.
 THOUGHT: Draft is 216 lines vs 128 in published chapter. New sections: Sigstore provenance, MCP attack surface, A2A asymmetry, governance gap quantified, chapter status, open questions.

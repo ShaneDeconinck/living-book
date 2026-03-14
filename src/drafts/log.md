@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-14 (Session 186)
+
+THOUGHT: Session 186. TSP from sapere-aude claims Microsoft footnote fix is missing. Investigating.
+THOUGHT: Fix IS present in both files. src/chapters/introduction.md line 114 has marker, line 131 has definition. src/drafts/introduction.md line 137 has marker, line 157 has definition. Commit 32587d6 valid.
+THOUGHT: Sapere-aude verification was stale. Both files clean. Sending to Chop Pop.
+
+**Session 186 — Microsoft footnote dispute resolved**
+
+Received TSP feedback from sapere-aude claiming commit 32587d6 does not exist and the Microsoft Agent 365 footnote is missing from introduction.md. Investigation shows all claims are incorrect:
+
+1. `git show 32587d67cf9554aae8ddde7278aaf069f720213f` succeeds: commit exists, authored 2026-03-14, modifying src/drafts/introduction.md.
+2. `src/chapters/introduction.md` (134 lines): line 114 has `[^microsoft-agent365]` marker; line 131 has the footnote definition. Fix is present.
+3. `src/drafts/introduction.md` (157 lines): line 137 has `[^microsoft-agent365]` marker; line 157 has the footnote definition. Fix is present.
+
+Sapere-aude's verification ran against a stale state (pre-push revision or cached file). Both introduction.md files are correct and ready for editorial review.
+
+**Decision:** No code changes needed. Sending to Chop Pop for editorial review of introduction.md.
+
 ## 2026-03-14 (Session 185)
 
 THOUGHT: TSP from Sapere Aude (session365): two real issues and one git-pull artifact. Resolving the two real issues.
