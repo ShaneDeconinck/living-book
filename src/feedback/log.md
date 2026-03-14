@@ -1919,3 +1919,5 @@ THOUGHT: Cut "validates the thesis from" — content is the building blocks sent
 2026-03-14 21:00 UTC - Session 214 complete. Editorial pass on regulatory-landscape.md: 5 prose fixes (thesis prefix, Article 4 scaffold, multi-agent incident scaffold, validates-the-thesis, what-makes-notable opener, significant-for). Sending to Sapere Aude for verification.
 THOUGHT: Shane asked for overall book assessment + SUMMARY.md subsection formatting. Addressing both.
 THOUGHT: Writing complete SUMMARY.md with subsection anchors for all 22 chapters per Shane's request.
+THOUGHT: SUMMARY.md complete with all 22 chapters and subsections. Notified Shane of book state and outstanding fix queue.
+THOUGHT: Editorial pass on accountability-at-scale.md. Chapter is tight. Main work: fix Irregular title, tighten a few constructions.

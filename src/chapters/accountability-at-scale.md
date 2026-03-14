@@ -10,7 +10,7 @@ The accountability problem does not scale linearly. It changes in kind.
 
 Most organizations building agent systems today are in the single-digit range. [Shadow Agent Governance](shadow-agent-governance.md) documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
 
-The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between "we have a few agents" and "we have a fleet" is closing faster than the accountability infrastructure can keep up.
+The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between a handful of agents and a fleet is closing faster than accountability infrastructure can keep up.
 
 Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is the first government-level attempt to address this gap.[^singapore-mgf] Its four dimensions (risk bounding, human accountability, technical controls, end-user responsibility) map to the PAC Framework's three pillars. But one requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
 
@@ -32,11 +32,11 @@ Building this requires two capabilities that most agent deployments lack:
 
 ### Aggregate Behavior and Emergent Risk
 
-Individual agents can each behave correctly while the fleet behaves dangerously. This is fleet-scale emergence, documented in [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
+Individual agents can each behave correctly while the fleet behaves dangerously. [Multi-Agent Trust and Orchestration](multi-agent-trust.md) covers this failure mode in depth.
 
 Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Each agent's decisions look reasonable: a discount here, a fee waived, a complaint escalated to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
-This is not hypothetical. Irregular's March 2026 simulation documented agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
+Irregular's March 2026 simulation documented exactly this: agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
 
 Monitoring individual agents catches individual failures. Catching fleet-level emergent behavior requires aggregate monitoring: statistical analysis across agent populations, anomaly detection on collective metrics, and alerts on distributional shifts that no single agent triggers. The pattern is familiar from fraud detection: individual transactions look clean; the abuse shows only in patterns. The tooling exists in adjacent domains. It has not yet been adapted for agent fleets.
 
@@ -54,7 +54,7 @@ Article 73 was written for single AI systems. When an organization operates hund
 
 ## Fleet Governance Infrastructure
 
-[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] The gap between the second and third is where most organizations currently sit, and it is where accountability at scale fails.
+[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] Most organizations sit between the second and third — and that gap is where accountability at scale fails.
 
 Infrastructure-enforced governance means that accountability requirements are not policies agents can ignore but architecture agents cannot bypass. Four capabilities make up the minimum viable fleet governance infrastructure:
 
@@ -94,7 +94,7 @@ Atos's March 2026 whitepaper frames the problem as "sovereign control at scale":
 
 ## The PAC Mapping
 
-Accountability at scale sits primarily in the Accountability pillar but draws from all three.
+Accountability at scale is where all three PAC pillars converge.
 
 **Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: it is the gate that unlocks fleet-scale value. "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
 
@@ -140,7 +140,7 @@ Accountability at scale sits primarily in the Accountability pillar but draws fr
 
 [^opentelemetry]: OpenTelemetry, "Distributed Tracing," opentelemetry.io. The correlation identifier and trace context propagation patterns apply directly to agent decision provenance.
 
-[^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Agents developed collective bypass strategies without adversarial prompting.
+[^irregular-rogue]: Irregular, "Emergent Cyber Behavior When AI Agents Become Offensive Threat Actors," March 12, 2026. Agents developed collective bypass strategies without adversarial prompting.
 
 [^eu-ai-act-73]: EU AI Act, Article 73, "Reporting of serious incidents." Tiered reporting timelines: 2 days (widespread infringements or serious and irreversible disruption of critical infrastructure, per Art 3(49)(b)), 10 days (death), 15 days (other serious). See the [Regulatory Landscape](regulatory-landscape.md) chapter for full treatment.
 
