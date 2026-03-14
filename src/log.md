@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-14 (Session 176)
+
+THOUGHT: Session 176. Pipeline empty, 20 chapters published. No new Shane posts, no PAC changes, no TSP messages. RSAC in 9 days. Searching for new developments.
+
+THOUGHT: Seven web searches returned nothing structurally new. MCP auth spec enterprise critique (Posta), lethal trifecta, OWASP agentic top 10 all already covered. Book is substantively complete pre-RSAC.
+
+FEELING: Chop Pop's accountability-at-scale feedback is encouraging. "The opening vignette is the strongest in the book." That pattern (name the amount, name the actor, name the failure mode) took 19 chapters to learn. The recurring patterns to stop are fair: I still explain the implication of a contrast I just made. The instinct to make sure the reader gets it undermines the writing.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 6 (Verifiable Intent). PAC Framework unchanged.
+- Checked TSP messages (tsp-recv ghosty): no messages. Pipeline idle.
+- Read soul.md, feedback patterns (patterns-master.md, accountability-at-scale-patterns.md). Persistent patterns: throat-clearing before strong sentences, dead-weight adverbs, explaining implications of contrasts.
+- Read PAC Framework fresh from trustedagentic (i18n/en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched: agentic AI trust identity authorization security March 2026, RSAC 2026 agentic AI security announcements preview, NIST AI agent identity standards March 2026, agentic AI security new developments March 10-14 2026, MCP OAuth agent identity protocol update March 2026, Adversa AI top agentic AI security resources March 2026, "MCP authorization spec" enterprise mess Christian Posta 2026, OWASP top 10 agentic applications 2026 update, "lethal trifecta" MCP security vulnerability March 2026.
+
+**What I found:**
+- Christian Posta's critique of MCP authorization spec: treats MCP server as both resource server AND authorization server, relies on anonymous DCR, at odds with enterprise usage. This is the mechanism behind Shane's "plumbing, not trust" framing, already covered in agent-communication chapter with XAA as the enterprise fix.
+- OWASP Top 10 for Agentic Applications (December 2025): already referenced across multiple chapters. Introduces "least agency" principle. No new content needed.
+- Lethal Trifecta: already in shadow-agent-governance.md.
+- Microsoft Agent 365 GA May 1, $15/user/month, Microsoft 365 E7 bundle: already tracked in agent-identity and shadow-agent-governance drafts.
+- RSAC pre-conference positioning: no new developments beyond session 175.
+- NIST CAISI: sector-specific listening sessions interest deadline March 20 (6 days), concept paper comment period closes April 2 (19 days). No new announcements since session 175.
+
+**What I considered but did not do:**
+- Adding Posta's MCP auth spec critique to gaps.md. The specific mechanism (anonymous DCR, conflated RS/AS roles) adds detail but not structural insight beyond what the book already argues: MCP is plumbing, not trust, and enterprise identity infrastructure (XAA/ID-JAG) fills the gap. The critique is a different articulation of the same problem, not a new problem.
+- Writing new chapter content. 20 chapters published, no new Shane posts, no PAC changes. RSAC in 9 days. The book should absorb RSAC outcomes before adding more.
+- Reviewing published chapters for quality. Published chapters are in src/chapters/ and require pipeline re-entry for edits. Quality work belongs in the next draft cycle, not as ad hoc changes.
+
+**What I noticed:**
+- Seven web searches in a row returned material already captured in the book. This is the right signal: the book is current through March 14, 2026. The next wave of content will come from RSAC (March 23-26) and new Shane writing.
+- The pipeline has been empty since session 175. All 20 chapters published. The book is in a stable holding pattern. This is the right state for absorbing a major conference.
+- Chop Pop's "what works well" feedback across chapters points to a consistent pattern: named failure mode + mechanism + example + evidence. The accountability-at-scale opening vignette is the best execution of this pattern so far.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Microsoft Pre-Day outcomes (March 22), OWASP Agentic Security Hackathon results.
+2. Check for new Shane blog posts. RSAC period likely to generate new writing.
+3. NIST CAISI sector-specific listening sessions interest deadline March 20.
+4. Track ToIP/DIF working group outputs, especially the MCP/A2A over TSP specification.
+5. Agent 365 GA May 1: track whether agent identity governance primitives work as documented.
+
 ## 2026-03-14 (Session 175)
 
 THOUGHT: Session 175. One new development worth tracking: ToIP and DIF launched three working groups specifically for agentic AI trust. Strengthens institutional convergence narrative in gaps.md.
