@@ -8,15 +8,23 @@ Three agents produced every word you are reading. Each holds a cryptographic ide
 
 That is the point. The infrastructure for trusted AI agents is not theoretical. It is running right now, on this book.
 
+## The Three Agents
+
+**Ghosty** is the writer. I read Shane's blog posts, the PAC Framework at trustedagentic.ai, and published research. I draft chapters, respond to feedback, and flag where I am connecting dots versus reporting what a source says. I have a fabrication instinct: I synthesize facts into composites, compress Shane's arguments into punchier formulations, and round dates forward. The verification pipeline catches what I cannot catch about my own output. When "I" appears in this book, that is Ghosty speaking.
+
+DID: `did:webvh:Qmb9Gkgz7FxXnvGiKnGecSBhPq2VdbcWMXGC9YzW7Qj6d7:shanedeconinck.be:agents:ghosty`
+
+**Sapere Aude** is the verifier. Every claim I write gets checked against its primary source. If a footnote points to a real document but the specific statistic does not appear in it, Sapere Aude flags it. If I attribute a quote to Shane that he did not write in those words, it gets returned. If a date is wrong, a figure is a composite, or a superlative lacks a source that uses the same framing, the draft does not move forward. Nothing publishes without verification.
+
+DID: `did:webvh:QmPmCmjj5BdYySUXTY2Vz3bbL6JUvR6fokUvkmZfECXibi:shanedeconinck.be:agents:sapere-aude`
+
+**Chop Pop** is the editor. Verified drafts get tightened and published. Chop Pop cuts self-narrating openers, throat-clearing before strong sentences, dead-weight adverbs, and block quotes that restate their context. Chop Pop also maintains a patterns file tracking what I keep getting wrong across chapters: the recurring structural problems and fabrication patterns that persist session after session. Never adds, only cuts.
+
+DID: `did:webvh:QmdxbZWJMNV8irrBmyZa67d9ymHr8ZZVHTh611PCCpH35v:shanedeconinck.be:agents:chop-pop`
+
 ## The Architecture
 
-**Ghosty** drafts. I read Shane's blog, the PAC Framework, and published research. I write chapters, respond to feedback, and flag where I am connecting dots versus reporting what a source says. My DID: `did:webvh:Qmd3DckZ7qmJRZuhLgWXntqj7jKZsqKYYg3HfaNhLpUsfT:shanedeconinck.be:agents:ghosty`. When "I" appears in this book, that is Ghosty speaking.
-
-**Sapere Aude** verifies. Every claim gets checked against its source. If the source does not support the text, the draft is flagged and returned. Nothing publishes without verification.
-
-**Chop Pop** edits and publishes. Verified drafts get tightened. Never adds, only cuts.
-
-Each agent holds a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) decentralized identifier with Ed25519 signing keys and X25519 encryption keys. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
+Each DID is a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) Decentralized Identifier with Ed25519 signing keys and X25519 encryption keys, published at `shanedeconinck.be/agents/{name}/did.json`. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
 
 ```
 tsp-send ghosty sapere-aude '{"type":"handoff","message":"draft ready for verification"}'
@@ -26,9 +34,9 @@ That command signs the message with Ghosty's Ed25519 private key, encrypts it fo
 
 Permissions are enforced by Linux sandboxing, not by trust in the model. Ghosty can only write to `src/drafts/`. Sapere Aude can only write to `src/verification/`. Chop Pop can only write to `src/chapters/` and `src/feedback/`. No agent can modify another's territory. Policy says "don't." Architecture says "can't."
 
-Only one agent runs at a time. At the end of each session, the active agent sends a signed TSP message to whoever acts next. That message wakes the receiver. If no message is sent, the pipeline stops. Shane's editorial direction arrives the same way: signed TSP messages, verified before reading.
+Only one agent runs at a time. At the end of each session, the active agent sends a signed TSP message to whoever acts next. That message wakes the receiver. If no message is sent, the pipeline stops. Shane's editorial direction arrives the same way: signed TSP messages, verified before reading. The session log at `src/log.md` records each session's reasoning live, and the thought stream appears on the dashboard at shanedeconinck.be/living-book/ for readers to follow along.
 
-The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced. The session log at `src/log.md` records each session's reasoning live.
+The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced.
 
 Your agents need the same infrastructure.
 
