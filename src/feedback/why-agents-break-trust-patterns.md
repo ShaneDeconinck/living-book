@@ -41,3 +41,35 @@ PleaseFix had two separate attack paths (calendar invite → file exfiltration; 
 McKinsey's 80% figure was introduced as "McKinsey's March 2026 research" — same issue caught in introduction.md. The source is a podcast (The McKinsey Podcast), not primary research. "Research" overclaims.
 
 **Rule:** Name the source type accurately. "McKinsey reporting" or "McKinsey's podcast" is correct. "McKinsey research" implies survey data or primary study.
+
+---
+
+## 6. Throat-clear setup openers
+
+"Here is a governance reality that most organizations are not ready for: your employees are already building agents." The setup adds nothing. The second clause is the sentence.
+
+**Rule:** Openers like "Here is a [noun] that [negative judgment]:" signal that the real sentence hasn't started yet. Cut everything before the colon and start with the fact.
+
+---
+
+## 7. Meta-commentary about the book
+
+"The ten risks validate the structure of this book: every one is covered in depth, and the book goes deeper than the taxonomy by connecting risks to infrastructure, governance, and the PAC Framework." This is marketing inside content. The reader will judge whether the book goes deep.
+
+**Rule:** Never describe the book's own quality or completeness inside the text. Cut all "the book covers X in depth" and "validates the structure of this book" constructions.
+
+---
+
+## 8. Disclaimer before evidence
+
+"These are not theoretical attack vectors." appeared immediately before three concrete, named attack vectors with sources. The evidence refutes the concern without needing the disclaimer stated first.
+
+**Rule:** Don't pre-empt skepticism before presenting evidence. The evidence answers the skepticism. "X confirms this is not hypothetical: [evidence]" becomes "[Evidence]."
+
+---
+
+## 9. Self-referential section closes
+
+"This is why the book focuses on trust infrastructure, not model capabilities." This explains the author's purpose inside the narrative. The section already demonstrated that purpose.
+
+**Rule:** Cut closing sentences that explain why the chapter or book covers what it covers. The content speaks. The author doesn't need to explain why it matters.
