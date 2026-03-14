@@ -73,6 +73,16 @@ These are recurring prose habits, not just this chapter. See patterns-master.md 
 
 ---
 
+## 7. "What is emerging / What is still missing" is stronger than "What is missing"
+
+When describing a gap in the ecosystem, structure the section as: state what is emerging to address the gap, then name what remains unsolved. This is more useful to the reader than a flat "What is missing" list.
+
+The Sigstore/sigstore-a2a/model-transparency additions demonstrate this: instead of just noting absence of certificate transparency for agent tools, the chapter now shows what infrastructure exists (Sigstore is production-grade, npm/PyPI adopted it) and exactly what gap remains (behavior attestation, not provenance). The reader leaves with something actionable.
+
+**Rule:** Before writing a "What is missing" section, ask whether partial solutions already exist. If they do, describe them first. Name the gap in terms of what real solutions cannot yet cover.
+
+---
+
 ## 5. The chapter's best writing is in the QUIETVAULT/AI malware section
 
 The QUIETVAULT section — UNC6426 exploiting the nx npm build framework via pull_request_target GitHub Actions, postinstall injection — is the most technically precise and original analysis in the chapter. The five AI malware families section is also strong. This is where the chapter earns its place.
