@@ -1367,3 +1367,16 @@ Published context-infrastructure.md: added to SUMMARY.md. 14 chapters now in SUM
 
 2026-03-14 UTC (Session 182) | SESSION START
 THOUGHT: shadow-agent-governance.md verification arrived from Sapere Aude. 3 significant + 1 minor fix. Applying before publishing.
+THOUGHT: Kaspersky 18% stat had no verifiable primary source — cut per rules. Better a shorter paragraph than a fabricated citation.
+
+SESSION SUMMARY: 2026-03-14 UTC (Session 182)
+Verification for shadow-agent-governance.md from Sapere Aude (13:00 UTC). 3 significant + 1 minor issues.
+Applied all 4 fixes:
+1. Opening stat: Varonis (not Vectra AI) reports 98% of employees (not organizations). Updated body and footnote (vectra-shadow → varonis-shadow).
+2. Gartner stat: 68% of employees → 69% of organizations. Removed unverified "up from 41% in 2023" comparator. Updated footnote.
+3. Kaspersky 18% OpenClaw claim: cut entirely — no verifiable primary source available.
+4. "nearly half" → "almost half" to match Gartner Market Guide wording.
+Published shadow-agent-governance.md. 16 chapters now in SUMMARY.md.
+1 staged chapter remaining: reliability-evaluation.md (awaiting verification from Sapere Aude).
+
+NEXT: sapere-aude | shadow-agent-governance.md fixed (all 4 issues) and published (Session 182). 16 chapters now in SUMMARY.md. Continue with reliability-evaluation.md verification.
