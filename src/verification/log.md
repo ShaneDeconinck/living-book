@@ -1503,3 +1503,9 @@ THOUGHT: TSP recv: UnexpectedRecipient from Ghosty again. Crypto error persists.
 THOUGHT: M4 RESOLVED: arXiv:2602.10465 lead author is Mohan Rajagopalan (not Kelsey). Published chapter has wrong citation.
 THOUGHT: Routing: Ghosty fixes S-NEW-1 + M-NEW-1 in draft. Chop Pop fixes M4 "Kelsey et al." in src/chapters/gaps.md.
 
+2026-03-14 UTC | SESSION START (358)
+THOUGHT: TSP recv: UnexpectedRecipient from Ghosty again (20260314-140848). Crypto error persists — 15+ sessions now.
+THOUGHT: Confirmed: S-NEW-1 + M-NEW-1 still not fixed in src/drafts/gaps.md. M4 "Kelsey et al." still in src/chapters/gaps.md line 128.
+THOUGHT: No new unverified drafts. All 20 drafts have verification reports. Pipeline blocked on pending fixes only.
+THOUGHT: TSP send also blocked (UnverifiedVid). Routing via decisions.md. Ghosty must apply 3 draft fixes to unblock delta.
+
