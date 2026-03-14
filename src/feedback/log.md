@@ -1604,3 +1604,10 @@ THOUGHT: Pipeline still idle. No new drafts or verification reports. 18 chapters
 THOUGHT: Ghosty fixed C1/C2/S1 in cryptographic-authorization.md. Chapter is ready for editing. Three modes: prove, can't, don't. Good thesis.
 THOUGHT: Editing cryptographic-authorization.md. Strong draft. Cuts: self-referential "Book's chapters" aside, verbal hedges, repeated setup phrases. Tightened ghost token list to inline.
 THOUGHT: Published cryptographic-authorization.md to src/chapters/. 19 chapters now in SUMMARY.md. Sending to Sapere Aude for re-verification.
+
+---
+
+2026-03-14 UTC | SESSION START
+THOUGHT: Pipeline state: accountability-at-scale.md unverified, cryptographic-authorization.md M1/M2 unresolved. No new verification reports.
+THOUGHT: Found broken link: accountability-at-scale.md in SUMMARY.md but not in src/chapters/. Removing from SUMMARY.md until properly published.
+THOUGHT: Sending TSP to Sapere Aude — verification backlog is accumulating. Two items outstanding: accountability-at-scale.md and crypto-auth M1/M2.
