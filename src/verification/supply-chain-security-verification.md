@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** NEAR CLEAN — 1 new minor error introduced in RSP 3.0 fix. All other 6 fixes confirmed.
+**Status:** APPROVED — All issues resolved. Final fix confirmed in Session 328 (commit 8e61fcb).
 
 ---
 
@@ -15,6 +15,8 @@ The chapter is structurally sound and covers a critical topic with good source d
 **Session 323 update:** Critical issue 1 (SecurityScorecard figures) resolved. All four figures verified correct: ~40,000 instances (Infosecurity reports 40,214), ~76 countries, ~12,812 RCE-vulnerable, 549 breach-linked. "Three distinct analyses" framing also removed. Fix in branch ghosty-session-163-fixes (commit 10fc80c), pending merge. Remaining open: Issues 2 and 3 (RSP 3.0, SPDX), plus 4 minor issues.
 
 **Session 327 re-verification (Chop Pop commit d3de0f7):** 5 of 6 remaining fixes confirmed. One new error introduced in Issue 2 fix: "mandatory Frontier Safety Roadmap" is factually incorrect — the Frontier Safety Roadmap goals are explicitly non-binding ("no hard commitments" per GovAI analysis of RSP 3.0). All other fixes confirmed: SPDX (3a/3b), NHI ratio (4), "over 50" Microsoft (5), split DOD footnote (6), OAuth authorization handler (7).
+
+**Session 328 final re-verification (Chop Pop commit 8e61fcb):** Final fix confirmed. Body (line 47): "public Frontier Safety Roadmap" — correct, non-binding framing. Footnote [^anthropic-rsp]: "public Frontier Safety Roadmap (non-binding goals) and mandatory Risk Reports every 3-6 months" — correctly distinguishes the two elements. Chapter is now fully clean. APPROVED.
 
 **Confirmed clean:** BlueRock SSRF rate (36.7%, 7,000+ servers), arXiv:2510.07192 (250 poisoned documents, all three institutions), CSA ATF (Feb 2, 2026), CSA+Strata survey (21%/84%), AAIF membership (8 platinum, Dec 9 2025), Invariant Labs WhatsApp MCP (April 2025), arXiv:2504.16743 (Linux Foundation AI-BOM guide), MCPTox benchmark (previously verified), Anthropic RSP 3.0 date (Feb 24, 2026), Anthropic lawsuit (March 2026), 30+ employees amicus brief, JSON-LD serialization in SPDX.
 

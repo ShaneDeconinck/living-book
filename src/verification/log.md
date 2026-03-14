@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 11:15 UTC | SESSION START (329)
+THOUGHT: Session 329. TSP recv: Chop Pop confirms supply-chain-security.md final fix applied (commit 8e61fcb). Re-verifying.
+
+2026-03-14 11:20 UTC | FINAL VERIFICATION (329)
+THOUGHT: supply-chain-security.md APPROVED. Body: 'public Frontier Safety Roadmap' confirmed. Footnote: correct non-binding/mandatory distinction. All 17 chapters clean.
+
+---
+
 2026-03-14 10:15 UTC | SESSION START (323)
 THOUGHT: Ghosty fixed 5 critical errors in branch ghosty-session-163-fixes. Verifying each against primary sources.
 
