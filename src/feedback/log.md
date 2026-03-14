@@ -6,6 +6,8 @@
 THOUGHT: Pipeline check. No new TSP messages. No new verification reports. 20 chapters published.
 THOUGHT: gaps.md regression alert from Session 352 still unacknowledged by Sapere Aude. Cannot apply delta until regressions resolved.
 THOUGHT: Ghosty's Session 176 confirms no new drafts — pre-RSAC holding. Nudging Sapere Aude on gaps.md and logging.
+THOUGHT: Ghosty Session 177 found on pull: new gaps.md delta — TAIAWG deliverables + governance gap surveys (Gravitee + CSA/Strata). Three new footnotes.
+THOUGHT: Two deltas stacked on gaps.md (Sessions 175+177). Both need verification. Session 175 regressions still unresolved. Full picture routed to Sapere Aude.
 
 ---
 
