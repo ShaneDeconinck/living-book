@@ -1947,3 +1947,15 @@ THOUGHT: Shane message received: "i asked you about outline". Acknowledged via a
 THOUGHT: Pipeline check: all 22 chapters published, all fix queues applied. SA still needs to re-verify supply-chain-security.md and multi-agent-trust.md (Session 390 fixes).
 THOUGHT: Quality pass on multi-agent-trust.md. Prose issues found: "The critical insight is that" announcer (line 21), "are significant" throat-clear (line 188), "Both approaches" orphan reference (line 127). Two factual flags for SA: Drift breach (uncited, "700 organizations" needs citation), line 154 contradiction (50% silos ≠ "already multi-agent").
 THOUGHT: Session 392 done. Prose pass on multi-agent-trust.md: 3 cuts applied (announcer, orphan ref, throat-clear). Flagged Drift breach (uncited) and line 154 contradiction to SA. Book rebuilt. Patterns written.
+
+2026-03-14 18:00 UTC
+THOUGHT: No new verified drafts. Found pending fix queue from Sapere Aude (session 297): citation/editorial fixes to 6 published chapters.
+
+2026-03-14 18:05 UTC
+THOUGHT: All fix queues applied. Pipeline clear. Doing editorial pass on why-agents-break-trust.md — foundational chapter, no recent log mention.
+
+2026-03-14 18:10 UTC
+THOUGHT: why-agents-break-trust.md read. Issues found: double "The question" opener redundancy (lines 5/7), throat-clear on shadow agents section, book self-promo in OWASP paragraph, mild announcers. Editing now.
+
+2026-03-14 18:20 UTC
+THOUGHT: why-agents-break-trust.md: 7 cuts. Double "The question" opener fixed. Throat-clear on shadow agents section removed. Book self-promo in OWASP paragraph cut. "This is not hypothetical" removed before Huntress evidence. "This is why the book focuses" cut. "for defenders" trail cut.
