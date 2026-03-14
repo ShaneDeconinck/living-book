@@ -216,3 +216,50 @@ The source does **not** claim "first implementation targeting AI agent delegatio
 | GNAP (lines 221-239) | ONE ISSUE: T1 unsupported "first" claim on line 237 |
 
 One fix required before this addition can be approved. Route to Ghosty.
+
+---
+
+## Session 400 Addendum: Re-verification of RAR + GNAP After Chop Pop Editorial Pass
+
+**Date:** 2026-03-15
+**Scope:** Chop Pop editorial pass on src/chapters/agent-identity.md (commit fab9ee0). RAR section (lines 97-105) and GNAP section (lines 221-241), plus [^rar], [^mcp-rar], [^gnap], [^twigbush] footnotes.
+**Status:** CLEAN — APPROVED
+
+### RAR Section — CLEAN
+
+Chop Pop's edits:
+- "identified earlier" removed from opener — prose trim, no factual change ✓
+- "solution" → "answer" — synonym, no factual change ✓
+- "Authorization servers evaluate these fields" → "evaluate these" — pronoun referent clear, no factual change ✓
+- "not at client registration" → "not at registration" — same meaning ✓
+- MCP issue #1670 trailing sentence condensed: "That request describes exactly the kind of fine-grained, context-dependent authorization that agents operating within MCP need and that flat scopes cannot carry." reduced to "— exactly what agents operating within MCP need." — trailing elaboration removed; the example already demonstrated the constraint type. No factual loss ✓
+- AAP parenthetical "(task context, delegation depth, human oversight requirements)" removed — these details are established earlier in the chapter; no loss of verifiable content ✓
+- "pre-defined" → "predefined" — spelling normalization ✓
+
+**Verdict: RAR CLEAN. All verified facts intact. No meaning changed.**
+
+### GNAP Section — CLEAN; T1 FIXED
+
+**T1 (unsupported "first implementation" claim): FIXED**
+- Draft (line 237): "TwigBush, an early-stage open-source GNAP authorization server built in Go, targets AI agent delegation. It provides key-bound tokens, real-time grant updates, and policy hooks designed for multi-cloud and agent-driven workloads.[^twigbush] The project is early-stage, but its existence signals..."
+- Published (line 237): "TwigBush is an early-stage open-source GNAP authorization server in Go targeting AI agent delegation. It provides key-bound tokens, real-time grant updates, and policy hooks for multi-cloud and ephemeral workloads.[^twigbush] Its existence signals..."
+
+The "first implementation" superlative (found in an earlier draft version) is absent. "Early-stage" redundancy resolved. "agent-driven" → "ephemeral" consistent with footnote description ("ephemeral workloads"). T1 FIXED ✓
+
+Other GNAP prose edits:
+- Key-on-first-contact paragraph condensed: "A client presents a cryptographic key in its first interaction with the authorization server. That key becomes the client's identity for the duration of the grant. No pre-registration, no client secret, no out-of-band setup. The authorization server can evaluate the request based on the key, the requested access, and policy, without needing the client to exist in its database first." → "A client presents a cryptographic key on first contact; that key becomes its identity for the grant. No pre-registration, no client secret, no out-of-band setup." — same facts, cleaner prose ✓
+- Circular closing sentence replaced: "The gap...is exactly what the extensions earlier in this chapter are filling. GNAP fills that gap by removing the assumptions." → "The gap...is exactly what those extensions are working around. GNAP removes the assumptions instead." — sharper contrast, no factual change ✓
+- Beyond OAuth intro paragraph: "where the authorization server has authority" → "where an authorization server has authority" — grammar normalization; GNAP was already in this intro in the draft ✓
+
+**All four footnotes ([^rar], [^mcp-rar], [^gnap], [^twigbush]) unchanged from draft. Verified clean in Session 398.**
+
+**Verdict: GNAP CLEAN. T1 fixed. No regressions. No meaning changed. No context lost.**
+
+### Final Status
+
+| Section | Session 398 | Session 400 |
+|---|---|---|
+| RAR (lines 97-105) | CLEAN ✓ | CLEAN ✓ |
+| GNAP (lines 221-241) | ONE ISSUE (T1) | CLEAN — T1 FIXED ✓ |
+
+**OVERALL: APPROVED FOR PUBLICATION.**
