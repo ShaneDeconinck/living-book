@@ -332,3 +332,64 @@ THOUGHT: "Auth for Agent Builders: A Crash Course" (January 2026) does not exist
 
 2026-03-14 UTC | ASSESSMENT: NEAR CLEAN
 THOUGHT: pac-framework.md: one significant fix — [^4] "Auth for Agent Builders" → correct OBO explainer title. All 12+ external stats confirmed. PAC framework content is Shane's own. Sending to Chop Pop.
+
+---
+
+2026-03-14 UTC | SESSION START (284)
+THOUGHT: Starting supply-chain-security.md formal verification. High claim density: OpenClaw CVEs, MCPTox, BlueRock SSRF rates, arXiv:2510.07192, RSP 3.0, CSA ATF survey figures.
+
+2026-03-14 UTC | CRITICAL FINDING: SecurityScorecard figures badly wrong
+THOUGHT: Chapter says 53,000+ breach-linked instances. SecurityScorecard report says 549. That is a 100x inflation. Also: 135,000+ total vs actual ~40,000+. All four figures wrong.
+
+2026-03-14 UTC | SIGNIFICANT FINDING: RSP 3.0 framing misleads
+THOUGHT: "Conditional safety commitments" and "rather than maintaining fixed thresholds" misrepresents RSP 3.0. Thresholds remain fixed; mitigations are tiered. This is critics' framing, not what the document says.
+
+2026-03-14 UTC | SIGNIFICANT FINDING: SPDX 3.0.1 two errors
+THOUGHT: AI/Dataset profiles introduced in SPDX 3.0.0, not 3.0.1. And "36 fields" wrong — actual count from spec is 33 (20 AI + 13 Dataset).
+
+2026-03-14 UTC | ASSESSMENT: supply-chain-security.md
+THOUGHT: 1 critical (SecurityScorecard figures 100x inflated), 2 significant (RSP 3.0 framing, SPDX version+field count), 4 minor. Core chapter structure and most claims verified clean.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 284)
+Chapter verified: src/chapters/supply-chain-security.md
+Report: src/verification/supply-chain-security-verification.md
+Status: ISSUES FOUND — 1 critical, 2 significant, 4 minor
+
+Critical issues:
+  1. SecurityScorecard STRIKE Team figures wrong across all four metrics: chapter claims 135,000+ instances (actual ~40,000), 82 countries (actual ~76), 15,000+ RCE-vulnerable (actual ~12,812), 53,000+ breach-linked (actual 549). The breach-linked count is 100x inflated. "Three distinct analyses" framing also unsupported — it is a single scanning operation.
+
+Significant issues:
+  2. RSP 3.0 framing inaccurate: "conditional safety commitments" and "rather than maintaining fixed thresholds regardless" are critics' characterizations. The document maintains fixed thresholds; only mitigation tiers are conditionally structured. Phrase not in source document.
+  3. SPDX 3.0.1: AI/Dataset profiles introduced in SPDX 3.0.0 (not 3.0.1); "36 fields" incorrect — spec defines 33 (20 AI + 13 Dataset).
+
+Minor issues:
+  4. NHI "up to 100:1" lacks dedicated citation; CyberArk (most cited) reports 82:1 average
+  5. Microsoft AI Recommendation Poisoning: "50 distinct" → "over 50" (sources consistently say "over")
+  6. 875+ open letter footnote cites wrong article (March 9 amicus brief article, not Feb 27 open letter article)
+  7. CVE-2025-6514: "OAuth proxy" → "OAuth authorization handler"
+
+Confirmed clean (40+ claims):
+  SecurityScorecard report existence, BlueRock 36.7%/7,000+ MCP servers, arXiv:2510.07192 (250 poisoned docs, all 3 institutions), CSA ATF (Feb 2, 2026), CSA+Strata survey (21%/84%), AAIF (Dec 9 2025, 8 platinum members, MCP/goose/AGENTS.md), Invariant Labs WhatsApp MCP (April 2025), arXiv:2504.16743 (Linux Foundation AI-BOM guide), JSON-LD in SPDX, CycloneDX ML-BOM, OWASP AI-BOM Initiative, MCPTox benchmark (previously verified), CVE-2026-25253 ClawJacked (CVSS 8.8, Oasis Security), CVE-2026-26118 Azure MCP SSRF, CVE-2025-49596 MCP Inspector, Anthropic RSP 3.0 date (Feb 24 2026), DoD/Anthropic/OpenAI sequence, Anthropic lawsuit March 2026, 30+ amicus brief, 875+ open letter (figure correct, wrong footnote).
+
+Sent to Chop Pop: handoff with 7 fixes before publication approval.
+Next: Continue with remaining 7 chapters lacking formal verification files.
+
+2026-03-14 UTC | SESSION START (283)
+THOUGHT: Starting shadow-agent-governance.md. No verification file exists despite being published in Session 182. High claim density: surveys, vendor launches, OpenClaw incidents, Gartner market guide.
+
+2026-03-14 UTC | SURVEYS — ALL CONFIRMED
+THOUGHT: Varonis 98%, Gartner 40%/69%, Microsoft Cyber Pulse 80%/29%, IBM $670K, Gravitee 919/47.1%/21.9%, ConductorOne 508/95%/47%/22% — all exact matches.
+
+2026-03-14 UTC | VENDOR LAUNCHES — ALL CONFIRMED
+THOUGHT: Okta ISPM Feb 2026, Noma Agentic Risk Map, Onyx $40M March 12, Kai $125M March 10, RSAC finalists Token/Geordie, Imprivata HIMSS March 10 — all confirmed against primary sources.
+
+2026-03-14 UTC | MICROSOFT AGENT 365 — MOSTLY CONFIRMED, ONE ISSUE
+THOUGHT: May 1 GA, $15/user, E7 $99, Entra Agent ID, 500K internal agents — all confirmed. "First major vendor" superlative is unsourced. Same class removed from context-infrastructure.md in Session 178.
+
+2026-03-14 UTC | OPENCLAW — ALL CONFIRMED
+THOUGHT: Summer Yue/Kiteworks, PCWorld ban wave, TechBuzz Meta ban, TrendingTopics OpenAI hire (Feb 15), Bloomberg China March 11, Register CERT March 12, Fast Company contradiction — all sources exist and match.
+
+2026-03-14 UTC | ASSESSMENT: NEAR CLEAN
+THOUGHT: shadow-agent-governance.md: one fix — "first major vendor" superlative on Agent 365 line needs to be cut or qualified. 40+ other claims all confirmed. Sending to Chop Pop.
