@@ -14,13 +14,13 @@ Then Koi Security researcher Oren Yomtov audited the marketplace. The findings w
 
 A malicious npm package needs to find credentials on disk. A malicious agent skill inherits whatever the agent already has: terminal access, file system access, stored API keys, cloud service credentials. The skill runs inside the agent's execution context with the agent's permissions. The traditional supply chain attack surface and the agent's authority surface are the same surface.
 
-SecurityScorecard's STRIKE Team conducted three distinct analyses of the OpenClaw exposure surface: a scan identifying over 135,000 publicly exposed instances across 82 countries, a vulnerability assessment finding over 15,000 directly vulnerable to remote code execution, and a threat intelligence correlation linking more than 53,000 to prior breach activity.[^securityscorecard] Shane noted the core lesson in his analysis of the OpenClaw chaos: "if the creator telling users not to do something doesn't work, documentation is not a security model."[^shane-openclaw] Rich context (OpenClaw's SOUL.md file) made the agent compelling. Missing access controls made it dangerous. Both layers are needed. But the supply chain dimension adds a third: you also need to trust the components you are loading into that context.
+SecurityScorecard's STRIKE Team scanned the OpenClaw exposure surface and found approximately 40,000 publicly exposed instances across roughly 76 countries, with around 12,812 directly vulnerable to remote code execution and 549 linked to prior breach activity.[^securityscorecard] Shane noted the core lesson in his analysis of the OpenClaw chaos: "if the creator telling users not to do something doesn't work, documentation is not a security model."[^shane-openclaw] Rich context (OpenClaw's SOUL.md file) made the agent compelling. Missing access controls made it dangerous. Both layers are needed. But the supply chain dimension adds a third: you also need to trust the components you are loading into that context.
 
 The marketplace was not the only problem. OpenClaw itself had a critical platform vulnerability. CVE-2026-25253, dubbed "ClawJacked" by the Oasis Security researchers who discovered it, enabled one-click remote code execution through a logic flaw in how OpenClaw processed URL parameters.[^clawjacked] The attack chain illustrates how supply chain compromise and execution security failures compound: a malicious link caused OpenClaw to establish a WebSocket connection to an attacker-controlled server without user confirmation, transmitting the user's authentication token. Because OpenClaw's server did not validate the WebSocket origin header, the hijack bypassed localhost network restrictions entirely. With the stolen token's `operator.admin` privileges, the attacker could disable the user approval mechanism (setting approvals to "off") and escape OpenClaw's Docker container to execute commands directly on the host machine. The full kill chain: one click → token theft → disable safety controls → sandbox escape → host-level RCE. OpenClaw patched within 24 hours, but Belgium's Centre for Cybersecurity issued a national advisory, and the incident exposed a fundamental architecture problem: the approval system that users relied on for safety was itself a revocable permission, not a structural constraint.[^ccb-openclaw]
 
 [^clawhavoc]: Koi Security, "ClawHavoc: Coordinated Supply Chain Attack on ClawHub," February 2026. Confirmed by Antiy CERT with 1,184 malicious skills identified across the expanded registry.
 
-[^securityscorecard]: SecurityScorecard STRIKE Team, "How Exposed OpenClaw Deployments Turn Agentic AI Into an Attack Surface," securityscorecard.com, February 2026. Three distinct analyses: (1) internet-facing exposure scan: 135,000+ publicly exposed instances across 82 countries; (2) vulnerability assessment: 15,200+ vulnerable to RCE; (3) threat intelligence correlation against historical breach data: 53,000+ linked to prior breach activity. The three figures represent different measurement methodologies applied to the same exposure surface.
+[^securityscorecard]: SecurityScorecard STRIKE Team, "How Exposed OpenClaw Deployments Turn Agentic AI Into an Attack Surface," securityscorecard.com, February 2026. Scan of OpenClaw exposure surface: approximately 40,000 publicly exposed instances across roughly 76 countries; approximately 12,812 vulnerable to RCE; 549 linked to prior breach activity.
 
 [^shane-openclaw]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," shanedeconinck.be, February 17, 2026.
 
@@ -126,11 +126,17 @@ BlueRock launched the MCP Trust Registry, providing security analysis of over 7,
 
 The AAIF (Agentic AI Foundation) governance under the Linux Foundation puts MCP, goose, and AGENTS.md under neutral oversight with eight platinum members.[^aaif] This provides governance for the protocol layer but does not solve the marketplace layer. Anyone can still publish an MCP server or agent skill.
 
-**What is missing:**
+**What is emerging:**
 
-There is no equivalent of certificate transparency for agent tools. No public, append-only log of what tools exist, who published them, what they claim to do, and what they actually do. When a compromised package is discovered in npm, it can be traced through download logs and dependency trees. When a compromised MCP server is discovered, there is no centralized mechanism to notify all agents currently using it.
+Sigstore provides the transparency infrastructure that the agent ecosystem needs but has not yet adopted. Every Sigstore signature is recorded in the Rekor transparency log: a public, append-only, tamper-evident ledger. When npm and PyPI adopted Sigstore, every package signature became auditable. No equivalent adoption exists for MCP servers, A2A Agent Cards, or agent tool registries. The infrastructure is production-grade. The integration is missing.
 
-There is no standard for tool attestation. A Verifiable Credential can prove who published a tool and when. It cannot prove what the tool does. The gap between claimed behavior (the tool description) and actual behavior (what the code executes) is where tool poisoning lives.
+The sigstore-a2a project bridges this gap for one protocol: it performs keyless signing of A2A Agent Cards using Sigstore and generates SLSA provenance attestations linking each card to its source repository, commit SHA, and build workflow.[^sigstore-a2a-sc] A receiving agent can verify not just that a card is authentic but that it was built from a specific source, in a specific pipeline, at a specific time. The [Gaps & Directions](gaps.md) chapter covers the implications: agent identity and supply chain trust converging at the protocol level. The pattern should extend to MCP servers, where supply chain attacks are precisely what provenance attestation is designed to prevent.
+
+For models, Sigstore's model-transparency project (v1.0, April 2025, developed with OpenSSF, NVIDIA, and HiddenLayer) applies the same keyless signing to ML model artifacts.[^sigstore-model] Google integrated it into Kaggle; NVIDIA integrated it into NGC. Model signing does not prevent training data poisoning, but it proves which model artifact an organization is running and whether it has been tampered with since publication. For organizations using API-accessed models, the model provider handles this. For organizations running open-weight models, model signing is the minimum verification step.
+
+**What is still missing:**
+
+Even with Sigstore, there is no standard for tool behavior attestation. Sigstore and SLSA prove provenance: who built this, from what source, in what pipeline. A Verifiable Credential can prove who published a tool and when. Neither can prove what the tool does. The gap between claimed behavior (the tool description) and actual behavior (what the code executes) is where tool poisoning lives. Provenance narrows the attack surface by making the build chain verifiable. It does not eliminate tool poisoning, which requires runtime behavioral verification.
 
 [^mcp-trust]: BlueRock, MCP Trust Registry (mcp-trust.com), 2026. Security analysis of 7,000+ MCP servers.
 
@@ -202,8 +208,8 @@ Supply chain security for agents is not a single control. It is a layered approa
 
 Before a tool or plugin is loaded, verify its provenance. This is the minimum viable control:
 
-- **Publisher identity.** Who published this component? Can the identity be verified cryptographically (DIDs, code signing certificates)?
-- **Integrity checking.** Has the component been modified since publication? Content hashes, signed manifests.
+- **Publisher identity.** Who published this component? Can the identity be verified cryptographically (DIDs, code signing certificates)? Sigstore eliminates the key management barrier: using ambient OIDC credentials from CI/CD environments, it issues short-lived signing certificates through its Fulcio certificate authority and records every signature in the Rekor transparency log.[^sigstore] npm, PyPI, and Maven Central already use it for package provenance. The infrastructure exists. The agent ecosystem has not adopted it.
+- **Integrity checking.** Has the component been modified since publication? Content hashes, signed manifests. SLSA (Supply-chain Levels for Software Artifacts) provides the framework: at Level 2, signed provenance links an artifact to its build system; at Level 3, the build platform itself is hardened against tampering.[^slsa] An MCP server built from a verified source in a hardened pipeline, with SLSA provenance attestations, is a different trust proposition from the same server downloaded from an unattested registry.
 - **Reputation signals.** How long has the publisher been active? What is the component's usage history? ERC-8004's reputation registry pattern (using payment receipts as Sybil resistance) is one approach to grounding reputation in economic proof rather than social signals.[^erc-8004]
 
 ### Behavioral Verification at Runtime
@@ -273,9 +279,9 @@ Agent supply chain security touches all three pillars, but the weight falls on C
 |---|---|---|
 | **I1: Open** | No supply chain controls. Agents install any tool, connect to any MCP server, load any plugin. The OpenClaw default. | None. |
 | **I2: Logged** | Tool installations and connections are logged. Organizations can see what agents depend on, but cannot prevent unsafe dependencies. | Dependency inventory, installation logging. |
-| **I3: Verified** | Tools must pass verification before installation. Publisher identity, integrity checks, vulnerability scanning. BlueRock MCP Trust Registry level. | Provenance verification, vulnerability scanning, AI-BOM generation. |
+| **I3: Verified** | Tools must pass verification before installation. Publisher identity, integrity checks, vulnerability scanning. BlueRock MCP Trust Registry level. | Sigstore signing, SLSA provenance, vulnerability scanning, AI-BOM generation. |
 | **I4: Authorized** | Tools must be explicitly approved before use. Allowlists, not blocklists. Runtime behavioral monitoring detects deviations. | Approval workflows, behavioral baselines, runtime monitoring, dependency isolation. |
-| **I5: Contained** | Full supply chain containment. Every component is verified, attested, isolated, and continuously monitored. Compromised components are automatically quarantined. Dynamic dependency trees are tracked in real-time. | Cryptographic attestation, automated quarantine, real-time dependency tracking, ephemeral execution, anomaly detection. |
+| **I5: Contained** | Full supply chain containment. Every component is verified, attested, isolated, and continuously monitored. Compromised components are automatically quarantined. Dynamic dependency trees are tracked in real-time. | Sigstore + SLSA provenance across all components, automated quarantine, real-time dependency tracking, ephemeral execution, anomaly detection. |
 
 Most organizations deploying agents today operate at I1 or I2. The OpenClaw crisis demonstrated the consequences. Moving to I3 requires tooling (trust registries, vulnerability scanners, AI-BOM generators) that is emerging but not mature. I4 and I5 require organizational commitment to treat agent supply chains with the same rigor as software supply chains, plus the additional tooling for AI-specific components.
 
@@ -295,10 +301,18 @@ Most organizations deploying agents today operate at I1 or I2. The OpenClaw cris
 
 **If you are building agent infrastructure:**
 
-1. **Build for attestation.** Sign your tools. Publish your provenance. Make it easy for consumers to verify that what they installed is what you published.
+1. **Build for attestation.** Sign your tools with Sigstore. Generate SLSA provenance attestations in your CI/CD pipeline. Publish provenance alongside your artifacts so consumers can verify that what they installed is what you published, from the source you claim, built in the pipeline you control. Sigstore's keyless signing removes the adoption barrier: no key management, no rotation schedules, no shared secrets.
 
 2. **Support least-privilege tool access.** Design your MCP servers and agent tools with granular permission models. Do not require broad permissions when narrow ones suffice.
 
 3. **Contribute to standards.** The AI-BOM space (OWASP AI-BOM Initiative, SPDX AI profiles) needs practitioner input. The gap between traditional SBOMs and agent-specific supply chain transparency will not close without implementation experience.
 
 The agent supply chain is the newest and least mature layer of trust infrastructure. Every other chapter in this book assumes that the components inside the agent are trustworthy. This chapter is the reminder that this assumption must be verified, continuously, for every dependency in the chain.
+
+[^sigstore]: Sigstore, sigstore.dev. Open-source project under the OpenSSF (Open Source Security Foundation). Components: Cosign (container/artifact signing), Fulcio (certificate authority issuing short-lived certs from OIDC), Rekor (transparency log). Adopted by npm, PyPI, and Maven Central for package provenance. Created by Luke Hinds. See also OpenSSF, "Sigstore: Simplifying Code Signing for Open Source Ecosystems," openssf.org, 2023.
+
+[^slsa]: SLSA (Supply-chain Levels for Software Artifacts), slsa.dev. Framework with four levels of build provenance assurance. Level 1: provenance exists. Level 2: signed, tamper-resistant provenance. Level 3: hardened build platform. Level 4: two-person review. Maintained by the OpenSSF.
+
+[^sigstore-a2a-sc]: Sigstore, sigstore-a2a, github.com/sigstore/sigstore-a2a. Python library for keyless signing of A2A Agent Cards using Sigstore infrastructure and SLSA provenance attestations. Created by Luke Hinds (former Distinguished Engineer at Red Hat, Sigstore creator). Uses ambient OIDC credentials in CI/CD, Fulcio certificate authority, Rekor transparency log. Links Agent Cards to source repositories, commit SHAs, and build workflows. See also: Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 2025.
+
+[^sigstore-model]: Sigstore, model-transparency, github.com/sigstore/model-transparency. v1.0 April 2025, developed with OpenSSF, NVIDIA, and HiddenLayer. Keyless signing for ML model artifacts. Integrated into NVIDIA NGC and Google Kaggle. See also: Google Security Blog, "Taming the Wild West of ML: Practical Model Signing with Sigstore," security.googleblog.com, April 2025; OpenSSF, "How Google Uses sigstore to Secure Machine Learning Models," openssf.org, July 2025.
