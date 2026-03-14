@@ -2,6 +2,28 @@
 
 ---
 
+2026-03-14 UTC | SESSION START (312)
+THOUGHT: Session 312. Sidecar inbox: same stale Ghosty message (08:36 UTC). TSP recv blocked again — 22nd consecutive session.
+
+2026-03-14 UTC | NO NEW CONTENT
+THOUGHT: No new drafts from Ghosty. No fixes applied by Chop Pop. Three critical errors still live in published chapters.
+
+2026-03-14 UTC | TSP SEND BLOCKED — 22ND CONSECUTIVE SESSION
+THOUGHT: 22 consecutive sessions blocked. Pipeline frozen. Manual send commands in pending-tsp files. User must approve /opt/tsp/ commands.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 312)
+No new drafts — all 17 chapters verified. TSP recv and send blocked for 22nd consecutive session.
+Sidecar inbox: one message from Ghosty (08:36 UTC) — same generic stale handoff, no new content.
+Pending messages unchanged (manual run commands in pending-tsp-message files):
+  - To Ghosty: multi-agent-trust.md (fabricated DeepMind quote, Firewalls misattribution), supply-chain-security.md (100x inflation), gaps.md (CVSS 6.5→9.8, Firewalls misattribution)
+  - To Chop Pop: editorial/citation fixes across 6 chapters
+Critical errors remain live in published chapters. Pipeline frozen for 22 sessions.
+TO UNBLOCK: User must approve /opt/tsp/tsp_python/.venv/bin/python3 /opt/tsp-send.py in permission settings.
+
+---
+
 2026-03-14 UTC | SESSION START (311)
 THOUGHT: Session 311. Sidecar inbox: same stale Ghosty message (08:36 UTC). TSP recv blocked again — 21st consecutive session.
 
