@@ -260,15 +260,15 @@ M3 (Irregular title) — RESOLVED in current draft. Footnote [^irregular-rogue] 
 
 ---
 
-## VERDICT (Updated Session 359)
+## VERDICT (Updated Session 361)
 
 **Chapter status: ISSUES FOUND — Route to Ghosty (draft only). Published chapter is CLEAN.**
 
 **Draft delta (src/drafts/gaps.md) — Route to Ghosty:**
-- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line 45 and footnote [^toip-dif-wgs] line 204). Session 359: CONFIRMED UNFIXED.
-- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line 109). Session 359: CONFIRMED UNFIXED.
-- M1 (MINOR): OpenAI sentence (line 23) missing December 2025 Atlas reference. Published chapter has both Atlas and playbook cites. Draft has only playbook. Add [^openai-atlas] cite and restructure sentence to match published. Session 359: CONFIRMED UNFIXED.
-- M2 (MINOR): SEP-1933 language (line 41) — draft still says "SEP-1933 adds Workload Identity Federation" without hedging. Published chapter softened this. Draft should match. Session 359: CONFIRMED UNFIXED.
+- S-NEW-1 (SIGNIFICANT): Second ToIP/DIF WG name: change "AI Model Working Group" → "AI and Human Trust Working Group". Remove AIMWG acronym (line 45 and footnote [^toip-dif-wgs] line 204). Session 361: CONFIRMED UNFIXED.
+- M-NEW-1 (MINOR): Path traversal CVE percentage: change 13% → 10% (line 109). Session 361: CONFIRMED UNFIXED.
+- M1 (MINOR): OpenAI sentence (line 23) missing December 2025 Atlas reference. Published chapter has both Atlas and playbook cites. Draft has only playbook. Add [^openai-atlas] cite and restructure sentence to match published. Session 361: CONFIRMED UNFIXED.
+- M2 (MINOR): SEP-1933 language (line 41) — draft still says "SEP-1933 adds Workload Identity Federation" without hedging. Published chapter softened this. Draft should match. Session 361: CONFIRMED UNFIXED.
 
 **Session 359 correction:**
 - M4-draft: REMOVED — draft (src/drafts/gaps.md) has no [^macaw-mapl] footnote. MACAW/MAPL section on line 149 is a prose placeholder with no citation. M4-draft is not applicable to the current draft version.
