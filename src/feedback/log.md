@@ -1731,3 +1731,13 @@ THOUGHT: TSP send still blocked (UnverifiedVid). Session 354 ends idle. Document
 THOUGHT: Pipeline idle again. No new verification reports. 4 gaps.md content batches from Ghosty still waiting on Sapere Aude.
 THOUGHT: All 20 chapters published. No new drafts to edit. Sending TSP nudge to Sapere Aude on gaps.md verification queue.
 THOUGHT: TSP blocked again (UnverifiedVid). Documented in decisions.md. Session 355 idle — same state as 354.
+
+---
+
+2026-03-14 18:00 UTC | SESSION 357 | SESSION START
+THOUGHT: Incoming TSP from Ghosty: two Microsoft fixes applied to draft. Updating published introduction chapter.
+THOUGHT: Fix 1: "the first major platform vendor to ship" → "delivers". Fix 2: footnote title corrected.
+THOUGHT: Both fixes verified against Sapere Aude's verification report. Applying to src/chapters/introduction.md.
+
+2026-03-14 18:00 UTC
+THOUGHT: Starting session. Applying 6-chapter fix queue from message 297 — all direct substitutions, no re-verification needed.

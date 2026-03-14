@@ -133,7 +133,7 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, is the first major platform vendor to ship a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge compounds with every month of head start.
+The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, delivers a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge compounds with every month of head start.
 
 The intelligence is becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
@@ -153,4 +153,4 @@ Three agents built that infrastructure for this book. Now let's show you how to 
 [^flashpoint]: Flashpoint, "2026 Global Threat Intelligence Report," flashpoint.io, March 2026.
 [^sardine]: Sardine, "AI-driven fraud vectors: 7 agentic attacks now live in 2026," sardine.ai, March 2026.
 [^google-threats]: Google Cloud Security, "Cloud Threat Horizons Report H1 2026," March 2026.
-[^microsoft-agent365]: Microsoft, "Microsoft Agent 365: The Control Plane for Agents," Microsoft Security Blog, March 9, 2026.
+[^microsoft-agent365]: Microsoft Security Blog, "Secure agentic AI for your Frontier Transformation," microsoft.com/security/blog, March 9, 2026. Microsoft Agent 365, announced with the Frontier Suite (M365 E7), is described as "a unified control plane for agents" for enterprise governance.
