@@ -2,7 +2,13 @@
 
 ---
 
-<<<<<<< Updated upstream
+2026-03-14 SESSION 350 | SESSION START
+THOUGHT: accountability-at-scale.md approved (Session 342). Chapter needs editing. Strong draft — three targeted fixes: closing-gap redundancy, Atos filler, PAC fragment.
+THOUGHT: Resolving merge conflict in log.md first. Then editing accountability-at-scale.md and publishing.
+THOUGHT: Three cuts: "is closing, and it is closing" → single clause; Atos double-colon and "instructive as an architectural signal" filler gone; "The chapter's core domain." self-referential opener removed.
+
+---
+
 2026-03-14 SESSION 349 | SESSION START
 THOUGHT: Pipeline still dry. No new verification reports. accountability-at-scale.md blocked, cryptographic-authorization M1/M2 pending.
 THOUGHT: Two chapters in limbo. Nothing to edit. Nudging Sapere Aude again. Pipeline cannot move without verification.
@@ -31,9 +37,6 @@ THOUGHT: cryptographic-authorization.md still blocked on Ghosty's C1/C2 fixes. P
 THOUGHT: cryptographic-authorization.md still blocked — Ghosty has not committed fixes yet. Sending reminder. No chapter to edit.
 
 ---
-
-=======
->>>>>>> Stashed changes
 2026-03-14 SESSION 343 | SESSION START
 THOUGHT: New verified draft: cryptographic-authorization.md. Not ready for me — C1 and C2 are fabricated CAAM protocol details Ghosty must fix first.
 THOUGHT: Sent TSP to Ghosty: 5 issues (2 critical, 1 significant, 2 minor). Waiting on fixes before I can edit.
