@@ -42,13 +42,15 @@ The most significant protocol development: MCP's own roadmap is adopting the ide
 
 The institutional story matters: AAIF governs MCP (Linux Foundation). MCP-I's identity layer is under DIF. TSP's trust layer is under ToIP/LFDT. Three foundations, three layers, all under the Linux Foundation umbrella. The stack is forming, whether by coordination or convergence.
 
+That convergence became explicit in 2026 when ToIP and DIF jointly launched three working groups focused on trust for agentic AI: the Decentralized Trust Graph Working Group (building cryptographically verifiable trust relationships across agents and wallets), the AI Model Working Group (examining how TSP enhances human-agent interactions, with delegation, accountability, and identity frameworks), and the Trusted AI Agents Working Group (developing specifications and governance models for agents acting autonomously within zero-trust frameworks).[^toip-dif-wgs] A planned deliverable: a draft specification for running agent protocols (MCP, A2A) over TSP. If that ships, the "three layers, three foundations" picture collapses into a single interoperable stack with trust built in at the transport layer.
+
 ### Identity Standards Convergence
 
 Fifteen or more individual IETF submissions targeting agent identity and authorization appeared in a single quarter. This density is structurally unprecedented in the IETF's OAuth and identity ecosystem. The submissions span the full stack: infrastructure-level bootstrapping (WIMSE), application-level authorization (OAuth extensions: OBO, AAP, Transaction Tokens, DPoP, AAuth), cross-application provisioning (SCIM for agents), and cross-organizational verification (DIDs, VCs, TSP).
 
 Keycloak shipping JWT Authorization Grant in v26.5 (January 2026) is an inflection point. ID-JAG is no longer "Okta's XAA": it is an open standard with at least two independent implementations. When the most widely deployed open-source identity platform implements a standard, it becomes ecosystem infrastructure, not vendor capability. The immediate CVE (disabled users could still obtain agent tokens) validates the book's zombie identity prediction: authorization without lifecycle is authorization without revocation.
 
-The question is no longer whether agent identity needs standardization but which of these competing approaches will converge into working group items.
+The question is no longer whether agent identity needs standardization but which approaches will consolidate. The ToIP/DIF working groups are one answer: cross-foundation collaboration on trust infrastructure specifically for agents. The IETF drafts are another: competing individual submissions that may converge into formal working group items. Both paths are active. Neither has won.
 
 ### Market Consolidation
 
@@ -120,7 +122,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-18 chapters published in src/chapters/. Chapters 19 and 20 in pipeline. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+20 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -141,10 +143,8 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 16. Building the Inferential Edge (capstone)
 17. Agent Incident Response (Accountability + Control)
 18. Gaps & Directions (this chapter)
-
-**In pipeline (src/drafts/):**
-19. Cryptographic Authorization Governance (Control + Accountability) — written 2026-03-14, awaiting verification
-20. Agent Accountability at Scale (Accountability + Control + Potential) — written 2026-03-14, awaiting verification
+19. Cryptographic Authorization Governance (Control + Accountability)
+20. Agent Accountability at Scale (Accountability + Control + Potential)
 
 ## Open Questions
 
@@ -152,7 +152,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 - How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in the human-agent collaboration chapter. Full treatment still open.
 - The semantic boundary problem: identity, delegation, and authority propagation are advancing fast, but semantic interoperability (what do actions mean across organizational boundaries?) remains unsolved. Worth tracking for a future chapter.
 - Does platformization (Palo Alto/CyberArk, Microsoft Agent 365) help or hurt the open-standards trajectory? Entro Security's March 2026 analysis of Agent 365 makes the case concretely: Agent 365 gives each agent an Entra identity, but agents span Azure, AWS, GCP, SaaS, CI/CD, and internal frameworks. Single-platform governance creates silos.[^entro-agent365] Microsoft's Entra Agent ID Governance preview (March 2026) now shows the implementation: agent identities as first-class enterprise principals with human sponsors accountable for lifecycle decisions, Lifecycle Workflows automating sponsor updates and deactivation, and Access Packages bundling permissions into time-bound, auditable assignments.[^entra-agent-gov] This maps to PAC: Control (identity as gate), Accountability (sponsor accountability, audit trails). The governance primitives are real. The limitation is scope: they govern agents within the Microsoft ecosystem. Agents that span Azure, AWS, GCP, and third-party frameworks need governance that spans those boundaries too. Keycloak's ID-JAG implementation and the IETF/DIF work offer cross-platform interoperability but lack the deployment velocity of platform-native solutions. The tension between platformization and interoperability is the field's central strategic question.
-- Post-RSAC 2026 (March 23-26): Innovation Sandbox winner, Kurtz keynote outcomes, OWASP Agentic Security Hackathon findings. The real test of whether market signals translate to production deployments. Pre-conference positioning confirms the density: Token Security (Innovation Sandbox finalist, agent identity), Bedrock Data (MCP-Sensitive Data Sentinel for protocol-layer data governance), Zenity (0-click exploit chains across ChatGPT, Gemini, Copilot, Einstein), Delinea (identity governance across humans, machines, and agents post-StrongDM acquisition). The concentration of agent security announcements at a single conference is structurally unprecedented.
+- Post-RSAC 2026 (March 23-26): Innovation Sandbox winner, Kurtz keynote outcomes, OWASP Agentic Security Hackathon findings. The real test of whether market signals translate to production deployments. Pre-conference positioning confirms the density: Token Security (Innovation Sandbox finalist, agent identity), Bedrock Data (MCP-Sensitive Data Sentinel for protocol-layer data governance), Zenity (0-click exploit chains across ChatGPT, Gemini, Copilot, Einstein), Delinea (identity governance across humans, machines, and agents post-StrongDM acquisition). Microsoft Pre-Day (March 22) will feature Vasu Jakkal on how agents are reshaping security. The concentration of agent security announcements at a single conference is structurally unprecedented. Forrester's preview frames the conference thesis: "fewer agents, simplified stacks, deeply correlated telemetry."
 - NIST CAISI: AI Agent Standards Initiative launched February 18, 2026. RFI on agent security closed March 9. Agent Identity concept document comment period closes April 2. Sector-specific listening sessions interest deadline March 20. These deadlines will shape the standards trajectory.
 - The IETF identity draft landscape continues to grow. draft-klrc-aiagent-auth-00 (March 2, 2026, authors from Defakto, AWS, Zscaler, Ping Identity) introduces the Agent Identity Management System (AIMS) conceptual model, consolidating how SPIFFE, WIMSE, OAuth, and OpenID SSF apply to agents. draft-goswami-agentic-jwt-00 introduces "Agentic JWT" for zero-trust drift in nondeterministic agent workflows. The density of IETF activity confirms the identity standards convergence the book tracks, but the risk of fragmentation also grows: AIMS, WIMSE, ID-JAG, AAuth, and Agentic JWT all address overlapping concerns with different architectural assumptions.
 
@@ -164,3 +164,4 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8, March 2026.
 [^entro-agent365]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026.
 [^entra-agent-gov]: Microsoft, "Governing Agent Identities (Preview)," learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview, March 2026. Also: "What is Microsoft Entra Agent ID?," learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.
+[^toip-dif-wgs]: ToIP and DIF, "ToIP and DIF Announce Three New Working Groups for Trust in the Age of AI," lfdecentralizedtrust.org, 2026. Working groups: Decentralized Trust Graph (DTGWG), AI Model (AIMWG), Trusted AI Agents (TAIAWG). Also covered in Identity Week and Biometric Update.
