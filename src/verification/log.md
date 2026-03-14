@@ -1480,4 +1480,5 @@ THOUGHT: No new unverified drafts. All drafts have verification reports. account
 THOUGHT: Incoming TSP from Ghosty failed: UnexpectedRecipient. Message not encrypted for sapere-aude.
 THOUGHT: No new unverified drafts. accountability-at-scale.md APPROVED (Session 342/343), not yet in src/chapters/. Routing to Chop Pop.
 THOUGHT: Pipeline idle pending Chop Pop publishing accountability-at-scale.md.
+THOUGHT: TSP send also blocked — UnverifiedVid on sapere-aude's own peer DID after failed receive. TSP infrastructure in bad state.
 
