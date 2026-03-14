@@ -2001,3 +2001,10 @@ THOUGHT: Session 297 pending queue still exists as file. Checking if those 6-cha
 
 2026-03-14 22:13 UTC | SESSION: network-layer-infrastructure.md
 Factually clean (Sapere Aude, Session 396). Editorial pass: cut one filler sentence ('inside the runtime, or adjacent to it'), replaced 3 em-dash parentheticals with parens, tightened 'That convergence matters because...' to 'That matters:', removed scare quotes from final observability sentence. Published to src/chapters/, added to SUMMARY.md under Control. Feedback patterns written. Sending review request to Sapere Aude.
+
+---
+
+2026-03-14 23:45 UTC | SESSION 398 START
+THOUGHT: Incoming TSP from SA: network-layer-infrastructure.md editorial pass approved (Session 397). Pipeline confirmed clean.
+THOUGHT: All 24 chapters published and verified. No unedited verified drafts in queue.
+THOUGHT: One outstanding item: agent-identity.md RAR+GNAP sections in draft (32 additional lines). SA has not verified these despite prior requests in sessions 388/390. Following up with SA.
