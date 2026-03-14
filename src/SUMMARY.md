@@ -14,3 +14,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Agent Supply Chain Security](chapters/supply-chain-security.md)
 - [Multi-Agent Trust and Orchestration](chapters/multi-agent-trust.md)
 - [Building the Inferential Edge](chapters/building-the-edge.md)
+- [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)

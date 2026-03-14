@@ -169,7 +169,7 @@ The complacency trap describes humans who stop watching. There is a second, less
 
 Anthropic studied their own engineering team: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts analyzed over six months.[^anthropic-work] The productivity data confirmed the patterns described above: task complexity increased from 3.2 to 3.8 on a five-point scale, average human turns per session decreased 33% (from 6.2 to 4.1), and engineers described a trust progression analogous to adopting navigation software: starting with unfamiliar routes, then using it for everything.
 
-But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. The report's authors frame the paradox directly: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse."[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
+But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. One engineer in the study captured the paradox directly: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse."[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
 
 This is a distinct governance risk from complacency. Complacency is an attention problem: the human is capable of evaluating but stops doing so. The paradox of supervision is a capability problem: the human watches, reviews, and approves, but the evaluation is less rigorous than it appears because the underlying expertise is degrading. The approval still happens. It just means less.
 
@@ -195,7 +195,7 @@ What the lifecycle looks like in practice:
 
 **Offboarding**: when an agent is deprecated, its credentials are revoked, its outstanding authorizations are cancelled, its audit trails are archived, and its delegated authorities are reclaimed. This is the lifecycle management that most organizations lack for their human-to-agent delegation chains.
 
-The critical insight from Deloitte is that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
+The critical insight from Deloitte is that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. Deloitte's analysis is direct: applying AI to an existing workflow without redesigning it amplifies the inefficiency already baked into that workflow.
 
 This aligns with Shane's framing of the inferential edge: the competitive advantage is not having access to better models but having the infrastructure to deploy them effectively[^inferential-edge].
 
@@ -250,7 +250,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 [^smashing-patterns]: Smashing Magazine, ["Designing For Agentic AI: Practical UX Patterns For Control, Consent, And Accountability"](https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/) (February 2026). A comprehensive taxonomy of UX patterns for agentic systems.
 
-[^ux-magazine]: UX Magazine, ["Secrets of Agentic UX: Emerging Design Patterns for Human Interaction with AI Agents"](https://uxmag.com/articles/secrets-of-agentic-ux-emerging-design-patterns-for-human-interaction-with-ai-agents) (2026).
+[^ux-magazine]: UX Magazine, ["Secrets of Agentic UX: Emerging Design Patterns for Human Interaction with AI Agents"](https://uxmag.com/articles/secrets-of-agentic-ux-emerging-design-patterns-for-human-interaction-with-ai-agents) (April 2025).
 
 [^identity-chapter]: See [Agent Identity and Delegation](agent-identity.md) for the full treatment of Verifiable Intent's three-layer SD-JWT architecture and the confused deputy problem.
 

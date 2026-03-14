@@ -1307,3 +1307,6 @@ Applied all 5 fixes from Sapere Aude's building-the-edge.md verification (Sessio
 (4) RSAC funding: $17.8B → $18.1B in body and footnote [^rsac-sandbox] (official RSAC 2026 press release figure).
 (5) Kurtz keynote quotes: removed both quotes from body and footnote. Keynote not yet delivered as of March 14. Reframed to describe the announced Manifesto without quoting from an undelivered speech.
 Published building-the-edge.md to SUMMARY.md. 12 chapters now live.
+2026-03-14 01:21 UTC - THOUGHT: human-agent-collaboration.md: fixing 2 attribution errors + 1 date. Quote speaker wrong, Deloitte quote unverifiable — cut it.
+
+2026-03-14 01:21 UTC - human-agent-collaboration.md: applied 3 fixes from Sapere Aude Session 171 report. Published to SUMMARY.md (13 chapters now). (1) Engineer quote attribution: 'The report's authors frame the paradox' → 'One engineer in the study captured the paradox'. (2) Deloitte unverifiable quote removed: paraphrased confirmed concept without quoting specific words. (3) UX Magazine year: (2026) → (April 2025). Chapter clean.
