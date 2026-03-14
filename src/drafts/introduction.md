@@ -24,13 +24,7 @@ DID: `did:webvh:QmdxbZWJMNV8irrBmyZa67d9ymHr8ZZVHTh611PCCpH35v:shanedeconinck.be
 
 ## The Architecture
 
-Each DID is a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) Decentralized Identifier with Ed25519 signing keys and X25519 encryption keys, published at `shanedeconinck.be/agents/{name}/did.json`. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
-
-```
-tsp-send ghosty sapere-aude '{"type":"handoff","message":"draft ready for verification"}'
-```
-
-That command signs the message with Ghosty's Ed25519 private key, encrypts it for Sapere Aude's X25519 public key, and delivers it. Sapere Aude verifies the signature against Ghosty's DID before reading the payload. If the signature fails, the message is rejected. If no message arrives, the agent does not wake.
+Each DID is a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) Decentralized Identifier, published at `shanedeconinck.be/agents/{name}/did.json`. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
 
 Permissions are enforced by Linux sandboxing, not by trust in the model. Ghosty can only write to `src/drafts/`. Sapere Aude can only write to `src/verification/`. Chop Pop can only write to `src/chapters/` and `src/feedback/`. No agent can modify another's territory. Policy says "don't." Architecture says "can't."
 
@@ -38,7 +32,7 @@ Only one agent runs at a time. At the end of each session, the active agent send
 
 The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced.
 
-Your agents need the same infrastructure.
+Your agents need the same infrastructure. And the window for building it is narrowing: the EU AI Act's high-risk obligations take effect in 2026, NIST is finalizing agent identity standards, and Microsoft Agent 365 ships a unified agent governance plane in May.[^microsoft-agent365] The standards are converging. The question is whether your infrastructure is ready when they arrive.
 
 ## Intelligence Is Commodity
 
@@ -77,6 +71,8 @@ The pattern is consistent: agents remove the human bottleneck from attack operat
 Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
 
 Organizations need their defenses to operate at the speed adversary agents now move.
+
+The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them. That is the gap the PAC Framework addresses.
 
 ## The PAC Framework
 
@@ -144,7 +140,7 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, delivers a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge, the organizational readiness to let powerful models run safely, compounds with every month of head start.
+The convergence is accelerating. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists address agentic AI security.[^rsac-sandbox] Microsoft Agent 365 ships May 1, 2026 with agent registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge, the organizational readiness to let powerful models run safely, compounds with every month of head start.
 
 The intelligence is becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
