@@ -61,7 +61,7 @@ The flow works like this:
 
 The key technical innovation is **EIP-3009 TransferWithAuthorization**: a standard supported by USDC that enables gasless payments. The agent signs an authorization using EIP-712 typed data, but never sends a blockchain transaction. The server settles the payment on-chain and pays the gas.[^2]
 
-The agent needs a signing key, not ETH for gas. It needs USDC in its wallet, not a full blockchain client. The private key management is still a custody concern, but the operational complexity is dramatically reduced.
+The agent needs a signing key, not ETH for gas. It needs USDC in its wallet, not a full blockchain client. The private key management is still a custody concern, but the operational complexity is reduced.
 
 ### The Economics of L2 Settlement
 
@@ -158,8 +158,6 @@ The theory is being tested in production. Three milestones from early 2026 show 
 **Stripe's x402 preview** (February 2026) enables developers to charge AI agents for services using USDC on Base. Stripe released an open-source CLI (purl) and SDK integrations in Python and Node.js, bringing agent payments to Stripe's existing developer ecosystem.[^5]
 
 **J.P. Morgan and Mirakl** announced a strategic agreement on March 10, 2026 to power agentic commerce at enterprise scale. Mirakl's Nexus platform provides the product catalog layer (optimized for AI agent discovery), while J.P. Morgan provides payment infrastructure including tokenization that enables agents to transact safely.[^12]
-
-These are the largest payment processors, banks, and commerce platforms in the world building agent payment infrastructure.
 
 ## The Micro-Transaction Problem
 
