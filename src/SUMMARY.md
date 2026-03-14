@@ -10,3 +10,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Sandboxing and Execution Security](chapters/execution-security.md)
 - [Cross-Organization Trust](chapters/cross-org-trust.md)
 - [Agent Communication Protocols](chapters/agent-communication.md)
+- [Gaps & Directions](chapters/gaps.md)

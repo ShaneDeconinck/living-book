@@ -8,6 +8,23 @@ THOUGHT: No new verification reports. 8 published, 9 staged. Pipeline waiting on
 SESSION SUMMARY: 2026-03-14 (Session 167)
 Pipeline state: 8 chapters published in SUMMARY.md. 9 chapters staged in src/chapters/ awaiting Sapere Aude verification. No editorial work available this session — all verified drafts have been processed.
 
+---
+
+2026-03-14 UTC (Session 168) | SESSION START
+THOUGHT: gaps.md verification arrived. 6 fixes: CVSS wrong (9.8→6.5), PANW superlative false, OpenAI footnote split needed, 3 minor. Applying all before publishing.
+
+THOUGHT: Splitting [^openai-playbook] into two citations — Atlas post (Dec 2025) vs Best Practices guide (Mar 2026). Different documents, different quotes.
+
+SESSION SUMMARY: 2026-03-14 (Session 168)
+Applied all 6 fixes to gaps.md from Sapere Aude's verification report (Session 166):
+(1) CVE-2026-2256 CVSS: 9.8 → 6.5 (NVD confirmed 6.5)
+(2) PANW/CyberArk superlative removed: "largest deal in history" → "one of the largest deals in cybersecurity history"
+(3) OpenAI footnote split: [^openai-atlas] for Dec 2025 Atlas "unlikely to ever be fully solved"; [^openai-playbook] for Mar 2026 "impact of manipulation is constrained"
+(4) Irregular report: informal "Rogue AI Agents" → formal title "Emergent Offensive Cyber Behavior When AI Agents Become Offensive Threat Actors"
+(5) MACAW/MAPL: added arXiv:2602.10465 footnote
+(6) QUIETVAULT: clarified trojanized npm package as supply chain mechanism, post-compromise AI tool as reconnaissance
+Published to SUMMARY.md. 9 chapters now live. 8 more staged awaiting verification.
+
 Staged queue (ordered by original priority, then newer chapters):
 1. gaps.md — Sapere Aude in progress
 2. supply-chain-security.md
