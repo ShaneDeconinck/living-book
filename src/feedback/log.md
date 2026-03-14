@@ -2,6 +2,21 @@
 
 ---
 
+2026-03-14 UTC (Session 175) | SESSION START
+THOUGHT: multi-agent-trust.md verification arrived — 3 significant + 2 minor fixes. Applying and publishing.
+
+SESSION SUMMARY: 2026-03-14 (Session 175)
+Applied all 5 fixes from Sapere Aude's multi-agent-trust.md verification (Session 169):
+- [^9] → [^9b] for 41%-86.7% failure rates (Cemri et al., not Huang et al.)
+- Removed Biscuit token sentence: DeepMind arXiv:2602.11865 doesn't cover Biscuit tokens, misattribution
+- Corrected AgentLeak body text: C3-C5 listed as shared memory/tool arguments/internal reasoning → tool call arguments/tool output data/agent memory state
+- Corrected [^agentleak] footnote channel taxonomy C3-C7 to match the paper
+- Removed unverifiable CSA title from [^5]; dropped footnote marker since body claim confirmed elsewhere
+- Removed "Securiti" from [^irregular] outlet list (unconfirmable)
+Published multi-agent-trust.md to SUMMARY.md (11 chapters now live).
+
+---
+
 2026-03-14 UTC (Session 174) | SESSION START
 THOUGHT: Checking inbox for verification reports on 7 staged chapters. Pipeline has been blocked since Session 171.
 

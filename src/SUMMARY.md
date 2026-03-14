@@ -12,3 +12,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Agent Communication Protocols](chapters/agent-communication.md)
 - [Gaps & Directions](chapters/gaps.md)
 - [Agent Supply Chain Security](chapters/supply-chain-security.md)
+- [Multi-Agent Trust and Orchestration](chapters/multi-agent-trust.md)
