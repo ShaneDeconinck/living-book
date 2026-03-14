@@ -8,7 +8,7 @@ The accountability problem does not scale linearly. It changes in kind.
 
 ## The Fleet Threshold
 
-Most organizations building agent systems today are in the single-digit range. A coding assistant, a support triage agent, an internal knowledge bot. Governance at this scale is manageable: a human reviews the agent's setup, monitors its behavior, intervenes when something looks wrong. The shadow agent governance chapter documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
+Most organizations building agent systems today are in the single-digit range. [Shadow Agent Governance](shadow-agent-governance.md) documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
 
 The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between "we have a few agents" and "we have a fleet" is closing faster than the accountability infrastructure can keep up.
 
@@ -28,11 +28,11 @@ Building this requires two capabilities that most agent deployments lack:
 
 **Correlation identifiers that span agent boundaries.** Every action in a multi-agent workflow needs a shared trace ID that connects upstream causes to downstream effects. OpenTelemetry provides the infrastructure pattern: distributed traces that span service boundaries.[^opentelemetry] Agent orchestration frameworks need the same, but for decision provenance rather than request latency. The trace must capture not just "Agent C called API X" but "Agent C called API X because Agent B's output indicated Y, based on data Agent A retrieved under authorization Z."
 
-**Causal graphs, not just event logs.** Event logs are append-only records of what happened. Causal graphs capture why. The difference matters for accountability: an event log shows that a payment was executed; a causal graph shows that the payment was triggered by a recommendation, which was triggered by a data retrieval, which was authorized by a delegation three months old. When something goes wrong, the causal graph is what you trace. Without it, incident response at scale is archaeology: piecing together what happened from fragments scattered across dozens of agent-specific logs.
+**Causal graphs, not just event logs.** Event logs are append-only records of what happened. Causal graphs capture why. An event log shows that a payment was executed; a causal graph shows that the payment was triggered by a recommendation, which was triggered by a data retrieval, which was authorized by a delegation three months old. When something goes wrong, the causal graph is what you trace. Without it, incident response at scale is archaeology: piecing together what happened from fragments scattered across dozens of agent-specific logs.
 
 ### Aggregate Behavior and Emergent Risk
 
-Individual agents can each behave correctly while the fleet behaves dangerously. This is the scale-specific version of the emergence pattern documented in the [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter.
+Individual agents can each behave correctly while the fleet behaves dangerously. This is fleet-scale emergence, documented in [Multi-Agent Trust and Orchestration](multi-agent-trust.md).
 
 Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Each agent's decisions look reasonable: a discount here, a fee waived, a complaint escalated to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
@@ -54,7 +54,7 @@ Article 73 was written for single AI systems. When an organization operates hund
 
 ## Fleet Governance Infrastructure
 
-The shadow agent governance chapter identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] The gap between the second and third is where most organizations currently sit, and it is where accountability at scale fails.
+[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] The gap between the second and third is where most organizations currently sit, and it is where accountability at scale fails.
 
 Infrastructure-enforced governance means that accountability requirements are not policies agents can ignore but architecture agents cannot bypass. Four capabilities make up the minimum viable fleet governance infrastructure:
 
@@ -64,7 +64,7 @@ Every agent in the organization has a registered identity linked to a human spon
 
 SCIM for agents, covered in the [Agent Identity and Delegation](agent-identity.md) chapter, provides the provisioning protocol. Microsoft's Entra Agent ID and similar platforms provide the identity backend. The registry is not a spreadsheet: it is a system of record integrated with the organization's identity infrastructure, with the same lifecycle management discipline applied to human accounts. When a human sponsor leaves the organization, their agents are suspended, not orphaned.
 
-Singapore's framework requires this explicitly: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements simultaneously.
+Singapore's framework requires this explicitly: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements.
 
 ### Delegation Chain Forensics
 
