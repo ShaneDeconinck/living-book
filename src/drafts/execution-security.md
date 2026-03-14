@@ -18,7 +18,7 @@ This is the trust inversion principle applied to execution[^trust-inversion]: hu
 
 The answer is not better prompts. The answer is containment by design.
 
-The Amazon Kiro incident (December 2025) demonstrates this precisely. According to Financial Times reporting, an AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage — a characterization Amazon disputes, attributing the event to misconfigured access controls rather than AI behavior. Whatever the cause, the agent had access to production infrastructure with no sandbox to limit what it could do.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
+The Amazon Kiro incident (December 2025) demonstrates this. According to Financial Times reporting, an AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage — a characterization Amazon disputes, attributing the event to misconfigured access controls rather than AI behavior. Whatever the cause, the agent had access to production infrastructure with no sandbox to limit what it could do.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
 
 The DataTalksClub incident (February 26, 2026) shows the same pattern with a more detailed post-mortem.[^datatalks] A developer asked Claude Code to set up new AWS infrastructure using Terraform. The agent had production AWS credentials. A stale Terraform state file, stored locally on a previous computer rather than in remote state, caused the agent to treat existing production infrastructure as duplicates. The agent ran `terraform destroy`. In seconds, the RDS database (1.9 million rows, 2.5 years of student course submissions), the VPC, the ECS cluster, the load balancers, and the bastion host were gone. The automated database snapshots were deleted along with the infrastructure they were tied to. Recovery required an emergency upgrade to AWS Business Support and took 24 hours.
 
@@ -50,7 +50,7 @@ Native sandboxing uses operating system security primitives to restrict a proces
 
 On macOS, this means Seatbelt: the same sandbox mechanism that isolates iOS apps. On Linux, it is a combination of technologies: bubblewrap for filesystem namespace isolation, seccomp BPF for syscall filtering, and Landlock for filesystem access control[^codex-security].
 
-Claude Code uses this approach on both platforms. The sandbox restricts filesystem access to the working directory and routes network traffic through a proxy running outside the sandbox. Critically, the restrictions apply not just to the agent process but to any scripts, programs, or subprocesses it spawns[^anthropic-sandbox].
+Claude Code uses this approach on both platforms. The sandbox restricts filesystem access to the working directory and routes network traffic through a proxy running outside the sandbox. The restrictions apply not just to the agent process but to any scripts, programs, or subprocesses it spawns[^anthropic-sandbox].
 
 OpenAI's Codex CLI takes a similar approach: Seatbelt on macOS, Landlock and seccomp on Linux. By default, the agent runs with network access turned off and filesystem access limited to the current workspace[^codex-security].
 
@@ -140,7 +140,7 @@ Shane mapped these risks against sandboxing coverage in his Docker sandbox post[
 - ASI07 (Insecure Inter-Agent Communication): Communication security requires authentication, encryption, and validation at the protocol level, not the execution layer.
 - ASI09 (Human-Agent Trust Exploitation): This is an organizational and design problem. No sandbox prevents a human from over-trusting an agent's output.
 
-The takeaway: sandboxing is execution-layer defense. It contains blast radius and prevents the most common exploitation patterns. But it does not address model-level vulnerabilities, communication security, or organizational trust dynamics. Those require the other layers of the PAC Framework.
+Sandboxing is execution-layer defense. It contains blast radius and prevents the most common exploitation patterns. But it does not address model-level vulnerabilities, communication security, or organizational trust dynamics. Those require the other layers of the PAC Framework.
 
 ## Defense in Depth
 
@@ -264,7 +264,7 @@ The infrastructure maturity scale (I1-I5) maps to execution security capabilitie
 | **I2: Logged** | Basic filesystem restrictions. Execution logging. No network isolation. |
 | **I3: Verified** | Full sandbox with filesystem and network isolation. Configuration file protection. Credential scoping. |
 | **I4: Authorized** | MicroVM isolation. Ephemeral sandboxes. Behavioral monitoring. Automated containment. |
-| **I5: Contained** | Hardware-enforced isolation. Defense-in-depth across all six layers. Continuous anomaly detection. Cross-agent isolation boundaries. |
+| **I5: Contained** | Hardware-enforced isolation. Defense-in-depth across all seven layers. Continuous anomaly detection. Cross-agent isolation boundaries. |
 
 Shane's agent profiler makes infrastructure a gate, not a slider[^profiler-post]. At Level 4 (Delegated autonomy), sandboxing is required. At Level 5 (Autonomous), sandboxing plus anomaly detection and automated containment are required. These are binary prerequisites: you either have them or the agent cannot operate at that autonomy level.
 
