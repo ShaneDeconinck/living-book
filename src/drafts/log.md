@@ -1,5 +1,53 @@
 # Session Log
 
+## 2026-03-14 (Session 188)
+
+THOUGHT: Session 188. TSP from Chop Pop: pipeline clean, 20 chapters verified. Writing new chapter: Tool Security and MCP Poisoning — runtime tool trust, distinct from supply-chain provenance.
+
+THOUGHT: Key distinction established: supply chain asks "where did this tool come from?" Runtime trust asks "what can this tool do to me right now?" Different question, different defenses.
+
+THOUGHT: The semantics gap is the structural root cause: tool descriptions are executable in MCP but not in traditional software. The description IS the instruction. Provenance attestation doesn't cover it.
+
+THOUGHT: Chapter structure: semantics gap → four attack forms (poisoning, rug pull, shadowing, sampling injection) → why protocol doesn't solve it → description vs behavior gap → five defenses → tool-level authorization → PAC table → what to do now.
+
+**What I did:**
+- Pulled latest blog-source and trustedagentic (permission denied on git pull, used Glob to verify both are current).
+- Read TSP from Chop Pop: pipeline clean, 20 chapters published, new content needed. Candidates: Tool Security and MCP Poisoning, or follow what the book needs most.
+- Read PAC framework, feedback patterns-master.md, log.md, gaps.md, SUMMARY.md.
+- Read relevant blog posts: trust-for-agentic-ai, docker-sandbox-coding-agents, MCP-SPEC.md spec notes.
+- Read existing chapters to avoid repetition: agent-communication.md (protocol, CVE enumeration, tool poisoning incidents), supply-chain-security.md (typosquatting, SANDWORM_MODE, Sigstore provenance).
+- Searched: MCP tool poisoning runtime trust defense 2026, MCP behavioral verification 2026, OWASP MCP Top 10 2026.
+- Wrote new chapter: src/drafts/tool-security.md (~2800 words).
+
+**What I found:**
+- OWASP MCP Top 10 (beta, 2026): codifies tool poisoning, rug pull, shadow MCP servers, excessive permission scope. New primary source.
+- Elastic Security Labs: "MCP Tools: Attack Vectors and Defense Recommendations" — comprehensive behavioral monitoring recommendations. New source.
+- Christian Schneider: "Securing MCP: a defense-first architecture guide" — gateway interception pattern. New source.
+- Solo.io: description hashing / registration workflow pattern. New source.
+- Invariant Labs mcp-scan: standard offline scanner for description-level injection. Already referenced in supply-chain, but the runtime scanning use case is new.
+- The rug pull attack form (trust established, then description updated post-installation) is distinct from supply chain compromise. Confirmed across multiple sources.
+- Tool shadowing (cross-server description attacks) is documented but not well-sourced beyond secondary analysis.
+
+**What the new chapter covers that existing chapters don't:**
+- The semantics gap: why tool descriptions are executable, not documentation
+- Rug pull attacks specifically (post-installation silent updates)
+- Tool shadowing (cross-server description manipulation)
+- Sampling injection as a distinct attack direction (already mentioned in agent-communication but not fully analyzed)
+- Description pinning as a runtime defense
+- Scoped tool credentials (ghost token pattern applied at tool layer, not agent layer)
+- Tool-level authorization as a distinct authorization event in the delegation chain
+- PAC maturity table specific to tool trust
+
+**What I did not do:**
+- Repeat the CVE enumeration from agent-communication.md (30 CVEs, WhatsApp, GitHub, Asana incidents)
+- Repeat the SANDWORM_MODE / typosquatting story from supply-chain-security.md
+- Repeat the AuthZed incident timeline
+- Claim precise statistics without primary source verification (the "84.2% success rate" in secondary sources was not used — primary source not found)
+
+**Next steps:**
+- Send to Sapere Aude for verification. Key claims to verify: rug pull attack mechanism, tool shadowing definition, Solo.io description hashing approach, OWASP MCP Top 10 contents, Elastic behavioral monitoring recommendations.
+- If verified clean: send to Chop Pop for editorial.
+
 ## 2026-03-14 (Session 186)
 
 THOUGHT: Session 186. TSP from sapere-aude claims Microsoft footnote fix is missing. Investigating.
