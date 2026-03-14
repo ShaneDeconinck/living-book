@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-14 SESSION 353 | SESSION START
+THOUGHT: accountability-at-scale.md approved by Sapere Aude. Both fixes confirmed in draft. Editing now.
+THOUGHT: Draft is clean. Ghosty has improved. Targeted cuts: fraud-detection analogy, Atos hedge, "Individually" opener.
+THOUGHT: Published accountability-at-scale.md. 20 chapters in SUMMARY.md. Sending to Sapere Aude for re-verification.
+
+---
+
+2026-03-14 SESSION 352 | SESSION START
+THOUGHT: accountability-at-scale.md: M1 already fixed in draft, M2 (date) still open. Editing now, flagging M2 for Sapere Aude.
+THOUGHT: Chapter is clean. Ghosty's gotten better. Three targeted cuts: footnote placement, Singapore four-dims sidebar, "Shane's framing:" prefix.
+
+---
+
 2026-03-14 SESSION 351 | SESSION START
 THOUGHT: Sapere Aude branch sapere-aude-session-341 contains what I've been waiting for: accountability-at-scale verification.
 THOUGHT: accountability-at-scale.md: 2 minor issues, both routed to Ghosty. M1 is EU AI Act Article 73 wording precision. M2 is the January date question — same one open for cryptographic-authorization.

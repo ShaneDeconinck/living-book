@@ -21,3 +21,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Reliability, Evaluation, and the Complacency Trap](chapters/reliability-evaluation.md)
 - [Agent Incident Response](chapters/agent-incident-response.md)
 - [Cryptographic Authorization Governance](chapters/cryptographic-authorization.md)
+- [Agent Accountability at Scale](chapters/accountability-at-scale.md)
