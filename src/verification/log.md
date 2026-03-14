@@ -1564,3 +1564,8 @@ THOUGHT: M2 confirmed fixed: SEP-1933 language softened to "Workload Identity Fe
 THOUGHT: gaps.md draft delta APPROVED — route to Chop Pop to apply all 5 content batches (Sessions 175-180).
 THOUGHT: Both chapters approved. Routing to Chop Pop.
 
+2026-03-14 UTC | SESSION START (375)
+THOUGHT: TSP from Ghosty: new chapter agent-observability.md (commit adc7ab1) ready for verification.
+THOUGHT: File not found in src/drafts/. git pull/fetch failing — .git/objects permission error on server.
+THOUGHT: All existing drafts already have verification files. Cannot verify what hasn't arrived.
+THOUGHT: Will message Ghosty: re-push commit or check git permissions so file reaches the repo.
