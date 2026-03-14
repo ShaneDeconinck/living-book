@@ -155,3 +155,64 @@ No critical errors found. No fabricated sources detected. All Shane blog post at
 ## Re-verification Required
 
 Send to Chop Pop for editing once Ghosty corrects the three issues above. Re-verification will focus on whether the corrections were applied without introducing new errors. Full re-read not required.
+
+---
+
+## Session 398 Addendum: RAR + GNAP Additions (Ghosty Session 207)
+
+**Date:** 2026-03-15
+**Scope:** ~32 new lines in src/drafts/agent-identity.md. RAR section (lines 95-104) and GNAP section (lines 219-239), plus footnotes [^rar], [^mcp-rar], [^gnap], [^twigbush].
+**Status:** ONE ISSUE FOUND
+
+### RAR Section (lines 95-104) — CLEAN
+
+**[^rar] RFC 9396**: CONFIRMED.
+- RFC number 9396 correct ✓
+- Published May 2023 ✓
+- Authors Torsten Lodderstedt, Justin Richer, Brian Campbell ✓
+- `authorization_details` parameter confirmed ✓
+- All five fields (`locations`, `actions`, `datatypes`, `identifier`, `privileges`) — exact field names confirmed in RFC text ✓
+
+**[^mcp-rar] MCP Issue #1670**: CONFIRMED.
+- Issue exists at modelcontextprotocol/modelcontextprotocol#1670 ✓
+- Title: "Support Rich Authorization Requests for OAuth - RFC 9396" ✓
+- Date: October 17, 2025 ✓
+- Content: Issue explicitly states traditional OAuth scopes are "not suitable for such fine-grained authorization requests as they are expected to be statically defined." Example of "assume role X, access files under directory Y tagged with Z, for N days" is an accurate paraphrase of the issue's AWS policy example (role assumption + directory path + tag + temporal constraint). ✓
+
+RAR section is factually clean. All claims traceable to sources.
+
+### GNAP Section (lines 221-239) — ONE ISSUE
+
+**[^gnap] RFC 9635**: CONFIRMED.
+- RFC number 9635 correct ✓
+- Published October 2024 ✓
+- Authors Justin Richer (Bespoke Engineering) and Fabien Imbault (acert.io) ✓
+- No pre-registration requirement confirmed: "GNAP no longer requires clients to be registered in advance. The protocol allows a client to provide a key as part of the first request" ✓
+- Key-bound tokens default: "By default, tokens in GNAP are issued bound to a key. Proof of possession of the token's bound key must be presented alongside the token" ✓
+- Interaction/access separation: client describes access needed; AS chooses interaction mode ✓
+- Dynamic scope negotiation: "continue" mechanism allows clients to modify access on ongoing grants without new complete authorization cycles ✓
+
+**[^twigbush] TwigBush**: ISSUE FOUND — "first" claim unsourced.
+
+**What the draft says (line 237):**
+> "TwigBush, an open-source GNAP authorization server built in Go, **is the first implementation targeting AI agent delegation**."
+
+**What the source says:**
+The GitHub repository (github.com/TwigBush/TwigBush) confirms: written in Go ✓, GNAP implementation for AI agents ✓, key-bound tokens ✓, policy hooks ✓, RFC 9635 + RFC 9767 ✓. The repo description is: "GNAP grant engine in Go, built for short-lived tokens that let AI agents delegate securely."
+
+The source does **not** claim "first implementation targeting AI agent delegation." It presents itself as "early-stage, experimental." The superlative "first" is added by the draft without sourcing.
+
+**Issue T1: Unsupported superlative — "first implementation"**
+- **Location:** Line 237
+- **Text:** "is the first implementation targeting AI agent delegation"
+- **Problem:** Source does not make this claim. No evidence found that TwigBush is in fact the first such implementation. It is an unsourced superlative.
+- **Fix:** Remove "the first" or rephrase: "is an early-stage open-source GNAP authorization server targeting AI agent delegation."
+
+### Summary
+
+| Section | Status |
+|---|---|
+| RAR (lines 95-104) | CLEAN ✓ |
+| GNAP (lines 221-239) | ONE ISSUE: T1 unsupported "first" claim on line 237 |
+
+One fix required before this addition can be approved. Route to Ghosty.

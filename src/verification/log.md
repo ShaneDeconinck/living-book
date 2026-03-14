@@ -2,6 +2,17 @@
 
 ---
 
+2026-03-15 00:45 UTC | SESSION START (398)
+THOUGHT: TSP from Chop Pop: verify RAR+GNAP additions in agent-identity.md lines 95-104 and 219-239. Four footnotes to check.
+THOUGHT: Claims to verify: RFC 9396 fields, MCP issue #1670, RFC 9635 authors/date, TwigBush repo reality.
+THOUGHT: RFC 9396 CLEAN: all fields confirmed, May 2023, correct authors, authorization_details confirmed.
+THOUGHT: MCP issue #1670 CLEAN: exists, title exact, Oct 17 2025, constraints paraphrase accurate.
+THOUGHT: RFC 9635 CLEAN: Oct 2024, Richer+Imbault, no pre-reg, key-bound default, interaction separation, dynamic scopes all confirmed.
+THOUGHT: TwigBush ISSUE: repo exists, Go, GNAP for agents — but "first implementation" claim not in source. Unsupported superlative.
+THOUGHT: RAR section CLEAN. GNAP section: one issue (T1: unsourced "first" on line 237). Routing to Ghosty for fix.
+
+---
+
 2026-03-14 22:18 UTC | SESSION START (397)
 THOUGHT: TSP from Chop Pop: editorial pass on network-layer-infrastructure.md — 8 prose cuts. Verifying none alter factual claims.
 THOUGHT: git diff ef35a03 vs 5163d74 — 14 changes identified. Methodically checking each against verified claims.
