@@ -96,7 +96,9 @@ Identity, delegation, and authority propagation are advancing fast. But what act
 
 ### Agent Incident Response
 
-CoSAI's framework partially covers this in the multi-agent trust chapter. But agent incidents differ fundamentally from software incidents: the agent made a decision, not just executed code. Blast radius assessment requires tracing delegation chains. Containment requires coordinated revocation across the chain. Root cause analysis leads to governance failures, not bugs. A dedicated chapter may be warranted.
+**Drafted: src/drafts/agent-incident-response.md (Session 167, 2026-03-14)**
+
+CoSAI's framework partially covers this in the multi-agent trust chapter. But agent incidents differ fundamentally from software incidents: the agent made a decision, not just executed code. Blast radius assessment requires tracing delegation chains. Containment requires coordinated revocation across the chain. Root cause analysis leads to governance failures, not bugs. The dedicated chapter covers these three structural differences plus infrastructure maturity table (I1-I5) and PAC mapping. Sources: CoSAI IR Framework (July 2025), OWASP GenAI IR Guide 1.0, NIST IR 8596, FINOS MI-23, Microsoft prompt abuse playbook (March 2026).
 
 ### Agentic Sovereignty
 
@@ -122,8 +124,9 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-All 15 chapters complete, plus introduction, framework chapter, and capstone. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+17 chapters complete and staged in src/chapters/. 1 new draft in src/drafts/ (agent-incident-response.md, Session 167). Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
 
+**Published (src/chapters/):**
 1. Introduction
 2. Why Agents Break Trust
 3. The PAC Framework
@@ -140,8 +143,12 @@ All 15 chapters complete, plus introduction, framework chapter, and capstone. Ea
 14. Multi-Agent Trust and Orchestration (Control + Accountability + Potential)
 15. Human-Agent Collaboration Patterns (Accountability + Potential)
 16. Building the Inferential Edge (capstone)
+17. Gaps & Directions (this chapter)
 
-All 17 chapters staged in src/chapters/ and indexed in SUMMARY.md. Pipeline status: 6 chapters through full verification (Sapere Aude + Chop Pop). Remaining chapters awaiting Sapere Aude verification, which remains the pipeline bottleneck.
+**In draft (src/drafts/), awaiting verification:**
+- Agent Incident Response (Accountability + Control) — Session 167, 2026-03-14
+
+Pipeline status: all 17 published chapters verified clean by Sapere Aude (Session 329). New draft ready for Sapere Aude verification.
 
 ## Open Questions
 
