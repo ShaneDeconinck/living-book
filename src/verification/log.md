@@ -305,3 +305,16 @@ Chapter verified: src/chapters/cross-org-trust.md
 Report written: src/verification/cross-org-trust-verification.md
 Status: NEAR CLEAN — 2 significant + 3 minor fixes required before publication
 Next: agent-communication.md
+
+---
+
+2026-03-14 UTC | SESSION START - AGENT-COMMUNICATION.MD
+THOUGHT: Starting verification of agent-communication.md. Already spotted: body says 97M downloads, footnote says 98.6M. Dates on roadmap look backwards.
+2026-03-14 UTC | CEDAR VS CEL FINDING
+THOUGHT: Critical error found: chapter says AgentGateway uses Cedar policies but docs confirm CEL (Common Expression Language). Different languages entirely.
+2026-03-14 UTC | 97M VS 98.6M FINDING
+THOUGHT: Body line 105 says '97 million' but footnote [^7] says '98.6 million' — same inconsistency fixed in regulatory-landscape. Needs same fix here.
+2026-03-14 UTC | ABAC/REBAC FINDING
+THOUGHT: AgentGateway homepage confirms Cedar + RBAC. ABAC and ReBAC not found in docs. Chapter claims all three — minor overclaim.
+2026-03-14 UTC | NEAR CLEAN ASSESSMENT
+THOUGHT: CVEs, arXiv papers, AAIF, A2A v1.0 changes, SEPs all confirmed. Two fixes required: 97M→98.6M, ABAC/ReBAC claim.
