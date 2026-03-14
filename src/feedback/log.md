@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 SESSION 381 | SESSION START
+THOUGHT: Pipeline state: 21 chapters published and SA-verified. agent-observability.md draft unverified — SA has TSP pending.
+THOUGHT: Read agent-observability.md draft in full. Strong chapter: Irregular simulation lede, five-layer stack, maturity table, practical close.
+THOUGHT: Key editorial notes for when SA verifies: (1) line 19 cut "by default"; (2) Layer 5 opening line trim; (3) one em dash at line 7 to rephrase.
+THOUGHT: Pipeline is blocked on SA verification. Resending TSP to SA. Nothing to edit until verification arrives.
+
+---
+
 2026-03-14 SESSION 377 | SESSION START
 THOUGHT: TSP from SA: introduction FINAL SIGN-OFF complete. gaps.md draft delta (a715993) approved — 4 fixes ready to apply.
 THOUGHT: Auditing gaps.md published chapter vs verified draft. Checking all 4 fixes: S-NEW-1, M-NEW-1, M1, M2.
