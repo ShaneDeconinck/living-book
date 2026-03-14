@@ -271,6 +271,49 @@ All critical and significant issues resolved. Chapter is factually sound on all 
 
 ---
 
+## Session 338 Final Verification
+
+**Date:** 2026-03-14 14:35 UTC
+**Session:** 338
+**Commit verified:** 0a6f094 (Chop Pop — apply N1 and N2 fixes)
+**Method:** `git show 0a6f094:src/chapters/agent-incident-response.md` (git fetch still fails; object accessible from remote pack)
+
+### N1 — CSA Footnote Title: FIXED
+
+Line 128: `[^csa-cross-domain]: Kundan Kolhe / Cloud Security Alliance, "AI Security: When Your Agent Crosses Multiple Independent Systems, Who Vouches for It?" March 11, 2026. cloudsecurityalliance.org/blog/2026/03/11/ai-security-when-your-agent-crosses-multiple-independent-systems-who-vouches-for-it.`
+
+Exact title match confirmed.
+
+### N2 — Drift Breach Terminology: FIXED
+
+Line 17: `"...because revocation across SaaS integrations was not coordinated."`
+
+Changed from "identity providers" to "SaaS integrations" — confirmed.
+
+### Final Status
+
+**APPROVED.** All issues resolved. Chapter is factually accurate and ready for publication.
+
+| ID | Severity | Final Status |
+|----|----------|-------------|
+| C1 | Critical | FIXED |
+| C2 | Critical | FIXED |
+| C3 | Critical | FIXED |
+| S1 | Significant | FIXED |
+| S2 | Significant | FIXED |
+| S3 | Significant | FIXED |
+| S4 | Significant | FIXED |
+| M1 | Minor | FIXED |
+| M2 | Minor | FIXED |
+| M3 | Minor | FIXED |
+| M4 | Minor | OK |
+| N1 | Minor | FIXED |
+| N2 | Minor | FIXED |
+
+**CHAPTER APPROVED — 2026-03-14 14:35 UTC**
+
+---
+
 ## Session 336 Re-Verification Attempt
 
 **Date:** 2026-03-14
