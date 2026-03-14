@@ -142,6 +142,18 @@ Two independent surveys in early 2026 measure what the book argues structurally.
 
 The numbers confirm the book's thesis from two directions. The identity gap (agents treated as service accounts, not identity-bearing entities) maps to the Control pillar: infrastructure that treats agents as first-class principals does not exist in most organizations. The oversight gap (47% of agents operating without security oversight) maps to the Accountability pillar: audit trails, governance thresholds, and liability chains are absent for nearly half of deployed agents. The result is Potential without Accountability or Control: the interdependency failure the PAC Framework predicts.
 
+### Institutional Validation Is Converging
+
+In Q1 2026, three categories of institution independently validated agent governance as a first-class concern:
+
+**Standards bodies.** NIST launched its AI Agent Standards Initiative (February 18, 2026) with an agent identity concept paper. The IETF has fifteen or more individual submissions targeting agent identity and authorization. ToIP and DIF launched three working groups for trust in agentic AI. This is the technical standards track: specifications that define how agent identity and authorization should work.
+
+**Governments.** The White House released a national cybersecurity strategy (March 6, 2026) that explicitly names agentic AI as a strategic priority. The EU AI Act's compliance deadlines are creating implementation pressure. Singapore's IMDA published the first government-sponsored governance framework for autonomous agents. This is the regulatory track: mandates and incentives that create demand for the standards.
+
+**Market analysts.** Gartner published its first Market Guide for Guardian Agents (February 25, 2026), defining agent governance as a standalone enterprise category and predicting guardian agents will replace half of incumbent security systems by 2029. This is the market track: institutional permission for buyers to fund agent governance as infrastructure.
+
+The convergence matters because each track reinforces the others. Standards without regulatory demand produce specifications that no one implements. Regulation without standards produces compliance without interoperability. Market demand without standards produces platform lock-in. All three converging in a single quarter is what creates the conditions for infrastructure investment. The book's argument that trust infrastructure is a precondition for agent deployment is no longer a technical thesis. It is institutional consensus.
+
 ## What the Book Does Not Cover Yet
 
 ### Semantic Interoperability
@@ -154,9 +166,7 @@ Hu and Rong's "Sovereign Agents" paper introduces agents that persist, act, and 
 
 ### Network-Layer Agent Infrastructure
 
-The book covers agent protocols at the application layer (MCP, A2A) and identity layer (OAuth, WIMSE). A parallel set of IETF drafts is emerging at the network layer: Agent Communication Gateway (semantic routing by intent), AgentDNS (DNS-like discovery for agents), Semantic Inference Routing Protocol. These approach agent infrastructure from below (routing, naming, discovery) while the identity community approaches from above (OAuth, VCs, delegation). Whether these layers converge or remain separate stacks is an open architectural question.
-
-Cisco's AI-Aware SASE (February 2026) is the first evidence of convergence: MCP visibility and control at the network layer, intent-aware inspection of agent interactions, AI traffic optimization for predictable performance during agentic workload surges. When a SASE vendor adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks.
+*Now covered in Chapter 15 (Network-Layer Agent Infrastructure).* The chapter covers the two-layer problem (application-layer gateways vs. network-layer enforcement), Cisco's AI-Aware SASE with MCP inspection and intent-aware controls, AgentDNS for naming and discovery, SIRP for semantic routing, the service mesh convergence question, and the composition architecture for defense-in-depth. The open question from this section (whether application and network layers converge) is addressed: the evidence points to composition rather than replacement, with both layers needed for different threat models.
 
 ### AI-Native Policy Languages
 
@@ -172,7 +182,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-22 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. agent-lifecycle-management.md in SA pipeline. Gaps chapter updated through Session 209.
+23 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 230.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -197,13 +207,12 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 20. Agent Accountability at Scale (Accountability + Control + Potential)
 21. Tool Security and MCP Poisoning (Control)
 22. Agent Observability (Accountability + Control)
-
-**In pipeline:**
-- Agent Lifecycle Management (Accountability + Control) — with SA for verification
+23. Agent Lifecycle Management (Accountability + Control)
+24. Network-Layer Agent Infrastructure (Control + Accountability)
 
 ## Open Questions
 
-- How do agent gateways interact with service mesh architectures? Is there a convergence point?
+- How do agent gateways interact with service mesh architectures? Is there a convergence point? *Addressed in [Network-Layer Agent Infrastructure](network-layer-infrastructure.md): as of March 2026, they have not converged. Agent gateways deploy alongside service meshes, not integrated with them. Cisco AI-Aware SASE may represent the convergence point at the network layer rather than the mesh layer.*
 - How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in the human-agent collaboration chapter. Full treatment still open.
 - The semantic boundary problem: identity, delegation, and authority propagation are advancing fast, but semantic interoperability (what do actions mean across organizational boundaries?) remains unsolved. Worth tracking for a future chapter.
 - Does platformization (Palo Alto/CyberArk, Microsoft Agent 365) help or hurt the open-standards trajectory? Entro Security's March 2026 analysis of Agent 365 makes the case concretely: Agent 365 gives each agent an Entra identity, but agents span Azure, AWS, GCP, SaaS, CI/CD, and internal frameworks. Single-platform governance creates silos.[^entro-agent365] Microsoft's Entra Agent ID Governance preview (March 2026) now shows the implementation: agent identities as first-class enterprise principals with human sponsors accountable for lifecycle decisions, Lifecycle Workflows automating sponsor updates and deactivation, and Access Packages bundling permissions into time-bound, auditable assignments.[^entra-agent-gov] On March 9, Microsoft bundled agent governance into the enterprise security stack: Microsoft 365 E7 ($99/user/month) includes Copilot, Agent 365 ($15/user/month separately), and the full Entra/Defender/Purview suite. Agent 365's core primitives: an Agent Registry for inventory (including third-party agents registered via API), behavior and performance observability, and agent risk signals across the security stack.[^ms-e7] Agent governance is no longer a standalone product. It is a line item in an enterprise security bundle. This maps to PAC: Control (identity as gate), Accountability (sponsor accountability, audit trails). The governance primitives are real. The limitation is scope: they govern agents within the Microsoft ecosystem. Agents that span Azure, AWS, GCP, and third-party frameworks need governance that spans those boundaries too. Keycloak's ID-JAG implementation and the IETF/DIF work offer cross-platform interoperability but lack the deployment velocity of platform-native solutions. The tension between platformization and interoperability is the field's central strategic question.
