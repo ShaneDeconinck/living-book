@@ -102,7 +102,7 @@ DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md
 
 ### Adoption
 
-The adoption numbers are striking. By February 2026, MCP crossed 97 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
+The adoption numbers are striking. By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
 
 ### Security: MCP Is Plumbing, Not Trust
 
@@ -313,7 +313,7 @@ AgentGateway's key capabilities:
 
 **MCP federation**: a single endpoint federates multiple backend MCP servers. Clients see one unified tool catalog instead of managing connections to dozens of individual servers. The gateway maps individual client sessions to permitted backend servers and handles bidirectional messaging.[^17]
 
-**Policy authorization**: Cedar policies (Amazon's fine-grained authorization language) control access to MCP servers, tools, and agents. Policies are declarative, auditable, and separate from application code. This supports RBAC (role-based), ABAC (attribute-based), and ReBAC (relationship-based) access control.[^17]
+**Policy authorization**: Cedar policies (Amazon's fine-grained authorization language) control access to MCP servers, tools, and agents. Policies are declarative, auditable, and separate from application code. This supports role-based access control (RBAC).[^17]
 
 **Security protections**: JWT authentication, tool-poisoning detection, tool server fingerprinting and versioning, and protection against naming collisions and rug-pulls (a server changing tool behavior after initial registration).[^18]
 
@@ -478,7 +478,7 @@ Mapping the PAC Framework's infrastructure maturity levels to communication prot
 | **I4: Managed** | TMCP/TA2A for cross-org interactions. Verifiable server identity. Authority tracking. | Trust layer integration, verifiable Agent Cards, delegation chain visibility, PIC authority continuity. |
 | **I5: Optimized** | Unified identity across all protocol layers. Semantic interoperability for agent actions. Continuous authorization. | Full protocol stack with unified identity, resolvable action vocabularies, per-action authorization with Verifiable Intent. |
 
-Most organizations are at I1-I2: they have adopted MCP for tool connections but lack gateway mediation, trust layer integration, or unified identity. The 97 million monthly MCP downloads represent broad I2 adoption. The gap between I2 and I3 (adding governance to communication) is where most production deployment friction lives today.
+Most organizations are at I1-I2: they have adopted MCP for tool connections but lack gateway mediation, trust layer integration, or unified identity. The 98.6 million monthly MCP downloads represent broad I2 adoption. The gap between I2 and I3 (adding governance to communication) is where most production deployment friction lives today.
 
 ## Practical Recommendations
 
