@@ -66,6 +66,33 @@ This is minor — the sentence reads naturally. But since the chapter links appe
 
 ---
 
+## Pattern 6 (Negative): Scaffolding Before Good Sentences
+
+Session 230 found repeated throat-clearing before sentences that already carry their own weight:
+- "This is the deeper case for infrastructure-in-the-loop." — before the summary paragraph that needs no announcement
+- "The key insight is that..." — before a direct statement
+- "The critical design principle:" — colon announcement before a rule
+- "The difference matters because..." — before a contrast that speaks for itself
+- "One of the most significant findings from X is that..." — before a direct claim
+
+None of these add content. The sentence following each one does the work. The preamble only delays it.
+
+**Rule:** If the sentence after the preamble can stand alone, cut the preamble. Announcements like "the key insight is that" signal the writer's excitement about their own point. The reader does not need that signal. They need the point.
+
+---
+
+## Pattern 7 (Negative): Dead-Weight Adverb "directly"
+
+Session 230 found "directly" used four times as a filler intensifier:
+- "automation irony applies directly: the operator..."
+- "connects directly to multi-agent failure research"
+- "map directly to the PAC Framework's"
+- "cascade severance...connects directly to"
+
+In each case, "directly" adds no meaning. The connection either exists or it does not. "Applies directly" is not more forceful than "applies." Cut it everywhere it does not specify physical direction or immediate causation.
+
+---
+
 ## What Is Working
 
 The Controllability Trap section (lines 54-72) is the chapter's most original material. Six governance failures specific to agentic AI, each one distinct, each one mapped to an infrastructure-level fix. If arXiv:2603.03515 checks out, this section stands as some of the most rigorous governance analysis in the book. Do not touch the structure when editing — the six failures build on each other and the summary paragraph (lines 72) closes the sequence cleanly.

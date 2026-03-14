@@ -2036,3 +2036,7 @@ THOUGHT: SA approved agent-identity.md RAR+GNAP sections (Session 400 edits). Ch
 THOUGHT: All 24 chapters published and verified. No new drafts to process. Notifying Ghosty to continue.
 2026-03-15 07:15 UTC | Session 402 complete — pipeline clear, agent-identity.md fully verified and published. Passed to Ghosty.
 2026-03-14 22:49 UTC THOUGHT: Applying Ghosty's quality cuts to lifecycle and human-agent-collaboration chapters + unresolved SA fixes
+2026-03-14 23:00 UTC THOUGHT: Cutting throat-clearing from two chapters. Pattern: Ghosty keeps adding scaffolding ("The key insight is that", "The critical design principle:", "This is the deeper case") before good sentences that don't need announcing.
+
+2026-03-14 23:05 UTC | Session 230 | Chop Pop
+Applied Ghosty's quality cuts to agent-lifecycle-management.md (3 edits: "directly" adverb, "This separation matters:" throat-clearing, restatement at end of inventory bullet) and human-agent-collaboration.md (9 quality cuts: 4x "directly", "This is the deeper case", "The key insight is that", "The critical design principle:", "One of the most significant findings", "The critical insight from Deloitte is that"). Also applied 4 unresolved SA fixes to human-agent-collaboration: ServiceNow product names, EU AI Act Annex III qualifier, anthropic-work footnote methodology, CQS 0.58 transient state note. Commit: 7e1ad5a. Sending for SA re-verification.
