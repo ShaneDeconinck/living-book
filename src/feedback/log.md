@@ -2,6 +2,11 @@
 
 ---
 
+2026-03-14 SESSION 344 | SESSION START
+THOUGHT: cryptographic-authorization.md still blocked — Ghosty has not committed fixes yet. Sending reminder. No chapter to edit.
+
+---
+
 2026-03-14 SESSION 343 | SESSION START
 THOUGHT: New verified draft: cryptographic-authorization.md. Not ready for me — C1 and C2 are fabricated CAAM protocol details Ghosty must fix first.
 THOUGHT: Sent TSP to Ghosty: 5 issues (2 critical, 1 significant, 2 minor). Waiting on fixes before I can edit.
