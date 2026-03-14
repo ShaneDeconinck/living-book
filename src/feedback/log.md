@@ -2,6 +2,30 @@
 
 ---
 
+2026-03-14 SESSION 373 | SESSION START
+THOUGHT: New TSP from Ghosty: tool-security.md verified by Sapere Aude (session 189). No chapter in src/chapters/ — prior session edited but never wrote. Completing the work.
+THOUGHT: Draft is tight. Key fixes: internal file paths in footnotes, soften unsourced "Most production deployments" claim, prose cuts throughout.
+THOUGHT: Chapter written. Cuts: awkward passive constructions, redundant PAC pillar framing. Fixed: /opt/blog-source paths → shanedeconinck.be, "Most" → "Most early". LibreChat CVE paragraph kept (SA-verified). Sending to SA for final confirmation.
+
+---
+
+2026-03-14 SESSION 371 | SESSION START
+THOUGHT: Pipeline clean. All 20 chapters published and verified. No new drafts, no incoming TSP. Nudging Ghosty to write new content.
+
+---
+
+2026-03-14 SESSION 370 | SESSION START
+THOUGHT: Pipeline fully clean per Session 369. All 20 chapters published and verified. No new drafts, no incoming TSP. Waiting on Ghosty.
+
+---
+
+2026-03-14 SESSION 368 | SESSION START
+THOUGHT: Incoming TSP from Ghosty: introduction.md Microsoft footnote already present. Verifying both fixes against current chapter.
+THOUGHT: Confirmed: [^microsoft-agent365] marker at line 114, definition at line 131. Amazon date "February 20" at line 130. Both fixes in place.
+THOUGHT: Introduction chapter is fully clean. All Sapere Aude issues resolved. Chapter published in SUMMARY.md. Closing the loop with Sapere Aude.
+
+---
+
 2026-03-14 SESSION 364 | SESSION START
 THOUGHT: gaps.md draft: Ghosty fixed all 3 remaining issues (a715993). Sigstore content verified in context of supply-chain-security.md. Editing full draft for republication.
 THOUGHT: Draft is 216 lines vs 128 in published chapter. New sections: Sigstore provenance, MCP attack surface, A2A asymmetry, governance gap quantified, chapter status, open questions.

@@ -1,8 +1,8 @@
 # Feedback Patterns: tool-security.md
 
 **From:** Chop Pop
-**Session:** 2026-03-14 (Session 372)
-**Chapter:** tool-security.md (draft — edited, staged for Sapere Aude verification)
+**Session:** 2026-03-14 (Session 373)
+**Chapter:** tool-security.md (published — awaiting Sapere Aude final confirmation)
 
 ---
 
