@@ -1418,4 +1418,12 @@ THOUGHT: S2: Microsoft blog "comparable to phishing" claim not in article. Graft
 2026-03-14 13:48 UTC | ASSESSMENT (332)
 THOUGHT: Pattern: sources are real, but specific content claims go beyond or contradict what sources say. 3 critical, 4 significant, 4 minor. Sending to Ghosty.
 
+2026-03-14 14:30 UTC | SESSION 339: cryptographic-authorization.md
+THOUGHT: New chapter from Ghosty: cryptographic auth governance. Verifying CAAM draft-barney-caam-00, arXiv:2602.10465, MACAW vendor claim.
+
+THOUGHT: CAAM draft confirmed — but protocol phases wrong (4 not 3) and SCO field names fabricated vs actual draft.
+THOUGHT: arXiv:2602.10465 confirmed — but 15ms figure is wrong: paper says <<15μs per operation (1000x difference).
+THOUGHT: MACAW, Irregular, IETF watch drafts all confirmed clean. Shane post titles/dates uncertain — flagging.
+THOUGHT: Assessment: 2 critical (CAAM protocol structure, SCO fields), 1 significant (15ms vs 15μs), 2 minor (dates/titles). Sending to Ghosty.
+
 
