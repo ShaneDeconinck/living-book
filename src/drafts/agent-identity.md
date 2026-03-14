@@ -10,7 +10,7 @@ In organizations, humans operate within broad boundaries. You trust employees wi
 
 Agents need the inverse. The default should be zero authority. Every capability must be explicitly granted, scoped to the task, time-bounded, and revocable. Not because agents are malicious, but because they have no judgment about whether an action is appropriate. An agent that can read all your email will read all your email if any part of its task touches email. It does not think "that seems excessive." It does what its credentials allow.
 
-Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this precisely. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] The finding that matters most: access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
+Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] The finding that matters most: access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
 
 This inversion maps directly to the Control pillar of PAC. Policy says "agents should only access what they need." Architecture must say "agents can only access what they need." The gap between those two statements is where incidents happen.
 
@@ -34,7 +34,7 @@ Authentication and authorization for software evolved through several eras, each
 
 **Decentralized identity (DIDs, 2019; VCs, 2019)** solved "how do I prove claims about myself without relying on a central authority?" Cryptographic credentials the holder controls.
 
-Every layer was a response to a real limitation of the previous one. Most were not designed for an entity that receives a goal and decides how to accomplish it. They assume either a human making decisions or software executing predetermined logic. The standards community is now adapting several of these layers for agents: OAuth extensions, WIMSE, SCIM, and DIDs are all being reworked. The rest of this chapter covers what that looks like.
+Every layer was a response to a real limitation of the previous one. Most were not designed for an entity that receives a goal and decides how to accomplish it. They assume either a human making decisions or software executing predetermined logic. The standards community is now adapting several of these layers for agents: OAuth extensions, WIMSE, SCIM, and DIDs are all being reworked.
 
 ### Where OAuth Falls Short
 
@@ -56,13 +56,13 @@ The problems compound with agents:
 
 ### The Agentic Gap
 
-Shane identified this gap clearly: an agent usually acts on behalf of a user but creates its own intent. It is neither a human (who would use interactive OAuth) nor a traditional service (which would use Client Credentials). It is something new: a delegated entity with decision-making capability.[^2]
+Shane identified this gap: an agent usually acts on behalf of a user but creates its own intent. It is neither a human (who would use interactive OAuth) nor a traditional service (which would use Client Credentials). It is something new: a delegated entity with decision-making capability.[^2]
 
 The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] A second independent survey by the Cloud Security Alliance and Strata Identity (285 IT and security professionals) corroborates the same picture: 44% use static API keys, 43% use username and password combinations, and 35% rely on shared service accounts for agent authentication. Only 18% say they are "highly confident" their current IAM systems can manage agent identities effectively.[^csa-strata-auth] Two independent surveys, different respondent pools, same finding: nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005. Shared API keys cannot carry delegation semantics, enforce scope attenuation, or create auditable accountability chains. The identity stack described in the rest of this chapter exists to close that gap.
 
 ## OAuth Extensions for Agents
 
-The identity community is not starting from scratch. The first wave of solutions extends OAuth to handle agent-specific patterns.
+The first wave of solutions extends OAuth to handle agent-specific patterns.
 
 ### On-Behalf-Of (RFC 8693)
 
@@ -76,7 +76,7 @@ In practice, the token request includes:
 
 The IETF has a draft specifically for AI agents: "OAuth 2.0 Extension: On-Behalf-Of User Authorization for AI Agents" (draft-oauth-ai-agents-on-behalf-of-user), which introduces a `requested_actor` parameter in authorization requests to identify the specific agent requiring delegation.[^5]
 
-This is real progress. But OBO alone does not solve purpose encoding or constraint enforcement. The token says who delegated and who acts, but not what the user actually intended.
+But OBO alone does not solve purpose encoding or constraint enforcement. The token says who delegated and who acts, but not what the user actually intended.
 
 ### Agent Authorization Profile (AAP)
 
@@ -110,7 +110,7 @@ Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents, Januar
 
 The mechanism works like this: when an agent calls Service A, the first service exchanges the agent's access token for a Transaction Token (Txn-Token) at a dedicated Txn-Token Service. The Txn-Token is a short-lived, signed JWT that carries immutable actor and principal context. Service A then passes the Txn-Token (not the access token) to Service B, which passes it to Service C. At every hop, each service can verify who the agent is and who it acts for, but no service ever holds the original access token. If the Txn-Token needs replacement (for scope changes at a boundary), the Txn-Token Service issues a new one, but the actor and principal claims remain immutable: they cannot be altered through the chain.
 
-It solves two problems simultaneously. First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
+First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
 
 A companion draft, the A2A Profile for OAuth Transaction Tokens (draft-liu-oauth-a2a-profile), applies this pattern specifically to agent-to-agent scenarios where agents need to propagate delegation context across A2A protocol interactions.[^txn-tokens-a2a]
 
@@ -128,7 +128,7 @@ AAuth identifies a threat class none of the other chapters address: the LLM itse
 
 DPoP (RFC 9449) binds tokens to cryptographic keys. Instead of bearer tokens that anyone holding them can use, DPoP tokens require the presenter to prove they hold the private key the token was bound to.[^6]
 
-For agents, this matters because stolen tokens become useless. If an agent's token is exfiltrated (through a compromised tool, a prompt injection attack, or a misconfigured logging pipeline), the attacker cannot use it without the agent's private key.
+For agents, stolen tokens become useless. If an agent's token is exfiltrated (through a compromised tool, a prompt injection attack, or a misconfigured logging pipeline), the attacker cannot use it without the agent's private key.
 
 DPoP is complementary to OBO: use OBO to track delegation, use DPoP to prevent token theft.
 
@@ -180,7 +180,7 @@ Microsoft Entra creates agent identities in one directory. But agents, like huma
 
 Two IETF drafts submitted in late 2025 and early 2026 extend SCIM to agents. The SCIM Agents and Agentic Applications Extension (draft-abbey-scim-agent-extension, Macy Abbey at Okta) defines two new SCIM resource types: "Agent" and "AgenticApplication."[^scim-agents] An Agent is a workload with its own identifier, metadata, and privileges, separate from the application that hosts it. An AgenticApplication is a platform that exposes or hosts one or more agents. A second draft, the SCIM Agentic Identity Schema (draft-wahl-scim-agent-schema, Mark Wahl), takes a complementary approach to the same problem, defining schema attributes for agent identity lifecycle management.[^scim-agents]
 
-The architectural significance is subtle but important. The OAuth extensions earlier in this chapter solve authorization: what can an agent do? The platform implementations (Auth0, Teleport, Entra) solve identity: who is this agent? SCIM for agents solves provisioning: how do agent identities get created, updated, and deactivated across every application in the enterprise, automatically and consistently?
+The OAuth extensions earlier in this chapter solve authorization: what can an agent do? The platform implementations (Auth0, Teleport, Entra) solve identity: who is this agent? SCIM for agents solves provisioning: how do agent identities get created, updated, and deactivated across every application in the enterprise, automatically and consistently?
 
 Without SCIM-level provisioning, agent lifecycle management is manual. An administrator creates the agent identity in Entra, then separately configures access in each connected application. When the agent is decommissioned, each application must be updated individually. This is exactly the problem SCIM solved for human identities a decade ago, and agents inherit it. With SCIM agent extensions, the identity provider provisions agent identities across the entire application ecosystem through a single protocol, and decommissioning an agent revokes access everywhere simultaneously.
 
@@ -202,7 +202,7 @@ The draft also introduces an Identity Proxy: an intermediary that can request, i
 
 CyberArk's Secure AI Agents Solution, generally available since late 2025, validates this architecture in production. The approach uses SPIFFE Verifiable Identity Documents (SVIDs) as universal, short-lived identities for AI agents, with two-way trust established between authorization servers and SPIFFE roots of trust via SPIRE.[^cyberark-agents] CyberArk's Workload Identity Day Zero event framed the design principle: "AI agents are workloads that need narrowly scoped permissions, explicit authorization of actions, and confirmation of intent."
 
-The layering matters. OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner? Each layer addresses a different phase, and an agent operating in a well-governed environment needs all three.
+OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner? Each layer addresses a different phase, and an agent operating in a well-governed environment needs all three.
 
 ### Agent Identity Is Now a Product Category
 
@@ -401,8 +401,6 @@ The standards are landing but not yet universal. For teams deploying agents toda
 **Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, and the Verifiable Intent specification are all active. These will shape how agent identity works for the next decade.
 
 The identity layer for agents is being built right now, in IETF drafts, W3C specifications, and open-source implementations. The organizations that adopt this infrastructure early will have accountable, auditable agent deployments. The ones that wait will be explaining to regulators why they cannot trace what their agents did.
-
-For how identity extends across organizational boundaries, see [Cross-Organization Trust](cross-org-trust.md). For how delegation chains compose (and break) in multi-agent systems, see [Multi-Agent Trust and Orchestration](multi-agent-trust.md). For how agent identity integrates with registry enforcement and shadow agent discovery, see [Shadow Agent Governance](shadow-agent-governance.md).
 
 ---
 

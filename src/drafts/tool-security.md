@@ -63,7 +63,7 @@ A new verification layer is required, and it must operate at the description lev
 
 ## Defense Patterns
 
-Five defense patterns address the runtime trust problem. They address different points in the tool call lifecycle.
+Five defense patterns address the runtime trust problem.
 
 ### Description Pinning
 
@@ -107,7 +107,7 @@ The OWASP MCP Top 10's "Excessive Permission Scope" finding captures the current
 
 ## PAC Framework Mapping
 
-Tool trust failures distribute across all three PAC pillars. No single defense is sufficient.
+Tool trust failures distribute across all three PAC pillars.
 
 | | Potential | Authorization | Control |
 |---|---|---|---|
