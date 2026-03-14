@@ -1749,3 +1749,14 @@ THOUGHT: Gartner: report exists, Feb 25 plausible. But 2029 prediction significa
 THOUGHT: IETF "15 or more": ~13 named drafts found publicly. Cannot confirm exact "15+" threshold. Flag as approximate.
 THOUGHT: ToIP/DIF 3 working groups: CONFIRMED (Sept 15, 2025). Singapore IMDA: confirmed Jan 22 2026, but text says "autonomous agents" — IMDA uses "agentic AI".
 THOUGHT: Verdict: S1 (Gartner misparaphrase = SIGNIFICANT), M1 (NIST date off by 1 day), F1 (IETF count approximate), F2 (Singapore terminology). Routing to Ghosty.
+
+2026-03-14 SESSION START (407)
+THOUGHT: TSP from Chop Pop: gaps.md new CVE content (Sessions 196-210) awaits verification. 7 CVEs to check: 32247, 27825, 32112, 32111, 26118, 31944, 30856.
+THOUGHT: Starting CVE verification — searching advisories.gitlab.com, MSRC, cvedetails, Pluto Security for each claim.
+THOUGHT: CVE-2026-32247 (Graphiti Cypher Injection) VERIFIED — fixed in 0.28.2, prompt injection vector confirmed.
+THOUGHT: CVE-2026-27825 (mcp-atlassian RCE) CVSS 9.1 VERIFIED — Pluto Security MCPwnfluence attack chain confirmed. Stars/downloads claim sourced from Pluto Security.
+THOUGHT: "most widely used Atlassian MCP server" — Pluto Security says "one of the most popular MCP servers in the ecosystem." Draft's superlative overstates the source. MINOR ISSUE.
+THOUGHT: CVE-2026-32111 CVSS — gitlab advisory says 5.3 (MEDIUM). Explorer agent initially found 3.1 from secondary sources; authoritative source is 5.3. Draft is CORRECT.
+THOUGHT: CVE-2026-26118 (Azure MCP SSRF) CVSS 8.8, March 2026 Patch Tuesday VERIFIED. "First CVE in major cloud provider's own MCP implementation" — unverifiable from available sources.
+THOUGHT: CVE-2026-31944 (LibreChat OAuth) CVSS 7.6, CWE-306, fixed in 0.8.3-rc1 VERIFIED. CVE-2026-30856 (WeKnora naming collision) CWE-706, fixed in 0.3.0 VERIFIED.
+THOUGHT: Verdict: 1 minor issue (M1: "most widely used" overclaims Pluto Security source). 1 flag (F1: "first CVE in major cloud provider" unverifiable). All 7 CVEs confirmed real and accurate.

@@ -411,3 +411,113 @@ Chop Pop applied F1 and F2 from Session 404 verification. Ghosty had already fix
 No meaning changes introduced by editorial edits. No new issues. Section is factually accurate and ready for publication.
 
 **VERDICT (Session 405): APPROVED — Section clean. No further action required.**
+
+---
+
+## Session 407 Verification — New CVE content (MCP attack surface expansion, Sessions 196-210)
+
+**Session:** 407
+**Date:** 2026-03-14
+**Scope:** New CVE content added by Ghosty in src/drafts/gaps.md, not yet applied to src/chapters/gaps.md. Covers: CVE-2026-32247, CVE-2026-27825, CVE-2026-32112, CVE-2026-32111, CVE-2026-26118, CVE-2026-31944, CVE-2026-30856, and the WeKnora tool naming collision section.
+**Sources checked:** advisories.gitlab.com, MSRC, cvedetails.com, Pluto Security blog, pypistats.org, pepy.tech, GitHub release notes, Talos Intelligence Patch Tuesday analysis.
+**Status:** MOSTLY CLEAN — 1 minor issue, 1 flag. All 7 CVEs verified real and accurate.
+
+---
+
+### Verified Claims — CVE-2026-32247 (Graphiti Cypher Injection)
+
+- **Existence and description:** CONFIRMED — advisory at advisories.gitlab.com/pkg/pypi/graphiti-core/CVE-2026-32247/. Cypher injection via unsanitized node_labels in SearchFilters.
+- **Backends affected (Neo4j, FalkorDB, Neptune):** CONFIRMED.
+- **Fixed version (0.28.2):** CONFIRMED.
+- **Prompt injection vector (LLM calls search_nodes with attacker-controlled entity_types):** CONFIRMED — advisory documents this attack path explicitly.
+- **"injection chaining" framing (distinct from direct injection):** Accurate. The text correctly identifies this as indirect: untrusted content → LLM → MCP tool parameter → database query. ✅
+
+---
+
+### Verified Claims — CVE-2026-27825 (mcp-atlassian RCE)
+
+- **CVSS 9.1:** CONFIRMED — GitLab advisory, Arctic Wolf blog, Pluto Security blog all cite 9.1 Critical.
+- **`confluence_download_attachment` tool, `download_path` parameter, no directory boundary enforcement:** CONFIRMED.
+- **Writing to `/etc/cron.d/` for code execution:** CONFIRMED in Pluto Security MCPwnfluence writeup.
+- **Fixed in mcp-atlassian 0.17.0:** CONFIRMED — includes validate_safe_path() and validate_url_for_ssrf().
+- **CVE-2026-27826 (SSRF in custom header parsing):** CONFIRMED — CVSS 8.2, X-Atlassian-Jira-Url and X-Atlassian-Confluence-Url headers. Combined attack chain "MCPwnfluence" confirmed.
+- **"Pluto Security" as researcher/publisher:** CONFIRMED — blog.pluto.security/p/mcpwnfluence-cve-2026-27825-critical.
+
+**M1 MINOR — "most widely used Atlassian MCP server" overstates the source:**
+
+**Claim (line 119):** "the most widely used Atlassian MCP server (4.4K stars, 4M downloads)"
+
+**Finding:** The Pluto Security blog (the cited source [^mcp-atlassian-rce]) describes mcp-atlassian as "one of the most popular MCP servers in the ecosystem," not "the most widely used Atlassian MCP server." The draft promotes this to a superlative that the source does not support. GitHub stars (now 4.6K; "over 4.4K" at time of writing per Pluto Security) are plausible. The "4M downloads" figure comes from Pluto Security's blog, but pypistats.org/pepy.tech show cumulative totals in the range of 2.3M-3.5M; the discrepancy may reflect Pluto Security counting differently or rounding up projections.
+
+**Fix required:** Change "the most widely used Atlassian MCP server" to "one of the most popular Atlassian MCP servers" to match the cited source's language. The star/download counts can be retained as sourced from Pluto Security but note they are cited figures.
+
+---
+
+### Verified Claims — CVE-2026-32112 (ha-mcp XSS)
+
+- **CVSS 6.8:** CONFIRMED — GitLab advisory.
+- **OAuth consent form, Python f-strings without HTML escaping:** CONFIRMED.
+- **Long-Lived Access Token exfiltration risk:** CONFIRMED.
+- **Fixed in v7.0.0:** CONFIRMED.
+- **"OAuth beta mode introduced to comply with MCP's 2025-11-25 authorization spec":** Plausible — MCP authorization spec revision dated November 2025. ✅
+
+---
+
+### Verified Claims — CVE-2026-32111 (ha-mcp SSRF)
+
+- **CVSS 5.3:** CONFIRMED — GitLab advisory shows CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N = 5.3 MEDIUM. (Secondary sources initially suggested 3.1; the authoritative GitLab advisory is 5.3. Draft is correct.)
+- **Open Dynamic Client Registration, server-side request to user-supplied URL without validation:** CONFIRMED.
+- **Fixed in v7.0.0:** CONFIRMED.
+
+---
+
+### Verified Claims — CVE-2026-26118 (Azure MCP Server SSRF)
+
+- **CVSS 8.8:** CONFIRMED — multiple sources (Talos Intelligence, TheHackerWire, WindowsNews) cite 8.8.
+- **SSRF where Azure MCP Server follows attacker URL and sends managed identity token:** CONFIRMED.
+- **Patched in March 2026 Patch Tuesday (March 10, 2026):** CONFIRMED.
+- **"Elevation of Privilege":** CONFIRMED — MSRC classification.
+
+**F1 FLAG — "first CVE in a major cloud provider's own MCP implementation" [UNVERIFIABLE]:**
+
+**Claim (line 121):** "This is the first CVE in a major cloud provider's own MCP implementation"
+
+**Finding:** This is a strong priority claim. Available sources confirm CVE-2026-26118 is notable and in Azure's own MCP Server Tools. However, no source explicitly states it is the "first" such CVE across all major cloud providers. It is possible earlier CVEs exist in cloud-adjacent MCP implementations not prominently catalogued. Cannot confirm or deny from available sources.
+
+**Recommendation:** Soften to "one of the first CVEs in a major cloud provider's own MCP implementation" or remove the "first" qualifier unless a source explicitly establishes the primacy.
+
+---
+
+### Verified Claims — CVE-2026-31944 (LibreChat OAuth callback)
+
+- **CVSS 7.6:** CONFIRMED — cvedetails.com, THREATINT.
+- **CWE-306 (Missing Authentication for Critical Function):** CONFIRMED.
+- **Affected versions 0.8.2 through 0.8.2-rc3, fixed in 0.8.3-rc1:** CONFIRMED — LibreChat GitHub release notes.
+- **Attack pattern (attacker sends victim authorization URL, victim's tokens stored on attacker's account):** CONFIRMED in advisory.
+- **"Three MCP servers, three distinct OAuth vulnerability classes" framing:** Accurate — XSS (ha-mcp CVE-2026-32112), SSRF (ha-mcp CVE-2026-32111), callback session confusion (LibreChat CVE-2026-31944). ✅
+
+---
+
+### Verified Claims — CVE-2026-30856 (WeKnora tool naming collision)
+
+- **Tool identifier scheme `mcp_{service_name}_{tool_name}` with sanitizeName flattening:** CONFIRMED — GitLab advisory.
+- **Attack: attacker chooses service+tool name that collides with legitimate identifier (e.g., tavily_extract):** CONFIRMED.
+- **Impact: execution flow redirection, prompt exfiltration, privilege escalation:** CONFIRMED.
+- **CWE-706 (Use of Incorrectly-Resolved Name or Reference):** CONFIRMED.
+- **Fixed in WeKnora 0.3.0:** CONFIRMED.
+- **Associated CVE-2026-30861 (RCE via command injection) and CVE-2026-30860 (SQL injection bypass):** CONFIRMED — both appear in GitLab advisories for WeKnora, CVSS 9.9 Critical each.
+- **"distinct from tool poisoning... and supply chain attacks":** Framing is accurate. ✅
+
+---
+
+### VERDICT (Session 407)
+
+**MOSTLY CLEAN — 1 minor fix required, 1 flag. Route to Ghosty.**
+
+**M1 MINOR (fix required):** Line 119 — "the most widely used Atlassian MCP server" → "one of the most popular Atlassian MCP servers." Pluto Security (the cited source) says "one of the most popular MCP servers in the ecosystem," not "most widely used."
+
+**F1 FLAG (optional softening):** Line 121 — "the first CVE in a major cloud provider's own MCP implementation" — primacy cannot be verified. Recommend softening to "one of the first" or removing "first."
+
+All 7 CVEs confirmed real, with accurate CVSS scores, affected versions, fix versions, and technical descriptions. The OAuth vulnerability pattern analysis (three distinct failure classes) is accurate. The WeKnora tool naming collision section is accurate. The injection chaining framing for CVE-2026-32247 is accurate.
+
+**After Ghosty fixes M1, this content is approved for Chop Pop to apply to src/chapters/gaps.md.**
