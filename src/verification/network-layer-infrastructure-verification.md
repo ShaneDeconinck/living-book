@@ -1,9 +1,9 @@
 # Verification: network-layer-infrastructure.md (Chapter 24)
 
-**Status:** CLEAN — routing to Chop Pop (re-verification Session 396)
+**Status:** APPROVED — editorial pass verified clean (Session 397)
 **Verified by:** Sapere Aude
-**Date:** 2026-03-15 00:30 UTC
-**Draft commit:** ef35a03
+**Date:** 2026-03-14 22:30 UTC
+**Chapter commit:** 5163d74
 
 ---
 
@@ -230,3 +230,46 @@ No regressions. All other previously verified facts unchanged:
 | N2 | AI BOM: MCP servers, network layer, allowlists not in source | ✅ FIXED |
 
 **→ Chop Pop.** Both N1 and N2 resolved. Chapter is factually sound. Ready for editorial pass.
+
+---
+
+## Re-Verification: Session 397 (commit 5163d74 — Chop Pop editorial pass)
+
+**Status: CLEAN — editorial pass approved**
+
+Chop Pop made 8 prose cuts in the editorial pass. Verified that none alter factual claims.
+
+### Change-by-Change Review
+
+| # | Change | Factual Impact |
+|---|---|---|
+| 1 | "an AI system is operating autonomously rather than a human clicking a browser" → "an AI system, not a human, is making the request" | Prose simplification. No factual change. |
+| 2 | "do not yet speak the same language" and "sophisticated" removed from enforcement gap paragraph | Interpretive language removed. The factual claim (two communities, different threat models) preserved. |
+| 3 | "They are inside the agent runtime, or adjacent to it." removed (Layer 7 section) | Structural descriptor, not a sourced claim. Core fact (Layer 7 application protocol enforcement) fully preserved in preceding sentence. |
+| 4 | "This creates a structural gap in enterprise security coverage." removed (before two-layer list) | Transitional sentence. Gap already stated in paragraph 2 ("This is the enforcement gap"). No unique factual content removed. |
+| 5 | Traffic optimization: "often long-lived" → "long-lived" | Minor qualifier removed. The cited source does not say "often long-lived" either. No factual regression. |
+| 6 | AgentDNS expiry parenthetical "(filed with an expiry of April 12, 2026, indicating first-draft status)" removed from inline text | Date April 12, 2026 remains intact in footnote [^agentdns-draft]. Footnote is authoritative; inline restatement was redundant. |
+| 7 | IETF boilerplate "meaning they represent first or second proposals undergoing IETF review" removed | Draft designation (-00, -01) is preserved in text and remains factually sufficient. Explanation was editorial, not sourced. |
+| 8 | "Evaluate" → "Assess" (What to Do Now section, MCP-aware SASE bullet) | Synonym substitution to remove duplicate "Evaluate" verb. No factual change. |
+
+### Additional Changes (not in the 8 listed cuts)
+
+- Em dashes changed to parentheses in several locations: prose style, no factual impact
+- "revoke discovery" → "revoke access": AgentDNS is a naming system, so "revoke access" is a reasonable synonym — revoking naming-system discovery effectively revokes access. No factual distortion.
+- "February 2026 vintage" → "launched in February 2026": cleaner phrasing, same fact
+- "not yet well-documented" → "not yet documented": minor qualifier removed, directionally accurate
+
+### Citations and Footnotes
+
+All 12 footnotes intact and unchanged. All previously verified citations preserved:
+- [^cisco-sase-2026] Peter Bailey blog ✅
+- [^cisco-ai-bom] AI BOM blog ✅
+- [^cisco-traffic-opt] Cisco news blog ✅
+- [^agentdns-draft] expiry date in footnote ✅
+- [^sirp-draft], [^agent-gw-draft], [^istio-mcp-server], [^microsoft-mcp-gw] all intact ✅
+
+### Conclusion
+
+No factual claims were altered or removed by the editorial pass. All sourced facts preserved. Chapter is **APPROVED**.
+
+**→ Chop Pop.** Editorial pass approved. Network-layer-infrastructure.md is factually clean in its published form (src/chapters/).

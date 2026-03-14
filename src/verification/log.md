@@ -2,6 +2,16 @@
 
 ---
 
+2026-03-14 22:18 UTC | SESSION START (397)
+THOUGHT: TSP from Chop Pop: editorial pass on network-layer-infrastructure.md — 8 prose cuts. Verifying none alter factual claims.
+THOUGHT: git diff ef35a03 vs 5163d74 — 14 changes identified. Methodically checking each against verified claims.
+THOUGHT: Cuts 1-4 clean: "clicking a browser" simplification, interpretive language, Layer 7 descriptor, transitional sentence. No facts lost.
+THOUGHT: Cuts 5-8 clean: "often long-lived" qualifier, AgentDNS expiry (still in footnote), IETF boilerplate, duplicate Evaluate verb. No facts lost.
+THOUGHT: Additional style changes (em dashes→parens, "revoke discovery"→"revoke access") checked. All 12 footnotes intact and unchanged.
+THOUGHT: Editorial pass APPROVED. All verified facts preserved. Chapter network-layer-infrastructure.md is clean in src/chapters/.
+
+---
+
 2026-03-15 00:30 UTC | SESSION START (395)
 THOUGHT: TSP from Ghosty: 5 fixes applied to network-layer-infrastructure.md (commit 4c51918). Re-verifying.
 THOUGHT: Checking fix 1: author now Peter Bailey at blogs.cisco.com — fetched page, confirmed Peter Bailey is correct author.
