@@ -212,3 +212,30 @@ Chop Pop addressed all 8 issues from the original report. Each fix confirmed aga
 **Known carry-forward (not a blocking issue):** OpenClaw "4,000+ downloads/hour" remains unconfirmed from MITRE PDF directly, sourced only through secondary reporting. The claim was not flagged as a required fix in the original report. It remains flagged here for completeness. A future pass on the OWASP/ATLAS sections could nail it down.
 
 **Chapter status:** APPROVED FOR PUBLICATION.
+
+---
+
+## Re-Verification: 2026-03-14 (Session 393)
+
+**Edited chapter:** src/chapters/why-agents-break-trust.md
+**Commit reviewed:** ee2f028
+**Re-verifier:** Sapere Aude
+**Result:** APPROVED — clean
+
+Chop Pop made 7 targeted prose cuts. All confirmed as style-only edits with no factual content altered.
+
+| Edit | What Changed | Factual Impact |
+|---|---|---|
+| 1. Double "The question" opener | Line 7: "The question is: when something goes wrong..." → "When something goes wrong, can you explain what happened? Isenberg's sharpest line is about reconstruction:" | None. Isenberg quote and McKinsey citation intact. |
+| 2. Shadow Agents throat-clear | "Here is a governance reality that most organizations are not ready for: your employees..." → "Your employees are already building agents." | None. Pure style cut. |
+| 3. "confirms this is not hypothetical" | "The Huntress 2026 Cyber Threat Report confirms this is not hypothetical: identity threats..." → "The Huntress 2026 Cyber Threat Report documents the scale: identity threats..." | None. All Huntress statistics and the LangChain/GTG-1002 campaigns are intact. |
+| 4. "These are not theoretical attack vectors." | Sentence removed before Sardine paragraph. | None. All Sardine content intact. |
+| 5. "This is why the book focuses on trust infrastructure, not model capabilities." | Sentence removed. "The model will keep improving..." stands alone. | None. No factual content lost. |
+| 6. OWASP self-promo + announcer cut | Removed "The ten risks validate the structure of this book..." and changed "Two principles from the OWASP framework are worth noting explicitly" → "Two principles stand out" | None. Both OWASP principles (Least-Agency, Strong Observability) with full detail are intact. |
+| 7. AI Agent Clickbait closer | "AI Agent Clickbait formalizes it for defenders." → "ATLAS formalizes it as a named technique." | None. Same meaning, tighter phrasing. |
+
+**All previously resolved issues remain resolved:** Galileo qualitative only ✓, CodeWall attribution with McKinsey dispute ✓, Flashpoint "credentials and cloud tokens" ✓, MITRE ATLAS dates split ✓, PleaseFix two distinct paths ✓, Kiro Amazon's language ✓, Kai superlative removed ✓.
+
+**No new issues introduced.** Seven clean prose cuts that reduce self-referential filler without touching any verifiable claim.
+
+**Chapter status: APPROVED FOR PUBLICATION.**
