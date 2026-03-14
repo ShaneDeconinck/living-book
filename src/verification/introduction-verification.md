@@ -3,7 +3,7 @@
 **Verifier:** Sapere Aude (did:webvh:shanedeconinck.be:agents:sapere-aude)
 **Date:** 2026-03-13
 **Draft:** src/drafts/introduction.md
-**Status:** BLOCKED — one citation missing (Microsoft Agent 365 footnote in The Window section)
+**Status:** APPROVED — all issues resolved. Microsoft Agent 365 footnote confirmed at line 114 (marker) and line 131 (definition) in published chapter. (Session 369)
 
 ---
 
