@@ -23,7 +23,7 @@ Neither layer alone is sufficient. The application-layer gateway can be bypassed
 
 ## What the Network Layer Can Now See
 
-Cisco's AI-Aware SASE, announced in February 2026 as the largest expansion of its AI Defense platform since its January 2025 launch, is the first major evidence that the network-security industry is addressing this gap.[^cisco-sase-2026]
+Cisco's AI-Aware SASE, announced in February 2026 as the most significant expansion of its AI Defense platform since its January 2025 launch, is the first major evidence that the network-security industry is addressing this gap.[^cisco-sase-2026]
 
 Four capabilities are relevant:
 
@@ -31,7 +31,7 @@ Four capabilities are relevant:
 
 **Intent-Aware Inspection.** The platform combines rapid detection with cloud-based analysis to evaluate the intent behind agentic messages and actions. This is a materially different capability than signature-based inspection: instead of matching known-bad patterns, it reasons about what the agent is attempting to do. A request to read emails is different from a request to delete emails, even if both use the same API endpoint and OAuth scope.
 
-**AI Bill of Materials and MCP Catalog.** The platform provides centralized visibility and governance for MCP servers and third-party dependencies. An AI BOM at the network layer means the security team can inventory which MCP servers agents are connecting to, assess their supply chain risk, and enforce allowlists — independent of how the application layer is configured. The MCP Catalog discovers and manages risk across MCP servers on both public and private platforms.[^cisco-sase-2026]
+**AI Bill of Materials and MCP Catalog.** The platform provides centralized visibility and governance for MCP servers and third-party dependencies. An AI BOM at the network layer means the security team can inventory which MCP servers agents are connecting to, assess their supply chain risk, and enforce allowlists — independent of how the application layer is configured. The MCP Catalog discovers and manages risk across MCP servers on both public and private platforms.[^cisco-ai-bom]
 
 **AI Traffic Optimization.** The platform detects AI traffic and applies packet duplication techniques to maintain reliable, low-latency interactions during agentic workload bursts. Agent traffic has different characteristics than human web traffic: bursty, latency-sensitive, and often long-lived. Network infrastructure that cannot distinguish AI traffic from browser traffic cannot optimize for it.
 
@@ -63,7 +63,7 @@ Two IETF drafts propose infrastructure to address this.
 
 **SIRP** (Semantic Inference Routing Protocol, draft-chen-nmrg-semantic-inference-routing-00) was authored by H. Chen (Red Hat) and L. Jalil (Verizon) and proposes model-agnostic, content-driven classification and routing before backend invocation.[^sirp-draft] Rather than routing based on client metadata, SIRP routes based on the content of the request itself. The draft defines standardized header signaling for semantic routing decisions and a pluggable pipeline of Value-Added Routing (VAR) modules: cost optimization, urgency prioritization, domain specialization, privacy-aware handling. A request marked by SIRP as a destructive operation can be routed to a different enforcement path than a read-only request, even when both are directed to the same tool.
 
-**Agent Communication Gateway** (draft-agent-gw-01) is a broader proposal for large-scale, heterogeneous, multi-agent collaboration across administrative and protocol boundaries.[^agent-gw-draft] Its core functions: semantic routing (dispatching tasks by agent capability), working memory (shared structured context across multi-step workflows), and automated protocol adaptation (normalizing heterogeneous interfaces into a unified agent-facing protocol). The draft explicitly integrates MCP and A2A: Agent-to-External-Resource-Service communication uses MCP, while agent-to-agent coordination uses A2A or deployment-specific interfaces.
+**Agent Communication Gateway** (draft-agent-gw-01) is a broader proposal for large-scale, heterogeneous, multi-agent collaboration across administrative and protocol boundaries.[^agent-gw-draft] Its core functions: semantic routing (dispatching tasks by agent capability), working memory (shared structured context across multi-step workflows), and automated protocol adaptation (normalizing heterogeneous interfaces into a unified agent-facing protocol). The draft references MCP and A2A as illustrative examples of protocols the gateway would adapt between — MCP for agent-to-external-resource communication, A2A for agent-to-agent coordination — but does not specify them as native implementations.
 
 Neither SIRP nor Agent-GW is a deployed standard. Both are -00 and -01 drafts, meaning they represent first or second proposals undergoing IETF review. The infrastructure they describe — semantic classification at routing time, shared working memory, intent-aware traffic handling — does not exist in production at scale as of March 2026.
 
@@ -139,7 +139,8 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 [^microsoft-mcp-gw]: Microsoft, "MCP Gateway," github.com/microsoft/mcp-gateway, 2026. Reverse proxy for MCP servers with session-aware stateful routing in Kubernetes.
 [^traefik-hub]: Traefik Hub, "MCP Gateway Best Practices," doc.traefik.io/traefik-hub/mcp-gateway/guides/mcp-gateway-best-practices, 2026.
 [^lasso-mcp]: Lasso Security, "Security for Agentic AI: Unveiling MCP Gateway and MCP Risk Assessment," prompt.security/blog, 2026.
-[^cisco-sase-2026]: Cisco, "Cisco Redefines Security for the Agentic Era with AI Defense Expansion and AI-Aware SASE," newsroom.cisco.com, February 2026. Described as the largest expansion of Cisco AI Defense since its January 2025 launch.
+[^cisco-sase-2026]: Jeetu Patel, "Redefining Security for the Agentic Era," blogs.cisco.com/security/redefining-security-for-the-agentic-era, February 10, 2026. Described as the most significant expansion of Cisco AI Defense since its January 2025 launch.
+[^cisco-ai-bom]: Cisco, "Know Your AI Stack: Introducing AI BOM in Cisco AI Defense," blogs.cisco.com/ai/know-your-ai-stack-introducing-ai-bom-in-cisco-ai-defense, 2026. Covers AI BOM and MCP Catalog capabilities for supply chain visibility.
 [^agentdns-draft]: Liang et al., "AgentDNS: A Root Domain Naming System for LLM Agents," draft-liang-agentdns-00, datatracker.ietf.org. Filed 2026; expires April 12, 2026.
 [^sandworm-mode]: SnailSploit, "MCP vs A2A Attack Surface: Every Trust Boundary Mapped," snailsploit.com, March 2026. Documents SANDWORM_MODE: 19 typosquatting npm packages targeting MCP server infrastructure.
 [^sirp-draft]: H. Chen (Red Hat), L. Jalil (Verizon), "Semantic Inference Routing Protocol (SIRP)," draft-chen-nmrg-semantic-inference-routing-00, datatracker.ietf.org. Filed 2026; expires April 3, 2026.
