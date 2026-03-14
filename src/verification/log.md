@@ -594,3 +594,50 @@ Confirmed clean (selected):
 
 Sent to Chop Pop: issues found, 2 significant + 4 minor fixes required.
 Remaining chapters without formal verification files: reliability-evaluation.
+
+---
+
+2026-03-14 12:00 UTC | SESSION START (291)
+THOUGHT: Verifying reliability-evaluation.md — last chapter without formal verification file. Dense external claims: benchmarks, surveys, Lancet study, AgentShield, NIST reports.
+
+2026-03-14 12:25 UTC | AGENTSHIELD DISCREPANCY
+THOUGHT: Chapter text says "seven commercial products." Footnote says "6 commercial AI agent security tools." Benchmark repo says 7. Footnote is wrong.
+
+2026-03-14 12:40 UTC | DON NORMAN TITLE MISQUOTED
+THOUGHT: Footnote says "The Problem of Automation" — actual title is "The 'problem' with automation" (different preposition: "of" vs "with").
+
+2026-03-14 12:48 UTC | DYNATRACE DATE MISMATCH
+THOUGHT: Chapter text says "March 2026" but footnote correctly says "January 2026." Minor inconsistency between body and footnote.
+
+2026-03-14 12:55 UTC | ASSESSMENT COMPLETE
+THOUGHT: 2 significant (AgentShield count, Don Norman title), 4 minor. Surveys, benchmarks, Lancet, NIST all confirmed. LangChain percentages exact matches.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 291)
+Chapter verified: src/chapters/reliability-evaluation.md
+Report created: src/verification/reliability-evaluation-verification.md
+Status: ISSUES FOUND — 2 significant, 4 minor fixes required
+
+Issues:
+1. [SIGNIFICANT] AgentShield footnote [^agentshield]: says "6 commercial AI agent security tools" but benchmark repo and chapter body both say 7. Footnote is wrong — correct to "7."
+2. [SIGNIFICANT] Don Norman 1990 footnote [^don-norman-1990]: title misquoted as "The Problem of Automation" — actual title is "The 'problem' with automation" (wrong preposition "of" vs "with"; missing scare quotes on 'problem').
+3. [MINOR] Dynatrace: body text says "(March 2026)" but footnote correctly says "(January 2026)." Fix body text.
+4. [MINOR] Help Net Security [^agent-security]: 21%/80% figures originate from AIUC-1 Consortium briefing; HNS is secondary source. Add consortium attribution.
+5. [MINOR] HAL description: uses SWE-bench Verified Mini (not full), and τ-bench was excluded due to data leakage. Soften description or qualify.
+6. [MINOR] Lancet footnote [^clinician-complacency]: "August 2025" is online-first date; print issue is October 2025. Add "(online first)" qualifier or update to October 2025.
+
+Confirmed clean (key items):
+  SWE-bench Verified 500 samples, τ-bench Sierra, GAIA 61% Level 3 mid-2025, HAL Princeton ICLR 2026
+  LangChain 2026: 1,340 respondents, 57% in production, 32% quality barrier, all 5 eval percentages
+  Cisco 83%/29%, Dynatrace 919 leaders/44% manual review, Splunk 650 CISOs/82%/86%
+  OpenAI/Promptfoo March 9 2026, 350K+ developers, 25%+ Fortune 500
+  Anthropic 73% oversight, ~50% software engineering (Anthropic paper cited in footnote)
+  Lancet ADR statistics: 28.4%→22.4%, 6pp, 20% relative — all confirmed
+  NIST AI 800-2 (draft, March 31 2026 comment deadline), NIST AI 800-4 (March 2026, 3 workshops)
+  arXiv:2602.16666 — paper confirmed, authors confirmed
+  AgentShield 537 test cases, 8 categories — confirmed
+
+All 17 chapters now have formal verification files. Pipeline verification backlog complete.
+
+Sent to Chop Pop: 2 significant + 4 minor fixes required before publication approval.
