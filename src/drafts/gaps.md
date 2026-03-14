@@ -108,7 +108,7 @@ Cisco's AI-Aware SASE (February 2026) is the first evidence of convergence: MCP 
 
 ### AI-Native Policy Languages
 
-MACAW/MAPL introduces policy languages designed specifically for governing agentic AI systems, with hierarchical composition (child policies can only add restrictions) and cryptographic attestations. The industry is moving from policy-based governance ("tell the agent what not to do") to cryptographic governance ("prove the agent was authorized to do it"). This adds a third option alongside "can't" and "don't": "prove."
+*Now covered in Chapter 19 (Cryptographic Authorization Governance, in pipeline).* MACAW/MAPL introduces policy languages designed specifically for governing agentic AI systems, with hierarchical composition (child policies can only add restrictions) and cryptographic attestations. The industry is moving from policy-based governance ("tell the agent what not to do") to cryptographic governance ("prove the agent was authorized to do it"). This adds a third option alongside "can't" and "don't": "prove." The ghost token pattern (CAAM) and the "prove" framing as a complement to the book's "can't vs. don't" thesis are developed there.
 
 ## Dogfooding: This Book Implements Its Own Trust Stack
 
@@ -120,7 +120,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-18 chapters complete and staged in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+18 chapters published in src/chapters/. Chapter 19 in pipeline. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -141,6 +141,9 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 16. Building the Inferential Edge (capstone)
 17. Agent Incident Response (Accountability + Control)
 18. Gaps & Directions (this chapter)
+
+**In pipeline (src/drafts/):**
+19. Cryptographic Authorization Governance (Control + Accountability) — written 2026-03-14, awaiting verification
 
 ## Open Questions
 
