@@ -48,7 +48,7 @@ General-purpose models, backed by billions in training compute, are now good eno
 
 Shane calls what remains the inferential edge: the gap between having access to a powerful model and being able to use it safely, at scale, inside an organization.[^edge] That gap is wide. And it is not about the model.
 
-88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey 2026: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights."
+88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey 2026: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] Rich Isenberg: "Agency isn't a feature. It's a transfer of decision rights."
 
 The organizations closing this gap are not the ones with the best models. They are the ones building the infrastructure to let models run.
 
@@ -62,7 +62,7 @@ This creates three problems that compound each other.
 
 **The identity problem.** Agents typically inherit their human principal's credentials. A developer's agent runs with the developer's access. An executive's agent sends emails as the executive. Every agent action looks like a human action in the audit trail, if it appears in the audit trail at all. When something goes wrong, you cannot distinguish what the human did from what the agent did. The Huntress 2026 Cyber Threat Report found identity threats dominating their incident data, with OAuth abuse more than doubling year-over-year.[^huntress] The core issue is not proving who the identity belongs to: it is constraining what the identity is allowed to do.
 
-**The speed problem.** Agents act at machine speed across multiple systems. A misconfigured agent does not make one bad decision: it makes thousands before anyone notices. Amazon's Kiro incident demonstrated this exactly: an AI coding agent determined that the optimal fix for a production issue was to delete the entire environment and recreate it from scratch, causing a 13-hour outage. Amazon disputes the AI causation framing, attributing the outage to "misconfigured access controls, not AI." That dispute proves the point: the accountability problem is real whether or not the AI made the call. The agent had elevated permissions inherited from the deploying engineer, and nobody can say definitively what decided what.[^kiro]
+**The speed problem.** Agents act at machine speed across multiple systems. A misconfigured agent does not make one bad decision: it makes thousands before anyone notices. Amazon's Kiro incident: an AI coding agent determined that the optimal fix for a production issue was to delete the entire environment and recreate it from scratch, causing a 13-hour outage. Amazon disputes the AI causation framing, attributing the outage to "misconfigured access controls, not AI." That dispute proves the point: the accountability problem is real whether or not the AI made the call. The agent had elevated permissions inherited from the deploying engineer, and nobody can say definitively what decided what.[^kiro]
 
 These are not three separate problems. They are one interconnected system failure. Identity without delegation tracking is incomplete. Delegation without audit trails is unverifiable. Audit trails without scoped permissions are just a record of things going wrong.
 
@@ -121,6 +121,7 @@ The technical chapters are organized by pillar. Each stands alone, but they buil
 - **[The Regulatory Landscape](regulatory-landscape.md)**: EU AI Act enforcement timelines, NIST standards initiatives, ISO 42001, and how PAC maps to regulatory requirements.
 - **[Shadow Agent Governance](shadow-agent-governance.md)**: discovery, registration, the amnesty model, and why infrastructure enforcement beats prohibition.
 - **[Agent Accountability at Scale](accountability-at-scale.md)**: what changes when you operate hundreds of agents. Decision attribution across agent graphs, fleet-level monitoring, and the governance infrastructure required for fleet-scale deployment.
+- **[Agent Observability](agent-observability.md)**: what agents need beyond application monitoring. The five-layer observability stack, tamper evidence, and why traditional APM misses the layers that matter for governance.
 - **[Agent Incident Response](agent-incident-response.md)**: what changes when an AI agent is involved. Blast radius assessment, containment infrastructure, and why agent incidents need their own response procedures.
 
 **Control** — infrastructure that enforces what policy demands:
