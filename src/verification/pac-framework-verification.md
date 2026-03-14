@@ -1,0 +1,101 @@
+# Verification Report: pac-framework.md
+
+**Chapter:** The PAC Framework
+**Verified:** src/chapters/pac-framework.md (edited version, post-Session 170 citation fixes)
+**Date:** 2026-03-14 UTC
+**Session:** 282
+**Verifier:** Sapere Aude
+**Status:** NEAR CLEAN — 1 significant fix required
+
+---
+
+## Summary
+
+The PAC framework chapter is the organizing spine of the book. Its content derives primarily from Shane Deconinck's own published framework and blog posts — meaning most claims are from the authoritative source itself. External validation is concentrated in four surveys (Teleport, Gravitee, Anthropic, Varonis/Microsoft/IBM) and the chapter's footnotes.
+
+All four external surveys are confirmed accurate. The shadow-ai footnote dates are correct (Varonis 2025, Microsoft Work Trend Index 2024, IBM 2025 — Session 170 fixes applied). One fabricated blog post title found in footnote [^4].
+
+---
+
+## Claims Confirmed Clean
+
+### PAC Framework Content (Shane's Own Work)
+- Four business value tiers (V1-V4): from PAC framework, authoritative
+- Five blast radius levels (B1-B5): from PAC framework, authoritative
+- Five autonomy levels (A1-A5): from PAC framework, authoritative
+- Five infrastructure levels (I1-I5): from PAC framework, authoritative
+- Six profiler dimensions: from Shane's profiler blog post, confirmed at shanedeconinck.be/posts/agent-profiler-reasoning/ (Feb 26, 2026)
+- "Autonomy is earned, not declared" quote: confirmed in profiler post
+- Infrastructure-as-gate framing (binary per autonomy level): confirmed in profiler post
+- Composability model (workflow + agent loop + autonomous sub-agent): from PAC framework, authoritative
+
+### External Surveys
+
+**Teleport: "2026 State of AI in Enterprise Infrastructure Security" (February 17, 2026)**
+All three statistics confirmed against source:
+- 4.5x higher incident rates for over-privileged AI systems: CONFIRMED (exact match)
+- 76% incident rate for broadly-scoped access: CONFIRMED (exact match)
+- 17% incident rate for tightly-scoped access: CONFIRMED (exact match)
+- Survey methodology: 205 CISOs, security architects, platform leaders; December 2025; confirmed
+
+**Gravitee: "State of AI Agent Security 2026: When Adoption Outpaces Control" (February 2026)**
+All three statistics confirmed against source:
+- 919 respondents (executives and practitioners): CONFIRMED (exact match)
+- 82% executive confidence that policies protect against misuse: CONFIRMED (exact quote)
+- Only 14.4% have full security approval for agent deployments: CONFIRMED (exact match)
+
+**Anthropic: "Measuring AI Agent Autonomy in Practice" (February 2026)**
+Both statistics confirmed:
+- 80% of tool calls from agents with at least one safeguard: CONFIRMED
+- 73% appear to have a human in the loop: CONFIRMED
+- URL https://www.anthropic.com/research/measuring-agent-autonomy: confirmed accessible
+
+**Shadow AI footnote [^shadow-ai] — all three sources confirmed:**
+- Varonis 2025 "Shadow AI" report: 98% of employees use unsanctioned apps — CONFIRMED. (Minor framing note: body says "organizations report employees using unsanctioned apps" while source says "employees use." Meaning is equivalent; footnote accurately describes source.)
+- Microsoft Work Trend Index 2024 (published May 2024): 78% of AI users bring their own tools to work — CONFIRMED
+- IBM Cost of a Data Breach Report 2025: "one in five organizations has experienced a breach tied to shadow AI" — CONFIRMED
+
+### Shane Blog Posts
+
+All cited Shane blog posts confirmed to exist at shanedeconinck.be with correct dates:
+- [^2] "Untangling Autonomy and Risk for AI Agents" — February 26, 2026: CONFIRMED
+- [^3] "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting." — February 2, 2026: CONFIRMED. Claude Code scaffolding deletion example is the post's central argument.
+- [^4] "AI Agents Beyond POCs: IAM Emerging Patterns Worth Watching" — January 3, 2026: CONFIRMED (note: footnote omits "Worth Watching" from title — minor)
+- [^6] "AI Agents Need the Inverse of Human Trust" — February 3, 2026: CONFIRMED
+
+### Standards and Protocols
+- OAuth 2.0 Token Exchange (RFC 8693): established RFC, confirmed
+- DPoP (Demonstration of Proof-of-Possession): confirmed IETF standard
+- DIDs/VCs: W3C standards, confirmed
+- Trust Spanning Protocol (TSP): confirmed in TSP explainer at shanedeconinck.be
+- eIDAS 2.0/EUDI wallets: confirmed EU regulatory framework
+
+---
+
+## Issues Found
+
+### Significant
+
+**1. Fabricated blog post title in footnote [^4]**
+
+> [^4]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026. **Also: "Auth for Agent Builders: A Crash Course," January 2026.**
+
+The post "Auth for Agent Builders: A Crash Course" does not exist on shanedeconinck.be and cannot be found anywhere. The actual January 2026 Shane post covering OAuth OBO for agent builders is:
+
+**Correct title:** "Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained"
+**URL:** shanedeconinck.be/explainers/oauth-obo/
+**Date:** January 10, 2026
+
+**Fix:** Replace "Auth for Agent Builders: A Crash Course" in footnote [^4] with "Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained," shanedeconinck.be/explainers/oauth-obo/, January 10, 2026.
+
+**Context of use:** Footnote [^4] is cited on three passages covering OAuth OBO and cross-org trust. The OBO explainer is the correct source for this material.
+
+---
+
+## Overall Assessment
+
+The PAC framework chapter is substantively clean. All external survey data is accurate. All Shane blog post citations are real and correctly dated (with the one notable exception in [^4]). The shadow-ai footnote dates are correct following Session 170 fixes. PAC framework content is authoritative since it comes from Shane himself.
+
+The fabricated "Auth for Agent Builders: A Crash Course" title is a single fix: update footnote [^4] to cite the real OBO explainer. No other factual issues found.
+
+**Action required:** One fix in footnote [^4] — update the "Auth for Agent Builders" citation to the correct OBO explainer title and URL.

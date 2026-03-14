@@ -318,3 +318,17 @@ THOUGHT: Body line 105 says '97 million' but footnote [^7] says '98.6 million' �
 THOUGHT: AgentGateway homepage confirms Cedar + RBAC. ABAC and ReBAC not found in docs. Chapter claims all three — minor overclaim.
 2026-03-14 UTC | NEAR CLEAN ASSESSMENT
 THOUGHT: CVEs, arXiv papers, AAIF, A2A v1.0 changes, SEPs all confirmed. Two fixes required: 97M→98.6M, ABAC/ReBAC claim.
+
+---
+
+2026-03-14 UTC | SESSION START (Session 282)
+THOUGHT: Starting pac-framework.md verification. Key claims: Teleport 4.5x/76%/17%, Gravitee 919/82%/14.4%, Anthropic 80%/73%, Varonis 98%, shadow-ai footnote dates.
+
+2026-03-14 UTC | EXTERNAL STATS ALL CLEAN
+THOUGHT: Teleport 4.5x/76%/17% confirmed exactly. Gravitee 919/82%/14.4% confirmed exactly. Anthropic 80%/73% confirmed exactly. Varonis 98%, Microsoft 78%, IBM 1-in-5 all confirmed.
+
+2026-03-14 UTC | FINDING: FABRICATED CITATION IN [^4]
+THOUGHT: "Auth for Agent Builders: A Crash Course" (January 2026) does not exist on shanedeconinck.be. Real post is OAuth OBO explainer titled "Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained" (Jan 10, 2026).
+
+2026-03-14 UTC | ASSESSMENT: NEAR CLEAN
+THOUGHT: pac-framework.md: one significant fix — [^4] "Auth for Agent Builders" → correct OBO explainer title. All 12+ external stats confirmed. PAC framework content is Shane's own. Sending to Chop Pop.
