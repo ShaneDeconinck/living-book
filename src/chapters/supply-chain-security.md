@@ -126,11 +126,17 @@ BlueRock launched the MCP Trust Registry, providing security analysis of over 7,
 
 The AAIF (Agentic AI Foundation) governance under the Linux Foundation puts MCP, goose, and AGENTS.md under neutral oversight with eight platinum members.[^aaif] This provides governance for the protocol layer but does not solve the marketplace layer. Anyone can still publish an MCP server or agent skill.
 
-**What is missing:**
+**What is emerging:**
 
-There is no equivalent of certificate transparency for agent tools. No public, append-only log of what tools exist, who published them, what they claim to do, and what they actually do. When a compromised package is discovered in npm, it can be traced through download logs and dependency trees. When a compromised MCP server is discovered, there is no centralized mechanism to notify all agents currently using it.
+Sigstore provides the transparency infrastructure that the agent ecosystem needs but has not yet adopted. Every Sigstore signature is recorded in the Rekor transparency log: a public, append-only, tamper-evident ledger. When npm and PyPI adopted Sigstore, every package signature became auditable. No equivalent adoption exists for MCP servers, A2A Agent Cards, or agent tool registries. The infrastructure is production-grade. The integration is missing.
 
-There is no standard for tool attestation. A Verifiable Credential can prove who published a tool and when. It cannot prove what the tool does. The gap between claimed behavior (the tool description) and actual behavior (what the code executes) is where tool poisoning lives.
+The sigstore-a2a project bridges this gap for one protocol: it performs keyless signing of A2A Agent Cards using Sigstore and generates SLSA provenance attestations linking each card to its source repository, commit SHA, and build workflow.[^sigstore-a2a-sc] A receiving agent can verify not just that a card is authentic but that it was built from a specific source, in a specific pipeline, at a specific time. The [Gaps & Directions](gaps.md) chapter covers the implications: agent identity and supply chain trust converging at the protocol level. The pattern should extend to MCP servers, where supply chain attacks are precisely what provenance attestation is designed to prevent.
+
+For models, Sigstore's model-transparency project (v1.0, April 2025, developed with OpenSSF, NVIDIA, and HiddenLayer) applies the same keyless signing to ML model artifacts.[^sigstore-model] Google integrated it into Kaggle; NVIDIA integrated it into NGC. Model signing does not prevent training data poisoning, but it proves which model artifact an organization is running and whether it has been tampered with since publication. For organizations using API-accessed models, the model provider handles this. For organizations running open-weight models, model signing is the minimum verification step.
+
+**What is still missing:**
+
+Even with Sigstore, there is no standard for tool behavior attestation. Sigstore and SLSA prove provenance: who built this, from what source, in what pipeline. A Verifiable Credential can prove who published a tool and when. Neither can prove what the tool does. The gap between claimed behavior (the tool description) and actual behavior (what the code executes) is where tool poisoning lives. Provenance narrows the attack surface by making the build chain verifiable. It does not eliminate tool poisoning, which requires runtime behavioral verification.
 
 [^mcp-trust]: BlueRock, MCP Trust Registry (mcp-trust.com), 2026. Security analysis of 7,000+ MCP servers.
 
@@ -202,8 +208,8 @@ Supply chain security for agents is not a single control. It is a layered approa
 
 Before a tool or plugin is loaded, verify its provenance. This is the minimum viable control:
 
-- **Publisher identity.** Who published this component? Can the identity be verified cryptographically (DIDs, code signing certificates)?
-- **Integrity checking.** Has the component been modified since publication? Content hashes, signed manifests.
+- **Publisher identity.** Who published this component? Can the identity be verified cryptographically (DIDs, code signing certificates)? Sigstore eliminates the key management barrier: using ambient OIDC credentials from CI/CD environments, it issues short-lived signing certificates through its Fulcio certificate authority and records every signature in the Rekor transparency log.[^sigstore] npm, PyPI, and Maven Central already use it for package provenance. The infrastructure exists. The agent ecosystem has not adopted it.
+- **Integrity checking.** Has the component been modified since publication? Content hashes, signed manifests. SLSA (Supply-chain Levels for Software Artifacts) provides the framework: at Level 2, signed provenance links an artifact to its build system; at Level 3, the build platform itself is hardened against tampering.[^slsa] An MCP server built from a verified source in a hardened pipeline, with SLSA provenance attestations, is a different trust proposition from the same server downloaded from an unattested registry.
 - **Reputation signals.** How long has the publisher been active? What is the component's usage history? ERC-8004's reputation registry pattern (using payment receipts as Sybil resistance) is one approach to grounding reputation in economic proof rather than social signals.[^erc-8004]
 
 ### Behavioral Verification at Runtime
@@ -273,9 +279,9 @@ Agent supply chain security touches all three pillars, but the weight falls on C
 |---|---|---|
 | **I1: Open** | No supply chain controls. Agents install any tool, connect to any MCP server, load any plugin. The OpenClaw default. | None. |
 | **I2: Logged** | Tool installations and connections are logged. Organizations can see what agents depend on, but cannot prevent unsafe dependencies. | Dependency inventory, installation logging. |
-| **I3: Verified** | Tools must pass verification before installation. Publisher identity, integrity checks, vulnerability scanning. BlueRock MCP Trust Registry level. | Provenance verification, vulnerability scanning, AI-BOM generation. |
+| **I3: Verified** | Tools must pass verification before installation. Publisher identity, integrity checks, vulnerability scanning. BlueRock MCP Trust Registry level. | Sigstore signing, SLSA provenance, vulnerability scanning, AI-BOM generation. |
 | **I4: Authorized** | Tools must be explicitly approved before use. Allowlists, not blocklists. Runtime behavioral monitoring detects deviations. | Approval workflows, behavioral baselines, runtime monitoring, dependency isolation. |
-| **I5: Contained** | Full supply chain containment. Every component is verified, attested, isolated, and continuously monitored. Compromised components are automatically quarantined. Dynamic dependency trees are tracked in real-time. | Cryptographic attestation, automated quarantine, real-time dependency tracking, ephemeral execution, anomaly detection. |
+| **I5: Contained** | Full supply chain containment. Every component is verified, attested, isolated, and continuously monitored. Compromised components are automatically quarantined. Dynamic dependency trees are tracked in real-time. | Sigstore + SLSA provenance across all components, automated quarantine, real-time dependency tracking, ephemeral execution, anomaly detection. |
 
 Most organizations deploying agents today operate at I1 or I2. The OpenClaw crisis demonstrated the consequences. Moving to I3 requires tooling (trust registries, vulnerability scanners, AI-BOM generators) that is emerging but not mature. I4 and I5 require organizational commitment to treat agent supply chains with the same rigor as software supply chains, plus the additional tooling for AI-specific components.
 
@@ -295,10 +301,18 @@ Most organizations deploying agents today operate at I1 or I2. The OpenClaw cris
 
 **If you are building agent infrastructure:**
 
-1. **Build for attestation.** Sign your tools. Publish your provenance. Make it easy for consumers to verify that what they installed is what you published.
+1. **Build for attestation.** Sign your tools with Sigstore. Generate SLSA provenance attestations in your CI/CD pipeline. Publish provenance alongside your artifacts so consumers can verify that what they installed is what you published, from the source you claim, built in the pipeline you control. Sigstore's keyless signing removes the adoption barrier: no key management, no rotation schedules, no shared secrets.
 
 2. **Support least-privilege tool access.** Design your MCP servers and agent tools with granular permission models. Do not require broad permissions when narrow ones suffice.
 
 3. **Contribute to standards.** The AI-BOM space (OWASP AI-BOM Initiative, SPDX AI profiles) needs practitioner input. The gap between traditional SBOMs and agent-specific supply chain transparency will not close without implementation experience.
 
 The agent supply chain is the newest and least mature layer of trust infrastructure. Every other chapter in this book assumes that the components inside the agent are trustworthy. This chapter is the reminder that this assumption must be verified, continuously, for every dependency in the chain.
+
+[^sigstore]: Sigstore, sigstore.dev. Open-source project under the OpenSSF (Open Source Security Foundation). Components: Cosign (container/artifact signing), Fulcio (certificate authority issuing short-lived certs from OIDC), Rekor (transparency log). Adopted by npm, PyPI, and Maven Central for package provenance. Created by Luke Hinds. See also OpenSSF, "Sigstore: Simplifying Code Signing for Open Source Ecosystems," openssf.org, 2023.
+
+[^slsa]: SLSA (Supply-chain Levels for Software Artifacts), slsa.dev. Framework with four levels of build provenance assurance. Level 1: provenance exists. Level 2: signed, tamper-resistant provenance. Level 3: hardened build platform. Level 4: two-person review. Maintained by the OpenSSF.
+
+[^sigstore-a2a-sc]: Sigstore, sigstore-a2a, github.com/sigstore/sigstore-a2a. Python library for keyless signing of A2A Agent Cards using Sigstore infrastructure and SLSA provenance attestations. Created by Luke Hinds (former Distinguished Engineer at Red Hat, Sigstore creator). Uses ambient OIDC credentials in CI/CD, Fulcio certificate authority, Rekor transparency log. Links Agent Cards to source repositories, commit SHAs, and build workflows. See also: Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 2025.
+
+[^sigstore-model]: Sigstore, model-transparency, github.com/sigstore/model-transparency. v1.0 April 2025, developed with OpenSSF, NVIDIA, and HiddenLayer. Keyless signing for ML model artifacts. Integrated into NVIDIA NGC and Google Kaggle. See also: Google Security Blog, "Taming the Wild West of ML: Practical Model Signing with Sigstore," security.googleblog.com, April 2025; OpenSSF, "How Google Uses sigstore to Secure Machine Learning Models," openssf.org, July 2025.

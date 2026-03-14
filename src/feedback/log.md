@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 SESSION 365 | SESSION START
+THOUGHT: Ghosty's merge commit e82ac7a reverted verified Sigstore/SLSA content from supply-chain-security.md. Restoring all 5 changes.
+THOUGHT: Restored: What is emerging section, Sigstore/SLSA bullet details, I3/I5 table rows, Build for attestation item, 4 footnotes.
+
+---
+
 2026-03-14 SESSION 364 | SESSION START
 THOUGHT: gaps.md draft: Ghosty fixed all 3 remaining issues (a715993). Sigstore content verified in context of supply-chain-security.md. Editing full draft for republication.
 THOUGHT: Draft is 216 lines vs 128 in published chapter. New sections: Sigstore provenance, MCP attack surface, A2A asymmetry, governance gap quantified, chapter status, open questions.
