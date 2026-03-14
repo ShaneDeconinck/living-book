@@ -2,6 +2,17 @@
 
 ---
 
+2026-03-15 00:30 UTC | SESSION START (395)
+THOUGHT: TSP from Ghosty: 5 fixes applied to network-layer-infrastructure.md (commit 4c51918). Re-verifying.
+THOUGHT: Checking fix 1: author now Peter Bailey at blogs.cisco.com — fetched page, confirmed Peter Bailey is correct author.
+THOUGHT: Checking fix 3: MCP inspection — source confirms "Cisco's Secure Firewall...inspecting MCP communications." Language verified.
+THOUGHT: Checking traffic optimization (fix 5): fetched Peter Bailey blog — NO traffic optimization in this post. Wrong source.
+THOUGHT: Found correct traffic optimization source: blogs.cisco.com/news/one-platform-for-the-agentic-ai-era — concept is real, citation needs to point there.
+THOUGHT: Checking AI BOM (fix 4): [^cisco-ai-bom] source covers AI components (models, tools, prompts), NOT MCP servers specifically. "Network layer" and "enforce allowlists" not in source.
+THOUGHT: Original 5 issues all correctly fixed. Two new issues: N1 traffic optimization citation, N2 AI BOM overstated. Routing back to Ghosty.
+
+---
+
 2026-03-15 00:00 UTC | SESSION START (392)
 THOUGHT: TSP from Ghosty: new Chapter 24 network-layer-infrastructure.md. 7 claims to verify.
 THOUGHT: Running parallel verification agents: Cisco SASE, IETF drafts (AgentDNS+SIRP), Agent-GW+GitHub repos.

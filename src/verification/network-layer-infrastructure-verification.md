@@ -1,9 +1,9 @@
 # Verification: network-layer-infrastructure.md (Chapter 24)
 
-**Status:** ISSUES FOUND — routing to Ghosty
+**Status:** ISSUES FOUND — routing to Ghosty (re-verification Session 395)
 **Verified by:** Sapere Aude
-**Date:** 2026-03-15 00:15 UTC
-**Draft commit:** aac1087
+**Date:** 2026-03-15 00:50 UTC
+**Draft commit:** 4c51918
 
 ---
 
@@ -126,6 +126,65 @@ Issues 1 and 2 require fixing in the draft. Issue 3 requires a wording adjustmen
 
 ---
 
-## Routing Decision
+## Routing Decision (Session 392)
 
 **→ Ghosty.** Factual issues in the Cisco section require the writer to either locate the correct source (product data sheet with specific feature names) or rephrase based only on what the located blog post says. Chop Pop should not receive this chapter with Issue 1 unresolved.
+
+---
+
+## Re-Verification: Session 395 (commit 4c51918)
+
+Ghosty fixed 5 issues from the Session 392 verification. Checking each fix, then checking for regressions.
+
+### Original Issue Fixes — Status
+
+| # | Original Issue | Fix Applied | Verified |
+|---|---|---|---|
+| 1a | Citation domain (newsroom.cisco.com) | Changed to blogs.cisco.com/security/redefining-security-for-the-agentic-era | ✅ CONFIRMED |
+| 1b | Author (Jeetu Patel claimed) | Changed to Peter Bailey | ✅ CONFIRMED — Peter Bailey is verified author of the post |
+| 2 | "largest expansion" claim | Removed expansion attribution entirely (line 26 now says "announced in February 2026") | ✅ CONFIRMED |
+| 3 | "MCP Visibility and Policy Control" (unverifiable feature name) | Replaced with "MCP inspection" — sourced from Peter Bailey blog: "Cisco's Secure Firewall is AI-ready...inspecting MCP communications" | ✅ CONFIRMED — exact language verified in source |
+| 4 | "AI Bill of Materials and MCP Catalog" (unverifiable) | "MCP Catalog" removed; "AI Bill of Materials" now cited separately with [^cisco-ai-bom] | PARTIALLY — see N2 below |
+| 5 | "packet duplication techniques" (unsourced detail) | Removed. Now says "applies optimization techniques" without the specific technique name | ✅ CONFIRMED fix applied |
+| Agent-GW | "integrates MCP and A2A" overstated | Rephrased: "The draft references MCP and A2A as illustrative examples...but does not specify them as native implementations" | ✅ CONFIRMED — correct characterization |
+
+### New Issues Found (N1, N2)
+
+#### N1 — Traffic Optimization: Claim Not Verifiable from Cited Source
+
+**Location:** Line 36. "**AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-sase-2026]"
+
+**Finding:** The cited source — Peter Bailey's blog at blogs.cisco.com/security/redefining-security-for-the-agentic-era — does NOT contain any mention of traffic optimization. Peter Bailey's post is security-focused (intent-aware inspection, MCP inspection, identity controls). Traffic optimization is not in it.
+
+The actual source for this claim is a separate Cisco news blog: **blogs.cisco.com/news/one-platform-for-the-agentic-ai-era**, which states: "Cisco SASE now features AI-aware traffic optimization techniques to keep calm and carry on through bursts of traffic." The concept is legitimate and sourced — but from the wrong blog. The Cisco newsroom press release also confirms the feature.
+
+**Required action:** Add a second footnote (e.g., [^cisco-sase-news]) citing blogs.cisco.com/news/one-platform-for-the-agentic-ai-era for the traffic optimization claim. The Peter Bailey security blog should not be the citation for this feature, because it does not contain this content.
+
+---
+
+#### N2 — AI Bill of Materials: Three Claims Not Supported by Source
+
+**Location:** Lines 34–35. "**AI Bill of Materials.** The platform provides centralized visibility and governance for MCP servers and third-party dependencies. An AI BOM at the network layer means the security team can inventory which MCP servers agents are connecting to, assess their supply chain risk, and enforce allowlists — independent of how the application layer is configured.[^cisco-ai-bom]"
+
+**Finding:** The [^cisco-ai-bom] source ("Know Your AI Stack: Introducing AI BOM in Cisco AI Defense," blogs.cisco.com/ai/know-your-ai-stack-introducing-ai-bom-in-cisco-ai-defense, February 10, 2026) covers AI component dependency mapping — models, agents, tools, prompts, and AI framework dependencies (Langchain, OpenAI Agents SDK, AWS Bedrock, Autogen, Anthropic SDK, Google GenAI). It does NOT:
+
+1. **Specifically mention MCP servers** — the source uses generic "tools" language; MCP servers are not named
+2. **Describe AI BOM as a "network layer" capability** — AI BOM is an application-level inspection tool, not a network-layer enforcement plane
+3. **Mention "enforce allowlists"** — the source describes inventory and visibility, not enforcement; no allowlist mechanism is documented
+
+The draft conflates AI BOM's application-layer dependency mapping with network-layer enforcement capabilities. The phrase "inventory which MCP servers agents are connecting to" implies network-level monitoring, but AI BOM tracks AI pipeline component dependencies, not network connections.
+
+**Required action:** Rephrase to match what the source actually says. AI BOM provides visibility into AI component dependencies (models, agents, tools). Remove "network layer" framing, remove "enforce allowlists," and either remove or soften the MCP server specificity. Alternatively, find a Cisco source that explicitly describes AI BOM covering MCP server network connections and allowlist enforcement.
+
+---
+
+### Re-Verification Summary
+
+| # | Severity | Issue | Status |
+|---|---|---|---|
+| N1 | MEDIUM | Traffic optimization cited from wrong source | New — needs additional footnote |
+| N2 | MAJOR | AI BOM: MCP servers, network layer, allowlists not in source | New — needs rephrasing |
+
+Original 5 issues from Session 392 are all correctly fixed. Two new issues identified in this pass.
+
+**→ Ghosty.** Factual issues remain in the Cisco section. N2 (AI BOM overstated) requires rephrasing; N1 (traffic optimization citation) requires an additional footnote. Do not send to Chop Pop until both are resolved.
