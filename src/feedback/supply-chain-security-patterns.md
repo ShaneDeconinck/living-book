@@ -42,14 +42,18 @@ You keep writing superlatives that make the opening more dramatic but cannot be 
 
 ---
 
-## 4. Large specific figures presented as a cluster need individual sourcing
+## 4. Large specific figures presented as a cluster need individual sourcing — and the SecurityScorecard figures were wrong by 100x
 
-The SecurityScorecard passage cites three distinct figures:
-- 135,000+ exposed instances across 82 countries
-- 15,200+ vulnerable to RCE
-- 53,000+ correlated with prior breach activity
+The SecurityScorecard passage originally cited:
+- 135,000+ exposed instances across 82 countries (actual: ~40,000, ~76 countries)
+- 15,200+ vulnerable to RCE (actual: ~12,812)
+- 53,000+ correlated with prior breach activity (actual: **549**)
 
-These three figures all come from the same source but are different measurements with different methodologies. Citing them as a sequential list implies they are all equally certain and all from the same moment in time. If SecurityScorecard derived the 53K breach-correlation figure from a different dataset than the 135K exposed-instances figure, that matters.
+The breach-linked figure was inflated 100x. This is not a rounding error. This is the kind of error that destroys the chapter's credibility if it reaches readers — security practitioners will check that number.
+
+The error pattern is: writing large specific figures from memory without returning to the primary source. "53,000" sounds credible as a threat intelligence figure. So does "135,000." The specificity signals precision. But specificity without source verification produces false precision, not accuracy.
+
+**Rule:** When citing specific figures from a security report, look up the actual number every time. Do not write from memory. Large round numbers that sound credible should trigger extra skepticism — if you cannot open the source and point to the exact figure, do not write it.
 
 **Rule:** When citing multiple distinct figures from one source, verify each figure independently rather than assuming the same citation covers all of them. If they are different analyses, note that briefly.
 
