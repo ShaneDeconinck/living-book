@@ -6,7 +6,7 @@ Every model upgrade makes agents more capable. Teams delete scaffolding instead 
 
 This is good news for Potential. It is dangerous news for Accountability.
 
-Shane frames the split clearly: context engineering increases reliability, which is about whether the model does what you intended. Governance manages risk, which is about whether the agent is *allowed* to do what it is about to do. Better models solve the first problem. They make the second one worse[^trust-inversion].
+Shane frames the split: context engineering increases reliability, which is about whether the model does what you intended. Governance manages risk, which is about whether the agent is *allowed* to do what it is about to do. Better models solve the first problem. They make the second one worse[^trust-inversion].
 
 The space between those two problems is where governance lives.
 
@@ -65,7 +65,7 @@ Most organizations are at I1 or I2 for their agent deployments. That means they 
 
 ## The Observability Shift
 
-Agent observability is fundamentally different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
+Agent observability is different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
 
 Dynatrace's survey of 919 enterprise leaders (January 2026) reveals how wide that gap is. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
 
@@ -199,7 +199,7 @@ The reliability and evaluation landscape maps to all three PAC pillars:
 | **Complacency** | Higher reliability amplifies complacency | Degrades human oversight, the Accountability backstop | Only infrastructure-enforced checkpoints survive complacency |
 | **Evaluation-as-governance** | Ensures continued performance | Proves compliance over time | Closes the loop between policy and enforcement |
 
-The critical insight: reliability is a Potential metric that organizations treat as an Accountability metric. "The agent is 95% accurate" feels like it answers the governance question. It does not. Governance asks: when the 5% happens, can you trace it, contain it, explain it, and prevent it? That is an infrastructure question.
+Reliability is a Potential metric that organizations treat as an Accountability metric. "The agent is 95% accurate" feels like it answers the governance question. It does not. Governance asks: when the 5% happens, can you trace it, contain it, explain it, and prevent it? That is an infrastructure question.
 
 ## What to Do
 

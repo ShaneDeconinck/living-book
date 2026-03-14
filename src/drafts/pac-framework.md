@@ -47,7 +47,7 @@ How much independence an agent earns depends on its reliability, blast radius, a
 - **A4 Delegated**: agent acts independently within defined boundaries, human reviews periodically.
 - **A5 Autonomous**: agent acts independently with minimal human involvement.
 
-The key insight: autonomy is earned, not declared. An agent does not start at A5 because the product team wants it to. It starts at A1 and progresses as the infrastructure, reliability data, and governance thresholds justify it.
+Autonomy is earned, not declared. An agent does not start at A5 because the product team wants it to. It starts at A1 and progresses as the infrastructure, reliability data, and governance thresholds justify it.
 
 ### Implementation Architecture: Composability, Not Categories
 
@@ -81,7 +81,7 @@ The first accountability question is not "who is responsible for this agent?" It
 
 ### Delegation Becomes Abdication
 
-When a human delegates to an agent, the agent interprets and expands that intent. The gap between what was delegated and what was acted on is where accountability dissolves. Shane frames this sharply: delegation without traceability is abdication.
+When a human delegates to an agent, the agent interprets and expands that intent. The gap between what was delegated and what was acted on is where accountability dissolves. In Shane's framing, delegation without traceability is abdication.
 
 The infrastructure requirement is a delegation chain that captures:
 
@@ -166,7 +166,7 @@ The three pillars are not independent. The framework explicitly maps the failure
 
 **Accountability without Control**: governance on paper. You have policies, risk assessments, and liability chains documented, but no infrastructure to enforce them. The policies say agents need scoped credentials. The agents have admin tokens.
 
-Two independent surveys in early 2026 quantify this failure mode precisely. Teleport's research found that over-privileged AI systems drive 4.5x higher incident rates: 76% of organizations with broadly scoped agent access reported security incidents, versus 17% of those with tightly scoped access.[^teleport] The predictor was not AI sophistication or model capability. It was access scope. Gravitee's survey of 919 executives and practitioners found that 82% of executives feel confident their policies protect against agent misuse, yet only 14.4% have full security approval for their agent deployments.[^gravitee] The confidence rests on policy documentation, not runtime enforcement. This is the exact gap between Accountability and Control: organizations believe they are governed because policies exist, while the infrastructure to enforce those policies does not.
+Two independent surveys in early 2026 quantify this failure mode. Teleport's research found that over-privileged AI systems drive 4.5x higher incident rates: 76% of organizations with broadly scoped agent access reported security incidents, versus 17% of those with tightly scoped access.[^teleport] The predictor was not AI sophistication or model capability. It was access scope. Gravitee's survey of 919 executives and practitioners found that 82% of executives feel confident their policies protect against agent misuse, yet only 14.4% have full security approval for their agent deployments.[^gravitee] The confidence rests on policy documentation, not runtime enforcement. This is the exact gap between Accountability and Control: organizations believe they are governed because policies exist, while the infrastructure to enforce those policies does not.
 
 **Control without Potential**: infrastructure without mandate. You build sophisticated identity, delegation, and sandboxing infrastructure, but the business does not see enough value to fund it. The project dies from lack of adoption.
 
@@ -191,7 +191,7 @@ Each dimension answers a question the others cannot:
 5. **Governance Thresholds**: where the organization draws its lines. Regulatory requirements, internal policies, risk appetite. An agent might be technically capable of full autonomy, but if the compliance team requires human approval for anything touching customer data, that is the ceiling.
 6. **Autonomy** (A1-A5): the output. Not an input you set, but a level the agent earns based on everything else.
 
-The key insight: autonomy is the dependent variable. You do not start by deciding "this agent should be autonomous" and then figure out the requirements. You assess the other five dimensions, and the appropriate autonomy level falls out. Shane puts it directly: "Autonomy is earned, not declared."[^profiler]
+Autonomy is the dependent variable. You do not start by deciding "this agent should be autonomous" and then figure out the requirements. You assess the other five dimensions, and the appropriate autonomy level falls out. Shane puts it directly: "Autonomy is earned, not declared."[^profiler]
 
 ### Infrastructure as Gate, Not Slider
 
