@@ -93,7 +93,7 @@ Agentic systems break this model. An agent's action space is not enumerable. An 
 
 MAPL (Manageable Access-control Policy Language), developed as part of the Authenticated Workflows framework for agentic AI, takes a different approach.[^authenticated-workflows] Rather than enumerating permitted actions, it expresses policies as hierarchical constraints with intersection semantics: child policies can only add restrictions, never relax them.
 
-The composition rule is the key architectural choice. A base organizational policy defines:
+A base organizational policy defines:
 
 ```json
 {
@@ -115,7 +115,7 @@ A department policy extends it:
 }
 ```
 
-The effective policy is the intersection: max $2,000, only vendor-a, approval required above $5,000 (inherited). The department cannot grant itself permissions its parent did not have. An agent operating under this policy inherits these constraints automatically — there is no path to escalate above them.
+The effective policy is the intersection: max $2,000, only vendor-a, approval required above $5,000 (inherited). The department cannot grant itself permissions its parent did not have. An agent operating under this policy inherits these constraints.
 
 The cryptographic attestation layer adds verifiability to this hierarchy. Each policy in the chain carries a signature from the issuing entity. The agent presents not just the effective constraints but the full policy chain with its signatures. The receiving system verifies the chain and confirms that the constraints derive from a signed authority chain, not from the agent's self-report.
 

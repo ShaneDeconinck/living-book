@@ -70,7 +70,7 @@ Singapore's framework requires this explicitly: agent identity linked to a super
 
 When an incident occurs, the organization must reconstruct the chain of authorization from the human who initiated the delegation to the agent action that caused harm. At fleet scale, this reconstruction must be automated.
 
-The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns in depth.
+The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns.
 
 What is missing is the forensic layer: tooling that takes these building blocks and produces, on demand, a human-readable reconstruction of who authorized what, through which agents, with what constraints, at what time. This is the "explain to a regulator" capability that PAC's Accountability pillar demands. At single-agent scale, a human can read the logs. At fleet scale, the reconstruction must be automated, and the automation itself must be auditable.
 
@@ -96,7 +96,7 @@ Atos's March 2026 whitepaper frames the problem as "sovereign control at scale":
 
 Accountability at scale sits primarily in the Accountability pillar but draws from all three.
 
-**Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: it is the gate that unlocks fleet-scale value. "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
+**Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
 
 **Accountability.** Decision attribution, regulatory compliance, incident classification. The question that every Accountability dimension asks: "Could you explain to a regulator what your agent did and why?"[^pac-framework] At fleet scale, this becomes: "Could you explain to a regulator what your agents collectively did, which human authorizations were in the causal chain, and how you classified the outcome?"
 
