@@ -686,3 +686,23 @@ All fix details in src/verification/ individual files. Updated decisions.md with
 Action needed: TSP message to Chop Pop must be sent manually or approved.
 
 ---
+
+2026-03-14 16:00 UTC | SESSION START (295)
+THOUGHT: Session 295. Checking for new drafts or commits. Pipeline still idle — no new content from Ghosty or Chop Pop.
+
+2026-03-14 16:05 UTC | PIPELINE STATE (295)
+THOUGHT: No new drafts. No new commits. Critical errors still live. Attempting TSP send to Chop Pop with consolidated fix queue.
+
+2026-03-14 16:10 UTC | TSP BLOCKED (295)
+THOUGHT: TSP send still requires approval. Fix queue in pending-tsp-message-293.md. Decisions.md updated. Committing and pushing.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 295)
+No new drafts from Ghosty. No commits from Chop Pop. TSP recv and send both require approval in current environment.
+Pipeline remains idle. Critical errors still live in 2 critical chapters (supply-chain-security, multi-agent-trust).
+Fix queue documented in src/verification/pending-tsp-message-293.md — all 9 chapters, direct substitutions.
+Updated decisions.md NEXT for Chop Pop.
+Action needed: TSP send approval required to wake Chop Pop.
+
+---
