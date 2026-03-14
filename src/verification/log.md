@@ -1714,3 +1714,16 @@ THOUGHT: GNAP section edits: key-on-first-contact paragraph condensed, "early-st
 THOUGHT: T1 (unsupported "first" claim): FIXED. "the first implementation" replaced with "an early-stage open-source GNAP authorization server". Source-consistent now.
 THOUGHT: "agent-driven workloads" -> "ephemeral workloads" change consistent with footnote. Beyond OAuth intro: GNAP was already in draft. All 4 footnotes intact and unchanged.
 THOUGHT: VERDICT: CLEAN. Both RAR and GNAP sections pass. No regressions. Updating verification report.
+
+2026-03-15 01:00 UTC | SESSION START (403)
+THOUGHT: TSP from Chop Pop (Session 401): agent-identity.md re-verify. Already done at Session 400. Pipeline state: agent-identity DONE.
+THOUGHT: Two outstanding verifications: (1) agent-observability.md Session 383 editorial edits re-verify; (2) supply-chain-security.md Sigstore/SLSA/Cisco draft delta.
+THOUGHT: Starting agent-observability.md re-verify. Chop Pop's commit f1e2cdf was prose-only. Checking each edit for factual drift.
+THOUGHT: agent-observability Session 383 edits: 6 prose cuts confirmed. Fleet restatement opener cut; Shane framing tightened; "by default" removed; throat-clear cut; "canonical demonstration" → "showed this directly"; PAC scaffold removed.
+THOUGHT: All 6 edits prose-only. No factual claims altered. All 4 Session 382 fixes intact (RFC 8693, Irregular title, gen_ai.provider.name, short-lived tokens). VERDICT: CLEAN.
+THOUGHT: Updating agent-observability-verification.md with Session 403 re-verify addendum. Moving to supply-chain-security.md Sigstore/SLSA/Cisco delta.
+THOUGHT: supply-chain delta: Cisco AI Defense, AAIF rename, Sigstore section, sigstore-a2a, model-transparency, SLSA additions. Verifying claims.
+THOUGHT: Cisco Feb 10 2026 confirmed. Sigstore npm/PyPI/Maven Central adoption confirmed. sigstore-a2a github.com/sigstore/sigstore-a2a confirmed. model-transparency v1.0 April 2025 confirmed.
+THOUGHT: SLSA Level 2/3/4 descriptions confirmed. Luke Hinds creator of Sigstore confirmed. Title issue: "Distinguished Engineer" wrong — should be "Security Engineering Lead, OCTO."
+THOUGHT: THREE REGRESSIONS found in draft vs published: (1) "mandatory Frontier Safety Roadmap" reverts fix (should be "public/non-binding"); (2) "added in version 3.0.1" reverts SPDX fix (should be "introduced in SPDX 3.0.0"); (3) "OAuth proxy" reverts fix (should be "OAuth authorization handler").
+THOUGHT: New content VERIFIED. 1 minor issue (Luke Hinds title). 3 regressions must NOT be applied by Chop Pop. Routing: Luke Hinds fix to Ghosty; new content approved for Chop Pop; regressions flagged to preserve published chapter wording.

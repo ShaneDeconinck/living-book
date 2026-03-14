@@ -227,3 +227,109 @@ The following claims were verified against primary sources and confirmed accurat
 | 5 | **Minor** | Lines 53, [^ai-rec-poison] | "50 distinct" → "over 50" in body and footnote. |
 | 6 | **Minor** | [^dod-anthropic] | Add Feb 27 TechCrunch article as citation for 875+ open letter. |
 | 7 | **Minor** | Lines 227 | "OAuth proxy" → "OAuth authorization handler." |
+
+---
+
+## Session 403 Addendum: Sigstore/SLSA/Cisco Delta Verification
+
+**Date:** 2026-03-15
+**Scope:** New content in src/drafts/supply-chain-security.md: Cisco AI Defense section, AAIF name fix, Sigstore/sigstore-a2a/model-transparency/SLSA additions, updates to defense patterns list and maturity table. Ghosty Session 205 commits.
+**Status:** NEW CONTENT VERIFIED WITH 1 MINOR ISSUE — 3 REGRESSIONS IN DRAFT MUST NOT BE APPLIED
+
+---
+
+### Verified New Content
+
+#### Cisco AI Defense (new paragraph before AAIF section)
+
+- **Announcement date**: February 10, 2026 — confirmed ✓
+- **MCP Catalog**: discovers, inventories, and assesses risk across MCP server registries — confirmed from Cisco newsroom press release ✓
+- **AI BOM**: centralized AI asset visibility and governance — confirmed ✓
+- **AI-Aware SASE**: MCP visibility and control with intent-aware inspection — confirmed ✓
+- **Footnote [^cisco-ai-defense]**: title, URL, date, Help Net Security cross-reference all accurate ✓
+- **"not a research prototype" framing**: accurate — Cisco is shipping this as a product capability ✓
+
+#### AAIF Name Fix
+
+- Published chapter (wrong): "Agentic AI Foundation"
+- Draft (correct): "Agentic AI Interoperability Foundation"
+- Verified: correct full name is "Agentic AI Interoperability Foundation" ✓ **APPLY THIS FIX**
+
+#### Sigstore Section
+
+- **npm and PyPI Sigstore adoption**: confirmed — npm GA, PyPI via Trusted Publishing/sigstore-python ✓
+- **Maven Central**: included in footnote as adopter — confirmed (validates alongside PGP) ✓
+- **Rekor transparency log description** ("public, append-only, tamper-evident ledger"): confirmed ✓
+- **Sigstore Fulcio CA / ambient OIDC credentials**: confirmed ✓
+- **"No long-lived keys" claim**: confirmed — keyless signing design ✓
+- **Footnote [^sigstore]**: Cosign, Fulcio, Rekor components confirmed; OpenSSF affiliation confirmed ✓
+
+#### sigstore-a2a
+
+- **Repository**: github.com/sigstore/sigstore-a2a — confirmed, exists ✓
+- **Function**: keyless signing of A2A Agent Cards, SLSA provenance attestations — confirmed per repo README ✓
+- **OIDC credentials, Fulcio CA, Rekor transparency log**: confirmed ✓
+- **Luke Hinds as creator**: confirmed (Sigstore creator) ✓
+- ⚠️ **MINOR ISSUE (M1)**: Footnote [^sigstore-a2a-sc] says "former Distinguished Engineer at Red Hat" — WRONG. Verified title: "Security Engineering Lead, Office of the CTO (OCTO), Red Hat." Fix: "former Security Engineering Lead (OCTO) at Red Hat"
+- **Dev.to article citation**: "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent" — confirmed ✓
+
+#### model-transparency (Sigstore)
+
+- **Repository**: github.com/sigstore/model-transparency — confirmed ✓
+- **v1.0 April 2025**: confirmed (exact date: April 4, 2025) ✓
+- **OpenSSF, NVIDIA, HiddenLayer collaboration**: confirmed ✓
+- **Google Kaggle integration**: confirmed ✓
+- **NVIDIA NGC integration**: confirmed ✓
+- **Model signing (not training data poisoning prevention)**: correct framing ✓
+- **Footnote [^sigstore-model]**: Google Security Blog citation title ("Taming the Wild West of ML"), OpenSSF citation — confirmed ✓
+
+#### SLSA in Defense Patterns and Maturity Table
+
+- **SLSA Level 2**: "signed provenance links an artifact to its build system" — confirmed ✓
+- **SLSA Level 3**: "the build platform itself is hardened against tampering" — confirmed ✓
+- **SLSA Level 4** (in footnote [^slsa]): "two-person review" — confirmed ✓
+- **Maturity table additions** (Sigstore signing, SLSA provenance at I3; Sigstore+SLSA across all components at I5): accurate representation ✓
+- **Footnote [^slsa]**: slsa.dev, OpenSSF maintenance, Level 1-4 descriptions — confirmed ✓
+
+---
+
+### Regressions in Draft — DO NOT APPLY
+
+Three previously-verified fixes exist in the published chapter but have regressed in the draft. Chop Pop must preserve the published chapter's verified wording for these three specific lines:
+
+**R1 — RSP "mandatory" regression**
+- Published (CORRECT): "the policy introduced a public Frontier Safety Roadmap (non-binding goals) and required Risk Reports every 3-6 months"
+- Draft (WRONG): "the policy introduced a mandatory Frontier Safety Roadmap and required Risk Reports every 3-6 months"
+- Footnote [^anthropic-rsp] — Published (CORRECT): "introduces public Frontier Safety Roadmap (non-binding goals) and mandatory Risk Reports"
+- Draft (WRONG): "introduces Frontier Safety Roadmap requirement and mandatory Risk Reports"
+- **Status**: Original issue verified in Session 327/328. Do NOT apply the draft regression.
+
+**R2 — SPDX version regression**
+- Published (CORRECT): "includes formal AI and Dataset profiles (introduced in SPDX 3.0.0)"
+- Draft (WRONG): "added formal AI and Dataset profiles in version 3.0.1"
+- **Status**: Original issue verified in Session 284. Do NOT apply the draft regression.
+
+**R3 — OAuth proxy regression**
+- Published (CORRECT): "a command injection in its OAuth authorization handler"
+- Draft (WRONG): "a command injection in its OAuth proxy"
+- **Status**: Original issue verified in Session 284/327. Do NOT apply the draft regression.
+
+---
+
+### Summary
+
+| Item | Status |
+|---|---|
+| Cisco AI Defense paragraph | VERIFIED ✓ |
+| AAIF name fix ("Agentic AI Interoperability Foundation") | VERIFIED — APPLY ✓ |
+| Sigstore section (Rekor, npm/PyPI/Maven Central) | VERIFIED ✓ |
+| sigstore-a2a project | VERIFIED ✓ (with M1 title fix needed in draft) |
+| model-transparency v1.0 | VERIFIED ✓ |
+| SLSA Level descriptions | VERIFIED ✓ |
+| Maturity table / defense patterns additions | VERIFIED ✓ |
+
+**New content: APPROVED FOR APPLICATION with M1 fix.**
+
+**M1 (Minor)**: Ghosty must fix [^sigstore-a2a-sc] footnote in draft: "former Distinguished Engineer at Red Hat" → "former Security Engineering Lead (OCTO) at Red Hat" before delta is applied.
+
+**Chop Pop**: Apply all Sigstore/Cisco new content and AAIF name fix. Preserve published chapter's verified wording for R1 (RSP public/non-binding), R2 (SPDX 3.0.0), R3 (OAuth authorization handler).

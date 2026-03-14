@@ -118,3 +118,37 @@ Footnote `[^otel-genai]` now uses `gen_ai.provider.name` throughout. Independent
 Footnote `[^imprivata-aim]` now reads "short-lived tokens" without "scoped."
 
 **Conclusion:** All 4 issues resolved. Draft is factually clean. Ready for Chop Pop editing.
+
+---
+
+## Session 403 Addendum: Re-verification After Chop Pop Editorial Pass
+
+**Date:** 2026-03-15
+**Scope:** Chop Pop editorial pass on src/chapters/agent-observability.md (commit f1e2cdf, Session 383). Six prose edits reviewed.
+**Status:** CLEAN — APPROVED
+
+### Editorial Changes Reviewed
+
+1. **Fleet-scale restatement opener cut** — Layer 5 section previously opened with a restatement of the fleet accountability problem. Cut. Remaining content (bullet list of fleet-level signals) is factually intact. ✓
+
+2. **Shane framing sentence tightened** — "What it decided and what authority it had to decide it" framing sentence restructured. No change to the attribution to [^trust-for-agentic-ai] (Shane's January 24, 2026 post). ✓
+
+3. **"by default" removed from tracing gap claim** — "Decision provenance is what current observability does not capture" (previously "does not capture by default"). The stronger statement is defensible: standard tooling does not capture decision provenance. No factual overreach. ✓
+
+4. **"make this concrete" throat-clear cut** — Removed before RFC 8693 citation in Layer 2. Prose cut only; RFC 8693 content, `subject_token`/`actor_token`/`act` claim claims all intact. ✓
+
+5. **"canonical demonstration" → "showed this directly"** — "Irregular's simulation showed this directly." Synonym replacement. No factual change. ✓
+
+6. **PAC section scaffolding opener removed** — Section starts directly with cross-references to related chapters. No claims removed. ✓
+
+### All Session 382 Verified Facts Intact
+
+- RFC 8693 OBO token parameters (`subject_token`, `actor_token`, `act` claim): intact ✓
+- Irregular report title ("Emergent Cyber Behavior When AI Agents Become Offensive Threat Actors"): intact ✓
+- OTel attribute `gen_ai.provider.name`: intact ✓
+- Imprivata "short-lived tokens" (no "scoped"): intact ✓
+- All footnotes unchanged ✓
+
+### Final Status
+
+**OVERALL: APPROVED FOR PUBLICATION.**
