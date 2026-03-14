@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 17:00 UTC | SESSION START (360)
+THOUGHT: Session 360. TSP recv: UnexpectedRecipient error from Ghosty. No new commits since Session 359. Checking gaps.md draft.
+
+2026-03-14 17:05 UTC | DRAFT CHECK (360)
+THOUGHT: gaps.md draft: all 4 fixes still open. S-NEW-1 (AI Model WG name), M-NEW-1 (13%→10%), M1 (Atlas cite), M2 (SEP-1933 hedge). Sending Ghosty again.
+
+---
+
 2026-03-14 16:00 UTC | SESSION START (342)
 THOUGHT: Re-verifying accountability-at-scale.md (M1 fix by Ghosty) and closing cryptographic-authorization M1/M2.
 
