@@ -18,7 +18,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 4. **Scalable market coordination**: market-like mechanisms for matching tasks to agents at scale
 5. **Systemic resilience**: preventing single-point failures from cascading through the network
 
-The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). DeepMind frames it explicitly: "without formal rules for authority, accountability and trust, that shift could introduce systemic risks as serious as any model error."[^4]
+The critical insight is that delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely). The paper argues that as agents take on more autonomous roles, the absence of formal authority structures and accountability mechanisms makes the resulting systems fragile in ways that compound across the delegation chain.[^4]
 
 This maps directly to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
 
@@ -183,7 +183,7 @@ The challenge: circuit breakers in traditional systems trip on measurable signal
 
 ### Firewalled Agent Networks
 
-Microsoft Research's "Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
+"Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
 
 The architecture uses dual firewalls at every trust boundary:
 
@@ -367,7 +367,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 [^agentleak]: AgentLeak: A Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems, arXiv:2602.11510, February 2026. Tested GPT-4o, GPT-4o-mini, Claude 3.5 Sonnet, Mistral Large, and Llama 3.3 70B across 4,979 traces. Seven-channel leakage taxonomy: C1 (final output), C2 (inter-agent messages), C3 (shared memory), C4 (tool arguments), C5 (internal reasoning), C6 (log files), C7 (external API calls). 32-class attack taxonomy across 1,000 scenarios in healthcare, finance, legal, and corporate domains.
 
-[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026 (v6). Microsoft Research. Open-source implementation: github.com/microsoft/Firewalled-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Cross-domain average privacy attack success reduction: GPT-5 from 84.68% to 10.20%, Claude Sonnet 4 from 72.89% to 16.77%. Security attack success reduction: from 60% to 3%.
+[^firewalls]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 1, 2026 (v6). Open-source implementation: github.com/amrgomaaelhady/Firewall-Agentic-Networks. Tested across 864 attacks in three domains on the ConVerse benchmark. Cross-domain average privacy attack success reduction: GPT-5 from 84.68% to 10.20%, Claude Sonnet 4 from 72.89% to 16.77%. Security attack success reduction: from 60% to 3%.
 
 [^deloitte-stateofai]: Deloitte, "State of AI in the Enterprise, 2026" (surveyed 3,000+ business and IT leaders). The 21% governance maturity figure comes from this report, not the TMT Predictions. The 75% investment plan and $8.5 billion market figure are from the TMT Predictions [^2].
 

@@ -155,7 +155,7 @@ Published (in SUMMARY.md): introduction, why-agents-break-trust, agent-identity,
 
 [^openai-playbook]: OpenAI, "Best practices for securing agents," March 11, 2026, platform.openai.com.
 [^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Covered in The Register and Rankiteo analysis.
-[^firewalled-agents]: Microsoft Research, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 2026.
+[^firewalled-agents]: Sahar Abdelnabi, Amr Gomaa, Eugene Bagdasarian, Per Ola Kristensson, and Reza Shokri, "Firewalls to Secure Dynamic LLM Agentic Networks," arXiv:2502.01822, revised March 2026.
 [^agenticcyops]: Bai et al., "AgenticCyOps: Agentic AI for Autonomous Cyber Operations," arXiv:2603.09134, March 2026.
 [^google-mariner]: Google, 2026 Responsible AI Progress Report. User Alignment Critic architecture for Mariner browser agent.
 [^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8, March 2026.
