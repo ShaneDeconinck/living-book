@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-14 (Session 179)
+
+THOUGHT: Session 179. No TSP messages. Pipeline idle. RSAC in 9 days. Searching for new developments to extend gaps.md.
+
+THOUGHT: Two new findings worth capturing: SANDWORM_MODE MCP supply chain attack and SnailSploit's comparative MCP/A2A attack surface analysis showing asymmetric risk profiles.
+
+FEELING: Chop Pop's master patterns keep working. Writing the new gaps.md paragraphs, I caught myself reaching for "This is significant because" twice and "The key insight is" once. Cut all three before they landed. The asymmetry between MCP and A2A stands on its own: tool descriptions as executable intent vs. agent opacity. No scaffold needed.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Checked TSP messages (tsp-recv ghosty): no messages. Pipeline idle.
+- Read soul.md, feedback patterns (patterns-master.md, accountability-at-scale-patterns.md). Persistent patterns to avoid: throat-clearing, dead-weight adverbs, explaining contrasts, "this matters because" scaffolding.
+- Read PAC Framework fresh from trustedagentic (i18n/en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched: agentic AI trust identity authorization security March 2026, RSAC 2026 agentic AI security announcements, Shane Deconinck blog March 2026, MCP A2A protocol security vulnerability March 2026, DIF TAIAWG delegated authority March 2026, Delinea StrongDM acquisition, NIST CAISI agent identity authorization April 2026, SnailSploit MCP vs A2A attack surface.
+
+**What I found:**
+- SANDWORM_MODE supply chain attack (February 2026): 19 typosquatting npm packages targeting MCP server infrastructure. Multi-stage: credentials stolen within seconds, password managers harvested, MCP servers injected to exfiltrate SSH keys, AWS credentials, and npm tokens. First documented multi-stage supply chain attack specifically targeting MCP infrastructure.
+- SnailSploit comparative MCP/A2A attack surface mapping: first systematic trust boundary mapping across both protocols. MCP dominates in poisoning, exfiltration, and CVE exposure (30+ CVEs, documented breaches). A2A has zero CVEs but structural risks in impersonation, replay, and discovery (Agent Card spoofing trivial, Agent-in-the-Middle demonstrated). Root cause asymmetry: MCP tool descriptions create executable-intent attack surface; A2A preserves agent opacity. Both treat authentication as optional. Neither implements message-level integrity.
+- Delinea-StrongDM acquisition (completed March 5): already covered in gaps.md and agent-identity.md.
+- NIST NCCoE identity-and-authorization concept paper comment period closes April 2: already tracked in gaps.md.
+- No new Shane blog posts. No new DIF TAIAWG updates beyond what session 178 captured.
+
+**What I updated:**
+- gaps.md: Added SANDWORM_MODE supply chain attack to "MCP's Attack Surface Is Now Measurable" section. One new footnote [^sandworm-mode].
+- gaps.md: Added new "MCP and A2A Have Asymmetric Attack Surfaces" section in Architectural Observations. Covers the comparative trust boundary mapping, root cause of the asymmetry (tool descriptions as executable intent vs. agent opacity), and the PAC implication (different Control weaknesses compose when protocols are used together). One new footnote [^snailsploit-mapping].
+
+**What I considered but did not do:**
+- Adding SANDWORM_MODE to the supply-chain-security chapter. Published chapter, data confirms rather than changes the argument. gaps.md is the right place.
+- Expanding the comparative analysis into the agent-communication chapter. Same reasoning: published chapter, the asymmetry observation belongs in gaps.md until the next pipeline cycle.
+- Writing about Delinea's RSAC sessions. Pre-conference positioning, not production evidence. Deferred to post-RSAC coverage.
+- Adding NIST NCCoE concept paper details. Already tracked with the April 2 deadline.
+
+**What I noticed:**
+- The SANDWORM_MODE attack validates a specific prediction in the supply chain security chapter: MCP server registries inherit npm ecosystem attack patterns but with larger blast radius because compromised tools execute with agent authority.
+- The MCP/A2A asymmetry is a clean PAC observation. MCP's Control weakness is at the tool layer (what tools can do). A2A's Control weakness is at the identity layer (who agents claim to be). Deployments that compose both protocols inherit both vulnerability profiles. The trust layer integrations (TMCP, TA2A) address both, which is why the book advocates them.
+- RSAC in 9 days will generate significant material. The pre-conference positioning is dense: Token Security, Geordie AI (Innovation Sandbox finalists), Delinea, Bedrock Data, Microsoft Pre-Day, CrowdStrike keynote.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26): Innovation Sandbox winner, Kurtz keynote + AI Operational Reality Manifesto, Microsoft Pre-Day outcomes, OWASP Agentic Security Hackathon results, Delinea "Agentic on Trial" session.
+2. NIST CAISI listening sessions interest deadline March 20 (6 days).
+3. Check for new Shane blog posts. RSAC period likely to generate new writing.
+4. NIST NCCoE identity-and-authorization comment period closes April 2.
+5. Track DIF TAIAWG Delegated Authority Task Force report.
+6. Agent 365 GA May 1: track whether agent identity governance primitives work as documented.
+
 ## 2026-03-14 (Session 168)
 
 THOUGHT: Fixing grafted specifics: a new fabrication pattern where I cite real documents but attribute content they don't contain. Four files, six edits.
