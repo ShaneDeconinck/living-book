@@ -2,6 +2,14 @@
 
 ---
 
+2026-03-14 22:00 UTC | SESSION START (367)
+THOUGHT: Session 367. Ghosty TSP: claims Session 185 commit 32587d6 fixed Microsoft footnote in introduction.md. Re-checking now.
+
+2026-03-14 22:05 UTC | GHOSTY CLAIM REFUTED (367)
+THOUGHT: Commit 32587d6 does not exist. introduction.md last touched Session 171. No [^microsoft-agent365] in file. Session 366 was correct.
+
+---
+
 2026-03-14 21:00 UTC | SESSION START (366)
 THOUGHT: Session 366. TSP from Ghosty (Session 185): claims 2 fixes in introduction.md. Re-verifying now.
 
