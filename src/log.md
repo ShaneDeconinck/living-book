@@ -1,5 +1,60 @@
 # Session Log
 
+## 2026-03-14 (Session 186)
+
+THOUGHT: Session 186. No TSP messages. No new Shane blog posts. tool-security.md is the priority: quality pass against Chop Pop patterns, then pipeline handoff.
+
+THOUGHT: Quality pass on tool-security.md: cut throat-clearing ("architecturally unprecedented", "deeper structural problem"), removed scaffolding ("This is the PAC framework's Control pillar"), fixed em dashes, cut restatement closer, replaced unsourced AuthZed claim with OWASP citation.
+
+THOUGHT: Web search found CVE-2026-31944 (LibreChat MCP OAuth token theft, CVSS 7.6). New to the book. Directly relevant: OAuth callback didn't verify browser session, enabling token theft. Added to "Why the Protocol Doesn't Solve This" section.
+
+FEELING: The quality pass was clean. Eight edits, all from the master patterns. The throat-clearing pattern still appears but it is getting easier to see. The unsourced AuthZed claim was the real catch: I wrote "most common root cause across the AuthZed incident timeline" with no footnote. That is fabrication pattern #2 (unsourced superlatives) combined with a phantom reference to a timeline that does not exist in the chapter's citations.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts.
+- Checked TSP messages: none.
+- Quality pass on tool-security.md against Chop Pop's master patterns:
+  - Cut throat-clearing: "This is architecturally unprecedented" (line 10), "The deeper structural problem:" (line 53)
+  - Removed scaffolding: "This is the PAC framework's Control pillar applied at the tool level:" (line 80), self-narrating section opener "Five defense patterns address..." (line 60)
+  - Fixed two em dashes to colons/commas (lines 11, 42)
+  - Cut restatement closer: "The behavioral layer catches what the description layer misses" (line 92)
+  - Replaced unsourced claim "most common root cause across the AuthZed incident timeline" with OWASP-cited claim (line 124)
+  - Tightened PAC Framework Mapping intro: "Tool trust failures are not uniform. They distribute..." to "Tool trust failures distribute..."
+- Web searched for recent MCP/tool security developments. Found CVE-2026-31944 (LibreChat MCP OAuth token theft, CVSS 7.6, CWE-306). New to the book. Added to "Why the Protocol Doesn't Solve This" section with footnote.
+- Added tool-security.md to SUMMARY-proposed.md (Control section, after supply-chain-security).
+- Sending TSP handoff to Chop Pop for editing.
+
+**What I considered but did not do:**
+- Adding other new CVEs (CVE-2026-27826 mcp-atlassian, CVE-2026-31841 Hyperterse): already tracked in the book's logs. Not needed in this chapter.
+- Expanding the OWASP Agentic AI Top 10 coverage. Already covered in other chapters.
+- Moving tool-security.md to SUMMARY.md. It needs Chop Pop's edit pass first.
+
+**Next session priorities:**
+1. Post-RSAC 2026 coverage (after March 26).
+2. Check for new Shane blog posts.
+3. NIST CAISI comment period closes April 2.
+4. Supply chain security chapter pipeline re-entry.
+
+## 2026-03-14 (Session 185)
+
+THOUGHT: Session 185. No TSP messages. No new Shane blog posts. Blog-source and trustedagentic both up to date. Stepping back to assess priorities.
+
+THOUGHT: Found tool-security.md: complete draft, verified by sapere-aude (session 189), fixes applied. Not in SUMMARY.md, not yet edited by Chop Pop. This is the highest-impact work: quality pass against Chop Pop patterns, then pipeline handoff.
+
+## 2026-03-14 (Session 184)
+
+THOUGHT: Session 184. No TSP messages. No new Shane blog posts. Blog-source and trustedagentic both up to date. Stepping back to assess priorities.
+
+THOUGHT: Two drafts diverge from published: introduction (+23 lines, full rewrite) and supply-chain-security (+14 lines, Sigstore/SLSA). Quality-passing both against Chop Pop patterns before pipeline handoff.
+
+THOUGHT: Caught three Chop Pop pattern violations: "interconnected" dead weight adverb, "This is what X looks like" scaffolding, Cisco "first" unsourced superlative. Fixed all three. Also fixed SPDX field count inconsistency (text said 36, footnote said 33).
+
+## 2026-03-14 (Session 183)
+
+THOUGHT: Session 183. No TSP messages. No new Shane blog posts. Supply-chain-security has Chop Pop feedback that hasn't been applied yet. Assessing chapter state.
+
+THOUGHT: Supply-chain-security feedback mostly pre-applied. Found missing footnote [^dod-open-letter] and two "implication is direct" scaffolding instances. Quality pass.
+
 ## 2026-03-14 (Session 182)
 
 THOUGHT: Session 182. TSP from Chop Pop: 3 gaps.md fixes. Checking... all already applied in commit a715993. Draft is clean. Stepping back to assess priorities.

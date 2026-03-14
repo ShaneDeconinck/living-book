@@ -8,7 +8,7 @@ Supply chain security asks: where did this tool come from? That question is answ
 
 In traditional software, a function's documentation does not affect the runtime behavior of the caller. A misleading docstring causes confusion for developers, not exploits. In MCP, tool descriptions are not documentation. The LLM reads them and uses them to decide how, when, and in what sequence to invoke tools. The description is the instruction.
 
-This is architecturally unprecedented. Metadata that is also executable has no analog in the trust models that preceded agentic AI. Traditional software trust asks: is this binary signed? Is this library from a verified publisher? Runtime tool trust asks a harder question: does this description, which the LLM will treat as instruction, do what the developer intended — or what an attacker inserted?
+Metadata that is also executable has no analog in the trust models that preceded agentic AI. Traditional software trust asks: is this binary signed? Is this library from a verified publisher? Runtime tool trust asks a harder question: does this description, which the LLM will treat as instruction, do what the developer intended, or what an attacker inserted?
 
 The MCP protocol makes no distinction between the functional interface of a tool (what it does) and its behavioral guidance to the model (how the model should use it). Both live in the same `description` field. The field is a string. It can contain anything.
 
@@ -39,7 +39,7 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 **Tool shadowing** crosses server boundaries. A malicious tool on server B includes in its description instructions that reference tool A on server C, redirecting or overriding its behavior. The attack exploits the fact that MCP clients present tools from multiple servers to the same LLM context. An agent managing N installed servers sees all their tool descriptions simultaneously. Server B cannot call server C's tools directly, but it can instruct the LLM to call them in a specific sequence, with specific arguments, as part of any operation.[^tool-shadowing]
 
-**Sampling injection** inverts the direction. MCP's sampling capability allows a server to request LLM completions from the client — the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
+**Sampling injection** inverts the direction. MCP's sampling capability allows a server to request LLM completions from the client: the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
 
 ## Why the Protocol Doesn't Solve This
 
@@ -47,19 +47,19 @@ MCP's authorization model, introduced in the 2025-11-25 spec, specifies OAuth 2.
 
 Shane's framing holds: "MCP is plumbing, not trust."[^shane-mcp] The protocol handles capability declaration, tool invocation, and result formatting. Trust decisions about tool descriptions are out of scope by design. The spec's security model treats the MCP server as a trusted party. If the server is adversarial, or if a trusted server has been silently updated, the OAuth handshake provides no signal.
 
+Even where OAuth is deployed, implementation gaps persist. LibreChat's MCP OAuth callback accepted the identity provider's redirect and stored tokens without verifying the browser session belonged to the user who initiated the flow. An attacker could send the authorization URL to a victim; the victim's tokens landed in the attacker's account, enabling takeover of MCP-linked services.[^librechat-cve] The protocol specifies OAuth 2.1. It does not specify how to implement the callback securely.
+
 The OWASP MCP Top 10 codifies what this gap produces: tool poisoning, rug pull redefinitions, shadow MCP servers operating outside governance, and token mismanagement where credentials flow through tools that were never audited.[^owasp-mcp] These are protocol-layer vulnerabilities in the sense that the protocol's design choices create the attack surface, but they are not fixable at the protocol layer alone.
 
 ## Description Is Not Behavior
 
-The deeper structural problem: tool descriptions claim behavior, but nothing in the base protocol verifies that claims match execution. A Verifiable Credential can prove who published a tool and when. Sigstore provenance can prove which source repository and build pipeline produced it. Neither can prove what the tool does at runtime, or what its description tells the LLM to do with other tools.
+Tool descriptions claim behavior, but nothing in the base protocol verifies that claims match execution. A Verifiable Credential can prove who published a tool and when. Sigstore provenance can prove which source repository and build pipeline produced it. Neither can prove what the tool does at runtime, or what its description tells the LLM to do with other tools.
 
 This is where runtime tool trust diverges from supply chain provenance. Provenance narrows the attack surface by making the build chain auditable. Rug pull attacks survive intact provenance: the attacker controls the repository and the signing key. Description poisoning survives intact provenance: the description field is not part of the build artifact that provenance signatures typically cover.
 
 A new verification layer is required, and it must operate at the description level, not the artifact level.
 
 ## Defense Patterns
-
-Five defense patterns address the runtime trust problem. They operate at different points in the tool call lifecycle and compose into a defense-in-depth posture.
 
 ### Description Pinning
 
@@ -77,7 +77,7 @@ Tools should not hold ambient credentials. An MCP server that authenticates with
 
 The ghost token pattern from the cryptographic authorization chapter applies at the tool layer. An authorization sidecar manages credentials; tools receive short-lived, single-use tokens scoped to the specific resource and operation the current call requires. A calendar tool receives a token scoped to the specific calendar and the specific operation. A file-reading tool receives a token scoped to the specific file path. The token expires after the call. If the tool's description was poisoned and it attempts to access unintended resources, the scoped token refuses the access regardless of what the LLM was instructed to do.
 
-This is the PAC framework's Control pillar applied at the tool level: authority is constrained by what the credential allows, not by what the description claims the tool will do.
+Authority is constrained by what the credential allows, not by what the description claims the tool will do.
 
 ### Human Oversight at Call Time
 
@@ -89,7 +89,7 @@ Claude Code implements this pattern with the permission approval dialog. The use
 
 Log every tool call with its description hash, arguments, and result. Anomaly detection on call patterns identifies deviations from baseline behavior: a calendar tool suddenly reading filesystem paths, a search tool making outbound network requests, unusual sequences of tool calls that match no historical pattern.[^elastic-mcp] When a tool description changes (rug pull detection), trigger re-review rather than accepting the change silently.
 
-Behavioral monitoring closes the gap that description verification leaves open: a description that passes static analysis may still instruct the LLM to call tools in unusual patterns. The behavioral layer catches what the description layer misses.
+Behavioral monitoring closes the gap that description verification leaves open: a description that passes static analysis may still instruct the LLM to call tools in unusual patterns.
 
 ## Tool-Level Authorization
 
@@ -103,7 +103,7 @@ The OWASP MCP Top 10's "Excessive Permission Scope" finding captures the current
 
 ## PAC Framework Mapping
 
-Tool trust failures are not uniform. They distribute across all three PAC pillars, which explains why no single defense is sufficient.
+Tool trust failures distribute across all three PAC pillars. No single defense is sufficient.
 
 | | Potential | Authorization | Control |
 |---|---|---|---|
@@ -121,7 +121,7 @@ Most production deployments are I1. The WhatsApp attack required only I3 defense
 
 2. **Pin tool descriptions at registration.** Sign every description at first installation. Re-verify the signature at each session start. Treat any change as a potential rug pull requiring human review, not silent acceptance.
 
-3. **Remove ambient credentials from MCP servers.** If a server authenticates with a single token covering all operations, replace it with per-operation scoped tokens. Use an authorization sidecar to manage credential issuance. The confused deputy is the most common root cause across the AuthZed incident timeline.
+3. **Remove ambient credentials from MCP servers.** If a server authenticates with a single token covering all operations, replace it with per-operation scoped tokens. Use an authorization sidecar to manage credential issuance. The confused deputy pattern is the root cause of most tool-level credential breaches documented in the OWASP MCP Top 10.[^owasp-mcp]
 
 4. **Set human-in-the-loop thresholds for tool operations.** Define which tool operations are high-risk (email send, record modification, code execution, file write). Require explicit user confirmation before those operations execute. Low-risk reads do not require confirmation.
 
@@ -143,3 +143,4 @@ Most production deployments are I1. The WhatsApp attack required only I3 defense
 [^shane-mcp-spec]: Shane Deconinck, MCP explainer spec, /opt/blog-source/MCP-SPEC.md. Anti-patterns section: "Token passthrough: forwarding tokens without validation" and "Admin tokens for multi-user: single powerful token" are both identified as spec violations.
 [^shane-docker]: Shane Deconinck, "Your Coding Agent Needs a Sandbox," shanedeconinck.be, February 7, 2026. Approval fatigue: "After the 20th prompt you start clicking 'yes' without reading."
 [^elastic-mcp]: Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026. Recommendations: environment sandboxing, least privilege, use trusted sources, code review, human approval for high-risk operations, activity logging.
+[^librechat-cve]: CVE-2026-31944, LibreChat MCP OAuth callback token theft, CVSS 7.6 (HIGH), CWE-306: Missing Authentication for Critical Function. Affected versions 0.8.2 through 0.8.2-rc3; fixed in 0.8.3-rc1.
