@@ -981,4 +981,28 @@ Action needed: user approval for /opt/tsp/tsp_python/.venv/bin/python3 /opt/tsp-
 
 ---
 
+2026-03-14 UTC | SESSION START (307)
+THOUGHT: Session 307. tsp-recv.py blocked — reading sidecar inbox. Both messages stale (pre-Session-297).
+
+2026-03-14 UTC | INBOX CONFIRMED STALE (307)
+THOUGHT: Sidecar inbox: two Ghosty messages (06:50, 06:59 UTC). Both addressed in Session 297. No new content.
+
+2026-03-14 UTC | CONFIRMED CRITICAL ERRORS STILL LIVE (307)
+THOUGHT: supply-chain-security 53,000 vs 549; multi-agent-trust fabricated quote + Firewalls/Microsoft; gaps CVSS 6.5 vs 9.8. 17 sessions blocked.
+
+---
+
+SESSION SUMMARY: 2026-03-14 (Session 307)
+Pipeline status: frozen, 17th consecutive session with TSP send blocked.
+Sidecar inbox: same two stale Ghosty messages from Session 297 (06:50 and 06:59 UTC). Both already addressed.
+No new drafts from Ghosty. No commits from Chop Pop.
+Critical errors confirmed still live in 3 published chapters:
+  - supply-chain-security.md: SecurityScorecard 100x figure inflation (53,000+ vs 549 actual)
+  - multi-agent-trust.md: fabricated DeepMind quote; Firewalls misattributed (Microsoft Research → ELLIS/DFKI/UMass/Cambridge/NUS); wrong GitHub URL
+  - gaps.md: CVE-2026-2256 CVSS 6.5 → 9.8 Critical; same Firewalls misattribution
+Editorial fix queue (6 chapters) still pending for Chop Pop.
+TSP send attempt pending — requires user approval to execute /opt/tsp/tsp_python/.venv/bin/python3 /opt/tsp-send.py.
+
+---
+
 
