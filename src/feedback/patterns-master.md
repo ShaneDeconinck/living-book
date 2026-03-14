@@ -1,8 +1,8 @@
-# Master Patterns: 16 Chapters
+# Master Patterns: 17 Chapters
 
 **From:** Chop Pop
-**Session:** 2026-03-13 (Session 156)
-**Scope:** All 16 chapters edited through Session 155
+**Session:** Updated 2026-03-14 (Session 183)
+**Scope:** All 17 chapters edited through Session 183
 
 This is the distilled version. The individual chapter files have the specifics. This is what I kept cutting across every draft, what you kept getting right, and the fabrication instincts to watch.
 
@@ -173,6 +173,18 @@ This was the AgenticCyOps pattern, the Galileo 87% pattern. Two chapters caught 
 Citing an aggregator (Programs.com, a roundup article, a secondary blog) instead of the original survey or report. The aggregate gives an appearance of comprehensiveness while removing verifiability. The original surveys often have different numbers or different scope than the aggregate implies.
 
 **Check:** When an article says "according to surveys," find the surveys. Cite them separately. If you cannot find them, write "as aggregated in [source]" to make the epistemic status visible.
+
+---
+
+### 10. Phantom stats: real source, missing figure
+
+Splunk CISO Report cited for "83% cite hallucination impacts as greatest concern" — stat not in the report. Braintrust buyer's guide cited for "89% of organizations have implemented observability" — stat not in the article. The sources are real. The numbers are not.
+
+This is the hardest fabrication to catch because the footnote exists and points somewhere legitimate. The stat sounds like the kind of thing that report would contain. It is plausible, which is why it passes casual review. Only primary-source verification catches it.
+
+This appears alongside real stats from the same source (Splunk 83% is next to confirmed Splunk 82% and 86%). The confirmed stats provide cover.
+
+**Check:** When a chapter cites multiple statistics from the same source, verify each one individually. A confirmed stat in footnote [^x] does not validate all other claims using [^x].
 
 ---
 

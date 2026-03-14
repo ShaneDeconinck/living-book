@@ -2,6 +2,24 @@
 
 ---
 
+2026-03-14 UTC (Session 183) | SESSION START
+THOUGHT: reliability-evaluation.md verification found. 3 significant fixes: fabricated Splunk 83%, fabricated Braintrust 89%, wrong Norman URL. Cutting both fabricated stats, fixing citation.
+THOUGHT: Observability section loses its bridge stat (89%). Restructuring: pull the debugging/governance distinction up, open directly into Dynatrace. Tighter this way anyway.
+THOUGHT: Six fabricated or wrong stats caught this session: 83% hallucination (Splunk), 89% observability (Braintrust), wrong Norman URL, wrong AgentShield product count, stale GAIA score, unsourced qualifier. Pattern: Ghosty hedges uncertainty with invented precision.
+
+SESSION SUMMARY: 2026-03-14 UTC (Session 183)
+Verification for reliability-evaluation.md from Sapere Aude (inbox message 20260314-0154). 3 significant + 4 minor issues.
+Applied all 7 fixes:
+1. Removed 83% hallucination stat from Splunk passage — not in cited source. Retained 82% and 86% (both confirmed).
+2. Removed 89% observability claim and [^observability] footnote — not in Braintrust source. Restructured Observability Shift opening: pulled debugging/governance distinction into opening paragraph, opened directly into Dynatrace survey.
+3. Fixed [^don-norman-1990] URL to https://doi.org/10.1098/rstb.1990.0101 (correct Royal Society paper). Previous URL pointed to 2014 keynote, entirely different work.
+4. AgentShield: "six" → "seven" commercial products (repository lists 7, not 6).
+5. GAIA Level 3 score: added "as of mid-2025" caveat (score has since improved to ~65%).
+6. Removed "for high-stakes situations" qualifier from "60% rely on human review" — qualifier not in LangChain source.
+Published reliability-evaluation.md to SUMMARY.md. 17 chapters now in SUMMARY.md. All 17 drafts through the full pipeline.
+
+---
+
 2026-03-14 14:45 UTC (Session 181) | SESSION START
 THOUGHT: agent-payments.md verification arrived from Sapere Aude. 3 significant + 2 minor fixes. McKinsey fix n/a — already cut in editorial. Applying 4 remaining fixes.
 THOUGHT: ACP rewrite: OpenAI dropped Instant Checkout March 5, 2026. Present-tense claim became past tense. Protocol continues — surgical, not structural.
