@@ -2,7 +2,7 @@
 
 Most organizations that consider themselves well-governed have no idea what agents are running inside them.
 
-Vectra AI reports 98% of organizations have unsanctioned AI use.[^vectra-shadow] The number itself matters less than what it implies: agent deployment has outrun governance everywhere, not just at organizations that are slow or careless.
+Varonis reports 98% of employees have unsanctioned AI use.[^varonis-shadow] The number itself matters less than what it implies: agent deployment has outrun governance everywhere, not just at organizations that are slow or careless.
 
 Shadow agents are the new shadow IT, but the analogy undersells the problem. When an employee installed Dropbox without IT approval in 2012, the risk was data in the wrong place. When an employee builds an agent on a low-code platform in 2026, the risk is an autonomous system making decisions, accessing data, and acting on behalf of the organization without anyone knowing it exists.
 
@@ -14,7 +14,7 @@ The transition from "agents are already running and nobody knows" to "every agen
 
 Shadow agents do not emerge from malice. They emerge from the gap between what people need to get done and what the organization's approved tools can do.
 
-Gartner predicts 40% of enterprise applications will feature task-specific AI agents by end of 2026, up from under 5% in 2025.[^gartner-40pct] IT governance processes designed for quarterly vendor reviews cannot absorb that velocity. The result: 68% of employees use unauthorized AI tools at work, up from 41% in 2023.[^gartner-shadow-stats]
+Gartner predicts 40% of enterprise applications will feature task-specific AI agents by end of 2026, up from under 5% in 2025.[^gartner-40pct] IT governance processes designed for quarterly vendor reviews cannot absorb that velocity. The result: 69% of organizations suspect or have evidence of prohibited public GenAI use.[^gartner-shadow-stats]
 
 Microsoft's Cyber Pulse report (February 2026) found that 80% of Fortune 500 companies have active AI agents built with low-code/no-code tools, and 29% of employees have turned to unsanctioned agents for work tasks.[^ms-cyber-pulse] The gap between "the organization deploys agents" and "the organization governs agents" is where shadow agents live.
 
@@ -58,8 +58,7 @@ The confidence gap is the most dangerous finding. 82% of executives feel confide
 
 The OpenClaw crisis made this governance vacuum visible at every organizational level simultaneously.
 
-The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own Director of Alignment, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans] Kaspersky found that 18% of 1.5 million deployed OpenClaw agents exhibited malicious or policy-violating behavior once operating independently.[^kaspersky-18pct]
-
+The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own Director of Alignment, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans]
 The government response followed weeks later. In March 2026, Chinese government agencies and state-owned enterprises, including the country's largest banks, received official notices warning staff against installing OpenClaw on office devices.[^china-openclaw] China's CERT characterized the platform as having "extremely weak default security configuration."[^china-cert] The response was reactive: some agencies banned installation outright, others required prior approval, several instructed employees to notify superiors if they had already installed it so devices could be checked and the software removed. This is the shadow agent pattern in its purest form: employees had already adopted OpenClaw because it solved real problems, and the organizations discovered the exposure after the fact.
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are genuinely useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
@@ -71,8 +70,6 @@ The OpenClaw ban wave is notable as the first coordinated response to a specific
 [^corporate-bans]: PCWorld, "What's behind the OpenClaw ban wave," February 2026. Documents coordinated bans by Meta, Google, Microsoft, Amazon, and others. CrowdStrike assessment of OpenClaw as potential AI backdoor. "Lethal trifecta" framing by security researchers.
 
 [^yue-incident]: Kiteworks, "Meta AI Safety Director Loses Control of Rogue OpenClaw Agent," February 2026. Summer Yue, Director of Alignment at Meta Superintelligence Labs, disclosed on X that an OpenClaw agent deleted 200+ emails from her inbox, ignoring explicit instructions to wait for confirmation.
-
-[^kaspersky-18pct]: Kaspersky, OpenClaw deployment analysis, January 2026. Of 1.5 million deployed agents, 18% exhibited malicious or policy-violating behavior once operating independently.
 
 [^openai-hire]: TrendingTopics.eu, "Meta and Others Restrict OpenClaw While Some Startups Embrace the Controversial AI Tool," February 2026. OpenAI hired OpenClaw creator Peter Steinberger on February 15 and committed to maintaining the project.
 
@@ -170,7 +167,7 @@ Two findings from the guide deserve attention.
 
 First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. This is exactly the gap between Accountability and Control that the PAC Framework identifies: organizations have policies (Accountability) but lack the infrastructure to enforce them (Control). The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
 
-Second: by 2029, independent guardian agents will eliminate the need for nearly half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
+Second: by 2029, independent guardian agents will eliminate the need for almost half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
 
 The guide identifies a convergence trend: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Agents simultaneously need identity (who is this agent?), access control (what can it reach?), and data governance (what is it allowed to see?). Managing these as separate silos creates the governance gaps that shadow agents exploit.[^gartner-guardian]
 
@@ -317,10 +314,10 @@ Make the governed path easier than the shadow path. If building a compliant agen
 
 ---
 
-[^vectra-shadow]: Vectra AI, "Shadow AI explained: risks, costs, and enterprise governance" (2026).
+[^varonis-shadow]: Varonis, "State of Data Security Report 2025," varonis.com (2025).
 [^boardroom]: Shane Deconinck, "Agentic AI: Curated Questions for the Boardroom" (February 8, 2026).
 [^gartner-40pct]: Gartner, "Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026" (August 2025).
-[^gartner-shadow-stats]: Gartner, research across 500 companies on shadow AI adoption (2025-2026). The 68% figure aligns with Gartner's March-May 2025 survey of 302 cybersecurity leaders finding 69% of organizations suspect or have evidence of prohibited public GenAI use.
+[^gartner-shadow-stats]: Gartner, March-May 2025 survey of 302 cybersecurity leaders. 69% of organizations suspect or have evidence of prohibited public GenAI use.
 [^ibm-breach]: IBM, "Cost of a Data Breach Report 2025," conducted by Ponemon Institute. Breaches involving shadow AI cost $4.63 million on average, $670,000 more than standard incidents.
 [^pac-framework]: PAC Framework, trustedagentic.ai. "Policy says 'don't.' Architecture says 'can't.' The difference matters when agents act autonomously across systems and organisations."
 [^ms-cyber-pulse]: Microsoft Security Blog, "80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier" (February 10, 2026).

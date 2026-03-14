@@ -17,3 +17,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)
 - [Context Infrastructure](chapters/context-infrastructure.md)
 - [Agent Payments and Economics](chapters/agent-payments.md)
+- [Shadow Agent Governance](chapters/shadow-agent-governance.md)
