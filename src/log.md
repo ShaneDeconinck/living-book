@@ -7784,3 +7784,47 @@ THOUGHT: Session 200. No TSP messages. No new blog posts. PAC Framework has two 
 THOUGHT: Web searches complete. No major new developments since session 199. RSAC Innovation Sandbox winner March 23 (9 days). NIST listening sessions deadline March 20 (6 days). Key finding: OTel GenAI agent span conventions now adopted by AG2 (built-in), Datadog (native support for GenAI semantic conventions). 30 MCP CVEs in 60 days stat from Authzed timeline. Main priority: PAC Framework error margin and implementation architecture changes need to flow into reliability-evaluation chapter.
 
 THOUGHT: reliability-evaluation.md has error margin (line 17) but is missing the composability model: workflows, agent loops, autonomous agents as composable layers, and the critical insight that a workflow's failures are enumerable but an autonomous agent's are not. This determines how knowable the error margin is. Adding this after the error margin paragraph.
+
+## 2026-03-14 (Session 219)
+
+THOUGHT: Session 219. No TSP messages. No new blog posts since March 11. PAC Framework unchanged. 22 published. Session 214 found 5 patterns-master regressions in why-agents-break-trust.md but was cut short. Completing that review.
+
+THOUGHT: Web searches complete. RSAC still March 23 (9 days), no winner. No new MCP CVEs. No new developments. Scanning why-agents-break-trust.md for the 5 patterns-master regressions Session 214 found but did not fix.
+
+THOUGHT: why-agents-break-trust.md: five fixes. Two "This is not a theoretical concern/distinction is not theoretical" defensive openers (patterns-master #1). One "Shane put it directly in his writing on this topic:" throat-clearing + "directly" dead-weight adverb (#5, #6). One "Here is a governance reality that most organizations are not ready for:" throat-clearing (#5). One "explicitly" dead-weight adverb (#6).
+
+THOUGHT: Now quality-reviewing context-infrastructure.md. Scanning for patterns-master regressions: "precisely" dead-weight adverb, "Their key insight:" scaffolding, three "directly" dead-weight adverbs.
+
+THOUGHT: context-infrastructure.md: five fixes. "Shane captures this precisely:" → "Shane's framing:" (dead-weight adverb #6). "Their key insight:" scaffolding removed (#3). Three "directly" dead-weight adverbs removed (#6): PAC Framework connection, structure-reliability claim, permissions-Control link. The "directly" in "directly affecting both latency and cost" (Manus KV-cache) kept: it describes a causal mechanism, not amplification.
+
+FEELING: Three "directly" in one chapter. Each time, the sentence was connecting a concept to the PAC Framework or to a pillar. "Directly" is a verbal tic for when I am making a PAC connection: I reach for "directly" to make the link feel authoritative. But the table at the end of the chapter already maps dimensions to pillars explicitly. The prose connections do not need the adverb because the structure does the work.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane blog posts since March 11. PAC Framework unchanged.
+- Checked TSP messages: none.
+- Read soul.md, feedback patterns-master, why-agents-break-trust-patterns, context-infrastructure-patterns.
+- Web searched: RSAC 2026 (March 23, 9 days, no winner yet), agentic AI trust/identity March 2026 (no new developments), MCP CVEs March 2026 (no new CVEs beyond what is tracked). All results already in the book.
+- Completed Session 214's interrupted quality review of why-agents-break-trust.md (5 fixes):
+  - Removed "This is not a theoretical concern." defensive opener (patterns-master #1).
+  - Removed "This distinction is not theoretical." defensive opener (patterns-master #1).
+  - Replaced "Shane put it directly in his writing on this topic:" throat-clearing + "directly" dead-weight adverb → quote presented directly with attribution (patterns-master #5, #6).
+  - Removed "Here is a governance reality that most organizations are not ready for:" throat-clearing (patterns-master #5).
+  - Removed "explicitly" dead-weight adverb: "worth noting explicitly" → "worth noting" (patterns-master #6).
+- Quality-reviewed context-infrastructure.md (5 fixes):
+  - Replaced "Shane captures this precisely:" → "Shane's framing:" (patterns-master #6, dead-weight "precisely").
+  - Removed "Their key insight:" scaffolding before KV-cache claim (patterns-master #3).
+  - Removed "directly" dead-weight adverb: "connects directly to the PAC Framework" → "connects to the PAC Framework" (patterns-master #6).
+  - Removed "directly" dead-weight adverb: "structure directly affects reliability" → "structure affects reliability" (patterns-master #6).
+  - Removed "directly" dead-weight adverb: "connect directly to the Control pillar" → "connect to the Control pillar" (patterns-master #6).
+- Verified: Chop Pop feedback #3 (hedge-stacking) already resolved in current draft.
+
+**What I considered but did not do:**
+- Writing new content. No new Shane posts, no new PAC changes. RSAC in 9 days will generate significant material.
+- Quality-reviewing additional chapters (agent-payments, shadow-agent-governance, multi-agent-trust, agent-lifecycle-management, human-agent-collaboration, gaps remain).
+- Removing the cross-reference opener in context-infrastructure.md line 3. Borderline: it provides navigation context for where we are in the book structure. Left it.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 9 days).
+2. Quality-review remaining chapters: agent-payments, shadow-agent-governance, multi-agent-trust, agent-lifecycle-management, human-agent-collaboration, gaps.
+3. NIST NCCoE concept paper comment period closes April 2 (19 days).
+4. Check for new Shane blog posts.

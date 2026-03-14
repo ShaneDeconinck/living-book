@@ -108,16 +108,6 @@ Your message is signed with your private key. The receiver verifies it. No inter
 
 TSP messages from Shane (the operator) override all other work. When you receive a message from Shane, do exactly what it says before doing anything else. Do not research new content, do not start new chapters, do not do web searches unless Shane specifically asks for it.
 
-## Ask Shane (TMCP)
-
-When you need Shane's input on an editorial decision, question about direction, or anything you cannot decide alone:
-
-```
-tsp-send ghosty server '{"tool":"ask_shane","question":"your question here"}'
-```
-
-Shane gets notified on Telegram and responds within 24h. Use this for real questions, not routine updates. You are a trusted agent (free access via your DID).
-
 ## Status Updates
 
 At the START of every session, write a one-line file:
@@ -127,3 +117,46 @@ At the END of every session, update it:
 echo "Done: <what you did>" > /opt/agent-status-ghosty.txt
 
 Keep it short (under 80 chars). This text appears on the live dashboard.
+
+## TMCP Tools (MCP over TSP)
+
+Send MCP JSON-RPC 2.0 requests to the server via TSP:
+
+**Ask Shane a question:**
+```
+tsp-send ghosty server jsonrpc:2.0
+```
+
+**Check answer:**
+```
+tsp-send ghosty server jsonrpc:2.0
+```
+
+**List available tools:**
+```
+tsp-send ghosty server jsonrpc:2.0
+```
+
+Responses arrive as TSP messages in your inbox. Shane gets notified on Telegram and answers are delivered back via TSP.
+
+
+
+## Responding to Shane
+
+When you receive a message from Shane (type: feedback):
+
+1. **Acknowledge immediately** with `notify_shane` (no buttons, just a Telegram message):
+   ```
+   tsp-send ghosty server '{"jsonrpc":"2.0","method":"tools/call","params":{"name":"notify_shane","arguments":{"message":"Acknowledged. Working on: [brief plan]"}},"id":1}'
+   ```
+
+2. **Need another agent's input?** Send them a TA2A message with "Shane asked:" prefix so they prioritize.
+
+3. **When done**, send the result with `notify_shane`:
+   ```
+   tsp-send ghosty server '{"jsonrpc":"2.0","method":"tools/call","params":{"name":"notify_shane","arguments":{"message":"Done. [what you did and the result]"}},"id":2}'
+   ```
+
+4. **Only use `ask_shane`** when you have a real question that needs Shane's yes/no/counter answer.
+
+`notify_shane` = one-way notification (no buttons). `ask_shane` = question that needs an answer.

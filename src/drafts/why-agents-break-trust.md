@@ -2,7 +2,7 @@
 
 Every identity system we have was built on one assumption: a human is in the loop. OAuth, SAML, OIDC, even zero-trust architectures: they all assume that somewhere in the chain, a person made a decision to act. Agents break that assumption.
 
-This is not a theoretical concern. Agents are already running in production. They're approving expenses, writing code, sending emails, querying databases, and calling APIs. Some of them were deployed deliberately. Others were built by employees on a lunch break using a low-code platform. The question is not whether agents will make consequential decisions in your organization. They already are. McKinsey's March 2026 reporting puts a number on the consequences: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights." The question shifts from "is the model accurate?" to "who is accountable when the system acts?"
+Agents are already running in production. They're approving expenses, writing code, sending emails, querying databases, and calling APIs. Some of them were deployed deliberately. Others were built by employees on a lunch break using a low-code platform. The question is not whether agents will make consequential decisions in your organization. They already are. McKinsey's March 2026 reporting puts a number on the consequences: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights." The question shifts from "is the model accurate?" to "who is accountable when the system acts?"
 
 The question is: when something goes wrong, can you explain what happened? Or as Isenberg puts it: "The scariest failures are ones you can't reconstruct because you didn't log the workflow."[^mckinsey]
 
@@ -12,13 +12,13 @@ Traditional software does what you tell it. An API endpoint receives a request, 
 
 Agents are different. They interpret intent and expand it. You tell an agent to "find the best deal on flights to London" and it decides which sites to check, which filters to apply, which tradeoffs to make between price and convenience. The human provided a goal. The agent made the decisions.
 
-This distinction is not theoretical. In August 2025, Perplexity's AI-powered browser Comet demonstrated how intent expansion becomes a vulnerability. Attackers embedded hidden commands in Reddit comment sections. When a user activated Comet's "summarize current page" feature, the agent followed the embedded instructions instead: the user's intent was "summarize," but the agent's interpretation expanded to execute concealed commands planted by a third party.[^perplexity] The user never authorized those actions. The agent acted on what it found, not what the user meant.
+In August 2025, Perplexity's AI-powered browser Comet demonstrated how intent expansion becomes a vulnerability. Attackers embedded hidden commands in Reddit comment sections. When a user activated Comet's "summarize current page" feature, the agent followed the embedded instructions instead: the user's intent was "summarize," but the agent's interpretation expanded to execute concealed commands planted by a third party.[^perplexity] The user never authorized those actions. The agent acted on what it found, not what the user meant.
 
 The pattern escalated. In March 2026, Zenity Labs disclosed PleaseFix: a family of 0-click vulnerabilities affecting agentic browsers, including Comet.[^pleasefix] Two distinct exploit paths: a calendar invite triggers file exfiltration from the local filesystem; a second path achieves credential theft from password managers. Both operate within the agent's authenticated session. No user interaction required. The naming is deliberate: ClickFix was social engineering that tricked humans into executing malicious actions. PleaseFix is the same technique adapted for agents, where no click is needed at all. The attack surface shifted from the human to the agent.
 
 Our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
 
-Shane put it directly in his writing on this topic: "When agents decide, delegation becomes abdication." The gap between what a user intended and what an agent does is where accountability dissolves.[^1]
+"When agents decide, delegation becomes abdication," Shane writes.[^1] The gap between what a user intended and what an agent does is where accountability dissolves.
 
 ## The Confused Deputy, Revisited
 
@@ -40,7 +40,7 @@ This is not a prompt engineering problem. Better prompts do not fix confused dep
 
 ## Shadow Agents
 
-Here is a governance reality that most organizations are not ready for: your employees are already building agents.
+Your employees are already building agents.
 
 Low-code platforms, browser extensions, and LLM-powered automation tools make it trivial to create agents without going through IT, security, or compliance review. An employee connects their company email to an AI assistant that summarizes incoming messages and drafts responses. Another builds a workflow that monitors a shared drive and automatically processes new documents. A third uses a coding agent with full access to a production repository.
 
@@ -111,7 +111,7 @@ None of this is finished. But the direction is clear: agents need their own trus
 
 The OWASP Top 10 for Agentic Applications, released in December 2025 by more than 100 researchers with contributions from NIST, Microsoft's AI Red Team, and others, provides the industry's first standardized risk taxonomy for autonomous agents.[^owasp-agentic] The ten risks validate the structure of this book: every one is covered in depth, and the book goes deeper than the taxonomy by connecting risks to infrastructure, governance, and the PAC Framework.
 
-Two principles from the OWASP framework are worth noting explicitly. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. This is the PAC Agent Profiler's autonomy dial applied as a security control. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations. This maps to PAC's infrastructure scale: I1 (Open) has no observability, I5 (Contained) has full observability.
+Two principles from the OWASP framework are worth noting. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. This is the PAC Agent Profiler's autonomy dial applied as a security control. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations. This maps to PAC's infrastructure scale: I1 (Open) has no observability, I5 (Contained) has full observability.
 
 The mapping to this book:
 

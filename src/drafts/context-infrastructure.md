@@ -4,7 +4,7 @@ The previous chapters covered identity: who the agent is and what authority it c
 
 Shane's argument is that context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
 
-This is not a claim about prompt engineering or RAG pipelines. It is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable. And it connects directly to the PAC Framework: context is where Potential meets Control.
+This is not a claim about prompt engineering or RAG pipelines. It is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable. And it connects to the PAC Framework: context is where Potential meets Control.
 
 ## Everything Else Depreciates
 
@@ -16,7 +16,7 @@ Every wave of applied AI brought a layer of investment that the next wave made o
 
 **Scaffolding (2024-2025).** Most energy in agentic AI went to framework selection and orchestration: how to work around the model's limitations. Then the model improved, and the workarounds got deleted. The scaffolding you built was now fighting the model's new capabilities.[^2]
 
-Shane captures this precisely: "Every line of scaffolding is a bet that you know better than the model. And models keep improving."[^2]
+Shane's framing: "Every line of scaffolding is a bet that you know better than the model. And models keep improving."[^2]
 
 This pattern is not slowing down. Training depreciates. Code depreciates. Access to the most capable AI on the planet went from requiring a research lab to requiring a credit card. Your competitor has the same model you do, tomorrow.
 
@@ -58,7 +58,7 @@ Lance Martin expanded this into a comprehensive framework for context engineerin
 
 ### Manus: KV-Cache as North Star
 
-Manus brought a production engineering lens to context management. Their key insight: the KV-cache hit rate is the single most important metric for a production-stage AI agent, directly affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, dramatically different from typical chatbot scenarios.[^4]
+Manus brought a production engineering lens to context management. The KV-cache hit rate is the single most important metric for a production-stage AI agent, directly affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, dramatically different from typical chatbot scenarios.[^4]
 
 From this, they derived concrete principles:
 
@@ -90,7 +90,7 @@ The principle is to model information after the domain, not after today's tool o
 
 The industry is learning this through experience. The evolution from basic RAG (chunk text, embed it, retrieve by similarity) to knowledge graph-augmented retrieval reflects a growing understanding that relationships between entities matter as much as the entities themselves. Vector similarity search finds passages that sound related. Structured knowledge finds passages that are related: following entity relationships, reasoning over constraints, respecting hierarchies.
 
-For the PAC Framework, structure directly affects reliability. An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure is a Potential investment that compounds.
+For the PAC Framework, structure affects reliability. An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure is a Potential investment that compounds.
 
 ### 2. Permissions
 
@@ -100,7 +100,7 @@ This is where context infrastructure meets the identity infrastructure from the 
 
 Shane's Google Workspace example applies here too: the user intends "help me find one email from last week," but if the information layer has no finer granularity than "all email," that is what the agent gets.
 
-Permissions on context connect directly to the Control pillar: infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
+Permissions on context connect to the Control pillar: infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
 
 #### The convergence of identity and information governance
 
