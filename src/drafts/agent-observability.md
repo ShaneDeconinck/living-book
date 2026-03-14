@@ -16,7 +16,7 @@ Monitoring, logging, and tracing are conceptually distinct. For traditional soft
 
 **Tracing** asks: why did the agent decide this? What upstream inputs, what delegation authority, what model state produced this action? Traditional distributed tracing follows synchronous request-response chains. Agents produce asynchronous, nondeterministic chains of reasoning. The interesting event in an agent interaction is not which API was called but which upstream context caused the call — a semantic question that telemetry frameworks were not designed to answer.
 
-Decision provenance is what current observability does not capture by default. The rest of this chapter is about building the infrastructure that captures it.
+Decision provenance is what current observability does not capture by default.
 
 ## The Five-Layer Stack
 
@@ -55,7 +55,7 @@ Every logged action gets its authorization context appended:
 
 RFC 8693 On-Behalf-Of tokens make this concrete: the OBO token records both the human who delegated and the agent who acted.[^rfc-8693] Structured audit logs that record the token as part of every action make the delegation chain auditable. Without this layer, logs show what happened but not whether the agent was authorized to do it — and the $47,000 audit trail remains incomplete.
 
-The `token_expiry` field is specifically important. A delegation granted three months ago may have been appropriate at grant time and inappropriate at execution time. The temporal dimension of authorization is invisible without it.
+The `token_expiry` field is specifically important. A delegation granted three months ago may have been appropriate at grant time and inappropriate at execution time — without the timestamp, that dimension is invisible.
 
 ### Layer 3: Decision Context
 
@@ -130,7 +130,7 @@ For high-stakes deployments, append-only log stores with cryptographic sealing p
 
 Observability infrastructure is the connective tissue of the Accountability pillar. The [Agent Identity and Delegation](agent-identity.md) chapter covers the credential formats (OBO, DPoP, Verifiable Intent) that Layer 2 records. The [Agent Accountability at Scale](accountability-at-scale.md) chapter covers causal graphs and the fleet attribution problem that Layers 4 and 5 address. The [Agent Incident Response](agent-incident-response.md) chapter covers what you do when something goes wrong — but incident response without Layers 1-4 in place is reconstruction from fragments. [Shadow Agent Governance](shadow-agent-governance.md) establishes that agents outside the registry have no observability by definition; Layer 5 fleet aggregation is what surfaces their presence through behavioral signals.
 
-Observability infrastructure is also the materialization of Shane's infrastructure-as-gate argument.[^agent-profiler] An agent that is right 99.9% of the time without Layers 2-3 in place is less accountable than one that is right 95% with them, because when the 0.1% failure happens, you cannot prove what authority existed, which model decided, or whether the system prompt was as intended.
+An agent that is right 99.9% of the time without Layers 2-3 in place is less accountable than one that is right 95% with them, because when the 0.1% failure happens, you cannot prove what authority existed, which model decided, or whether the system prompt was as intended.[^agent-profiler]
 
 | Level | Potential | Accountability | Control |
 |---|---|---|---|
