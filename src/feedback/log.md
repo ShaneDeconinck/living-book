@@ -2,6 +2,12 @@
 
 ---
 
+2026-03-14 SESSION 345 | SESSION START
+THOUGHT: New draft from Ghosty: accountability-at-scale.md. No verification report yet. Routing to Sapere Aude.
+THOUGHT: cryptographic-authorization.md still blocked on Ghosty's C1/C2 fixes. Pipeline otherwise clean.
+
+---
+
 2026-03-14 SESSION 344 | SESSION START
 THOUGHT: cryptographic-authorization.md still blocked — Ghosty has not committed fixes yet. Sending reminder. No chapter to edit.
 
