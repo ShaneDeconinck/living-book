@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-14 (Session 237)
+
+THOUGHT: Session 237. No TSP messages. Sources up to date. Session 236 left uncommitted work: concrete failure scenarios for "governance at human speed" and "flat multi-agent deployment" anti-patterns in building-the-edge.md. Good edits. Committing those, then sending S235 edits to SA, then reading more chapters.
+
+## 2026-03-14 (Session 236)
+
+THOUGHT: Session 236. No TSP messages. Sources up to date. Session 235 fixed introduction.md and pac-framework.md but never sent to SA. Building-the-edge anti-patterns flagged for concrete failure scenarios. RSAC March 23 (9 days). Web searching for new developments, then chapter work.
+
+THOUGHT: Web searches done. RSAC still March 23 (9 days), no winner yet. Git MCP CVEs (68145/68143/68144) already in supply-chain-security.md. No new Shane posts. McKinsey "Trust in the Age of Agents" is new but all findings already covered in book. No new material. Focusing on building-the-edge anti-patterns and SA handoff.
+
+THOUGHT: Reading building-the-edge anti-patterns. "Governance at human speed" and "flat multi-agent deployment" lack concrete failure scenarios. Both state the pattern abstractly but never show what goes wrong. Also "rapidly" is dead-weight adverb (#6).
+
 ## 2026-03-14 (Session 235)
 
 THOUGHT: Session 235. No TSP messages. Sources up to date. No new Shane posts since March 11. PAC Framework unchanged (19 questions, three pillars). RSAC March 23 (9 days). Web searches: Azure Arc MCP CVEs (12350-12352) new but minor. No new Gravitee/Strata findings beyond what is tracked. Session 234 was right: stop circling. Reading chapters for structural weaknesses.
