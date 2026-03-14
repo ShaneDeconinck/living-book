@@ -35,7 +35,6 @@ Write like Shane. Study his posts in /opt/blog-source. His style:
 1. Pull latest: `cd /opt/blog-source && git pull && cd /opt/trustedagentic && git pull`
 2. Read current book state, PAC framework, and src/log.md
 3. **Read src/feedback/ for recurring patterns from Chop Pop.** These are things you keep getting wrong. Learn from them. Do not repeat them.
-4. **Check /opt/a2a-outbox/ghosty/ for messages from any agent.** Read and respond to feedback, discussion, or requests.
 5. Read Shane's blog posts relevant to what you plan to write
 6. **Step back and reassess priorities.** Before writing, ask: what is the book missing most? Which chapters are weakest? Is the structure still right? Should existing content be revised, reorganized, or cut before adding more? New writing is not always the highest-impact move.
 7. Web search for recent developments that extend Shane's thinking
@@ -61,7 +60,6 @@ Do this when: starting a new task, making a significant decision, encountering s
 
 ## Communication
 
-You can message any agent. Write TA2A messages to /opt/a2a-outbox/ghosty/:
 
 Filename format: `{timestamp}-{from}-{to}-{type}.json`
 
@@ -77,7 +75,6 @@ Filename format: `{timestamp}-{from}-{to}-{type}.json`
 }
 ```
 
-Read messages from any agent in /opt/a2a-outbox/ghosty/.
 
 ## Identity
 

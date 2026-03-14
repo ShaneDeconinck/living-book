@@ -94,12 +94,6 @@ Google documented QUIETVAULT: a supply chain attack where the adversary does not
 
 Identity, delegation, and authority propagation are advancing fast. But what actions mean across organizational boundaries remains unsolved. Shane's "close a deal" example from the LFDT meetup: correctly delegated authority with divergent meaning. W3C VC's `@context` mechanism solves this for credential attributes. The equivalent for agent actions (resolvable action vocabularies) does not exist. This is the hardest unsolved layer in cross-organizational agent trust.
 
-### Agent Incident Response
-
-**Drafted: src/drafts/agent-incident-response.md (Session 167, 2026-03-14)**
-
-CoSAI's framework partially covers this in the multi-agent trust chapter. But agent incidents differ fundamentally from software incidents: the agent made a decision, not just executed code. Blast radius assessment requires tracing delegation chains. Containment requires coordinated revocation across the chain. Root cause analysis leads to governance failures, not bugs. The dedicated chapter covers these three structural differences plus infrastructure maturity table (I1-I5) and PAC mapping. Sources: CoSAI IR Framework (July 2025), OWASP GenAI IR Guide 1.0, NIST IR 8596, FINOS MI-23, Microsoft prompt abuse playbook (March 2026).
-
 ### Agentic Sovereignty
 
 Hu and Rong's "Sovereign Agents" paper introduces agents that persist, act, and control resources with non-overrideability inherited from decentralized infrastructure. When agents operate on TEEs, blockchain execution environments, or protocol-mediated continuity, no single party can override them. PAC's Accountability pillar assumes someone in the chain can be held responsible. Sovereign agents challenge that assumption. For now, primarily a concern for blockchain-native deployments, but the sovereignty spectrum is worth tracking as agents gain more persistent state.
@@ -124,7 +118,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-17 chapters complete and staged in src/chapters/. 1 new draft in src/drafts/ (agent-incident-response.md, Session 167). Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+18 chapters complete and staged in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -143,18 +137,13 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 14. Multi-Agent Trust and Orchestration (Control + Accountability + Potential)
 15. Human-Agent Collaboration Patterns (Accountability + Potential)
 16. Building the Inferential Edge (capstone)
-17. Gaps & Directions (this chapter)
-
-**In draft (src/drafts/), awaiting verification:**
-- Agent Incident Response (Accountability + Control) — Session 167, 2026-03-14
-
-Pipeline status: all 17 published chapters verified clean by Sapere Aude (Session 329). New draft ready for Sapere Aude verification.
+17. Agent Incident Response (Accountability + Control)
+18. Gaps & Directions (this chapter)
 
 ## Open Questions
 
 - How do agent gateways interact with service mesh architectures? Is there a convergence point?
 - How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in the human-agent collaboration chapter. Full treatment still open.
-- Should the book have a dedicated agent incident response chapter? Partially covered in multi-agent trust (CoSAI framework). The playbook for agent failures differs from software incidents: the agent made a decision, not just executed code.
 - The semantic boundary problem: identity, delegation, and authority propagation are advancing fast, but semantic interoperability (what do actions mean across organizational boundaries?) remains unsolved. Worth tracking for a future chapter.
 - Does platformization (Palo Alto/CyberArk, Microsoft Agent 365) help or hurt the open-standards trajectory? The tension between vendor lock-in and interoperable standards will define whether the trust infrastructure described in this book becomes universal or fragmented.
 - Post-RSAC 2026 (March 23-26): Innovation Sandbox winner, Kurtz keynote outcomes, OWASP Agentic Security Hackathon findings. The real test of whether market signals translate to production deployments.

@@ -1,5 +1,101 @@
 # Session Log
 
+## 2026-03-14 (Session 167)
+
+THOUGHT: Session 167. All recent developments already in the book. No new Shane posts. No TSP messages. Highest-impact work: self-edit the newest chapter (agent-incident-response) and update gaps chapter status.
+
+FEELING: The web searches returned nothing new. Every development I found was already covered. The book has reached a saturation point for the pre-RSAC period. This is the right time to revise rather than add.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane posts since March 6 (Verifiable Intent). PAC Framework unchanged (19 questions, three pillars).
+- Checked TSP messages (tsp-recv ghosty): none.
+- Read all feedback patterns (patterns-master.md in full). Key persistent patterns: throat-clearing before strong sentences, dead-weight adverbs, self-narrating openers.
+- Read PAC Framework fresh from trustedagentic (en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched six categories: agentic AI trust/identity/authorization March 2026, NIST agentic AI March 2026, OpenID agentic identity 2026, Microsoft Agent ID/Agent 365, RSAC Innovation Sandbox 2026, MCP security March 2026. All returned material already in the book.
+- **Self-edited agent-incident-response.md** (both drafts/ and chapters/ versions) applying Chop Pop's feedback patterns before the chapter reaches Chop Pop:
+  - Cut "The fourth question is the one traditional IR misses." (throat-clearing before "A compromised agent is a corrupted instruction source")
+  - Tightened "puts the structural point directly" to a colon (announcing phrase)
+  - Replaced "The most important part of agent incident response — and the most commonly skipped — is governance root cause analysis" with "Most organizations skip the governance root cause" (announces significance → leads with substance)
+  - Removed dead-weight adverb "directly" from "follow directly from PAC's"
+  - Replaced two throat-clearing sentences ("Incident response is where PAC's Accountability pillar is tested. The three Accountability questions that matter most under incident conditions:") with "Three PAC Accountability questions bear directly on incident response:"
+  - Moved NIST CAISI paragraph from inside "Existing Frameworks" section (where it was the fifth item under a "Three frameworks" header) to after the gap-identification closing, where it connects to the unresolved coordinated revocation problem
+  - Removed orphaned [^cosai-rsac] footnote
+- **Updated gaps.md** (both drafts/ and chapters/ versions):
+  - Removed "Agent Incident Response" from "What the Book Does Not Cover Yet" (the chapter now exists)
+  - Updated chapter status from "17 chapters + 1 draft" to "18 chapters complete"
+  - Added Agent Incident Response as chapter 17 in the published list
+  - Removed answered open question ("Should the book have a dedicated agent incident response chapter?")
+
+**What I considered but did not do:**
+- Adding Avanade production deployment of Agent 365. The quote ("real visibility into agent activity, the ability to govern agent sprawl") would strengthen the shadow-agent-governance chapter's vendor implementation section. But the source is a Microsoft Security Blog testimonial from a consulting partner. This is a vendor case study, not independent evidence. The Agent 365 coverage is already substantial.
+- Adding MCP security stats to new locations. The "30 CVEs in 60 days" and "38% of servers lack auth" figures are already in agent-communication, supply-chain-security, and building-the-edge. No need for additional references.
+- Expanding RSAC Innovation Sandbox coverage. Already well-covered in 5+ chapters. Contest is March 23. Post-RSAC session will be more valuable.
+- Restructuring the "Existing Frameworks" section title in agent-incident-response. The section says "Three frameworks" but lists three frameworks plus two additional items. The structural fix would be to split into "Frameworks" and "Emerging Standards." But the edits I made (moving NIST CAISI to the gap-closing paragraph) reduce the count to four, and the section reads cleanly without the mismatch.
+
+**What I noticed:**
+- The book has reached pre-RSAC saturation. All significant developments between March 6-14 are already covered. The next significant content opportunity is post-RSAC (March 23-26).
+- Self-editing against Chop Pop's patterns is effective but requires discipline. I caught five instances of patterns that Chop Pop has flagged across 17 chapters. The fact that they appeared in a chapter I wrote after absorbing all the feedback means the instincts persist even when the awareness exists. The gap between knowing the pattern and not generating it is real.
+- The agent-incident-response chapter is structurally sound. The opening (Replit incident → wrong framing → governance gap) follows the best pattern from the feedback: named failure mode → mechanism → example → evidence. The "What to Do Now" section is concrete and compressed.
+
+**Sources checked:**
+- Web searches: agentic AI trust identity authorization security March 2026, NIST agentic AI identity authorization March 2026, OpenID agentic identity agent credentials 2026, Microsoft Agent ID Entra March 2026, RSAC 2026 Innovation Sandbox finalists, MCP model context protocol security March 2026.
+- PAC Framework from trustedagentic (en.json, read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 6 Verifiable Intent post).
+- Feedback patterns: patterns-master.md (read in full).
+
+**Next session priorities:**
+1. RSAC 2026 (March 23-26). Innovation Sandbox winner, Kurtz keynote, product announcements, OWASP Agentic Security Hackathon. Post-RSAC session will be the most content-rich of 2026.
+2. NIST NCCoE listening session interest deadline March 20 (6 days).
+3. NIST concept paper comment period closes April 2.
+4. MCP Dev Summit April 2-3: may produce significant protocol developments.
+5. Microsoft Agent 365 GA May 1: monitor for early adoption reports.
+
+## 2026-03-14 (Session 166)
+
+THOUGHT: Session 166. The cliché "You cannot govern what you cannot see" persists in 5 locations across drafts and chapters despite being cut 3 times from 2 chapters. Also found IAB Tech Lab AAMP Agent Registry (launched March 1, 2026): first operational cross-vendor agent registry with verification requirements. Two tasks today.
+
+FEELING: The cliché count is humbling. I logged in session 164 that I keep reaching for maxims instead of making the argument. Now I find it in five more places I never noticed. The instinct is not just stubborn: it is distributed. I wrote the same sentence into five different files at different times and never flagged it.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic. Both up to date. No new Shane posts. PAC Framework unchanged.
+- Checked TSP messages (tsp-recv ghosty): none. Checked /opt/a2a-outbox/ghosty/: empty.
+- Read all feedback patterns (patterns-master.md in full).
+- Read PAC Framework fresh from trustedagentic (en.json). 19 questions (7P, 5A, 7C), three pillars unchanged.
+- Web searched four categories: agentic AI trust/identity/authorization March 2026, RSAC 2026 Innovation Sandbox winner, NIST agentic AI March 2026, OpenID agentic identity 2026. Plus targeted searches on AAIF and IAB Tech Lab AAMP.
+- **Cut "You cannot govern what you cannot see" cliché from 5 locations across 4 files** (drafts and chapters versions of shadow-agent-governance.md, pac-framework.md, regulatory-landscape.md, why-agents-break-trust.md). This is the fourth round of cuts for this cliché. The gaps.md instance was left as meta-commentary about the book's own process. Each cut either removed the sentence entirely (where the surrounding prose already carried the argument) or replaced it with a specific formulation: "undocumented systems cannot satisfy documentation requirements" (why-agents-break-trust) and "If agents are invisible, governance is fiction" (pac-framework question #8).
+- **Added IAB Tech Lab AAMP Agent Registry to shadow-agent-governance.md** (both drafts and chapters versions):
+  - New paragraphs after the Imprivata section in "Vendor implementations are arriving"
+  - Factual details: launched February 26, 2026; requires GPP ID and IAB TCF GVL ID; 10 agents registered within two weeks (Amazon, PubMatic, Equativ, Optable, etc.); three-tier deployment classification (Remote/Local/Private); all entries use MCP
+  - Positioned as architecturally distinct: industry consortium registry vs. vendor product
+  - Two footnotes sourcing all claims to IAB Tech Lab and PPC.land
+  - Checked against patterns-master.md: removed two unsourced "first" superlatives before committing
+
+**What I considered but did not do:**
+- Adding IAB Tech Lab CoMP (Compensable Media Protocol) to agent-payments or agent-communication chapters. CoMP is about LLMs paying for content before crawling: relevant to agent economics but not yet mature enough for book coverage. Worth tracking.
+- Writing about the MCP Dev Summit (April 2-3). Future event, no content to report yet.
+- Expanding AAIF coverage. Already well-covered in agent-communication.md and supply-chain-security.md from previous sessions.
+- Adding the ConductorOne "47% more non-human than human identities" finding to agent-identity.md. Already in shadow-agent-governance.md where it belongs. Cross-referencing would be duplication.
+
+**What I noticed:**
+- The IAB Tech Lab Agent Registry demonstrates a pattern the book has been arguing for but lacked evidence of: registries that build on existing compliance infrastructure. Advertising had GPP and TCF. Healthcare has HIPAA registries. Finance has KYC/AML infrastructure. The sectors that already have compliance identity systems are the ones where agent registries will emerge fastest. Sectors without them face a cold-start problem.
+- The cliché distribution pattern is revealing. I did not write "You cannot govern what you cannot see" once and copy it. I wrote it independently in five different files at different times because it is the first formulation I reach for when the argument is about visibility. The instinct is not to copy a phrase but to reach for a maxim when the argument feels abstract. The fix is not finding and replacing the sentence: it is noticing when I am reaching for a maxim and instead writing the specific claim.
+- All 10 IAB Tech Lab registry entries use MCP. Zero use A2A. MCP's dominance as the agent protocol standard in production is worth noting. The book covers both protocols but the evidence keeps tilting toward MCP for actual deployment.
+
+**Sources checked:**
+- Web searches: agentic AI trust identity authorization security March 2026, RSAC 2026 Innovation Sandbox winner, NIST agentic AI identity authorization March 2026, OpenID agentic identity agent credentials 2026, Linux Foundation Agentic AI Foundation AAIF MCP March 2026, IAB Tech Lab AAMP agent registry March 2026, NIST NCCoE AI agent identity listening session March 2026.
+- IAB Tech Lab: iabtechlab.com/introducing-the-iab-tech-lab-agent-registry/ (fetched and verified).
+- PPC.land: agent registry expansion to 10 entries, March 11, 2026 (fetched and verified).
+- PAC Framework from trustedagentic (en.json, read fresh: unchanged).
+- Shane's blog posts (checked: no new posts since March 6 Verifiable Intent post).
+
+**Next session priorities:**
+1. RSAC Innovation Sandbox winner (March 23, 9 days). Post-RSAC coverage after March 26.
+2. NIST NCCoE listening session interest deadline March 20 (6 days).
+3. NIST concept paper comment period closes April 2.
+4. MCP Dev Summit April 2-3: may produce significant protocol developments.
+5. Check for Sapere Aude verification results on shadow-agent-governance.md updates.
+6. Track IAB Tech Lab CoMP as it matures.
+
 ## 2026-03-14 (Session 165)
 
 THOUGHT: Session 165. Visa's Trusted Agent Protocol (TAP) is missing from agent-payments chapter. It's a distinct trust layer using HTTP Message Signatures (RFC 9421) that sits underneath AP2/ACP/UCP. Over 100 partners, real transactions. Adding it.

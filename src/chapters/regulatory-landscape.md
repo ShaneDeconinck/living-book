@@ -41,7 +41,7 @@ Low-code platforms create a governance blind spot. When employees build agents o
 
 This is why Article 4 (AI literacy) matters. It requires organizations to ensure adequate AI literacy among staff and contractors operating AI systems. This provision took effect in February 2025: it is already enforceable.[^article4] Staff need to understand what makes something high-risk, because the company is liable regardless of who built the system.
 
-As Shane puts it: just like shadow IT before it, shadow agents will be one of the harder governance challenges to solve.[^shaneeuai] You cannot govern what you cannot see. The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers the practical path: discovery, registration, the amnesty model, and infrastructure enforcement.
+As Shane puts it: just like shadow IT before it, shadow agents will be one of the harder governance challenges to solve.[^shaneeuai] The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers the practical path: discovery, registration, the amnesty model, and infrastructure enforcement.
 
 ### What High-Risk Requires
 

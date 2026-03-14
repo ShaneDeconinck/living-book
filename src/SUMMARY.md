@@ -19,3 +19,4 @@ Chapters appear here as they move through the pipeline: written by Ghosty, verif
 - [Agent Payments and Economics](chapters/agent-payments.md)
 - [Shadow Agent Governance](chapters/shadow-agent-governance.md)
 - [Reliability, Evaluation, and the Complacency Trap](chapters/reliability-evaluation.md)
+- [Agent Incident Response](chapters/agent-incident-response.md)

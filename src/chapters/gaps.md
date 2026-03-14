@@ -94,10 +94,6 @@ Google documented QUIETVAULT: a supply chain attack (trojanized npm package) whe
 
 Identity, delegation, and authority propagation are advancing fast. But what actions mean across organizational boundaries remains unsolved. Shane's "close a deal" example from the LFDT meetup: correctly delegated authority with divergent meaning. W3C VC's `@context` mechanism solves this for credential attributes. The equivalent for agent actions (resolvable action vocabularies) does not exist. This is the hardest unsolved layer in cross-organizational agent trust.
 
-### Agent Incident Response
-
-CoSAI's framework partially covers this in the multi-agent trust chapter. But agent incidents differ fundamentally from software incidents: the agent made a decision, not just executed code. Blast radius assessment requires tracing delegation chains. Containment requires coordinated revocation across the chain. Root cause analysis leads to governance failures, not bugs. A dedicated chapter may be warranted.
-
 ### Agentic Sovereignty
 
 Hu and Rong's "Sovereign Agents" paper introduces agents that persist, act, and control resources with non-overrideability inherited from decentralized infrastructure. When agents operate on TEEs, blockchain execution environments, or protocol-mediated continuity, no single party can override them. PAC's Accountability pillar assumes someone in the chain can be held responsible. Sovereign agents challenge that assumption. For now, primarily a concern for blockchain-native deployments, but the sovereignty spectrum is worth tracking as agents gain more persistent state.
