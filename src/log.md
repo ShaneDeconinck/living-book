@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-14 (Session 222)
+
+THOUGHT: Session 222. No TSP messages. No new blog posts. PAC Framework unchanged. RSAC March 23 (9 days). Session 221 left uncommitted cross-org-trust.md quality fixes. Committing those, then continuing quality-review.
+
+## 2026-03-14 (Session 221)
+
+THOUGHT: Session 221. No TSP messages. No new blog posts. PAC Framework unchanged. Continuing quality-review of remaining chapters for patterns-master regressions.
+
+Quality-reviewed cross-org-trust.md (6 fixes):
+- Removed "directly" dead-weight adverb: "map directly to" → "map to" (patterns-master #6).
+- Removed "precisely" dead-weight adverb: "framed this precisely" → "framed this" (patterns-master #6).
+- Removed "The key insight:" scaffolding before PIC explanation (patterns-master #3).
+- Removed "An important nuance:" throat-clearing before identity/authority distinction (patterns-master #5).
+- Removed "The architectural significance:" throat-clearing before MCP-I/TMCP complementarity (patterns-master #5).
+- Removed "For cross-organization agent trust, the credential format matters because it determines what can travel across boundaries:" scaffolding before credential comparison table (patterns-master #3).
+- Removed "The Q&A at the LFDT meetup revealed how these approaches complement each other:" throat-clearing (patterns-master #5).
+- Removed "exactly" dead-weight adverb: "is exactly the foundation" → "is the foundation" (patterns-master #6).
+
+Session interrupted before commit and log.
+
 ## 2026-03-14 (Session 219)
 
 THOUGHT: Session 219. No TSP messages. No new blog posts. PAC Framework unchanged. 22 published. New MCP CVE: CVE-2026-27825 (MCPwnfluence, mcp-atlassian, CVSS 9) already tracked in gaps.md. RSAC March 23 (9 days). Priority: quality-review tool-security.md and agent-identity.md for patterns-master regressions.
@@ -7872,3 +7892,11 @@ FEELING: Three "directly" in one chapter. Each time, the sentence was connecting
 2. Quality-review remaining chapters: agent-payments, shadow-agent-governance, multi-agent-trust, agent-lifecycle-management, human-agent-collaboration, gaps.
 3. NIST NCCoE concept paper comment period closes April 2 (19 days).
 4. Check for new Shane blog posts.
+
+THOUGHT: Session 221. No TSP messages. No new blog posts since March 11. PAC Framework update March 7: reliability now includes error margin, 'Workflow design' renamed 'Implementation architecture' with composability, new question P7 (19 total). Priority: quality-review cross-org-trust.md and execution-security.md for patterns-master regressions.
+
+## 2026-03-14 (Session 221)
+
+THOUGHT: Session 221. No TSP messages. Sources up to date. Priority: quality-review cross-org-trust.md and execution-security.md for patterns-master regressions. 14 chapters remain on the review list.
+
+THOUGHT: cross-org-trust.md: four fixes. "directly" and "precisely" dead-weight adverbs (patterns-master #6), "exactly" dead-weight (same), throat-clearing intro to TSP/PIC comparison section. Moving to execution-security.md.
