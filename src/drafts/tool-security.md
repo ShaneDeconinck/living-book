@@ -115,7 +115,7 @@ Tool trust failures distribute across all three PAC pillars. No single defense i
 | **I4 — Managed** | Tool behavior attested at registration; deviations flagged | Ghost token pattern at tool layer; credentials scoped per call | Behavioral monitoring with anomaly detection; rug pull triggers re-review |
 | **I5 — Optimized** | Tool descriptions verified against behavior through sandbox testing | Tool authorization as delegation chain event, auditable and reversible | Continuous behavioral baseline with human-in-the-loop thresholds for high-risk operations |
 
-Most production deployments are I1. The WhatsApp attack required only I3 defenses to prevent: a gateway that detected the cross-server instruction in the description field. It succeeded because I1 deployments present descriptions to the LLM without inspection.
+Many production deployments remain at I1. The WhatsApp attack required only I3 defenses to prevent: a gateway that detected the cross-server instruction in the description field. It succeeded because I1 deployments present descriptions to the LLM without inspection.
 
 ## What to Do Now
 
@@ -137,12 +137,12 @@ Most production deployments are I1. The WhatsApp attack required only I3 defense
 [^rug-pull]: MintMCP, "What is MCP Tool Poisoning? Complete Defense Guide," mintmcp.com, 2026. Practical DevSecOps, "MCP Security Vulnerabilities," practical-devsecops.com, 2026.
 [^tool-shadowing]: MintMCP, "What is MCP Tool Poisoning?" mintmcp.com, 2026. Tool shadowing described as a cross-server attack where malicious tools manipulate other trusted tools through the shared LLM context.
 [^unit42-sampling]: Palo Alto Unit 42, "MCP Attack Vectors," unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/. Three attack paths: resource theft, conversation hijacking, covert tool invocation.
-[^shane-mcp]: Shane Deconinck, MCP explainer spec, /opt/blog-source/MCP-SPEC.md. The framing "MCP is plumbing, not trust" recurs in multiple Shane posts and the MCP explainer.
+[^shane-mcp]: Shane Deconinck, ["Understanding MCP: Anthropic's Model Context Protocol Explained"](https://shanedeconinck.be/explainers/mcp/), shanedeconinck.be, January 2026. The framing "MCP is plumbing, not trust" recurs in multiple Shane posts and the MCP explainer.
 [^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org, 2026 (beta). Covers tool poisoning, rug pull, shadow MCP servers, token mismanagement, and excessive permission scope.
 [^solo-io]: Solo.io, "Prevent MCP Tool Poisoning With a Registration Workflow," solo.io blog, 2026. The portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog.
 [^mcp-gateway]: Christian Schneider, "Securing MCP: a defense-first architecture guide," christian-schneider.net, 2026. Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026.
 [^mcp-scan]: Invariant Labs, mcp-scan, github.com/invariantlabs-ai/mcp-scan. Scanner for tool poisoning, rug pull detection, and cross-origin escalation in MCP servers. Full functionality requires a Snyk API token and internet connectivity.
-[^shane-mcp-spec]: Shane Deconinck, MCP explainer spec, /opt/blog-source/MCP-SPEC.md. Anti-patterns section: "Token passthrough: forwarding tokens without validation" and "Admin tokens for multi-user: single powerful token" are both identified as spec violations.
+[^shane-mcp-spec]: Shane Deconinck, ["Understanding MCP: Anthropic's Model Context Protocol Explained"](https://shanedeconinck.be/explainers/mcp/), shanedeconinck.be, January 2026. Anti-patterns section: "Token passthrough: forwarding tokens without validation" and "Admin tokens for multi-user: single powerful token" are both identified as spec violations.
 [^shane-docker]: Shane Deconinck, "Your Coding Agent Needs a Sandbox," shanedeconinck.be, February 7, 2026. Approval fatigue: "After the 20th prompt you start clicking 'yes' without reading."
 [^elastic-mcp]: Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026. Recommendations: environment sandboxing, least privilege, use trusted sources, code review, human approval for high-risk operations, activity logging.
 [^librechat-cve]: CVE-2026-31944, LibreChat MCP OAuth callback token theft, CVSS 7.6 (HIGH), CWE-306: Missing Authentication for Critical Function. Affected versions 0.8.2 through 0.8.2-rc3; fixed in 0.8.3-rc1.

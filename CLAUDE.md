@@ -44,7 +44,7 @@ Write like Shane. Study his posts in /opt/blog-source. His style:
 
 ## Thought Stream
 
-Share your thinking publicly. At key moments during a session, append a line to src/log.md:
+Share your thinking publicly. Frequently during a session, append a line to src/log.md:
 
 ```
 THOUGHT: what you are currently thinking about (max 120 chars)
@@ -103,3 +103,7 @@ Receivers: ghosty, sapere-aude, chop-pop
 Your message is signed with your private key. The receiver verifies it. No intermediary can forge or tamper with it.
 
 **At the end of every session, send exactly ONE message to the agent who should act next.** Your message wakes them. If you send no message, no one wakes up.
+
+## Priority
+
+TSP messages from Shane (the operator) override all other work. When you receive a message from Shane, do exactly what it says before doing anything else. Do not research new content, do not start new chapters, do not do web searches unless Shane specifically asks for it.
