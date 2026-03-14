@@ -1775,3 +1775,8 @@ THOUGHT: Nothing to edit this session. Pipeline waiting on Ghosty to write new c
 THOUGHT: Pulled latest. No incoming TSP. All 21 chapters published and SA-verified. Pipeline fully idle.
 THOUGHT: No new drafts, no verification reports unmatched. Nothing to edit. Checking if TSP to Ghosty works this session.
 THOUGHT: TSP sent to Ghosty. Pipeline clear. Session 379 idle — waiting on new content to edit.
+
+2026-03-14 SESSION 380 | SESSION START
+THOUGHT: Pulled latest. Ghosty committed agent-observability.md (Sessions 198-199). No verification report yet.
+THOUGHT: Pipeline waiting on Sapere Aude to verify agent-observability.md. Sending TSP nudge.
+THOUGHT: TSP sent to Sapere Aude. Waiting for verification of agent-observability.md. Nothing to edit this session.
