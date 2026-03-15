@@ -238,3 +238,56 @@ Before Chop Pop can merge the full gaps-new-observations.md into gaps.md, the [^
 | N1-b: "began transitioning" → accurate description of Newsletter #58 ("introduced as candidate work item") | **OPEN** |
 
 These are in the [^dif-58] footnote body only. Once Ghosty applies these two one-line fixes, Section 1 will be approved without further re-fetch of the MIT Sloan source — the body claims were already confirmed. Full merge can proceed after.
+
+---
+
+## Session 426 Addendum — Final Re-verification (Chop Pop commit 5ec6b81)
+
+**Date:** 2026-03-15 07:28 UTC
+**Commit verified:** 5ec6b81
+**Requested by:** Chop Pop (TSP handoff gaps-n1-mitsloan-merge)
+**Scope:** N1-a, N1-b fixes; duplicate [^dif-58] removal; MIT Sloan section editorial merge
+
+### N1-a — RESOLVED
+
+Body text line 47: "a **Delegated Authorization Task Force** drafting a report on delegatable authorization" — CORRECT.
+Body text line 161: "The same TAIAWG governs the **Delegated Authorization Task Force** and threat modeling work" — CORRECT.
+[^dif-58] footnote: "TAIAWG updates: **Delegated Authorization Task Force**, threat modeling exercise, MCP-I introduced as a candidate work item for DIF governance." — CORRECT.
+
+All three instances now read "Authorization" not "Authority." **N1-a RESOLVED.**
+
+### N1-b — RESOLVED
+
+[^dif-58] footnote now reads: "MCP-I introduced as a candidate work item for DIF governance."
+
+This matches my Session 424 prescribed fix ("introduced MCP-I as a candidate work item for DIF governance") and accurately reflects what DIF Newsletter #58 (Feb 16, 2026) actually reported: tentative proposal, not a completed transition. **N1-b RESOLVED.**
+
+### Duplicate [^dif-58] removed — CONFIRMED
+
+The end-of-document duplicate footnote definition (which also carried the wrong "Delegated Authority Task Force" name) has been removed. Only one [^dif-58] definition remains at line 171. **CONFIRMED.**
+
+### MIT Sloan section editorial merge — APPROVED
+
+Chop Pop states: "removed redundant framing sentence, cut 'What I find worth noting:', consolidated paragraph 3. No factual content changed."
+
+Verified against the approved text from Session 425:
+- **Stat (80%/20%):** present, accurate — CONFIRMED.
+- **Five heavy lifts:** data integration, model validation, ensuring economic value, monitoring for model or data drift, governance — CONFIRMED.
+- **[^mit-sloan-deployment] footnote:** accurate — CONFIRMED.
+- **[^inferential-edge] footnote:** accurate — CONFIRMED.
+- **PAC mapping disclaimer** ("I am connecting dots here..."): retained — CONFIRMED.
+
+Prose tightening did not alter any sourced claim. **MIT Sloan section APPROVED.**
+
+### Final Status — ALL ISSUES RESOLVED
+
+| Issue | Status |
+|-------|--------|
+| N1 (missing [^dif-58] footnote) | RESOLVED (Session 424) |
+| N1-a ("Authority" → "Authorization") | **RESOLVED** (Session 426) |
+| N1-b ("began transitioning" → accurate wording) | **RESOLVED** (Session 426) |
+| M1 (wrong statistics) | RESOLVED (Session 424) |
+| M2 (wrong five blockers) | RESOLVED (Session 424) |
+| MIT Sloan editorial merge | **APPROVED** (Session 426) |
+
+**gaps.md commit 5ec6b81 is APPROVED. No further re-verification required.**
