@@ -185,7 +185,7 @@ The architecture uses dual firewalls at every trust boundary:
 
 **Language Converter Firewall (inbound).** Before an incoming message reaches the agent, it is converted from unconstrained natural language into a closed, domain-specific, structured protocol. The conversion uses deterministic validation: only well-formed fields pass through. Persuasive framing, urgency tactics, embedded instructions, and social engineering attempts are structurally eliminated because they cannot be expressed in the validated protocol format. This is not prompt filtering (which tries to detect malicious patterns in natural language). It is protocol conversion (which makes malicious patterns inexpressible).
 
-The results across 864 attacks spanning three domains are significant. Averaged across domains, privacy attack success rates dropped from 85% to 10% for GPT-5 and from 73% to 17% for Claude Sonnet 4. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
+Averaged across domains, privacy attack success rates dropped from 85% to 10% for GPT-5 and from 73% to 17% for Claude Sonnet 4. Security attack success rates dropped from 60% to 3%. Task completion quality was maintained or improved, because the structured protocol eliminated ambiguity that had caused errors in unconstrained communication.[^firewalls]
 
 The architecture has an open-source implementation and both firewalls operate in a trusted environment isolated from external input, applying domain-specific rules learned automatically from demonstrations. This means the firewalls do not need manual rule engineering for each new domain: they learn what constitutes legitimate task-context content from examples of correct interactions.
 
@@ -247,7 +247,7 @@ Attack path tracing showed that three of four representative attack chains were 
 
 The paper also maps each defensive principle to compliance standards: Authorized Interface to NIST SP 800-207 (Zero Trust), Capability Scoping to NIST AC-6 (least privilege) and OWASP LLM08 (excessive agency), Verified Execution to ISO 27001 A.10 (non-repudiation) and EU AI Act Article 12 (logging), Memory Integrity to NIST SI-7 (data integrity) and EU AI Act traceability requirements, and Access-Controlled Data Isolation to NIST AC-2/3 (RBAC/ABAC) and GDPR Article 5 (data minimization).[^agenticcyops]
 
-The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle applied to multi-agent systems with quantified results.
+The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires."
 
 ### Cross-Boundary Multi-Agent Delegation
 
@@ -289,7 +289,7 @@ Multi-agent trust touches all three pillars at compound scale.
 | **Control: Containment** | Sandbox per agent | Circuit breakers between agents, cascade prevention |
 | **Control: Cross-Org** | Bilateral trust | Transitive trust across multi-party delegation chains |
 
-The key PAC insight for multi-agent systems: **governance cost scales with delegation depth, not just agent count.** An organization with 12 agents that all report to humans has 12 governance relationships to manage. The same 12 agents orchestrated into delegation chains have potentially 12! (factorial) governance relationships. The infrastructure must scale accordingly.
+**Governance cost scales with delegation depth, not just agent count.** An organization with 12 agents that all report to humans has 12 governance relationships to manage. The same 12 agents orchestrated into delegation chains have potentially 12! (factorial) governance relationships. The infrastructure must scale accordingly.
 
 ## Infrastructure Maturity for Multi-Agent Trust
 
@@ -305,7 +305,7 @@ Building on the I1-I5 infrastructure maturity scale used throughout this book:
 
 **I5 (Contained): Adaptive Trust.** Dynamic trust assessment adjusts delegation authority based on observed agent behavior. Reputation systems inform delegation decisions. Automated cascade detection and containment. Multi-agent systems self-govern within externally auditable bounds.
 
-The gap between I1 (where most organizations are) and I3 (where the EU AI Act's high-risk obligations require, whether on the original August 2026 timeline or the Digital Omnibus's December 2027 backstop) is significant. The gap between I3 and I5 is the research frontier.
+The gap between I1 (where most organizations are) and I3 (where the EU AI Act's high-risk obligations require, whether on the original August 2026 timeline or the Digital Omnibus's December 2027 backstop) is the implementation challenge; the gap between I3 and I5 is the research frontier.
 
 ## Practical Recommendations
 

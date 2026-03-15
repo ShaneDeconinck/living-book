@@ -34,7 +34,7 @@ Ownership is not permanent. It must transfer when people change roles, leave the
 
 ### Initial scoping
 
-The agent's initial permissions should reflect its declared purpose and nothing more. Shane's trust inversion applies here: agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
+The agent's initial permissions should reflect its declared purpose and nothing more. Agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
 
 In practice, this fails at provisioning time more often than anywhere else. Teleport's 2026 report found that 70% of organizations grant AI systems higher levels of privileged access than humans would receive for the same task.[^teleport] The reason is structural: provisioning agents through existing IAM tools means choosing from permission sets designed for human roles. An agent that needs to read one database table gets a "data analyst" role that includes read access to every table in the schema.
 
@@ -131,7 +131,7 @@ The IETF draft-klrc-aiagent-auth (March 2026) represents the first attempt to co
 - **Authorization:** OAuth 2.0 token exchange (RFC 8693) for delegation, with the Agent Authorization Profile (AAP) for structured capabilities
 - **Lifecycle:** SCIM for cross-application provisioning and deprovisioning
 
-The draft's value is not in new protocol design. It is in consolidation: showing practitioners which existing standards apply at each lifecycle phase and where new work is needed. The gap analysis identifies credential lifecycle management as the area with the least mature standardization: identity issuance and authentication have clear standards, but credential rotation coordination across trust domains, automated decommissioning triggers, and orphan detection remain implementation-specific.[^klrc]
+The value is consolidation: showing practitioners which existing standards apply at each lifecycle phase and where new work is needed. The gap analysis identifies credential lifecycle management as the area with the least mature standardization: identity issuance and authentication have clear standards, but credential rotation coordination across trust domains, automated decommissioning triggers, and orphan detection remain implementation-specific.[^klrc]
 
 ## PAC Framework Mapping
 
