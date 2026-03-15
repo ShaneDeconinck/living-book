@@ -129,6 +129,8 @@ The technical chapters are organized by pillar. Each stands alone, but they buil
 - **[Tool Security and MCP Poisoning](tool-security.md)**: runtime tool trust, description poisoning, MCPTox, and the attack surface that lands inside the agent's context window.
 - **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes or breaks when agents delegate to other agents. Cascading failures and governance that scales with delegation depth.
 - **[Cryptographic Authorization Governance](cryptographic-authorization.md)**: the third governance mode. Architecture says "can't." Policy says "don't." Cryptographic authorization says "prove." Ghost tokens, AI-native policy languages, and verifiable action chains.
+- **[Network-Layer Agent Infrastructure](network-layer-infrastructure.md)**: agent gateways, AI-Aware SASE, AgentDNS, semantic routing, and why the network layer is a distinct enforcement plane from the application layer.
+- **[Agent Lifecycle Management](agent-lifecycle-management.md)**: provisioning, runtime governance, continuous authorization, and decommissioning. The full lifecycle from agent creation to retirement.
 
 The book closes with synthesis:
 

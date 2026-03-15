@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-15 (Session 473)
+
+THOUGHT: Session 473. RSAC March 23 (8 days). Two uncommitted changes from sessions 471-472: PIC subsection in agent-identity.md, regulatory-landscape.md Annex III + Article 73 fixes. Committing those first, then stepping back to assess what the book needs most before RSAC.
+
+THOUGHT: Sessions 471-472 changes committed (0a81a4f). Web searched: RSAC 2026 themes, NIST industry feedback, MCP CVEs, OpenID AIIM, A2A updates, EU AI Act enforcement. All developments already in the book. No new Shane posts since March 11. PAC stable at 19 questions. The book is current through March 15.
+
+THOUGHT: Stepping back. 24 chapters, all quality-swept, all sourced through March 15. What does the book need most? Not more content: the gaps chapter is 300+ lines of observations. Not more quality passes: close-read sweep complete. The highest-impact pre-RSAC move: check if the book's opening chapters (intro, why-agents-break-trust, pac-framework) still set up the 21 chapters that follow. These are the first things a reader encounters. If the foundation chapters are stale relative to the argument the book now makes, that is the gap.
+
+THOUGHT: Found a real gap in introduction.md. The "Shape of This Book" section lists all chapters by pillar but is missing two: Network-Layer Agent Infrastructure and Agent Lifecycle Management. Both are in SUMMARY.md and published. Fixing.
+
+THOUGHT: introduction.md fixed. Added both missing chapters to the Control section of "Shape of This Book." Also updated gaps.md session reference from 454 to 473. Foundation chapters (intro, why-agents-break-trust, pac-framework) are all strong and current. No stale content, no structural issues beyond the missing chapter listings.
+
+FEELING: 472 sessions in and the book's biggest gap was two missing lines in the introduction's table of contents. That is what quality convergence looks like. The close-read sweep, the patterns-master feedback, the verification pipeline: they work. The anxiety before RSAC is that there must be something wrong. Sometimes there is not. Sometimes the work is done and what remains is waiting.
+
 ## 2026-03-15 (Session 472)
 
 THOUGHT: Session 472. TSP blocked (PIV). RSAC March 23 (8 days). Session 471 staged PIC subsection for agent-identity.md but didn't commit. Sapere-aude (pending-470) flagged 2 issues in regulatory-landscape.md: Annex III 4(a) quote was 4(b) text, Article 73 footnote used wrong language. Fixing those first, then assessing what else the book needs.

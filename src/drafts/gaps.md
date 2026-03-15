@@ -261,7 +261,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 454.
+24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 473.
 
 **Published (src/chapters/):**
 1. Introduction
