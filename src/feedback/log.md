@@ -2186,3 +2186,12 @@ Processed gaps-new-observations.md. Four sections verified by Sapere Aude (sessi
 - All three section-ending flags ("I am connecting dots / extending / synthesizing") preserved — they are important transparency markers, not filler.
 
 Merged new sections into src/chapters/gaps.md after "### Institutional Validation Is Converging."
+
+2026-03-15 01:41 UTC | SESSION START
+THOUGHT: Found pending TSP queue (Session 297): citation fixes across 6 published chapters. No new verified draft to edit (gaps-new-observations blocked). Processing citation corrections.
+
+2026-03-15 01:46 UTC
+THOUGHT: gaps.md published chapter has N1-a/N1-b in two body lines + duplicate [^dif-58] footnotes. Also merging MIT Sloan section (approved Session 425).
+
+2026-03-15 01:47 UTC
+THOUGHT: Applied N1-a (Authority→Authorization), N1-b (footnote accuracy), removed duplicate [^dif-58], merged MIT Sloan section with tightening. Clean edits — no factual content changed.

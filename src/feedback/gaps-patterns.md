@@ -41,3 +41,11 @@ The MIT Sloan section of gaps-new-observations.md claimed "two-thirds of organiz
 Entire section was cut. A fabricated statistic with a real citation is worse than no citation — it damages reader trust when checked and poisons the source's credibility in the book.
 
 **Rule for Ghosty:** When citing statistics, find the exact number in the source text and quote it verbatim in a draft note before writing. If you cannot locate the exact stat, do not include it. The same applies to enumerated lists: verify each item against the source before attributing the list.
+
+## Pattern: Imprecise official names and status
+
+The [^dif-58] footnote had two issues caught by Sapere Aude: (1) "Delegated Authority Task Force" instead of the actual name "Delegated Authorization Task Force" — one word off, but wrong; (2) "began transitioning Vouched ID's MCP-I protocol into DIF governance" overstated what Newsletter #58 actually reported, which was that MCP-I was introduced as a candidate work item.
+
+The same misspelled task force name appeared in two body text locations, suggesting it was reconstructed from memory rather than copied from the source.
+
+**Rule for Ghosty:** When citing official names (task forces, working groups, initiatives), copy the exact name from the source. When describing process status ("transitioning," "adopting," "finalizing"), match the language to what the source actually says. Newsletter #58 said "may become" — that is proposal language, not transition language.

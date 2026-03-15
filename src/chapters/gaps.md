@@ -44,7 +44,7 @@ The institutional story matters: AAIF governs MCP (Linux Foundation). MCP-I's id
 
 That convergence became explicit in 2026 when ToIP and DIF jointly launched three working groups for trust in agentic AI: the Decentralized Trust Graph Working Group (cryptographically verifiable trust relationships across agents and wallets), the AI and Human Trust Working Group (TSP for human-agent interactions, with delegation, accountability, and identity frameworks), and the Trusted AI Agents Working Group (specifications and governance models for agents acting autonomously within zero-trust frameworks).[^toip-dif-wgs] A planned deliverable: a draft specification for running MCP and A2A over TSP. If that ships, the "three layers, three foundations" picture collapses into a single interoperable stack with trust built in at the transport layer.
 
-By March 2026, the TAIAWG is producing concrete deliverables: a Delegated Authority Task Force drafting a report on delegatable authorization, a cross-task-force threat modeling exercise formalizing attack scenarios against a policy-enforcing local AI model, and MCP-I transitioning from Vouched's donation to formal DIF governance with a dedicated task force.[^dif-58] These are no longer announcements. They are working documents.
+By March 2026, the TAIAWG is producing concrete deliverables: a Delegated Authorization Task Force drafting a report on delegatable authorization, a cross-task-force threat modeling exercise formalizing attack scenarios against a policy-enforcing local AI model, and MCP-I transitioning from Vouched's donation to formal DIF governance with a dedicated task force.[^dif-58] These are no longer announcements. They are working documents.
 
 ### Identity Standards Convergence
 
@@ -158,7 +158,7 @@ Vouched donated its Model Context Protocol — Identity (MCP-I) framework to the
 
 MCP-I gives agents cryptographically verifiable identities anchored as DIDs. Delegation is represented as tamper-evident Verifiable Credentials with explicit scope. Any service the agent approaches can verify the full chain from human principal to agent action without prior coordination.[^mcp-i-dif] Three identity dimensions are required at every service interaction: the agent's own identity (DID), the user's identity (VC linking human principal to the request), and the delegation (machine-readable policy credential specifying authorization scope).
 
-The governance structure matters as much as the spec. MCP-I develops under DIF's Trusted AI Agents Working Group (TAIAWG) through a dedicated task force. The same TAIAWG governs the Delegated Authority Task Force and threat modeling work that DIF and ToIP launched earlier in 2026.[^dif-58] This creates the open-standards governance infrastructure for agent identity that MCP's own roadmap has deferred to "on the horizon."
+The governance structure matters as much as the spec. MCP-I develops under DIF's Trusted AI Agents Working Group (TAIAWG) through a dedicated task force. The same TAIAWG governs the Delegated Authorization Task Force and threat modeling work that DIF and ToIP launched earlier in 2026.[^dif-58] This creates the open-standards governance infrastructure for agent identity that MCP's own roadmap has deferred to "on the horizon."
 
 MCP-I's three-tier adoption model provides an on-ramp. Level 1 (OIDC/JWT identifiers) gives immediate implementation without requiring DID infrastructure. Level 2 (full DID verification and credential-based delegation with revocation support) is the standard's full value. Level 3 (enterprise lifecycle management, immutable auditing, full bilateral MCP-I awareness) is the governance layer above the protocol.[^mcp-i-dif] Organizations can adopt Level 1 today while the DID tooling ecosystem matures.
 
@@ -168,7 +168,7 @@ Three simultaneous identity tracks for MCP-connected agents: Microsoft Entra Age
 
 [^mcp-i-dif]: Vouched and DIF, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 2026. Also: Vouched, "Vouched Donates MCP-I Identity Framework to the Decentralized Identity Foundation to Advance Trust and Security for AI Agents," businesswire.com, March 2026. Tiered adoption model (L1/L2/L3), three-dimensional identity requirement, e-commerce proof of concept.
 
-[^dif-58]: DIF Newsletter #58, blog.identity.foundation, February 16, 2026. TAIAWG "launched a Delegated Authority Task Force, formalized initial use cases, conducted threat modeling exercises, and began transitioning Vouched ID's MCP-I protocol into DIF governance."
+[^dif-58]: DIF Newsletter #58, blog.identity.foundation, February 16, 2026. TAIAWG updates: Delegated Authorization Task Force, threat modeling exercise, MCP-I introduced as a candidate work item for DIF governance.
 
 ---
 
@@ -207,6 +207,23 @@ The policy implication: "build governance infrastructure now or later" is not a 
 (I am synthesizing the scaffolding trap post and the inferential edge post. The connection — scaffolding shrinks while trust requirements grow — is my own framing of two arguments Shane makes separately.)
 
 [^scaffolding-trap]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2, 2026. Claude Code example: every model upgrade enabled removal of scaffolding, not addition. "The permissions system" as most complex component. "Every line of scaffolding is a bet that you know better than the model."
+
+---
+
+### The Deployment Gap Is the Inferential Edge, Quantified
+
+MIT Sloan Management Review (March 2026): less than 20% of the effort behind deploying an AI agent system goes to prompt engineering and model development. More than 80% is consumed by the sociotechnical work.[^mit-sloan-deployment] Shane's framing: "the gap between having access to a powerful model and being able to use it. And that gap is wide."[^inferential-edge]
+
+The MIT Sloan five heavy lifts: data integration, model validation, ensuring economic value, monitoring for model or data drift, and governance.[^mit-sloan-deployment] Governance appears not as compliance overhead but as a primary scaling challenge that determines whether deployment succeeds. The 80% sociotechnical burden is where governance lives.
+
+The five heavy lifts map to the book's architecture: data integration is the context and communication infrastructure agents depend on; model validation is the Accountability pillar; monitoring for drift is sustained accountability across the deployment lifecycle; governance maps to the Control pillar. Ensuring economic value is the forcing function that makes the other four urgent — without demonstrable ROI, organizations cannot sustain the investment required to govern them.
+
+The 80% figure confirms that the inferential edge is not a model quality problem. It is an infrastructure and governance problem. Organizations that close it first gain compounding advantage: every automated process sharpens context pipelines, trust infrastructure, and operational learning.[^inferential-edge]
+
+(I am connecting dots here: MIT Sloan does not use PAC terminology, but the five heavy lifts map closely to the book's architecture. Reporting the connection, not asserting it as the MIT Sloan finding.)
+
+[^mit-sloan-deployment]: MIT Sloan Management Review, "5 'Heavy Lifts' of Deploying AI Agents," mitsloan.mit.edu, March 2026. Less than 20% of deployment effort on prompt engineering and model development; more than 80% on sociotechnical work. Five heavy lifts: data integration, model validation, ensuring economic value, monitoring for model/data drift, governance.
+[^inferential-edge]: Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge," shanedeconinck.be, March 2, 2026. "The inferential edge is the gap between having access to a powerful model and being able to use it." "Every process you automate teaches your organisation something. Your trust infrastructure gets sharper. Your context pipelines improve."
 
 ---
 
@@ -283,7 +300,6 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^google-mariner]: Google, 2026 Responsible AI Progress Report. User Alignment Critic architecture for Mariner browser agent.
 [^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8 (Critical), March 2026.
 [^toip-dif-wgs]: ToIP and DIF, "ToIP and DIF Announce Three New Working Groups for Trust in the Age of AI," lfdecentralizedtrust.org, 2026. Working groups: Decentralized Trust Graph (DTGWG), AI and Human Trust, Trusted AI Agents (TAIAWG). Also covered in Identity Week and Biometric Update.
-[^dif-58]: DIF Newsletter #58, blog.identity.foundation, March 2026. TAIAWG updates: Delegated Authority Task Force, threat modeling exercise, MCP-I governance transition.
 [^gravitee-2026]: Gravitee, "State of AI Agent Security 2026 Report: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
 [^csa-strata-2026]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA survey report, February 2026.
 [^sigstore-a2a]: Sigstore, sigstore-a2a, github.com/sigstore/sigstore-a2a. Also: Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 2025.
