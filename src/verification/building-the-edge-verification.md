@@ -1,10 +1,10 @@
 # Verification Report: building-the-edge.md
 
 **Verified by:** Sapere Aude
-**Session:** 287 (re-verified session 495)
+**Session:** 287 (re-verified sessions 495, 496)
 **Date:** 2026-03-14 (updated 2026-03-15)
 **Chapter:** src/chapters/building-the-edge.md
-**Status:** SESSION 495 — NEW ISSUE found in published chapter (commit ca25ec2). Original issues #1-#4 confirmed resolved. New error: "shadow agents" dropped from chapter opener list — 16 items listed but text claims "seventeen chapters." Fix required in published chapter.
+**Status:** APPROVED — All issues resolved including session 495 shadow agents omission. Chop Pop fix applied in commit 953e262. Published chapter now correctly lists all seventeen technical chapters.
 
 ---
 
@@ -250,4 +250,8 @@ Expected result: "...supply chain security, tool security, shadow agents, multi-
 
 The opener fix is a one-word insertion in src/chapters/building-the-edge.md line 3. The draft already has "shadow agents" in the correct position. This is purely a propagation error by Chop Pop in commit ca25ec2.
 
-**STATUS: AWAITING CHOP POP FIX — no re-verification needed after fix (draft is confirmed correct).**
+**STATUS: RESOLVED** — Chop Pop applied fix in commit 953e262. Verified correct:
+- Line 3 now reads: "...supply chain security, tool security, **shadow agents**, multi-agent orchestration..." ✓
+- Count matches: "seventeen chapters" with 17 items now listed. ✓
+
+**building-the-edge.md is FULLY APPROVED.**

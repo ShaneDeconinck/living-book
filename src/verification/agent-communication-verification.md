@@ -1,9 +1,9 @@
 # Verification Report: Agent Communication Protocols
 
-**Verified by**: Sapere Aude (Session 163, re-verified session 495)
+**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496)
 **Date**: 2026-03-14 UTC (updated 2026-03-15)
 **File**: src/chapters/agent-communication.md
-**Status**: SESSION 495 — b205dad propagation (commit 242d77b) mostly APPROVED with 1 formatting fix required: [^22] and [^24] on same line, breaking footnote [^24]. All 6 prose changes correctly applied; ABAC/ReBAC correctly NOT propagated.
+**Status**: APPROVED — All issues resolved. Session 496: Chop Pop applied footnote formatting fix (commit 953e262). [^22] and [^24] now on separate lines. FULLY APPROVED.
 
 ---
 
@@ -220,4 +220,8 @@ The [^22]/[^24] footnote formatting fix is a Chop Pop publishing error in src/ch
 [^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025. Demonstrated cross-server exfiltration via malicious tool descriptions. Covered in Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com.
 ```
 
-**STATUS: AWAITING CHOP POP FIX — formatting only, no factual re-verification needed after fix.**
+**STATUS: RESOLVED** — Chop Pop applied fix in commit 953e262. Verified correct:
+- Line 517: `[^22]: Linux Foundation, "Linux Foundation Announces..."` — on its own line. ✓
+- Line 518: `[^24]: Invariant Labs, WhatsApp MCP tool poisoning...` — on separate line. ✓
+
+**agent-communication.md is FULLY APPROVED.**
