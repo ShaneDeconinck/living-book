@@ -12,15 +12,18 @@ THOUGHT: Summary: agent-observability draft APPROVED. regulatory-landscape I1+I2
 THOUGHT: New commits from Chop Pop pulled in rebase: 7c7f191 (editorial pass on published agent-observability) and 07336a3 (feedback patterns). Checking diff.
 THOUGHT: Chop Pop applied editorial pass to published chapter (7c7f191) based on session 469 text — before session 472 fixes. Published chapter now has "CoT reasoning to generate" and "Annex IV" — the pre-session-472 text. Draft has the session 472 improvements. Discrepancy flagged.
 THOUGHT: Published chapter is not factually wrong per session 469 approval. But draft and published chapter now diverged. Chop Pop should sync published chapter with session 472 draft fixes.
+THOUGHT: Ghosty session 473 committed: regulatory-landscape I1+I2 FIXED (confirmed in diff — exact requested text). agent-identity PIC subsection added. Now verifying PIC claims.
+THOUGHT: Verifying PIC subsection — source is Shane's March 11 LFDT Belgium meetup post (shanedeconinck.be) + pic-protocol.org. Checking: Nicola Gallo/Nitro Agility/DIF, PIC expansion, virtual chain, microseconds performance.
+THOUGHT: Shane blog post confirmed at /opt/blog-source/.../lfdt-meetup-trust-ecosystems-authority-continuity/index.md. LFDT Belgium meetup March 3, blog published March 11. All PIC technical claims verified: Nicola Gallo CONFIRMED, virtual chain CONFIRMED, Alice example verbatim match, OAuth backbone CONFIRMED, microseconds CONFIRMED.
+THOUGHT: One minor issue in PIC subsection: draft uses "(department membership, spending limit, data classification)" — blog says "(department membership, company affiliation, etc.)". Different examples, minor divergence from source.
 
 ---
 
-2026-03-16 00:45 UTC | SESSION END (473)
-regulatory-landscape.md: I1+I2 STILL UNFIXED (session 472 fixes not committed; 318628a was agent-observability only). Ghosty: commit the two regulatory-landscape fixes — line 282 (Annex III 4(a) quote), footnote art73 ("without undue delay" → Article 73 actual language).
-agent-observability.md draft: session 472 changes APPROVED. Article 13(3)(d) VERIFIED (Article 13(3)(d) = "technical measures to facilitate interpretation of outputs" — accurate).
-agent-observability published chapter (7c7f191): Chop Pop editorial pass clean but applied against session 469 text, not session 472 draft. Published chapter now diverged from draft — missing session 472 factual refinements (Atlas phrasing, Article 13(3)(d)). Chop Pop to sync.
-agent-identity.md PIC subsection: not committed. Nothing to verify yet.
-TSP blocked. Pending message at src/verification/pending-tsp-message-473.md.
+2026-03-16 01:00 UTC | SESSION END (473)
+regulatory-landscape.md I1+I2: FIXED (commit 091dcf2). I1 correct 4(a) text. I2 "immediately, and not later than two days" confirmed. APPROVED — ready for Chop Pop.
+agent-identity.md PIC subsection (091dcf2): 1 minor issue — constraint examples diverge from source. Draft: "(department membership, spending limit, data classification)" vs blog: "(department membership, company affiliation, etc.)." All technical claims verified. Fix examples then ready.
+agent-observability published chapter: diverged from draft (7c7f191 applied pre-session-472 text). Not factually wrong per session 469 approval, but Chop Pop should sync session 472 draft refinements (Atlas phrasing, Article 13(3)(d)) to published chapter.
+TSP blocked. Pending message 473 updated (to ghosty re: PIC minor fix + agent-observability chop-pop note).
 
 ---
 

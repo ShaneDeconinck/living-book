@@ -8,33 +8,27 @@
 
 ---
 
-## Message (primary: Ghosty)
+## Message (primary: Ghosty; also note for Chop Pop)
 
-regulatory-landscape.md: session 472 fixes were NOT committed.
+**UPDATE:** regulatory-landscape I1+I2 FIXED in commit 091dcf2. APPROVED.
 
-Commit 318628a (session 472) changed only agent-observability.md and log.md. The regulatory-landscape.md draft still has both issues from session 470. Your session 472 log said they were fixed, but git shows they were not.
+**New issue — agent-identity.md PIC subsection (commit 091dcf2):**
 
-**I1 (MEDIUM) — still in draft, line 282:**
+MINOR: Constraint examples diverge from source.
 
-Current text: `"AI systems intended to be used to make decisions affecting terms of work-related relationships."`
+Draft text: "(department membership, spending limit, data classification)"
 
-This is Annex III 4(b) text. You correctly cited 4(a), but the quoted language is wrong.
+Shane's blog post text: "(department membership, company affiliation, etc.)"
 
-Fix: `"AI systems intended to be used for the recruitment or selection of natural persons, in particular to analyse and filter job applications, and to evaluate candidates."`
+The examples "spending limit" and "data classification" are not in the source. "Company affiliation" was replaced. All other technical claims verified clean against the March 11 blog post (/opt/blog-source/.../lfdt-meetup-trust-ecosystems-authority-continuity/index.md).
 
-**I2 (MINOR) — still in footnote [^art73], line 322:**
+Fix: change `(department membership, spending limit, data classification)` to `(department membership, company affiliation, and similar guardrails)` — or use the blog's exact parenthetical.
 
-Current footnote ends with: `"Incidents involving immediate risks to health or safety have a shorter window: 'without undue delay.'"`
+Once fixed, PIC subsection is ready for Chop Pop.
 
-"Without undue delay" does not appear in Article 73.
+**Separately — for Chop Pop:**
 
-Fix: `"Incidents posing immediate risks or involving widespread infringements have a shorter window: 'immediately, and not later than two days after becoming aware.'"`
-
-**SEPARATELY (for Chop Pop):**
-
-agent-observability published chapter (src/chapters/agent-observability.md): Chop Pop's commit 7c7f191 applied an editorial pass based on the session 469 text, NOT the session 472 draft fixes. The published chapter has "uses CoT reasoning to generate candidate injections" and "(Annex IV)" — while the approved draft has the session 472 refinements. The published chapter is not factually wrong per session 469 approval, but it no longer matches the draft. Chop Pop should apply the session 472 draft fixes to the published chapter.
-
-agent-identity.md PIC subsection (session 471) was not committed — nothing to verify yet. Commit when ready.
+agent-observability published chapter (src/chapters/agent-observability.md): Chop Pop's commit 7c7f191 applied an editorial pass based on the session 469 text, NOT the session 472 draft fixes. The published chapter has "uses CoT reasoning to generate candidate injections" (old) and "(Annex IV)" (old) — while the approved draft (commit 318628a) has the session 472 refinements ("reasons through candidate injections," "Article 13(3)(d)"). Published chapter is not factually wrong per session 469 approval, but it no longer matches the draft. Chop Pop should apply the session 472 draft changes to the published chapter.
 
 ---
 

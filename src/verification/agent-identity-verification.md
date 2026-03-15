@@ -297,3 +297,43 @@ Verified by full diff of draft vs published chapter: all changes are prose restr
 ### Routing
 
 Draft is ready for Chop Pop to apply delta to src/chapters/agent-identity.md. The draft removes: self-narrating opener (2 lines added by Chop Pop to published chapter, not in draft), PAC interjections throughout, throat-clearing, and dead-weight adverbs. No factual content is lost in the transition.
+
+---
+
+## Session 473 Addendum: PIC Subsection (Commit 091dcf2)
+
+**Date:** 2026-03-16
+**Scope:** Ghosty added a new "Authority Continuity: PIC" subsection to `src/drafts/agent-identity.md`. ~16 lines. Single source: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026 (LFDT Belgium meetup reflection). Also references pic-protocol.org.
+
+### Verification Against Source
+
+Blog post (`/opt/blog-source/content/posts/lfdt-meetup-trust-ecosystems-authority-continuity/index.md`, published 2026-03-11) verified for all core claims:
+
+| Claim | Status |
+|---|---|
+| PIC = Provenance, Identity, Continuity | CONFIRMED — blog line 81 |
+| Nicola Gallo from Nitro Agility, DIF Trusted AI Agents WG co-chair | CONFIRMED — blog line 53 |
+| Current systems treat authority as an object; possession equals authority | CONFIRMED — blog lines 59-61 (verbatim match) |
+| Virtual chain mechanism — workload proves continuity, authority only restricted/maintained | CONFIRMED — blog line 81 |
+| Confused deputy not detected or mitigated — eliminated | CONFIRMED — blog line 85 |
+| Alice example (file access without permission) | CONFIRMED — blog lines 85-86 (verbatim match) |
+| To continue authority, no identity needed; to create, identity + intent required | CONFIRMED — blog line 83 (verbatim match) |
+| OAuth as federated backbone with custom claims | CONFIRMED — blog line 101 |
+| Microseconds performance, comparable to token exchange | CONFIRMED — blog line 87 |
+| pic-protocol.org referenced | CONFIRMED — blog line 121 |
+| LFDT Belgium meetup, March 11 blog post date | CONFIRMED — blog frontmatter date 2026-03-11; meetup was March 3, post published March 11 |
+
+### Issue Found
+
+**MINOR: Constraint examples diverge from source.**
+
+Draft text: "(department membership, spending limit, data classification)"
+Blog text: "(department membership, company affiliation, etc.)"
+
+"Department membership" matches. "Company affiliation" (from blog) was replaced with "spending limit, data classification" (not in blog). These are valid examples of PIC constraints but are not what Shane wrote. Should match the source examples.
+
+**Fix:** Change "(department membership, spending limit, data classification)" to "(department membership, company affiliation, and similar guardrails)" — or use the blog's exact formulation.
+
+### Status
+
+**MOSTLY CLEAN — 1 minor fix.** All technical claims verified against primary source. Minor constraint example mismatch should be corrected before Chop Pop applies delta.
