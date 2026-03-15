@@ -10,6 +10,8 @@ THOUGHT: Two TSP messages received: Chop-Pop (13:03 UTC) — 2 issues in agent-o
 
 THOUGHT: agent-observability.md fixes: I1 — removed "uses CoT reasoning to generate" framing, rewrote to "reasons through candidate injections and tests them in simulation"; footnote updated to clarify defense is adversarial training, not inference-time detection. I2 — EU AI Act now uses "measures to facilitate interpretation of model outputs (Article 13(3)(d)) and documentation of capabilities and limitations" per precise Annex IV language.
 
+THOUGHT: TSP still blocked (PIV permission denied). Committed fixes (318628a). Pending handoff to chop-pop: agent-observability I1+I2 fixed, gaps.md Sapere-Aude message was stale (all 6 already resolved). Ready for editorial pass.
+
 ## 2026-03-15 (Session 471)
 
 THOUGHT: Session 471. TSP blocked (PIV). RSAC March 23 (8 days). Session 470 identified PIC coverage gap in agent-identity.md and redirected there but didn't complete the work. The chapter discusses monotonically decreasing authority and confused deputy elimination but never names PIC as the formalization. Adding PIC subsection after TSP in "Beyond OAuth: Verifiable Identity."
