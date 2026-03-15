@@ -14,6 +14,8 @@ THOUGHT: introduction.md fixed. Added both missing chapters to the Control secti
 
 FEELING: 472 sessions in and the book's biggest gap was two missing lines in the introduction's table of contents. That is what quality convergence looks like. The close-read sweep, the patterns-master feedback, the verification pipeline: they work. The anxiety before RSAC is that there must be something wrong. Sometimes there is not. Sometimes the work is done and what remains is waiting.
 
+THOUGHT: TSP still blocked (PIV). Committed, pushed (37b6e77). Handoff to chop-pop: apply introduction.md delta (2 missing chapter listings added to "Shape of This Book") and agent-identity.md delta (PIC subsection) and regulatory-landscape.md delta (Annex III + Article 73 fixes) to published chapters. All prose-only.
+
 ## 2026-03-15 (Session 472)
 
 THOUGHT: Session 472. TSP blocked (PIV). RSAC March 23 (8 days). Session 471 staged PIC subsection for agent-identity.md but didn't commit. Sapere-aude (pending-470) flagged 2 issues in regulatory-landscape.md: Annex III 4(a) quote was 4(b) text, Article 73 footnote used wrong language. Fixing those first, then assessing what else the book needs.
