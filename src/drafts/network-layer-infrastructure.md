@@ -23,7 +23,7 @@ Neither layer alone is sufficient. The application-layer gateway can be bypassed
 
 ## What the Network Layer Can Now See
 
-Cisco's AI-Aware SASE, announced in February 2026, is the first major evidence that the network-security industry is addressing this gap.[^cisco-sase-2026]
+Cisco's AI-Aware SASE, announced in February 2026, is the clearest evidence to date that the network-security industry is addressing this gap.[^cisco-sase-2026]
 
 Four capabilities are relevant:
 

@@ -27,6 +27,32 @@ FEELING: Session 500. Five hundred sessions. Sapere Aude's verification caught a
 2. NIST CAISI listening sessions interest deadline March 20 (5 days).
 3. Quality-review next unreviewed chapter against patterns-master. Candidates: agent-payments, network-layer-infrastructure.
 
+## 2026-03-15 (Session 500b)
+
+THOUGHT: Session 500b. Following session 499 priority #3: quality-review network-layer-infrastructure.md against patterns-master and network-layer-infrastructure-patterns.md.
+
+THOUGHT: Close-read complete. One violation found:
+1. Unsourced superlative (Fabrication #2): "is the first major evidence that the network-security industry is addressing this gap" (line 26). No source called Cisco the first. Changed to "is the clearest evidence to date that the network-security industry is addressing this gap."
+
+THOUGHT: Verified remaining patterns are clean. No em dashes (fixed in original edit session). No self-narrating opener (#1) — opens on Gmail/port-443 enforcement gap, substance. No chapter-index closer (#2) — ends on What to Do Now. No "this matters because" scaffolding (#3) — "The significance of Cisco's approach is architectural, not just commercial" makes its own argument. Section closers add new information (#4) — clean throughout. All 10 chapter-specific feedback patterns verified as applied (em dashes, throat-clearing, scare quotes, redundant framing clauses, verb precision, IETF boilerplate). No dead-weight adverbs (#6). No block quotes (#7). No cliché exact phrase (#8). No in-prose PAC interjections (#9). One instance of "cannot enforce what it cannot see" — variant of cliché but not the exact phrase, not flagged by Chop Pop in the published chapter.
+
+FEELING: This chapter was almost clean. One superlative fix. The opening is the strongest in any chapter I've written — four short sentences before naming the gap, the specific example (Gmail, port 443, no delegation chain) earns everything that follows. Chop Pop's edit session cleaned the structure well. The pattern that persists is the unsourced superlative; this is the fourth or fifth chapter where I've used "first" without a source that says "first." I know the rule. I keep writing it. Slow down on superlatives.
+
+**What I did:**
+- Quality-reviewed network-layer-infrastructure.md against patterns-master and network-layer-infrastructure-patterns.md.
+- 1 prose fix: unsourced superlative "first major evidence" changed to "clearest evidence to date."
+- Verified all master patterns and chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Content additions: no access to Shane's blog or PAC Framework (sandbox restrictions).
+- RSAC Innovation Sandbox winner not yet announced (March 23, 8 days).
+- NIST CAISI listening sessions interest deadline March 20 (5 days).
+
+**Next session priorities:**
+1. NIST CAISI listening sessions interest deadline March 20 (5 days). Check if relevant to any chapter.
+2. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+3. Quality-review next unreviewed chapter against patterns-master. Candidate: agent-payments.
+
 ## 2026-03-15 (Session 499)
 
 THOUGHT: Session 499. Following session 498 priority #3: quality-review agent-lifecycle-management.md against patterns-master and agent-lifecycle-management-patterns.md.
