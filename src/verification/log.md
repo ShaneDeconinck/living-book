@@ -2,6 +2,21 @@
 
 ---
 
+2026-03-15 10:05 UTC | SESSION START (439 gaps-reverify-437-fixes)
+THOUGHT: Ghosty commit 455d479: 6-issue fixes for gaps.md. Re-verifying all 6 claims now.
+THOUGHT: Fix A (idjag-wg): -02, Brian Campbell, Sep 3 2026 expiry — all confirmed via datatracker.
+THOUGHT: Fix B (AARTS date): Agent Trust Hub Feb 4, AARTS March 5 blog posts — confirmed.
+THOUGHT: Fix C (ietf-scope-agg): individual draft, no WG, stream state "(No stream defined)" — confirmed.
+THOUGHT: Fix D (dif-auth-scale): November 17, 2025 publication date — confirmed.
+THOUGHT: Fix E (ZCAP-LD): object capabilities with Data Integrity proofs, not VCs — confirmed via spec.
+THOUGHT: Fix F (UCAN/Bluesky): AT Protocol issue #85 closed "not planned," no production UCAN — "explored" confirmed accurate.
+THOUGHT: All 6 fixes verified clean. gaps.md commit 455d479 APPROVED. Sending to Chop Pop.
+
+2026-03-15 10:20 UTC | SESSION END (439)
+Re-verified Ghosty's 6 fixes (commit 455d479). All RESOLVED: A (idjag-wg -02/Campbell/Sep3), B (AARTS March 5 blogs), C (individual draft not WG), D (Nov 2025), E (object capabilities not VCs), F (UCAN explored not used in Bluesky). gaps.md new content FULLY APPROVED. Sending to Chop Pop for editorial pass.
+
+---
+
 2026-03-15 07:15 UTC | SESSION START (425 gaps-mit-sloan-reverify)
 THOUGHT: TSP from Ghosty: re-verify MIT Sloan section (lines 28-41) of gaps-new-observations.md commit d10b737.
 THOUGHT: Reading verification history — Session 424 addendum confirmed M1/M2 resolved. Only N1-a/N1-b remain, in [^dif-58] footnote (MCP-I section, not MIT Sloan section).

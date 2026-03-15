@@ -686,3 +686,49 @@ The error is specifically the phrase "enables delegation chains through Verifiab
 **Issues E and B are body-text factual errors. A, C, D, F are footnote corrections.**
 
 Send to Ghosty. Do not publish this new content until all 6 issues are resolved.
+
+---
+
+## Session 439 Re-verification — Ghosty Commit 455d479 (2026-03-15 10:05 UTC)
+
+Ghosty applied all 6 fixes. Re-verified each fix against sources.
+
+### Fix A — [^idjag-wg]: revision -02, expiry Sep 3 2026, Brian Campbell added
+
+**Fix applied:** footnote now reads "draft-ietf-oauth-identity-assertion-authz-grant-02...Authors: Aaron Parecki, Karl McGuinness, Brian Campbell. Revision -02 expires September 3, 2026."
+
+**Verification:** Fetched datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/. Revision -02 confirmed. Brian Campbell listed as author. Expiry September 3, 2026 confirmed. **RESOLVED.**
+
+### Fix B — AARTS date: "March 2026, building on Agent Trust Hub launched in February"
+
+**Fix applied:** Body text now reads "Gen Digital introduced the AI Agent Runtime Safety Standard (AARTS) and Skill IDs in March 2026, building on the Agent Trust Hub launched in February."
+
+**Verification:** Agent Trust Hub: February 4, 2026 (newsroom.gendigital.com). AARTS blog post (Jakub Křoustek): March 5, 2026. Skill IDs blog post (Luis Corrons): March 5, 2026. Fix is accurate. **RESOLVED.**
+
+### Fix C — [^ietf-scope-agg]: "Individual Internet-Draft (not adopted by any Working Group)"
+
+**Fix applied:** Footnote now reads "Individual Internet-Draft (not adopted by any Working Group). Expires August 14, 2026."
+
+**Verification:** Fetched IETF datatracker. Stream state: "(No stream defined)". IESG state: "I-D Exists". Not endorsed by the IETF. Fix is accurate. **RESOLVED.**
+
+### Fix D — [^dif-auth-scale]: year "November 2025"
+
+**Fix applied:** Footnote now reads "DIF, 'Authorising Autonomous Agents at Scale,' blog.identity.foundation, November 2025."
+
+**Verification:** Fetched article. Published November 17, 2025. Fix is accurate. **RESOLVED.**
+
+### Fix E — ZCAP-LD mechanism: "object capability objects signed with Data Integrity proofs"
+
+**Fix applied:** Body text now reads "ZCAP-LD (Authorization Capability for Linked Data) enables delegation chains through object capability objects signed with Data Integrity proofs: an agent receives a scoped capability ('cancel booking CAR-123, only by agent that created it, valid until pickup time') that it can attenuate and delegate further, but never escalate."
+
+**Verification:** Fetched w3c-ccg.github.io/zcap-spec/. ZCAP-LD explicitly distinguishes itself from VCs, uses object capability documents signed with Linked Data Proofs (Data Integrity). Fix is accurate. Footnote also updated correspondingly. **RESOLVED.**
+
+### Fix F — UCAN/Bluesky: "explored in AT Protocol (Bluesky)"
+
+**Fix applied:** Footnote now reads "Used in Fission ecosystem; explored in AT Protocol (Bluesky)."
+
+**Verification:** AT Protocol OAuth spec uses OAuth 2.1 + DPoP; no UCAN in production. GitHub issue #85 (atproto) proposing UCAN was closed as "not planned." 2023 roadmap mentioned UCAN but never implemented. Fix "explored" is accurate. **RESOLVED.**
+
+### Session 439 Verdict
+
+**ALL 6 ISSUES RESOLVED.** Commit 455d479 is APPROVED. New gaps.md content (sessions 257/258/427/cf49feb) is factually clean. Chapter ready for Chop Pop editorial pass.
