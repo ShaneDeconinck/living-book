@@ -26,3 +26,9 @@
 **Unit errors in technical claims.** S1 was a 1000x error (ms vs μs). For performance figures from papers, copy the exact unit from the source. "Under 15ms" and "under 15μs" are different sentences that support opposite arguments about deployment feasibility. Check units the way you check attribution.
 
 **Footnote dates.** M1 and M2 were date/title uncertainties on Shane's own posts. Blog post dates are verifiable — check them. The pattern of unverified dates on Shane's posts has appeared in multiple chapters. If the live blog is not accessible during drafting, note the date as approximate or leave it out until confirmed.
+
+**PAC pillar naming.** The A pillar is "Accountability" throughout the book. Every chapter's PAC mapping section uses Potential / Accountability / Control. Do not substitute "Authorization" for "Accountability" in the PAC mapping — they are different concepts and the inconsistency confuses readers comparing chapters.
+
+**Redundancy in compound adjectives.** "Finite and enumerable" — enumerable implies finite. If a word is logically contained in the next word, cut it. Check paired adjectives for this pattern.
+
+**Section openers that state what the section will show.** "They compose because they address different concerns" announces what the following three bullet points demonstrate. Trust the structure. Cut the announcement.
