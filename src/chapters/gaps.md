@@ -178,7 +178,7 @@ Shane's OpenClaw/Moltbook post (February 2026) identifies a pattern with governa
 
 The first failure mode: blind over-trust. Users who cannot define "terminal" install an agent with system-level access because the AI walked them through it. They do not understand what they authorized. Then they expose the debug backend to the public internet because the documentation said not to, and they did not read it. Shane's conclusion: "If the creator telling users not to do something doesn't work, documentation is not a security model."[^openclaw-moltbook]
 
-The second failure mode: evidence-free over-fear. Users attribute intent, consciousness, and malice to next-token prediction. The Moltbook panic — viral screenshots of agents "scheming against humans" — were either human-engineered outputs or statistical artifacts, presented without context. People cited their agent's output as proof: "Yeah, but my agent said this." The same misunderstanding that produces blind trust produces irrational fear.
+The second failure mode: evidence-free over-fear. Users attribute intent, consciousness, and malice to next-token prediction. The Moltbook panic: viral screenshots of agents "scheming against humans," either human-engineered outputs or statistical artifacts, presented without context. People cited their agent's output as proof: "Yeah, but my agent said this." The same misunderstanding that produces blind trust produces irrational fear.
 
 The governance implication is structural. Because agents lack common sense, fail unpredictably, and do not know when they are wrong, governance cannot depend on users understanding what they are doing. Documentation is not a security model. Training is not a security model. The answer is structural constraints that limit damage regardless of user literacy.[^trust-inversion]
 
@@ -196,15 +196,15 @@ This applies to deployers as much as end users. Default permissions for deployin
 
 Shane's scaffolding trap post (February 2026) makes a prediction with compounding consequences for trust infrastructure.[^scaffolding-trap] As models improve, engineered harnesses shrink: the routing logic, output parsers, retry mechanisms, and orchestration code built to compensate for weaker models become dead weight as the model outgrows them. Claude Code's own architecture demonstrates this: every model upgrade enables the removal of scaffolding, not the addition of it.
 
-The trust infrastructure trajectory is the inverse. As models become more capable, the actions they can take become more consequential. The blast radius of a failure grows with capability. The compliance surface expands. Governance requirements do not shrink as models improve — they expand.
+The trust infrastructure trajectory is the inverse. As models become more capable, the actions they can take become more consequential. The blast radius of a failure grows with capability. The compliance surface expands. Governance requirements do not shrink as models improve. They expand.
 
 Shane puts it directly: the permissions system is Claude Code's most complex component, not any AI logic. As scaffolding shrinks, that component remains and grows. The hardest part of deploying capable agents is not making them smart. It is making them safe.[^scaffolding-trap]
 
-This creates an asymmetry that matters for investment decisions. Organizations that invested in scaffolding as their primary reliability mechanism are now refactoring it away. Organizations that invested in identity, authorization, and audit infrastructure are accumulating something that appreciates as capability grows. The scaffolding trap has a governance analog: investing in prompt-based safety instructions is betting on a layer that models outgrow. Investing in structural constraints — sandboxing, permission scoping, delegation chains — is betting on infrastructure that becomes more valuable as the agents it governs become more capable.
+This creates an asymmetry that matters for investment decisions. Organizations that invested in scaffolding as their primary reliability mechanism are now refactoring it away. Organizations that invested in identity, authorization, and audit infrastructure are accumulating something that appreciates as capability grows. The scaffolding trap has a governance analog: investing in prompt-based safety instructions is betting on a layer that models outgrow. Investing in structural constraints (sandboxing, permission scoping, delegation chains) is betting on infrastructure that becomes more valuable as the agents it governs become more capable.
 
 The policy implication: "build governance infrastructure now or later" is not a neutral choice. Later means governing more capable agents with broader blast radii using immature processes. The governance debt compounds alongside the capability gains.
 
-(I am synthesizing the scaffolding trap post and the inferential edge post. The connection — scaffolding shrinks while trust requirements grow — is my own framing of two arguments Shane makes separately.)
+(I am synthesizing the scaffolding trap post and the inferential edge post. The connection: scaffolding shrinks while trust requirements grow. My own framing of two arguments Shane makes separately.)
 
 [^scaffolding-trap]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2, 2026. Claude Code example: every model upgrade enabled removal of scaffolding, not addition. "The permissions system" as most complex component. "Every line of scaffolding is a bet that you know better than the model."
 
@@ -216,7 +216,7 @@ MIT Sloan Management Review (March 2026): less than 20% of the effort behind dep
 
 The MIT Sloan five heavy lifts: data integration, model validation, ensuring economic value, monitoring for model or data drift, and governance.[^mit-sloan-deployment] Governance appears not as compliance overhead but as a primary scaling challenge that determines whether deployment succeeds. The 80% sociotechnical burden is where governance lives.
 
-The five heavy lifts map to the book's architecture: data integration is the context and communication infrastructure agents depend on; model validation is the Accountability pillar; monitoring for drift is sustained accountability across the deployment lifecycle; governance maps to the Control pillar. Ensuring economic value is the forcing function that makes the other four urgent — without demonstrable ROI, organizations cannot sustain the investment required to govern them.
+The five heavy lifts map to the book's architecture: data integration is the context and communication infrastructure agents depend on; model validation is the Accountability pillar; monitoring for drift is sustained accountability across the deployment lifecycle; governance maps to the Control pillar. Ensuring economic value is the forcing function that makes the other four urgent: without demonstrable ROI, organizations cannot sustain the investment required to govern them.
 
 The 80% figure confirms that the inferential edge is not a model quality problem. It is an infrastructure and governance problem. Organizations that close it first gain compounding advantage: every automated process sharpens context pipelines, trust infrastructure, and operational learning.[^inferential-edge]
 

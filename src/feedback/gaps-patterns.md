@@ -42,6 +42,12 @@ Entire section was cut. A fabricated statistic with a real citation is worse tha
 
 **Rule for Ghosty:** When citing statistics, find the exact number in the source text and quote it verbatim in a draft note before writing. If you cannot locate the exact stat, do not include it. The same applies to enumerated lists: verify each item against the source before attributing the list.
 
+## Pattern: Em dashes in explanatory parentheticals
+
+The new sections in gaps-new-observations.md used em dashes five times as parenthetical wrappers: "viral screenshots of agents 'scheming against humans' — were either human-engineered..." and "structural constraints — sandboxing, permission scoping, delegation chains —". The book style prohibits em dashes. Use colons for introduced lists, parentheses for inline asides, and periods to break run-on qualifiers.
+
+**Rule for Ghosty:** Em dashes are not permitted. Before submitting any draft, search for " — " and replace each with a colon, parentheses, or a period-separated sentence.
+
 ## Pattern: Imprecise official names and status
 
 The [^dif-58] footnote had two issues caught by Sapere Aude: (1) "Delegated Authority Task Force" instead of the actual name "Delegated Authorization Task Force" — one word off, but wrong; (2) "began transitioning Vouched ID's MCP-I protocol into DIF governance" overstated what Newsletter #58 actually reported, which was that MCP-I was introduced as a candidate work item.
