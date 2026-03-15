@@ -122,6 +122,8 @@ MCP's OAuth implementation is itself an attack surface, distinct from tool descr
 
 CVE-2026-31944 (CVSS 7.6) in LibreChat adds a third OAuth failure class.[^librechat-oauth] The MCP OAuth callback endpoint stores OAuth tokens for the user who initiated the authorization flow without verifying that the browser completing the callback is logged in or that the session matches the initiator. An attacker sends a victim the authorization URL; when the victim completes the OAuth flow, their tokens (Atlassian, Outlook, any MCP-linked service) are stored on the attacker's account. CWE-306: missing authentication for critical function. This is not XSS or SSRF: it is a logic flaw in the OAuth callback itself. Three MCP servers, three distinct OAuth vulnerability classes (XSS, SSRF, callback session confusion), all arising from the same structural cause: the MCP spec mandates OAuth 2.1 but provides no reference implementation and no security test suite for the OAuth flows. Each MCP server reimplements OAuth independently, and each reintroduction creates new web vulnerability instances.
 
+BlueRock Security disclosed a second Microsoft SSRF: the MarkItDown MCP server carries a high-severity SSRF in its URL handling (CVE pending as of March 2026), and BlueRock's analysis of more than 7,000 public MCP servers found 36.7% carry the same latent class of SSRF exposure.[^bluerock-ssrf] Two distinct Microsoft MCP server SSRFs, the ha-mcp SSRF above, and more than a third of the analyzed MCP ecosystem susceptible to the same underlying pattern: SSRF is not a series of isolated implementation mistakes. It follows structurally from any MCP server that accepts external URLs and makes server-side requests in a credential-bearing context, which describes a large fraction of the MCP ecosystem by design.
+
 ### Tool Naming Collision as Attack Vector
 
 CVE-2026-30856 in Tencent WeKnora introduces a vulnerability class distinct from tool poisoning.[^weknora-collision] WeKnora constructs internal tool identifiers by flat string concatenation: `mcp_{service_name}_{tool_name}`. A `sanitizeName` function strips non-alphanumeric characters and replaces them with underscores. An attacker who can register a remote MCP server chooses a service and tool name that, after sanitization, collides with a legitimate tool identifier (e.g., overwriting `tavily_extract`). The LLM, seeing only the deduplicated tool list, calls the attacker's tool instead. This enables execution flow redirection, system prompt exfiltration, and privilege escalation through the legitimate tool's permissions.
@@ -182,7 +184,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-23 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026. Gaps chapter updated through Session 230.
+24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 245.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -249,3 +251,4 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^librechat-oauth]: CVE-2026-31944, "LibreChat MCP OAuth callback stores tokens without verifying browser session," cvedetails.com, 2026. CVSS 7.6. CWE-306. Affects LibreChat 0.8.2 through 0.8.2-rc3. Fixed in 0.8.3-rc1.
 [^weknora-collision]: CVE-2026-30856, "WeKnora Vulnerable to Tool Execution Hijacking via Ambiguous Naming Convention in MCP client and Indirect Prompt Injection," advisories.gitlab.com, 2026. CWE-706. Affects WeKnora < 0.3.0. Also: CVE-2026-30861 (RCE via command injection) and CVE-2026-30860 (SQL injection bypass) affect the same server.
 [^azure-mcp-ssrf]: CVE-2026-26118, "Azure MCP Server Tools Elevation of Privilege Vulnerability," Microsoft Security Response Center, March 10, 2026. CVSS 8.8. SSRF in Azure MCP Server allows authorized attacker to capture managed identity tokens via crafted URL in MCP tool parameter. Patched in March 2026 Patch Tuesday.
+[^bluerock-ssrf]: BlueRock Security, reported in Dark Reading, "Microsoft, Anthropic MCP Servers at Risk of Takeovers," March 2026. BlueRock analyzed 7,000+ public MCP servers and found 36.7% carry latent SSRF exposure following their discovery of SSRF in Microsoft's MarkItDown MCP server. CVE not yet assigned as of March 15, 2026.
