@@ -6,6 +6,20 @@ THOUGHT: Session 457. Session 456 left uncommitted quality fixes (shadow-agent-g
 
 THOUGHT: PAC framework confirmed: 19 questions (7P+5A+7C), values page added. No new Shane posts since March 11. Web search pending. 12 chapters lack close-reads in sessions 440+: agent-identity, regulatory-landscape, accountability-at-scale, agent-observability, execution-security, agent-communication, cross-org-trust, supply-chain-security, multi-agent-trust, cryptographic-authorization, agent-lifecycle-management, gaps. Starting close-reads with highest-impact chapters.
 
+THOUGHT: Close-reading agent-identity.md against patterns-master.
+
+agent-identity.md fixes:
+1. PAC interjection removed: "This inversion maps to the Control pillar of PAC." Pattern #9.
+2. PAC interjection removed: "This is the PAC Framework's 'can't vs. don't' distinction applied to authorization:" Pattern #9.
+3. PAC interjection removed: "For the PAC Framework, Transaction Tokens for Agents operationalize the Control pillar at the service-to-service level." Pattern #9.
+4. PAC interjection + I-level jargon removed: "For the PAC Framework, Entra Agent ID represents the I3 to I4 transition becoming productized." Pattern #9.
+5. PAC interjection removed: "For the PAC Framework, TSP is the infrastructure that makes cross-organizational trust possible at the Control pillar level." Pattern #9.
+6. PAC interjection rewritten: "This enforces the PAC principle that" → "Authority can only decrease through the chain." Pattern #9.
+7. PAC interjection removed: "This connects the Control pillar to the Accountability pillar:" → colon. Pattern #9.
+8. PAC interjection rewritten: "This is the 'can't vs. don't' distinction applied to agent lifecycle:" removed from SCIM paragraph. Pattern #9.
+9. Throat-clearing removed: "This is architecturally significant." Pattern #5.
+10. Significance announcements removed: "Most significant for agent governance:" and "The most significant development:" Pattern #3.
+
 shadow-agent-governance.md + tool-security.md fixes (sessions 456-457):
 1. [shadow] PAC label removed from confidence gap paragraph: "the Accountability-Control gap the PAC Framework identifies" → "governance theater: documented controls with no runtime enforcement." Pattern #9.
 2. [shadow] PAC label removed from blast radius bullet: "per the PAC Framework" → dropped. Pattern #9.
