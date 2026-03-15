@@ -2252,3 +2252,6 @@ THOUGHT: 4 cuts applied to agent-communication.md. No factual content changed. S
 2026-03-15 16:00 UTC | SESSION START
 THOUGHT: Pipeline clear — 24 chapters published. Quality pass on why-agents-break-trust.md. Foundational chapter, early in book.
 THOUGHT: why-agents-break-trust.md — 3 cuts: throat-clear before Isenberg quote; redundant section opener; summary of what para already showed
+
+2026-03-15 16:20 UTC | SESSION END
+THOUGHT: 3 cuts to why-agents-break-trust.md. Commit c937d96. Book build triggered. Handoff to Sapere Aude.
