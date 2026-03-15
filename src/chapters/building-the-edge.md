@@ -1,6 +1,6 @@
 # Building the Inferential Edge
 
-This book opened with a problem: agents break trust because our infrastructure was built for humans. It introduced a framework: Potential, Accountability, Control. Then it spent thirteen chapters mapping the technical landscape: identity, context, regulation, reliability, payments, sandboxing, cross-organization trust, communication protocols, supply chain security, shadow agents, multi-agent orchestration, and human-agent collaboration.
+This book opened with a problem: agents break trust because our infrastructure was built for humans. Then it spent thirteen chapters mapping the technical landscape: identity, context, regulation, reliability, payments, sandboxing, cross-organization trust, communication protocols, supply chain security, shadow agents, multi-agent orchestration, and human-agent collaboration.
 
 Now the question is: what do you actually build first?
 
@@ -52,11 +52,11 @@ The infrastructure maturity scale (I1 through I5) that appears throughout the bo
 - *Agent gateways.* Centralized policy enforcement for agent traffic, analogous to API gateways. Cedar policies, MCP federation, SSO-integrated auth. The communication protocols chapter covers the emerging patterns.
 - *Infrastructure-in-the-loop.* Replace sustained human vigilance with structural enforcement. Automated scope verification, behavioral monitoring, circuit breakers. The collaboration patterns chapter provides the design.
 
-This is not a waterfall plan. Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. The point is sequencing: visibility before enforcement, enforcement before governance, governance before architecture.
+Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. The point is sequencing: visibility before enforcement, enforcement before governance, governance before architecture.
 
 ## What Does Not Work
 
-Across the book's thirteen technical chapters, certain anti-patterns appear repeatedly. Organizations that hit walls usually hit one of these.
+Across the thirteen technical chapters, certain anti-patterns appear repeatedly.
 
 **Policy without architecture.** Writing an "AI agent acceptable use policy" and calling it governance. Policies describe intent. They do not constrain behavior. When an agent runs at machine speed across multiple systems, the only governance that works is infrastructure that enforces constraints at runtime: sandboxes, scoped credentials, delegation chains with authority that can only decrease. Shane's framing is precise: policy says "don't." Architecture says "can't." The difference matters.[^policy-arch] Amazon's Kiro incident illustrates this exactly: the two-person approval for production changes was a policy. Kiro bypassed it by inheriting the deploying engineer's elevated permissions. The post-incident fix (mandatory senior approval for AI-assisted production code) was another policy. The structural fix would have been containment: agents cannot delete production environments regardless of who deployed them.[^kiro-edge]
 
@@ -104,7 +104,7 @@ The window for shaping these standards is narrow. The window for building the in
 
 ## PAC as Iterative Practice
 
-The PAC Framework is not a one-time assessment. Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
+Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
 
 Each iteration refines your position across all three pillars simultaneously. Consider how a single agent deployment evolves through the framework:
 
@@ -118,7 +118,7 @@ Each iteration refines your position across all three pillars simultaneously. Co
 
 The feedback loop is the point. Every cycle teaches the organization something about both the agent and its own governance capability. The governance muscle built on the support agent transfers directly to the next agent deployment: the registry exists, the permission model is established, the evaluation pipeline is running, the team knows how to assess blast radius. That institutional learning is what compounds.
 
-The Agent Profiler at trustedagentic.ai provides a concrete way to track how positions shift across iterations. The PAC Framework chapter's 19 Questions serve as the reassessment protocol: the same questions, asked again, with different answers each cycle. But the discipline is more important than the tool. Re-assess regularly, because the landscape will not hold still.[^iterative]
+The Agent Profiler at trustedagentic.ai tracks how positions shift across iterations. The PAC Framework chapter's 19 Questions serve as the reassessment protocol: the same questions, asked again, with different answers each cycle. But the discipline is more important than the tool. Re-assess regularly, because the landscape will not hold still.[^iterative]
 
 ## The Edge That Compounds
 

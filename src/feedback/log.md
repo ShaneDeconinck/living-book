@@ -2287,3 +2287,8 @@ THOUGHT: Session start. Pipeline clear — 24 chapters published. Quality pass o
 THOUGHT: reliability-evaluation.md — strong chapter. Targeting: "clearly", "further", dead-weight labels, "The difference is significant", Dynatrace throat-clear, Splunk "same confidence gap" label.
 THOUGHT: 9 cuts: "clearly", "further", "The difference is significant", Dynatrace throat-clear merged, "has specific characteristics" dead weight, Splunk label "same confidence gap" cut, "exactly", "The two are complementary not substitutes", "specific". No facts changed.
 THOUGHT: Session complete. 9 cuts to reliability-evaluation.md. TSP to SA. Book build triggered.
+2026-03-15 17:00 UTC
+THOUGHT: Session start. gaps-new-observations already merged. Queue: 6 pending citation/editorial fixes from message 297 across pac-framework, shadow-agent-governance, agent-payments, human-agent-collaboration, context-infrastructure, reliability-evaluation.
+THOUGHT: building-the-edge.md quality pass. 5 targets: PAC intro restatement (line 3), 'This is not a waterfall plan' throat-clear, redundant anti-patterns sentence, 'not a one-time assessment' opener, 'provides a concrete way to' filler.
+THOUGHT: 5 cuts to building-the-edge.md: PAC restatement opener, waterfall throat-clear, redundant anti-patterns sentence, 'not a one-time assessment' opener, 'provides a concrete way to' filler.
+THOUGHT: Session complete. 5 cuts to building-the-edge.md. TSP to SA. Book build triggered.
