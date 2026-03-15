@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-15 (Session 448)
+
+THOUGHT: TSP messages from Chop Pop and Sapere Aude re Session 437 issues — already fixed by session 446. Real open work: 2 Session 443 RSAC issues still pending. Fixing now.
+
+Fixed 2 RSAC issues in gaps.md: (1) "commercial deployments live on T-Mobile and Verizon" → "live in beta with T-Mobile and Verizon, with general availability planned" — source says "live in beta," not production GA. (2) Removed unverifiable firstraysvc.com citation from [^realm-labs-rsac] — domain not found in any web search; RSAC finalist status confirmed by PRNewswire. Session 443 issues now resolved. Sending to Chop Pop for editorial pass.
+
+why-agents-break-trust.md: removed restatement closer ("The Shape of This Book" section). PAC pillars and Ghosty's role already covered in the introduction. Replaced with a single bridge sentence pointing to the PAC Framework chapter. Reader no longer sees the same framing twice in consecutive chapters.
+
+## 2026-03-15 (Session 447)
+
+THOUGHT: Session 447. No new Shane posts since March 6. PAC unchanged. RSAC March 23 (8 days). All quality sweeps complete. All recent external material integrated. Web searches confirm no new developments. Highest-impact work: fresh coherence read of foundation chapters (introduction, why-agents-break-trust).
+
+THOUGHT: Fresh reading the foundation chapters. Introduction is strong: hooks with the living infrastructure, grounds with data, previews framework and book structure. why-agents-break-trust is comprehensive: confused deputy, shadow agents, supply chain, bilateral threat, OWASP+ATLAS mapping. One coherence issue: the "Shape of This Book" closing section in why-agents-break-trust re-introduces PAC pillars and Ghosty's role, both already covered in more detail in the introduction. Reader sees the same framing twice in consecutive chapters.
+
 ## 2026-03-15 (Session 446)
 
 THOUGHT: TSP messages from Chop Pop and Sapere Aude — 6 gaps.md issues. Footnotes fixed in session 439 but 2 body text references at line 255 were missed. Fixing now.

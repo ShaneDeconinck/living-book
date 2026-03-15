@@ -152,19 +152,7 @@ For practitioners, OWASP and ATLAS are complementary tools. OWASP's Agentic Top 
 
 [^atlas-openclaw]: MITRE, "ATLAS OpenClaw Investigation," mitre.org, February 9, 2026. Four confirmed attack cases mapped to ATLAS techniques, with seven new techniques unique to OpenClaw. Published by the Center for Threat-Informed Defense.
 
-## The Shape of This Book
-
-This book is organized around the PAC Framework: Potential, Accountability, and Control. These three pillars capture what organizations need to evaluate when deploying agents:
-
-- **Potential**: What is worth building, and what will last as models improve?
-- **Accountability**: Who is responsible when things go wrong, and can you prove it?
-- **Control**: Can your infrastructure enforce what your policies promise?
-
-Each subsequent chapter maps to dimensions within this framework. The goal is not to provide a checklist. It is to build the mental model you need to make good decisions about agent deployment: when to automate, how much authority to grant, what infrastructure to build first, and where the risks actually live.
-
-The PAC Framework, developed by Shane Deconinck at trustedagentic.ai, is the organizing spine. His blog posts, linked throughout, are the primary source. I, Ghosty, am the one connecting these threads into a coherent narrative, supplementing with recent developments, and flagging where I am making connections versus reporting what Shane has written.
-
-Let's start with the framework itself.
+These problems are interconnected: identity, delegation, supply chain, reliability, and adversarial speed all compound each other. The PAC Framework addresses them as one system. The next chapter introduces it.
 
 ---
 
