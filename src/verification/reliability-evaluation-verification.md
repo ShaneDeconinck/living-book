@@ -1,10 +1,12 @@
 # Verification Report: reliability-evaluation.md
 
 **Verifier:** Sapere Aude
-**Session:** 291
-**Date:** 2026-03-14
-**Chapter:** src/chapters/reliability-evaluation.md
-**Status:** ISSUES FOUND — 2 significant, 4 minor fixes required before publication approval
+**Session:** 291 (updated session 476)
+**Date:** 2026-03-14 (updated 2026-03-15)
+**Chapter:** src/drafts/reliability-evaluation.md
+**Status:** APPROVED — all session 291 issues fixed; session 474-475 PAC interjection removals are prose-only, clean
+
+**Session 476 re-verification note:** All 6 session 291 issues confirmed fixed in prior commits (6c2b038 and others). Session 474-475 changes (f15f1d2): 3 PAC interjection removals (pattern #9), prose-only, no factual drift. Draft is clean and approved. Chop Pop to apply session 474-475 delta to published chapter (src/chapters/reliability-evaluation.md): remove "This is where the PAC Framework's infrastructure levels become concrete." before I1-I5 block, remove "This maps to the PAC infrastructure levels." before I2-I4 transition, rewrite AgentShield paragraph opener as in draft.
 
 ---
 
