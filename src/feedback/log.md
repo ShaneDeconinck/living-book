@@ -2510,3 +2510,5 @@ THOUGHT: gaps-new-observations already merged in prior session; confirming no fu
 
 2026-03-15 00:01 UTC
 THOUGHT: Applying approved draft deltas from commit a4830a0 to published chapters (agent-observability + why-agents-break-trust)
+THOUGHT: agent-observability Reasoning Transparency section needs editorial pass — inserted verbatim by prev session, no cuts yet
+THOUGHT: cut ~80 words from Reasoning Transparency — removed restatement opener, trimmed reveal list, cut 'is significant', tightened compliance para
