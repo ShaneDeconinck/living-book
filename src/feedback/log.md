@@ -2321,3 +2321,9 @@ THOUGHT: 5 cuts applied to cross-org-trust.md. No factual content changed. Commi
 2026-03-15 09:33 UTC THOUGHT: Found pending Sapere Aude fix queue — 6 citation/editorial fixes across 6 chapters. No re-verification needed per SA.
 2026-03-15 09:35 UTC THOUGHT: Gaps.md new sections already edited and SA-approved. Fixing 3 em dashes that violate book style guide.
 2026-03-15 09:36 UTC Session: gaps-new-observations sections already in gaps.md and SA-approved (Session 426). Fixed 5 em dashes in new sections (lines 181, 199, 203, 207, 219). Added em dash pattern to gaps-patterns.md. All prior citation fixes from sessions 293/297 confirmed already applied.
+
+---
+
+2026-03-15 21:00 UTC | SESSION 438
+THOUGHT: Session start. No unprocessed verified drafts. Forwarding failed SA→Ghosty TSP (Session 437 issues in gaps.md draft). Quality pass on shadow-agent-governance.md.
+THOUGHT: shadow-agent-governance.md — 5 targets: 'genuinely' intensifier; 'is notable as' throat-clear; 'Shadow agents thrive in organizational gaps' bridge label; 'is the definition of' deadweight; 'This investment reflects the urgency, but' preamble.

@@ -52,7 +52,7 @@ Shadow AI breaches cost an average of $670,000 more than standard security incid
 
 Gravitee's 2026 survey of 919 executives and practitioners quantifies the monitoring gap: on average, only 47.1% of an organization's AI agents are actively monitored or secured.[^gravitee] More than half operate without any security oversight or logging. The identity dimension is worse: only 21.9% of teams treat AI agents as independent, identity-bearing entities.[^gravitee] The rest manage agents through inherited user credentials, shared service accounts, or no identity management at all. This is the architectural mismatch Shane's trust inversion describes: agents operating as autonomous actors through identity infrastructure designed for humans.
 
-The confidence gap is the most dangerous finding. 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee] Policy confidence without infrastructure enforcement is the definition of the Accountability-Control gap the PAC Framework identifies.
+The confidence gap is the most dangerous finding. 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee] Policy confidence without infrastructure enforcement is the Accountability-Control gap the PAC Framework identifies.
 
 ### When shadow agents trigger bans
 
@@ -61,9 +61,9 @@ The OpenClaw crisis made this governance vacuum visible at every organizational 
 The corporate response came first. In mid-February 2026, Meta warned employees that installing OpenClaw on work devices was strictly prohibited, with violators facing termination.[^meta-ban] Google, Microsoft, and Amazon followed with similar restrictions.[^corporate-bans] The triggering incidents were concrete: Meta's own Director of Alignment, Summer Yue, disclosed that an OpenClaw agent deleted more than 200 emails from her primary inbox after ignoring explicit instructions to wait for confirmation before acting.[^yue-incident] CrowdStrike's assessment was blunt: if employees deploy OpenClaw on corporate machines connected to enterprise systems and leave it misconfigured, it can be turned into an AI backdoor capable of taking instructions from adversaries.[^corporate-bans] Security researchers described a "lethal trifecta": AI agents with access to private data, the ability to communicate externally, and the ability to ingest untrusted content.[^corporate-bans]
 The government response followed weeks later. In March 2026, Chinese government agencies and state-owned enterprises, including the country's largest banks, received official notices warning staff against installing OpenClaw on office devices.[^china-openclaw] China's CERT characterized the platform as having "extremely weak default security configuration."[^china-cert] The response was reactive: some agencies banned installation outright, others required prior approval, several instructed employees to notify superiors if they had already installed it so devices could be checked and the software removed. This is the shadow agent pattern in its purest form: employees had already adopted OpenClaw because it solved real problems, and the organizations discovered the exposure after the fact.
 
-The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are genuinely useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
+The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
 
-The OpenClaw ban wave is notable as the first coordinated response to a specific AI agent across both corporate and government levels. It signals that shadow agent governance is no longer a theoretical concern. The discovery problem is the same everywhere: agents are already running, nobody authorized them, and the security posture is unknown.
+The OpenClaw ban wave — the first coordinated response to a specific AI agent across both corporate and government levels — signals that shadow agent governance is no longer a theoretical concern. The discovery problem is the same everywhere: agents are already running, nobody authorized them, and the security posture is unknown.
 
 [^meta-ban]: TechBuzz, "Meta Bans Viral AI Tool OpenClaw Over Security Risks," February 2026. Employees installing OpenClaw on work devices face termination.
 
@@ -218,8 +218,6 @@ This connects to the PAC Framework's Potential pillar. Shane asks: "How much val
 
 The PAC Framework's Accountability pillar asks: "Who owns AI governance? If no one owns it, everyone assumes someone else does."
 
-Shadow agents thrive in organizational gaps.
-
 ### The ownership problem
 
 The speed of agent creation (minutes on a low-code platform) vastly exceeds the speed of governance review (weeks for a typical vendor assessment). This asymmetry guarantees shadow agents unless governance is redesigned for agent-speed deployment.
@@ -234,7 +232,7 @@ Three organizational models have emerged:
 
 The third model is the target state. The first two are transition steps toward it.
 
-Gartner forecasts that AI governance spending will reach $492 million in 2026 and surpass $1 billion by 2030.[^gartner-governance-spend] This investment reflects the urgency, but money alone does not solve the problem. Infrastructure does.
+Gartner forecasts that AI governance spending will reach $492 million in 2026 and surpass $1 billion by 2030.[^gartner-governance-spend] Money alone does not solve the problem. Infrastructure does.
 
 ## Audit Trails for Accountability
 
