@@ -271,6 +271,22 @@ TSP is distinct from OAuth. OAuth assumes you pre-registered with the authorizat
 
 The spec reached Revision 2 in November 2025 and is actively developing.[^10]
 
+### Authority Continuity: PIC
+
+TSP handles identity across boundaries. But identity verification alone does not constrain what happens after authentication. An agent that proves who it is can still accumulate authority beyond what was delegated to it.
+
+Nicola Gallo reframes this as a model problem, not a configuration problem. Current systems treat authority as an object: create a token, store it, transfer it, consume it. Whoever holds the token exercises the authority. A stolen token works. A replayed token works. A token used in an unintended context works. Possession equals authority.[^pic]
+
+PIC (Provenance, Identity, Continuity) replaces proof of possession with proof of continuity. Each execution step forms a virtual chain where the workload proves it can continue under the received authority, satisfying the constraints (department membership, company affiliation, and similar guardrails). The trust plane validates this at each step and creates the next link. Authority can only be restricted or maintained, never expanded.
+
+The confused deputy is not detected or mitigated under this model. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability.[^pic]
+
+To continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. To create authority, it needs an identity and an expressed intent. That distinction makes the model work for agents: some act autonomously, others continue authority received from a human principal.
+
+PIC is designed to work with existing infrastructure. It can use OAuth as a federated backbone, embedding causal authority in custom claims. Performance is not a blocker: executing a continuity chain takes microseconds, comparable to a token exchange call.[^pic]
+
+The [Cross-Organization Trust](cross-org-trust.md) chapter covers how TSP and PIC compose into a full stack for cross-boundary agent governance.
+
 ## Verifiable Intent: Proving What Was Authorized
 
 The biggest gap in the identity stack is not "who" but "what exactly." OAuth proves who has access. OBO proves who delegated. But neither proves what the user actually intended the agent to do.
@@ -443,3 +459,4 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^bpi-aba]: Bank Policy Institute and American Bankers Association, "BPI/ABA Comment on NIST's Security Considerations for AI Agent Systems," bpi.com, March 9, 2026. Joint comment to NIST CAISI proposing risk-scaled "nutrition label" controlled-sharing profile for agent transparency, with foundational and enhanced tiers, Data Dependency Labels, and NCCoE-style practice guides for financial services agent deployments.
 [^cyberark-agents]: CyberArk, "CyberArk Introduces First Identity Security Solution Purpose-Built to Protect AI Agents with Privilege Controls," cyberark.com, November 2025. General availability late 2025. Uses SPIFFE SVIDs as short-lived agent identities. Palo Alto Networks acquired CyberArk for $25 billion in February 2026, the largest security industry deal in history, making agent identity security a core pillar of its platform. See also GitGuardian, "Workload And Agentic Identity at Scale: Insights From CyberArk's Workload Identity Day Zero," blog.gitguardian.com, November 2025.
 [^keycloak-idjag]: Keycloak, "JWT Authorization Grant and Identity Chaining in Keycloak 26.5," keycloak.org, January 2026. Implements IETF Identity Assertion JWT Authorization Grant (ID-JAG) via RFC 7523 profile, combined with Token Exchange (RFC 8693) for cross-domain identity chaining. See also CVE-2026-1609: disabled users could obtain tokens via JWT Authorization Grant (fixed in 26.5.3, February 2026); CVE-2026-1486: logic bypass allowing authentication via disabled identity providers.
+[^pic]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Reflections from the LFDT Belgium meetup featuring Nicola Gallo (Nitro Agility, co-chair of Trusted AI Agents working group at Decentralized Identity Foundation) on PIC. See also pic-protocol.org.

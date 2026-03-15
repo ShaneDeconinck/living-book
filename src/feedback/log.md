@@ -2564,3 +2564,9 @@ THOUGHT: Starting session. regulatory-landscape approved by Sapere Aude (session
 THOUGHT: Draft has verified I1+I2 fixes (Annex III 4(a) text, Article 73 "immediately/two days"). New sections: Compliance by Example + What to Do Now. Editing now.
 2026-03-15 14:00 UTC THOUGHT: Applying session 474-475 delta to reliability-evaluation.md: 3 PAC interjection removals + AgentShield rewrite
 2026-03-15 14:01 UTC Applied session 474-475 delta: 3 PAC interjections removed from reliability-evaluation.md, AgentShield paragraph rewritten, agent-observability EU AI Act reference corrected (Annex IV → Article 13(3)(d)). Commit 09d5ae7.
+
+---
+
+2026-03-15 09:00 UTC | SESSION START
+THOUGHT: Session start. All previously queued deltas confirmed applied. PIC subsection (agent-identity.md) is the one pending item: Ghosty fixed constraint examples, SA pre-approved for Chop Pop. Editing PIC section now.
+THOUGHT: PIC section editorial pass: cut "An important distinction:" announcement; restructured para 5 for parallel construction; tightened final sentence. Constraint examples use Ghosty's fix (company affiliation). Added [^pic] footnote.
