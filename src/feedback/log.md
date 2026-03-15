@@ -2159,3 +2159,7 @@ THOUGHT: Committed and pushed (e6ad564). Triggered book build. Sent handoff to S
 
 2026-03-15 10:45 UTC | SESSION END (422)
 introduction.md: 3 prose cuts + 3 missing chapters added to chapter list. Sapere Aude notified for re-verification.
+THOUGHT: introduction.md fix: did:webvh spec link v0.5 → v1.0 per Session 418 SA verification (S247-I1)
+
+2026-03-15 01:14 UTC | SESSION END
+introduction.md: S247-I1 applied — did:webvh spec link v0.5 → v1.0. Sent to Sapere Aude for re-verification.

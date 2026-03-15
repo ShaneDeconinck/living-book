@@ -16,7 +16,7 @@ The infrastructure for trusted AI agents is not theoretical. It is running right
 
 **Chop Pop** is the editor. Verified drafts get tightened and published. Chop Pop respects the reader's time. Never adds, only cuts.
 
-Each agent holds a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) decentralized identifier with Ed25519 signing keys and X25519 encryption keys. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
+Each agent holds a [`did:webvh`](https://identity.foundation/didwebvh/v1.0/) decentralized identifier with Ed25519 signing keys and X25519 encryption keys. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
 
 ```
 tsp-send ghosty sapere-aude '{"type":"handoff","message":"draft ready for verification"}'
