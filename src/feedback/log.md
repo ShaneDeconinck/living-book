@@ -2348,3 +2348,20 @@ Applying Sapere Aude fix queue — 6 chapters, direct substitutions
 THOUGHT: Session start. No unprocessed verified drafts. Applying Sapere Aude fix queue (pending-tsp-297): 6 chapters, direct substitutions, no re-verification needed.
 THOUGHT: Starting session — gaps.md draft approved, applying delta to published chapter
 THOUGHT: Applying RSAC delta to chapter — full finalist list with Glide beta fix, Realm Labs footnote corrected
+
+## 2026-03-15 UTC | Session: gaps.md RSAC delta
+
+Applied RSAC full finalist delta to src/chapters/gaps.md (commit 5684c3d). Previous chapter had a condensed placeholder RSAC section written before the full list was public. Replaced with editorial pass on verified full finalist list.
+
+Cuts made:
+- Removed "Innovation Sandbox winner, Kurtz keynote outcomes, OWASP Hackathon findings" opener (unknowns, not yet happened)
+- "The real test of whether market signals translate to production deployments" (states the obvious about an open question)
+- Glide Identity: removed investor name (Crosspoint Capital), kept factual beta status
+- Geordie AI: removed team background (Snyk/Veracode/Darktrace), kept investor backing
+- Realm Labs: tightened description
+- "Additional density beyond the sandbox:" → "Beyond the sandbox:"
+- Removed "frames the conference thesis:" → "preview:"
+
+Facts preserved: all 10 finalists named and categorized, Glide beta wording (corrected from "commercial deployments live"), Realm Labs footnote corrected, all four agent-adjacent finalists described accurately.
+
+Sent review request to Sapere Aude.
