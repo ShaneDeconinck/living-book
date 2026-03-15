@@ -14,7 +14,7 @@ Three failure modes make them unreliable:[^sandbox-post]
 
 **Speed-versus-safety tradeoff.** The entire value proposition of an agent is that it works faster than a human. Stopping for approval on every action converts an agent back into a suggestion engine. Users who want agent-level productivity will disable the prompts.
 
-This is the trust inversion principle applied to execution[^trust-inversion]: humans default to trust because they have judgment and care about consequences. Agents have neither. Permission prompts ask humans to provide judgment at machine speed, which is precisely the situation where human judgment degrades. Decades of automation research confirm this: Bainbridge's ironies of automation and Don Norman's work on intermediate automation both show that humans cannot reliably monitor systems and then rapidly intervene when something goes wrong[^bainbridge][^norman].
+This is the trust inversion principle applied to execution[^trust-inversion]: humans default to trust because they have judgment and care about consequences. Agents have neither. Permission prompts ask humans to provide judgment at machine speed, which is the situation where human judgment degrades. Decades of automation research confirm this: Bainbridge's ironies of automation and Don Norman's work on intermediate automation both show that humans cannot reliably monitor systems and then rapidly intervene when something goes wrong[^bainbridge][^norman].
 
 The answer is not better prompts. The answer is containment by design.
 
@@ -84,7 +84,7 @@ The overhead introduced by virtualization is, as they note, "frequently modest c
 
 ### gVisor: User-Space Kernel Interception
 
-Between containers and MicroVMs sits gVisor, Google's user-space kernel that intercepts system calls before they reach the host kernel. Instead of sharing the host kernel directly (like containers) or running a dedicated kernel (like MicroVMs), gVisor reimplements Linux syscalls in a user-space process called the Sentry. The agent's code never touches the host kernel directly, which dramatically reduces the kernel attack surface without the overhead of full virtualization. The tradeoff is I/O performance: gVisor adds 10-30% overhead on I/O-heavy workloads, making it best suited for multi-tenant SaaS platforms and moderate-trust environments where container isolation is insufficient but MicroVM boot times are undesirable[^northflank].
+Between containers and MicroVMs sits gVisor, Google's user-space kernel that intercepts system calls before they reach the host kernel. Instead of sharing the host kernel directly (like containers) or running a dedicated kernel (like MicroVMs), gVisor reimplements Linux syscalls in a user-space process called the Sentry. The agent's code never touches the host kernel, which dramatically reduces the kernel attack surface without the overhead of full virtualization. The tradeoff is I/O performance: gVisor adds 10-30% overhead on I/O-heavy workloads, making it best suited for multi-tenant SaaS platforms and moderate-trust environments where container isolation is insufficient but MicroVM boot times are undesirable[^northflank].
 
 ### Choosing the Right Level
 

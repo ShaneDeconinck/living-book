@@ -20,7 +20,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 
 Delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely).
 
-This maps to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
+All five properties must hold at every delegation hop, not just at the entry point.
 
 ## Trust Does Not Compose By Default
 
@@ -89,7 +89,7 @@ The defense is structural containment: make bypass impossible, not trust advisor
 
 How do you encode trust across multi-hop delegation chains? OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent address the single-hop case. Multi-hop delegation requires a different mechanism. One approach: Delegation Capability Tokens (DCTs) built on macaroons.
 
-Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps naturally to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
+Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
 
 A DCT for a multi-agent delegation chain works like this:
 
@@ -124,7 +124,7 @@ A DCT for a multi-agent delegation chain works like this:
 
 Each delegation hop can only add restrictions. Agent A cannot give Agent B a $10,000 budget from a $5,000 authorization. The token is self-verifying: any party in the chain can confirm that the caveats were added by authorized holders without contacting the original issuer. This is offline verification, critical for multi-agent systems where round-trips to an authentication server at every hop would be prohibitively slow.
 
-DCTs enforce what the PAC Framework calls decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
+DCTs enforce decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
 
 ## The Orchestration Governance Gap
 
@@ -247,7 +247,7 @@ Attack path tracing showed that three of four representative attack chains were 
 
 The paper also maps each defensive principle to compliance standards: Authorized Interface to NIST SP 800-207 (Zero Trust), Capability Scoping to NIST AC-6 (least privilege) and OWASP LLM08 (excessive agency), Verified Execution to ISO 27001 A.10 (non-repudiation) and EU AI Act Article 12 (logging), Memory Integrity to NIST SI-7 (data integrity) and EU AI Act traceability requirements, and Access-Controlled Data Isolation to NIST AC-2/3 (RBAC/ABAC) and GDPR Article 5 (data minimization).[^agenticcyops]
 
-The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle from the PAC Framework's Control pillar, applied to multi-agent systems with quantified results.
+The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle, applied to multi-agent systems with quantified results.
 
 ### Cross-Boundary Multi-Agent Delegation
 

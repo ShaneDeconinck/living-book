@@ -38,7 +38,7 @@ The agent's initial permissions should reflect its declared purpose and nothing 
 
 In practice, this fails at provisioning time more often than anywhere else. Teleport's 2026 report found that 70% of organizations grant AI systems higher levels of privileged access than humans would receive for the same task.[^teleport] The reason is structural: provisioning agents through existing IAM tools means choosing from permission sets designed for human roles. An agent that needs to read one database table gets a "data analyst" role that includes read access to every table in the schema.
 
-Token Security's approach inverts this: intent-aware least-privilege ensures agents have only the permissions needed for their purpose, and only for the time required.[^token-security] The permission is derived from the agent's declared intent, not from a pre-existing role. This is Shane's profiler model applied to provisioning: infrastructure is a gate, not a slider.[^profiler]
+Token Security's approach inverts this: intent-aware least-privilege ensures agents have only the permissions needed for their purpose, and only for the time required.[^token-security] The permission is derived from the agent's declared intent, not from a pre-existing role.[^profiler]
 
 ## Life: Runtime Governance
 

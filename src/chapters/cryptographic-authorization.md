@@ -8,7 +8,7 @@ This is the gap that cryptographic authorization addresses. Architecture blocks 
 
 ## Three Governance Modes
 
-The PAC Framework's central argument is that policy enforcement fails where architecture holds. "Don't" says you should not act. "Can't" makes the action structurally impossible.
+Policy enforcement fails where architecture holds. "Don't" says you should not act. "Can't" makes the action structurally impossible.
 
 But there is a third mode: "prove." Where "can't" constrains the action space, "prove" attaches verifiable authorization to every action within that space. Where "don't" expresses a policy, "prove" cryptographically binds the policy to the action at execution time.
 
