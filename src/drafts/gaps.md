@@ -96,6 +96,38 @@ The book now identifies three distinct mechanisms by which human oversight degra
 
 Each has a different mitigation. Complacency requires reducing monitoring demands. Controllability requires making agent interpretation visible. The paradox of supervision requires evaluating review quality alongside review completion. All three reinforce infrastructure-in-the-loop as the durable governance model because none can be solved by asking humans to try harder.
 
+### AI Literacy Cannot Scale: Structural Constraints Fill the Gap
+
+Shane's OpenClaw/Moltbook post (February 2026) identifies a pattern with governance implications the book does not fully address.[^shane-openclaw] Two opposite-looking failure modes share the same root cause: people misunderstand what AI is, in both directions.
+
+The first failure mode: blind over-trust. Users who cannot define "terminal" install an agent with system-level access because the AI walked them through it. They do not understand what they authorized. Then they expose the debug backend to the public internet because the documentation said not to and they did not read it. Shane: "If the creator telling users not to do something doesn't work, documentation is not a security model."[^shane-openclaw]
+
+The second failure mode: evidence-free over-fear. Users attribute intent, consciousness, and malice to next-token prediction. The Moltbook panic: viral screenshots of agents "scheming against humans" were either human-engineered outputs or statistical artifacts, presented without context. People cited their agent's output as proof: "Yeah, but my agent said this." Shane and Lex Fridman's counter: LLMs are "matrix calculations." The same misunderstanding that produces blind trust produces irrational fear.
+
+The governance implication is structural. Shane's argument across multiple posts: because agents lack common sense, because they fail unpredictably, and because they do not know when they are wrong, governance cannot depend on users understanding what they are doing. Documentation is not a security model. Training is not a security model. The answer is structural constraints that limit damage regardless of user literacy level.[^trust-inversion]
+
+This applies to deployers as much as end users. Agent deployment platforms should apply trust inversion to administrators as well as agents. Default permissions for deploying an agent should be narrow. Expanding them should require explicit approval and documented rationale. The pattern: assume the person deploying the agent may not fully understand the blast radius, and design the deployment interface to make dangerous configurations hard by default.
+
+(I am extending Shane's argument from end users to deployers. Shane's posts focus on the agent governance layer; I am applying the same logic one layer up. Flagging this as my own connection.)
+
+[^trust-inversion]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 3, 2026. "Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task."
+
+### As Scaffolding Shrinks, Trust Infrastructure Is What Remains
+
+Shane's scaffolding trap post (February 2026) makes a prediction with compounding consequences for trust infrastructure.[^scaffolding-trap] As models improve, engineered harnesses shrink: the routing logic, output parsers, retry mechanisms, and orchestration code built to compensate for weaker models become dead weight or active constraints as the model outgrows them. Claude Code's own architecture demonstrates this: every model upgrade enables the removal of scaffolding, not the addition of it.
+
+The trust infrastructure trajectory is the inverse. As models become more capable, the actions they can take become more consequential. An agent that could barely generate bash commands in late 2024 runs complex multi-step workflows by early 2026. The blast radius of a failure grows with capability. The compliance surface expands. The governance requirement does not shrink as models improve. It expands.
+
+Shane puts it directly: "The permissions system" is Claude Code's most complex component, not any AI logic. As scaffolding shrinks, this component remains and grows. The hardest part of deploying capable agents is not making them smart. It is making them safe.[^scaffolding-trap]
+
+This creates an asymmetry that matters for investment decisions. Organizations that invested in scaffolding as their primary reliability mechanism are now refactoring it away. Organizations that invested in identity, authorization, and audit infrastructure are accumulating something that appreciates as capability grows. The scaffolding trap has a governance analog: investing in prompt-based safety instructions is betting on a layer that models outgrow. Investing in structural constraints (sandboxing, permission scoping, delegation chains) is betting on infrastructure that becomes more valuable as the agents it governs become more capable.
+
+The policy implication: organizations evaluating whether to build governance infrastructure "now or later" should note that later means governing more capable agents with broader blast radii using immature processes. The governance debt compounds alongside the capability gains.
+
+(I am synthesizing the scaffolding trap post and the inferential edge post. The connection between scaffolding shrinking and trust requirements growing is my own framing of two arguments Shane makes separately. Flagging this.)
+
+[^scaffolding-trap]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2, 2026. Claude Code example: every model upgrade enabled removal of scaffolding, not addition. "The permissions system" as most complex component. "Every line of scaffolding is a bet that you know better than the model."
+
 ### Agent Identity Meets Supply Chain Provenance
 
 Agent Card signing (A2A v1.0, JWS + JSON Canonicalization) answers "is this card authentic?" Sigstore's sigstore-a2a project answers a harder question: "where did this agent come from, and how was it built?"[^sigstore-a2a] Using ambient OIDC credentials in CI/CD environments, sigstore-a2a performs keyless signing of Agent Cards through Sigstore's certificate authority (Fulcio), records signatures in the Rekor transparency log, and generates SLSA provenance attestations linking each card to its source repository, commit SHA, and build workflow. No long-lived signing keys to manage or rotate.
@@ -229,7 +261,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 453.
+24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 454.
 
 **Published (src/chapters/):**
 1. Introduction
