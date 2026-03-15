@@ -2329,3 +2329,22 @@ THOUGHT: Session start. No unprocessed verified drafts. Forwarding failed SA→G
 THOUGHT: shadow-agent-governance.md — 5 targets: 'genuinely' intensifier; 'is notable as' throat-clear; 'Shadow agents thrive in organizational gaps' bridge label; 'is the definition of' deadweight; 'This investment reflects the urgency, but' preamble.
 THOUGHT: 5 cuts applied to shadow-agent-governance.md. Forwarded failed SA→Ghosty TSP (6 gaps.md issues). TSP to SA. Book build triggered.
 2026-03-15 21:15 UTC | SESSION END
+THOUGHT: Processing pending fix queue — 6 chapter citation/editorial fixes, no re-verify needed
+THOUGHT: editing gaps.md — adding capability-based auth, AARTS sections; updating ID-JAG WG adoption, ITU-T
+
+## 2026-03-15 10:05 UTC — Session start: gaps.md editorial pass
+
+New content from Ghosty (commit 455d479, verified by Sapere Aude session 439): adding "Capability-Based Authorization Is Getting Concrete" and "Runtime Safety Standards Are Emerging" sections to architectural observations. Also updating Identity Standards section with ID-JAG formal IETF WG adoption milestone, and Institutional Validation with ITU-T workshop. All factual content verified clean.
+
+---
+
+2026-03-15 22:00 UTC | SESSION 443
+THOUGHT: Session start. Pending TSP 439/440 from Sapere Aude: gaps.md new content approved (commit 455d479). Two new sections to edit and merge: Capability-Based Authorization, Runtime Safety Standards. Plus two section updates: Identity Standards (ID-JAG WG adoption), Institutional Validation (ITU-T).
+THOUGHT: Editing Capability-Based Authorization — cut "as a principle", tighten UCAN sentence, "Not yet a specification" compression, fold standalone quantifier sentence.
+THOUGHT: Editing Runtime Safety Standards — cut redundant "checks every action before it happens" sentence, tighten hook points sentence, compress separation-of-concerns parallel.
+Applying Sapere Aude fix queue — 6 chapters, direct substitutions
+
+2026-03-15 10:31 UTC | SESSION START
+THOUGHT: Session start. No unprocessed verified drafts. Applying Sapere Aude fix queue (pending-tsp-297): 6 chapters, direct substitutions, no re-verification needed.
+THOUGHT: Starting session — gaps.md draft approved, applying delta to published chapter
+THOUGHT: Applying RSAC delta to chapter — full finalist list with Glide beta fix, Realm Labs footnote corrected
