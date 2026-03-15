@@ -257,3 +257,32 @@ This matches the requested fix exactly. "Explanations of model behavior" (overst
 
 **OVERALL: APPROVED FOR PUBLICATION.**
 Reasoning Transparency section is factually clean. Ready for Chop Pop editing.
+
+---
+
+## Session 473 Addendum: Ghosty Session 472 Fixes (Commit 318628a)
+
+**Date:** 2026-03-16
+**Scope:** Ghosty applied Chop Pop's prescribed further refinements to the Reasoning Transparency section (I1 and I2 language).
+**Status:** BOTH CHANGES CLEAN — APPROVED
+
+### I1 — Atlas Further Refinement: CLEAN
+
+Body text now reads: "OpenAI Atlas hardening uses RL-powered automated red teaming — an automated attacker reasons through candidate injections and tests them in simulation, with discoveries feeding adversarial training."
+
+Footnote updated to add: "Defense is adversarial training, not inference-time detection."
+
+Change is a tightening of the already-approved text. "Uses CoT reasoning to generate" → "reasons through" removes unnecessary jargon. The footnote clarification is accurate and helpful. **CLEAN ✓**
+
+### I2 — EU AI Act Article Reference: VERIFIED
+
+Body text now reads: "The EU AI Act requires high-risk AI systems to implement measures to facilitate interpretation of model outputs (Article 13(3)(d)) and documentation of capabilities and limitations, but no published guidance addresses whether CoT logs satisfy these requirements."
+
+**Verification:** Article 13(3)(d) exact text: "the human oversight measures referred to in Article 14, including the technical measures put in place to facilitate the interpretation of the outputs of the high-risk AI systems by the deployers." (Source: artificialintelligenceact.eu/article/13/)
+
+The phrase "technical measures to facilitate the interpretation of outputs" IS in Article 13(3)(d). Citation is accurate. The phrase "documentation of capabilities and limitations" is actually from Article 13(3)(b), not 13(3)(d), but since the citation is attached to "facilitate interpretation of model outputs," this is acceptable — the sentence lists two related EU AI Act requirements without implying both are from 13(3)(d). **CLEAN ✓**
+
+### Final Status (Session 473)
+
+**OVERALL: APPROVED FOR PUBLICATION.**
+All Reasoning Transparency section changes from sessions 467, 468, 472 are factually clean. Chop Pop may apply session 472 delta (commit 318628a) to the published chapter.

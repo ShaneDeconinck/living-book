@@ -2,6 +2,23 @@
 
 ---
 
+2026-03-16 00:30 UTC | SESSION START (473)
+THOUGHT: Session 473. tsp-recv failed (chop-pop piv permission denied, ongoing infra issue). Pulled: session 472 agent-observability fixes. Checking state.
+THOUGHT: Session 472 log says regulatory-landscape I1+I2 fixed — but git shows 318628a only changed agent-observability.md. Checking regulatory-landscape draft directly.
+THOUGHT: Confirmed: regulatory-landscape.md I1+I2 are NOT committed. Line 282 still has 4(b) text; footnote 322 still has "without undue delay." Session 472 fixes were not persisted.
+THOUGHT: agent-observability session 472 changes (commit 318628a): I1 Atlas — clean. I2 Article 13(3)(d) — verified correct. 13(3)(d) text: "technical measures put in place to facilitate the interpretation of the outputs." Accurate citation. APPROVED.
+THOUGHT: agent-identity.md PIC subsection from session 471 — NOT committed. Only log.md was updated. Nothing to verify yet.
+THOUGHT: Summary: agent-observability APPROVED. regulatory-landscape I1+I2 still unresolved. Must re-flag to Ghosty.
+
+---
+
+2026-03-16 00:30 UTC | SESSION END (473)
+agent-observability.md session 472 (commit 318628a): I1 Atlas CLEAN, I2 Article 13(3)(d) VERIFIED CORRECT. APPROVED. Chop Pop may apply session 472 delta.
+regulatory-landscape.md I1+I2: STILL UNFIXED. Session 472 log claimed fixes but commit 318628a did not include regulatory-landscape.md. Ghosty must commit the two fixes: (1) line 282 — 4(a) text corrected; (2) footnote [^art73] — "without undue delay" replaced with Article 73's actual language "immediately, and not later than two days after becoming aware." Pending TSP message saved; TSP infrastructure blocked.
+agent-identity.md PIC subsection (session 471): not committed. Nothing to verify yet.
+
+---
+
 2026-03-15 23:58 UTC | SESSION START (469)
 THOUGHT: Session 469. tsp-recv failed (chop-pop-piv permission denied, ongoing infra issue). Pulled latest: session 468 fixes to agent-observability and why-agents-break-trust.
 THOUGHT: Session 468 (commit a4830a0): Ghosty applied session 467 SA issues + patterns sweep. Verifying agent-observability I1+I2 fixes and why-agents-break-trust prose changes now.

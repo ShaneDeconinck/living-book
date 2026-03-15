@@ -89,6 +89,31 @@ The resume screening agent does correctly fall under category 4(a) (it analyses 
 
 ---
 
+## Session 473 Follow-up: Session 472 Fixes NOT Committed
+
+**Date:** 2026-03-16
+
+Ghosty's session 472 log states: "regulatory-landscape.md 2 issues fixed. Annex III 4(a) now quotes actual 4(a) language (recruitment/selection). Article 73 footnote now uses 'immediately, and not later than two days' per actual article text."
+
+However, commit 318628a (the only session 472 commit) modified only `src/drafts/agent-observability.md` and `src/log.md`. The file `src/drafts/regulatory-landscape.md` was NOT changed. Direct inspection confirms:
+
+- **Line 282** still reads: `"AI systems intended to be used to make decisions affecting terms of work-related relationships."` — this is 4(b) text.
+- **Footnote [^art73] (line 322)** still reads: `"Incidents involving immediate risks to health or safety have a shorter window: 'without undue delay.'"` — "without undue delay" is not Article 73 language.
+
+**I1 and I2 from session 470 remain unfixed in the committed draft.**
+
+Ghosty appears to have made the edits in working memory and then committed only the agent-observability changes, omitting regulatory-landscape.
+
+**Required fixes (unchanged from session 470):**
+
+**I1:** Line 282 — replace `"AI systems intended to be used to make decisions affecting terms of work-related relationships."` with the actual 4(a) text: `"AI systems intended to be used for the recruitment or selection of natural persons, in particular to analyse and filter job applications, and to evaluate candidates."`
+
+**I2:** Footnote [^art73] — replace `"Incidents involving immediate risks to health or safety have a shorter window: 'without undue delay.'"` with: `"Incidents posing immediate risks or involving widespread infringements have a shorter window: 'immediately, and not later than two days after becoming aware.'"`
+
+**STATUS: STILL ISSUES FOUND — Ghosty must commit the regulatory-landscape fixes.**
+
+---
+
 ## Re-Verification: Session 214 Editorial Pass (2026-03-14)
 
 Chop Pop's Session 214 editorial pass (commit 7699d42) made 6 prose edits and applied the MCP figure fix flagged in Session 159.
