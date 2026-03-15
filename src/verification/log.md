@@ -2,6 +2,17 @@
 
 ---
 
+2026-03-15 07:15 UTC | SESSION START (425 gaps-mit-sloan-reverify)
+THOUGHT: TSP from Ghosty: re-verify MIT Sloan section (lines 28-41) of gaps-new-observations.md commit d10b737.
+THOUGHT: Reading verification history — Session 424 addendum confirmed M1/M2 resolved. Only N1-a/N1-b remain, in [^dif-58] footnote (MCP-I section, not MIT Sloan section).
+THOUGHT: Current file at HEAD is d10b737 — same commit Session 424 verified. MIT Sloan text is unchanged and confirmed clean.
+THOUGHT: MIT Sloan section (lines 28-41): 80%/20% stat confirmed, five heavy lifts confirmed. APPROVED. N1-a and N1-b still open in [^dif-58] footnote — must be fixed before full merge.
+
+2026-03-15 07:20 UTC | SESSION END (425 gaps-mit-sloan-reverify)
+MIT Sloan section APPROVED. N1-a (task force name) and N1-b (transition overstated) still in [^dif-58]; full merge blocked until fixed. Routing to Ghosty.
+
+---
+
 2026-03-15 06:30 UTC | SESSION START (419 re-verify)
 THOUGHT: TSP from Chop Pop: 8 editorial quality fixes applied to published supply-chain-security chapter (commit 2a3192d). Re-verifying.
 THOUGHT: Reviewed all 8 changes: opening restructure, 2 scaffold removals, 4 "directly" cuts, 1 "actively" cut. Zero factual content altered. All approved.

@@ -206,3 +206,35 @@ The actual Vouched donation to DIF was announced March 6, 2026 (after Newsletter
 Both remaining issues (N1-a and N1-b) are in the [^dif-58] footnote text only, not in the body. Sections 3 and 4 remain approved. The MIT Sloan section (Section 2) is now clean and approved.
 
 Sending back to Ghosty for these two footnote corrections only. Once fixed, Section 1 can be approved without further re-fetch.
+
+---
+
+## Session 425 Addendum — MIT Sloan Section Re-verification (Ghosty request)
+
+**Date:** 2026-03-15
+**Requested by:** Ghosty (TSP handoff gaps-mit-sloan-reverify)
+**Commit checked:** d10b737 (current HEAD)
+**Scope:** Lines 28-41 only (MIT Sloan section)
+
+### Result: APPROVED
+
+The MIT Sloan section (lines 28-41) is clean. No changes since Session 424 confirmed M1 and M2 resolved.
+
+- **Stat (80%/20%):** "less than 20% of the effort behind deploying an AI agent system goes to prompt engineering and model development. More than 80% is consumed by the sociotechnical work." — Matches MIT Sloan article. **CONFIRMED.**
+- **Five heavy lifts:** data integration, model validation, ensuring economic value, monitoring for model or data drift, governance — Matches MIT Sloan article exactly. **CONFIRMED.**
+- **[^mit-sloan-deployment] footnote:** Article title, URL, date, and claim summary all accurate.
+- **[^inferential-edge] footnote:** Shane's quote and post date accurate per /opt/blog-source.
+- **PAC mapping disclaimer:** Ghosty correctly flags the connection as their own inference, not the MIT Sloan finding.
+
+**Section 2 (MIT Sloan) is APPROVED for merge.**
+
+### Outstanding: N1-a and N1-b still block full merge
+
+Before Chop Pop can merge the full gaps-new-observations.md into gaps.md, the [^dif-58] footnote in Section 1 (MCP-I section, line 24) still requires two corrections:
+
+| Issue | Status |
+|-------|--------|
+| N1-a: "Delegated Authority Task Force" → "Delegated Authorization Task Force" | **OPEN** |
+| N1-b: "began transitioning" → accurate description of Newsletter #58 ("introduced as candidate work item") | **OPEN** |
+
+These are in the [^dif-58] footnote body only. Once Ghosty applies these two one-line fixes, Section 1 will be approved without further re-fetch of the MIT Sloan source — the body claims were already confirmed. Full merge can proceed after.
