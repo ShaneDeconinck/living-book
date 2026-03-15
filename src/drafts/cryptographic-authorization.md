@@ -4,7 +4,7 @@ The agent paid $847 for a flight upgrade. The policy said upgrades require manag
 
 "Don't" said: you need approval. "Can't" said nothing. The amount was within the agent's allocated budget. Neither left a trace of what was actually authorized. The question (did anyone authorize this specific action?) has no answer.
 
-This is the gap that cryptographic authorization addresses. Architecture blocks what cannot happen. Policy prohibits what should not happen. Cryptographic authorization proves what was authorized to happen, and makes that proof verifiable before the action executes.
+Architecture blocks what cannot happen. Policy prohibits what should not happen. Cryptographic authorization proves what was authorized to happen, and makes that proof verifiable before the action executes.
 
 ## Three Governance Modes
 
@@ -121,7 +121,7 @@ The cryptographic attestation layer adds verifiability to this hierarchy. Each p
 
 MACAW Security frames this shift as moving from "trust and verify" to "prove and ensure."[^macaw-blog] Current agentic security treats authorization as a post-hoc audit problem. Cryptographic authorization treats it as a pre-execution proof requirement. The action either carries valid cryptographic proof or it is rejected. The nondeterminism of the agent's reasoning does not affect whether the proof is valid.
 
-The Authenticated Workflows paper reports 100% detection rate with zero false positives across 174 test cases covering nine of the OWASP Top 10 vulnerability classes for agentic AI.[^authenticated-workflows] The authors' framing is exact: cryptographic authorization replaces probabilistic security (guardrails, content filtering, pattern matching) with deterministic security (valid proof or rejection). The agent's behavior remains nondeterministic. The authorization layer is not.
+The Authenticated Workflows paper reports 100% detection rate with zero false positives across 174 test cases covering nine of the OWASP Top 10 vulnerability classes for agentic AI.[^authenticated-workflows] Their framing: cryptographic authorization replaces probabilistic security (guardrails, content filtering, pattern matching) with deterministic security (valid proof or rejection). The agent's behavior remains nondeterministic. The authorization layer is not.
 
 ## How the Three Layers Compose
 
@@ -139,15 +139,13 @@ The stack does not require all three layers simultaneously. A payment workflow w
 
 ## PAC Framework Connection
 
-The "prove" mode maps onto all three PAC pillars, but differently than "can't" and "don't."
-
 **Control:** Cryptographic authorization makes enforcement verifiable. A policy that says "max $500" is enforceable. A ghost token encoding `"amount": 247` with a signature from a trusted sidecar is verifiably enforced. The resource server does not need to consult a policy engine at runtime: the proof travels with the request.
 
 **Accountability:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
 
 **Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits. The Potential pillar connects to the maturity of the authorization infrastructure.
 
-The I4/I5 maturity levels in the PAC framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain (identity, constraints, intent, and action) is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
+The I4/I5 maturity levels in the PAC Framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain (identity, constraints, intent, and action) is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
 
 ## The Open Problems
 
