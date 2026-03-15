@@ -54,6 +54,24 @@ The [^kiro-edge] footnote has cited February 21 in multiple prior drafts. The co
 
 ---
 
+## 7. Unverifiable statistics with specific figures recur in this chapter
+
+Session 287/456 found the same structural problem twice: "over 1,000 legal claims" (Gartner, inconsistent across secondary sources) and "30 CVEs in 60 days" (Adversa AI, not found in any indexed source). Both are precise figures attached to real sources that do not contain those exact numbers.
+
+The pattern: a real source, a real general finding, and a specific number that crept in during drafting — either reconstructed from memory, derived from arithmetic, or misread from a secondary citation. The source is real; the figure is not.
+
+**Rule:** When citing a statistic from a source you have not directly fetched, flag it for verification. "Roughly" or "significant" is safer than a precise number you cannot verify. If a secondary source reports a Gartner figure, note that it is via secondary source — especially for figures that appear in multiple secondary sources with inconsistent values.
+
+---
+
+## 8. Disputed incidents need to carry the dispute
+
+The Kiro incident appeared in three chapter versions as undisputed fact before Session 287 flagged that Amazon disputes the FT characterization. The fix (add "According to FT reporting") is simple. The problem: the draft presented a contested account as settled. Amazon's official statement was in the footnote but absent from the body.
+
+**Rule:** When a cited incident is disputed by one of the named parties, the dispute belongs in the body, not the footnote. The footnote carries the sources; the body carries the qualifier: "According to FT reporting," "X disputes this characterization," or similar.
+
+---
+
 ## 6. "You cannot govern what you cannot see" is a book-wide cliché
 
 This sentence was cut from shadow-agent-governance.md in Session 148 and appeared again in building-the-edge.md Session 155. It is an overused maxim in the AI governance space and adds nothing beyond what "Start here:" does.
