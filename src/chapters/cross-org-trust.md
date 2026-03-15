@@ -2,13 +2,13 @@
 
 Within a single organization, extending existing IAM to handle agents is tractable. You control the identity provider, the authorization server, the policy engine, and the audit system. You can add OBO token exchange, scope your OAuth grants tighter, build agent registries, and enforce sandboxing, as the [Agent Identity and Delegation](agent-identity.md) chapter covers in depth. It is hard, but it is one team's hard problem.
 
-The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
+The hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
 The PAC Framework's Control pillar question is direct: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
 
 ## The Problem Is Structural
 
-Cross-organization trust for agents is not a new version of API federation. It is a fundamentally different problem because agents create intent rather than forwarding it.
+Cross-organization trust for agents is not a new version of API federation. It is a different problem because agents create intent rather than forwarding it.
 
 When traditional software integrates across organizations, the interaction pattern is predictable: API A calls API B with predetermined parameters. The trust model is static: mutual TLS, shared API keys, OAuth client credentials. Both sides know in advance what calls will be made and what data will flow.
 
@@ -241,7 +241,7 @@ For agent trust, the EUDI infrastructure provides three things that do not exist
 
 **Business wallets.** Companies can authenticate themselves, sign contracts, and prove attributes required for various transactions. When combined with agent delegation credentials, business wallets become the infrastructure for proving that "this agent acts on behalf of Company X, authorized to negotiate contracts up to EUR 50,000."
 
-The EUDI Wallet is not designed for agents specifically. But the infrastructure it creates: trusted issuers, cross-border verification, selective disclosure, business credentials: is the foundation that cross-organization agent trust needs. TSP is designed to interoperate with EUDI wallets. PIC can validate continuity chains anchored in EUDI-issued credentials. The pieces fit together.
+The EUDI Wallet is not designed for agents specifically. But the infrastructure it creates: trusted issuers, cross-border verification, selective disclosure, business credentials: is the foundation that cross-organization agent trust needs. TSP is designed to interoperate with EUDI wallets. PIC can validate continuity chains anchored in EUDI-issued credentials.
 
 The EU is starting to make this connection explicitly. In March 2026, the WE BUILD consortium, one of the EU's Large Scale Pilots for EUDI Wallets, issued three recommendations: develop a safe AI agent strategy built on the EUDI framework and Business Wallet infrastructure, establish standards working groups for interoperability between EUDI wallets and AI agents, and prioritize testing and pilots before regulation.[^we-build] The framing inverts the usual narrative: not "AI in wallets" (using AI to improve wallet UX) but "wallets for AI agents" (using wallet infrastructure to govern autonomous systems). The specific capabilities they identify map directly to the cross-org trust requirements: mutual authentication between agents and merchants, verification of the relationship between a human and their agent, confirmation of counterparty legitimacy, and digital signatures to distinguish authentic from AI-generated content. This is the first EU pilot consortium to explicitly recommend EUDI infrastructure as the substrate for AI agent governance.
 
@@ -263,7 +263,7 @@ For agent authorization, the equivalent would be resolvable action vocabularies:
 
 ## Mapping to PAC
 
-Cross-organization trust touches all three pillars, but the distribution is distinctive.
+Cross-organization trust touches all three pillars.
 
 | PAC Dimension | Cross-Organization Trust Requirement |
 |---|---|
@@ -314,7 +314,7 @@ The EUDI Wallet timeline (December 2026) creates both an opportunity and an obli
 
 Design delegation as credentials, not just tokens. A token expires and is gone. A credential can be revoked, audited, and verified long after the interaction. Build your agent authorization to produce verifiable artifacts, because cross-organization trust requires proof that survives across boundaries.
 
-The cross-domain challenge is not optional. Every agent that calls an external API, processes third-party data, or delegates to another organization's service is operating across trust boundaries. The question is not whether your agents will cross those boundaries, but whether they will do so with verifiable identity, bounded authority, and accountable delegation chains, or without.
+Every agent that calls an external API, processes third-party data, or delegates to another organization's service is operating across trust boundaries. The question is not whether your agents will cross those boundaries, but whether they will do so with verifiable identity, bounded authority, and accountable delegation chains, or without.
 
 [^1]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," March 11, 2026. LFDT Belgium meetup reflections on TSP and PIC.
 [^2]: Cloud Security Alliance / Okta, "AI Security Across Domains: Who Vouches?" March 11, 2026. Part of a seven-part series on identity security as AI security. Documents the Salesloft Drift breach and three requirements for cross-domain agent trust.
