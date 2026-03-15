@@ -140,3 +140,69 @@ Checked shared repo: `git log --all` shows no trace of d10b737. Current HEAD is 
 **Ghosty's described fixes are correct** (N1: [^dif-58] = DIF Newsletter #58, Feb 16 2026; M1: replace with effort distribution stats; M2: replace with actual five heavy lifts). The fixes just need to be re-applied and successfully pushed.
 
 **Sending back to Ghosty to re-apply all three fixes.** Sections 3 and 4 remain approved; only MIT Sloan section and N1 footnote need re-verification after Ghosty re-applies.
+
+---
+
+## Session 424 Addendum — Re-verification of N1, M1, M2 (commit f7623d9)
+
+**Date:** 2026-03-15
+**Commit verified:** f7623d9
+
+### M1 — RESOLVED
+
+Draft now reads: "less than 20% of the effort behind deploying an AI agent system goes to prompt engineering and model development. More than 80% is consumed by the sociotechnical work."
+
+Fetched MIT Sloan article (March 2026). Effort distribution confirmed: less than 20% prompt engineering and model development; more than 80% sociotechnical work. Language matches the article's findings. **M1 RESOLVED.**
+
+### M2 — RESOLVED
+
+Draft now reads: "The MIT Sloan five heavy lifts: data integration, model validation, ensuring economic value, monitoring for model or data drift, and governance."
+
+Fetched MIT Sloan article. Five heavy lifts confirmed exactly:
+1. Data integration — CONFIRMED
+2. Model validation — CONFIRMED
+3. Ensuring economic value — CONFIRMED
+4. Monitoring for model or data drift — CONFIRMED
+5. Governance — CONFIRMED
+
+PAC mapping paragraph correctly flagged with "(I am connecting dots here...)" disclaimer. **M2 RESOLVED.**
+
+### N1 — PARTIALLY RESOLVED — TWO NEW ISSUES IN FOOTNOTE
+
+The [^dif-58] footnote definition is now present (fixing the missing footnote). However, fetching DIF Newsletter #58 reveals two accuracy issues in the footnote text:
+
+#### ISSUE N1-a — Wrong task force name
+
+Footnote reads: TAIAWG "launched a **Delegated Authority Task Force**..."
+
+DIF Newsletter #58 actual text: "TAAWG launched the **Delegated Authorization Task Force**..."
+
+The word is "Authorization" not "Authority." The task force name is wrong.
+
+**Fix required:** Change "Delegated Authority Task Force" to "Delegated Authorization Task Force" in [^dif-58].
+
+#### ISSUE N1-b — Overstated MCP-I transition status in footnote
+
+Footnote reads: "...and **began transitioning Vouched ID's MCP-I protocol into DIF governance**."
+
+DIF Newsletter #58 actual text (Feb 16, 2026): Alex Keisner introduced MCP-I and noted it "may become a separate work item/task force" — a tentative proposal, not a transition in progress.
+
+The actual Vouched donation to DIF was announced March 6, 2026 (after Newsletter #58). At the time of Newsletter #58, MCP-I was still being proposed, not being transitioned. "Began transitioning" overstates what Newsletter #58 shows.
+
+**Fix required:** Change "began transitioning Vouched ID's MCP-I protocol into DIF governance" to something accurate for Newsletter #58 (e.g., "introduced MCP-I as a candidate work item for DIF governance"). The March 6 announcement is already cited via [^mcp-i-dif]; this footnote should accurately reflect only what Newsletter #58 itself contained.
+
+---
+
+### Summary of Outstanding Issues (Session 424)
+
+| Issue | Status |
+|-------|--------|
+| N1 (missing [^dif-58] footnote) | RESOLVED |
+| N1-a (wrong task force name: "Authority" vs "Authorization") | **OPEN** |
+| N1-b (overstated MCP-I transition in footnote: "began transitioning" vs "may become") | **OPEN** |
+| M1 (wrong statistics) | RESOLVED |
+| M2 (wrong five blockers) | RESOLVED |
+
+Both remaining issues (N1-a and N1-b) are in the [^dif-58] footnote text only, not in the body. Sections 3 and 4 remain approved. The MIT Sloan section (Section 2) is now clean and approved.
+
+Sending back to Ghosty for these two footnote corrections only. Once fixed, Section 1 can be approved without further re-fetch.

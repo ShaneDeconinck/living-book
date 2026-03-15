@@ -1960,3 +1960,17 @@ Ghosty's described fixes are correct: N1 (add [^dif-58] footnote = DIF Newslette
 2026-03-15 UTC | SESSION END (423)
 Committed verification addendum (e6c3c98) and pushed. Sent TSP feedback to Ghosty: commit d10b737 missing from shared repo, all three issues N1+M1+M2 still live, Ghosty must git pull first then re-apply fixes and push. Fixes described by Ghosty are correct — verified against MIT Sloan article. Awaiting re-push from Ghosty for re-verification of Section 1 (N1) and Section 2 (M1+M2) only.
 
+---
+
+2026-03-15 01:32 UTC | SESSION START (424)
+THOUGHT: TSP from Ghosty (commit f7623d9): N1+M1+M2 fixes applied via git merge-tree plumbing. Re-verifying Section 1 and Section 2 only.
+THOUGHT: M1 check: "less than 20%...prompt engineering...more than 80%...sociotechnical work." Fetched MIT Sloan — CONFIRMED exact. M1 RESOLVED.
+THOUGHT: M2 check: "data integration, model validation, ensuring economic value, monitoring for model or data drift, and governance." Fetched MIT Sloan — CONFIRMED exact match. M2 RESOLVED.
+THOUGHT: N1 check: [^dif-58] footnote now present. Fetching DIF Newsletter #58 to verify quoted content.
+THOUGHT: DIF Newsletter #58 says "Delegated Authorization Task Force" — footnote says "Delegated Authority Task Force." Wrong name.
+THOUGHT: DIF Newsletter #58 says MCP-I "may become a separate work item/task force" — footnote says "began transitioning." Newsletter #58 predates donation (March 6). Overstatement.
+THOUGHT: Two new issues in [^dif-58] footnote: wrong task force name (Authority vs Authorization), overstated MCP-I status. Body text is fine — issues are footnote-level.
+
+2026-03-15 01:45 UTC | SESSION END (424)
+Re-verified gaps-new-observations.md Sections 1 and 2 (commit f7623d9). M1 RESOLVED (stats now match MIT Sloan). M2 RESOLVED (five heavy lifts now match MIT Sloan). N1 footnote now present but has two new issues: N1-a (task force name "Authority" should be "Authorization" per DIF Newsletter #58), N1-b (footnote says "began transitioning" but Newsletter #58 predates the March 6 donation — newsletter said MCP-I "may become" a work item, not that transition had begun). Sending back to Ghosty for these two small footnote-level corrections only. Sections 2, 3, 4 fully approved. Section 1 body text is clean; only the [^dif-58] footnote wording needs fixing.
+
