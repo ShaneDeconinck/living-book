@@ -10,7 +10,7 @@ The accountability problem does not scale linearly. It changes in kind.
 
 Most organizations building agent systems today are in the single-digit range. [Shadow Agent Governance](shadow-agent-governance.md) documented the breakpoint: centralized governance works for fewer than 50 agents. Beyond that, review bottlenecks create shadow deployments, and shadow deployments create ungoverned risk.[^shadow-agent-gov]
 
-The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between a handful of agents and a fleet is closing faster than accountability infrastructure can keep up.
+The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between a handful of agents and a fleet is closing faster than accountability infrastructure can follow.
 
 Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is the first government-level attempt to address this gap.[^singapore-mgf] Its four dimensions (risk bounding, human accountability, technical controls, end-user responsibility) map to the PAC Framework's three pillars. But one requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
 
@@ -36,7 +36,7 @@ Individual agents can each behave correctly while the fleet behaves dangerously.
 
 Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Each agent's decisions look reasonable: a discount here, a fee waived, a complaint escalated to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
-Irregular's March 2026 simulation documented exactly this: agents developing collective strategies without adversarial prompting: bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
+Irregular's March 2026 simulation documented exactly this: without adversarial prompting, agents developed collective strategies, bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
 
 Monitoring individual agents catches individual failures. Catching fleet-level emergent behavior requires aggregate monitoring: statistical analysis across agent populations, anomaly detection on collective metrics, and alerts on distributional shifts that no single agent triggers. The pattern is familiar from fraud detection: individual transactions look clean; the abuse shows only in patterns. The tooling exists in adjacent domains. It has not yet been adapted for agent fleets.
 
@@ -54,7 +54,7 @@ Article 73 was written for single AI systems. When an organization operates hund
 
 ## Fleet Governance Infrastructure
 
-[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] Most organizations sit between the second and third — and that gap is where accountability at scale fails.
+[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] Most organizations sit between the second and third. That gap is where accountability at scale fails.
 
 Infrastructure-enforced governance means that accountability requirements are not policies agents can ignore but architecture agents cannot bypass. Four capabilities make up the minimum viable fleet governance infrastructure:
 
@@ -76,7 +76,7 @@ What is missing is the forensic layer: tooling that takes these building blocks 
 
 ### Fleet-Level Monitoring
 
-Individual agent monitoring catches individual failures. Fleet-level monitoring catches emergent behavior, distributional drift, and aggregate risk accumulation. Three monitoring layers compose:
+Individual agent monitoring catches individual failures. Fleet-level monitoring catches emergent behavior, distributional drift, and aggregate risk accumulation. Three monitoring layers build the system:
 
 **Behavioral baselines per agent class.** Agents performing similar functions (all customer support agents, all procurement agents) should exhibit similar behavioral distributions. A single agent deviating from its class baseline is an anomaly. A shift in the entire class baseline is a policy or model change that may need governance review.
 
@@ -86,7 +86,7 @@ Individual agent monitoring catches individual failures. Fleet-level monitoring 
 
 ### Incident Triage at Scale
 
-With a fleet of agents operating in high-risk domains, the organization will generate a continuous stream of anomalies, edge cases, and potential incidents. Not all of them are Article 73 reportable. Not all of them are even problematic. But all of them need classification.
+With a fleet of agents operating in high-risk domains, the organization will generate a continuous stream of anomalies and potential incidents. Not all of them are Article 73 reportable. Not all of them are even problematic. But all of them need classification.
 
 Triage infrastructure sits between fleet monitoring and incident response. It classifies events into operational noise (log and learn), governance review (human assessment needed), and reportable incident (regulatory notification required). The classification criteria must be defined in advance, documented, and themselves auditable, because a regulator may ask not just "what incidents did you report?" but "what incidents did you classify as non-reportable, and on what basis?"
 
