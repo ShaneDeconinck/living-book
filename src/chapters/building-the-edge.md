@@ -1,6 +1,6 @@
 # Building the Inferential Edge
 
-This book opened with a problem: agents break trust because our infrastructure was built for humans. It introduced a framework: Potential, Accountability, Control. Then it spent seventeen chapters mapping the technical landscape: identity, context, regulation, reliability, payments, sandboxing, cross-organization trust, communication protocols, supply chain security, tool security, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration.
+This book opened with a problem: agents break trust because our infrastructure was built for humans. It introduced a framework: Potential, Accountability, Control. Then it spent seventeen chapters mapping the technical landscape: identity, context, regulation, reliability, payments, sandboxing, cross-organization trust, communication protocols, supply chain security, tool security, shadow agents, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration.
 
 Now the question is: what do you actually build first?
 
