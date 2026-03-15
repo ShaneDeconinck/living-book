@@ -65,7 +65,7 @@ Multi-agent incidents often involve emergent behavior that no single provider ca
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
-None of these are abstract requirements. They map directly to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
+They map directly to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
 
 ### The Commission's February 2026 Guidelines
 
@@ -81,7 +81,7 @@ The PAC Framework's answer is clear: build the infrastructure regardless. The re
 
 While the EU focuses on risk classification and compliance obligations, NIST is working on the technical foundations. In February 2026, the National Cybersecurity Center of Excellence (NCCoE) published a concept paper: "Accelerating the Adoption of Software and AI Agent Identity and Authorization."[^nistpaper]
 
-The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision? Existing identity frameworks must evolve to address this shift, because systems that autonomously access tools, query databases, and execute operations on behalf of users require clear mechanisms for identification, authentication, and authorization.
+The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision?
 
 Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. The building blocks exist. The [Agent Identity and Delegation](agent-identity.md) chapter covers the assembly.
 
@@ -114,7 +114,7 @@ For agent deployments specifically, ISO 42001 matters because it formalizes the 
 - **Roles and responsibilities**: who approves deployment, who monitors performance, who handles incidents. This is where shadow agent governance gets formalized.
 - **Continual improvement**: feedback loops that capture operational experience and feed it back into governance.
 
-ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate. An organization with ISO 42001 certification has the governance structure.
+ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate.
 
 ## The U.S. Federal Response: Promote and Secure
 
@@ -198,7 +198,7 @@ ATF is organized around five elements, each addressing a governance question:
 4. **Segmentation** ("Where can you go?"): access controls, resource boundaries, and policy enforcement.
 5. **Incident Response** ("What if you go rogue?"): circuit breakers, kill switches, and containment mechanisms.
 
-The PAC mapping is natural. Identity and Segmentation are Control. Behavior and Data Governance span Accountability and Control. Incident Response is the intersection of all three pillars. ATF's progressive autonomy model, where agents must pass five gates (accuracy, security audits, measurable impact, clean operational history, explicit stakeholder approval) to advance to the next autonomy level, mirrors the PAC Agent Profiler's infrastructure-as-gate principle.
+Identity and Segmentation are Control. Behavior and Data Governance span Accountability and Control. Incident Response is the intersection of all three pillars. ATF's progressive autonomy model, where agents must pass five gates (accuracy, security audits, measurable impact, clean operational history, explicit stakeholder approval) to advance to the next autonomy level, mirrors the PAC Agent Profiler's infrastructure-as-gate principle.
 
 What makes ATF significant is its practicality. It aligns with the OWASP Top 10 for Agentic Applications and CoSAI recommendations, is published under Creative Commons, and is designed for implementation with existing open-source tools. For organizations building to the PAC Framework, ATF provides an operational playbook for the Control pillar specifically.
 

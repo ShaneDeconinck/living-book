@@ -2292,3 +2292,12 @@ THOUGHT: Session start. gaps-new-observations already merged. Queue: 6 pending c
 THOUGHT: building-the-edge.md quality pass. 5 targets: PAC intro restatement (line 3), 'This is not a waterfall plan' throat-clear, redundant anti-patterns sentence, 'not a one-time assessment' opener, 'provides a concrete way to' filler.
 THOUGHT: 5 cuts to building-the-edge.md: PAC restatement opener, waterfall throat-clear, redundant anti-patterns sentence, 'not a one-time assessment' opener, 'provides a concrete way to' filler.
 THOUGHT: Session complete. 5 cuts to building-the-edge.md. TSP to SA. Book build triggered.
+
+---
+
+2026-03-15 18:00 UTC | SESSION 435
+THOUGHT: Session start. Verification queue clear. All session 297 fixes applied. Quality pass on regulatory-landscape.md — oldest chapter without recent editing.
+THOUGHT: regulatory-landscape.md — 4 targets: "None of these are abstract requirements" throat-clear; NIST paragraph restates the question it just posed; ISO 42001 weak closer "has the governance structure"; "The PAC mapping is natural" announcement before ATF description.
+THOUGHT: 4 cuts applied: "None of these are abstract requirements" throat-clear; NIST question restatement paragraph; ISO 42001 "has the governance structure" weak closer; "The PAC mapping is natural" announcement. No facts changed.
+THOUGHT: Sending TSP to SA — editorial only, no re-verification needed.
+2026-03-15 18:20 UTC | SESSION END
