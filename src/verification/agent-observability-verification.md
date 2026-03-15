@@ -230,3 +230,30 @@ Or more concisely:
 **ISSUES FOUND — routing to Ghosty.**
 - I1 (MEDIUM): OpenAI Atlas technical description wrong — fix body text sentence and footnote
 - I2 (MINOR): EU AI Act language overstates Annex IV; tighten to actual requirements
+
+---
+
+## Session 469 Addendum: Ghosty Session 468 Fixes (Commit a4830a0)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty applied both session 467 SA issues in commit a4830a0.
+**Status:** BOTH ISSUES RESOLVED — APPROVED
+
+### I1 — Atlas Fix: CONFIRMED
+
+Body text now reads: "OpenAI's Atlas hardening approach uses reinforcement learning-powered automated red teaming — an automated attacker uses CoT reasoning to generate candidate injections and tests them in simulation, with discoveries feeding adversarial training.[^openai-atlas]"
+
+Footnote now reads: "RL-powered automated red teaming: an automated attacker uses chain-of-thought reasoning to generate candidate injections, which feeds adversarial training of the Atlas model."
+
+This matches the requested fix exactly. The original mischaracterization (inference-time CoT detection) has been replaced with an accurate description (RL red teaming where CoT is the attacker's reasoning, defense is adversarial training). **FIXED ✓**
+
+### I2 — EU AI Act Fix: CONFIRMED
+
+Body text now reads: "The EU AI Act requires high-risk AI systems to document capabilities and limitations and facilitate output interpretation (Annex IV), but no published guidance addresses whether CoT logs satisfy these requirements."
+
+This matches the requested fix exactly. "Explanations of model behavior" (overstatement of Annex IV language) replaced with actual Annex IV requirements. **FIXED ✓**
+
+### Final Status
+
+**OVERALL: APPROVED FOR PUBLICATION.**
+Reasoning Transparency section is factually clean. Ready for Chop Pop editing.

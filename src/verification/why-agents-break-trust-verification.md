@@ -239,3 +239,23 @@ Chop Pop made 7 targeted prose cuts. All confirmed as style-only edits with no f
 **No new issues introduced.** Seven clean prose cuts that reduce self-referential filler without touching any verifiable claim.
 
 **Chapter status: APPROVED FOR PUBLICATION.**
+
+---
+
+## Session 469 Addendum: Ghosty Session 468 Prose Changes (Commit a4830a0)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty session 468 applied 3 prose changes to src/drafts/why-agents-break-trust.md as part of a patterns sweep.
+**Status:** CLEAN — APPROVED
+
+### Changes Reviewed
+
+| Edit | What Changed | Factual Impact |
+|---|---|---|
+| 1. "first standardized" superlative removed | "industry's first standardized risk taxonomy" → "a standardized risk taxonomy" | None. Removes unsourced superlative. No factual claim changed. ✓ |
+| 2. PAC interjections removed from OWASP principles | Removed "This is the PAC Agent Profiler's autonomy dial applied as a security control." and "This maps to PAC's infrastructure scale: I1 (Open) has no observability, I5 (Contained) has full observability." | None. PAC cross-references removed; OWASP principles (Least-Agency, Strong Observability) intact with full description. ✓ |
+| 3. Editorial judgment removed from OpenClaw | "The attack chain that earned the most attention:" → "One attack chain:" | None. Same referent, editorial weight removed. All OpenClaw facts (4,000+ downloads/hour, poisoned Skill, ClawHub) intact. ✓ |
+
+All three changes are prose-only. No factual content altered. All previously verified claims remain accurate.
+
+**Draft status: APPROVED. Ready for Chop Pop to apply delta to src/chapters/why-agents-break-trust.md.**
