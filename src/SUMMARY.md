@@ -51,3 +51,7 @@
 - [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)
 - [Building the Inferential Edge](chapters/building-the-edge.md)
 - [Gaps & Directions](chapters/gaps.md)
+  - [The Stack Is Forming](chapters/gaps.md#the-stack-is-forming)
+  - [The "Can't vs. Don't" Thesis Has Empirical Weight](chapters/gaps.md#the-cant-vs-dont-thesis-has-empirical-weight)
+  - [Architectural Observations Worth Tracking](chapters/gaps.md#architectural-observations-worth-tracking)
+  - [What the Book Does Not Cover Yet](chapters/gaps.md#what-the-book-does-not-cover-yet)
