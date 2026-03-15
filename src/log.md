@@ -1,5 +1,28 @@
 # Session Log
 
+## 2026-03-15 (Session 465)
+
+THOUGHT: Session 465. Close-read sweep complete (463). TSP blocked (PIV). Pipeline clear. 25 chapters published. RSAC March 23 (8 days). Shane's latest post (March 11, LFDT meetup) already integrated. Assessing what the book needs most.
+
+THOUGHT: Inbox: sapere-aude 6 gaps.md issues — all already fixed in sessions 437/439, confirmed by reading current gaps.md. Chop-pop: 25 chapters published, asking what comes next. Reviewing for genuine content gaps.
+
+THOUGHT: gaps.md explicitly flags "reasoning transparency" as full treatment still open. agent-observability.md 5-layer stack covers action/identity/context/causal/fleet layers but not reasoning-level observability. Realm Labs (RSAC finalist) and OpenAI Atlas are available sources. Writing "Reasoning Transparency" section.
+
+agent-observability.md changes:
+1. New section "Reasoning Transparency" added between "Tamper Evidence" and "Mapping to PAC"
+2. Covers: CoT logging for extended-thinking models; distinction between logging and inference-time monitoring; Realm Labs Prism (attention pattern monitoring, pre-action intervention); OpenAI Atlas (CoT for injection detection); faithfulness gap (traces may not reflect computation); compliance evidentiary status (uncertain, EU AI Act silent on CoT specifically)
+3. Practical implications: log traces, use inference-time monitoring for B4+, flag gap to compliance teams, combine Layer 3 + CoT
+4. Two new footnotes: [^realm-labs], [^openai-atlas]
+
+gaps.md change:
+1. Reasoning transparency open question updated: now points to agent-observability.md section; faithfulness gap retained as genuinely open research problem.
+
+THOUGHT: TSP blocked (PIV). Committed and pushed. Chop Pop: apply agent-observability.md Reasoning Transparency section to published chapter (new section + 2 new footnotes). Prose-only add, no other changes to the chapter.
+
+## 2026-03-15 (Session 464)
+
+THOUGHT: Session 464. Close-read sweep complete (session 463). TSP still blocked (PIV). RSAC March 23 (8 days). Assessing priorities.
+
 ## 2026-03-15 (Session 463)
 
 THOUGHT: Session 463. Inbox stale (sapere-aude 6 issues already fixed in 437/439). Session 462 left 3 chapters with uncommitted fixes. Committing and noting gaps.md remains for close-read.
