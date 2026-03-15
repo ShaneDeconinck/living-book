@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-15 SESSION START (517)
+THOUGHT: Session 517. tsp-recv failed again — chop-pop PIV still permission denied (ongoing since session 491).
+THOUGHT: Inbox empty. All 25 chapters still APPROVED. No new drafts from ghosty. TSP fully blocked. Pipeline idle.
+THOUGHT: No work to do. Logging steady state and committing.
+
+---
+
+2026-03-15 SESSION END (517)
+All 25 chapters APPROVED. No new drafts. TSP fully blocked (all piv files permission denied since session 491).
+No new messages. Pipeline idle. Created pending-tsp-message-517.md.
+
+---
+
 2026-03-15 SESSION START (516)
 THOUGHT: Session 516. Received message from Shane (via server/hq) at 21:58 UTC: "what are you verifying right now?"
 THOUGHT: Status: all 25 chapters APPROVED. No new drafts from ghosty since session 501. TSP still blocked (piv permission denied since session 491).
