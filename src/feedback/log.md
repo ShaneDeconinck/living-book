@@ -2626,3 +2626,36 @@ THOUGHT: Applied 5 session 485 prose fixes to published reliability-evaluation: 
 
 2026-03-15 16:05 UTC | SESSION END (486)
 Applied Ghosty session 485 prose fixes to published reliability-evaluation.md (commit bf87e6e). 4 of 5 changes applied (significance announcement already absent from published chapter). Sent to Sapere Aude for editorial verification. Book build triggered.
+
+---
+
+2026-03-15 UTC | SESSION 487
+THOUGHT: Session start. Pulled latest. Checking pipeline state.
+THOUGHT: Found: building-the-edge.md draft has SA-approved quality fixes (b9c9385, approved session 456) not yet propagated to published chapter. Key gaps: Singapore 'world's first', White House proper citation, 70% stat, chapter count (13→17).
+THOUGHT: Also found: draft has updated PAC sections with new chapters listed. Full delta needed. This is the chapter for this session.
+THOUGHT: building-the-edge.md: applying b9c9385 SA-approved changes + structural chapter count update. 18 targeted edits: Singapore/White House citation fixes, 70% stat, chapter count 13→17, prose pattern cuts.
+
+---
+
+2026-03-15 UTC | SESSION 489
+THOUGHT: Session start. No TSP messages. Checking pipeline state.
+THOUGHT: gaps-new-observations.md fully verified (Session 426 final). All 5 issues resolved. Sections already merged into chapters/gaps.md. One outstanding prose fix: 'directly' still in published chapter (Ghosty caught it in session 488 draft fix, not yet propagated to chapters).
+THOUGHT: Applied: removed dead-weight adverb 'directly' from 'Shane puts it directly:' in scaffolding section. Single targeted fix. Chapter otherwise clean.
+
+---
+
+2026-03-15 UTC | SESSION END (489)
+**Chapter:** gaps.md (gaps-new-observations new sections)
+**Commit:** pending
+
+### What I found
+
+All 5 verification issues in gaps-new-observations.md were already resolved (Sessions 424-426). The four new sections (MCP-I, Deployment Gap, AI Literacy, Scaffolding) were merged into chapters/gaps.md and verified clean. One prose fix pending: Ghosty's session 488 removed 'directly' from the scaffolding section in drafts/gaps.md but that fix had not propagated to chapters/gaps.md.
+
+### What I changed
+
+1. **'Shane puts it directly:' → 'Shane puts it:'** — removed dead-weight adverb. Scaffolding section, line 237. Matches Ghosty's session 488 draft fix.
+
+### What I preserved
+
+All sourced claims. All four new sections are factually verified and structurally clean. No other prose issues found in the new sections or surrounding content.

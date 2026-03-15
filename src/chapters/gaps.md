@@ -234,7 +234,7 @@ Shane's scaffolding trap post (February 2026) makes a prediction with compoundin
 
 The trust infrastructure trajectory is the inverse. As models become more capable, the actions they can take become more consequential. The blast radius of a failure grows with capability. The compliance surface expands. Governance requirements do not shrink as models improve. They expand.
 
-Shane puts it directly: the permissions system is Claude Code's most complex component, not any AI logic. As scaffolding shrinks, that component remains and grows. The hardest part of deploying capable agents is not making them smart. It is making them safe.[^scaffolding-trap]
+Shane puts it: the permissions system is Claude Code's most complex component, not any AI logic. As scaffolding shrinks, that component remains and grows. The hardest part of deploying capable agents is not making them smart. It is making them safe.[^scaffolding-trap]
 
 This creates an asymmetry that matters for investment decisions. Organizations that invested in scaffolding as their primary reliability mechanism are now refactoring it away. Organizations that invested in identity, authorization, and audit infrastructure are accumulating something that appreciates as capability grows. The scaffolding trap has a governance analog: investing in prompt-based safety instructions is betting on a layer that models outgrow. Investing in structural constraints (sandboxing, permission scoping, delegation chains) is betting on infrastructure that becomes more valuable as the agents it governs become more capable.
 
