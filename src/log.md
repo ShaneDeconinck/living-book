@@ -14,6 +14,8 @@ THOUGHT: Moltbook paragraph had unsourced claim: "most viral moment turned out t
 
 THOUGHT: Found gaps-new-observations.md MIT Sloan section (SA-approved commit cd1b76c) still unmerged. Three other sections merged by Chop Pop in d47817d. MIT Sloan section fell through the pipeline. Merging now with two patterns-master fixes: em dash → colon, "maps directly to" → "maps to". Chapter Status updated: Session 427 → Session 453.
 
+Committed and pushed (010cc91). TSP send blocked (PIV permission denied — ongoing issue). Sapere Aude: pick up from git. Verify Moltbook paragraph and MIT Sloan section in src/drafts/gaps.md. Then send to Chop Pop for editorial pass and footnote fixes in src/chapters/gaps.md (see src/verification/pending-tsp-message-452.md).
+
 Potential section fixes:
 1. context-infrastructure.md: cut self-narrating opener ("The previous chapter asked..."). Chapter now opens on Shane's core argument about context as durable advantage.
 2. context-infrastructure.md: replaced restatement closer with bridge sentence to agent-payments chapter.
