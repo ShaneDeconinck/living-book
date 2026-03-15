@@ -276,7 +276,7 @@ AgentMaster, in July 2025, was the first framework to use A2A and MCP together i
 
 ## The Authorization Gap
 
-This is where Shane's analysis cuts deepest. His March 2026 post on Google's Workspace CLI exposes the structural problem:[^3]
+Shane's March 2026 post on Google's Workspace CLI exposes the structural problem:[^3]
 
 > OAuth is possession-based. If you hold a valid token, you can act. There is no mechanism to verify *why* you are acting, *what task* you are acting on behalf of, or whether the action still aligns with what was originally consented to. The token is a key, not a contract.
 

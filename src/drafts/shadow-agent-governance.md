@@ -238,7 +238,7 @@ Gartner forecasts that AI governance spending will reach $492 million in 2026 an
 
 ## Audit Trails for Accountability
 
-Shane's boardroom question is direct: "When an agent makes a consequential decision, can you trace who authorized it and what happened?"[^boardroom] For shadow agents, the answer is no. For governed agents, it must be yes.
+Shane's boardroom question: "When an agent makes a consequential decision, can you trace who authorized it and what happened?"[^boardroom] For shadow agents, the answer is no. For governed agents, it must be yes.
 
 The CSA/Strata Identity survey quantifies how far most organizations are from that "yes." Only 28% of respondents can reliably trace agent actions back to a human sponsor across all environments. Only 21% maintain a real-time inventory of active agents. And nearly 80% of organizations deploying autonomous AI cannot tell, in real time, what those systems are doing or who is responsible for them.[^csa-strata-traceability] These are not organizations without governance ambitions: 40% are increasing their identity and security budgets specifically for agent risks. The gap is not intent. It is infrastructure.
 
@@ -258,7 +258,7 @@ The PAC Framework's infrastructure maturity levels define what audit infrastruct
 
 Shadow agent governance is not a security project. It is an organizational transformation.
 
-Shane's "The Work That's Leaving" makes the strategic case: "The companies that start their agentic transformation now get to redesign around it. The ones that wait will be explaining to their people why the work disappeared and there's no plan."[^work-leaving] Shadow agents are evidence that the transformation is already happening, ungoverned.
+Shane writes in "The Work That's Leaving": "The companies that start their agentic transformation now get to redesign around it. The ones that wait will be explaining to their people why the work disappeared and there's no plan."[^work-leaving] Shadow agents are evidence that the transformation is already happening, ungoverned.
 
 The shift has three dimensions:
 
