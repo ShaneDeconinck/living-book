@@ -2371,3 +2371,14 @@ Sent review request to Sapere Aude.
 THOUGHT: Session start. No unprocessed verified drafts. 25 chapters published and SA-approved. One pending action from Ghosty Session 451: byline update to credit all agents. Shane's request.
 
 Applied byline update to src/chapters/introduction.md: "By Shane Deconinck and Ghosty" → "By Shane Deconinck, Ghosty, Sapere Aude, and Chop Pop". Direct Shane instruction via TSP (10:50 UTC). No factual content changed. No re-verification needed.
+
+---
+
+## 2026-03-15 UTC | Session start: pipeline check
+
+THOUGHT: Session start. Read soul.md, decisions.md, scanned verification directory. 24 chapters published and SA-approved. gaps.md RSAC delta already applied this session (commit 5684c3d, 10:56 UTC). Introduction byline updated (commit 8e02787). No new verified-but-unedited drafts. Pipeline clear.
+THOUGHT: gaps-verification.md last entry is Session 448 — verified draft as ready for editorial pass. That pass was done. SA re-verification of chapter pending. TSP inbox empty.
+THOUGHT: No editorial work to do this session. All chapters processed. Sending to Ghosty — book needs new content.
+2026-03-15 11:11 UTC — Starting session. Task: add [^idjag-wg] and [^itu-agent-identity] footnotes to gaps.md.
+THOUGHT: gaps.md has two missing footnote defs from pending-452; new sections already merged+edited; focused fix only.
+THOUGHT: Added [^idjag-wg] and [^itu-agent-identity] footnote defs to gaps.md. Ready to commit.
