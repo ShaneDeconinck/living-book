@@ -85,7 +85,7 @@ Authority is constrained by what the credential allows, not by what the descript
 
 ### Human Oversight at Call Time
 
-For high-impact operations, insert a human decision point before the tool executes. Not for every tool call: approval fatigue degrades oversight to rubber-stamping.[^shane-docker] The threshold is configurable. A tool that reads a file and summarizes it is low-risk. A tool that sends email, modifies records, or executes code is high-risk. The PAC framework maps this to Authorization: the agent's granted authority should specify which tool operations require explicit confirmation, not assume the model's judgment is sufficient.
+For high-impact operations, insert a human decision point before the tool executes. Not for every tool call: approval fatigue degrades oversight to rubber-stamping.[^shane-docker] The threshold is configurable. A tool that reads a file and summarizes it is low-risk. A tool that sends email, modifies records, or executes code is high-risk. The agent's granted authority should specify which tool operations require explicit confirmation, not assume the model's judgment is sufficient.
 
 Claude Code implements this pattern with the permission approval dialog. The user sees the tool call parameters before execution and can deny or modify them. The attack surface this closes: even if the tool description successfully manipulated the LLM into constructing a malicious call, the human sees the constructed call and can intervene. The LLM makes the decision; the human reviews the output of that decision before it executes.
 

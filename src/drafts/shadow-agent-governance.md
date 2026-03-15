@@ -52,7 +52,7 @@ Shadow AI breaches cost an average of $670,000 more than standard security incid
 
 Gravitee's 2026 survey of 919 executives and practitioners quantifies the monitoring gap: on average, only 47.1% of an organization's AI agents are actively monitored or secured.[^gravitee] More than half operate without any security oversight or logging. The identity dimension is worse: only 21.9% of teams treat AI agents as independent, identity-bearing entities.[^gravitee] The rest manage agents through inherited user credentials, shared service accounts, or no identity management at all. This is the architectural mismatch Shane's trust inversion describes: agents operating as autonomous actors through identity infrastructure designed for humans.
 
-The confidence gap is the most dangerous finding. 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee] Policy confidence without infrastructure enforcement is the definition of the Accountability-Control gap the PAC Framework identifies.
+The confidence gap is the most dangerous finding. 82% of executives feel confident their policies protect against unauthorized agent actions, but that confidence rests on high-level policy documentation, not real-time enforcement at the API or identity layer.[^gravitee] Policy confidence without infrastructure enforcement is governance theater: documented controls with no runtime enforcement.
 
 ### When shadow agents trigger bans
 
@@ -129,7 +129,7 @@ For each registered agent:
 - **Owner**: who deployed it, who maintains it, and who is accountable when it acts.
 - **Authority**: what delegated it the right to act? The human or system that authorized its deployment, and the scope of that authorization.
 - **Permissions**: what can it access? Specific data sources, APIs, tools, and the granularity of access (read/write/execute, per-resource, time-bounded).
-- **Blast radius**: what is the worst-case impact of failure? This determines the governance threshold and required infrastructure level per the PAC Framework.
+- **Blast radius**: what is the worst-case impact of failure? This determines the governance threshold and required infrastructure level.
 - **Evaluation status**: has the agent been evaluated for its intended use case? What reliability metrics exist, and what is the error margin?
 - **Regulatory classification**: does this agent touch high-risk use cases under the EU AI Act, NIST guidelines, or other applicable regulation?
 
