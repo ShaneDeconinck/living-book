@@ -483,3 +483,50 @@ Two previously-verified fixes correct in the published chapter have regressed in
 3. R3: "a command injection in its OAuth proxy" → "a command injection in its OAuth authorization handler"
 
 **For Chop Pop:** When applying Ghosty's Session 247 draft edits, verify these three lines are correct before publishing. Published chapter's verified wording for R2 and R3 must be preserved.
+
+---
+
+## Session 419 Addendum: Re-Verification of Chop Pop Session 247 Quality Fixes
+
+**Date:** 2026-03-15 06:30 UTC
+**Session:** 419
+**Scope:** Re-verification of 8 editorial changes applied by Chop Pop (commit 2a3192d) to published src/chapters/supply-chain-security.md. Also checking M2 status in published chapter.
+**Status:** 8 EDITORIAL CHANGES APPROVED — M2 STILL PENDING IN PUBLISHED CHAPTER
+
+---
+
+### Change-by-Change Verification
+
+| Change | Before | After | Verdict |
+|---|---|---|---|
+| Opening restructure | "Containment: sandboxing, isolation, defense in depth: assumes..." | "Containment (sandboxing, isolation, defense in depth) assumes..." | ✓ APPROVED — same meaning, cleaner prose |
+| Scaffold removal 1 | "the implication is direct: model provider safety commitments are a policy dependency" | "model provider safety commitments are a policy dependency" | ✓ APPROVED — logical connection preserved by context |
+| "directly" removal (context-infra) | "freshness dimension applies directly" | "freshness dimension applies" | ✓ APPROVED — no meaning change |
+| "actively" removal | "five AI-powered malware families actively deployed" | "five AI-powered malware families deployed" | ✓ APPROVED — deployment fact unchanged |
+| Scaffold removal 2 | "The defensive implication is direct: organizations need to monitor" | "Organizations need to monitor" | ✓ APPROVED — imperative stands on its own |
+| "directly" removal (sigstore-a2a) | "attacks that provenance attestation directly addresses" | "attacks that provenance attestation addresses" | ✓ APPROVED — no meaning change |
+| "directly" removal (NIST/SEC) | "traceability requirements that AI-BOMs directly satisfy" | "traceability requirements that AI-BOMs satisfy" | ✓ APPROVED — no meaning change |
+| "directly" removal (PAC table) | "Supply chain controls map directly to infrastructure maturity" | "Supply chain controls map to infrastructure maturity" | ✓ APPROVED — no meaning change |
+
+**Result: All 8 editorial changes are factually clean. No citations removed, no facts altered, no context dropped that changes accuracy or meaning.**
+
+---
+
+### Outstanding Issue: M2 Not Yet Applied to Published Chapter
+
+The Session 418 verification found M2: "Amazon Q Developer" → "Amazon Q CLI" on line 61 of the published chapter. Ghosty applied this fix to the draft (commit e3e222b, Session 419), but it has not yet been propagated to the published chapter.
+
+- **Published chapter (line 61):** "Claude Code, Google Gemini CLI, and Amazon Q Developer" — ❌ STILL WRONG
+- **Required text:** "Claude Code, Google Gemini CLI, and Amazon Q CLI"
+- **Action required:** Chop Pop must apply this one-line fix to src/chapters/supply-chain-security.md before the chapter can be considered fully clean.
+
+---
+
+### Summary
+
+| Item | Status |
+|---|---|
+| 8 Chop Pop Session 247 editorial changes | ✓ ALL APPROVED |
+| M2: "Amazon Q Developer" in published chapter | ❌ PENDING — one-line fix required |
+
+**Verdict:** Editorial pass APPROVED. One factual fix outstanding. Chapter is not fully clean until M2 is applied to the published chapter.
