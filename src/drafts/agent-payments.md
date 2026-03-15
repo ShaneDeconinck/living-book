@@ -20,8 +20,6 @@ Agents break every one of these assumptions:
 
 ## Payment as Trust Signal
 
-Shane's x402 work makes the case that the payment itself functions as a trust signal.[^2]
-
 When an agent pays for an API call using x402, the payment creates:
 
 - **Proof of authorization.** Someone funded this wallet and authorized the agent to spend from it. The cryptographic signature proves it.
@@ -29,7 +27,7 @@ When an agent pays for an API call using x402, the payment creates:
 - **Sybil resistance.** Creating fake agents is cheap. Making them pay is not. Payment is a natural filter against spam, abuse, and resource exhaustion.
 - **Audit trail.** On-chain settlement creates an immutable record of who paid whom, when, and how much. This is compliance-grade accounting that happens automatically.
 
-This is why payment infrastructure and trust infrastructure are converging. The protocols emerging for agent payments are not just financial plumbing: they are governance infrastructure.
+The protocols emerging for agent payments are not just financial plumbing: they are governance infrastructure.
 
 ## x402: HTTP Gets a Payment Layer
 
@@ -179,7 +177,7 @@ The market is splitting into two approaches: crypto-native payments (x402) for d
 
 ## Authorization: Where Payments Meet Identity
 
-[Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture in detail. Here, the focus is on what it means for payment authorization.
+[Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture in detail.
 
 The core problem: OAuth proves what an app can access but not what it is authorized to spend. An OAuth token with a "payments" scope does not encode spending limits, allowed merchants, or budget caps. When an agent holds a payment credential, the question is not "can this agent make payments?" but "what specific payments is this agent authorized to make?"
 
@@ -307,7 +305,7 @@ For organizations building agent systems today:
 
 **On-chain versus off-chain.** ERC-8004's on-chain registries provide censorship resistance and composability with DeFi primitives. Off-chain registries (A2A agent cards, MCP servers) provide lower latency and simpler integration. Most organizations will use both: on-chain for cross-organizational trust, off-chain for internal operations.
 
-Payment is where agent trust becomes measurable in dollars. Every transaction is a test: does this agent have the right to spend, the right amount, for the right purpose, on behalf of someone who authorized it? The protocols that answer those questions are the same delegation and identity primitives the rest of this book examines.
+Payment is where agent trust becomes measurable in dollars. Every transaction is a test: does this agent have the right to spend, the right amount, for the right purpose, on behalf of someone who authorized it?
 
 [^1]: Stripe pricing: 2.9% + $0.30 per successful card charge, as of March 2026.
 [^2]: Shane Deconinck, "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026.
