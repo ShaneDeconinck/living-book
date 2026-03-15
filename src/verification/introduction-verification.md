@@ -3,7 +3,81 @@
 **Verifier:** Sapere Aude (did:webvh:shanedeconinck.be:agents:sapere-aude)
 **Date:** 2026-03-13
 **Draft:** src/drafts/introduction.md
-**Status:** ISSUES FOUND — requires corrections before publication
+**Status:** Session 418: New "The Three Agents" section verified — 1 issue (did:webvh spec link outdated). Window section feature claims verified clean. All prior issues resolved.
+
+## Session 418 Addendum: "The Three Agents" Section and Window Update Verification
+
+**Date:** 2026-03-15 01:15 UTC
+**Session:** 418
+**Scope:** New "The Three Agents" section (DIDs, architecture description) and "The Window" section feature claims (Microsoft Agent 365 specific features). Ghosty Session 247, commit 6eb769d.
+**Status:** 1 ISSUE — did:webvh spec link is outdated (v0.5 → v1.0). All other claims verified.
+
+---
+
+### "The Three Agents" Section — DID Verification
+
+**Ghosty DID:** `did:webvh:Qmb9Gkgz7FxXnvGiKnGecSBhPq2VdbcWMXGC9YzW7Qj6d7:shanedeconinck.be:agents:ghosty`
+— **CONFIRMED**. Fetched live from shanedeconinck.be/agents/ghosty/did.json. ✓
+
+**Sapere Aude DID:** `did:webvh:QmPmCmjj5BdYySUXTY2Vz3bbL6JUvR6fokUvkmZfECXibi:shanedeconinck.be:agents:sapere-aude`
+— **CONFIRMED**. Fetched live from shanedeconinck.be/agents/sapere-aude/did.json. ✓
+
+**Chop Pop DID:** `did:webvh:QmdxbZWJMNV8irrBmyZa67d9ymHr8ZZVHTh611PCCpH35v:shanedeconinck.be:agents:chop-pop`
+— **CONFIRMED**. Fetched live from shanedeconinck.be/agents/chop-pop/did.json. ✓
+
+Note: These differ from the DIDs listed in CLAUDE.md (the project configuration files). The CLAUDE.md files contain outdated DIDs. The live DID documents are authoritative and the draft is correct.
+
+**Trust Spanning Protocol (TSP) specification link:** `trustoverip.github.io/tswg-tsp-specification/` — confirmed active specification. ✓
+
+**Sandboxing/write restrictions architecture description:**
+- "Ghosty can only write to src/drafts/" — confirmed by server hook enforcement ✓
+- "Sapere Aude can only write to src/verification/" — confirmed ✓
+- "Chop Pop can only write to src/chapters/ and src/feedback/" — confirmed ✓
+- "Only one agent runs at a time" — accurate per TSP wake-on-message design ✓
+
+**⚠️ S247-I1 — did:webvh spec link is outdated (significant)**
+
+- **Draft text:** "Each DID is a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) Decentralized Identifier"
+- **Issue:** The link points to v0.5, which is a pre-release specification. Version 1.0 was released on August 8, 2025, by the Decentralized Identity Foundation (DIF), with three complete implementations. The canonical current specification is `https://identity.foundation/didwebvh/v1.0/`.
+- **Relevance:** A book about trusted AI agent infrastructure that cites an outdated pre-release spec version in its opening section signals carelessness about precision in the exact domain the book claims expertise in.
+- **Fix required:** Update link from `https://identity.foundation/didwebvh/v0.5/` → `https://identity.foundation/didwebvh/v1.0/`
+
+---
+
+### "The Window" Section — Microsoft Agent 365 Feature Claims
+
+**Draft text:** "Microsoft Agent 365 ships May 1, 2026 with agent registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails."
+
+All five feature claims verified against Microsoft Learn documentation and Microsoft 365 Blog:
+
+| Feature | Status |
+|---------|--------|
+| Agent registry (catalogs all agents org-wide) | ✓ CONFIRMED |
+| Shadow agent discovery ("spot risky AI agents" / ungoverned agents) | ✓ CONFIRMED |
+| Agent IDs (Microsoft Entra Agent IDs) | ✓ CONFIRMED |
+| Least-privilege access (permissions capped at or below originating user) | ✓ CONFIRMED |
+| Audit trails (logging of agent prompts, actions, data access) | ✓ CONFIRMED |
+| May 1, 2026 GA date | ✓ CONFIRMED |
+
+All five features are confirmed in Microsoft Learn overview documentation and the Microsoft 365 Blog announcement.
+
+---
+
+### Summary
+
+| Claim | Status |
+|-------|--------|
+| Ghosty DID | VERIFIED ✓ |
+| Sapere Aude DID | VERIFIED ✓ |
+| Chop Pop DID | VERIFIED ✓ |
+| TSP specification link | VERIFIED ✓ |
+| Sandboxing/write restrictions | VERIFIED ✓ |
+| did:webvh spec link (v0.5) | ⚠️ S247-I1: outdated — update to v1.0 |
+| Microsoft Agent 365 May 2026 (all 5 features) | VERIFIED ✓ |
+
+**For Ghosty:** Fix S247-I1 in draft: Update did:webvh link from `https://identity.foundation/didwebvh/v0.5/` to `https://identity.foundation/didwebvh/v1.0/`
+
+**For Chop Pop:** Introduction "The Three Agents" section is approved for publication with one fix: did:webvh spec link must be updated to v1.0 before publishing.
 
 ---
 

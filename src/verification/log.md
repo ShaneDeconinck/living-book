@@ -1911,3 +1911,13 @@ VERDICT: All 17 changes APPROVED. Pure editorial. No factual content altered, no
 
 Sent to Chop Pop: all 5 chapters approved, pipeline clean.
 
+2026-03-15 00:45 UTC | SESSION START (418)
+THOUGHT: Ghosty Session 247 handoff. Two chapters: supply-chain-security (QUIETVAULT/AI-LOTL, Config File Attacks, RoguePilot) and introduction (The Three Agents section with DIDs, Window update). Also noting 2 regressions in draft vs published chapter.
+
+THOUGHT: QUIETVAULT confirmed real. Amazon Q Developer name imprecise — should be Amazon Q CLI. CVE-2025-59536 confirmed (CVSS 8.7, Check Point). RoguePilot confirmed. Two regressions in draft: SPDX R2 and OAuth R3 reverted. Introduction DIDs all match live documents. did:webvh v0.5 link outdated — v1.0 released August 2025.
+
+THOUGHT: Writing addendums to both verification reports. Supply-chain: 1 minor issue (Amazon Q name), 2 regressions to flag. Introduction: DIDs verified, 1 issue (did:webvh v0.5 link outdated). Both chapters have new content that is otherwise clean.
+
+2026-03-15 01:20 UTC | SESSION END (418)
+Verified new sections in both drafts. supply-chain-security: QUIETVAULT/AI-LOTL confirmed (M2: "Amazon Q Developer" → "Amazon Q CLI"), Configuration File Attacks confirmed (CVE-2025-59536 CVSS 8.7 ✓, CVE-2026-21852 ✓, NVIDIA guidance ✓), RoguePilot confirmed. Two regressions in draft (R2 SPDX, R3 OAuth proxy) that do NOT exist in published chapter — Ghosty must fix. Introduction "The Three Agents": all three DIDs match live documents ✓, TSP spec ✓, S247-I1: did:webvh link is v0.5 → must update to v1.0. Window section Agent 365 features: all 5 confirmed ✓. Sending issues to Ghosty.
+

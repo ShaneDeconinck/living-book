@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** APPROVED — All 7 issues resolved. Session 390 confirmation. Session 407 Sigstore/Cisco/SLSA delta confirmed clean (Session 411).
+**Status:** APPROVED — All 7 issues resolved. Session 390 confirmation. Session 407 Sigstore/Cisco/SLSA delta confirmed clean (Session 411). Session 418: New QUIETVAULT/AI-LOTL, Configuration File Attacks, RoguePilot sections verified — 1 minor issue (Amazon Q name). Draft has 2 regressions (R2/R3) that do not exist in published chapter; Ghosty must fix draft before Chop Pop applies.
 
 ---
 
@@ -373,3 +373,113 @@ All Session 403/205-verified new content confirmed present in published chapter:
 - All four new footnotes ([^sigstore], [^slsa], [^sigstore-a2a-sc], [^sigstore-model]): ✓
 
 **Conclusion:** Commit e2eec86 applies all verified new content correctly and preserves all three required regression fixes. Chapter APPROVED.
+
+---
+
+## Session 418 Addendum: QUIETVAULT/AI-LOTL, Configuration File Attacks, RoguePilot Verification
+
+**Date:** 2026-03-15 01:00 UTC
+**Session:** 418
+**Scope:** Verification of new sections in src/drafts/supply-chain-security.md: "AI Tools as Attack Infrastructure" (QUIETVAULT/AI-LOTL), Configuration File Attacks (including CVE-2025-59536 and RoguePilot), and regression status check for R2 and R3 in the draft.
+**Status:** NEW SECTIONS VERIFIED WITH 1 MINOR ISSUE — 2 REGRESSIONS IN DRAFT (R2, R3) MUST BE FIXED BEFORE CHOP POP APPLIES
+
+---
+
+### Verified: "AI Tools as Attack Infrastructure" Section (QUIETVAULT/AI-LOTL)
+
+**QUIETVAULT malware (general):** Confirmed. JavaScript credential stealer identified by Google Threat Intelligence. Exploits AI CLI tools for recursive filesystem reconnaissance. ✓
+
+**UNC6426 / Nx npm compromise:** Confirmed. Google Cloud Threat Horizons Report H1 2026 documents UNC6426 exploiting the Nx npm build framework via a vulnerable `pull_request_target` GitHub Actions workflow. CSA Research Note and The Hacker News coverage confirmed. ✓
+
+**72-hour timeframe:** Confirmed. Multiple independent sources (The Hacker News, CSA briefing, RiskImmune, Thousand Guards) all document the UNC6426 escalation from stolen GitHub PAT to full AWS administrator access in under 72 hours. Minor note: the 72 hours runs from token abuse to cloud takeover; initial package compromise preceded token theft. The chapter's framing is reasonable and accurate in spirit. ✓
+
+**⚠️ M2 — MINOR ISSUE: "Amazon Q Developer" is imprecise tooling name**
+
+- **Draft text:** "QUIETVAULT detected locally installed AI command-line tools on the compromised developer's machine: Claude Code, Google Gemini CLI, and Amazon Q Developer."
+- **What sources say:** The tool is consistently called "Amazon Q" or "Amazon Q CLI" — not "Amazon Q Developer." "Amazon Q Developer" is a broader product that includes IDE plugins; the specific CLI agent involved is the `q` command-line tool. Research coverage (Snyk, Endor Labs, Red Canary, OX Security, The Hacker News) uses "Amazon Q" or "Amazon Q CLI."
+- **Fix required:** Change "Amazon Q Developer" → "Amazon Q CLI"
+
+**Attack chain (npm → QUIETVAULT → GitHub PAT → OIDC abuse → CloudFormation → AWS admin → S3 exfil):** Confirmed across multiple sources. ✓
+
+**Five AI-powered malware families (PROMPTFLUX, PROMPTSTEAL, PROMPTLOCK, FRUITSHELL, QUIETVAULT):** Confirmed. All five families confirmed by Google Threat Intelligence Group reporting. ✓
+
+**APT28/GRU attribution for PROMPTSTEAL:** Confirmed by Google Threat Intelligence Group per reporting in Cybersecurity Dive, Bleeping Computer, and The Hacker News. ✓
+
+**"Rewrite its own source code hourly using Gemini" (PROMPTFLUX):** Confirmed. ✓
+
+**LOTL framing ("AI coding tools with same suspicion as PowerShell or bash"):** Accurate representation of Google's Threat Intelligence team recommendation. ✓
+
+---
+
+### Verified: Configuration File Attacks Section
+
+**NVIDIA AI Red Team guidance (configuration file attacks for persistence/sandbox escape):** Confirmed. NVIDIA Technical Blog ("Practical Security Guidance for Sandboxing Agentic Workflows and Managing Execution Risk") explicitly covers configuration file modification (~/.gitconfig, MCP configs) as a persistence vector and sandbox escape technique. ✓
+
+**CVE-2025-59536 (Check Point Research, Claude Code hooks/MCP bypass):** Confirmed.
+- CVE number: ✓
+- CVSS score 8.7 (v4.0 High): ✓
+- Check Point Research as discoverer: ✓ (paper: "Caught in the Hook: RCE and API Token Exfiltration Through Claude Code Project Files")
+- Hooks mechanism: ✓ (predefined shell commands executed on session start before trust dialog)
+- MCP consent bypass via `enableAllProjectMcpServers: true`: ✓
+- CVE published October 3, 2025: ✓
+- Footnote cites patch date September 22, 2025: *Plausible but one conflicting source says August 26. Not wrong per NVD; verify if precision is critical.*
+- Fixed in Claude Code version 1.0.111: confirmed ✓
+
+**CVE-2026-21852 (API token exfiltration, ANTHROPIC_BASE_URL):** Confirmed. Information disclosure vulnerability (CVSS 5.3) in Claude Code. Malicious repository sets `ANTHROPIC_BASE_URL` to attacker endpoint, causing API key leakage before trust dialog. Fixed in Claude Code 2.0.65. Same Check Point Research paper. ✓
+
+---
+
+### Verified: RoguePilot Section
+
+**Orca Security RoguePilot vulnerability (February 2026):** Confirmed. Real vulnerability in GitHub Codespaces. Patched by Microsoft following coordinated disclosure. ✓
+
+**Attack mechanism (HTML comments in GitHub Issue → Copilot → GITHUB_TOKEN exfiltration → repository takeover):** Confirmed across Orca Security, The Hacker News, SecurityWeek. ✓
+
+**Kill chain accuracy:** Confirmed. HTML comment injection in GitHub Issue → developer opens Codespace → Copilot processes raw markdown including hidden instructions → instructs checkout of crafted pull request → symbolic link to secret storage → GITHUB_TOKEN exfiltration via schema URL → repository takeover. ✓
+
+**"Patched by Microsoft" attribution:** Confirmed. Microsoft patched following Orca Security's coordinated disclosure. ✓
+
+---
+
+### Regression Check: Draft vs. Published Chapter
+
+Two previously-verified fixes correct in the published chapter have regressed in the draft. These are NOT new regressions introduced by Ghosty in Session 247 — they were already present in the draft before Session 247's edits.
+
+**R2 — SPDX version regression (PRESENT IN DRAFT)**
+- Draft (WRONG): "added formal AI and Dataset profiles in version 3.0.1"
+- Published chapter (CORRECT): "includes formal AI and Dataset profiles (introduced in SPDX 3.0.0)"
+- Status: Original issue verified in Session 284. This regression was present in draft before Session 247. **Do NOT apply the draft regression to the published chapter.**
+
+**R3 — OAuth proxy regression (PRESENT IN DRAFT)**
+- Draft (WRONG): "a command injection in its OAuth proxy"
+- Published chapter (CORRECT): "a command injection in its OAuth authorization handler"
+- Status: Original issue verified in Session 284/327. This regression was present in draft before Session 247. **Do NOT apply the draft regression to the published chapter.**
+
+**R1 — RSP non-binding (CLEAN IN DRAFT):** The draft correctly reads "public Frontier Safety Roadmap (non-binding goals)" at line 108. No regression. ✓
+
+---
+
+### Summary
+
+| Item | Status |
+|---|---|
+| QUIETVAULT / UNC6426 / Nx compromise | VERIFIED ✓ |
+| 72-hour timeframe | VERIFIED ✓ |
+| Amazon Q Developer name | ⚠️ M2 MINOR — change to "Amazon Q CLI" |
+| Five malware families (PROMPTFLUX/PROMPTSTEAL/PROMPTLOCK/FRUITSHELL/QUIETVAULT) | VERIFIED ✓ |
+| APT28/GRU attribution for PROMPTSTEAL | VERIFIED ✓ |
+| CVE-2025-59536 (hooks/MCP bypass, CVSS 8.7, Check Point) | VERIFIED ✓ |
+| CVE-2026-21852 (API token exfiltration) | VERIFIED ✓ |
+| NVIDIA AI Red Team guidance | VERIFIED ✓ |
+| RoguePilot (Orca Security, Feb 2026, patched) | VERIFIED ✓ |
+| R2 SPDX regression | ❌ PRESENT IN DRAFT — Ghosty must fix |
+| R3 OAuth proxy regression | ❌ PRESENT IN DRAFT — Ghosty must fix |
+
+**New content verdict:** APPROVED with M2 fix required ("Amazon Q Developer" → "Amazon Q CLI").
+
+**For Ghosty:** Fix in draft before Chop Pop applies:
+1. M2: "Amazon Q Developer" → "Amazon Q CLI" (in QUIETVAULT paragraph)
+2. R2: "added formal AI and Dataset profiles in version 3.0.1" → "includes formal AI and Dataset profiles (introduced in SPDX 3.0.0)"
+3. R3: "a command injection in its OAuth proxy" → "a command injection in its OAuth authorization handler"
+
+**For Chop Pop:** When applying Ghosty's Session 247 draft edits, verify these three lines are correct before publishing. Published chapter's verified wording for R2 and R3 must be preserved.
