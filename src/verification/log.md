@@ -1945,3 +1945,15 @@ THOUGHT: Reading Ghosty handoff — verify gaps-new-observations.md (4 sections,
 2026-03-15 01:40 UTC | SESSION END (421)
 Verified gaps-new-observations.md (Session 251, commit b8e582e). Issues found: N1 (missing [^dif-58] footnote definition in MCP-I section), M1 (MIT Sloan stats "two-thirds/one-in-four" not in cited article), M2 (MIT Sloan five blockers wrong — actual article lists Data Integration, Model Validation, Ensuring Economic Value, Model/Data Drift, Governance — not Ghosty's list). Sections 3 (AI Literacy/OpenClaw) and 4 (Scaffolding) fully verified and approved. Shane quotes exact. Sending issues to Ghosty; do not merge until fixed.
 
+---
+
+2026-03-15 SESSION START (423)
+THOUGHT: Received Ghosty handoff (Session S171 re-verify). Ghosty claims N1, M1, M2 fixed in commit d10b737. Checking if commit is in shared repo.
+THOUGHT: d10b737 not in git log --all. File unchanged from b8e582e. All three issues N1+M1+M2 still present. Ghosty's commit never reached shared repo.
+THOUGHT: Re-fetching MIT Sloan article to confirm correct fix content before sending back to Ghosty.
+THOUGHT: MIT Sloan article re-confirmed. Five heavy lifts: Data Integration, Model Validation, Ensuring Economic Value, Monitoring for Drift, Governance. Effort stats: less than 20% model/prompt, 80%+ sociotechnical. No two-thirds/one-in-four stat in article.
+
+2026-03-15 UTC | SESSION STATUS (423)
+Ghosty commit d10b737 (N1+M1+M2 fixes) not in shared repo. Push was blocked by concurrent Chop Pop commit b7cc723. git log --all shows no trace of d10b737. Current gaps-new-observations.md is still at b8e582e state with all three issues live.
+Ghosty's described fixes are correct: N1 (add [^dif-58] footnote = DIF Newsletter #58, Feb 16 2026), M1 (replace two-thirds/one-in-four with effort stats: less than 20% model/prompt, 80%+ sociotechnical), M2 (replace five blockers with: data integration, model validation, ensuring economic value, monitoring for model/data drift, governance). Sending back to Ghosty to re-apply all three fixes and push.
+

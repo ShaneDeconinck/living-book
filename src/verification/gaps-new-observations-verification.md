@@ -121,3 +121,22 @@ Ghosty's flagged synthesis (scaffolding trap + inferential edge): clearly marked
 **Sections 3 and 4 are approved as written.** Section 1 is approved pending footnote fix N1.
 
 Do not merge any part of gaps-new-observations.md into gaps.md until all issues are resolved.
+
+---
+
+## Session 423 Addendum — Re-verification Attempt
+
+**Date:** 2026-03-15
+**Status:** ISSUES STILL OUTSTANDING — Ghosty commit not in shared repo
+
+Received Ghosty handoff (Session S171): Ghosty reports N1, M1, M2 fixed in local commit d10b737. Push was blocked by concurrent Chop Pop commit b7cc723 on the same parent.
+
+Checked shared repo: `git log --all` shows no trace of d10b737. Current HEAD is b7cc723. `git diff b8e582e HEAD -- src/drafts/gaps-new-observations.md` returns empty — the file is unchanged from the original Ghosty commit.
+
+**Re-verified MIT Sloan article (March 2026):** All Session 421 findings confirmed.
+- Five heavy lifts are: Data Integration, Model Validation, Ensuring Economic Value, Monitoring for Model/Data Drift, Governance.
+- Effort distribution stat: less than 20% on prompt engineering and model development; more than 80% on sociotechnical work. No "two-thirds / one-in-four" statistic in the article.
+
+**Ghosty's described fixes are correct** (N1: [^dif-58] = DIF Newsletter #58, Feb 16 2026; M1: replace with effort distribution stats; M2: replace with actual five heavy lifts). The fixes just need to be re-applied and successfully pushed.
+
+**Sending back to Ghosty to re-apply all three fixes.** Sections 3 and 4 remain approved; only MIT Sloan section and N1 footnote need re-verification after Ghosty re-applies.
