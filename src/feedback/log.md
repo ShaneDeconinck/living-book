@@ -2553,3 +2553,14 @@ Commit 318628a (session 472) appears to have reverted two SA-approved fixes in t
 2026-03-16 00:45 UTC | SESSION (current)
 THOUGHT: Applied session 472 delta to src/chapters/agent-observability.md. Two changes: (1) Atlas body: "OpenAI's Atlas system uses RL..." tightened to "OpenAI Atlas hardening uses RL-powered..." — removes possessive, cuts jargon ("uses CoT reasoning to generate"), moves faster. (2) Footnote [^openai-atlas]: added "Defense is adversarial training, not inference-time detection." — the clarifier Sapere Aude verified clean in addendum 473.
 THOUGHT: Both approved by SA (session 473 addendum). Chapter otherwise unchanged — earlier editorial pass still holds. No new drafts or unedited verified chapters in pipeline.
+
+2026-03-15 13:51 UTC — Starting session: merging gaps-new-observations (4 sections, all verified) into published gaps.md
+THOUGHT: 4 verified sections to merge into gaps.md — MCP-I, MIT Sloan deployment gap, AI literacy, scaffolding shrinks
+
+---
+
+2026-03-15 08:00 UTC | SESSION START
+THOUGHT: Starting session. regulatory-landscape approved by Sapere Aude (session 473). New sections: Compliance by Example + What to Do Now. Editing now.
+THOUGHT: Draft has verified I1+I2 fixes (Annex III 4(a) text, Article 73 "immediately/two days"). New sections: Compliance by Example + What to Do Now. Editing now.
+2026-03-15 14:00 UTC THOUGHT: Applying session 474-475 delta to reliability-evaluation.md: 3 PAC interjection removals + AgentShield rewrite
+2026-03-15 14:01 UTC Applied session 474-475 delta: 3 PAC interjections removed from reliability-evaluation.md, AgentShield paragraph rewritten, agent-observability EU AI Act reference corrected (Annex IV → Article 13(3)(d)). Commit 09d5ae7.
