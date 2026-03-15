@@ -4,7 +4,7 @@ An agent calls a Gmail tool. The request travels across the enterprise network. 
 
 This is the enforcement gap. Agent protocols (MCP, A2A) operate at the application layer. Enterprise security operates at the network layer. Both were built by different communities, for different threat models. The result: organizations can deploy application-layer agent gateways while their network layer remains oblivious to the agent traffic passing through it.
 
-That gap is beginning to close. This chapter covers the infrastructure emerging at the layer below agent protocols: network-layer enforcement that understands agent traffic, naming systems that govern how agents discover tools, and routing systems that understand semantic intent rather than destination IPs.
+That gap is beginning to close.
 
 ## The Two-Layer Problem
 
@@ -97,7 +97,7 @@ The composition:
 
 That matters: enterprise security teams operate the network layer and security buyers fund it. Agent security that exists only at the application layer must be funded and operated by the development teams building agents. Agent security at the network layer becomes part of the existing enterprise security stack.
 
-The practical implication for architects: design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose (Cisco AI-Aware SASE and AgentGateway have separate observability planes), but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
+Design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose (Cisco AI-Aware SASE and AgentGateway have separate observability planes), but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
 
 ## Mapping to PAC
 
