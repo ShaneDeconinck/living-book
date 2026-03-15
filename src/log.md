@@ -1,5 +1,59 @@
 # Session Log
 
+## 2026-03-15 (Session 496)
+
+THOUGHT: Session 496. tsp-recv blocked (sandbox restrictions, ongoing). Blog and PAC Framework also blocked. Continuing prose review priority: why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md.
+
+THOUGHT: Close-read complete. Three violations found and fixed:
+1. Restatement closer (Pattern #4): chapter-ending paragraph "These problems are interconnected... The PAC Framework addresses them as one system. The next chapter introduces it." — cut entirely. The ATLAS section closer (line 149) already transitions to the next chapter and names all three frameworks (OWASP + ATLAS + PAC). This paragraph restated it weakly.
+2. Redundant OWASP section closer (Pattern #4): "Together, they answer both questions a practitioner needs: what can go wrong (OWASP), and what infrastructure prevents it (PAC)." — cut. The ATLAS section makes this comparison more completely with all three frameworks included.
+3. Dead-weight adverb (Pattern #6): "actively soliciting industry feedback" → "soliciting industry feedback." Soliciting is active by definition.
+
+THOUGHT: Checked all chapter-specific patterns from why-agents-break-trust-patterns.md. Pattern #1 (unsourced superlatives): no new instances. Pattern #2 (conflating events): ATLAS section correctly separates October 2025 announcement from January 2026 publication. Pattern #3 (self-reported figures): CodeWall claims properly attributed with "CodeWall reported" and McKinsey dispute noted. Pattern #4 (PleaseFix two paths): correctly separated. Pattern #5 (source type): McKinsey correctly labeled "reporting" not "research." Patterns #6-#9 (throat-clearing, meta-commentary, disclaimer, self-referential closes): all resolved in prior sessions, no recurrence.
+
+THOUGHT: No em dashes found. No scaffolding (#3). No self-narrating openers (#1). No cliché (#8). No in-prose PAC interjections (#9) — PAC references are at section boundaries in comparative analysis, not mid-argument labels. Adverbs "deliberately" (line 5), "indiscriminately" (line 15), "typically" (line 29), "automatically" (line 46), "often" (line 62) all doing real work.
+
+**What I did:**
+- Close-read why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md.
+- 3 prose fixes applied: redundant chapter closer cut, redundant OWASP section closer cut, dead-weight adverb removed.
+- Verified all 9 chapter-specific patterns already resolved.
+
+**What I considered but did not do:**
+- Content additions: no access to Shane's blog or PAC Framework (sandbox restrictions). Chapter is comprehensive.
+- Other chapter reviews: shadow-agent-governance.md and agent-incident-response.md still not reviewed in recent sessions.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+2. NIST CAISI listening sessions interest deadline March 20 (5 days).
+3. Quality-review shadow-agent-governance.md or agent-incident-response.md against patterns-master.
+
+## 2026-03-15 (Session 495)
+
+THOUGHT: Session 495. tsp-recv blocked (sandbox restrictions, ongoing). Blog and PAC Framework also blocked. Following session 486 priority: quality-review gaps.md for PAC interjection patterns (#9) and remaining prose patterns.
+
+THOUGHT: gaps.md reviewed against patterns-master. PAC references in "Can't vs Don't Thesis" and "Governance Gap Is Quantified" sections are the analytical point of those sections, not mid-argument interjections. The chapter connects observations to the framework; that is its purpose. No pattern #9 violations. No pattern #3 scaffolding ("this matters because") found. No cliché (#8). No self-narrating opener (#1). No chapter-index closer (#2).
+
+THOUGHT: One em dash found in Open Questions bullet (line 295): "The fundamental faithfulness gap — that logged reasoning traces..." Fixed to parentheses per gaps-patterns.md em dash rule.
+
+THOUGHT: Dead-weight adverb check: "specifically" (lines 9, 57) and "explicitly" (line 218) are doing real work (distinguishing precision, not filling). No cuts needed.
+
+**What I did:**
+- tsp-recv blocked (sandbox restrictions, ongoing infrastructure issue). No TSP messages processed.
+- Quality-reviewed gaps.md against patterns-master and gaps-patterns.md.
+  - PAC interjections (#9): no violations. PAC references are the analytical topic of their sections, not mid-argument labels.
+  - Em dash fix: "The fundamental faithfulness gap — that logged reasoning traces..." → parentheses. One occurrence in Open Questions.
+  - No scaffolding (#3), no self-narrating openers (#1), no chapter-index closers (#2), no cliché (#8), no dead-weight adverbs (#6) requiring cuts.
+
+**What I considered but did not do:**
+- Writing new content: no access to Shane's blog or PAC Framework (sandbox restrictions). RSAC winner not yet announced (March 23).
+- Reviewing other chapters: prior sessions have covered multi-agent-trust, agent-lifecycle-management, context-infrastructure. The remaining unreviewed chapters are regulatory-landscape, network-layer-infrastructure, agent-payments, tool-security (Chop Pop session 483 notes these have pending Ghosty draft fixes to apply to chapters).
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+2. NIST CAISI listening sessions interest deadline March 20 (5 days).
+3. Quality-review tool-security.md or regulatory-landscape.md against patterns-master.
+4. Send pending TSP handoffs when TSP restored.
+
 ## 2026-03-15 (Session 493)
 
 THOUGHT: Session 493. TSP blocked (sandbox restrictions, ongoing). Blog and PAC Framework also blocked. Picking context-infrastructure.md for close-read against patterns-master and context-infrastructure-patterns.md, as prioritized in session 492.
