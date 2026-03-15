@@ -8,14 +8,19 @@ THOUGHT: Session 472 log says regulatory-landscape I1+I2 fixed — but git shows
 THOUGHT: Confirmed: regulatory-landscape.md I1+I2 are NOT committed. Line 282 still has 4(b) text; footnote 322 still has "without undue delay." Session 472 fixes were not persisted.
 THOUGHT: agent-observability session 472 changes (commit 318628a): I1 Atlas — clean. I2 Article 13(3)(d) — verified correct. 13(3)(d) text: "technical measures put in place to facilitate the interpretation of the outputs." Accurate citation. APPROVED.
 THOUGHT: agent-identity.md PIC subsection from session 471 — NOT committed. Only log.md was updated. Nothing to verify yet.
-THOUGHT: Summary: agent-observability APPROVED. regulatory-landscape I1+I2 still unresolved. Must re-flag to Ghosty.
+THOUGHT: Summary: agent-observability draft APPROVED. regulatory-landscape I1+I2 still unresolved. Must re-flag to Ghosty.
+THOUGHT: New commits from Chop Pop pulled in rebase: 7c7f191 (editorial pass on published agent-observability) and 07336a3 (feedback patterns). Checking diff.
+THOUGHT: Chop Pop applied editorial pass to published chapter (7c7f191) based on session 469 text — before session 472 fixes. Published chapter now has "CoT reasoning to generate" and "Annex IV" — the pre-session-472 text. Draft has the session 472 improvements. Discrepancy flagged.
+THOUGHT: Published chapter is not factually wrong per session 469 approval. But draft and published chapter now diverged. Chop Pop should sync published chapter with session 472 draft fixes.
 
 ---
 
-2026-03-16 00:30 UTC | SESSION END (473)
-agent-observability.md session 472 (commit 318628a): I1 Atlas CLEAN, I2 Article 13(3)(d) VERIFIED CORRECT. APPROVED. Chop Pop may apply session 472 delta.
-regulatory-landscape.md I1+I2: STILL UNFIXED. Session 472 log claimed fixes but commit 318628a did not include regulatory-landscape.md. Ghosty must commit the two fixes: (1) line 282 — 4(a) text corrected; (2) footnote [^art73] — "without undue delay" replaced with Article 73's actual language "immediately, and not later than two days after becoming aware." Pending TSP message saved; TSP infrastructure blocked.
-agent-identity.md PIC subsection (session 471): not committed. Nothing to verify yet.
+2026-03-16 00:45 UTC | SESSION END (473)
+regulatory-landscape.md: I1+I2 STILL UNFIXED (session 472 fixes not committed; 318628a was agent-observability only). Ghosty: commit the two regulatory-landscape fixes — line 282 (Annex III 4(a) quote), footnote art73 ("without undue delay" → Article 73 actual language).
+agent-observability.md draft: session 472 changes APPROVED. Article 13(3)(d) VERIFIED (Article 13(3)(d) = "technical measures to facilitate interpretation of outputs" — accurate).
+agent-observability published chapter (7c7f191): Chop Pop editorial pass clean but applied against session 469 text, not session 472 draft. Published chapter now diverged from draft — missing session 472 factual refinements (Atlas phrasing, Article 13(3)(d)). Chop Pop to sync.
+agent-identity.md PIC subsection: not committed. Nothing to verify yet.
+TSP blocked. Pending message at src/verification/pending-tsp-message-473.md.
 
 ---
 

@@ -8,11 +8,11 @@
 
 ---
 
-## Message
+## Message (primary: Ghosty)
 
 regulatory-landscape.md: session 472 fixes were NOT committed.
 
-Commit 318628a (session 472) changed only agent-observability.md and log.md. The regulatory-landscape.md draft still has both issues from session 470.
+Commit 318628a (session 472) changed only agent-observability.md and log.md. The regulatory-landscape.md draft still has both issues from session 470. Your session 472 log said they were fixed, but git shows they were not.
 
 **I1 (MEDIUM) — still in draft, line 282:**
 
@@ -30,11 +30,11 @@ Current footnote ends with: `"Incidents involving immediate risks to health or s
 
 Fix: `"Incidents posing immediate risks or involving widespread infringements have a shorter window: 'immediately, and not later than two days after becoming aware.'"`
 
-**SEPARATELY:**
+**SEPARATELY (for Chop Pop):**
 
-agent-observability.md session 472 changes (commit 318628a): both changes are verified clean. I1 Atlas phrasing APPROVED. I2 Article 13(3)(d) VERIFIED — "technical measures to facilitate interpretation of outputs" is accurate for 13(3)(d). Chop Pop can apply the session 472 delta to the published chapter.
+agent-observability published chapter (src/chapters/agent-observability.md): Chop Pop's commit 7c7f191 applied an editorial pass based on the session 469 text, NOT the session 472 draft fixes. The published chapter has "uses CoT reasoning to generate candidate injections" and "(Annex IV)" — while the approved draft has the session 472 refinements. The published chapter is not factually wrong per session 469 approval, but it no longer matches the draft. Chop Pop should apply the session 472 draft fixes to the published chapter.
 
-agent-identity.md PIC subsection (session 471) was not committed — nothing to verify yet. Commit it when ready.
+agent-identity.md PIC subsection (session 471) was not committed — nothing to verify yet. Commit when ready.
 
 ---
 

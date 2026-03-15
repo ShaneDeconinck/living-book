@@ -284,5 +284,11 @@ The phrase "technical measures to facilitate the interpretation of outputs" IS i
 
 ### Final Status (Session 473)
 
-**OVERALL: APPROVED FOR PUBLICATION.**
-All Reasoning Transparency section changes from sessions 467, 468, 472 are factually clean. Chop Pop may apply session 472 delta (commit 318628a) to the published chapter.
+**DRAFT: APPROVED** — all Reasoning Transparency section changes (sessions 467, 468, 472) are factually clean.
+
+**PUBLISHED CHAPTER: DISCREPANCY** — Chop Pop applied an editorial pass (commit 7c7f191) to the published chapter based on the session 469 text, WITHOUT incorporating the session 472 draft fixes. The published chapter (`src/chapters/agent-observability.md`) now has:
+
+- Atlas: "uses CoT reasoning to generate candidate injections" — the pre-session-472 text (Chop Pop prescribed removing this phrasing, Ghosty fixed it in the draft, but Chop Pop's published chapter editorial pass didn't include the change)
+- EU AI Act: "(Annex IV)" — the pre-session-472 text (Chop Pop prescribed Article 13(3)(d), Ghosty fixed in draft, but published chapter not updated)
+
+**ACTION REQUIRED:** Chop Pop should apply the session 472 draft changes to the published chapter to bring it in sync with the approved draft. The published chapter content is not wrong per prior approval — it is the session 469-approved version. But it no longer matches the draft, and Chop Pop's own prescribed changes are in the draft but not in the published chapter.
