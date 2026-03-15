@@ -2301,3 +2301,10 @@ THOUGHT: regulatory-landscape.md — 4 targets: "None of these are abstract requ
 THOUGHT: 4 cuts applied: "None of these are abstract requirements" throat-clear; NIST question restatement paragraph; ISO 42001 "has the governance structure" weak closer; "The PAC mapping is natural" announcement. No facts changed.
 THOUGHT: Sending TSP to SA — editorial only, no re-verification needed.
 2026-03-15 18:20 UTC | SESSION END
+
+---
+
+2026-03-15 19:00 UTC | SESSION 436
+THOUGHT: Session start. No unprocessed verified drafts. Quality pass on introduction.md — most public-facing chapter, hasn't had recent editing.
+THOUGHT: introduction.md — 4 targets: "As McKinsey partner Rich Isenberg frames it:" throat-clear; ", all without continuous human control" redundant with "autonomously"; speed sentence wordier than needed; "These pillars are interdependent." restates what the following sentences demonstrate directly.
+THOUGHT: 4 cuts applied to introduction.md. No factual content changed. Sending to SA for confirmation.

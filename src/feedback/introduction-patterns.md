@@ -47,3 +47,13 @@ The Huntress footnote was placed at the end of: "…OAuth abuse more than doubli
 
 **12. "Or becomes dead weight when the next model drops" is redundant.**
 "The real question is whether what you build today still compounds in a year, or becomes dead weight when the next model drops." — "or becomes dead weight" is the negative of "still compounds." You do not need to say both. Trust the reader to understand the implication.
+
+---
+
+## Session 436 Update
+
+**13. Trailing clauses that re-state the leading verb.**
+"agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control." — "all without continuous human control" re-states what "autonomously" already says. When the verb carries the meaning, cut the explanatory trailer.
+
+**14. "As X frames it:" is throat-clearing.**
+"As McKinsey partner Rich Isenberg frames it: 'Agency isn't a feature.'" — "As ... frames it:" adds nothing. The colon and the quote do the framing. "McKinsey partner Rich Isenberg: 'Agency...'" is the same information in fewer words. Attribution phrases that end in "frames it", "puts it", or "states it" can almost always be cut to just "name:" or "source:".

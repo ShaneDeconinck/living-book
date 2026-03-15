@@ -38,7 +38,7 @@ General-purpose models, backed by billions in training compute, are now good eno
 
 Shane calls what remains the inferential edge: the gap between having access to a powerful model and being able to use it safely, at scale, inside an organization.[^edge] That gap is wide. And it is not about the model.
 
-88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey 2026: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights."
+88% of organizations report confirmed or suspected security incidents involving AI agents.[^gravitee] Only 14.4% have full security approval for their agent deployments. More than half of all agents operate without any security oversight or logging.[^gravitee-monitoring] McKinsey 2026: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] McKinsey partner Rich Isenberg: "Agency isn't a feature. It's a transfer of decision rights."
 
 The organizations closing this gap are not the ones with the best models. They are the ones building the infrastructure to let models run.
 
@@ -60,13 +60,13 @@ These are not three separate problems. They are one interconnected system failur
 
 The governance challenge is not just "can we trust our own agents?" Adversaries are deploying agents too.
 
-Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation, all without continuous human control.[^flashpoint] Criminal forum discussions referencing AI spiked 1,500% between November and December 2025. Sardine's research documents seven agentic attack types producing losses across banking, fintech, and crypto: polymorphic phishing agents that study internal communication patterns for weeks before inserting themselves into high-trust threads; synthetic identity maturation agents that cultivate fabricated profiles over cycles of up to 18 months; automated chain-hopping that fragments stolen funds into tens of thousands of sub-$10 transactions across blockchains.[^sardine]
+Flashpoint's 2026 Global Threat Intelligence Report documents agentic attack chains operating autonomously: reconnaissance, phishing generation, credential testing, and infrastructure rotation.[^flashpoint] Criminal forum discussions referencing AI spiked 1,500% between November and December 2025. Sardine's research documents seven agentic attack types producing losses across banking, fintech, and crypto: polymorphic phishing agents that study internal communication patterns for weeks before inserting themselves into high-trust threads; synthetic identity maturation agents that cultivate fabricated profiles over cycles of up to 18 months; automated chain-hopping that fragments stolen funds into tens of thousands of sub-$10 transactions across blockchains.[^sardine]
 
 The pattern is consistent: agents remove the human bottleneck from attack operations. The time between vulnerability disclosure and weaponized exploit is shrinking toward zero.
 
 Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
 
-Organizations need their defenses to operate at the speed adversary agents now move.
+Organizations need defenses that operate at agent speed.
 
 ## The PAC Framework
 
@@ -78,7 +78,7 @@ The PAC Framework, developed by Shane Deconinck at trustedagentic.ai, is the org
 
 **Control: can your infrastructure enforce what policy demands?** Policy says "don't." Architecture says "can't." The difference matters when agents act autonomously across systems and organizations. Agent identity, scoped credentials, delegation chains where authority can only decrease, sandboxing, cross-organizational trust: the Control pillar is about infrastructure that makes violations structurally impossible, not just policy-prohibited.
 
-These pillars are interdependent. Potential without Accountability is reckless adoption: you build fast and hit a wall when the first incident happens and nobody can explain what went wrong. Accountability without Control is governance on paper: policies mean nothing if the infrastructure cannot enforce them. Control without Potential is infrastructure without a mandate: if the business does not see value, funding stops.
+Potential without Accountability is reckless adoption: you build fast and hit a wall when the first incident happens and nobody can explain what went wrong. Accountability without Control is governance on paper: policies mean nothing if the infrastructure cannot enforce them. Control without Potential is infrastructure without a mandate: if the business does not see value, funding stops.
 
 The framework is iterative. Models improve, protocols land, regulations tighten, internal policies evolve. Your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability. This is not a one-time assessment. It is a living practice.
 
