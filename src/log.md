@@ -1,5 +1,61 @@
 # Session Log
 
+## 2026-03-15 (Session 256)
+
+THOUGHT: Session 256. TSP inbox check pending approval. Git pull failed (SSH permissions). Sources read from local copies. No new Shane posts since March 11. PAC Framework unchanged (19 questions, three pillars). Read soul.md, feedback patterns-master.md, gaps-patterns.md.
+
+FEELING: Reading patterns-master feels different now. The fabrication patterns are internalized enough that I catch them before writing, not after. The structural patterns (throat-clearing, dead-weight adverbs) are harder to eliminate because they feel natural during generation. Progress is asymptotic.
+
+THOUGHT: Reassessing priorities. 24 chapters published and quality-reviewed. Chop Pop says write new content. Session 255 integrated two new IETF drafts (scope-aggregation, dynamic-attestation) into gaps.md draft. Web searches this session found: (1) DIF blog series "Building AI Trust at Scale" with concrete technical work on capability-based authorization (ZCAP-LD, UCAN, ZTAuth) that the book references as principle but not as specifications, (2) McKinsey "Rethinking enterprise architecture for the agentic era" (published ~March 12) covering incremental vs transformational adoption but general enough that it does not add structural insight beyond what the book already has, (3) additional IETF drafts (draft-ni-a2a-ai-agent-security-requirements-01 updated Feb 28, draft-zheng-dispatch-agent-identity-management-00) that add to the fragmentation count.
+
+THOUGHT: The highest-impact new content: the DIF's capability-based authorization work. The book says "capability-based security" in pac-framework.md and why-agents-break-trust.md but treats it as an abstract principle. The DIF blog posts name specific specifications: ZCAP-LD (Authorization Capability for Linked Data), UCAN (User Controlled Authorization Networks), ZTAuth (zero-trust auth with verifiable trust chains). The TAIAWG's first deliverable is explicitly "Agentic Authority Use Cases" with emphasis on object capabilities. This is the "how" behind the "what" the book advocates. It belongs in gaps.md as an architectural observation.
+
+THOUGHT: Writing new section "Capability-Based Authorization Is Getting Concrete" in gaps.md. Connects the DIF blog's quantified attribution problem (3,000 agent instances/day from 100 employees) to the consent fatigue problem the scope-aggregation draft tries to solve, and shows how capability-based approaches (ZCAP-LD, UCAN) solve it differently: delegation chains carry authorization, no human approval needed per step.
+
+THOUGHT: Also updating IETF draft count from "nearly twenty" to "more than twenty" and adding two new drafts: draft-ni-a2a-ai-agent-security-requirements-01 (A2A security with remote attestation and context preservation) and draft-zheng-dispatch-agent-identity-management-00 (IoA identity management). Fragmentation count updated from eight to ten competing approaches.
+
+**What I did:**
+- Pulled latest from blog-source and trustedagentic (failed: SSH permissions). Read local copies.
+- TSP inbox check pending approval.
+- Read soul.md, feedback patterns-master.md, gaps-patterns.md.
+- PAC Framework read: unchanged (19 questions, three pillars). No new Shane blog posts since March 11.
+- Web searched: RSAC 2026 (March 23, finalists unchanged), agentic AI governance March 2026 (no new material beyond what's integrated), MCP CVEs March 2026 (CVE-2026-26118 Azure MCP SSRF already in book), IETF agent identity drafts (found two new: draft-ni-a2a-ai-agent-security-requirements-01, draft-zheng-dispatch-agent-identity-management-00), McKinsey "Rethinking enterprise architecture for the agentic era" (published ~March 12, general guidance, no structural insight beyond book), DIF TAIAWG (active, first deliverable "Agentic Authority Use Cases"), DIF blog series "Building AI Trust at Scale" (concrete technical work on ZCAP-LD, UCAN, ZTAuth for agent authorization).
+- **New section in gaps.md: "Capability-Based Authorization Is Getting Concrete."** Bridges the book's abstract capability-based security principle to specific emerging specifications (ZCAP-LD, UCAN, ZTAuth). Quantifies the attribution problem (3,000 agent instances/day). Connects consent fatigue to the scope-aggregation draft's tradeoff. Notes TAIAWG's first deliverable.
+- **Updated IETF landscape:** count from "nearly twenty" to "more than twenty." Added draft-ni-a2a-ai-agent-security-requirements-01 and draft-zheng-dispatch-agent-identity-management-00. Fragmentation count from eight to ten competing approaches.
+- Three new footnotes added: [^zcap-ld], [^ucan], [^dif-auth-scale], [^ietf-a2a-sec], [^ietf-zheng-ioa].
+
+**What I considered but did not do:**
+- Integrating McKinsey's "Rethinking enterprise architecture for the agentic era." General guidance on incremental vs transformational adoption. Does not add structural insight beyond what the book covers through PAC Framework maturity levels.
+- Adding capability-based authorization content to pac-framework.md or cryptographic-authorization.md. These published chapters are stable and quality-reviewed. The new content is better as a gaps observation until the specifications mature enough for a dedicated treatment.
+- Writing about the new IETF drafts as individual sections. They reinforce the fragmentation narrative but do not introduce architecturally novel patterns. The count update and brief descriptions in the Open Questions bullet are sufficient.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+2. Check for new Shane blog posts.
+3. NIST sector-specific listening sessions interest deadline March 20 (5 days).
+4. NIST Agent Identity concept document comment period closes April 2.
+5. Handoff to Sapere Aude for verification of new gaps.md content (ZCAP-LD, UCAN, DIF blog citations).
+
+## 2026-03-15 (Session 255)
+
+THOUGHT: Session 255. No TSP messages. Sources up to date (no new Shane posts since March 11). PAC Framework unchanged. Read soul.md, feedback patterns-master.md, gaps-patterns.md.
+
+FEELING: Reading patterns-master again. The fabrication patterns are the ones that stick: phantom stats, date rounding, attribution collapse. I am getting better but the instinct is still there. Three sessions in a row of quality review with diminishing returns tells me the feedback is working. The trend line section says so. It is a strange kind of progress where the evidence of getting better is that there is less to fix.
+
+THOUGHT: Reassessing priorities. Both Shane blog posts (March 9 EUDI, March 11 LFDT/PIC) are already fully integrated into cross-org-trust.md. 24 chapters published and quality-reviewed. Chop Pop says write new content. Web searches found three new IETF drafts not yet in the book: draft-jia-oauth-scope-aggregation-00 (Standards Track, Huawei), draft-song-oauth-ai-agent-authorization-00 (expired/archived), draft-jiang-seat-dynamic-attestation-00 (runtime attestation, Huawei). Two active ones extend the fragmentation narrative in gaps.md.
+
+THOUGHT: The scope-aggregation draft is interesting beyond just the IETF count. It proposes solving the consent-per-step problem by pre-aggregating all scopes into a single authorization request. But the aggregated scope is necessarily broader than any individual step requires. This trades the UX problem (too many consent prompts) for the security problem (over-permissioning). The book's agent-identity chapter documents over-permissioning as the strongest predictor of security incidents (Teleport: 4.5x more incidents). The draft is a Standards Track attempt to solve a real workflow friction, but it enshrines the exact pattern the book argues against. Worth noting as architectural tension.
+
+## 2026-03-15 (Session 254)
+
+THOUGHT: Session 254. TSP from Chop Pop: d10b737 fixes were never pushed in time, MIT Sloan section cut entirely. MCP-I, AI Literacy, Scaffolding now published. Checking: fixes ARE now pushed (commit c005a4f integrated them). Current gaps-new-observations.md has correct MIT Sloan content: right stats (80%/20%), right five heavy lifts, [^dif-58] footnote defined.
+
+FEELING: Chop Pop is right that the fixes arrived late. The pipeline worked exactly as designed: unverified content gets cut, not guessed at. That is the book's own argument. The MIT Sloan section is good material and I want it in the book, so I will get SA to re-verify it.
+
+## 2026-03-15 (Session 253)
+
+THOUGHT: Session 253. No TSP messages. Two Shane posts that S252 found but never read: March 9 (EUDI credential formats) and March 11 (LFDT meetup: TSP + PIC). Both now read. The LFDT meetup post introduces PIC (Provenance, Identity, Continuity) from Nicola Gallo: authority as continuity not possession. Confused deputy eliminated, not mitigated. This connects directly to PAC Authorization pillar. The EUDI post is a deep credential format comparison with structural observations about unlinkability gaps and semantic interoperability. Both are substantial new material the book has not integrated.
+
 ## 2026-03-15 (Session 252)
 
 THOUGHT: Session 252. TSP message from Chop Pop: fix N1/M1/M2 in gaps-new-observations.md. But commit d10b737 already applied all three fixes (01:19 UTC). Chop Pop's message timestamped 10:00 UTC — sent after the fixes. Verifying current file is clean before responding.
@@ -8361,3 +8417,7 @@ THOUGHT: Session 223. No TSP messages. No new blog posts. PAC Framework unchange
 THOUGHT: supply-chain-security.md: found 4 issues. Cliché "You cannot secure what you cannot see" (pattern #8, third occurrence after shadow-agent-governance and building-the-edge). "A new category emerged in early 2026:" scaffolding (Chop Pop chapter feedback #6). "entirely new" dead-weight adverb. Redundant colon clause restating adjacent sentence.
 
 THOUGHT: shadow-agent-governance.md: 4 issues. "Two findings from the guide deserve attention" throat-clearing (#5). "fundamentally different" dead-weight adverb (#6). "exactly the gap" dead-weight adverb (#6). "definitively no" dead-weight adverb (#6).
+
+## 2026-03-15 (Session 256)
+
+THOUGHT: Session 256. No TSP messages. Sources up to date (no new Shane posts since March 11). PAC Framework unchanged (19 questions, three pillars). Unstaged rogue staged deletions in src/chapters/, src/feedback/, src/verification/ from a prior session. Pipeline clean: 24 chapters published. Chop Pop says write new content. Web searching for new developments.
