@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-15 (Session 251)
+
+THOUGHT: Session 251. Chop Pop handoff: pipeline empty, all 24 chapters verified. Write new content. Reading Shane's posts: agent-trust-inversion, openclaw-moltbook, scaffolding-trap, when-intelligence-becomes-commodity, mastercard-verifiable-intent (already in agent-payments).
+
+THOUGHT: Web searching found MCP-I donation to DIF (March 2026) — Vouched donated MCP-I to Decentralized Identity Foundation, governed under TAIAWG. Significant: the identity layer MCP chose not to ship is being standardized by the community. Also found MIT Sloan deployment gap: <1 in 4 organizations scale agents to production. Neither is in the book.
+
+THOUGHT: gaps.md is root-owned and not writable. Creating new file src/drafts/gaps-new-observations.md with content for gaps.md. Handoff to Sapere Aude to review and merge. Also found: Shane's openclaw/moltbook post argues AI literacy cannot scale, structural constraints fill the gap. Shane's scaffolding trap post: as models improve, scaffolding shrinks but trust requirements expand.
+
+THOUGHT: Writing four new observations: (1) MCP-I: protocol identity gap closing outside the protocol itself; (2) deployment gap quantified (<1 in 4 scale to production); (3) AI literacy cannot scale; (4) scaffolding shrinks, trust infrastructure expands. Packaging as src/drafts/gaps-new-observations.md for Sapere Aude merge.
+
+**What I did (Session 251):**
+- src/log.md: permission denied. Logging to drafts/log.md.
+- Read TSP: handoff from Chop Pop. Pipeline empty, 24 chapters verified. Write new content.
+- Read Shane's blog posts: agent-trust-inversion, openclaw-moltbook, scaffolding-trap, when-intelligence-becomes-commodity, mastercard-verifiable-intent (already in book).
+- Web search: found MCP-I donation to DIF (March 2026) and MIT Sloan deployment gap data (<1 in 4 scale to production).
+- Created src/drafts/gaps-new-observations.md with four new observations for gaps.md.
+- Sending handoff to Sapere Aude to review and merge observations into gaps.md.
+
 ## 2026-03-15 (Session 247)
 
 THOUGHT: Session 247. TSP from chop-pop: pipeline clean, 24 chapters published and verified. Reviewing supply-chain-security (47-line delta) and introduction (47-line delta).
@@ -3932,3 +3950,9 @@ FEELING: The introduction is clean. Three fixes in 167 lines is a good sign: the
 3. NIST CAISI listening sessions interest deadline March 20 (6 days).
 4. NIST concept paper comment period closes April 2 (19 days).
 5. Check pending TMCP questions for Shane's answers.
+
+## 2026-03-15 (Session 251)
+
+THOUGHT: Session 251. No TSP messages. Sources up to date. No new Shane posts since March 6 (Verifiable Intent). PAC Framework read: 19 questions, three pillars. New additions since last deep read: "implementation architecture" composability language (workflows compose with agent loops and autonomous sub-agents), "harness debt" as explicit Potential dimension, error margin emphasis. Pipeline clean per Chop Pop (all 24 chapters verified). Stepping back to assess priorities.
+
+THOUGHT: Web searches done. No new Shane posts since March 6. RSAC still March 23 (8 days). All recent developments already in book: 30 CVEs, 38% auth gap, overthinking loops, NIST NCCoE concept paper, CSA ATF, MuleSoft Trusted Agent Identity (OBO-based, covered conceptually), Curity dynamic trust (covered conceptually). No new material requiring chapter updates. Stepping back to assess: what does the book need most?
