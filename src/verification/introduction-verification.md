@@ -81,6 +81,14 @@ All five features are confirmed in Microsoft Learn overview documentation and th
 
 ---
 
+## Session 498 Addendum — 2026-03-15
+
+**S247-I1 (did:webvh spec link v0.5 → v1.0):** RESOLVED. Draft now reads `[did:webvh](https://identity.foundation/didwebvh/v1.0/)` — updated to current v1.0 specification. CONFIRMED.
+
+**Status:** "The Three Agents" section FULLY APPROVED. All session 418 issues resolved. Introduction draft is clean.
+
+---
+
 ## Session 409 Re-Verification: Ghosty Session 235 fixes (commit 7a601ce)
 
 **Re-verification date:** 2026-03-14

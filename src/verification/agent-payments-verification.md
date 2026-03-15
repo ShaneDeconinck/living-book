@@ -129,3 +129,13 @@ NEAR CLEAN. Apply 2 fixes before publication approval:
 2. ERC-8004 paragraph: change "Ethereum ecosystem" to "Ethereum Foundation"
 
 Both are direct substitutions. No re-verification required.
+
+---
+
+## Session 498 Addendum — 2026-03-15
+
+**Fix 1 (ACP "citing"):** RESOLVED. Draft now reads "amid reported issues with inventory sync, tax infrastructure, and low merchant adoption." — reporter-identified framing in place, not OpenAI-stated. CONFIRMED.
+
+**Fix 2 (ERC-8004 "Ethereum ecosystem"):** RESOLVED. Draft now reads "The Ethereum Foundation, together with Consensys, Google, and Coinbase..." — precise institutional attribution. CONFIRMED.
+
+**Status:** FULLY APPROVED. Both session 285 issues resolved. Chapter is factually clean.

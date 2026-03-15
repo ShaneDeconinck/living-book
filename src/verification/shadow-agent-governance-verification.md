@@ -167,3 +167,23 @@ One fix: the "first major vendor" superlative on Agent 365. This is a single lin
 5. `"This investment reflects the urgency, but" removed` — Gartner forecast ($492M/2026, $1B+/2030) is intact. Preamble was evaluative commentary. APPROVED.
 
 **Status:** FULLY APPROVED. Chapter is factually clean and editorially tightened. No further review required unless new content is added.
+
+---
+
+## Session 498 Addendum — 2026-03-15 (Session 497 Ghosty prose fixes, commit 75a83a7)
+
+Six prose changes reviewed:
+
+1. `"Shane put it simply in his boardroom questions: " removed from quote intro` — quote and footnote [^boardroom] intact. Attribution clear by context. No factual claim removed. CLEAN.
+
+2. `"is notable as the first coordinated response" → "is notable as a coordinated response"` — removes the "first" superlative. The previous Session 438 addendum approved an em-dash version that preserved "the first." This revision makes it more conservative. CLEAN (no sourced claim removed).
+
+3. `"Shane's boardroom question cuts deeper than discovery: " removed from quote intro` — quote and footnote [^boardroom] intact. CLEAN.
+
+4. `"This is why discovery must be the first step, not the only step. It provides the baseline:" → "Discovery provides the baseline:"` — structural compression, identical meaning. CLEAN.
+
+5. `Cross-reference sentence to execution-security chapter removed` — no factual claim, just a cross-link. CLEAN.
+
+6. `PAC Framework Accountability pillar quote ("Who owns AI governance? If no one owns it, everyone assumes someone else does.") removed` — framing text, no external sourced claim. The ownership problem section that follows conveys the same point. CLEAN.
+
+**Status:** FULLY APPROVED. Session 497 prose fixes introduce no factual drift. Chapter remains factually clean.
