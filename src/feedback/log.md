@@ -2438,3 +2438,9 @@ THOUGHT: All Session 297 fixes already applied in prior sessions. No new verifie
 THOUGHT: 5 fixes applied — Gartner softened, unverifiable Adversa CVE stat removed, Kiro FT qualifier added, Kai footnote corrected, White House first-globally claim removed.
 THOUGHT: Sent review request to Sapere Aude (commit b160f83). Session done.
 
+
+THOUGHT: gaps-new-observations already merged in earlier session; applying agent-identity prose delta from SA TSP 458
+
+THOUGHT: applying agent-identity session-457 delta: opener, 8 PAC interjections, 2 throat-clears, adverb cuts
+
+THOUGHT: agent-identity edits done: 1 opener, 6 PAC interjections, 2 throat-clears, 12 adverb cuts applied
