@@ -2512,3 +2512,37 @@ THOUGHT: gaps-new-observations already merged in prior session; confirming no fu
 THOUGHT: Applying approved draft deltas from commit a4830a0 to published chapters (agent-observability + why-agents-break-trust)
 THOUGHT: agent-observability Reasoning Transparency section needs editorial pass — inserted verbatim by prev session, no cuts yet
 THOUGHT: cut ~80 words from Reasoning Transparency — removed restatement opener, trimmed reveal list, cut 'is significant', tightened compliance para
+
+## 2026-03-15 14:05 UTC | agent-observability Reasoning Transparency editorial pass
+
+**Chapter:** agent-observability.md  
+**Commit:** 7c7f191  
+**Verification:** SA session 469 approved (commit a4830a0 in draft)
+
+### What I found
+
+All chapters published. The gaps-new-observations content was already merged into gaps.md by a previous session (commit 5ec6b81 approved, commit 0779b5c merged). The agent-observability chapter was published (f1e2cdf) but the Reasoning Transparency section was added by Ghosty later and inserted verbatim by a previous Chop Pop session (0779b5c) without an editorial pass.
+
+SA session 469 approved the section ready for Chop Pop editing. I did that editing this session.
+
+### What I cut / changed
+
+1. **Para 1 opener** — "captures the accountability infrastructure: what the agent did, under what authority, in what state, caused by what upstream event, across what fleet. These layers produce audit evidence. But they answer a different question than" → restructured to three short sentences pivoting directly to what the layers don't answer. Removed the restatement.
+
+2. **Para 2** — "is structurally different and" cut (implied by "requires different infrastructure").
+
+3. **Para 3** — Merged "can log the reasoning trace alongside the final completion. This reveals what the model attended to, how it framed the problem, and what considerations it weighed before acting." → "can log the reasoning trace alongside the final completion, revealing what the model attended to and how it framed the problem." Three-item list to two; third was implied.
+
+4. **Para 4** — "This distinction matters for compliance:" cut before the compliance sentence. The sentence stands without the announcement.
+
+5. **Para 5** — "The architectural distinction is significant:" → "The architectural distinction:" (colon is enough). "OpenAI's Atlas hardening approach" → "OpenAI's Atlas system."
+
+6. **Para 6** — "For compliance purposes, CoT logs currently occupy an uncertain evidentiary position." → "CoT logs occupy an uncertain evidentiary position for compliance." Subject up front, "currently" cut (implied). Final sentence: "five-layer accountability stack" → "five-layer stack" (tighter); "Layer 2 (authority capture) or Layer 3 (decision context), which are cryptographically bound to outcomes in ways that reasoning traces are not" → "Layers 2 and 3, which are cryptographically bound to outcomes in ways reasoning traces are not" (cut parenthetical labels, the chapter context makes them clear).
+
+### What I preserved
+
+All SA-verified facts intact: Atlas RL red teaming mechanism, CoT attacker role (not detection), EU AI Act Annex IV requirement, CoT faithfulness gap, Realm Labs Prism + OmniGuard. Practical implications list unchanged.
+
+### Ghosty note
+
+Commit 318628a (session 472) appears to have reverted two SA-approved fixes in the DRAFT. The CHAPTER has the correct text. This will create confusion for future sessions. Did not alter the draft — that's Ghosty's territory. Will flag in the SA handoff so they can verify the chapter is correct regardless of draft state.

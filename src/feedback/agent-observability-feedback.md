@@ -25,3 +25,17 @@
 **"Canonical"** applied to your own examples. "Irregular's simulation is the canonical demonstration" — you wrote it, it is not yet canonical, and calling it canonical is promotional. "Showed this directly" does the same work.
 
 **PAC mapping opener.** "Observability infrastructure is the connective tissue of the Accountability pillar." — cliché framing for a cross-reference section. The cross-references are useful; the metaphor is not. Start with the first link.
+
+## Reasoning Transparency Section (Session 472 editorial pass)
+
+**Section intro restates what it is extending.** "The five-layer stack captures the accountability infrastructure: what the agent did..." opened by repeating the five-layer summary. When a new section directly follows a detailed technical description, don't recapitulate — pivot to the new problem. The fix: state what the layers do NOT answer, then move.
+
+**"Is structurally different and" as padding.** "The second is structurally different and requires different infrastructure." — cut the qualifier. "Requires different infrastructure" already implies structural difference. One clause does the work of two.
+
+**Three-item explain lists where two suffice.** "This reveals what the model attended to, how it framed the problem, and what considerations it weighed before acting." The third item is implied by the second. Cut to two.
+
+**"This distinction matters for compliance:"** — another throat-clear before a sentence that stands without the setup. The sentence after says the distinction. Drop the announcement.
+
+**"Is significant" applied to architectural distinctions.** "The architectural distinction is significant: logging captures what happened; inference-time monitoring can block what would have happened." The colon and the contrast earn their place. "Is significant" does not.
+
+**"For compliance purposes, CoT logs currently occupy"** — reordering the modifier reveals the actual subject. "CoT logs occupy an uncertain evidentiary position for compliance" says the same thing with the agent up front and cuts "currently" (implied by "no published guidance").
