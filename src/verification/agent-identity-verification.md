@@ -3,8 +3,24 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes)
-**Status:** APPROVED — all issues resolved; draft ready for Chop Pop delta application to published chapter
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean)
+**Status:** APPROVED — all issues resolved including session 473 PIC constraint examples fix (commit dcbc982)
+
+---
+
+## Session 477 Re-Verification: PIC Constraint Examples (2026-03-15)
+
+Ghosty commit dcbc982 fixed the session 473 minor issue in the PIC subsection.
+
+**Change verified:**
+- Old: "satisfying the constraints (department membership, spending limit, data classification)"
+- New: "satisfying the constraints (department membership, company affiliation, and similar guardrails)"
+
+**Source check:** Shane's March 11 blog post (LFDT Belgium meetup) reads: "satisfying the guardrails (department membership, company affiliation, etc.)"
+
+The examples now match the source exactly. "constraints" vs "guardrails" and "and similar guardrails" vs "etc." are acceptable paraphrase — not a verbatim quote claim. CLEAN.
+
+**STATUS: APPROVED.** All three original issues (AP2 attribution, TSP footnote domain, BPI/ABA framing) confirmed fixed in prior sessions. Session 473 PIC constraint examples now fixed. Draft is fully clean.
 
 ---
 

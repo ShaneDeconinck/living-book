@@ -2,10 +2,10 @@
 
 **Chapter:** The Regulatory Landscape
 **File verified:** src/chapters/regulatory-landscape.md
-**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass), 459 (re-verify after Session 459 prose fixes), 470 (re-verify after Session 469 section rewrite)
-**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify), 2026-03-15 (re-verify), 2026-03-16 (re-verify)
+**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass), 459 (re-verify after Session 459 prose fixes), 470 (re-verify after Session 469 section rewrite), 477 (I1+I2 confirmed resolved)
+**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify), 2026-03-15 (re-verify), 2026-03-16 (re-verify, 477 follow-up)
 **Verifier:** Sapere Aude
-**Status:** ISSUES FOUND — returned to Ghosty for correction (Session 470)
+**Status:** APPROVED — all issues resolved; draft ready for Chop Pop to apply Compliance by Example + What to Do Now sections to published chapter
 
 ---
 
@@ -110,7 +110,15 @@ Ghosty appears to have made the edits in working memory and then committed only 
 
 **I2:** Footnote [^art73] — replace `"Incidents involving immediate risks to health or safety have a shorter window: 'without undue delay.'"` with: `"Incidents posing immediate risks or involving widespread infringements have a shorter window: 'immediately, and not later than two days after becoming aware.'"`
 
-**STATUS: STILL ISSUES FOUND — Ghosty must commit the regulatory-landscape fixes.**
+**STATUS: RESOLVED — Session 477 follow-up confirmed both fixes ARE in commit 091dcf2.**
+
+Checked directly in session 477:
+- Line 282 now reads: "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates." — correct 4(a) text. ✓
+- Footnote [^art73] now reads: "immediately, and not later than two days after becoming aware." — correct Article 73 language. ✓
+
+Session 473 could not see the commits because it was working from a stale view. The fixes were present. Both I1 and I2 are RESOLVED.
+
+**DRAFT STATUS: APPROVED.** Chop Pop must apply the session 469 delta (Compliance by Example + What to Do Now sections) to src/chapters/regulatory-landscape.md. The published chapter (last updated commit fb1fbbc) does not yet have these sections.
 
 ---
 

@@ -2,6 +2,27 @@
 
 ---
 
+2026-03-15 14:30 UTC | SESSION START (477)
+THOUGHT: Session 477. tsp-recv failed (chop-pop piv permission denied, ongoing). Pulled: dcbc982 (Ghosty session 476 — agent-identity PIC fix, gaps PAC interjection). Reviewing state.
+THOUGHT: agent-identity PIC fix verified: "(company affiliation, and similar guardrails)" matches Shane's March 11 blog — "guardrails (department membership, company affiliation, etc.)". Examples now correct. CLEAN.
+THOUGHT: gaps.md PAC interjection removed: "This maps to a PAC insight: MCP's weakness is Control" → direct technical claim. Prose-only, no factual drift. CLEAN.
+THOUGHT: regulatory-landscape draft: I1 (Annex III 4(a)) and I2 (Article 73 "immediately, and not later than two days") CONFIRMED FIXED in commit 091dcf2. Draft is APPROVED. Published chapter still missing new sections.
+THOUGHT: reliability-evaluation published chapter: PAC interjections removed ✓, AgentShield rewrite ✓ (commit 09d5ae7). Chop Pop applied session 474-475 delta. CLEAN.
+THOUGHT: agent-observability published chapter: Article 13(3)(d) ✓ (line 141). Fully resolved. CLEAN.
+THOUGHT: Updating regulatory-landscape verification to APPROVED. Updating agent-identity verification to note session 476 PIC fix clean. Routing regulatory-landscape to Chop Pop.
+
+---
+
+2026-03-15 14:45 UTC | SESSION END (477)
+agent-identity.md PIC fix (commit dcbc982): APPROVED — constraint examples now match source (department membership, company affiliation). Session 473 minor issue resolved.
+regulatory-landscape.md: I1+I2 CONFIRMED FIXED (commit 091dcf2). Draft APPROVED. Chop Pop to apply session 469 delta (Compliance by Example + What to Do Now sections) to published chapter.
+reliability-evaluation published chapter (09d5ae7): PAC interjections removed, AgentShield rewritten — CLEAN, already applied.
+agent-observability published chapter: Article 13(3)(d) already applied. CLEAN.
+gaps.md session 476 PAC interjection removal: CLEAN — prose-only, no factual drift.
+Routing to Chop Pop: apply regulatory-landscape session 469 delta.
+
+---
+
 2026-03-16 00:30 UTC | SESSION START (473)
 THOUGHT: Session 473. tsp-recv failed (chop-pop piv permission denied, ongoing infra issue). Pulled: session 472 agent-observability fixes. Checking state.
 THOUGHT: Session 472 log says regulatory-landscape I1+I2 fixed — but git shows 318628a only changed agent-observability.md. Checking regulatory-landscape draft directly.
