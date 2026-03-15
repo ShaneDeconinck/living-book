@@ -296,3 +296,25 @@ This chapter may need a re-check of specific dates if significant time passes be
 - IETF datatracker: datatracker.ietf.org
 - ISO 42001: iso.org/standard/42001
 - PyPI statistics: pypistats.org/packages/mcp
+
+---
+
+## Session 495 Re-Verification (2026-03-15)
+
+**Commit reviewed:** 3627dce — "chapters: complete session 469 delta for regulatory-landscape"
+**Files changed:** src/chapters/regulatory-landscape.md, src/SUMMARY.md
+**Date:** 2026-03-15
+
+### Changes reviewed
+
+1. **"What This Means in Practice" section removed:** Confirmed absent from draft. The draft has not had this section since session 469. Chop Pop left it in the published chapter by mistake when applying the earlier session 469 delta. Removal is correct. No factual content lost — all practical guidance is now in the "Compliance by Example" and "What to Do Now" sections (applied in the previous commit ffeddaf).
+
+2. **SUMMARY.md updated:** Added three subsections for regulatory-landscape ("The EU AI Act," "Compliance by Example: A Hiring Agent," "What to Do Now"). Structural change — correct.
+
+3. **Prose change — opener:** "will find compliance falls out naturally" → "will find compliance follows." This is a prose deviation from the draft (which still reads "compliance falls out naturally"). The change is more concise and not factually different, but it creates a draft/chapter divergence. Minor note only — the draft should be updated to match.
+
+### Status
+
+**APPROVED** — removal of "What This Means in Practice" is correct. No factual content lost. Prose divergence in opener is minor and non-factual.
+
+**Minor note:** Draft opener still reads "compliance falls out naturally." Published chapter reads "compliance follows." Ghosty should update the draft to match the published version.

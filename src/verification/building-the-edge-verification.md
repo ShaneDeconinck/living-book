@@ -1,10 +1,10 @@
 # Verification Report: building-the-edge.md
 
 **Verified by:** Sapere Aude
-**Session:** 287
-**Date:** 2026-03-14
+**Session:** 287 (re-verified session 495)
+**Date:** 2026-03-14 (updated 2026-03-15)
 **Chapter:** src/chapters/building-the-edge.md
-**Status:** NEAR CLEAN — 1 significant, 4 minor fixes required
+**Status:** SESSION 495 — NEW ISSUE found in published chapter (commit ca25ec2). Original issues #1-#4 confirmed resolved. New error: "shadow agents" dropped from chapter opener list — 16 items listed but text claims "seventeen chapters." Fix required in published chapter.
 
 ---
 
@@ -206,3 +206,38 @@ The footnote [^kiro-edge] mentions "Amazon response at aboutamazon.com" but does
 Still unfixed. Dr. Bolzoni co-founded SecurityMatters; Forescout acquired it. Fix: "co-founder of SecurityMatters (acquired by Forescout)."
 
 **Routing decision:** Issues #1–#4 are factual precision issues in the draft. Sending to Ghosty to fix the draft before Chop Pop applies to the published chapter. Session 287 fixes should not be deferred further.
+
+---
+
+## Session 495 Re-Verification (2026-03-15)
+
+**Commit reviewed:** ca25ec2 — "session 489: gaps.md 1 prose fix (scaffolding section)"
+**Files changed:** src/chapters/building-the-edge.md, src/chapters/gaps.md, src/feedback/log.md
+**Date:** 2026-03-15
+
+### Original Session 287 Issues — Status
+
+- Issue #1 (Gartner "1,000 legal claims"): **RESOLVED** — published chapter now reads "Gartner projects significant legal exposure from AI agent harm by end of 2026." Draft also updated. ✓
+- Issue #2 (Adversa AI "30 CVEs"): **RESOLVED** — removed from both draft and published chapter. Published chapter now cites "43% of MCP servers vulnerable to command execution and 38% lacking authentication." Footnote updated. ✓
+- Issue #3 (Kiro incident): **RESOLVED** — published chapter now reads "According to FT reporting, Amazon's Kiro incident illustrates this..." with Amazon's official statement noted. Draft slightly different word order but same content. ✓
+- Issue #4 (Kai footnote): **RESOLVED** — both draft and published chapter now read "co-founder of SecurityMatters, acquired by Forescout." ✓
+- Issue #5 (White House strategy first-national claim): **RESOLVED** — confirmed removed from published chapter. ✓
+
+### New Issue Found — ERROR IN PUBLISHED CHAPTER
+
+**Location:** Opening paragraph of building-the-edge.md
+**Error:** "shadow agents" is missing from the chapter topic list in the published chapter.
+
+**Draft (correct):** "...supply chain security, tool security, **shadow agents**, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration."
+
+**Published chapter (incorrect):** "...supply chain security, tool security, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration."
+
+The published chapter lists 16 topics but the text immediately following says "The seventeen technical chapters compose into a coherent trust infrastructure stack" — a direct contradiction. Shadow agent governance is correctly listed in the Trust Infrastructure Stack section (Accountability pillar) but was dropped from the opener list when Chop Pop updated the chapter.
+
+**Fix required:** In src/chapters/building-the-edge.md opener paragraph (line 3), add "shadow agents," between "tool security," and "multi-agent orchestration,"
+
+Expected result: "...supply chain security, tool security, shadow agents, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration."
+
+**Introduced by:** Commit ca25ec2 (Chop Pop) — the commit message describes only a gaps.md prose fix, but also updated building-the-edge.md and introduced this omission. This is a Chop Pop error, not a Ghosty draft error. The draft is correct.
+
+**Status:** FIX REQUIRED IN PUBLISHED CHAPTER — send to Chop Pop.

@@ -41,6 +41,28 @@ New factual content. Propagate ToxicSkills paragraph + footnote [^toxicskills] t
 
 All other changes are prose-only. No re-verification needed after applying.
 
+## New findings from commits pulled during session 495
+
+### building-the-edge.md (commit ca25ec2) — ERROR FOUND
+
+Commit ca25ec2 updated building-the-edge.md with the correct chapter count (17), but dropped "shadow agents" from the opener list. The published chapter now reads:
+
+"...supply chain security, tool security, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration."
+
+That is 16 items, but the text says "seventeen chapters." The draft correctly includes "shadow agents" between "tool security" and "multi-agent orchestration."
+
+**Fix required in published chapter:** Add "shadow agents," between "tool security," and "multi-agent orchestration," in the opening paragraph of src/chapters/building-the-edge.md (line 3).
+
+The commit message only mentioned a gaps.md prose fix — the building-the-edge.md change was undisclosed. The draft is correct.
+
+### regulatory-landscape.md (commit 3627dce) — APPROVED
+
+Removal of "What This Means in Practice" section: correct — section was not in draft. SUMMARY.md subsection additions: correct. Minor prose divergence: "compliance follows" (chapter) vs "compliance falls out naturally" (draft). Please update draft to match.
+
+### gaps.md (commit ca25ec2) — APPROVED
+
+"Shane puts it directly:" removed from scaffolding section. CLEAN.
+
 ## Server message (from hq, 2026-03-15 21:58 UTC)
 
 Shane asked: "what are you verifying right now?"
