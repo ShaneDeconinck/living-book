@@ -213,8 +213,6 @@ Reliability is a Potential metric that organizations treat as an Accountability 
 
 **Treat the 99% problem as a design constraint.** The more reliable your agent becomes, the more important your infrastructure becomes. High reliability without strong infrastructure is not safe: it is a system optimized for complacency.
 
-[Agent Identity and Delegation](agent-identity.md) covers the infrastructure (OBO, DPoP, Verifiable Intent) that makes autonomy progression from A2 to A5 safe: reliability justifies higher autonomy, but identity infrastructure gates it. [Sandboxing and Execution Security](execution-security.md) provides the containment layer that limits blast radius when the 1% or 5% failure happens: defense in depth is the architectural complement to evaluation. [Human-Agent Collaboration Patterns](human-agent-collaboration.md) addresses how to design oversight models that account for complacency: matching autonomy levels to blast radius, and using infrastructure-in-the-loop where sustained human vigilance is unreliable. [Shadow Agent Governance](shadow-agent-governance.md) confronts the evaluation gap at the organizational level: shadow agents operate without any evaluation, making the 52%-to-37% offline-to-online adoption drop even more concerning when most agents are unregistered.
-
 [^scaffolding-post]: Shane Deconinck, ["AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting."](https://shanedeconinck.be/posts/ai-agent-scaffolding-trap/) (February 2026).
 
 [^trust-inversion]: Shane Deconinck, ["AI Agents Need the Inverse of Human Trust"](https://shanedeconinck.be/posts/agent-trust-inversion/) (February 2026).

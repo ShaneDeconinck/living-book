@@ -1,6 +1,6 @@
 # Context Infrastructure
 
-The previous chapters covered identity: who the agent is and what authority it carries. This chapter addresses the other half of the equation: what the agent knows.
+The previous chapter asked whether agents are reliable. This chapter asks a different Potential question: what do agents know?
 
 Shane's argument is that context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
 

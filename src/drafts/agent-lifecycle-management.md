@@ -165,6 +165,8 @@ Agent lifecycle management spans all three pillars:
 
 5. **Preserve the audit trail.** When an agent is decommissioned, its lifecycle records must survive it. Activity logs, credential history, authorization decisions, and the decommissioning approval chain are all compliance and incident response requirements.
 
+Lifecycle governance answers the question of how long an agent should exist and what access it should carry. It does not answer what comes next: how the humans responsible for that governance stay meaningfully engaged with agents that almost always behave correctly and systems that almost never fail.
+
 [^cyberark-82]: CyberArk, "Machine Identities Outnumber Humans by More Than 80 to 1: New Report Exposes the Exponential Threats of Fragmented Identity Security," 2025. Machine identities outnumber human identities by more than 80 to 1 across organizations worldwide. 42% of machine identities have privileged or sensitive access; 88% of organizations define "privileged user" as applying solely to human identities.
 
 [^cyberark-96]: CyberArk, "96 machines per human: The financial sector's agentic AI identity crisis," 2026. Financial services organizations report 96 machine identities per human. 45% admit unsanctioned AI agents are already creating identity silos outside formal governance programs.
