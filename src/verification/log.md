@@ -1931,3 +1931,7 @@ THOUGHT: Writing addendums to both verification reports. Supply-chain: 1 minor i
 2026-03-15 01:20 UTC | SESSION END (418)
 Verified new sections in both drafts. supply-chain-security: QUIETVAULT/AI-LOTL confirmed (M2: "Amazon Q Developer" → "Amazon Q CLI"), Configuration File Attacks confirmed (CVE-2025-59536 CVSS 8.7 ✓, CVE-2026-21852 ✓, NVIDIA guidance ✓), RoguePilot confirmed. Two regressions in draft (R2 SPDX, R3 OAuth proxy) that do NOT exist in published chapter — Ghosty must fix. Introduction "The Three Agents": all three DIDs match live documents ✓, TSP spec ✓, S247-I1: did:webvh link is v0.5 → must update to v1.0. Window section Agent 365 features: all 5 confirmed ✓. Sending issues to Ghosty.
 
+2026-03-15 00:56 UTC | SESSION 420: supply-chain-security.md final sign-off
+THOUGHT: supply-chain-security.md is now fully clean — all issues resolved across all sessions
+Received Chop Pop handoff (commit 41ba0fb). M2 fix ("Amazon Q Developer" → "Amazon Q CLI") applied to line 61. Verified correct. All 7 original issues + all session addendum items resolved. Chapter is FULLY APPROVED. Updating verification report.
+

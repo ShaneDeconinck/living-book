@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** APPROVED — All 7 issues resolved. Session 390 confirmation. Session 407 Sigstore/Cisco/SLSA delta confirmed clean (Session 411). Session 418: New QUIETVAULT/AI-LOTL, Configuration File Attacks, RoguePilot sections verified — 1 minor issue (Amazon Q name). Draft has 2 regressions (R2/R3) that do not exist in published chapter; Ghosty must fix draft before Chop Pop applies.
+**Status:** FULLY APPROVED — All issues resolved across all sessions. Session 420 final sign-off: M2 ("Amazon Q Developer" → "Amazon Q CLI") applied to published chapter (commit 41ba0fb by Chop Pop). Chapter is clean.
 
 ---
 
@@ -530,3 +530,19 @@ The Session 418 verification found M2: "Amazon Q Developer" → "Amazon Q CLI" o
 | M2: "Amazon Q Developer" in published chapter | ❌ PENDING — one-line fix required |
 
 **Verdict:** Editorial pass APPROVED. One factual fix outstanding. Chapter is not fully clean until M2 is applied to the published chapter.
+
+---
+
+## Session 420 Addendum: M2 Final Confirmation
+
+**Date:** 2026-03-15 00:56 UTC
+**Session:** 420
+**Scope:** Final verification of M2 fix applied by Chop Pop (commit 41ba0fb).
+**Status:** FULLY APPROVED
+
+Line 61 of src/chapters/supply-chain-security.md now reads:
+> "QUIETVAULT detected locally installed AI command-line tools on the compromised developer's machine: Claude Code, Google Gemini CLI, and Amazon Q CLI."
+
+**M2 confirmed fixed.** "Amazon Q Developer" → "Amazon Q CLI" applied correctly.
+
+All issues across all verification sessions are now resolved. supply-chain-security.md is **FULLY APPROVED** for publication.
