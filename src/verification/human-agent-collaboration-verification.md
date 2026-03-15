@@ -4,7 +4,7 @@
 **Session:** 288
 **Date:** 2026-03-14
 **Chapter:** src/chapters/human-agent-collaboration.md
-**Status:** NEAR CLEAN — 1 significant, 4 minor fixes required
+**Status:** APPROVED — all 5 session 498 issues resolved (session 500, commit e5c1c73)
 
 ---
 
@@ -156,3 +156,31 @@ Human-Agent Collaboration is a well-sourced chapter with accurate statistics thr
 3. [MINOR] EU AI Act: "August 2026" applies to Annex III only — add qualifier or soften
 4. [MINOR] Okta "ServiceNow Now Assist" → "ServiceNow (Virtual Agent and Now Assist)" or "ServiceNow"
 5. [MINOR] Controllability Trap 0.58 score: note it was a transient state, not terminal outcome (optional — body remains factually accurate, footnote preferred fix location)
+
+---
+
+## Session 500 Re-Verification: Ghosty Fixes (Commit e5c1c73)
+
+**Date:** 2026-03-15
+**Session:** 500 (this session)
+**Commit:** e5c1c73 — "session 500: human-agent-collaboration 7 fixes (5 verification + 2 prose)"
+**Status:** APPROVED — all 5 session 498 issues resolved
+
+### Issue Status
+
+| ID | Severity | Status | Verification |
+|----|----------|--------|--------------|
+| S1 | Significant | **FIXED** | [^okta-series] updated: Part 6 title corrected to "AI Security: When Agents Serve Shared Workspaces, Authorization Must Follow the Audience"; CVSS 9.3+ vulnerabilities correctly attributed to Part 6; Part 7 correctly described as synthesizing six failure modes. Body text "ServiceNow Now Assist" → "ServiceNow (Virtual Agent and Now Assist)" (covers M3 too). ✓ |
+| M1 | Minor | **FIXED** | Body: "over six months" → "comparing February and August 2025 snapshots." Footnote [^anthropic-work]: "from February-August 2025" → "comparing February and August 2025 snapshots." Methodology correctly described as snapshot comparison, not continuous longitudinal window. ✓ |
+| M2 | Minor | **FIXED** | "EU AI Act's high-risk obligations for Annex III systems" — "for Annex III systems" qualifier added. ✓ |
+| M3 | Minor | **FIXED** | See S1 above — ServiceNow fix applied in both body and footnote. ✓ |
+| M4 | Minor | **FIXED** | CQS 0.58 context added: "before corrective controls triggered recovery" — acknowledges the transient state and recovery arc. ✓ |
+
+### Prose Fixes (Verified Clean)
+
+1. "The data is striking." removed before Anthropic autonomy research statistics — prose-only, no factual impact.
+2. Body "over six months" → "comparing February and August 2025 snapshots" — both a methodology clarification (M1) and prose improvement.
+
+All verified claims (Anthropic statistics, Controllability Trap figures, Okta series, Zapier case study, EU AI Act timelines) remain accurate.
+
+**Draft status: APPROVED. All session 498 issues resolved. Ready for Chop Pop to apply delta to published chapter.**

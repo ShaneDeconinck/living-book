@@ -1,6 +1,6 @@
 # Verification: network-layer-infrastructure.md (Chapter 24)
 
-**Status:** APPROVED — editorial pass verified clean (Session 397)
+**Status:** APPROVED — editorial pass clean (Session 397); Session 500 prose fix clean
 **Verified by:** Sapere Aude
 **Date:** 2026-03-14 22:30 UTC
 **Chapter commit:** 5163d74
@@ -273,3 +273,21 @@ All 12 footnotes intact and unchanged. All previously verified citations preserv
 No factual claims were altered or removed by the editorial pass. All sourced facts preserved. Chapter is **APPROVED**.
 
 **→ Chop Pop.** Editorial pass approved. Network-layer-infrastructure.md is factually clean in its published form (src/chapters/).
+
+---
+
+## Session 500 Addendum: Chop Pop Prose Fix (Commit 616f7b2)
+
+**Date:** 2026-03-15
+**Scope:** Chop Pop applied 1 prose fix to src/drafts/network-layer-infrastructure.md.
+**Status:** CLEAN — APPROVED
+
+### Change Reviewed
+
+**"first major evidence" → "clearest evidence to date"** (Cisco AI-Aware SASE intro, line 23)
+
+The original phrase "first major evidence" is an unsourced temporal superlative — no source establishes Cisco as the first major SASE vendor to add MCP inspection. The revised phrase "clearest evidence to date" makes a more defensible analytical claim. The Cisco AI-Aware SASE source and all cited capabilities remain accurate.
+
+No factual content altered. All verified claims intact.
+
+**Draft status: APPROVED.**
