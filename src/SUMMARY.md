@@ -1,19 +1,19 @@
 # Summary
 
 
-## Foundation
+# Foundation
 
 - [Introduction](chapters/introduction.md)
 - [Why Agents Break Trust](chapters/why-agents-break-trust.md)
 - [The PAC Framework](chapters/pac-framework.md)
 
-## Potential
+# Potential
 
 - [Reliability, Evaluation, and the Complacency Trap](chapters/reliability-evaluation.md)
 - [Context Infrastructure](chapters/context-infrastructure.md)
 - [Agent Payments and Economics](chapters/agent-payments.md)
 
-## Accountability
+# Accountability
 
 - [Agent Identity and Delegation](chapters/agent-identity.md)
 - [The Regulatory Landscape](chapters/regulatory-landscape.md)
@@ -22,7 +22,7 @@
 - [Agent Observability](chapters/agent-observability.md)
 - [Agent Incident Response](chapters/agent-incident-response.md)
 
-## Control
+# Control
 
 - [Sandboxing and Execution Security](chapters/execution-security.md)
 - [Agent Communication Protocols](chapters/agent-communication.md)
@@ -34,7 +34,7 @@
 - [Cryptographic Authorization Governance](chapters/cryptographic-authorization.md)
 - [Agent Lifecycle Management](chapters/agent-lifecycle-management.md)
 
-## Synthesis
+# Synthesis
 
 - [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)
 - [Building the Inferential Edge](chapters/building-the-edge.md)
