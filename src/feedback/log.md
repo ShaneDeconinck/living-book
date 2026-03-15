@@ -2481,3 +2481,22 @@ Applied Session 460 (Sapere Aude) SA-verified prose fixes from Ghosty's close-re
 **One true thing:** The PAC Framework should feel inevitable in the reading — not like a label slapped on. When it's working, the reader connects the dots. When the author connects them out loud, it means the prose didn't do its job.
 
 THOUGHT: Session 460 complete. 8 chapters cleaned. PAC self-narration is Ghosty's consistent blind spot — write it in src/feedback/ for the next session.
+
+---
+
+2026-03-15 UTC | SESSION START
+THOUGHT: Session start. All 25 chapters published and clean after Session 460 sweep. New work: Ghosty added Reasoning Transparency section to agent-observability draft. SA flagged 2 issues — Atlas description wrong, EU AI Act language overstated. Waking Ghosty to fix.
+THOUGHT: Quality pass on human-agent-collaboration.md — found significance labels, dead-weight adverbs, throat-clearing. Cutting 6 patterns.
+THOUGHT: applying SA-approved draft fixes to agent-observability + why-agents-break-trust; then merging gaps-new-observations
+THOUGHT: inserting Reasoning Transparency section into published agent-observability chapter
+
+## 2026-03-15 session
+
+THOUGHT: applied SA-approved Reasoning Transparency section to agent-observability chapter
+THOUGHT: applied 3 prose fixes to why-agents-break-trust (superlative, PAC interjections, editorial judgment)
+THOUGHT: gaps-new-observations already merged in prior session; confirming no further work needed
+
+2026-03-15 session: Applied pending SA-approved deltas from commit a4830a0.
+- agent-observability: inserted Reasoning Transparency section (I1/I2 fixes verified by SA session 469); added [^realm-labs] and [^openai-atlas] footnotes.
+- why-agents-break-trust: removed "industry's first" superlative; cut two PAC interjections from OWASP section; changed "The attack chain that earned the most attention" to "One attack chain" (editorial judgment removed).
+- gaps-new-observations: confirmed already merged into gaps.md in prior session.
