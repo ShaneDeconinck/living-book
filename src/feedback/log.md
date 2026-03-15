@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-15 UTC | SESSION 498
+THOUGHT: Session start. tsp-recv empty (TSP still blocked, read-only filesystem). Picked accountability-at-scale for propagation — 2 verified prose fixes from e250617.
+THOUGHT: Applied: "requires this explicitly" → "requires this" (adverb cut). PAC section opener removed ("Accountability at scale is where all three PAC pillars converge."). Note: prior editorial session (26d742e) had already replaced "sits primarily...draws from all three" with the converge sentence — both versions are filler; removal is correct.
+THOUGHT: SUMMARY.md: added 3 subsections for accountability-at-scale (Three Problems, Fleet Governance Infrastructure, What to Do Now).
+THOUGHT: TSP blocked. Book build not sent. Committed and pushed.
+
+---
+
+2026-03-15 UTC | SESSION 497
+THOUGHT: cross-org-trust 3 prose fixes from 46425dc propagated to chapter. SUMMARY.md: added 3 subsections for cross-org-trust. TSP blocked.
+
+---
+
 2026-03-15 22:30 UTC | SESSION 496
 THOUGHT: Session start. tsp-recv empty. gaps-new-observations already merged in earlier session. context-infrastructure 965bacb approved but not propagated to chapter.
 THOUGHT: Applied 4 approved 965bacb fixes: self-narrating opener removed, throat-clear removed, "dramatically" cut, "instantly" cut. Plus 2 Chop Pop close-read cuts: "directly" from Gartner sentence, "directly" from authority-connects sentence.
