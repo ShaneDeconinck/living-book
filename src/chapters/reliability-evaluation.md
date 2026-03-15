@@ -6,7 +6,7 @@ Every model upgrade makes agents more capable. Teams delete scaffolding instead 
 
 This is good news for Potential. It is dangerous news for Accountability.
 
-Shane frames the split clearly: context engineering increases reliability, which is about whether the model does what you intended. Governance manages risk, which is about whether the agent is *allowed* to do what it is about to do. Better models solve the first problem. They make the second one worse[^trust-inversion].
+Shane frames the split: context engineering increases reliability, which is about whether the model does what you intended. Governance manages risk, which is about whether the agent is *allowed* to do what it is about to do. Better models solve the first problem. They make the second one worse[^trust-inversion].
 
 The space between those two problems is where governance lives.
 
@@ -16,7 +16,7 @@ When teams say an agent is "reliable," they usually mean it completes its task c
 
 The PAC Framework insists on a specific discipline here: reliability is a percentage *with its error margin*. A 95% success rate sounds impressive. A 95% ± 8% success rate means it could be 87% in production. Without the margin, the number is meaningless[^pac-framework].
 
-Recent research decomposes reliability further into four dimensions[^reliability-science]:
+Recent research decomposes reliability into four dimensions[^reliability-science]:
 
 - **Consistency**: does the agent produce repeatable behavior across runs?
 - **Robustness**: does it stay stable under input and environmental perturbation?
@@ -57,7 +57,7 @@ LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and
 
 The gap between offline evaluation (controlled, pre-deployment) and online evaluation (real-world, post-deployment) is where governance breaks down. Anthropic's research noted this directly: many critical findings "cannot be observed through pre-deployment testing alone"[^anthropic-data].
 
-Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. The difference is significant. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
+Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
 
 This is where the PAC Framework's infrastructure levels become concrete. At I1 (Open), there is no monitoring: you know the agent's benchmark score and nothing else. At I2 (Logged), you can see what happened after the fact. At I3 (Verified), structured audit trails let you analyze patterns. At I4 (Authorized), real-time monitoring triggers intervention. At I5 (Contained), anomaly detection and automated containment prevent cascading failures.
 
@@ -67,7 +67,7 @@ Most organizations are at I1 or I2 for their agent deployments. That means they 
 
 Agent observability is fundamentally different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
 
-Dynatrace's survey of 919 enterprise leaders (January 2026) reveals how wide that gap is. Among organizations with production agentic AI deployments, 44% still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
+Among the 919 enterprise leaders Dynatrace surveyed in January 2026, 44% of those with production agentic AI deployments still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
 
 The distinction between debugging and compliance matters here. A debugging log tells an engineer what to fix. A compliance-grade audit trail tells a regulator what the agent did, what authority it had, who delegated that authority, and what information was available at the time of the decision. Shane's trust-for-agentic-ai post illustrates the gap: an expense-approval agent authorized $47,000 in vendor payments, but "the audit trail has no way to capture" that the agent, not the human, made the decision[^trust-for-agentic]. These are different artifacts with different requirements.
 
@@ -98,7 +98,7 @@ An AI agent does not fail gracefully. It does not raise a hand and say "I'm not 
 
 Shane puts it directly: "After twenty correct outputs, who reviews the twenty-first carefully?"[^anthropic-data]
 
-The complacency pattern for agents has specific characteristics:
+The complacency pattern for agents:
 
 **Review fatigue**: human reviewers approve agent outputs faster as confidence builds. The approval becomes a checkbox, not a review. Anthropic's data shows 73% of agent tool calls involve human oversight of some form[^agent-profiler]. But oversight that is not attentive is not oversight.
 
@@ -110,7 +110,7 @@ The complacency pattern for agents has specific characteristics:
 
 Recent evidence reinforces this pattern beyond AI. A multicentre study in The Lancet found that clinicians' adenoma detection rate during colonoscopy dropped by 6 percentage points (a 20% relative decrease) after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
 
-Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report, surveying 650 global CISOs, shows the same confidence gap: 82% believe agentic AI will increase their teams' detection and response speed, while 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
+Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report (650 global CISOs): 82% believe agentic AI will increase their teams' detection and response speed, while 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
 
 ## Why Better Models Make Governance Harder
 
@@ -158,7 +158,7 @@ Current evaluation approaches sit at two levels:
 
 The gap between these two levels is where the complacency trap lives. Teams invest heavily in pre-deployment evaluation because it is familiar (it looks like software testing) and because it answers the question leadership asks first ("does it work?"). They underinvest in post-deployment evaluation because it is less familiar, harder to build, and answers questions nobody wants to ask until something goes wrong ("what did it do, and who authorized it?").
 
-The LangChain data confirms this: 52% run offline evaluations, but only 37% run online evaluations[^langchain-report]. The drop-off is exactly where governance demands increase.
+The LangChain data confirms this: 52% run offline evaluations, but only 37% run online evaluations[^langchain-report]. The drop-off is where governance demands increase.
 
 Treating evaluation as infrastructure means:
 
@@ -175,7 +175,7 @@ This follows the same pattern Shane described for intelligence itself: evaluatio
 
 The Accountability pillar requires that evaluation be independent enough to be trustworthy. An evaluation system that shares a provider, incentive structure, and release cycle with the model it evaluates has a structural conflict of interest. This does not mean platform-integrated evaluation is useless. Pre-deployment red-teaming, vulnerability scanning, and compliance checks are valuable wherever they run. But for governance purposes, the organization needs evaluation capability it controls: its own benchmarks, its own monitoring, its own criteria for what "within scope" means.
 
-The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). The two are complementary, not substitutes. Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
+The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
 
 ### The Tool Abuse Blind Spot
 
@@ -185,7 +185,7 @@ The industry has built increasingly sophisticated defenses against prompt inject
 
 The benchmark's methodology is itself notable. The test corpus, scoring methodology, and adapter code are open source and auditable. AgentShield includes a commit-reveal protocol that allows vendors to run the benchmark locally on proprietary models while cryptographically proving result legitimacy. This addresses the evaluation integrity problem: when the entity being evaluated controls the evaluation environment, independent verification matters.
 
-For the PAC Framework, AgentShield validates a specific claim: evaluation must be multi-dimensional. An agent security product that scores 98% on prompt injection and 40% on tool abuse provides a false sense of security. The governance question is not "is this agent protected?" but "protected against which threat categories, and at what coverage level?" Infrastructure at I4 (Authorized) requires that evaluation cover the full attack surface, not just the most studied subset.
+For the PAC Framework, AgentShield validates a claim: evaluation must be multi-dimensional. An agent security product that scores 98% on prompt injection and 40% on tool abuse provides a false sense of security. The governance question is not "is this agent protected?" but "protected against which threat categories, and at what coverage level?" Infrastructure at I4 (Authorized) requires that evaluation cover the full attack surface, not just the most studied subset.
 
 ## Mapping to PAC
 
