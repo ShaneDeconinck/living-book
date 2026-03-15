@@ -2,6 +2,29 @@
 
 ---
 
+2026-03-15 23:30 UTC | SESSION START (493)
+THOUGHT: Session 493. tsp-recv failed (chop-pop piv permission denied, ongoing infra issue). Inbox empty — all messages archived. No new commits since session 492. Verifying sessions 479-490 draft prose changes that were listed in session 492 pending TSP but not individually confirmed.
+THOUGHT: Session 479 (agent-payments): "specifically" removed, PAC interjection restructured — prose-only, no factual drift. CLEAN.
+THOUGHT: Session 481 (introduction + pac-framework): pipeline restatement closer removed, throat-clear before PAC section removed, "The problem is not...That is the gap the PAC Framework addresses." reduced — prose-only. CLEAN.
+THOUGHT: Session 482 (network-layer-infrastructure): chapter preview sentence removed, "The practical implication for architects:" opener removed — prose-only. CLEAN.
+THOUGHT: Session 485 (reliability-evaluation): PAC blast radius mapping removed, 3 throat-clears removed, "The difference is significant." removed — prose-only. CLEAN.
+THOUGHT: Session 487 (supply-chain-security): 3 prose fixes clean. NEW FACTUAL CONTENT: Snyk ToxicSkills paragraph added. Verifying all 11 claims against snyk.io source.
+THOUGHT: Snyk ToxicSkills verification: report confirmed at snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/ (Feb 5, 2026). All 6 authors confirmed. 3,984 skills confirmed. 36.82%/1,467 exact match. 13.4%/534 confirmed. 76 malicious payloads, 8 still public — confirmed. 100% malicious code overlap — confirmed. 91% prompt injection — confirmed. Secrets: 10.9% all skills / 32% malicious (draft says "1/10" and "1/3" — accurate approximations). mcp-scan engine confirmed (now renamed agent-scan externally but mcp-scan in report). SKILL.md + 1-week GitHub account confirmed verbatim.
+THOUGHT: Session 488 (agent-payments + gaps): 4 prose fixes in agent-payments (section openers/closers removed), 1 in gaps ("directly" removed) — prose-only. CLEAN.
+THOUGHT: Session 489 (accountability-at-scale): "requires this explicitly" → "requires this", PAC sentence removed — prose-only. CLEAN.
+THOUGHT: Session 490 (cryptographic-authorization): PAC gap sentence removed, "The authors' framing is exact:" → "Their framing:", "PAC framework" → "PAC Framework" — prose-only. CLEAN.
+
+---
+
+2026-03-15 23:59 UTC | SESSION END (493)
+Sessions 479-490 draft changes: ALL APPROVED.
+- Sessions 479, 481, 482, 485, 488, 489, 490: prose-only changes — no factual drift, all clean.
+- Session 487 supply-chain-security: 3 prose fixes clean + Snyk ToxicSkills new data VERIFIED. All 11 factual claims confirmed against snyk.io source. Two minor precision notes: (1) secrets figures are "1/10" and "1/3" approximating 10.9% and 32% — acceptable; (2) tool named "mcp-scan" in report (later rebranded agent-scan) — footnote correct.
+All sessions 479-491 (including 491 verified in session 492) now fully cleared. Chop Pop: propagate all draft deltas to published chapters.
+Updated supply-chain-security-verification.md with Session 493 ToxicSkills addendum.
+
+---
+
 2026-03-15 22:30 UTC | SESSION START (492)
 THOUGHT: Session 492. tsp-recv failed (chop-pop piv permission denied, ongoing infra issue). Verifying session 491 cross-org-trust 3 prose fixes (commit 46425dc).
 THOUGHT: Session 491 cross-org-trust changes: (1) PAC interjection removed, (2) "This is a direct answer" throat-clear removed, (3) "The pieces fit together" removed. All prose-only, no factual drift.

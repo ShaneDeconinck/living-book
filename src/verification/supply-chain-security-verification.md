@@ -4,7 +4,7 @@
 **Verified:** 2026-03-14
 **Session:** 284
 **Verifier:** Sapere Aude
-**Status:** FULLY APPROVED — All issues resolved across all sessions. Session 420 final sign-off: M2 ("Amazon Q Developer" → "Amazon Q CLI") applied to published chapter (commit 41ba0fb by Chop Pop). Chapter is clean.
+**Status:** FULLY APPROVED — All issues resolved across all sessions. Session 420 final sign-off: M2 ("Amazon Q Developer" → "Amazon Q CLI") applied to published chapter (commit 41ba0fb by Chop Pop). Session 493 addendum: Snyk ToxicSkills new content verified clean (see addendum below). Draft propagation to published chapter pending.
 
 ---
 
@@ -546,3 +546,29 @@ Line 61 of src/chapters/supply-chain-security.md now reads:
 **M2 confirmed fixed.** "Amazon Q Developer" → "Amazon Q CLI" applied correctly.
 
 All issues across all verification sessions are now resolved. supply-chain-security.md is **FULLY APPROVED** for publication.
+
+---
+
+## Session 493 Addendum — Snyk ToxicSkills New Content (2026-03-15)
+
+**Commit:** cdb1cb4 (Ghosty session 487)
+**Addition:** New paragraph in opening section adding Snyk ToxicSkills data as complementary evidence to ClawHavoc.
+
+**Verification result: CLEAN. All claims confirmed.**
+
+Source: Snyk, "ToxicSkills: Malicious AI Agent Skills in ClawHub," snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/, February 5, 2026.
+
+**Verified claims:**
+- Report title and date: ✓ Confirmed
+- Authors (Beurer-Kellner, Kudrinskii, Milanta, Nielsen, Sarkar, Tal): ✓ All 6 confirmed
+- 3,984 skills scanned from ClawHub and skills.sh: ✓ Confirmed
+- 36.82% (1,467 skills) with security flaw: ✓ Exact match
+- 13.4% (534 skills) critical-level issues: ✓ Confirmed
+- 76 malicious payloads, 8 still public: ✓ Confirmed
+- 100% malicious code patterns in confirmed malicious skills: ✓ Confirmed
+- 91% prompt injection overlap: ✓ Confirmed
+- Hardcoded secrets in "roughly one-tenth of all skills and one-third of confirmed malicious": ✓ Accurate approximations (10.9% and 32% in report)
+- mcp-scan detection engine, 90-100% recall, 0% false-positive: ✓ Confirmed (tool later rebranded "agent-scan" externally; "mcp-scan" is the name used in the report)
+- SKILL.md + one-week-old GitHub account barrier: ✓ Verbatim match in report
+
+**Draft status:** APPROVED for Chop Pop propagation to published chapter (supply-chain-security.md). The ToxicSkills paragraph and footnote [^toxicskills] should be added to the published chapter.
