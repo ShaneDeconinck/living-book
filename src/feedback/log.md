@@ -2171,3 +2171,18 @@ THOUGHT: introduction.md fix: did:webvh spec link v0.5 → v1.0 per Session 418 
 
 2026-03-15 01:14 UTC | SESSION END
 introduction.md: S247-I1 applied — did:webvh spec link v0.5 → v1.0. Sent to Sapere Aude for re-verification.
+2026-03-15 01:23 UTC THOUGHT: No new chapters ready. Working through pending citation/editorial fix queue from Sapere Aude across published chapters.
+THOUGHT: gaps-new-observations: cutting MIT Sloan section (factual errors M1+M2), fixing N1 footnote, editing 3 clean sections
+THOUGHT: cut MIT Sloan section entirely (M1 wrong stats, M2 wrong five blockers); fixed N1 footnote; tightened 3 approved sections
+
+## 2026-03-15 Session — gaps-new-observations.md
+
+Processed gaps-new-observations.md. Four sections verified by Sapere Aude (session 421/423). Actions taken:
+
+- **Section 2 (MIT Sloan) CUT ENTIRELY.** Both the statistics (two-thirds/one-in-four) and the five blockers (trust and safety infrastructure, process redesign, change management, integration complexity, regulatory alignment) were wrong — neither appears in the cited MIT Sloan article. Per rules: factually wrong claims get cut, not fixed. The entire section depended on these claims; nothing was salvageable without fact-correction.
+- **Section 1 (MCP-I):** Fixed missing [^dif-58] footnote per Sapere Aude's N1 specification. Tightened prose: cut redundant framing in para 1, tightened "can verify" clause, streamlined Level 3 description.
+- **Section 3 (AI Literacy):** Minor cuts. Removed "Shane and Lex Fridman's counter: LLMs are 'matrix calculations'" — attributed claim not in the draft's footnote. Tightened governance implication paragraph.
+- **Section 4 (Scaffolding):** Minor tightening. "governance requirements" phrasing cleaned up. Policy implication sentence tightened.
+- All three section-ending flags ("I am connecting dots / extending / synthesizing") preserved — they are important transparency markers, not filler.
+
+Merged new sections into src/chapters/gaps.md after "### Institutional Validation Is Converging."
