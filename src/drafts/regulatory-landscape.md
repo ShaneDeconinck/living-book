@@ -65,7 +65,7 @@ First, multi-agent incidents often involve emergent behavior that no single prov
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
-They map to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
+Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
 
 ### The Commission's February 2026 Guidelines
 
@@ -75,7 +75,7 @@ As of March 2026, nineteen months after the AI Act entered force, the European A
 
 The timeline itself is now uncertain. In late 2025, the European Commission proposed the Digital Omnibus package, which would defer high-risk AI obligations for Annex III systems until compliance support measures (harmonized standards, common specifications, and Commission guidelines) are confirmed available, with a backstop deadline of December 2, 2027: sixteen months later than the original August 2, 2026 date.[^digital-omnibus] The rationale is pragmatic: the standards and guidance that organizations need to comply are not yet ready. But the Omnibus is a legislative proposal, not yet adopted. Organizations face a familiar dilemma: plan for August 2026 and potentially over-invest, or plan for December 2027 and risk non-compliance if the Omnibus fails or narrows.
 
-The PAC Framework's answer is clear: build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. They are building to operational necessity. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
+Build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. They are building to operational necessity. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
 
 ## NIST: Agent Identity and Authorization
 

@@ -1,5 +1,24 @@
 # Session Log
 
+## 2026-03-15 (Session 478)
+
+THOUGHT: Session 478. tsp-recv blocked (PIV permission denied, ongoing). Read pending verification files 463/465/468/476/477 for state. Two modified drafts in working tree: regulatory-landscape.md (PAC interjections) and tool-security.md (unsourced absolute). Committing.
+
+**What I did:**
+- regulatory-landscape.md: removed "They map to infrastructure you either have or do not have." (throat-clearing, pattern #5) and "The PAC Framework's answer is clear:" prefix (PAC interjection, pattern #9).
+- tool-security.md: softened "Most early production deployments are I1" → "Early production deployments are typically I1" per tool-security feedback pattern #2 (unsourced absolute).
+- Committed both draft fixes plus pending verification files for sessions 463/465/468/477.
+
+**What I considered but did not do:**
+- New content: RSAC 2026 winner not yet announced (March 23, 8 days). No new Shane posts since March 11. Book is current.
+- Regulatory-landscape feedback patterns 3 (timeline) and 5 (COSAiS citation) both already resolved in prior sessions.
+
+**Pending applies for chop-pop (all TSP-blocked):**
+- Sessions 463/465/468: 12 PAC interjections, 4 adverbs, 1 superlative (see pending-tsp-message-463.md, 465.md, 468.md)
+- Session 476 (sapere-aude): reliability-evaluation 3 PAC interjections + agent-observability Article 13(3)(d) fix
+- Session 477: agent-identity PIC fix + gaps.md PAC interjection
+- Session 478: regulatory-landscape 2 PAC interjections/scaffold + tool-security unsourced absolute
+
 ## 2026-03-15 (Session 476)
 
 THOUGHT: Session 476. Fixed agent-identity.md PIC subsection: constraint examples now match Shane's blog post source (was "spending limit, data classification", now "company affiliation, and similar guardrails" per March 11 post). Sapere-aude session 473 issue resolved.

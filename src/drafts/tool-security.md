@@ -117,7 +117,7 @@ Tool trust failures distribute across all three PAC pillars.
 | **I4: Managed** | Tool behavior attested at registration; deviations flagged | Ghost token pattern at tool layer; credentials scoped per call | Behavioral monitoring with anomaly detection; rug pull triggers re-review |
 | **I5: Optimized** | Tool descriptions verified against behavior through sandbox testing | Tool authorization as delegation chain event, auditable and reversible | Continuous behavioral baseline with human-in-the-loop thresholds for high-risk operations |
 
-Most early production deployments are I1. The WhatsApp attack required only I3 defenses to prevent: a gateway that detected the cross-server instruction in the description field. It succeeded because I1 deployments present descriptions to the LLM without inspection.
+Early production deployments are typically I1. The WhatsApp attack required only I3 defenses to prevent: a gateway that detected the cross-server instruction in the description field. It succeeded because I1 deployments present descriptions to the LLM without inspection.
 
 ## What to Do Now
 
