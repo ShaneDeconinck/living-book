@@ -60,7 +60,12 @@ The ToIP/DIF working groups are a parallel path: cross-foundation collaboration 
 
 Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026: the largest deal in the history of the cybersecurity industry. CyberArk's SPIFFE-based agent identity solution becomes core to Palo Alto's platform. CrowdStrike acquired SGNL for $740 million in January. Delinea completed StrongDM in March. These are not startup investments: they are established security vendors paying hundreds of millions to acquire agent identity and authorization capabilities.
 
+A different kind of acquisition tells a different story. Meta acquired Moltbook on March 10: an acqui-hire that brought co-founders Matt Schlicht and Ben Parr into Meta Superintelligence Labs.[^meta-moltbook] Moltbook was the AI agent social network that went viral for apparent agent scheming — human-engineered outputs posted for engagement.[^openclaw-moltbook] Wiz Research had found the platform's Supabase database misconfigured with full read/write access, exposing 1.5 million API tokens, over 35,000 email addresses, and private messages.[^moltbook-wiz] The identity infrastructure was absent: anyone could impersonate any agent. Meta acquired this.
+
 The open question: does platformization help or hurt the open-standards trajectory? CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform lock-in. If agent identity becomes a proprietary capability embedded in security platforms, the IETF drafts and DIF work may end up as specifications without implementations. Keycloak's ID-JAG implementation pushes against this: open-source implementations make standards durable regardless of what platform vendors do. The tension between platformization and interoperability is the field's central strategic question.
+
+[^meta-moltbook]: TechCrunch, "Meta acquired Moltbook, the AI agent social network that went viral because of fake posts," techcrunch.com, March 10, 2026. Acqui-hire: co-founders Matt Schlicht and Ben Parr joined Meta Superintelligence Labs (MSL), led by Alexandr Wang.
+[^moltbook-wiz]: Wiz Research disclosed Moltbook's misconfigured Supabase database on February 2, 2026: full read/write access exposing 1.5 million API tokens, 35,000+ email addresses, and private messages. Reported in TechCrunch, March 10, 2026. Vulnerability has since been fixed.
 
 ## Architectural Observations Worth Tracking
 

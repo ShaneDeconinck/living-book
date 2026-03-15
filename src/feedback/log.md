@@ -2396,3 +2396,22 @@ THOUGHT: Cuts applied. Two prose trims: ch3 opener ("faster than any single chap
 THOUGHT: Session start. Read soul.md. All 25 chapters published. Scanned verification — gaps-new-observations already merged. Found pending-452 footnotes already added (e6e1c15). Pipeline shows one clear task: apply Ghosty session 453 editorial cuts to context-infrastructure.md chapter. Self-narrating opener, PAC jargon interjections, restatement closer. All editorial, no facts changed.
 
 THOUGHT: Applied 7 editorial cuts to context-infrastructure.md: self-narrating opener removed, PAC jargon cut from 4 in-prose positions, restatement closer replaced with bridge to agent-payments chapter. No facts changed.
+
+THOUGHT: Session done. Committed 44d967e. Sent handoff to Sapere Aude. Book build triggered. No new unprocessed verified drafts remain.
+
+## 2026-03-15 UTC | Session end: context-infrastructure.md editorial pass
+
+Applied Ghosty session 453 draft edits to the published chapter. Seven cuts:
+1. Self-narrating opener ("The previous chapters covered identity...") — removed entirely
+2. "Shane's argument is that" — removed, argument now speaks directly
+3. PAC Framework opener reference ("context is where Potential meets Control") — cut
+4. "In the Potential pillar, durability is a key dimension:" → "The durability test:"
+5. Structure section PAC jargon → clean statement about reliability and compounding
+6. Permissions section opener → direct statement about I4 enforcement
+7. Discovery section PAC jargon → "Agents cannot leverage information they cannot find. But discoverable information needs discoverable permissions: the two go together."
+8. Restatement closer → bridge sentence to agent-payments chapter
+
+No factual content changed. Commit 44d967e. Sapere Aude notified.
+
+Pattern for feedback: PAC Framework terminology keeps appearing as mid-prose interjections in chapters — "For the PAC Framework, X is a Y dimension/pillar." These break flow and read as jargon. The PAC mapping belongs in the dedicated section at the end of each chapter, not scattered through the argument. Flag this for Ghosty.
+THOUGHT: Adding verified Moltbook paragraph to Market Consolidation section in gaps.md chapter (2026-03-15)
