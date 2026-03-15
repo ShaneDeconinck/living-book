@@ -169,7 +169,7 @@ The complacency trap describes humans who stop watching. There is a second, less
 
 Anthropic studied their own engineering team: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts analyzed over six months.[^anthropic-work] The productivity data confirmed the patterns described above: task complexity increased from 3.2 to 3.8 on a five-point scale, average human turns per session decreased 33% (from 6.2 to 4.1), and engineers described a trust progression analogous to adopting navigation software: starting with unfamiliar routes, then using it for everything.
 
-But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. The report's authors frame the paradox directly: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse."[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
+But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. The report's authors frame the paradox: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse."[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
 
 This is a distinct governance risk from complacency. Complacency is an attention problem: the human is capable of evaluating but stops doing so. The paradox of supervision is a capability problem: the human watches, reviews, and approves, but the evaluation is less rigorous than it appears because the underlying expertise is degrading. The approval still happens. It just means less.
 
@@ -179,7 +179,7 @@ The practical implication: organizations should monitor not just whether humans 
 
 ## The Organizational Shift
 
-Deloitte's 2026 Tech Trends report frames the organizational challenge directly: agents are a "silicon-based workforce" that requires the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding[^deloitte-silicon].
+Deloitte's 2026 Tech Trends report frames the organizational challenge: agents are a "silicon-based workforce" that requires the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding[^deloitte-silicon].
 
 The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned ([Shadow Agent Governance](shadow-agent-governance.md) quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
 
@@ -195,7 +195,7 @@ What the lifecycle looks like in practice:
 
 **Offboarding**: when an agent is deprecated, its credentials are revoked, its outstanding authorizations are cancelled, its audit trails are archived, and its delegated authorities are reclaimed. This is the lifecycle management that most organizations lack for their human-to-agent delegation chains.
 
-Deloitte reports that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
+Deloitte reports that only 14% of organizations have deployable agentic solutions and just 11% are using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
 
 This aligns with Shane's framing of the inferential edge: the competitive advantage is not having access to better models but having the infrastructure to deploy them effectively[^inferential-edge].
 
@@ -254,7 +254,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 [^identity-chapter]: See [Agent Identity and Delegation](agent-identity.md) for the full treatment of Verifiable Intent's three-layer SD-JWT architecture and the confused deputy problem.
 
-[^authz-platforms]: Authorization platforms for AI agents are maturing rapidly. See [Permit.io](https://www.permit.io/), [Cerbos](https://www.cerbos.dev/), [Stytch](https://stytch.com/blog/handling-ai-agent-permissions/), and [WorkOS](https://workos.com/) for current approaches to fine-grained, context-aware permission models designed for AI agents.
+[^authz-platforms]: Authorization platforms for AI agents are maturing. See [Permit.io](https://www.permit.io/), [Cerbos](https://www.cerbos.dev/), [Stytch](https://stytch.com/blog/handling-ai-agent-permissions/), and [WorkOS](https://workos.com/) for current approaches to fine-grained, context-aware permission models designed for AI agents.
 
 [^deloitte-silicon]: Deloitte, ["The agentic reality check: Preparing for a silicon-based workforce"](https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html), Tech Trends 2026.
 

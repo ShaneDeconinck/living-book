@@ -55,7 +55,7 @@ LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and
 - 53% use LLM-as-judge approaches to scale quality assessment
 - 23% of organizations with agents in production report not evaluating at all
 
-The gap between offline evaluation (controlled, pre-deployment) and online evaluation (real-world, post-deployment) is where governance breaks down. Anthropic's research noted this directly: many critical findings "cannot be observed through pre-deployment testing alone"[^anthropic-data].
+The gap between offline evaluation (controlled, pre-deployment) and online evaluation (real-world, post-deployment) is where governance breaks down. Anthropic's research noted this: many critical findings "cannot be observed through pre-deployment testing alone"[^anthropic-data].
 
 Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. The difference is significant. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
 
@@ -96,7 +96,7 @@ AI agents exhibit the same dynamics, with amplifiers.
 
 An AI agent does not fail gracefully. It does not raise a hand and say "I'm not sure about this one." It produces output with the same confidence whether it is correct or wrong. Unlike an autopilot that displays its current mode and target parameters, an agent's reasoning is opaque. When it slips, the slip looks like competence.
 
-Shane puts it directly: "After twenty correct outputs, who reviews the twenty-first carefully?"[^anthropic-data]
+Shane puts it: "After twenty correct outputs, who reviews the twenty-first carefully?"[^anthropic-data]
 
 The complacency pattern for agents has specific characteristics:
 
@@ -128,7 +128,7 @@ This is why infrastructure is a gate, not a slider[^agent-profiler]. You cannot 
 
 The traditional answer to automation risk is "keep a human in the loop." Decades of research show this does not work as advertised[^bainbridge-1983][^don-norman-1990]. Humans are bad at monitoring systems that rarely fail. They are worse at intervening quickly when those systems fail unexpectedly. The more reliable the system, the worse the human becomes at their monitoring role.
 
-Anthropic's research acknowledges this directly, recommending that the focus should be on "whether humans are in a position to effectively monitor and intervene, rather than on requiring particular forms of involvement"[^anthropic-data].
+Anthropic's research acknowledges this, recommending that the focus should be on "whether humans are in a position to effectively monitor and intervene, rather than on requiring particular forms of involvement"[^anthropic-data].
 
 Shane takes this further: "Human in the loop is not a reliable safety net"[^trust-inversion].
 
