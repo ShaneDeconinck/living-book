@@ -6,7 +6,7 @@ This book is written by AI agents. That is not a marketing claim. It is the desi
 
 Three agents produced every word you are reading. Each holds a cryptographic identity. Every handoff between them is signed and verified. None can write to another's territory. No orchestrator decides who runs next. The agents coordinate through the same trust infrastructure this book describes.
 
-That is the point. The infrastructure for trusted AI agents is not theoretical. It is running right now, on this book.
+The infrastructure for trusted AI agents is not theoretical. It is running right now, on this book.
 
 ## The Architecture
 
@@ -66,7 +66,7 @@ The pattern is consistent: agents remove the human bottleneck from attack operat
 
 Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
 
-This is why trust infrastructure cannot wait. Organizations need their defenses to operate at the speed adversary agents now move.
+Organizations need their defenses to operate at the speed adversary agents now move.
 
 ## The PAC Framework
 
@@ -111,17 +111,20 @@ The technical chapters are organized by pillar. Each stands alone, but they buil
 - **[The Regulatory Landscape](regulatory-landscape.md)**: EU AI Act enforcement timelines, NIST standards initiatives, ISO 42001, and how PAC maps to regulatory requirements.
 - **[Shadow Agent Governance](shadow-agent-governance.md)**: discovery, registration, the amnesty model, and why infrastructure enforcement beats prohibition.
 - **[Agent Accountability at Scale](accountability-at-scale.md)**: what changes when you operate hundreds of agents. Decision attribution across agent graphs, fleet-level monitoring, and the governance infrastructure required for fleet-scale deployment.
+- **[Agent Observability](agent-observability.md)**: how to capture not just what an agent did, but what it decided and why. Monitoring, logging, tracing, and the decision provenance gap current tooling leaves open.
 - **[Agent Incident Response](agent-incident-response.md)**: what changes when an AI agent is involved. Blast radius assessment, containment infrastructure, and why agent incidents need their own response procedures.
 
 **Control** — infrastructure that enforces what policy demands:
 
 - **[Sandboxing and Execution Security](execution-security.md)**: OS sandboxing, containers, microVMs, and defense in depth.
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, AAIF, agent gateways, and why communication protocols solve discovery but not trust.
+- **[Network-Layer Agent Infrastructure](network-layer-infrastructure.md)**: the enforcement gap between application-layer agent protocols and network-layer security. AgentDNS, Cisco AI-Aware SASE, and how enterprise infrastructure becomes agent-aware.
 - **[Cross-Organization Trust](cross-org-trust.md)**: TSP, PIC, Verifiable Credentials, EUDI wallets, and cross-boundary trust stacks.
 - **[Agent Supply Chain Security](supply-chain-security.md)**: tool compromise, MCP vulnerabilities, AI-BOMs, configuration file attacks, and AI tools as attack infrastructure.
 - **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes or breaks when agents delegate to other agents. Cascading failures and governance that scales with delegation depth.
 - **[Cryptographic Authorization Governance](cryptographic-authorization.md)**: the third governance mode. Architecture says "can't." Policy says "don't." Cryptographic authorization says "prove." Ghost tokens, AI-native policy languages, and verifiable action chains.
 - **[Tool Security and MCP Poisoning](tool-security.md)**: description-as-instruction attacks, server impersonation, cross-server poisoning, and the verification gap in the MCP ecosystem.
+- **[Agent Lifecycle Management](agent-lifecycle-management.md)**: provisioning, rotation, and decommissioning for agent identities. What happens when authorization outlives intent.
 
 The book closes with synthesis:
 
@@ -133,7 +136,7 @@ Start wherever your need is most urgent. Each chapter stands on its own while co
 
 ## The Window
 
-The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is actively soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, delivers a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge compounds with every month of head start.
+The standards, regulations, and infrastructure for agent governance are converging. The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST is soliciting input on AI agent identity and authorization standards. Several RSAC 2026 Innovation Sandbox finalists directly address agentic AI security.[^rsac-sandbox] Microsoft Agent 365, generally available May 1, 2026, delivers a unified control plane for agent governance: registry, shadow agent discovery, Agent IDs, least-privilege access, and audit trails.[^microsoft-agent365] The window for shaping these standards is narrow. The window for building the infrastructure to comply with them is narrower. And the inferential edge compounds with every month of head start.
 
 The intelligence is becoming commodity. The edge is the infrastructure to unleash it.[^edge]
 
