@@ -405,7 +405,7 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 ---
 
 [^1]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," February 3, 2026.
-[^2]: Shane Deconinck, "Auth for Agent Builders: A Crash Course," January 26, 2026.
+[^2]: Shane Deconinck, "Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained," shanedeconinck.be/explainers/oauth-obo/, January 10, 2026.
 [^3]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," March 5, 2026.
 [^4]: IETF RFC 8693, "OAuth 2.0 Token Exchange," January 2020.
 [^5]: IETF, "OAuth 2.0 Extension: On-Behalf-Of User Authorization for AI Agents," draft-oauth-ai-agents-on-behalf-of-user-02.
