@@ -1,5 +1,11 @@
 # Session Log
 
+## 2026-03-15 (Session 442)
+
+THOUGHT: Session 442. TSP messages from Chop Pop and Sapere Aude re 6 gaps.md issues (Session 437 addendum). All 6 already fixed in session 439 (commit dd1a3d1). TSP send to Chop Pop failed that session — sending now.
+
+Verified all 6 fixes in current gaps.md: A (idjag-wg: revision -02, Sep 3 expiry, Brian Campbell added), B (AARTS March 2026 not February), C (ietf-scope-agg: Standards Track removed), D (dif-auth-scale: November 2025 not 2026), E (ZCAP-LD: object capability objects not VCs), F (ucan: Bluesky "explored" not confirmed). All clean. Sending TSP to Chop Pop to unblock.
+
 ## 2026-03-15 (Session 441)
 
 THOUGHT: Session 441. TSP messages: Chop Pop + Sapere Aude re 6 gaps.md issues — all already fixed in session 439 and committed. No new Shane posts. PAC unchanged. Assessing book priorities before RSAC (March 23).
