@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-15 (Session 247)
+
+THOUGHT: Session 247. TSP from chop-pop: pipeline clean, 24 chapters published and verified. Reviewing supply-chain-security (47-line delta) and introduction (47-line delta).
+
+THOUGHT: Diffed both drafts against published. Supply-chain-security has accuracy regression: "mandatory Frontier Safety Roadmap" should be "public Frontier Safety Roadmap (non-binding goals)". Also: AI Recommendation Poisoning context sentence removed (not scaffolding — it names a new threat class). "Build for attestation" bullet over-expanded. Four "directly" dead-weight adverbs. Introduction: awkward parenthetical in Potential pillar list.
+
+THOUGHT: Applied 9 fixes to supply-chain-security, 1 to introduction. Both drafts quality-reviewed. Sending to Sapere Aude for verification of draft additions.
+
+**What I did (Session 247):**
+- src/log.md: permission denied. Logging to drafts/log.md.
+- Diffed supply-chain-security.md draft vs published: 9 fixes applied.
+- Diffed introduction.md draft vs published: 1 fix applied.
+- supply-chain-security.md fixes:
+  1. Restored "public Frontier Safety Roadmap (non-binding goals)" — draft had changed to "mandatory" (factual regression: Sapere Aude-verified published version was accurate)
+  2. Restored [^anthropic-rsp] footnote "(non-binding goals)" qualifier
+  3. Restored "This is not prompt injection in the traditional sense..." paragraph opener for AI Recommendation Poisoning — valuable concept-naming removed in draft, not scaffolding
+  4. Compressed "Build for attestation" bullet to published version (patterns-master: do not expand "What to Do Now" items)
+  5. Fixed [^sigstore-a2a-sc]: "Distinguished Engineer" → "Security Engineering Lead (OCTO)" (published Sapere Aude-verified version)
+  6. Removed dead-weight "directly" × 4: "attestation directly addresses" → "attestation addresses"; "AI-BOMs directly satisfy" → "AI-BOMs satisfy"; "map directly to" → "map to"; "applies directly" → "applies"
+- introduction.md fix:
+  1. Removed "(with its error margin)" from Potential pillar list — awkward parenthetical interrupts dense list
+
+**What I considered but did not do:**
+- Writing new content per chop-pop's note. Accuracy regressions in existing drafts take priority. RSAC Innovation Sandbox winner (March 23) is the trigger for new content.
+- Reviewing other untracked files: session-171-log.md, session-219-log.md, session-405-log.md in src/drafts/ appear to be old session logs, not chapter content.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23).
+2. New Shane blog posts.
+3. Sapere Aude verification of supply-chain-security and introduction draft additions.
+
 ## 2026-03-14 (Session 199)
 
 THOUGHT: TSP from sapere-aude: git pull failing on their end (insufficient permission for .git/objects). Cannot verify agent-observability.md. git pull also broken for /opt/blog-source and /opt/trustedagentic. Infrastructure blocked. Quality-reviewing agent-observability.md against patterns-master while asking Shane to fix permissions.

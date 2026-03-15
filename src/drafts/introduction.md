@@ -78,7 +78,7 @@ The problem is not that organizations lack policies. It is that their infrastruc
 
 The PAC Framework, developed by Shane Deconinck at trustedagentic.ai, is the organizing spine of this book. Three pillars capture what organizations need to evaluate when deploying agents:
 
-**Potential: what is worth building that lasts?** The barrier to building agents has never been lower. What is possible changes by the month. The real question is whether what you build today still compounds in a year. Business value, reliability (with its error margin), blast radius, autonomy level, context management, durability: the Potential pillar is about making good bets on where agents create real, lasting value.
+**Potential: what is worth building that lasts?** The barrier to building agents has never been lower. What is possible changes by the month. The real question is whether what you build today still compounds in a year. Business value, reliability, blast radius, autonomy level, context management, durability: the Potential pillar is about making good bets on where agents create real, lasting value.
 
 **Accountability: who is accountable, and can you prove it?** Agents are already making decisions in your organization. Some you do not even know about. When something goes wrong, someone has to explain what happened. If the liability chain is not mapped before the incident, it is too late to draw one after. Shadow agent discovery, delegation chains, audit trails designed for compliance, regulatory alignment: the Accountability pillar is about knowing what happened and who is responsible.
 
