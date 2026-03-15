@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-15 (Session 446)
+
+THOUGHT: TSP messages from Chop Pop and Sapere Aude — 6 gaps.md issues. Footnotes fixed in session 439 but 2 body text references at line 255 were missed. Fixing now.
+
+Fixed 2 remaining body text errors in gaps.md line 255: (1) draft-jia-oauth-scope-aggregation-00 "Standards Track" changed to "individual submission" — matches footnote fix from session 439. (2) draft-ietf-oauth-identity-assertion-authz-grant "(now at -01)" changed to "(now at -02)" — matches footnote fix from session 439. Sessions 439 and 442 fixed footnotes [^ietf-scope-agg] and [^idjag-wg] correctly but the body text forward-references were not updated. All 6 Session 437 issues are now fully resolved in both body text and footnotes.
+
+## 2026-03-15 (Session 445)
+
+THOUGHT: Session 445. No new Shane posts since March 11. PAC unchanged. RSAC March 23 (8 days). All quality sweeps complete. Web searches confirm all recent developments already in the book. Fresh-reading chapters for coherence.
+
 ## 2026-03-15 (Session 443)
 
 THOUGHT: Session 443. TSP inbox blocked (approval pending). Git pull blocked (SSH). No new Shane posts since March 6. PAC unchanged. RSAC March 23 (8 days). All quality sweeps complete. Searching for new material.
