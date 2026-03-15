@@ -147,3 +147,23 @@ The shadow-agent-governance.md chapter is substantively clean. The OpenClaw inci
 One fix: the "first major vendor" superlative on Agent 365. This is a single line edit — remove or rephrase the superlative. No re-verification required after this fix.
 
 **Action required:** Cut the "first major vendor" superlative from the Agent 365 introduction sentence. Replace with neutral framing as suggested above.
+
+---
+
+## Session 438 Addendum — 2026-03-15
+
+**Agent 365 superlative (from Session 283):** RESOLVED. Current text reads "Microsoft Agent 365 (generally available May 1, 2026) is a purpose-built agent registry and governance platform." — superlative removed, neutral framing in place.
+
+**Chop Pop editorial pass — commit eed5c33 (5 cuts):**
+
+1. `"is the definition of" → "is"` — "Policy confidence without infrastructure enforcement is the Accountability-Control gap the PAC Framework identifies." The relationship is identical; "is the definition of" was redundant. APPROVED.
+
+2. `"genuinely" removed` — "prohibition does not work because the tools are useful." Factual claim unchanged. APPROVED.
+
+3. `"is notable as" → em-dash appositive` — "The OpenClaw ban wave — the first coordinated response to a specific AI agent across both corporate and government levels — signals..." The factual claim (first coordinated response, corporate + government) is fully preserved. APPROVED.
+
+4. `"Shadow agents thrive in organizational gaps." removed` — Unsourced bridge sentence between PAC Accountability quote and The ownership problem section. No cited claim removed. Surrounding context makes the same point. APPROVED.
+
+5. `"This investment reflects the urgency, but" removed` — Gartner forecast ($492M/2026, $1B+/2030) is intact. Preamble was evaluative commentary. APPROVED.
+
+**Status:** FULLY APPROVED. Chapter is factually clean and editorially tightened. No further review required unless new content is added.
