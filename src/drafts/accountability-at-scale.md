@@ -64,7 +64,7 @@ Every agent in the organization has a registered identity linked to a human spon
 
 SCIM for agents, covered in [Agent Identity and Delegation](agent-identity.md), provides the provisioning protocol. Microsoft's Entra Agent ID and similar platforms provide the identity backend. The registry is not a spreadsheet: it is a system of record integrated with the organization's identity infrastructure, with the same lifecycle management discipline applied to human accounts. When a human sponsor leaves the organization, their agents are suspended, not orphaned.
 
-Singapore's framework requires this explicitly: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements.
+Singapore's framework requires this: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements.
 
 ### Delegation Chain Forensics
 
@@ -93,8 +93,6 @@ Triage infrastructure sits between fleet monitoring and incident response. It cl
 Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
 
 ## The PAC Mapping
-
-Accountability at scale sits primarily in the Accountability pillar but draws from all three.
 
 **Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
 
