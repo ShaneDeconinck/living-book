@@ -273,6 +273,22 @@ TSP is distinct from OAuth. OAuth assumes you pre-registered with the authorizat
 
 The spec reached Revision 2 in November 2025 and is actively developing.[^10]
 
+### Authority Continuity: PIC
+
+TSP handles identity across boundaries. But identity verification alone does not constrain what happens after authentication. An agent that proves who it is can still accumulate authority beyond what was delegated to it.
+
+Nicola Gallo reframes this as a model problem, not a configuration problem. Current systems treat authority as an object: create a token, store it, transfer it, consume it. Whoever holds the token exercises the authority. A stolen token works. A replayed token works. A token used in an unintended context works. Possession equals authority.[^pic]
+
+PIC (Provenance, Identity, Continuity) replaces proof of possession with proof of continuity. Each execution step forms a virtual chain where the workload proves it can continue under the received authority, satisfying the constraints (department membership, spending limit, data classification). The trust plane validates this at each step and creates the next link. Authority can only be restricted or maintained, never expanded.
+
+The confused deputy is not detected or mitigated under this model. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability.[^pic]
+
+An important distinction: to continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. But to create authority, you need an identity and an expressed intent. That distinction is what makes the model work for agents, which are workloads that sometimes need to act autonomously and sometimes need to continue authority received from a human principal.
+
+PIC is designed to work with existing infrastructure. It can use OAuth as a federated backbone, embedding causal authority in custom claims. Performance is not a blocker: executing a continuity chain takes microseconds, comparable to a token exchange call.[^pic]
+
+The [Cross-Organization Trust](cross-org-trust.md) chapter covers how TSP and PIC compose into a full stack for cross-boundary agent governance.
+
 ## Verifiable Intent: Proving What Was Authorized
 
 The biggest gap in the identity stack is not "who" but "what exactly." OAuth proves who has access. OBO proves who delegated. But neither proves what the user actually intended the agent to do.
@@ -379,7 +395,7 @@ The infrastructure scale from the PAC Framework maps to identity maturity:
 | I1 (Open) | No agent identity; acts under user credentials |
 | I2 (Logged) | Agent actions logged but not identity-scoped |
 | I3 (Verified) | OBO delegation, scoped credentials, audit trails |
-| I4 (Authorized) | Verifiable identity, cross-org trust, purpose encoding |
+| I4 (Authorized) | Verifiable identity, cross-org trust, PIC authority continuity |
 | I5 (Contained) | Full delegation chains, verifiable intent, sandboxed execution |
 
 Most organizations are between I1 and I2 today. The standards described in this chapter provide the path to I3 through I5.
@@ -396,7 +412,7 @@ The standards are landing but not yet universal. For teams deploying agents toda
 
 **Log the delegation chain.** Even before you have formal delegation infrastructure, log who authorized what at every hop. When the incident comes, this is what you will need.
 
-**Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, and the Verifiable Intent specification are all active. These will shape how agent identity works for the next decade.
+**Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, PIC, and the Verifiable Intent specification are all active. These will shape how agent identity works for the next decade.
 
 The identity layer for agents is being built right now, in IETF drafts, W3C specifications, and open-source implementations. The organizations that adopt this infrastructure early will have accountable, auditable agent deployments. The ones that wait will be explaining to regulators why they cannot trace what their agents did.
 
@@ -443,3 +459,4 @@ The identity layer for agents is being built right now, in IETF drafts, W3C spec
 [^mcp-rar]: GitHub, modelcontextprotocol/modelcontextprotocol, Issue #1670: "Support Rich Authorization Requests for OAuth - RFC 9396," October 17, 2025. Requests RAR support in MCP for fine-grained, time-bound, role-based agent authorization that traditional scopes cannot express.
 [^gnap]: IETF RFC 9635, "Grant Negotiation and Authorization Protocol (GNAP)," October 2024. Authors: Justin Richer, Fabien Imbault. Defines a next-generation authorization protocol that removes OAuth's pre-registration requirement, makes key-bound tokens the default, and separates access requests from interaction modes. See also IETF RFC 9767, "GNAP Resource Server Connections," 2025.
 [^twigbush]: TwigBush, "GNAP grant engine in Go, built for short-lived tokens that let AI agents delegate securely," github.com/TwigBush/TwigBush. Open-source implementation of RFC 9635 and RFC 9767 targeting AI agent delegation, multi-cloud environments, and ephemeral workloads. Early-stage.
+[^pic]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Reflections from the LFDT Belgium meetup featuring Nicola Gallo (Nitro Agility, co-chair of Trusted AI Agents working group at Decentralized Identity Foundation) on PIC. See also pic-protocol.org.

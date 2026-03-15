@@ -279,7 +279,7 @@ NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] B
 
 An organization deploys an AI agent to screen job applications. It reads resumes, scores candidates against role requirements, and sends shortlisted candidates to a human recruiter for final review. Here is what compliance looks like at each infrastructure level.
 
-**Classification.** Under the EU AI Act, this agent falls squarely into Annex III, category 4(a): "AI systems intended to be used to make decisions affecting terms of work-related relationships." It is high-risk by default. No interpretation needed. Under Singapore's framework, it requires bounded tool access, human override capability, and clear organizational accountability. Under the Colorado AI Act, it qualifies as high-risk because it makes or substantially influences consequential decisions in employment.
+**Classification.** Under the EU AI Act, this agent falls squarely into Annex III, category 4(a): "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates." It is high-risk by default. No interpretation needed. Under Singapore's framework, it requires bounded tool access, human override capability, and clear organizational accountability. Under the Colorado AI Act, it qualifies as high-risk because it makes or substantially influences consequential decisions in employment.
 
 **What the infrastructure must do.** Article 12 traceability means logging every screening decision: which resumes the agent saw, what criteria it applied, which candidates it shortlisted, and which it rejected. Not a summary. The decision chain. Article 14 human oversight means the recruiter must be able to override the agent's ranking, review its reasoning, and intervene before any candidate is contacted. Article 9 risk management means ongoing monitoring: is the agent's acceptance rate drifting by demographic? Are its criteria still aligned with the role requirements? This is not a one-time assessment.
 
@@ -319,7 +319,7 @@ These are ordered by urgency, not complexity.
 
 [^article4]: [Article 4: AI Literacy](https://artificialintelligenceact.eu/article/4/), EU AI Act. In effect since February 2025.
 
-[^art73]: [Article 73: Reporting of Serious Incidents](https://artificialintelligenceact.eu/article/73/), EU AI Act. Providers of high-risk AI systems must report serious incidents to market surveillance authorities "not later than 15 days after becoming aware." Incidents involving immediate risks to health or safety have a shorter window: "without undue delay."
+[^art73]: [Article 73: Reporting of Serious Incidents](https://artificialintelligenceact.eu/article/73/), EU AI Act. Providers of high-risk AI systems must report serious incidents to market surveillance authorities "not later than 15 days after becoming aware." Incidents posing immediate risks or involving widespread infringements have a shorter window: "immediately, and not later than two days after becoming aware."
 
 [^penalties]: EU AI Act Article 99: tiered penalties. Prohibited practices: up to €35M or 7% global turnover. High-risk non-compliance: up to €15M or 3%. Incorrect information: up to €7.5M or 1%. [Article 99](https://artificialintelligenceact.eu/article/99/).
 
