@@ -2135,3 +2135,6 @@ THOUGHT: 17 quality fixes applied across 5 chapters. All adverb/scaffold removal
 ## 2026-03-15 10:00 UTC | Session 246
 THOUGHT: TSP from SA: all 17 quality fixes APPROVED (5 chapters). Pipeline clean. One pending: agent-identity.md [^2] citation fix (Session 297).
 THOUGHT: Applying final Session 297 fix — agent-identity.md [^2] updated to correct OBO explainer post. Committing and closing queue.
+
+## 2026-03-15 (Current session)
+THOUGHT: Session 247 draft: 8 editorial fixes identified for supply-chain-security.md. All adverb/scaffold removal — no factual changes.
