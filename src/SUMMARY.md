@@ -17,6 +17,9 @@
 
 - [Agent Identity and Delegation](chapters/agent-identity.md)
 - [The Regulatory Landscape](chapters/regulatory-landscape.md)
+  - [The EU AI Act](chapters/regulatory-landscape.md#the-eu-ai-act-risk-that-wont-sit-still)
+  - [Compliance by Example: A Hiring Agent](chapters/regulatory-landscape.md#compliance-by-example-a-hiring-agent)
+  - [What to Do Now](chapters/regulatory-landscape.md#what-to-do-now)
 - [Shadow Agent Governance](chapters/shadow-agent-governance.md)
 - [Agent Accountability at Scale](chapters/accountability-at-scale.md)
 - [Agent Observability](chapters/agent-observability.md)

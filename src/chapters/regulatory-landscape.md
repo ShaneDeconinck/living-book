@@ -2,7 +2,7 @@
 
 Regulation is catching up to agents. Not all the way, and not evenly, but faster than most teams expect. The White House released a national cybersecurity strategy naming agentic AI as a strategic priority in March 2026. Singapore launched the world's first agentic AI governance framework in January 2026. The EU AI Act's high-risk obligations take effect August 2, 2026. NIST published a concept paper on AI agent identity and authorization in February 2026. ISO 42001 is becoming the enterprise baseline for AI management systems. The Colorado AI Act goes live in June 2026. And the standards bodies shaping agent protocols (IETF, OpenID Foundation, Linux Foundation Decentralized Trust) are all moving simultaneously.
 
-Organizations that build agent trust infrastructure for engineering reasons will find compliance falls out naturally. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
+Organizations that build agent trust infrastructure for engineering reasons will find compliance follows. Organizations that treat regulation as a paperwork exercise will find themselves retrofitting infrastructure under pressure.
 
 ## The EU AI Act: Risk That Won't Sit Still
 
@@ -274,20 +274,6 @@ Upcoming:
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
 NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
-
-## What This Means in Practice
-
-The regulatory landscape leads to practical conclusions:
-
-**For teams building agents today**: map your agent deployments against the EU AI Act risk tiers. Any agent that could reach high-risk use cases at runtime (employment decisions, credit scoring, critical infrastructure) needs to be governed as high-risk unless you can technically constrain it to lower tiers. Architecture is cheaper than reclassification under pressure.
-
-**For organizations with shadow agents**: Article 4 is already enforceable. AI literacy is not optional. If your employees are building agents on low-code platforms without governance review, you have a compliance exposure today, not in August.
-
-**For infrastructure teams**: the NIST concept paper describes the agent identity infrastructure you should be building anyway. Start with I2 (logging everything) and work toward I3 (verified agent identity, tracked delegation). These investments satisfy regulatory requirements and improve engineering quality.
-
-**For organizations operating across jurisdictions**: a unified governance framework (like PAC) becomes more valuable as regulation fragments across the EU, U.S. states, and sector-specific requirements. Building to the highest common standard is simpler than maintaining jurisdiction-specific compliance.
-
-The gap between what agents can do and what regulation requires is an infrastructure gap. Auth, identity, scoping, audit trails, guardrails. The organizations that close this gap for engineering reasons will find compliance is a byproduct. The ones that wait for enforcement will find themselves building under pressure.
 
 ## Compliance by Example: A Hiring Agent
 
