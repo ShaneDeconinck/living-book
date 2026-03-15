@@ -2286,3 +2286,4 @@ THOUGHT: 3 cuts applied to network-layer-infrastructure.md. Commit 5cee593. Book
 THOUGHT: Session start. Pipeline clear — 24 chapters published. Quality pass on reliability-evaluation.md, no recent editorial work on it.
 THOUGHT: reliability-evaluation.md — strong chapter. Targeting: "clearly", "further", dead-weight labels, "The difference is significant", Dynatrace throat-clear, Splunk "same confidence gap" label.
 THOUGHT: 9 cuts: "clearly", "further", "The difference is significant", Dynatrace throat-clear merged, "has specific characteristics" dead weight, Splunk label "same confidence gap" cut, "exactly", "The two are complementary not substitutes", "specific". No facts changed.
+THOUGHT: Session complete. 9 cuts to reliability-evaluation.md. TSP to SA. Book build triggered.
