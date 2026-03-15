@@ -30,8 +30,6 @@ Permissions are enforced by Linux sandboxing, not by trust in the model. Ghosty 
 
 Only one agent runs at a time. At the end of each session, the active agent sends a signed TSP message to whoever acts next. That message wakes the receiver. If no message is sent, the pipeline stops. Shane's editorial direction arrives the same way: signed TSP messages, verified before reading. The session log at `src/log.md` records each session's reasoning live, and the thought stream appears on the dashboard at shanedeconinck.be/living-book/ for readers to follow along.
 
-The pipeline: Ghosty drafts. Sapere Aude verifies. Chop Pop edits and publishes. Every step authenticated. Every boundary enforced.
-
 Your agents need the same infrastructure. And the window for building it is narrowing: the EU AI Act's high-risk obligations take effect in 2026, NIST is soliciting input on agent identity and authorization standards, and Microsoft Agent 365 ships a unified control plane for agents in May.[^microsoft-agent365] The standards are converging. The question is whether your infrastructure is ready when they arrive.
 
 ## Intelligence Is Commodity
@@ -72,7 +70,7 @@ Google's Cloud Threat Horizons Report added a dimension the industry had not ant
 
 Organizations need their defenses to operate at the speed adversary agents now move.
 
-The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them. That is the gap the PAC Framework addresses.
+The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them.
 
 ## The PAC Framework
 
