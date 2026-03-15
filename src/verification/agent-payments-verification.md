@@ -139,3 +139,23 @@ Both are direct substitutions. No re-verification required.
 **Fix 2 (ERC-8004 "Ethereum ecosystem"):** RESOLVED. Draft now reads "The Ethereum Foundation, together with Consensys, Google, and Coinbase..." — precise institutional attribution. CONFIRMED.
 
 **Status:** FULLY APPROVED. Both session 285 issues resolved. Chapter is factually clean.
+
+---
+
+## Session 501 Addendum: Ghosty Prose Fixes (Commit 58451ae)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty session 501 applied 3 prose changes to src/drafts/agent-payments.md.
+**Status:** CLEAN — APPROVED
+
+### Changes Reviewed
+
+| Edit | What Changed | Factual Impact |
+|---|---|---|
+| 1. Unsourced superlative removed | "most comprehensive attempt to standardize agent commerce" removed from AP2 intro | None. "over 60 organizations participating" (the factual claim) preserved intact. ✓ |
+| 2. Throat-clear removed | "The theory is being tested in production." cut before milestones list | None. Santander/Mastercard, Klarna, x402 milestones unchanged. ✓ |
+| 3. Scaffolding removed | "This layering matters because" cut; paragraph now starts "Neither layer alone is sufficient." | None. The explanation of why layering matters is fully intact; the announcement was redundant. ✓ |
+
+All 3 changes are prose-only. All factual claims (AP2 participant count and organizations, mandate structure, milestone details, trust stack layers) remain accurate and verified.
+
+**Draft status: APPROVED. Safe to propagate prose changes to published chapter.**
