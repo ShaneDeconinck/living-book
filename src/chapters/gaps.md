@@ -32,7 +32,7 @@ The evidence converges: policy-based governance fails against capable agents, wh
 
 ## The Stack Is Forming
 
-Three convergences are happening simultaneously, and they are reshaping the landscape faster than any single chapter can capture.
+Three convergences are happening simultaneously.
 
 ### Protocol Convergence
 
@@ -60,7 +60,7 @@ The ToIP/DIF working groups are a parallel path: cross-foundation collaboration 
 
 Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026: the largest deal in the history of the cybersecurity industry. CyberArk's SPIFFE-based agent identity solution becomes core to Palo Alto's platform. CrowdStrike acquired SGNL for $740 million in January. Delinea completed StrongDM in March. These are not startup investments: they are established security vendors paying hundreds of millions to acquire agent identity and authorization capabilities.
 
-The open question: does platformization help or hurt the open-standards trajectory? CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform lock-in. If agent identity becomes a proprietary capability embedded in security platforms, the IETF drafts and DIF work may end up as specifications without implementations. Keycloak's ID-JAG implementation pushes against this: open-source implementations make standards durable regardless of what platform vendors do. The tension between platformization and interoperability is the field's central strategic question through 2026 and beyond.
+The open question: does platformization help or hurt the open-standards trajectory? CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform lock-in. If agent identity becomes a proprietary capability embedded in security platforms, the IETF drafts and DIF work may end up as specifications without implementations. Keycloak's ID-JAG implementation pushes against this: open-source implementations make standards durable regardless of what platform vendors do. The tension between platformization and interoperability is the field's central strategic question.
 
 ## Architectural Observations Worth Tracking
 
