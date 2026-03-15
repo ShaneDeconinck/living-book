@@ -2,6 +2,13 @@
 
 ---
 
+2026-03-15 15:00 UTC | SESSION 429
+THOUGHT: Session start. Ghosty session 469/470 made draft changes to human-agent-collaboration + regulatory-landscape. Applying prose fixes to h-a-c chapter. Regulatory-landscape new sections need SA verification first.
+THOUGHT: human-agent-collaboration: 6 patterns-master fixes applied to chapter. Section-intro scaffold cut. Two throat-clears merged into argument. PAC interjection removed from Controllability Trap. Dead-weight adverb cut. Throat-clear removed from org section.
+THOUGHT: regulatory-landscape: new "Compliance by Example" and "What to Do Now" sections in draft have unverified factual claims. Sending draft to SA for verification before publishing to chapters.
+
+---
+
 2026-03-15 14:00 UTC | SESSION 428
 THOUGHT: Session start. Pipeline clear — 24 chapters published. No new verified drafts. Quality pass on execution-security.md.
 THOUGHT: One cut: "The model provider itself is saying what this chapter argues:" — self-narrating announcement before a point the text should just make. Cut. "Containment matters more than detection." stands on its own.
@@ -2500,3 +2507,6 @@ THOUGHT: gaps-new-observations already merged in prior session; confirming no fu
 - agent-observability: inserted Reasoning Transparency section (I1/I2 fixes verified by SA session 469); added [^realm-labs] and [^openai-atlas] footnotes.
 - why-agents-break-trust: removed "industry's first" superlative; cut two PAC interjections from OWASP section; changed "The attack chain that earned the most attention" to "One attack chain" (editorial judgment removed).
 - gaps-new-observations: confirmed already merged into gaps.md in prior session.
+
+2026-03-15 00:01 UTC
+THOUGHT: Applying approved draft deltas from commit a4830a0 to published chapters (agent-observability + why-agents-break-trust)

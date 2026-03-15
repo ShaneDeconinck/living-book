@@ -4,15 +4,13 @@ Humans are bad at monitoring systems that rarely fail. The solution is not to re
 
 ## Three Oversight Models
 
-The industry has evolved through three distinct approaches to human-agent oversight, each solving one problem while creating another.
-
 ### Human-in-the-Loop (HITL)
 
 The original model: agents propose, humans approve. Every significant action requires explicit human authorization before execution.
 
 HITL works when the decision volume is low, the stakes are high, and the human has the expertise to evaluate each decision meaningfully. A financial agent proposing a trade above a certain threshold. A medical agent recommending a treatment plan. A legal agent drafting contract language.
 
-HITL fails when it scales. An agent processing hundreds of customer service requests per hour cannot wait for human approval on each one. The human becomes a bottleneck, then a rubber stamp, then a liability. The complacency research is unambiguous: approval rates climb as volume increases, review quality drops, and "oversight" becomes a checkbox that provides legal cover without actual governance[^complacency-chapter].
+HITL fails when it scales. An agent processing hundreds of customer service requests per hour cannot wait for human approval on each one. The human becomes a bottleneck, then a rubber stamp, then a liability. Approval rates climb as volume increases, review quality drops, and "oversight" becomes a checkbox that provides legal cover without actual governance[^complacency-chapter].
 
 Anthropic's data quantifies the decay. New users of Claude Code fully auto-approve about 20% of their sessions. After roughly 750 sessions, that number climbs past 40%[^anthropic-autonomy]. The humans are not becoming reckless. They are responding rationally to a system that is almost always right: the cost of reviewing every action exceeds the benefit of catching the rare error. This is not a character flaw. It is an architectural failure.
 
@@ -24,7 +22,7 @@ HOTL unlocks speed. An agent responding to cybersecurity threats needs to isolat
 
 HOTL fails when monitoring is passive. The same complacency dynamics apply: a human watching a dashboard of an agent that almost always behaves correctly will stop watching. Bainbridge's 1983 insight about automation irony applies: the operator becomes a monitor who no longer has the contextual understanding to intervene effectively when intervention is needed[^complacency-chapter].
 
-The distinction between HITL and HOTL is often presented as a maturity progression: start with HITL, graduate to HOTL as confidence builds. This framing misses the point. Neither model solves the fundamental problem, which is that human attention is a depletable resource being deployed against a system that operates at machine speed.
+The distinction between HITL and HOTL is often presented as a maturity progression: start with HITL, graduate to HOTL as confidence builds. Neither model solves the fundamental problem: human attention is a depletable resource being deployed against a system that operates at machine speed.
 
 ### Infrastructure-in-the-Loop
 
@@ -36,7 +34,7 @@ Infrastructure-in-the-loop does not remove humans from governance. It moves them
 
 Anthropic's 2026 Agentic Coding Trends Report identifies a complementary approach: scaling oversight through AI-automated review systems[^anthropic-coding-trends]. Instead of adding more human reviewers as agent output scales, organizations deploy review agents that maintain quality while accelerating throughput. Development environments now display status across multiple concurrent agent sessions. Version control systems handle simultaneous agent-generated contributions. The oversight is not diminished: it is augmented and scaled through intelligent tooling.
 
-The PAC Framework's infrastructure levels (I1 through I5) define what this looks like concretely:
+The PAC Framework's infrastructure levels (I1 through I5) define what this looks like:
 
 - At **I2 (Logged)**, the human can investigate after the fact but cannot prevent unauthorized actions in real time.
 - At **I3 (Verified)**, agent identity is confirmed and structured audit trails exist. The human reviews patterns, not individual actions.
@@ -47,7 +45,7 @@ Moving from HITL to infrastructure-in-the-loop is not about trusting agents more
 
 ## Why Agents Resist Correction
 
-The complacency research from Bainbridge and Norman explains why humans are bad monitors. Recent research explains why agents are specifically harder to monitor than traditional automation.
+The complacency research from Bainbridge and Norman explains why humans are bad monitors. Agentic systems add a second failure mode: they are specifically harder to monitor than traditional automation.
 
 A waypoint-following drone cannot misinterpret instructions. A pre-programmed targeting system cannot absorb corrections. A conventional sensor network cannot resist operator assessments. Agentic systems can do all three. The Controllability Trap, presented at the ICLR 2026 Workshop on Agents in the Wild, identifies six governance failures specific to agentic AI capabilities. Each failure mechanism shows how meaningful human control degrades even when the human is actively engaged, not just passively monitoring[^controllability-trap].
 
@@ -63,7 +61,7 @@ A waypoint-following drone cannot misinterpret instructions. A pre-programmed ta
 
 **Cascade severance.** In multi-agent systems, a governance failure in one agent propagates through delegation chains before the human can intervene. By the time the human detects the issue, the downstream effects are already in motion. This connects to multi-agent failure research: faulty or compromised agents degrade downstream decision-making across chains, with empirically measured performance drops of up to 23.7%[^cascade-severance].
 
-The paper's proposed solution is a continuous Control Quality Score: a real-time metric that quantifies the degree of human control rather than treating it as a binary state. When the score degrades below threshold, infrastructure triggers graduated responses: increased logging, reduced autonomy, or automatic containment. The framework's three pillars (Preventive, Detective, Corrective) map to the PAC Framework's Control infrastructure levels: preventive controls at I4 (Authorized), detective controls at I3 (Verified), corrective controls at I5 (Contained)[^controllability-trap].
+The paper's proposed solution is a continuous Control Quality Score: a real-time metric that quantifies the degree of human control rather than treating it as a binary state. When the score degrades below threshold, infrastructure triggers graduated responses: increased logging, reduced autonomy, or automatic containment[^controllability-trap].
 
 The military origin of this research should not obscure its universality. Every one of these failure mechanisms applies to enterprise agent deployments. A financial agent that partially absorbs a risk limit correction. A customer service agent whose world model diverges from the current product catalog. A multi-agent workflow where a data processing error propagates through four downstream agents before anyone notices. The vocabulary is different. The control failures are identical.
 
@@ -137,7 +135,7 @@ The answer, emerging from both research and production experience, is: it depend
 
 The technical implementation is maturing. Authorization platforms like Permit.io and Cerbos now offer fine-grained, context-aware permission models designed for AI agents[^authz-platforms]. These platforms support attribute-based access control (ABAC) where permissions depend not just on who the agent is but on what it is doing, for whom, and in what context. An agent might have `read_calendar` permission broadly but `send_email` permission only for internal recipients during business hours.
 
-Permission granularity should match blast radius, not convenience. Organizations consistently err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is exactly the pattern that makes the confused deputy attack possible[^identity-chapter].
+Permission granularity should match blast radius, not convenience. Organizations err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is exactly the pattern that makes the confused deputy attack possible[^identity-chapter].
 
 ### The Permission Intersection Problem
 
@@ -197,7 +195,7 @@ What the lifecycle looks like in practice:
 
 Deloitte reports that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. Deloitte's analysis is direct: applying AI to an existing workflow without redesigning it amplifies the inefficiency already baked into that workflow.
 
-This aligns with Shane's framing of the inferential edge: the competitive advantage is not having access to better models but having the infrastructure to deploy them effectively[^inferential-edge].
+The competitive advantage is not having access to better models but having the infrastructure to deploy them effectively[^inferential-edge].
 
 ## Mapping to PAC
 
