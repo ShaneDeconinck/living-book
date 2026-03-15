@@ -108,6 +108,10 @@ The dedicated PAC section at the end of each chapter is where the framework mapp
 
 **Rule:** Never interrupt an argument mid-paragraph to label it with PAC terminology. The PAC section at the end is for the framework mapping. The rest of the chapter is for the argument.
 
+**Subvariant (Session 460):** "This maps to the PAC Framework's X pillar." Cut 5 times across 5 chapters in a single sweep. The interpretation is unnecessary — the argument already demonstrates the connection. Naming it out loud is the tell that the prose didn't do its job. Examples removed: "This maps to the PAC Framework's Control pillar: 'Can authority only decrease?'" (cross-org-trust), "This maps to the PAC Framework's accountability requirements:" (cross-org-trust), "This maps to the PAC Framework." + full PAC pillar breakdown (multi-agent-trust), "The PAC Framework's central argument is that policy enforcement fails where architecture holds." (cryptographic-authorization), "The PAC Framework's answer is the Control pillar:" (supply-chain-security).
+
+**Rule extension:** "This maps to PAC Framework" sentences are almost always cuts. If the connection needs to be made, make it in the PAC section.
+
 ---
 
 ## Fabrication Patterns (Ghosty knows these — read this as a checklist)

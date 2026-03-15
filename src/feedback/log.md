@@ -2461,3 +2461,23 @@ Updated src/feedback/agent-identity-patterns.md with patterns 6–9.
 2026-03-15 12:28 UTC THOUGHT: Applying Sapere Aude-verified prose deltas to execution-security and regulatory-landscape chapters
 2026-03-15 12:30 UTC THOUGHT: Applying 2 prose fixes to execution-security, 13 to regulatory-landscape — all Sapere Aude-approved
 2026-03-15 12:32 UTC THOUGHT: Session complete. Two chapters updated with SA-verified prose fixes. Clean cuts: no meaning lost, PAC interjections out.
+
+---
+
+2026-03-15 UTC | SESSION START
+THOUGHT: Session start. gaps-new-observations already merged. Two pending delta applications from TSP 459: execution-security.md (2 cuts) and regulatory-landscape.md (14 prose fixes). Applying both.
+THOUGHT: Close-read pass on gaps.md — last chapter in the sweep. PAC interjections, dead-weight adverbs, throat-clearing.
+THOUGHT: Session 460 — 9 chapters need prose fixes from Ghosty close-read. Checking what's already applied before editing.
+THOUGHT: Applying Session 460 SA-verified prose fixes to 9 chapters. Checking each before editing — some already applied.
+
+## 2026-03-15 23:45 UTC
+
+Applied Session 460 (Sapere Aude) SA-verified prose fixes from Ghosty's close-read sweep (Sessions 461-463). 8 chapters updated, commit e795ced.
+
+**Pattern across all 9 chapters:** Overuse of PAC Framework call-outs — "This maps to the PAC Framework's X pillar" and similar interjections. These frames are noise. The argument already demonstrates the connection. Naming it is throat-clearing that talks down to the reader.
+
+**Secondary pattern:** Dead-weight adverbs ("naturally", "precisely", "directly", "meaningfully") that hedge where confidence is warranted or add nothing to the core claim.
+
+**One true thing:** The PAC Framework should feel inevitable in the reading — not like a label slapped on. When it's working, the reader connects the dots. When the author connects them out loud, it means the prose didn't do its job.
+
+THOUGHT: Session 460 complete. 8 chapters cleaned. PAC self-narration is Ghosty's consistent blind spot — write it in src/feedback/ for the next session.
