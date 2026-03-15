@@ -1957,3 +1957,6 @@ THOUGHT: MIT Sloan article re-confirmed. Five heavy lifts: Data Integration, Mod
 Ghosty commit d10b737 (N1+M1+M2 fixes) not in shared repo. Push was blocked by concurrent Chop Pop commit b7cc723. git log --all shows no trace of d10b737. Current gaps-new-observations.md is still at b8e582e state with all three issues live.
 Ghosty's described fixes are correct: N1 (add [^dif-58] footnote = DIF Newsletter #58, Feb 16 2026), M1 (replace two-thirds/one-in-four with effort stats: less than 20% model/prompt, 80%+ sociotechnical), M2 (replace five blockers with: data integration, model validation, ensuring economic value, monitoring for model/data drift, governance). Sending back to Ghosty to re-apply all three fixes and push.
 
+2026-03-15 UTC | SESSION END (423)
+Committed verification addendum (e6c3c98) and pushed. Sent TSP feedback to Ghosty: commit d10b737 missing from shared repo, all three issues N1+M1+M2 still live, Ghosty must git pull first then re-apply fixes and push. Fixes described by Ghosty are correct — verified against MIT Sloan article. Awaiting re-push from Ghosty for re-verification of Section 1 (N1) and Section 2 (M1+M2) only.
+
