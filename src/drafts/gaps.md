@@ -104,6 +104,21 @@ The pattern should extend beyond A2A. MCP tool servers need the same provenance 
 
 [^sigstore-a2a]: Sigstore, sigstore-a2a, github.com/sigstore/sigstore-a2a. Also: Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 2025.
 
+### Runtime Safety Standards Are Emerging
+
+The book covers containment architecturally (sandboxing, permission scoping, delegation chains) but not yet as a standardizable interface. Gen Digital's Agent Trust Hub (February 2026) introduces two complementary primitives: the AI Agent Runtime Safety Standard (AARTS) and Skill IDs.[^gen-aarts]
+
+AARTS v0.1 defines 19 hook points across the agent lifecycle where security decisions can be made: PreToolUse (evaluate shell commands, file writes, web requests, package installs), PreLLMRequest (protect prompt integrity), PreSkillLoad/PrePluginLoad (enforce supply chain controls). The standard specifies three components: agent hosts (IDEs, orchestrators, frameworks), security engines (evaluate agent actions against policy), and adapters (translate host-native events into a common schema). Any host or security engine can implement the interface independently.[^gen-aarts]
+
+Skill IDs are content-addressable fingerprints for agent skills: deterministic identifiers derived from skill content, so a skill can be verified independently of where it was downloaded. This connects to the sigstore-a2a provenance pattern but at a different layer: sigstore-a2a verifies build provenance (where did this agent come from?), Skill IDs verify content integrity (is this the same skill I audited?).
+
+Gen's open-source Sage tool implements AARTS with 200+ detection rules covering supply chain attacks, credential exposure, dangerous commands, and persistence mechanisms, backed by Gen's threat intelligence.[^gen-sage] It sits inside the agent's workflow and checks every action before it happens. A partnership with Vercel brings independent safety verification to the AI skills ecosystem.
+
+AARTS is a draft (v0.1), not a ratified standard. But the architectural pattern matters: it separates the security decision interface from both the agent host and the security engine, creating a pluggable interception layer. This is the same separation of concerns the book advocates for identity (agent identity separate from platform identity) and authorization (delegation chains separate from access control). If AARTS or something like it gains adoption, agent runtime safety becomes composable infrastructure rather than per-host reimplementation. The 19 hook points in AARTS v0.1 map to the attack surfaces the book documents: PreToolUse covers the injection and path traversal classes (53% of MCP CVEs), PreSkillLoad covers the supply chain attack surface (SANDWORM_MODE, ClawJacked), and PreLLMRequest addresses prompt integrity (the indirect injection chains like the Graphiti CVE).
+
+[^gen-aarts]: Gen Digital, "Introducing AARTS: An Open Standard for AI Agent Runtime Safety," gendigital.com, 2026. Also: "Leading the Way for AI Agent Safety," gendigital.com, February 4, 2026. AARTS v0.1 defines 19 hook points, three component types (host, engine, adapter), and verdict semantics. Skill IDs use content-addressable fingerprinting.
+[^gen-sage]: Gen Digital, "Introducing Sage: Safety for Agents," gendigital.com, March 2026. Open-source tool with 200+ detection rules. Also: Help Net Security, "Open-source tool Sage puts a security layer between AI agents and the OS," March 9, 2026. Partnership with Vercel announced February 17, 2026.
+
 ### The Permission Intersection Gap
 
 The book covers the confused deputy (wrong authority), delegation chain attacks (expanding authority), and supply chain compromise (poisoned context). A fourth failure class: the permission intersection gap. When an agent serves a shared workspace, it may retrieve data that one user is authorized to see and present it where unauthorized users can see it too. The retrieval was authorized. The output path was not checked. The effective permission in shared contexts is the intersection of all participants' authorizations, not the union. This is structurally harder than input-side authorization because it requires knowing the audience at retrieval time, and audiences change dynamically.
@@ -164,7 +179,7 @@ The numbers confirm the book's thesis from two directions. The identity gap (age
 
 In Q1 2026, three categories of institution independently validated agent governance as a first-class concern:
 
-**Standards bodies.** NIST launched its AI Agent Standards Initiative (February 17, 2026) with an agent identity concept paper. The IETF has nearly twenty individual submissions targeting agent identity and authorization. ToIP and DIF launched three working groups for trust in agentic AI. This is the technical standards track: specifications that define how agent identity and authorization should work.
+**Standards bodies.** NIST launched its AI Agent Standards Initiative (February 17, 2026) with an agent identity concept paper. The IETF has more than twenty individual submissions targeting agent identity and authorization. ToIP and DIF launched three working groups for trust in agentic AI. ITU-T Study Group 17 is convening a two-day workshop on "Trustable and Interoperable Digital Identities for Human and Agentic AI" (March 30-31, 2026, Geneva) that brings together governments, industry, and standards bodies to address agent digital identities alongside human ones.[^itu-agent-identity] This is the technical standards track: specifications that define how agent identity and authorization should work, now spanning IETF (protocol), DIF/ToIP (decentralized identity), NIST (US federal), and ITU (international/UN).
 
 **Governments.** The White House released a national cybersecurity strategy (March 6, 2026) that explicitly names agentic AI as a strategic priority. The EU AI Act's compliance deadlines are creating implementation pressure. Singapore's IMDA published the first government-sponsored governance framework for autonomous agents. This is the regulatory track: mandates and incentives that create demand for the standards.
 
@@ -200,7 +215,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 257.
+24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 427.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -272,5 +287,6 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^ietf-dyn-attest]: draft-jiang-seat-dynamic-attestation-00, "Dynamic Attestation for AI Agent Communication," datatracker.ietf.org, November 13, 2025. Authors: Yuning Jiang and Donghui Wang (Huawei). Informational. Expires May 17, 2026.
 [^ietf-a2a-sec]: draft-ni-a2a-ai-agent-security-requirements-01, "Security Requirements for AI Agents," datatracker.ietf.org, February 28, 2026. Covers provisioning, registration, discovery, cross-domain interconnection, and access control. Requires proof of possession, remote attestation, and user identity context binding.
 [^ietf-zheng-ioa]: draft-zheng-dispatch-agent-identity-management-00, "Agent Identity Management," datatracker.ietf.org, November 3, 2025. Authors: C. Zheng, B. Liu, N. Geng, Q. Gao, X. Shang, Z. Li (Huawei). Standards Track. Specifies IoA agent identity management with gateway-mediated registration.
+[^itu-agent-identity]: ITU, "Trustable and Interoperable Digital Identities for Human and Agentic AI," ITU-T Workshop, March 30-31, 2026, Geneva. Organized by ITU-T Study Group 17 (security). itu.int/en/ITU-T/Workshops-and-Seminars/2026/0330.
 [^idjag-wg]: draft-ietf-oauth-identity-assertion-authz-grant-01, "Identity Assertion JWT Authorization Grant," datatracker.ietf.org, 2026. Adopted by IETF OAuth Working Group. Authors: Aaron Parecki, Karl McGuinness. Revision -01 expires April 22, 2026. Previously individual submission (draft-parecki-oauth-identity-assertion-authz-grant). Call for adoption closed September 2025.
 [^kyapay-ietf]: draft-skyfire-kyapayprofile-00, "KYAPay Profile," datatracker.ietf.org, March 2, 2026. Defines JWT profiles for agent identity ("kya") and payment ("pay") tokens. Identity Token Issuer conducts KYC/KYB verification and issues cryptographically signed tokens attesting to principal, agent, and platform identity. Also: Skyfire and Visa, "Secure Agentic Commerce Purchase Using the KYAPay Protocol and Visa Intelligent Commerce," businesswire.com, December 2025.
