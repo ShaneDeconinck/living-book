@@ -38,7 +38,7 @@ Traditional shadow IT introduced unauthorized tools. Shadow agents introduce una
 
 A SaaS tool that an employee signs up for without IT approval has a fixed capability set. It does what the vendor built it to do. A shadow agent has an open-ended capability set: it reasons, plans, and acts based on the goal it is given and the tools it can access. Shane's example of an office assistant told to "handle my inbox" illustrates this: it might draft an email (minimal risk), then screen a job application (high-risk under the EU AI Act).[^boardroom] The risk tier depends on the prompt, not the tool.
 
-Three properties make shadow agents fundamentally different:
+Three properties make shadow agents different:
 
 **They make decisions.** Traditional shadow IT processes data. Shadow agents interpret goals, choose actions, and execute them. A shadow agent connected to a CRM does not just read customer records: it decides which customers to contact, what to say, and when to follow up.
 
@@ -163,9 +163,7 @@ Onyx Security emerged from stealth on March 12, 2026, with $40 million to build 
 
 Gartner's first-ever Market Guide for Guardian Agents (February 25, 2026) made it official: agent governance is a standalone enterprise category, not a feature of existing security tooling.[^gartner-guardian] Gartner defines guardian agents as "a blend of AI governance and AI runtime controls in the AI TRiSM framework that supports automated, trustworthy and secure AI agent activities and outcomes," with three core capabilities: visibility and traceability (understanding what agents do), continuous evaluation (ongoing behavioral assessment), and runtime enforcement (real-time policy application).[^gartner-guardian]
 
-Two findings from the guide deserve attention.
-
-First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. This is exactly the gap between Accountability and Control that the PAC Framework identifies: organizations have policies (Accountability) but lack the infrastructure to enforce them (Control). The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
+First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. This is the gap between Accountability and Control that the PAC Framework identifies: organizations have policies (Accountability) but lack the infrastructure to enforce them (Control). The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
 
 Second: by 2029, independent guardian agents will eliminate the need for almost half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
 
@@ -240,7 +238,7 @@ Gartner forecasts that AI governance spending will reach $492 million in 2026 an
 
 ## Audit Trails for Accountability
 
-Shane's boardroom question is direct: "When an agent makes a consequential decision, can you trace who authorized it and what happened?"[^boardroom] For shadow agents, the answer is definitively no. For governed agents, it must be yes.
+Shane's boardroom question is direct: "When an agent makes a consequential decision, can you trace who authorized it and what happened?"[^boardroom] For shadow agents, the answer is no. For governed agents, it must be yes.
 
 The CSA/Strata Identity survey quantifies how far most organizations are from that "yes." Only 28% of respondents can reliably trace agent actions back to a human sponsor across all environments. Only 21% maintain a real-time inventory of active agents. And nearly 80% of organizations deploying autonomous AI cannot tell, in real time, what those systems are doing or who is responsible for them.[^csa-strata-traceability] These are not organizations without governance ambitions: 40% are increasing their identity and security budgets specifically for agent risks. The gap is not intent. It is infrastructure.
 

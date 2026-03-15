@@ -32,11 +32,11 @@ The CSA identified three requirements that current infrastructure lacks:[^2]
 - **Operational envelopes**: cryptographic constraints that travel with the token and define what an agent can do, not just what resources it can access
 - **Coordinated revocation**: shared, real-time risk signals between providers so revocation in one domain invalidates access in others
 
-These requirements map directly to the Control pillar. Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
+These requirements map to the Control pillar. Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
 
 ## The Token Model's Structural Limit
 
-Nicola Gallo, co-chair of the Trusted AI Agents working group at the Decentralized Identity Foundation, framed this precisely at the LFDT Belgium meetup: we treat authority as an object.[^1] We create tokens, store them, transfer them, consume them. Whoever holds the token can exercise the authority. A stolen token works. A replayed token works. A token used in an unintended context works. Possession equals authority.
+Nicola Gallo, co-chair of the Trusted AI Agents working group at the Decentralized Identity Foundation, framed this at the LFDT Belgium meetup: we treat authority as an object.[^1] We create tokens, store them, transfer them, consume them. Whoever holds the token can exercise the authority. A stolen token works. A replayed token works. A token used in an unintended context works. Possession equals authority.
 
 This works within a perimeter. Within a single organization, you control the token issuer, the token validator, and the enforcement points between them. You can add short expiry, audience restrictions, DPoP binding. The token model's weaknesses are mitigated by the infrastructure around it.
 
@@ -58,11 +58,11 @@ Gallo reframes the structural elements of authorization:[^1][^3]
 - **Workload**: the executor that continues or creates authority
 - **Governance**: can stop, restrict, or leave authority unchanged, but never expand it
 
-The key insight: authority exists only when execution preserves the origin. This is PIC: Provenance, Identity, Continuity. The new primitive is proof of continuity instead of proof of possession.
+Authority exists only when execution preserves the origin. This is PIC: Provenance, Identity, Continuity. The new primitive is proof of continuity instead of proof of possession.
 
 Each execution step forms a virtual chain. The workload proves it can continue under the received authority, satisfying the guardrails (department membership, company affiliation, spending limit). The trust plane validates this at each step and creates the next link. Authority can only be restricted or maintained, never expanded.
 
-An important nuance: to continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. But to create authority, you need an identity and an expressed intent. That distinction is what makes the model work for agents.
+To continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. But to create authority, you need an identity and an expressed intent. That distinction is what makes the model work for agents.
 
 Under this model, the confused deputy is not detected or mitigated. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability, not an accidental confused deputy.
 
@@ -110,11 +110,9 @@ Where TMCP replaces the transport, MCP-I defines what agents must prove at the p
 
 MCP-I defines three conformance levels. Level 1 bridges legacy: foundational support using existing identifiers (OIDC, JWT) for immediate implementation. Level 2 requires full DID verification, credential-based delegation, and revocation support. Level 3 adds enterprise-tier credential lifecycle management and immutable audit trails. This graduated approach is pragmatic: organizations can start at Level 1 without rebuilding their identity infrastructure, then tighten as their agent deployments mature.[^12]
 
-The architectural significance: MCP-I and TMCP are not competing. TMCP provides the trusted channel (how messages travel securely). MCP-I provides the identity semantics (what the agent must prove before acting). Together, they address all three of Shane's MCP trust gaps: server identity (DID verification), capability proof (delegation credentials with scoped permissions), and delegation chains (VC chain from human principal through agent to service).[^1]
+MCP-I and TMCP are not competing. TMCP provides the trusted channel (how messages travel securely). MCP-I provides the identity semantics (what the agent must prove before acting). Together, they address all three of Shane's MCP trust gaps: server identity (DID verification), capability proof (delegation credentials with scoped permissions), and delegation chains (VC chain from human principal through agent to service).[^1]
 
 ## Where TSP and PIC Meet
-
-The Q&A at the LFDT meetup revealed how these approaches complement each other:[^1]
 
 **TSP solves the cross-domain trust problem.** How do you verify who you are dealing with across organizational boundaries? Verifiable identifiers, authenticated channels, delegation that travels with the request.
 
@@ -148,8 +146,6 @@ Shane's EUDI credential formats crash course walks through the four formats the 
 - **mdoc (ISO 18013-5)** excels at proximity: NFC, BLE, compact CBOR encoding. Selective disclosure through per-claim salted hashes. Designed for in-person verification.
 - **SD-JWT VC** meets the web where it is: built on the OAuth/OIDC stack, JSON encoding, selective disclosure through salted hashes in JWTs. Mastercard and Google's Verifiable Intent uses SD-JWT credential chains for delegated agent payments.
 - **W3C VC** carries meaning across borders: JSON-LD with resolvable vocabularies, so a German employer's system can interpret a Spanish diploma's qualification level deterministically, not by convention. With BBS signatures, it also provides unlinkability: each presentation generates a mathematically distinct proof.
-
-For cross-organization agent trust, the credential format matters because it determines what can travel across boundaries:
 
 | Requirement | SD-JWT VC | W3C VC |
 |---|---|---|
@@ -245,7 +241,7 @@ For agent trust, the EUDI infrastructure provides three things that do not exist
 
 **Business wallets.** Companies can authenticate themselves, sign contracts, and prove attributes required for various transactions. When combined with agent delegation credentials, business wallets become the infrastructure for proving that "this agent acts on behalf of Company X, authorized to negotiate contracts up to EUR 50,000."
 
-The EUDI Wallet is not designed for agents specifically. But the infrastructure it creates: trusted issuers, cross-border verification, selective disclosure, business credentials: is exactly the foundation that cross-organization agent trust needs. TSP is designed to interoperate with EUDI wallets. PIC can validate continuity chains anchored in EUDI-issued credentials. The pieces fit together.
+The EUDI Wallet is not designed for agents specifically. But the infrastructure it creates: trusted issuers, cross-border verification, selective disclosure, business credentials: is the foundation that cross-organization agent trust needs. TSP is designed to interoperate with EUDI wallets. PIC can validate continuity chains anchored in EUDI-issued credentials. The pieces fit together.
 
 The EU is starting to make this connection explicitly. In March 2026, the WE BUILD consortium, one of the EU's Large Scale Pilots for EUDI Wallets, issued three recommendations: develop a safe AI agent strategy built on the EUDI framework and Business Wallet infrastructure, establish standards working groups for interoperability between EUDI wallets and AI agents, and prioritize testing and pilots before regulation.[^we-build] The framing inverts the usual narrative: not "AI in wallets" (using AI to improve wallet UX) but "wallets for AI agents" (using wallet infrastructure to govern autonomous systems). The specific capabilities they identify map directly to the cross-org trust requirements: mutual authentication between agents and merchants, verification of the relationship between a human and their agent, confirmation of counterparty legitimacy, and digital signatures to distinguish authentic from AI-generated content. This is the first EU pilot consortium to explicitly recommend EUDI infrastructure as the substrate for AI agent governance.
 

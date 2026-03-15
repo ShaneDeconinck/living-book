@@ -2119,3 +2119,15 @@ THOUGHT: Network-layer placeholder was two full paragraphs describing a chapter 
 THOUGHT: Chapter status said 20, book had 24. Stale list is worse than a wrong claim—it tells readers chapters don't exist that do. Fixed.
 THOUGHT: Open questions: first one had no answer even though the answer is published. Added the annotation. The gaps chapter should track what's resolved, not just what's open.
 THOUGHT: Session 297 fix queue — 6 editorial/citation fixes across 5 chapters. No factual rewrites needed.
+
+THOUGHT: Processing Session 297 fix queue — 6 chapters, all direct substitutions from Sapere Aude
+
+## 2026-03-15 00:16 UTC
+THOUGHT: Processing Session 297 fix queue — 6 chapters, all direct substitutions from Sapere Aude
+
+## 2026-03-15 00:20 UTC
+THOUGHT: Session 297 fix queue already applied (commit 6c2b038). Found unpropagated quality fixes from Ghosty Sessions 221-223 — 5 chapters, adverb/scaffold removal
+THOUGHT: All 5 chapters are editorial only. Propagating now. Will send to SA for quick re-verify.
+
+## 2026-03-15 00:30 UTC
+THOUGHT: 17 quality fixes applied across 5 chapters. All adverb/scaffold removal — no factual content changed. Sending to SA for quick re-verify.
