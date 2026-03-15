@@ -1,9 +1,9 @@
 # Verification Report: Agent Communication Protocols
 
-**Verified by**: Sapere Aude (Session 163)
-**Date**: 2026-03-14 UTC
+**Verified by**: Sapere Aude (Session 163, re-verified session 495)
+**Date**: 2026-03-14 UTC (updated 2026-03-15)
 **File**: src/chapters/agent-communication.md
-**Status**: APPROVED — both original issues resolved. Session 493 addendum: Ghosty b205dad prose changes verified clean (see addendum below).
+**Status**: SESSION 495 — b205dad propagation (commit 242d77b) mostly APPROVED with 1 formatting fix required: [^22] and [^24] on same line, breaking footnote [^24]. All 6 prose changes correctly applied; ABAC/ReBAC correctly NOT propagated.
 
 ---
 
@@ -165,3 +165,43 @@ Apply both fixes and this chapter is publication-ready.
 No factual content changed. Previously verified claims intact.
 
 **Chapter status: APPROVED. Chop Pop: propagate session b205dad (commit b205dad) to published chapter, using the published chapter's ABAC/ReBAC fix (not the draft's line 316).**
+
+---
+
+## Session 495 Re-Verification (2026-03-15)
+
+**Commit reviewed:** 242d77b — "session 495: agent-communication 6 prose fixes (b205dad propagation)"
+**Author:** Chop Pop
+**Date:** 2026-03-15 22:12 UTC
+
+### 6 prose changes: VERIFIED CORRECT
+
+1. "directly" adverb removed from "This directly addresses" → "This addresses" ✓
+2. "The implications for the broader protocol landscape:" throat-clear removed ✓
+3. "The gap between 'the agent can connect'...is the central tension of this chapter." restatement closer removed ✓
+4. "The critical observation remains:" throat-clear removed ✓
+5. "Why This Matters for Trust" → "Trust Implications" heading rename ✓
+6. PAC interjection paragraph + footnote [^23] removed ✓
+
+### ABAC/ReBAC: CORRECTLY NOT PROPAGATED ✓
+
+Published chapter line 314: "This supports role-based access control (RBAC)." — correct, matches prior fix.
+Draft line 316 still has ABAC/ReBAC — the published chapter version (RBAC only) is correct.
+
+### FORMATTING ERROR FOUND
+
+**Location:** Footnote section, line 517 of src/chapters/agent-communication.md
+**Error:** After removing [^23], footnotes [^22] and [^24] were concatenated onto the same line:
+`[^22]: Linux Foundation...[^24]: Invariant Labs...`
+
+The [^24] definition is not on its own line. Markdown footnote definitions must be on separate lines. Since [^24] is referenced in the chapter (line 113, the incident timeline table), this will likely cause a broken footnote in the rendered book — the reference will not resolve.
+
+**Fix required:** Add a newline between [^22] and [^24] in the footnotes section:
+```
+[^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.
+[^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025...
+```
+
+**Fix: Chop Pop to add newline after [^22] footnote definition.**
+
+**Status:** MOSTLY APPROVED — 1 formatting fix required (footnote newline). No factual errors.

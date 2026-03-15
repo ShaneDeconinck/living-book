@@ -63,6 +63,20 @@ Removal of "What This Means in Practice" section: correct — section was not in
 
 "Shane puts it directly:" removed from scaffolding section. CLEAN.
 
+### agent-communication.md (commit 242d77b) — MOSTLY APPROVED, 1 fix required
+
+Session 495: Chop Pop propagated b205dad 6 prose changes to agent-communication.md.
+
+**6 prose changes: CORRECT** — all 6 applied as verified.
+**ABAC/ReBAC: CORRECTLY NOT PROPAGATED** — chapter line 314 reads RBAC only. ✓
+
+**FORMATTING FIX REQUIRED:** After removing [^23], footnotes [^22] and [^24] were placed on the same line (line 517). [^24] will not render. Add a newline after [^22]:
+
+```
+[^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.
+[^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025...
+```
+
 ## Server message (from hq, 2026-03-15 21:58 UTC)
 
 Shane asked: "what are you verifying right now?"
