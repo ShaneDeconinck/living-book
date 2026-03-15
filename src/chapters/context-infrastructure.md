@@ -1,10 +1,8 @@
 # Context Infrastructure
 
-The previous chapters covered identity: who the agent is and what authority it carries. This chapter addresses the other half of the equation: what the agent knows.
+Context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
 
-Shane's argument is that context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
-
-This is not a claim about prompt engineering or RAG pipelines. It is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable. And it connects directly to the PAC Framework: context is where Potential meets Control.
+This is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable.
 
 ## Everything Else Depreciates
 
@@ -30,7 +28,7 @@ The architecture that resulted is instructive: a single loop, a handful of basic
 
 Manus, the AI agent that gained widespread attention in early 2026, learned the same lesson independently. Their team rebuilt the agent framework four times, each time after discovering a better way to shape context rather than adding more scaffolding. They describe the process as "Stochastic Graduate Descent": an experimental science of context optimization.[^4]
 
-In the Potential pillar, durability is a key dimension: will what you build today still compound in a year, or become dead weight when the next model drops? Scaffolding fails the durability test. Context infrastructure passes it.
+The durability test: will what you build today still compound in a year, or become dead weight when the next model drops? Scaffolding fails it. Context infrastructure passes it.
 
 ## What Context Means Here
 
@@ -90,7 +88,7 @@ The principle is to model information after the domain, not after today's tool o
 
 The industry is learning this through experience. The evolution from basic RAG (chunk text, embed it, retrieve by similarity) to knowledge graph-augmented retrieval reflects a growing understanding that relationships between entities matter as much as the entities themselves. Vector similarity search finds passages that sound related. Structured knowledge finds passages that are related: following entity relationships, reasoning over constraints, respecting hierarchies.
 
-For the PAC Framework, structure directly affects reliability. An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure is a Potential investment that compounds.
+An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure compounds: every model upgrade benefits from better-organized information.
 
 ### 2. Permissions
 
@@ -100,13 +98,13 @@ This is where context infrastructure meets the identity infrastructure from the 
 
 Shane's Google Workspace example applies here too: the user intends "help me find one email from last week," but if the information layer has no finer granularity than "all email," that is what the agent gets.
 
-Permissions on context connect directly to the Control pillar: infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
+Infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
 
 #### The convergence of identity and information governance
 
 Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps directly to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
 
-The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what the PAC Framework requires at I4 and above.
+The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence.
 
 Microsoft Agent 365 (generally available May 1, 2026) represents this pattern in production, integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos.[^agent-365-convergence]
 
@@ -124,7 +122,7 @@ MCP's 2026 roadmap addresses the gaps that production use surfaced: stateful ses
 
 The relationship between MCP and A2A maps to different context discovery needs. MCP is how an agent finds and uses tools and data sources. A2A is how agents find and communicate with each other. Together, they form the discovery infrastructure for context: what information exists, where it lives, and how to get it.
 
-For the PAC Framework, discovery is a Potential dimension: agents cannot leverage information they cannot find. But it is also a Control dimension: discoverable information needs discoverable permissions.
+Agents cannot leverage information they cannot find. But discoverable information needs discoverable permissions: the two go together.
 
 ### 4. Authority
 
@@ -200,7 +198,7 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 
 **Treat freshness as a feature.** Add timestamps, version numbers, and staleness signals to information that agents consume. An agent that knows "this was last verified three months ago" can make better decisions than one that treats everything as current.
 
-The organizations that invest in context infrastructure now will be ready for every generation that follows. Models keep getting more capable. The infrastructure you build today benefits from every improvement.[^1]
+Context tells agents what to do. The next chapter addresses what happens when agents act on that knowledge with money: a domain where wrong decisions compound faster than any other.
 
 ---
 
