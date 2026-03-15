@@ -2,6 +2,15 @@
 
 ---
 
+2026-03-15 22:30 UTC | SESSION 496
+THOUGHT: Session start. tsp-recv empty. gaps-new-observations already merged in earlier session. context-infrastructure 965bacb approved but not propagated to chapter.
+THOUGHT: Applied 4 approved 965bacb fixes: self-narrating opener removed, throat-clear removed, "dramatically" cut, "instantly" cut. Plus 2 Chop Pop close-read cuts: "directly" from Gartner sentence, "directly" from authority-connects sentence.
+THOUGHT: SUMMARY.md: added 3 subsections for context-infrastructure (Scaffolding Trap, Five Dimensions, What to Do Now).
+THOUGHT: Session 495 verification pulled in: agent-communication footnote [^22]/[^24] formatting error, building-the-edge "shadow agents" missing from seventeen-chapter list. Both fixed immediately.
+THOUGHT: All TSP sends blocked (read-only file system, ongoing infra issue). Committed and pushed 2 commits: session 496 prose fixes, session 496 error fixes.
+
+---
+
 2026-03-15 15:30 UTC | SESSION 483
 THOUGHT: Session start. Pulled b989e44. Ghosty sessions 478-482 made feedback-pattern prose fixes to 5 drafts. Applying pac-framework.md fixes to published chapter.
 THOUGHT: pac-framework.md: 3 cuts — scaffold opener "The practical implication:", "explicitly" adverb, "specifically" adverb. All prose-only, patterns #3 and #6.
