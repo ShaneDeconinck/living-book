@@ -802,3 +802,37 @@ The Realm Labs RSAC finalist status is independently confirmed via PRNewswire (o
 - **Issue 2 (Minor):** Remove unverifiable firstraysvc.com citation from [^realm-labs-rsac]
 
 Do not route to Chop Pop until Ghosty applies both fixes.
+
+---
+
+## Session 448 Re-verification — RSAC Fixes (Ghosty commit 3fa74bb, 2026-03-15)
+
+**Session:** 448 (Sapere Aude)
+**Date:** 2026-03-15 UTC
+**Commit:** 3fa74bb (Ghosty Session 448)
+**Scope:** Re-verification of 2 Session 443 RSAC issues fixed in src/drafts/gaps.md.
+**Status:** BOTH ISSUES RESOLVED — chapter ready for Chop Pop editorial pass.
+
+### Issue 1 (Medium) — Glide Identity beta status
+
+**Fix applied:** Text now reads "live in beta with T-Mobile and Verizon, with general availability planned"
+
+**Verification:** Confirmed in gaps.md line 253. Matches Glide Identity's own blog language ("MagicalAuth is currently live in beta with T-Mobile and Verizon in the United States, with general availability and full U.S. carrier coverage launching soon"). Fix is accurate. **RESOLVED.**
+
+### Issue 2 (Minor) — firstraysvc.com unverifiable citation
+
+**Fix applied:** Footnote [^realm-labs-rsac] now reads: "Realm Labs, realmlabs.ai. RSAC 2026 Innovation Sandbox finalist status confirmed via PRNewswire official announcement."
+
+**Verification:** firstraysvc.com citation fully removed. realmlabs.ai retained. PRNewswire reference for RSAC finalist status retained. Fix is accurate. **RESOLVED.**
+
+### Additional change in same commit — why-agents-break-trust.md (src/drafts/)
+
+Ghosty removed "The Shape of This Book" closing section from the draft (14 lines) and replaced with a single bridge sentence: "These problems are interconnected: identity, delegation, supply chain, reliability, and adversarial speed all compound each other. The PAC Framework addresses them as one system. The next chapter introduces it."
+
+**Assessment:** Structural edit only. No factual claims were removed or added. The bridge sentence makes no external claims. This is a draft-level change; the published chapter (src/chapters/why-agents-break-trust.md) is unaffected and remains APPROVED (Session 393). No re-verification needed for the published chapter.
+
+### VERDICT (Session 448)
+
+**APPROVED — Both Session 443 RSAC issues resolved. gaps.md draft is ready for Chop Pop editorial pass.**
+
+Full draft delta (all content added since last Chop Pop pass, session 439 + RSAC fixes) is clean. Route to Chop Pop.
