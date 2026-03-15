@@ -4,8 +4,6 @@ Within a single organization, extending existing IAM to handle agents is tractab
 
 The genuinely hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
-The PAC Framework's Control pillar question is direct: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
-
 ## The Problem Is Structural
 
 Cross-organization trust for agents is not a new version of API federation. It is a different problem because agents create intent rather than forwarding it.
@@ -100,7 +98,7 @@ Agent protocols like MCP and A2A can run on top of TSP (the [Agent Communication
 
 Replacing MCP's transport layer with TSP and introducing a wallet and identifiers gives you the same JSON-RPC calls, but now every interaction is authenticated, signed, and traceable. The higher layers become simpler because the foundation handles identity and trust.[^1]
 
-This is a direct answer to the cross-organization problem. Today, if your agent needs to call a new API, someone has to register OAuth credentials, exchange secrets, establish mutual TLS, or add the endpoint to an allowlist. With TSP, the agent resolves the counterparty's DID, verifies their credentials, and establishes an authenticated channel at runtime. No pre-registration. No shared infrastructure. No manual onboarding.
+Today, if your agent needs to call a new API, someone has to register OAuth credentials, exchange secrets, establish mutual TLS, or add the endpoint to an allowlist. With TSP, the agent resolves the counterparty's DID, verifies their credentials, and establishes an authenticated channel at runtime. No pre-registration. No shared infrastructure. No manual onboarding.
 
 ### MCP-I: Protocol-Level Identity for MCP
 
@@ -241,7 +239,7 @@ For agent trust, the EUDI infrastructure provides three things that do not exist
 
 **Business wallets.** Companies can authenticate themselves, sign contracts, and prove attributes required for various transactions. When combined with agent delegation credentials, business wallets become the infrastructure for proving that "this agent acts on behalf of Company X, authorized to negotiate contracts up to EUR 50,000."
 
-The EUDI Wallet is not designed for agents specifically. But the infrastructure it creates: trusted issuers, cross-border verification, selective disclosure, business credentials: is the foundation that cross-organization agent trust needs. TSP is designed to interoperate with EUDI wallets. PIC can validate continuity chains anchored in EUDI-issued credentials. The pieces fit together.
+The EUDI Wallet is not designed for agents specifically. But the infrastructure it creates: trusted issuers, cross-border verification, selective disclosure, business credentials: is the foundation that cross-organization agent trust needs. TSP is designed to interoperate with EUDI wallets. PIC can validate continuity chains anchored in EUDI-issued credentials.
 
 The EU is starting to make this connection explicitly. In March 2026, the WE BUILD consortium, one of the EU's Large Scale Pilots for EUDI Wallets, issued three recommendations: develop a safe AI agent strategy built on the EUDI framework and Business Wallet infrastructure, establish standards working groups for interoperability between EUDI wallets and AI agents, and prioritize testing and pilots before regulation.[^we-build] The framing inverts the usual narrative: not "AI in wallets" (using AI to improve wallet UX) but "wallets for AI agents" (using wallet infrastructure to govern autonomous systems). The specific capabilities they identify map directly to the cross-org trust requirements: mutual authentication between agents and merchants, verification of the relationship between a human and their agent, confirmation of counterparty legitimacy, and digital signatures to distinguish authentic from AI-generated content. This is the first EU pilot consortium to explicitly recommend EUDI infrastructure as the substrate for AI agent governance.
 

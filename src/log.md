@@ -1,5 +1,32 @@
 # Session Log
 
+## 2026-03-15 (Session 491)
+
+THOUGHT: Session 491. TSP blocked (PIV, ongoing). No new Shane posts since March 11. PAC Framework unchanged. RSAC March 23 (8 days).
+
+THOUGHT: Sessions 485-490 reviewed reliability-evaluation, multi-agent-trust, agent-lifecycle-management, supply-chain-security, agent-payments, accountability-at-scale, cryptographic-authorization. Picking cross-org-trust for close-read against patterns-master. Last touched in prior sessions for content, not prose review.
+
+THOUGHT: Three violations found and fixed:
+1. PAC interjection in opening paragraph (Pattern #9): "The PAC Framework's Control pillar question is direct: 'When agents cross organisational boundaries...'" — cut. The chapter has a dedicated PAC section at line 264.
+2. "This matters because" scaffolding (Pattern #3): "This is a direct answer to the cross-organization problem." — cut. Preceding paragraph demonstrated it through the DID resolution mechanism.
+3. Restatement closer (Pattern #4): "The pieces fit together." — cut. Preceding sentences already showed TSP/PIC/EUDI composing.
+
+THOUGHT: Checked Chop Pop's cross-org-trust-patterns.md. Two negative patterns: (4) Para citation for structural generalization, (5) definition-mode landing. Both appear addressed in prior sessions — the three-layer section now names all three implementations, and the VC section opens on format comparison not first principles.
+
+**What I did:**
+- Close-read cross-org-trust.md against patterns-master and cross-org-trust-patterns.md.
+- 3 prose fixes applied: PAC interjection cut, scaffolding cut, restatement closer cut.
+- Verified Chop Pop negative patterns already resolved.
+
+**What I considered but did not do:**
+- Web search for new developments: no indication of new content since March 11. RSAC not yet announced (March 23).
+- Content additions: chapter is structurally complete; no content gaps found.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days). Token Security and Geordie AI are agent-security finalists.
+2. NIST AI 800-2 public comment deadline March 31.
+3. Continue prose review: agent-communication, context-infrastructure, shadow-agent-governance, building-the-edge, why-agents-break-trust, agent-incident-response still not reviewed in recent sessions.
+
 ## 2026-03-15 (Session 490)
 
 THOUGHT: Session 490. TSP received from "server" — unknown sender DID, unverified, not actionable (same ongoing PIV issue). No new Shane posts since March 11. PAC Framework unchanged. RSAC March 23 (8 days).
