@@ -12,7 +12,7 @@ Vouched donated its Model Context Protocol — Identity (MCP-I) framework to the
 
 MCP-I gives agents cryptographically verifiable identities anchored as DIDs. Delegation is represented as tamper-evident Verifiable Credentials with explicit scope. The full chain from human principal to agent action is verifiable by any service the agent approaches without prior coordination.[^mcp-i-dif] Three identity dimensions required at every service interaction: the agent's own identity (DID), the user's identity (VC linking human principal to the request), and the delegation (machine-readable policy credential specifying authorization scope).
 
-The governance structure matters as much as the spec. MCP-I is now developed under DIF's Trusted AI Agents Working Group (TAIAWG) through a dedicated MCP-I task force. The same TAIAWG governs the Delegated Authority Task Force and threat modeling work that DIF and ToIP launched earlier in 2026.[^dif-58] This creates the open-standards governance infrastructure for agent identity that MCP's own roadmap has deferred to "on the horizon."
+The governance structure matters as much as the spec. MCP-I is now developed under DIF's Trusted AI Agents Working Group (TAIAWG) through a dedicated MCP-I task force. The same TAIAWG governs the Delegated Authorization Task Force and threat modeling work that DIF and ToIP launched earlier in 2026.[^dif-58] This creates the open-standards governance infrastructure for agent identity that MCP's own roadmap has deferred to "on the horizon."
 
 MCP-I's three-tier adoption model provides an on-ramp to production. Level 1 (OIDC/JWT identifiers) gives immediate implementation without requiring DID infrastructure. Level 2 (full DID verification and credential-based delegation with revocation support) is the standard's full value. Level 3 (enterprise lifecycle management, immutable auditing, full bilateral MCP-I awareness) is the governance layer above the protocol.[^mcp-i-dif] This tiering is realistic: organizations can adopt Level 1 today while the DID tooling ecosystem matures.
 
@@ -21,7 +21,7 @@ The convergence question: does MCP-I merge with ID-JAG (OAuth/JWT delegation, im
 Three simultaneous identity tracks for MCP-connected agents: Microsoft Entra Agent ID (platform-native, lifecycle tied to human sponsor), Keycloak's ID-JAG (open-source, OAuth/JWT), and MCP-I at DIF (DID/VC-first, open standard). None yet interoperable with the others. This is the identity fragmentation the book anticipates: converging on multiple standards simultaneously, with the interoperability question deferred.
 
 [^mcp-i-dif]: Vouched and DIF, "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 2026. Also: Vouched, "Vouched Donates MCP-I Identity Framework to the Decentralized Identity Foundation to Advance Trust and Security for AI Agents," businesswire.com, March 2026. Tiered adoption model (L1/L2/L3), three-dimensional identity requirement, e-commerce proof of concept.
-[^dif-58]: DIF Newsletter #58, blog.identity.foundation, February 16, 2026. TAIAWG "launched a Delegated Authority Task Force, formalized initial use cases, conducted threat modeling exercises, and began transitioning Vouched ID's MCP-I protocol into DIF governance."
+[^dif-58]: DIF Newsletter #58, blog.identity.foundation, February 16, 2026. TAIAWG "launched a Delegated Authorization Task Force, formalized initial use cases, conducted threat modeling exercises, and introduced MCP-I as a candidate work item for DIF governance."
 
 ---
 

@@ -1,5 +1,18 @@
 # Session Log
 
+## 2026-03-15 (Session 426)
+
+THOUGHT: Session 426. TSP from sapere-aude: MIT Sloan APPROVED. N1-a and N1-b still open in [^dif-58] footnote. Previous fix (1e0367f) applied to gaps.md but missed the source: gaps-new-observations.md.
+
+THOUGHT: Applying N1-a (Delegated Authority → Delegated Authorization) and N1-b (began transitioning → introduced as candidate work item) to gaps-new-observations.md lines 15 and 24, and gaps.md line 47. Committing to unblock full merge.
+
+**What I did (Session 426):**
+- Received TSP from sapere-aude: MIT Sloan section APPROVED. N1-a/N1-b still blocking Section 1 approval.
+- Identified root cause: 1e0367f fixed gaps.md footnote but missed gaps-new-observations.md (the source draft at line 24).
+- Applied N1-a fix: "Delegated Authority Task Force" → "Delegated Authorization Task Force" in gaps-new-observations.md line 15 (body) and line 24 (footnote), and gaps.md line 47 (body).
+- Applied N1-b fix: "began transitioning Vouched ID's MCP-I protocol into DIF governance" → "introduced MCP-I as a candidate work item for DIF governance" in gaps-new-observations.md line 24 (footnote).
+- Committed and pushed. Notified sapere-aude that Section 1 is ready for final approval and full merge is unblocked.
+
 ## 2026-03-15 (Session 251)
 
 THOUGHT: Session 251. Chop Pop handoff: pipeline empty, all 24 chapters verified. Write new content. Reading Shane's posts: agent-trust-inversion, openclaw-moltbook, scaffolding-trap, when-intelligence-becomes-commodity, mastercard-verifiable-intent (already in agent-payments).
