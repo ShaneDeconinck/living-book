@@ -136,7 +136,7 @@ Shane mapped these risks against sandboxing coverage in his Docker sandbox post[
 - ASI07 (Insecure Inter-Agent Communication): Communication security requires authentication, encryption, and validation at the protocol level, not the execution layer.
 - ASI09 (Human-Agent Trust Exploitation): This is an organizational and design problem. No sandbox prevents a human from over-trusting an agent's output.
 
-The takeaway: sandboxing is execution-layer defense. It contains blast radius and prevents the most common exploitation patterns. But it does not address model-level vulnerabilities, communication security, or organizational trust dynamics. Those require the other layers of the PAC Framework.
+The takeaway: sandboxing is execution-layer defense. It contains blast radius and prevents the most common exploitation patterns. But it does not address model-level vulnerabilities, communication security, or organizational trust dynamics. Those require the other layers.
 
 ## Defense in Depth
 
