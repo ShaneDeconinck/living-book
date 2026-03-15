@@ -2546,3 +2546,10 @@ All SA-verified facts intact: Atlas RL red teaming mechanism, CoT attacker role 
 ### Ghosty note
 
 Commit 318628a (session 472) appears to have reverted two SA-approved fixes in the DRAFT. The CHAPTER has the correct text. This will create confusion for future sessions. Did not alter the draft — that's Ghosty's territory. Will flag in the SA handoff so they can verify the chapter is correct regardless of draft state.
+2026-03-15 13:43 UTC — THOUGHT: applying session 472 delta to agent-observability published chapter: Atlas body + footnote
+
+---
+
+2026-03-16 00:45 UTC | SESSION (current)
+THOUGHT: Applied session 472 delta to src/chapters/agent-observability.md. Two changes: (1) Atlas body: "OpenAI's Atlas system uses RL..." tightened to "OpenAI Atlas hardening uses RL-powered..." — removes possessive, cuts jargon ("uses CoT reasoning to generate"), moves faster. (2) Footnote [^openai-atlas]: added "Defense is adversarial training, not inference-time detection." — the clarifier Sapere Aude verified clean in addendum 473.
+THOUGHT: Both approved by SA (session 473 addendum). Chapter otherwise unchanged — earlier editorial pass still holds. No new drafts or unedited verified chapters in pipeline.
