@@ -111,11 +111,11 @@ Tool trust failures distribute across all three PAC pillars.
 
 | | Potential | Authorization | Control |
 |---|---|---|---|
-| **I1 — Ad hoc** | No tool allowlist; any tool the LLM discovers is available | No per-tool authorization; all tools share agent's credentials | No description monitoring; no behavioral baseline |
-| **I2 — Aware** | Tool inventory maintained; no enforcement | Tool scopes documented; not enforced at call time | Description changes logged; not blocked |
-| **I3 — Structured** | Tool allowlist enforced at connection; unknown tools rejected | Tool calls carry distinct scopes from agent authorization | Gateway intercepts descriptions; static analysis for injection patterns |
-| **I4 — Managed** | Tool behavior attested at registration; deviations flagged | Ghost token pattern at tool layer; credentials scoped per call | Behavioral monitoring with anomaly detection; rug pull triggers re-review |
-| **I5 — Optimized** | Tool descriptions verified against behavior through sandbox testing | Tool authorization as delegation chain event, auditable and reversible | Continuous behavioral baseline with human-in-the-loop thresholds for high-risk operations |
+| **I1: Ad hoc** | No tool allowlist; any tool the LLM discovers is available | No per-tool authorization; all tools share agent's credentials | No description monitoring; no behavioral baseline |
+| **I2: Aware** | Tool inventory maintained; no enforcement | Tool scopes documented; not enforced at call time | Description changes logged; not blocked |
+| **I3: Structured** | Tool allowlist enforced at connection; unknown tools rejected | Tool calls carry distinct scopes from agent authorization | Gateway intercepts descriptions; static analysis for injection patterns |
+| **I4: Managed** | Tool behavior attested at registration; deviations flagged | Ghost token pattern at tool layer; credentials scoped per call | Behavioral monitoring with anomaly detection; rug pull triggers re-review |
+| **I5: Optimized** | Tool descriptions verified against behavior through sandbox testing | Tool authorization as delegation chain event, auditable and reversible | Continuous behavioral baseline with human-in-the-loop thresholds for high-risk operations |
 
 Most early production deployments are I1. The WhatsApp attack required only I3 defenses to prevent: a gateway that detected the cross-server instruction in the description field. It succeeded because I1 deployments present descriptions to the LLM without inspection.
 

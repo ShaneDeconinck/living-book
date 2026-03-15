@@ -16,8 +16,8 @@ The network layer (Layers 3-4) sees none of this. Traditional security infrastru
 
 When an agent invokes a tool, two enforcement points exist:
 
-1. **Application layer**: the gateway, if one is deployed, enforces policy on the tool call itself — what tool, what parameters, under what authorization.
-2. **Network layer**: the SASE or firewall enforces policy on the IP connection — destination allowed, traffic volume within baseline, TLS certificate valid.
+1. **Application layer**: the gateway, if one is deployed, enforces policy on the tool call itself: what tool, what parameters, under what authorization.
+2. **Network layer**: the SASE or firewall enforces policy on the IP connection: destination allowed, traffic volume within baseline, TLS certificate valid.
 
 Neither layer alone is sufficient. The application-layer gateway can be bypassed if agents are deployed without one. The network layer cannot enforce what it cannot see. Defense-in-depth for agent traffic requires both layers to understand agent semantics.
 
@@ -31,9 +31,9 @@ Four capabilities are relevant:
 
 **Intent-Aware Inspection.** The platform combines rapid detection with cloud-based analysis to evaluate the intent behind agentic messages and actions. This is a materially different capability than signature-based inspection: instead of matching known-bad patterns, it reasons about what the agent is attempting to do. A request to read emails is different from a request to delete emails, even if both use the same API endpoint and OAuth scope.
 
-**AI Bill of Materials.** The platform provides centralized visibility and inventory of AI component dependencies — models, agents, tools, and prompts — including the third-party tools agents connect to. The security team can inventory which AI components and tool dependencies are in use and assess their supply chain risk.[^cisco-ai-bom]
+**AI Bill of Materials.** The platform provides centralized visibility and inventory of AI component dependencies (models, agents, tools, and prompts), including the third-party tools agents connect to. The security team can inventory which AI components and tool dependencies are in use and assess their supply chain risk.[^cisco-ai-bom]
 
-**AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-traffic-opt] Agent traffic is bursty, latency-sensitive, and long-lived — unlike human web traffic. Infrastructure that cannot distinguish the two cannot optimize for either.
+**AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-traffic-opt] Agent traffic is bursty, latency-sensitive, and long-lived (unlike human web traffic). Infrastructure that cannot distinguish the two cannot optimize for either.
 
 The significance of Cisco's approach is architectural, not just commercial. When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 (application developers building gateways, network teams enforcing generic HTTPS policies) is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
 
@@ -49,23 +49,23 @@ agentdns://{organization}/{category}/{name}
 
 Service discovery in AgentDNS uses natural-language queries processed by a root server using retrieval-augmented generation: an agent queries "find a tool that can search recent academic papers" and receives a resolved endpoint. A single authentication with AgentDNS replaces per-vendor registration, and the system is designed to be compatible with both MCP and A2A.
 
-The governance implication: a root-domain naming system for agents creates a layer where discovery itself can be governed. Today, an agent discovers MCP servers through environment variables, hardcoded URLs, or MCP registries that each vendor maintains independently. AgentDNS would centralize this discovery — which also centralizes the ability to revoke access for a compromised or deregistered server.
+The governance implication: a root-domain naming system for agents creates a layer where discovery itself can be governed. Today, an agent discovers MCP servers through environment variables, hardcoded URLs, or MCP registries that each vendor maintains independently. AgentDNS would centralize this discovery (which also centralizes the ability to revoke access for a compromised or deregistered server).
 
-This connects to supply chain security. A malicious MCP server in the SANDWORM_MODE campaign (19 typosquatting npm packages documented in [Agent Supply Chain Security](supply-chain-security.md)) achieved reach by being installable and discoverable through package registries.[^sandworm-mode] A governance layer at the naming level — where discovering a server requires a verifiable identity claim — raises the bar for these attacks.
+This connects to supply chain security. A malicious MCP server in the SANDWORM_MODE campaign (19 typosquatting npm packages documented in [Agent Supply Chain Security](supply-chain-security.md)) achieved reach by being installable and discoverable through package registries.[^sandworm-mode] A governance layer at the naming level (where discovering a server requires a verifiable identity claim) raises the bar for these attacks.
 
-AgentDNS is an early-stage draft. Its operational characteristics — governance of the root server, conflict resolution for namespace collisions, key rotation — are not yet specified. The proposal names a problem that is real. The solution has not yet been stress-tested.
+AgentDNS is an early-stage draft. Its operational characteristics (governance of the root server, conflict resolution for namespace collisions, key rotation) are not yet specified. The proposal names a problem that is real. The solution has not yet been stress-tested.
 
 ## Semantic Routing
 
-Conventional routing sends packets based on destination: IP address, port, protocol. Agent traffic has a property that conventional routing ignores: semantic intent. A request to summarize documents and a request to delete documents may be directed to the same endpoint, carry the same authorization header, and be indistinguishable at the network layer — but they have different risk profiles.
+Conventional routing sends packets based on destination: IP address, port, protocol. Agent traffic has a property that conventional routing ignores: semantic intent. A request to summarize documents and a request to delete documents may be directed to the same endpoint, carry the same authorization header, and be indistinguishable at the network layer. But they have different risk profiles.
 
 Two IETF drafts propose infrastructure to address this.
 
 **SIRP** (Semantic Inference Routing Protocol, draft-chen-nmrg-semantic-inference-routing-00) proposes model-agnostic, content-driven classification and routing before backend invocation.[^sirp-draft] Rather than routing based on client metadata, SIRP routes based on the content of the request itself. The draft defines standardized header signaling for semantic routing decisions and a pluggable pipeline of Value-Added Routing (VAR) modules: cost optimization, urgency prioritization, domain specialization, privacy-aware handling. A request marked by SIRP as a destructive operation can be routed to a different enforcement path than a read-only request, even when both are directed to the same tool.
 
-**Agent Communication Gateway** (draft-agent-gw-01) is a broader proposal for large-scale, heterogeneous, multi-agent collaboration across administrative and protocol boundaries.[^agent-gw-draft] Its core functions: semantic routing (dispatching tasks by agent capability), working memory (shared structured context across multi-step workflows), and automated protocol adaptation (normalizing heterogeneous interfaces into a unified agent-facing protocol). The draft references MCP and A2A as illustrative examples of protocols the gateway would adapt between — MCP for agent-to-external-resource communication, A2A for agent-to-agent coordination — but does not specify them as native implementations.
+**Agent Communication Gateway** (draft-agent-gw-01) is a broader proposal for large-scale, heterogeneous, multi-agent collaboration across administrative and protocol boundaries.[^agent-gw-draft] Its core functions: semantic routing (dispatching tasks by agent capability), working memory (shared structured context across multi-step workflows), and automated protocol adaptation (normalizing heterogeneous interfaces into a unified agent-facing protocol). The draft references MCP and A2A as illustrative examples of protocols the gateway would adapt between (MCP for agent-to-external-resource communication, A2A for agent-to-agent coordination) but does not specify them as native implementations.
 
-Neither SIRP nor Agent-GW is a deployed standard. Both are -00 and -01 drafts. The infrastructure they describe — semantic classification at routing time, shared working memory, intent-aware traffic handling — does not exist in production at scale as of March 2026.
+Neither SIRP nor Agent-GW is a deployed standard. Both are -00 and -01 drafts. The infrastructure they describe (semantic classification at routing time, shared working memory, intent-aware traffic handling) does not exist in production at scale as of March 2026.
 
 What they signal: the network layer is beginning to treat agent semantics as a first-class routing concern. The separation between what the agent is trying to do (application-layer knowledge) and how the traffic is routed (network-layer decision) is what these drafts aim to collapse.
 
@@ -77,7 +77,7 @@ As of March 2026, there is no native MCP or A2A awareness in Istio or Envoy core
 
 The open question from the gaps chapter is whether agent gateways and service meshes converge. The evidence so far: they have not. Agent gateways (AgentGateway, Traefik Hub, Microsoft MCP Gateway) are deployed alongside service meshes, not integrated with them. The observability planes do not connect. The policy models do not share primitives. An enterprise running both Istio and AgentGateway has two separate governance layers for two types of service traffic, without a unified view.
 
-Cisco AI-Aware SASE operating at the network layer may represent the convergence point the service mesh question was pointing toward — not merging gateways with meshes, but adding a network-layer enforcement plane that sits above both.
+Cisco AI-Aware SASE operating at the network layer may represent the convergence point the service mesh question was pointing toward: not merging gateways with meshes, but adding a network-layer enforcement plane that sits above both.
 
 ## The Composition Architecture
 
@@ -97,7 +97,7 @@ The composition:
 
 That matters: enterprise security teams operate the network layer and security buyers fund it. Agent security that exists only at the application layer must be funded and operated by the development teams building agents. Agent security at the network layer becomes part of the existing enterprise security stack.
 
-The practical implication for architects: design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose — Cisco AI-Aware SASE and AgentGateway have separate observability planes — but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
+The practical implication for architects: design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose (Cisco AI-Aware SASE and AgentGateway have separate observability planes), but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
 
 ## Mapping to PAC
 
@@ -119,7 +119,7 @@ The limitation: network-layer control is coarser than application-layer control.
 | **I4** Governed | Semantic routing and naming | AgentDNS integration for tool discovery governance. SIRP or equivalent semantic routing active. Intent-aware inspection provides audit records correlated with application-layer gateway logs. Supply chain verification at naming layer. |
 | **I5** Composed | Full defense-in-depth | Application-layer gateways and network-layer enforcement share policy models and audit trails. Semantic routing enforces PAC policies across both layers. Shadow agent detection at network layer. Network-layer revocation integrates with agent lifecycle management. |
 
-Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exists (Cisco AI-Aware SASE, MCP-aware proxies). I4 requires IETF drafts (AgentDNS, SIRP) to mature to implementation. I5 requires both application and network observability planes to integrate — work that has not yet been built.
+Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exists (Cisco AI-Aware SASE, MCP-aware proxies). I4 requires IETF drafts (AgentDNS, SIRP) to mature to implementation. I5 requires both application and network observability planes to integrate. That work has not yet been built.
 
 ## What to Do Now
 
@@ -129,7 +129,7 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 
 **Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Assess whether its AI BOM and intent inspection capabilities address your threat model. The product launched in February 2026; operational characteristics at enterprise scale are not yet documented.
 
-**Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics — governance of root servers, key management, namespace arbitration — are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
+**Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics (governance of root servers, key management, namespace arbitration) are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
 
 **Design observability to correlate both layers.** The application-layer gateway knows what tool call was made and whether it was authorized. The network layer knows what connection was made and what intent was inferred. A correlated audit trail is what the Accountability pillar requires. The two planes do not currently integrate; design your observability architecture for the integration you will need, even if you implement it in phases.
 

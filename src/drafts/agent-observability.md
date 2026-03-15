@@ -4,7 +4,7 @@ In March 2026, Irregular placed agents on a corporate network with legitimate ta
 
 But the problem predates fleets. A single expense-approval agent authorized $47,000 in vendor payments. The audit log showed alice@company.com. It captured the outcome. It did not capture the delegation chain, the model that decided, the inputs at decision time, or the authority under which the agent acted.[^trust-for-agentic-ai] When accountability was needed, the log had what happened but not what decided.
 
-"What it decided and what authority it had to decide it" is Shane's framing for what agent governance requires.[^trust-for-agentic-ai] It is also the frame that defines what observability infrastructure must capture — and what current tooling mostly does not.
+"What it decided and what authority it had to decide it" is Shane's framing for what agent governance requires.[^trust-for-agentic-ai] It is also the frame that defines what observability infrastructure must capture. Current tooling mostly does not.
 
 ## Three Layers That Agents Conflate
 
@@ -14,7 +14,7 @@ Monitoring, logging, and tracing are conceptually distinct. For traditional soft
 
 **Logging** asks: what did the agent do? Every tool call, API invocation, and resource access, with timestamps, inputs, and outputs. Logging infrastructure for agents exists and is improving. OpenTelemetry's GenAI semantic conventions define a standardized schema for LLM spans: model, request parameters, token counts, completion content.[^otel-genai] These let organizations correlate LLM calls across agents using existing distributed tracing infrastructure.
 
-**Tracing** asks: why did the agent decide this? What upstream inputs, what delegation authority, what model state produced this action? Traditional distributed tracing follows synchronous request-response chains. Agents produce asynchronous, nondeterministic chains of reasoning. The interesting event in an agent interaction is not which API was called but which upstream context caused the call — a semantic question that telemetry frameworks were not designed to answer.
+**Tracing** asks: why did the agent decide this? What upstream inputs, what delegation authority, what model state produced this action? Traditional distributed tracing follows synchronous request-response chains. Agents produce asynchronous, nondeterministic chains of reasoning. The interesting event in an agent interaction is not which API was called but which upstream context caused the call (a semantic question that telemetry frameworks were not designed to answer).
 
 Decision provenance is what current observability does not capture.
 
@@ -53,7 +53,7 @@ Every logged action gets its authorization context appended:
 }
 ```
 
-RFC 8693 On-Behalf-Of tokens record both the human who delegated and the agent who acted.[^rfc-8693] Structured audit logs that record the token as part of every action make the delegation chain auditable. Without this layer, logs show what happened but not whether the agent was authorized to do it — and the $47,000 audit trail remains incomplete.
+RFC 8693 On-Behalf-Of tokens record both the human who delegated and the agent who acted.[^rfc-8693] Structured audit logs that record the token as part of every action make the delegation chain auditable. Without this layer, logs show what happened but not whether the agent was authorized to do it. The $47,000 audit trail remains incomplete.
 
 The `token_expiry` field captures a dimension other fields miss. A delegation granted three months ago may have been appropriate at grant time and inappropriate at execution time. Without the timestamp, that gap is invisible.
 
@@ -89,7 +89,7 @@ Distributed trace IDs that span agent boundaries. Every action in a multi-agent 
 }
 ```
 
-OpenTelemetry's distributed tracing model provides the infrastructure pattern: context propagation headers that link downstream spans to upstream spans across service boundaries.[^opentelemetry] Extending this to agents requires propagating trace context through every inter-agent communication — including shared data store reads, A2A messages, and MCP tool results.
+OpenTelemetry's distributed tracing model provides the infrastructure pattern: context propagation headers that link downstream spans to upstream spans across service boundaries.[^opentelemetry] Extending this to agents requires propagating trace context through every inter-agent communication: shared data store reads, A2A messages, and MCP tool results.
 
 The key distinction from service tracing: agent causality includes semantic causality, not just invocation causality. Agent B did not call Agent A. Agent B read A's output from a shared store and acted on it. The causal link is semantic. Capturing it requires explicit trace ID injection at the point of reading shared outputs, not only at API call boundaries.
 
@@ -112,7 +112,7 @@ This layer does not require behavioral AI or anomaly detection models to be usef
 
 **OpenTelemetry GenAI semantic conventions** cover Layers 1 and 3 partially.[^otel-genai] LLM span attributes for model, request parameters, token counts, and completion content are standardized. The agent span conventions extend this with `create_agent` and `invoke_agent` operations, plus `gen_ai.agent.name`, `gen_ai.agent.id`, `gen_ai.agent.description`, and `gen_ai.agent.version` attributes: agent identity at the telemetry level.[^otel-agent-spans] What they do not cover: Layer 2 (no attributes for delegation chain or token scope), Layer 4 (no agent-specific trace propagation for semantic causality), Layer 5 (no fleet aggregation specification). The agent span conventions move OTel closer to full Layer 1 coverage for agent operations, but the accountability-critical layers remain outside the specification.
 
-**W3C PROV-DM** defines a formal provenance model with three entity types: Agent (the entity responsible), Activity (what happened), and Entity (what was produced or used).[^prov-dm] The model is expressive enough to capture agent decision chains. It is not adopted in practice in agent frameworks — the gap is adoption, not expressiveness.
+**W3C PROV-DM** defines a formal provenance model with three entity types: Agent (the entity responsible), Activity (what happened), and Entity (what was produced or used).[^prov-dm] The model is expressive enough to capture agent decision chains. It is not adopted in practice in agent frameworks (the gap is adoption, not expressiveness).
 
 **CloudEvents** standardizes the event envelope but defines no schema for agent-specific content. Organizations using CloudEvents for their event infrastructure can use it as the carrier for agent action logs, but must define the payload schema themselves.
 
@@ -122,25 +122,25 @@ The standards gap is at Layers 2 and 4: delegation capture and semantic causalit
 
 Logs are only as useful as the mechanism that produced them. An agent that knows its actions are logged in a specific location can selectively corrupt that location if it has write access to it.
 
-Infrastructure-level logging is more tamper-resistant than agent-level logging. When the logging mechanism sits outside the agent's execution environment — in a gateway, sidecar, or platform layer — the agent cannot suppress its own logs without access to the infrastructure. This applies the same principle as the distinction between agent-layer authorization checks and infrastructure-layer authorization enforcement: the entity that benefits from overriding a check should not be the entity enforcing it.
+Infrastructure-level logging is more tamper-resistant than agent-level logging. When the logging mechanism sits outside the agent's execution environment (in a gateway, sidecar, or platform layer), the agent cannot suppress its own logs without access to the infrastructure. This applies the same principle as the distinction between agent-layer authorization checks and infrastructure-layer authorization enforcement: the entity that benefits from overriding a check should not be the entity enforcing it.
 
 For high-stakes deployments, append-only log stores with cryptographic sealing provide additional assurance. The Certificate Transparency model is applicable: each log entry is included in a Merkle tree whose root is published externally.[^cert-transparency] Retrospective insertion or deletion is detectable because it requires recalculating all tree roots from the point of modification forward. An agent, or an attacker who has compromised an agent, cannot alter the log without leaving a detectable signature.
 
 ## Mapping to PAC
 
-The [Agent Identity and Delegation](agent-identity.md) chapter covers the credential formats (OBO, DPoP, Verifiable Intent) that Layer 2 records. The [Agent Accountability at Scale](accountability-at-scale.md) chapter covers causal graphs and the fleet attribution problem that Layers 4 and 5 address. The [Agent Incident Response](agent-incident-response.md) chapter covers what you do when something goes wrong — but incident response without Layers 1-4 in place is reconstruction from fragments. [Shadow Agent Governance](shadow-agent-governance.md) establishes that agents outside the registry have no observability by definition; Layer 5 fleet aggregation is what surfaces their presence through behavioral signals.
+The [Agent Identity and Delegation](agent-identity.md) chapter covers the credential formats (OBO, DPoP, Verifiable Intent) that Layer 2 records. The [Agent Accountability at Scale](accountability-at-scale.md) chapter covers causal graphs and the fleet attribution problem that Layers 4 and 5 address. The [Agent Incident Response](agent-incident-response.md) chapter covers what you do when something goes wrong. Incident response without Layers 1-4 in place is reconstruction from fragments. [Shadow Agent Governance](shadow-agent-governance.md) establishes that agents outside the registry have no observability by definition; Layer 5 fleet aggregation is what surfaces their presence through behavioral signals.
 
 An agent that is right 99.9% of the time without Layers 2-3 in place is less accountable than one that is right 95% with them, because when the 0.1% failure happens, you cannot prove what authority existed, which model decided, or whether the system prompt was as intended.[^agent-profiler]
 
 | Level | Potential | Accountability | Control |
 |---|---|---|---|
-| **I1 — Open** | No action logging; agent behavior is unobservable | No audit trail; delegation is untrackable | Agents operate without observable footprint |
-| **I2 — Logging** | Action logs with timestamps; tool calls and outcomes recorded | Agent identity recorded per action; delegation chain absent | Log completeness depends on agent compliance |
-| **I3 — Verified** | Decision context logged (model ID, system prompt hash); causal correlation within single-agent workflows | Delegation chain captured via OBO tokens; token scope recorded at every action | Infrastructure-level logging; agent cannot suppress its own log |
-| **I4 — Managed** | Cross-agent trace IDs propagated; semantic causality captured across multi-agent workflows | Full delegation chain auditable from human principal to acting agent; token expiry logged | Fleet-level behavioral aggregation; coordination pattern detection operational |
-| **I5 — Optimized** | Behavioral baselines per agent type; drift detection automated; fleet patterns reviewed against authorized behavior | Append-only log stores with cryptographic sealing; tamper detection operational | Real-time anomaly signals with human-in-the-loop escalation for threshold breaches |
+| **I1: Open** | No action logging; agent behavior is unobservable | No audit trail; delegation is untrackable | Agents operate without observable footprint |
+| **I2: Logging** | Action logs with timestamps; tool calls and outcomes recorded | Agent identity recorded per action; delegation chain absent | Log completeness depends on agent compliance |
+| **I3: Verified** | Decision context logged (model ID, system prompt hash); causal correlation within single-agent workflows | Delegation chain captured via OBO tokens; token scope recorded at every action | Infrastructure-level logging; agent cannot suppress its own log |
+| **I4: Managed** | Cross-agent trace IDs propagated; semantic causality captured across multi-agent workflows | Full delegation chain auditable from human principal to acting agent; token expiry logged | Fleet-level behavioral aggregation; coordination pattern detection operational |
+| **I5: Optimized** | Behavioral baselines per agent type; drift detection automated; fleet patterns reviewed against authorized behavior | Append-only log stores with cryptographic sealing; tamper detection operational | Real-time anomaly signals with human-in-the-loop escalation for threshold breaches |
 
-Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent — present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
+Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent (present in deliberate deployments, absent in most shadow agents). Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
 
 ## What to Do Now
 
@@ -148,7 +148,7 @@ Layer 1 is increasingly available through platform-native tooling: Microsoft Age
 
 **Add identity capture before fleet scale.** OBO tokens make the delegation chain explicit at the credential level. The logging layer records what the token says. Retrofitting this at ten agents is feasible; retrofitting at three hundred requires re-instrumenting every agent in production.
 
-**Use infrastructure-level logging for high-stakes agents.** Any agent with B4+ blast radius — regulated consequences, financial authority, customer-facing decisions — should log through a gateway or sidecar that the agent cannot write to. Agent-level logging is sufficient for low-stakes deployments; it is insufficient when the log is evidence.
+**Use infrastructure-level logging for high-stakes agents.** Any agent with B4+ blast radius (regulated consequences, financial authority, customer-facing decisions) should log through a gateway or sidecar that the agent cannot write to. Agent-level logging is sufficient for low-stakes deployments; it is insufficient when the log is evidence.
 
 **Plan for causal trace IDs before multi-agent deployment.** Distributed trace context is straightforward to add when designing a multi-agent workflow; it is hard to retrofit after agents are in production because every inter-agent communication path must propagate the trace. Define the format and propagation mechanism before the workflow ships, not during incident investigation.
 
