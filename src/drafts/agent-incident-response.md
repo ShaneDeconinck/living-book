@@ -90,7 +90,7 @@ Most enterprise agent deployments are at I1 or I2. The CoSAI and OWASP framework
 
 ## PAC Framework: Incident Response as Accountability Infrastructure
 
-Three PAC Accountability questions bear directly on incident response:
+Three PAC Accountability questions bear on incident response:
 
 **A2: If an agent causes harm, is the liability chain clear?** The liability chain must be documented before the incident to be usable during one. This means: each agent has a registered owner, each delegation has a documented grant event, and each credential scope is recorded at issuance. Organizations that have not done this work before the first incident cannot do it under incident conditions.
 

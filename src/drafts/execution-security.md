@@ -178,7 +178,7 @@ Before agent output reaches the user or triggers downstream actions, scan for se
 
 Agents should receive only the credentials they need for the current task, with the shortest practical lifetime. The NVIDIA guidance recommends explicit secret injection rather than inheriting host credentials[^nvidia-sandbox]. This prevents the accumulation of stale credentials inside the sandbox and limits the damage from a compromised agent to the scope of its current task.
 
-This connects directly to the identity and delegation architecture from [Agent Identity and Delegation](agent-identity.md). Short-lived, task-scoped tokens (OAuth OBO with DPoP binding, or Verifiable Intent constraints) are the authorization analog of execution sandboxing: they constrain what the agent can do even if it escapes the sandbox.
+This connects to the identity and delegation architecture from [Agent Identity and Delegation](agent-identity.md). Short-lived, task-scoped tokens (OAuth OBO with DPoP binding, or Verifiable Intent constraints) are the authorization analog of execution sandboxing: they constrain what the agent can do even if it escapes the sandbox.
 
 ### Layer 6: Behavioral Monitoring
 

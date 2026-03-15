@@ -252,7 +252,7 @@ The framework distills each pillar into concrete questions designed for stakehol
 
 14. **When agents delegate to other agents, can authority only decrease?** The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter covers Delegation Capability Tokens and PIC. Authority attenuation at every hop is a non-negotiable property for multi-agent systems.
 
-15. **What happens when human oversight breaks down in practice?** The [Human-Agent Collaboration](human-agent-collaboration.md) chapter and the [Reliability, Evaluation](reliability-evaluation.md) chapter address this directly. Bainbridge's irony: the more reliable the agent, the less attentive the human overseer. Infrastructure-in-the-loop replaces sustained human vigilance.
+15. **What happens when human oversight breaks down in practice?** The [Human-Agent Collaboration](human-agent-collaboration.md) chapter and the [Reliability, Evaluation](reliability-evaluation.md) chapter address this. Bainbridge's irony: the more reliable the agent, the less attentive the human overseer. Infrastructure-in-the-loop replaces sustained human vigilance.
 
 16. **How do you balance agent quality with data privacy?** Agents need context to perform well, but data governance constrains what they can access. [Context Infrastructure](context-infrastructure.md) addresses the permissioning layer. [The Regulatory Landscape](regulatory-landscape.md) sets the legal constraints.
 

@@ -120,7 +120,7 @@ ISO 42001 does not solve the technical problems of agent identity or authorizati
 
 On March 6, 2026, the White House released "President Trump's Cyber Strategy for America," a seven-page framework organized around six policy pillars. Pillar 5 ("Sustain Superiority in Critical and Emerging Technologies") explicitly names agentic AI as a strategic priority: securing the AI technology stack from data centers to models while "promoting agentic AI to scale network defense." An accompanying Executive Order on "Combating Cybercrime, Fraud, and Predatory Schemes Against American Citizens" was issued the same day.[^whitehousecyber]
 
-This is the first national cybersecurity strategy globally to directly address agentic AI. But the framing is different from the EU's. Where the EU AI Act classifies and restricts AI systems by risk tier, the U.S. strategy promotes and secures: it treats agentic AI as a capability advantage to be deployed for autonomous threat detection and disruption, not a risk to be governed through classification.[^whitehousecyber]
+This is the first national cybersecurity strategy globally to address agentic AI. But the framing is different from the EU's. Where the EU AI Act classifies and restricts AI systems by risk tier, the U.S. strategy promotes and secures: it treats agentic AI as a capability advantage to be deployed for autonomous threat detection and disruption, not a risk to be governed through classification.[^whitehousecyber]
 
 The strategy's six pillars have implications for agent trust infrastructure:
 

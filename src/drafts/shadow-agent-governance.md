@@ -276,7 +276,7 @@ Shadow agent governance touches all three pillars:
 |---|---|
 | **Potential: Business Value** | Shadow agents prove where value exists. Discovery reveals which processes employees are automating, providing a map of the highest-value agent use cases. |
 | **Potential: Durability** | The governed path (registry + infrastructure enforcement) is the durable investment. Shadow agents are fragile: they break when tokens expire, APIs change, or employees leave. |
-| **Accountability: Shadow Agents** | This chapter directly addresses the dimension. The goal is zero: every agent registered, every delegation traceable. |
+| **Accountability: Shadow Agents** | This chapter addresses the dimension. The goal is zero: every agent registered, every delegation traceable. |
 | **Accountability: Liability Chains** | Registration establishes ownership. Audit trails establish causation. Together they answer "who is responsible when this agent acts?" |
 | **Accountability: Regulatory Landscape** | The EU AI Act requires documentation of AI systems. Shadow agents are undocumented by definition. The registry is the compliance artifact. |
 | **Control: Infrastructure as Gate** | Registry enforcement through identity providers, gateways, and network controls makes governance structural, not advisory. |

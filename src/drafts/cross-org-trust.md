@@ -8,7 +8,7 @@ The PAC Framework's Control pillar question is direct: "When agents cross organi
 
 ## The Problem Is Structural
 
-Cross-organization trust for agents is not a new version of API federation. It is a fundamentally different problem because agents create intent rather than forwarding it.
+Cross-organization trust for agents is not a new version of API federation. It is a different problem because agents create intent rather than forwarding it.
 
 When traditional software integrates across organizations, the interaction pattern is predictable: API A calls API B with predetermined parameters. The trust model is static: mutual TLS, shared API keys, OAuth client credentials. Both sides know in advance what calls will be made and what data will flow.
 

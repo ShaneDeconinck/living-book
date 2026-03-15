@@ -58,7 +58,7 @@ Lance Martin expanded this into a comprehensive framework for context engineerin
 
 ### Manus: KV-Cache as North Star
 
-Manus brought a production engineering lens to context management. The KV-cache hit rate is the single most important metric for a production-stage AI agent, directly affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, dramatically different from typical chatbot scenarios.[^4]
+Manus brought a production engineering lens to context management. The KV-cache hit rate is the single most important metric for a production-stage AI agent, affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, dramatically different from typical chatbot scenarios.[^4]
 
 From this, they derived concrete principles:
 
@@ -104,7 +104,7 @@ Permissions on context connect to the Control pillar: infrastructure-level enfor
 
 #### The convergence of identity and information governance
 
-Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps directly to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
+Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
 
 The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what the PAC Framework requires at I4 and above.
 
@@ -116,7 +116,7 @@ The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem
 
 Agents need to find what they need. Two protocols are emerging as the standard discovery layer:
 
-**MCP (Model Context Protocol)** handles tool and resource discovery for agents. Originally released by Anthropic in November 2024, MCP has evolved rapidly. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation. OpenAI adopted it across the Agents SDK, Responses API, and ChatGPT desktop. Google DeepMind confirmed support in Gemini models. The protocol now sees 98.6 million monthly SDK downloads across Python and TypeScript.[^7]
+**MCP (Model Context Protocol)** handles tool and resource discovery for agents. Originally released by Anthropic in November 2024, MCP has evolved fast. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation. OpenAI adopted it across the Agents SDK, Responses API, and ChatGPT desktop. Google DeepMind confirmed support in Gemini models. The protocol now sees 98.6 million monthly SDK downloads across Python and TypeScript.[^7]
 
 MCP's 2026 roadmap addresses the gaps that production use surfaced: stateful sessions that fight with load balancers, horizontal scaling that requires workarounds, and no standard way for a registry or crawler to learn what a server does without connecting to it. The planned solution includes evolving the transport model so servers can scale without holding state, and a standard metadata format served via `.well-known` for discoverable server capabilities.[^7]
 
@@ -128,7 +128,7 @@ For the PAC Framework, discovery is a Potential dimension: agents cannot leverag
 
 ### 4. Authority
 
-Access scoped to the delegating user's authority. This connects directly to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
+Access scoped to the delegating user's authority. This connects to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
 
 For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
