@@ -11,6 +11,9 @@
 
 - [Reliability, Evaluation, and the Complacency Trap](chapters/reliability-evaluation.md)
 - [Context Infrastructure](chapters/context-infrastructure.md)
+  - [The Scaffolding Trap](chapters/context-infrastructure.md#the-scaffolding-trap)
+  - [Five Dimensions of Context Infrastructure](chapters/context-infrastructure.md#five-dimensions-of-context-infrastructure)
+  - [What to Do Now](chapters/context-infrastructure.md#what-to-do-now)
 - [Agent Payments and Economics](chapters/agent-payments.md)
 
 # Accountability

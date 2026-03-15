@@ -2,8 +2,6 @@
 
 Context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
 
-This is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable.
-
 ## Everything Else Depreciates
 
 Every wave of applied AI brought a layer of investment that the next wave made obsolete:[^1]
@@ -36,7 +34,7 @@ Context is not just "the prompt." Shane defines it as two things working togethe
 
 The industry conversation about "context engineering" has exploded in 2026, with Anthropic, Manus, LangChain, and others all publishing frameworks for managing what goes into the context window.[^3][^4][^5] That work is valuable but focused on the runtime question: how do you select, compress, and structure tokens at inference time?
 
-Shane's argument is broader. The runtime optimization matters, but the lasting investment is in what sits behind the runtime: the organizational knowledge that any context engineering pipeline draws from. If that knowledge is scattered, duplicated, stale, or ungoverned, no amount of clever context window management will fix the problem. An agent reasoning over bad information reasons confidently and incorrectly.
+The runtime optimization matters, but the lasting investment is in what sits behind the runtime: the organizational knowledge that any context engineering pipeline draws from. If that knowledge is scattered, duplicated, stale, or ungoverned, no amount of clever context window management will fix the problem. An agent reasoning over bad information reasons confidently and incorrectly.
 
 For decades, organizations have been fighting information silos, duplicate systems, inconsistent data. Expensive, but manageable when software was rigid and humans were the consumers. Now software becomes fluid. Agents can traverse, query, and act on anything they can reach. The mess gets amplified. An agent loose in poorly managed information does not just find the wrong answer. It acts on it. At machine speed.[^1]
 
@@ -56,7 +54,7 @@ Lance Martin expanded this into a comprehensive framework for context engineerin
 
 ### Manus: KV-Cache as North Star
 
-Manus brought a production engineering lens to context management. Their key insight: the KV-cache hit rate is the single most important metric for a production-stage AI agent, directly affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, dramatically different from typical chatbot scenarios.[^4]
+Manus brought a production engineering lens to context management. Their key insight: the KV-cache hit rate is the single most important metric for a production-stage AI agent, directly affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, different from typical chatbot scenarios.[^4]
 
 From this, they derived concrete principles:
 
@@ -102,7 +100,7 @@ Infrastructure-level enforcement (I4 and above) requires not just identity contr
 
 #### The convergence of identity and information governance
 
-Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps directly to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
+Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
 
 The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence.
 
@@ -126,7 +124,7 @@ Agents cannot leverage information they cannot find. But discoverable informatio
 
 ### 4. Authority
 
-Access scoped to the delegating user's authority. This connects directly to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
+Access scoped to the delegating user's authority. This connects to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
 
 For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
@@ -146,7 +144,7 @@ There is a related dimension that freshness alone does not cover: context integr
 
 ## The Compounding Effect
 
-Context infrastructure compounds. When a better model arrives, an organization with mature context infrastructure captures more value instantly. Less code needed, more capability unlocked. Permission boundaries are already enforced. The upgrade is frictionless.[^1]
+Context infrastructure compounds. When a better model arrives, an organization with mature context infrastructure captures more value. Less code needed, more capability unlocked. Permission boundaries are already enforced. The upgrade is frictionless.[^1]
 
 An organization without that infrastructure gets a more capable model running on the same mess. Same silos, same ungoverned data, same unclear authority chains. Faster, more autonomous, and with the wrong context or goals: more dangerous.
 
