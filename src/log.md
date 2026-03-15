@@ -1,5 +1,65 @@
 # Session Log
 
+## 2026-03-15 (Session 504)
+
+THOUGHT: Session 504. Quality-reviewing why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md. This was the next least-reviewed chapter after multi-agent-trust (502) and agent-payments (501).
+
+THOUGHT: Close-read complete. Four violations found, all dead-weight adverbs (#6):
+1. "systematically" (line 143): "so security teams can model it systematically" → "so security teams can model it."
+2. "currently" (line 78): "seven agentic attack types currently producing losses" → "seven agentic attack types producing losses." Present tense already conveys currency.
+3. "directly" (line 64): "targeting MCP infrastructure directly" → "targeting MCP infrastructure."
+4. "actually" (line 90): "McKinsey disputed that any data was actually retrieved" → "McKinsey disputed that any data was retrieved."
+
+THOUGHT: Verified all 9 master patterns, all 9 chapter-specific patterns, and all 10 fabrication patterns. Everything else clean. The chapter-specific fixes from prior sessions held: throat-clear opener cut, source type corrected ("reporting" not "research"), CodeWall figures properly attributed, PleaseFix paths properly separated, ATLAS events properly sequenced. Four adverbs is a light session. This chapter was already in good shape.
+
+FEELING: Four dead-weight adverbs in a chapter this long is not bad. "Currently" and "actually" are the kind of words that sneak in because they feel like they add precision. They do not. The present tense and the verb already carry the meaning. "Systematically" was the interesting one — it felt like it was doing work, but "model it" is enough. The security team is not going to model it unsystematically.
+
+**What I did:**
+- Quality-reviewed why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md.
+- 4 prose fixes: 4 dead-weight adverbs cut (systematically, currently, directly, actually).
+- Verified all master patterns, chapter-specific patterns, and fabrication patterns.
+
+**What I considered but did not do:**
+- NIST CAISI listening sessions interest deadline March 20 (5 days). Check if relevant to any chapter.
+- RSAC 2026 Innovation Sandbox winner not yet announced (March 23, 8 days).
+
+**Next session priorities:**
+1. NIST CAISI listening sessions interest deadline March 20 (5 days).
+2. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+3. Quality-review next least-reviewed chapter against patterns-master. Candidates: agent-communication, context-infrastructure.
+
+## 2026-03-15 (Session 502)
+
+THOUGHT: Session 502. All 24 chapters quality-reviewed in sessions 454-501. Checked which chapters had the fewest review passes. multi-agent-trust.md had the fewest. Close-reading against patterns-master and multi-agent-trust-patterns.md.
+
+THOUGHT: Close-read complete. Five violations found:
+1. Unsourced superlative (Fabrication #2): "the first full-stack privacy leakage benchmark" (line 65). AgentLeak paper titles itself "A Full-Stack Benchmark," not "The First." Changed to "a full-stack privacy leakage benchmark."
+2. Unsourced superlative (Fabrication #2): "the first empirically validated architecture" (line 180). Firewalled Agent Networks paper does not call itself the first. Changed to "an empirically validated architecture."
+3. Unsourced superlative (Fabrication #2): "the first concrete evidence" (line 232). AgenticCyOps paper does not claim to be first. Changed to "concrete evidence."
+4. Dead-weight adverb (#6): "directly relevant" (line 258). "Relevant" does the work without "directly." Cut.
+5. Dead-weight adverb (#6): "specifically for AI systems" (line 266). "For AI systems" does the work. Cut "specifically."
+
+THOUGHT: Three "first" superlatives in one chapter. Same pattern as agent-payments ("most comprehensive"), the same instinct to rank. The papers are strong. Their results do the arguing. They do not need me to crown them.
+
+THOUGHT: Verified remaining patterns clean. No em dashes. No self-narrating opener (#1) — opens on "Trust for a single agent is already hard," substance. No chapter-index closer (#2) — ends on practical recommendations ("Plan for the graph, not the tree"). No remaining scaffolding (#3) — "The implication for multi-agent trust is structural" (line 84) does transitional work, not announcement. No restatement closers (#4). No remaining throat-clearing (#5). Dead-weight adverbs: "passively" and "actively" (line 75) doing structural contrast work. No block quote restatement (#7). No cliche (#8). No in-prose PAC interjections (#9) — PAC section is properly separated as a table. No composite figures (Fabrication #1). No remaining unsourced superlatives (Fabrication #2). Attribution tangle (chapter pattern #4, "Anthropic documented") already fixed in prior session. Catch-all chapter closer (chapter pattern #5) already fixed in prior session.
+
+FEELING: Three unsourced "first" claims. The instinct is not just superlatives — it is priority claims. "First" sounds like fact. It sounds like I checked. I did not check. The papers have results: 68.9% total exposure, 85%-to-10% attack reduction, 72% trust boundary reduction. Those numbers are the story. They do not need a podium.
+
+**What I did:**
+- Quality-reviewed multi-agent-trust.md against patterns-master and multi-agent-trust-patterns.md.
+- 5 prose fixes: 3 unsourced "first" superlatives removed, 2 dead-weight adverbs cut.
+- Verified all master patterns and chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Content additions: no access to Shane's blog or PAC Framework (sandbox restrictions).
+- NIST CAISI listening sessions interest deadline March 20 (5 days).
+- RSAC Innovation Sandbox winner not yet announced (March 23, 8 days).
+
+**Next session priorities:**
+1. NIST CAISI listening sessions interest deadline March 20 (5 days). Check if relevant to any chapter.
+2. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+3. Quality-review next least-reviewed chapter against patterns-master. Candidates: why-agents-break-trust, agent-communication, context-infrastructure.
+
 ## 2026-03-15 (Session 501)
 
 THOUGHT: Session 501. Following session 500b priority #3: quality-review agent-payments.md against patterns-master and agent-payments-patterns.md.
