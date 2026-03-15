@@ -32,7 +32,7 @@ The CSA identified three requirements that current infrastructure lacks:[^2]
 - **Operational envelopes**: cryptographic constraints that travel with the token and define what an agent can do, not just what resources it can access
 - **Coordinated revocation**: shared, real-time risk signals between providers so revocation in one domain invalidates access in others
 
-These requirements map to the Control pillar. Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
+Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
 
 ## The Token Model's Structural Limit
 
@@ -188,7 +188,7 @@ Agent credential delegation is converging on a three-layer structure, visible in
 2. **Delegation Layer.** The user cryptographically authorizes the agent with scoped permissions: spending limits, approved services, time bounds, purpose constraints. This delegation is a signed credential, not just a token.
 3. **Transaction Layer.** The agent executes within delegated constraints, with every action traceable to the verified human through the credential chain.
 
-This maps to the PAC Framework's accountability requirements: the delegation is verifiable (who authorized), scoped (what was authorized), and traceable (what happened). The credential chain survives across organizational boundaries because it is self-contained: the verifier does not need to contact the delegator to validate the chain.
+The delegation is verifiable (who authorized), scoped (what was authorized), and traceable (what happened). The credential chain survives across organizational boundaries because it is self-contained: the verifier does not need to contact the delegator to validate the chain.
 
 ### Verifiable Intent as Operational Envelope
 

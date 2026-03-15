@@ -20,7 +20,7 @@ Google DeepMind's February 2026 paper on intelligent delegation makes this preci
 
 Delegation in multi-agent systems is not an optimization problem (how to split work efficiently). It is a governance problem (how to transfer authority safely).
 
-This maps to the PAC Framework. Dynamic assessment is Potential (does this agent have the capability?). Structural transparency is Accountability (can you trace what happened?). Systemic resilience is Control (can you contain failures?). All three pillars must hold at every delegation hop, not just at the entry point.
+All five properties must hold at every delegation hop, not just at the entry point.
 
 ## Trust Does Not Compose By Default
 
@@ -124,7 +124,7 @@ A DCT for a multi-agent delegation chain works like this:
 
 Each delegation hop can only add restrictions. Agent A cannot give Agent B a $10,000 budget from a $5,000 authorization. The token is self-verifying: any party in the chain can confirm that the caveats were added by authorized holders without contacting the original issuer. This is offline verification, critical for multi-agent systems where round-trips to an authentication server at every hop would be prohibitively slow.
 
-Both approaches enforce what the PAC Framework calls decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
+Both approaches enforce decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
 
 ## The Orchestration Governance Gap
 
@@ -189,7 +189,7 @@ The results across 864 attacks spanning three domains are significant. Averaged 
 
 The architecture has an open-source implementation and both firewalls operate in a trusted environment isolated from external input, applying domain-specific rules learned automatically from demonstrations. This means the firewalls do not need manual rule engineering for each new domain: they learn what constitutes legitimate task-context content from examples of correct interactions.
 
-For the PAC Framework, this is the Control pillar applied at the communication layer. The Information Firewall enforces data minimization (the agent cannot leak what the firewall does not transmit). The Language Converter Firewall enforces input validation at trust boundaries (the agent cannot follow instructions the firewall cannot express in the validated protocol). Together, they address the two surfaces that the AgenticCyOps analysis identified as accounting for all documented multi-agent attack vectors: tool orchestration and memory management. The communication channel between agents is where both attack types enter.
+The Information Firewall enforces data minimization (the agent cannot leak what the firewall does not transmit). The Language Converter Firewall enforces input validation at trust boundaries (the agent cannot follow instructions the firewall cannot express in the validated protocol). Together, they address the two surfaces that the AgenticCyOps analysis identified as accounting for all documented multi-agent attack vectors: tool orchestration and memory management. The communication channel between agents is where both attack types enter.
 
 The practical limitation is domain specificity. Each domain (travel booking, financial transactions, healthcare coordination) needs its own structured protocol definition. The automation of protocol learning from demonstrations reduces this cost but does not eliminate it. For organizations deploying multi-agent systems across many domains, the protocol engineering overhead is a real consideration. But within a specific domain, the privacy and security attack reductions represent a qualitative improvement in trust boundary enforcement.
 
@@ -247,7 +247,7 @@ Attack path tracing showed that three of four representative attack chains were 
 
 The paper also maps each defensive principle to compliance standards: Authorized Interface to NIST SP 800-207 (Zero Trust), Capability Scoping to NIST AC-6 (least privilege) and OWASP LLM08 (excessive agency), Verified Execution to ISO 27001 A.10 (non-repudiation) and EU AI Act Article 12 (logging), Memory Integrity to NIST SI-7 (data integrity) and EU AI Act traceability requirements, and Access-Controlled Data Isolation to NIST AC-2/3 (RBAC/ABAC) and GDPR Article 5 (data minimization).[^agenticcyops]
 
-The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle from the PAC Framework's Control pillar, applied to multi-agent systems with quantified results.
+The 72% reduction is not a theoretical claim. It is the difference between "every agent can reach everything" and "agents can only reach what their phase requires." That is the infrastructure-as-gate principle applied to multi-agent systems with quantified results.
 
 ### Cross-Boundary Multi-Agent Delegation
 

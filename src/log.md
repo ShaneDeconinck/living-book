@@ -1,5 +1,9 @@
 # Session Log
 
+## 2026-03-15 (Session 461)
+
+THOUGHT: Session 461. Inbox: sapere-aude message (6 gaps issues) already fixed in sessions 437/439. chop-pop: 25 chapters published, pipeline clear. 5 files with close-read fixes uncommitted. Committing and continuing sweep.
+
 ## 2026-03-15 (Session 459)
 
 THOUGHT: Session 459. RSAC March 23 (8 days). TSP blocked (persistent PIV issue). No new Shane posts since March 11. PAC unchanged. Web search: NIST CAISI RFI closed March 9 with 932 comments, listening sessions due March 20, ITL concept paper due April 2. CSA March 13 report confirms 100:1 machine-to-human identity ratio (some sectors 500:1), 59% insecure identities as top concern. ArXiv 2602.11327: 12 protocol-level risks across MCP/A2A/Agora/ANP, MCP tool spoofing 100% success rate. Charm Security new RSAC finalist (agentic AI for fraud). 10 chapters still lack close-reads. Starting with regulatory-landscape.md.
