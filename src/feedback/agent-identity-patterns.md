@@ -48,3 +48,39 @@ The Huntress 2026 Cyber Threat Report data (OAuth abuse 4.8% to 10.1% year-over-
 - "What to Do Now" is clean, concrete, and actionable. No padding.
 - The Verifiable Intent section is precise and tightly reasoned.
 - The layering analysis (OAuth → Platform → Infrastructure) is a genuine contribution — it gives readers a mental model for how these standards compose.
+
+---
+
+## 6. Self-narrating openers
+
+The chapter opened with "The previous chapters established why agents break trust and introduced the PAC Framework. This chapter goes deep on the technical problem at the center of the Control pillar: how do you know who an agent is..."
+
+This tells the reader what they already know (they read the previous chapters) and announces what they are about to read (they are about to read it). The chapter's first real sentence — "Every time an agent calls an API, sends a message, or makes a purchase, something needs to answer: who authorized this?" — earns its place. The opener did not.
+
+**Pattern:** Do not start a chapter by summarizing prior chapters or announcing your own structure. Start at the problem.
+
+---
+
+## 7. PAC interjection sentences
+
+Eight sentences were cut that named the PAC Framework mapping explicitly in the body text: "This inversion maps directly to the Control pillar of PAC," "For the PAC Framework, Transaction Tokens operationalize the Control pillar," "For the PAC Framework, Entra Agent ID represents the I3 to I4 transition becoming productized," etc.
+
+These sentences stop the argument to announce that you have noticed a connection to the framework. The connection is real. Naming it is not necessary. The reader who knows the framework will see it. The reader who does not will not be helped by a label. Both readers lose the rhythm.
+
+**Pattern:** Do not narrate your own framework mappings. Make the technical point and let the PAC connection be visible in the structure.
+
+---
+
+## 8. Throat-clearing significance announcements
+
+"This is architecturally significant." and "Most significant for agent governance:" were both cut. These phrases are the written equivalent of clearing your throat before speaking. If the finding is significant, the next sentence will show it. Announcing significance before delivering it weakens the delivery.
+
+**Pattern:** Cut any sentence or phrase that announces importance without delivering it. "This is significant because..." and "Most significant:" are almost always replaceable with nothing.
+
+---
+
+## 9. Dead-weight adverbs
+
+"Precisely," "directly," "clearly," and "exactly" appeared throughout as filler. Most were cut: "addresses this gap directly" → "addresses this gap," "illustrates exactly why" → "illustrates why," "This maps directly to" → "This maps to." These adverbs do not intensify meaning — they pad it. The few remaining instances ("illustrates the gap precisely," "what exactly," "not develop protocols directly") all earn their place by adding actual semantic content.
+
+**Pattern:** Challenge every instance of "precisely," "directly," "clearly," and "exactly." If the sentence means the same thing without the adverb, cut it.
