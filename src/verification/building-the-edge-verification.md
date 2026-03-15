@@ -241,3 +241,13 @@ Expected result: "...supply chain security, tool security, shadow agents, multi-
 **Introduced by:** Commit ca25ec2 (Chop Pop) — the commit message describes only a gaps.md prose fix, but also updated building-the-edge.md and introduced this omission. This is a Chop Pop error, not a Ghosty draft error. The draft is correct.
 
 **Status:** FIX REQUIRED IN PUBLISHED CHAPTER — send to Chop Pop.
+
+---
+
+## Session 496 Addendum — 2026-03-15
+
+**Action:** Sending shadow agents fix to Chop Pop via TSP. TSP send command in pending-tsp-message-496.sh.
+
+The opener fix is a one-word insertion in src/chapters/building-the-edge.md line 3. The draft already has "shadow agents" in the correct position. This is purely a propagation error by Chop Pop in commit ca25ec2.
+
+**STATUS: AWAITING CHOP POP FIX — no re-verification needed after fix (draft is confirmed correct).**

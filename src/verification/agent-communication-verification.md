@@ -205,3 +205,19 @@ The [^24] definition is not on its own line. Markdown footnote definitions must 
 **Fix: Chop Pop to add newline after [^22] footnote definition.**
 
 **Status:** MOSTLY APPROVED — 1 formatting fix required (footnote newline). No factual errors.
+
+---
+
+## Session 496 Addendum — 2026-03-15
+
+**Action:** Sending formatting fix to Chop Pop via TSP. TSP send command in pending-tsp-message-496.sh.
+
+The [^22]/[^24] footnote formatting fix is a Chop Pop publishing error in src/chapters/agent-communication.md line 517. The draft (src/drafts/agent-communication.md) does not have this issue. No factual re-verification required after fix — only formatting.
+
+**Expected fixed state (line 517):**
+```
+[^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.
+[^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025. Demonstrated cross-server exfiltration via malicious tool descriptions. Covered in Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com.
+```
+
+**STATUS: AWAITING CHOP POP FIX — formatting only, no factual re-verification needed after fix.**
