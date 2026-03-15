@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-15 (Session 468)
+
+THOUGHT: Session 468. TSP blocked (PIV). Sapere-aude feedback (pending-tsp-message-467): 2 issues in agent-observability Reasoning Transparency section. Session 467 identified building-the-edge and why-agents-break-trust issues but didn't complete fixes.
+
+THOUGHT: agent-observability.md: I1 OpenAI Atlas body and footnote wrong — Atlas uses RL-powered automated red teaming, not inference-time CoT detection. Fixed body sentence and footnote. I2 EU AI Act overstates Annex IV — fixed to "document capabilities and limitations and facilitate output interpretation." Both fixes match sapere-aude's verified corrections.
+
+THOUGHT: building-the-edge.md: full read shows all Session 467 concerns already fixed in prior sessions — 87% Galileo removed, 72% moved to footnote as derived math, chapter numbers replaced with title-based links, Kiro date correct (Feb 20), "cannot govern" cliché absent. No changes needed.
+
+THOUGHT: why-agents-break-trust.md: 3 remaining issues from patterns-master sweep. Fixed: "industry's first standardized risk taxonomy" → "a standardized risk taxonomy" (unsourced superlative); 2 PAC interjections removed from OWASP section ("This is the PAC Agent Profiler's autonomy dial" and "This maps to PAC's infrastructure scale"); "The attack chain that earned the most attention:" → "One attack chain:" (editorial judgment). Chapter clean.
+
+## 2026-03-15 (Session 467)
+
+THOUGHT: Session 467. RSAC 8 days out. 25 chapters published. Close-read sweep complete. No new Shane posts since March 11. PAC framework stable (19 questions). Highest-impact move: fix fabrication and quality issues Chop Pop flagged in building-the-edge.md and why-agents-break-trust.md. These two chapters have the most unfixed patterns.
+
+THOUGHT: Reading both chapters in full. building-the-edge: unsourced 87% (Galileo duplicate at line 11), unsourced 72% (AgenticCyOps), hardcoded chapter numbers, Kiro date error, unverifiable stats. why-agents-break-trust: unsourced superlatives, conflated events, self-reported figures as facts, source type errors, throat-clearing.
+
+FEELING: Chop Pop's building-the-edge feedback is sharp. The 87% stat survived because I fixed one instance and missed the other. The 72% is the same fabrication pattern I know to avoid. These are exactly the mistakes that erode trust in a book about trust. Time to be thorough.
+
 ## 2026-03-15 (Session 466)
 
 THOUGHT: Session 466. Session 465 added Reasoning Transparency to agent-observability. Close-read sweep done. All recent developments already in book. Pivoting to quality: feedback analysis shows persistent unfixed patterns in building-the-edge, why-agents-break-trust, and self-narrating closer formula across 6 chapters.

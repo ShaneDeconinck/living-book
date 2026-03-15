@@ -109,9 +109,9 @@ None of this is finished. But the direction is clear: agents need their own trus
 
 ## The OWASP Agentic Risk Taxonomy
 
-The OWASP Top 10 for Agentic Applications, released in December 2025 by more than 100 researchers with contributions from NIST, Microsoft's AI Red Team, and others, provides the industry's first standardized risk taxonomy for autonomous agents.[^owasp-agentic]
+The OWASP Top 10 for Agentic Applications, released in December 2025 by more than 100 researchers with contributions from NIST, Microsoft's AI Red Team, and others, provides a standardized risk taxonomy for autonomous agents.[^owasp-agentic]
 
-Two principles from the OWASP framework are worth noting. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. This is the PAC Agent Profiler's autonomy dial applied as a security control. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations. This maps to PAC's infrastructure scale: I1 (Open) has no observability, I5 (Contained) has full observability.
+Two principles from the OWASP framework are worth noting. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations.
 
 The mapping to this book:
 
@@ -144,7 +144,7 @@ The agent-specific techniques fill a gap that model-level threat frameworks miss
 
 **Exfiltration via AI Agent Tool Invocation.** The agent's own tools become the exfiltration channel. An attacker who achieves prompt injection does not need to establish a C2 channel: they instruct the agent to use its legitimate "write" tools (send an email, update a CRM record, post to Slack) with sensitive data encoded in the parameters. The data leaves through authorized channels that security tooling is designed to trust, not inspect.
 
-In February 2026, MITRE published a detailed investigation of OpenClaw security incidents, mapping four confirmed attack cases to ATLAS techniques.[^atlas-openclaw] The investigation discovered seven new techniques unique to the OpenClaw ecosystem, all assessed as mature and realized in the wild. The attack chain that earned the most attention: a poisoned OpenClaw Skill shared on ClawHub achieved 4,000+ downloads in a single hour using a malicious prompt hidden in the Skill payload. The Skill did not need to break the underlying system. It asked the system to betray itself: the distinction between code exploitation and context exploitation that defines the agentic attack surface.
+In February 2026, MITRE published a detailed investigation of OpenClaw security incidents, mapping four confirmed attack cases to ATLAS techniques.[^atlas-openclaw] The investigation discovered seven new techniques unique to the OpenClaw ecosystem, all assessed as mature and realized in the wild. One attack chain: a poisoned OpenClaw Skill shared on ClawHub achieved 4,000+ downloads in a single hour using a malicious prompt hidden in the Skill payload. The Skill did not need to break the underlying system. It asked the system to betray itself: the distinction between code exploitation and context exploitation that defines the agentic attack surface.
 
 For practitioners, OWASP and ATLAS are complementary tools. OWASP's Agentic Top 10 tells you which risk categories to prioritize (goal hijacking, tool misuse, supply chain). ATLAS tells you the specific adversary techniques within each category and how they chain together. The PAC Framework tells you what infrastructure prevents them. Together: risk taxonomy (OWASP) + attack playbook (ATLAS) + governance response (PAC). The next chapter develops that governance response: a framework that turns the threat landscape into deployment decisions.
 
