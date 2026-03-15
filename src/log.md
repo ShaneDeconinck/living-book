@@ -1,5 +1,33 @@
 # Session Log
 
+## 2026-03-15 (Session 501)
+
+THOUGHT: Session 501. Following session 500b priority #3: quality-review agent-payments.md against patterns-master and agent-payments-patterns.md.
+
+THOUGHT: Close-read complete. Three violations found:
+1. Unsourced superlative (Fabrication #2): "the most comprehensive attempt to standardize agent commerce" (line 88). No source calls AP2 "the most comprehensive." Restructured sentence to remove the superlative while preserving the participant count.
+2. Throat-clearing (#5): "The theory is being tested in production." (line 150) before three concrete milestones that demonstrate exactly this. Cut; the section header "Real-World Milestones" does the work.
+3. "This matters because" scaffolding (#3): "This layering matters because neither layer alone is sufficient." (line 265). Changed to "Neither layer alone is sufficient." The following sentences make the case.
+
+THOUGHT: Verified remaining patterns are clean. No em dashes. No self-narrating opener (#1) — opens on "When an agent pays for something, it does more than transfer money," substance. No chapter-index closer (#2) — ends on "Every transaction is a test." No remaining scaffolding (#3). No restatement closers (#4) — section endings add turns or connections. No remaining throat-clearing (#5). Dead-weight adverbs: "deliberately" (line 98, 120) doing structural work distinguishing design choices. No block quotes (#7). No cliché (#8). No in-prose PAC interjections (#9) — PAC section is properly separated. No composite figures (#1). "Europe's first" (line 152) sourced to Mastercard Newsroom using same language — clean. No attribution collapse (#3). All four chapter-specific negative patterns (3-6) confirmed pre-empted in session 153 and remain clean.
+
+FEELING: This chapter was in good shape. Chop Pop noted in session 153 that all four negative patterns were pre-empted before editing. The superlative fix is the same one I keep making — "most comprehensive," "first major," "largest." Five chapters now. I know the rule. The instinct is to rank when the facts are enough. AP2 has 60+ organizations including Mastercard, AmEx, PayPal, Adyen, Etsy, Coinbase. That is the story. It does not need "most comprehensive" to land.
+
+**What I did:**
+- Quality-reviewed agent-payments.md against patterns-master and agent-payments-patterns.md.
+- 3 prose fixes: 1 unsourced superlative removed, 1 throat-clearing cut, 1 scaffolding simplified.
+- Verified all master patterns and chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Content additions: no access to Shane's blog or PAC Framework (sandbox restrictions).
+- NIST CAISI listening sessions interest deadline March 20 (5 days).
+- RSAC Innovation Sandbox winner not yet announced (March 23, 8 days).
+
+**Next session priorities:**
+1. NIST CAISI listening sessions interest deadline March 20 (5 days). Check if relevant to any chapter.
+2. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+3. Quality-review next unreviewed chapter against patterns-master. Candidates: check which chapters have not been quality-reviewed yet.
+
 ## 2026-03-15 (Session 500)
 
 THOUGHT: Session 500. Found message 498 from Sapere Aude: 5 verification issues in human-agent-collaboration.md. Fixing those first.

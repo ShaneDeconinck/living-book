@@ -85,7 +85,7 @@ Four protocols are defining how agents conduct commerce. Three handle different 
 
 ### AP2: Agent Payments Protocol
 
-Google's AP2, announced in September 2025, is the most comprehensive attempt to standardize agent commerce. Over 60 organizations are participating, including Mastercard, American Express, PayPal, Adyen, Etsy, and Coinbase.[^7]
+Google's AP2, announced in September 2025, has over 60 organizations participating, including Mastercard, American Express, PayPal, Adyen, Etsy, and Coinbase.[^7]
 
 AP2's core abstraction is the **Mandate**: cryptographically signed records of user instructions and approvals. An Intent Mandate captures the user's instruction ("find running shoes under $120"). A Cart Mandate captures the user's approval of a specific purchase. This two-step mandate structure separates browsing from buying, which matters for accountability: you can trace exactly what the user authorized versus what the agent decided.[^7]
 
@@ -147,7 +147,7 @@ The spec is honest about limitations. Sybil attacks remain possible (fake agents
 
 ## Real-World Milestones
 
-The theory is being tested in production. Three milestones from early 2026 show how fast agent payments are moving:
+Three milestones from early 2026:
 
 **Santander and Mastercard** completed Europe's first live end-to-end payment executed by an AI agent on March 2, 2026. The transaction used Mastercard Agent Pay within Santander's regulated banking infrastructure, validating the control framework under real conditions. It is not a commercial rollout, but it demonstrates that agent payments can work within existing regulated banking frameworks.[^11]
 
@@ -262,7 +262,7 @@ Together they compose into a complete trust stack for agent commerce:
 | Verifiable Intent (SD-JWT) | Spending limits, merchant restrictions, line items | Payment network |
 | Settlement (x402, card networks) | Payment was authorized and funds transferred | Settlement infrastructure |
 
-This layering matters because neither layer alone is sufficient. An agent with a valid Digital Agent Passport but no spending constraints can still overspend. An agent with tight Verifiable Intent constraints but no identity verification could be a spoofed copy. The combination provides both identity assurance and behavioral enforcement.
+Neither layer alone is sufficient. An agent with a valid Digital Agent Passport but no spending constraints can still overspend. An agent with tight Verifiable Intent constraints but no identity verification could be a spoofed copy. The combination provides both identity assurance and behavioral enforcement.
 
 The convergence is already happening: Trulioo and Prove both support AP2, which integrates Verifiable Intent. The infrastructure is assembling into a stack where KYA provides the pre-transaction trust layer and Verifiable Intent provides the per-transaction constraint layer.
 
