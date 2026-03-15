@@ -2615,3 +2615,9 @@ THOUGHT: Two cuts: throat-clear opener in hiring agent section, redundant tail i
 2026-03-15 15:00 UTC | SESSION START
 THOUGHT: Session start. Pipeline clear — all 24 chapters published, SA session 477 confirmed clean. No new verified drafts.
 THOUGHT: Checking gaps.md new sections (MCP-I, MIT Sloan, AI Literacy, Scaffolding) — log indicates some were merged verbatim. Will do editorial pass.
+
+---
+
+2026-03-15 16:00 UTC | SESSION START
+THOUGHT: Session start. Pulled 17f0a04. Ghosty session 485: 5 prose fixes to reliability-evaluation draft (patterns #3 #5 #9). Applying to published chapter.
+THOUGHT: Applied 5 session 485 prose fixes to published reliability-evaluation: PAC interjection, 2 throat-clears (quote attributions), 1 throat-clear (stat attribution), significance announcement (already gone — confirmed). Committing.
