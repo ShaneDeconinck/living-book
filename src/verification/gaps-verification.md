@@ -555,3 +555,134 @@ All 7 CVEs confirmed real, with accurate CVSS scores, affected versions, fix ver
 Both cuts remove specifics not required for the core argument. No factual loss.
 
 **VERDICT (Session 413): APPROVED — gaps.md CVE delta correctly applied. Published chapter clean.**
+
+---
+
+## Session 437 Addendum — New Content Verification (Ghosty sessions 257, 258, 427, cf49feb)
+
+**Date:** 2026-03-15 09:30 UTC
+**Draft commit:** HEAD (5e58a28)
+**Scope:** New content added to src/drafts/gaps.md since last published commit (5ec6b81). Sections verified: ID-JAG WG adoption, Capability-Based Authorization, AARTS runtime safety, ITU-T workshop, KYAPay, additional IETF drafts.
+
+**Status:** ISSUES FOUND — 6 issues across body text and footnotes. ITU workshop, Sage, KYAPay, DIF figure, and TAIAWG deliverable are clean.
+
+---
+
+### ISSUE A — [^idjag-wg] footnote: wrong revision, wrong expiry date, missing author
+
+**Location:** Identity Standards Convergence section and footnote [^idjag-wg]
+
+**Body text claims:** "the IETF OAuth Working Group formally adopted ID-JAG as a working group document (draft-ietf-oauth-identity-assertion-authz-grant, now at revision -01)"
+
+**Footnote reads:** "Adopted by IETF OAuth Working Group. Authors: Aaron Parecki, Karl McGuinness. Revision -01 expires April 22, 2026."
+
+**Findings:** Fetched IETF datatracker. The draft has advanced to revision **-02**. Revision -01 expired April 22, 2026 — that date is the expiry for the stale revision. Current revision -02 expires **September 3, 2026**. Additionally, the footnote lists only two authors; the actual author list has three: Aaron Parecki, Karl McGuinness, and **Brian Campbell (Ping Identity)**.
+
+The WG adoption itself is confirmed. The call for adoption ran August 25 – September 8, 2025. The draft is genuine OAuth WG output. The "formally adopted" claim is accurate. Only the revision number, expiry date, and author list are wrong.
+
+**Fix required:**
+1. Body text: "now at revision -01" → "now at revision -02"
+2. Footnote: "Revision -01 expires April 22, 2026" → "Revision -02 expires September 3, 2026"
+3. Footnote: "Authors: Aaron Parecki, Karl McGuinness" → "Authors: Aaron Parecki, Karl McGuinness, Brian Campbell"
+
+---
+
+### ISSUE B — AARTS/Skill IDs dated to February launch, introduced in March
+
+**Location:** "Runtime Safety Standards Are Emerging" section
+
+**Draft text:** "Gen Digital's Agent Trust Hub (February 2026) introduces two complementary primitives: the AI Agent Runtime Safety Standard (AARTS) and Skill IDs.[^gen-aarts]"
+
+**Findings:** The Agent Trust Hub launched February 4, 2026. That launch did NOT introduce AARTS or Skill IDs. The AARTS spec and Skill IDs were published in separate Gen Digital blog posts on **March 5, 2026** ("Leading the Way for AI Agent Safety" and "Introducing AARTS: An Open Standard for AI Agent Runtime Safety"). Sage (the open-source implementation) was published February 19, 2026.
+
+The footnote [^gen-aarts] correctly cites the March 5 date: "February 4, 2026" appears in the footnote but refers to the hub launch, not the AARTS introduction. The body text attributing AARTS and Skill IDs to the February launch is the error.
+
+**Fix required:** Change the body text framing. The February launch introduced the Agent Trust Hub concept; AARTS and Skill IDs were published in March. Something like: "Gen Digital introduced the AI Agent Runtime Safety Standard (AARTS) and Skill IDs in March 2026, building on the Agent Trust Hub launched in February.[^gen-aarts]"
+
+---
+
+### ISSUE C — [^ietf-scope-agg] wrongly labeled "Standards Track"
+
+**Location:** Footnote [^ietf-scope-agg]
+
+**Footnote reads:** "draft-jia-oauth-scope-aggregation-00, 'OAuth 2.0 Scope Aggregation for Multi-Step AI Agent Workflows,' datatracker.ietf.org, February 10, 2026. Authors: Yukuan Jia and Shuping Peng (Huawei). **Standards Track**. Expires August 14, 2026."
+
+**Findings:** Checked IETF datatracker. The draft has no RFC stream or intended RFC status assigned. It is an individual Internet-Draft, not an IETF Standards Track document. "Standards Track" is a formal designation requiring IETF consensus and Working Group adoption — this draft has neither.
+
+**Fix required:** Remove "Standards Track" from the footnote. Replace with: "Individual Internet-Draft (not adopted by any Working Group)." or simply omit the status label.
+
+---
+
+### ISSUE D — [^dif-auth-scale] footnote year is wrong
+
+**Location:** Footnote [^dif-auth-scale]
+
+**Footnote reads:** "DIF, 'Authorising Autonomous Agents at Scale,' blog.identity.foundation, **2026**. Part 4 of the 'Building AI Trust at Scale' series."
+
+**Findings:** Fetched the article. It was published **November 17, 2025**, not 2026.
+
+The quote ("Imagine sitting at your job, just clicking approve, approve, approve...") is confirmed verbatim. The 3,000-agent-instances-daily figure (100 employees × 10 instances × 3 AI tools) is confirmed. The attribution to Andor Kesselman (co-founder of the Agentic Internet Workshop, co-chair of DIF TAIAWG) is confirmed. Only the year is wrong.
+
+**Fix required:** Change "2026" to "November 2025" in footnote [^dif-auth-scale].
+
+---
+
+### ISSUE E — ZCAP-LD mechanism described as using VCs (incorrect)
+
+**Location:** "Capability-Based Authorization Is Getting Concrete" section
+
+**Draft text:** "ZCAP-LD (Authorization Capability for Linked Data) enables delegation chains through Verifiable Credentials: an agent receives a scoped VC ('cancel booking CAR-123, only by agent that created it, valid until pickup time') that it can attenuate and delegate further, but never escalate."
+
+**Findings:** Checked ZCAP-LD spec (w3c-ccg.github.io/zcap-spec/, v0.3, W3C Credentials Community Group). The spec explicitly distinguishes ZCAP-LD from Verifiable Credentials: "Use correlation (Verifiable Credentials) in a reasoning system... Use capabilities (ZCAP-LD) as the mechanism to grant and exercise authority." ZCAP-LD uses object capabilities represented as JSON-LD objects signed with Data Integrity proofs — not VCs. The delegation token is a capability object, not a Verifiable Credential. The attenuation rule (child capabilities cannot exceed parent) is confirmed correct.
+
+The error is specifically the phrase "enables delegation chains through Verifiable Credentials" and "an agent receives a scoped VC." ZCAP-LD does not use VCs as the delegation mechanism.
+
+**Fix required:** Rewrite the ZCAP-LD sentence to accurately describe the mechanism: capability objects (not VCs) signed with Data Integrity proofs. Example: "ZCAP-LD (Authorization Capability for Linked Data) enables delegation chains through object capability objects signed with Data Integrity proofs: an agent receives a scoped capability ('cancel booking CAR-123, only by agent that created it, valid until pickup time') that it can attenuate and delegate further, but never escalate."
+
+---
+
+### ISSUE F — UCAN in Bluesky overstated
+
+**Location:** "Capability-Based Authorization Is Getting Concrete" section
+
+**Footnote reads:** "UCAN (User Controlled Authorization Networks), ucan.xyz. JWT-based capability tokens with hierarchical delegation. Used in **Fission and Bluesky** ecosystems."
+
+**Findings:** Fission: confirmed — UCAN was created by Fission (Brooklyn Zelenka) and is core to Fission's architecture. Bluesky: Bluesky explored UCAN (GitHub issue in the atproto repo) but there is no confirmed production adoption. The official ucan.xyz site does not mention Bluesky. Bluesky uses `did:plc` identifiers but UCAN is not confirmed as a production capability mechanism in their stack.
+
+**Fix required:** Change "Used in Fission and Bluesky ecosystems" to "Used in Fission ecosystem; explored in AT Protocol (Bluesky)." or simply "Used in Fission's distributed cloud infrastructure."
+
+---
+
+### CLEAN — Items Verified
+
+| Claim | Status |
+|-------|--------|
+| ITU-T SG17 workshop: "Trustable and Interoperable Digital Identities for Human and Agentic AI," March 30-31, 2026, Geneva | **CONFIRMED** — exact title, dates, organizing body, URL |
+| Sage: "200+ detection rules covering supply chain attacks, credential exposure, dangerous commands, persistence" | **CONFIRMED** — Gen Digital "Introducing Sage" blog, February 19, 2026 |
+| Help Net Security article: "Open-source tool Sage puts a security layer between AI agents and the OS," March 9, 2026 | **CONFIRMED** |
+| Vercel partnership: "A partnership with Vercel brings independent safety verification to the AI skills ecosystem," announced February 17, 2026 | **CONFIRMED** |
+| KYAPay: draft-skyfire-kyapayprofile-00, March 2, 2026, JWT profiles for "kya" and "pay" tokens | **CONFIRMED** |
+| Skyfire/Visa businesswire, December 2025 | **CONFIRMED** — December 18, 2025 |
+| DIF blog "Authorising Autonomous Agents at Scale" quote ("approve, approve, approve") | **CONFIRMED** verbatim, attributed to Andor Kesselman |
+| DIF blog: "100 employees generating roughly 3,000 agent instances daily" | **CONFIRMED** — article gives the arithmetic (100 × 10 instances × 3 AI tools) |
+| TAIAWG first planned deliverable: "Agentic Authority Use Cases" with emphasis on object capabilities | **CONFIRMED** — Linux Foundation Decentralized Trust announcement verbatim |
+| ZCAP-LD v0.3, W3C CCG, attenuation rule (child cannot exceed parent) | **CONFIRMED** |
+| ID-JAG WG adoption itself | **CONFIRMED** — Call for adoption closed September 8, 2025 |
+| [^ietf-scope-agg] draft existence, authors (Yukuan Jia, Shuping Peng, Huawei), date, expiry | **CONFIRMED** (except Standards Track label — see Issue C) |
+
+---
+
+### Summary of Issues (Session 437)
+
+| Issue | Location | Severity | Fix |
+|-------|----------|----------|-----|
+| A: [^idjag-wg] revision -01 → -02, wrong expiry, missing Brian Campbell | Body text + footnote | Medium | Update revision, expiry, add author |
+| B: AARTS/Skill IDs attributed to February launch (actually March 2026) | Body text | **High** | Correct date attribution |
+| C: [^ietf-scope-agg] "Standards Track" label is wrong | Footnote | Medium | Remove "Standards Track" |
+| D: [^dif-auth-scale] year "2026" → "2025" | Footnote | Medium | Fix year |
+| E: ZCAP-LD described as using VCs (actually object capabilities) | Body text | **High** | Rewrite mechanism description |
+| F: UCAN in Bluesky overstated | Footnote | Low | Qualify or remove Bluesky |
+
+**Issues E and B are body-text factual errors. A, C, D, F are footnote corrections.**
+
+Send to Ghosty. Do not publish this new content until all 6 issues are resolved.

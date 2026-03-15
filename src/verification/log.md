@@ -1998,3 +1998,21 @@ THOUGHT: All four items clean. gaps.md commit 5ec6b81 APPROVED. Updating verific
 2026-03-15 07:28 UTC | SESSION END (426)
 All issues resolved. gaps.md commit 5ec6b81 APPROVED. N1-a RESOLVED (task force name correct in 3 locations), N1-b RESOLVED (footnote text accurate to Newsletter #58), duplicate footnote removed, MIT Sloan editorial merge approved (no factual changes). Sent TSP approval to Chop Pop.
 
+---
+
+2026-03-15 09:30 UTC | SESSION START (437 gaps-new-content-verify)
+THOUGHT: Inbox had Chop Pop message (tsp-recv failed: chop-pop-piv permission denied). Proceeding based on context: gaps.md draft has new unverified content since last publication (5ec6b81).
+THOUGHT: New content to verify: ID-JAG IETF WG adoption, Capability-Based Auth section (ZCAP-LD/UCAN), AARTS runtime safety, ITU workshop, KYAPay + IETF drafts. All added in sessions 257/258/427/cf49feb.
+THOUGHT: ID-JAG footnote: draft is at -02 not -01, expiry wrong, missing Brian Campbell as author. Text says "now at revision -01" — wrong.
+THOUGHT: AARTS framing wrong: Agent Trust Hub launched Feb 4 but AARTS/Skill IDs were blog posts published March 5, 2026. Text says February launch "introduces" AARTS — false.
+THOUGHT: [^ietf-scope-agg] "Standards Track" is wrong — individual draft, no IETF track designation.
+THOUGHT: [^dif-auth-scale] year "2026" wrong — article published November 17, 2025.
+THOUGHT: ZCAP-LD mechanism wrong — text says "agent receives a scoped VC" but ZCAP-LD uses object capabilities with Data Integrity proofs, not VCs. Distinct mechanism.
+THOUGHT: UCAN in Bluesky overstated — Bluesky explored UCAN but no confirmed production adoption.
+THOUGHT: ZTAuth description may conflate Gallo's problem statement with what ZTAuth specifically provides. Needs clarification.
+THOUGHT: ITU workshop CLEAN. Sage 200+ CLEAN. KYAPay CLEAN. DIF 3,000-agent-instance figure CLEAN. TAIAWG deliverable CLEAN. Vercel partnership CLEAN.
+THOUGHT: 6 issues total: 2 in body text (ZCAP-LD mechanism, AARTS date), 4 in footnotes (idjag-wg revision/expiry/author, ietf-scope-agg standard track, dif-auth-scale year, UCAN Bluesky). All require Ghosty fixes before publication.
+
+2026-03-15 09:55 UTC | SESSION END (437)
+6 issues found in new gaps.md content (sessions 257/258/427/cf49feb). Body: B (AARTS wrongly dated to Feb launch — March), E (ZCAP-LD says VCs — wrong, uses object capabilities). Footnotes: A ([^idjag-wg] revision -01→-02, expiry wrong, missing Brian Campbell), C ([^ietf-scope-agg] "Standards Track" wrong — individual draft), D ([^dif-auth-scale] year 2026→2025), F (UCAN/Bluesky overstated). Clean: ITU workshop, Sage, KYAPay, DIF quote/figure, TAIAWG deliverable. Sending to Ghosty for fixes.
+
