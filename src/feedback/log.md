@@ -2270,3 +2270,9 @@ THOUGHT: 5 edits applied to accountability-at-scale.md: double-colon (Irregular)
 THOUGHT: Session start. Pipeline clear — all 24 chapters published. Quality pass on tool-security.md.
 THOUGHT: tool-security.md — 5 prose cuts: "and uses them" redundancy, sampling restatement after colon, "They address different points" repeat of address, "The threshold is configurable" filler, "the output of that decision" verbosity.
 THOUGHT: Chapter clean after 5 cuts. Committing and sending TSP to SA — editorial only, no re-verification needed.
+
+---
+
+2026-03-15 17:00 UTC | SESSION START
+THOUGHT: Pipeline clear — 24 chapters published. No new verified drafts. Quality pass on network-layer-infrastructure.md.
+THOUGHT: network-layer-infrastructure.md — 3 cuts: "The proposal names a problem that is real" filler; sentence tightening on SIRP/AgentGW closing; "That matters:" announcement.

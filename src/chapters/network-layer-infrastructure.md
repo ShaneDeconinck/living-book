@@ -53,7 +53,7 @@ The governance implication: a root-domain naming system for agents creates a lay
 
 This connects directly to supply chain security. A malicious MCP server in the SANDWORM_MODE campaign (19 typosquatting npm packages documented in [Agent Supply Chain Security](supply-chain-security.md)) achieved reach by being installable and discoverable through package registries.[^sandworm-mode] A governance layer at the naming level — where discovering a server requires a verifiable identity claim — raises the bar for these attacks.
 
-AgentDNS is an early-stage draft. Its operational characteristics — governance of the root server, conflict resolution for namespace collisions, key rotation — are not yet specified. The proposal names a problem that is real. The solution has not yet been stress-tested.
+AgentDNS is an early-stage draft. Its operational characteristics — governance of the root server, conflict resolution for namespace collisions, key rotation — are not yet specified. The solution has not yet been stress-tested.
 
 ## Semantic Routing
 
@@ -67,7 +67,7 @@ Two IETF drafts propose infrastructure to address this.
 
 Neither SIRP nor Agent-GW is a deployed standard. Both are -00 and -01 drafts. The infrastructure they describe — semantic classification at routing time, shared working memory, intent-aware traffic handling — does not exist in production at scale as of March 2026.
 
-What they signal: the network layer is beginning to treat agent semantics as a first-class routing concern. The separation between what the agent is trying to do (application-layer knowledge) and how the traffic is routed (network-layer decision) is what these drafts aim to collapse.
+What they signal: the network layer is beginning to treat agent semantics as a first-class routing concern. Both aim to collapse the separation between what the agent is trying to do and how the traffic is routed.
 
 ## Service Mesh: Community Projects, Not Standards
 
@@ -95,7 +95,7 @@ The composition:
 | Network SASE | Connectivity, destination allowlists, intent inspection | Tool-call authorization details inside TLS |
 | Both composed | Enforcement without deployment gaps | — |
 
-That matters: enterprise security teams operate the network layer and security buyers fund it. Agent security that exists only at the application layer must be funded and operated by the development teams building agents. Agent security at the network layer becomes part of the existing enterprise security stack.
+Enterprise security teams operate the network layer and security buyers fund it. Agent security that exists only at the application layer must be funded and operated by the development teams building agents. Agent security at the network layer becomes part of the existing enterprise security stack.
 
 The practical implication for architects: design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose — Cisco AI-Aware SASE and AgentGateway have separate observability planes — but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
 
