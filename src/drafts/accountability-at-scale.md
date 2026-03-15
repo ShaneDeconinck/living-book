@@ -54,7 +54,7 @@ Article 73 was written for single AI systems. When an organization operates hund
 
 ## Fleet Governance Infrastructure
 
-[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] The gap between the second and third is where most organizations currently sit, and it is where accountability at scale fails.
+[Shadow Agent Governance](shadow-agent-governance.md) identified three organizational models: centralized review (breaks at 50 agents), federated governance with central standards (works for departments), and infrastructure-enforced governance (the target).[^shadow-agent-gov] Most organizations sit between the second and third, and that gap is where accountability at scale fails.
 
 Infrastructure-enforced governance means that accountability requirements are not policies agents can ignore but architecture agents cannot bypass. Four capabilities make up the minimum viable fleet governance infrastructure:
 
@@ -90,7 +90,7 @@ With a fleet of agents operating in high-risk domains, the organization will gen
 
 Triage infrastructure sits between fleet monitoring and incident response. It classifies events into operational noise (log and learn), governance review (human assessment needed), and reportable incident (regulatory notification required). The classification criteria must be defined in advance, documented, and themselves auditable, because a regulator may ask not just "what incidents did you report?" but "what incidents did you classify as non-reportable, and on what basis?"
 
-Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems simultaneously.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
+Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
 
 ## The PAC Mapping
 
@@ -138,7 +138,7 @@ Accountability at scale sits primarily in the Accountability pillar but draws fr
 
 [^rfc-8693]: IETF RFC 8693, "OAuth 2.0 Token Exchange," January 2020. The On-Behalf-Of pattern for dual-identity tokens.
 
-[^opentelemetry]: OpenTelemetry, "Distributed Tracing," opentelemetry.io. The correlation identifier and trace context propagation patterns apply directly to agent decision provenance.
+[^opentelemetry]: OpenTelemetry, "Distributed Tracing," opentelemetry.io. The correlation identifier and trace context propagation patterns apply to agent decision provenance.
 
 [^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Agents developed collective bypass strategies without adversarial prompting.
 
