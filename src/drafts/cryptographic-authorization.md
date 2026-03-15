@@ -8,7 +8,7 @@ This is the gap that cryptographic authorization addresses. Architecture blocks 
 
 ## Three Governance Modes
 
-The PAC Framework's central argument is that policy enforcement fails where architecture holds. "Don't" says you should not act. "Can't" makes the action structurally impossible.
+Policy enforcement fails where architecture holds. "Don't" says you should not act. "Can't" makes the action structurally impossible.
 
 But there is a third mode: "prove." Where "can't" constrains the action space, "prove" attaches verifiable authorization to every action within that space. Where "don't" expresses a policy, "prove" cryptographically binds the policy to the action at execution time.
 
@@ -87,7 +87,7 @@ The proof travels with the action, signed by the sidecar (a separate trust domai
 
 ## AI-Native Policy Languages
 
-Traditional policy languages (XACML, OPA's Rego, Cedar) were designed for human-readable service authorization. They work when the set of possible actions is finite and enumerable.
+Traditional policy languages (XACML, OPA's Rego, Cedar) were designed for human-readable service authorization. They work when the set of possible actions is enumerable.
 
 Agentic systems break this model. An agent's action space is not enumerable. An agent asked to "negotiate a contract" can produce an arbitrary sequence of tool invocations across an arbitrary set of resources. Policy languages that enumerate permitted actions cannot cover what they did not anticipate.
 
@@ -125,7 +125,7 @@ The Authenticated Workflows paper reports 100% detection rate with zero false po
 
 ## How the Three Layers Compose
 
-Ghost tokens, AI-native policy languages, and action-level authorization proofs operate at different layers of the stack. They compose because they address different concerns.
+Ghost tokens, AI-native policy languages, and action-level authorization proofs operate at different layers of the stack.
 
 **CAAM at the credential layer** answers: who is this agent, what authority has been delegated for this session, and can I verify that without trusting the agent itself? The ghost token is the proof artifact.
 
@@ -143,7 +143,7 @@ The "prove" mode maps onto all three PAC pillars, but differently than "can't" a
 
 **Control:** Cryptographic authorization makes enforcement verifiable. A policy that says "max $500" is enforceable. A ghost token encoding `"amount": 247` with a signature from a trusted sidecar is verifiably enforced. The resource server does not need to consult a policy engine at runtime: the proof travels with the request.
 
-**Authorization:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
+**Accountability:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
 
 **Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits. The Potential pillar connects to the maturity of the authorization infrastructure.
 

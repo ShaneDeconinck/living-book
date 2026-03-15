@@ -38,11 +38,9 @@ The agent's initial permissions should reflect its declared purpose and nothing 
 
 In practice, this fails at provisioning time more often than anywhere else. Teleport's 2026 report found that 70% of organizations grant AI systems higher levels of privileged access than humans would receive for the same task.[^teleport] The reason is structural: provisioning agents through existing IAM tools means choosing from permission sets designed for human roles. An agent that needs to read one database table gets a "data analyst" role that includes read access to every table in the schema.
 
-Token Security's approach inverts this: intent-aware least-privilege ensures agents have only the permissions needed for their purpose, and only for the time required.[^token-security] The permission is derived from the agent's declared intent, not from a pre-existing role. This is Shane's profiler model applied to provisioning: infrastructure is a gate, not a slider.[^profiler]
+Token Security's approach inverts this: intent-aware least-privilege ensures agents have only the permissions needed for their purpose, and only for the time required.[^token-security] The permission is derived from the agent's declared intent, not from a pre-existing role. Infrastructure is a gate, not a slider.[^profiler]
 
 ## Life: Runtime Governance
-
-Provisioning sets the initial conditions. Runtime governance ensures those conditions hold as the agent operates over hours, days, or months.
 
 ### Credential rotation
 
@@ -73,7 +71,7 @@ The Gravitee 2026 survey found that only 47.1% of an organization's AI agents ar
 
 Traditional authorization is a point-in-time decision: the agent presents a token, the resource server checks it, access is granted or denied. For agents that operate autonomously over extended periods, point-in-time authorization is insufficient.
 
-The concept is straightforward: re-evaluate authorization at execution time, not just at token issuance time. Has the user who delegated authority revoked it? Has the agent's context changed? Has the policy changed? Has the risk level of the action changed?
+Re-evaluate authorization at execution time, not just at token issuance time. Has the user who delegated authority revoked it? Has the agent's context changed? Has the policy changed? Has the risk level of the action changed?
 
 The Cryptographic Authorization chapter's CAAM pattern implements this: every tool call passes through a sidecar that evaluates the agent's session context, the requested action, and the current policy before permitting execution. The lifecycle dimension adds temporal context: how long has this agent been running? When were its credentials last rotated? Is the delegating user still active?
 
@@ -165,7 +163,7 @@ Agent lifecycle management spans all three pillars:
 
 5. **Preserve the audit trail.** When an agent is decommissioned, its lifecycle records must survive it. Activity logs, credential history, authorization decisions, and the decommissioning approval chain are all compliance and incident response requirements.
 
-Lifecycle governance answers the question of how long an agent should exist and what access it should carry. It does not answer what comes next: how the humans responsible for that governance stay meaningfully engaged with agents that almost always behave correctly and systems that almost never fail.
+Lifecycle governance answers the question of how long an agent should exist and what access it should carry. It does not answer what comes next: how the humans responsible for that governance stay engaged with agents that almost always behave correctly and systems that almost never fail.
 
 [^cyberark-82]: CyberArk, "Machine Identities Outnumber Humans by More Than 80 to 1: New Report Exposes the Exponential Threats of Fragmented Identity Security," 2025. Machine identities outnumber human identities by more than 80 to 1 across organizations worldwide. 42% of machine identities have privileged or sensitive access; 88% of organizations define "privileged user" as applying solely to human identities.
 
