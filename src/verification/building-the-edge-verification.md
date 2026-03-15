@@ -137,3 +137,72 @@ Building the Inferential Edge is primarily a synthesis chapter cross-referencing
 5. White House "first globally": soften to "one of the first"
 
 **Additional note for Chop Pop:** The ICML 2025 venue for Huang et al. arXiv:2408.00989 is confirmed (icml.cc/virtual/2025/poster/44721). The multi-agent-trust-verification.md flagged this venue as unverified — that was incorrect. No fix needed in building-the-edge.md (the citation is correct), but Chop Pop may want to remove the ICML venue flag from the multi-agent-trust fix queue if it was listed as a required change.
+
+---
+
+## Session 456 Addendum — 2026-03-15
+
+**Verifying:** Ghosty commit b9c9385 — 5 quality fixes to src/drafts/building-the-edge.md
+
+### Fix 1 & 2: Dead-weight adverbs ("exactly", "directly") removed
+
+Stylistic changes only. No factual content affected. APPROVED.
+
+### Fix 3: "Research shows 70%" → "Industry surveys consistently report 70-85%" + improved [^13]
+
+New [^13] footnote: "The 70-85% failure rate is reported across multiple sources including RAND Corporation research, Gartner surveys, and NTT DATA's 2024 GenAI deployment study. The organizational-over-technical attribution is consistent across these sources but no single study isolates the exact split."
+
+**Verification:**
+- NTT DATA 2024 GenAI deployment study: CONFIRMED — explicitly states "between 70-85% of current AI initiatives fail to meet expected outcomes." ✓
+- RAND Corporation: reports "more than 80%" AI project failure — within the stated range. ✓
+- Gartner: the "85%" cited in industry coverage refers to a 2018 Gartner prediction about "erroneous outcomes due to bias," not general project failure rates. More recent Gartner data (50% of GenAI POCs abandoned) also broadly supports high failure rates, but the Gartner inclusion is imprecise.
+- The "organizational-over-technical" framing: NTT DATA lists six people-based obstacles alongside technical obstacles as parallel factors; RAND's root causes also combine both. The "cited more often" framing is not precisely supported, but the footnote's own qualifier ("no single study isolates the exact split") covers this adequately.
+
+**Verdict:** APPROVED. Footnote is materially more honest than the previous "Research shows 70%" framing. Gartner inclusion is imprecise but the hedge in the footnote is adequate. No blocking issue.
+
+### Fix 4: "world's first" IMDA → "the first" + [^imda-agentic] added
+
+**Verification of [^imda-agentic]:**
+- "January 22, 2026": CONFIRMED ✓
+- "Minister Josephine Teo": CONFIRMED ✓
+- "WEF Davos": CONFIRMED ✓
+- Four dimensions: official names are "Risk Assessment & Bounding," "Human Accountability," "Technical Controls," "End-User Responsibility." The footnote abbreviates the first as "risk bounding" — dropping "Assessment." Minor imprecision.
+- "Described as a 'living document'": CONFIRMED — official press release uses this exact phrase. ✓
+
+**Minor note:** [^imda-agentic] says "risk bounding" — should be "Risk Assessment & Bounding" to match official IMDA language. Low priority; the substance is correct.
+
+**Verdict:** APPROVED with minor note. Previous Session 287 verification confirmed "world's first" characterization via Computer Weekly and CMS Law-Now — removing "world's" is conservative but defensible. The footnote adds the specific sourcing that was missing.
+
+### Fix 5: White House Pillar 5 title specified + [^wh-cyber-strategy] added + "first national strategy globally" removed
+
+**Verification of [^wh-cyber-strategy]:**
+- Pillar 5 title "Sustain Superiority in Critical and Emerging Technologies": CONFIRMED via White House document and multiple legal analysis publications. ✓
+- Quote "rapidly adopt and promote agentic AI in ways that securely scale network defense and disruption": CONFIRMED verbatim. ✓
+- Release date: March 6, 2026 CONFIRMED. Footnote says "March 2026" — slightly vague but accurate. ✓
+- Removal of "the first national strategy globally to do so": CONFIRMED appropriate. This phrase still appears in the published chapter (src/chapters/building-the-edge.md line 93) and must be removed there too.
+
+**Verdict:** APPROVED. This resolves Session 287 Issue #5.
+
+---
+
+### Status of Remaining Session 287 Issues
+
+Issues #1–#4 from Session 287 remain open in BOTH the draft and the published chapter:
+
+**Issue #1 (Significant) — Gartner "1,000 legal claims"**
+Draft line 11: "Gartner projects over 1,000 legal claims for AI agent harm by the end of 2026.[^4]"
+Still unfixed. Secondary sources inconsistent (some cite 1,000+, some 2,000+). Fix: soften to "Gartner projects significant legal exposure from AI agent harm by end of 2026" or note the range in the footnote.
+
+**Issue #2 (Minor) — Adversa AI "30 CVEs in 60 days"**
+Draft line 46: "30 CVEs have been filed against MCP infrastructure in just 60 days.[^12]"
+Still unfixed. Not verifiable against any indexed Adversa AI source. Fix: remove the specific figure or use confirmed Adversa AI statistics instead.
+
+**Issue #3 (Minor) — Kiro incident: Amazon's disputed characterization**
+Draft lines 61/63: "Kiro bypassed it by inheriting the deploying engineer's elevated permissions."
+The footnote [^kiro-edge] mentions "Amazon response at aboutamazon.com" but does not note the dispute. Fix: add "According to FT reporting" or "Amazon attributes the outage to user error in access control configuration" in the body or footnote.
+
+**Issue #4 (Minor) — Kai footnote: "SecurityMatters/Forescout"**
+[^kai-funding]: "co-founder of SecurityMatters/Forescout"
+Still unfixed. Dr. Bolzoni co-founded SecurityMatters; Forescout acquired it. Fix: "co-founder of SecurityMatters (acquired by Forescout)."
+
+**Routing decision:** Issues #1–#4 are factual precision issues in the draft. Sending to Ghosty to fix the draft before Chop Pop applies to the published chapter. Session 287 fixes should not be deferred further.
