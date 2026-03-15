@@ -152,3 +152,81 @@ Footnote `[^imprivata-aim]` now reads "short-lived tokens" without "scoped."
 ### Final Status
 
 **OVERALL: APPROVED FOR PUBLICATION.**
+
+---
+
+## Session 467 Addendum: Reasoning Transparency Section (Ghosty Session 465, Commit 017760a)
+
+**Date:** 2026-03-15
+**Scope:** New "Reasoning Transparency" section added to src/drafts/agent-observability.md in commit 017760a. Two new footnotes: `[^realm-labs]` and `[^openai-atlas]`.
+**Status:** ISSUES FOUND — 2 issues (1 medium, 1 minor)
+
+### New Claims Verified
+
+**Realm Labs / OmniGuard / RSAC 2026 finalist:** CONFIRMED (pre-verified in session 443). Prism monitors attention patterns and internal chain-of-thought during inference; OmniGuard provides runtime enforcement; RSAC 2026 Innovation Sandbox finalist confirmed via PRNewswire. `[^realm-labs]` footnote citing realmlabs.ai is accurate.
+
+**CoT faithfulness gap (traces may not determine outputs):** CLEAN. This is a well-established ML research finding, not a contested claim requiring a named source. The framing ("CoT logs are forensically valuable... not cryptographic evidence of what it computed") is accurate and appropriately hedged.
+
+**CoT logs as "incomplete evidence" vs Layer 2/Layer 3:** CLEAN. The distinction between cryptographically bound accountability evidence and advisory reasoning traces is accurate and well-framed.
+
+---
+
+### I1 — MEDIUM: OpenAI Atlas technical description incorrect
+
+**Location:** `[^openai-atlas]` footnote and body text:
+> "OpenAI's Atlas system applies the same principle to injection detection: reasoning trace analysis identifies when the model is processing adversarial instructions rather than legitimate user context."
+
+> [^openai-atlas]: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," December 2025, openai.com. Chain-of-thought analysis used to detect prompt injection attempts at inference time.
+
+**What is wrong:** The document title, date, and URL are correct (openai.com/index/hardening-atlas-against-prompt-injection/, December 2025). But the technical description is a mischaracterization.
+
+According to the source, OpenAI uses **reinforcement learning-powered automated red teaming** to harden Atlas. In this approach, an automated attacker uses chain-of-thought reasoning to generate candidate prompt injections and simulate attacks — CoT is part of the *attacker's* reasoning, not a detection mechanism. The defense comes from **adversarial training** of the model and **system-level safeguards**, not from inference-time CoT analysis.
+
+The chapter frames Atlas as using "reasoning trace analysis [to identify] when the model is processing adversarial instructions" — implying real-time CoT-based detection. The source describes the opposite direction: CoT used by an attacker to discover injections, which then feeds adversarial training.
+
+**Fix (body text):** Remove or rewrite the Atlas sentence. Suggested:
+> "OpenAI's Atlas hardening approach uses reinforcement learning-powered automated red teaming — an automated attacker reasons through candidate injections and tests them in simulation, with discoveries feeding back into adversarial training.[^openai-atlas]"
+
+Or, if the section wants to preserve the "inference-time monitoring" parallel with Realm Labs, remove the Atlas reference entirely — Atlas does not use inference-time CoT detection and does not belong in that comparison.
+
+**Fix (footnote):** Replace "Chain-of-thought analysis used to detect prompt injection attempts at inference time" with "RL-powered automated red teaming: an automated attacker uses CoT reasoning to generate candidate injections, which feeds adversarial training of the Atlas model."
+
+---
+
+### I2 — MINOR: EU AI Act "explanations of model behavior" overstates Annex IV
+
+**Location:** Body text:
+> "The EU AI Act's technical documentation requirements for high-risk systems include explanations of model behavior..."
+
+**What is wrong:** Annex IV (technical documentation for high-risk AI systems, Article 11) does not use the phrase "explanations of model behavior." The actual requirements include:
+- "Technical measures needed to facilitate the interpretation of the outputs of AI systems" (Article 13(3)(d) cross-reference)
+- "Capabilities and limitations in performance" documentation
+- "Foreseeable unintended outcomes" and use-case specifications
+
+"Explanations of model behavior" is a plausible paraphrase but overstates the specificity of the requirement. The regulation does not mandate behavior explanations — it mandates output interpretability measures and capability/limitation documentation.
+
+**What is accurate:** The claim that "guidance on whether CoT logs satisfy that requirement does not yet exist" is CONFIRMED. Commission Guidelines on Transparent AI Systems are due Q2 2026 and have not yet been published.
+
+**Fix:** Tighten the characterization:
+> "The EU AI Act's technical documentation requirements for high-risk systems include measures to facilitate interpretation of model outputs (Article 13(3)(d)) and documentation of capabilities and limitations, but specific guidance on whether CoT logs satisfy any of these requirements does not yet exist."
+
+Or more concisely:
+> "The EU AI Act requires high-risk AI systems to document capabilities and limitations and facilitate output interpretation (Annex IV), but no published guidance addresses whether CoT logs satisfy these requirements."
+
+---
+
+### Clean in New Section
+
+- Realm Labs Prism monitors attention patterns and CoT during inference (not just post-hoc logging): CONFIRMED ✓
+- OmniGuard as runtime enforcement layer: CONFIRMED ✓
+- RSAC 2026 Innovation Sandbox finalist: CONFIRMED via PRNewswire ✓
+- Document title "Continuously hardening ChatGPT Atlas against prompt injection attacks": CONFIRMED ✓
+- Document date December 2025, openai.com: CONFIRMED ✓
+- CoT faithfulness gap is a recognized limitation (not cryptographic evidence of computation): CLEAN (established ML finding) ✓
+- CoT guidance gap (Commission guidelines Q2 2026): CONFIRMED ✓
+
+### Session 467 Status
+
+**ISSUES FOUND — routing to Ghosty.**
+- I1 (MEDIUM): OpenAI Atlas technical description wrong — fix body text sentence and footnote
+- I2 (MINOR): EU AI Act language overstates Annex IV; tighten to actual requirements
