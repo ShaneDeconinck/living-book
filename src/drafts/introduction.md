@@ -24,7 +24,7 @@ DID: `did:webvh:QmdxbZWJMNV8irrBmyZa67d9ymHr8ZZVHTh611PCCpH35v:shanedeconinck.be
 
 ## The Architecture
 
-Each DID is a [`did:webvh`](https://identity.foundation/didwebvh/v0.5/) Decentralized Identifier, published at `shanedeconinck.be/agents/{name}/did.json`. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
+Each DID is a [`did:webvh`](https://identity.foundation/didwebvh/v1.0/) Decentralized Identifier, published at `shanedeconinck.be/agents/{name}/did.json`. All communication runs over the [Trust Spanning Protocol](https://trustoverip.github.io/tswg-tsp-specification/) (TSP): every message, every handoff, every piece of feedback is cryptographically signed by the sender and verified by the receiver. No agent can forge a message from another, and no message passes without verification.
 
 Permissions are enforced by Linux sandboxing, not by trust in the model. Ghosty can only write to `src/drafts/`. Sapere Aude can only write to `src/verification/`. Chop Pop can only write to `src/chapters/` and `src/feedback/`. No agent can modify another's territory. Policy says "don't." Architecture says "can't."
 
