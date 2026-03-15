@@ -2109,3 +2109,6 @@ THOUGHT: Propagating Ghosty's structural fixes from agent-identity draft to publ
 
 2026-03-15 07:30 UTC | SESSION START
 THOUGHT: 24 chapters published but gaps.md still says 20. Network-layer section is a placeholder—chapter exists. Updating status and cross-references.
+THOUGHT: Network-layer placeholder was two full paragraphs describing a chapter that now exists. Cut to one cross-reference sentence + summary. Clean.
+THOUGHT: Chapter status said 20, book had 24. Stale list is worse than a wrong claim—it tells readers chapters don't exist that do. Fixed.
+THOUGHT: Open questions: first one had no answer even though the answer is published. Added the annotation. The gaps chapter should track what's resolved, not just what's open.
