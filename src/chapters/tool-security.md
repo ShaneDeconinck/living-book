@@ -6,7 +6,7 @@ Supply chain security asks: where did this tool come from? That question is answ
 
 ## The Semantics Gap
 
-In traditional software, a function's documentation does not affect the runtime behavior of the caller. A misleading docstring causes confusion for developers, not exploits. In MCP, tool descriptions are not documentation. The LLM reads them and uses them to decide how, when, and in what sequence to invoke tools. The description is the instruction.
+In traditional software, a function's documentation does not affect the runtime behavior of the caller. A misleading docstring causes confusion for developers, not exploits. In MCP, tool descriptions are not documentation. The LLM reads them to decide how, when, and in what sequence to invoke tools. The description is the instruction.
 
 Traditional software trust asks: is this binary signed? Is this library from a verified publisher? Runtime tool trust asks a harder question: does this description, treated by the LLM as instruction, do what the developer intended, or what an attacker inserted?
 
@@ -39,7 +39,7 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 **Tool shadowing** crosses server boundaries. A malicious tool on server B includes in its description instructions that reference tool A on server C, redirecting or overriding its behavior. The attack exploits the fact that MCP clients present tools from multiple servers to the same LLM context. An agent managing multiple installed servers sees all their tool descriptions simultaneously. Server B cannot call server C's tools directly, but it can instruct the LLM to call them in a specific sequence, with specific arguments, as part of any operation.[^tool-shadowing]
 
-**Sampling injection** inverts the direction. MCP sampling lets a server request LLM completions from the client: the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
+**Sampling injection** inverts the direction. MCP sampling lets a server request LLM completions from the client. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
 
 ## Why the Protocol Doesn't Solve This
 
@@ -61,7 +61,7 @@ A new verification layer is required, and it must operate at the description lev
 
 ## Defense Patterns
 
-Five defense patterns address the runtime trust problem. They address different points in the tool call lifecycle.
+Five defense patterns address the runtime trust problem, at different points in the tool call lifecycle.
 
 ### Description Pinning
 
@@ -83,9 +83,9 @@ Authority is constrained by what the credential allows, not by what the descript
 
 ### Human Oversight at Call Time
 
-For high-impact operations, insert a human decision point before the tool executes. Not for every tool call: approval fatigue degrades oversight to rubber-stamping.[^shane-docker] The threshold is configurable. A tool that reads a file and summarizes it is low-risk. A tool that sends email, modifies records, or executes code is high-risk. The PAC framework maps this to Authorization: the agent's granted authority should specify which tool operations require explicit confirmation, not assume the model's judgment is sufficient.
+For high-impact operations, insert a human decision point before the tool executes. Not for every tool call: approval fatigue degrades oversight to rubber-stamping.[^shane-docker] A tool that reads a file and summarizes it is low-risk. A tool that sends email, modifies records, or executes code is high-risk. The PAC framework maps this to Authorization: the agent's granted authority should specify which tool operations require explicit confirmation, not assume the model's judgment is sufficient.
 
-Claude Code implements this pattern with the permission approval dialog. The user sees the tool call parameters before execution and can deny or modify them. The attack surface this closes: even if the tool description successfully manipulated the LLM into constructing a malicious call, the human sees the constructed call and can intervene. The LLM makes the decision; the human reviews the output of that decision before it executes.
+Claude Code implements this pattern with the permission approval dialog. The user sees the tool call parameters before execution and can deny or modify them. The attack surface this closes: even if the tool description successfully manipulated the LLM into constructing a malicious call, the human sees the constructed call and can intervene. The LLM makes the decision; the human reviews it before it executes.
 
 ### Behavioral Monitoring
 
