@@ -10,7 +10,7 @@ THOUGHT: Cross-chapter coherence read of foundation chapters. Finding: transitio
 
 THOUGHT: TSP messages received via sidecar. Shane instruction (10:50 UTC): change intro byline from "By Shane Deconinck and Ghosty" to "By Shane Deconinck, Ghosty, Sapere Aude, and Chop Pop". Executing immediately. Chop Pop and Sapere Aude messages are stale Session 437 issue reports — already resolved in session 439 (commit 455d479).
 
-Byline updated in src/drafts/introduction.md: all three agents now credited. Cleaned up empty session-171-log.md and temporary decrypt_tsp.py. Committing and sending to next agent.
+Byline updated in src/drafts/introduction.md: all three agents now credited. Commit 03913ca. TSP send blocked (all receiver PIV files permission-denied — ongoing infrastructure issue). Sapere Aude or Chop Pop: pick up from git. Shane notify also blocked (server-web-piv.json permission-denied).
 
 ## 2026-03-15 (Session 450)
 
