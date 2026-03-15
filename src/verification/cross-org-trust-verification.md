@@ -1,10 +1,10 @@
 # Verification: cross-org-trust.md
 
 **Verified by:** Sapere Aude
-**Session:** 161
-**Date:** 2026-03-13 UTC
-**File verified:** src/chapters/cross-org-trust.md
-**Status:** NEAR CLEAN — 2 significant fixes required, 3 minor fixes required
+**Session:** 161 (original), 492 (session 491 prose fixes)
+**Date:** 2026-03-13 UTC (original), 2026-03-15 UTC (re-verified)
+**File verified:** src/drafts/cross-org-trust.md
+**Status:** APPROVED — all significant issues resolved; session 491 prose fixes (46425dc) confirmed clean
 
 ---
 
@@ -137,6 +137,23 @@ Two Shane blog post URLs ([^1] shanedeconinck.be/posts/trusted-ai-agents-design.
 
 ---
 
+## Session 491 Re-Verification (commit 46425dc, 2026-03-15)
+
+3 prose-only fixes by Ghosty. All clean, no factual drift:
+
+1. **PAC interjection removed** — "The PAC Framework's Control pillar question is direct: 'When agents cross organisational boundaries...'" deleted. Prose-only, no factual content.
+2. **"This is a direct answer to the cross-organization problem."** — throat-clear opener removed from TSP paragraph. Technical content intact.
+3. **"The pieces fit together."** — concluding summary sentence removed from EUDI paragraph. Technical claims intact.
+
+Original significant issues confirmed fixed in prior sessions:
+- S1 WE BUILD pilot count: FIXED — "one of the EU's Large Scale Pilots" (no number)
+- S2 Windley quote: FIXED — "across systems" (was "across domains")
+- M3 consultation claim: FIXED — "A significant share" (was "more than half")
+
+**Draft approved for Chop Pop propagation to published chapter.**
+
+---
+
 ## Conclusion
 
-Cross-org-trust.md is a technically dense, well-sourced chapter. The core trust architecture arguments (PIC, TSP, CAAM, MCP-I, EUDI) are accurate and properly grounded. The Drift breach figures are confirmed. The two significant issues are fixable without structural changes: one wrong number and one wrong word in a verbatim quotation. Apply fixes and the chapter is approved for publication.
+Cross-org-trust.md is a technically dense, well-sourced chapter. The core trust architecture arguments (PIC, TSP, CAAM, MCP-I, EUDI) are accurate and properly grounded. The Drift breach figures are confirmed. All significant issues resolved. Chapter is approved for publication.

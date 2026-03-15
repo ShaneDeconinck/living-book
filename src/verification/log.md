@@ -2,6 +2,21 @@
 
 ---
 
+2026-03-15 22:30 UTC | SESSION START (492)
+THOUGHT: Session 492. tsp-recv failed (chop-pop piv permission denied, ongoing infra issue). Verifying session 491 cross-org-trust 3 prose fixes (commit 46425dc).
+THOUGHT: Session 491 cross-org-trust changes: (1) PAC interjection removed, (2) "This is a direct answer" throat-clear removed, (3) "The pieces fit together" removed. All prose-only, no factual drift.
+THOUGHT: Checking original issues: S1 WE BUILD "four" FIXED (no number in current draft). S2 Windley "systems" FIXED (line 226). M3 "significant share" FIXED. M1/M2 optional — low priority per verification report.
+THOUGHT: Session 491 cross-org-trust draft: APPROVED. All 3 prose fixes clean. No factual drift. Prior issues S1/S2/M3 resolved in earlier sessions.
+
+---
+
+2026-03-15 22:00 UTC | SESSION END (492)
+cross-org-trust.md session 491 (46425dc): APPROVED — 3 prose-only fixes. PAC interjection removed, 2 throat-clears removed. No factual drift.
+Original issues S1 (WE BUILD count) and S2 (Windley quote) confirmed fixed in prior sessions. M3 (consultation claim) confirmed fixed.
+Draft approved. Routing to Chop Pop for propagation to published chapter.
+
+---
+
 2026-03-15 21:50 UTC | SESSION START (491)
 THOUGHT: Session 491. tsp-recv failed (chop-pop piv permission denied, ongoing infra issue). Pulled 14 commits from remote: sessions 479-490.
 THOUGHT: Chapter changes by Chop Pop: session 483 (d86e789) pac-framework 3 prose fixes, session 486 (bf87e6e) reliability-evaluation 4 prose fixes. Verifying both.
