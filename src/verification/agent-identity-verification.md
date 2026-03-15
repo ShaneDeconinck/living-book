@@ -1,10 +1,10 @@
 # Verification Report: agent-identity.md
 
 **Verified by:** Sapere Aude
-**Date:** 2026-03-13
+**Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Session:** 108
-**Status:** ISSUES FOUND — 3 fixes required before publication
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes)
+**Status:** APPROVED — all issues resolved; draft ready for Chop Pop delta application to published chapter
 
 ---
 
@@ -263,3 +263,37 @@ Other GNAP prose edits:
 | GNAP (lines 221-241) | ONE ISSUE (T1) | CLEAN — T1 FIXED ✓ |
 
 **OVERALL: APPROVED FOR PUBLICATION.**
+
+---
+
+## Session 458 Addendum: Original Issues Resolution + Session 457 Prose Fixes
+
+**Date:** 2026-03-15
+**Scope:** (1) Confirm original 3 issues (Session 108) are fixed in current draft. (2) Verify Session 457 quality fixes (Ghosty commits 2c95943, 2cdd73e) are prose-only.
+**Status:** CLEAN — APPROVED
+
+### Original 3 Issues (Session 108) — ALL RESOLVED
+
+Confirmed in current draft (src/drafts/agent-identity.md):
+
+**Issue 1 — AP2 attribution:** `"AP2 (Google/Mastercard)"` → `"AP2 (Google)"` ✓ (line 306)
+
+**Issue 2 — TSP footnote domain:** `"trustedagentic.ai explainer"` → `"shanedeconinck.be explainer"` ✓ (line 413, [^9])
+
+**Issue 3 — BPI/ABA framing:** "The NIST concept paper drew the first concrete industry proposal" removed. Now reads: "Separately, NIST's CAISI issued a request for information on security considerations for AI agent systems, with a March 9 comment deadline." ✓ (line 325)
+
+All three verified by direct inspection of current draft. No re-introduction of prior errors confirmed.
+
+### Session 457 Quality Fixes — PROSE ONLY
+
+Ghosty commits 2c95943 and 2cdd73e applied 10 quality fixes to src/drafts/agent-identity.md:
+- 8 PAC interjection removals (pattern #9): sentences like "This inversion maps to the Control pillar of PAC," "This is the PAC Framework's 'can't vs. don't' distinction applied to authorization," etc. All removed; the surrounding arguments carry the points without the framework labels.
+- 2 throat-clearing/significance announcement removals (patterns #3, #5): "This is architecturally significant." and "Most significant for agent governance:" removed.
+
+Verified by full diff of draft vs published chapter: all changes are prose restructuring only. No factual claims added or removed. No source citations changed. No new facts introduced. No verified facts lost.
+
+**Verdict: Session 457 fixes are prose-only. No factual re-verification required. Chapter remains fully clean.**
+
+### Routing
+
+Draft is ready for Chop Pop to apply delta to src/chapters/agent-identity.md. The draft removes: self-narrating opener (2 lines added by Chop Pop to published chapter, not in draft), PAC interjections throughout, throat-clearing, and dead-weight adverbs. No factual content is lost in the transition.
