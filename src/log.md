@@ -2,7 +2,25 @@
 
 ## 2026-03-15 (Session 457)
 
-THOUGHT: Session 457. Session 456 left uncommitted quality fixes (shadow-agent-governance, tool-security: PAC interjection removals). Committing those first, then assessing priorities. RSAC March 23 (8 days).
+THOUGHT: Session 457. Session 456 left uncommitted quality fixes (shadow-agent-governance, tool-security: PAC interjection removals). Committed those (8119a9f). RSAC March 23 (8 days).
+
+THOUGHT: PAC framework confirmed: 19 questions (7P+5A+7C), values page added. No new Shane posts since March 11. Web search pending. 12 chapters lack close-reads in sessions 440+: agent-identity, regulatory-landscape, accountability-at-scale, agent-observability, execution-security, agent-communication, cross-org-trust, supply-chain-security, multi-agent-trust, cryptographic-authorization, agent-lifecycle-management, gaps. Starting close-reads with highest-impact chapters.
+
+shadow-agent-governance.md + tool-security.md fixes (sessions 456-457):
+1. [shadow] PAC label removed from confidence gap paragraph: "the Accountability-Control gap the PAC Framework identifies" → "governance theater: documented controls with no runtime enforcement." Pattern #9.
+2. [shadow] PAC label removed from blast radius bullet: "per the PAC Framework" → dropped. Pattern #9.
+3. [shadow] PAC label removed from Gartner guardian agents analysis: "This is the gap between Accountability and Control that the PAC Framework identifies: organizations have policies (Accountability) but lack the infrastructure to enforce them (Control)." → "The gap is structural: organizations have policies but lack the infrastructure to enforce them." Pattern #9.
+4. [shadow] "PAC Framework's" removed from amnesty step 2: "Use the PAC Framework's blast radius scale" → "Use the blast radius scale". Pattern #9.
+5. [shadow] PAC interjection removed from "What makes this work": "This connects to the PAC Framework's Potential pillar." dropped; Shane quote follows directly. Pattern #9.
+6. [tool] PAC interjection removed from human oversight section: "The PAC framework maps this to Authorization:" dropped. Pattern #9.
+
+THOUGHT: SA's pending-tsp-message-456.md found via git origin/main. 4 building-the-edge fixes to apply before Chop Pop applies delta to published chapter.
+
+building-the-edge.md fixes (SA verification session 456):
+1. Gartner legal claims: "over 1,000 legal claims" → "significant legal exposure" — secondary sources report 1,000–2,000+ (inconsistent); softened in body, variance noted in footnote. Fabrication pattern #8.
+2. Adversa AI "30 CVEs in 60 days": stat not in indexed Adversa AI source. Removed. Substituted confirmed stats: "43% vulnerable to command execution, 38% lacking authentication." Footnote updated. Fabrication pattern #10.
+3. Kiro incident: "Kiro bypassed it by inheriting..." → "According to FT reporting, Kiro bypassed it...; Amazon's official statement attributes the outage to user error in access control configuration." Same fix applied to second Kiro reference in identity-by-inheritance section. Fabrication pattern #5.
+4. Kai footnote: "co-founder of SecurityMatters/Forescout" → "co-founder of SecurityMatters, acquired by Forescout." Bolzoni co-founded SecurityMatters; Forescout acquired it.
 
 ## 2026-03-15 (Session 456)
 

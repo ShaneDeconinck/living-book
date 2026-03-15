@@ -163,7 +163,7 @@ Onyx Security emerged from stealth on March 12, 2026, with $40 million to build 
 
 Gartner's first-ever Market Guide for Guardian Agents (February 25, 2026) made it official: agent governance is a standalone enterprise category, not a feature of existing security tooling.[^gartner-guardian] Gartner defines guardian agents as "a blend of AI governance and AI runtime controls in the AI TRiSM framework that supports automated, trustworthy and secure AI agent activities and outcomes," with three core capabilities: visibility and traceability (understanding what agents do), continuous evaluation (ongoing behavioral assessment), and runtime enforcement (real-time policy application).[^gartner-guardian]
 
-First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. This is the gap between Accountability and Control that the PAC Framework identifies: organizations have policies (Accountability) but lack the infrastructure to enforce them (Control). The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
+First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. The gap is structural: organizations have policies but lack the infrastructure to enforce them. The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
 
 Second: by 2029, independent guardian agents will eliminate the need for almost half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
 
@@ -195,7 +195,7 @@ The most effective transition follows an amnesty pattern:
 
 1. **Discover and inventory.** Use the discovery tools described above to build a complete picture of shadow agents in the organization.
 
-2. **Classify by risk.** Not all shadow agents are equally dangerous. An agent that summarizes meeting notes from a single user's calendar is a different risk category from an agent that screens job applications across the entire HR system. Use the PAC Framework's blast radius scale (B1-B5) and infrastructure requirements (I1-I5) to classify each discovered agent.
+2. **Classify by risk.** Not all shadow agents are equally dangerous. An agent that summarizes meeting notes from a single user's calendar is a different risk category from an agent that screens job applications across the entire HR system. Use the blast radius scale (B1-B5) and infrastructure requirements (I1-I5) to classify each discovered agent.
 
 3. **Amnesty period.** Give agent creators a defined window (30-90 days) to register their agents. During this period, provide clear guidance: what information is needed, how to assess blast radius, what permissions adjustments are required. Make registration easy. If it takes longer to register an agent than to build one, registration will not happen.
 
@@ -212,7 +212,7 @@ The most effective transition follows an amnesty pattern:
 
 The amnesty model treats shadow agent creators as early adopters, not policy violators.
 
-This connects to the PAC Framework's Potential pillar. Shane asks: "How much value are you leaving on the table by over-constraining? Agents that need human approval for every action aren't agents: they're suggestion engines."[^boardroom] The governance system must enable agent autonomy within safe boundaries, not prevent it.
+Shane asks: "How much value are you leaving on the table by over-constraining? Agents that need human approval for every action aren't agents: they're suggestion engines."[^boardroom] The governance system must enable agent autonomy within safe boundaries, not prevent it.
 
 ## Who Owns Agent Governance?
 
