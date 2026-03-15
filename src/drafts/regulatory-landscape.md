@@ -275,19 +275,35 @@ Upcoming:
 
 NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
 
-## What This Means in Practice
+## Compliance by Example: A Hiring Agent
 
-The regulatory landscape leads to practical conclusions:
+An organization deploys an AI agent to screen job applications. It reads resumes, scores candidates against role requirements, and sends shortlisted candidates to a human recruiter for final review. Here is what compliance looks like at each infrastructure level.
 
-**For teams building agents today**: map your agent deployments against the EU AI Act risk tiers. Any agent that could reach high-risk use cases at runtime (employment decisions, credit scoring, critical infrastructure) needs to be governed as high-risk unless you can technically constrain it to lower tiers. Architecture is cheaper than reclassification under pressure.
+**Classification.** Under the EU AI Act, this agent falls squarely into Annex III, category 4(a): "AI systems intended to be used to make decisions affecting terms of work-related relationships." It is high-risk by default. No interpretation needed. Under Singapore's framework, it requires bounded tool access, human override capability, and clear organizational accountability. Under the Colorado AI Act, it qualifies as high-risk because it makes or substantially influences consequential decisions in employment.
 
-**For organizations with shadow agents**: Article 4 is already enforceable. AI literacy is not optional. If your employees are building agents on low-code platforms without governance review, you have a compliance exposure today, not in August.
+**What the infrastructure must do.** Article 12 traceability means logging every screening decision: which resumes the agent saw, what criteria it applied, which candidates it shortlisted, and which it rejected. Not a summary. The decision chain. Article 14 human oversight means the recruiter must be able to override the agent's ranking, review its reasoning, and intervene before any candidate is contacted. Article 9 risk management means ongoing monitoring: is the agent's acceptance rate drifting by demographic? Are its criteria still aligned with the role requirements? This is not a one-time assessment.
 
-**For infrastructure teams**: the NIST concept paper describes the agent identity infrastructure you should be building anyway. Start with I2 (logging everything) and work toward I3 (verified agent identity, tracked delegation). These investments satisfy regulatory requirements and improve engineering quality.
+**Where infrastructure level matters.** At I1 (Open), none of this exists. The agent screens candidates and the recruiter sees the shortlist. No audit trail, no override mechanism, no monitoring. Non-compliant under every framework. At I2 (Logged), the agent's decisions are recorded, but the identity of the agent instance and the authorization chain (who approved this agent to screen for this role?) are not captured. Partial Article 12 compliance at best. At I3 (Verified), the agent has a verified identity, the delegation from hiring manager to agent is tracked, and each screening decision is logged with the criteria applied. This satisfies Article 12, most of Article 14, and provides the audit trail ISO 42001 requires. At I4 (Authorized), the agent's permissions are scoped to specific roles and departments, with context-aware constraints: it cannot screen for a role it was not authorized to evaluate, and its scoring criteria are bound to the job description approved by the hiring manager. This is what meaningful oversight looks like in practice.
 
-**For organizations operating across jurisdictions**: a unified governance framework (like PAC) becomes more valuable as regulation fragments across the EU, U.S. states, and sector-specific requirements. Building to the highest common standard is simpler than maintaining jurisdiction-specific compliance.
+**The cross-jurisdiction answer.** Building to I3 or I4 satisfies the EU AI Act's high-risk requirements, meets Singapore's framework for bounded agent governance, satisfies the Colorado AI Act's transparency and risk management provisions, and provides the traceability the Council of Europe Convention demands. One infrastructure investment covers all four. Building jurisdiction-specific compliance for the same agent would mean maintaining separate audit mechanisms, separate oversight workflows, and separate documentation, all for the same screening decision.
 
-The gap between what agents can do and what regulation requires is an infrastructure gap. Auth, identity, scoping, audit trails, guardrails. The organizations that close this gap for engineering reasons will find compliance is a byproduct. The ones that wait for enforcement will find themselves building under pressure.
+**What breaks without this infrastructure.** An employee builds a resume screening agent on a low-code platform. No compliance review, no registration, no audit trail. The company is the deployer under Article 3(4). Article 4 (AI literacy) is already enforceable: the company is liable for the employee's lack of understanding of what makes this high-risk. Article 73 incident reporting kicks in if the agent discriminates against a protected class: the company must notify the relevant authority within 15 calendar days and may not even know the agent exists.[^art73]
+
+## What to Do Now
+
+These are ordered by urgency, not complexity.
+
+1. **Inventory your agents against risk tiers.** Map every agent deployment (including shadow agents on low-code platforms) to the EU AI Act's Annex III categories. Anything that touches employment, credit, insurance, education, law enforcement, or critical infrastructure is high-risk. If an agent could reach a high-risk use case at runtime, constrain it architecturally or classify it as high-risk. This is the first move because you cannot comply with requirements you do not know apply to you.
+
+2. **Enforce Article 4 now.** AI literacy obligations have been enforceable since February 2025. Staff building or operating agents need to know what makes a use case high-risk, what logging is required, and when human oversight must be possible. This is not a training program: it is a liability boundary. If an employee deploys an unregistered high-risk agent, the organization is non-compliant today.
+
+3. **Build to I3 minimum for high-risk agents.** Verified agent identity, tracked delegation chains, and decision-level audit trails. This satisfies Article 12 traceability across all frameworks. I3 is the threshold where you can answer "what did this agent do, and who authorized it?" to a regulator, an auditor, or a court.
+
+4. **Implement human override at the infrastructure level.** Article 14 demands meaningful oversight. A human reviewing a dashboard is not meaningful if they cannot intervene before the agent acts. Override mechanisms (approval gates, kill switches, scope constraints) must be part of the agent's runtime architecture, not a monitoring overlay.
+
+5. **Prepare incident reporting workflows.** Article 73 timelines are tight: 15 calendar days for serious incidents, shorter for immediate health or safety risks.[^art73] Multi-agent incidents have no established attribution mechanism. Build the traceability infrastructure now so that when an incident occurs, you can identify which agent acted, under whose authority, and through which delegation chain, within the reporting window.
+
+6. **Engage the standards processes.** NIST NCCoE comment period closes April 2. CAISI listening sessions start in April. OpenID AIIM is shaping agent identity standards. The window for influencing these standards is Q2 2026. After that, you comply with what others decided.
 
 ---
 
@@ -302,6 +318,8 @@ The gap between what agents can do and what regulation requires is an infrastruc
 [^gpaiguidelines]: European Commission, [GPAI Provider Guidelines](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers), July 2025.
 
 [^article4]: [Article 4: AI Literacy](https://artificialintelligenceact.eu/article/4/), EU AI Act. In effect since February 2025.
+
+[^art73]: [Article 73: Reporting of Serious Incidents](https://artificialintelligenceact.eu/article/73/), EU AI Act. Providers of high-risk AI systems must report serious incidents to market surveillance authorities "not later than 15 days after becoming aware." Incidents involving immediate risks to health or safety have a shorter window: "without undue delay."
 
 [^penalties]: EU AI Act Article 99: tiered penalties. Prohibited practices: up to €35M or 7% global turnover. High-risk non-compliance: up to €15M or 3%. Incorrect information: up to €7.5M or 1%. [Article 99](https://artificialintelligenceact.eu/article/99/).
 
