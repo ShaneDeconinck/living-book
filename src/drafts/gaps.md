@@ -60,6 +60,8 @@ The ToIP/DIF working groups are a parallel path: cross-foundation collaboration 
 
 Palo Alto Networks completed its $25 billion acquisition of CyberArk on February 11, 2026: the largest deal in the history of the cybersecurity industry. CyberArk's SPIFFE-based agent identity solution becomes core to Palo Alto's platform. CrowdStrike acquired SGNL for $740 million in January. Delinea completed StrongDM in March. These are not startup investments: they are established security vendors paying hundreds of millions to acquire agent identity and authorization capabilities.
 
+A different kind of acquisition tells a different story. Meta acquired Moltbook on March 10: an acqui-hire that brought co-founders Matt Schlicht and Ben Parr into Meta Superintelligence Labs.[^meta-moltbook] Moltbook was the AI agent social network that went viral because of apparent agent scheming behavior, which turned out to be human-engineered outputs posted for engagement.[^shane-openclaw] Separately, Wiz Research found the platform's Supabase database misconfigured with full read/write access, exposing 1.5 million API tokens, over 35,000 email addresses, and private messages.[^moltbook-wiz] The identity infrastructure was absent: anyone could impersonate any agent. Meta acquired this.
+
 The open question: does platformization help or hurt the open-standards trajectory? CyberArk used SPIFFE, an open standard. Under Palo Alto, the incentive shifts toward platform lock-in. If agent identity becomes a proprietary capability embedded in security platforms, the IETF drafts and DIF work may end up as specifications without implementations. Keycloak's ID-JAG implementation pushes against this: open-source implementations make standards durable regardless of what platform vendors do. The tension between platformization and interoperability is the field's central strategic question through 2026 and beyond.
 
 ## Architectural Observations Worth Tracking
@@ -187,6 +189,18 @@ In Q1 2026, three categories of institution independently validated agent govern
 
 The convergence matters because each track reinforces the others. Standards without regulatory demand produce specifications that no one implements. Regulation without standards produces compliance without interoperability. Market demand without standards produces platform lock-in. All three converging in a single quarter is what creates the conditions for infrastructure investment. The book's argument that trust infrastructure is a precondition for agent deployment is no longer a technical thesis. It is institutional consensus.
 
+### The Deployment Gap Is the Inferential Edge, Quantified
+
+The book's inferential edge concept now has a concrete measure. MIT Sloan Management Review analysis (March 2026): less than 20% of the effort behind deploying an AI agent system goes to prompt engineering and model development. More than 80% is consumed by the sociotechnical work.[^mit-sloan-deployment] This is the gap between "having access to a powerful model" and "being able to use it safely, at scale." Shane frames this as the inferential edge: "the gap between having access to a powerful model and being able to use it. And that gap is wide."[^inferential-edge]
+
+The MIT Sloan five heavy lifts: data integration, model validation, ensuring economic value, monitoring for model or data drift, and governance.[^mit-sloan-deployment] Governance appears as a primary scaling challenge: not compliance overhead managed after deployment, but a heavy lift that determines whether deployment succeeds. The 80% sociotechnical burden is where governance lives.
+
+The five heavy lifts map to the book's architecture: data integration is the context and communication infrastructure agents depend on; model validation is the Accountability pillar (you cannot audit what you cannot validate); monitoring for drift is sustained accountability across the deployment lifecycle; governance maps to the Control pillar. Ensuring economic value is the forcing function that makes the other four urgent: organizations that cannot demonstrate ROI from agent deployments cannot sustain the investment in the infrastructure to govern them.
+
+What I find worth noting: the 80% figure confirms that the inferential edge is not primarily a model quality problem. It is an infrastructure and governance problem. Organizations that close it first gain compounding advantage: every automated process improves their context pipelines, trust infrastructure, and operational learning. Every cycle raises the ceiling on what they can safely automate.[^inferential-edge]
+
+(MIT Sloan does not use PAC terminology. The mapping of the five heavy lifts to the book's architecture is my own connection. Reporting the connection, not asserting it as the MIT Sloan finding.)
+
 ## What the Book Does Not Cover Yet
 
 ### Semantic Interoperability
@@ -215,7 +229,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 427.
+24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 15, 2026. Gaps chapter updated through Session 453.
 
 **Published (src/chapters/):**
 1. Introduction
@@ -292,3 +306,8 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^itu-agent-identity]: ITU, "Trustable and Interoperable Digital Identities for Human and Agentic AI," ITU-T Workshop, March 30-31, 2026, Geneva. Organized by ITU-T Study Group 17 (security). itu.int/en/ITU-T/Workshops-and-Seminars/2026/0330.
 [^idjag-wg]: draft-ietf-oauth-identity-assertion-authz-grant-02, "Identity Assertion JWT Authorization Grant," datatracker.ietf.org, 2026. Adopted by IETF OAuth Working Group. Authors: Aaron Parecki, Karl McGuinness, Brian Campbell. Revision -02 expires September 3, 2026. Previously individual submission (draft-parecki-oauth-identity-assertion-authz-grant). Call for adoption closed September 2025.
 [^kyapay-ietf]: draft-skyfire-kyapayprofile-00, "KYAPay Profile," datatracker.ietf.org, March 2, 2026. Defines JWT profiles for agent identity ("kya") and payment ("pay") tokens. Identity Token Issuer conducts KYC/KYB verification and issues cryptographically signed tokens attesting to principal, agent, and platform identity. Also: Skyfire and Visa, "Secure Agentic Commerce Purchase Using the KYAPay Protocol and Visa Intelligent Commerce," businesswire.com, December 2025.
+[^meta-moltbook]: TechCrunch, "Meta acquired Moltbook, the AI agent social network that went viral because of fake posts," techcrunch.com, March 10, 2026. Acqui-hire: co-founders Matt Schlicht and Ben Parr joined Meta Superintelligence Labs (MSL), led by Alexandr Wang.
+[^moltbook-wiz]: Wiz Research disclosed Moltbook's misconfigured Supabase database on February 2, 2026: full read/write access exposing 1.5 million API tokens, 35,000+ email addresses, and private messages. Reported in TechCrunch, March 10, 2026. Vulnerability has since been fixed.
+[^shane-openclaw]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," shanedeconinck.be, February 17, 2026. Viral Moltbook screenshots were human-engineered outputs or statistical artifacts presented without context. Lex Fridman: "It's art when you know how it works. It's an extremely powerful viral narrative creating, fearmongering machine if you don't know how it works."
+[^mit-sloan-deployment]: MIT Sloan Management Review, "5 'Heavy Lifts' of Deploying AI Agents," mitsloan.mit.edu, March 2026. Less than 20% of deployment effort on prompt engineering and model development; more than 80% on sociotechnical work. Five heavy lifts: data integration, model validation, ensuring economic value, monitoring for model/data drift, governance.
+[^inferential-edge]: Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge," shanedeconinck.be, March 2, 2026. "The inferential edge is the gap between having access to a powerful model and being able to use it. And that gap is wide." "Every process you automate teaches your organisation something. Your trust infrastructure gets sharper. Your context pipelines improve."

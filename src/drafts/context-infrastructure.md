@@ -1,10 +1,8 @@
 # Context Infrastructure
 
-The previous chapter asked whether agents are reliable. This chapter asks a different Potential question: what do agents know?
+Context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
 
-Shane's argument is that context is the durable competitive advantage in agentic AI. Models depreciate. Scaffolding depreciates. Access to a frontier model takes a credit card. But the information infrastructure that feeds those models appreciates with every upgrade.[^1]
-
-This is not a claim about prompt engineering or RAG pipelines. It is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable. And it connects to the PAC Framework: context is where Potential meets Control.
+This is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable.
 
 ## Everything Else Depreciates
 
@@ -30,7 +28,7 @@ The architecture that resulted is instructive: a single loop, a handful of basic
 
 Manus, the AI agent that gained widespread attention in early 2026, learned the same lesson independently. Their team rebuilt the agent framework four times, each time after discovering a better way to shape context rather than adding more scaffolding. They describe the process as "Stochastic Graduate Descent": an experimental science of context optimization.[^4]
 
-In the Potential pillar, durability is a key dimension: will what you build today still compound in a year, or become dead weight when the next model drops? Scaffolding fails the durability test. Context infrastructure passes it.
+The durability test: will what you build today still compound in a year, or become dead weight when the next model drops? Scaffolding fails it. Context infrastructure passes it.
 
 ## What Context Means Here
 
@@ -90,7 +88,7 @@ The principle is to model information after the domain, not after today's tool o
 
 The industry is learning this through experience. The evolution from basic RAG (chunk text, embed it, retrieve by similarity) to knowledge graph-augmented retrieval reflects a growing understanding that relationships between entities matter as much as the entities themselves. Vector similarity search finds passages that sound related. Structured knowledge finds passages that are related: following entity relationships, reasoning over constraints, respecting hierarchies.
 
-For the PAC Framework, structure affects reliability. An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure is a Potential investment that compounds.
+An agent reasoning over well-structured domain knowledge makes fewer errors than one reasoning over flat text chunks. Structure compounds: every model upgrade benefits from better-organized information.
 
 ### 2. Permissions
 
@@ -100,7 +98,7 @@ This is where context infrastructure meets identity infrastructure. OBO tokens s
 
 Shane's Google Workspace example applies here too: the user intends "help me find one email from last week," but if the information layer has no finer granularity than "all email," that is what the agent gets.
 
-Permissions on context connect to the Control pillar: infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
+Infrastructure-level enforcement (I4 and above) requires not just identity controls but information controls.
 
 #### The convergence of identity and information governance
 
@@ -124,7 +122,7 @@ MCP's 2026 roadmap addresses the gaps that production use surfaced: stateful ses
 
 The relationship between MCP and A2A maps to different context discovery needs. MCP is how an agent finds and uses tools and data sources. A2A is how agents find and communicate with each other. Together, they form the discovery infrastructure for context: what information exists, where it lives, and how to get it.
 
-For the PAC Framework, discovery is a Potential dimension: agents cannot leverage information they cannot find. But it is also a Control dimension: discoverable information needs discoverable permissions.
+Agents cannot leverage information they cannot find. But discoverable information needs discoverable permissions: the two go together.
 
 ### 4. Authority
 
@@ -138,7 +136,7 @@ But agent gateways introduce new questions. How do they interact with service me
 
 ### 5. Freshness
 
-Up to date, or at least versioned. Stale information fed to an agent is worse than no information: it acts on it with full confidence. Wrong context produces wrong decisions at machine speed.[^1]
+Up to date, or at least versioned. Stale information fed to an agent is worse than no information: it acts on it with full confidence. Wrong context produces wrong decisions before anyone notices.[^1]
 
 This dimension is often underestimated. Organizations focus on getting information into the agent's context but not on keeping it current. A policy document updated last quarter that the agent treats as current. A customer record that was modified yesterday by another system. A price list that changed overnight.
 
@@ -200,7 +198,7 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 
 **Treat freshness as a feature.** Add timestamps, version numbers, and staleness signals to information that agents consume. An agent that knows "this was last verified three months ago" can make better decisions than one that treats everything as current.
 
-The organizations that invest in context infrastructure now will be ready for every generation that follows. Models keep getting more capable. The infrastructure you build today benefits from every improvement.[^1]
+Context tells agents what to do. The next chapter addresses what happens when agents act on that knowledge with money: a domain where wrong decisions compound faster than any other.
 
 ---
 

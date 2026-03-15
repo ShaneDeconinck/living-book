@@ -309,7 +309,7 @@ For organizations building agent systems today:
 
 **On-chain versus off-chain.** ERC-8004's on-chain registries provide censorship resistance and composability with DeFi primitives. Off-chain registries (A2A agent cards, MCP servers) provide lower latency and simpler integration. Most organizations will use both: on-chain for cross-organizational trust, off-chain for internal operations.
 
-Mastercard, Stripe, J.P. Morgan, Google, and Coinbase are building the infrastructure now. The constraint layer that makes it governable lives in [Agent Identity and Delegation](agent-identity.md): the SD-JWT architecture that encodes spending limits, merchant restrictions, and recurrence parameters at the credential level.
+Payment is where agent trust becomes measurable in dollars. Every transaction is a test: does this agent have the right to spend, the right amount, for the right purpose, on behalf of someone who authorized it? The protocols that answer those questions are the same delegation and identity primitives the rest of this book examines.
 
 [^1]: Stripe pricing: 2.9% + $0.30 per successful card charge, as of March 2026.
 [^2]: Shane Deconinck, "When Agents Pay for APIs: Getting Hands-On with x402 and EIP-3009," January 7, 2026.

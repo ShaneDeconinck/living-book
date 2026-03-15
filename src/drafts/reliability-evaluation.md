@@ -213,6 +213,8 @@ Reliability is a Potential metric that organizations treat as an Accountability 
 
 **Treat the 99% problem as a design constraint.** The more reliable your agent becomes, the more important your infrastructure becomes. High reliability without strong infrastructure is not safe: it is a system optimized for complacency.
 
+Reliability determines whether an agent can act. The next chapter addresses what it acts on: the context infrastructure that shapes every decision an agent makes.
+
 [^scaffolding-post]: Shane Deconinck, ["AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting."](https://shanedeconinck.be/posts/ai-agent-scaffolding-trap/) (February 2026).
 
 [^trust-inversion]: Shane Deconinck, ["AI Agents Need the Inverse of Human Trust"](https://shanedeconinck.be/posts/agent-trust-inversion/) (February 2026).
