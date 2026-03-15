@@ -178,3 +178,19 @@ All required elements preserved verbatim:
 Insertion location correct: after infrastructure-gate paragraph (line 130), before Agent Identity section (line 134).
 
 No new issues. Published chapter is factually clean.
+
+---
+
+## Session 483 Re-Verification: Chop Pop prose fixes (commit d86e789)
+
+**Re-verification date:** 2026-03-15
+**Edit reviewed:** src/chapters/pac-framework.md — 3 prose-only fixes; Ghosty session 481 draft changes propagated to published chapter
+**Status:** APPROVED — prose-only, no factual drift
+
+### Changes reviewed
+
+1. **Scaffold opener removed (pattern #3):** "The practical implication: invest in context and evaluation..." → "Invest in context and evaluation..." — removes throat-clearing prefix, no factual content lost
+2. **Adverb removed (pattern #6):** "The framework explicitly maps the failure modes" → "The framework maps the failure modes" — "explicitly" removed, claim unchanged
+3. **Adverb removed (pattern #6):** "it says specifically: 'you need identity verification...'" → "it says: 'you need identity verification...'" — "specifically" removed, quoted content unchanged
+
+All three edits are prose-only. No factual claims altered. Previously verified factual content (PAC framework content, Teleport/Gravitee/Anthropic survey stats, Shane blog post citations, shadow-AI footnote, standards references) unchanged. Chapter remains factually clean.

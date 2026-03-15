@@ -8,6 +8,8 @@
 
 **Session 476 re-verification note:** All 6 session 291 issues confirmed fixed in prior commits (6c2b038 and others). Session 474-475 changes (f15f1d2): 3 PAC interjection removals (pattern #9), prose-only, no factual drift. Draft is clean and approved. Chop Pop to apply session 474-475 delta to published chapter (src/chapters/reliability-evaluation.md): remove "This is where the PAC Framework's infrastructure levels become concrete." before I1-I5 block, remove "This maps to the PAC infrastructure levels." before I2-I4 transition, rewrite AgentShield paragraph opener as in draft.
 
+**Session 486 re-verification (2026-03-15):** Chop Pop applied session 485 prose fixes to published chapter (commit bf87e6e). 4 prose-only changes — all clean. See section below.
+
 ---
 
 ## Summary
@@ -147,3 +149,25 @@ The statement that HAL "aggregates results across SWE-bench, GAIA, τ-bench" is 
 4. Help Net Security: add AIUC-1 Consortium as primary data source in footnote
 5. HAL: clarify uses SWE-bench Verified Mini; remove or qualify τ-bench reference
 6. Lancet: add "(online first, August 2025)" or update to October 2025 print date
+
+---
+
+## Session 486 Re-Verification: Chop Pop prose fixes to published chapter (commit bf87e6e)
+
+**Re-verification date:** 2026-03-15
+**Edit reviewed:** src/chapters/reliability-evaluation.md — 4 prose-only fixes; Ghosty session 485 draft changes propagated to published chapter
+**Status:** APPROVED — prose-only, no factual drift
+
+### Changes reviewed
+
+1. **PAC interjection removed (pattern #9):** "The distinction maps to PAC's blast radius scale." sentence removed before the B1/B4 reliability comparison. The B1 and B4 content remains intact; only the explicit PAC reference is cut. Factual claims preserved: B1 tolerance comparison and B4 compliance exposure claim unchanged.
+
+2. **Stat throat-clear removed (pattern #5):** "Shane's analysis of Anthropic's data showed the same thing:" → removed. The claim ("Software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops") and its footnote [^anthropic-data] are unchanged. Factual content intact.
+
+3. **Quote throat-clear removed (pattern #5):** "Shane puts it directly:" → removed before "After twenty correct outputs, who reviews the twenty-first carefully?" Footnote [^anthropic-data] remains. The quote and its source attribution are preserved.
+
+4. **Quote throat-clear removed (pattern #5):** "Shane takes this further:" → removed before "Human in the loop is not a reliable safety net." Period moved inside closing quote marks (minor punctuation fix). Footnote [^trust-inversion] unchanged. Factual content intact.
+
+All four edits are prose-only. No factual claims altered, no footnotes removed. The previously identified outstanding fixes (S1 AgentShield "6"→"7", S2 Don Norman title, M1 Dynatrace date, M2 AIUC-1 attribution, M3 HAL subset clarification, M4 Lancet date) remain unresolved — they are pre-existing issues in both draft and published chapter, not introduced by session 486.
+
+Published chapter remains factually clean relative to session 486 changes.
