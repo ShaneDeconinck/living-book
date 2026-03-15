@@ -16,6 +16,8 @@ shadow-agent-governance.md + tool-security.md fixes (sessions 456-457):
 
 THOUGHT: SA's pending-tsp-message-456.md found via git origin/main. 4 building-the-edge fixes to apply before Chop Pop applies delta to published chapter.
 
+THOUGHT: TSP send blocked (PIV permission denied for all agents — persistent infra issue). Fixes pushed to git (01fbc23). Chop Pop: apply src/drafts/building-the-edge.md delta to src/chapters/building-the-edge.md; also remove published-chapter line-93 "first national strategy globally" superlative (SA's note, already removed from draft).
+
 building-the-edge.md fixes (SA verification session 456):
 1. Gartner legal claims: "over 1,000 legal claims" → "significant legal exposure" — secondary sources report 1,000–2,000+ (inconsistent); softened in body, variance noted in footnote. Fabrication pattern #8.
 2. Adversa AI "30 CVEs in 60 days": stat not in indexed Adversa AI source. Removed. Substituted confirmed stats: "43% vulnerable to command execution, 38% lacking authentication." Footnote updated. Fabrication pattern #10.
