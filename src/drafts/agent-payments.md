@@ -179,7 +179,7 @@ The market is splitting into two approaches: crypto-native payments (x402) for d
 
 ## Authorization: Where Payments Meet Identity
 
-[Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture in detail. Here, the focus is on what it means specifically for payment authorization.
+[Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture in detail. Here, the focus is on what it means for payment authorization.
 
 The core problem: OAuth proves what an app can access but not what it is authorized to spend. An OAuth token with a "payments" scope does not encode spending limits, allowed merchants, or budget caps. When an agent holds a payment credential, the question is not "can this agent make payments?" but "what specific payments is this agent authorized to make?"
 
@@ -196,9 +196,7 @@ Verifiable Intent answers this with machine-enforceable constraints:[^13]
 | `payment.agent_recurrence` | Multi-transaction authorization within bounds |
 | `payment.reference` | Binds payment to a conditional transaction ID |
 
-These constraints are enforced at the network level, not at the agent level. The payment network maintains state across transactions (tracking budget caps, enforcing recurrence limits). The agent cannot bypass its own limits because enforcement happens outside the agent's control perimeter.
-
-This is the Control pillar in action: policy says "don't spend more than $300"; architecture says "can't spend more than $300."
+These constraints are enforced at the network level, not at the agent level. The payment network maintains state across transactions (tracking budget caps, enforcing recurrence limits). The agent cannot bypass its own limits because enforcement happens outside the agent's control perimeter. Policy says "don't spend more than $300"; architecture says "can't spend more than $300."
 
 ### Selective Disclosure: Privacy by Architecture
 
