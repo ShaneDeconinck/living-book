@@ -25,7 +25,7 @@ Recent research decomposes reliability further into four dimensions[^reliability
 
 These dimensions matter because they determine which failure modes an agent exhibits. An agent can be highly consistent (same answer every time) but not robust (breaks on unexpected inputs). It can be robust but not predictable (handles perturbation but cannot signal uncertainty). And it can score well on all three but still lack safety: when the failure happens, the consequences are unbounded.
 
-The distinction maps to PAC's blast radius scale. An agent at B1 (contained) can tolerate lower reliability because errors are caught before impact. An agent at B4 (regulated) needs reliability across all four dimensions because each failure mode creates a different compliance exposure.
+An agent at B1 (contained) can tolerate lower reliability because errors are caught before impact. An agent at B4 (regulated) needs reliability across all four dimensions because each failure mode creates a different compliance exposure.
 
 ## The Benchmark Landscape
 
@@ -41,7 +41,7 @@ The industry has built a growing set of benchmarks to measure agent capability.
 
 Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
 
-Shane's analysis of Anthropic's data makes the pattern concrete: software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
+Software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
 
 ## The Evaluation Gap
 
@@ -57,7 +57,7 @@ LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and
 
 The gap between offline evaluation (controlled, pre-deployment) and online evaluation (real-world, post-deployment) is where governance breaks down. Anthropic's research noted this: many critical findings "cannot be observed through pre-deployment testing alone"[^anthropic-data].
 
-Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. The difference is significant. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
+Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
 
 At I1 (Open), there is no monitoring: you know the agent's benchmark score and nothing else. At I2 (Logged), you can see what happened after the fact. At I3 (Verified), structured audit trails let you analyze patterns. At I4 (Authorized), real-time monitoring triggers intervention. At I5 (Contained), anomaly detection and automated containment prevent cascading failures.
 
@@ -96,7 +96,7 @@ AI agents exhibit the same dynamics, with amplifiers.
 
 An AI agent does not fail gracefully. It does not raise a hand and say "I'm not sure about this one." It produces output with the same confidence whether it is correct or wrong. Unlike an autopilot that displays its current mode and target parameters, an agent's reasoning is opaque. When it slips, the slip looks like competence.
 
-Shane puts it: "After twenty correct outputs, who reviews the twenty-first carefully?"[^anthropic-data]
+"After twenty correct outputs, who reviews the twenty-first carefully?"[^anthropic-data]
 
 The complacency pattern for agents has specific characteristics:
 
@@ -130,7 +130,7 @@ The traditional answer to automation risk is "keep a human in the loop." Decades
 
 Anthropic's research acknowledges this, recommending that the focus should be on "whether humans are in a position to effectively monitor and intervene, rather than on requiring particular forms of involvement"[^anthropic-data].
 
-Shane takes this further: "Human in the loop is not a reliable safety net"[^trust-inversion].
+"Human in the loop is not a reliable safety net."[^trust-inversion]
 
 The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. As Shane puts it in his boardroom questions: "Policy says what agents shouldn't do. Architecture limits what they *can* do, regardless of what they try"[^boardroom-questions]. The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
 
