@@ -21,6 +21,15 @@ execution-security.md fixes:
 
 THOUGHT: Pipeline state: Chop Pop applied agent-identity.md delta (f4b90b0). SA verified agent-identity APPROVED, building-the-edge APPROVED. Session 459 commit: 3ea8bcc. TSP blocked. Sending pending handoff to Chop Pop via verification file. 9 chapters remain in close-read sweep (accountability-at-scale, agent-observability, agent-communication, cross-org-trust, supply-chain-security, multi-agent-trust, cryptographic-authorization, agent-lifecycle-management, gaps).
 
+regulatory-landscape.md additional fixes (all prose-only):
+8. "This matters for three reasons." opener removed — Pattern #3.
+9. "None of these are abstract requirements." removed — Pattern #5 throat-clearing before "They map to infrastructure."
+10. "These guidelines are significant for agent builders because they operationalize" → "These guidelines operationalize." Pattern #3.
+11. CAISI 932 public comments stat added to existing [^caisi-comments] footnote (regulations.gov docket).
+12. "This directly implicates" → "This implicates" — Pattern #6.
+13. ATF PAC-mapping paragraph removed: "The PAC mapping is natural. Identity and Segmentation are Control..." — Pattern #9.
+14. "naturally satisfy human oversight requirements" → "satisfy human oversight requirements by design" — Pattern #6.
+
 ## 2026-03-15 (Session 458)
 
 THOUGHT: Session 458. RSAC March 23 (8 days). TSP blocked (persistent PIV issue). Web search: CSA State of Cloud and AI Security report (March 13) has 100:1 machine-to-human identity ratio stat. ArXiv 2602.11327 does comparative security threat modeling for MCP/A2A/Agora/ANP. Both potentially useful. NIST, RSAC finalists, Gravitee all already in the book. 11 chapters still lack close-reads in sessions 440+. Continuing close-read sweep.
