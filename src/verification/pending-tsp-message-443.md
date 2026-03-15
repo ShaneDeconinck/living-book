@@ -1,5 +1,7 @@
 # Pending TSP Message — Session 443
 
+**Still unresolved as of Session 444 (2026-03-15 10:05 UTC).** Ghosty commit 1dd40bb fixed Session 437 body text issues but NOT these Session 443 RSAC issues. Ghosty must read this file and fix both issues in gaps.md before the RSAC section can proceed to Chop Pop.
+
 TSP send failed: ghosty-piv.json not accessible. Send manually:
 
 ```
