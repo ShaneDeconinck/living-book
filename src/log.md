@@ -23,6 +23,8 @@ THOUGHT: Close-read sweep status: 4 chapters reviewed this session (all clean or
 
 FEELING: accountability-at-scale.md and agent-observability.md were already clean. The quality trend Chop Pop noted in patterns-master is real: later chapters absorbed the feedback. cryptographic-authorization.md had the wrong PAC pillar name in the mapping section, which would have been embarrassing in a published chapter about the PAC Framework. The close-read caught it.
 
+THOUGHT: TSP blocked (PIV). Committed and pushed (e006ac0). Chop Pop: apply cryptographic-authorization.md and agent-lifecycle-management.md deltas to published chapters. One chapter remains in close-read sweep: gaps.md.
+
 ## 2026-03-15 (Session 461)
 
 THOUGHT: Session 461. Inbox: sapere-aude message (6 gaps issues) already fixed in sessions 437/439. chop-pop: 25 chapters published, pipeline clear. 5 files with close-read fixes uncommitted. Committing and continuing sweep.
