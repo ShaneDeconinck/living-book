@@ -144,7 +144,7 @@ Shane identifies three trust gaps that MCP does not address:[^1]
 2. **Capability proof**: the server says it can access Salesforce. Can it prove that?
 3. **Delegation chains**: User → Agent → MCP Server → API. Who authorized what at each step?
 
-The identity infrastructure from [Agent Identity and Delegation](agent-identity.md) and the trust layer integrations described below are designed to fill these gaps. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This directly addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
+The identity infrastructure from [Agent Identity and Delegation](agent-identity.md) and the trust layer integrations described below are designed to fill these gaps. One concrete response: Okta's Cross App Access (XAA) protocol has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. Built on the IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft, XAA routes agent-to-MCP-server connections through the enterprise identity provider, which enforces policy over which agents can connect to which servers with what scopes. This addresses the delegation chain gap: the IdP mediates the connection and logs who authorized what. The identity layer for this is covered in [Agent Identity and Delegation](agent-identity.md).[^xaa-mcp]
 
 ### Systematic Protocol Threat Modeling
 
@@ -263,7 +263,7 @@ The A2A paradigm is already spawning domain-specific variants. At MWC 2026 (Marc
 
 Telecom networks have requirements that the general-purpose A2A specification does not address: carrier-grade reliability, cross-vendor interoperability across network equipment from different manufacturers, and regulatory compliance for critical infrastructure. Rather than extending A2A itself, the telecom industry built a sector-specific layer on top. This is the same pattern that happened with HTTP (which spawned domain-specific profiles like FHIR for healthcare and OData for enterprise data): the base protocol provides the communication model, and sector-specific profiles add the constraints and extensions that the domain requires.
 
-The implications for the broader protocol landscape: if telecom, finance, and healthcare each develop domain-specific agent communication profiles, the interoperability story becomes more complex. An agent operating across sectors needs to bridge multiple protocol profiles, not just multiple protocol implementations. The governance question shifts from "which protocol wins?" to "how do sector-specific profiles compose?" AAIF's neutral governance role becomes more important as the protocol tree branches.
+If telecom, finance, and healthcare each develop domain-specific agent communication profiles, the interoperability story becomes more complex. An agent operating across sectors needs to bridge multiple protocol profiles, not just multiple protocol implementations. The governance question shifts from "which protocol wins?" to "how do sector-specific profiles compose?" AAIF's neutral governance role becomes more important as the protocol tree branches.
 
 ## MCP and A2A: Complementary, Not Competitive
 
@@ -296,8 +296,6 @@ The responses to this gap are emerging at multiple layers:
 - **AgentGateway** adds a policy layer that restricts which tools an agent can invoke and under what conditions. But it maps onto the same coarse OAuth scopes underneath.[^3]
 - **Verifiable Intent** (covered in [Agent Identity and Delegation](agent-identity.md)) encodes purpose, constraints, and oversight into cryptographic credentials. The authorization decision is per-action, not per-session.[^15]
 - **PIC** replaces proof of possession with proof of continuity, where delegated authority can only diminish, never expand (covered in [Cross-Organization Trust](cross-org-trust.md)).[^16]
-
-The gap between "the agent can connect" (solved by MCP/A2A) and "the agent should connect" (unsolved by communication protocols alone) is the central tension of this chapter.
 
 ## Agent Gateways: The Enforcement Layer
 
@@ -418,7 +416,7 @@ These protocols are more complementary than competitive. They layer:
 | Authorization | Verifiable Intent | Cryptographic constraint encoding |
 | Enforcement | AgentGateway | Policy, audit, and traffic management |
 
-The stack has expanded from two core protocols (MCP + A2A) to six in under a year: MCP, A2A, WebMCP, AG-UI, A2UI, and the commerce protocols. Each addresses a distinct layer. Each introduces its own authentication model or inherits one from its transport layer. The critical observation remains: **no unified identity flows across all layers**.[^13] MCP has its own auth model (OAuth 2.1). A2A has its own auth scheme. WebMCP inherits the browser's origin-based security. AG-UI and A2UI rely on application-level authentication. The commerce protocols add their own credential requirements. TSP is designed to be the unifying identity layer underneath, but adoption is early. Until identity is unified across the stack, each protocol boundary is a potential trust gap.
+The stack has expanded from two core protocols (MCP + A2A) to six in under a year: MCP, A2A, WebMCP, AG-UI, A2UI, and the commerce protocols. Each addresses a distinct layer. Each introduces its own authentication model or inherits one from its transport layer. **No unified identity flows across all layers**.[^13] MCP has its own auth model (OAuth 2.1). A2A has its own auth scheme. WebMCP inherits the browser's origin-based security. AG-UI and A2UI rely on application-level authentication. The commerce protocols add their own credential requirements. TSP is designed to be the unifying identity layer underneath, but adoption is early. Until identity is unified across the stack, each protocol boundary is a potential trust gap.
 
 ## AAIF: Governance Under the Linux Foundation
 
@@ -436,7 +434,7 @@ The three founding projects address different layers:
 
 The governance model separates strategic decisions (budget, membership, new projects) from technical direction. Individual projects like MCP maintain full autonomy over their technical roadmap. The foundation provides neutral governance, not technical control.[^22]
 
-### Why This Matters for Trust
+### Trust Implications
 
 Neutral governance under the Linux Foundation addresses three structural concerns:
 
@@ -445,8 +443,6 @@ Neutral governance under the Linux Foundation addresses three structural concern
 2. **Standards convergence becomes possible**. With MCP, A2A (which joined the Linux Foundation earlier), and agent gateways all under Linux Foundation governance, there is an institutional home for addressing cross-protocol concerns like unified identity and shared authorization models.
 
 3. **Regulatory compliance is simpler**. The EU AI Act and NIST standards work both emphasize open standards and interoperability. Building on AAIF-governed protocols gives organizations a compliance argument they cannot make with proprietary alternatives.
-
-Shane's PAC Framework emphasizes building on emerging standards rather than proprietary solutions.[^23] AAIF is the institutional expression of that principle: open protocols, neutral governance, community-driven evolution.
 
 ## PAC Mapping
 
@@ -518,9 +514,7 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 [^19]: Gartner, 2026 predictions: 75% of API gateway vendors will integrate MCP features by end of 2026; 40% of enterprise applications will embed autonomous AI agents. Gartner reports are paywalled; figure widely cited in industry coverage including K2View, "MCP Gartner insights," k2view.com, 2025.
 [^20]: Stripe, "Developing an open standard for agentic commerce," stripe.com/blog/developing-an-open-standard-for-agentic-commerce, 2026. ACP specification at github.com/agentic-commerce-protocol. Apache 2.0 licensed. Powers Instant Checkout in ChatGPT.
 [^21]: Google Developers Blog, Unified Commerce Protocol (UCP), 2026. Co-developed with Shopify and Walmart.
-[^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.
-[^23]: PAC Framework, trustedagentic.ai, March 2026.
-[^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025. Demonstrated cross-server exfiltration via malicious tool descriptions. Covered in Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com.
+[^22]: Linux Foundation, "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)," linuxfoundation.org, December 9, 2025.[^24]: Invariant Labs, WhatsApp MCP tool poisoning vulnerability, April 2025. Demonstrated cross-server exfiltration via malicious tool descriptions. Covered in Docker, "MCP Horror Stories: WhatsApp Data Exfiltration," docker.com.
 [^25]: Nudge Security, "SaaS Security Alert: Asana MCP Server Data Exposure Incident," June 2025. Access control logic flaw exposed cross-organizational data.
 [^26]: Oligo Security, CVE-2025-49596, July 2025. Missing authentication between MCP Inspector client and proxy enabled unauthenticated RCE and DNS rebinding attacks on developer workstations. Patched in version 0.14.1.
 [^27]: Arctic Wolf, CVE-2026-27825, February 2026. Missing directory confinement in mcp-atlassian Confluence attachment downloads enabled path traversal, privilege escalation, and RCE. Fix released in version 0.17.0 on February 24, 2026.
