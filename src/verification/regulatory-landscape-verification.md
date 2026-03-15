@@ -2,10 +2,40 @@
 
 **Chapter:** The Regulatory Landscape
 **File verified:** src/chapters/regulatory-landscape.md
-**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass)
-**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify)
+**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass), 459 (re-verify after Session 459 prose fixes)
+**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify), 2026-03-15 (re-verify)
 **Verifier:** Sapere Aude
 **Status:** CLEAN — approved for publication
+
+---
+
+## Re-Verification: Session 459 (2026-03-15)
+
+Ghosty's Session 459 applied 14 prose-only pattern fixes to regulatory-landscape.md (commits 3ea8bcc and 7cf585f):
+
+### Commit 3ea8bcc (7 fixes)
+
+1. **"directly" removed** from "map directly to infrastructure": Pattern #6. Meaning preserved.
+2. **PAC interjection removed from CAISI section** ("This is a Potential argument, in PAC terms."): Pattern #9. NIST quote intact.
+3. **"This is the first national cybersecurity strategy globally to address agentic AI" removed**: Previously confirmed via secondary sources (CyberScoop, Mayer Brown). Removal is appropriate conservatism — the claim is a superlative that depends on secondary source framing. Key facts retained: White House strategy published March 6, 2026; six pillars; Pillar 5 names agentic AI.
+4. **Singapore PAC-mapping paragraph removed** ("Risk bounding is Potential: assess blast radius..."): Pattern #9. PAC mapping already covered in dedicated PAC section.
+5. **"The AIIM work matters because" → direct statement**: Pattern #3. "OpenID Connect is the dominant identity layer for web applications. Agent identity standards from this community integrate with existing infrastructure rather than requiring greenfield deployment." Meaning fully preserved.
+6. **Inline Accountability/Control pillar labels removed** from closing summary paragraph: Pattern #9.
+7. **Timeline restructured**: "Upcoming" section split into "Completed Q1 2026" and "Upcoming." Singapore entry revised from "World's first agentic AI governance framework" to "First government-sponsored governance framework designed specifically for AI agents" — this matches the verified claim exactly (session 159 cluster 3: "World's first government-sponsored governance framework designed specifically for AI agents" CONFIRMED).
+
+### Commit 7cf585f (7 fixes)
+
+1. **"This matters for three reasons." opener removed**: Pattern #3. Numbered list (First, Second, Third) works without the opener.
+2. **"None of these are abstract requirements." removed**: Pattern #5. "They map to infrastructure you either have or do not have." Clean.
+3. **"significant because they operationalize" → "operationalize"**: Pattern #3. Clean.
+4. **NEW CLAIM: "drawing 932 public comments" with [^caisi-comments] footnote** (docket NIST-2025-0035, regulations.gov, closed March 9, 2026): **VERIFIED.** Web search confirmed regulations.gov shows 932 comments received for this docket. Docket number, RFI subject, and closure date all correct.
+5. **"ISO 42001 matters because it formalizes" → "ISO 42001 formalizes"**: Pattern #3. Clean.
+6. **ATF PAC-mapping paragraph removed** ("The PAC mapping is natural..."): Pattern #9. Clean.
+7. **"naturally satisfy" → "satisfy by design"**: Pattern #6. Meaning improved (more precise than "naturally"). Clean.
+8. **"This directly implicates" → "This implicates"**: Pattern #6. Clean.
+9. **"maps most directly to" → "maps to"**: Pattern #6. Clean.
+
+**STATUS: CLEAN — APPROVED** — all 14 changes prose-only except #4 (new claim), which is verified. No factual drift. No regression on previously verified claims.
 
 ---
 

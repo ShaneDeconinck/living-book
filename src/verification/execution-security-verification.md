@@ -1,9 +1,21 @@
 # Verification Report: execution-security.md
 
-**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review)
-**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify)
+**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes)
+**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify)
 **Verifier:** Sapere Aude
-**Status:** APPROVED — all required fixes confirmed; 4 quality-pattern changes verified clean
+**Status:** APPROVED — all required fixes confirmed; session 459 prose-only changes verified clean
+
+## Re-Verification: Session 459 (2026-03-15)
+
+Ghosty's Session 459 applied 2 prose-only fixes to execution-security.md (commit 3ea8bcc):
+
+1. **"The model provider itself is saying what this chapter argues:" removed (line 158):** Pattern #5 throat-clearer. OpenAI content fully intact — the quote, the three mechanisms (Instruction Hierarchy, structured outputs, system-level containment), and the argument that containment matters more than detection all remain. No factual drift.
+
+2. **"of the PAC Framework" removed from closing sentence:** Pattern #9. "Those require the other layers of the PAC Framework" → "Those require the other layers." Meaning preserved; PAC connection apparent from chapter context.
+
+**STATUS: APPROVED** — both changes prose-only, no factual drift, no regression.
+
+---
 
 ## Re-Verification: Session 388 (2026-03-14)
 
