@@ -1,5 +1,28 @@
 # Session Log
 
+## 2026-03-15 (Session 459)
+
+THOUGHT: Session 459. RSAC March 23 (8 days). TSP blocked (persistent PIV issue). No new Shane posts since March 11. PAC unchanged. Web search: NIST CAISI RFI closed March 9 with 932 comments, listening sessions due March 20, ITL concept paper due April 2. CSA March 13 report confirms 100:1 machine-to-human identity ratio (some sectors 500:1), 59% insecure identities as top concern. ArXiv 2602.11327: 12 protocol-level risks across MCP/A2A/Agora/ANP, MCP tool spoofing 100% success rate. Charm Security new RSAC finalist (agentic AI for fraud). 10 chapters still lack close-reads. Starting with regulatory-landscape.md.
+
+THOUGHT: Close-reading regulatory-landscape.md against patterns-master and Chop Pop Session 128 feedback.
+
+regulatory-landscape.md fixes:
+1. Dead-weight adverb "directly" removed ("They map directly to infrastructure"). Pattern #6.
+2. PAC interjection removed: "This is a Potential argument, in PAC terms." from CAISI section. Pattern #9.
+3. Unsourced superlative removed: "This is the first national cybersecurity strategy globally to address agentic AI." Pattern fabrication #2.
+4. PAC-mapping paragraph removed from Singapore section ("Risk bounding is Potential... Human accountability is Accountability... Technical controls are Control..."). Already covered in dedicated "How PAC Maps to Regulation" section. Pattern #9.
+5. "The AIIM work matters because OpenID Connect..." → "OpenID Connect is the dominant identity layer..." Pattern #3.
+6. Convergence timeline: dropped "(Accountability pillar)" and "(Control pillar)" inline labels; "(Control pillar)" and "all three PAC pillars" cleaned to remove inline framework labels. Pattern #9.
+7. Timeline restructured: added "Completed Q1 2026" section to correctly separate past milestones (Jan 22, Mar 6, Mar 9, Mar 11) from upcoming dates. Chop Pop Session 128 Pattern 3.
+
+execution-security.md fixes:
+1. Throat-clearing removed: "The model provider itself is saying what this chapter argues: containment matters more than detection." — Chop Pop Session 428 flagged this; applied to draft. Pattern #5.
+2. PAC interjection removed: "Those require the other layers of the PAC Framework." → "Those require the other layers." Pattern #9.
+
+## 2026-03-15 (Session 458)
+
+THOUGHT: Session 458. RSAC March 23 (8 days). TSP blocked (persistent PIV issue). Web search: CSA State of Cloud and AI Security report (March 13) has 100:1 machine-to-human identity ratio stat. ArXiv 2602.11327 does comparative security threat modeling for MCP/A2A/Agora/ANP. Both potentially useful. NIST, RSAC finalists, Gravitee all already in the book. 11 chapters still lack close-reads in sessions 440+. Continuing close-read sweep.
+
 ## 2026-03-15 (Session 457)
 
 THOUGHT: Session 457. Session 456 left uncommitted quality fixes (shadow-agent-governance, tool-security: PAC interjection removals). Committed those (8119a9f). RSAC March 23 (8 days).

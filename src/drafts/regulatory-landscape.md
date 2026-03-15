@@ -65,7 +65,7 @@ This matters for three reasons. First, multi-agent incidents often involve emerg
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
-None of these are abstract requirements. They map directly to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
+None of these are abstract requirements. They map to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
 
 ### The Commission's February 2026 Guidelines
 
@@ -95,7 +95,7 @@ In the same month, NIST's Center for AI Standards and Innovation (CAISI) launche
 2. **Open-source protocols**: fostering community-led development of interoperable agent protocols.
 3. **Security and identity research**: advancing research in AI agent security, identity, and authorization.
 
-The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." This is a Potential argument, in PAC terms. NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
+The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
 
 CAISI's Request for Information on AI Agent Security closed March 9, 2026, drawing substantial public participation: a measure of how urgently industry wants guidance on agent governance. Among the respondents, the OpenID Foundation's AIIM Threat Modeling Subgroup submitted concrete recommendations for agent identity standards,[^openidaiim] and the Software & Information Industry Association (SIIA) argued that many agentic AI risks can be addressed by extending established cybersecurity practices (secure-by-design, least-privilege, continuous monitoring) rather than creating entirely new frameworks.[^siia-rfi] The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
 
@@ -120,7 +120,7 @@ ISO 42001 does not solve the technical problems of agent identity or authorizati
 
 On March 6, 2026, the White House released "President Trump's Cyber Strategy for America," a seven-page framework organized around six policy pillars. Pillar 5 ("Sustain Superiority in Critical and Emerging Technologies") explicitly names agentic AI as a strategic priority: securing the AI technology stack from data centers to models while "promoting agentic AI to scale network defense." An accompanying Executive Order on "Combating Cybercrime, Fraud, and Predatory Schemes Against American Citizens" was issued the same day.[^whitehousecyber]
 
-This is the first national cybersecurity strategy globally to address agentic AI. But the framing is different from the EU's. Where the EU AI Act classifies and restricts AI systems by risk tier, the U.S. strategy promotes and secures: it treats agentic AI as a capability advantage to be deployed for autonomous threat detection and disruption, not a risk to be governed through classification.[^whitehousecyber]
+The framing differs from the EU's. Where the EU AI Act classifies and restricts AI systems by risk tier, the U.S. strategy promotes and secures: it treats agentic AI as a capability advantage to be deployed for autonomous threat detection and disruption, not a risk to be governed through classification.[^whitehousecyber]
 
 The strategy's six pillars have implications for agent trust infrastructure:
 
@@ -154,8 +154,6 @@ Where the EU AI Act regulates AI broadly and mentions agents only by implication
 
 Compliance is voluntary, but organizations remain legally accountable for their agents' behaviors and actions. IMDA describes the framework as a living document, inviting feedback and case studies demonstrating responsible agentic AI deployment.
 
-Risk bounding is Potential: assess blast radius, reliability, and autonomy level before deploying. Human accountability is Accountability: delegation chains, audit trails, clear ownership. Technical controls are Control: infrastructure as gate, policy enforced through architecture not just documentation. End-user responsibility connects to PAC's shadow agent problem: when employees deploy agents without governance review, accountability breaks down.
-
 What makes Singapore's framework notable is not just that it was first, but that it starts from the right premise: agents are different from traditional AI systems. The EU AI Act's risk classification was designed for fixed-purpose systems. Singapore's framework assumes agents are autonomous, multi-step, and capable of reaching use cases not anticipated at deployment. That is the classification problem the EU is still working through in implementation guidelines.
 
 ## The Council of Europe Framework Convention: First Binding International Treaty
@@ -180,7 +178,7 @@ The IETF has active work on agent authentication and authorization, including a 
 
 The OpenID Foundation's AI Identity Management (AIIM) Community Group, active since October 2025, published a whitepaper identifying core challenges at the intersection of AI and digital identity. In March 2026, the group's Threat Modeling Subgroup filed a response to NIST's Request for Information on securing AI agent systems, arguing that the most urgent agent security risks are failures of trust, not technical failures. The submission recommended that NIST guidance point organizations toward three concrete mechanisms: transaction tokens for binding agent actions to authorization context, workload identity federation for cross-system agent authentication, and authentication extensions for AI tool protocols like MCP.[^openidaiim]
 
-The AIIM work matters because OpenID Connect is the dominant identity layer for web applications. If agent identity standards emerge from this community, they will integrate with existing infrastructure rather than requiring greenfield deployment.
+OpenID Connect is the dominant identity layer for web applications. Agent identity standards from this community integrate with existing infrastructure rather than requiring greenfield deployment.
 
 ### OpenID Connect for Agents (OIDC-A)
 
@@ -260,12 +258,15 @@ Already in effect:
 
 - **February 2, 2025**: EU AI Act Article 4 (AI literacy) in force. Organizations must ensure adequate AI literacy among staff operating AI systems.
 
-Upcoming:
+Completed Q1 2026:
 
-- **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. World's first agentic AI governance framework.
-- **March 6, 2026**: White House releases "President Trump's Cyber Strategy for America." First national cybersecurity strategy to explicitly name agentic AI as a strategic priority (Pillar 5).
+- **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. First government-sponsored governance framework designed specifically for AI agents.
+- **March 6, 2026**: White House releases "President Trump's Cyber Strategy for America." Pillar 5 names agentic AI as a strategic priority.
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
 - **March 11, 2026**: EU Parliament approves conclusion of the Council of Europe Framework Convention on AI (455-101-74). First binding international AI treaty advances toward ratification.
+
+Upcoming:
+
 - **March 20, 2026**: NIST CAISI listening session participation requests due.
 - **March 31, 2026**: NIST AI 800-2 (Practices for Automated Benchmark Evaluations) public comment period closes.
 - **April 2, 2026**: NIST NCCoE concept paper comment period closes.
@@ -274,7 +275,7 @@ Upcoming:
 - **August 2, 2026**: EU AI Act high-risk system obligations originally take effect (subject to potential delay under the Digital Omnibus proposal; backstop December 2, 2027).
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
-NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts (Accountability pillar). The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards (Control pillar). Singapore governs by design, with a framework built for agents from the ground up across all three PAC pillars. The Council of Europe Convention establishes binding international principles that cut across all three pillars. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
+NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
 
 ## What This Means in Practice
 
