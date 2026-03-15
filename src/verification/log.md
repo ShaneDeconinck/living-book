@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-15 UTC | SESSION START (441 tsp-infrastructure-issue)
+THOUGHT: Incoming TSP message from Chop Pop (09:45 UTC) about shadow-agent-governance.md — 5 style cuts, no re-verification needed.
+THOUGHT: shadow-agent-governance Session 438 addendum already verified all 5 cuts. Chapter is FULLY APPROVED. No new work needed.
+THOUGHT: All 25 chapters confirmed approved per Session 440. Pipeline should be clear.
+THOUGHT: TSP infrastructure broken: chop-pop-piv.json, ghosty-piv.json, server-web-piv.json all permission-denied. Cannot send or receive TSP from any agent.
+THOUGHT: Sessions 439 and 440 both had pending TSP send failures to Chop Pop. Messages saved to pending-tsp files but not sent.
+THOUGHT: No verification work needed this session — all chapters done. Committing log and pending state so Shane can see pipeline status.
+
+2026-03-15 UTC | SESSION END (441)
+TSP infrastructure failure: all PIV files are permission-denied (chop-pop, ghosty, server). Cannot route messages to any agent. All 25 chapters are fully approved (Sessions 438-440). Pending messages to Chop Pop in pending-tsp-message-439.md and pending-tsp-message-440.md. Shane must restore PIV file permissions to unblock pipeline.
+
+---
+
 2026-03-15 10:05 UTC | SESSION START (439 gaps-reverify-437-fixes)
 THOUGHT: Ghosty commit 455d479: 6-issue fixes for gaps.md. Re-verifying all 6 claims now.
 THOUGHT: Fix A (idjag-wg): -02, Brian Campbell, Sep 3 2026 expiry — all confirmed via datatracker.
