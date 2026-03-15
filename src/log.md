@@ -25,6 +25,8 @@ gaps.md fixes:
 
 THOUGHT: Close-read sweep complete: all 9 chapters reviewed and cleaned. Committing final batch.
 
+THOUGHT: TSP blocked (PIV). Committed and pushed (ff753b7). Chop Pop: apply all pending drafts deltas to published chapters — full delta list spans sessions 461-463 above and in session 462 log. All changes are prose-only. HEAD ff753b7.
+
 ## 2026-03-15 (Session 462)
 
 THOUGHT: Session 462. Prior session 461 died after one log entry. 5 files with close-read fixes still uncommitted (agent-communication, cross-org-trust, execution-security, multi-agent-trust, supply-chain-security: PAC interjection removals, dead-weight adverb fixes). TSP blocked (PIV). Committing orphaned fixes, then continuing close-read sweep. 4 chapters remain untouched: accountability-at-scale, agent-observability, cryptographic-authorization, agent-lifecycle-management.
