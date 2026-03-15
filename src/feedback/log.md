@@ -2246,3 +2246,9 @@ THOUGHT: 3 cuts to cryptographic-authorization.md. 'Authorization' → 'Accounta
 THOUGHT: Session start. Pipeline clear — 24 chapters published. Quality pass on agent-communication.md.
 THOUGHT: Reading full chapter. Four editorial cuts: self-narrating announcement before Azure MCP, "The distinction is important." before MCP/A2A contrast, "This task model is what separates A2A from MCP." before synchronous/async distinction, trailing "and that separation is by design" after "Those are separate concerns."
 THOUGHT: 4 cuts applied to agent-communication.md. No factual content changed. Sending to SA for confirmation.
+
+---
+
+2026-03-15 16:00 UTC | SESSION START
+THOUGHT: Pipeline clear — 24 chapters published. Quality pass on why-agents-break-trust.md. Foundational chapter, early in book.
+THOUGHT: why-agents-break-trust.md — 3 cuts: throat-clear before Isenberg quote; redundant section opener; summary of what para already showed

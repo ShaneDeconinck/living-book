@@ -4,7 +4,7 @@ Every identity system we have was built on one assumption: a human is in the loo
 
 This is not a theoretical concern. Agents are already running in production. They're approving expenses, writing code, sending emails, querying databases, and calling APIs. Some of them were deployed deliberately. Others were built by employees on a lunch break using a low-code platform. The question is not whether agents will make consequential decisions in your organization. They already are. McKinsey's March 2026 reporting puts a number on the consequences: 80% of organizations have already encountered risky behavior from AI agents.[^mckinsey] As McKinsey partner Rich Isenberg frames it: "Agency isn't a feature. It's a transfer of decision rights." That reframing matters. The question shifts from "is the model accurate?" to "who is accountable when the system acts?"
 
-When something goes wrong, can you explain what happened? Isenberg's sharpest line is about reconstruction: "The scariest failures are ones you can't reconstruct because you didn't log the workflow."[^mckinsey]
+Isenberg's sharpest line is about reconstruction: "The scariest failures are ones you can't reconstruct because you didn't log the workflow."[^mckinsey]
 
 ## What Changed
 
@@ -55,7 +55,7 @@ The EU AI Act's high-risk system obligations, originally set for August 2, 2026 
 
 ## The Supply Chain You Cannot See
 
-There is a fourth way agents break trust, and it is the one least visible to the teams deploying them: the tools agents use are themselves an attack surface.
+The tools agents use are themselves an attack surface.
 
 In May 2025, a critical vulnerability in GitHub's Model Context Protocol integration showed what this looks like. Attackers embedded malicious instructions in public repository Issues. When a developer's locally running AI agent processed those issues through MCP, it indiscriminately executed the embedded commands, exfiltrating private repository source code and cryptographic keys. The developer never saw the malicious instructions. The agent followed them because they appeared in a context the agent was designed to read.[^github-mcp]
 
@@ -67,7 +67,7 @@ The [Agent Supply Chain Security](supply-chain-security.md) chapter covers the f
 
 ## Reliability Is Getting Easier. Governance Is Not.
 
-Models are improving rapidly. Tasks that required elaborate scaffolding a year ago now work with a single prompt. Claude Code is a good example: as the underlying model improved, the team deleted scaffolding code rather than optimizing it. Better models make reliability easier.
+Models are improving rapidly. Tasks that required elaborate scaffolding a year ago now work with a single prompt. Claude Code is a good example: as the underlying model improved, the team deleted scaffolding code rather than optimizing it.
 
 But reliability and governance are different problems. Reliability asks: does the agent get the right answer? Governance asks: when it gets the wrong answer, can you explain what happened, who authorized it, and what the blast radius was?
 
