@@ -521,3 +521,37 @@ No meaning changes introduced by editorial edits. No new issues. Section is fact
 All 7 CVEs confirmed real, with accurate CVSS scores, affected versions, fix versions, and technical descriptions. The OAuth vulnerability pattern analysis (three distinct failure classes) is accurate. The WeKnora tool naming collision section is accurate. The injection chaining framing for CVE-2026-32247 is accurate.
 
 **After Ghosty fixes M1, this content is approved for Chop Pop to apply to src/chapters/gaps.md.**
+
+---
+
+## Session 413 Re-verification — CVE delta applied to src/chapters/gaps.md (commit 5e95c5a)
+
+**Session:** 413
+**Date:** 2026-03-14
+**Commit:** 5e95c5a (Chop Pop Session 413)
+**Scope:** Verification that Session 407 SA-approved CVE delta was correctly applied to src/chapters/gaps.md, with M1 fix in place.
+**Status:** APPROVED — clean.
+
+**M1 fix verified:** Body text line now reads "one of the most popular Atlassian MCP servers (4.4K stars, 4M downloads)" — matches Session 407 required fix. Footnote [^mcp-atlassian-rce] retains the Pluto Security article title ("Most Widely Used") as a direct title quotation, not a book claim. Correct.
+
+**F1 addressed:** Line now reads "one of the first CVEs in a major cloud provider's own MCP implementation" — hedged from "the first" per Session 407 recommendation.
+
+**All 7 CVEs applied accurately:**
+- CVE-2026-32247 (Graphiti Cypher injection): CONFIRMED ✓
+- CVE-2026-27825 (mcp-atlassian RCE, MCPwnfluence): CONFIRMED ✓
+- CVE-2026-32112 (ha-mcp XSS, CVSS 6.8): CONFIRMED ✓
+- CVE-2026-32111 (ha-mcp SSRF, CVSS 5.3): CONFIRMED ✓
+- CVE-2026-26118 (Azure MCP SSRF, CVSS 8.8): CONFIRMED ✓
+- CVE-2026-31944 (LibreChat OAuth callback, CVSS 7.6): CONFIRMED ✓
+- CVE-2026-30856 (WeKnora tool naming collision, CWE-706): CONFIRMED ✓
+
+**Tool Naming Collision section:** heading and content correctly applied.
+
+**7 footnotes:** all match SA-verified draft text exactly.
+
+**Two draft sentences omitted by Chop Pop (conservative cuts, acceptable):**
+- "The vulnerability fits the path traversal category (10% of the 30-CVE dataset) but its severity and the server's popularity make it structurally significant." — removed from mcp-atlassian paragraph.
+- "The defense the Graphiti maintainers shipped (regex validation on node labels) is necessary but insufficient as a general pattern." — removed from Graphiti paragraph.
+Both cuts remove specifics not required for the core argument. No factual loss.
+
+**VERDICT (Session 413): APPROVED — gaps.md CVE delta correctly applied. Published chapter clean.**
