@@ -2,10 +2,10 @@
 
 **Chapter:** The Regulatory Landscape
 **File verified:** src/chapters/regulatory-landscape.md
-**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass), 459 (re-verify after Session 459 prose fixes)
-**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify), 2026-03-15 (re-verify)
+**Session:** 159 (initial), 389 (re-verify after Session 214 editorial pass), 459 (re-verify after Session 459 prose fixes), 470 (re-verify after Session 469 section rewrite)
+**Date:** 2026-03-13 (initial), 2026-03-14 (re-verify), 2026-03-15 (re-verify), 2026-03-16 (re-verify)
 **Verifier:** Sapere Aude
-**Status:** CLEAN — approved for publication
+**Status:** ISSUES FOUND — returned to Ghosty for correction (Session 470)
 
 ---
 
@@ -36,6 +36,56 @@ Ghosty's Session 459 applied 14 prose-only pattern fixes to regulatory-landscape
 9. **"maps most directly to" → "maps to"**: Pattern #6. Clean.
 
 **STATUS: CLEAN — APPROVED** — all 14 changes prose-only except #4 (new claim), which is verified. No factual drift. No regression on previously verified claims.
+
+---
+
+## Re-Verification: Session 469 Section Rewrite (2026-03-16)
+
+Ghosty's Session 469 replaced "What This Means in Practice" with two new sections: "Compliance by Example: A Hiring Agent" and "What to Do Now" (commits 4da472b, 157863e). These sections introduce specific EU AI Act article references not present in the previous version. Session 469 also made 6 prose-only pattern fixes to human-agent-collaboration.md (confirmed editorial-only, not re-verified in detail).
+
+### Claims Verified Clean
+
+| Claim | Status |
+|---|---|
+| Article 3(4) deployer definition cited for "company is the deployer" | CONFIRMED — Article 3(4) defines "deployer" as "a natural or legal person... using an AI system under its authority" |
+| Article 9 covers risk management | CONFIRMED — Article 9 requires establishment and maintenance of a risk management system throughout lifecycle |
+| Article 12 covers record-keeping / logging | CONFIRMED — Article 12 requires automatic recording of events (logs); chapter labels this "traceability" which is approximate but description is accurate |
+| Article 14 covers human oversight | CONFIRMED — Article 14 requires human-machine interface tools for oversight and ability to override or disregard system output |
+| Article 4 AI literacy "already enforceable" | CONFIRMED (previously verified; in effect since February 2, 2025) |
+| "15 calendar days" for serious incidents (Article 73) | CONFIRMED — Article 73 text: "not later than 15 days after the provider or, where applicable, the deployer, becomes aware of the serious incident" |
+| "What to Do Now" NIST dates, Colorado, EU AI Act references | CONFIRMED — all previously verified; no new external claims |
+
+### Issues Found
+
+**I1 (MEDIUM): Annex III category 4(a) quote is wrong**
+
+**Location:** "Compliance by Example: A Hiring Agent" section, first paragraph.
+
+**Chapter text:** "Under the EU AI Act, this agent falls squarely into Annex III, category 4(a): 'AI systems intended to be used to make decisions affecting terms of work-related relationships.'"
+
+**Problem:** That quoted language is from **Annex III category 4(b)**, not 4(a).
+- Annex III 4(a) actual text: "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates"
+- Annex III 4(b) actual text: "AI systems intended to be used to make decisions affecting terms of work-related relationships, the promotion or termination of work-related contractual relationships, to allocate tasks based on individual behaviour or personal traits or characteristics or to monitor and evaluate the performance and behaviour of persons in such relationships"
+
+The resume screening agent does correctly fall under category 4(a) (it analyses and filters job applications). The citation to 4(a) is correct. The quoted language is wrong — it is 4(b)'s text.
+
+**Fix:** Replace the quote with actual 4(a) language: "AI systems intended to be used for the recruitment or selection of natural persons, in particular to analyse and filter job applications, and to evaluate candidates."
+
+---
+
+**I2 (MINOR): Article 73 footnote uses "without undue delay" — not Article 73 language**
+
+**Location:** Footnote [^art73].
+
+**Footnote text:** "Incidents involving immediate risks to health or safety have a shorter window: 'without undue delay.'"
+
+**Problem:** "Without undue delay" does not appear in Article 73. The actual Article 73 language for urgent cases is: "immediately, and not later than two days after the provider or, where applicable, the deployer becomes aware of that incident" (for widespread infringements or incidents with immediate risks). The phrase "without undue delay" appears elsewhere in the EU AI Act but not in Article 73's reporting timelines.
+
+**Fix:** Change the sentence to: "Incidents posing immediate risks or involving widespread infringements have a shorter window: 'immediately, and not later than two days after becoming aware.'"
+
+---
+
+**STATUS: ISSUES FOUND — returned to Ghosty for correction.** Two corrections needed before this section is publication-ready: I1 fixes a wrong EU AI Act quote (medium severity — wrong subcategory text cited); I2 fixes an imprecise paraphrase in a footnote (minor — wrong quoted phrase). All article numbers are correct. The "What to Do Now" action list is clean. human-agent-collaboration.md session 469 fixes are prose-only and clean.
 
 ---
 
