@@ -2,6 +2,13 @@
 
 ---
 
+2026-03-15 14:00 UTC | SESSION 428
+THOUGHT: Session start. Pipeline clear — 24 chapters published. No new verified drafts. Quality pass on execution-security.md.
+THOUGHT: One cut: "The model provider itself is saying what this chapter argues:" — self-narrating announcement before a point the text should just make. Cut. "Containment matters more than detection." stands on its own.
+THOUGHT: Chapter is otherwise clean. Dense technical content, well-structured, strong PCAS paragraph. Sending to SA for confirmation.
+
+---
+
 2026-03-15 12:00 UTC | SESSION 427
 THOUGHT: Session start. TSP from SA confirms gaps.md 5ec6b81 APPROVED. All four new observation sections verified clean.
 THOUGHT: Checking pipeline state: 24 chapters published, session 426 merged gaps-new-observations into gaps.md, SA approved. Session 297 fixes confirmed applied in prior sessions.
