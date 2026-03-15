@@ -89,7 +89,7 @@ The defense is structural containment: make bypass impossible, not trust advisor
 
 How do you encode trust across multi-hop delegation chains? OAuth OBO, DPoP, Verifiable Credentials, and Verifiable Intent address the single-hop case. Multi-hop delegation requires a different mechanism. One approach: Delegation Capability Tokens (DCTs) built on macaroons.
 
-Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps naturally to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
+Macaroons, introduced by Google in 2014, are bearer credentials with a distinctive property: anyone holding a macaroon can attenuate it by adding caveats (restrictions) but cannot remove caveats or expand authority.[^10] This maps to delegation chains where authority must only decrease, never increase: exactly the principle Shane describes as fundamental to agent trust.[^3]
 
 A DCT for a multi-agent delegation chain works like this:
 
@@ -317,7 +317,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 **Build multi-agent incident response playbooks.** Standard incident response assumes the compromised system stopped doing damage when you revoked its access. Multi-agent incident response must also address: what did downstream agents do with this agent's outputs? Were those outputs persisted in shared memory? Did any downstream agent delegate further based on corrupted input? CoSAI's CACAO-standard playbooks are a starting point.[^14]
 
-**Audit delegation chains, not just agent actions.** Individual agent audit logs are necessary but not sufficient. Multi-agent governance requires end-to-end delegation traces that connect the human's original authorization through every agent decision to the final action. This is the accountability chain that the PAC Framework demands.
+**Audit delegation chains, not just agent actions.** Individual agent audit logs are necessary but not sufficient. Multi-agent governance requires end-to-end delegation traces that connect the human's original authorization through every agent decision to the final action.
 
 **Plan for the graph, not the tree.** Real multi-agent interactions form graphs with cycles, shared resources, and dynamic topology. Design governance infrastructure that handles cycles (Agent A delegates to Agent B, which calls back to Agent A with different authority) and shared state (multiple agents writing to the same memory or database). Hierarchical models are a starting point, not the destination.
 

@@ -66,7 +66,7 @@ To continue authority, a workload does not need its own identity. It just needs 
 
 Under this model, the confused deputy is not detected or mitigated. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability, not an accidental confused deputy.
 
-This maps to the PAC Framework's Control pillar: "Can authority only decrease?" PIC answers yes, and proves it mathematically. The monotonic property (authority can only decrease through a delegation chain) is not a policy aspiration but a structural guarantee.
+PIC proves this mathematically: authority can only decrease through a delegation chain. The monotonic property is a structural guarantee, not a policy aspiration.
 
 Gallo also demonstrated that performance is not a blocker: executing a continuity chain takes microseconds, comparable to a token exchange call.[^1] The overhead is a deployment concern, not an architectural one.
 
@@ -134,7 +134,7 @@ First, CAAM introduces what the authors call the Ghost Token Pattern. Raw delega
 
 Second, CAAM requires AuthZ-at-Discovery: before a session is established, the agent must advertise its SPIFFE trust domain, supported attestation evidence types, inference boundary hash, and policy manifest URI. The receiving party evaluates this security posture before permitting any interaction. This operationalizes the transparency label concept at the protocol level: the agent's security properties are machine-verifiable preconditions, not post-hoc audit artifacts.
 
-CAAM is an early individual draft, not yet adopted by an IETF working group. But the architecture it describes composes naturally with the rest of the stack: SPIFFE for workload identity, RATS (RFC 9334) for execution environment attestation, TSP for cross-boundary channels, and PIC for authority continuity. The sidecar model is the practical deployment pattern for "infrastructure in the loop": authorization decisions happen in a layer the agent cannot influence, even if it is compromised.
+CAAM is an early individual draft, not yet adopted by an IETF working group. But the architecture it describes composes with the rest of the stack: SPIFFE for workload identity, RATS (RFC 9334) for execution environment attestation, TSP for cross-boundary channels, and PIC for authority continuity. The sidecar model is the practical deployment pattern for "infrastructure in the loop": authorization decisions happen in a layer the agent cannot influence, even if it is compromised.
 
 ## Verifiable Credentials as the Trust Carrier
 
