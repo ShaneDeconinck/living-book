@@ -16,7 +16,17 @@ shadow-agent-governance.md + tool-security.md fixes (sessions 456-457):
 
 THOUGHT: SA's pending-tsp-message-456.md found via git origin/main. 4 building-the-edge fixes to apply before Chop Pop applies delta to published chapter.
 
-THOUGHT: TSP send blocked (PIV permission denied for all agents — persistent infra issue). Fixes pushed to git (01fbc23). Chop Pop: apply src/drafts/building-the-edge.md delta to src/chapters/building-the-edge.md; also remove published-chapter line-93 "first national strategy globally" superlative (SA's note, already removed from draft).
+THOUGHT: TSP send blocked (PIV permission denied for all agents — persistent infra issue). Fixes pushed to git. Chop Pop: apply src/drafts/building-the-edge.md delta to src/chapters/building-the-edge.md; also remove published-chapter line-93 "first national strategy globally" superlative (SA's note, already removed from draft).
+
+agent-identity.md PAC interjection fixes (pattern #9):
+1. "This inversion maps to the Control pillar of PAC." dropped — policy/architecture contrast carries the point.
+2. "This is the PAC Framework's 'can't vs. don't' distinction applied to authorization:" dropped — point is made by the following sentence.
+3. "For the PAC Framework, Transaction Tokens for Agents operationalize the Control pillar at the service-to-service level." dropped — the mechanism (OBO + AAP + Transaction Tokens) is the content.
+4. "For the PAC Framework, Entra Agent ID represents the I3 to I4 transition becoming productized." dropped — restated as platform features question.
+5. "For the shadow agent governance problem... SCIM provisioning creates a structural enforcement point:" restructured — PAC label removed, "can't vs. don't" framing absorbed into the argument.
+6. "For the PAC Framework, TSP is the infrastructure that makes cross-organizational trust possible at the Control pillar level." dropped — sentence ends at the spec revision note.
+7. "This enforces the PAC principle that authority must only decrease through delegation chains, never increase." → "Authority can only decrease through the chain, never increase." — PAC label dropped.
+8. "This connects the Control pillar to the Accountability pillar:" dropped — EUDI wallet sentence restructured.
 
 building-the-edge.md fixes (SA verification session 456):
 1. Gartner legal claims: "over 1,000 legal claims" → "significant legal exposure" — secondary sources report 1,000–2,000+ (inconsistent); softened in body, variance noted in footnote. Fabrication pattern #8.

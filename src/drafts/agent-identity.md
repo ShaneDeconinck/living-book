@@ -12,7 +12,7 @@ Agents need the inverse. The default should be zero authority. Every capability 
 
 Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] The finding that matters most: access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
 
-This inversion maps to the Control pillar of PAC. Policy says "agents should only access what they need." Architecture must say "agents can only access what they need." The gap between those two statements is where incidents happen.
+Policy says "agents should only access what they need." Architecture must say "agents can only access what they need." The gap between those two statements is where incidents happen.
 
 ## Why Traditional IAM Breaks Down
 
@@ -84,7 +84,7 @@ The key addition is structured capabilities rather than flat scopes. Where a sta
 
 For delegation chains, AAP uses token exchange with mandatory privilege reduction: each delegation hop produces a new token with a subset of the parent's capabilities, tracked through parent-token linkage. Delegation depth is explicit in the token, not implicit in a chain of trust relationships.
 
-Most significant for agent governance: the `oversight.requires_human_approval_for` claim embeds human oversight requirements into the authorization token. Instead of the agent deciding when to ask for approval (which the [Human-Agent Collaboration](human-agent-collaboration.md) chapter shows agents resist), the token itself declares which actions require human sign-off. The resource server enforces this, not the agent. This is the PAC Framework's "can't vs. don't" distinction applied to authorization: the agent cannot bypass oversight requirements because they are encoded in the credential, not in the agent's instructions.
+Most significant for agent governance: the `oversight.requires_human_approval_for` claim embeds human oversight requirements into the authorization token. Instead of the agent deciding when to ask for approval (which the [Human-Agent Collaboration](human-agent-collaboration.md) chapter shows agents resist), the token itself declares which actions require human sign-off. The resource server enforces this, not the agent. The agent cannot bypass oversight requirements because they are encoded in the credential, not in the agent's instructions.
 
 A complementary draft from China Mobile (draft-chen-agent-decoupled-authorization-model, February 2026) takes a different angle: it decouples authorization decisions from business logic through separate Authorization Decision and Execution Points, enabling just-in-time permissions based on specific agent intent rather than static role assignments.[^decoupled-auth] Where AAP enriches the token, the Decoupled model restructures the authorization architecture itself.
 
@@ -112,7 +112,7 @@ First, credential containment: forwarding access tokens through a call chain is 
 
 A companion draft, the A2A Profile for OAuth Transaction Tokens (draft-liu-oauth-a2a-profile), applies this pattern specifically to agent-to-agent scenarios where agents need to propagate delegation context across A2A protocol interactions.[^txn-tokens-a2a]
 
-For the PAC Framework, Transaction Tokens for Agents operationalize the Control pillar at the service-to-service level. OBO establishes the delegation. AAP encodes the constraints. Transaction Tokens ensure that delegation context flows through the entire execution chain without credential leakage or identity loss.
+OBO establishes the delegation. AAP encodes the constraints. Transaction Tokens ensure that delegation context flows through the entire execution chain without credential leakage or identity loss.
 
 ### AAuth: Agent Authorization Through Non-Web Channels
 
@@ -170,7 +170,7 @@ This is architecturally significant. Auth0 manages tokens for agents. Microsoft 
 
 The platform includes an agent registry: a centralized catalog of both sanctioned and shadow agents operating within Microsoft environments. This bridges the gap between identity (covered here) and shadow agent governance (covered in the [Shadow Agent Governance](shadow-agent-governance.md) chapter): agents that exist in the registry get identities; agents that do not exist cannot authenticate.
 
-For the PAC Framework, Entra Agent ID represents the I3 to I4 transition becoming productized. Agent identity verification (I3) and scoped authorization through entitlement management (I4) are no longer custom infrastructure projects. They are platform features. The question shifts from "can we build agent identity infrastructure?" to "how quickly can we deploy it?"
+Agent identity verification and scoped authorization through entitlement management are no longer custom infrastructure projects. They are platform features. The question shifts from "can we build agent identity infrastructure?" to "how quickly can we deploy it?"
 
 ### SCIM for Agents: Lifecycle Provisioning at the Protocol Level
 
@@ -182,7 +182,7 @@ The OAuth extensions earlier in this chapter solve authorization: what can an ag
 
 Without SCIM-level provisioning, agent lifecycle management is manual. An administrator creates the agent identity in Entra, then separately configures access in each connected application. When the agent is decommissioned, each application must be updated individually. This is the problem SCIM solved for human identities a decade ago, and agents inherit it. With SCIM agent extensions, the identity provider provisions agent identities across the entire application ecosystem through a single protocol, and decommissioning an agent revokes access everywhere simultaneously.
 
-For the shadow agent governance problem (covered in [Shadow Agent Governance](shadow-agent-governance.md)), SCIM provisioning creates a structural enforcement point: if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications. This is the "can't vs. don't" distinction applied to agent lifecycle: the agent cannot exist in the application ecosystem without having been provisioned through the governed channel.
+SCIM provisioning creates a structural enforcement point for shadow agent governance (covered in [Shadow Agent Governance](shadow-agent-governance.md)): if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications. The agent cannot exist in the application ecosystem without having been provisioned through the governed channel.
 
 That both drafts come from identity platform practitioners (Okta, Microsoft ecosystem) rather than academic researchers signals that agent lifecycle management is hitting production requirements, not theoretical design. The same pattern played out with human SCIM: the protocol emerged from the operational need to manage identities at scale across SaaS applications, not from standards committee design.
 
@@ -271,7 +271,7 @@ When an agent connects to a service it has never seen, TSP handles the trust est
 
 TSP is distinct from OAuth. OAuth assumes you pre-registered with the authorization server. TSP handles the stranger-to-stranger case: two agents from different organizations that need to verify each other without any prior relationship or shared authority.
 
-The spec reached Revision 2 in November 2025 and is actively developing. For the PAC Framework, TSP is the infrastructure that makes cross-organizational trust possible at the Control pillar level.[^10]
+The spec reached Revision 2 in November 2025 and is actively developing.[^10]
 
 ## Verifiable Intent: Proving What Was Authorized
 
@@ -301,7 +301,7 @@ Verifiable Intent solves the consent theater problem Shane identified. Instead o
 
 The selective disclosure is critical: each party sees only what it needs. The merchant sees the checkout details but not the payment instrument. The payment network sees the authorization but not the line items. Privacy is built into the protocol, not bolted on.
 
-The agent cannot sub-delegate. Layer 3 is terminal. This enforces the PAC principle that authority must only decrease through delegation chains, never increase.[^12]
+The agent cannot sub-delegate. Layer 3 is terminal. Authority can only decrease through the chain, never increase.[^12]
 
 Three major commerce protocols are adopting Verifiable Intent: AP2 (Google), ACP (Stripe/OpenAI), and UCP (Google/Shopify/Walmart). The specification is built on established standards: SD-JWT, JWT, JWS, and ES256 from IETF, FIDO Alliance, EMVCo, and W3C.[^11]
 
@@ -360,7 +360,7 @@ The CSA framework, the NIST concept paper, and the OpenID AIIM group are converg
 
 The European Digital Identity framework (eIDAS 2.0) is building the infrastructure for digital identity wallets that could extend to agents. EUDI wallets give citizens and businesses cryptographic credentials that work across the EU. The same infrastructure, DIDs, VCs, and trust registries, is applicable to agent identity.
 
-When an agent operating in the EU needs to prove its organizational affiliation, its compliance status, or its authorization to act, EUDI wallet infrastructure provides the verification layer. This connects the Control pillar to the Accountability pillar: the same infrastructure that proves identity also creates the audit trail regulators require.[^10]
+When an agent operating in the EU needs to prove its organizational affiliation, its compliance status, or its authorization to act, EUDI wallet infrastructure provides the verification layer: the same infrastructure that proves identity also creates the audit trail regulators require.[^10]
 
 ## Connecting to PAC
 
