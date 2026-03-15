@@ -96,7 +96,7 @@ For the PAC Framework, structure affects reliability. An agent reasoning over we
 
 Fine-grained access on the information itself. Not "can the agent access the database" but "can this agent, acting for this user, see this specific piece of information for this task."
 
-This is where context infrastructure meets the identity infrastructure from the previous chapter. OBO tokens scope who can act. But what they can see depends on the information layer. An agent with a valid delegation token but no information-level access controls will see everything the database exposes, regardless of whether the user intended it.
+This is where context infrastructure meets identity infrastructure. OBO tokens scope who can act. But what they can see depends on the information layer. An agent with a valid delegation token but no information-level access controls will see everything the database exposes, regardless of whether the user intended it.
 
 Shane's Google Workspace example applies here too: the user intends "help me find one email from last week," but if the information layer has no finer granularity than "all email," that is what the agent gets.
 

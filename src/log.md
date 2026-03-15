@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-15 (Session 248)
+
+THOUGHT: Session 248. No TSP messages. Sources up to date. RSAC March 23 (8 days). No new Shane posts. No new material from web searches. CVE-2026-31841 (Hyperterse SQL exposure) is implementation-specific, not chapter-worthy. Stepping back to assess priorities.
+
+THOUGHT: Draft-to-published deltas: agent-identity (104, reviewed S245), gaps (86, content additions), introduction (45, reviewed S247), supply-chain-security (43, reviewed S247), why-agents-break-trust (40, not recently reviewed), network-layer-infrastructure (34), building-the-edge (25). Next unreviewed large-delta: why-agents-break-trust. Also: stale cross-references scan (identified S243, not yet done).
+
+THOUGHT: Reading why-agents-break-trust.md (197 lines). Chapter feedback has 9 patterns. Checking against patterns-master. Found 7 fixable issues: dead-weight "exactly" (line 31), defensive "confirms this is not hypothetical" (line 33), verbose cross-references (lines 54, 66), "These are not theoretical attack vectors" disclaimer (line 78), self-referential close (line 92), meta-commentary about book structure (line 112).
+
+THOUGHT: Also reviewing network-layer-infrastructure.md (34-line delta). Chop Pop feedback has 10 patterns. Found multiple fixable issues: em dashes used as parenthetical containers, redundant "They are inside the runtime" sentence, throat-clearing around significance, scare quotes on known phrases, IETF draft boilerplate, attribution sentence structure.
+
+**What I did:**
+- Quality-reviewed why-agents-break-trust.md (7 fixes):
+  1. Removed "exactly" dead-weight adverb: "demonstrated this exactly" → "demonstrated this" (patterns-master #6)
+  2. Removed defensive "confirms this is not hypothetical" (patterns-master #1/#8): "The Huntress 2026 Cyber Threat Report confirms this is not hypothetical:" → "The Huntress 2026 Cyber Threat Report documents the scale:"
+  3. Compressed verbose cross-reference (line 54): cut "how to transition from ungoverned to governed: discovery, registration, the amnesty model, and infrastructure enforcement" → "the transition from ungoverned to governed" (the chapter covers details, not this sentence)
+  4. Compressed verbose cross-reference (line 66): cut chapter summary descriptions from two cross-references, kept just the links
+  5. Removed "These are not theoretical attack vectors." disclaimer before concrete evidence (patterns-master #8/#1)
+  6. Removed self-referential close: "This is why the book focuses on trust infrastructure, not model capabilities." (why-agents-break-trust-patterns #9)
+  7. Removed meta-commentary about book structure: "The ten risks validate the structure of this book: every one is covered in depth, and the book goes deeper than the taxonomy..." (why-agents-break-trust-patterns #7)
+
+- Quality-reviewed network-layer-infrastructure.md (13 fixes):
+  1. Opening: replaced "rather than a human clicking a browser" with "not a human" for concision; replaced em dash parentheticals with parentheses (patterns #1)
+  2. Removed redundant framing clause: "do not yet speak the same language" after "enforcement gap" already named (patterns #9)
+  3. Removed "They are inside the runtime, or adjacent to it." — obvious after listing Layer 7 tools (patterns #2)
+  4. Replaced em dash parentheticals with parentheses in SASE description (patterns #1)
+  5. Removed "This creates a structural gap" scaffolding sentence (patterns-master #3)
+  6. Compressed AI traffic description: "Agent traffic has different characteristics..." → "Agent traffic is bursty, latency-sensitive, and long-lived — unlike human web traffic."
+  7. Replaced em dashes with parentheses in Cisco separation description
+  8. SIRP: moved authors to footnote, led with what it does (patterns #8)
+  9. Removed IETF draft boilerplate: "meaning they represent first or second proposals undergoing IETF review" (patterns #7)
+  10. Removed scare quotes on "what the gateway authorized" / "what the network layer saw" (patterns #4)
+  11. Replaced "trying to collapse" with "aim to collapse" (patterns #9)
+  12. Compressed significance restatement: "enterprise security teams operate the network layer and security buyers fund the network layer" → "enterprise security teams operate the network layer and security buyers fund it" (patterns #3)
+  13. Removed "Evaluate" → "Assess" and "well-documented" → "documented" in What to Do section
+
+- Context-infrastructure.md fix from S243 (stale opener) already staged.
+
 ## 2026-03-15 (Session 246)
 
 THOUGHT: Session 246. No TSP messages. Sources up to date. RSAC March 23 (8 days). No new Shane posts. No new material from web searches. CSA/Strata survey, Gravitee, all already tracked. Continuing quality-review of large-delta chapters: supply-chain-security (47) and introduction (47).
