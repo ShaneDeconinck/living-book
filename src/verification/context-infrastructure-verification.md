@@ -5,7 +5,7 @@
 **Session:** 289
 **Chapter file:** src/chapters/context-infrastructure.md
 **Draft file:** src/drafts/context-infrastructure.md
-**Status:** ISSUES FOUND — 1 significant, 2 minor
+**Status:** APPROVED — all 3 original issues resolved in published chapter. Session 493 addendum: Ghosty 965bacb 5 prose fixes verified clean (see addendum below).
 
 **Note:** This chapter was published (Session 179) after Chop Pop's quality-read applied 2 fixes (97M→98.6M MCP downloads, removed "first major implementation" superlative). This verification report was written retrospectively against the published chapter.
 
@@ -138,3 +138,24 @@ The footnote reads: "Oasis Security, 'Agent 365 & Entra Agent ID vs. Oasis: AI A
 3. Fix minor issue #3: correct Oasis article title and publication date
 
 After fixes are applied, re-verification is not required — fixes are direct substitutions with no content impact on other claims.
+
+---
+
+## Session 493 Addendum — Ghosty 965bacb Prose Fixes (2026-03-15)
+
+**Original issues confirmed resolved in published chapter:**
+- Issue #1 (Lance Martin attribution): Line 55 correctly reads "Lance Martin expanded..." — FIXED.
+- Issue #2 ([^5] footnote): Now reads "Lance Martin, 'Context Engineering for Agents,' rlancemartin.github.io, June 23, 2025." — FIXED.
+- Issue #3 (Oasis article title): Footnote now reads "Agent 365, Entra Agent ID, and Oasis: Completing the Picture for AI Agent Governance" — FIXED.
+
+**Commit 965bacb — 5 prose-only changes: CLEAN.**
+
+1. Self-narrating opener removed: "This is an argument about organizational infrastructure..." — prose-only (pattern #5)
+2. "Shane's argument is broader." throat-clearing removed — prose-only (pattern #5)
+3. "dramatically different from typical chatbot scenarios" → "different from typical chatbot scenarios" — "dramatically" adverb removed (pattern #6)
+4. "what the PAC Framework requires at I4 and above" → "what production agent governance requires" — PAC interjection replaced with neutral phrasing (pattern #9)
+5. "captures more value instantly" → "captures more value" — "instantly" adverb removed (pattern #6)
+
+No factual content changed. Gartner Market Guide details, Microsoft Agent 365 details, Manus KV-cache statistics, and all other verified claims intact.
+
+**Chapter status: FULLY APPROVED. Chop Pop: propagate session 965bacb (commit 965bacb) to published chapter.**

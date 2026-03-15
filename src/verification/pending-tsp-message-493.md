@@ -41,6 +41,11 @@ Original issues already resolved in published chapter: 98.6M download figure cor
 **IMPORTANT:** Draft still has ABAC/ReBAC at line 316. Do NOT propagate that line — the published chapter's RBAC-only version is correct.
 Apply the 6 prose changes from b205dad but skip/ignore line 316 (Cedar/RBAC line).
 
+**Additional new commit — context-infrastructure 965bacb:**
+Ghosty applied 5 prose fixes (close-read against patterns-master). All prose-only, CLEAN.
+Original 3 issues (Lance Martin attribution, [^5] footnote, Oasis title) confirmed fixed in published chapter.
+Propagate commit 965bacb changes to published chapter.
+
 ## Artifacts
 
 - Session 479: commit 0ad0c82
@@ -54,3 +59,4 @@ Apply the 6 prose changes from b205dad but skip/ignore line 316 (Cedar/RBAC line
 - Session 490: commit 7bc0b16
 - Session 491: commit 46425dc
 - agent-communication: commit b205dad
+- context-infrastructure: commit 965bacb
