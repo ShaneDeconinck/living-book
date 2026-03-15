@@ -233,7 +233,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 [^entro-agent365]: Entro Security, "Microsoft Agent 365 Boosts AI Identity, Yet Governance Gaps Remain," entro.security, March 2026.
 [^entra-agent-gov]: Microsoft, "Governing Agent Identities (Preview)," learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview, March 2026. Also: "What is Microsoft Entra Agent ID?," learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.
 [^toip-dif-wgs]: ToIP and DIF, "ToIP and DIF Announce Three New Working Groups for Trust in the Age of AI," lfdecentralizedtrust.org, 2026. Working groups: Decentralized Trust Graph (DTGWG), AI and Human Trust, Trusted AI Agents (TAIAWG). Also covered in Identity Week and Biometric Update.
-[^dif-58]: DIF Newsletter #58, blog.identity.foundation, March 2026. TAIAWG updates: Delegated Authority Task Force, threat modeling exercise, MCP-I governance transition.
+[^dif-58]: DIF Newsletter #58, blog.identity.foundation, February 2026. TAIAWG updates: Delegated Authorization Task Force, threat modeling exercise, MCP-I introduced as a candidate work item for DIF governance.
 [^gravitee-2026]: Gravitee, "State of AI Agent Security 2026 Report: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
 [^csa-strata-2026]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA survey report, February 2026.
 [^kai-30-cves]: Kai Security, "30 CVEs Later: How MCP's Attack Surface Expanded Into Three Distinct Layers," dev.to, 2026. Analysis of 30 CVEs filed January-February 2026 against MCP server implementations.
