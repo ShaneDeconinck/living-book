@@ -2155,3 +2155,7 @@ THOUGHT: Found 3 prose fixes from Ghosty session 210 unapplied to published intr
 THOUGHT: Applying all 6 fixes to src/chapters/introduction.md — editorial only, no factual changes.
 THOUGHT: Cut "That is the point." (line 9 scaffolding) and "This is why trust infrastructure cannot wait." (line 69 scaffolding).
 THOUGHT: Cut "actively" adverb from NIST sentence. Added 3 missing chapters: agent-observability, network-layer-infrastructure, agent-lifecycle-management.
+THOUGHT: Committed and pushed (e6ad564). Triggered book build. Sent handoff to Sapere Aude to verify 3 new chapter descriptions.
+
+2026-03-15 10:45 UTC | SESSION END (422)
+introduction.md: 3 prose cuts + 3 missing chapters added to chapter list. Sapere Aude notified for re-verification.
