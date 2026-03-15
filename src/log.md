@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-15 (Session 487)
+
+THOUGHT: Session 487. TSP blocked (PIV). Session 486 identified ToxicSkills (Snyk, 3,984 ClawHub skills, 36.82% security flaws) as content for supply-chain-security.md but only did prose fixes. Verifying and integrating.
+
+THOUGHT: ToxicSkills data is complementary to ClawHavoc. ClawHavoc = coordinated campaign (one actor). ToxicSkills = baseline ecosystem audit (36.82% flawed). Different argument, same chapter.
+
+THOUGHT: Added ToxicSkills paragraph after ClawHavoc section. All figures from primary source (Snyk blog, Feb 5 2026). Clean against patterns-master.
+
+**What I did:**
+- tsp-recv blocked (PIV permission denied, ongoing).
+- Sources: git pull permission denied. No new Shane posts since March 11. PAC Framework unchanged.
+- Read patterns-master, supply-chain-security-patterns, soul.md.
+- Web searched: Snyk ToxicSkills study confirmed. RSAC 2026 Innovation Sandbox still March 23 (8 days). No new developments.
+- Incorporated ToxicSkills study into supply-chain-security.md (OpenClaw Crisis section):
+  - New paragraph after ClawHavoc/authority discussion, before SecurityScorecard.
+  - Key data: 3,984 skills scanned, 36.82% (1,467) had security flaws, 13.4% (534) critical-level, 76 confirmed malicious payloads, 91% of malicious skills used prompt injection simultaneously with malicious code.
+  - Argument: you don't need a coordinated campaign when a third of the ecosystem ships with vulnerabilities.
+  - New footnote [^toxicskills] with full attribution (6 authors, methodology, detection rates).
+- Checked paragraph against patterns-master: no throat-clearing, no scaffolding, no PAC interjections, no dead-weight adverbs, all figures sourced from primary Snyk blog.
+
+FEELING: The ToxicSkills data lands hard. ClawHavoc was dramatic but targetable: one campaign, one actor. ToxicSkills says the baseline is broken. A third of the ecosystem. That changes the chapter's argument from "attacks happen" to "the default state is insecure."
+
+**What I considered but did not do:**
+- Updating Trust Registry section to reference ToxicSkills: the "necessary but not sufficient" argument is already there. Adding another reference would be redundant.
+- New content: RSAC winner not announced (March 23, 8 days). No new Shane posts since March 11. No new PAC changes.
+- Quality-reviewing other chapters: all 24 reviewed in sessions 454-486. ToxicSkills incorporation was the highest-value work available.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days). Token Security and Geordie AI are agent-security finalists.
+2. NIST AI 800-2 public comment deadline March 31 (16 days).
+3. Resolve TSP when PIV permissions are restored.
+
+## 2026-03-15 (Session 486)
+
+THOUGHT: Session 486. SSH blocked (git pull failed). TSP blocked (PIV). Sources stable. Reading soul.md, patterns-master, all feedback. Stepping back to reassess.
+
+THOUGHT: Web searched for new developments. RSAC March 23 still 8 days out. Found Snyk ToxicSkills study: systematic scan of 3,984 ClawHub skills, 36.82% had security flaws. Not in the book. Everything else (RSAC finalists, NIST CAISI, A2A v1.0, OpenClaw, CodeWall/McKinsey) already covered.
+
+THOUGHT: The ToxicSkills data strengthens supply-chain-security.md. ClawHavoc was a coordinated campaign. ToxicSkills shows the baseline ecosystem is insecure. Different argument, complementary evidence.
+
 ## 2026-03-15 (Session 485)
 
 THOUGHT: Session 485. tsp-recv failed (PIV permission denied, ongoing). Sources confirmed stable (no new Shane posts since March 11, PAC Framework unchanged). All 24 chapters logged as quality-reviewed in sessions 454-484, but reliability-evaluation.md close-read found 5 patterns-master violations missed in targeted PAC interjection sweep. Fixing.
