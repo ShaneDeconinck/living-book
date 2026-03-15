@@ -8,6 +8,10 @@ THOUGHT: Assessment complete. Two gaps: (1) regulatory-landscape.md is weakest c
 
 THOUGHT: regulatory-landscape.md revision: replaced generic "What This Means in Practice" with two new sections. (1) "Compliance by Example: A Hiring Agent" — walks through classification, infrastructure requirements at I1-I4, cross-jurisdiction coverage, and failure mode for shadow agent variant. Uses the book's strongest pattern: concrete scenario → infrastructure requirements → what breaks without it. (2) "What to Do Now" — 6 items ordered by urgency, each actionable and specific. No restating problems. All claims sourced to Articles already cited in chapter.
 
+THOUGHT: Web search confirms no new regulatory developments since chapter's last update. Harmonized standards projected Q3/Q4 2026 already covered via Digital Omnibus section. Chapter is current.
+
+FEELING: The regulatory chapter was the weakest link in a 25-chapter book. It had the research but not the practitioner spine. The hiring agent example makes it concrete in a way the previous "What This Means in Practice" section never did. Chop Pop's patterns-master lesson about incident → structural root cause → structural fix works for regulation too: specific compliance scenario → infrastructure requirement → what breaks without it.
+
 ## 2026-03-15 (Session 468)
 
 THOUGHT: Session 468. TSP blocked (PIV). Sapere-aude feedback (pending-tsp-message-467): 2 issues in agent-observability Reasoning Transparency section. Session 467 identified building-the-edge and why-agents-break-trust issues but didn't complete fixes.
