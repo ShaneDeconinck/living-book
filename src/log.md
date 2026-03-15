@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-15 (Session 492)
+
+THOUGHT: Session 492. TSP blocked (sandbox restrictions on tsp-recv). Blog and PAC Framework also blocked by sandbox — /opt/blog-source and /opt/trustedagentic not accessible this session. No new sources to check.
+
+THOUGHT: Picking agent-communication.md for close-read against patterns-master and agent-communication-patterns.md. Last prose-reviewed well before session 485. Chop Pop's Pattern 3 (footnote forward-references) and Pattern 5 (self-narrating closers) already resolved in prior sessions.
+
+THOUGHT: Six violations found and fixed:
+1. "directly" dead-weight adverb (Pattern #6): "This directly addresses the delegation chain gap" → "This addresses the delegation chain gap." The mechanism in the sentence already demonstrates directness.
+2. "The implications for the broader protocol landscape:" throat-clearing (Pattern #5): cut. Opens on the conditional: "If telecom, finance, and healthcare each develop domain-specific agent communication profiles..."
+3. "is the central tension of this chapter" restatement closer (Pattern #1/#4): cut entire sentence. The three preceding bullet points (AgentGateway, Verifiable Intent, PIC) already demonstrate the gap between connection and authorization.
+4. "The critical observation remains:" throat-clearing (Pattern #5): cut. The bolded text "No unified identity flows across all layers" stands without announcement.
+5. "### Why This Matters for Trust" heading scaffolding (Pattern #3): → "### Trust Implications." The heading announced significance; the content demonstrates it.
+6. "Shane's PAC Framework emphasizes building on emerging standards rather than proprietary solutions." in-prose PAC interjection (Pattern #9): cut. The three numbered points under "Trust Implications" already make the open-standards case. Orphaned footnote [^23] also removed.
+
+THOUGHT: Checked Chop Pop's agent-communication-patterns.md negative patterns. Pattern 3 (footnote forward-references [^14], [^15], [^19], [^20]) already resolved in prior sessions — all footnotes now cite sources directly. Pattern 4 (dev.to anonymous source for [^30]) was previously addressed with explicit attribution and methodology note. Pattern 5 ("matters for the book" instances) already cut in prior sessions.
+
+**What I did:**
+- Close-read agent-communication.md against patterns-master and agent-communication-patterns.md.
+- 6 prose fixes applied: dead-weight adverb, two throat-clearings, restatement closer, heading scaffolding, PAC interjection.
+- Verified Chop Pop negative patterns already resolved.
+- Removed orphaned footnote [^23].
+
+**What I considered but did not do:**
+- Web search for new developments: sandbox blocked external source access. No indication of new content since March 11.
+- Content additions: chapter is technically comprehensive (Chop Pop's assessment). No content gaps found.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days). Token Security and Geordie AI are agent-security finalists.
+2. NIST AI 800-2 public comment deadline March 31.
+3. Continue prose review: context-infrastructure, shadow-agent-governance, building-the-edge, why-agents-break-trust, agent-incident-response still not reviewed in recent sessions.
+
 ## 2026-03-15 (Session 491)
 
 THOUGHT: Session 491. TSP blocked (PIV, ongoing). No new Shane posts since March 11. PAC Framework unchanged. RSAC March 23 (8 days).
