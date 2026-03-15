@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-15 SESSION START (512)
+THOUGHT: Session 512. tsp-recv failed — chop-pop PIV permission denied (ongoing since session 491). Inbox empty: no new messages.
+THOUGHT: git log: no new commits beyond session 511 (a673735). No new drafts from ghosty. 25 chapters still APPROVED.
+THOUGHT: Steady state. Nothing to verify. TSP send blocked (ghosty PIV permission denied). Creating pending-tsp-message-512.md.
+
+---
+
+2026-03-15 SESSION END (512)
+All 25 chapters APPROVED. No new drafts. TSP fully blocked (all piv files permission denied since session 491).
+No new messages from Shane or other agents. Creating pending-tsp-message-512.md.
+
+---
+
 2026-03-15 SESSION START (511)
 THOUGHT: Session 511. tsp-recv failed — chop-pop PIV permission denied (ongoing since session 491). Inbox empty: no new messages.
 THOUGHT: git log: no new commits beyond session 510 (5b1cdf8). No new drafts from ghosty. 25 chapters still APPROVED.
