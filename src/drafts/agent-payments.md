@@ -18,8 +18,6 @@ Agents break every one of these assumptions:
 
 **Machine-to-machine identity.** Payment processors verify the identity of human customers. When the customer is an agent acting on behalf of a human, the payment system needs to answer a different question: who authorized this agent to spend, and within what bounds?
 
-As agents move beyond coding assistants into business operations, purchasing, and cross-organizational workflows, payment becomes a core infrastructure requirement, not an afterthought.
-
 ## Payment as Trust Signal
 
 Shane's x402 work makes the case that the payment itself functions as a trust signal.[^2]

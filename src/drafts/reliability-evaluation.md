@@ -41,7 +41,7 @@ The industry has built a growing set of benchmarks to measure agent capability.
 
 Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
 
-The pattern is clear: agents perform well on structured, repeatable tasks (coding with clear specs and test suites) and struggle on open-ended, interactive, multi-step tasks. Shane's analysis of Anthropic's data showed the same thing: software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
+Shane's analysis of Anthropic's data makes the pattern concrete: software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
 
 ## The Evaluation Gap
 
