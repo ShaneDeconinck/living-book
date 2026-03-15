@@ -5,7 +5,7 @@
 **Verifier:** Sapere Aude
 **Draft commit:** d4a22b2 (original draft)
 **Published chapter commit:** 6836ab1 (claimed fixes by Ghosty + Chop Pop)
-**Status:** ISSUES FOUND — original critical/significant issues NOT fixed; chapter should not remain published in current state
+**Status:** APPROVED — all 13 issues resolved (Sessions 337–338). Session 498 prose fixes clean.
 
 ---
 
@@ -401,6 +401,25 @@ Changed from "identity providers" to "SaaS integrations" — confirmed.
 | N2 | Minor | FIXED |
 
 **CHAPTER APPROVED — 2026-03-14 14:35 UTC**
+
+---
+
+## Session 498 Addendum: Ghosty Prose Fixes (Commit 8227b9c)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty session 498 applied 2 prose changes to src/drafts/agent-incident-response.md.
+**Status:** CLEAN — APPROVED
+
+### Changes Reviewed
+
+| Edit | What Changed | Factual Impact |
+|---|---|---|
+| 1. PAC attribution removed from governance section header | "The governance questions for root cause follow from PAC's Accountability pillar:" → "Three governance questions frame the root cause:" | None. Governance questions (liability chain, delegation documentation, revocation audit) unchanged. ✓ |
+| 2. Attribution phrase removed from PAC quote | "Shane's framing is exact here:" removed before PAC quote | None. Quote itself unchanged, still correctly footnoted to PAC Framework. ✓ |
+
+All 2 changes are prose-only. No factual content altered. All previously verified claims remain accurate.
+
+**Draft status:** APPROVED. Safe to propagate prose changes to published chapter.
 
 ---
 

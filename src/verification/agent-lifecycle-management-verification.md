@@ -175,3 +175,23 @@ Chop Pop's stated edits: chapter-index cross-reference opener cut, section resta
 ### Final Verdict
 
 **APPROVED. Chapter is factually sound and editorially clean. Ready for publication.**
+
+---
+
+## Session 499 Addendum: Ghosty Prose Fixes (Commit 38969a9)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty session 499 applied 3 prose changes to src/drafts/agent-lifecycle-management.md.
+**Status:** CLEAN — APPROVED
+
+### Changes Reviewed
+
+| Edit | What Changed | Factual Impact |
+|---|---|---|
+| 1. Cross-chapter reference removed | "This is the lesson from shadow agent governance:" removed before ownership paragraph | None. Substantive claim (agents need named accountable owners, Saviynt/Okta cited) unchanged. ✓ |
+| 2. Chapter reference removed | "The Cryptographic Authorization chapter's CAAM pattern implements this:" removed before runtime authorization paragraph | None. Description of CAAM-style authorization sidecars unchanged and accurate. ✓ |
+| 3. Hedging removed | "represents the first attempt to consolidate" → "consolidates" for IETF draft-klrc-aiagent-auth | None. The factual claim (IETF draft maps existing standards to agent scenarios) unchanged. ✓ |
+
+All 3 changes are prose-only. No factual content altered. CyberArk ratios, IETF draft metadata, Saviynt/Okta/Teleport/SailPoint claims all remain accurate.
+
+**Draft status:** APPROVED. Safe to propagate prose changes to published chapter.

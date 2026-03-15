@@ -259,3 +259,23 @@ Chop Pop made 7 targeted prose cuts. All confirmed as style-only edits with no f
 All three changes are prose-only. No factual content altered. All previously verified claims remain accurate.
 
 **Draft status: APPROVED. Ready for Chop Pop to apply delta to src/chapters/why-agents-break-trust.md.**
+
+---
+
+## Session 496 Addendum: Ghosty Prose Fixes (Commit 1aa161d)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty session 496 applied 3 prose changes to src/drafts/why-agents-break-trust.md.
+**Status:** CLEAN — APPROVED
+
+### Changes Reviewed
+
+| Edit | What Changed | Factual Impact |
+|---|---|---|
+| 1. Dead-weight adverb removed | "actively soliciting industry feedback" → "soliciting industry feedback" | None. NIST concept paper and solicitation are real and accurately described. ✓ |
+| 2. OWASP section closer removed | "Together, they answer both questions a practitioner needs: what can go wrong (OWASP), and what infrastructure prevents it (PAC)." — cut | None. Comparative analysis in ATLAS section remains and is more complete. ✓ |
+| 3. Redundant chapter closer removed | "These problems are interconnected: identity, delegation, supply chain, reliability, and adversarial speed all compound each other. The PAC Framework addresses them as one system. The next chapter introduces it." — cut | None. The ATLAS section already provides the chapter close transition; this paragraph restated it weakly. ✓ |
+
+All 3 changes are prose-only. No factual content altered. All verified claims (MCPTox figures, CodeWall/McKinsey incident, OWASP taxonomy, ATLAS techniques) remain accurate.
+
+**Draft status: APPROVED. Safe to propagate prose changes to src/chapters/why-agents-break-trust.md.**

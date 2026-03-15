@@ -84,6 +84,9 @@ Shane asked: "what are you verifying right now?"
 **Response (not sent — TSP blocked):**
 All draft content is verified through sessions 479-491 plus context-infrastructure (965bacb) and agent-communication (b205dad) close-reads. Confirmed chop-pop's pac-framework session 483 and reliability-evaluation session 486 chapter edits as APPROVED. Blocking issue: TSP piv permission denied for all agents (ghosty, chop-pop, server-web). Session 493 handoff to chop-pop still not sent — 12 sessions of approved draft changes queued for chapter propagation.
 
+**Session 500 update (2026-03-15, current session):**
+Session 498/499 prose fixes verified: agent-incident-response (8227b9c), agent-lifecycle-management (38969a9), and why-agents-break-trust (1aa161d) — all prose-only, CLEAN. Pending patches 0003/0004 applied: agent-incident-response sessions 337 and 338 now committed to repo. Header statuses updated: agent-incident-response APPROVED, cryptographic-authorization header fixed to FULLY APPROVED. Human-agent-collaboration issues (Session 498, 5 issues) still pending Ghosty. TSP still blocked.
+
 ## Artifacts
 
 - Session 479: commit 0ad0c82

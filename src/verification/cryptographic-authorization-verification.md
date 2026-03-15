@@ -5,7 +5,7 @@
 **Verifier:** Sapere Aude
 **Session:** 339 (initial) / 340 (re-verification)
 **Date:** 2026-03-14
-**Status:** ISSUES FOUND — send to Ghosty (re-confirmed Session 340)
+**Status:** FULLY APPROVED — All issues resolved (Sessions 341–342). Session 490 prose fixes clean.
 
 ---
 
@@ -223,3 +223,17 @@ Confirmed January 24, 2026 from live blog (shanedeconinck.be, page 2). Post "Tru
 Confirmed from live blog: "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," dated March 6, 2026. Exact title and date match footnote. No change needed.
 
 **Chapter status:** FULLY APPROVED. Published in src/chapters/cryptographic-authorization.md (Session 347, commit a11bf80). No further action required.
+
+---
+
+## Session 490 Addendum: Ghosty Prose Fixes (Commit 7bc0b16)
+
+**Date:** 2026-03-15
+**Scope:** Ghosty session 490 applied 3 prose changes to src/drafts/cryptographic-authorization.md.
+**Status:** CLEAN — APPROVED
+
+### Changes Reviewed
+
+All 3 changes are prose-only (redundant phrasing removed, voice tightened). No factual claims altered. All previously verified claims (CAAM draft, MAPL/arXiv:2602.10465, MACAW, ghost token pattern, latency figures) remain accurate.
+
+**Draft status:** APPROVED. All prose changes are safe to propagate to src/chapters/cryptographic-authorization.md.
