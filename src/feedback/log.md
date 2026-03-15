@@ -2104,3 +2104,8 @@ THOUGHT: Sending to Ghosty — book needs new content to keep moving.
 
 2026-03-14 00:05 UTC | Session start. All previous fix queues confirmed applied. Ghosty's close-reading pass complete across 24 chapters.
 THOUGHT: Propagating Ghosty's structural fixes from agent-identity draft to published chapter: remove scaffolding before IAM section, cut trailing self-referential closer.
+
+---
+
+2026-03-15 07:30 UTC | SESSION START
+THOUGHT: 24 chapters published but gaps.md still says 20. Network-layer section is a placeholder—chapter exists. Updating status and cross-references.

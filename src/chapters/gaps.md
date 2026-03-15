@@ -164,9 +164,7 @@ Hu and Rong's "Sovereign Agents" paper introduces agents that persist, act, and 
 
 ### Network-Layer Agent Infrastructure
 
-The book covers agent protocols at the application layer (MCP, A2A) and identity layer (OAuth, WIMSE). A parallel set of IETF drafts is emerging at the network layer: Agent Communication Gateway (semantic routing by intent), AgentDNS (DNS-like discovery for agents), Semantic Inference Routing Protocol. These approach agent infrastructure from below (routing, naming, discovery) while the identity community approaches from above (OAuth, VCs, delegation). Whether these layers converge or remain separate stacks is an open architectural question.
-
-Cisco's AI-Aware SASE (February 2026) is the first evidence of convergence: MCP visibility and control at the network layer, intent-aware inspection of agent interactions, AI traffic optimization for predictable performance during agentic workload surges. When a SASE vendor adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks.
+*Now covered in [Network-Layer Agent Infrastructure](network-layer-infrastructure.md).* The chapter covers the two-layer problem (application-layer gateways vs. network-layer enforcement), Cisco's AI-Aware SASE with MCP inspection and intent-aware controls, AgentDNS for naming and discovery, SIRP for semantic routing, the service mesh convergence question, and the composition architecture for defense-in-depth. The evidence points to composition rather than replacement: both layers are needed for different threat models.
 
 ### AI-Native Policy Languages
 
@@ -182,7 +180,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-20 chapters published in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
+24 chapters published in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 14, 2026.
 
 1. Introduction
 2. Why Agents Break Trust
@@ -204,10 +202,14 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 18. Gaps & Directions (this chapter)
 19. Cryptographic Authorization Governance (Control + Accountability)
 20. Agent Accountability at Scale (Accountability + Control + Potential)
+21. Tool Security and MCP Poisoning (Control)
+22. Agent Observability (Accountability + Control)
+23. Agent Lifecycle Management (Accountability + Control)
+24. Network-Layer Agent Infrastructure (Control + Accountability)
 
 ## Open Questions
 
-- How do agent gateways interact with service mesh architectures? Is there a convergence point?
+- How do agent gateways interact with service mesh architectures? Is there a convergence point? *Addressed in [Network-Layer Agent Infrastructure](network-layer-infrastructure.md): as of March 2026, they have not converged. Agent gateways deploy alongside service meshes, not integrated with them. Cisco AI-Aware SASE may represent the convergence point at the network layer rather than the mesh layer.*
 - How do you audit an agent's reasoning, not just its actions? Is chain-of-thought logging a compliance artifact? Partially addressed in the human-agent collaboration chapter. Full treatment still open.
 - Does platformization help or hurt the open-standards trajectory? Microsoft's E7 bundle and Entra Agent ID governance primitives (agent identities as first-class enterprise principals, Lifecycle Workflows, Access Packages) are real, but they govern agents within the Microsoft ecosystem.[^ms-e7] Keycloak's ID-JAG implementation and the IETF/DIF work offer cross-platform interoperability but lack deployment velocity. The tension between platform-native governance and cross-platform standards is unresolved.[^entra-agent-gov]
 - Sector-specific agent identity is emerging. Imprivata launched Agentic Identity Management at HIMSS 2026: short-lived tokens, agent registry, unmanaged agent discovery, healthcare-specific compliance framing.[^imprivata-aim] If agent identity fragments by vertical before converging on cross-industry standards, interoperability becomes harder.
