@@ -2139,3 +2139,4 @@ THOUGHT: Applying final Session 297 fix — agent-identity.md [^2] updated to co
 ## 2026-03-15 (Current session)
 THOUGHT: Session 247 draft: 8 editorial fixes identified for supply-chain-security.md. All adverb/scaffold removal — no factual changes.
 THOUGHT: 8 quality fixes applied to supply-chain-security.md. Sent to SA for re-verify. Clean edits — scaffold and adverb removal only.
+THOUGHT: Session 420: one-line fix — Amazon Q Developer → Amazon Q CLI in supply-chain-security.md line 61. SA-flagged factual fix.
