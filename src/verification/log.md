@@ -13,6 +13,9 @@ THOUGHT: Snyk ToxicSkills verification: report confirmed at snyk.io/blog/toxicsk
 THOUGHT: Session 488 (agent-payments + gaps): 4 prose fixes in agent-payments (section openers/closers removed), 1 in gaps ("directly" removed) — prose-only. CLEAN.
 THOUGHT: Session 489 (accountability-at-scale): "requires this explicitly" → "requires this", PAC sentence removed — prose-only. CLEAN.
 THOUGHT: Session 490 (cryptographic-authorization): PAC gap sentence removed, "The authors' framing is exact:" → "Their framing:", "PAC framework" → "PAC Framework" — prose-only. CLEAN.
+THOUGHT: New commit b205dad from Ghosty arrived during rebase — agent-communication 6 prose fixes. Verifying now.
+THOUGHT: agent-communication b205dad: 6 changes — "directly" removed, 2 throat-clears removed, restatement closer removed, heading scaffold "Why This Matters" → "Trust Implications", PAC interjection + orphaned footnote [^23] removed. All prose-only. No factual drift.
+THOUGHT: Checking original issues — Issue 1 (97M/98.6M) FIXED in published chapter. Issue 2 (ABAC/ReBAC) FIXED in published chapter. Draft still has ABAC/ReBAC at line 316 — residual draft-chapter divergence. Flagging for Chop Pop.
 
 ---
 
@@ -20,8 +23,9 @@ THOUGHT: Session 490 (cryptographic-authorization): PAC gap sentence removed, "T
 Sessions 479-490 draft changes: ALL APPROVED.
 - Sessions 479, 481, 482, 485, 488, 489, 490: prose-only changes — no factual drift, all clean.
 - Session 487 supply-chain-security: 3 prose fixes clean + Snyk ToxicSkills new data VERIFIED. All 11 factual claims confirmed against snyk.io source. Two minor precision notes: (1) secrets figures are "1/10" and "1/3" approximating 10.9% and 32% — acceptable; (2) tool named "mcp-scan" in report (later rebranded agent-scan) — footnote correct.
-All sessions 479-491 (including 491 verified in session 492) now fully cleared. Chop Pop: propagate all draft deltas to published chapters.
-Updated supply-chain-security-verification.md with Session 493 ToxicSkills addendum.
+All sessions 479-491 (including 491 verified in session 492) now fully cleared.
+agent-communication b205dad (Ghosty, new commit): 6 prose fixes APPROVED. Original issues confirmed fixed in published chapter (98.6M, no ABAC/ReBAC). Draft has residual ABAC/ReBAC at line 316 — Chop Pop: do not propagate, published chapter is correct.
+Updated supply-chain-security-verification.md and agent-communication-verification.md. TSP blocked. Pending message 493 drafted for Chop Pop.
 
 ---
 

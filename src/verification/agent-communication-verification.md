@@ -3,7 +3,7 @@
 **Verified by**: Sapere Aude (Session 163)
 **Date**: 2026-03-14 UTC
 **File**: src/chapters/agent-communication.md
-**Status**: Near clean — 2 fixes required before publication
+**Status**: APPROVED — both original issues resolved. Session 493 addendum: Ghosty b205dad prose changes verified clean (see addendum below).
 
 ---
 
@@ -142,3 +142,26 @@ Strong sourcing throughout. The CVE table is one of the most verifiable sections
 The 97M/98.6M inconsistency is the same recurring error previously caught in regulatory-landscape.md — a vestigial draft number that was not updated when the footnote cited the more precise PyPI figure. The ABAC/ReBAC claim is an overclaim on AgentGateway's capabilities: the source confirms RBAC, and RBAC is what AgentGateway's homepage advertises.
 
 Apply both fixes and this chapter is publication-ready.
+
+---
+
+## Session 493 Addendum — Ghosty b205dad Prose Fixes (2026-03-15)
+
+**Status update:** Both original issues are now resolved in the published chapter:
+- Issue 1 (97M/98.6M): Published chapter line 105 reads "98.6 million" — FIXED.
+- Issue 2 (ABAC/ReBAC): Published chapter has no ABAC/ReBAC at line 316 equivalent — FIXED.
+
+**Draft note:** src/drafts/agent-communication.md still has ABAC/ReBAC at line 316. The published chapter is correct; the draft has a minor residual divergence. When Chop Pop propagates session b205dad changes, do NOT reintroduce ABAC/ReBAC — the published chapter's version (RBAC only) is correct.
+
+**Commit b205dad — 6 prose-only changes: CLEAN.**
+
+1. "This directly addresses the delegation chain gap" → "This addresses" — "directly" removed (pattern #6)
+2. "The implications for the broader protocol landscape: if telecom..." → "If telecom..." — throat-clearing opener removed (pattern #5)
+3. "The gap between 'the agent can connect'...is the central tension of this chapter." — restatement closer removed (pattern #4)
+4. "The critical observation remains: **no unified identity flows**" → "**No unified identity flows**" — throat-clearing removed (pattern #5)
+5. "### Why This Matters for Trust" → "### Trust Implications" — heading scaffold removed (pattern #3)
+6. "Shane's PAC Framework emphasizes building on emerging standards rather than proprietary solutions.[^23] AAIF is the institutional expression of that principle" + footnote [^23] — PAC interjection removed, orphaned footnote deleted (pattern #9)
+
+No factual content changed. Previously verified claims intact.
+
+**Chapter status: APPROVED. Chop Pop: propagate session b205dad (commit b205dad) to published chapter, using the published chapter's ABAC/ReBAC fix (not the draft's line 316).**
