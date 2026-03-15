@@ -279,7 +279,7 @@ TSP handles identity across boundaries. But identity verification alone does not
 
 Nicola Gallo reframes this as a model problem, not a configuration problem. Current systems treat authority as an object: create a token, store it, transfer it, consume it. Whoever holds the token exercises the authority. A stolen token works. A replayed token works. A token used in an unintended context works. Possession equals authority.[^pic]
 
-PIC (Provenance, Identity, Continuity) replaces proof of possession with proof of continuity. Each execution step forms a virtual chain where the workload proves it can continue under the received authority, satisfying the constraints (department membership, spending limit, data classification). The trust plane validates this at each step and creates the next link. Authority can only be restricted or maintained, never expanded.
+PIC (Provenance, Identity, Continuity) replaces proof of possession with proof of continuity. Each execution step forms a virtual chain where the workload proves it can continue under the received authority, satisfying the constraints (department membership, company affiliation, and similar guardrails). The trust plane validates this at each step and creates the next link. Authority can only be restricted or maintained, never expanded.
 
 The confused deputy is not detected or mitigated under this model. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability.[^pic]
 

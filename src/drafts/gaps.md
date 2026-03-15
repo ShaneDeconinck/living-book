@@ -201,7 +201,7 @@ The first systematic comparative mapping of trust boundaries across MCP and A2A 
 
 The asymmetry has a root cause. MCP's tool descriptions create an attack surface where metadata becomes executable intent. This single architectural choice is responsible for tool poisoning, tool shadowing, rug pulls, and the majority of MCP's CVEs. A2A preserves opacity: agents never share internal thoughts, plans, or memory, which provides natural isolation that MCP lacks. Both protocols treat authentication as optional. Neither implements message-level integrity.
 
-This maps to a PAC insight: MCP's weakness is Control (insufficient containment of what tools can do). A2A's weakness is also Control but at a different layer (insufficient verification of who agents claim to be). The trust layer integrations the book advocates (TMCP, TA2A) address both, but the asymmetry means deployments that compose MCP and A2A inherit both vulnerability profiles simultaneously.
+MCP's weakness is containment: insufficient restriction of what tools can do. A2A's weakness is also containment but at a different layer: insufficient verification of who agents claim to be. The trust layer integrations the book advocates (TMCP, TA2A) address both, but the asymmetry means deployments that compose MCP and A2A inherit both vulnerability profiles simultaneously.
 
 ### The Governance Gap Is Quantified
 
