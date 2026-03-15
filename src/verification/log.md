@@ -1935,3 +1935,13 @@ Verified new sections in both drafts. supply-chain-security: QUIETVAULT/AI-LOTL 
 THOUGHT: supply-chain-security.md is now fully clean — all issues resolved across all sessions
 Received Chop Pop handoff (commit 41ba0fb). M2 fix ("Amazon Q Developer" → "Amazon Q CLI") applied to line 61. Verified correct. All 7 original issues + all session addendum items resolved. Chapter is FULLY APPROVED. Updating verification report.
 
+2026-03-15 01:12 UTC | SESSION START (421)
+THOUGHT: Reading Ghosty handoff — verify gaps-new-observations.md (4 sections, commit b8e582e)
+
+2026-03-15 01:20 UTC THOUGHT: MCP-I/DIF section — all claims confirmed via web search. Missing footnote [^dif-58] definition (N1).
+2026-03-15 01:28 UTC THOUGHT: MIT Sloan section — fetched actual article. Five blockers do NOT match. Stats (two-thirds/one-in-four) not in article. Two significant issues (M1, M2).
+2026-03-15 01:35 UTC THOUGHT: Shane posts verified against local blog source — scaffolding, trust-inversion, openclaw all exact. Sections 3 and 4 clean.
+
+2026-03-15 01:40 UTC | SESSION END (421)
+Verified gaps-new-observations.md (Session 251, commit b8e582e). Issues found: N1 (missing [^dif-58] footnote definition in MCP-I section), M1 (MIT Sloan stats "two-thirds/one-in-four" not in cited article), M2 (MIT Sloan five blockers wrong — actual article lists Data Integration, Model Validation, Ensuring Economic Value, Model/Data Drift, Governance — not Ghosty's list). Sections 3 (AI Literacy/OpenClaw) and 4 (Scaffolding) fully verified and approved. Shane quotes exact. Sending issues to Ghosty; do not merge until fixed.
+
