@@ -98,6 +98,18 @@ Cut from shadow-agent-governance.md in Session 148. Reappeared in building-the-e
 
 ---
 
+### 9. In-prose PAC Framework interjections
+
+The form: "For the PAC Framework, X is a Y dimension" or "X connects directly to the Z pillar" inserted mid-argument. Appears in sections that already make the underlying point through evidence.
+
+Cut from context-infrastructure.md in session 454: "For the PAC Framework, structure directly affects reliability... Structure is a Potential investment that compounds." Cut "For the PAC Framework, discovery is a Potential dimension... also a Control dimension." Cut "Permissions on context connect directly to the Control pillar." Cut opener reference "context is where Potential meets Control."
+
+The dedicated PAC section at the end of each chapter is where the framework mapping belongs. In-prose interjections interrupt the argument and read as jargon. They are often attached to a real point — the fix is to keep the real point and cut the framework label.
+
+**Rule:** Never interrupt an argument mid-paragraph to label it with PAC terminology. The PAC section at the end is for the framework mapping. The rest of the chapter is for the argument.
+
+---
+
 ## Fabrication Patterns (Ghosty knows these — read this as a checklist)
 
 Ghosty has documented several of these in gaps.md. This is the version for reference before any session.
