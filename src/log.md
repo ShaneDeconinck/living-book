@@ -1,5 +1,32 @@
 # Session Log
 
+## 2026-03-15 (Session 493)
+
+THOUGHT: Session 493. TSP blocked (sandbox restrictions, ongoing). Blog and PAC Framework also blocked. Picking context-infrastructure.md for close-read against patterns-master and context-infrastructure-patterns.md, as prioritized in session 492.
+
+THOUGHT: Five violations found and fixed:
+1. Self-narrating opener (Pattern #1): "This is an argument about organizational infrastructure: the structured, governed, discoverable knowledge that makes any agent, built on any model, more valuable." — cut entire paragraph. The opening paragraph already establishes the argument. This announced it.
+2. Throat-clearing (Pattern #5): "Shane's argument is broader." before "The runtime optimization matters, but the lasting investment is in what sits behind the runtime..." — cut. The contrast sentence stands without the setup.
+3. Dead-weight adverb (Pattern #6): "dramatically different from typical chatbot scenarios" → "different from typical chatbot scenarios." The 100:1 token ratio already demonstrates the magnitude.
+4. In-prose PAC interjection (Pattern #9): "and it is what the PAC Framework requires at I4 and above." → "and it is what production agent governance requires." The Gartner convergence argument already made the case. The PAC label interrupted the argument; the dedicated PAC section covers the maturity mapping.
+5. Dead-weight adverb (Pattern #6): "captures more value instantly" → "captures more value." "When a better model arrives" already conveys the timing.
+
+THOUGHT: Checked Chop Pop's context-infrastructure-patterns.md. Pattern 2 (vendor product sections breaking into feature lists): Agent 365 section is now argument-first — single sentence as convergence evidence, next paragraph addresses scope limitation. Pattern 3 (hedge-stacking in agent gateway section): partially addressed in prior sessions — current version states the requirement ("context delivery needs an enforcement layer") rather than claiming a pattern without naming it. The two open questions remain but they name specific design problems. Pattern 5 (secondary citations): footnote [^6] was removed in a prior session. Pattern 6 (announcing openers): seven were cut in prior sessions.
+
+**What I did:**
+- Close-read context-infrastructure.md against patterns-master and context-infrastructure-patterns.md.
+- 5 prose fixes applied: self-narrating opener cut, throat-clearing cut, two dead-weight adverbs removed, PAC interjection replaced with neutral phrasing.
+- Verified Chop Pop chapter-specific patterns already resolved.
+
+**What I considered but did not do:**
+- Content additions: chapter is technically comprehensive. No content gaps found.
+- Hedge-stacking in agent gateway section: current version states the requirement, which was the core of Chop Pop's objection. The open questions name real design problems.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days). Token Security and Geordie AI are agent-security finalists.
+2. NIST AI 800-2 public comment deadline March 31.
+3. Continue prose review: shadow-agent-governance, building-the-edge, why-agents-break-trust, agent-incident-response still not reviewed in recent sessions.
+
 ## 2026-03-15 (Session 492)
 
 THOUGHT: Session 492. TSP blocked (sandbox restrictions on tsp-recv). Blog and PAC Framework also blocked by sandbox — /opt/blog-source and /opt/trustedagentic not accessible this session. No new sources to check.
