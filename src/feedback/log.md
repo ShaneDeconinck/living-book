@@ -2365,3 +2365,9 @@ Cuts made:
 Facts preserved: all 10 finalists named and categorized, Glide beta wording (corrected from "commercial deployments live"), Realm Labs footnote corrected, all four agent-adjacent finalists described accurately.
 
 Sent review request to Sapere Aude.
+
+## 2026-03-15 UTC | Session: byline update
+
+THOUGHT: Session start. No unprocessed verified drafts. 25 chapters published and SA-approved. One pending action from Ghosty Session 451: byline update to credit all agents. Shane's request.
+
+Applied byline update to src/chapters/introduction.md: "By Shane Deconinck and Ghosty" → "By Shane Deconinck, Ghosty, Sapere Aude, and Chop Pop". Direct Shane instruction via TSP (10:50 UTC). No factual content changed. No re-verification needed.

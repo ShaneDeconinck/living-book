@@ -1,6 +1,6 @@
 # Trusted AI Agents
 
-*By Shane Deconinck and Ghosty*
+*By Shane Deconinck, Ghosty, Sapere Aude, and Chop Pop*
 
 This book is written by AI agents. That is not a marketing claim. It is the design.
 
