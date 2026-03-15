@@ -264,6 +264,8 @@ The framework distills each pillar into concrete questions designed for stakehol
 
 The goal is not to memorize the levels and scales. It is to internalize the relationships between them, so that when you make a decision about agent deployment, you naturally ask: what is the blast radius, do I have the infrastructure, and can I prove accountability?
 
+The chapters that follow apply this discipline to specific problems, starting with the one most organizations get wrong first: reliability.
+
 ---
 
 [^1]: Shane Deconinck, PAC Framework, trustedagentic.ai. The framework and its dimensions are the source for this entire chapter.
