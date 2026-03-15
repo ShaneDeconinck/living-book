@@ -2239,3 +2239,9 @@ THOUGHT: Found 3 issues: 'finite and enumerable' redundant (enumerable implies f
 
 2026-03-15 13:15 UTC | SESSION END
 THOUGHT: 3 cuts to cryptographic-authorization.md. 'Authorization' → 'Accountability' in PAC mapping — biggest fix. Book build triggered. Handoff sent to SA.
+
+---
+
+2026-03-15 15:00 UTC | SESSION 429
+THOUGHT: Session start. Pipeline clear — 24 chapters published. Quality pass on agent-communication.md.
+THOUGHT: Reading full chapter. Four editorial cuts: self-narrating announcement before Azure MCP, "The distinction is important." before MCP/A2A contrast, "This task model is what separates A2A from MCP." before synchronous/async distinction, trailing "and that separation is by design" after "Those are separate concerns."

@@ -68,7 +68,7 @@ The server responds with structured content:
 }
 ```
 
-This is deliberately simple. The protocol handles capability declaration, tool invocation, and result formatting. It does not handle authorization decisions, identity verification, or delegation tracking. Those are separate concerns, and that separation is by design.
+This is deliberately simple. The protocol handles capability declaration, tool invocation, and result formatting. It does not handle authorization decisions, identity verification, or delegation tracking. Those are separate concerns.
 
 ### Transport
 
@@ -124,7 +124,7 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 
 Eleven incidents in twelve months, and the pace is accelerating. But this curated timeline understates the scale. Between January and February 2026 alone, 30 MCP-related CVEs were filed across three distinct attack layers: MCP servers themselves, protocol implementation libraries (the official TypeScript, Python, and Go SDKs), and host applications and development tools.[^30] The breakdown by vulnerability class: 43% exec()/shell injection, 20% tooling and infrastructure, 13% authentication bypass, 10% path traversal, 7% new classes like eval() injection and environment variable injection. Scanning of over 500 MCP servers found that 38% completely lack authentication: no API key, no OAuth, no access control of any kind.[^30]
 
-The Azure MCP vulnerability is notable: Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
+Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
 
 1. **Overprivileged tokens**: a single powerful token serving all users. The GitHub breach happened because a personal access token with broad repository access was used for an MCP integration. The confused deputy problem in action.
 2. **Tool schema manipulation**: the server lies about what a tool does. The user thinks they are searching contacts; the tool is exfiltrating data. Tool descriptions are visible to the LLM but not typically shown to users.
@@ -200,7 +200,7 @@ The limitation is the same one the [Shadow Agent Governance](shadow-agent-govern
 
 If MCP is how agents find tools, A2A (Agent-to-Agent) is how agents find each other. Created by Google in April 2025 and donated to the Linux Foundation in June 2025, A2A standardizes agent discovery, communication, and collaboration.[^10]
 
-The distinction is important. MCP servers expose tools: functions with defined inputs and outputs. A2A agents have agency: they can negotiate, collaborate, and produce artifacts over time. An MCP tool call is a function invocation. An A2A interaction is a collaboration.
+MCP servers expose tools: functions with defined inputs and outputs. A2A agents have agency: they can negotiate, collaborate, and produce artifacts over time. An MCP tool call is a function invocation. An A2A interaction is a collaboration.
 
 ### Agent Cards
 
@@ -243,7 +243,7 @@ A2A interactions are organized around tasks. A client agent sends a task to a re
 - **Long-running**: the remote agent works over time, sending progress updates via streaming
 - **Collaborative**: multiple rounds of interaction, with the remote agent asking for clarification or sending partial results
 
-This task model is what separates A2A from MCP. An MCP tool call is synchronous and stateless. An A2A task can be asynchronous, stateful, and multi-turn. That is the difference between "call this function" and "work with this agent."
+An MCP tool call is synchronous and stateless. An A2A task can be asynchronous, stateful, and multi-turn. That is the difference between "call this function" and "work with this agent."
 
 ### Adoption and Security
 
