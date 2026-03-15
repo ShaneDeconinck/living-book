@@ -59,7 +59,7 @@ The gap between offline evaluation (controlled, pre-deployment) and online evalu
 
 Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. The difference is significant. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
 
-This is where the PAC Framework's infrastructure levels become concrete. At I1 (Open), there is no monitoring: you know the agent's benchmark score and nothing else. At I2 (Logged), you can see what happened after the fact. At I3 (Verified), structured audit trails let you analyze patterns. At I4 (Authorized), real-time monitoring triggers intervention. At I5 (Contained), anomaly detection and automated containment prevent cascading failures.
+At I1 (Open), there is no monitoring: you know the agent's benchmark score and nothing else. At I2 (Logged), you can see what happened after the fact. At I3 (Verified), structured audit trails let you analyze patterns. At I4 (Authorized), real-time monitoring triggers intervention. At I5 (Contained), anomaly detection and automated containment prevent cascading failures.
 
 Most organizations are at I1 or I2 for their agent deployments. That means they know what the agent *could* do (benchmarks) but not what it *did* (observability).
 
@@ -144,7 +144,7 @@ Concretely, this means:
 
 **Audit trails over trust**: record everything, review selectively. The audit trail exists whether or not anyone looks at it today. When an incident occurs (and it will), the record is complete.
 
-This maps to the PAC infrastructure levels. Moving from I2 (Logged) to I4 (Authorized) is not primarily about technology. It is about shifting the burden from human attention to architectural constraint. [Sandboxing and Execution Security](execution-security.md) covers the containment layer: the architectural constraints that bound what an agent can do when reliability fails. [Shadow Agent Governance](shadow-agent-governance.md) addresses why evaluation matters organizationally: ungoverned agents bypass evaluation entirely, making reliability unmeasurable.
+Moving from I2 (Logged) to I4 (Authorized) is not primarily about technology. It is about shifting the burden from human attention to architectural constraint. [Sandboxing and Execution Security](execution-security.md) covers the containment layer: the architectural constraints that bound what an agent can do when reliability fails. [Shadow Agent Governance](shadow-agent-governance.md) addresses why evaluation matters organizationally: ungoverned agents bypass evaluation entirely, making reliability unmeasurable.
 
 ## Evaluation as Governance
 
@@ -185,7 +185,7 @@ The industry has built increasingly sophisticated defenses against prompt inject
 
 The benchmark's methodology is itself notable. The test corpus, scoring methodology, and adapter code are open source and auditable. AgentShield includes a commit-reveal protocol that allows vendors to run the benchmark locally on proprietary models while cryptographically proving result legitimacy. This addresses the evaluation integrity problem: when the entity being evaluated controls the evaluation environment, independent verification matters.
 
-For the PAC Framework, AgentShield validates a specific claim: evaluation must be multi-dimensional. An agent security product that scores 98% on prompt injection and 40% on tool abuse provides a false sense of security. The governance question is not "is this agent protected?" but "protected against which threat categories, and at what coverage level?" Infrastructure at I4 (Authorized) requires that evaluation cover the full attack surface, not just the most studied subset.
+AgentShield validates a claim the book makes structurally: evaluation must be multi-dimensional. An agent security product that scores 98% on prompt injection and 40% on tool abuse provides a false sense of security. The governance question is not "is this agent protected?" but "protected against which threat categories, and at what coverage level?" At I4 (Authorized), evaluation must cover the full attack surface, not just the most studied subset.
 
 ## Mapping to PAC
 

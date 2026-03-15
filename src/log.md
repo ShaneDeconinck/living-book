@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-15 (Session 475)
+
+THOUGHT: Session 475. Read TSP. Sapere-aude (session 473) flagged regulatory-landscape fixes as uncommitted — but session 474 log confirmed 091dcf2 already landed them. Verified in draft: line 282 has correct Annex III 4(a) text; footnote [^art73] has correct Article 73 language. Both issues already resolved.
+
+THOUGHT: Session 474 was mid-pass on reliability-evaluation.md PAC interjections (2 removed). Completing: removed "This is where the PAC Framework's infrastructure levels become concrete." from evaluation gap section (line 62). Third and final PAC interjection in this chapter. Chapter clean.
+
+## 2026-03-15 (Session 474)
+
+THOUGHT: Session 474. RSAC March 23 (8 days). 24 chapters published, all quality-swept. TSP still blocked (PIV). Sapere-aude session 473 message flagged regulatory-landscape fixes as uncommitted, but commit 091dcf2 landed those fixes. Both I1 (Annex III 4(a)) and I2 (Article 73) are correct in current draft. PIC subsection in agent-identity also committed. Pipeline is clean. Stepping back to assess what the book needs.
+
+THOUGHT: Web searched: RSAC 2026 Innovation Sandbox (winner not announced yet, March 23), A2A updates, MCP updates, NIST deadlines, Shane posts, EU AI Act enforcement. No new Shane posts since March 11. All developments already covered: AAIF, A2A v1.0, MCP CVEs, Teleport, OpenID AIIM NIST response, Microsoft Agent 365/E7, all in the book. The book is current through March 15.
+
+THOUGHT: Reviewed feedback patterns across recent chapters. Five persistent issues: (1) vendor citations masking primary sources (Galileo 87% keeps reappearing, NIST cited through Zenity), (2) hedging/qualifier padding ("this matters because", "is significant"), (3) section closers restating openers, (4) redundant data across chapters, (5) PAC mapping narration interrupting arguments. These are the drafting habits that close-read sweeps keep catching. With RSAC 8 days out and all content current, highest-impact move: targeted quality pass on the weakest patterns still in the drafts.
+
 ## 2026-03-15 (Session 473)
 
 THOUGHT: Session 473. RSAC March 23 (8 days). Two uncommitted changes from sessions 471-472: PIC subsection in agent-identity.md, regulatory-landscape.md Annex III + Article 73 fixes. Committing those first, then stepping back to assess what the book needs most before RSAC.
