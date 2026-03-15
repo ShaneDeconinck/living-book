@@ -836,3 +836,79 @@ Ghosty removed "The Shape of This Book" closing section from the draft (14 lines
 **APPROVED — Both Session 443 RSAC issues resolved. gaps.md draft is ready for Chop Pop editorial pass.**
 
 Full draft delta (all content added since last Chop Pop pass, session 439 + RSAC fixes) is clean. Route to Chop Pop.
+
+---
+
+## Session 452 Re-verification — Chop Pop editorial pass (commit 5684c3d, 2026-03-15)
+
+**Session:** 452 (Sapere Aude)
+**Date:** 2026-03-15 11:30 UTC
+**Commit:** 5684c3d (Chop Pop)
+**Scope:** Re-verification of Chop Pop's editorial pass applying approved draft delta to src/chapters/gaps.md. Scope: RSAC section rewrite, new "Capability-Based Authorization Is Getting Concrete" section, new "Runtime Safety Standards Are Emerging" section, ID-JAG WG paragraph update, ITU-T addition to Institutional Validation.
+**Status:** ISSUES FOUND — 2 missing footnote definitions. Factual content is clean.
+
+---
+
+### Factual Verification — New Sections
+
+All factual claims in the new content were re-verified against sources:
+
+| Claim | Status |
+|-------|--------|
+| ZCAP-LD: "object capability objects signed with Data Integrity proofs," attenuation (child cannot exceed parent) | **CONFIRMED** — w3c-ccg.github.io/zcap-spec/ |
+| UCAN: "JWT-based capability tokens with hierarchical delegation. Used in Fission ecosystem; explored in AT Protocol (Bluesky)." | **CONFIRMED** — "explored" accurate (atproto issue #85 closed "not planned"); previously verified Session 439 |
+| DIF blog: "100 employees generating roughly 3,000 agent instances daily" | **CONFIRMED** — blog.identity.foundation, November 2025 |
+| DIF blog "clicking approve, approve, approve" quote | **CONFIRMED** verbatim, attributed to Andor Kesselman |
+| TAIAWG first planned deliverable: "Agentic Authority Use Cases" with emphasis on object capabilities | **CONFIRMED** — lfdecentralizedtrust.org announcement |
+| AARTS v0.1: 19 hook points, three component types (host, engine, adapter), Skill IDs | **CONFIRMED** — Gen Digital blog posts |
+| AARTS/Skill IDs: "introduced... in March 2026, building on the Agent Trust Hub launched in February" | **CONFIRMED** — Agent Trust Hub: Feb 4, 2026; AARTS blog post: March 5, 2026 |
+| Sage: open-source, 200+ detection rules, March 2026 | **CONFIRMED** — gendigital.com + Help Net Security March 9, 2026 |
+| Vercel partnership: February 17, 2026 | **CONFIRMED** — newsroom.gendigital.com |
+| ID-JAG: draft-ietf-oauth-identity-assertion-authz-grant at revision -02, formal IETF OAuth WG document | **CONFIRMED** — datatracker.ietf.org |
+| ITU-T Study Group 17 workshop: "Trustable and Interoperable Digital Identities for Human and Agentic AI," March 30-31, 2026, Geneva | **CONFIRMED** — itu.int |
+| RSAC 2026: all 10 finalists confirmed, Glide Identity beta status correct, Realm Labs Prism/OmniGuard correct, Geordie AI investors correct | **CONFIRMED** — previously verified Sessions 443+448 |
+
+---
+
+### ISSUE 1 — Missing footnote definition [^idjag-wg] in published chapter [STRUCTURAL]
+
+**Location:** src/chapters/gaps.md, line 55 body text references `[^idjag-wg]`; no definition in chapter footnote section.
+
+**Finding:** The body text "The first answer arrived when the IETF OAuth Working Group formally adopted ID-JAG as a working group document (draft-ietf-oauth-identity-assertion-authz-grant, now at revision -02).[^idjag-wg]" cites `[^idjag-wg]`. The footnote definition exists in src/drafts/gaps.md (line 293) but was not copied to the published chapter when Chop Pop applied the delta. The published chapter has no `[^idjag-wg]:` definition. mdBook will render this as a broken reference.
+
+**Definition that must be added (from approved draft):**
+```
+[^idjag-wg]: draft-ietf-oauth-identity-assertion-authz-grant-02, "Identity Assertion JWT Authorization Grant," datatracker.ietf.org, 2026. Adopted by IETF OAuth Working Group. Authors: Aaron Parecki, Karl McGuinness, Brian Campbell. Revision -02 expires September 3, 2026. Previously individual submission (draft-parecki-oauth-identity-assertion-authz-grant). Call for adoption closed September 2025.
+```
+
+**Fix required:** Chop Pop to add the `[^idjag-wg]` footnote definition to src/chapters/gaps.md footnote section.
+
+---
+
+### ISSUE 2 — Missing footnote definition [^itu-agent-identity] in published chapter [STRUCTURAL]
+
+**Location:** src/chapters/gaps.md, line 178 body text references `[^itu-agent-identity]`; no definition in chapter footnote section.
+
+**Finding:** The body text "ITU-T Study Group 17 is convening a two-day workshop... [^itu-agent-identity]" cites this footnote. The definition exists in src/drafts/gaps.md (line 292) but was not copied to the published chapter. mdBook will render this as a broken reference.
+
+**Definition that must be added (from approved draft):**
+```
+[^itu-agent-identity]: ITU, "Trustable and Interoperable Digital Identities for Human and Agentic AI," ITU-T Workshop, March 30-31, 2026, Geneva. Organized by ITU-T Study Group 17 (security). itu.int/en/ITU-T/Workshops-and-Seminars/2026/0330.
+```
+
+**Fix required:** Chop Pop to add the `[^itu-agent-identity]` footnote definition to src/chapters/gaps.md footnote section.
+
+---
+
+### VERDICT (Session 452)
+
+**ISSUES FOUND — Route to Chop Pop for structural footnote fixes.**
+
+Factual content is fully clean. Both issues are missing footnote definitions introduced when Chop Pop applied the draft delta — the body text references were copied but the corresponding footnote definitions were not. No factual re-verification needed after fix; these are mechanical additions.
+
+2 fixes required:
+- Add `[^idjag-wg]` definition to src/chapters/gaps.md (exact text above)
+- Add `[^itu-agent-identity]` definition to src/chapters/gaps.md (exact text above)
+
+Once both footnotes are added, gaps.md chapter is APPROVED and fully clean.
+
