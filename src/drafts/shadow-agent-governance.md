@@ -6,7 +6,7 @@ Varonis reports 98% of employees have unsanctioned AI use.[^varonis-shadow] The 
 
 Shadow agents are the new shadow IT, but the analogy undersells the problem. When an employee installed Dropbox without IT approval in 2012, the risk was data in the wrong place. When an employee builds an agent on a low-code platform in 2026, the risk is an autonomous system making decisions, accessing data, and acting on behalf of the organization without anyone knowing it exists.
 
-Shane put it simply in his boardroom questions: "An HR screening agent built without a compliance assessment makes you non-compliant without knowing the system exists."[^boardroom] The liability sits with the company regardless of whether anyone approved the deployment.
+"An HR screening agent built without a compliance assessment makes you non-compliant without knowing the system exists."[^boardroom] The liability sits with the company regardless of whether anyone approved the deployment.
 
 The transition from "agents are already running and nobody knows" to "every agent is registered, scoped, and auditable" does not happen through prohibition. It happens through infrastructure that makes governed agents easier to deploy than ungoverned ones.
 
@@ -63,7 +63,7 @@ The government response followed weeks later. In March 2026, Chinese government 
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are genuinely useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
 
-The OpenClaw ban wave is notable as the first coordinated response to a specific AI agent across both corporate and government levels. It signals that shadow agent governance is no longer a theoretical concern. The discovery problem is the same everywhere: agents are already running, nobody authorized them, and the security posture is unknown.
+The OpenClaw ban wave is notable as a coordinated response to a specific AI agent across both corporate and government levels. It signals that shadow agent governance is no longer a theoretical concern. The discovery problem is the same everywhere: agents are already running, nobody authorized them, and the security posture is unknown.
 
 [^meta-ban]: TechBuzz, "Meta Bans Viral AI Tool OpenClaw Over Security Risks," February 2026. Employees installing OpenClaw on work devices face termination.
 
@@ -111,11 +111,11 @@ Several approaches to agent discovery have emerged:
 
 ### Discovery is necessary but not sufficient
 
-Shane's boardroom question cuts deeper than discovery: "Can your infrastructure prevent an agent from running without being registered? Knowing what's running today is one thing. Making it structurally impossible to deploy an unregistered agent is another. If anyone can spin one up without it showing up in a registry, visibility is a snapshot, not a guarantee."[^boardroom]
+"Can your infrastructure prevent an agent from running without being registered? Knowing what's running today is one thing. Making it structurally impossible to deploy an unregistered agent is another. If anyone can spin one up without it showing up in a registry, visibility is a snapshot, not a guarantee."[^boardroom]
 
 Discovery tools show you the current state. They do not prevent new shadow agents from appearing tomorrow. The gap between "we scanned and found everything" and "nothing can run without registration" is the difference between monitoring and governance.
 
-This is why discovery must be the first step, not the only step. It provides the baseline: what exists, what permissions it has, what data it accesses, who deployed it. But the goal is infrastructure that makes unregistered agents structurally impossible.
+Discovery provides the baseline: what exists, what permissions it has, what data it accesses, who deployed it. The goal is infrastructure that makes unregistered agents structurally impossible.
 
 ## The Agent Registry
 
@@ -143,7 +143,7 @@ Enforcement requires integration with the infrastructure layers the agent depend
 
 **API gateways and agent gateways.** As discussed in the [Agent Communication Protocols](agent-communication.md) chapter, agent gateways (like AgentGateway with Cedar policies) can enforce that only registered agents with valid credentials can invoke tools and access resources. Every MCP server connection, every A2A task request, and every API call passes through infrastructure that checks registration status.
 
-**Network controls.** Agents that cannot reach external services without passing through a governed proxy cannot exfiltrate data or connect to unauthorized APIs. This is the network isolation dimension from the [Sandboxing and Execution Security](execution-security.md) chapter applied at the organizational level.
+**Network controls.** Agents that cannot reach external services without passing through a governed proxy cannot exfiltrate data or connect to unauthorized APIs.
 
 **Platform controls.** Low-code platforms that support agent building (Copilot Studio, Agentforce, etc.) should be configured to require registration as a deployment prerequisite. If the platform cannot enforce this natively, the gateway layer provides the enforcement point.
 
@@ -215,8 +215,6 @@ The amnesty model treats shadow agent creators as early adopters, not policy vio
 Shane asks: "How much value are you leaving on the table by over-constraining? Agents that need human approval for every action aren't agents: they're suggestion engines."[^boardroom] The governance system must enable agent autonomy within safe boundaries, not prevent it.
 
 ## Who Owns Agent Governance?
-
-The PAC Framework's Accountability pillar asks: "Who owns AI governance? If no one owns it, everyone assumes someone else does."
 
 Shadow agents thrive in organizational gaps.
 

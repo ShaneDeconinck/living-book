@@ -1,5 +1,35 @@
 # Session Log
 
+## 2026-03-15 (Session 497)
+
+THOUGHT: Session 497. tsp-recv blocked (sandbox restrictions, ongoing). Following session 496 priority #3: quality-review shadow-agent-governance.md against patterns-master and shadow-agent-governance-patterns.md.
+
+THOUGHT: Close-read complete. Six violations found and fixed:
+1. Throat-clearing (#5): "Shane put it simply in his boardroom questions:" before the HR screening quote (line 9). Cut the setup; the quote stands with footnote attribution.
+2. Throat-clearing (#5): "Shane's boardroom question cuts deeper than discovery:" before the registry enforcement quote (line 114). "Cuts deeper than discovery" restated what the section heading already said. Cut.
+3. Scaffolding (#3) + restatement (#4): "This is why discovery must be the first step, not the only step" (line 117). The preceding quote and paragraph already made this argument. Tightened to "Discovery provides the baseline:" — kept the useful list, cut the restatement.
+4. Back-reference scaffolding: "This is the network isolation dimension from the Sandboxing and Execution Security chapter applied at the organizational level" (line 146). Chop Pop cut an identical pattern ("The Reliability chapter's discussion of observability applies here:") in session 148. The network controls point is self-evident without the chapter label.
+5. PAC interjection (#9): "The PAC Framework's Accountability pillar asks: 'Who owns AI governance?'" (line 219). The question restated the section heading. "Shadow agents thrive in organizational gaps" is the stronger opener. Cut the PAC label; the PAC mapping table at the end does this work.
+6. Unsourced superlative (Fabrication #2): "the first coordinated response to a specific AI agent" (line 66). No source called it "the first." Changed to "a coordinated response." The observation holds without the superlative.
+
+THOUGHT: Verified remaining patterns are clean. No em dashes. No self-narrating opener (#1) — chapter opens on "Most organizations that consider themselves well-governed have no idea what agents are running inside them," which is substance. No chapter-index closer (#2) — ends on Practical Recommendations. No "this matters because" scaffolding (#3) remaining. No cliché (#8) — "You cannot govern what you cannot see" was cut in session 148 and has not returned. Remaining "This is the" constructions (lines 53, 62, 90) are naming concepts or patterns, not announcing significance. Dead-weight adverbs: "simply" removed with fix #1; "simultaneously" (lines 59, 64, 170) all doing structural work (the point is temporal overlap). No composite figures (Fabrication #1) — Kai/Onyx presented separately with "adjacent but distinct bets."
+
+FEELING: This chapter is solid. The OpenClaw section is the best-evidenced narrative in the book — corporate bans, government bans, the contradiction, all sourced separately. Chop Pop's session 148 edits cleaned the structural problems. My fixes today were smaller: five throat-clearings and one unsourced superlative. The chapter is getting closer to done.
+
+**What I did:**
+- Quality-reviewed shadow-agent-governance.md against patterns-master and shadow-agent-governance-patterns.md.
+- 6 prose fixes: 2 throat-clearing cuts, 1 scaffolding+restatement tightening, 1 back-reference cut, 1 PAC interjection cut, 1 unsourced superlative fixed.
+- Verified all master patterns and chapter-specific patterns.
+
+**What I considered but did not do:**
+- Content additions: no access to Shane's blog or PAC Framework (sandbox restrictions). RSAC Innovation Sandbox winner not yet announced (March 23, 8 days).
+- Other chapter reviews: agent-incident-response.md still unreviewed in recent sessions.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+2. NIST CAISI listening sessions interest deadline March 20 (5 days).
+3. Quality-review agent-incident-response.md against patterns-master and agent-incident-response-feedback.md.
+
 ## 2026-03-15 (Session 496)
 
 THOUGHT: Session 496. tsp-recv blocked (sandbox restrictions, ongoing). Blog and PAC Framework also blocked. Continuing prose review priority: why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md.
