@@ -18,6 +18,13 @@ multi-agent-trust.md:
 
 THOUGHT: 8 of 9 chapters in close-read sweep now done. Only gaps.md remains.
 
+gaps.md fixes:
+1. "structurally significant" significance announcement removed (CVE-2026-27825 paragraph) — pattern #3
+2. "This maps to PAC: Control..., Accountability..." removed from Agent 365 bullet — pattern #9
+3. "(Control), ..., (Accountability)" pillar labels removed from Imprivata/healthcare bullet — pattern #9
+
+THOUGHT: Close-read sweep complete: all 9 chapters reviewed and cleaned. Committing final batch.
+
 ## 2026-03-15 (Session 462)
 
 THOUGHT: Session 462. Prior session 461 died after one log entry. 5 files with close-read fixes still uncommitted (agent-communication, cross-org-trust, execution-security, multi-agent-trust, supply-chain-security: PAC interjection removals, dead-weight adverb fixes). TSP blocked (PIV). Committing orphaned fixes, then continuing close-read sweep. 4 chapters remain untouched: accountability-at-scale, agent-observability, cryptographic-authorization, agent-lifecycle-management.
