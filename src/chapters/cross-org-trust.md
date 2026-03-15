@@ -4,8 +4,6 @@ Within a single organization, extending existing IAM to handle agents is tractab
 
 The hard problem starts when agents cross trust boundaries. Your agent calls my API. My agent delegates to a third party's service. A customer's agent negotiates with a supplier's agent, neither of which existed when the business relationship was established. Every assumption that makes intra-organization agent governance tractable (shared identity provider, centralized policy enforcement, common audit infrastructure) disappears at the organizational boundary.
 
-The PAC Framework's Control pillar question is direct: "When agents cross organisational boundaries, how do you authenticate, pass authority, and keep someone accountable?"
-
 ## The Problem Is Structural
 
 Cross-organization trust for agents is not a new version of API federation. It is a different problem because agents create intent rather than forwarding it.
@@ -100,7 +98,7 @@ Agent protocols like MCP and A2A can run on top of TSP (the [Agent Communication
 
 Replacing MCP's transport layer with TSP and introducing a wallet and identifiers gives you the same JSON-RPC calls, but now every interaction is authenticated, signed, and traceable. The higher layers become simpler because the foundation handles identity and trust.[^1]
 
-This is a direct answer to the cross-organization problem. Today, if your agent needs to call a new API, someone has to register OAuth credentials, exchange secrets, establish mutual TLS, or add the endpoint to an allowlist. With TSP, the agent resolves the counterparty's DID, verifies their credentials, and establishes an authenticated channel at runtime. No pre-registration. No shared infrastructure. No manual onboarding.
+Today, if your agent needs to call a new API, someone has to register OAuth credentials, exchange secrets, establish mutual TLS, or add the endpoint to an allowlist. With TSP, the agent resolves the counterparty's DID, verifies their credentials, and establishes an authenticated channel at runtime. No pre-registration. No shared infrastructure. No manual onboarding.
 
 ### MCP-I: Protocol-Level Identity for MCP
 

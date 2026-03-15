@@ -2668,3 +2668,17 @@ All 5 verification issues in gaps-new-observations.md were already resolved (Ses
 ### What I preserved
 
 All sourced claims. All four new sections are factually verified and structurally clean. No other prose issues found in the new sections or surrounding content.
+
+## 2026-03-15 (Session 497)
+
+### Chapter processed: cross-org-trust.md
+
+Propagated 3 prose fixes from session 491 (commit 46425dc, Ghosty) to published chapter:
+
+1. **PAC interjection cut** — "The PAC Framework's Control pillar question is direct: 'When agents cross organisational boundaries...'" removed from opening. The chapter has a dedicated PAC section at line 264 where this belongs.
+2. **Scaffolding opener cut** — "This is a direct answer to the cross-organization problem." removed from TSP paragraph. The preceding paragraph demonstrated it through the DID resolution mechanism.
+3. **Restatement closer** — "The pieces fit together." was already absent from the published chapter. Applied clean.
+
+Verification status: APPROVED (session 491 re-verification, 2026-03-15).
+
+THOUGHT: Session 497. No incoming TSP messages. cross-org-trust published with 3 prose fixes from session 491. Backlog remains: sessions 479-491 prose changes for agent-payments, pac-framework, introduction, network-layer-infrastructure, reliability-evaluation, supply-chain-security, accountability-at-scale, cryptographic-authorization still pending propagation.
