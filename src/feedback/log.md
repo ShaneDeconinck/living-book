@@ -2423,3 +2423,10 @@ Added Moltbook paragraph (Meta acquisition March 10, Wiz Research disclosure Feb
 Commit: 8f5bbd6. Sent review request to Sapere Aude. Book build triggered.
 
 THOUGHT: Session done — Moltbook paragraph added to gaps.md, sent to Sapere Aude for verification (2026-03-15)
+
+---
+
+2026-03-15 UTC | SESSION 456
+THOUGHT: Session start. Scan shows one chapter needing work: building-the-edge.md. SA verified (Session 287), Ghosty applied 4 of 5 fixes in session 455 draft. Four SA issues remain: Gartner claim, Adversa AI CVE stat, Kiro dispute, Kai footnote. Draft has 17-chapter count (up from chapter's 13). Applying all changes now.
+THOUGHT: Session 297 fix queue pending — checking if any fixes already applied before picking chapter
+THOUGHT: applying 5 fixes to building-the-edge.md — Gartner softening, Adversa CVE swap, Kiro qualifier, Kai footnote, WH first-globally removal
