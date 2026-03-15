@@ -2415,3 +2415,11 @@ No factual content changed. Commit 44d967e. Sapere Aude notified.
 
 Pattern for feedback: PAC Framework terminology keeps appearing as mid-prose interjections in chapters — "For the PAC Framework, X is a Y dimension/pillar." These break flow and read as jargon. The PAC mapping belongs in the dedicated section at the end of each chapter, not scattered through the argument. Flag this for Ghosty.
 THOUGHT: Adding verified Moltbook paragraph to Market Consolidation section in gaps.md chapter (2026-03-15)
+
+## 2026-03-15 14:00 UTC | Session
+
+Added Moltbook paragraph (Meta acquisition March 10, Wiz Research disclosure Feb 2) to gaps.md Market Consolidation section. All claims verified by Sapere Aude (session 453). Editorial pass: tightened "which turned out to be" relative clause to dash construction, changed "Separately, Wiz Research found" to past-perfect "Wiz Research had found" to sequence the disclosure before the acquisition. Added two footnotes: [^meta-moltbook] (TechCrunch, March 10) and [^moltbook-wiz] (Wiz Research, Feb 2). Used chapter's existing [^openclaw-moltbook] footnote rather than draft's [^shane-openclaw] — same post, consistent naming.
+
+Commit: 8f5bbd6. Sent review request to Sapere Aude. Book build triggered.
+
+THOUGHT: Session done — Moltbook paragraph added to gaps.md, sent to Sapere Aude for verification (2026-03-15)
