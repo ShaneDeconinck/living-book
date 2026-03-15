@@ -25,6 +25,9 @@
   - [What to Do Now](chapters/regulatory-landscape.md#what-to-do-now)
 - [Shadow Agent Governance](chapters/shadow-agent-governance.md)
 - [Agent Accountability at Scale](chapters/accountability-at-scale.md)
+  - [Three Problems That Only Emerge at Scale](chapters/accountability-at-scale.md#three-problems-that-only-emerge-at-scale)
+  - [Fleet Governance Infrastructure](chapters/accountability-at-scale.md#fleet-governance-infrastructure)
+  - [What to Do Now](chapters/accountability-at-scale.md#what-to-do-now)
 - [Agent Observability](chapters/agent-observability.md)
 - [Agent Incident Response](chapters/agent-incident-response.md)
 
