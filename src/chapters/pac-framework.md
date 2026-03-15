@@ -67,7 +67,7 @@ Shane identifies three durable investments:
 
 And one liability: **harness debt**. Scaffolding built to compensate for weaker models (retry logic, output parsers, chain-of-thought templates) becomes dead weight when models improve. The Claude Code team demonstrated this: as the underlying model got better, they deleted scaffolding rather than optimizing it.[^3]
 
-The practical implication: invest in context and evaluation. Be cautious about investing heavily in model-specific workarounds. And when you do build scaffolding, design it as composable layers rather than monolithic pipelines, so you can strip away the outer constraints as the model earns more autonomy.
+Invest in context and evaluation. Be cautious about investing heavily in model-specific workarounds. And when you do build scaffolding, design it as composable layers rather than monolithic pipelines, so you can strip away the outer constraints as the model earns more autonomy.
 
 ## Accountability: Who Is Accountable, and Can You Prove It?
 
@@ -162,7 +162,7 @@ This is not deployed at scale yet. But the architectural direction is clear, and
 
 ## The Interdependencies
 
-The three pillars are not independent. The framework explicitly maps the failure modes of addressing them in isolation:
+The three pillars are not independent. The framework maps the failure modes of addressing them in isolation:
 
 **Potential without Accountability**: reckless adoption. You build fast, ship agents that deliver value, and hit a wall at the first incident when nobody can explain what happened or who is responsible.
 
@@ -206,7 +206,7 @@ In the profiler, infrastructure requirements are cumulative per autonomy level:
 - **A4 (Delegated)**: identity verification, scoped authorization, and sandboxing.
 - **A5 (Autonomous)**: all of the above plus anomaly detection and automated containment.
 
-No amount of reliability compensates for guardrails you have not built. A brilliant agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened. This makes the profiler actionable: instead of "improve your governance posture," it says specifically: "you need identity verification and authorization scopes before this agent can move from human-approval to oversight mode."[^profiler]
+No amount of reliability compensates for guardrails you have not built. A brilliant agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened. This makes the profiler actionable: instead of "improve your governance posture," it says: "you need identity verification and authorization scopes before this agent can move from human-approval to oversight mode."[^profiler]
 
 Eighty percent of tool calls come from agents with at least one safeguard in place, and 73% appear to have a human in the loop.[^anthropic-autonomy-profiler]
 
