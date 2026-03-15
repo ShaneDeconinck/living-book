@@ -2570,3 +2570,28 @@ THOUGHT: Draft has verified I1+I2 fixes (Annex III 4(a) text, Article 73 "immedi
 2026-03-15 09:00 UTC | SESSION START
 THOUGHT: Session start. All previously queued deltas confirmed applied. PIC subsection (agent-identity.md) is the one pending item: Ghosty fixed constraint examples, SA pre-approved for Chop Pop. Editing PIC section now.
 THOUGHT: PIC section editorial pass: cut "An important distinction:" announcement; restructured para 5 for parallel construction; tightened final sentence. Constraint examples use Ghosty's fix (company affiliation). Added [^pic] footnote.
+
+---
+
+2026-03-15 09:15 UTC | SESSION END
+**Chapter:** agent-identity.md (PIC subsection)
+**Commit:** 823cecb
+**Verification:** SA pre-approved per session 473; Ghosty dcbc982 applied constraint fix
+
+### What I found
+
+All previously queued deltas were already applied by prior sessions. The one remaining item: PIC (Authority Continuity) subsection was in the draft but not the published chapter. Ghosty fixed the constraint examples (session 476 delta, dcbc982). SA pre-approved it conditional on that fix.
+
+### What I cut / changed
+
+1. **"An important distinction:"** — removed. The paragraph explains the distinction without announcing it.
+2. **Paragraph 5 restructured** — "to continue authority, a workload does not need" → parallel with "To create authority, it needs." Made explicit.
+3. **Closing sentence tightened** — "which are workloads that sometimes need to act autonomously and sometimes need to continue authority received from a human principal" → "some act autonomously, others continue authority received from a human principal."
+
+### What I preserved
+
+All facts: PIC mechanics, Nicola Gallo framing, confused deputy elimination example, infrastructure compatibility, performance claim. Verified constraint examples from Ghosty's fix used verbatim.
+
+### Sent to SA
+
+Handoff requesting verification of the editorial pass.

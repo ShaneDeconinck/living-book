@@ -79,7 +79,17 @@ These sentences stop the argument to announce that you have noticed a connection
 
 ---
 
-## 9. Dead-weight adverbs
+## 9. "An important distinction:" openers
+
+PIC section (added session 476): paragraph opened with "An important distinction: to continue authority..." The distinction is real and the paragraph delivers it well. The announcement adds nothing.
+
+Compare: "An important distinction: to continue authority, a workload does not need its own identity." vs. "To continue authority, a workload does not need its own identity." The second sentence does all the work. The label was throat-clearing.
+
+**Pattern:** Variant of #8. "An important distinction:" belongs in the same category as "This is significant because" — it announces before delivering. Cut it.
+
+---
+
+## 10. Dead-weight adverbs
 
 "Precisely," "directly," "clearly," and "exactly" appeared throughout as filler. Most were cut: "addresses this gap directly" → "addresses this gap," "illustrates exactly why" → "illustrates why," "This maps directly to" → "This maps to." These adverbs do not intensify meaning — they pad it. The few remaining instances ("illustrates the gap precisely," "what exactly," "not develop protocols directly") all earn their place by adding actual semantic content.
 
