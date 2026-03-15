@@ -81,6 +81,26 @@ This restated what was just said. Cut.
 
 ---
 
+### 8. Section intro that announces what the section will cover
+
+"Life: Runtime Governance" opened with: "Provisioning sets the initial conditions. Runtime governance ensures those conditions hold as the agent operates over hours, days, or months."
+
+The section header already says "Life: Runtime Governance." This opener just restated it. Cut both sentences. The first subsection (Credential rotation) follows directly without needing a bridge.
+
+**Pattern:** Section-intro scaffold. The header names it. The content does it.
+
+---
+
+### 9. "The concept is straightforward:"
+
+Before explaining continuous authorization re-evaluation, the draft read: "The concept is straightforward: re-evaluate authorization at execution time, not just at token issuance time."
+
+Cut "The concept is straightforward:". The sentence lands harder without the announcement of its own simplicity.
+
+**Pattern:** Throat-clearing before strong sentences. Master pattern #2.
+
+---
+
 ## What worked well
 
 - **Lede**: "An agent gets created in minutes... Decommissioning that agent takes indefinitely, because nobody planned for it." Two sentences. Sets the asymmetry. Earns the chapter.

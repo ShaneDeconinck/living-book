@@ -42,8 +42,6 @@ Token Security's approach inverts this: intent-aware least-privilege ensures age
 
 ## Life: Runtime Governance
 
-Provisioning sets the initial conditions. Runtime governance ensures those conditions hold as the agent operates over hours, days, or months.
-
 ### Credential rotation
 
 Long-lived credentials are the most common lifecycle failure. An agent provisioned with an API key in January is still using that same key in December, long after the task that justified it has changed, the person who created it has moved on, and the security posture has shifted.
@@ -73,7 +71,7 @@ The Gravitee 2026 survey found that only 47.1% of an organization's AI agents ar
 
 Traditional authorization is a point-in-time decision: the agent presents a token, the resource server checks it, access is granted or denied. For agents that operate autonomously over extended periods, point-in-time authorization is insufficient.
 
-The concept is straightforward: re-evaluate authorization at execution time, not just at token issuance time. Has the user who delegated authority revoked it? Has the agent's context changed? Has the policy changed? Has the risk level of the action changed?
+Re-evaluate authorization at execution time, not just at token issuance time. Has the user who delegated authority revoked it? Has the agent's context changed? Has the policy changed? Has the risk level of the action changed?
 
 The Cryptographic Authorization chapter's CAAM pattern implements this: every tool call passes through a sidecar that evaluates the agent's session context, the requested action, and the current policy before permitting execution. The lifecycle dimension adds temporal context: how long has this agent been running? When were its credentials last rotated? Is the delegating user still active?
 
