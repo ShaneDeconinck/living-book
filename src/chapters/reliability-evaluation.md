@@ -116,7 +116,7 @@ Potential and Accountability are supposed to reinforce each other. Higher busine
 
 The complacency trap breaks this cycle. Higher reliability (Potential) reduces perceived risk, which reduces investment in governance (Accountability). The organization gets better agents and worse oversight simultaneously. The blast radius grows while the safety net thins.
 
-Shane frames this as a fundamental split: context engineering and governance are not the same problem. "As reliability improves, the risk might grow. When an agent gets things right 99% of the time, we stop watching"[^trust-inversion].
+"As reliability improves, the risk might grow. When an agent gets things right 99% of the time, we stop watching"[^trust-inversion].
 
 Control is what prevents the cycle from breaking. Infrastructure-enforced checkpoints do not care whether the human is paying attention. A governance threshold at I4 (Authorized) requires identity verification and scoped authorization before each action, regardless of how reliable the agent has been historically. An audit trail at I3 (Verified) records what happened whether or not anyone reviews it in real time.
 
@@ -179,7 +179,7 @@ The AgentShield benchmark, released in March 2026 as the first open, reproducibl
 
 The industry has built increasingly sophisticated defenses against prompt injection: the attack vector that dominates the threat taxonomy. But agents do not just process prompts. They invoke tools. An agent that is fully protected against prompt injection but not against unauthorized tool use is protected against one attack vector while leaving the more operationally dangerous one open: the confused deputy operating through legitimate tool calls with legitimate credentials.
 
-The benchmark's methodology is itself notable. The test corpus, scoring methodology, and adapter code are open source and auditable. AgentShield includes a commit-reveal protocol that allows vendors to run the benchmark locally on proprietary models while cryptographically proving result legitimacy. This addresses the evaluation integrity problem: when the entity being evaluated controls the evaluation environment, independent verification matters.
+The test corpus, scoring methodology, and adapter code are open source and auditable. AgentShield includes a commit-reveal protocol that allows vendors to run the benchmark locally on proprietary models while cryptographically proving result legitimacy. This addresses the evaluation integrity problem: when the entity being evaluated controls the evaluation environment, independent verification matters.
 
 AgentShield validates a claim the book makes structurally: evaluation must be multi-dimensional. An agent security product that scores 98% on prompt injection and 40% on tool abuse provides a false sense of security. The governance question is not "is this agent protected?" but "protected against which threat categories, and at what coverage level?" At I4 (Authorized), evaluation must cover the full attack surface, not just the most studied subset.
 
