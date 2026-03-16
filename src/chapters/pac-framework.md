@@ -180,7 +180,7 @@ This is a cycle, not a checklist. Models improve, protocols land, regulations ti
 
 The PAC Framework's pillars, dimensions, and scales describe the governance landscape. But how do you apply them to a specific agent deployment? Shane built the PAC Agent Profiler to answer this: a tool that maps six independent dimensions for a concrete use case, shows where the gaps are, and identifies what is blocking higher autonomy.[^profiler]
 
-The profiler emerged from a practical frustration. Most governance conversations collapse everything into a single question: "how risky is this agent?" That bundles together what the agent does, what happens when it fails, how much freedom it has, and whether you have built the infrastructure to contain it. Too many questions crammed into one. The six dimensions separate them.
+The profiler emerged from a practical frustration. Most governance conversations collapse everything into a single question: "how risky is this agent?" That bundles together what the agent does, what happens when it fails, how much freedom it has, and whether you have built the infrastructure to contain it. The six dimensions separate them.
 
 ### Six Dimensions, One Assessment
 
@@ -197,7 +197,7 @@ The key insight: autonomy is the dependent variable. You do not start by decidin
 
 ### Infrastructure as Gate, Not Slider
 
-This is where the profiler diverges from typical risk frameworks. Most frameworks treat everything as a spectrum. Infrastructure does not work that way. You either have audit trails or you do not. You either verify agent identity or you do not.
+This is where the profiler diverges from typical risk frameworks. Most frameworks treat everything as a spectrum. Infrastructure does not work that way.
 
 In the profiler, infrastructure requirements are cumulative per autonomy level:
 
@@ -207,8 +207,6 @@ In the profiler, infrastructure requirements are cumulative per autonomy level:
 - **A5 (Autonomous)**: all of the above plus anomaly detection and automated containment.
 
 No amount of reliability compensates for guardrails you have not built. A brilliant agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened. This makes the profiler actionable: instead of "improve your governance posture," it says: "you need identity verification and authorization scopes before this agent can move from human-approval to oversight mode."[^profiler]
-
-Eighty percent of tool calls come from agents with at least one safeguard in place, and 73% appear to have a human in the loop.[^anthropic-autonomy-profiler]
 
 ### Using the Profiler
 
@@ -279,4 +277,3 @@ The goal is not to memorize the levels and scales. It is to internalize the rela
 [^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control" (February 2026). Survey of 919 executives and practitioners. 82% executive confidence vs. 14.4% full security approval.
 [^profiler]: Shane Deconinck, ["Untangling Autonomy and Risk for AI Agents"](https://shanedeconinck.be/posts/agent-profiler-reasoning/), shanedeconinck.be, February 26, 2026. Introduces the PAC Agent Profiler and six-dimension model. The profiler is available at [trustedagentic.ai/profiler](https://trustedagentic.ai/profiler/) (open source).
 [^shadow-ai]: The 98% figure (organizations with employees using unsanctioned apps) is from Varonis, ["Shadow AI: The Growing Risk of Unsanctioned AI in the Enterprise,"](https://www.varonis.com/blog/shadow-ai) 2025. The 78% BYOAI figure is from Microsoft WorkLab, 2024 Work Trend Index (published May 2024). One in five organizations has experienced a breach tied to shadow AI (IBM, Cost of a Data Breach Report 2025).
-[^anthropic-autonomy-profiler]: Anthropic, ["Measuring AI Agent Autonomy in Practice"](https://www.anthropic.com/research/measuring-agent-autonomy), February 2026. 80% of tool calls come from agents with at least one safeguard; 73% appear to have a human in the loop.
