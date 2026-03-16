@@ -12,7 +12,7 @@ Authorization is advancing. PIC's monotonic property — authority can only decr
 
 Semantic interoperability has no equivalent trajectory. There is no active standards effort, no funded vendor ecosystem, and no agreed vocabulary for agent actions across organizational boundaries.
 
-Nicola Gallo flagged this at the LFDT Belgium meetup as a layer that neither TSP nor PIC claims to fully solve.[^lfdt-meetup] "Solving this requires not just identity and authority, but shared understanding of what actions mean across boundaries." The observation has not generated a concrete standards proposal.
+Nicola Gallo flagged this at the LFDT Belgium meetup as a layer that neither TSP nor PIC claims to fully solve.[^lfdt-meetup] Solving this requires not just identity and authority, but shared understanding of what actions mean across boundaries. The observation has not generated a concrete standards proposal.
 
 ## Why Credentials Solved It and Actions Have Not
 
@@ -93,5 +93,5 @@ Most organizations operating cross-organizational agent workflows are at I1. I3 
 
 **Track misalignments, not just errors.** Standard incident tracking captures failures: the agent took an unauthorized action, the system rejected the request, the transaction failed. Semantic misalignment produces different signals: the transaction succeeded but produced an unexpected outcome, the counterparty disputed what was agreed, the intent was correct but the execution diverged. Track these separately. They are the evidence base for where vocabulary agreements are most urgently needed.
 
-[^lfdt-meetup]: Shane De Coninck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Reflects on the LFDT Belgium meetup of March 3, 2026. Nicola Gallo's "close a deal" scenario and the conclusion that the semantic layer "remains tractable" once identity and authority are solved are both from this post.
-[^w3c-vc]: W3C, "Verifiable Credentials Data Model 2.0," w3.org/TR/vc-data-model-2.0/, February 2025. The JSON-LD `@context` mechanism and its role in semantic interoperability for credential attributes is specified in Section 4.1 and Appendix A.
+[^lfdt-meetup]: Shane De Coninck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Reflects on the LFDT Belgium meetup of March 3, 2026. Nicola Gallo's "close a deal" scenario and the conclusion that the semantic layer "becomes tractable" once identity and authority are solved are both from this post.
+[^w3c-vc]: W3C, "Verifiable Credentials Data Model 2.0," w3.org/TR/vc-data-model-2.0/, 15 May 2025. The JSON-LD `@context` mechanism and its role in semantic interoperability for credential attributes is specified in Section 4.3 (Contexts).
