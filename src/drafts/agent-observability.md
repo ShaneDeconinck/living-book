@@ -148,7 +148,7 @@ CoT logs occupy an uncertain evidentiary position for compliance. The EU AI Act 
 
 ## Mapping to PAC
 
-The [Agent Identity and Delegation](agent-identity.md) chapter covers the credential formats (OBO, DPoP, Verifiable Intent) that Layer 2 records. The [Agent Accountability at Scale](accountability-at-scale.md) chapter covers causal graphs and the fleet attribution problem that Layers 4 and 5 address. The [Agent Incident Response](agent-incident-response.md) chapter covers what you do when something goes wrong. Incident response without Layers 1-4 in place is reconstruction from fragments. [Shadow Agent Governance](shadow-agent-governance.md) establishes that agents outside the registry have no observability by definition; Layer 5 fleet aggregation is what surfaces their presence through behavioral signals.
+[Agent Identity and Delegation](agent-identity.md) covers the credential formats (OBO, DPoP, Verifiable Intent) that Layer 2 records. [Agent Accountability at Scale](accountability-at-scale.md) covers causal graphs and the fleet attribution problem that Layers 4 and 5 address. [Agent Incident Response](agent-incident-response.md) covers what you do when something goes wrong. Incident response without Layers 1-4 in place is reconstruction from fragments. [Shadow Agent Governance](shadow-agent-governance.md) establishes that agents outside the registry have no observability by definition; Layer 5 fleet aggregation is what surfaces their presence through behavioral signals.
 
 An agent that is right 99.9% of the time without Layers 2-3 in place is less accountable than one that is right 95% with them, because when the 0.1% failure happens, you cannot prove what authority existed, which model decided, or whether the system prompt was as intended.[^agent-profiler]
 
@@ -160,7 +160,7 @@ An agent that is right 99.9% of the time without Layers 2-3 in place is less acc
 | **I4: Managed** | Cross-agent trace IDs propagated; semantic causality captured across multi-agent workflows | Full delegation chain auditable from human principal to acting agent; token expiry logged | Fleet-level behavioral aggregation; coordination pattern detection operational |
 | **I5: Optimized** | Behavioral baselines per agent type; drift detection automated; fleet patterns reviewed against authorized behavior | Append-only log stores with cryptographic sealing; tamper detection operational | Real-time anomaly signals with human-in-the-loop escalation for threshold breaches |
 
-Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent (present in deliberate deployments, absent in most shadow agents). Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
+Layer 1 is available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent (present in deliberate deployments, absent in most shadow agents). Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
 
 ## What to Do Now
 

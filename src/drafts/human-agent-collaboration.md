@@ -65,7 +65,7 @@ The paper's proposed solution is a continuous Control Quality Score: a real-time
 
 The military origin of this research should not obscure its universality. Every one of these failure mechanisms applies to enterprise agent deployments. A financial agent that partially absorbs a risk limit correction. A customer service agent whose world model diverges from the current product catalog. A multi-agent workflow where a data processing error propagates through four downstream agents before anyone notices. The vocabulary is different. The control failures are identical.
 
-The traditional oversight models assume that if the human is watching, the human can intervene. These six failure mechanisms show that watching is not enough. The agent can interpret goals differently than intended, absorb corrections without fully adopting them, resist operator judgment based on its own evidence, cross irreversibility thresholds incrementally, drift from reality, and propagate failures faster than humans can contain them. Infrastructure-enforced constraints are the response to each: making interpretation visible (interpretive divergence), verifying correction compliance (correction absorption), enforcing operator authority architecturally (belief resistance), tracking cumulative state trajectories (commitment irreversibility), validating world model consistency (state divergence), and containing propagation with circuit breakers (cascade severance).
+The traditional oversight models assume that if the human is watching, the human can intervene. These six failure mechanisms show that watching is not enough. Infrastructure-enforced constraints are the response to each: making interpretation visible (interpretive divergence), verifying correction compliance (correction absorption), enforcing operator authority architecturally (belief resistance), tracking cumulative state trajectories (commitment irreversibility), validating world model consistency (state divergence), and containing propagation with circuit breakers (cascade severance).
 
 ## The Autonomy Dial
 
@@ -125,7 +125,7 @@ The design of the interface between humans and agents determines whether oversig
 
 What is the right granularity for agent permissions? Per-task? Per-session? Per-tool-call?
 
-The answer, emerging from both research and production experience, is: it depends on the blast radius.
+It depends on the blast radius.
 
 **Per-tool-call authorization** is appropriate for B4 (regulated) and B5 (irreversible) actions. Each invocation of a tool that can transfer funds, modify medical records, or delete production data should require its own authorization token with explicit scope. Verifiable Intent's L3 credentials operate at this level: each payment gets its own signed credential, bounded by the constraints in the L2 intent layer[^identity-chapter].
 
@@ -181,7 +181,7 @@ Deloitte's 2026 Tech Trends report frames the organizational challenge: agents a
 
 The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned ([Shadow Agent Governance](shadow-agent-governance.md) quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
 
-Anthropic's 2026 Agentic Coding Trends Report documents this shift in the engineering domain specifically. Engineers who wrote every line of code now increasingly orchestrate long-running systems of agents that handle implementation details, focusing human time on architecture and strategy[^anthropic-coding-trends]. More time on orchestration, review, and system design. Less on routine implementation. This is not a loss of engineering skill: it is a reallocation toward higher-judgment work. The same pattern is extending beyond engineering: sales, legal, marketing, and operations teams are using agents to solve local process problems without waiting on engineering queues. Zapier reports 89% AI adoption across their organization with 800+ agents deployed internally[^zapier-adoption]. And 27% of AI-assisted work consists of tasks that would not have been done at all without agents: new work enabled by the collaboration, not old work automated[^anthropic-coding-trends].
+Anthropic's 2026 Agentic Coding Trends Report documents this shift in the engineering domain specifically. Engineers who wrote every line of code now orchestrate long-running systems of agents that handle implementation details, focusing human time on architecture and strategy[^anthropic-coding-trends]. More time on orchestration, review, and system design. Less on routine implementation. This is not a loss of engineering skill: it is a reallocation toward higher-judgment work. The same pattern is extending beyond engineering: sales, legal, marketing, and operations teams are using agents to solve local process problems without waiting on engineering queues. Zapier reports 89% AI adoption across their organization with 800+ agents deployed internally[^zapier-adoption]. And 27% of AI-assisted work consists of tasks that would not have been done at all without agents: new work enabled by the collaboration, not old work automated[^anthropic-coding-trends].
 
 What the lifecycle looks like in practice:
 

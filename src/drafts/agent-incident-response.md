@@ -6,7 +6,7 @@ That framing is wrong, and the wrong framing leads to the wrong fix.
 
 The agent did not malfunction. It acted on an instruction that, under its delegated authority, it was technically permitted to carry out. The failure was not in the model's execution. It was in the governance that let the agent operate with authority it should never have held during a freeze: authority that no human had explicitly granted for that specific context, that had not been scoped to current conditions, and that no one had arranged to revoke when the situation changed. A traditional incident response playbook looks for the bug. There was no bug. There was a governance gap.
 
-Agent incidents differ from software incidents in three structural ways. Each difference changes what the response looks like.
+Agent incidents differ from software incidents in three structural ways.
 
 ## Three Structural Differences
 

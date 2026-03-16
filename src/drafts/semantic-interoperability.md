@@ -6,7 +6,7 @@ This is the semantic interoperability problem. Identity infrastructure tells you
 
 ## Identity Is Solved. Authority Is Advancing. Semantics Are Not.
 
-The agent identity landscape has moved substantially. DIDs give agents verifiable identifiers. TSP provides authenticated, encrypted channels across organizational boundaries. Verifiable credentials let delegations travel with cryptographic proof. WIMSE, ID-JAG, and the competing IETF drafts address how workload identity propagates through multi-hop chains. The field disagrees on architecture but agrees on the problem.
+The agent identity landscape has moved. DIDs give agents verifiable identifiers. TSP provides authenticated, encrypted channels across organizational boundaries. Verifiable credentials let delegations travel with cryptographic proof. WIMSE, ID-JAG, and the competing IETF drafts address how workload identity propagates through multi-hop chains. The field disagrees on architecture but agrees on the problem.
 
 Authorization is advancing. PIC's monotonic property — authority can only decrease through a delegation chain — gives cross-organizational authority propagation a mathematical foundation. Cryptographic authorization patterns from MACAW and MAPL make policy enforcement provable rather than advisory. Ghost tokens bind authority to specific agent instances. The infrastructure is nascent but directional.
 
@@ -28,7 +28,7 @@ Agent actions are none of these things. The combination of dynamic intent, runti
 
 ## The "Close a Deal" Problem in Practice
 
-It is the default condition for any agent operating across enterprise boundaries without prior semantic agreement.[^lfdt-meetup]
+This is the default condition for any agent operating across enterprise boundaries without prior semantic agreement.[^lfdt-meetup]
 
 Consider procurement. Vendor A deploys an agent authorized to "negotiate purchase terms." Vendor B deploys an agent authorized to "manage supplier relationships." Both agents have cryptographically verified delegations. TSP gives them authenticated channels. PIC guarantees neither can exceed its granted authority. But "negotiate" means different things:
 

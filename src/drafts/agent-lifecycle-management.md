@@ -131,7 +131,7 @@ The IETF draft-klrc-aiagent-auth (March 2026) consolidates the agent lifecycle f
 - **Authorization:** OAuth 2.0 token exchange (RFC 8693) for delegation, with the Agent Authorization Profile (AAP) for structured capabilities
 - **Lifecycle:** SCIM for cross-application provisioning and deprovisioning
 
-The value is consolidation: showing practitioners which existing standards apply at each lifecycle phase and where new work is needed. The gap analysis identifies credential lifecycle management as the area with the least mature standardization: identity issuance and authentication have clear standards, but credential rotation coordination across trust domains, automated decommissioning triggers, and orphan detection remain implementation-specific.[^klrc]
+The gap analysis identifies credential lifecycle management as the area with the least mature standardization: identity issuance and authentication have clear standards, but credential rotation coordination across trust domains, automated decommissioning triggers, and orphan detection remain implementation-specific.[^klrc]
 
 ## PAC Framework Mapping
 

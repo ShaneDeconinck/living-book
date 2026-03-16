@@ -34,7 +34,7 @@ These are not defects of poorly-designed systems. They are properties that sover
 
 **Decentralized finance.** Automated market makers (Uniswap's liquidity pool contracts, Compound's interest rate models, Aave's liquidation engines) execute financial actions continuously, at machine speed, without human authorization per transaction.[^defi] Aave's v3 liquidation engine processed liquidations continuously throughout the March 2023 USDC de-pegging event without a single human-initiated transaction.[^aave] The liquidations were correct by protocol design. They were irreversible by protocol design.
 
-**Confidential AI inference.** Organizations handling sensitive data increasingly deploy inference workloads in TEEs: legal discovery agents, medical record summarization, financial analysis.[^confidential-ai] The hospital that deploys a diagnostic agent in an SGX enclave provides a privacy guarantee: even the cloud provider cannot observe the patient data being analyzed. The enclave's non-modifiability is the privacy property. The same design makes the agent difficult to stop, patch, or audit from outside.
+**Confidential AI inference.** Organizations handling sensitive data deploy inference workloads in TEEs: legal discovery agents, medical record summarization, financial analysis.[^confidential-ai] The hospital that deploys a diagnostic agent in an SGX enclave provides a privacy guarantee: even the cloud provider cannot observe the patient data being analyzed. The enclave's non-modifiability is the privacy property. The same design makes the agent difficult to stop, patch, or audit from outside.
 
 **Autonomous vehicle fleets.** Real-time navigation and safety systems cannot wait for a human authorization loop. An agent deciding to brake, merge, or swerve executes its decision in milliseconds, within a closed control loop that no external system can override while the vehicle is in motion. The accountability model shifts from "who authorized this action" to "who designed and certified the system that took this action."
 
@@ -68,8 +68,6 @@ Organizations building sovereign agent systems need to design accountability inf
 - **Attestation infrastructure**: record execution-time evidence that the deployed code ran as specified.
 - **Governance mechanisms**: for agents whose parameters can be adjusted, design the governance process as the accountability layer.
 - **Liability assignment**: identify who carries regulatory and legal liability for agent outcomes before deployment, not after incidents.
-
-The PAC Framework's architecture applies to sovereign environments because it asks the right questions: who authorized this agent to operate (Accountability), what can it do (Control), and what value does it deliver (Potential). The infrastructure that answers those questions looks different in sovereign environments, but the questions remain.
 
 ## Infrastructure Maturity
 
