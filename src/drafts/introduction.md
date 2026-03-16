@@ -68,9 +68,7 @@ Agents remove the human bottleneck from attack operations. The time between vuln
 
 Google's Cloud Threat Horizons Report added a dimension the industry had not anticipated: adversaries weaponizing developers' own AI tools. The threat actor UNC6426 compromised an npm build framework and delivered malware that detected locally installed AI command-line tools, invoked them with natural-language prompts to perform filesystem reconnaissance for credentials.[^google-threats] The AI tool did the attacker's work.
 
-Organizations need their defenses to operate at the speed adversary agents now move.
-
-The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them.
+The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them at the speed agents now move.
 
 ## The PAC Framework
 
@@ -117,12 +115,14 @@ The technical chapters are organized by pillar. Each stands alone, but they buil
 - **[Agent Accountability at Scale](accountability-at-scale.md)**: what changes when you operate hundreds of agents. Decision attribution across agent graphs, fleet-level monitoring, and the governance infrastructure required for fleet-scale deployment.
 - **[Agent Observability](agent-observability.md)**: what agents need beyond application monitoring. The five-layer observability stack, tamper evidence, and why traditional APM misses the layers that matter for governance.
 - **[Agent Incident Response](agent-incident-response.md)**: what changes when an AI agent is involved. Blast radius assessment, containment infrastructure, and why agent incidents need their own response procedures.
+- **[Agentic Sovereignty](agentic-sovereignty.md)**: what happens when agents persist on infrastructure no single party can override. Where PAC breaks down and what remains.
 
 **Control:** infrastructure that enforces what policy demands.
 
 - **[Sandboxing and Execution Security](execution-security.md)**: OS sandboxing, containers, microVMs, and defense in depth.
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, AAIF, agent gateways, and why communication protocols solve discovery but not trust.
 - **[Cross-Organization Trust](cross-org-trust.md)**: TSP, PIC, Verifiable Credentials, EUDI wallets, and cross-boundary trust stacks.
+- **[Semantic Interoperability for Agents](semantic-interoperability.md)**: why credentials solved semantic interoperability and agent actions have not. Schema registries, semantic negotiation, and the gap between delegated authority and shared meaning.
 - **[Agent Supply Chain Security](supply-chain-security.md)**: tool compromise, MCP vulnerabilities, AI-BOMs, configuration file attacks, and AI tools as attack infrastructure.
 - **[Tool Security and MCP Poisoning](tool-security.md)**: runtime tool trust, description poisoning, MCPTox, and the attack surface that lands inside the agent's context window.
 - **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes or breaks when agents delegate to other agents. Cascading failures and governance that scales with delegation depth.
