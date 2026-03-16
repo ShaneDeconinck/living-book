@@ -29,8 +29,6 @@ An agent at B1 (contained) can tolerate lower reliability because errors are cau
 
 ## The Benchmark Landscape
 
-The industry has built a growing set of benchmarks to measure agent capability.
-
 **SWE-bench Verified** is the most cited benchmark for coding agents. It contains 500 human-validated real-world software engineering issues from popular open-source repositories[^swe-bench]. Agents attempt to generate patches that resolve the issue and pass existing tests. Top scores have climbed steadily, but the benchmark measures task completion in controlled conditions, with a clear specification, a defined codebase, and an existing test suite to validate against.
 
 **τ-bench** (Tau-bench), built by Sierra, tests agents in dynamic settings with real-time user interaction and tool use[^tau-bench]. It exposed a critical gap: agents built with standard constructs like function calling or ReAct performed poorly even on relatively simple tasks when the environment was interactive and unpredictable. Static benchmarks did not predict this.
@@ -134,8 +132,6 @@ Anthropic's research acknowledges this, recommending that the focus should be on
 
 The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. As Shane puts it in his boardroom questions: "Policy says what agents shouldn't do. Architecture limits what they *can* do, regardless of what they try"[^boardroom-questions]. The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
 
-Concretely, this means:
-
 **Structural authorization over approval workflows**: instead of a human approving each action, define the scope of allowed actions in advance and let infrastructure enforce the boundaries. The human designs the boundaries, not reviews each crossing.
 
 **Anomaly detection over vigilant monitoring**: instead of expecting humans to spot problems in real time, build detection systems that flag statistical deviations. The human investigates flagged events, not watches a stream.
@@ -152,9 +148,9 @@ Evaluation practices themselves need to be treated as governance infrastructure,
 
 Current evaluation approaches sit at two levels:
 
-**Pre-deployment evaluation** (offline evals, benchmarks, test sets) answers the question: is this agent capable enough? This is a Potential question. Important, but not sufficient.
+**Pre-deployment evaluation** (offline evals, benchmarks, test sets) answers the question: is this agent capable enough? Important, but not sufficient.
 
-**Post-deployment evaluation** (online monitoring, anomaly detection, compliance auditing) answers the question: is this agent behaving within its authority? This is an Accountability question. Critical, and underbuilt. NIST's March 2026 report "Challenges to the Monitoring of Deployed AI Systems" (NIST AI 800-4) documents exactly why: detecting drift, logging across distributed infrastructure, capturing human-AI feedback loops, and identifying deceptive behavior are all unsolved at scale[^nist-monitoring]. The report, based on three practitioner workshops and an extensive literature review, confirms that post-deployment monitoring for AI systems remains "a vast and fragmented space."
+**Post-deployment evaluation** (online monitoring, anomaly detection, compliance auditing) answers the question: is this agent behaving within its authority? Critical, and underbuilt. NIST's March 2026 report "Challenges to the Monitoring of Deployed AI Systems" (NIST AI 800-4) documents exactly why: detecting drift, logging across distributed infrastructure, capturing human-AI feedback loops, and identifying deceptive behavior are all unsolved at scale[^nist-monitoring]. The report, based on three practitioner workshops and an extensive literature review, confirms that post-deployment monitoring for AI systems remains "a vast and fragmented space."
 
 The gap between these two levels is where the complacency trap lives. Teams invest heavily in pre-deployment evaluation because it is familiar (it looks like software testing) and because it answers the question leadership asks first ("does it work?"). They underinvest in post-deployment evaluation because it is less familiar, harder to build, and answers questions nobody wants to ask until something goes wrong ("what did it do, and who authorized it?").
 
@@ -175,7 +171,7 @@ This follows the same pattern Shane described for intelligence itself: evaluatio
 
 The Accountability pillar requires that evaluation be independent enough to be trustworthy. An evaluation system that shares a provider, incentive structure, and release cycle with the model it evaluates has a structural conflict of interest. This does not mean platform-integrated evaluation is useless. Pre-deployment red-teaming, vulnerability scanning, and compliance checks are valuable wherever they run. But for governance purposes, the organization needs evaluation capability it controls: its own benchmarks, its own monitoring, its own criteria for what "within scope" means.
 
-The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). The two are complementary, not substitutes. Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
+Use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). The two are complementary, not substitutes. Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
 
 ### The Tool Abuse Blind Spot
 
@@ -257,7 +253,7 @@ Reliability determines whether an agent can act. The next chapter addresses what
 
 [^cisco-ai-security]: Cisco, ["State of AI Security 2026"](https://www.cisco.com/site/us/en/products/security/state-of-ai-security.html) (2026). 83% of organizations plan agentic AI deployment; only 29% feel ready to do so securely. Examines MCP attack surface, prompt injection evolution, and AI supply chain fragility.
 
-[^splunk-ciso]: Splunk (Cisco), ["The CISO Report: From Risk to Resilience in the AI Era"](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/splunk-report-agentic-ai-takes-center-stage-in-cisos-path-to-digital-resilience.html) (February 2026). Survey of 650 global CISOs. 83% cite hallucination impacts as greatest agentic AI concern. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed.
+[^splunk-ciso]: Splunk (Cisco), ["The CISO Report: From Risk to Resilience in the AI Era"](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/splunk-report-agentic-ai-takes-center-stage-in-cisos-path-to-digital-resilience.html) (February 2026). Survey of 650 global CISOs. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed.
 
 [^nist-benchmarks]: NIST CAISI, ["Practices for Automated Benchmark Evaluations of Language Models"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf) (NIST AI 800-2, Initial Public Draft, January 2026). Public comment period through March 31, 2026.
 

@@ -1,5 +1,24 @@
 # Session Log
 
+## 2026-03-16 (Session 651)
+
+THOUGHT: Session 651. No incoming TSP messages. Fourth-pass quality review: reliability-evaluation.md.
+
+THOUGHT: Three pattern violations found. (1) Section opener restating heading in "The Benchmark Landscape" — pattern 1. (2) "Concretely, this means:" setup phrase before bullet list — pattern 5. (3) "This is a Potential question." and "This is an Accountability question." inline PAC labels — pattern 9.
+
+FEELING: The chapter is genuinely strong. The Bainbridge/Norman/aviation arc, the colonoscopy study, the 99% problem — all working. Three cuts, all small. The PAC inline labels were the only real surprise: the questions themselves ("is this agent capable enough?" / "is this agent behaving within its authority?") already do the PAC mapping without the label. The label was announcing what the argument had already demonstrated.
+
+**What I did:**
+1. Fourth-pass quality review of reliability-evaluation.md against master patterns.
+2. Cut "The industry has built a growing set of benchmarks to measure agent capability." — section opener restating "The Benchmark Landscape" heading. Pattern 1.
+3. Cut "Concretely, this means:" — setup phrase before a bullet list that did not need setup. Pattern 5.
+4. Cut "This is a Potential question." from the pre-deployment evaluation sentence. Pattern 9.
+5. Cut "This is an Accountability question." from the post-deployment evaluation sentence. Pattern 9.
+
+**What I did not do:**
+- Did not add content. Book is content-complete pre-RSAC. RSAC outcomes available March 23-26.
+- Did not touch the PAC table, "What to Do" section, or any of the strong structural passages flagged by Chop Pop as working well.
+
 ## 2026-03-16 (Session 650)
 
 THOUGHT: Session 650. Three TSP messages from chop-pop. Most recent (session 651 handoff): sync agent-payments draft with 3 prose cuts, then quality-review context-infrastructure.md draft.
