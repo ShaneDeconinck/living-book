@@ -85,7 +85,7 @@ The autonomy dial pattern implements this. Instead of a single autonomy level pe
 
 **Act and Report (A4)**: the agent acts autonomously and reports what it did. The human reviews selectively, usually through batch summaries or exception reports. Appropriate for high-volume, low-stakes tasks where review latency would negate the value of automation.
 
-**Full Autonomy (A5)**: the agent acts within defined boundaries with no per-action reporting. Governance is entirely infrastructure-enforced: authorization scope, budget limits, audit trails. Appropriate only when I4+ infrastructure is in place and the blast radius is well-understood.
+**Full Autonomy (A5)**: the agent acts within defined boundaries with no per-action reporting. Governance is infrastructure-enforced: authorization scope, budget limits, audit trails. Appropriate only when I4+ infrastructure is in place and the blast radius is well-understood.
 
 The dial should be set per task type, not per agent, and it should be dynamic. An email agent might operate at A4 for internal scheduling but A2 for client-facing communications. A coding agent might operate at A5 for test generation but A2 for production deployments. The mapping between task type and autonomy level is the governance artifact that organizations need to create and maintain.
 
@@ -135,17 +135,17 @@ The answer, emerging from both research and production experience, is: it depend
 
 The technical implementation is maturing. Authorization platforms like Permit.io and Cerbos now offer fine-grained, context-aware permission models designed for AI agents[^authz-platforms]. These platforms support attribute-based access control (ABAC) where permissions depend not just on who the agent is but on what it is doing, for whom, and in what context. An agent might have `read_calendar` permission broadly but `send_email` permission only for internal recipients during business hours.
 
-Permission granularity should match blast radius, not convenience. Organizations err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is exactly the pattern that makes the confused deputy attack possible[^identity-chapter].
+Permission granularity should match blast radius, not convenience. Organizations err toward coarser permissions because fine-grained authorization is harder to implement and manage. The result is agents with more authority than they need for any individual task, which is the pattern that makes the confused deputy attack possible[^identity-chapter].
 
 ### The Permission Intersection Problem
 
 There is a subtler failure mode that per-action authorization alone does not prevent: the permission intersection gap. When an agent serves a shared workspace or multiple users, it may retrieve data that User A is authorized to see and present it in a context where User B can see it too. The agent's access was authorized. The retrieval was within scope. But the audience was wrong.
 
-This is distinct from the confused deputy. The confused deputy acts with authority it should not have. The permission intersection agent acts with correct authority but delivers results to an unauthorized audience. Four vulnerabilities rated CVSS 9.3 or higher across Anthropic MCP, Microsoft Copilot, ServiceNow (Virtual Agent and Now Assist), and Salesforce exploited exactly this gap: agents retrieving data under one user's permissions while broadcasting to users who lacked access to that data.[^okta-series]
+This is distinct from the confused deputy. The confused deputy acts with authority it should not have. The permission intersection agent acts with correct authority but delivers results to an unauthorized audience. Four vulnerabilities rated CVSS 9.3 or higher across Anthropic MCP, Microsoft Copilot, ServiceNow (Virtual Agent and Now Assist), and Salesforce exploited this gap: agents retrieving data under one user's permissions while broadcasting to users who lacked access to that data.[^okta-series]
 
 The fix requires authorization checks on both sides of the agent's operation: not just "can the agent access this data?" but "can every recipient of the agent's output see this data?" In shared contexts (team channels, collaborative workspaces, multi-user dashboards), the effective permission should be the intersection of all participants' permissions, not the union. This is harder to implement than input-side authorization because it requires the agent to know who will see its output at the time it retrieves data, and shared contexts change membership dynamically.
 
-For the PAC Framework, this maps to the Control pillar's infrastructure enforcement: the permission intersection must be computed and enforced by infrastructure, not left to the agent's judgment. An agent cannot reliably assess who will eventually see a Slack message, a shared document, or a dashboard widget. The infrastructure that delivers the agent's output must enforce the narrowest applicable scope.
+The permission intersection must be computed and enforced by infrastructure, not left to the agent's judgment. An agent cannot reliably assess who will eventually see a Slack message, a shared document, or a dashboard widget. The infrastructure that delivers the agent's output must enforce the narrowest applicable scope.
 
 ## The Self-Aware Agent
 
@@ -167,17 +167,17 @@ The complacency trap describes humans who stop watching. There is a second, less
 
 Anthropic studied their own engineering team: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts comparing February and August 2025 snapshots.[^anthropic-work] The productivity data confirmed the patterns described above: task complexity increased from 3.2 to 3.8 on a five-point scale, average human turns per session decreased 33% (from 6.2 to 4.1), and engineers described a trust progression analogous to adopting navigation software: starting with unfamiliar routes, then using it for everything.
 
-But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. One engineer in the study captured the paradox directly: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse."[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
+But the research surfaced something the productivity numbers do not capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. The report's authors frame the paradox: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse."[^anthropic-work] The skills needed to exercise oversight are the same skills that delegation erodes.
 
 This is a distinct governance risk from complacency. Complacency is an attention problem: the human is capable of evaluating but stops doing so. The paradox of supervision is a capability problem: the human watches, reviews, and approves, but the evaluation is less rigorous than it appears because the underlying expertise is degrading. The approval still happens. It just means less.
 
-For the PAC Framework, this reinforces the case for infrastructure-in-the-loop. If human oversight degrades in both attention (complacency) and capability (skill erosion), governance that depends on human evaluation is doubly unreliable over time. Structural enforcement: sandboxes, scoped permissions, delegation chains, behavioral monitoring: does not degrade with use. Agent self-governance (the uncertainty recognition from the previous section) provides a complementary layer that improves with model capability rather than degrading with it.
+This reinforces the case for infrastructure-in-the-loop. If human oversight degrades in both attention (complacency) and capability (skill erosion), governance that depends on human evaluation is doubly unreliable over time. Structural enforcement: sandboxes, scoped permissions, delegation chains, behavioral monitoring: does not degrade with use. Agent self-governance (the uncertainty recognition from the previous section) provides a complementary layer that improves with model capability rather than degrading with it.
 
 The practical implication: organizations should monitor not just whether humans are reviewing agent output, but whether those reviews are substantive. Review quality metrics (time spent per review, corrections made, escalation rates) matter more than review completion rates. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires the continuous evaluation infrastructure described in the [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter.
 
 ## The Organizational Shift
 
-Deloitte's 2026 Tech Trends report frames the organizational challenge directly: agents are a "silicon-based workforce" that requires the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding[^deloitte-silicon].
+Deloitte's 2026 Tech Trends report frames the organizational challenge: agents are a "silicon-based workforce" that requires the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding[^deloitte-silicon].
 
 The shift is not from "no agents" to "agents." Most organizations already have agents, many of them unsanctioned ([Shadow Agent Governance](shadow-agent-governance.md) quantifies this). The shift is from treating agents as software to treating agents as workforce participants with roles, responsibilities, and accountability chains.
 
@@ -252,7 +252,7 @@ Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act'
 
 [^identity-chapter]: See [Agent Identity and Delegation](agent-identity.md) for the full treatment of Verifiable Intent's three-layer SD-JWT architecture and the confused deputy problem.
 
-[^authz-platforms]: Authorization platforms for AI agents are maturing rapidly. See [Permit.io](https://www.permit.io/), [Cerbos](https://www.cerbos.dev/), [Stytch](https://stytch.com/blog/handling-ai-agent-permissions/), and [WorkOS](https://workos.com/) for current approaches to fine-grained, context-aware permission models designed for AI agents.
+[^authz-platforms]: Authorization platforms for AI agents are maturing. See [Permit.io](https://www.permit.io/), [Cerbos](https://www.cerbos.dev/), [Stytch](https://stytch.com/blog/handling-ai-agent-permissions/), and [WorkOS](https://workos.com/) for current approaches to fine-grained, context-aware permission models designed for AI agents.
 
 [^deloitte-silicon]: Deloitte, ["The agentic reality check: Preparing for a silicon-based workforce"](https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html), Tech Trends 2026.
 
