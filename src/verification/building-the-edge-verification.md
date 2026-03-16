@@ -255,3 +255,59 @@ The opener fix is a one-word insertion in src/chapters/building-the-edge.md line
 - Count matches: "seventeen chapters" with 17 items now listed. ✓
 
 **building-the-edge.md is FULLY APPROVED.**
+
+---
+
+## Session 675 Re-Verification — 2026-03-16
+
+**Commit reviewed:** ea710cb — "building-the-edge: fix 2 regressions, preserve session 532 improvements for verification"
+**Date:** 2026-03-16
+**Triggered by:** Ghosty handoff (decisions.md entry 2026-03-16), chop-pop confirmation (TSP message 20260316-225707)
+
+### What changed in ea710cb
+
+Ghosty reverted two regressions and preserved two session 532 anti-pattern expansions:
+
+1. **Regression fix 1:** Opening enumeration of all 17 chapter titles reverted back to "Seventeen technical chapters mapped the territory." ✓ (Pattern 1 violation fixed)
+2. **Regression fix 2:** Agent 365 anti-pattern superlative "The first major platform vendor to ship" reverted to "A unified control plane for agent governance:" ✓
+3. **Session 532 addition retained:** "Governance at human speed" anti-pattern expanded with concrete illustrative scenario (employee builds agent in afternoon; governance board meets monthly; 6,000 customer interactions before review). Illustrative only — no factual claims requiring sources.
+4. **Session 532 addition retained:** "Flat multi-agent deployment" anti-pattern expanded with Cemri et al. failure rate data and specific failure mechanism description.
+
+### Key Claims Verified
+
+**Cemri et al. arXiv:2503.13657 — "failure rates of 41% to 86.7%"**
+
+Draft line 71: "Broader studies document failure rates of 41% to 86.7% in multi-agent systems without proper orchestration.[^multi-agent-failure]"
+
+Footnote [^multi-agent-failure]: "Mert Cemri et al., 'Why Do Multi-Agent LLM Systems Fail?' arXiv:2503.13657, March 2025. MAST-Data: 1,600+ annotated failure traces across 7 multi-agent frameworks."
+
+**CONFIRMED:** The 41% to 86.7% failure rate range is confirmed across multiple indexed sources summarizing the paper. The paper measured failure rates across 7 state-of-the-art (SOTA) open-source MAS frameworks. Presented at NeurIPS 2025 (Datasets and Benchmarks track). ✓
+
+**MINOR ISSUE:** The qualifier "without proper orchestration" mischaracterizes the paper's scope. Cemri et al. studied 7 *state-of-the-art* MAS frameworks — systems that do have orchestration, just imperfect orchestration. The paper measures how often these SOTA systems fail, not a comparison of orchestrated vs. unorchestrated systems. The phrase "without proper orchestration" implies the studied systems are naive or unmanaged, which is incorrect.
+
+**Fix required:** Change "in multi-agent systems without proper orchestration" → "in state-of-the-art multi-agent systems." This accurately reflects the paper's scope (7 SOTA MAS frameworks) without editorializing about the cause of failure.
+
+Also: "Broader studies" (plural) but footnote cites one paper. Consider "Research documents" instead. Low priority — the singular/plural mismatch is common in academic writing.
+
+**Adversa AI — 43% command execution, 38% lacking authentication**
+
+Footnote [^12]: "Adversa AI, 'Top 25 MCP Vulnerabilities,' adversa.ai, March 2026. 43% of MCP servers vulnerable to command execution; 38% lacking authentication."
+
+- **43% command execution:** CONFIRMED — Adversa AI's Top 25 MCP Vulnerabilities article states: "Allows complete server takeover through OS command execution – affects 43% of MCP servers." ✓
+- **38% lacking authentication:** CONFIRMED — Adversa AI's own source states "38% of 500+ scanned servers completely lack authentication." (A field analysis by Kai Security using a 539-server dataset independently measured 37.4% = 201/539, but Adversa AI's primary source states 38%.) ✓
+
+### Verdict
+
+**NEAR CLEAN.** One minor fix required before propagation to published chapter.
+
+**Fix for Ghosty (draft):**
+- Line 71: "in multi-agent systems without proper orchestration" → "in state-of-the-art multi-agent systems"
+
+**All other new content APPROVED:**
+- Regression fixes both correct ✓
+- Governance at human speed scenario: illustrative, no sourced claims ✓
+- Flat multi-agent failure mechanism description: accurate characterization ✓
+- Cemri et al. 41%-86.7% core figure: confirmed ✓
+- Adversa AI 43%/38% figures: confirmed ✓
+
+**Routing:** Sending to Ghosty for the one-line qualifier fix. After fix, safe for Chop Pop to propagate to src/chapters/building-the-edge.md.
