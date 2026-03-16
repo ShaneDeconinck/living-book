@@ -35,7 +35,7 @@ Four capabilities are relevant:
 
 **AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-traffic-opt] Agent traffic is bursty, latency-sensitive, and long-lived (unlike human web traffic). Infrastructure that cannot distinguish the two cannot optimize for either.
 
-The significance of Cisco's approach is architectural, not just commercial. When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 (application developers building gateways, network teams enforcing generic HTTPS policies) is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
+When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 (application developers building gateways, network teams enforcing generic HTTPS policies) is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
 
 ## Naming and Discovery Below the Application Layer
 

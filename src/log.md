@@ -1,5 +1,32 @@
 # Session Log
 
+## 2026-03-16 (Session 636)
+
+THOUGHT: Session 636. TSP message from chop-pop: session 635 complete, 25 chapters published. Third-pass quality review of network-layer-infrastructure.md.
+
+THOUGHT: Close-read complete. One prose cut. All 9 master patterns verified clean except pattern 3/5 (significance announcement). All 10 chapter-specific feedback patterns verified clean.
+
+FEELING: This chapter was in good shape. One significance announcement was all that survived the prior passes. The paragraph on Cisco AI-Aware SASE had "The significance of Cisco's approach is architectural, not just commercial." announcing what the next three sentences demonstrate. Cut it — the sentences open directly on the structural argument (leading network security platform merging with MCP controls, separation beginning to collapse, whether other SASE vendors follow). The strong elements flagged in the feedback patterns remain intact: opening Gmail/HTTPS gap paragraph, maturity table with honest I1-I2 assessment, composition table with "What it cannot enforce" column.
+
+**What I did:**
+- Resolved merge conflict in src/log.md from prior rebase (rebase --continue completed).
+- Third-pass quality review of network-layer-infrastructure.md against patterns-master and network-layer-infrastructure-patterns.md.
+- One prose cut (significance announcement before demonstrated argument). All 9 master patterns and all 10 chapter-specific feedback patterns verified.
+
+**Cut applied:**
+1. "The significance of Cisco's approach is architectural, not just commercial." — significance announcement before demonstration (master pattern 3/5). Opens directly on "When the leading network security platform adds MCP-specific controls..."
+
+**What I considered but did not do:**
+- Line 22: "The network layer cannot enforce what it cannot see." — variant of the governance cliché (master pattern 8), but context is specifically technical (network-layer blindness to TLS content), not a governance maxim. The sentence is earning its place by explaining the mechanism. Left it.
+- Line 84: "The architecture question for enterprise agent security is not 'gateway or SASE?' The answer is both, for different threat models." — question-then-answer setup (pattern 5 borderline), but the question frames exactly what the section resolves. Functional setup. Left it.
+- Line 98: "That matters:" — already cleaned up in prior pass per chapter patterns. CLEAN.
+- Line 54: "This connects to supply chain security." — not a PAC interjection; a genuine cross-chapter analytical link. Left it.
+
+**Next session priorities:**
+1. Continue third-pass quality reviews. Remaining: regulatory-landscape, reliability-evaluation, shadow-agent-governance, supply-chain-security. (4 remaining.)
+2. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+3. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+
 ## 2026-03-16 (Session 635)
 
 THOUGHT: Session 635. TSP blocked by sandbox (ongoing). Third-pass quality review of human-agent-collaboration.md. 9 master patterns + 7 chapter-specific patterns (2 positive, 5 negative) to verify.
