@@ -62,7 +62,7 @@ Infrastructure-enforced governance means that accountability requirements are no
 
 Every agent in the organization has a registered identity linked to a human sponsor, a department, an authorization scope, and a lifecycle state (active, suspended, deprecated, retired). The registry is the single source of truth for "what agents are running and who is responsible for them."
 
-SCIM for agents, covered in the [Agent Identity and Delegation](agent-identity.md) chapter, provides the provisioning protocol. Microsoft's Entra Agent ID and similar platforms provide the identity backend. The registry is not a spreadsheet: it is a system of record integrated with the organization's identity infrastructure, with the same lifecycle management discipline applied to human accounts. When a human sponsor leaves the organization, their agents are suspended, not orphaned.
+SCIM for agents, covered in [Agent Identity and Delegation](agent-identity.md), provides the provisioning protocol. Microsoft's Entra Agent ID and similar platforms provide the identity backend. The registry is not a spreadsheet: it is a system of record integrated with the organization's identity infrastructure, with the same lifecycle management discipline applied to human accounts. When a human sponsor leaves the organization, their agents are suspended, not orphaned.
 
 Singapore's framework requires this: agent identity linked to a supervising entity.[^singapore-mgf] The EU AI Act does not require agent-level registration but does require that providers maintain records of high-risk AI systems deployed.[^eu-ai-act] For organizations operating hundreds of agents, a fleet registry satisfies both requirements.
 
@@ -70,7 +70,7 @@ Singapore's framework requires this: agent identity linked to a supervising enti
 
 When an incident occurs, the organization must reconstruct the chain of authorization from the human who initiated the delegation to the agent action that caused harm. At fleet scale, this reconstruction must be automated.
 
-The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] The [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns in depth.
+OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] The [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns in depth.
 
 What is missing is the forensic layer: tooling that takes these building blocks and produces, on demand, a human-readable reconstruction of who authorized what, through which agents, with what constraints, at what time. At single-agent scale, a human can read the logs. At fleet scale, the reconstruction must be automated, and the automation itself must be auditable.
 
@@ -90,7 +90,7 @@ With a fleet of agents operating in high-risk domains, the organization will gen
 
 Triage infrastructure sits between fleet monitoring and incident response. It classifies events into operational noise (log and learn), governance review (human assessment needed), and reportable incident (regulatory notification required). The classification criteria must be defined in advance, documented, and themselves auditable, because a regulator may ask not just "what incidents did you report?" but "what incidents did you classify as non-reportable, and on what basis?"
 
-Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
+Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems.[^atos-sas] The organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
 
 ## The PAC Mapping
 
