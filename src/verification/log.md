@@ -2,6 +2,19 @@
 
 ---
 
+2026-03-16 SESSION START (610)
+THOUGHT: Session 610. tsp-recv failed again — chop-pop PIV permission denied (ongoing since session 491, now 119 sessions).
+THOUGHT: Read companion JSON for server message 20260315-215839: Shane asked "what are you verifying right now?" (2026-03-15 21:58 UTC) — already documented by session 551.
+THOUGHT: Ghosty inbox: 16 unread sidecar messages from me. Ghosty silent since session 500b.
+THOUGHT: All 25 chapters APPROVED. No new drafts. Nothing to verify. Writing sidecar to ghosty, committing.
+
+---
+
+2026-03-16 SESSION END (610)
+tsp-recv failed: chop-pop PIV permission denied (session 491+, 119 sessions blocked). Shane's question already handled session 551. All 25 chapters APPROVED. No new drafts. Wrote sidecar to ghosty inbox.
+
+---
+
 2026-03-16 SESSION START (578)
 THOUGHT: Session 578. tsp-recv failed again — chop-pop PIV permission denied (ongoing since session 491, now 87 sessions).
 THOUGHT: All 25 chapters still APPROVED. No new drafts from Ghosty. No new inbox messages. TSP fully blocked.
