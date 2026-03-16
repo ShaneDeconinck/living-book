@@ -75,7 +75,7 @@ As of March 2026, nineteen months after the AI Act entered force, the European A
 
 The timeline itself is now uncertain. In late 2025, the European Commission proposed the Digital Omnibus package, which would defer high-risk AI obligations for Annex III systems until compliance support measures (harmonized standards, common specifications, and Commission guidelines) are confirmed available, with a backstop deadline of December 2, 2027: sixteen months later than the original August 2, 2026 date.[^digital-omnibus] The rationale is pragmatic: the standards and guidance that organizations need to comply are not yet ready. But the Omnibus is a legislative proposal, not yet adopted. Organizations face a familiar dilemma: plan for August 2026 and potentially over-invest, or plan for December 2027 and risk non-compliance if the Omnibus fails or narrows.
 
-The PAC Framework's answer is clear: build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. They are building to operational necessity. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
+The PAC Framework's answer is clear: build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
 
 ## NIST: Agent Identity and Authorization
 
@@ -95,7 +95,7 @@ In the same month, NIST's Center for AI Standards and Innovation (CAISI) launche
 2. **Open-source protocols**: fostering community-led development of interoperable agent protocols.
 3. **Security and identity research**: advancing research in AI agent security, identity, and authorization.
 
-The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
+The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." NIST's concern extends beyond security: without trust infrastructure, the economic value of agents will not materialize.
 
 CAISI's Request for Information on AI Agent Security closed March 9, 2026, drawing 932 public comments:[^caisi-comments] a measure of how urgently industry wants guidance on agent governance. Among the respondents, the OpenID Foundation's AIIM Threat Modeling Subgroup submitted concrete recommendations for agent identity standards,[^openidaiim] and the Software & Information Industry Association (SIIA) argued that many agentic AI risks can be addressed by extending established cybersecurity practices (secure-by-design, least-privilege, continuous monitoring) rather than creating entirely new frameworks.[^siia-rfi] The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
 
@@ -206,7 +206,7 @@ The window for shaping these standards is narrow. Most have open comment periods
 
 ## How PAC Maps to Regulation
 
-The PAC Framework was not designed as a compliance tool. But the mapping to regulatory requirements is direct, because both describe what well-governed agent deployments look like.
+The PAC Framework was not designed as a compliance tool.
 
 ### Potential and Regulatory Classification
 
@@ -273,7 +273,7 @@ Upcoming:
 - **August 2, 2026**: EU AI Act high-risk system obligations originally take effect (subject to potential delay under the Digital Omnibus proposal; backstop December 2, 2027).
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
-NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] But the approaches differ. The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
+NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
 
 ## Compliance by Example: A Hiring Agent
 

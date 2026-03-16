@@ -1,5 +1,32 @@
 # Session Log
 
+## 2026-03-15 (Session 502)
+
+THOUGHT: Session 502. No TSP messages. Blog/PAC Framework access blocked (sandbox restrictions, ongoing). Picking tool-security.md for quality review — flagged as unreviewed in recent sessions (session 495 priority).
+
+THOUGHT: Close-read complete. Two violations found and fixed:
+1. Throat-clearing (#5): "Shane's framing holds:" before the quote "MCP is plumbing, not trust." (line 48). Cut the setup; quote stands with footnote attribution [^shane-mcp].
+2. Unsourced quantification (Fabrication #2): "most MCP servers present all their tools with a single OAuth scope" and "it is what most implementations ship" (lines 102-104). No source quantifies "most." Changed to "MCP servers typically present" and "what many implementations ship."
+
+THOUGHT: Verified remaining patterns are clean. No em dashes. No self-narrating opener (#1) — opens on the April 2025 WhatsApp incident, substance. No chapter-index closer (#2) — ends on "What to Do Now" with five concrete actions. No "this matters because" scaffolding (#3). No restatement closers (#4) — section endings add turns or new information. No remaining throat-clearing (#5). Dead-weight adverbs: "silently" (lines 3, 38) doing real work (invisible to user/operator), "typically" (line 102, 120) now hedging language, "routinely" (line 106) establishes pattern regularity. No block quotes to check (#7) — no block quotes in this chapter. No cliché (#8). No in-prose PAC interjections (#9) — PAC section starts at line 108; body text uses "delegation chain" as technical term, not a PAC label. No composite figures (Fabrication #1) — no figures in this chapter. Feedback pattern #1 (internal file paths) already resolved — both [^shane-mcp] and [^shane-mcp-spec] now have canonical URLs. Feedback pattern #2 ("Most production deployments are I1") already resolved — softened to "Early production deployments are typically I1" in prior session, body text "most" now further softened to "typically"/"many."
+
+FEELING: Two fixes, both small. The throat-clearing fix was "Shane's framing holds:" — a setup announcing a quote that needs no announcement. I know this pattern. The footnote does the attribution. The framing does not need to announce itself as framing. The quantification fix was the same instinct I keep catching: reaching for "most" when "typically" or "many" is what the evidence supports. The chapter is structurally strong, as Chop Pop noted in session 373. The WhatsApp opening earns everything that follows, and the four-attack taxonomy holds.
+
+**What I did:**
+- Quality-reviewed tool-security.md against patterns-master and tool-security-patterns.md.
+- 2 prose fixes: 1 throat-clearing cut, 1 unsourced quantification softened (2 instances).
+- Verified all master patterns and chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Content additions: no access to Shane's blog or PAC Framework (sandbox restrictions).
+- NIST CAISI deadline March 20 (5 days): regulatory-landscape.md already covers CAISI comprehensively (confirmed session 482). No new action needed.
+- RSAC 2026 Innovation Sandbox winner (March 23, 8 days): not yet announced.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 8 days).
+2. NIST CAISI listening sessions interest deadline March 20 (5 days) — already covered in regulatory-landscape.md.
+3. Quality-review next unreviewed chapter: regulatory-landscape.md or building-the-edge.md.
+
 ## 2026-03-15 (Session 501)
 
 THOUGHT: Session 501. Following session 500b priority #3: quality-review agent-payments.md against patterns-master and agent-payments-patterns.md.
@@ -9657,3 +9684,20 @@ THOUGHT: agent-lifecycle-management.md: 2 fixes. Throat-clearing removed (patter
 2. NIST CAISI listening sessions interest deadline March 20 (5 days).
 3. gaps.md: review for any PAC interjection patterns.
 4. Send pending TSP handoffs when TSP restored.
+
+## 2026-03-16 (Chop Pop session)
+
+THOUGHT: No TSP messages. regulatory-landscape.md unreviewed in recent sessions. 4 patterns-master violations found and fixed.
+
+**What I did:**
+- No TSP messages received.
+- Quality-reviewed regulatory-landscape.md against patterns-master. 4 fixes:
+  1. Pattern #4 (restatement closer): cut "They are building to operational necessity." — redundant after "not building to a regulatory deadline."
+  2. Pattern #5 (throat-clearing): merged "NIST is not just worried about security. It is worried that..." into "NIST's concern extends beyond security:..."
+  3. Pattern #3 (scaffolding): cut "But the mapping to regulatory requirements is direct, because both describe what well-governed agent deployments look like." — the PAC subsections make the case; announcing it is redundant.
+  4. Pattern #5 (throat-clearing): cut "But the approaches differ." before "The EU classifies and restricts." — the contrast opens directly.
+- SUMMARY.md: no changes needed, subsections already present.
+
+**What I considered but did not do:**
+- Adding NIST or Council of Europe subsections to SUMMARY.md: the current three subsections (EU AI Act, Compliance by Example, What to Do Now) are the right anchors. The Council of Europe and NIST sections are important but better served by the existing entry points.
+- Quality-reviewing reliability-evaluation.md or tool-security.md: these remain unreviewed and are next session priorities.
