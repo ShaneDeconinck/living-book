@@ -216,7 +216,7 @@ The first failure mode: blind over-trust. Users who cannot define "terminal" ins
 
 The second failure mode: evidence-free over-fear. Users attribute intent, consciousness, and malice to next-token prediction. The Moltbook panic: viral screenshots of agents "scheming against humans," either human-engineered outputs or statistical artifacts, presented without context. People cited their agent's output as proof: "Yeah, but my agent said this." The same misunderstanding that produces blind trust produces irrational fear.
 
-The governance implication is structural. Because agents lack common sense, fail unpredictably, and do not know when they are wrong, governance cannot depend on users understanding what they are doing. Documentation is not a security model. Training is not a security model. The answer is structural constraints that limit damage regardless of user literacy.[^trust-inversion]
+Because agents lack common sense, fail unpredictably, and do not know when they are wrong, governance cannot depend on users understanding what they are doing. Documentation is not a security model. Training is not a security model. The answer is structural constraints that limit damage regardless of user literacy.[^trust-inversion]
 
 This applies to deployers as much as end users. Default permissions for deploying an agent should be narrow. Expanding them should require explicit approval and documented rationale. Assume the deployer may not fully understand the blast radius, and make dangerous configurations hard by default.
 
@@ -236,7 +236,7 @@ The trust infrastructure trajectory is the inverse. As models become more capabl
 
 Shane puts it: the permissions system is Claude Code's most complex component, not any AI logic. As scaffolding shrinks, that component remains and grows. The hardest part of deploying capable agents is not making them smart. It is making them safe.[^scaffolding-trap]
 
-This creates an asymmetry that matters for investment decisions. Organizations that invested in scaffolding as their primary reliability mechanism are now refactoring it away. Organizations that invested in identity, authorization, and audit infrastructure are accumulating something that appreciates as capability grows. The scaffolding trap has a governance analog: investing in prompt-based safety instructions is betting on a layer that models outgrow. Investing in structural constraints (sandboxing, permission scoping, delegation chains) is betting on infrastructure that becomes more valuable as the agents it governs become more capable.
+Organizations that invested in scaffolding as their primary reliability mechanism are now refactoring it away. Organizations that invested in identity, authorization, and audit infrastructure are accumulating something that appreciates as capability grows. The scaffolding trap has a governance analog: investing in prompt-based safety instructions is betting on a layer that models outgrow. Investing in structural constraints (sandboxing, permission scoping, delegation chains) is betting on infrastructure that becomes more valuable as the agents it governs become more capable.
 
 The policy implication: "build governance infrastructure now or later" is not a neutral choice. Later means governing more capable agents with broader blast radii using immature processes. The governance debt compounds alongside the capability gains.
 
