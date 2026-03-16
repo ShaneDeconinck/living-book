@@ -14,7 +14,7 @@ Sovereignty in this context has three distinct meanings, and they are often conf
 
 **Protocol sovereignty** means the agent persists as long as the underlying protocol operates, regardless of what any individual party does. A smart contract on Ethereum runs until every node stops running Ethereum. Its authors can deprecate the interface, but they cannot stop the contract. The execution environment provides continuity that no single actor controls.
 
-Hu and Rong's framework identifies non-overrideability as the core property: sovereign agents inherit the impossibility of unilateral termination from their execution environment.[^sovereign-agents] For TEE deployments, non-overrideability is hardware-enforced. For blockchain deployments, it is consensus-enforced. For protocol-mediated deployments, it is multi-party-enforced: no single party can stop the system because no single party controls it.
+Hu and Rong's framework positions infrastructural sovereignty as the core property: the agent's non-overrideability is not a feature it carries but a condition the execution environment provides, making unilateral termination structurally impossible.[^sovereign-agents] For TEE deployments, non-overrideability is hardware-enforced. For blockchain deployments, it is consensus-enforced. For protocol-mediated deployments, it is multi-party-enforced: no single party can stop the system because no single party controls it.
 
 ## Where PAC Breaks Down
 
@@ -34,7 +34,7 @@ These are not defects of poorly-designed systems. They are properties that sover
 
 The blockchain-native case is the clearest, but not the only one.
 
-**Decentralized finance.** Automated market makers (Uniswap's liquidity pool contracts, Compound's interest rate models, Aave's liquidation engines) execute financial actions continuously, at machine speed, without human authorization per transaction.[^defi] Aave's v3 liquidation engine processed over $2.3 billion in liquidations during the March 2023 stablecoin de-pegging event without a single human-initiated transaction.[^aave] The liquidations were correct by protocol design. They were irreversible by protocol design.
+**Decentralized finance.** Automated market makers (Uniswap's liquidity pool contracts, Compound's interest rate models, Aave's liquidation engines) execute financial actions continuously, at machine speed, without human authorization per transaction.[^defi] Aave's v3 liquidation engine processed liquidations continuously throughout the March 2023 USDC de-pegging event without a single human-initiated transaction.[^aave] The liquidations were correct by protocol design. They were irreversible by protocol design.
 
 **Confidential AI inference.** Organizations handling sensitive data increasingly deploy inference workloads in TEEs: legal discovery agents, medical record summarization, financial analysis.[^confidential-ai] The hospital that deploys a diagnostic agent in an SGX enclave provides a privacy guarantee: even the cloud provider cannot observe the patient data being analyzed. The enclave's non-modifiability is the privacy property. The same design makes the agent difficult to stop, patch, or audit from outside.
 
@@ -46,7 +46,7 @@ The blockchain-native case is the clearest, but not the only one.
 
 Sovereign execution does not eliminate accountability. It relocates it.
 
-When a DeFi liquidation engine processes $2.3 billion in liquidations, the accountable parties are the organizations and individuals who designed the protocol, wrote the code, and deployed it. Their accountability is pre-execution, not concurrent. The question is not "who authorized this liquidation?" but "who designed a system that would execute this liquidation under these conditions, and were they authorized to deploy such a system?"
+When a DeFi liquidation engine processes liquidations at machine speed across a market crisis, the accountable parties are the organizations and individuals who designed the protocol, wrote the code, and deployed it. Their accountability is pre-execution, not concurrent. The question is not "who authorized this liquidation?" but "who designed a system that would execute this liquidation under these conditions, and were they authorized to deploy such a system?"
 
 This is not weaker accountability. It is earlier accountability. And it has different implications for governance.
 
@@ -110,12 +110,12 @@ The sovereign agent pattern is not a failure of the accountability architecture.
 
 [^tee]: Intel SGX Developer Guide; AWS Nitro Enclaves documentation. TEE attestation provides cryptographic proof of code identity at execution time without revealing execution contents.
 
-[^sovereign-agents]: Hu, Y. and Rong, C., "Sovereign Agents: Decentralized AI Agents with Non-Overrideability," 2024. Framework for agents whose continuity and non-overrideability is inherited from decentralized execution environments.
+[^sovereign-agents]: Hu, B. and Rong, H., "Sovereign Agents: Towards Infrastructural Sovereignty and Diffused Accountability in Decentralized AI," arXiv:2602.14951, February 2026 (FAccT 2026). Framework for agents whose continuity and accountability properties are inherited from decentralized execution environments.
 
 [^euaia]: EU AI Act, Regulation (EU) 2024/1689, Articles 9 and 16. High-risk AI system deployers carry obligations for risk management, transparency, and corrective action that persist post-deployment.
 
 [^defi]: DeFi protocol mechanics are documented in respective protocol whitepapers. Uniswap v3 whitepaper; Compound Protocol Specification; Aave v3 Technical Paper.
 
-[^aave]: Aave protocol liquidation data, March 2023. On-chain records are publicly verifiable via Etherscan and Aave analytics dashboards.
+[^aave]: Aave protocol liquidation activity during the March 2023 USDC de-pegging event. On-chain records are publicly verifiable via Etherscan and Aave analytics dashboards. Specific aggregate figures vary by methodology; the point is the protocol's automated execution without human intervention.
 
 [^confidential-ai]: Confidential computing use cases for AI: Intel Project Amber; Azure Confidential Computing; AMD SEV-SNP documentation. Adoption is concentrated in healthcare, legal, and financial services.
