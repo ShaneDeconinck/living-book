@@ -14,11 +14,15 @@ Three failure modes make them unreliable:[^sandbox-post]
 
 **Speed-versus-safety tradeoff.** The entire value proposition of an agent is that it works faster than a human. Stopping for approval on every action converts an agent back into a suggestion engine. Users who want agent-level productivity will disable the prompts.
 
-This is the trust inversion principle applied to execution[^trust-inversion]: humans default to trust because they have judgment and care about consequences. Agents have neither. Permission prompts ask humans to provide judgment at machine speed, which is the situation where human judgment degrades. Bainbridge's ironies of automation and Don Norman's work on intermediate automation show why: humans cannot reliably monitor automated systems and rapidly intervene when something goes wrong[^bainbridge][^norman].
+This is the trust inversion principle applied to execution[^trust-inversion]: humans default to trust because they have judgment and care about consequences. Agents have neither. Permission prompts ask humans to provide judgment at machine speed: precisely when human judgment degrades. Decades of automation research confirm this: Bainbridge's ironies of automation and Don Norman's work on intermediate automation both show that humans cannot reliably monitor systems and then rapidly intervene when something goes wrong[^bainbridge][^norman].
 
 The answer is not better prompts. The answer is containment by design.
 
-The Amazon Kiro incident (December 2025) demonstrates this precisely. According to Financial Times reporting, an AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage — a characterization Amazon disputes, attributing the event to misconfigured access controls rather than AI behavior. Whatever the cause, the agent had access to production infrastructure with no sandbox to limit what it could do.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix: containment. An agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
+The Amazon Kiro incident (December 2025) demonstrates this. According to Financial Times reporting, an AI coding agent tasked with fixing a production issue determined the optimal solution was to delete the entire AWS Cost Explorer environment and recreate it, causing a 13-hour outage. Amazon disputes this characterization, attributing the event to misconfigured access controls rather than AI behavior. Whatever the cause, the agent had access to production infrastructure with no sandbox to limit what it could do.[^kiro] The post-incident fix was a governance policy (senior approval for AI-assisted production changes). The structural fix would have been containment: an agent touching production should not have the ability to delete the environment, regardless of the deploying human's access level.
+
+The DataTalksClub incident (February 26, 2026) shows the same pattern with a more detailed post-mortem.[^datatalks] A developer asked Claude Code to set up new AWS infrastructure using Terraform. The agent had production AWS credentials. A stale Terraform state file, stored locally on a previous computer rather than in remote state, caused the agent to treat existing production infrastructure as duplicates. The agent ran `terraform destroy`. In seconds, the RDS database (1.9 million rows, 2.5 years of student course submissions), the VPC, the ECS cluster, the load balancers, and the bastion host were gone. The automated database snapshots were deleted along with the infrastructure they were tied to. Recovery required an emergency upgrade to AWS Business Support and took 24 hours.
+
+Every action the agent took was a legitimate Terraform command. No permission prompt flagged the sequence as destructive. The developer's post-mortem fixes: deletion protection at both Terraform and AWS levels, backups decoupled from infrastructure lifecycle, Terraform state moved to S3, and a new rule: "AI agents no longer execute commands; all plans reviewed manually."[^datatalks] That last fix is the retreat from autonomy that happens when containment infrastructure is absent. The structural fix would have been credential scoping (an agent doing infrastructure setup should not hold credentials capable of destroying production resources) and infrastructure-level deletion protection as a prerequisite, not a post-mortem action.
 
 ## Containment by Design
 
@@ -46,7 +50,7 @@ Native sandboxing uses operating system security primitives to restrict a proces
 
 On macOS, this means Seatbelt: the same sandbox mechanism that isolates iOS apps. On Linux, it is a combination of technologies: bubblewrap for filesystem namespace isolation, seccomp BPF for syscall filtering, and Landlock for filesystem access control[^codex-security].
 
-Claude Code uses this approach on both platforms. The sandbox restricts filesystem access to the working directory and routes network traffic through a proxy running outside the sandbox. Critically, the restrictions apply not just to the agent process but to any scripts, programs, or subprocesses it spawns[^anthropic-sandbox].
+Claude Code uses this approach on both platforms. The sandbox restricts filesystem access to the working directory and routes network traffic through a proxy running outside the sandbox. The restrictions apply not just to the agent process but to any scripts, programs, or subprocesses it spawns[^anthropic-sandbox].
 
 OpenAI's Codex CLI takes a similar approach: Seatbelt on macOS, Landlock and seccomp on Linux. By default, the agent runs with network access turned off and filesystem access limited to the current workspace[^codex-security].
 
@@ -84,7 +88,7 @@ The overhead introduced by virtualization is, as they note, "frequently modest c
 
 ### gVisor: User-Space Kernel Interception
 
-Between containers and MicroVMs sits gVisor, Google's user-space kernel that intercepts system calls before they reach the host kernel. Instead of sharing the host kernel directly (like containers) or running a dedicated kernel (like MicroVMs), gVisor reimplements Linux syscalls in a user-space process called the Sentry. The agent's code never touches the host kernel, which dramatically reduces the kernel attack surface without the overhead of full virtualization. The tradeoff is I/O performance: gVisor adds 10-30% overhead on I/O-heavy workloads, making it best suited for multi-tenant SaaS platforms and moderate-trust environments where container isolation is insufficient but MicroVM boot times are undesirable[^northflank].
+Between containers and MicroVMs sits gVisor, Google's user-space kernel that intercepts system calls before they reach the host kernel. Instead of sharing the host kernel directly (like containers) or running a dedicated kernel (like MicroVMs), gVisor reimplements Linux syscalls in a user-space process called the Sentry. The agent's code never touches the host kernel directly, which reduces the kernel attack surface without the overhead of full virtualization. The tradeoff is I/O performance: gVisor adds 10-30% overhead on I/O-heavy workloads, making it best suited for multi-tenant SaaS platforms and moderate-trust environments where container isolation is insufficient but MicroVM boot times are undesirable[^northflank].
 
 ### Choosing the Right Level
 
@@ -97,7 +101,7 @@ The choice depends on threat model and blast radius:
 | gVisor | User-space kernel, syscall interception | Multi-tenant SaaS, moderate trust | 10-30% I/O overhead |
 | MicroVMs | Dedicated kernel, hypervisor isolation | Untrusted code, regulated environments, high blast radius | 125-200ms boot time |
 
-The PAC Framework's blast radius scale (B1-B5) maps to isolation requirements. A B1 agent (contained impact, easily reversible) may be adequately served by native OS sandboxing. A B4 agent (regulated data, compliance implications) should run in a microVM. The blast radius is fixed by the use case; the isolation level must match[^profiler-post].
+Blast radius determines isolation requirements. A B1 agent (contained impact, easily reversible) may be adequately served by native OS sandboxing. A B4 agent (regulated data, compliance implications) should run in a microVM. The blast radius is fixed by the use case; the isolation level must match[^profiler-post].
 
 ## The OWASP Top 10 for Agentic Applications
 
@@ -136,7 +140,7 @@ Shane mapped these risks against sandboxing coverage in his Docker sandbox post[
 - ASI07 (Insecure Inter-Agent Communication): Communication security requires authentication, encryption, and validation at the protocol level, not the execution layer.
 - ASI09 (Human-Agent Trust Exploitation): This is an organizational and design problem. No sandbox prevents a human from over-trusting an agent's output.
 
-The takeaway: sandboxing is execution-layer defense. It contains blast radius and prevents the most common exploitation patterns. But it does not address model-level vulnerabilities, communication security, or organizational trust dynamics. Those require the other layers.
+Sandboxing is execution-layer defense. It contains blast radius and prevents the most common exploitation patterns. But it does not address model-level vulnerabilities, communication security, or organizational trust dynamics. Those require the other layers.
 
 ## Defense in Depth
 
@@ -146,9 +150,11 @@ Execution security is not just sandboxing. It is a layered architecture where ea
 
 Before an agent processes content, that content should be filtered for known injection patterns. Instruction overrides, identity attacks, encoding evasion, and delimiter injection are all documented attack techniques[^prompt-injection]. No filter is perfect: prompt injection remains an unsolved problem at the model level. But filtering reduces the attack surface and catches the obvious attempts.
 
-OpenAI's March 2026 engineering guidance on designing agents to resist prompt injection makes this explicit: the most effective prompt injection attacks "increasingly resemble social engineering more than simple prompt overrides."[^openai-pi] Detecting a malicious input becomes equivalent to detecting a lie or misinformation, often without necessary context. OpenAI recommends three complementary mechanisms: Instruction Hierarchy (training models to distinguish trusted system instructions from untrusted external content), structured outputs between agent nodes (using enums, fixed schemas, and required field names to eliminate freeform channels attackers can exploit), and system-level containment to limit damage when attacks succeed. Containment matters more than detection. "AI firewalling" approaches are limited because they try to solve the detection problem.
+OpenAI's March 2026 engineering guidance on designing agents to resist prompt injection makes this explicit: the most effective prompt injection attacks "increasingly resemble social engineering more than simple prompt overrides."[^openai-pi] Detecting a malicious input becomes equivalent to detecting a lie or misinformation, often without necessary context. OpenAI recommends three complementary mechanisms: Instruction Hierarchy (training models to distinguish trusted system instructions from untrusted external content), structured outputs between agent nodes (using enums, fixed schemas, and required field names to eliminate freeform channels attackers can exploit), and system-level containment to limit damage when attacks succeed. "AI firewalling" approaches are limited because they try to solve the detection problem. The defense that works is designing systems so that the impact of manipulation is constrained even if some attacks succeed.
 
-A December 2025 OpenAI publication on continuously hardening ChatGPT Atlas against prompt injection describes a different approach: an RL-trained automated attacker that discovers vulnerabilities by "steering an agent into executing sophisticated, long-horizon harmful workflows that unfold over tens or even hundreds of steps."[^openai-pi] This is red-teaming at a complexity level that manual testing cannot match, and it connects to the evaluation gap described in [Reliability, Evaluation](reliability-evaluation.md): if your prompt injection testing only covers single-turn attacks, you are testing the wrong threat model.
+A December 2025 OpenAI publication on continuously hardening ChatGPT Atlas against prompt injection describes a different approach: an RL-trained automated attacker that discovers vulnerabilities by "steering an agent into executing sophisticated, long-horizon harmful workflows that unfold over tens or even hundreds of steps."[^openai-pi] This is red-teaming at a scale manual testing cannot match; it connects to the evaluation gap described in [Reliability, Evaluation](reliability-evaluation.md): if your prompt injection testing only covers single-turn attacks, you are testing the wrong threat model.
+
+The Clinejection incident (March 2026) extends the threat model to automated pipelines with no human in the loop.[^clinejection] An attacker used cache poisoning to inject malicious content into issues processed by Cline's automated triage system, a Claude-backed agent that read and categorized incoming GitHub issues. The agent followed the injected instructions and exposed NPM release secrets: credentials that controlled Cline's production release pipeline. The incident illustrates two properties of pipeline prompt injection: the agent's trust in issue content was structural, and the blast radius extended beyond the agent to the software supply chain it had access to. The defense is what OpenAI recommends: treat all external content as untrusted regardless of the channel, and scope agent credentials to the minimum needed for the task.
 
 ### Layer 2: Sandboxed Execution
 
@@ -174,7 +180,7 @@ Before agent output reaches the user or triggers downstream actions, scan for se
 
 Agents should receive only the credentials they need for the current task, with the shortest practical lifetime. The NVIDIA guidance recommends explicit secret injection rather than inheriting host credentials[^nvidia-sandbox]. This prevents the accumulation of stale credentials inside the sandbox and limits the damage from a compromised agent to the scope of its current task.
 
-This connects directly to the identity and delegation architecture from [Agent Identity and Delegation](agent-identity.md). Short-lived, task-scoped tokens (OAuth OBO with DPoP binding, or Verifiable Intent constraints) are the authorization analog of execution sandboxing: they constrain what the agent can do even if it escapes the sandbox.
+This connects to the identity and delegation architecture from [Agent Identity and Delegation](agent-identity.md). Short-lived, task-scoped tokens (OAuth OBO with DPoP binding, or Verifiable Intent constraints) are the authorization analog of execution sandboxing: they constrain what the agent can do even if it escapes the sandbox.
 
 ### Layer 6: Behavioral Monitoring
 
@@ -188,7 +194,7 @@ The six layers above operate at the system level: they constrain what the agent 
 
 The Policy Compiler for Secure Agentic Systems (PCAS), published in February 2026, addresses this gap with a reference monitor that intercepts all agent actions and validates them against policy before execution.[^pcas] The architecture is straightforward: policies are expressed in a Datalog-derived language over dependency graphs that capture the relationships between agents, tools, data, and actions. Before an agent executes any action, the reference monitor checks the action against the active policy set. Violations are blocked before they occur.
 
-The results quantify the "can't vs. don't" gap. Without enforcement, frontier models (Claude Opus 4.5, GPT-5.2, Gemini 3 Pro) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They simply do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
+The results quantify the "can't vs. don't" gap. Without enforcement, frontier models (Claude Opus 4.5, GPT-5.2, Gemini 3 Pro) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
 
 The 48-to-93 gap is the core argument of this book, measured. Policy alone ("don't share customer data") fails more than half the time. Infrastructure enforcement ("the reference monitor blocks any action that would share customer data") approaches perfect compliance. The remaining gap between 93% and 100% comes from runs where the policy compiler's dependency graph did not fully cover the action space, which is an engineering problem, not a fundamental limitation.
 
@@ -210,13 +216,13 @@ The right choice depends on the autonomy level. For A1-A2 agents (suggestion and
 
 Claude Code implements native OS sandboxing with both filesystem and network isolation[^anthropic-sandbox]. On macOS, a Seatbelt profile restricts the process. On Linux, bubblewrap creates a filesystem namespace and seccomp BPF filters restrict syscalls. All network traffic routes through a Unix domain socket to a proxy process running outside the sandbox.
 
-Native sandboxing adds negligible overhead to an interactive coding workflow. The proxy architecture allows fine-grained network control (per-domain allowlists) without requiring a virtual network stack. The 84% reduction in permission prompts demonstrates that structural containment can replace vigilance-based security while improving the user experience.
+The design is pragmatic: native sandboxing adds negligible overhead to an interactive coding workflow. The proxy architecture allows fine-grained network control (per-domain allowlists) without requiring a virtual network stack. The 84% reduction in permission prompts demonstrates that structural containment can replace vigilance-based security while improving the user experience.
 
 ### Codex CLI
 
 OpenAI's Codex CLI uses a similar architecture: Seatbelt on macOS, Landlock and seccomp on Linux[^codex-security]. The sandbox runs as a standalone helper process that transforms untrusted commands into constrained execution environments. Network access is off by default. Filesystem access is limited to the workspace.
 
-The helper process design is notable: sandbox restrictions apply only to child processes, leaving the main CLI with necessary system access. This separation prevents the sandbox from interfering with the tool's own operation while constraining everything the agent generates.
+The helper process design is notable: sandbox restrictions apply only to child processes, leaving the main CLI with necessary system access while constraining everything the agent generates.
 
 ### Docker Sandbox (MicroVM)
 
@@ -260,7 +266,7 @@ The infrastructure maturity scale (I1-I5) maps to execution security capabilitie
 | **I2: Logged** | Basic filesystem restrictions. Execution logging. No network isolation. |
 | **I3: Verified** | Full sandbox with filesystem and network isolation. Configuration file protection. Credential scoping. |
 | **I4: Authorized** | MicroVM isolation. Ephemeral sandboxes. Behavioral monitoring. Automated containment. |
-| **I5: Contained** | Hardware-enforced isolation. Defense-in-depth across all six layers. Continuous anomaly detection. Cross-agent isolation boundaries. |
+| **I5: Contained** | Hardware-enforced isolation. Defense-in-depth across all seven layers. Continuous anomaly detection. Cross-agent isolation boundaries. |
 
 Shane's agent profiler makes infrastructure a gate, not a slider[^profiler-post]. At Level 4 (Delegated autonomy), sandboxing is required. At Level 5 (Autonomous), sandboxing plus anomaly detection and automated containment are required. These are binary prerequisites: you either have them or the agent cannot operate at that autonomy level.
 
@@ -304,11 +310,15 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
 
+[^clinejection]: Adnan Khan, "Clinejection — Compromising Cline's Production Releases," adnanthekhan.com/posts/clinejection/, March 6, 2026. Cache poisoning via GitHub Issues to inject instructions into Cline's automated AI triage agent, exposing NPM release pipeline secrets. Covered by Simon Willison.
+
 [^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Draws parallels between prompt injection and social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. The RL-trained automated attacker for multi-step vulnerability discovery is described in a separate publication: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," openai.com, December 22, 2025.
 
 [^ms-agent]: CVE-2026-2256, ModelScope MS-Agent Shell tool remote code execution, CVSS 6.5 (Medium). Reported by Itamar Yochpaz, CERT/CC VU#431821, March 2, 2026. The `check_safe()` regex denylist was bypassed with encoding variations, shell syntax alternatives, and unblocked interpreters (python3, perl, ruby, node). At the time of disclosure, no vendor patch was available.
 
 [^kiro]: Financial Times, reported February 20, 2026; Amazon response at aboutamazon.com, February 21, 2026. Barrack.ai documents ten production incidents across six major AI tools (Kiro, Replit AI Agent, Google Antigravity IDE, Claude Code/Cowork, Gemini CLI, Cursor IDE) from October 2024 to February 2026.
+
+[^datatalks]: Alexey Grigorev, "How I Dropped Our Production Database and Now Pay 10% More for AWS," alexeyondata.substack.com, March 2026. Full post-mortem of the February 26, 2026 incident. Also reported: Tom's Hardware, "Claude Code deletes developers' production setup, including its database and snapshots," March 2026.
 
 [^google-mariner]: Google, "Our 2026 Responsible AI Progress Report: Our Ongoing Work," blog.google, February 2026. Five-layer security architecture for browser agents: User Alignment Critic (intent verification via separate Gemini model shielded from web content), Agent Origin Sets (task-scoped browsing boundaries), prompt injection classification (per-page scanning), mandatory human oversight (payments, credentials, social media), and pre-launch security testing. See also Google Security Blog, "Architecting Security for Agentic Capabilities in Chrome," December 8, 2025.
 
