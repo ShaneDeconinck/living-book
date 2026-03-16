@@ -10,6 +10,10 @@
 # Potential
 
 - [Reliability, Evaluation, and the Complacency Trap](chapters/reliability-evaluation.md)
+  - [The Benchmark Landscape](chapters/reliability-evaluation.md#the-benchmark-landscape)
+  - [The Complacency Trap](chapters/reliability-evaluation.md#the-complacency-trap)
+  - [From "Human in the Loop" to Infrastructure in the Loop](chapters/reliability-evaluation.md#from-human-in-the-loop-to-infrastructure-in-the-loop)
+  - [What to Do](chapters/reliability-evaluation.md#what-to-do)
 - [Context Infrastructure](chapters/context-infrastructure.md)
   - [The Scaffolding Trap](chapters/context-infrastructure.md#the-scaffolding-trap)
   - [Five Dimensions of Context Infrastructure](chapters/context-infrastructure.md#five-dimensions-of-context-infrastructure)
