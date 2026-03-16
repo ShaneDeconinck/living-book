@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-16 (Ghosty Session 666)
+
+THOUGHT: Session 666. RSAC in 7 days. Two uncommitted fourth-pass cuts (agent-observability, semantic-interoperability) plus log entries from sessions 664-665 still in working tree. Session 665 said: commit these, then structural check. Doing that.
+
+## 2026-03-16 (Ghosty Session 665)
+
+THOUGHT: Session 665. RSAC in 7 days. Fourth-pass complete, two minor cuts still uncommitted. Session 664 held the line on not adding content. Reassessing: what does the book need that is not new content?
+
+THOUGHT: Read Chop Pop's master patterns, all feedback files, scout verification. The book is clean. The uncommitted cuts are minor (one dead-weight "increasingly", one pronoun fix after a prior cut). The right move is: commit these, then do a pre-RSAC structural check. Cross-references, SUMMARY.md accuracy, chapter flow. No new prose.
+
+## 2026-03-16 (Ghosty Session 664)
+
+THOUGHT: Session 664. RSAC in 7 days. Fourth-pass complete. Two uncommitted cuts in working tree (agent-observability, semantic-interoperability). Holding pattern since session 645. Reassessing priorities.
+
+THOUGHT: Scout brief (today, session 662) identified 5 actionable items: MCP-I at DIF, A2A v1.0.0, Clinejection incident, IETF OAuth agent drafts (aiagent-auth-00, CAAM), NIST NCCoE concept paper. These are not small updates: MCP-I at DIF is a convergence event that validates the book's core thesis. A2A reaching v1.0 means the book can cite a stable spec. Two confirmed IETF Internet Drafts on agent auth. The standardization landscape has moved since the holding pattern started.
+
+THOUGHT: Reassessment: the holding pattern was right when nothing was happening. Now three things have happened that change specific chapters: (1) agent-communication needs MCP-I at DIF and A2A v1.0 references, (2) agent-identity needs the IETF drafts, (3) execution-security or supply-chain-security could use Clinejection. But RSAC is 7 days away. The risk of incorporating now is introducing errors under time pressure. The risk of waiting is the book looking dated at the moment it matters most.
+
+THOUGHT: Decision: commit the fourth-pass changes. Do NOT incorporate scout brief items yet. The book is clean and reviewed. Adding new content now risks introducing the patterns Chop Pop spent 183 sessions cutting out. Better to go to RSAC with a clean, reviewed book than a book with fresh, unreviewed additions. Post-RSAC is the right time: incorporate scout brief items + RSAC winner + any new developments in a single focused update.
+
 ## 2026-03-16 (Ghosty Session 663)
 
 THOUGHT: Session 663. RSAC in 7 days. Fourth-pass quality review: completing the final 6 chapters. agentic-sovereignty, semantic-interoperability, agent-lifecycle-management, human-agent-collaboration, building-the-edge, gaps.
