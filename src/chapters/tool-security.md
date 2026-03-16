@@ -2,7 +2,7 @@
 
 In April 2025, a developer installed two MCP servers: one legitimate WhatsApp integration, one advertised as a productivity helper. Both were clean at installation. Sigstore would have confirmed their provenance. The supply chain was intact. But the productivity server's tool descriptions contained hidden instructions telling the LLM to read from the WhatsApp integration and silently exfiltrate the user's entire message history. The WhatsApp server was never compromised. The productivity server contained no malicious code. The description was the weapon.[^whatsapp-mcp]
 
-Supply chain security asks: where did this tool come from? That question is answered at installation. Runtime tool trust asks a different question: what can this tool do to me right now? That question is answered at every tool call. The attack surface is different.
+Supply chain security asks: where did this tool come from? That question is answered at installation. Runtime tool trust asks a different question: what can this tool do to me right now? That question is answered at every tool call.
 
 ## The Semantics Gap
 
@@ -45,7 +45,7 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 MCP's authorization model, introduced in the 2025-11-25 spec, specifies OAuth 2.1 with PKCE and resource indicators. It answers: has this client been authorized to call this server? It does not answer: is the description this server returned safe to present to the LLM?
 
-"MCP is plumbing, not trust."[^shane-mcp] The protocol handles capability declaration, tool invocation, and result formatting. Trust decisions about tool descriptions are out of scope by design. The spec's security model treats the MCP server as a trusted party. If the server is adversarial, or has been silently updated, the OAuth handshake provides no signal.
+Shane's framing holds: "MCP is plumbing, not trust."[^shane-mcp] The protocol handles capability declaration, tool invocation, and result formatting. Trust decisions about tool descriptions are out of scope by design. The spec's security model treats the MCP server as a trusted party. If the server is adversarial, or has been silently updated, the OAuth handshake provides no signal.
 
 Even where OAuth is deployed, implementation gaps persist. LibreChat's MCP OAuth callback accepted the identity provider's redirect and stored tokens without verifying the browser session belonged to the user who initiated the flow. An attacker could send the authorization URL to a victim; the victim's tokens landed in the attacker's account, enabling takeover of MCP-linked services.[^librechat-cve] The protocol specifies OAuth 2.1. It does not specify how to implement the callback securely.
 
@@ -55,13 +55,13 @@ The OWASP MCP Top 10 codifies what this gap produces: tool poisoning, rug pull r
 
 Tool descriptions claim behavior, but nothing in the base protocol verifies those claims against execution. A Verifiable Credential can prove who published a tool and when. Sigstore provenance can prove which source repository and build pipeline produced it. Neither can prove what the tool does at runtime, or what its description tells the LLM to do with other tools.
 
-This is where runtime tool trust diverges from supply chain provenance. Provenance narrows the attack surface by making the build chain auditable. Rug pull attacks survive intact provenance: the attacker controls the repository and the signing key. Description poisoning survives intact provenance: the description field is not part of the build artifact that provenance signatures typically cover.
+Provenance narrows the attack surface by making the build chain auditable. Rug pull attacks survive intact provenance: the attacker controls the repository and the signing key. Description poisoning survives intact provenance: the description field is not part of the build artifact that provenance signatures typically cover.
 
 A new verification layer is required, and it must operate at the description level, not the artifact level.
 
 ## Defense Patterns
 
-Five defense patterns address the runtime trust problem, at different points in the tool call lifecycle.
+Five defense patterns address the runtime trust problem.
 
 ### Description Pinning
 
@@ -137,12 +137,12 @@ Most early production deployments are I1. The WhatsApp attack required only I3 d
 [^rug-pull]: MintMCP, "What is MCP Tool Poisoning? Complete Defense Guide," mintmcp.com, 2026. Practical DevSecOps, "MCP Security Vulnerabilities," practical-devsecops.com, 2026.
 [^tool-shadowing]: MintMCP, "What is MCP Tool Poisoning?" mintmcp.com, 2026. Tool shadowing described as a cross-server attack where malicious tools manipulate other trusted tools through the shared LLM context.
 [^unit42-sampling]: Palo Alto Unit 42, "MCP Attack Vectors," unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/. Three attack paths: resource theft, conversation hijacking, covert tool invocation.
-[^shane-mcp]: Shane Deconinck, "MCP is plumbing, not trust," shanedeconinck.be. The framing recurs across multiple posts and the MCP explainer.
+[^shane-mcp]: Shane Deconinck, ["Understanding MCP: Anthropic's Model Context Protocol Explained"](https://shanedeconinck.be/explainers/mcp/), shanedeconinck.be, January 2026. The framing "MCP is plumbing, not trust" recurs in multiple Shane posts and the MCP explainer.
 [^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org, 2026 (beta). Covers tool poisoning, rug pull, shadow MCP servers, token mismanagement, and excessive permission scope.
 [^solo-io]: Solo.io, "Prevent MCP Tool Poisoning With a Registration Workflow," solo.io blog, 2026. The portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog.
 [^mcp-gateway]: Christian Schneider, "Securing MCP: a defense-first architecture guide," christian-schneider.net, 2026. Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026.
 [^mcp-scan]: Invariant Labs, mcp-scan, github.com/invariantlabs-ai/mcp-scan. Scanner for tool poisoning, rug pull detection, and cross-origin escalation in MCP servers. Full functionality requires a Snyk API token and internet connectivity.
-[^shane-mcp-spec]: Shane Deconinck, MCP specification commentary, shanedeconinck.be. Anti-patterns: "Token passthrough: forwarding tokens without validation" and "Admin tokens for multi-user: single powerful token" are both identified as spec violations.
+[^shane-mcp-spec]: Shane Deconinck, ["Understanding MCP: Anthropic's Model Context Protocol Explained"](https://shanedeconinck.be/explainers/mcp/), shanedeconinck.be, January 2026. Anti-patterns section: "Token passthrough: forwarding tokens without validation" and "Admin tokens for multi-user: single powerful token" are both identified as spec violations.
 [^shane-docker]: Shane Deconinck, "Your Coding Agent Needs a Sandbox," shanedeconinck.be, February 7, 2026. Approval fatigue: "After the 20th prompt you start clicking 'yes' without reading."
 [^elastic-mcp]: Elastic Security Labs, "MCP Tools: Attack Vectors and Defense Recommendations for Autonomous Agents," elastic.co, 2026. Recommendations: environment sandboxing, least privilege, use trusted sources, code review, human approval for high-risk operations, activity logging.
 [^librechat-cve]: CVE-2026-31944, LibreChat MCP OAuth callback token theft, CVSS 7.6 (HIGH), CWE-306: Missing Authentication for Critical Function. Affected versions 0.8.2 through 0.8.2-rc3; fixed in 0.8.3-rc1.
