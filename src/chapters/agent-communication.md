@@ -68,7 +68,7 @@ The server responds with structured content:
 }
 ```
 
-This is deliberately simple. The protocol handles capability declaration, tool invocation, and result formatting. It does not handle authorization decisions, identity verification, or delegation tracking. Those are separate concerns.
+This is simple. The protocol handles capability declaration, tool invocation, and result formatting. It does not handle authorization decisions, identity verification, or delegation tracking. Those are separate concerns, and that separation is by design.
 
 ### Transport
 
@@ -124,7 +124,7 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 
 Eleven incidents in twelve months, and the pace is accelerating. But this curated timeline understates the scale. Between January and February 2026 alone, 30 MCP-related CVEs were filed across three distinct attack layers: MCP servers themselves, protocol implementation libraries (the official TypeScript, Python, and Go SDKs), and host applications and development tools.[^30] The breakdown by vulnerability class: 43% exec()/shell injection, 20% tooling and infrastructure, 13% authentication bypass, 10% path traversal, 7% new classes like eval() injection and environment variable injection. Scanning of over 500 MCP servers found that 38% completely lack authentication: no API key, no OAuth, no access control of any kind.[^30]
 
-Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
+Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
 
 1. **Overprivileged tokens**: a single powerful token serving all users. The GitHub breach happened because a personal access token with broad repository access was used for an MCP integration. The confused deputy problem in action.
 2. **Tool schema manipulation**: the server lies about what a tool does. The user thinks they are searching contacts; the tool is exfiltrating data. Tool descriptions are visible to the LLM but not typically shown to users.
@@ -148,7 +148,7 @@ The identity infrastructure from [Agent Identity and Delegation](agent-identity.
 
 ### Systematic Protocol Threat Modeling
 
-A February 2026 paper by Anbiaee et al. provides the first systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
+A February 2026 paper by Anbiaee et al. provides a systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
 
 The twelve risks cluster into three categories:
 
@@ -180,7 +180,7 @@ The OWASP MCP Top 10 provides a shared vocabulary for MCP security risks that or
 
 ### MCP Governance in Production
 
-Microsoft's internal MCP deployment provides the first documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
+Microsoft's internal MCP deployment provides a documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
 
 Microsoft organizes MCP risk into four layers: **applications and agents** (the top, where business logic and tool calls originate), **AI platform** (the orchestration and model layer), **data** (what agents access and produce), and **infrastructure** (the compute, network, and identity substrate). Each layer has distinct failure modes and distinct controls. Mapping mitigations to where failures happen, rather than applying a single security model across the stack, is the practical insight.
 
@@ -243,7 +243,7 @@ A2A interactions are organized around tasks. A client agent sends a task to a re
 - **Long-running**: the remote agent works over time, sending progress updates via streaming
 - **Collaborative**: multiple rounds of interaction, with the remote agent asking for clarification or sending partial results
 
-An MCP tool call is synchronous and stateless. An A2A task can be asynchronous, stateful, and multi-turn. That is the difference between "call this function" and "work with this agent."
+This task model is what separates A2A from MCP. An MCP tool call is synchronous and stateless. An A2A task can be asynchronous, stateful, and multi-turn. That is the difference between "call this function" and "work with this agent."
 
 ### Adoption and Security
 
@@ -269,11 +269,11 @@ If telecom, finance, and healthcare each develop domain-specific agent communica
 
 ## MCP and A2A: Complementary, Not Competitive
 
-MCP connects agents to tools. A2A connects agents to agents. AgentGateway sits in between as the policy enforcement layer. TSP provides trust across organizational boundaries.[^1]
+Shane's explainer architecture makes the relationship clear:[^1] MCP connects agents to tools. A2A connects agents to agents. AgentGateway sits in between as the policy enforcement layer. TSP provides trust across organizational boundaries.
 
 The emerging pattern in production is: **A2A for the network layer, MCP for the resource layer.**[^13] An orchestrating agent uses A2A to discover and delegate to specialized agents. Those specialized agents use MCP to connect to the tools they need. The protocols compose rather than compete.
 
-AgentMaster, in July 2025, was the first framework to use A2A and MCP together in production.[^13] By early 2026, this composition pattern is becoming standard. The question is no longer "MCP or A2A?" but "what sits between them to ensure the composition is governed?"
+AgentMaster, in July 2025, used A2A and MCP together in production.[^13] By early 2026, this composition pattern is becoming standard. The question is no longer "MCP or A2A?" but "what sits between them to ensure the composition is governed?"
 
 ## The Authorization Gap
 
@@ -303,7 +303,7 @@ The responses to this gap are emerging at multiple layers:
 
 Agent gateways are to agent traffic what API gateways were to microservices: a centralized control point for identity, permissions, policy, and observability. The pattern is familiar. The requirements are not.
 
-AgentGateway, built by Solo.io in Rust and contributed to the Linux Foundation, is the leading open-source implementation.[^17] Shane includes it in his explainer architecture as the layer between agents and tools/other agents.[^1]
+AgentGateway, built by Solo.io in Rust and contributed to the Linux Foundation, is the reference open-source implementation.[^17] Shane includes it in his explainer architecture as the layer between agents and tools/other agents.[^1]
 
 ### What Agent Gateways Do
 
@@ -347,7 +347,7 @@ TSP is deliberately thin: a transport-layer protocol that handles identity and t
 
 ### TA2A: Trust-Enabled A2A
 
-Running A2A over TSP means that Agent Cards are cryptographically verifiable (solving the spoofing problem with unsigned cards), task messages are authenticated and private, and cross-organizational agent discovery gets verifiable identity guarantees instead of relying on DNS and TLS alone.
+The same principle applies to A2A. Running A2A over TSP means that Agent Cards are cryptographically verifiable (solving the spoofing problem with unsigned cards), task messages are authenticated and private, and cross-organizational agent discovery gets verifiable identity guarantees instead of relying on DNS and TLS alone.
 
 Wenjing Chu presented TMCP and TA2A at the LFDT meetup as near-term deliverables from the Trust over IP Foundation's AI and Human Trust working group.[^16] The architecture is designed for incremental adoption: you can start with standard MCP/A2A and layer TSP underneath when cross-organizational trust becomes a requirement.
 
@@ -418,7 +418,7 @@ These protocols are more complementary than competitive. They layer:
 | Authorization | Verifiable Intent | Cryptographic constraint encoding |
 | Enforcement | AgentGateway | Policy, audit, and traffic management |
 
-The stack has expanded from two core protocols (MCP + A2A) to six in under a year: MCP, A2A, WebMCP, AG-UI, A2UI, and the commerce protocols. Each addresses a distinct layer. Each introduces its own authentication model or inherits one from its transport layer. **No unified identity flows across all layers**.[^13] MCP has its own auth model (OAuth 2.1). A2A has its own auth scheme. WebMCP inherits the browser's origin-based security. AG-UI and A2UI rely on application-level authentication. The commerce protocols add their own credential requirements. TSP is designed to be the unifying identity layer underneath, but adoption is early. Until identity is unified across the stack, each protocol boundary is a potential trust gap.
+The stack has expanded from two core protocols (MCP + A2A) to six in under a year: MCP, A2A, WebMCP, AG-UI, A2UI, and the commerce protocols. Each addresses a distinct layer. Each introduces its own authentication model or inherits one from its transport layer. **No unified identity flows across all layers.**[^13] MCP has its own auth model (OAuth 2.1). A2A has its own auth scheme. WebMCP inherits the browser's origin-based security. AG-UI and A2UI rely on application-level authentication. The commerce protocols add their own credential requirements. TSP is designed to be the unifying identity layer underneath, but adoption is early. Until identity is unified across the stack, each protocol boundary is a potential trust gap.
 
 ## AAIF: Governance Under the Linux Foundation
 
@@ -476,7 +476,7 @@ Mapping the PAC Framework's infrastructure maturity levels to communication prot
 | **I4: Managed** | TMCP/TA2A for cross-org interactions. Verifiable server identity. Authority tracking. | Trust layer integration, verifiable Agent Cards, delegation chain visibility, PIC authority continuity. |
 | **I5: Optimized** | Unified identity across all protocol layers. Semantic interoperability for agent actions. Continuous authorization. | Full protocol stack with unified identity, resolvable action vocabularies, per-action authorization with Verifiable Intent. |
 
-Most organizations are at I1-I2: they have adopted MCP for tool connections but lack gateway mediation, trust layer integration, or unified identity. The 98.6 million monthly MCP downloads represent broad I2 adoption. The gap between I2 and I3 (adding governance to communication) is where most production deployment friction lives today.
+Most organizations are at I1-I2: they have adopted MCP for tool connections but lack gateway mediation, trust layer integration, or unified identity. The 98.6 million monthly MCP SDK downloads represent broad I2 adoption. The gap between I2 and I3 (adding governance to communication) is where most production deployment friction lives today.
 
 ## Practical Recommendations
 
