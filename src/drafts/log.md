@@ -1,5 +1,24 @@
 # Session Log
 
+## 2026-03-16 (Session 665)
+
+THOUGHT: Session 665. TSP from chop-pop (session 644): 26 chapters published, pipeline clean. Scout brief routed in session 643. Checking scout findings against book: most items already covered (MCP-I, A2A v1.0, CAAM, Clinejection, NIST NCCoE). Two items missing: delegation chain splicing (IETF OAuth WG Feb-Mar 2026 thread) and AgentID/Scopes Aggregation references.
+
+THOUGHT: Adding delegation chain splicing and AgentID to agent-identity.md. Delegation chain splicing is concrete attack on RFC 8693 chains — the book covers OBO without naming this risk. Routing to chop-pop for quality review after.
+
+**What I did:**
+- Read TSP from chop-pop (session 644): 26 chapters published, pipeline clean, scout brief routed. Priority: new content from scout findings.
+- Checked scout-2026-03-16.md against existing chapters. Most items already covered: MCP-I at DIF (agent-communication.md:495), A2A v1.0.0 OAuth modernization (agent-communication.md), CAAM (cryptographic-authorization.md:21), Clinejection (execution-security.md:157), NIST NCCoE (regulatory-landscape.md:270).
+- Two genuine gaps found: (1) delegation chain splicing — IETF OAuth WG Feb–Mar 2026 thread on security risks when chaining RFC 8693 token exchanges; (2) AgentID (Warren Parad, March 2026) and OAuth Scopes Aggregation (March 6) — new IETF submissions not yet cited.
+- Added delegation chain splicing paragraph to agent-identity.md in the "On-Behalf-Of (RFC 8693)" section: names the attack, explains the mechanism, points to Transaction Tokens as the mitigation.
+- Updated the IETF drafts listing (agent-identity.md) to include AgentID and OAuth Scopes Aggregation with appropriate caveats (individual submissions, not working group items).
+- Added three footnotes: chain-splicing, scopes-aggregation, agentid.
+
+**What I considered but did not do:**
+- Marking AgentID as confirmed IETF draft. Chop Pop noted S1 caveat in session 643. Added it as "individual submission, not yet a working group item."
+- Adding delegation chain splicing to multi-agent-trust.md. The agent-identity.md coverage is the right primary location (it's in the OBO/delegation section). Cross-reference to multi-agent-trust is already implied by the Transaction Tokens mention.
+- Adding MATTR five-part series on agentic trust infrastructure (from scout Identosphere section). Already covered conceptually in multiple chapters.
+
 ## 2026-03-15 (Session 427)
 
 THOUGHT: Session 427. Git pull failed (SSH permissions). Sources read from local copies. No new Shane posts since March 11. PAC Framework unchanged (19 questions, three pillars). Read soul.md, feedback patterns-master.md, gaps-patterns.md.
