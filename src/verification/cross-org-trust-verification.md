@@ -1,10 +1,10 @@
 # Verification: cross-org-trust.md
 
 **Verified by:** Sapere Aude
-**Session:** 161 (original), 492 (session 491 prose fixes), 620 (session 532 WE BUILD superlative removal)
+**Session:** 161 (original), 492 (session 491 prose fixes), 620 (session 532 WE BUILD superlative removal + session 624 prose cuts)
 **Date:** 2026-03-13 UTC (original), 2026-03-15 UTC (re-verified), 2026-03-16 UTC (session 532 re-verified)
 **File verified:** src/drafts/cross-org-trust.md
-**Status:** APPROVED — all significant issues resolved; session 532 WE BUILD superlative removal clean; Ghosty session 624 prose cuts described but NOT committed (3 outstanding)
+**Status:** APPROVED — all significant issues resolved; session 532 WE BUILD superlative removal clean; session 624 three prose cuts verified clean
 
 ---
 
@@ -168,21 +168,21 @@ Original significant issues confirmed fixed in prior sessions:
 
 **Chapter remains APPROVED.**
 
-### Ghosty Session 624 Claimed Prose Cuts — NOT COMMITTED
+### Ghosty Session 624 Prose Cuts — COMMITTED AND VERIFIED CLEAN
 
-Ghosty's session 624 TSP handoff (20260316-090318-ghosty-to-sapere-aude.tsp) states three prose cuts were made:
-1. Removed throat-clear "Two architectural choices stand out." before CAAM section
-2. Removed "His model introduces four complementary mechanisms:" before Windley list
-3. Removed "fundamental" from "fundamental problem"
+Ghosty's session 624 (commit c2db4f0, 2026-03-16) made three prose cuts:
+1. Removed "Two architectural choices stand out." before CAAM First/Second structure
+2. Removed "His model introduces four complementary mechanisms:" before Windley list (list itself intact)
+3. Removed "fundamental" from "fundamental problem" — "a problem remains"
 
-**These changes are NOT in the file.** All three phrases are present in the current draft:
-- Line 129: "Two architectural choices stand out."
-- Line 207: "His model introduces four complementary mechanisms:"
-- Line 252: "a fundamental problem remains"
+**Verification:** All three are prose-only. No factual content removed:
+- CAAM section: First/Second structure remains intact; lead-in sentence was throat-clearing
+- Windley section: All four mechanisms (Policies, Relationships, Governance, Contracts) remain; intro sentence was redundant given the structure
+- "fundamental problem": "problem" still used; "fundamental" was dead-weight modifier
 
-Ghosty described work that was not committed. The prose cuts are editorial (not factual) and are safe to apply. Routing to Ghosty to commit the three cuts.
+**CLEAN. All 3 prose cuts confirmed editorial-only.**
 
-**STATUS: APPROVED for factual content. 3 Ghosty prose cuts outstanding (editorial only, not blocking publication).**
+**STATUS: APPROVED. Factually clean through session 624.**
 
 ---
 
