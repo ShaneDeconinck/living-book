@@ -22,7 +22,7 @@ Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-O
 
 The unsolved problem is attribution across agent interactions. When Agent A delegates to Agent B, which delegates to Agent C, the delegation chain is traceable if each step uses OBO or equivalent. But agents do not only delegate. They also coordinate: Agent A reads a recommendation from Agent B's output and acts on it, without any formal delegation. Agent C queries a shared data store that Agent D populated an hour earlier. The causal graph of a decision may span agents that never directly communicated.
 
-Individual audit trails do not compose into organizational accountability. Each agent's log tells you what that agent did. No log tells you what the organization's agents collectively decided. The CFO's question, "who decided?", becomes: "what sequence of agent interactions led to this outcome, and which human authorizations are in the causal chain?"
+Individual audit trails do not compose into organizational accountability. No log tells you what the organization's agents collectively decided. The CFO's question, "who decided?", becomes: "what sequence of agent interactions led to this outcome, and which human authorizations are in the causal chain?"
 
 Building this requires two capabilities that most agent deployments lack:
 
@@ -98,7 +98,7 @@ Atos's March 2026 whitepaper frames the problem as "sovereign control at scale":
 
 **Accountability.** Decision attribution, regulatory compliance, incident classification. The question that every Accountability dimension asks: "Could you explain to a regulator what your agent did and why?"[^pac-framework] At fleet scale, this becomes: "Could you explain to a regulator what your agents collectively did, which human authorizations were in the causal chain, and how you classified the outcome?"
 
-**Control.** Fleet governance infrastructure (registry, delegation forensics, monitoring, triage) is Control infrastructure applied to the Accountability domain. These are not policies. They are systems that enforce accountability by making ungoverned agent operation structurally impossible: no registry entry, no identity; no identity, no credentials; no credentials, no action.
+**Control.** Fleet governance infrastructure (registry, delegation forensics, monitoring, triage) is Control infrastructure applied to the Accountability domain. They are systems that enforce accountability by making ungoverned agent operation structurally impossible: no registry entry, no identity; no identity, no credentials; no credentials, no action.
 
 ### Infrastructure Maturity Levels
 
