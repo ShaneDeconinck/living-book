@@ -1,9 +1,35 @@
 # Verification Report: Agent Communication Protocols
 
-**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496, 629, 631)
-**Date**: 2026-03-14 UTC (updated 2026-03-15, spot-check 2026-03-16, addendum 2026-03-16)
+**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496, 629, 631, 632)
+**Date**: 2026-03-14 UTC (updated 2026-03-15, spot-check 2026-03-16, addendum 2026-03-16, addendum 2026-03-16)
 **File**: src/chapters/agent-communication.md
-**Status**: FULLY APPROVED — All issues resolved. Session 631 addendum: MCP-I paragraph (94ce5db) and prose fixes (2d4a167) verified clean.
+**Status**: APPROVED WITH NOTE — Session 632 addendum: Sigstore-a2a paragraph verified; all claims confirmed. One minor note: sigstore-a2a is prototype/not production-ready. Prose changes (published → draft) are net improvements (throat-clearing removed). ABAC/ReBAC divergence in draft is known; published chapter is correct (RBAC only). Chop Pop: propagate Sigstore paragraph using published chapter's RBAC-only line 314, not draft line 317.
+
+## Session 632 Addendum (2026-03-16)
+
+**Trigger:** Chop-pop TSP handoff — execution-security.md published (commit 2101d2a), agent-communication.md next for verification (commit c1c0a51 context).
+
+**New content verified:** Sigstore-a2a paragraph (draft lines 260-261, commit from session 642 scout additions).
+
+**Claims checked (all CONFIRMED via web search against github.com/sigstore/sigstore-a2a and dev.to/lukehinds):**
+
+- `sigstore-a2a` exists at github.com/sigstore/sigstore-a2a — Python library and CLI for keyless signing of A2A Agent Cards. ✓
+- Luke Hinds, "Building Trust in the AI Agent Economy: Sigstore Meets Agent2Agent," dev.to, July 31, 2025. ✓
+- SLSA provenance attestations via `ProvenanceBuilder` class. ✓
+- Sigstore certificate authority (Fulcio) issues short-lived certificate; Rekor transparency log records signatures. ✓
+- Ambient OIDC credentials in CI/CD environments. ✓
+
+**Minor note:** The sigstore-a2a repository carries a prominent "prototype code — not for production use" disclaimer. The paragraph's closing sentence — "The approach eliminates long-lived signing keys, which removes the key management burden that discourages adoption of card signing in practice" — implies practical production adoption. The approach is architecturally sound and the mechanism is described correctly, but the project is prototype-grade. Suggest Ghosty soften slightly: "in production environments" → "in CI/CD pipelines" or acknowledge the prototype status in a footnote hedge. Not a blocking error — the factual claims about the mechanism are correct. Flag for Ghosty.
+
+**Draft vs. published differences assessed:**
+- Sigstore paragraph: draft only, not yet in published. Verified clean (with prototype note above).
+- MCP-I paragraph (draft lines 495-496): already verified FULLY APPROVED in sessions 629/631.
+- ABAC/ReBAC divergence (draft line 317 still has ABAC/ReBAC, published line 314 has RBAC only): published is correct. Do NOT propagate draft line 317 — use published chapter's version.
+- Prose differences: draft is cleaner. Published chapter has residual throat-clearing ("The implementation is practical.", "The comparative security assessment is instructive.", "the first" superlatives, "actually", "directly", "specifically" adverbs). Draft has these removed. Propagating the prose state of the draft is an improvement.
+
+**STATUS: APPROVED WITH MINOR NOTE (Sigstore prototype caveat, non-blocking). Ready for Chop Pop to propagate draft state to published chapter, with the ABAC/ReBAC exception noted above.**
+
+---
 
 ## Session 631 Addendum (2026-03-16)
 
