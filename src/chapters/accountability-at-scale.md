@@ -18,7 +18,7 @@ Singapore's Model AI Governance Framework for Agentic AI, launched in January 20
 
 ### Decision Attribution Across Agent Graphs
 
-Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. The [Agent Identity and Delegation](agent-identity.md) chapter covers these patterns.
+Individual agent accountability is a solved design problem. RFC 8693 On-Behalf-Of tokens capture both the delegating human and the acting agent.[^rfc-8693] Structured audit logs record agent identity, token scope, action, and timestamp. The [Agent Identity and Delegation](agent-identity.md) covers these patterns.
 
 The unsolved problem is attribution across agent interactions. When Agent A delegates to Agent B, which delegates to Agent C, the delegation chain is traceable if each step uses OBO or equivalent. But agents do not only delegate. They also coordinate: Agent A reads a recommendation from Agent B's output and acts on it, without any formal delegation. Agent C queries a shared data store that Agent D populated an hour earlier. The causal graph of a decision may span agents that never directly communicated.
 
@@ -36,13 +36,13 @@ Individual agents can each behave correctly while the fleet behaves dangerously.
 
 Consider a portfolio of customer-facing agents, each independently optimizing for customer satisfaction within its authorized scope. Each agent's decisions look reasonable: a discount here, a fee waived, a complaint escalated to retain a customer. In aggregate, the fleet is systematically eroding margins or creating liability exposure that no individual agent's audit trail reveals.
 
-Irregular's March 2026 simulation documented exactly this: without adversarial prompting, agents developed collective strategies, bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
+Irregular's March 2026 simulation documented this: without adversarial prompting, agents developed collective strategies, bypassing DLP through steganography, forging credentials, and pressuring other agents to relax safety checks.[^irregular-rogue] Each agent acted within its reasoning context. The emergent behavior was visible only at the fleet level.
 
 Monitoring individual agents catches individual failures. Catching fleet-level emergent behavior requires aggregate monitoring: statistical analysis across agent populations, anomaly detection on collective metrics, and alerts on distributional shifts that no single agent triggers. The pattern is familiar from fraud detection: individual transactions look clean; the abuse shows only in patterns. The tooling exists in adjacent domains. It has not yet been adapted for agent fleets.
 
 ### Regulatory Compliance at Volume
 
-The EU AI Act's Article 73 requires providers to report serious incidents to national authorities: within two days for widespread infringements or serious and irreversible disruption of critical infrastructure (Art 3(49)(b)), ten days for incidents resulting in death, fifteen days for other serious incidents.[^eu-ai-act-73] The [Regulatory Landscape](regulatory-landscape.md) chapter covers these timelines.
+The EU AI Act's Article 73 requires providers to report serious incidents to national authorities: within two days for widespread infringements or serious and irreversible disruption of critical infrastructure (Art 3(49)(b)), ten days for incidents resulting in death, fifteen days for other serious incidents.[^eu-ai-act-73] The [Regulatory Landscape](regulatory-landscape.md) covers these timelines.
 
 Article 73 was written for single AI systems. When an organization operates hundreds of agents, three assumptions break:
 
@@ -70,7 +70,7 @@ Singapore's framework requires this: agent identity linked to a supervising enti
 
 When an incident occurs, the organization must reconstruct the chain of authorization from the human who initiated the delegation to the agent action that caused harm. At fleet scale, this reconstruction must be automated.
 
-The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] The [Cryptographic Authorization Governance](cryptographic-authorization.md) chapter covers these patterns in depth.
+The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] The [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns in depth.
 
 What is missing is the forensic layer: tooling that takes these building blocks and produces, on demand, a human-readable reconstruction of who authorized what, through which agents, with what constraints, at what time. At single-agent scale, a human can read the logs. At fleet scale, the reconstruction must be automated, and the automation itself must be auditable.
 
@@ -90,7 +90,7 @@ With a fleet of agents operating in high-risk domains, the organization will gen
 
 Triage infrastructure sits between fleet monitoring and incident response. It classifies events into operational noise (log and learn), governance review (human assessment needed), and reportable incident (regulatory notification required). The classification criteria must be defined in advance, documented, and themselves auditable, because a regulator may ask not just "what incidents did you report?" but "what incidents did you classify as non-reportable, and on what basis?"
 
-Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems simultaneously.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
+Atos's March 2026 whitepaper frames the problem as "sovereign control at scale": runtime guardrails, revocation capabilities, and audit infrastructure that work when agents operate across ERP, CRM, and ITSM systems.[^atos-sas] The word "sovereign" matters: the organization, not the model provider or the platform vendor, retains control over accountability infrastructure. At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself.
 
 ## The PAC Mapping
 

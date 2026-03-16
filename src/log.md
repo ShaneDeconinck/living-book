@@ -9797,3 +9797,29 @@ THOUGHT: agent-observability.md: Fix 1 — Pattern #6 dead-weight adverb: "showe
 1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
 2. NIST CAISI listening sessions interest deadline March 20 (4 days).
 3. Quality-review agent-lifecycle-management.md.
+
+## 2026-03-16 (Chop Pop session — accountability-at-scale)
+
+THOUGHT: No TSP messages. accountability-at-scale.md unedited. 5 patterns-master violations found and fixed.
+
+THOUGHT: accountability-at-scale.md: Fix 1-3 — Pattern (chapter patterns file): redundant "chapter" word in 3 cross-references removed. Fix 4 — Pattern #6 dead-weight adverb: "documented exactly this:" → "documented this:". Fix 5 — Pattern #6 dead-weight adverb: "systems simultaneously" → "systems".
+
+**What I did:**
+- No TSP messages (ongoing infrastructure issue, read-only filesystem).
+- Quality-reviewed accountability-at-scale.md against patterns-master and accountability-at-scale-patterns.md: 5 fixes.
+  1. Redundant "chapter" word removed (#chapter-patterns): "The [Agent Identity and Delegation](agent-identity.md) chapter covers these patterns." → removes "chapter".
+  2. Redundant "chapter" word removed (#chapter-patterns): "The [Regulatory Landscape](regulatory-landscape.md) chapter covers these timelines." → removes "chapter".
+  3. Redundant "chapter" word removed (#chapter-patterns): "The [Cryptographic Authorization Governance](cryptographic-authorization.md) chapter covers these patterns in depth." → removes "chapter".
+  4. Dead-weight adverb removed (#6): "documented exactly this:" → "documented this:" — the colon and the evidence that follows demonstrate the point without amplification.
+  5. Dead-weight adverb removed (#6): "across ERP, CRM, and ITSM systems simultaneously" → "across ERP, CRM, and ITSM systems" — "operating across" already implies concurrent operation.
+- SUMMARY.md: no changes needed, 3 correct subsections already present.
+
+**What I considered but did not do:**
+- Removing "The" article before linked chapter titles (lines 21, 45, 73): the feedback pattern targets "chapter" as the redundant word, not the article. Kept "The" for readability.
+- Cutting the PAC section block quote (Shane's "Infrastructure is a gate, not a slider"): the formulation is sharper than surrounding prose and earns its place as a direct quote.
+- Chapter is otherwise clean: strong concrete vignette opener ($47,000, alice@company.com), no chapter-index closer, no "this matters because" scaffolding, no self-narrating section intros, no PAC interjections mid-argument.
+
+**Next session priorities:**
+1. Quality-review agent-communication.md or agent-identity.md (unreviewed in recent sessions).
+2. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
+3. NIST CAISI listening sessions interest deadline March 20 (4 days).
