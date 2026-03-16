@@ -18,7 +18,7 @@ The pattern escalated. In March 2026, Zenity Labs disclosed PleaseFix: a family 
 
 This matters because our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
 
-Shane put it directly in his writing on this topic: "When agents decide, delegation becomes abdication." The gap between what a user intended and what an agent does is where accountability dissolves.[^1]
+Shane put it directly: "When agents decide, delegation becomes abdication." The gap between what a user intended and what an agent does is where accountability dissolves.[^1]
 
 ## The Confused Deputy, Revisited
 
@@ -28,7 +28,7 @@ Agents make this problem worse in four ways.
 
 First, agents typically receive broad credentials. Shane's analysis of Google's Workspace CLI illustrates the pattern: `gmail.readonly` grants access to every email in your account, forever. When you tell an agent to "help me find one email," the credential it receives allows reading all of them. The agent has more authority than any single task requires, because the credential system was not designed for task-scoped access.[^google-workspace]
 
-Second, agents process untrusted input with trusted credentials. In mid-2025, Supabase's Cursor agent demonstrated this exactly. The agent ran with privileged service-role access to help developers. Support tickets contained user-supplied input. Attackers embedded SQL instructions in those tickets. The agent, operating with full database credentials, processed the instructions as commands and exfiltrated sensitive integration tokens.[^supabase-cursor] The agent was not compromised in the traditional sense: it did what it was designed to do (process support tickets) using the credentials it was given (full database access). The problem was that nobody scoped those credentials to the actual task.
+Second, agents process untrusted input with trusted credentials. In mid-2025, Supabase's Cursor agent demonstrated this exactly. The agent ran with privileged service-role access to help developers. Support tickets contained user-supplied input. Attackers embedded SQL instructions in those tickets. The agent, operating with full database credentials, processed the instructions as commands and exfiltrated sensitive integration tokens.[^supabase-cursor] The agent was not compromised in the traditional sense: it did what it was designed to do (process support tickets) using the credentials it was given (full database access).
 
 The Huntress 2026 Cyber Threat Report documents the scale: identity threats now dominate their incident data, with OAuth abuse more than doubling year-over-year. The report documents campaigns like LangChain CVE-2025-68664, Langflow RCE, and the GTG-1002 campaign where attackers exploited valid NHIs to produce high-impact breaches. The critical finding: the issue was not proving who the identity belonged to. It was constraining what the identity was allowed to do.[^huntress] Long-lived, over-privileged, unowned NHIs with no enforced lifecycle boundaries and no runtime constraints create unmonitored execution paths. Agents inherit this problem and amplify it: a compromised agent acting as a confused deputy operates at machine speed and scale, causing more damage than a traditional attacker with the same credentials.
 
@@ -87,7 +87,7 @@ Google's Cloud Threat Horizons Report (H1 2026) added a dimension the industry h
 
 The defensive side is responding in kind. OpenAI's Codex Security, launched in March 2026, scanned 1.2 million commits across open-source repositories during its beta period, identifying 792 critical and 10,561 high-severity vulnerabilities: an audit velocity no human security team can achieve.[^codex-security] Kai emerged from stealth the same month with $125 million in funding for an agentic AI cybersecurity platform that operates autonomously across threat intelligence, detection, and response.[^kai] The governance challenge is not just "can we trust our agents?" It is: can our defenses operate at the speed adversary agents now move?
 
-The McKinsey Lilli hack brought this home. In March 2026, red-team startup CodeWall turned an AI agent loose on McKinsey's internal AI platform. The agent found publicly exposed API documentation, identified 22 unauthenticated endpoints, and discovered that one of them concatenated JSON keys directly into SQL: a textbook SQL injection vulnerability. Within two hours, the agent had full read-write access to the production database. CodeWall reported 46.5 million chat messages about strategy, mergers and acquisitions, and client engagements, all in plaintext, plus 728,000 confidential files and 57,000 user accounts — McKinsey disputed that any data was actually retrieved.[^codewall-mckinsey] The vulnerability class was decades old. The speed was new. A human penetration tester might have found the same flaw, but not in two hours across 22 endpoints. The deeper problem is what the platform accumulated: McKinsey's 40,000+ employees used Lilli for over 500,000 prompts per month, and the system stored their strategic reasoning and client data in one concentrated target. Agent platforms are not just tools. They are honeypots of organizational intelligence, and adversary agents can crack them at machine speed.
+The McKinsey Lilli hack brought this home. In March 2026, red-team startup CodeWall turned an AI agent loose on McKinsey's internal AI platform. The agent found publicly exposed API documentation, identified 22 unauthenticated endpoints, and discovered that one of them concatenated JSON keys directly into SQL: a textbook SQL injection vulnerability. Within two hours, the agent had full read-write access to the production database. CodeWall reported 46.5 million chat messages about strategy, mergers and acquisitions, and client engagements, all in plaintext, plus 728,000 confidential files and 57,000 user accounts; McKinsey disputed that any data was actually retrieved.[^codewall-mckinsey] The vulnerability class was decades old. The speed was new. A human penetration tester might have found the same flaw, but not in two hours across 22 endpoints. The deeper problem is what the platform accumulated: McKinsey's 40,000+ employees used Lilli for over 500,000 prompts per month, and the system stored their strategic reasoning and client data in one concentrated target. Agent platforms are not just tools. They are honeypots of organizational intelligence, and adversary agents can crack them at machine speed.
 
 The model will keep improving. The infrastructure to deploy it responsibly is what most organizations lack.
 
@@ -111,7 +111,7 @@ None of this is finished. But the direction is clear: agents need their own trus
 
 The OWASP Top 10 for Agentic Applications, released in December 2025 by more than 100 researchers with contributions from NIST, Microsoft's AI Red Team, and others, provides a standardized risk taxonomy for autonomous agents.[^owasp-agentic]
 
-Two principles from the OWASP framework are worth noting. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations.
+**Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. **Strong Observability** is non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations.
 
 The mapping to this book:
 
@@ -132,7 +132,7 @@ The OWASP taxonomy organizes risks by attack surface. The PAC Framework organize
 
 ## MITRE ATLAS: The Attack Technique Library
 
-OWASP organizes by risk: what can go wrong. MITRE ATLAS organizes by adversary technique: how attackers do it. If the OWASP Top 10 for Agentic Applications is the risk taxonomy, ATLAS is the attack playbook.
+MITRE ATLAS organizes by adversary technique: how attackers do it. If the OWASP Top 10 for Agentic Applications is the risk taxonomy, ATLAS is the attack playbook.
 
 MITRE ATLAS (Adversarial Threat Landscape for AI Systems) extends the ATT&CK framework, the industry standard for cyber threat modeling, to AI and machine learning systems. In October 2025, Zenity Labs announced contributions of 14 new attack techniques and sub-techniques specifically targeting AI agents, incorporated into the framework's first 2026 release in January.[^atlas-zenity] The framework now catalogues 15 tactics, 66+ techniques, and 46+ sub-techniques for adversarial AI.
 
