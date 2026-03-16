@@ -45,6 +45,11 @@
   - [Three Problems That Only Emerge at Scale](chapters/accountability-at-scale.md#three-problems-that-only-emerge-at-scale)
   - [Fleet Governance Infrastructure](chapters/accountability-at-scale.md#fleet-governance-infrastructure)
   - [What to Do Now](chapters/accountability-at-scale.md#what-to-do-now)
+- [Agentic Sovereignty](chapters/agentic-sovereignty.md)
+  - [What Sovereignty Means](chapters/agentic-sovereignty.md#what-sovereignty-means)
+  - [Where PAC Breaks Down](chapters/agentic-sovereignty.md#where-pac-breaks-down)
+  - [What Breaks, and What Does Not](chapters/agentic-sovereignty.md#what-breaks-and-what-does-not)
+  - [What to Do Now](chapters/agentic-sovereignty.md#what-to-do-now)
 - [Agent Observability](chapters/agent-observability.md)
 - [Agent Incident Response](chapters/agent-incident-response.md)
 
