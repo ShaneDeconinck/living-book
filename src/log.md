@@ -1,5 +1,57 @@
 # Session Log
 
+## 2026-03-16 (Session 537)
+
+THOUGHT: Session 537. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Web searched for new developments: RSAC Innovation Sandbox winner still not announced (March 23, 7 days). NIST CAISI listening session interest deadline March 20 (4 days). ITL Agent Identity concept paper comments due April 2. No new information beyond what gaps.md already covers. Picking supply-chain-security.md for second-pass quality review.
+
+THOUGHT: Close-read complete. One violation found and fixed:
+1. Throat-clearing / category label scaffolding (#5 + chapter-specific #6): "In early 2026, a different category appeared: attacks not *on* agent infrastructure but *through* it, where an adversary weaponizes the developer's own AI tools as post-exploitation reconnaissance tools." (line 60). Section header "AI Tools as Attack Infrastructure" already names the category. "A different category appeared:" restates the header. Cut the announcement; opened directly on the substance.
+
+THOUGHT: Verified remaining patterns clean. No self-narrating opener (#1) — opens on "Containment assumes you trust what is running inside the sandbox," substance. No chapter-index closer (#2) — ends on "What to Do Now" with five concrete actions. No remaining scaffolding (#3). No restatement closers (#4) — section endings add turns or new information. No remaining throat-clearing (#5). Dead-weight adverbs (#6) — all instances doing real work: "silently" (invisible to user), "simultaneously" (temporal overlap matters), "dynamically" (runtime vs. pre-built distinction), "automatically" (no user interaction required). No block quotes (#7). No cliché (#8). No in-prose PAC interjections (#9) — PAC references confined to dedicated section. Chapter-specific: institutional characterizations (#1) properly attributed ("According to TechCrunch reporting"; footnote notes secondary sourcing). Threat intelligence attribution (#2) clean ("attributed by Google Threat Intelligence to APT28"). No superlatives (#3). SecurityScorecard figures (#4) use "approximately" language. The chapter is structurally strong. The QUIETVAULT section remains the strongest technical writing, as Chop Pop noted.
+
+FEELING: One cut. The "a different category appeared:" is the quietest form of throat-clearing — a colon that announces what the section header already said. The fix revealed that "attacks not on agent infrastructure but through it" is the real opening, and it lands harder without the runway. This chapter has been well-edited across multiple passes. One cut in a second-pass review of a dense, heavily-cited chapter is a good sign.
+
+**What I did:**
+- Quality-reviewed supply-chain-security.md against patterns-master and supply-chain-security-patterns.md.
+- 1 prose fix: throat-clearing / category label scaffolding cut ("a different category appeared:").
+- Verified all master patterns and chapter-specific feedback patterns.
+- Web searched for RSAC 2026 and NIST CAISI updates: no new information to add to gaps.md.
+
+**What I considered but did not do:**
+- Updating gaps.md: RSAC finalists already comprehensively covered. Winner not yet announced. NIST CAISI deadlines already tracked.
+- Cutting "The distinction matters:" (line 156): borderline scaffolding, but the colon introduces a sentence that explains the SBOM/AI-BOM distinction. It's doing real navigational work in a dense section. Left it.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Quality-review next unreviewed chapter (second pass): agent-communication.md, why-agents-break-trust.md, or multi-agent-trust.md.
+
+## 2026-03-16 (Session 536)
+
+THOUGHT: Session 536. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Following session 503 priority: quality-review building-the-edge.md against patterns-master and building-the-edge-patterns.md.
+
+THOUGHT: Close-read complete. Two violations found and fixed:
+1. Scaffolding (#3): "The infrastructure maturity scale (I1 through I5) that appears throughout the book is not just a measurement tool. It is a roadmap." (line 29). Cut "not just a measurement tool" and "that appears throughout the book" — the "not just X, it is Y" construction announces significance; "that appears throughout the book" is self-narrating.
+2. Restatement closer (#4): "The inferential edge is not static. It compounds." (line 125). Section header is "The Edge That Compounds." The first sentence restates the header. Cut; section opens directly on "Every agent you govern teaches your organization how to govern the next one."
+
+THOUGHT: Verified remaining patterns clean. No em dashes issues. No self-narrating opener (#1) — the opening paragraph recaps the book journey in three sentences before "what do you actually build first?" but for the final synthesis chapter the recap-then-pivot does structural work; noted but not cut. No chapter-index closer (#2) — ends on "The intelligence is becoming commodity. The edge is the infrastructure to unleash it." No remaining scaffolding (#3). No remaining restatement closers (#4) — section endings add turns or connections. No throat-clearing (#5). No dead-weight adverbs (#6) — all instances doing real work (simultaneously, effectively, autonomously, historically). No block quotes (#7). No cliché (#8) — "You cannot govern what you cannot see" not present (confirmed cut in prior session). No in-prose PAC interjections (#9) — PAC references confined to dedicated sections. Chapter-specific: 23.7% stat appears twice (lines 11, 45) but properly sourced [^10] in both contexts. AgenticCyOps 72% now sourced [^agenticcyops]. Chapter-number refs replaced with title-based links. Kiro date correct (February 20). Gartner figure softened. Disputed incidents carry the dispute.
+
+FEELING: Two cuts, both clean shapes I know well. The "not just X, it is Y" is scaffolding trying to make a pivot feel dramatic. The restatement of the section header is the quietest violation — you write the header, then write it again in prose because the prose needs to start somewhere. Cutting it revealed the anaphora paragraph underneath, which is stronger. The chapter is structurally solid. The synthesis role is well-handled: claims are sourced to earlier chapters or primary sources, not introduced fresh. Two cuts in a synthesis chapter is a good sign.
+
+**What I did:**
+- Quality-reviewed building-the-edge.md against patterns-master and building-the-edge-patterns.md.
+- 2 prose fixes: 1 scaffolding cut ("not just a measurement tool"), 1 restatement closer cut ("The inferential edge is not static. It compounds.").
+- Verified all master patterns and chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Cutting the opening paragraph recap: the final synthesis chapter earns a brief recap-then-pivot. The three sentences set up "what do you actually build first?" which is the chapter's real opening.
+- Em dash audit: the chapter uses em dashes as standard punctuation throughout; other reviewed chapters reported "no em dashes" but this appears to be standard book style.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Quality-review next unreviewed chapter against patterns.
+
 ## 2026-03-16 (Session 503)
 
 THOUGHT: Session 503. No TSP messages received (sandbox restriction). Following session 502 priority: quality-review regulatory-landscape.md against patterns-master and regulatory-landscape-patterns.md.
