@@ -1,8 +1,8 @@
 # Multi-Agent Trust and Orchestration
 
-Trust for a single agent is already hard: one identity, one delegation chain, one set of permissions. But it is not where the industry is heading.
+Trust for a single agent is hard: one identity, one delegation chain, one set of permissions. But it is not where the industry is heading.
 
-Salesforce's 2026 Connectivity Benchmark found that organizations already run an average of 12 agents, with adoption projected to surge 67% by 2027.[^1] Deloitte predicts as many as 75% of companies may invest in agentic AI by end of 2026, fueling an autonomous agent market worth $8.5 billion.[^2] The problem: 50% of those agents operate in isolated silos.[^1] They do not compose. They do not share trust context. They do not fail gracefully when one goes wrong.
+Salesforce's 2026 Connectivity Benchmark found that organizations run an average of 12 agents, with adoption projected to surge 67% by 2027.[^1] Deloitte predicts as many as 75% of companies may invest in agentic AI by end of 2026, fueling an autonomous agent market worth $8.5 billion.[^2] The problem: 50% of those agents operate in isolated silos.[^1] They do not compose. They do not share trust context. They do not fail gracefully when one goes wrong.
 
 ## The Delegation Problem
 
@@ -124,7 +124,7 @@ A DCT for a multi-agent delegation chain works like this:
 
 Each delegation hop can only add restrictions. Agent A cannot give Agent B a $10,000 budget from a $5,000 authorization. The token is self-verifying: any party in the chain can confirm that the caveats were added by authorized holders without contacting the original issuer. This is offline verification, critical for multi-agent systems where round-trips to an authentication server at every hop would be prohibitively slow.
 
-DCTs enforce decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
+DCTs enforce decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. The token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
 
 ## The Orchestration Governance Gap
 
@@ -151,7 +151,7 @@ The orchestration framework manages task assignment and result collection. But g
 
 **Where does liability sit?** When a multi-agent system makes a consequential error, the liability question is harder than for a single agent. The EU AI Act's provider/deployer distinction was designed for individual AI systems, not for chains of agents from different providers executing delegated authority.[^12]
 
-The Salesforce data makes the organizational dimension concrete: 50% of agents operate in silos.[^1] Half of enterprise agents are already multi-agent systems in practice (they interact with other agents through shared databases, APIs, or workflows) without any of the governance infrastructure to manage that interaction.
+The Salesforce data makes the organizational dimension concrete: 50% of agents operate in silos.[^1] Half of enterprise agents are multi-agent systems in practice (they interact with other agents through shared databases, APIs, or workflows) without any of the governance infrastructure to manage that interaction.
 
 ## Architectural Patterns for Multi-Agent Trust
 
@@ -293,8 +293,6 @@ The key PAC insight for multi-agent systems: **governance cost scales with deleg
 
 ## Infrastructure Maturity for Multi-Agent Trust
 
-Building on the I1-I5 infrastructure maturity scale used throughout this book:
-
 **I1 (Open): Ad Hoc.** Multi-agent systems exist but delegation is implicit. Agents call other agents as tools without authority tracking. No delegation audit trail. Failure in one agent is debugged as a standalone issue. This is where most organizations are today.
 
 **I2 (Logged): Basic Coordination.** Orchestration frameworks manage task assignment. Basic logging of which agent did what. No authority attenuation. Blast radius of agent failure is understood qualitatively but not enforced technically.
@@ -309,7 +307,7 @@ The gap between I1 (where most organizations are) and I3 (where the EU AI Act's 
 
 ## Practical Recommendations
 
-**Start with delegation visibility.** Before governing multi-agent delegation, you need to see it. Instrument orchestration frameworks to log delegation events: who delegated to whom, with what scope, and what the outcome was. This is the multi-agent equivalent of the agent registry in the Shadow Agent Governance chapter.
+**Start with delegation visibility.** Before governing multi-agent delegation, you need to see it. Instrument orchestration frameworks to log delegation events: who delegated to whom, with what scope, and what the outcome was. This is the multi-agent equivalent of the agent registry in [Shadow Agent Governance](shadow-agent-governance.md).
 
 **Enforce authority attenuation.** Implement DCTs or equivalent mechanisms that make authority expansion impossible at the token level. If your orchestration framework does not support this, add a delegation gateway that validates authority scope at every hop.
 
