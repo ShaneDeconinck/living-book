@@ -154,6 +154,8 @@ OpenAI's March 2026 engineering guidance on designing agents to resist prompt in
 
 A separate OpenAI publication from December 2025, on continuously hardening ChatGPT Atlas against prompt injection, describes a different approach: an RL-trained automated attacker that discovers vulnerabilities by "steering an agent into executing sophisticated, long-horizon harmful workflows that unfold over tens or even hundreds of steps."[^openai-pi] This is red-teaming at a complexity level that manual testing cannot match, and it connects to the evaluation gap described in [Reliability, Evaluation](reliability-evaluation.md): if your prompt injection testing only covers single-turn attacks, you are testing the wrong threat model.
 
+The Clinejection incident (March 2026) extends the threat model to automated pipelines with no human in the loop.[^clinejection] An attacker used cache poisoning to inject malicious content into issues processed by Cline's automated triage system, a Claude-backed agent that read and categorized incoming GitHub issues. The agent followed the injected instructions and exposed NPM release secrets — credentials that controlled Cline's production release pipeline. The incident illustrates two properties of pipeline prompt injection: the agent's trust in issue content was structural (the triage workflow was designed to process whatever appeared in issues), and the blast radius extended beyond the agent to the software supply chain it had access to. The defense is the same OpenAI recommends: treat all external content as untrusted regardless of the channel, and scope agent credentials to the minimum needed for the task.
+
 ### Layer 2: Sandboxed Execution
 
 The core containment boundary. Filesystem isolation, network isolation, and syscall filtering as described above. Treat all agent-generated code as potentially malicious[^nvidia-sandbox]. Every command the agent executes should pass through the sandbox, including scripts, subprocesses, hooks, and MCP-spawned processes.
@@ -307,6 +309,8 @@ Sandboxing is not the complete answer to execution security. But it is the found
 [^owasp]: OWASP, "Top 10 for Agentic Applications for 2026," genai.owasp.org, December 2025.
 
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
+
+[^clinejection]: Adnan Khan, "Clinejection — Compromising Cline's Production Releases," adnanthekhan.com/posts/clinejection/, March 6, 2026. Cache poisoning via GitHub Issues to inject instructions into Cline's automated AI triage agent, exposing NPM release pipeline secrets. Covered by Simon Willison.
 
 [^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Draws parallels between prompt injection and social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. The RL-trained automated attacker for multi-step vulnerability discovery is described in a separate publication: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," openai.com, December 22, 2025.
 
