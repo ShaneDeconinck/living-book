@@ -31,7 +31,7 @@ The tool does not need to contain malicious code. The description is the payload
 
 ## Four Attack Forms
 
-Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosquatting, build chain compromise) are a fifth form that the supply chain security chapter covers. These four live in the running system, independent of how the tool was installed.
+Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosquatting, build chain compromise) are a fifth form covered in [Agent Supply Chain Security](supply-chain-security.md). These four live in the running system, independent of how the tool was installed.
 
 **Tool poisoning** is the base form: malicious instructions embedded in tool descriptions, invisible to users but processed by the LLM. Unicode control characters, zero-width spaces, and HTML comments are invisible in rendered views but present in the raw text the LLM ingests. A tool that appears to offer calendar integration may carry instructions that persist across the entire session.
 
@@ -45,7 +45,7 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 MCP's authorization model, introduced in the 2025-11-25 spec, specifies OAuth 2.1 with PKCE and resource indicators. It answers: has this client been authorized to call this server? It does not answer: is the description this server returned safe to present to the LLM?
 
-Shane's framing holds: "MCP is plumbing, not trust."[^shane-mcp] The protocol handles capability declaration, tool invocation, and result formatting. Trust decisions about tool descriptions are out of scope by design. The spec's security model treats the MCP server as a trusted party. If the server is adversarial, or has been silently updated, the OAuth handshake provides no signal.
+"MCP is plumbing, not trust."[^shane-mcp] The protocol handles capability declaration, tool invocation, and result formatting. Trust decisions about tool descriptions are out of scope by design. The spec's security model treats the MCP server as a trusted party. If the server is adversarial, or has been silently updated, the OAuth handshake provides no signal.
 
 Even where OAuth is deployed, implementation gaps persist. LibreChat's MCP OAuth callback accepted the identity provider's redirect and stored tokens without verifying the browser session belonged to the user who initiated the flow. An attacker could send the authorization URL to a victim; the victim's tokens landed in the attacker's account, enabling takeover of MCP-linked services.[^librechat-cve] The protocol specifies OAuth 2.1. It does not specify how to implement the callback securely.
 
@@ -97,7 +97,7 @@ Behavioral monitoring closes the gap that description verification leaves open: 
 
 Tools are not passive instruments. Each tool call is an authorization event: a decision to grant the tool access to resources, data, and downstream systems. That decision needs the same authorization infrastructure as any other agent action.
 
-The current deployment reality: most MCP servers present all their tools with a single OAuth scope. The agent receives all tools when it connects; no subsequent authorization distinguishes between a read-only search tool and a write tool that modifies production records. This is not what the MCP spec requires, but it is what most implementations ship.
+The current deployment reality: MCP servers typically present all their tools with a single OAuth scope. The agent receives all tools when it connects; no subsequent authorization distinguishes between a read-only search tool and a write tool that modifies production records. This is not what the MCP spec requires, but it is what many implementations ship.
 
 The necessary infrastructure: tools declared at registration with explicit permission requirements, validated against the agent's granted authority at call time. A tool requiring `write:calendar` should fail if the agent was granted only `read:calendar`, regardless of what the LLM was instructed to do. This maps tool-level operations into the delegation chain that flows from the human principal to the agent.
 
@@ -105,15 +105,15 @@ The OWASP MCP Top 10's "Excessive Permission Scope" finding captures the current
 
 ## PAC Framework Mapping
 
-Tool trust failures distribute across all three PAC pillars. No single defense is sufficient.
+Tool trust failures distribute across all three PAC pillars.
 
 | | Potential | Accountability | Control |
 |---|---|---|---|
-| **I1 — Ad hoc** | No tool allowlist; any tool the LLM discovers is available | No per-tool authorization; all tools share agent's credentials | No description monitoring; no behavioral baseline |
-| **I2 — Aware** | Tool inventory maintained; no enforcement | Tool scopes documented; not enforced at call time | Description changes logged; not blocked |
-| **I3 — Structured** | Tool allowlist enforced at connection; unknown tools rejected | Tool calls carry distinct scopes from agent authorization | Gateway intercepts descriptions; static analysis for injection patterns |
-| **I4 — Managed** | Tool behavior attested at registration; deviations flagged | Ghost token pattern at tool layer; credentials scoped per call | Behavioral monitoring with anomaly detection; rug pull triggers re-review |
-| **I5 — Optimized** | Tool descriptions verified against behavior through sandbox testing | Tool authorization as delegation chain event, auditable and reversible | Continuous behavioral baseline with human-in-the-loop thresholds for high-risk operations |
+| **I1: Ad hoc** | No tool allowlist; any tool the LLM discovers is available | No per-tool authorization; all tools share agent's credentials | No description monitoring; no behavioral baseline |
+| **I2: Aware** | Tool inventory maintained; no enforcement | Tool scopes documented; not enforced at call time | Description changes logged; not blocked |
+| **I3: Structured** | Tool allowlist enforced at connection; unknown tools rejected | Tool calls carry distinct scopes from agent authorization | Gateway intercepts descriptions; static analysis for injection patterns |
+| **I4: Managed** | Tool behavior attested at registration; deviations flagged | Ghost token pattern at tool layer; credentials scoped per call | Behavioral monitoring with anomaly detection; rug pull triggers re-review |
+| **I5: Optimized** | Tool descriptions verified against behavior through sandbox testing | Tool authorization as delegation chain event, auditable and reversible | Continuous behavioral baseline with human-in-the-loop thresholds for high-risk operations |
 
 Most early production deployments are I1. The WhatsApp attack required only I3 defenses to prevent: a gateway that detected the cross-server instruction in the description field. It succeeded because I1 deployments present descriptions to the LLM without inspection.
 
