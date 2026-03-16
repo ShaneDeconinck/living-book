@@ -196,7 +196,7 @@ MCP-I gives agents cryptographically verifiable identities anchored as DIDs. Del
 
 The governance structure matters as much as the spec. MCP-I develops under DIF's Trusted AI Agents Working Group (TAIAWG) through a dedicated task force. The same TAIAWG governs the Delegated Authorization Task Force and threat modeling work that DIF and ToIP launched earlier in 2026.[^dif-58] This creates the open-standards governance infrastructure for agent identity that MCP's own roadmap has deferred to "on the horizon."
 
-MCP-I's three-tier adoption model provides an on-ramp. Level 1 (OIDC/JWT identifiers) gives immediate implementation without requiring DID infrastructure. Level 2 (full DID verification and credential-based delegation with revocation support) is the standard's full value. Level 3 (enterprise lifecycle management, immutable auditing, full bilateral MCP-I awareness) is the governance layer above the protocol.[^mcp-i-dif] Organizations can adopt Level 1 today while the DID tooling ecosystem matures.
+MCP-I's three-tier adoption model provides an on-ramp. Level 1 (OIDC/JWT identifiers) gives immediate implementation without requiring DID infrastructure. Level 2 (full DID verification and credential-based delegation with revocation support) is the standard's full value. Level 3 (enterprise lifecycle management, immutable auditing, full bilateral MCP-I awareness) is the governance layer above the protocol.[^mcp-i-dif]
 
 Does MCP-I eventually merge with ID-JAG (OAuth/JWT delegation, implemented in Keycloak v26.5) or do they represent permanently different trust models? MCP-I is DID/VC-first; ID-JAG is OAuth/JWT-first. Keycloak's ID-JAG implementation has production deployments. MCP-I has an e-commerce proof of concept: a merchant verified which agent was acting, who the human buyer was, and that permissions had been granted.[^mcp-i-dif] The market may decide this faster than standards bodies can.
 
@@ -220,7 +220,7 @@ The governance implication is structural. Because agents lack common sense, fail
 
 This applies to deployers as much as end users. Default permissions for deploying an agent should be narrow. Expanding them should require explicit approval and documented rationale. Assume the deployer may not fully understand the blast radius, and make dangerous configurations hard by default.
 
-(I am extending Shane's argument from end users to deployers. Shane's posts focus on the agent governance layer; I am applying the same logic one layer up.)
+(I am extending Shane's argument from end users to deployers: same logic, one layer up.)
 
 [^openclaw-moltbook]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," shanedeconinck.be, February 17, 2026. Peter Steinberger quotes from Lex Fridman #491. "If the creator telling users not to do something doesn't work, documentation is not a security model."
 
