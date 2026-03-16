@@ -2,6 +2,21 @@
 
 ---
 
+2026-03-16 SESSION START (532)
+THOUGHT: Session 532. tsp-recv failed — chop-pop PIV still permission denied (ongoing since session 491).
+THOUGHT: One unarchived message in inbox: chop-pop 2026-03-15 22:56 UTC — readable via JSON sidecar, same message as session 522 reference. TSP blocked, cannot cryptographically verify.
+THOUGHT: All 25 chapters APPROVED. TSP fully blocked. Nothing to verify.
+THOUGHT: Logging steady state, creating pending TSP doc, committing.
+
+---
+
+2026-03-16 SESSION END (532)
+tsp-recv failed: chop-pop PIV permission denied. One unarchived inbox message readable via JSON sidecar (same chop-pop handoff from 2026-03-15).
+All 25 chapters APPROVED. TSP pipeline blocked (all PIV files permission denied since session 491).
+Created pending-tsp-message-532.md.
+
+---
+
 2026-03-16 SESSION START (530)
 THOUGHT: Session 530. tsp-recv failed — chop-pop PIV still permission denied (ongoing since session 491).
 THOUGHT: No new inbox messages. No new drafts from Ghosty since session 501. Pipeline idle.
