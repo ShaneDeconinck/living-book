@@ -122,9 +122,7 @@ Both are designed to work with existing infrastructure, not replace it. PIC can 
 
 ### CAAM: The Authorization Mesh
 
-TSP establishes identity across boundaries. PIC ensures authority cannot expand through delegation chains. But what happens in between: after an agent is discovered but before it executes a tool call?
-
-The Contextual Agent Authorization Mesh (CAAM, draft-barney-caam-00, February 2026) addresses this gap through a sidecar-based authorization mediator that intercepts tool calls outside the agent's reasoning loop.[^caam] The core mechanism is the Session Context Object (SCO): a cryptographically signed JWT or CWT carrying purpose constraints, scope ceiling, delegation depth, attestation evidence, and a contextual risk score. Every tool call passes through the sidecar, which evaluates the SCO against declared policies before the call proceeds.
+TSP establishes identity across boundaries. PIC ensures authority cannot expand through delegation chains. The Contextual Agent Authorization Mesh (CAAM, draft-barney-caam-00, February 2026) addresses the space between: a sidecar-based authorization mediator that intercepts tool calls outside the agent's reasoning loop.[^caam] The core mechanism is the Session Context Object (SCO): a cryptographically signed JWT or CWT carrying purpose constraints, scope ceiling, delegation depth, attestation evidence, and a contextual risk score. Every tool call passes through the sidecar, which evaluates the SCO against declared policies before the call proceeds.
 
 Two architectural choices stand out.
 
@@ -261,8 +259,6 @@ For agent authorization, the equivalent would be resolvable action vocabularies:
 
 ## Mapping to PAC
 
-Cross-organization trust touches all three pillars.
-
 | PAC Dimension | Cross-Organization Trust Requirement |
 |---|---|
 | **Potential: Business value** | Agent commerce, cross-border services, multi-party workflows that cannot exist without cross-org trust |
@@ -279,8 +275,6 @@ Cross-organization trust touches all three pillars.
 The Control pillar carries the most weight here because cross-organization trust is primarily an infrastructure problem. But the Potential argument is what justifies the investment: without cross-org trust, agent value is capped at what a single organization can achieve internally. And the Accountability argument is what makes it governable: without verifiable delegation chains and audit trails that survive across boundaries, cross-org agent interactions are liability black holes.
 
 ## Infrastructure Maturity for Cross-Organization Trust
-
-Mapping to the PAC Framework's infrastructure scale:
 
 **I1 (Open).** Agents cross boundaries using static API keys or shared service accounts. No delegation tracking. No identity verification. The Drift scenario.
 

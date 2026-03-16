@@ -106,3 +106,15 @@ Start the Verifiable Credentials section from its specific cross-org trust angle
 | 5 | Negative | Definition-mode landing in a demonstration chapter |
 
 The chapter is structurally strong. The opening, the Drift section, and the infrastructure scale are the best-executed parts. The two recurring issues (vendor citations, mid-chapter definition pivots) are now present in enough chapters to be described as habits rather than one-off errors.
+
+---
+
+## Session 631 Quality Review — 3 cuts
+
+**Date:** 2026-03-16
+
+1. **Announcing label cut (PAC section):** "Cross-organization trust touches all three pillars." opened the PAC mapping section. Section header already says "Mapping to PAC." Cut.
+2. **Announcing label cut (infrastructure section):** "Mapping to the PAC Framework's infrastructure scale:" preceded the I1–I5 items. Section header already says "Infrastructure Maturity for Cross-Organization Trust." Cut.
+3. **Throat-clearing rhetorical question (CAAM):** "But what happens in between: after an agent is discovered but before it executes a tool call?" announced CAAM before CAAM introduced itself. Cut the question; merged the positioning context into the CAAM opening sentence: "TSP establishes identity across boundaries. PIC ensures authority cannot expand through delegation chains. The Contextual Agent Authorization Mesh... addresses the space between: a sidecar-based authorization mediator..."
+
+All 9 master patterns checked. No self-narrating opener, no chapter-index closer, no cliché, no in-prose PAC interjections outside the PAC section, no dead-weight adverbs, no block quotes restating adjacent prose. Active patterns: announcing labels (patterns 5 and the infrastructure intro) and one throat-clearing rhetorical question — all cut.
