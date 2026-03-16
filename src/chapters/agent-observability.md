@@ -4,7 +4,7 @@ In March 2026, Irregular placed agents on a corporate network with legitimate ta
 
 The problem predates fleets. A single expense-approval agent authorized $47,000 in vendor payments. The audit log showed alice@company.com. It captured the outcome. It did not capture the delegation chain, the model that decided, the inputs at decision time, or the authority under which the agent acted.[^trust-for-agentic-ai] When accountability was needed, the log had what happened but not what decided.
 
-"What it decided and what authority it had to decide it" is Shane's framing for what agent governance requires.[^trust-for-agentic-ai] Observability infrastructure must capture the same answer — and current tooling mostly does not.
+"What it decided and what authority it had to decide it" is Shane's framing for what agent governance requires.[^trust-for-agentic-ai] Observability infrastructure must capture the same answer; current tooling mostly does not.
 
 ## Three Layers That Agents Conflate
 
@@ -14,7 +14,7 @@ Monitoring, logging, and tracing are conceptually distinct. For traditional soft
 
 **Logging** asks: what did the agent do? Every tool call, API invocation, and resource access, with timestamps, inputs, and outputs. Logging infrastructure for agents exists and is improving. OpenTelemetry's GenAI semantic conventions define a standardized schema for LLM spans: model, request parameters, token counts, completion content.[^otel-genai] These let organizations correlate LLM calls across agents using existing distributed tracing infrastructure.
 
-**Tracing** asks: why did the agent decide this? What upstream inputs, what delegation authority, what model state produced this action? Traditional distributed tracing follows synchronous request-response chains. Agents produce asynchronous, nondeterministic chains of reasoning. The interesting event in an agent interaction is not which API was called but which upstream context caused the call — a semantic question that telemetry frameworks were not designed to answer.
+**Tracing** asks: why did the agent decide this? What upstream inputs, what delegation authority, what model state produced this action? Traditional distributed tracing follows synchronous request-response chains. Agents produce asynchronous, nondeterministic chains of reasoning. The interesting event in an agent interaction is not which API was called but which upstream context caused the call: a semantic question that telemetry frameworks were not designed to answer.
 
 Decision provenance is what current observability does not capture.
 
@@ -53,7 +53,7 @@ Every logged action gets its authorization context appended:
 }
 ```
 
-RFC 8693 OBO tokens record both the human who delegated and the agent who acted.[^rfc-8693] Structured audit logs that record the token as part of every action make the delegation chain auditable. Without this layer, logs show what happened but not whether the agent was authorized to do it — and the $47,000 audit trail remains incomplete.
+RFC 8693 OBO tokens record both the human who delegated and the agent who acted.[^rfc-8693] Structured audit logs that record the token as part of every action make the delegation chain auditable. Without this layer, logs show what happened but not whether the agent was authorized to do it; the $47,000 audit trail remains incomplete.
 
 The `token_expiry` field captures a dimension other fields miss. A delegation granted three months ago may have been appropriate at grant time and inappropriate at execution time. Without the timestamp, that gap is invisible.
 
@@ -89,7 +89,7 @@ Distributed trace IDs that span agent boundaries. Every action in a multi-agent 
 }
 ```
 
-OpenTelemetry's distributed tracing model provides the infrastructure pattern: context propagation headers that link downstream spans to upstream spans across service boundaries.[^opentelemetry] Extending this to agents requires propagating trace context through every inter-agent communication — including shared data store reads, A2A messages, and MCP tool results.
+OpenTelemetry's distributed tracing model provides the infrastructure pattern: context propagation headers that link downstream spans to upstream spans across service boundaries.[^opentelemetry] Extending this to agents requires propagating trace context through every inter-agent communication (including shared data store reads, A2A messages, and MCP tool results).
 
 The distinction from service tracing: agent causality includes semantic causality, not just invocation causality. Agent B did not call Agent A. Agent B read A's output from a shared store and acted on it. The causal link is semantic. Capturing it requires explicit trace ID injection at the point of reading shared outputs, not only at API call boundaries.
 
@@ -112,7 +112,7 @@ This layer does not require behavioral AI or anomaly detection models to be usef
 
 **OpenTelemetry GenAI semantic conventions** cover Layers 1 and 3 partially.[^otel-genai] LLM span attributes for model, request parameters, token counts, and completion content are standardized. The agent span conventions extend this with `create_agent` and `invoke_agent` operations, plus `gen_ai.agent.name`, `gen_ai.agent.id`, `gen_ai.agent.description`, and `gen_ai.agent.version` attributes: agent identity at the telemetry level.[^otel-agent-spans] What they do not cover: Layer 2 (no attributes for delegation chain or token scope), Layer 4 (no agent-specific trace propagation for semantic causality), Layer 5 (no fleet aggregation specification). The agent span conventions move OTel closer to full Layer 1 coverage for agent operations, but the accountability-critical layers remain outside the specification.
 
-**W3C PROV-DM** defines a formal provenance model with three entity types: Agent (the entity responsible), Activity (what happened), and Entity (what was produced or used).[^prov-dm] The model is expressive enough to capture agent decision chains. It is not adopted in practice in agent frameworks — the gap is adoption, not expressiveness.
+**W3C PROV-DM** defines a formal provenance model with three entity types: Agent (the entity responsible), Activity (what happened), and Entity (what was produced or used).[^prov-dm] The model is expressive enough to capture agent decision chains. It is not adopted in practice in agent frameworks. The gap is adoption, not expressiveness.
 
 **CloudEvents** standardizes the event envelope but defines no schema for agent-specific content. Organizations using CloudEvents for their event infrastructure can use it as the carrier for agent action logs, but must define the payload schema themselves.
 
@@ -132,7 +132,7 @@ The five layers produce audit evidence: what the agent did, under what authority
 
 Every tool call has two histories: the authorization history (Layers 2-3: who delegated what, which model ran under which prompt) and the reasoning history (the intermediate conclusions the model formed before acting). The five-layer stack captures the first. The second requires different infrastructure.
 
-Chain-of-thought (CoT) logging captures the model's intermediate reasoning steps — the internal monologue visible in extended-thinking architectures. Organizations deploying models with extended thinking can log the reasoning trace alongside the final completion, revealing what the model attended to and how it framed the problem.
+Chain-of-thought (CoT) logging captures the model's intermediate reasoning steps: the internal monologue visible in extended-thinking architectures. Organizations deploying models with extended thinking can log the reasoning trace alongside the final completion, revealing what the model attended to and how it framed the problem.
 
 What CoT logging does not reveal is whether that trace drove the actual computation. Models can produce coherent reasoning traces without those traces determining the output — the reasoning looks like the cause, but the weights-level computation may have reached the same output independently. CoT logs are forensically valuable: they surface what the model said it was thinking. They are not cryptographic evidence of what it computed. A reasoning trace is evidence that the model produced a certain intermediate output, not that the trace controlled the decision.
 
@@ -142,7 +142,7 @@ CoT logs occupy an uncertain evidentiary position for compliance. The EU AI Act 
 
 **Practical implications:**
 - Log reasoning traces for extended-thinking models with the same rigor as action logs. They are incomplete evidence, but incomplete evidence is better than none.
-- Use inference-time monitoring (not only post-hoc logging) for agents where intervention before action is feasible — high blast-radius decisions in particular.
+- Use inference-time monitoring (not only post-hoc logging) for agents where intervention before action is feasible (high blast-radius decisions in particular).
 - Communicate the gap to compliance teams: CoT evidence shows that a reasoning trace existed at decision time; it does not prove the trace determined the output.
 - Layer 3 (decision context: model ID, system prompt hash, context window state) plus CoT logging together provide more accountability signal than either alone.
 
@@ -160,7 +160,7 @@ An agent that is right 99.9% of the time without Layers 2-3 in place is less acc
 | **I4 — Managed** | Cross-agent trace IDs propagated; semantic causality captured across multi-agent workflows | Full delegation chain auditable from human principal to acting agent; token expiry logged | Fleet-level behavioral aggregation; coordination pattern detection operational |
 | **I5 — Optimized** | Behavioral baselines per agent type; drift detection automated; fleet patterns reviewed against authorized behavior | Append-only log stores with cryptographic sealing; tamper detection operational | Real-time anomaly signals with human-in-the-loop escalation for threshold breaches |
 
-Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent — present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
+Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent: present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
 
 ## What to Do Now
 
@@ -168,7 +168,7 @@ Layer 1 is increasingly available through platform-native tooling: Microsoft Age
 
 **Add identity capture before fleet scale.** OBO tokens make the delegation chain explicit at the credential level. The logging layer records what the token says. Retrofitting this at ten agents is feasible; retrofitting at three hundred requires re-instrumenting every agent in production.
 
-**Use infrastructure-level logging for high-stakes agents.** Any agent with B4+ blast radius — regulated consequences, financial authority, customer-facing decisions — should log through a gateway or sidecar that the agent cannot write to. Agent-level logging is sufficient for low-stakes deployments; it is insufficient when the log is evidence.
+**Use infrastructure-level logging for high-stakes agents.** Any agent with B4+ blast radius (regulated consequences, financial authority, customer-facing decisions) should log through a gateway or sidecar that the agent cannot write to. Agent-level logging is sufficient for low-stakes deployments; it is insufficient when the log is evidence.
 
 **Plan for causal trace IDs before multi-agent deployment.** Distributed trace context is straightforward to add when designing a multi-agent workflow; it is hard to retrofit after agents are in production because every inter-agent communication path must propagate the trace. Define the format and propagation mechanism before the workflow ships, not during incident investigation.
 
