@@ -42,7 +42,7 @@ A correctly sandboxed agent can operate more autonomously, not less. Anthropic r
 
 ## The Isolation Spectrum
 
-Not all sandboxes are equal. The strength of isolation depends on where the boundary sits in the system architecture. Three approaches exist today, each with different security properties and performance characteristics.
+The strength of isolation depends on where the boundary sits in the system architecture. Three approaches exist today, each with different security properties and performance characteristics.
 
 ### Native OS Sandboxing
 
@@ -122,7 +122,7 @@ The ten risks are:
 
 ### What Sandboxing Covers
 
-Shane mapped these risks against sandboxing coverage in his Docker sandbox post[^sandbox-post]. The results are instructive:
+Shane mapped these risks against sandboxing coverage in his Docker sandbox post[^sandbox-post]:
 
 **Strong coverage (5 of 10 risks):**
 - ASI02 (Tool Misuse): Sandboxing restricts which tools the agent can invoke and what parameters it can pass. A sandboxed agent cannot access tools outside its environment.
