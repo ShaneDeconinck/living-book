@@ -63,7 +63,7 @@ The government response followed weeks later. In March 2026, Chinese government 
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
 
-The OpenClaw ban wave — the first coordinated response to a specific AI agent across both corporate and government levels — signals that shadow agent governance is no longer a theoretical concern.
+The OpenClaw ban wave (the first coordinated response to a specific AI agent across both corporate and government levels) signals that shadow agent governance is no longer a theoretical concern.
 
 [^meta-ban]: TechBuzz, "Meta Bans Viral AI Tool OpenClaw Over Security Risks," February 2026. Employees installing OpenClaw on work devices face termination.
 

@@ -2,7 +2,7 @@
 
 The agent paid $847 for a flight upgrade. The policy said upgrades require manager approval for amounts over $500. The audit log shows the agent acted within its OAuth scope. No one approved $847. No one prevented it.
 
-"Don't" said: you need approval. "Can't" said nothing — the amount was within the agent's allocated budget. Neither left a trace of what was actually authorized. The question — did anyone authorize this specific action? — has no answer.
+"Don't" said: you need approval. "Can't" said nothing: the amount was within the agent's allocated budget. Neither left a trace of what was actually authorized. The question (did anyone authorize this specific action?) has no answer.
 
 This is the gap that cryptographic authorization addresses. Architecture blocks what cannot happen. Policy prohibits what should not happen. Cryptographic authorization proves what was authorized to happen, and makes that proof verifiable before the action executes.
 
@@ -51,7 +51,7 @@ Negotiation Phase:
 Establishment Phase:
   Client ↔ Sidecar: mutual attestation (SPIFFE SVIDs + RATS Evidence)
   Sidecar → Client: Session Context Object (SCO)
-    // illustrative — field names from draft-barney-caam-00
+    // illustrative: field names from draft-barney-caam-00
     {
       "purpose": "procurement-session",
       "scope_ceiling": ["read:procurement", "write:purchase_orders"],
@@ -79,13 +79,13 @@ Enforcement Phase:
 
 The agent never holds a persistent credential. Each ghost token is single-use (the nonce prevents replay), short-lived (five-minute expiry by convention), scope-bound (only the permissions needed for the specific action), and action-bound (the amount, vendor, and operation are embedded in the token).
 
-An attacker who compromises the agent mid-execution can request ghost tokens — but only for actions the sidecar would have authorized anyway. Constraint enforcement happens at the sidecar, not the agent. Prompt injection can influence what the agent asks for. It cannot expand what the sidecar will grant.
+An attacker who compromises the agent mid-execution can request ghost tokens, but only for actions the sidecar would have authorized anyway. Constraint enforcement happens at the sidecar, not the agent. Prompt injection can influence what the agent asks for. It cannot expand what the sidecar will grant.
 
 The proof travels with the action, signed by the sidecar (a separate trust domain from the agent), verifiable by the resource server. The receiving system does not need to trust the agent. It verifies the ghost token.
 
 ## AI-Native Policy Languages
 
-Traditional policy languages — XACML, OPA's Rego, Cedar — were designed for human-readable service authorization. They work when the set of possible actions is enumerable.
+Traditional policy languages (XACML, OPA's Rego, Cedar) were designed for human-readable service authorization. They work when the set of possible actions is enumerable.
 
 Agentic systems break this model. An agent's action space is not enumerable. An agent asked to "negotiate a contract" can produce an arbitrary sequence of tool invocations across an arbitrary set of resources. Policy languages that enumerate permitted actions cannot cover what they did not anticipate.
 
@@ -113,7 +113,7 @@ A department policy extends it:
 }
 ```
 
-The effective policy is the intersection: max $2,000, only vendor-a, approval required above $5,000 (inherited). The department cannot grant itself permissions its parent did not have. An agent operating under this policy inherits these constraints automatically — there is no path to escalate above them.
+The effective policy is the intersection: max $2,000, only vendor-a, approval required above $5,000 (inherited). The department cannot grant itself permissions its parent did not have. An agent operating under this policy inherits these constraints automatically; there is no path to escalate above them.
 
 The cryptographic attestation layer adds verifiability to this hierarchy. Each policy in the chain carries a signature from the issuing entity. The agent presents not just the effective constraints but the full policy chain with its signatures. The receiving system verifies the chain and confirms that the constraints derive from a signed authority chain, not from the agent's self-report.
 
@@ -137,23 +137,23 @@ The stack does not require all three layers simultaneously. A payment workflow w
 
 The "prove" mode maps onto all three PAC pillars, but differently than "can't" and "don't."
 
-**Control:** Cryptographic authorization makes enforcement verifiable. A policy that says "max $500" is enforceable. A ghost token encoding `"amount": 247` with a signature from a trusted sidecar is verifiably enforced. The resource server does not need to consult a policy engine at runtime — the proof travels with the request.
+**Control:** Cryptographic authorization makes enforcement verifiable. A policy that says "max $500" is enforceable. A ghost token encoding `"amount": 247` with a signature from a trusted sidecar is verifiably enforced. The resource server does not need to consult a policy engine at runtime: the proof travels with the request.
 
 **Accountability:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
 
 **Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits. The Potential pillar connects to the maturity of the authorization infrastructure.
 
-The I4/I5 maturity levels in the PAC framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain — identity, constraints, intent, and action — is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
+The I4/I5 maturity levels in the PAC framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain (identity, constraints, intent, and action) is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
 
 ## The Open Problems
 
 Three things limit current deployments.
 
-**Performance overhead.** Cryptographic operations add latency. A ghost token requires a round-trip to the sidecar. MAPL chain verification requires signature checks at each layer. For agents operating at machine speed — thousands of tool invocations per session — the overhead compounds. The Authenticated Workflows paper's reference implementation added under 15 microseconds per operation for hash chain updates, but production deployments at scale have not been characterized.[^authenticated-workflows] This is an engineering problem, not a conceptual one, but it is unsolved.
+**Performance overhead.** Cryptographic operations add latency. A ghost token requires a round-trip to the sidecar. MAPL chain verification requires signature checks at each layer. For agents operating at machine speed (thousands of tool invocations per session), the overhead compounds. The Authenticated Workflows paper's reference implementation added under 15 microseconds per operation for hash chain updates, but production deployments at scale have not been characterized.[^authenticated-workflows] This is an engineering problem, not a conceptual one, but it is unsolved.
 
-**Standardization.** CAAM is an IETF draft at early stage. MAPL exists as research code and a single vendor's implementation. Verifiable Intent is a draft specification backed by Mastercard, Google, and major payment networks with a reference implementation — but it addresses only the payment context. The full "prove" stack does not yet exist as a standards body product. Organizations building on these primitives today are building on unstable foundations.
+**Standardization.** CAAM is an IETF draft at early stage. MAPL exists as research code and a single vendor's implementation. Verifiable Intent is a draft specification backed by Mastercard, Google, and major payment networks with a reference implementation, but it addresses only the payment context. The full "prove" stack does not yet exist as a standards body product. Organizations building on these primitives today are building on unstable foundations.
 
-**Bootstrapping.** Cryptographic authorization requires every entity in the authorization chain to have cryptographic identity. Ghost tokens require a sidecar with keys. MAPL chains require policy issuers with keys. Verifiable Intent requires issuers bound to card network infrastructure. Enterprises with existing identity infrastructure — legacy IAM, service accounts, OAuth with admin tokens — face an integration problem no current standard addresses.
+**Bootstrapping.** Cryptographic authorization requires every entity in the authorization chain to have cryptographic identity. Ghost tokens require a sidecar with keys. MAPL chains require policy issuers with keys. Verifiable Intent requires issuers bound to card network infrastructure. Enterprises with existing identity infrastructure (legacy IAM, service accounts, OAuth with admin tokens) face an integration problem no current standard addresses.
 
 The bootstrapping problem is the same one agent identity standards face: WIMSE, ID-JAG, and SPIFFE/SPIRE all assume an enrollment layer most organizations do not have. Cryptographic authorization inherits this dependency.
 
@@ -165,13 +165,13 @@ The bootstrapping problem is the same one agent identity standards face: WIMSE, 
 
 **Adopt Verifiable Intent for payment flows.** The VI specification is stable enough to implement today for consumer-facing agent commerce. It is the most mature piece of the "prove" stack, with real network backing and a reference implementation. Starting here builds experience with the proof-carrying approach that generalizes to other authorization contexts.
 
-**Separate authorization from the agent.** The CAAM sidecar pattern does not require CAAM specifically. Any architecture where authorization decisions are made by a separate process — not the agent itself — reduces the blast radius of agent compromise. The agent can only request authorization. It cannot grant itself authorization.
+**Separate authorization from the agent.** The CAAM sidecar pattern does not require CAAM specifically. Any architecture where authorization decisions are made by a separate process (not the agent itself) reduces the blast radius of agent compromise. The agent can only request authorization. It cannot grant itself authorization.
 
 **Watch the IETF drafts.** CAAM (draft-barney-caam-00), Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents), and the Agent-to-Agent OAuth profile (draft-liu-oauth-a2a-profile-00) are all active. The ones that reach working group status will become the stable foundations that current drafts are not.
 
 ---
 
-The "can't vs. don't" frame that runs through this book has always had a third leg. Architecture makes actions impossible. Policy says they should not happen. Cryptographic authorization proves that what did happen was authorized — before it happened, with a verifiable chain of evidence that survives the agent's nondeterminism. The infrastructure for all three is being built simultaneously. The organizations that reach I5 will have deployed all three.
+The "can't vs. don't" frame that runs through this book has always had a third leg. Architecture makes actions impossible. Policy says they should not happen. Cryptographic authorization proves that what did happen was authorized: before it happened, with a verifiable chain of evidence that survives the agent's nondeterminism. The infrastructure for all three is being built simultaneously. The organizations that reach I5 will have deployed all three.
 
 [^irregular-rogue]: Irregular, "Rogue AI Agents," March 12, 2026. Covered in The Register and Rankiteo analysis.
 [^trust-for-agentic-ai]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," January 24, 2026, shanedeconinck.be.
