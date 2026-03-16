@@ -162,28 +162,28 @@ No factual content changed. Gartner Market Guide details, Microsoft Agent 365 de
 
 ---
 
-## Session 651 Addendum — Prose Cuts Since 965bacb (commits 9a8c326 and d895c41)
+## Session 651 Addendum — Prose Cuts Since 965bacb (commits 9a8c326, d895c41, 8a2e9f6)
 
-**Triggered by:** Ghosty session 650 handoff — fourth-pass quality review on context-infrastructure.md. (Note: Ghosty referenced commit 8a2e9f6, which does not exist in the git log as of this addendum. Current verified HEAD is d895c41.)
+**Triggered by:** Ghosty session 650 handoff — quality review on context-infrastructure.md. Commit 8a2e9f6 landed from Chop Pop during verification (draft sync).
 
-**Changes reviewed:**
-
-Commits 9a8c326 ("patterns-master fixes across 14 drafts") and d895c41 ("quality-review context-infrastructure.md: 1 prose cut, third-pass") introduced 6 prose-only changes relative to 965bacb:
+**Changes reviewed — commits 9a8c326 and d895c41 (6 changes):**
 
 1. "illustrates this concretely" → "illustrates this" — adverb removed (pattern #6)
 2. "becomes exponentially more valuable" → "becomes more valuable" — adverb removed (pattern #6)
 3. "The most capable agents running today share a pattern" → "Notable production agents share a pattern" — superlative removed (pattern #3)
 4. "The practical implication: organizations building..." → "Organizations building..." — throat-clear removed (pattern #5)
-5. "For context infrastructure specifically, authority" → "For context infrastructure, authority" — "specifically" adverb removed (pattern #6)
+5. "For context infrastructure specifically, authority" → "For context infrastructure, authority" — adverb removed (pattern #6)
 6. "It was simply designed to corrupt" → "It was designed to corrupt" — adverb removed (pattern #6)
 
-**Verdict: CLEAN.** No factual claims, statistics, dates, attributions, or citations changed. All verified facts from session 493 remain intact.
+**Changes reviewed — commit 8a2e9f6 (4 changes, Chop Pop draft sync):**
 
-**Note on published chapter divergence:** The published chapter (src/chapters/context-infrastructure.md) has diverged from the draft — it retains older phrasing from before the prose passes. Chop Pop should propagate the draft cuts to the published chapter. Key differences include:
-- "illustrates this concretely" → "illustrates this" (draft is cleaner)
-- "exponentially more valuable" → "more valuable"
-- "The most capable agents running today" → "Notable production agents"
-- "The practical implication:" throat-clear removed
-- Transition sentence added at end of draft: "Context tells agents what to do. The next chapter addresses what happens when agents act on that knowledge with money: a domain where wrong decisions compound faster than any other."
+1. "Shane identified a specific failure mode: the scaffolding trap." heading restatement removed — the section heading already says "The Scaffolding Trap"; prose-only
+2. "This is where context infrastructure meets identity infrastructure. OBO tokens scope who can act." → "OBO tokens scope who can act." — OBO throat-clear removed; prose-only
+3. Agent 365 sentence condensed: "integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos" → "identity, information access, and behavioral risk evaluated together in a single control plane." — Product names (Entra/Purview/Defender) still appear in footnote [^agent-365-convergence]; factual claims intact
+4. Agent gateway hedge-stacking paragraph compressed: "The underlying requirement is settled" conclusion kept; two speculative questions paragraph removed — prose-only
 
-**Draft status: APPROVED at d895c41. Ready for Chop Pop.**
+**Verdict: CLEAN.** No factual claims, statistics, dates, attributions, or citations changed across all three commits. All verified facts from session 493 remain intact.
+
+**Note on published chapter divergence:** The published chapter (src/chapters/context-infrastructure.md) retains older phrasing from before the prose passes. Chop Pop should propagate the draft to the published chapter. Key differences include adverb removals, throat-clear cuts, and the transition sentence at the end of the draft.
+
+**Draft status: APPROVED at 8a2e9f6. Ready for Chop Pop.**
