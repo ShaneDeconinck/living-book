@@ -99,13 +99,13 @@ The book opens with the problem and the framework:
 
 The technical chapters are organized by pillar. Each stands alone, but they build on each other.
 
-**Potential** — what is worth building that lasts:
+**Potential**: what is worth building that lasts:
 
 - **[Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md)**: why better models make governance harder. Grounded in 40 years of human factors research.
 - **[Context Infrastructure](context-infrastructure.md)**: why context appreciates while scaffolding depreciates. MCP, A2A, agent gateways, and the convergence of identity and information governance.
 - **[Agent Payments and Economics](agent-payments.md)**: x402, EIP-3009, Verifiable Intent, and payment as a trust signal.
 
-**Accountability** — who is accountable, and can you prove it:
+**Accountability**: who is accountable, and can you prove it:
 
 - **[Agent Identity and Delegation](agent-identity.md)**: OAuth extensions, DIDs, Verifiable Credentials, and Verifiable Intent. How identity, credentials, and authority flow through agent systems.
 - **[The Regulatory Landscape](regulatory-landscape.md)**: EU AI Act enforcement timelines, NIST standards initiatives, ISO 42001, and how PAC maps to regulatory requirements.
@@ -114,7 +114,7 @@ The technical chapters are organized by pillar. Each stands alone, but they buil
 - **[Agent Observability](agent-observability.md)**: how to capture not just what an agent did, but what it decided and why. Monitoring, logging, tracing, and the decision provenance gap current tooling leaves open.
 - **[Agent Incident Response](agent-incident-response.md)**: what changes when an AI agent is involved. Blast radius assessment, containment infrastructure, and why agent incidents need their own response procedures.
 
-**Control** — infrastructure that enforces what policy demands:
+**Control**: infrastructure that enforces what policy demands:
 
 - **[Sandboxing and Execution Security](execution-security.md)**: OS sandboxing, containers, microVMs, and defense in depth.
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, AAIF, agent gateways, and why communication protocols solve discovery but not trust.
