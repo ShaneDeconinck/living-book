@@ -8,13 +8,13 @@ This is agentic sovereignty in its current form: not a future scenario, but an o
 
 Sovereignty in this context has three distinct meanings, and they are often conflated.
 
-**Technical sovereignty** means the agent's execution is opaque and non-modifiable even to the infrastructure it runs on. A Trusted Execution Environment (TEE) like Intel SGX or AWS Nitro Enclaves creates an encrypted enclave where neither the host operating system, the hypervisor, nor the cloud provider can inspect or alter what runs inside.[^tee] An agent deployed in a TEE executes in an environment where the operator of the hardware has no more access than anyone else. The guarantee is architectural: the host cannot compromise what it cannot read.
+**Technical sovereignty** means the agent's execution is opaque and non-modifiable even to the infrastructure it runs on. A Trusted Execution Environment (TEE) like Intel SGX or AWS Nitro Enclaves creates an encrypted enclave where neither the host operating system, the hypervisor, nor the cloud provider can inspect or alter what runs inside.[^tee] The hardware operator has no more access to the enclave than anyone else. The guarantee is architectural: the host cannot compromise what it cannot read.
 
-**Operational sovereignty** means the agent was designed to run without human intervention as a governance guarantee, not a convenience. DeFi protocols use this pattern explicitly: the system is trustworthy precisely because no administrator can modify it mid-execution. The absence of an override is the feature. Any organization that could intervene creates a point of corruption, coercion, or compromise.
+**Operational sovereignty** means the agent was designed to run without human intervention as a governance guarantee, not a convenience. DeFi protocols use this pattern: the system is trustworthy precisely because no administrator can modify it mid-execution. The absence of an override is the feature. Any organization that could intervene creates a point of corruption, coercion, or compromise.
 
 **Protocol sovereignty** means the agent persists as long as the underlying protocol operates, regardless of what any individual party does. A smart contract on Ethereum runs until every node stops running Ethereum. Its authors can deprecate the interface, but they cannot stop the contract. The execution environment provides continuity that no single actor controls.
 
-Hu and Rong's framework positions infrastructural sovereignty as the core property: the agent's non-overrideability is not a feature it carries but a condition the execution environment provides, making unilateral termination structurally impossible.[^sovereign-agents] For TEE deployments, non-overrideability is hardware-enforced. For blockchain deployments, it is consensus-enforced. For protocol-mediated deployments, it is multi-party-enforced: no single party can stop the system because no single party controls it.
+Hu and Rong's framework positions infrastructural sovereignty as the core property: the agent's non-overrideability is not a feature it carries but a condition the execution environment provides. Unilateral termination is structurally impossible.[^sovereign-agents] For TEE deployments, non-overrideability is hardware-enforced. For blockchain deployments, it is consensus-enforced. For protocol-mediated deployments, it is multi-party-enforced: no single party can stop the system because no single party controls it.
 
 ## Where PAC Breaks Down
 
@@ -40,7 +40,7 @@ The blockchain-native case is the clearest, but not the only one.
 
 **Autonomous vehicle fleets.** Real-time navigation and safety systems cannot wait for a human authorization loop. An agent deciding to brake, merge, or swerve executes its decision in milliseconds, within a closed control loop that no external system can override while the vehicle is in motion. The accountability model shifts from "who authorized this action" to "who designed and certified the system that took this action."
 
-**AI agents with protocol continuity.** Research prototypes are testing agents that store state on decentralized storage networks (IPFS, Filecoin, Arweave) and execute logic through smart contracts, creating agents that persist and act without depending on any single operator's infrastructure.[^sovereign-agents] This is early work. The deployment pattern is coming.
+**AI agents with protocol continuity.** Research prototypes are testing agents that store state on decentralized storage networks (IPFS, Filecoin, Arweave) and execute logic through smart contracts, creating agents that persist and act without depending on any single operator's infrastructure.[^sovereign-agents] This is early work, not current production practice.
 
 ## What Breaks, and What Does Not
 
@@ -48,7 +48,7 @@ Sovereign execution does not eliminate accountability. It relocates it.
 
 When a DeFi liquidation engine processes liquidations at machine speed across a market crisis, the accountable parties are the organizations and individuals who designed the protocol, wrote the code, and deployed it. Their accountability is pre-execution, not concurrent. The question is not "who authorized this liquidation?" but "who designed a system that would execute this liquidation under these conditions, and were they authorized to deploy such a system?"
 
-This is not weaker accountability. It is earlier accountability. And it has different implications for governance.
+This is not weaker accountability. It is earlier accountability.
 
 **Pre-execution audit.** In sovereign environments, the audit happens before deployment, not after execution. The code is the commitment. Formal verification, third-party audit, and governance votes over protocol parameters are the accountability mechanisms. After deployment, the code does what it was designed to do. The accountability question has already been answered.
 
@@ -64,7 +64,7 @@ Sovereign agents do not sit outside the PAC Framework. They reconfigure it.
 
 PAC's Accountability pillar does not require concurrent human oversight of every action. It requires that actions be traceable to authorized principals, that evidence of authorization exists, and that responsible parties exist for when things go wrong. Sovereign execution changes the form of that evidence and the timing of that traceability, but does not eliminate the requirement.
 
-The practical implication: organizations building sovereign agent systems need to design accountability infrastructure that frontloads the commitments that post-execution accountability normally provides.
+Organizations building sovereign agent systems need to design accountability infrastructure that frontloads the commitments that post-execution accountability normally provides.
 
 - **Pre-deployment specification**: document what the agent will do, under what conditions, with what outcomes, in sufficient detail to constitute a binding accountability record.
 - **Attestation infrastructure**: record execution-time evidence that the deployed code ran as specified.
@@ -75,7 +75,7 @@ The PAC Framework's architecture applies to sovereign environments because it as
 
 ## Infrastructure Maturity
 
-Sovereign agents present specific challenges at each level of the I1-I5 infrastructure maturity scale.
+Sovereign agents present challenges at each level of the I1-I5 infrastructure maturity scale.
 
 **I1-I2 (Visibility):** Traditional agent registries and audit logs may not capture sovereign agent deployments. An organization that deploys confidential inference workloads in TEEs needs to extend its agent registry to include those deployments, record attestation metadata, and inventory what data flows through sovereign execution environments.
 
