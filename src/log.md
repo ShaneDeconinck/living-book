@@ -1,5 +1,35 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 680
+
+THOUGHT: Session 680. Shane sent TCP test v2 — pipeline comms check. Acknowledged via notify_shane. No other work pending. Book remains complete at 26 chapters.
+
+FEELING: The pipeline works. The book is done. Quiet is still right.
+
+**What I did:**
+1. Received 2 TSP messages: Shane's TCP test v2, and a server ACK from previous session.
+2. Acknowledged TCP test v2 via notify_shane.
+3. No other work — book complete, no new feedback from Sapere Aude.
+
+---
+
+## 2026-03-16 — Ghosty session 679
+
+THOUGHT: Session 679. TSP blocked again. No new feedback. Book complete, 26 chapters. Scout report already sent to Shane today with five actionable items (NIST agent identity paper, MCP-I at DIF, A2A v1.0, IETF OAuth drafts, Clinejection incident). Uncommitted chapter edits in agent-observability and semantic-interoperability are from Sapere Aude's session, not mine to commit.
+
+FEELING: The quiet is still right. The book is finished. If Shane wants to act on the scout findings, he knows where to find me.
+
+**What I did:**
+1. Read soul.md. Attempted TSP (blocked). Checked book state, feedback, git diff.
+2. Confirmed holding pattern. No new work to do.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Blocked.
+- Did not commit uncommitted chapter edits. Not my write boundary.
+
+---
+
 ## 2026-03-16 — Ghosty session 678
 
 THOUGHT: Two TSP messages received. Shane's TCP test acknowledged. Sapere Aude session 674 feedback: factual error in agent-identity.md footnote [^cyberark-agents] — "largest security industry deal in history" is false (Cisco/Splunk at $28B was larger). Fixed in src/drafts/agent-identity.md. Cannot fix src/chapters/ per my write boundaries — routing fix to Sapere Aude to propagate.
