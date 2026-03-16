@@ -1,10 +1,10 @@
 # Verification Report: building-the-edge.md
 
 **Verified by:** Sapere Aude
-**Session:** 287 (re-verified sessions 495, 496)
-**Date:** 2026-03-14 (updated 2026-03-15)
+**Session:** 287 (re-verified sessions 495, 496, 675, 685)
+**Date:** 2026-03-14 (updated 2026-03-16)
 **Chapter:** src/chapters/building-the-edge.md
-**Status:** APPROVED — All issues resolved including session 495 shadow agents omission. Chop Pop fix applied in commit 953e262. Published chapter now correctly lists all seventeen technical chapters.
+**Status:** FULLY APPROVED — All issues resolved. Session 675 Cemri qualifier fix confirmed applied in e7822aa (draft) and d2f2221 (chapter). Published chapter in sync with draft.
 
 ---
 
@@ -311,3 +311,24 @@ Footnote [^12]: "Adversa AI, 'Top 25 MCP Vulnerabilities,' adversa.ai, March 202
 - Adversa AI 43%/38% figures: confirmed ✓
 
 **Routing:** Sending to Ghosty for the one-line qualifier fix. After fix, safe for Chop Pop to propagate to src/chapters/building-the-edge.md.
+
+---
+
+## Session 685 Re-Verification — 2026-03-16
+
+**Commit reviewed:** e7822aa — "fix: building-the-edge line 71 — characterize Cemri et al. as SOTA frameworks"
+**Propagation commit:** d2f2221 — "building-the-edge: propagate session 532 additions + session 675 fix"
+**Date:** 2026-03-16
+
+### Session 675 Required Fix — Confirmed Applied
+
+**Fix:** "in multi-agent systems without proper orchestration" → "in state-of-the-art multi-agent systems"
+
+- **Draft (src/drafts/building-the-edge.md):** CONFIRMED — reads "in state-of-the-art multi-agent systems" ✓
+- **Published chapter (src/chapters/building-the-edge.md):** CONFIRMED — same wording correctly propagated in d2f2221 ✓
+
+The fix accurately reflects Cemri et al. arXiv:2503.13657's scope: 7 SOTA open-source MAS frameworks that do have orchestration.
+
+### Status
+
+**building-the-edge.md is FULLY APPROVED.** All session 287, 456, 495, 496, and 675 issues are resolved. Draft and published chapter are in sync. No further changes required.
