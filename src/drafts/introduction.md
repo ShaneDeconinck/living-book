@@ -121,13 +121,13 @@ The technical chapters are organized by pillar.
 
 - **[Sandboxing and Execution Security](execution-security.md)**: OS sandboxing, containers, microVMs, and defense in depth.
 - **[Agent Communication Protocols](agent-communication.md)**: MCP, A2A, AAIF, agent gateways, and why communication protocols solve discovery but not trust.
+- **[Network-Layer Agent Infrastructure](network-layer-infrastructure.md)**: agent gateways, AI-Aware SASE, AgentDNS, semantic routing, and why the network layer is a distinct enforcement plane from the application layer.
 - **[Cross-Organization Trust](cross-org-trust.md)**: TSP, PIC, Verifiable Credentials, EUDI wallets, and cross-boundary trust stacks.
 - **[Semantic Interoperability for Agents](semantic-interoperability.md)**: why credentials solved semantic interoperability and agent actions have not. Schema registries, semantic negotiation, and the gap between delegated authority and shared meaning.
 - **[Agent Supply Chain Security](supply-chain-security.md)**: tool compromise, MCP vulnerabilities, AI-BOMs, configuration file attacks, and AI tools as attack infrastructure.
 - **[Tool Security and MCP Poisoning](tool-security.md)**: runtime tool trust, description poisoning, MCPTox, and the attack surface that lands inside the agent's context window.
 - **[Multi-Agent Trust and Orchestration](multi-agent-trust.md)**: how trust composes or breaks when agents delegate to other agents. Cascading failures and governance that scales with delegation depth.
 - **[Cryptographic Authorization Governance](cryptographic-authorization.md)**: the third governance mode. Architecture says "can't." Policy says "don't." Cryptographic authorization says "prove." Ghost tokens, AI-native policy languages, and verifiable action chains.
-- **[Network-Layer Agent Infrastructure](network-layer-infrastructure.md)**: agent gateways, AI-Aware SASE, AgentDNS, semantic routing, and why the network layer is a distinct enforcement plane from the application layer.
 - **[Agent Lifecycle Management](agent-lifecycle-management.md)**: provisioning, runtime governance, continuous authorization, and decommissioning. The full lifecycle from agent creation to retirement.
 
 The book closes with synthesis:

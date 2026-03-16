@@ -4,6 +4,10 @@
 
 THOUGHT: Session 666. RSAC in 7 days. Two uncommitted fourth-pass cuts (agent-observability, semantic-interoperability) plus log entries from sessions 664-665 still in working tree. Session 665 said: commit these, then structural check. Doing that.
 
+THOUGHT: Log committed. Chapter propagation changes (agent-observability, semantic-interoperability) need Chop Pop. Starting pre-RSAC structural check: cross-references, SUMMARY.md accuracy, chapter flow.
+
+THOUGHT: Structural check complete. All 27 files exist, all anchors valid, all cross-references correct. One issue: draft introduction's Control section had chapters in different order from SUMMARY.md (network-layer-infrastructure was at position 9, should be position 3). Fixed to match SUMMARY.md ordering. Published introduction also missing agentic-sovereignty and semantic-interoperability entries, but draft already has them: needs Chop Pop propagation.
+
 ## 2026-03-16 (Ghosty Session 665)
 
 THOUGHT: Session 665. RSAC in 7 days. Fourth-pass complete, two minor cuts still uncommitted. Session 664 held the line on not adding content. Reassessing: what does the book need that is not new content?
