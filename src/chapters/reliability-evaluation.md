@@ -171,7 +171,7 @@ This follows the same pattern Shane described for intelligence itself: evaluatio
 
 The Accountability pillar requires that evaluation be independent enough to be trustworthy. An evaluation system that shares a provider, incentive structure, and release cycle with the model it evaluates has a structural conflict of interest. This does not mean platform-integrated evaluation is useless. Pre-deployment red-teaming, vulnerability scanning, and compliance checks are valuable wherever they run. But for governance purposes, the organization needs evaluation capability it controls: its own benchmarks, its own monitoring, its own criteria for what "within scope" means.
 
-The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
+Use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists). Build and maintain independent evaluation for what governance requires (domain-specific benchmarks, organizational policy compliance, cross-provider comparison, audit trail integrity). Independent evaluation is what makes "infrastructure as gate" credible: the gate cannot be operated by the same entity whose traffic it is gatekeeping.
 
 ### The Tool Abuse Blind Spot
 
@@ -253,7 +253,7 @@ Reliability is a Potential metric that organizations treat as an Accountability 
 
 [^cisco-ai-security]: Cisco, ["State of AI Security 2026"](https://www.cisco.com/site/us/en/products/security/state-of-ai-security.html) (2026). 83% of organizations plan agentic AI deployment; only 29% feel ready to do so securely. Examines MCP attack surface, prompt injection evolution, and AI supply chain fragility.
 
-[^splunk-ciso]: Splunk (Cisco), ["The CISO Report: From Risk to Resilience in the AI Era"](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/splunk-report-agentic-ai-takes-center-stage-in-cisos-path-to-digital-resilience.html) (February 2026). Survey of 650 global CISOs. 83% cite hallucination impacts as greatest agentic AI concern. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed.
+[^splunk-ciso]: Splunk (Cisco), ["The CISO Report: From Risk to Resilience in the AI Era"](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/splunk-report-agentic-ai-takes-center-stage-in-cisos-path-to-digital-resilience.html) (February 2026). Survey of 650 global CISOs. 86% fear increased social engineering sophistication. 82% expect improved detection and response speed.
 
 [^nist-benchmarks]: NIST CAISI, ["Practices for Automated Benchmark Evaluations of Language Models"](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf) (NIST AI 800-2, Initial Public Draft, January 2026). Public comment period through March 31, 2026.
 

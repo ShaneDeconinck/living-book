@@ -27,8 +27,6 @@ When an agent pays for an API call using x402, the payment creates:
 - **Sybil resistance.** Creating fake agents is cheap. Making them pay is not. Payment is a natural filter against spam, abuse, and resource exhaustion.
 - **Audit trail.** On-chain settlement creates an immutable record of who paid whom, when, and how much. This is compliance-grade accounting that happens automatically.
 
-The protocols emerging for agent payments are not just financial plumbing: they are governance infrastructure.
-
 ## x402: HTTP Gets a Payment Layer
 
 HTTP 402 "Payment Required" has existed since 1997 but never had a payment layer behind it. Coinbase and Cloudflare are building one: x402, an open standard that embeds payment directly into HTTP workflows.[^3]
@@ -117,7 +115,7 @@ Three properties make this architecturally distinct from Verifiable Intent:
 
 **Time-bound validity.** Signatures expire after a maximum of 8 minutes. Merchants track nonces within that window to prevent replay attacks. The combination of short-lived signatures and nonce deduplication means captured requests are useless almost immediately.
 
-**Existing web infrastructure.** TAP is built on HTTP, not on new credential formats. Merchants need to add signature verification to their existing web servers, not adopt SD-JWT or blockchain infrastructure. This is a deliberate adoption strategy: minimal changes to existing systems.[^tap-spec]
+**Existing web infrastructure.** TAP is built on HTTP, not on new credential formats. Merchants need to add signature verification to their existing web servers, not adopt SD-JWT or blockchain infrastructure.[^tap-spec]
 
 The protocol carries three types of information: agent intent (proof the agent is Visa-trusted with a specific commerce purpose), consumer recognition (hashed identifiers that let merchants match returning customers without exposing raw data), and payment information (hashed credentials for checkout or encrypted payloads for API integrations).[^tap]
 
@@ -262,7 +260,7 @@ Together they compose into a complete trust stack for agent commerce:
 
 Neither layer alone is sufficient. An agent with a valid Digital Agent Passport but no spending constraints can still overspend. An agent with tight Verifiable Intent constraints but no identity verification could be a spoofed copy. The combination provides both identity assurance and behavioral enforcement.
 
-The convergence is already happening: Trulioo and Prove both support AP2, which integrates Verifiable Intent. The infrastructure is assembling into a stack where KYA provides the pre-transaction trust layer and Verifiable Intent provides the per-transaction constraint layer.
+The convergence is already happening: Trulioo and Prove both support AP2, which integrates Verifiable Intent.
 
 ## PAC Framework Mapping
 
