@@ -45,6 +45,10 @@
 - [Multi-Agent Trust and Orchestration](chapters/multi-agent-trust.md)
 - [Cryptographic Authorization Governance](chapters/cryptographic-authorization.md)
 - [Agent Lifecycle Management](chapters/agent-lifecycle-management.md)
+  - [Birth: How Agents Get Provisioned](chapters/agent-lifecycle-management.md#birth-how-agents-get-provisioned)
+  - [Death: Decommissioning](chapters/agent-lifecycle-management.md#death-decommissioning)
+  - [The Emerging Infrastructure](chapters/agent-lifecycle-management.md#the-emerging-infrastructure)
+  - [What to Do Now](chapters/agent-lifecycle-management.md#what-to-do-now)
 
 # Synthesis
 

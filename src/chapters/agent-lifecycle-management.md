@@ -28,13 +28,13 @@ The IETF's March 2026 draft on AI Agent Authentication and Authorization (draft-
 
 Every agent needs a named, accountable human owner from day one. Not a team. Not a department. A person.
 
-This is the lesson from shadow agent governance: when agents have no owner, nobody notices when they drift, break, or get compromised. Saviynt's framework requires structured capture of the accountable owner alongside the agent's model version, hosting environment, and declared purpose.[^saviynt] Okta's AI Agent Lifecycle Management framework enforces ownership as part of identity creation, before the agent receives any credentials.[^okta-lcm]
+When agents have no owner, nobody notices when they drift, break, or get compromised. Saviynt's framework requires structured capture of the accountable owner alongside the agent's model version, hosting environment, and declared purpose.[^saviynt] Okta's AI Agent Lifecycle Management framework enforces ownership as part of identity creation, before the agent receives any credentials.[^okta-lcm]
 
 Ownership is not permanent. It must transfer when people change roles, leave the organization, or when the agent's purpose shifts. The decommissioning section below covers what happens when ownership transfer fails.
 
 ### Initial scoping
 
-The agent's initial permissions should reflect its declared purpose and nothing more. Shane's trust inversion applies here: agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
+The agent's initial permissions should reflect its declared purpose and nothing more. Agents start from zero authority and receive explicit grants for what they can do.[^trust-inversion]
 
 In practice, this fails at provisioning time more often than anywhere else. Teleport's 2026 report found that 70% of organizations grant AI systems higher levels of privileged access than humans would receive for the same task.[^teleport] The reason is structural: provisioning agents through existing IAM tools means choosing from permission sets designed for human roles. An agent that needs to read one database table gets a "data analyst" role that includes read access to every table in the schema.
 
@@ -73,7 +73,7 @@ Traditional authorization is a point-in-time decision: the agent presents a toke
 
 Re-evaluate authorization at execution time, not just at token issuance time. Has the user who delegated authority revoked it? Has the agent's context changed? Has the policy changed? Has the risk level of the action changed?
 
-The Cryptographic Authorization chapter's CAAM pattern implements this: every tool call passes through a sidecar that evaluates the agent's session context, the requested action, and the current policy before permitting execution. The lifecycle dimension adds temporal context: how long has this agent been running? When were its credentials last rotated? Is the delegating user still active?
+Every tool call passes through a sidecar that evaluates the agent's session context, the requested action, and the current policy before permitting execution. The lifecycle dimension adds temporal context: how long has this agent been running? When were its credentials last rotated? Is the delegating user still active?
 
 ## Death: Decommissioning
 
@@ -124,7 +124,7 @@ The pattern across all four platforms: agents are treated as first-class identit
 
 ## The Standards Consolidation
 
-The IETF draft-klrc-aiagent-auth (March 2026) represents the first attempt to consolidate the agent lifecycle from the standards perspective.[^klrc] Co-authored by engineers from Defakto Security, AWS, Zscaler, and Ping Identity, the draft maps existing standards to agent scenarios:
+The IETF draft-klrc-aiagent-auth (March 2026) consolidates the agent lifecycle from the standards perspective.[^klrc] Co-authored by engineers from Defakto Security, AWS, Zscaler, and Ping Identity, the draft maps existing standards to agent scenarios:
 
 - **Identity:** WIMSE/SPIFFE for workload-level, OAuth/OIDC for application-level
 - **Authentication:** mTLS with short-lived workload identities as the primary mechanism
