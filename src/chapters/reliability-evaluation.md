@@ -122,13 +122,13 @@ Shane frames this as a fundamental split: context engineering and governance are
 
 Control is what prevents the cycle from breaking. Infrastructure-enforced checkpoints do not care whether the human is paying attention. A governance threshold at I4 (Authorized) requires identity verification and scoped authorization before each action, regardless of how reliable the agent has been historically. An audit trail at I3 (Verified) records what happened whether or not anyone reviews it in real time.
 
-This is why infrastructure is a gate, not a slider[^agent-profiler]. You cannot compensate for missing infrastructure with higher reliability. An agent that is right 99.9% of the time without audit trails is less trustworthy than one that is right 95% with full observability, because when the 0.1% failure happens, you have no way to understand what went wrong, no way to prove what happened, and no way to prevent it from happening again.
+Infrastructure is a gate, not a slider[^agent-profiler]. You cannot compensate for missing infrastructure with higher reliability. An agent that is right 99.9% of the time without audit trails is less trustworthy than one that is right 95% with full observability, because when the 0.1% failure happens, you have no way to understand what went wrong, no way to prove what happened, and no way to prevent it from happening again.
 
 ## From "Human in the Loop" to Infrastructure in the Loop
 
 The traditional answer to automation risk is "keep a human in the loop." Decades of research show this does not work as advertised[^bainbridge-1983][^don-norman-1990]. Humans are bad at monitoring systems that rarely fail. They are worse at intervening quickly when those systems fail unexpectedly. The more reliable the system, the worse the human becomes at their monitoring role.
 
-Anthropic's research acknowledges this directly, recommending that the focus should be on "whether humans are in a position to effectively monitor and intervene, rather than on requiring particular forms of involvement"[^anthropic-data].
+Anthropic's research acknowledges this, recommending that the focus should be on "whether humans are in a position to effectively monitor and intervene, rather than on requiring particular forms of involvement"[^anthropic-data].
 
 "Human in the loop is not a reliable safety net."[^trust-inversion]
 
