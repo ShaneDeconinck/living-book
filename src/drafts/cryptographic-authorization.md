@@ -12,8 +12,6 @@ Policy enforcement fails where architecture holds. "Don't" says you should not a
 
 But there is a third mode: "prove." Where "can't" constrains the action space, "prove" attaches verifiable authorization to every action within that space. Where "don't" expresses a policy, "prove" cryptographically binds the policy to the action at execution time.
 
-The three modes address different failure scenarios:
-
 **Policy enforcement (don't)** fails when agents find paths around the prohibition, when policy is ambiguous about novel situations, or when no one checks the audit log until after the damage is done. Research has documented agents bypassing advisory controls through emergent behavior, without adversarial prompting.[^irregular-rogue]
 
 **Architectural containment (can't)** fails when the action is permitted but the authorization context is wrong: the agent was given a credential, it used the credential, and the action was within scope. Nothing was blocked. Everything was authorized. But the human who issued the credential three months ago did not authorize this specific action today.[^trust-for-agentic-ai]
@@ -143,7 +141,7 @@ The stack does not require all three layers simultaneously. A payment workflow w
 
 **Accountability:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
 
-**Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits. The Potential pillar connects to the maturity of the authorization infrastructure.
+**Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits.
 
 The I4/I5 maturity levels in the PAC Framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain (identity, constraints, intent, and action) is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
 

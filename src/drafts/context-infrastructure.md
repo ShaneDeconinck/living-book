@@ -20,7 +20,7 @@ This pattern is not slowing down. Training depreciates. Code depreciates. Access
 
 Shane identified a specific failure mode: the scaffolding trap. When the model improves, scaffolding does not just become dead weight. It actively fights the model's new capabilities. The workaround you wrote for a limitation now prevents the model from using the better approach it learned.[^2]
 
-Claude Code's history illustrates this concretely. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
+Claude Code's history illustrates this. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
 
 The architecture that resulted is instructive: a single loop, a handful of basic tools, no multi-agent orchestration. Anthropic's engineering blog puts it simply: "do the simplest thing that works."[^3]
 
@@ -38,11 +38,11 @@ The runtime optimization matters, but the lasting investment is in what sits beh
 
 For decades, organizations have been fighting information silos, duplicate systems, inconsistent data. Expensive, but manageable when software was rigid and humans were the consumers. Now software becomes fluid. Agents can traverse, query, and act on anything they can reach. The mess gets amplified. An agent loose in poorly managed information does not just find the wrong answer. It acts on it. At machine speed.[^1]
 
-But the inverse is also true. Well-structured, discoverable, properly governed information becomes exponentially more valuable when agents can consume it. The same cleanup you should have done for humans now pays compound interest through agents.
+But the inverse is also true. Well-structured, discoverable, properly governed information becomes more valuable when agents can consume it. The same cleanup you should have done for humans now pays compound interest through agents.
 
 ## Context in Practice: What Works
 
-The most capable agents running today share a pattern: thin architecture, rich context.
+Notable production agents share a pattern: thin architecture, rich context.
 
 ### Claude Code: Files and Search
 
@@ -126,7 +126,7 @@ Agents cannot leverage information they cannot find. But discoverable informatio
 
 Access scoped to the delegating user's authority. This connects to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
 
-For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
+For context infrastructure, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
 The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10]
 
@@ -140,7 +140,7 @@ This dimension is often underestimated. Organizations focus on getting informati
 
 Freshness is not just about updating data. It is about the agent knowing what it does not know: metadata that says "this was last verified on date X" or "this source may have changed since retrieval." Without freshness signals, the agent has no way to calibrate its confidence.
 
-There is a related dimension that freshness alone does not cover: context integrity. Microsoft's discovery of AI Recommendation Poisoning showed that 31 legitimate companies across 14 industries were embedding hidden instructions in "Summarize with AI" buttons to bias AI assistant memory toward their products.[^rec-poison] This is not adversarial attack in the traditional sense: it is commercial manipulation of agent context at scale. The context the agent consumed was fresh and came through a normal interaction channel. It was simply designed to corrupt the agent's future decision-making for commercial advantage. Defending against this requires treating context provenance and integrity as governed properties, not just freshness. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this as part of the broader memory poisoning threat.
+There is a related dimension that freshness alone does not cover: context integrity. Microsoft's discovery of AI Recommendation Poisoning showed that 31 legitimate companies across 14 industries were embedding hidden instructions in "Summarize with AI" buttons to bias AI assistant memory toward their products.[^rec-poison] This is not adversarial attack in the traditional sense: it is commercial manipulation of agent context at scale. The context the agent consumed was fresh and came through a normal interaction channel. It was designed to corrupt the agent's future decision-making for commercial advantage. Defending against this requires treating context provenance and integrity as governed properties, not just freshness. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this as part of the broader memory poisoning threat.
 
 ## The Compounding Effect
 

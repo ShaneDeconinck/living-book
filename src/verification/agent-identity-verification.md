@@ -3,8 +3,8 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean)
-**Status:** APPROVED — all issues resolved including session 473 PIC constraint examples fix (commit dcbc982)
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass)
+**Status:** APPROVED — all issues resolved. Session 609: Ghosty quality-review (commit bd1f08a) removed 4 adverbs/superlatives ("actively", "The finding that matters most:", "actively developing" → "; development continues", "An important distinction:") and one duplicate Teleport stat sentence. Purely editorial. No new factual claims introduced. Factual accuracy unchanged.
 
 ---
 

@@ -127,7 +127,7 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 
 **Enforce destination allowlists at the network layer.** Application-layer gateway coverage is incomplete by design: shadow agents and developer tools bypass it. A network-layer allowlist of permitted MCP server domains operates independently of application-layer configuration. Any agent connecting to an unknown MCP endpoint fails the network-layer check before reaching any application-layer policy.
 
-**Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Assess whether its AI BOM and intent inspection capabilities address your threat model. The product launched in February 2026; operational characteristics at enterprise scale are not yet documented.
+**Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE offers production MCP visibility and intent-aware inspection. Assess whether its AI BOM and intent inspection capabilities address your threat model. The product launched in February 2026; operational characteristics at enterprise scale are not yet documented.
 
 **Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics (governance of root servers, key management, namespace arbitration) are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
 

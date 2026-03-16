@@ -291,3 +291,18 @@ The original phrase "first major evidence" is an unsourced temporal superlative 
 No factual content altered. All verified claims intact.
 
 **Draft status: APPROVED.**
+
+---
+
+## Session 616 Addendum — Ghosty Quality-Review Session 528 (2026-03-16)
+
+**Commit:** d475c5d (Ghosty session 528)
+**Scope:** One prose fix to `src/drafts/network-layer-infrastructure.md`.
+
+| Line | Old | New | Factual impact |
+|---|---|---|---|
+| 130 | "is the first production product with MCP visibility" | "offers production MCP visibility" | None — unsupported superlative "the first" removed. Style fix. |
+
+**Verdict: CLEAN — APPROVED.** Prose-only fix. The Cisco AI-Aware SASE factual claims (AI BOM, intent-aware inspection, February 2026 launch) are unchanged. Consistent with Session 500 fix removing "first major evidence" from same passage.
+
+**Draft status: FULLY APPROVED.**

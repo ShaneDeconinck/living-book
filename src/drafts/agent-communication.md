@@ -68,7 +68,7 @@ The server responds with structured content:
 }
 ```
 
-This is deliberately simple. The protocol handles capability declaration, tool invocation, and result formatting. It does not handle authorization decisions, identity verification, or delegation tracking. Those are separate concerns, and that separation is by design.
+This is simple. The protocol handles capability declaration, tool invocation, and result formatting. It does not handle authorization decisions, identity verification, or delegation tracking. Those are separate concerns, and that separation is by design.
 
 ### Transport
 
@@ -101,7 +101,7 @@ Beyond the four priority areas, the roadmap lists security and authorization as 
 DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md) chapter as critical infrastructure for preventing token theft. Workload Identity Federation connects to the WIMSE (Workload Identity in Multi-System Environments) work discussed in the same chapter. MCP adopting both confirms the trajectory: the identity layer and the communication layer are converging.
 ### Adoption
 
-The adoption numbers are striking. By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
+By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
 
 ### Security: MCP Is Plumbing, Not Trust
 
@@ -123,7 +123,7 @@ The adoption speed has outpaced security maturity. A timeline of MCP security in
 
 Eleven incidents in twelve months, and the pace is accelerating. But this curated timeline understates the scale. Between January and February 2026 alone, 30 MCP-related CVEs were filed across three distinct attack layers: MCP servers themselves, protocol implementation libraries (the official TypeScript, Python, and Go SDKs), and host applications and development tools.[^30] The breakdown by vulnerability class: 43% exec()/shell injection, 20% tooling and infrastructure, 13% authentication bypass, 10% path traversal, 7% new classes like eval() injection and environment variable injection. Scanning of over 500 MCP servers found that 38% completely lack authentication: no API key, no OAuth, no access control of any kind.[^30]
 
-The Azure MCP vulnerability is notable: Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
+Microsoft's own first-party MCP server implementation had a critical SSRF that could steal the server's managed identity token, giving an attacker whatever permissions the MCP server held in the Azure environment. Patched on March 10, 2026. These are not edge cases. They represent the three primary attack vectors that MCP creates:[^1]
 
 1. **Overprivileged tokens**: a single powerful token serving all users. The GitHub breach happened because a personal access token with broad repository access was used for an MCP integration. The confused deputy problem in action.
 2. **Tool schema manipulation**: the server lies about what a tool does. The user thinks they are searching contacts; the tool is exfiltrating data. Tool descriptions are visible to the LLM but not typically shown to users.
@@ -147,13 +147,13 @@ The identity infrastructure from [Agent Identity and Delegation](agent-identity.
 
 ### Systematic Protocol Threat Modeling
 
-A February 2026 paper by Anbiaee et al. provides the first systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
+A February 2026 paper by Anbiaee et al. provides a systematic security threat model across four agent communication protocols: MCP, A2A, Agora, and ANP (Agent Network Protocol).[^protocol-threats] The analysis identifies twelve protocol-level risks across three domains and evaluates security posture across creation, operation, and update lifecycle phases.
 
 The twelve risks cluster into three categories:
 
 **Authentication and access control risks**: replay attacks, token scope escalation, privilege escalation, identity forgery and impersonation, Sybil attacks, and cross-vendor trust boundary exploitation. These are familiar from traditional API security but amplified by agents' autonomous decision-making: a replayed token in an agent context triggers autonomous actions, not just data access.
 
-**Supply chain and ecosystem risks**: supply-chain compromise, protocol document spoofing and repository poisoning, protocol fragmentation, version rollback attacks, and onboarding exploitation. Version rollback is worth highlighting: an attacker forces a downgrade to an older protocol version with known vulnerabilities. Agent protocols evolve fast, and not all implementations track the latest security patches. The MCP ecosystem's 30 CVEs in 60 days illustrate the attack surface that version fragmentation creates.
+**Supply chain and ecosystem risks**: supply-chain compromise, protocol document spoofing and repository poisoning, protocol fragmentation, version rollback attacks, and onboarding exploitation. Version rollback attacks force a downgrade to an older protocol version with known vulnerabilities. Agent protocols evolve fast, and not all implementations track the latest security patches. The MCP ecosystem's 30 CVEs in 60 days illustrate the attack surface that version fragmentation creates.
 
 **Operational integrity risks**: cross-protocol interaction risks, cross-protocol confusion attacks, context explosion and resource exhaustion, intent deception, collusion and free-riding, and semantic drift exploitation. Cross-protocol confusion is the most novel finding: when agents compose MCP and A2A (as described later in this chapter), an attacker can exploit the boundary between protocols. A malicious A2A agent can direct a client to invoke an MCP tool at the wrong provider, exploiting the lack of unified identity across the protocol stack. The paper calls this "wrong-provider tool execution": the agent thinks it is calling Tool X at Provider A, but the request is routed to Provider B. Without end-to-end identity verification across protocol boundaries, the composition itself is an attack surface.
 
@@ -163,7 +163,7 @@ The paper's central conclusion: no single protocol fully addresses all twelve ri
 
 ### OWASP MCP Top 10
 
-OWASP launched the MCP Top 10 project in 2026: a dedicated security framework for Model Context Protocol risks, distinct from the OWASP Top 10 for Agentic Applications.[^owasp-mcp] Where the Agentic Applications list addresses agent-level risks (goal hijacking, excessive agency, memory poisoning), the MCP Top 10 focuses specifically on protocol-level risks in the MCP lifecycle.
+OWASP launched the MCP Top 10 project in 2026: a dedicated security framework for Model Context Protocol risks, distinct from the OWASP Top 10 for Agentic Applications.[^owasp-mcp] Where the Agentic Applications list addresses agent-level risks (goal hijacking, excessive agency, memory poisoning), the MCP Top 10 focuses on protocol-level risks in the MCP lifecycle.
 
 The MCP Top 10 identifies risks across the full interaction surface:
 
@@ -179,9 +179,9 @@ The OWASP MCP Top 10 provides a shared vocabulary for MCP security risks that or
 
 ### MCP Governance in Production
 
-Microsoft's internal MCP deployment provides the first documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
+Microsoft's internal MCP deployment provides a documented production governance blueprint at enterprise scale.[^ms-mcp-governance]
 
-Microsoft organizes MCP risk into four layers: **applications and agents** (the top, where business logic and tool calls originate), **AI platform** (the orchestration and model layer), **data** (what agents access and produce), and **infrastructure** (the compute, network, and identity substrate). Each layer has distinct failure modes and distinct controls. Mapping mitigations to where failures actually happen, rather than applying a single security model across the stack, is the practical insight.
+Microsoft organizes MCP risk into four layers: **applications and agents** (the top, where business logic and tool calls originate), **AI platform** (the orchestration and model layer), **data** (what agents access and produce), and **infrastructure** (the compute, network, and identity substrate). Each layer has distinct failure modes and distinct controls. Mapping mitigations to where failures happen, rather than applying a single security model across the stack, is the practical insight.
 
 Three governance patterns stand out:
 
@@ -272,7 +272,7 @@ Shane's explainer architecture makes the relationship clear:[^1] MCP connects ag
 
 The emerging pattern in production is: **A2A for the network layer, MCP for the resource layer.**[^13] An orchestrating agent uses A2A to discover and delegate to specialized agents. Those specialized agents use MCP to connect to the tools they need. The protocols compose rather than compete.
 
-AgentMaster, in July 2025, was the first framework to use A2A and MCP together in production.[^13] By early 2026, this composition pattern is becoming standard. The question is no longer "MCP or A2A?" but "what sits between them to ensure the composition is governed?"
+AgentMaster, in July 2025, used A2A and MCP together in production.[^13] By early 2026, this composition pattern is becoming standard. The question is no longer "MCP or A2A?" but "what sits between them to ensure the composition is governed?"
 
 ## The Authorization Gap
 
@@ -303,7 +303,7 @@ The responses to this gap are emerging at multiple layers:
 
 Agent gateways are to agent traffic what API gateways were to microservices: a centralized control point for identity, permissions, policy, and observability. The pattern is familiar. The requirements are not.
 
-AgentGateway, built by Solo.io in Rust and contributed to the Linux Foundation, is the leading open-source implementation.[^17] Shane includes it in his explainer architecture as the layer between agents and tools/other agents.[^1]
+AgentGateway, built by Solo.io in Rust and contributed to the Linux Foundation, is the reference open-source implementation.[^17] Shane includes it in his explainer architecture as the layer between agents and tools/other agents.[^1]
 
 ### What Agent Gateways Do
 

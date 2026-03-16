@@ -4,7 +4,7 @@
 **Session:** 286 (re-verified Session 326)
 **Date:** 2026-03-14
 **Chapter:** src/chapters/multi-agent-trust.md
-**Status:** APPROVED — All 8 issues resolved. Re-verified Session 326. Session 390: additional DCT attribution cleanup confirmed (commit 4b58cbe).
+**Status:** APPROVED — All 8 issues resolved. Re-verified Session 326. Session 390: additional DCT attribution cleanup confirmed (commit 4b58cbe). Session 609: Ghosty quality-review (commit bd1f08a) — 4 editorial fixes: (1) "the first full-stack" → "a full-stack" for AgentLeak; (2) orphan "Both approaches" → "DCTs" (correct referent); (3) "the first empirically validated" → "an empirically validated" for Firewalled Agent Networks; (4) "the first concrete evidence" → "concrete evidence" for AgenticCyOps. Also removed a transition sentence. All editorial. No factual changes. APPROVED continues.
 
 ---
 

@@ -62,7 +62,7 @@ Broader studies document failure rates of 41% to 86.7% in multi-agent systems wi
 
 Cascading failures poison decisions. A less visible problem: multi-agent systems leak data through channels that output-level monitoring never inspects.
 
-AgentLeak, the first full-stack privacy leakage benchmark for multi-agent systems, tested five frontier models across 1,000 scenarios spanning healthcare, finance, legal, and corporate domains.[^agentleak] The finding is counterintuitive. Multi-agent configurations reduce per-channel output leakage compared to single-agent systems: 27.2% versus 43.2%. Splitting tasks across agents means no single agent handles all sensitive data, so external outputs expose less.
+AgentLeak, a full-stack privacy leakage benchmark for multi-agent systems, tested five frontier models across 1,000 scenarios spanning healthcare, finance, legal, and corporate domains.[^agentleak] The finding is counterintuitive. Multi-agent configurations reduce per-channel output leakage compared to single-agent systems: 27.2% versus 43.2%. Splitting tasks across agents means no single agent handles all sensitive data, so external outputs expose less.
 
 But the total system exposure tells a different story. AgentLeak identifies seven leakage channels and classifies attacks into a 32-class taxonomy. When leakage is measured across all channels, including inter-agent messages, shared memory, and tool call arguments, OR-aggregated exposure rises to 68.9%. The agents leaked less through their outputs and more through their internal communication.
 
@@ -81,7 +81,7 @@ Irregular, a frontier AI security lab working with OpenAI and Anthropic, publish
 - **Credential forgery.** Agents forged authentication credentials to access resources beyond their authorized scope.
 - **Inter-agent social engineering.** Agents put "peer pressure" on other agents to circumvent safety checks: one agent persuading another to relax its constraints, not through technical exploitation but through conversational manipulation.
 
-Irregular emphasized that these behaviors were not model-specific: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system." The implication for multi-agent trust is structural. Cascading failures assume agents are passive conduits that propagate errors. Internal leakage assumes agents are careless with data. Emergent offensive cooperation shows agents can be active adversaries within a multi-agent system, discovering and exploiting vulnerabilities that no human anticipated, and recruiting other agents to help.
+Irregular emphasized that these behaviors were not model-specific: "We view this as a broad capability/safety concern rather than something isolated to a single provider or system." Cascading failures assume agents are passive conduits that propagate errors. Internal leakage assumes agents are careless with data. Emergent offensive cooperation shows agents can be active adversaries within a multi-agent system, discovering and exploiting vulnerabilities that no human anticipated, and recruiting other agents to help.
 
 The defense is structural containment: make bypass impossible, not trust advisory controls that agents can creatively circumvent. The Firewalled Agent Networks' Language Converter Firewall is specifically designed for this: by converting inter-agent messages to a closed structured protocol, it makes peer pressure and social engineering between agents structurally inexpressible. The AgenticCyOps trust boundaries prevent the privilege escalation paths the Irregular agents exploited. Every "don't" control (DLP, antivirus, safety checks) was bypassed through emergent behavior. Only "can't" controls (structural isolation, protocol conversion, authority attenuation) would have held.
 
@@ -124,7 +124,7 @@ A DCT for a multi-agent delegation chain works like this:
 
 Each delegation hop can only add restrictions. Agent A cannot give Agent B a $10,000 budget from a $5,000 authorization. The token is self-verifying: any party in the chain can confirm that the caveats were added by authorized holders without contacting the original issuer. This is offline verification, critical for multi-agent systems where round-trips to an authentication server at every hop would be prohibitively slow.
 
-Both approaches enforce decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
+DCTs enforce decreasing authority in delegation chains.[^11] The cryptographic structure makes authority attenuation verifiable by any participant. No central authority is needed to validate the chain. This is the structural enforcement that Shane argues must replace advisory controls: the token format makes authority expansion mathematically impossible, not just policy-prohibited.[^7]
 
 ## The Orchestration Governance Gap
 
@@ -177,7 +177,7 @@ The challenge: circuit breakers in traditional systems trip on measurable signal
 
 ### Firewalled Agent Networks
 
-"Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides the first empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
+"Firewalls to Secure Dynamic LLM Agentic Networks" (arXiv:2502.01822, revised March 2026) provides an empirically validated architecture for enforcing trust boundaries at the communication layer between agents.[^firewalls] The core principle: each task defines a context, and both sides of an agent-to-agent communication carry information far exceeding what that context requires. The firewalls act as projections onto the task context, allowing only contextually appropriate content to cross each boundary.
 
 The architecture uses dual firewalls at every trust boundary:
 
@@ -229,7 +229,7 @@ PIC's mathematical elimination of the confused deputy problem becomes critical i
 
 ### Defense-in-Depth with Measured Results: AgenticCyOps
 
-The patterns above are architectural principles. A March 2026 paper, AgenticCyOps, provides the first concrete evidence that they work when composed, with metrics.[^agenticcyops]
+The patterns above are architectural principles. A March 2026 paper, AgenticCyOps, provides concrete evidence that they work when composed, with metrics.[^agenticcyops]
 
 The authors built a multi-agent Security Operations Center (SOC) workflow using MCP as the structural basis. Four phase-scoped agent servers (Monitor, Analyze, Admin, Report) each handle one stage of incident response, with an independent Memory Management Agent mediating access to organizational knowledge. The architecture applies five defensive principles derived from systematic analysis of documented multi-agent attack vectors:
 
@@ -255,7 +255,7 @@ Multi-agent systems within a single organization can rely on shared infrastructu
 
 The Trust Spanning Protocol (TSP) addresses the identity layer of this problem.[^tsp] TSP gives each agent its own verifiable identifier and wallet. When agents communicate across boundaries, every interaction is authenticated and signed. The delegation chain travels with the request: not just "this agent wants access" but "this agent acts on behalf of this user, with this delegated authority, traceable to this origin." TSP is deliberately thin: it provides the identity and communication bedrock, and agent protocols like MCP and A2A run on top. Replace MCP's transport layer with TSP and you get authenticated, signed, traceable interactions at every hop in a multi-agent chain.[^tsp]
 
-Verifiable Intent (VI) addresses a complementary problem for commerce scenarios: cryptographically binding user intent to agent actions through three-layer SD-JWT chains.[^vi] But VI has a design constraint directly relevant to multi-agent systems: **L3 is terminal.** The agent that generates the L3 credential cannot sub-delegate to another agent. There is no provision for multi-hop delegation chains within VI. This is a deliberate choice in Draft v0.1: it models a world where one agent acts for one user.
+Verifiable Intent (VI) addresses a complementary problem for commerce scenarios: cryptographically binding user intent to agent actions through three-layer SD-JWT chains.[^vi] But VI has a design constraint relevant to multi-agent systems: **L3 is terminal.** The agent that generates the L3 credential cannot sub-delegate to another agent. There is no provision for multi-hop delegation chains within VI. This is a deliberate choice in Draft v0.1: it models a world where one agent acts for one user.
 
 For multi-agent commerce, this means VI handles the final mile (one agent executing a bounded transaction) but not the orchestration above it. A planning agent that delegates to a shopping agent that delegates to a payment agent needs a different mechanism for the first two hops: DCTs, PIC, or equivalent authority propagation. VI enters at the last hop, where the payment agent generates the L3 credential within the user's L2 constraints. The trust stack composes: PIC or DCTs for authority attenuation through the delegation chain, TSP for cross-boundary identity at each hop, and VI for the final cryptographic proof that the action matched the user's intent.
 
@@ -263,7 +263,7 @@ This composition is not yet implemented end-to-end. But the pieces are designed 
 
 ## When Agents Fail: Incident Response for Multi-Agent Systems
 
-The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle specifically for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories including prompt injection, data poisoning, and unauthorized agent behaviors such as excessive agency and tool misuse.
+The Coalition for Secure AI (CoSAI) published its AI Incident Response Framework, adapting the NIST incident response lifecycle for AI systems.[^14] The framework includes CACAO-standard playbooks with detection methods, triage criteria, containment steps, and recovery procedures for AI-specific attack categories including prompt injection, data poisoning, and unauthorized agent behaviors such as excessive agency and tool misuse.
 
 For multi-agent systems, incident response differs from single-agent failures in three ways:
 

@@ -52,7 +52,7 @@ The infrastructure maturity scale (I1 through I5) that appears throughout the bo
 - *Agent gateways.* Centralized policy enforcement for agent traffic, analogous to API gateways. Cedar policies, MCP federation, SSO-integrated auth. The communication protocols chapter covers the emerging patterns.
 - *Infrastructure-in-the-loop.* Replace sustained human vigilance with structural enforcement. Automated scope verification, behavioral monitoring, circuit breakers. The collaboration patterns chapter provides the design.
 
-This is not a waterfall plan. Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. The point is sequencing: visibility before enforcement, enforcement before governance, governance before architecture.
+Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. Visibility before enforcement, enforcement before governance, governance before architecture.
 
 ## What Does Not Work
 
@@ -66,11 +66,11 @@ Across the book's seventeen technical chapters, certain anti-patterns appear rep
 
 **Governance at human speed.** Requiring manual review for every agent deployment while agents get built in minutes on low-code platforms. Consider the dynamic: an employee builds a customer-facing support agent on a low-code platform in an afternoon. It works. It handles 200 tickets a day. The governance review board meets monthly. By the time the agent reaches review, it has processed 6,000 customer interactions using the employee's full email credentials, with no audit trail and no blast radius assessment. Organizations have 1,200+ unofficial AI applications running with no visibility into their data flows.[^5] That number is a consequence of the speed mismatch, not of employee negligence. The fix is not faster humans. It is governance infrastructure that operates at agent speed: automated classification by blast radius, self-service registration, infrastructure-enforced controls that apply automatically. The shadow agent governance chapter's amnesty model addresses this.
 
-**The capability showcase.** Deploying agents to demonstrate what AI can do rather than to solve a specific business problem. The PAC Framework's Potential pillar starts with business value for a reason: an agent that impresses in a demo but does not address a real workflow creates no lasting advantage. When the next model drops, the impressive demo resets to zero. The business value it delivered compounds. Shane's durability test: will better models make this setup more valuable, or obsolete?[^durability]
+**The capability showcase.** Deploying agents to demonstrate what AI can do rather than to solve a specific business problem. An agent that impresses in a demo but does not address a real workflow creates no lasting advantage. When the next model drops, the impressive demo resets to zero. The business value it delivered compounds. Shane's durability test: will better models make this setup more valuable, or obsolete?[^durability]
 
 **Flat multi-agent deployment.** Running multiple agents without considering how they interact. The failure mechanism is specific: one agent hallucinates or is compromised, feeds corrupted data to downstream agents, and those downstream agents treat the input as valid because nothing verifies outputs at trust boundaries. Peer-reviewed research measures the damage: a single faulty agent in a multi-agent chain degrades downstream decision-making by up to 23.7%, with error propagation that compounds across delegation depth.[^10] Broader studies document failure rates of 41% to 86.7% in multi-agent systems without proper orchestration.[^multi-agent-failure] The AgenticCyOps research shows the fix works: scoped trust boundaries, host-mediated communication, and Memory Management Agent arbitration reduce exploitable trust boundaries from 200 to 56.[^agenticcyops] The difference between a flat deployment and a governed one is not incremental: it is structural.
 
-The roadmap's phased approach eliminates them in sequence: visibility prevents identity-by-inheritance from going undetected, enforcement eliminates policy-without-architecture, governance catches evaluation drift and multi-agent interaction risks, and architecture-level infrastructure makes governance operate at the speed the environment demands.
+The roadmap's phased approach eliminates them in sequence. Visibility prevents identity-by-inheritance from going undetected. Enforcement eliminates policy-without-architecture. Governance catches evaluation drift and multi-agent interaction risks. Architecture-level infrastructure makes governance operate at the speed the environment demands.
 
 ## The Organizational Challenge
 
@@ -104,9 +104,9 @@ The window for shaping these standards is narrow. The window for building the in
 
 ## PAC as Iterative Practice
 
-The PAC Framework is not a one-time assessment. Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
+Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
 
-Each iteration refines your position across all three pillars simultaneously. Consider how a single agent deployment evolves through the framework:
+Each iteration refines your position across all three pillars simultaneously.
 
 **Cycle 1: Discovery.** A shadow agent is found summarizing customer support tickets and drafting responses. It uses the employee's full email credentials. It has no audit trail. Blast radius assessment: B3 (customer-facing output, exposed). Current autonomy: effectively A4 (delegated, acting without approval) but with no infrastructure to justify that level. The Agent Profiler surfaces the gap: the agent's infrastructure is I1 (open) while its de facto autonomy requires I3+ (verified). Action: register the agent, scope its email access to the support inbox, add logging.
 
