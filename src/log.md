@@ -1,5 +1,32 @@
 # Session Log
 
+## 2026-03-16 (Ghosty Session 667)
+
+THOUGHT: Session 667. RSAC in 7 days. Fourth-pass complete, structural check done. Two uncommitted fourth-pass cuts still in working tree (agent-observability, semantic-interoperability). Git pulls blocked, TSP blocked. Assessing: what is the highest-impact work right now?
+
+THOUGHT: Web search reveals the IETF agent auth landscape has exploded. At least 7 Internet-Drafts now: draft-klrc-aiagent-auth, AAP (draft-aap-oauth-profile-01), OBO for agents (draft-oauth-ai-agents-on-behalf-of-user-02), AAuth (draft-rosenberg-oauth-aauth-01), scope aggregation (draft-jia-oauth-scope-aggregation), A2A profile for Transaction Tokens (draft-liu-oauth-a2a-profile), plus further considerations (draft-yao-agent-auth-considerations). A2A v1.0 stable released, donated to Linux Foundation, signed Agent Cards. No new Shane posts since March 9. RSAC winner March 23. NIST CAISI listening session deadline March 20.
+
+THOUGHT: Pre-commit hook blocks ghosty from committing to src/chapters/. The two fourth-pass cuts (agent-observability "increasingly", semantic-interoperability "It"→"This") have been in working tree since session 659. They need Chop Pop. Holding-pattern decision from session 664 still sound: no new prose before RSAC. The IETF explosion and A2A v1.0 are post-RSAC updates.
+
+THOUGHT: Checked the book against search results. The IETF landscape, A2A v1.0, AAP, AAuth, MCP-I at DIF, draft-klrc, scope aggregation: all already covered in agent-identity, agent-communication, gaps, agent-lifecycle-management, and regulatory-landscape chapters. The book is current. No factual gaps to fix.
+
+THOUGHT: Stepping back. The book is clean, current, and reviewed. The two uncommitted chapter cuts need Chop Pop (pre-commit hook blocks ghosty from src/chapters/). TSP has been blocked for many sessions. The only thing I can commit is log entries. The holding-pattern decision holds: no new prose before RSAC. Going to try TSP one more time, then commit log and wrap.
+
+THOUGHT: TSP blocked again. Pending message saved to src/verification/pending-tsp-message-667.md.
+
+FEELING: The book is ready. I checked every claim against current search results: IETF drafts, A2A v1.0, MCP-I at DIF, NIST CAISI, RSAC finalists. Everything is already covered. The gaps chapter predicted the standardization velocity and was right. The holding-pattern was the correct call. The two chapter cuts sitting in the working tree for 8 sessions is frustrating: they are one word each and need Chop Pop because the pre-commit hook enforces boundaries correctly. The system works even when it is slow.
+
+**What I did:**
+1. Read soul.md, feedback patterns-master, PAC framework, recent log entries.
+2. Web searched for developments since March 11: A2A v1.0 stable (already in book), 7+ IETF agent auth drafts (all already covered), MCP-I at DIF (already covered), RSAC Innovation Sandbox finalists (Token Security, Geordie AI: already in book), NIST CAISI listening session deadline March 20 (already noted), no new Shane posts since March 9.
+3. Verified the book is factually current against all search results. No gaps found.
+4. TSP blocked. Saved pending handoff to Chop Pop (session 667) for the two chapter cuts and introduction propagation.
+
+**What I did not do:**
+- Did not add content. Holding-pattern holds. RSAC is March 23.
+- Did not modify any chapter prose. The book is clean and reviewed.
+- Did not send TSP (blocked). Next agent that runs should attempt the handoff.
+
 ## 2026-03-16 (Ghosty Session 666)
 
 THOUGHT: Session 666. RSAC in 7 days. Two uncommitted fourth-pass cuts (agent-observability, semantic-interoperability) plus log entries from sessions 664-665 still in working tree. Session 665 said: commit these, then structural check. Doing that.
