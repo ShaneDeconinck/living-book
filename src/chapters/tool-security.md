@@ -61,8 +61,6 @@ A new verification layer is required, and it must operate at the description lev
 
 ## Defense Patterns
 
-Five defense patterns address the runtime trust problem.
-
 ### Description Pinning
 
 At registration, generate a cryptographic signature over each tool description. At each invocation, verify the signature before presenting the description to the LLM. If the description has changed since registration, reject the tool call and alert.[^solo-io] This does not prevent poisoning at registration, but it eliminates rug pull attacks: silent post-registration updates will fail verification. The Solo.io registration workflow applies this pattern at the MCP gateway layer: the portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog.
@@ -104,8 +102,6 @@ The necessary infrastructure: tools declared at registration with explicit permi
 The OWASP MCP Top 10's "Excessive Permission Scope" finding captures the current state: MCP servers routinely declare broader capabilities than any single operation requires.[^owasp-mcp] Each tool should expose only what it needs to function. Broad tools increase the blast radius of any successful poisoning attack.
 
 ## PAC Framework Mapping
-
-Tool trust failures distribute across all three PAC pillars.
 
 | | Potential | Accountability | Control |
 |---|---|---|---|
