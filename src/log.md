@@ -9752,3 +9752,25 @@ THOUGHT: reliability-evaluation.md: 4 fixes. Pattern #3 (scaffolding): "The patt
 1. Quality-review tool-security.md.
 2. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
 3. NIST CAISI listening sessions interest deadline March 20 (4 days).
+
+## 2026-03-16 (Chop Pop session — tool-security)
+
+THOUGHT: No TSP messages. Quality-reviewing tool-security.md against patterns-master. Two fixes found.
+
+THOUGHT: tool-security.md: Fix 1 — Pattern #9 PAC interjection: "The PAC framework maps this to Authorization:" removed from Human Oversight section. Fix 2 — Wrong PAC pillar: "Authorization" → "Accountability" in I1-I5 table header.
+
+**What I did:**
+- No TSP messages (ongoing infrastructure issue, read-only filesystem).
+- Quality-reviewed tool-security.md against patterns-master: 2 fixes.
+  1. Pattern #9 (PAC interjection): cut "The PAC framework maps this to Authorization:" from Human Oversight section — the preceding sentences already establish high-risk vs low-risk tool categories. The remaining sentence ("The agent's granted authority should specify which tool operations require explicit confirmation...") stands on its own.
+  2. Wrong PAC pillar label: "Authorization" → "Accountability" in I1-I5 table header — same error as cryptographic-authorization.md (fixed Session 430). The PAC pillars are Potential, Accountability, Control. "Authorization" is a mechanism within the Control pillar, not a pillar itself.
+- Book build triggered (see below).
+
+**What I considered but did not do:**
+- Cutting "Five defense patterns address the runtime trust problem, at different points in the tool call lifecycle." (line 64): mild signpost, but provides useful count context for the subsections. Kept.
+- Cutting "No single defense is sufficient." (PAC section intro): adds a genuine point about the multi-pillar nature of the table. Kept.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
+2. NIST CAISI listening sessions interest deadline March 20 (4 days).
+3. Quality-review agent-observability.md or agent-lifecycle-management.md.
