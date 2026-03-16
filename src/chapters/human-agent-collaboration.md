@@ -34,7 +34,7 @@ Infrastructure-in-the-loop does not remove humans from governance. It moves them
 
 Anthropic's 2026 Agentic Coding Trends Report identifies a complementary approach: scaling oversight through AI-automated review systems[^anthropic-coding-trends]. Instead of adding more human reviewers as agent output scales, organizations deploy review agents that maintain quality while accelerating throughput. Development environments now display status across multiple concurrent agent sessions. Version control systems handle simultaneous agent-generated contributions. The oversight is not diminished: it is augmented and scaled through intelligent tooling.
 
-The PAC Framework's infrastructure levels (I1 through I5) define what this looks like:
+The PAC Framework's infrastructure levels (I1 through I5) define what this looks like concretely:
 
 - At **I2 (Logged)**, the human can investigate after the fact but cannot prevent unauthorized actions in real time.
 - At **I3 (Verified)**, agent identity is confirmed and structured audit trails exist. The human reviews patterns, not individual actions.
@@ -193,7 +193,7 @@ What the lifecycle looks like in practice:
 
 **Offboarding**: when an agent is deprecated, its credentials are revoked, its outstanding authorizations are cancelled, its audit trails are archived, and its delegated authorities are reclaimed. This is the lifecycle management that most organizations lack for their human-to-agent delegation chains.
 
-Deloitte reports that only 14% of organizations have deployable agentic solutions and just 11% are actively using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. Deloitte's analysis is direct: applying AI to an existing workflow without redesigning it amplifies the inefficiency already baked into that workflow.
+Deloitte reports that only 14% of organizations have deployable agentic solutions and just 11% are using them in production[^deloitte-silicon]. But the organizations that are succeeding share a common trait: they redesigned processes around human-agent collaboration rather than automating existing processes. "If you just take your existing workflow and try to apply advanced AI to it, you're going to weaponize inefficiency."
 
 The competitive advantage is not having access to better models but having the infrastructure to deploy them effectively[^inferential-edge].
 
@@ -222,7 +222,7 @@ The critical interdependency: effective collaboration requires all three pillars
 | **I4 Authorized** | Scoped permissions enforced per action | Full autonomy dial with per-task authorization. Permission granularity matches blast radius. Self-aware agent calibration tracked as governance metric. Escalation chains enforced by infrastructure |
 | **I5 Contained** | Sandboxed execution with automatic containment | Infrastructure-in-the-loop fully realized. Agents operate at A4-A5 within defined boundaries. Human role shifts entirely to policy design, threshold setting, and exception investigation |
 
-Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act's high-risk obligations (originally August 2026 for Annex III systems, potentially December 2027 under the Digital Omnibus proposal) require I3 for high-risk systems. Organizations building agent-first workflows should target I4, where the autonomy dial, permission granularity, and agent self-governance patterns become fully operational.
+Most organizations are at I1 or I2 for human-agent collaboration. The EU AI Act's high-risk obligations for Annex III systems (originally August 2026, potentially December 2027 under the Digital Omnibus proposal) require I3 for high-risk systems. Organizations building agent-first workflows should target I4, where the autonomy dial, permission granularity, and agent self-governance patterns become fully operational.
 
 ## What to Do
 

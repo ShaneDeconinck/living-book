@@ -49,6 +49,10 @@
 # Synthesis
 
 - [Human-Agent Collaboration Patterns](chapters/human-agent-collaboration.md)
+  - [Three Oversight Models](chapters/human-agent-collaboration.md#three-oversight-models)
+  - [Why Agents Resist Correction](chapters/human-agent-collaboration.md#why-agents-resist-correction)
+  - [The Autonomy Dial](chapters/human-agent-collaboration.md#the-autonomy-dial)
+  - [The Organizational Shift](chapters/human-agent-collaboration.md#the-organizational-shift)
 - [Building the Inferential Edge](chapters/building-the-edge.md)
 - [Gaps & Directions](chapters/gaps.md)
   - [The Stack Is Forming](chapters/gaps.md#the-stack-is-forming)
