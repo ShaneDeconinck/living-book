@@ -173,7 +173,7 @@ This is a distinct governance risk from complacency. Complacency is an attention
 
 This reinforces the case for infrastructure-in-the-loop. If human oversight degrades in both attention (complacency) and capability (skill erosion), governance that depends on human evaluation is doubly unreliable over time. Structural enforcement: sandboxes, scoped permissions, delegation chains, behavioral monitoring: does not degrade with use. Agent self-governance (the uncertainty recognition from the previous section) provides a complementary layer that improves with model capability rather than degrading with it.
 
-The practical implication: organizations should monitor not just whether humans are reviewing agent output, but whether those reviews are substantive. Review quality metrics (time spent per review, corrections made, escalation rates) matter more than review completion rates. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires the continuous evaluation infrastructure described in the [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter.
+Organizations should monitor not just whether humans are reviewing agent output, but whether those reviews are substantive. Review quality metrics (time spent per review, corrections made, escalation rates) matter more than review completion rates. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires the continuous evaluation infrastructure described in the [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter.
 
 ## The Organizational Shift
 
@@ -210,7 +210,7 @@ The human-agent collaboration landscape maps to all three PAC pillars:
 | **Self-aware agents** | Uncertainty recognition prevents costly errors | Escalation events are auditable governance artifacts | Agent calibration is a measurable control property |
 | **Organizational design** | Process redesign unlocks more value than automation | Defined roles and owners for every agent | Onboarding/offboarding lifecycle enforced by infrastructure |
 
-The critical interdependency: effective collaboration requires all three pillars working together. Good UX patterns (Potential) without authorization infrastructure (Control) create agents that are easy to use but hard to govern. Strong infrastructure (Control) without clear ownership models (Accountability) creates secure systems that nobody is responsible for. Defined accountability (Accountability) without usable interfaces (Potential) creates governance requirements that get bypassed because they are too cumbersome.
+Effective collaboration requires all three pillars working together. Good UX patterns (Potential) without authorization infrastructure (Control) create agents that are easy to use but hard to govern. Strong infrastructure (Control) without clear ownership models (Accountability) creates secure systems that nobody is responsible for. Defined accountability (Accountability) without usable interfaces (Potential) creates governance requirements that get bypassed because they are too cumbersome.
 
 ## Infrastructure Maturity for Collaboration
 

@@ -12,7 +12,7 @@ Most organizations building agent systems today are in the single-digit range. [
 
 The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between "we have a few agents" and "we have a fleet" is closing faster than the accountability infrastructure can keep up.
 
-Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is an early government-level framework specifically addressing fleet-scale governance.[^singapore-mgf] One requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
+Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is an early government-level framework addressing fleet-scale governance.[^singapore-mgf] One requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
 
 ## Three Problems That Only Emerge at Scale
 
@@ -72,7 +72,7 @@ When an incident occurs, the organization must reconstruct the chain of authoriz
 
 The building blocks exist. OBO tokens capture dual identity. PIC (Provenance, Identity, Continuity) makes authority cryptographically traceable through delegation chains.[^pic] CAAM's ghost token pattern ensures agents never possess raw credentials, so every action is mediated through verifiable authorization.[^caam] [Cryptographic Authorization Governance](cryptographic-authorization.md) covers these patterns.
 
-What is missing is the forensic layer: tooling that takes these building blocks and produces, on demand, a human-readable reconstruction of who authorized what, through which agents, with what constraints, at what time. At single-agent scale, a human can read the logs. At fleet scale, the reconstruction must be automated, and the automation itself must be auditable.
+What is missing is the forensic layer: tooling that takes these building blocks and produces, on demand, a human-readable reconstruction of who authorized what, through which agents, with what constraints, at what time. The automation itself must be auditable.
 
 ### Fleet-Level Monitoring
 
@@ -124,7 +124,7 @@ Atos's March 2026 whitepaper frames the problem as "sovereign control at scale":
 
 [^trust-for-agentic-ai]: Shane Deconinck, "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 24, 2026.
 
-[^shadow-agent-gov]: See the [Shadow Agent Governance](shadow-agent-governance.md) chapter for the full analysis of organizational governance models and the centralized review breakpoint.
+[^shadow-agent-gov]: See [Shadow Agent Governance](shadow-agent-governance.md) for the full analysis of organizational governance models and the centralized review breakpoint.
 
 [^mckinsey-projection]: McKinsey, 2026 reporting on enterprise agent adoption trajectories. Cited as projection, not confirmed deployment figure.
 

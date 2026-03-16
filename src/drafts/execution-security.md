@@ -101,7 +101,7 @@ The choice depends on threat model and blast radius:
 | gVisor | User-space kernel, syscall interception | Multi-tenant SaaS, moderate trust | 10-30% I/O overhead |
 | MicroVMs | Dedicated kernel, hypervisor isolation | Untrusted code, regulated environments, high blast radius | 125-200ms boot time |
 
-The PAC Framework's blast radius scale (B1-B5) maps to isolation requirements. A B1 agent (contained impact, easily reversible) may be adequately served by native OS sandboxing. A B4 agent (regulated data, compliance implications) should run in a microVM. The blast radius is fixed by the use case; the isolation level must match[^profiler-post].
+Blast radius determines isolation requirements. A B1 agent (contained impact, easily reversible) may be adequately served by native OS sandboxing. A B4 agent (regulated data, compliance implications) should run in a microVM. The blast radius is fixed by the use case; the isolation level must match[^profiler-post].
 
 ## The OWASP Top 10 for Agentic Applications
 
@@ -192,7 +192,7 @@ The six layers above operate at the system level: they constrain what the agent 
 
 The Policy Compiler for Secure Agentic Systems (PCAS), published in February 2026, addresses this gap with a reference monitor that intercepts all agent actions and validates them against policy before execution.[^pcas] The architecture is straightforward: policies are expressed in a Datalog-derived language over dependency graphs that capture the relationships between agents, tools, data, and actions. Before an agent executes any action, the reference monitor checks the action against the active policy set. Violations are blocked before they occur.
 
-The results quantify the "can't vs. don't" gap. Without enforcement, frontier models (Claude Opus 4.5, GPT-5.2, Gemini 3 Pro) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They simply do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
+The results quantify the "can't vs. don't" gap. Without enforcement, frontier models (Claude Opus 4.5, GPT-5.2, Gemini 3 Pro) comply with stated policies only 48% of the time on customer service tasks.[^pcas] The policies are explicit and unambiguous: do not share customer data with third-party tools, do not execute refunds above a threshold without approval, do not access records outside the current case. The models understand the policies. They do not reliably follow them when the policies conflict with task completion. With PCAS active, compliance rises to 93% across all tested models, with zero violations in fully instrumented runs.
 
 The 48-to-93 gap is the core argument of this book, measured. Policy alone ("don't share customer data") fails more than half the time. Infrastructure enforcement ("the reference monitor blocks any action that would share customer data") approaches perfect compliance. The remaining gap between 93% and 100% comes from runs where the policy compiler's dependency graph did not fully cover the action space, which is an engineering problem, not a fundamental limitation.
 

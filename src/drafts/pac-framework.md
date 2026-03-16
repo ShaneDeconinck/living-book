@@ -144,7 +144,7 @@ Within a single organization, OAuth OBO may be sufficient. Across organizations,
 
 ### The Inverse of Human Trust
 
-Shane makes a distinction that reframes how organizations should think about agent permissions: humans are trusted within broad boundaries, and we design organizations to minimize constraints on people. Agents require the opposite.
+Humans are trusted within broad boundaries, and we design organizations to minimize constraints on people. Agents require the opposite.
 
 For humans, we start with trust and add restrictions where needed (blocklist approach). For agents, we should start with zero authority and grant specific capabilities (allowlist approach). The reason is practical: the set of things an agent should not do is infinite and unknowable in advance. The set of things it should do is finite and specifiable.
 
@@ -178,7 +178,7 @@ This is a cycle, not a checklist. Models improve, protocols land, regulations ti
 
 The PAC Framework's pillars, dimensions, and scales describe the governance landscape. But how do you apply them to a specific agent deployment? Shane built the PAC Agent Profiler to answer this: a tool that maps six independent dimensions for a concrete use case, shows where the gaps are, and identifies what is blocking higher autonomy.[^profiler]
 
-The profiler emerged from a practical frustration. Most governance conversations collapse everything into a single question: "how risky is this agent?" That bundles together what the agent does, what happens when it fails, how much freedom it has, and whether you have built the infrastructure to contain it. Too many questions crammed into one. The six dimensions separate them.
+Most governance conversations collapse everything into a single question: "how risky is this agent?" That bundles together what the agent does, what happens when it fails, how much freedom it has, and whether you have built the infrastructure to contain it. Too many questions crammed into one. The six dimensions separate them.
 
 ### Six Dimensions, One Assessment
 
@@ -191,7 +191,7 @@ Each dimension answers a question the others cannot:
 5. **Governance Thresholds**: where the organization draws its lines. Regulatory requirements, internal policies, risk appetite. An agent might be technically capable of full autonomy, but if the compliance team requires human approval for anything touching customer data, that is the ceiling.
 6. **Autonomy** (A1-A5): the output. Not an input you set, but a level the agent earns based on everything else.
 
-Autonomy is the dependent variable. You do not start by deciding "this agent should be autonomous" and then figure out the requirements. You assess the other five dimensions, and the appropriate autonomy level falls out. Shane puts it directly: "Autonomy is earned, not declared."[^profiler]
+Autonomy is the dependent variable. You do not start by deciding "this agent should be autonomous" and then figure out the requirements. You assess the other five dimensions, and the appropriate autonomy level falls out.[^profiler]
 
 ### Infrastructure as Gate, Not Slider
 

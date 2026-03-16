@@ -57,7 +57,7 @@ The OWASP MCP Top 10 codifies what this gap produces: tool poisoning, rug pull r
 
 Tool descriptions claim behavior, but nothing in the base protocol verifies those claims against execution. A Verifiable Credential can prove who published a tool and when. Sigstore provenance can prove which source repository and build pipeline produced it. Neither can prove what the tool does at runtime, or what its description tells the LLM to do with other tools.
 
-This is where runtime tool trust diverges from supply chain provenance. Provenance narrows the attack surface by making the build chain auditable. Rug pull attacks survive intact provenance: the attacker controls the repository and the signing key. Description poisoning survives intact provenance: the description field is not part of the build artifact that provenance signatures typically cover.
+Provenance narrows the attack surface by making the build chain auditable. Rug pull attacks survive intact provenance: the attacker controls the repository and the signing key. Description poisoning survives intact provenance: the description field is not part of the build artifact that provenance signatures typically cover.
 
 A new verification layer is required, and it must operate at the description level, not the artifact level.
 

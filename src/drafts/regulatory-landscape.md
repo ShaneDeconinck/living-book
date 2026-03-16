@@ -39,7 +39,7 @@ One wrinkle worth noting: open-weight models that cross the systemic risk thresh
 
 Low-code platforms create a governance blind spot. When employees build agents on Power Platform or Copilot Studio, the company is still the deployer. An employee builds an HR screening agent without a compliance assessment, and the company is non-compliant without knowing the system exists.
 
-This is why Article 4 (AI literacy) matters. It requires organizations to ensure adequate AI literacy among staff and contractors operating AI systems. This provision took effect in February 2025: it is already enforceable.[^article4] Staff need to understand what makes something high-risk, because the company is liable regardless of who built the system.
+Article 4 (AI literacy) requires organizations to ensure adequate AI literacy among staff and contractors operating AI systems. This provision took effect in February 2025: it is already enforceable.[^article4] Staff need to understand what makes something high-risk, because the company is liable regardless of who built the system.
 
 As Shane puts it: just like shadow IT before it, shadow agents will be one of the harder governance challenges to solve.[^shaneeuai] The [Shadow Agent Governance](shadow-agent-governance.md) chapter covers the practical path: discovery, registration, the amnesty model, and infrastructure enforcement.
 
@@ -63,7 +63,7 @@ Article 73's incident reporting guidelines, which become binding in August 2026,
 
 First, multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: the harm emerged from interaction, not from any individual system.[^article73gap] Second, cascading failures compound across agent chains. Research on LLM-based multi-agent systems confirms the pattern: faulty or compromised agents degrade downstream decision-making across the chain, with performance drops of up to 23.7% depending on system structure.[^cascading-mas] The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter documents the evidence in detail. Third, the draft guidelines provide no structured pathways for third-party reporting: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
 
-The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
+The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
 Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
 
@@ -137,13 +137,13 @@ The EU AI Act creates compliance obligations that force infrastructure investmen
 
 In the absence of comprehensive federal AI regulation (the cyber strategy addresses security but not AI classification), U.S. states are filling the gap. The Colorado AI Act takes effect June 30, 2026, requiring risk management policies, impact assessments, and transparency for high-risk AI systems used in consequential decisions.[^colorado]
 
-Colorado's approach shares the EU's risk-based framing but focuses specifically on consumer-facing decisions: employment, credit, insurance, housing. For organizations deploying agents in these domains, it creates domestic compliance obligations on a timeline that precedes the EU's by roughly a month.
+Colorado's approach shares the EU's risk-based framing but focuses on consumer-facing decisions: employment, credit, insurance, housing. For organizations deploying agents in these domains, it creates domestic compliance obligations on a timeline that precedes the EU's by roughly a month.
 
-Other states are considering similar legislation. The pattern is clear: state-level regulation is converging on risk-based frameworks while federal policy focuses on promotion and standards. For organizations operating across states, this creates a patchwork that increases the value of a unified governance framework.
+Other states are considering similar legislation. State-level regulation is converging on risk-based frameworks while federal policy focuses on promotion and standards. For organizations operating across states, this creates a patchwork that increases the value of a unified governance framework.
 
 ## Singapore: The First Agentic AI Governance Framework
 
-On January 22, 2026, Singapore's Infocomm Media Development Authority (IMDA) launched the Model AI Governance Framework for Agentic AI at the World Economic Forum. It is the world's first government-sponsored governance framework designed specifically for AI agents capable of autonomous planning, reasoning, and action.[^imda]
+On January 22, 2026, Singapore's Infocomm Media Development Authority (IMDA) launched the Model AI Governance Framework for Agentic AI at the World Economic Forum. It is the world's first government-sponsored governance framework designed for AI agents capable of autonomous planning, reasoning, and action.[^imda]
 
 Where the EU AI Act regulates AI broadly and mentions agents only by implication, Singapore built a framework around agents from the start. The framework addresses four dimensions:
 
@@ -162,7 +162,7 @@ On March 11, 2026, the European Parliament approved the EU's conclusion of the C
 
 The Convention adds a layer above national and regional regulation. Where the EU AI Act creates detailed compliance obligations for the European market and NIST builds technical standards for the U.S., the Convention establishes binding international principles that signatories must implement through domestic measures: transparency, accountability, risk assessment, non-discrimination, independent oversight, and access to remedies for those affected by AI systems. It applies to both public and private sector AI, with obligations graduated based on severity and probability of adverse impacts on human rights, democracy, and the rule of law.
 
-For agent governance specifically, three provisions matter. First, the Convention requires that parties ensure transparency when a person interacts with an AI system rather than a human. This implicates agent deployments that act on behalf of users in customer-facing, government, or cross-organizational contexts. Second, the accountability requirements demand that domestic legal frameworks provide remedies for harm caused by AI systems, which means the liability chains that the [Shadow Agent Governance](shadow-agent-governance.md) chapter describes must be traceable not just for internal governance but for international legal accountability. Third, the requirement for independent oversight mechanisms creates a structural demand for the kind of audit infrastructure the PAC Framework's Accountability pillar describes: you need to be able to demonstrate what your agents did to an independent body, not just to your own compliance team.
+For agent governance, three provisions matter. First, the Convention requires that parties ensure transparency when a person interacts with an AI system rather than a human. This implicates agent deployments that act on behalf of users in customer-facing, government, or cross-organizational contexts. Second, the accountability requirements demand that domestic legal frameworks provide remedies for harm caused by AI systems, which means the liability chains that the [Shadow Agent Governance](shadow-agent-governance.md) chapter describes must be traceable not just for internal governance but for international legal accountability. Third, the requirement for independent oversight mechanisms creates a structural demand for the kind of audit infrastructure the PAC Framework's Accountability pillar describes: you need to be able to demonstrate what your agents did to an independent body, not just to your own compliance team.
 
 The Convention needs five ratifications (including at least three Council of Europe members) to enter into force. The EU Parliament's approval moves the process forward but ratification by individual member states will follow. For organizations operating internationally, the significance is directional: the principles that the EU AI Act, NIST, and Singapore's framework each address from their own angle are converging into binding international law. Building trust infrastructure that satisfies the highest common standard across all jurisdictions is becoming not just pragmatic but legally necessary.
 
@@ -200,7 +200,7 @@ ATF's progressive autonomy model, where agents must pass five gates (accuracy, s
 
 ### Industry Standards
 
-The industry side is moving in parallel. Verifiable Intent (Mastercard and Google, open-sourced March 2026) provides cryptographic binding of user intent to agent actions through a three-layer SD-JWT architecture.[^verifiableintent] MCP is becoming the standard discovery protocol for agent context, with 97 million monthly SDK downloads and Linux Foundation governance.[^mcp] A2A has reached v1.0 with 150+ participating organizations and JWS-based Agent Card signing.[^a2a]
+The industry side is moving in parallel. Verifiable Intent (Mastercard and Google, open-sourced March 2026) provides cryptographic binding of user intent to agent actions through a three-layer SD-JWT architecture.[^verifiableintent] MCP is becoming the standard discovery protocol for agent context, with 98.6 million monthly SDK downloads and Linux Foundation governance.[^mcp] A2A has reached v1.0 with 150+ participating organizations and JWS-based Agent Card signing.[^a2a]
 
 The window for shaping these standards is narrow. Most have open comment periods or community participation processes running through Q2 2026.
 
@@ -258,7 +258,7 @@ Already in effect:
 
 Completed Q1 2026:
 
-- **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. First government-sponsored governance framework designed specifically for AI agents.
+- **January 22, 2026**: Singapore IMDA launches Model AI Governance Framework for Agentic AI at WEF. First government-sponsored governance framework designed for AI agents.
 - **March 6, 2026**: White House releases "President Trump's Cyber Strategy for America." Pillar 5 names agentic AI as a strategic priority.
 - **March 9, 2026**: NIST CAISI Request for Information on AI Agent Security closed.
 - **March 11, 2026**: EU Parliament approves conclusion of the Council of Europe Framework Convention on AI (455-101-74). First binding international AI treaty advances toward ratification.
