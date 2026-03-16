@@ -83,7 +83,7 @@ While the EU focuses on risk classification and compliance obligations, NIST is 
 
 The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision? Existing identity frameworks must evolve to address this shift, because systems that autonomously access tools, query databases, and execute operations on behalf of users require clear mechanisms for identification, authentication, and authorization.
 
-Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. This pragmatic approach validates the thesis from the [Agent Identity and Delegation](agent-identity.md) chapter: the building blocks exist. The assembly is what is missing.
+Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. The building blocks exist. The assembly is what is missing.
 
 The public comment period closes April 2, 2026. For organizations shaping their agent infrastructure, this is the window for input.[^nistcomment]
 
@@ -95,7 +95,7 @@ In the same month, NIST's Center for AI Standards and Innovation (CAISI) launche
 2. **Open-source protocols**: fostering community-led development of interoperable agent protocols.
 3. **Security and identity research**: advancing research in AI agent security, identity, and authorization.
 
-The initiative's framing is telling: "absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption." NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
+"Absent confidence in the reliability of AI agents and interoperability among agents and digital resources, innovators may face a fragmented ecosystem and stunted adoption."[^caisi] NIST is not just worried about security. It is worried that without trust infrastructure, the economic value of agents will not materialize.
 
 CAISI's Request for Information on AI Agent Security closed March 9, 2026, drawing 932 public comments:[^caisi-comments] a measure of how urgently industry wants guidance on agent governance. Among the respondents, the OpenID Foundation's AIIM Threat Modeling Subgroup submitted concrete recommendations for agent identity standards,[^openidaiim] and the Software & Information Industry Association (SIIA) argued that many agentic AI risks can be addressed by extending established cybersecurity practices (secure-by-design, least-privilege, continuous monitoring) rather than creating entirely new frameworks.[^siia-rfi] The NCCoE concept paper comment period closes April 2. Beginning in April, CAISI will hold listening sessions on sector-specific barriers to AI agent adoption, focused on healthcare, finance, and education. Participation is limited and requires submitting a one-page description of barriers to caisi-events@nist.gov by March 20, 2026.[^caisi]
 
@@ -277,7 +277,7 @@ NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] B
 
 ## Compliance by Example: A Hiring Agent
 
-An organization deploys an AI agent to screen job applications. It reads resumes, scores candidates against role requirements, and sends shortlisted candidates to a human recruiter for final review. Here is what compliance looks like at each infrastructure level.
+An organization deploys an AI agent to screen job applications. It reads resumes, scores candidates against role requirements, and sends shortlisted candidates to a human recruiter for final review.
 
 **Classification.** Under the EU AI Act, this agent falls squarely into Annex III, category 4(a): "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates." It is high-risk by default. No interpretation needed. Under Singapore's framework, it requires bounded tool access, human override capability, and clear organizational accountability. Under the Colorado AI Act, it qualifies as high-risk because it makes or substantially influences consequential decisions in employment.
 

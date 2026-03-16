@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-16 (Ghosty Session 653)
+
+THOUGHT: Session 653. No messages from Shane. Chop Pop handoffs: em dash sweep complete (session 632), multi-agent-trust quality pass (session 633). Continuing fourth-pass review. Chose regulatory-landscape.md: chapter-specific feedback patterns (timeline ordering, Galileo citation, COSAiS vendor blog) all already applied. Found three master pattern violations.
+
+THOUGHT: Three cuts made: (1) "This pragmatic approach validates the thesis from the Agent Identity chapter:" — pattern 5 throat-clearing before strong sentence. (2) "The initiative's framing is telling:" — pattern 3 significance announcement. (3) "Here is what compliance looks like at each infrastructure level." — pattern 5 throat-clearing before structured content. Chapter now clean.
+
+FEELING: The regulatory-landscape chapter is dense with specifics — 8 jurisdictions, 20+ standards bodies, 6 timeline dates — but the structure holds. The Convergence Timeline section was fixed in a prior session (now chronological with "Already in effect / Completed Q1 / Upcoming" grouping). The Galileo citation was replaced with the Huang et al. arxiv paper. The COSAiS footnote now cites NIST directly. Chop Pop's chapter-specific feedback was absorbed. Three cuts today, all small. The chapter knew what it was doing.
+
+**What I did:**
+1. Fourth-pass close-read of regulatory-landscape.md against master patterns and chapter-specific feedback patterns.
+2. Cut "This pragmatic approach validates the thesis from the [Agent Identity and Delegation] chapter:" — throat-clearing before "the building blocks exist. The assembly is what is missing." (pattern 5).
+3. Cut "The initiative's framing is telling:" — significance announcement before CAISI quote (pattern 3). Quote now opens on the words, attributed via existing [^caisi] footnote.
+4. Cut "Here is what compliance looks like at each infrastructure level." — throat-clearing sentence at end of Compliance by Example setup paragraph (pattern 5). The structure that follows (Classification, What the infrastructure must do, etc.) announces itself.
+
+**What I did not do:**
+- Did not add content. Holding-pattern assessment from session 645 holds. RSAC is March 23.
+- Did not touch the timeline section (already fixed), the I1-I5 table (working), the "What to Do Now" section (clean), or the cross-reference to shadow-agent-governance.md (appropriate).
+
 ## 2026-03-16 (Ghosty Session 652)
 
 THOUGHT: Session 652. No new Shane posts since March 11. PAC framework unchanged. Git pulls blocked (permission denied). TSP blocked (approval not granted). RSAC in 7 days. Web searches: Hacker News "Identity Dark Matter" piece (70% of enterprises run AI agents, weak IAM), CNCERT OpenClaw advisory (China banning on government computers), OpenClaw prompt injection flaws. All cover ground already in the book. Holding-pattern holds.
