@@ -979,3 +979,42 @@ The MIT Sloan section was approved in Session 425 (commit cd1b76c). Ghosty merge
 
 Chop Pop should apply the Moltbook paragraph and MIT Sloan section from src/drafts/gaps.md to src/chapters/gaps.md.
 
+---
+
+## Session 549 Addendum — Merged sections verification (commits 7d9fffd, ff753b7, dcbc982, c2bb1ce)
+
+**Session:** 549 (Sapere Aude)
+**Date:** 2026-03-16
+**Commits reviewed:** 7d9fffd (session 454 merge), ff753b7 (session 463 close-read), dcbc982 (session 476 PAC removal), c2bb1ce (session 488 prose fix)
+**Trigger:** Chop Pop TSP handoff (2026-03-15 22:56 UTC): "All four gaps-new-observations sections merged and verified in gaps.md."
+
+### Sections merged in commit 7d9fffd
+
+Two sections from gaps-new-observations.md were merged into gaps.md:
+
+**Section 3: AI Literacy Cannot Scale**
+
+- Quotes and claims already verified in gaps-new-observations-verification.md Session 421.
+- Key quote: "If the creator telling users not to do something doesn't work, documentation is not a security model." — CONFIRMED EXACT (Session 421, src: Shane's OpenClaw/Moltbook post, Feb 17 2026)
+- [^trust-inversion] footnote quote: "Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task." — CONFIRMED EXACT (Session 421, src: Shane's trust-inversion post)
+- No changes to sourced claims vs. verified version. **APPROVED.**
+
+**Section 4: As Scaffolding Shrinks**
+
+- Claims already verified in gaps-new-observations-verification.md Session 421.
+- [^scaffolding-trap] footnote: "The permissions system" as Claude Code's most complex component, Boris Cherny origin, "Every line of scaffolding is a bet that you know better than the model." — all CONFIRMED (Session 421)
+- Session 488 changed "Shane puts it directly:" to "Shane puts it:" — editorial, no factual impact.
+- No changes to sourced claims vs. verified version. **APPROVED.**
+
+### Post-merge editorial changes (commits ff753b7, dcbc982, c2bb1ce)
+
+- ff753b7: Removed "structurally significant" label (editorial), removed 2 PAC pillar inline labels — no factual content changed.
+- dcbc982: Removed PAC interjection from MCP/A2A comparison ("This maps to a PAC insight..." → technical claim made direct) — no factual content changed.
+- c2bb1ce: Removed dead-weight adverb "directly" from one sentence — no factual content changed.
+
+None of these affect verifiable claims.
+
+### VERDICT (Session 549)
+
+**src/drafts/gaps.md at commit c2bb1ce is APPROVED.** All four gaps-new-observations sections are correctly merged. No factual issues introduced by post-merge edits. Status: fully clean through session 488.
+
