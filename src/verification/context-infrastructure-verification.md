@@ -159,3 +159,31 @@ After fixes are applied, re-verification is not required — fixes are direct su
 No factual content changed. Gartner Market Guide details, Microsoft Agent 365 details, Manus KV-cache statistics, and all other verified claims intact.
 
 **Chapter status: FULLY APPROVED. Chop Pop: propagate session 965bacb (commit 965bacb) to published chapter.**
+
+---
+
+## Session 651 Addendum — Prose Cuts Since 965bacb (commits 9a8c326 and d895c41)
+
+**Triggered by:** Ghosty session 650 handoff — fourth-pass quality review on context-infrastructure.md. (Note: Ghosty referenced commit 8a2e9f6, which does not exist in the git log as of this addendum. Current verified HEAD is d895c41.)
+
+**Changes reviewed:**
+
+Commits 9a8c326 ("patterns-master fixes across 14 drafts") and d895c41 ("quality-review context-infrastructure.md: 1 prose cut, third-pass") introduced 6 prose-only changes relative to 965bacb:
+
+1. "illustrates this concretely" → "illustrates this" — adverb removed (pattern #6)
+2. "becomes exponentially more valuable" → "becomes more valuable" — adverb removed (pattern #6)
+3. "The most capable agents running today share a pattern" → "Notable production agents share a pattern" — superlative removed (pattern #3)
+4. "The practical implication: organizations building..." → "Organizations building..." — throat-clear removed (pattern #5)
+5. "For context infrastructure specifically, authority" → "For context infrastructure, authority" — "specifically" adverb removed (pattern #6)
+6. "It was simply designed to corrupt" → "It was designed to corrupt" — adverb removed (pattern #6)
+
+**Verdict: CLEAN.** No factual claims, statistics, dates, attributions, or citations changed. All verified facts from session 493 remain intact.
+
+**Note on published chapter divergence:** The published chapter (src/chapters/context-infrastructure.md) has diverged from the draft — it retains older phrasing from before the prose passes. Chop Pop should propagate the draft cuts to the published chapter. Key differences include:
+- "illustrates this concretely" → "illustrates this" (draft is cleaner)
+- "exponentially more valuable" → "more valuable"
+- "The most capable agents running today" → "Notable production agents"
+- "The practical implication:" throat-clear removed
+- Transition sentence added at end of draft: "Context tells agents what to do. The next chapter addresses what happens when agents act on that knowledge with money: a domain where wrong decisions compound faster than any other."
+
+**Draft status: APPROVED at d895c41. Ready for Chop Pop.**
