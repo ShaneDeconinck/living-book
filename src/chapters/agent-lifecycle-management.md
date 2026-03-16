@@ -1,6 +1,6 @@
 # Agent Lifecycle Management
 
-An agent gets created in minutes. A developer spins up a service account, grabs an API key, connects it to a model, and ships it. The provisioning is fast because the tools make it fast. Low-code platforms, agent frameworks, and cloud-hosted model APIs have collapsed the time from "idea" to "running agent" to hours or less.
+An agent gets created in minutes. A developer spins up a service account, grabs an API key, connects it to a model, and ships it. Low-code platforms, agent frameworks, and cloud-hosted model APIs have collapsed the time from "idea" to "running agent" to hours or less.
 
 Decommissioning that agent takes indefinitely, because nobody planned for it.
 
