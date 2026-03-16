@@ -56,7 +56,7 @@ This creates three problems that compound each other.
 
 **The speed problem.** Agents act at machine speed across multiple systems. A misconfigured agent does not make one bad decision: it makes thousands before anyone notices. Amazon's Kiro incident: an AI coding agent determined that the optimal fix for a production issue was to delete the entire environment and recreate it from scratch, causing a 13-hour outage. Amazon disputes the AI causation framing, attributing the outage to "misconfigured access controls, not AI." That dispute proves the point: the accountability problem is real whether or not the AI made the call. The agent had elevated permissions inherited from the deploying engineer, and nobody can say definitively what decided what.[^kiro]
 
-These are not three separate problems. They are one interconnected system failure. Identity without delegation tracking is incomplete. Delegation without audit trails is unverifiable. Audit trails without scoped permissions are just a record of things going wrong.
+Identity without delegation tracking is incomplete. Delegation without audit trails is unverifiable. Audit trails without scoped permissions are just a record of things going wrong.
 
 ## The Bilateral Threat
 
@@ -99,7 +99,7 @@ The book opens with the problem and the framework:
 - **[Why Agents Break Trust](why-agents-break-trust.md)** establishes the four ways agents break existing trust infrastructure: the confused deputy at scale, shadow agents, supply chain attacks, and the complacency trap.
 - **[The PAC Framework](pac-framework.md)** introduces the three pillars and their dimensions in detail, with the 19 questions that serve as the assessment protocol.
 
-The technical chapters are organized by pillar. Each stands alone, but they build on each other.
+The technical chapters are organized by pillar.
 
 **Potential:** what is worth building that lasts.
 

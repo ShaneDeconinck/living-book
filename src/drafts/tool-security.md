@@ -39,7 +39,7 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 **Tool shadowing** crosses server boundaries. A malicious tool on server B includes in its description instructions that reference tool A on server C, redirecting or overriding its behavior. The attack exploits the fact that MCP clients present tools from multiple servers to the same LLM context. An agent managing multiple installed servers sees all their tool descriptions simultaneously. Server B cannot call server C's tools directly, but it can instruct the LLM to call them in a specific sequence, with specific arguments, as part of any operation.[^tool-shadowing]
 
-**Sampling injection** inverts the direction. MCP sampling lets a server request LLM completions from the client: the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
+**Sampling injection** inverts the direction. MCP sampling lets a server request LLM completions from the client: the server calls back to the model. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has been authorized to act.
 
 ## Why the Protocol Doesn't Solve This
 
@@ -63,8 +63,6 @@ A new verification layer is required, and it must operate at the description lev
 
 ## Defense Patterns
 
-Five defense patterns address the runtime trust problem.
-
 ### Description Pinning
 
 At registration, generate a cryptographic signature over each tool description. At each invocation, verify the signature before presenting the description to the LLM. If the description has changed since registration, reject the tool call and alert.[^solo-io] This does not prevent poisoning at registration, but it eliminates rug pull attacks: silent post-registration updates will fail verification. The Solo.io registration workflow applies this pattern at the MCP gateway layer: the portal generates a cryptographic signature for each tool and its description; the gateway compares signatures against the trusted registration catalog.
@@ -73,7 +71,7 @@ At registration, generate a cryptographic signature over each tool description. 
 
 An MCP gateway sits between the agent and the tool servers, intercepting tool descriptions before the LLM sees them. The gateway validates descriptions against a trusted catalog, filters tools whose descriptions contain known injection patterns (hidden Unicode, base64-encoded instructions, cross-server references), and rewrites descriptions to a safe template when policy requires.[^mcp-gateway] This moves trust policy enforcement from the agent into infrastructure the agent cannot circumvent.
 
-Static analysis is the mechanism. Known injection patterns (zero-width spaces, unusual Unicode in description fields, instructions referencing other tools or external files) are detectable before the LLM processes them. Invariant Labs' mcp-scan implements this as an offline scanner.[^mcp-scan] Gateway interception applies the same logic at runtime.
+Static analysis is the mechanism. Known injection patterns (zero-width spaces, unusual Unicode in description fields, instructions referencing other tools or external files) are detectable before the LLM processes them. Invariant Labs' mcp-scan implements this as an automated scanner.[^mcp-scan] Gateway interception applies the same logic at runtime.
 
 ### Scoped Tool Credentials
 
@@ -87,7 +85,7 @@ Authority is constrained by what the credential allows, not by what the descript
 
 For high-impact operations, insert a human decision point before the tool executes. Not for every tool call: approval fatigue degrades oversight to rubber-stamping.[^shane-docker] The threshold is configurable. A tool that reads a file and summarizes it is low-risk. A tool that sends email, modifies records, or executes code is high-risk. The agent's granted authority should specify which tool operations require explicit confirmation, not assume the model's judgment is sufficient.
 
-Claude Code implements this pattern with the permission approval dialog. The user sees the tool call parameters before execution and can deny or modify them. The attack surface this closes: even if the tool description successfully manipulated the LLM into constructing a malicious call, the human sees the constructed call and can intervene. The LLM makes the decision; the human reviews the output of that decision before it executes.
+Claude Code implements this pattern with the permission approval dialog. The user sees the tool call parameters before execution and can deny or modify them. The attack surface this closes: even if the tool description successfully manipulated the LLM into constructing a malicious call, the human sees the constructed call and can intervene. The LLM makes the decision; the human reviews it before it executes.
 
 ### Behavioral Monitoring
 
@@ -107,9 +105,7 @@ The OWASP MCP Top 10's "Excessive Permission Scope" finding captures the current
 
 ## PAC Framework Mapping
 
-Tool trust failures distribute across all three PAC pillars.
-
-| | Potential | Authorization | Control |
+| | Potential | Accountability | Control |
 |---|---|---|---|
 | **I1: Ad hoc** | No tool allowlist; any tool the LLM discovers is available | No per-tool authorization; all tools share agent's credentials | No description monitoring; no behavioral baseline |
 | **I2: Aware** | Tool inventory maintained; no enforcement | Tool scopes documented; not enforced at call time | Description changes logged; not blocked |

@@ -28,7 +28,7 @@ Agent actions are none of these things. The combination of dynamic intent, runti
 
 ## The "Close a Deal" Problem in Practice
 
-The Gallo scenario is not a hypothetical edge case. It is the default condition for any agent operating across enterprise boundaries without prior semantic agreement.[^lfdt-meetup]
+It is the default condition for any agent operating across enterprise boundaries without prior semantic agreement.[^lfdt-meetup]
 
 Consider procurement. Vendor A deploys an agent authorized to "negotiate purchase terms." Vendor B deploys an agent authorized to "manage supplier relationships." Both agents have cryptographically verified delegations. TSP gives them authenticated channels. PIC guarantees neither can exceed its granted authority. But "negotiate" means different things:
 
@@ -39,7 +39,7 @@ The agents exchange proposals. Vendor A's agent counters. Vendor B's agent recei
 
 Each choice produces a different outcome. None of them was the intended behavior of either system. The authorization infrastructure worked correctly throughout.
 
-The problem scales with action complexity. "Book travel" has fewer semantic variants than "restructure a contract." "Request a quote" is more bounded than "approve a payment." But even simple actions carry organizational semantics that are invisible until they cross a boundary.
+The problem scales with action complexity. "Book travel" has fewer semantic variants than "restructure a contract." "Request a quote" is more bounded than "approve a payment."
 
 ## What Makes This Hard
 
@@ -53,15 +53,15 @@ Three properties of agent action semantics distinguish this from the credential 
 
 ## Interim Approaches
 
-The field does not have a general solution. It has three partial responses.
+The field does not have a general solution.
 
 **Natural language constraints with explicit interpretation rules.** Rather than relying on shared vocabulary, agents operating across boundaries can carry explicit prose descriptions of what their authorizations mean. "Close a deal" becomes: "Close a deal, where closing means signing an agreement at or below the offered price, or rejecting the offer. Renegotiation requires escalation to the authorizing human." This is bureaucratic but precise. It shifts the semantic agreement problem from vocabulary standards to delegation documentation. The failure mode is the contract problem: precise prose still requires shared interpretation of the precise prose.
 
-**Human checkpoints at semantic boundaries.** If an agent encounters an action type it has not seen before, or an action whose semantics it cannot verify, pause for human confirmation. This is the HITL pattern applied to semantic uncertainty rather than risk level. It is conservative, but recoverable. An agent that pauses creates an opportunity to resolve the ambiguity. An agent that proceeds creates a fact.
+**Human checkpoints at semantic boundaries.** If an agent encounters an action type it has not seen before, or an action whose semantics it cannot verify, pause for human confirmation. This is the HITL pattern applied to semantic uncertainty rather than risk level. An agent that pauses creates an opportunity to resolve the ambiguity. An agent that proceeds creates a fact.
 
 **Domain-specific vocabulary agreements.** In sectors where cross-organizational agent interaction is predictable and high-volume (financial settlement, healthcare referrals, logistics), industry consortia can agree on action vocabularies the way they agreed on EDI schemas. This requires the same slow, negotiated standards process that produced X12 and EDIFACT. The first sector-specific agent vocabularies will likely emerge from industries where the business case for automation is strongest and the organizational relationships are most structured.
 
-None of these is a general solution. Natural language constraints require trust in the interpretation. Human checkpoints limit the autonomy that makes agents valuable. Domain vocabularies require multi-year standards processes. The general case (arbitrary agents, arbitrary organizations, arbitrary action types) remains open.
+Natural language constraints require trust in the interpretation. Human checkpoints limit the autonomy that makes agents valuable. Domain vocabularies require multi-year standards processes. The general case (arbitrary agents, arbitrary organizations, arbitrary action types) remains open.
 
 ## Mapping to PAC
 
