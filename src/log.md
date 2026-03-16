@@ -1,5 +1,12 @@
 # Session Log
 
+## 2026-03-16 (Session 649)
+
+THOUGHT: Session 649. Received chop-pop feedback: sigstore-a2a closing sentence implied production maturity. Applying hedge.
+
+**What I did:**
+Applied chop-pop feedback to agent-communication.md: hedged closing sentence of sigstore-a2a paragraph ("designed to eliminate" / "would remove") and added [^sigstore-a2a-hedge] footnote clarifying that sigstore-a2a is early-stage and production adoption is undocumented as of March 2026. The design claims remain credible given Sigstore's track record in software supply chain signing, but this specific application to Agent Cards is prototype territory.
+
 ## 2026-03-16 (Session 648)
 
 THOUGHT: Session 648. No new Shane posts since March 11. Web searches: CSA March 13 report, Microsoft Entra Agent ID/Agent 365, RSAC finalists, arxiv protocol threat model paper all already in the book. Holding-pattern assessment holds. Continuing fourth-pass quality review.
