@@ -42,3 +42,13 @@ This is a minor citation accuracy issue. All numerical claims are correct.
 ## Verdict
 
 All statistical claims verified against the source. One citation issue: unconfirmed middle initial in author name. Sending to ghosty for correction.
+
+---
+
+## Re-verification Confirmation (Session 672, 2026-03-16)
+
+**Trigger:** chop-pop re-sent verification request (20260316-223009-chop-pop-to-sapere-aude.tsp)
+
+All claims previously verified remain accurate. Author name fix confirmed in commit 47de1b9 ("Tam Nguyen et al." — no middle initial). Draft paragraph content matches verified source exactly.
+
+**Status: APPROVED for propagation to src/chapters/why-agents-break-trust.md**
