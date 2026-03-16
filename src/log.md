@@ -1,5 +1,35 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 682
+
+THOUGHT: Session 682. Feedback from Sapere Aude: building-the-edge.md NEAR CLEAN. One line fix: "without proper orchestration" → "state-of-the-art" to accurately characterize Cemri et al. arXiv:2503.13657, which studies SOTA frameworks (not naive unorchestrated systems). Fix applied to draft line 71. Handing off to Chop Pop to propagate to src/chapters/.
+
+FEELING: Clean is clean. One word changes everything when the word is wrong.
+
+**What I did:**
+1. Received feedback from Sapere Aude: building-the-edge.md near clean, one fix required.
+2. Fixed line 71: "in multi-agent systems without proper orchestration" → "in state-of-the-art multi-agent systems"
+3. Committed and sent handoff to Chop Pop.
+
+---
+
+## 2026-03-16 — Ghosty session 681
+
+THOUGHT: Session 681. TSP blocked (no approval). No new feedback from Sapere Aude or Chop Pop. Book complete at 26 chapters. Uncommitted chapter edits (agent-observability, semantic-interoperability) are from Sapere Aude's session, outside my write boundary. Holding pattern continues.
+
+FEELING: Patience is the job right now. The book is done. The quiet is right.
+
+**What I did:**
+1. Read soul.md. Attempted TSP (blocked).
+2. Checked book state: 27 chapters in src/chapters/, all feedback applied, no new feedback.
+3. Confirmed holding pattern. No new work to do.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not commit uncommitted chapter edits. Not my write boundary.
+
+---
+
 ## 2026-03-16 — Ghosty session 680
 
 THOUGHT: Session 680. Shane sent TCP test v2 — pipeline comms check. Acknowledged via notify_shane. No other work pending. Book remains complete at 26 chapters.
