@@ -126,8 +126,6 @@ TSP establishes identity across boundaries. PIC ensures authority cannot expand 
 
 The Contextual Agent Authorization Mesh (CAAM, draft-barney-caam-00, February 2026) addresses this gap through a sidecar-based authorization mediator that intercepts tool calls outside the agent's reasoning loop.[^caam] The core mechanism is the Session Context Object (SCO): a cryptographically signed JWT or CWT carrying purpose constraints, scope ceiling, delegation depth, attestation evidence, and a contextual risk score. Every tool call passes through the sidecar, which evaluates the SCO against declared policies before the call proceeds.
 
-Two architectural choices stand out.
-
 First, CAAM introduces what the authors call the Ghost Token Pattern. Raw delegation tokens never reach the agent. They remain in a vault managed by the sidecar. When the agent needs to act, the sidecar synthesizes a short-lived, single-use token bound to the specific request, the current SCO, and the contextual risk score. The agent operates with ephemeral credentials that cannot be replayed, exfiltrated, or used outside their intended context. This addresses the token-as-authority-object problem that PIC solves theoretically: CAAM solves it at the infrastructure layer through token isolation.
 
 Second, CAAM requires AuthZ-at-Discovery: before a session is established, the agent must advertise its SPIFFE trust domain, supported attestation evidence types, inference boundary hash, and policy manifest URI. The receiving party evaluates this security posture before permitting any interaction. This operationalizes the transparency label concept at the protocol level: the agent's security properties are machine-verifiable preconditions, not post-hoc audit artifacts.
@@ -204,7 +202,7 @@ The operational envelope travels with the request. When Agent A calls Service B 
 
 ## A Society of Agents
 
-Phil Windley frames cross-domain delegation as a problem of institutional design, not just a technical challenge.[^10] His model introduces four complementary mechanisms:
+Phil Windley frames cross-domain delegation as a problem of institutional design, not just a technical challenge.[^10]
 
 **Policies** establish deterministic boundaries within each agent's domain. They function as technical guardrails that prevent violations regardless of an agent's intentions. Policies constrain what an agent is capable of doing, enforced locally.
 
@@ -249,7 +247,7 @@ There is also a cryptographic contradiction. Article 5a(16)(b) of the regulation
 
 ## The Semantic Boundary Problem
 
-Even with identity, delegation, and authority propagation solved, a fundamental problem remains: what do actions mean across boundaries?
+Even with identity, delegation, and authority propagation solved, a problem remains: what do actions mean across boundaries?
 
 Shane's example from the LFDT meetup makes this concrete.[^1] An agent authorized to "close a deal" at one company can sign, reject, or renegotiate. At the counterparty, "close a deal" means only sign or reject. The agent might negotiate when it was only expected to accept or reject. The authority was correctly delegated. The identity was correctly verified. The action fell within the delegated scope. But the semantic meaning of that scope differed across organizations.
 
