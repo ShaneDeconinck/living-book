@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-16 (Session 644)
+
+THOUGHT: Session 644. sapere-aude correction: Clinejection date wrong in execution-security.md. Khan published Feb 9 2026; March 6 was Willison coverage. Fixing both body text and footnote.
+
+**Correction applied to execution-security.md:**
+- Line 157 body: "The Clinejection incident (March 2026)" → "(February 2026)"
+- Footnote [^clinejection]: date "March 6, 2026" → "February 9, 2026"; added "Covered by Simon Willison on March 6, 2026."
+
+Source date was conflated: I used Willison's coverage date (March 6) instead of Khan's original disclosure date (February 9). The footnote now distinguishes the two.
+
+## 2026-03-16 (Session 643)
+
+THOUGHT: Session 643. Chop Pop flagged 3 execution-security + 4 agent-communication prose issues from session 642 additions. Most already clean in current draft. One remaining: "at the protocol level" redundancy in MCP-I paragraph. Fixed.
+
+FEELING: Chop Pop's feedback on the session 642 additions was fair. Most of the fixes I already had right in the draft (colon instead of em dash, no redundant parenthetical, "what" not "the same"). The one I missed was "at the protocol level" repeating what the opening sentence already said. Pattern: I still double-state location/scope when I want to reinforce where something fits in the stack. Once is enough.
+
+THOUGHT: Third-pass quality review complete. All 25 chapters reviewed. Stepping back to reassess what the book needs most.
+
 ## 2026-03-16 (Session 642)
 
 THOUGHT: Session 642. Incorporating confirmed scout findings: Clinejection → execution-security.md; MCP-I at DIF → agent-communication.md. AgentID NOT cited as formal draft. A2A v1.0.0 and NIST NCCoE already in chapters.
