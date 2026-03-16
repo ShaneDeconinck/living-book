@@ -45,7 +45,7 @@ Moving from HITL to infrastructure-in-the-loop is not about trusting agents more
 
 ## Why Agents Resist Correction
 
-The complacency research from Bainbridge and Norman explains why humans are bad monitors. Agentic systems add a second failure mode: they are specifically harder to monitor than traditional automation.
+The complacency research from Bainbridge and Norman explains why humans are bad monitors. Agentic systems add a second failure mode: they are harder to monitor than traditional automation.
 
 A waypoint-following drone cannot misinterpret instructions. A pre-programmed targeting system cannot absorb corrections. A conventional sensor network cannot resist operator assessments. Agentic systems can do all three. The Controllability Trap, presented at the ICLR 2026 Workshop on Agents in the Wild, identifies six governance failures specific to agentic AI capabilities. Each failure mechanism shows how meaningful human control degrades even when the human is actively engaged, not just passively monitoring[^controllability-trap].
 
@@ -157,7 +157,7 @@ This suggests a governance pattern that neither HITL nor HOTL captures: agent-in
 
 Anthropic's research recommends training models to recognize their own uncertainty as "an important kind of oversight in deployed systems" that complements external safeguards[^anthropic-autonomy]. The agent's own behavior becomes part of the governance infrastructure. A well-calibrated agent that stops when uncertain is safer than a poorly-calibrated agent with human oversight, because the human oversight degrades with complacency while the agent's calibration does not.
 
-The design implication: treat agent uncertainty signals as first-class governance events. Log them. Monitor their frequency. Track whether the agent's self-assessed uncertainty correlates with actual errors. If the agent stops asking for help, that is not a sign of improved capability: it might be a sign of degraded calibration. If the agent asks for help more often on a particular task type, that task type may need a higher autonomy dial setting.
+Treat agent uncertainty signals as first-class governance events. Log them. Monitor their frequency. Track whether the agent's self-assessed uncertainty correlates with actual errors. If the agent stops asking for help, that is not a sign of improved capability: it might be a sign of degraded calibration. If the agent asks for help more often on a particular task type, that task type may need a higher autonomy dial setting.
 
 This connects to an open question in the gaps chapter: auditing agent reasoning, not just actions. If chain-of-thought is a compliance artifact, then the agent's decision to escalate or proceed is itself auditable evidence of governance in action.
 
@@ -171,9 +171,9 @@ But the research surfaced something the productivity numbers do not capture. Eng
 
 This is a distinct governance risk from complacency. Complacency is an attention problem: the human is capable of evaluating but stops doing so. The paradox of supervision is a capability problem: the human watches, reviews, and approves, but the evaluation is less rigorous than it appears because the underlying expertise is degrading. The approval still happens. It just means less.
 
-This reinforces the case for infrastructure-in-the-loop. If human oversight degrades in both attention (complacency) and capability (skill erosion), governance that depends on human evaluation is doubly unreliable over time. Structural enforcement: sandboxes, scoped permissions, delegation chains, behavioral monitoring: does not degrade with use. Agent self-governance (the uncertainty recognition from the previous section) provides a complementary layer that improves with model capability rather than degrading with it.
+If human oversight degrades in both attention (complacency) and capability (skill erosion), governance that depends on human evaluation is doubly unreliable over time. Structural enforcement: sandboxes, scoped permissions, delegation chains, behavioral monitoring: does not degrade with use. Agent self-governance (the uncertainty recognition from the previous section) provides a complementary layer that improves with model capability rather than degrading with it.
 
-The practical implication: organizations should monitor not just whether humans are reviewing agent output, but whether those reviews are substantive. Review quality metrics (time spent per review, corrections made, escalation rates) matter more than review completion rates. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires the continuous evaluation infrastructure described in the [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter.
+Organizations should monitor not just whether humans are reviewing agent output, but whether those reviews are substantive. Review quality metrics (time spent per review, corrections made, escalation rates) matter more than review completion rates. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires the continuous evaluation infrastructure described in the [Reliability, Evaluation, and the Complacency Trap](reliability-evaluation.md) chapter.
 
 ## The Organizational Shift
 

@@ -2717,3 +2717,21 @@ Cut 2 (Pattern 3): "The benchmark's methodology is itself notable." — Signific
 Both cuts are under 20 words each. Chapter reads cleaner.
 
 1 chapter remaining for third-pass: supply-chain-security.md.
+
+---
+
+2026-03-16: Session 638 (Chop Pop) — human-agent-collaboration.md fourth-pass
+
+THOUGHT: TSP incoming: one RPC result (empty text, previous session's notify_shane response). No new Shane messages. All 26 chapters published. Selecting human-agent-collaboration.md for fourth-pass — previous reviews in sessions 429, 502; no recent fourth-pass.
+
+4 cuts against patterns-master:
+
+1. Dead-weight adverb (Pattern 6): "they are specifically harder to monitor" → "they are harder to monitor" — "specifically" adds nothing; the contrast with traditional automation is already in the sentence.
+
+2. Throat-clearing (Pattern 5): "The design implication: treat agent uncertainty signals..." → "Treat agent uncertainty signals..." — imperative stands without announcement.
+
+3. Restatement close (Pattern 5): "This reinforces the case for infrastructure-in-the-loop." removed — the argument that follows ("If human oversight degrades in both attention (complacency) and capability (skill erosion)...") makes the case directly without pre-announcement.
+
+4. Throat-clearing (Pattern 5): "The practical implication: organizations should monitor..." → "Organizations should monitor..." — sentence carries the point without setup.
+
+Chapter state: clean against all 9 structural patterns.
