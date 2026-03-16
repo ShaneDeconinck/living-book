@@ -228,6 +228,17 @@ The implication for deployment: organizations connecting AI agents to existing s
 
 [^agentic-collapse]: Penligent, "Agentic Collapse: Why CVE-2026-22200 is a Wake-Up Call for RAG Tool Security," penligent.ai, March 2026. Also: Horizon3.ai, "CVE-2026-22200: osTicket PHP Filter Chain Injection Vulnerability," horizon3.ai, 2026.
 
+### Autonomous Agents as Vulnerability Researchers
+
+CVE-2026-21536 (CVSS 9.8) is a remote code execution vulnerability in Microsoft's Devices Pricing Program cloud service, discovered by XBOW, a fully autonomous AI penetration testing agent.[^xbow-cve] XBOW found the vulnerability without access to source code. Microsoft patched it server-side in the March 2026 Patch Tuesday.
+
+This is significant not as a single CVE but as a capability milestone. XBOW has submitted over 1,060 vulnerabilities through HackerOne, executed 48-step exploit chains, and matched a principal pentester's 40-hour assessment in 28 minutes with no human in the loop.[^xbow-scale] It has ranked at or near the top of HackerOne's bug bounty leaderboard for the past year.
+
+The implication for this book: the same autonomy that makes agents a governance challenge makes them a security tool. Agents that can reason about systems, chain actions, and persist through multi-step tasks are as capable at finding vulnerabilities as they are at creating them. The attack surface the book documents is being mapped by the same class of system. This creates pressure from both directions: organizations need trust infrastructure to govern their own agents, and they need it faster because autonomous agents are accelerating the rate at which vulnerabilities in their systems are discovered and exploited. The defensive use is real. The offensive use is equally real. The infrastructure gap between the two is where the risk concentrates.
+
+[^xbow-cve]: CVE-2026-21536, Microsoft Devices Pricing Program RCE, CVSS 9.8, patched March 2026. Credited to XBOW autonomous AI agent. Covered in Krebs on Security, WinBuzzer, March 2026.
+[^xbow-scale]: XBOW, xbow.com. Autonomous offensive security platform. 1,060+ vulnerability submissions on HackerOne. Statistics from XBOW blog, "We Ran 1,060 Autonomous Attacks," 2026.
+
 ### The Governance Gap Is Quantified
 
 Two independent surveys in early 2026 measure what the book argues structurally. Gravitee's State of AI Agent Security 2026 report (900+ executives and practitioners): 88% of organizations reported confirmed or suspected AI agent security incidents in the past year, but only 14.4% of deployed agents went live with full security and IT approval. Only 21.9% of teams treat AI agents as independent, identity-bearing entities; the rest treat them as extensions of human users or generic service accounts.[^gravitee-2026] The CSA/Strata Identity survey found only 18% of security leaders highly confident their IAM systems can manage agent identities, and 84% doubt they could pass a compliance audit focused on agent behavior.[^csa-strata-2026]
@@ -286,7 +297,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 16, 2026. Gaps chapter updated through Session 530. Second-pass quality review of all 24 chapters complete (sessions 521-528).
+24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 16, 2026. Gaps chapter updated through Session 531. Second-pass quality review of all 24 chapters complete (sessions 521-528).
 
 **Published (src/chapters/):**
 1. Introduction
