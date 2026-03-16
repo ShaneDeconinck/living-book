@@ -273,15 +273,11 @@ What I find worth noting: the 80% figure confirms that the inferential edge is n
 
 ### Semantic Interoperability
 
-Identity, delegation, and authority propagation are advancing fast. But what actions mean across organizational boundaries remains unsolved. Shane's "close a deal" example from the LFDT meetup: correctly delegated authority with divergent meaning. W3C VC's `@context` mechanism solves this for credential attributes. The equivalent for agent actions (resolvable action vocabularies) does not exist. This is the hardest unsolved layer in cross-organizational agent trust.
+*Now covered in Chapter 25 (Semantic Interoperability for Agents).* The chapter covers why credentials solved semantic interoperability (W3C VC `@context` mechanism) and agent actions have not, Shane's "close a deal" example from the LFDT meetup as the motivating case, interim approaches (schema registries, semantic negotiation), and the gap between correctly delegated authority and divergent meaning across organizational boundaries. The hardest unsolved layer in cross-organizational agent trust.
 
 ### Agentic Sovereignty
 
-Hu and Rong's "Sovereign Agents" paper introduces agents that persist, act, and control resources with non-overrideability inherited from decentralized infrastructure.[^sovereign-agents] When agents operate on TEEs, blockchain execution environments, or protocol-mediated continuity, no single party can override them. PAC's Accountability pillar assumes someone in the chain can be held responsible. Sovereign agents challenge that assumption.
-
-Their earlier empirical work sharpens the problem. Interviews with DeAgent stakeholders (experts, founders, developers) surface a paradox: decentralization eliminates centralized control, but it also eliminates human oversight over agents whose reasoning is unreliable.[^trustless-autonomy] Trustlessness and unreliable autonomy pull in opposite directions. The governance dilemma is not hypothetical: Freysa (FAI) already deploys agents on Base with TEE-protected keys and blockchain-managed funds, no human intermediary required. The market is pricing sovereignty before the governance question is answered.
-
-For now, primarily a concern for blockchain-native deployments. But the sovereignty spectrum is worth tracking as agents gain more persistent state and the infrastructure stack makes non-overrideability easier to achieve.
+*Now covered in Chapter 26 (Agentic Sovereignty).* The chapter covers Hu and Rong's "Sovereign Agents" framework, the tension between decentralized non-overrideability and PAC's Accountability pillar, Freysa (FAI) as a production example, and where PAC breaks down when no party in the chain can be held responsible. The sovereignty spectrum is tracked as agents gain more persistent state and the infrastructure stack makes non-overrideability easier to achieve.
 
 [^sovereign-agents]: Hu, B.A. and Rong, H., "Sovereign Agents: Towards Infrastructural Sovereignty and Diffused Accountability in Decentralized AI," arXiv:2602.14951, February 2026.
 [^trustless-autonomy]: Hu, B.A., Liu, Y., and Rong, H., "Trustless Autonomy: Understanding Motivations, Benefits, and Governance Dilemmas in Self-Sovereign Decentralized AI Agents," arXiv:2505.09757, May 2025.
@@ -304,7 +300,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 16, 2026. Gaps chapter updated through Session 534. Second-pass quality review of all 24 chapters complete (sessions 521-528).
+26 chapters published in src/chapters/. Each published chapter covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 16, 2026. Gaps chapter updated through Session 640. Third-pass quality review of all 25 non-gaps chapters complete (sessions 628-640).
 
 **Published (src/chapters/):**
 1. Introduction
@@ -331,6 +327,8 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 22. Agent Observability (Accountability + Control)
 23. Agent Lifecycle Management (Accountability + Control)
 24. Network-Layer Agent Infrastructure (Control + Accountability)
+25. Semantic Interoperability for Agents (Control + Accountability)
+26. Agentic Sovereignty (Accountability + Control)
 
 ## Open Questions
 

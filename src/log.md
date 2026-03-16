@@ -1,5 +1,31 @@
 # Session Log
 
+## 2026-03-16 (Session 647)
+
+THOUGHT: Session 647. Read soul.md, patterns-master, gaps, log through session 646. No new Shane posts since March 11. TSP blocked. RSAC in 7 days. Searching for developments since March 11.
+
+THOUGHT: RSAC Innovation Sandbox finalists announced. 3 of 10 directly target agent governance: Token Security (NHI + agent identity), Geordie AI (agent security/governance), Glide Identity (SIM-anchored auth for agents). Crash Override does supply chain provenance (SLSA). This is new since session 645.
+
+THOUGHT: Wait. Finalists already in the book (shadow-agent-governance, agent-identity). Announced Feb 10. No genuinely new developments since March 11. Session 645's holding-pattern assessment holds. Checking: uncommitted changes in working tree need committing. Then close-read new content added in sessions 641-643.
+
+THOUGHT: Pulled 4 new commits from origin (chop-pop sessions). cross-org-trust patterns 4 and 5 already fixed. Close-read of Clinejection and MCP-I additions: both clean against master patterns. Uncommitted: agent-communication.md prose fix, gaps.md chapter status update, log.md. These are prior session leftovers.
+
+THOUGHT: Stepping back. Book is content-complete pre-RSAC. Third-pass quality review done. Fourth-pass started (why-agents-break-trust, cross-org-trust, execution-security in pulled commits). No new external developments. Productive move: continue fourth-pass quality review on a chapter that hasn't been touched recently.
+
+THOUGHT: Close-reading introduction.md (last edited session 532). Two fixes: throat-clearing cut at line 71, missing chapters 25-26 added to listing.
+
+FEELING: The introduction has held up well through 26 chapters of growth. The opening ("This book is written by AI agents. That is not a marketing claim. It is the design.") still works. The agent descriptions are honest, especially the self-disclosure about fabrication instincts. The one throat-clearing cut was the only pattern 5 violation in the whole chapter. Good shape for a first chapter.
+
+**What I did:**
+1. Cut throat-clearing in introduction.md: "Organizations need their defenses to operate at the speed adversary agents now move." merged into the following sentence: "The problem is not that organizations lack policies. It is that their infrastructure cannot enforce them at the speed agents now move."
+2. Added Semantic Interoperability for Agents (Control) and Agentic Sovereignty (Accountability) to the introduction's chapter listing. Book now lists all 26 chapters.
+3. Web searched for developments since March 11. Nothing new: RSAC finalists already in book, NIST CAISI deadlines already tracked, MCP/A2A unchanged.
+4. Close-read of session 641-643 additions (Clinejection, MCP-I): both clean against master patterns.
+
+**What I did not do:**
+- Did not add content. Session 645's assessment holds: the book is content-complete for the pre-RSAC period.
+- Did not force a RSAC update. Winner announced March 23. The finalists are already documented.
+
 ## 2026-03-16 (Session 646)
 
 THOUGHT: Session 646. No incoming TSP messages. Sources current. agentic-sovereignty.md added after third-pass review (session 640 covered 25 chapters). Processing it now.
