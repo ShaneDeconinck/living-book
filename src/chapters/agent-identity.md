@@ -4,7 +4,7 @@ Every time an agent calls an API, sends a message, or makes a purchase, somethin
 
 ## The Trust Inversion
 
-Shane's framing of this is precise: humans are restricted in what they can't do, agents must be restricted to what they can.[^1]
+Shane's framing: humans are restricted in what they can't do, agents must be restricted to what they can.[^1]
 
 In organizations, humans operate within broad boundaries. You trust employees with judgment, then add guardrails for specific risks: compliance training, approval workflows, separation of duties. The default is trust. Restrictions are exceptions.
 
@@ -56,7 +56,7 @@ The problems compound with agents:
 
 Shane identified this gap: an agent usually acts on behalf of a user but creates its own intent. It is neither a human (who would use interactive OAuth) nor a traditional service (which would use Client Credentials). It is something new: a delegated entity with decision-making capability.[^2]
 
-The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] A second independent survey by the Cloud Security Alliance and Strata Identity (285 IT and security professionals) corroborates the same picture: 44% use static API keys, 43% use username and password combinations, and 35% rely on shared service accounts for agent authentication. Only 18% say they are "highly confident" their current IAM systems can manage agent identities effectively.[^csa-strata-auth] Two independent surveys, different respondent pools, same finding: nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005. Shared API keys cannot carry delegation semantics, enforce scope attenuation, or create auditable accountability chains.
+The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] A second independent survey by the Cloud Security Alliance and Strata Identity (285 IT and security professionals) corroborates the same picture: 44% use static API keys, 43% use username and password combinations, and 35% rely on shared service accounts for agent authentication. Only 18% say they are "highly confident" their current IAM systems can manage agent identities effectively.[^csa-strata-auth] Two independent surveys, different respondent pools, same finding: nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005.
 
 ## OAuth Extensions for Agents
 
@@ -120,7 +120,7 @@ The drafts above assume agents interact through web-based OAuth flows. AAuth (Ag
 
 AAuth defines an Agent Authorization Grant inspired by the OAuth Device Authorization Grant (RFC 8628). The agent collects identity information through natural-language conversation, then obtains a scoped access token through HTTP polling, Server-Sent Events, or WebSocket. The key security contribution is its treatment of LLM hallucination as an impersonation vector. The draft explicitly addresses the risk that an LLM could hallucinate or confuse identity information gathered during conversation, potentially obtaining tokens for the wrong user. The mitigations require out-of-band identity verification: the authorization server sends a confirmation challenge through a separate channel (SMS code, email link) that the LLM cannot fabricate.
 
-AAuth identifies a threat class none of the other chapters address: the LLM itself, through hallucination rather than prompt injection, can become the confused deputy. The attacker is not an external adversary injecting prompts. The failure mode is internal: the model's own tendency to confuse or fabricate information during multi-turn conversations produces incorrect identity claims. The fix is architectural, not prompt-level: the authorization server never trusts identity information that passed through the LLM without independent verification.
+AAuth identifies a threat class none of the other chapters address: the LLM itself, through hallucination rather than prompt injection, can become the confused deputy. The failure mode is internal: the model's own tendency to confuse or fabricate information during multi-turn conversations produces incorrect identity claims. The fix is architectural, not prompt-level: the authorization server never trusts identity information that passed through the LLM without independent verification.
 
 ### DPoP (Demonstration of Proof-of-Possession)
 
@@ -136,7 +136,7 @@ OBO and DPoP solve delegation tracking and token binding. But both assume the ag
 
 The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been contributing to with public and industry collaborators, addresses this. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
 
-The architectural shift matters: instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
+Instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
 
 Okta's product implementation, Cross App Access (XAA), shipped in early access in January 2026 with industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, and others. A developer playground (xaa.dev) launched the same month for testing integrations.[^xaa]
 
@@ -334,7 +334,7 @@ In February 2026, NIST released "Accelerating the Adoption of Software and Artif
 - **Access delegation:** linking user identities to AI agents
 - **Logging and transparency:** linking agent actions to their non-human entity
 
-The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal). Both the US and EU regulatory apparatus are recognizing that agent identity is a foundational governance requirement.
+The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal).
 
 ### Industry Response: The Agent Transparency Label
 
