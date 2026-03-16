@@ -30,7 +30,7 @@ The CSA identified three requirements that current infrastructure lacks:[^2]
 - **Operational envelopes**: cryptographic constraints that travel with the token and define what an agent can do, not just what resources it can access
 - **Coordinated revocation**: shared, real-time risk signals between providers so revocation in one domain invalidates access in others
 
-These requirements map to the Control pillar. Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
+Verifiable delegation is agent identity infrastructure. Operational envelopes are authorization infrastructure. Coordinated revocation is containment infrastructure. None of them work in isolation; all three must function across organizational boundaries.
 
 ## The Token Model's Structural Limit
 
