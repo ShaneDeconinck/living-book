@@ -12,7 +12,7 @@ Most organizations building agent systems today are in the single-digit range. [
 
 The industry is heading past that threshold. McKinsey projects thousands of agents per enterprise within five to ten years.[^mckinsey-projection] Microsoft reported that 80% of Fortune 500 companies already use its AI agent infrastructure.[^microsoft-fortune500] Gartner expects 40% of enterprise applications to include agentic capabilities by the end of 2026.[^gartner-prediction] The gap between a handful of agents and a fleet is closing faster than accountability infrastructure can follow.
 
-Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is an early government-level framework specifically addressing fleet-scale governance.[^singapore-mgf] But one requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
+Singapore's Model AI Governance Framework for Agentic AI, launched in January 2026 at Davos, is an early government-level framework specifically addressing fleet-scale governance.[^singapore-mgf] One requirement stands out: "An agent should have its own unique identity, such that it can identify itself to the organisation, its human user, or other agents. This identity should be linked to a supervising agent, a human user, or an organisational department to enable accountability and tracking."[^singapore-mgf] At scale, this is not a recommendation. It is a prerequisite for every other governance capability.
 
 ## Three Problems That Only Emerge at Scale
 
@@ -94,7 +94,7 @@ Atos's March 2026 whitepaper frames the problem as "sovereign control at scale":
 
 ## The PAC Mapping
 
-**Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: it is the gate that unlocks fleet-scale value. "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
+**Potential.** The business case for fleet-scale deployment depends on accountability infrastructure being in place. Organizations that cannot attribute decisions, monitor aggregate behavior, or triage incidents will not be permitted (by regulators, by insurers, by their own risk functions) to scale beyond pilot deployments. Accountability infrastructure is not a cost center: "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^profiler-reasoning]
 
 **Accountability.** Decision attribution, regulatory compliance, incident classification. The question that every Accountability dimension asks: "Could you explain to a regulator what your agent did and why?"[^pac-framework] At fleet scale, this becomes: "Could you explain to a regulator what your agents collectively did, which human authorizations were in the causal chain, and how you classified the outcome?"
 
