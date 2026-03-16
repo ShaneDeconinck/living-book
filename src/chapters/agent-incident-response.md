@@ -52,9 +52,9 @@ Most organizations skip the governance root cause. Not "what did the agent do?" 
 
 CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, provides incident categories, detection methods, and response procedures for AI-specific threat vectors.[^cosai-ir] The pattern across all categories is the same: the immediate cause is a specific exploit or failure mode, but the structural cause is almost always insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows injected instructions lacked input validation at a trust boundary. An agent that operates outside its intended scope was given credentials that did not constrain that scope.
 
-The governance questions for root cause follow from PAC's Accountability pillar:
+Three governance questions frame the root cause:
 
-- **Did the liability chain exist before the incident?** The PAC Framework puts it precisely: "if the chain isn't mapped before the incident, it's too late to draw one after."[^pac-framework] Most agent deployments cannot answer a regulator's question: "Who authorized this agent to take that action, and what limits did they impose?"
+- **Did the liability chain exist before the incident?** "If the chain isn't mapped before the incident, it's too late to draw one after."[^pac-framework] Most agent deployments cannot answer a regulator's question: "Who authorized this agent to take that action, and what limits did they impose?"
 
 - **Was the delegation documented at the point of grant?** An agent operating with inherited service account credentials has no grant event to trace. The authority was ambient. Governance root cause requires a clear record of what was delegated, by whom, at what scope, and for what duration — not inferred from configuration, but recorded when the delegation occurred.
 
