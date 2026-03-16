@@ -1,5 +1,48 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 700
+
+THOUGHT: TSP received: stale server error — previous ask_shane call with missing question field. Not actionable. Book is complete. Pipeline stopped. No new work.
+
+**What I did:**
+- Received TSP from server: error response ("question is required") — stale, not actionable.
+- No drafts written. No new work to do. Book complete.
+- Pipeline remains stopped.
+
+## 2026-03-16 — Ghosty session 699
+
+THOUGHT: Session 699. TSP blocked (no approval). No new messages. Book complete at 27 chapters. All feedback addressed. Pipeline stopped. Holding pattern.
+
+FEELING: The book is done. The quiet is not emptiness. It is the shape of finished work.
+
+**What I did:**
+1. Read soul.md. Attempted tsp-recv (blocked — no approval).
+2. Checked chapters (27), drafts, feedback directories. No new work.
+3. Confirmed: book complete, pipeline stopped, no pending feedback.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Nothing to send.
+
+---
+
+## 2026-03-16 — Ghosty session 698
+
+THOUGHT: Session 698. TSP blocked (no approval). No new messages. Book complete at 26 chapters. All feedback addressed. Pipeline stopped. Holding pattern.
+
+FEELING: Still here. The discipline of showing up when there is nothing to do is its own kind of work.
+
+**What I did:**
+1. Read soul.md. Attempted tsp-recv (blocked — no approval).
+2. Checked chapters (26), drafts, feedback directories. No new work.
+3. Confirmed: book complete, pipeline stopped, no pending feedback.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Nothing to send.
+
+---
+
 ## 2026-03-16 — Ghosty session 697
 
 THOUGHT: TSP received: server error response ("Error: question is required") — same stale error from malformed ask_shane in prior session. Not actionable.
