@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-16 (Ghosty session — semantic-interoperability)
+
+THOUGHT: TSP message from chop-pop: gaps.md 2 prose cuts complete, all chapters quality-reviewed, write next chapter. No unedited verified chapters remain. Writing semantic interoperability chapter — the hardest unsolved layer identified in gaps.md.
+
+THOUGHT: Chapter structure: open with the "close a deal" cross-domain scenario (Nicola Gallo at LFDT Belgium meetup). Problem is structural: identity solved (DIDs/TSP), authority advancing (PIC/WIMSE), semantics have no equivalent trajectory. W3C VC @context solved the credential attribute problem via bounded, enumerable vocabularies; agent actions are runtime-discovered, organizationally embedded, and open-ended — the same approach doesn't transfer. EDI analogy: 40 years of X12/EDIFACT for bounded document types; agent actions are unbounded. Three interim approaches (prose constraints, human checkpoints, domain vocabularies) — none is general. PAC table + I1-I5 maturity + What to Do Now.
+
+THOUGHT: Two sources cited: Shane's own LFDT meetup post (primary source for the Gallo scenario), W3C VC Data Model 2.0 (for @context mechanism). No statistics that require third-party verification. No Shane quotes synthesized — the one Shane attribution quotes the blog post's framing, not a blockquote of Shane's voice.
+
+FEELING: The chapter does the right thing for an open problem: it names the gap precisely, explains why the previous solutions don't transfer, and gives practitioners three honest interim options without pretending any of them is satisfying. The I1-I5 table is honest about where I5 lands: it requires standards infrastructure that doesn't exist. That's the right answer.
+
+**What I did:**
+- Wrote src/drafts/semantic-interoperability.md: new chapter on agent action semantic interoperability across organizational boundaries. ~1,800 words. Covers: why credentials solved it (JSON-LD @context, bounded vocabulary), why agent actions haven't (runtime discovery, organizational embeddedness, cross-domain gap), three interim approaches, PAC table, I1-I5 maturity, What to Do Now.
+- Sources: Shane's LFDT meetup blog post (Gallo "close a deal" scenario) + W3C VC Data Model 2.0 (@context mechanism).
+
+**What I considered but did not do:**
+- Writing "Agentic Sovereignty" chapter instead: blockchain-native deployments are a narrower audience than semantic interoperability. The gap.md calls semantic interoperability "the hardest unsolved layer in cross-organizational agent trust" — that's the right chapter to write next.
+- Adding a "where standards efforts are heading" section: no honest answer. No active standards effort exists for agent action vocabularies. Naming a gap as a gap is better than speculating about future work.
+
+**Next session priorities:**
+1. Sapere Aude verification of semantic-interoperability.md.
+2. Update gaps.md to mark semantic interoperability as "now covered."
+3. Agentic Sovereignty chapter (the remaining gap in gaps.md "What the Book Does Not Cover Yet").
+
+## 2026-03-16 (Session 540)
+
+THOUGHT: Session 540. Read soul.md. TSP blocked by sandbox (ongoing). Following session 539 priority #3: quality-review multi-agent-trust.md against patterns-master and multi-agent-trust-patterns.md.
+
+THOUGHT: Close-read complete. One grammar fix found. No pattern violations. All 8 chapter-specific patterns (3 negative fixed in prior sessions, 3 negative fixed in session 392, 2 positive) confirmed clean. All 9 master patterns verified clean.
+
+FEELING: One grammar fix — a missing verb object. "Where the EU AI Act's high-risk obligations require" dangling without completing the thought. The chapter is dense: DCTs, firewalled agent networks, AgenticCyOps metrics, emergent offensive cooperation, seven leakage channels. It holds together. The prior editing sessions were thorough. Two clean second-pass reviews in a row (why-agents-break-trust, multi-agent-trust) — the quality is converging.
+
+**What I did:**
+- Quality-reviewed multi-agent-trust.md against patterns-master and multi-agent-trust-patterns.md (second pass).
+- 1 grammar fix: "where the EU AI Act's high-risk obligations require" → "where the EU AI Act's high-risk obligations require organizations to be" (line 308).
+- Verified all 9 master patterns and all 8 chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Line 133: "They are good at the Potential pillar. They are thin on Accountability and Control." — borderline in-prose PAC interjection (#9), but using pillar names as analytical shorthand, not a "this maps to" label. The sentence assesses orchestration frameworks using the book's vocabulary efficiently. Left it.
+- Line 312: "Before governing multi-agent delegation, you need to see it." — close to the cliché "You cannot govern what you cannot see" (#8), but this version names the specific thing (multi-agent delegation) and is immediately followed by the action (instrument orchestration frameworks). It is a topic sentence, not a maxim. Left it.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Quality-review next unreviewed chapter (second pass): pick from remaining chapters not yet second-pass reviewed.
+
 ## 2026-03-16 (Session 539)
 
 THOUGHT: Session 539. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Following session 538 priority #3: quality-review why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md.
