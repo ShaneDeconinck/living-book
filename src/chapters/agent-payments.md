@@ -157,7 +157,7 @@ Three milestones from early 2026:
 
 ## The Micro-Transaction Problem
 
-Agent economics differ from human economics. A human might make a few purchases per day. An agent orchestrating a workflow might make hundreds of API calls per hour, each requiring payment.
+A human might make a few purchases per day. An agent orchestrating a workflow might make hundreds of API calls per hour, each requiring payment.
 
 Traditional payment infrastructure cannot handle this:
 
@@ -176,8 +176,6 @@ But stablecoin payments create their own challenges:
 The market is splitting into two approaches: crypto-native payments (x402) for developer-to-developer and agent-to-agent transactions, and traditional payment rails (AP2, ACP) for consumer-facing agent commerce where existing card networks handle settlement. Both approaches need the same authorization infrastructure (Verifiable Intent) but different settlement layers.
 
 ## Authorization: Where Payments Meet Identity
-
-[Agent Identity and Delegation](agent-identity.md) covers Verifiable Intent's three-layer SD-JWT architecture in detail.
 
 The core problem: OAuth proves what an app can access but not what it is authorized to spend. An OAuth token with a "payments" scope does not encode spending limits, allowed merchants, or budget caps. When an agent holds a payment credential, the question is not "can this agent make payments?" but "what specific payments is this agent authorized to make?"
 
