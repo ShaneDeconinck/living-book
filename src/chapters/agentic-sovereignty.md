@@ -69,8 +69,6 @@ Organizations building sovereign agent systems need to design accountability inf
 - **Governance mechanisms**: for agents whose parameters can be adjusted, design the governance process as the accountability layer.
 - **Liability assignment**: identify who carries regulatory and legal liability for agent outcomes before deployment, not after incidents.
 
-The PAC Framework's architecture applies to sovereign environments because it asks the right questions: who authorized this agent to operate (Accountability), what can it do (Control), and what value does it deliver (Potential). The infrastructure that answers those questions looks different in sovereign environments, but the questions remain.
-
 ## Infrastructure Maturity
 
 **I1-I2 (Visibility):** Traditional agent registries and audit logs may not capture sovereign agent deployments. An organization that deploys confidential inference workloads in TEEs needs to extend its agent registry to include those deployments, record attestation metadata, and inventory what data flows through sovereign execution environments.

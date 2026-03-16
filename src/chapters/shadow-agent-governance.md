@@ -6,7 +6,7 @@ Varonis reports 98% of employees have unsanctioned AI use.[^varonis-shadow] The 
 
 Shadow agents are the new shadow IT, but the analogy undersells the problem. When an employee installed Dropbox without IT approval in 2012, the risk was data in the wrong place. When an employee builds an agent on a low-code platform in 2026, the risk is an autonomous system making decisions, accessing data, and acting on behalf of the organization without anyone knowing it exists.
 
-Shane put it simply in his boardroom questions: "An HR screening agent built without a compliance assessment makes you non-compliant without knowing the system exists."[^boardroom] The liability sits with the company regardless of whether anyone approved the deployment.
+"An HR screening agent built without a compliance assessment makes you non-compliant without knowing the system exists."[^boardroom] The liability sits with the company regardless of whether anyone approved the deployment.
 
 The transition from "agents are already running and nobody knows" to "every agent is registered, scoped, and auditable" does not happen through prohibition. It happens through infrastructure that makes governed agents easier to deploy than ungoverned ones.
 
@@ -63,8 +63,6 @@ The government response followed weeks later. In March 2026, Chinese government 
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
 
-The OpenClaw ban wave (the first coordinated response to a specific AI agent across both corporate and government levels) signals that shadow agent governance is no longer a theoretical concern.
-
 [^meta-ban]: TechBuzz, "Meta Bans Viral AI Tool OpenClaw Over Security Risks," February 2026. Employees installing OpenClaw on work devices face termination.
 
 [^corporate-bans]: PCWorld, "What's behind the OpenClaw ban wave," February 2026. Documents coordinated bans by Meta, Google, Microsoft, Amazon, and others. CrowdStrike assessment of OpenClaw as potential AI backdoor. "Lethal trifecta" framing by security researchers.
@@ -115,8 +113,6 @@ Shane's boardroom question cuts deeper than discovery: "Can your infrastructure 
 
 Discovery tools show you the current state. They do not prevent new shadow agents from appearing tomorrow. The gap between "we scanned and found everything" and "nothing can run without registration" is the difference between monitoring and governance.
 
-It provides the baseline: what exists, what permissions it has, what data it accesses, who deployed it. But the goal is infrastructure that makes unregistered agents structurally impossible.
-
 ## The Agent Registry
 
 A centralized agent registry is the foundation of governed agent deployment. Every agent operating in the organization, whether built internally, deployed from a vendor, or created by an employee, must be registered before it can access organizational resources.
@@ -129,7 +125,7 @@ For each registered agent:
 - **Owner**: who deployed it, who maintains it, and who is accountable when it acts.
 - **Authority**: what delegated it the right to act? The human or system that authorized its deployment, and the scope of that authorization.
 - **Permissions**: what can it access? Specific data sources, APIs, tools, and the granularity of access (read/write/execute, per-resource, time-bounded).
-- **Blast radius**: what is the worst-case impact of failure? This determines the governance threshold and required infrastructure level per the PAC Framework.
+- **Blast radius**: what is the worst-case impact of failure? This determines the governance threshold and required infrastructure level.
 - **Evaluation status**: has the agent been evaluated for its intended use case? What reliability metrics exist, and what is the error margin?
 - **Regulatory classification**: does this agent touch high-risk use cases under the EU AI Act, NIST guidelines, or other applicable regulation?
 
