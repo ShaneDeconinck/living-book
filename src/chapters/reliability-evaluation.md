@@ -130,8 +130,6 @@ Anthropic's research acknowledges this, recommending that the focus should be on
 
 The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. "Policy says what agents shouldn't do. Architecture limits what they *can* do, regardless of what they try."[^boardroom-questions] The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
 
-Concretely, this means:
-
 **Structural authorization over approval workflows**: instead of a human approving each action, define the scope of allowed actions in advance and let infrastructure enforce the boundaries. The human designs the boundaries, not reviews each crossing.
 
 **Anomaly detection over vigilant monitoring**: instead of expecting humans to spot problems in real time, build detection systems that flag statistical deviations. The human investigates flagged events, not watches a stream.
@@ -148,9 +146,9 @@ Evaluation practices themselves need to be treated as governance infrastructure,
 
 Current evaluation approaches sit at two levels:
 
-**Pre-deployment evaluation** (offline evals, benchmarks, test sets) answers the question: is this agent capable enough? This is a Potential question. Important, but not sufficient.
+**Pre-deployment evaluation** (offline evals, benchmarks, test sets) answers the question: is this agent capable enough? Important, but not sufficient.
 
-**Post-deployment evaluation** (online monitoring, anomaly detection, compliance auditing) answers the question: is this agent behaving within its authority? This is an Accountability question. Critical, and underbuilt. NIST's March 2026 report "Challenges to the Monitoring of Deployed AI Systems" (NIST AI 800-4) documents exactly why: detecting drift, logging across distributed infrastructure, capturing human-AI feedback loops, and identifying deceptive behavior are all unsolved at scale[^nist-monitoring]. The report, based on three practitioner workshops and an extensive literature review, confirms that post-deployment monitoring for AI systems remains "a vast and fragmented space."
+**Post-deployment evaluation** (online monitoring, anomaly detection, compliance auditing) answers the question: is this agent behaving within its authority? Critical, and underbuilt. NIST's March 2026 report "Challenges to the Monitoring of Deployed AI Systems" (NIST AI 800-4) documents exactly why: detecting drift, logging across distributed infrastructure, capturing human-AI feedback loops, and identifying deceptive behavior are all unsolved at scale[^nist-monitoring]. The report, based on three practitioner workshops and an extensive literature review, confirms that post-deployment monitoring for AI systems remains "a vast and fragmented space."
 
 The gap between these two levels is where the complacency trap lives. Teams invest heavily in pre-deployment evaluation because it is familiar (it looks like software testing) and because it answers the question leadership asks first ("does it work?"). They underinvest in post-deployment evaluation because it is less familiar, harder to build, and answers questions nobody wants to ask until something goes wrong ("what did it do, and who authorized it?").
 
