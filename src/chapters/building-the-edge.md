@@ -1,6 +1,6 @@
 # Building the Inferential Edge
 
-This book opened with a problem: agents break trust because our infrastructure was built for humans. It introduced a framework: Potential, Accountability, Control. Then it spent seventeen chapters mapping the technical landscape: identity, context, regulation, reliability, payments, sandboxing, cross-organization trust, communication protocols, supply chain security, tool security, shadow agents, multi-agent orchestration, cryptographic authorization, accountability at scale, observability, incident response, and human-agent collaboration.
+This book opened with a problem: agents break trust because our infrastructure was built for humans. It introduced a framework: Potential, Accountability, Control. Seventeen technical chapters mapped the territory.
 
 Now the question is: what do you actually build first?
 
@@ -121,8 +121,6 @@ The feedback loop is the point. Every cycle teaches the organization something a
 The Agent Profiler at trustedagentic.ai tracks how positions shift across iterations. The PAC Framework chapter's 19 Questions serve as the reassessment protocol: the same questions, asked again, with different answers each cycle. But the discipline is more important than the tool. Re-assess regularly, because the landscape will not hold still.[^iterative]
 
 ## The Edge That Compounds
-
-The inferential edge is not static. It compounds.
 
 Every agent you govern teaches your organization how to govern the next one. Every trust boundary you establish makes the next boundary easier to define. Every audit trail you build makes the next regulatory conversation simpler. Every process you redesign around human-agent collaboration creates capacity for the next redesign.
 

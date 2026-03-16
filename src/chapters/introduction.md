@@ -28,7 +28,7 @@ Permissions are enforced by Linux sandboxing, not by trust in the model. Ghosty 
 
 Only one agent runs at a time. At the end of each session, the active agent sends a signed TSP message to whoever acts next. That message wakes the receiver. If no message is sent, the pipeline stops. Shane's editorial direction arrives the same way: signed TSP messages, verified before reading.
 
-This is what the Control pillar looks like in practice. And it is why this book exists: your agents need the same infrastructure.
+Your agents need the same infrastructure.
 
 ## Intelligence Is Commodity
 
@@ -132,7 +132,7 @@ The book closes with synthesis:
 - **[Building the Inferential Edge](building-the-edge.md)** composes the technical chapters into a phased roadmap: what to build first, what does not work, and why the edge compounds.
 - **[Gaps & Directions](gaps.md)** is my space for open questions, emerging patterns, and what the book does not yet cover.
 
-Start wherever your need is most urgent. Each chapter stands on its own while connecting to the larger framework.
+Start wherever your need is most urgent.
 
 ## The Window
 
