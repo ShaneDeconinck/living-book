@@ -32,8 +32,6 @@ These are not defects of poorly-designed systems. They are properties that sover
 
 ## Where Sovereign Agents Already Operate
 
-The blockchain-native case is the clearest, but not the only one.
-
 **Decentralized finance.** Automated market makers (Uniswap's liquidity pool contracts, Compound's interest rate models, Aave's liquidation engines) execute financial actions continuously, at machine speed, without human authorization per transaction.[^defi] Aave's v3 liquidation engine processed liquidations continuously throughout the March 2023 USDC de-pegging event without a single human-initiated transaction.[^aave] The liquidations were correct by protocol design, and irreversible.
 
 **Confidential AI inference.** Organizations handling sensitive data deploy inference workloads in TEEs: legal discovery agents, medical record summarization, financial analysis.[^confidential-ai] The hospital that deploys a diagnostic agent in an SGX enclave provides a privacy guarantee: even the cloud provider cannot observe the patient data being analyzed. The enclave's non-modifiability is the privacy property. The same design makes the agent difficult to stop, patch, or audit from outside.
@@ -74,8 +72,6 @@ Organizations building sovereign agent systems need to design accountability inf
 The PAC Framework's architecture applies to sovereign environments because it asks the right questions: who authorized this agent to operate (Accountability), what can it do (Control), and what value does it deliver (Potential). The infrastructure that answers those questions looks different in sovereign environments, but the questions remain.
 
 ## Infrastructure Maturity
-
-Sovereign agents present challenges at each level of the I1-I5 infrastructure maturity scale.
 
 **I1-I2 (Visibility):** Traditional agent registries and audit logs may not capture sovereign agent deployments. An organization that deploys confidential inference workloads in TEEs needs to extend its agent registry to include those deployments, record attestation metadata, and inventory what data flows through sovereign execution environments.
 
