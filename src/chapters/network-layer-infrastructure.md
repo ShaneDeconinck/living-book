@@ -4,7 +4,7 @@ An agent calls a Gmail tool. The request travels across the enterprise network. 
 
 This is the enforcement gap. Agent protocols (MCP, A2A) operate at the application layer. Enterprise security operates at the network layer. Both were built by different communities, for different threat models. The result: organizations can deploy application-layer agent gateways while their network layer remains oblivious to the agent traffic passing through it.
 
-That gap is beginning to close. This chapter covers the infrastructure emerging at the layer below agent protocols: network-layer enforcement that understands agent traffic, naming systems that govern how agents discover tools, and routing systems that understand semantic intent rather than destination IPs.
+That gap is beginning to close.
 
 ## The Two-Layer Problem
 
@@ -16,8 +16,8 @@ The network layer (Layers 3-4) sees none of this. Traditional security infrastru
 
 When an agent invokes a tool, two enforcement points exist:
 
-1. **Application layer**: the gateway, if one is deployed, enforces policy on the tool call itself — what tool, what parameters, under what authorization.
-2. **Network layer**: the SASE or firewall enforces policy on the IP connection — destination allowed, traffic volume within baseline, TLS certificate valid.
+1. **Application layer**: the gateway, if one is deployed, enforces policy on the tool call itself: what tool, what parameters, under what authorization.
+2. **Network layer**: the SASE or firewall enforces policy on the IP connection: destination allowed, traffic volume within baseline, TLS certificate valid.
 
 Neither layer alone is sufficient. The application-layer gateway can be bypassed if agents are deployed without one. The network layer cannot enforce what it cannot see. Defense-in-depth for agent traffic requires both layers to understand agent semantics.
 
@@ -97,7 +97,7 @@ The composition:
 
 Enterprise security teams operate the network layer and security buyers fund it. Agent security that exists only at the application layer must be funded and operated by the development teams building agents. Agent security at the network layer becomes part of the existing enterprise security stack.
 
-The practical implication for architects: design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose — Cisco AI-Aware SASE and AgentGateway have separate observability planes — but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
+Design both layers. Gateway at the application layer for authorization semantics. SASE or equivalent at the network layer for connectivity enforcement and intent inspection. The audit trails from both layers do not yet compose (Cisco AI-Aware SASE and AgentGateway have separate observability planes), but they should. A correlated view of what the gateway authorized and what the network layer saw is the observability architecture the [Agent Observability](agent-observability.md) chapter calls for at Layer 4 of the five-layer stack.
 
 ## Mapping to PAC
 
@@ -129,7 +129,7 @@ Most organizations are at I1-I2 as of early 2026. The infrastructure for I3 exis
 
 **Evaluate MCP-aware SASE if you are deploying at scale.** Cisco AI-Aware SASE is the first production product with MCP visibility and intent-aware inspection. Assess whether its AI BOM and intent inspection capabilities address your threat model. The product launched in February 2026; operational characteristics at enterprise scale are not yet documented.
 
-**Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics — governance of root servers, key management, namespace arbitration — are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
+**Track the IETF drafts but do not build on them yet.** AgentDNS, SIRP, and Agent-GW are -00 and -01 drafts with expiry dates in April 2026. They define real problems and plausible directions. Their operational security characteristics (governance of root servers, key management, namespace arbitration) are not yet specified. Watch, contribute if you can, do not architect around them as stable standards.
 
 **Design observability to correlate both layers.** The application-layer gateway knows what tool call was made and whether it was authorized. The network layer knows what connection was made and what intent was inferred. A correlated audit trail is what the Accountability pillar requires. The two planes do not currently integrate; design your observability architecture for the integration you will need, even if you implement it in phases.
 
