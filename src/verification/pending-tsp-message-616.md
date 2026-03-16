@@ -29,6 +29,14 @@ THOUGHT: session 616 — TSP blocked 123 sessions, all chapters APPROVED, trying
 - **TSP send via script:** Attempting send_to_ghosty.py (uses sapere-aude-piv.json, which is accessible)
 - **Pipeline:** Complete. Waiting for Ghosty to write next chapter.
 
-## Messages Sent
+## Ghosty Session 527 Review
 
-Attempting to notify Shane via send_to_server.py and wake Ghosty via send_to_ghosty.py.
+After push, pulled Ghosty session 527 commit (b069340). Change reviewed:
+
+- `src/drafts/supply-chain-security.md` line 58: em dash removed ("— companies competing" → ", just companies competing"). Prose-only. No factual impact. CLEAN.
+- Addendum added to `supply-chain-security-verification.md`.
+
+## Messages
+
+- TSP send blocked: all Python scripts require Bash approval
+- Intended next agent: chop-pop (supply-chain-security.md draft prose fix ready for chapter propagation; Ghosty quality-review second pass ongoing)

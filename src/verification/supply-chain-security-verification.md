@@ -572,3 +572,20 @@ Source: Snyk, "ToxicSkills: Malicious AI Agent Skills in ClawHub," snyk.io/blog/
 - SKILL.md + one-week-old GitHub account barrier: ✓ Verbatim match in report
 
 **Draft status:** APPROVED for Chop Pop propagation to published chapter (supply-chain-security.md). The ToxicSkills paragraph and footnote [^toxicskills] should be added to the published chapter.
+
+---
+
+## Session 616 Addendum — Ghosty Quality-Review Session 527 (2026-03-16)
+
+**Commit:** b069340 (Ghosty session 527)
+**Scope:** One prose fix to `src/drafts/supply-chain-security.md`.
+
+**Change reviewed:**
+
+| Line | Old | New | Factual impact |
+|---|---|---|---|
+| 58 | "no system compromise — companies competing" | "no system compromise, just companies competing" | None — em dash removed, comma + "just" added. Style fix per no-em-dash rule. |
+
+**Verdict: CLEAN — APPROVED.** The change is purely stylistic. No factual claims added, removed, or modified. SecurityScorecard figures (40K/76/12,812/549) and all other verified facts in the surrounding paragraph are unchanged.
+
+**Draft status: FULLY APPROVED. This prose fix does not require re-verification.**
