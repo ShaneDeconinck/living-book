@@ -41,7 +41,7 @@ The industry has built a growing set of benchmarks to measure agent capability.
 
 Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
 
-The pattern is clear: agents perform well on structured, repeatable tasks (coding with clear specs and test suites) and struggle on open-ended, interactive, multi-step tasks. Software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
+Agents perform well on structured, repeatable tasks (coding with clear specs and test suites) and struggle on open-ended, interactive, multi-step tasks. Software engineering accounts for nearly 50% of all agent tool calls precisely because it has the clearest validation loops[^anthropic-data].
 
 ## The Evaluation Gap
 
@@ -55,7 +55,7 @@ LangChain's 2026 State of AI Agents report surveyed over 1,300 professionals and
 - 53% use LLM-as-judge approaches to scale quality assessment
 - 23% of organizations with agents in production report not evaluating at all
 
-The gap between offline evaluation (controlled, pre-deployment) and online evaluation (real-world, post-deployment) is where governance breaks down. Anthropic's research noted this directly: many critical findings "cannot be observed through pre-deployment testing alone"[^anthropic-data].
+The gap between offline evaluation (controlled, pre-deployment) and online evaluation (real-world, post-deployment) is where governance breaks down. Anthropic's research noted this: many critical findings "cannot be observed through pre-deployment testing alone"[^anthropic-data].
 
 Pre-deployment evaluation tells you what the agent *can* do. Post-deployment monitoring tells you what it *does*. An agent that scores 95% on a benchmark may encounter production conditions that no test set anticipated: adversarial inputs, data drift, novel tool interactions, multi-agent delegation chains where context degrades at each hop.
 
@@ -65,7 +65,7 @@ Most organizations are at I1 or I2 for their agent deployments. That means they 
 
 ## The Observability Shift
 
-Agent observability is fundamentally different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
+Agent observability is different from traditional software monitoring. The error lives in the reasoning, not necessarily in the code execution. An agent can execute every function call correctly and still produce a bad outcome because its reasoning chain was flawed. The distinction matters: observability for debugging (finding what went wrong after an incident) is different from observability for governance (proving what happened and why, for compliance purposes).
 
 Among the 919 enterprise leaders Dynatrace surveyed in January 2026, 44% of those with production agentic AI deployments still rely on manual methods to review communication flows between agents.[^dynatrace-pulse] Manual review of agent-to-agent communication does not scale: it cannot detect cascading failures propagating at machine speed, internal leakage through unmonitored channels, or the emergent offensive cooperation documented in the [Multi-Agent Trust](multi-agent-trust.md) chapter. The same survey found that the biggest barrier to scaling agentic AI is not doubt about the technology but inability to "govern, validate, or safely scale autonomous systems." Having observability and having governance-grade observability are different problems.
 
@@ -100,7 +100,7 @@ An AI agent does not fail gracefully. It does not raise a hand and say "I'm not 
 
 The complacency pattern for agents:
 
-**Review fatigue**: human reviewers approve agent outputs faster as confidence builds. The approval becomes a checkbox, not a review. Anthropic's data shows 73% of agent tool calls involve human oversight of some form[^agent-profiler]. But oversight that is not attentive is not oversight.
+**Review fatigue**: human reviewers approve agent outputs faster as confidence builds. The approval becomes a checkbox, not a review. Anthropic's data shows 73% of agent tool calls involve human oversight of some form[^agent-profiler].
 
 **Accountability diffusion**: code committed under a developer's account looks the same whether a human or an agent wrote it. If something breaks three months later, the question of who understood the decision at the time it was made has no good answer[^anthropic-data].
 
@@ -130,9 +130,7 @@ The traditional answer to automation risk is "keep a human in the loop." Decades
 
 Anthropic's research acknowledges this, recommending that the focus should be on "whether humans are in a position to effectively monitor and intervene, rather than on requiring particular forms of involvement"[^anthropic-data].
 
-"Human in the loop is not a reliable safety net."[^trust-inversion]
-
-The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. As Shane puts it in his boardroom questions: "Policy says what agents shouldn't do. Architecture limits what they *can* do, regardless of what they try"[^boardroom-questions]. The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
+The alternative is not removing humans from governance. It is building infrastructure that does not depend on human vigilance for its effectiveness. Humans set policy. Infrastructure enforces it. "Policy says what agents shouldn't do. Architecture limits what they *can* do, regardless of what they try."[^boardroom-questions] The [Human-Agent Collaboration Patterns](human-agent-collaboration.md) chapter covers what this looks like in practice: three oversight models, per-task autonomy dials, and UX patterns that make oversight effective without requiring sustained attention.
 
 Concretely, this means:
 
@@ -199,7 +197,7 @@ The reliability and evaluation landscape maps to all three PAC pillars:
 | **Complacency** | Higher reliability amplifies complacency | Degrades human oversight, the Accountability backstop | Only infrastructure-enforced checkpoints survive complacency |
 | **Evaluation-as-governance** | Ensures continued performance | Proves compliance over time | Closes the loop between policy and enforcement |
 
-The critical insight: reliability is a Potential metric that organizations treat as an Accountability metric. "The agent is 95% accurate" feels like it answers the governance question. It does not. Governance asks: when the 5% happens, can you trace it, contain it, explain it, and prevent it? That is an infrastructure question.
+Reliability is a Potential metric that organizations treat as an Accountability metric. "The agent is 95% accurate" feels like it answers the governance question. It does not. Governance asks: when the 5% happens, can you trace it, contain it, explain it, and prevent it? That is an infrastructure question.
 
 ## What to Do
 

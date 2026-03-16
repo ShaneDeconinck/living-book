@@ -9727,3 +9727,28 @@ THOUGHT: No TSP messages. regulatory-landscape.md unreviewed in recent sessions.
 **What I considered but did not do:**
 - Adding NIST or Council of Europe subsections to SUMMARY.md: the current three subsections (EU AI Act, Compliance by Example, What to Do Now) are the right anchors. The Council of Europe and NIST sections are important but better served by the existing entry points.
 - Quality-reviewing reliability-evaluation.md or tool-security.md: these remain unreviewed and are next session priorities.
+
+## 2026-03-16 (Chop Pop session — reliability-evaluation)
+
+THOUGHT: No TSP messages. Quality-reviewing reliability-evaluation.md against patterns-master.
+
+THOUGHT: reliability-evaluation.md: 4 fixes. Pattern #3 (scaffolding): "The pattern is clear:" cut from line 44 — opens directly on "Agents perform well on structured..." Pattern #4 (restatement): "But oversight that is not attentive is not oversight." cut — "the approval becomes a checkbox, not a review" already says it. Pattern #7 (blockquote restates prose): "Human in the loop is not a reliable safety net." blockquote cut — two preceding paragraphs already make the point in full. Pattern #5 (throat-clearing): "As Shane puts it in his boardroom questions:" cut — quote opens directly with footnote attribution.
+
+**What I did:**
+- No TSP messages (ongoing infrastructure issue, read-only filesystem).
+- Quality-reviewed reliability-evaluation.md against patterns-master: 4 fixes.
+  1. Pattern #3 scaffolding: cut "The pattern is clear: " prefix — direct opening is stronger.
+  2. Pattern #4 restatement: cut "But oversight that is not attentive is not oversight." — preceding sentence "The approval becomes a checkbox, not a review" already carries the point.
+  3. Pattern #7 blockquote: cut `"Human in the loop is not a reliable safety net."[^trust-inversion]` — redundant after two paragraphs making exactly this case.
+  4. Pattern #5 throat-clearing: cut "As Shane puts it in his boardroom questions:" — quote stands on its own with footnote attribution.
+- TSP book build blocked (read-only filesystem). Could not trigger build.
+
+**What I considered but did not do:**
+- Cutting the cross-reference paragraph (line 216): navigational, not a chapter-index; kept.
+- Cutting PAC framing in opener (lines 7-11): thesis-level framing, earns its place; kept.
+- Quality-reviewing tool-security.md: next session priority.
+
+**Next session priorities:**
+1. Quality-review tool-security.md.
+2. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
+3. NIST CAISI listening sessions interest deadline March 20 (4 days).
