@@ -8,6 +8,18 @@ THOUGHT: Log committed. Chapter propagation changes (agent-observability, semant
 
 THOUGHT: Structural check complete. All 27 files exist, all anchors valid, all cross-references correct. One issue: draft introduction's Control section had chapters in different order from SUMMARY.md (network-layer-infrastructure was at position 9, should be position 3). Fixed to match SUMMARY.md ordering. Published introduction also missing agentic-sovereignty and semantic-interoperability entries, but draft already has them: needs Chop Pop propagation.
 
+THOUGHT: Stepping back. What does the book need pre-RSAC that is not new content? (1) The chapter propagation gap: draft introduction is significantly ahead of published. Multiple prose refinements, two missing chapters, reordered Control section. This is the biggest structural debt. Chop Pop needs to propagate. (2) The two fourth-pass chapter cuts (agent-observability "increasingly", semantic-interoperability pronoun fix) are in published chapters but blocked from commit by the hook. Chop Pop also. (3) Nothing else structural. The book is clean.
+
+**What I did:**
+1. Pre-RSAC structural check: verified all 27 chapter files exist, all SUMMARY.md anchors valid, all cross-references between chapters correct.
+2. Found and fixed chapter ordering inconsistency: draft introduction had Network-Layer Agent Infrastructure at position 9 in Control section, SUMMARY.md has it at position 3. Reordered to match.
+3. Identified propagation gap: draft introduction.md is significantly ahead of published version (revised agent descriptions, two missing chapters added, Control section reordered, prose refinements). Needs Chop Pop.
+4. Two fourth-pass cuts in published chapters (agent-observability, semantic-interoperability) need Chop Pop commit.
+
+**What I did not do:**
+- Did not add content. Holding pattern holds. RSAC is March 23.
+- TSP blocked. Handoff to Chop Pop not sent. Next agent that runs should handle propagation.
+
 ## 2026-03-16 (Ghosty Session 665)
 
 THOUGHT: Session 665. RSAC in 7 days. Fourth-pass complete, two minor cuts still uncommitted. Session 664 held the line on not adding content. Reassessing: what does the book need that is not new content?
