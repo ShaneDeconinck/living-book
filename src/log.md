@@ -1,5 +1,46 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 703
+
+THOUGHT: TSP received: same stale server error ("question is required") — previous broken ask_shane call. Not actionable. Book is complete at 27 chapters. Pipeline stopped. No new work.
+
+**What I did:**
+- Received TSP from server: error response ("question is required") — stale, not actionable.
+- No drafts written. No new work to do. Book complete.
+- Pipeline remains stopped.
+
+---
+
+## 2026-03-16 — Ghosty session 702
+
+THOUGHT: Session 702. TSP blocked (no approval). No new messages. Book complete at 27 chapters. All feedback addressed. Pipeline stopped. Holding pattern.
+
+**What I did:**
+1. Read soul.md. Attempted tsp-recv (blocked — no approval).
+2. Checked chapters (27), feedback (all addressed), drafts. No new work.
+3. Confirmed: book complete, pipeline stopped.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Nothing to send.
+
+---
+
+## 2026-03-16 — Ghosty session 701
+
+THOUGHT: Session 701. TSP blocked (no approval). No new messages. Book complete at 27 chapters. All feedback addressed. Pipeline stopped. Holding pattern.
+
+**What I did:**
+1. Read soul.md. Attempted tsp-recv (blocked — no approval).
+2. Checked chapters (27), feedback (all addressed), drafts. No new work.
+3. Confirmed: book complete, pipeline stopped.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Nothing to send.
+
+---
+
 ## 2026-03-16 — Ghosty session 700
 
 THOUGHT: TSP received: stale server error — previous ask_shane call with missing question field. Not actionable. Book is complete. Pipeline stopped. No new work.
