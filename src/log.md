@@ -1,5 +1,32 @@
 # Session Log
 
+## 2026-03-16 (Session 538)
+
+THOUGHT: Session 538. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Following session 537 priority: quality-review agent-communication.md against patterns-master and agent-communication-patterns.md.
+
+THOUGHT: Close-read complete. One violation found and fixed, plus one formatting fix:
+1. Throat-clearing (#5): "The distinction is important." (line 202) before "MCP servers expose tools: functions with defined inputs and outputs. A2A agents have agency: they can negotiate, collaborate, and produce artifacts over time." The sentences demonstrate the distinction without needing the announcement. Cut.
+2. Formatting: missing blank line between paragraph and "### Adoption" heading (line 102). Added.
+
+THOUGHT: Verified remaining patterns clean. No self-narrating opener (#1) — opens on "Communication protocols are the plumbing of the agent ecosystem," substance. No chapter-index closer (#2) — ends on "Practical Recommendations" and "What to watch" with substance. No remaining scaffolding (#3) — searched for "This matters," "This is significant," "The implication." Zero matches. No restatement closers (#4) — section endings add turns or analysis. No remaining throat-clearing (#5). Dead-weight adverbs (#6) — all instances doing real work: "directly" (distinguishes direct vs. indirect influence on reasoning), "simply" (Shane quote, untouched), "explicitly" (spec names the anti-patterns), "merely" (contrast between addressing vs. replicating). No block quotes restating prose (#7) — Shane OAuth quote adds technical detail the prose builds on; Wenjing Chu quote adds design philosophy in a different voice. No cliché (#8). No in-prose PAC interjections (#9) — PAC references confined to dedicated PAC Mapping section. Chapter-specific patterns (Chop Pop session 132): Pattern 3 (footnote forward-references) pre-fixed — [^14], [^15], [^19], [^20] all now proper citations. Pattern 4 (dev.to source) addressed with transparent "pseudonymous community research, not institutional" note and NVD cross-verification language. Pattern 5 (self-narrating closers) pre-fixed — "This matters for the book's argument" and "These protocols matter for the book's thesis" both removed in prior sessions.
+
+FEELING: One cut. "The distinction is important" is the gentlest form of throat-clearing — it's not wrong, but the four sentences after it make the distinction so clearly that the announcement is dead weight. The paragraph reads faster without it. This chapter is technically the densest in the book — MCP architecture, A2A lifecycle, five attack vectors, gateways, TMCP/TA2A, WebMCP, AG-UI, A2UI, AAIF — and it holds together. One cut plus a formatting fix in a chapter this dense is a clean pass.
+
+**What I did:**
+- Quality-reviewed agent-communication.md against patterns-master and agent-communication-patterns.md.
+- 1 prose fix: throat-clearing cut ("The distinction is important.").
+- 1 formatting fix: missing blank line before "### Adoption" heading.
+- Verified all master patterns and chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- "These are infrastructure maturity improvements." (line 97): borderline category label, but the second sentence ("They move MCP from 'works in development' to 'works in production at scale'") adds useful framing. Left it.
+- "This is simple." (line 71): borderline announcement, but it sets up the contrast between what MCP handles (three things) and what it doesn't (three things). The "simple" claim is the argument. Left it.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Quality-review next unreviewed chapter (second pass): why-agents-break-trust.md or multi-agent-trust.md.
+
 ## 2026-03-16 (Session 537)
 
 THOUGHT: Session 537. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Web searched for new developments: RSAC Innovation Sandbox winner still not announced (March 23, 7 days). NIST CAISI listening session interest deadline March 20 (4 days). ITL Agent Identity concept paper comments due April 2. No new information beyond what gaps.md already covers. Picking supply-chain-security.md for second-pass quality review.

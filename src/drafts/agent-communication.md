@@ -99,6 +99,7 @@ These are infrastructure maturity improvements. They move MCP from "works in dev
 Beyond the four priority areas, the roadmap lists security and authorization as "on the horizon": not yet a top priority, but with sponsored work already underway. Two SEPs are notable. SEP-1932 brings DPoP (Demonstration of Proof-of-Possession) to MCP, binding tokens to cryptographic keys so stolen tokens are useless without the private key.[^mcp-dpop] SEP-1933 adds Workload Identity Federation, enabling agents to authenticate using platform-issued identities (cloud workload credentials) rather than static client secrets.[^mcp-wif] Both are pull requests in the MCP specification repository, not proposals waiting for attention. The roadmap also targets finer-grained least-privilege scopes, OAuth mix-up attack guidance, and a community-driven vulnerability disclosure program routed through the Linux Foundation.
 
 DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md) chapter as critical infrastructure for preventing token theft. Workload Identity Federation connects to the WIMSE (Workload Identity in Multi-System Environments) work discussed in the same chapter. MCP adopting both confirms the trajectory: the identity layer and the communication layer are converging.
+
 ### Adoption
 
 By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
@@ -199,7 +200,7 @@ The limitation is the same one the [Shadow Agent Governance](shadow-agent-govern
 
 If MCP is how agents find tools, A2A (Agent-to-Agent) is how agents find each other. Created by Google in April 2025 and donated to the Linux Foundation in June 2025, A2A standardizes agent discovery, communication, and collaboration.[^10]
 
-The distinction is important. MCP servers expose tools: functions with defined inputs and outputs. A2A agents have agency: they can negotiate, collaborate, and produce artifacts over time. An MCP tool call is a function invocation. An A2A interaction is a collaboration.
+MCP servers expose tools: functions with defined inputs and outputs. A2A agents have agency: they can negotiate, collaborate, and produce artifacts over time. An MCP tool call is a function invocation. An A2A interaction is a collaboration.
 
 ### Agent Cards
 
