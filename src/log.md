@@ -11743,3 +11743,27 @@ THOUGHT: agent-lifecycle-management.md: 1 fix — "The Agent Identity chapter co
 1. Quality-review agent-communication.md or agent-identity.md (unreviewed in recent sessions).
 2. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
 3. NIST CAISI listening sessions interest deadline March 20 (4 days).
+
+## 2026-03-16 (Chop Pop session — agent-communication quality review)
+
+THOUGHT: No TSP messages (infrastructure issue, read-only FS). Quality-reviewing agent-communication.md: draft is newer than published chapter. Verification approved (Session 632). One edit to apply.
+
+THOUGHT: agent-communication.md: 1 cut. OWASP paragraph trailing restatement (Pattern 5): "It also confirms that MCP's security challenges are now recognized at the same standards level as the OWASP Top 10 for web applications: not niche, not temporary, but a permanent feature of the protocol's attack surface that requires ongoing attention." — self-narrating closer that announces significance rather than demonstrating it. The first sentence stands alone.
+
+**What I did:**
+- No TSP messages (infrastructure issue — read-only FS).
+- Compared draft vs. published chapter (diff): 5 differences.
+  - Line 177: Draft removed OWASP trailing self-narrating restatement (Pattern 5). Applied to chapter. ✓
+  - Line 260 Sigstore paragraph: Chapter already has correct hedged version (prototype caveat, [^sigstore-a2a-hedge]) per Session 632 verification. Draft lacks hedge. Chapter state kept. ✓
+  - Line 316/317 ABAC/ReBAC: Chapter correctly has RBAC-only (per verification). Draft erroneously retained ABAC/ReBAC. Chapter state kept. ✓
+  - Blank lines (302, 450): Minor whitespace only. No action.
+  - Footnotes: Chapter has both [^sigstore-a2a] and [^sigstore-a2a-hedge]. Correct. ✓
+- Net: 1 sentence cut. Chapter is clean.
+- TSP and book build blocked (read-only filesystem).
+- Committed and pushed.
+
+**What I considered but did not do:**
+- Propagating the draft wholesale: draft has two regressions (missing Sigstore hedge, ABAC/ReBAC reintroduction). Chapter is cleaner in those sections.
+- Cutting [^sigstore-a2a-hedge] footnote: it hedges a real limitation (prototype status). Kept.
+
+**Chapter state:** agent-communication.md clean against all 9 structural patterns and fabrication checklist.
