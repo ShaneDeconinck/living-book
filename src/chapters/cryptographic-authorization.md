@@ -22,7 +22,7 @@ The three modes address different failure scenarios:
 
 ## Ghost Tokens: The CAAM Pattern
 
-Long-lived credentials are the opposite of cryptographic authorization. An agent that holds an admin token has authority as a side effect of possession, not verified authorization. The token proves identity, not intent.
+An agent that holds an admin token has authority as a side effect of possession, not verified authorization. The token proves identity, not intent.
 
 CAAM (Contextual Agent Authorization Mesh), an IETF draft, introduces the ghost token pattern to address this.[^caam-draft] It separates credential possession from credential use.
 
@@ -125,8 +125,6 @@ The Authenticated Workflows paper reports 100% detection rate with zero false po
 
 ## How the Three Layers Compose
 
-Ghost tokens, AI-native policy languages, and action-level authorization proofs operate at different layers of the stack.
-
 **CAAM at the credential layer** answers: who is this agent, what authority has been delegated for this session, and can I verify that without trusting the agent itself? The ghost token is the proof artifact.
 
 **MAPL at the policy layer** answers: given that this agent has authority for this session, does this action fall within the organizational constraints that govern it? The signed policy chain is the proof artifact.
@@ -145,7 +143,7 @@ The "prove" mode maps onto all three PAC pillars, but differently than "can't" a
 
 **Accountability:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
 
-**Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits. The Potential pillar connects directly to the maturity of the authorization infrastructure.
+**Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits. The Potential pillar connects to the maturity of the authorization infrastructure.
 
 The I4/I5 maturity levels in the PAC framework require this layer. At I3, organizations have scoped credentials and enforcement policies. At I4, spending constraints are cryptographically enforced. At I5, the full authorization chain — identity, constraints, intent, and action — is cryptographically verifiable end-to-end. "Prove" is not an alternative to "can't" and "don't": it is what I4 and I5 look like in practice.
 
