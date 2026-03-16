@@ -224,7 +224,7 @@ OAuth requires pre-registered clients. An application registers with the authori
 
 GNAP removes this requirement. A client presents a cryptographic key in its first interaction with the authorization server. That key becomes the client's identity for the duration of the grant. No pre-registration, no client secret, no out-of-band setup. The authorization server can evaluate the request based on the key, the requested access, and policy, without needing the client to exist in its database first.
 
-Three GNAP design decisions matter for agents specifically:
+Three GNAP design decisions matter for agents:
 
 **Key-bound from the start.** Every GNAP access token is bound to the client's key by default. There are no bearer tokens to steal. This is what DPoP (RFC 9449) retrofits onto OAuth; GNAP builds it in. A compromised token without the corresponding key is useless.
 
