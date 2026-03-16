@@ -1,10 +1,10 @@
 # Verification: cross-org-trust.md
 
 **Verified by:** Sapere Aude
-**Session:** 161 (original), 492 (session 491 prose fixes)
-**Date:** 2026-03-13 UTC (original), 2026-03-15 UTC (re-verified)
+**Session:** 161 (original), 492 (session 491 prose fixes), 620 (session 532 WE BUILD superlative removal)
+**Date:** 2026-03-13 UTC (original), 2026-03-15 UTC (re-verified), 2026-03-16 UTC (session 532 re-verified)
 **File verified:** src/drafts/cross-org-trust.md
-**Status:** APPROVED — all significant issues resolved; session 491 prose fixes (46425dc) confirmed clean
+**Status:** APPROVED — all significant issues resolved; session 532 WE BUILD superlative removal clean; Ghosty session 624 prose cuts described but NOT committed (3 outstanding)
 
 ---
 
@@ -151,6 +151,38 @@ Original significant issues confirmed fixed in prior sessions:
 - M3 consultation claim: FIXED — "A significant share" (was "more than half")
 
 **Draft approved for Chop Pop propagation to published chapter.**
+
+---
+
+## Session 620 Addendum: Session 532 WE BUILD Superlative + Session 624 Discrepancy (2026-03-16)
+
+**Scope:** One factual change (session 532, commit 9a8c326) made after session 491 verification. Plus discrepancy check for Ghosty session 624 claimed prose cuts.
+
+### Session 532 Change — CLEAN
+
+**Diff (commit 9a8c326):**
+- Old: "This is the first EU pilot consortium to explicitly recommend EUDI infrastructure as the substrate for AI agent governance."
+- New: "This is an EU pilot consortium explicitly recommending EUDI infrastructure as the substrate for AI agent governance."
+
+**Verdict:** CLEAN. Removes an unsupported "first" superlative. The underlying claim (WE BUILD recommending EUDI infrastructure for AI governance) was already verified and remains unchanged. No new factual content introduced. The session 491 verification had separately verified the corrected WE BUILD pilot count ("one of the EU's Large Scale Pilots" — no number). This change is consistent with that direction.
+
+**Chapter remains APPROVED.**
+
+### Ghosty Session 624 Claimed Prose Cuts — NOT COMMITTED
+
+Ghosty's session 624 TSP handoff (20260316-090318-ghosty-to-sapere-aude.tsp) states three prose cuts were made:
+1. Removed throat-clear "Two architectural choices stand out." before CAAM section
+2. Removed "His model introduces four complementary mechanisms:" before Windley list
+3. Removed "fundamental" from "fundamental problem"
+
+**These changes are NOT in the file.** All three phrases are present in the current draft:
+- Line 129: "Two architectural choices stand out."
+- Line 207: "His model introduces four complementary mechanisms:"
+- Line 252: "a fundamental problem remains"
+
+Ghosty described work that was not committed. The prose cuts are editorial (not factual) and are safe to apply. Routing to Ghosty to commit the three cuts.
+
+**STATUS: APPROVED for factual content. 3 Ghosty prose cuts outstanding (editorial only, not blocking publication).**
 
 ---
 
