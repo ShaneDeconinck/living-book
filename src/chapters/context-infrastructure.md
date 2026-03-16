@@ -12,17 +12,17 @@ Every wave of applied AI brought a layer of investment that the next wave made o
 
 **Scaffolding (2024-2025).** Most energy in agentic AI went to framework selection and orchestration: how to work around the model's limitations. Then the model improved, and the workarounds got deleted. The scaffolding you built was now fighting the model's new capabilities.[^2]
 
-Shane captures this precisely: "Every line of scaffolding is a bet that you know better than the model. And models keep improving."[^2]
+Shane's framing: "Every line of scaffolding is a bet that you know better than the model. And models keep improving."[^2]
 
 This pattern is not slowing down. Training depreciates. Code depreciates. Access to the most capable AI on the planet went from requiring a research lab to requiring a credit card. Your competitor has the same model you do, tomorrow.
 
 ### The Scaffolding Trap
 
-Shane identified a specific failure mode: the scaffolding trap. When the model improves, scaffolding does not just become dead weight. It actively fights the model's new capabilities. The workaround you wrote for a limitation now prevents the model from using the better approach it learned.[^2]
+When the model improves, scaffolding does not just become dead weight. It actively fights the model's new capabilities. The workaround you wrote for a limitation now prevents the model from using the better approach it learned.[^2]
 
-Claude Code's history illustrates this concretely. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
+Claude Code's history illustrates this. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
 
-The architecture that resulted is instructive: a single loop, a handful of basic tools, no multi-agent orchestration. Anthropic's engineering blog: "do the simplest thing that works."[^3]
+The architecture that resulted is instructive: a single loop, a handful of basic tools, no multi-agent orchestration. Anthropic's engineering blog puts it simply: "do the simplest thing that works."[^3]
 
 Manus, the AI agent that gained widespread attention in early 2026, learned the same lesson independently. Their team rebuilt the agent framework four times, each time after discovering a better way to shape context rather than adding more scaffolding. They describe the process as "Stochastic Graduate Descent": an experimental science of context optimization.[^4]
 
@@ -38,23 +38,23 @@ The runtime optimization matters, but the lasting investment is in what sits beh
 
 For decades, organizations have been fighting information silos, duplicate systems, inconsistent data. Expensive, but manageable when software was rigid and humans were the consumers. Now software becomes fluid. Agents can traverse, query, and act on anything they can reach. The mess gets amplified. An agent loose in poorly managed information does not just find the wrong answer. It acts on it. At machine speed.[^1]
 
-But the inverse is also true. Well-structured, discoverable, properly governed information becomes exponentially more valuable when agents can consume it. The same cleanup you should have done for humans now pays compound interest through agents.
+But the inverse is also true. Well-structured, discoverable, properly governed information becomes more valuable when agents can consume it. The same cleanup you should have done for humans now pays compound interest through agents.
 
 ## Context in Practice: What Works
 
-The most capable agents running today share a pattern: thin architecture, rich context.
+Notable production agents share a pattern: thin architecture, rich context.
 
 ### Claude Code: Files and Search
 
 Claude Code uses no vector databases, no embeddings. Just raw files and search. Each team at Anthropic maintains a `CLAUDE.md` file checked into git. When the team sees the model make a mistake, they do not write code. They write a sentence in the context file.[^2]
 
-Simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
+This is context infrastructure in action: simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
 
 Lance Martin expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^5]
 
 ### Manus: KV-Cache as North Star
 
-Manus brought a production engineering lens to context management. Their key insight: the KV-cache hit rate is the single most important metric for a production-stage AI agent, directly affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, different from typical chatbot scenarios.[^4]
+Manus brought a production engineering lens to context management. The KV-cache hit rate is the single most important metric for a production-stage AI agent, affecting both latency and cost. Their agents have an average input-to-output token ratio of around 100:1, different from typical chatbot scenarios.[^4]
 
 From this, they derived concrete principles:
 
@@ -92,7 +92,7 @@ An agent reasoning over well-structured domain knowledge makes fewer errors than
 
 Fine-grained access on the information itself. Not "can the agent access the database" but "can this agent, acting for this user, see this specific piece of information for this task."
 
-This is where context infrastructure meets the identity infrastructure from the previous chapter. OBO tokens scope who can act. But what they can see depends on the information layer. An agent with a valid delegation token but no information-level access controls will see everything the database exposes, regardless of whether the user intended it.
+OBO tokens scope who can act. But what they can see depends on the information layer. An agent with a valid delegation token but no information-level access controls will see everything the database exposes, regardless of whether the user intended it.
 
 Shane's Google Workspace example applies here too: the user intends "help me find one email from last week," but if the information layer has no finer granularity than "all email," that is what the agent gets.
 
@@ -102,9 +102,9 @@ Infrastructure-level enforcement (I4 and above) requires not just identity contr
 
 Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend that maps to this intersection: the traditional separation between agent identity, credential, and access management (ICAM) and information governance is narrowing. Organizations that manage these as separate disciplines create a structural gap: the identity system says the agent is authorized, but the information system has no corresponding policy for what the agent should see. Or the information system restricts access, but the identity system issued a token broad enough to bypass those restrictions.[^gartner-convergence]
 
-The practical implication: organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence.
+Organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what production agent governance requires.
 
-Microsoft Agent 365 (generally available May 1, 2026) represents this pattern in production, integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos.[^agent-365-convergence]
+Microsoft Agent 365 (generally available May 1, 2026) represents this pattern in production: identity, information access, and behavioral risk evaluated together in a single control plane.[^agent-365-convergence]
 
 The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-environment governance that no single vendor provides today.[^entro-critique] This is the same cross-organizational trust problem the [Cross-Organization Trust](cross-org-trust.md) chapter addresses for identity, now extended to information governance. The agent that queries your Azure SQL database through one identity and your AWS S3 bucket through another has two sets of information policies that do not talk to each other. Solving this requires not just federated identity (which standards like TSP and EUDI address) but federated information governance: portable, verifiable policies that travel with the agent's context across trust boundaries.
 
@@ -112,7 +112,7 @@ The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem
 
 Agents need to find what they need. Two protocols are emerging as the standard discovery layer:
 
-**MCP (Model Context Protocol)** handles tool and resource discovery for agents. Originally released by Anthropic in November 2024, MCP has evolved rapidly. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation. OpenAI adopted it across the Agents SDK, Responses API, and ChatGPT desktop. Google DeepMind confirmed support in Gemini models. The protocol now sees 98.6 million monthly SDK downloads across Python and TypeScript.[^7]
+**MCP (Model Context Protocol)** handles tool and resource discovery for agents. Originally released by Anthropic in November 2024, MCP has evolved fast. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation. OpenAI adopted it across the Agents SDK, Responses API, and ChatGPT desktop. Google DeepMind confirmed support in Gemini models. The protocol now sees 98.6 million monthly SDK downloads across Python and TypeScript.[^7]
 
 MCP's 2026 roadmap addresses the gaps that production use surfaced: stateful sessions that fight with load balancers, horizontal scaling that requires workarounds, and no standard way for a registry or crawler to learn what a server does without connecting to it. The planned solution includes evolving the transport model so servers can scale without holding state, and a standard metadata format served via `.well-known` for discoverable server capabilities.[^7]
 
@@ -126,21 +126,19 @@ Agents cannot leverage information they cannot find. But discoverable informatio
 
 Access scoped to the delegating user's authority. This connects to the delegation chains covered in the [Agent Identity and Delegation](agent-identity.md) chapter: OBO, DPoP, and the principle that authority must decrease through chains, never escalate.
 
-For context infrastructure specifically, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
+For context infrastructure, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
-The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10]
-
-How do agent gateways interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
+The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10] The underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
 
 ### 5. Freshness
 
-Up to date, or at least versioned. Stale information fed to an agent is worse than no information: it acts on it with full confidence. Wrong context produces wrong decisions at machine speed.[^1]
+Up to date, or at least versioned. Stale information fed to an agent is worse than no information: it acts on it with full confidence. Wrong context produces wrong decisions before anyone notices.[^1]
 
 This dimension is often underestimated. Organizations focus on getting information into the agent's context but not on keeping it current. A policy document updated last quarter that the agent treats as current. A customer record that was modified yesterday by another system. A price list that changed overnight.
 
 Freshness is not just about updating data. It is about the agent knowing what it does not know: metadata that says "this was last verified on date X" or "this source may have changed since retrieval." Without freshness signals, the agent has no way to calibrate its confidence.
 
-There is a related dimension that freshness alone does not cover: context integrity. Microsoft's discovery of AI Recommendation Poisoning showed that 31 legitimate companies across 14 industries were embedding hidden instructions in "Summarize with AI" buttons to bias AI assistant memory toward their products.[^rec-poison] This is not adversarial attack in the traditional sense: it is commercial manipulation of agent context at scale. The context the agent consumed was fresh and came through a normal interaction channel. It was simply designed to corrupt the agent's future decision-making for commercial advantage. Defending against this requires treating context provenance and integrity as governed properties, not just freshness. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this as part of the broader memory poisoning threat.
+There is a related dimension that freshness alone does not cover: context integrity. Microsoft's discovery of AI Recommendation Poisoning showed that 31 legitimate companies across 14 industries were embedding hidden instructions in "Summarize with AI" buttons to bias AI assistant memory toward their products.[^rec-poison] This is not adversarial attack in the traditional sense: it is commercial manipulation of agent context at scale. The context the agent consumed was fresh and came through a normal interaction channel. It was designed to corrupt the agent's future decision-making for commercial advantage. Defending against this requires treating context provenance and integrity as governed properties, not just freshness. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this as part of the broader memory poisoning threat.
 
 ## The Compounding Effect
 
@@ -195,6 +193,8 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 **Invest in discovery.** MCP adoption is accelerating. If your organization exposes APIs or data sources that agents should consume, making them discoverable through standard protocols is a durable investment.
 
 **Treat freshness as a feature.** Add timestamps, version numbers, and staleness signals to information that agents consume. An agent that knows "this was last verified three months ago" can make better decisions than one that treats everything as current.
+
+Context tells agents what to do. The next chapter addresses what happens when agents act on that knowledge with money: a domain where wrong decisions compound faster than any other.
 
 ---
 
