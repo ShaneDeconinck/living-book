@@ -50,7 +50,7 @@ Strata Identity's analysis of compromised multi-agent systems: with standing pri
 
 Most organizations skip the governance root cause. Not "what did the agent do?" but "what governance failure made this possible?"
 
-CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, provides incident categories, detection methods, and response procedures for AI-specific threat vectors.[^cosai-ir] The pattern across all categories is the same: the immediate cause is a specific exploit or failure mode, but the structural cause is almost always insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows injected instructions lacked input validation at a trust boundary. An agent that operates outside its intended scope was given credentials that did not constrain that scope.
+CoSAI's AI Incident Response Framework, adapted from the NIST lifecycle and published in October 2025, provides incident categories, detection methods, and response procedures for AI-specific threat vectors.[^cosai-ir] The immediate cause is a specific exploit or failure mode; the structural cause is almost always insufficient delegation controls. An agent that abuses a tool was given access it should not have had. An agent that follows injected instructions lacked input validation at a trust boundary. An agent that operates outside its intended scope was given credentials that did not constrain that scope.
 
 Three governance questions frame the root cause:
 
@@ -98,7 +98,7 @@ Three PAC Accountability questions bear directly on incident response:
 
 **A5: When an agent makes a consequential decision, can you trace who authorized it and what happened?** The forensic minimum: every consequential action maps to an authorization event (who delegated what to whom), a credential (what token was used), and a reasoning trace (what the agent was responding to). Systems that can answer A5 under incident conditions are at I3 or above.
 
-The Potential pillar determines blast radius: an agent with a narrow task scope (B1: contained) has less blast radius than one with broad system access (B4: regulated). Blast radius is not decided during incident response. It is decided during deployment — when the delegation scope is set. Organizations that did not think about blast radius at deployment cannot reduce it during an incident.
+The Potential pillar determines blast radius: an agent with a narrow task scope (B1: contained) has less blast radius than one with broad system access (B4: regulated). Blast radius is not decided during incident response. It is decided during deployment — when the delegation scope is set.
 
 The Control pillar determines what architecture enforced versus what policy only requested. Post-incident root cause analysis that identifies a policy gap leads to a policy update, which fails again at the next incident. Root cause that identifies an architectural gap — missing scope constraint, long-lived credential where ephemeral was needed, no delegation registry — leads to structural change.
 
