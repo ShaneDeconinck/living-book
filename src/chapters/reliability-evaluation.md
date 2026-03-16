@@ -23,13 +23,11 @@ Recent research decomposes reliability into four dimensions[^reliability-science
 - **Predictability**: can it calibrate its own confidence and distinguish when it is likely wrong?
 - **Safety**: when it fails, is the severity bounded?
 
-These dimensions matter because they determine which failure modes an agent exhibits. An agent can be highly consistent (same answer every time) but not robust (breaks on unexpected inputs). It can be robust but not predictable (handles perturbation but cannot signal uncertainty). And it can score well on all three but still lack safety: when the failure happens, the consequences are unbounded.
+An agent can be highly consistent (same answer every time) but not robust (breaks on unexpected inputs). It can be robust but not predictable (handles perturbation but cannot signal uncertainty). And it can score well on all three but still lack safety: when the failure happens, the consequences are unbounded.
 
 An agent at B1 (contained) can tolerate lower reliability because errors are caught before impact. An agent at B4 (regulated) needs reliability across all four dimensions because each failure mode creates a different compliance exposure.
 
 ## The Benchmark Landscape
-
-The industry has built a growing set of benchmarks to measure agent capability.
 
 **SWE-bench Verified** is the most cited benchmark for coding agents. It contains 500 human-validated real-world software engineering issues from popular open-source repositories[^swe-bench]. Agents attempt to generate patches that resolve the issue and pass existing tests. Top scores have climbed steadily, but the benchmark measures task completion in controlled conditions, with a clear specification, a defined codebase, and an existing test suite to validate against.
 
@@ -37,7 +35,7 @@ The industry has built a growing set of benchmarks to measure agent capability.
 
 **GAIA** tests general AI assistants on tasks requiring multi-step reasoning, web browsing, and tool use across domains[^gaia]. At the highest difficulty level (Level 3), the top score was 61% as of mid-2025. These are not edge cases: they are tasks a competent human assistant would handle routinely.
 
-**The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench Verified Mini, GAIA, and other benchmarks into a unified view[^hal]. Its existence reflects a recognition that no single benchmark captures reliability across the dimensions that matter.
+**The Holistic Agent Leaderboard (HAL)** from Princeton aggregates results across SWE-bench Verified Mini, GAIA, and other benchmarks into a unified view[^hal]. No single benchmark captures reliability across all these dimensions.
 
 Benchmark methodology itself is now attracting regulatory attention. NIST's draft AI 800-2 "Practices for Automated Benchmark Evaluations of Language Models" is open for public comment through March 31, 2026[^nist-benchmarks]. The document aims to establish best practices for how benchmarks are constructed, administered, and reported. For organizations using benchmark scores to justify agent autonomy levels (as the PAC Framework recommends), standardized evaluation methodology is not just a technical concern: it is a governance input.
 
@@ -108,7 +106,7 @@ The complacency pattern for agents:
 
 **The 99% problem**: an agent that is right 99% of the time is more dangerous than one that is right 80% of the time. At 80%, humans stay engaged because errors are frequent enough to maintain vigilance. At 99%, the errors are rare enough to seem like anomalies rather than a systemic issue. But 1% of a million actions is ten thousand failures.
 
-Recent evidence reinforces this pattern beyond AI. A multicentre study in The Lancet found that clinicians' adenoma detection rate during colonoscopy dropped by 6 percentage points (a 20% relative decrease) after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
+A multicentre study in The Lancet found that clinicians' adenoma detection rate during colonoscopy dropped by 6 percentage points (a 20% relative decrease) after several months of performing the procedure with AI assistance[^clinician-complacency]. The AI made them better on average but degraded their independent capability.
 
 Only 21% of executives report complete visibility into agent permissions, tool usage, or data access patterns[^agent-security]. Meanwhile, 80% of organizations surveyed reported risky agent behaviors including unauthorized system access and improper data exposure. Splunk's 2026 CISO Report (650 global CISOs): 82% believe agentic AI will increase their teams' detection and response speed, while 86% fear it will increase the sophistication of social engineering attacks.[^splunk-ciso] The agents are becoming more reliable. The humans governing them are not keeping up.
 
