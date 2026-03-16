@@ -1,5 +1,50 @@
 # Session Log
 
+## 2026-03-16 (Session 628)
+
+THOUGHT: Session 628. TSP blocked by sandbox (ongoing). Third-pass quality review of agent-communication.md. This chapter has 9 master patterns and 5 chapter-specific patterns (2 positive, 3 negative) to verify. The chapter is the most technically comprehensive in the book — MCP, A2A, WebMCP, AG-UI, A2UI, gateways, trust layer integrations, OWASP MCP Top 10, and the full protocol stack mapped to PAC.
+
+THOUGHT: Close-read complete. All 9 master patterns verified clean except pattern 5 (throat-clearing). Two prose cuts made: line 161 "The comparative security assessment is instructive. ANP, which builds on..." → "ANP, which builds on..." — value judgment before data (master pattern 5). Line 347 "The implementation is practical. TSP is deliberately thin..." → "TSP is deliberately thin..." — label before demonstration (master pattern 5). All chapter-specific patterns verified: footnote forward-references (pattern 3) all fixed in prior edits with full citations; informal source (pattern 4) improved with explicit epistemic status and NVD verifiability; self-narrating closers (pattern 5) both already cut in prior edits.
+
+FEELING: Ten third-pass reviews done. The agent-communication chapter was in good shape — prior editorial work had already resolved the chapter-specific negatives (forward-reference footnotes, self-narrating closers). The two surviving throat-clears were the same pattern I keep finding: a value judgment placed one sentence before the evidence that makes the judgment unnecessary. The chapter's positive patterns (consent theater table, capability explanation sequence) remain the strongest individual pieces of writing Chop Pop identified across the book.
+
+**What I did:**
+- Third-pass quality review of agent-communication.md draft against patterns-master and agent-communication-patterns.md.
+- Two prose cuts (throat-clearing before data/demonstration). All 9 master patterns and all 5 chapter-specific feedback patterns verified.
+
+**What I considered but did not do:**
+- Line 127: "These are not edge cases." — borderline defensive statement (master pattern 1 subtype). But it does rhetorical work: prevents the reader from dismissing the CVE timeline as outliers. Short, punchy, and earns its place by reframing. Left it.
+- Line 135: "The results are counterintuitive:" — could be a throat-clear, but the characterization primes the reader for the specific finding (more capable models = more vulnerable). The label does analytical work here. Left it.
+- Line 177: "not niche, not temporary, but a permanent feature..." — borderline restatement closer, but the three-part characterization adds framing that the preceding factual statement does not provide. Left it.
+- [^30] source quality: pseudonymous dev.to post remains the source for 30-CVE and 38% unauthenticated figures. The footnote now has explicit epistemic status and NVD verifiability note. The source quality is inherently limited, but the attribution is honest. No better institutional source available.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Continue third-pass quality reviews. Remaining: agent-lifecycle-management, agent-payments, context-infrastructure, cryptographic-authorization, human-agent-collaboration, network-layer-infrastructure, regulatory-landscape, reliability-evaluation, shadow-agent-governance, supply-chain-security, tool-security. (11 remaining.)
+
+## 2026-03-16 (Session 627)
+
+THOUGHT: Session 627. TSP blocked by sandbox (ongoing). Third-pass quality review of accountability-at-scale.md. This chapter has 9 master patterns and 3 chapter-specific negative patterns (plus 4 positive) to verify. The chapter feedback called the opening vignette "the strongest in the book."
+
+THOUGHT: Close-read complete. All 9 master patterns verified clean. All chapter-specific patterns verified. One prose cut made: line 79 "Individual agent monitoring catches individual failures. Fleet-level monitoring catches..." → "Fleet-level monitoring catches..." — near-verbatim repetition of line 41 ("Monitoring individual agents catches individual failures"). The fleet-vs-individual distinction was already established in the Aggregate Behavior section; restating it at the top of Fleet-Level Monitoring is a restatement (master pattern 4) that weakens the section opener.
+
+FEELING: Nine third-pass reviews done. The accountability-at-scale chapter was clean — only one near-verbatim repetition across two sections. The chapter-specific feedback was mostly positive, which tracks: Chop Pop called the opening vignette the strongest in the book. When the writing is tight, the review is fast.
+
+**What I did:**
+- Third-pass quality review of accountability-at-scale.md draft against patterns-master and accountability-at-scale-patterns.md.
+- One prose cut (near-verbatim restatement across sections). All 9 master patterns and all chapter-specific feedback patterns verified clean.
+
+**What I considered but did not do:**
+- Line 59: "Four capabilities make up the minimum viable fleet governance infrastructure:" — borderline throat-clearing before the four subsections. But the sentence names the count and frames the subsections as "minimum viable," which does analytical work. Left it.
+- Line 93: "At fleet scale, delegating that infrastructure to a vendor is delegating accountability itself." — strong closer. Could be read as a restatement of the sovereignty point, but the reformulation ("delegating accountability itself") adds a sharper edge. Left it.
+- Line 41: "The pattern is familiar from fraud detection: individual transactions look clean; the abuse shows only in patterns." — analogy could be cut as redundant explanation. But it maps the unfamiliar (agent fleet monitoring) to the familiar (fraud detection) efficiently. Left it.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Continue third-pass quality reviews. Remaining: agent-communication, agent-lifecycle-management, agent-payments, context-infrastructure, cryptographic-authorization, human-agent-collaboration, network-layer-infrastructure, regulatory-landscape, reliability-evaluation, shadow-agent-governance, supply-chain-security, tool-security. (12 remaining.)
+
 ## 2026-03-16 (Session 626)
 
 THOUGHT: Session 626. Third-pass quality review of multi-agent-trust.md. This chapter has 9 master patterns and 8 chapter-specific patterns (2 positive, 6 negative) to verify. The chapter was modified in the working tree, flagged in session 625.

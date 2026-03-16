@@ -158,7 +158,7 @@ The twelve risks cluster into three categories:
 
 **Operational integrity risks**: cross-protocol interaction risks, cross-protocol confusion attacks, context explosion and resource exhaustion, intent deception, collusion and free-riding, and semantic drift exploitation. Cross-protocol confusion is the most novel finding: when agents compose MCP and A2A (as described later in this chapter), an attacker can exploit the boundary between protocols. A malicious A2A agent can direct a client to invoke an MCP tool at the wrong provider, exploiting the lack of unified identity across the protocol stack. The paper calls this "wrong-provider tool execution": the agent thinks it is calling Tool X at Provider A, but the request is routed to Provider B. Without end-to-end identity verification across protocol boundaries, the composition itself is an attack surface.
 
-The comparative security assessment is instructive. ANP, which builds on W3C Decentralized Identifiers with end-to-end encryption, has the strongest security posture. A2A, with OAuth 2.0 mutual authentication and JWT signing, is second. MCP and Agora are weakest: MCP lacks authentication in its core design (relying on transport-layer OAuth that 38% of servers do not implement), and Agora's trustless validation model lacks strong cryptographic binding.[^protocol-threats]
+ANP, which builds on W3C Decentralized Identifiers with end-to-end encryption, has the strongest security posture. A2A, with OAuth 2.0 mutual authentication and JWT signing, is second. MCP and Agora are weakest: MCP lacks authentication in its core design (relying on transport-layer OAuth that 38% of servers do not implement), and Agora's trustless validation model lacks strong cryptographic binding.[^protocol-threats]
 
 The paper's central conclusion: no single protocol fully addresses all twelve risks, and the most dangerous vulnerabilities emerge at protocol boundaries during composition. The trust layer integrations (TMCP, TA2A) described later in this chapter provide the unified identity and verification layer that individual protocols lack.
 
@@ -344,7 +344,7 @@ TMCP addresses the three trust gaps that standard MCP leaves open:
 2. **Capability proof**: verifiable credentials attached to TSP messages can prove that the server actually has the claimed relationship with a service (e.g., a credential from Salesforce proving API access).
 3. **Delegation chains**: TSP's authenticated channels preserve who said what to whom, creating an accountability trail that survives across the full chain: User → Agent → MCP Server → API.
 
-The implementation is practical. TSP is deliberately thin: a transport-layer protocol that handles identity and trust. MCP's JSON-RPC messages ride on top unchanged. The agent framework does not need to change. The gateway does not need to change. The transport layer adds trust properties that the higher layers inherit.[^16]
+TSP is deliberately thin: a transport-layer protocol that handles identity and trust. MCP's JSON-RPC messages ride on top unchanged. The agent framework does not need to change. The gateway does not need to change. The transport layer adds trust properties that the higher layers inherit.[^16]
 
 ### TA2A: Trust-Enabled A2A
 
