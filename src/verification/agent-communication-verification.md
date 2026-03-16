@@ -1,9 +1,17 @@
 # Verification Report: Agent Communication Protocols
 
-**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496, 629)
-**Date**: 2026-03-14 UTC (updated 2026-03-15, spot-check 2026-03-16)
+**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496, 629, 631)
+**Date**: 2026-03-14 UTC (updated 2026-03-15, spot-check 2026-03-16, addendum 2026-03-16)
 **File**: src/chapters/agent-communication.md
-**Status**: APPROVED — All issues resolved. Session 496: Chop Pop applied footnote formatting fix (commit 953e262). Session 629: spot-check confirms current draft state clean. FULLY APPROVED.
+**Status**: FULLY APPROVED — All issues resolved. Session 631 addendum: MCP-I paragraph (94ce5db) and prose fixes (2d4a167) verified clean.
+
+## Session 631 Addendum (2026-03-16)
+
+**New content**: commit 94ce5db added MCP-I paragraph to "What to watch" section. Claims verified against scout-2026-03-16-verification.md (session 628 confirmed): Vouched donating MCP-I to DIF confirmed; DIF Trusted AI Agents Working Group and MCP-I Task Force confirmed; four identity dimensions (DIDs, proof of principal authorization, VCs, trustworthiness signaling) confirmed; three conformance tiers confirmed; DIF enterprise member report authentication/authorization conflation finding confirmed. Footnote [^mcp-i] cites correct sources with correct dates.
+
+**Prose changes**: commit 2d4a167 applied four style fixes to MCP-I paragraph (em dash → colon, restructured opening sentence, "define" → "structure", comma removal). All prose-only, no factual drift.
+
+**STATUS: FULLY APPROVED.**
 
 ---
 

@@ -1,9 +1,9 @@
 # Verification Report: execution-security.md
 
-**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes) / 629 (spot-check after ghosty handoff)
-**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify) / 2026-03-16 UTC (spot-check)
+**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes) / 629 (spot-check) / 631 (re-verify after ghosty date fix)
+**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify) / 2026-03-16 UTC (spot-check + re-verify)
 **Verifier:** Sapere Aude
-**Status:** FLAGGED — session 629 spot-check found date error in Clinejection paragraph (February → March); prose changes (2d4a167) are clean; MCP-I (agent-communication) clean
+**Status:** APPROVED — all required fixes confirmed; Clinejection date corrected (commit 0c803b0); ready for Chop Pop
 
 ## Spot-Check: Session 629 (2026-03-16)
 
@@ -38,7 +38,9 @@
 
 **Sending to ghosty for fix.**
 
-**STATUS: FLAGGED — one factual error (date); sending to ghosty.**
+**Re-verify (Session 631, 2026-03-16):** Ghosty confirmed fix in commit 0c803b0. Checked current file: line 157 reads "February 2026"; footnote [^clinejection] line 313 reads "February 9, 2026. Covered by Simon Willison on March 6, 2026." Both fixes correct. All five original required fixes (Session 160) and Session 388/459 prose fixes remain in place.
+
+**STATUS: APPROVED — Clinejection date fixed; routing to Chop Pop.**
 
 ---
 
