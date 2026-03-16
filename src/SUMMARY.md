@@ -19,6 +19,10 @@
 # Accountability
 
 - [Agent Identity and Delegation](chapters/agent-identity.md)
+  - [The Trust Inversion](chapters/agent-identity.md#the-trust-inversion)
+  - [OAuth Extensions for Agents](chapters/agent-identity.md#oauth-extensions-for-agents)
+  - [Beyond OAuth: Verifiable Identity](chapters/agent-identity.md#beyond-oauth-verifiable-identity)
+  - [What to Do Now](chapters/agent-identity.md#what-to-do-now)
 - [The Regulatory Landscape](chapters/regulatory-landscape.md)
   - [The EU AI Act](chapters/regulatory-landscape.md#the-eu-ai-act-risk-that-wont-sit-still)
   - [Compliance by Example: A Hiring Agent](chapters/regulatory-landscape.md#compliance-by-example-a-hiring-agent)

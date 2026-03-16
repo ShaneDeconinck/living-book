@@ -32,7 +32,7 @@ Authentication and authorization for software evolved through several eras, each
 
 **Decentralized identity (DIDs, 2019; VCs, 2019)** solved "how do I prove claims about myself without relying on a central authority?" Cryptographic credentials the holder controls.
 
-Every layer was a response to a real limitation of the previous one. Most were not designed for an entity that receives a goal and decides how to accomplish it. They assume either a human making decisions or software executing predetermined logic. The standards community is now adapting several of these layers for agents: OAuth extensions, WIMSE, SCIM, and DIDs are all being reworked. The rest of this chapter covers what that looks like.
+Every layer was a response to a real limitation of the previous one. Most were not designed for an entity that receives a goal and decides how to accomplish it. They assume either a human making decisions or software executing predetermined logic. The standards community is now adapting several of these layers for agents: OAuth extensions, WIMSE, SCIM, and DIDs are all being reworked.
 
 ### Where OAuth Falls Short
 
@@ -60,7 +60,7 @@ The numbers confirm how wide this gap is. According to the Gravitee State of AI 
 
 ## OAuth Extensions for Agents
 
-The identity community is not starting from scratch. The first wave of solutions extends OAuth to handle agent-specific patterns.
+The first wave of solutions extends OAuth to handle agent-specific patterns.
 
 ### On-Behalf-Of (RFC 8693)
 
@@ -74,7 +74,7 @@ In practice, the token request includes:
 
 The IETF has a draft specifically for AI agents: "OAuth 2.0 Extension: On-Behalf-Of User Authorization for AI Agents" (draft-oauth-ai-agents-on-behalf-of-user), which introduces a `requested_actor` parameter in authorization requests to identify the specific agent requiring delegation.[^5]
 
-This is real progress. But OBO alone does not solve purpose encoding or constraint enforcement. The token says who delegated and who acts, but not what the user actually intended.
+But OBO alone does not solve purpose encoding or constraint enforcement. The token says who delegated and who acts, but not what the user actually intended.
 
 ### Agent Authorization Profile (AAP)
 
@@ -92,13 +92,13 @@ Both drafts are individual submissions, not IETF-endorsed standards. But togethe
 
 ### Rich Authorization Requests (RFC 9396)
 
-The scope granularity problem has a published standard answer. Rich Authorization Requests (RAR, RFC 9396) replaces coarse OAuth scopes with structured JSON objects in the `authorization_details` parameter. Where a scope says `repo`, a RAR request specifies: this repository, read-only access, to files under this path, tagged with these attributes, for the next ten days.[^rar]
+The scope granularity problem identified earlier has a published standard solution. Rich Authorization Requests (RAR, RFC 9396) replaces coarse OAuth scopes with structured JSON objects in the `authorization_details` parameter. Where a scope says `repo`, a RAR request specifies: this repository, read-only access, to files under this path, tagged with these attributes, for the next ten days.[^rar]
 
-The difference is structural. Scopes are flat strings negotiated at registration time. RAR objects carry typed fields: `locations` (the resources), `actions` (what the client may do), `datatypes` (what information is requested), `identifier` (which specific resource), and `privileges` (what level of access). Authorization servers evaluate these against policy at request time, not at registration.
+The difference is structural. Scopes are flat strings negotiated at registration time. RAR objects carry typed fields: `locations` (the resources), `actions` (what the client may do), `datatypes` (what information is requested), `identifier` (which specific resource), and `privileges` (what level of access). Authorization servers evaluate these fields against policy at request time, not at client registration.
 
-For agents, RAR closes the gap between what a user intends and what a token permits. MCP issue #1670 requests RAR support specifically because traditional scopes cannot express constraints like "assume role X, access files under directory Y tagged with Z, for N days" — what agents operating within MCP need.[^mcp-rar]
+For agents, RAR solves the gap between what a user intends and what a token permits. The MCP specification is already feeling this: issue #1670 in the MCP repository requests RAR support specifically because traditional scopes cannot express authorization constraints like "assume role X, access files under directory Y tagged with Z, for N days."[^mcp-rar] That request describes the kind of fine-grained, context-dependent authorization that agents operating within MCP need and that flat scopes cannot carry.
 
-RAR is complementary to AAP. AAP adds agent-specific claims to the token. RAR structures the request: how the agent asks for the access it needs rather than accepting predefined scopes. An agent using both sends a structured RAR request to the authorization server, receives a token with AAP claims encoding the granted constraints, and the resource server enforces both.
+RAR is complementary to AAP. AAP adds agent-specific claims (task context, delegation depth, human oversight requirements) to the token itself. RAR structures the authorization request: it is how the agent asks for the access it needs, rather than accepting whatever pre-defined scopes are available. An agent using both sends a structured RAR request to the authorization server, receives a token with AAP claims encoding the granted constraints, and the resource server enforces both.
 
 ### Transaction Tokens for Agents
 
@@ -108,7 +108,7 @@ Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents, Januar
 
 The mechanism works like this: when an agent calls Service A, the first service exchanges the agent's access token for a Transaction Token (Txn-Token) at a dedicated Txn-Token Service. The Txn-Token is a short-lived, signed JWT that carries immutable actor and principal context. Service A then passes the Txn-Token (not the access token) to Service B, which passes it to Service C. At every hop, each service can verify who the agent is and who it acts for, but no service ever holds the original access token. If the Txn-Token needs replacement (for scope changes at a boundary), the Txn-Token Service issues a new one, but the actor and principal claims remain immutable: they cannot be altered through the chain.
 
-It solves two problems simultaneously. First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
+First, credential containment: forwarding access tokens through a call chain exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
 
 A companion draft, the A2A Profile for OAuth Transaction Tokens (draft-liu-oauth-a2a-profile), applies this pattern specifically to agent-to-agent scenarios where agents need to propagate delegation context across A2A protocol interactions.[^txn-tokens-a2a]
 
@@ -120,7 +120,7 @@ The drafts above assume agents interact through web-based OAuth flows. AAuth (Ag
 
 AAuth defines an Agent Authorization Grant inspired by the OAuth Device Authorization Grant (RFC 8628). The agent collects identity information through natural-language conversation, then obtains a scoped access token through HTTP polling, Server-Sent Events, or WebSocket. The key security contribution is its treatment of LLM hallucination as an impersonation vector. The draft explicitly addresses the risk that an LLM could hallucinate or confuse identity information gathered during conversation, potentially obtaining tokens for the wrong user. The mitigations require out-of-band identity verification: the authorization server sends a confirmation challenge through a separate channel (SMS code, email link) that the LLM cannot fabricate.
 
-AAuth identifies a threat class none of the other drafts address: the LLM itself, through hallucination rather than prompt injection, can become the confused deputy. The attacker is not an external adversary injecting prompts. The failure mode is internal: the model's own tendency to confuse or fabricate information during multi-turn conversations produces incorrect identity claims. The fix is architectural, not prompt-level: the authorization server never trusts identity information that passed through the LLM without independent verification.
+AAuth identifies a threat class none of the other chapters address: the LLM itself, through hallucination rather than prompt injection, can become the confused deputy. The attacker is not an external adversary injecting prompts. The failure mode is internal: the model's own tendency to confuse or fabricate information during multi-turn conversations produces incorrect identity claims. The fix is architectural, not prompt-level: the authorization server never trusts identity information that passed through the LLM without independent verification.
 
 ### DPoP (Demonstration of Proof-of-Possession)
 
@@ -134,17 +134,17 @@ DPoP is complementary to OBO: use OBO to track delegation, use DPoP to prevent t
 
 OBO and DPoP solve delegation tracking and token binding. But both assume the agent is operating within a system where it already has a relationship with the authorization server. The harder problem: how does an agent connect to a new application it has never interacted with, without forcing a human through an OAuth consent screen?
 
-The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been actively contributing to with public and industry collaborators, addresses this. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
+The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been contributing to with public and industry collaborators, addresses this. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
 
 The architectural shift matters: instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
 
 Okta's product implementation, Cross App Access (XAA), shipped in early access in January 2026 with industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, and others. A developer playground (xaa.dev) launched the same month for testing integrations.[^xaa]
 
-The most significant development: XAA has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. This addresses one of the three trust gaps Shane identified in MCP (covered in [Agent Communication Protocols](agent-communication.md)): MCP defines how agents discover and call tools, but not how authorization travels with those calls. With XAA as the MCP authorization layer, the enterprise IdP can enforce policy over which agents connect to which MCP servers, with what scopes, and under whose authority. The delegation chain that was invisible in plain MCP becomes auditable through the IdP.[^xaa-mcp]
+XAA has been incorporated into the MCP specification as the "Enterprise-Managed Authorization" extension. This addresses one of the three trust gaps Shane identified in MCP (covered in [Agent Communication Protocols](agent-communication.md)): MCP defines how agents discover and call tools, but not how authorization travels with those calls. With XAA as the MCP authorization layer, the enterprise IdP can enforce policy over which agents connect to which MCP servers, with what scopes, and under whose authority. The delegation chain that was invisible in plain MCP becomes auditable through the IdP.[^xaa-mcp]
 
 XAA is complementary to OBO and DPoP. OBO tracks the delegation chain (who authorized whom). DPoP binds tokens to keys (preventing theft). XAA handles the initial connection establishment (getting the agent a scoped token for a new application without interactive consent). Together, they cover the three critical phases of agent authorization: connection, delegation, and protection.
 
-The critical question for ID-JAG was whether it would remain an Okta-only capability or become a genuine open standard. That question is now answered. Keycloak 26.5 (January 2026) shipped JWT Authorization Grant support, implementing the ID-JAG draft alongside OAuth Token Exchange (RFC 8693) to enable full identity and authorization chaining across trust domains.[^keycloak-idjag] This matters because Keycloak is the most widely deployed open-source identity platform, used by Red Hat and millions of enterprise deployments. When Keycloak implements a standard, it becomes infrastructure that organizations can deploy without vendor lock-in.
+The critical question for ID-JAG was whether it would remain an Okta-only capability or become a genuine open standard. Keycloak 26.5 (January 2026) shipped JWT Authorization Grant support, implementing the ID-JAG draft alongside OAuth Token Exchange (RFC 8693) to enable full identity and authorization chaining across trust domains.[^keycloak-idjag] Keycloak is the most widely deployed open-source identity platform, used by Red Hat and millions of enterprise deployments. When Keycloak implements a standard, it becomes infrastructure that organizations can deploy without vendor lock-in.
 
 The implementation also revealed an edge case the book's lifecycle coverage predicted. CVE-2026-1609: disabled user accounts could still obtain valid tokens through the JWT Authorization Grant flow, because the feature's validation path did not check user status. Fixed in Keycloak 26.5.3 (February 2026), but the vulnerability illustrates why SCIM-based agent lifecycle deprovisioning matters. If a human is offboarded but their agent identity persists in the identity provider, the agent becomes a zombie identity: technically disabled, still authorized. Agent identity lifecycle management is not just an administrative convenience; it is a security requirement at the protocol level.
 
@@ -178,17 +178,17 @@ Microsoft Entra creates agent identities in one directory. But agents, like huma
 
 Two IETF drafts submitted in late 2025 and early 2026 extend SCIM to agents. The SCIM Agents and Agentic Applications Extension (draft-abbey-scim-agent-extension, Macy Abbey at Okta) defines two new SCIM resource types: "Agent" and "AgenticApplication."[^scim-agents] An Agent is a workload with its own identifier, metadata, and privileges, separate from the application that hosts it. An AgenticApplication is a platform that exposes or hosts one or more agents. A second draft, the SCIM Agentic Identity Schema (draft-wahl-scim-agent-schema, Mark Wahl), takes a complementary approach to the same problem, defining schema attributes for agent identity lifecycle management.[^scim-agents]
 
-The architectural significance is subtle but important. The OAuth extensions earlier in this chapter solve authorization: what can an agent do? The platform implementations (Auth0, Teleport, Entra) solve identity: who is this agent? SCIM for agents solves provisioning: how do agent identities get created, updated, and deactivated across every application in the enterprise, automatically and consistently?
+The OAuth extensions earlier in this chapter solve authorization: what can an agent do? The platform implementations (Auth0, Teleport, Entra) solve identity: who is this agent? SCIM for agents solves provisioning: how do agent identities get created, updated, and deactivated across every application in the enterprise, automatically and consistently?
 
 Without SCIM-level provisioning, agent lifecycle management is manual. An administrator creates the agent identity in Entra, then separately configures access in each connected application. When the agent is decommissioned, each application must be updated individually. This is the problem SCIM solved for human identities a decade ago, and agents inherit it. With SCIM agent extensions, the identity provider provisions agent identities across the entire application ecosystem through a single protocol, and decommissioning an agent revokes access everywhere simultaneously.
 
-For the shadow agent governance problem (covered in [Shadow Agent Governance](shadow-agent-governance.md)), SCIM provisioning creates a structural enforcement point: if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications. This is the "can't vs. don't" distinction applied to agent lifecycle: the agent cannot exist in the application ecosystem without having been provisioned through the governed channel.
+SCIM provisioning creates a structural enforcement point for shadow agent governance (covered in [Shadow Agent Governance](shadow-agent-governance.md)): if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications.
 
 That both drafts come from identity platform practitioners (Okta, Microsoft ecosystem) rather than academic researchers signals that agent lifecycle management is hitting production requirements, not theoretical design. The same pattern played out with human SCIM: the protocol emerged from the operational need to manage identities at scale across SaaS applications, not from standards committee design.
 
 ### WIMSE for Agents: Workload Identity Meets Agent Identity
 
-SCIM handles lifecycle provisioning across applications. But there is a lower layer: how does an agent get an identity at the infrastructure level, before it ever touches an application?
+SCIM handles lifecycle provisioning across applications. But there is a lower layer: how does an agent get an identity in the first place, at the infrastructure level, before it ever touches an application?
 
 This is the problem workload identity was built for. SPIFFE (Secure Production Identity Framework for Everyone) assigns cryptographic identities to software workloads based on their runtime environment: which Kubernetes pod they run in, which cloud instance they occupy, what attestation they can provide. The identity comes from the infrastructure, not from a pre-shared secret. WIMSE (Workload Identity in Multi-System Environments) extends this across trust domains.
 
@@ -196,23 +196,25 @@ The IETF draft "WIMSE Applicability for AI Agents" (draft-ni-wimse-ai-agent-iden
 
 The key architectural contribution is the dual-identity credential: a credential that binds both the agent's identity and its owner's identity cryptographically. Where a standard SPIFFE SVID identifies only the workload, a WIMSE agent credential identifies the agent and the specific user or department it represents. An agent acting on behalf of Alice in the R&D department carries a credential that an authorization server can verify on both dimensions: this is a trusted agent, and it is specifically representing Alice's authority. This maps to the OBO pattern but at the infrastructure layer rather than the OAuth layer.
 
-The draft also introduces an Identity Proxy: an intermediary that can request, inspect, replace, or augment agent identity credentials while exposing a local Agent API. This matters for credential management at scale: agents do not handle their own credential lifecycle. The proxy manages credential rotation, scope verification, and credential augmentation as agents move between tasks.
+The draft also introduces an Identity Proxy: an intermediary that can request, inspect, replace, or augment agent identity credentials while exposing a local Agent API. Agents do not handle their own credential lifecycle. The proxy manages credential rotation, scope verification, and credential augmentation as agents move between tasks.
 
 CyberArk's Secure AI Agents Solution, generally available since late 2025, validates this architecture in production. The approach uses SPIFFE Verifiable Identity Documents (SVIDs) as universal, short-lived identities for AI agents, with two-way trust established between authorization servers and SPIFFE roots of trust via SPIRE.[^cyberark-agents] CyberArk's Workload Identity Day Zero event framed the design principle: "AI agents are workloads that need narrowly scoped permissions, explicit authorization of actions, and confirmation of intent."
 
-The layering matters. OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner? Each layer addresses a different phase, and an agent operating in a well-governed environment needs all three.
+OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner?
 
 ### Agent Identity Is Now a Product Category
 
-Auth0, Teleport, and Microsoft Entra are not isolated moves. Agent identity is converging into a product category across multiple market segments simultaneously.
+Agent identity is converging into a product category across multiple market segments simultaneously.
 
 At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance. Token Security provides continuous discovery, lifecycle governance, and intent-based access controls for autonomous agents: treating every AI agent and non-human identity as a managed identity with enforced constraints.[^token-security] Geordie AI provides real-time visibility into an organization's agentic footprint, with posture and behavior monitoring designed to identify and mitigate risk as agents scale.[^geordie] Both were selected from hundreds of submissions, and each finalist receives a $5 million investment.
 
 Sector-specific solutions are emerging alongside the horizontal platforms. Imprivata launched Agentic Identity Management at HIMSS 2026 (March 10), purpose-built for healthcare environments where agents must access EHRs, clinical systems, and legacy infrastructure under strict regulatory requirements.[^imprivata] The approach mirrors the patterns from Teleport and Entra: agents do not store or handle static credentials. Instead, Imprivata brokers secure connections using short-lived tokens, continuously verifies agent identity, enforces least-privilege access, and maintains real-time audit logs of every action. If an agent behaves unexpectedly, security teams can revoke access instantly. The advantage is ecosystem scope: Imprivata already secures clinical access across healthcare environments that most identity providers cannot reach, so agent identity inherits that coverage.
 
+The Huntress 2026 Cyber Threat Report confirms the pattern from the attacker's perspective: identity threats now dominate their incident data, with OAuth abuse more than doubling year-over-year (4.8% to 10.1%) as attackers exploit the gap between what credentials permit and what their holders intended.[^huntress]
+
 The product category is not just forming. It is already consolidating through M&A. CrowdStrike announced the acquisition of SGNL for $740 million in January 2026, specifically to extend Falcon identity security to human, non-human, and AI agent identities with continuous, context-aware authorization.[^crowdstrike-sgnl] Kurtz: "AI agents operate with superhuman speed and access, making every agent a privileged identity that must be protected." Two months later, Delinea completed its acquisition of StrongDM to combine enterprise privileged access management with just-in-time runtime authorization for agents, creating what they describe as a "unified identity security control plane" for both human and non-human identities.[^delinea-strongdm] Two major acquisitions in Q1 2026, both explicitly positioned around agent identity authorization, confirm that the infrastructure gap described in this chapter is now priced as a strategic asset by the market, not just identified as a technical problem by practitioners.
 
-The pattern: platform vendors, infrastructure providers, horizontal startups, sector-specific players, and security platform acquirers are all converging on agent identity governance simultaneously. No single vendor covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
+The pattern: platform vendors (Microsoft Entra, Okta XAA), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), sector-specific providers (Imprivata), and security platform acquirers (CrowdStrike, Delinea) are all converging on agent identity governance at the same time. This is no longer an infrastructure gap for organizations to build around. It is a product category forming and consolidating in real time. The practical implication: organizations evaluating agent identity infrastructure should assess vendor coverage against their actual agent footprint. Microsoft Entra covers Microsoft environments. Imprivata covers healthcare systems. Teleport covers infrastructure access. CrowdStrike/SGNL covers SaaS and cloud authorization. None of them covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
 
 ### GNAP: Authorization Without OAuth's Assumptions
 
@@ -220,7 +222,7 @@ The extensions above patch OAuth to handle agent patterns. GNAP (Grant Negotiati
 
 OAuth requires pre-registered clients. An application registers with the authorization server, receives a client ID and secret, and uses those in every token request. For agents that spin up dynamically, connect to services they have never seen, and may be ephemeral, pre-registration is a friction point that drives organizations toward shared credentials or static API keys: the anti-patterns the CSA/Strata survey found in 44% of deployments.
 
-GNAP removes this requirement. A client presents a cryptographic key on first contact; that key becomes its identity for the grant. No pre-registration, no client secret, no out-of-band setup.
+GNAP removes this requirement. A client presents a cryptographic key in its first interaction with the authorization server. That key becomes the client's identity for the duration of the grant. No pre-registration, no client secret, no out-of-band setup. The authorization server can evaluate the request based on the key, the requested access, and policy, without needing the client to exist in its database first.
 
 Three GNAP design decisions matter for agents specifically:
 
@@ -230,13 +232,13 @@ Three GNAP design decisions matter for agents specifically:
 
 **Dynamic scope negotiation.** GNAP allows the authorization server to grant less than requested and the client to request modifications to an ongoing grant without starting a new flow. An agent can begin with narrow access, discover it needs additional capabilities mid-task, and request them without re-authenticating the user. This matches how agents actually work: they discover what they need as they execute, not before.
 
-TwigBush is an early-stage open-source GNAP authorization server in Go targeting AI agent delegation. It provides key-bound tokens, real-time grant updates, and policy hooks for multi-cloud and ephemeral workloads.[^twigbush] Its existence signals that practitioners are looking beyond OAuth patches to protocols designed for the agent model from the ground up.
+TwigBush, an early-stage open-source GNAP authorization server built in Go, targets AI agent delegation. It provides key-bound tokens, real-time grant updates, and policy hooks designed for multi-cloud and agent-driven workloads.[^twigbush] The project is early-stage, but its existence signals that practitioners are looking beyond OAuth patches to protocols designed for the agent model from the ground up.
 
-The practical question is adoption. OAuth's ecosystem is enormous: every identity provider, every SaaS application, every mobile SDK speaks OAuth. GNAP has a published RFC but limited deployment. For most organizations today, the OAuth extensions described earlier in this chapter are the pragmatic path. But GNAP's design assumptions (dynamic clients, key-bound tokens, interaction flexibility) map more closely to the agent model than OAuth's. The gap between what OAuth assumes and what agents need is what those extensions are working around. GNAP removes the assumptions instead.
+The practical question is adoption. OAuth's ecosystem is enormous: every identity provider, every SaaS application, every mobile SDK speaks OAuth. GNAP has a published RFC but limited deployment. For most organizations today, the OAuth extensions described earlier in this chapter are the pragmatic path. But GNAP's design assumptions (dynamic clients, key-bound tokens, interaction flexibility) map more closely to the agent model than OAuth's. The gap between what OAuth assumes and what agents need is what the extensions earlier in this chapter are filling. GNAP fills that gap by removing the assumptions.
 
 ## Beyond OAuth: Verifiable Identity
 
-The OAuth extensions and GNAP address authorization within systems where an authorization server has authority. But agents increasingly operate across organizational boundaries, where no single authority governs all parties. This is where decentralized identity enters.
+The OAuth extensions and GNAP address authorization within systems where the authorization server has authority. But agents increasingly operate across organizational boundaries, where no single authorization server governs all parties.
 
 ### DIDs and Verifiable Credentials
 
@@ -269,7 +271,7 @@ When an agent connects to a service it has never seen, TSP handles the trust est
 
 TSP is distinct from OAuth. OAuth assumes you pre-registered with the authorization server. TSP handles the stranger-to-stranger case: two agents from different organizations that need to verify each other without any prior relationship or shared authority.
 
-The spec reached Revision 2 in November 2025 and is actively developing.[^10]
+The spec reached Revision 2 in November 2025; development continues.[^10]
 
 ### Authority Continuity: PIC
 
@@ -281,7 +283,7 @@ PIC (Provenance, Identity, Continuity) replaces proof of possession with proof o
 
 The confused deputy is not detected or mitigated under this model. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability.[^pic]
 
-To continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. To create authority, it needs an identity and an expressed intent. That distinction makes the model work for agents: some act autonomously, others continue authority received from a human principal.
+To continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. But to create authority, you need an identity and an expressed intent. That distinction is what makes the model work for agents, which are workloads that sometimes need to act autonomously and sometimes need to continue authority received from a human principal.
 
 PIC is designed to work with existing infrastructure. It can use OAuth as a federated backbone, embedding causal authority in custom claims. Performance is not a blocker: executing a continuity chain takes microseconds, comparable to a token exchange call.[^pic]
 
@@ -309,19 +311,19 @@ Verifiable Intent uses a three-layer SD-JWT (Selective Disclosure JSON Web Token
 
 **Layer 3: Agent Action.** The agent signs what it intends to do within the user's constraints. This layer splits into L3a (sent to the payment network) and L3b (sent to the merchant), each containing only the information that party needs.
 
-### Why This Matters for Agent Identity
+### Solving Consent Theater
 
 Verifiable Intent solves the consent theater problem Shane identified. Instead of a coarse OAuth scope ("can make payments"), the user's constraints are cryptographically bound to the authorization. The agent cannot exceed them. The merchant can verify them. The payment network can enforce them.
 
 The selective disclosure is critical: each party sees only what it needs. The merchant sees the checkout details but not the payment instrument. The payment network sees the authorization but not the line items. Privacy is built into the protocol, not bolted on.
 
-And critically: the agent cannot sub-delegate. Layer 3 is terminal. This enforces the PAC principle that authority must only decrease through delegation chains, never increase.[^12]
+The agent cannot sub-delegate. Layer 3 is terminal. Authority can only decrease through the chain, never increase.[^12]
 
 Three major commerce protocols are adopting Verifiable Intent: AP2 (Google), ACP (Stripe/OpenAI), and UCP (Google/Shopify/Walmart). The specification is built on established standards: SD-JWT, JWT, JWS, and ES256 from IETF, FIDO Alliance, EMVCo, and W3C.[^11]
 
 ## The Regulatory Convergence
 
-These technical developments are not happening in isolation. Regulators are converging on the same questions.
+Regulators are converging on the same questions.
 
 ### NIST: Agent Identity as National Priority
 
@@ -332,15 +334,15 @@ In February 2026, NIST released "Accelerating the Adoption of Software and Artif
 - **Access delegation:** linking user identities to AI agents
 - **Logging and transparency:** linking agent actions to their non-human entity
 
-The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal). This is not a coincidence. Both the US and EU regulatory apparatus are recognizing that agent identity is a foundational governance requirement.
+The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal). Both the US and EU regulatory apparatus are recognizing that agent identity is a foundational governance requirement.
 
 ### Industry Response: The Agent Transparency Label
 
-On March 9, 2026, the Bank Policy Institute and the American Bankers Association submitted a joint comment to NIST's CAISI proposing what they call a "nutrition label" for AI agents: a risk-scaled, controlled-sharing profile that standardizes what organizations must disclose about their agents to counterparties.[^bpi-aba]
+Separately, NIST's CAISI issued a request for information on security considerations for AI agent systems, with a March 9 comment deadline. The Bank Policy Institute and the American Bankers Association submitted a joint response proposing what they call a "nutrition label" for AI agents: a risk-scaled, controlled-sharing profile that standardizes what organizations must disclose about their agents to counterparties.[^bpi-aba]
 
 The proposal has two tiers. A foundational baseline covers every agent: purpose, data dependencies, operational boundaries, permission scope, human approval requirements, logging capabilities, and change notification requirements. An enhanced tier adds detail when risk or complexity is higher: deeper data dependency documentation, protective measures for high-risk actions, and operational validation evidence. The analogy to food nutrition labels is deliberate: a standard baseline set of information for due diligence, with added detail when the stakes are higher.
 
-The specific mechanism they propose is a "Data Dependency Label": a structured document that maps an agent's data dependencies, helping counterparties determine what disclosure tier is appropriate. This matters for financial services, where agents increasingly interact across institutional boundaries (payment processing, fraud detection, lending decisions) and each counterparty needs to assess the other's agent before trusting it with sensitive data or authority.
+The specific mechanism they propose is a "Data Dependency Label": a structured document that maps an agent's data dependencies, helping counterparties determine what disclosure tier is appropriate. In financial services, agents increasingly interact across institutional boundaries (payment processing, fraud detection, lending decisions) and each counterparty needs to assess the other's agent before trusting it with sensitive data or authority.
 
 The proposal connects three threads the book has covered separately. The NIST concept paper asks what identity and authorization standards agents need. KYA (covered in the [Agent Payments](agent-payments.md) chapter) answers who the agent is and whether it is legitimate. The transparency label answers what the agent does, what it accesses, and what safeguards constrain it. Together, they compose into a pre-interaction trust stack: verify the agent's identity (KYA), understand its capabilities and constraints (transparency label), then authorize specific actions (Verifiable Intent). The financial industry is proposing the middle layer.
 
@@ -364,7 +366,7 @@ The Cloud Security Alliance published "Agentic AI Identity & Access Management: 
 
 **Agent Naming Service (ANS).** The framework specifies a discovery mechanism where agents query for specific capabilities, compliance requirements, and protocol preferences. The ANS returns cryptographically signed responses containing target agent DIDs, service endpoints, and relevant attestations (such as SOX compliance certifications). This connects agent identity to agent discovery: you cannot verify an agent's credentials if you cannot find the agent. ANS addresses the gap between identity infrastructure (covered here) and communication protocols (covered in [Agent Communication Protocols](agent-communication.md)).
 
-**Zero-Knowledge Proofs for compliance.** The framework specifies ZKPs to enable privacy-preserving attribute disclosure: an agent can prove it meets specific compliance requirements or holds a particular certification without revealing the underlying data. This matters for cross-organizational trust because it allows agents to satisfy verification requirements without over-disclosing. A financial services agent can prove SOX compliance without revealing its internal audit documentation.
+**Zero-Knowledge Proofs for compliance.** The framework specifies ZKPs to enable privacy-preserving attribute disclosure: an agent can prove it meets specific compliance requirements or holds a particular certification without revealing the underlying data. For cross-organizational trust, agents can satisfy verification requirements without over-disclosing. A financial services agent can prove SOX compliance without revealing its internal audit documentation.
 
 **Unified session management.** A global policy enforcement layer that propagates revocations instantly across heterogeneous multi-agent systems. When an agent's authority is revoked, the revocation takes effect at every interaction point simultaneously, not at the next token refresh. This addresses a practical gap in current implementations where revocation latency creates windows of unauthorized action.
 
@@ -372,9 +374,9 @@ The CSA framework, the NIST concept paper, and the OpenID AIIM group are converg
 
 ### eIDAS 2.0 and EUDI Wallets
 
-The European Digital Identity framework (eIDAS 2.0) is building the infrastructure for digital identity wallets that could extend to agents. EUDI wallets give citizens and businesses cryptographic credentials that work across the EU. The same infrastructure, DIDs, VCs, and trust registries, is directly applicable to agent identity.
+The European Digital Identity framework (eIDAS 2.0) is building the infrastructure for digital identity wallets that could extend to agents. EUDI wallets give citizens and businesses cryptographic credentials that work across the EU. The same infrastructure, DIDs, VCs, and trust registries, is applicable to agent identity.
 
-When an agent operating in the EU needs to prove its organizational affiliation, its compliance status, or its authorization to act, EUDI wallet infrastructure provides the verification layer. This connects the Control pillar to the Accountability pillar: the same infrastructure that proves identity also creates the audit trail regulators require.[^10]
+When an agent operating in the EU needs to prove its organizational affiliation, its compliance status, or its authorization to act, EUDI wallet infrastructure provides the verification layer: the same infrastructure that proves identity also creates the audit trail regulators require.[^10]
 
 ## Connecting to PAC
 
@@ -393,7 +395,7 @@ The infrastructure scale from the PAC Framework maps to identity maturity:
 | I1 (Open) | No agent identity; acts under user credentials |
 | I2 (Logged) | Agent actions logged but not identity-scoped |
 | I3 (Verified) | OBO delegation, scoped credentials, audit trails |
-| I4 (Authorized) | Verifiable identity, cross-org trust, purpose encoding |
+| I4 (Authorized) | Verifiable identity, cross-org trust, PIC authority continuity |
 | I5 (Contained) | Full delegation chains, verifiable intent, sandboxed execution |
 
 Most organizations are between I1 and I2 today. The standards described in this chapter provide the path to I3 through I5.
@@ -406,20 +408,18 @@ The standards are landing but not yet universal. For teams deploying agents toda
 
 **Bind tokens to keys.** DPoP is available now and prevents the most common credential theft scenarios. If your agents hold long-lived tokens, bind them.
 
-**Scope aggressively.** Default to the narrowest permissions possible. Resist the temptation to grant broad scopes "for flexibility." Every unnecessary permission is attack surface.
+**Scope aggressively.** Default to the narrowest permissions possible. If your authorization server supports Rich Authorization Requests (RFC 9396), use `authorization_details` instead of flat scopes. Every unnecessary permission is attack surface.
 
 **Log the delegation chain.** Even before you have formal delegation infrastructure, log who authorized what at every hop. When the incident comes, this is what you will need.
 
-**Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, and the Verifiable Intent specification are all active. These will shape how agent identity works for the next decade.
+**Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, PIC, and the Verifiable Intent specification are all active. These will shape how agent identity works for the next decade.
 
 The identity layer for agents is being built right now, in IETF drafts, W3C specifications, and open-source implementations. The organizations that adopt this infrastructure early will have accountable, auditable agent deployments. The ones that wait will be explaining to regulators why they cannot trace what their agents did.
-
-For how identity extends across organizational boundaries, see [Cross-Organization Trust](cross-org-trust.md). For how delegation chains compose (and break) in multi-agent systems, see [Multi-Agent Trust and Orchestration](multi-agent-trust.md). For how agent identity integrates with registry enforcement and shadow agent discovery, see [Shadow Agent Governance](shadow-agent-governance.md).
 
 ---
 
 [^1]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," February 3, 2026.
-[^2]: Shane Deconinck, "Understanding OAuth On-Behalf-Of: The OBO Token Exchange Flow Explained," shanedeconinck.be/explainers/oauth-obo/, January 10, 2026.
+[^2]: Shane Deconinck, "Auth for Agent Builders: A Crash Course," January 26, 2026.
 [^3]: Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," March 5, 2026.
 [^4]: IETF RFC 8693, "OAuth 2.0 Token Exchange," January 2020.
 [^5]: IETF, "OAuth 2.0 Extension: On-Behalf-Of User Authorization for AI Agents," draft-oauth-ai-agents-on-behalf-of-user-02.
@@ -432,7 +432,7 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^12]: Mastercard, "How Verifiable Intent Builds Trust in Agentic AI Commerce," March 5, 2026.
 [^13]: NIST NCCoE, "Accelerating the Adoption of Software and Artificial Intelligence Agent Identity and Authorization," February 5, 2026.
 [^14]: OpenID Foundation, "Identity Management for Agentic AI," Artificial Intelligence Identity Management Community Group whitepaper, 2025.
-[^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 900+ executives and technical practitioners.
+[^gravitee]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026. Survey of 919 executives and practitioners across industries.
 [^csa]: Cloud Security Alliance, "Agentic AI Identity & Access Management: A New Approach," cloudsecurityalliance.org, 2025-2026. Framework proposing DID+VC+ZKP-based IAM for multi-agent systems.
 [^entra-agent-id]: Microsoft, "What is Microsoft Entra Agent ID?," learn.microsoft.com, March 2026. Part of Microsoft Agent 365, generally available May 1, 2026. See also ConductorOne, "Future of Identity Report 2026," March 10, 2026.
 [^teleport]: Teleport, "2026 State of AI in Enterprise Infrastructure Security," February 17, 2026. Survey of 205 senior infrastructure and security leaders. See also Teleport, "Agentic Identity Framework," goteleport.com, January 27, 2026.
@@ -451,12 +451,12 @@ For how identity extends across organizational boundaries, see [Cross-Organizati
 [^txn-tokens-a2a]: IETF, "Agent-to-Agent (A2A) Profile for OAuth Transaction Tokens," draft-liu-oauth-a2a-profile-00, 2026. Applies Transaction Tokens to A2A protocol interactions for agent delegation context propagation.
 [^scim-agents]: IETF, "SCIM Agents and Agentic Applications Extension," draft-abbey-scim-agent-extension-00. Defines "Agent" and "AgenticApplication" SCIM resource types for cross-domain provisioning and lifecycle management. See also IETF, "SCIM Agentic Identity Schema," draft-wahl-scim-agent-schema-01 (complementary schema approach). WorkOS, "SCIM for AI: Inside the new IETF draft for agent and agentic application provisioning," workos.com, 2026. Microsoft, "Beyond OAuth: Why SCIM must evolve for the AI agent revolution," techcommunity.microsoft.com, 2026.
 [^aauth]: IETF, "AAuth: Agentic Authorization OAuth 2.1 Extension," draft-rosenberg-oauth-aauth-01, 2026. Authors: Jonathan Rosenberg and Pat White. Defines the Agent Authorization Grant for non-web channel agent interactions (voice, SMS, messaging). Addresses LLM hallucination as impersonation vector through mandatory out-of-band identity verification.
-[^rar]: IETF RFC 9396, "OAuth 2.0 Rich Authorization Requests," May 2023. Authors: Torsten Lodderstedt, Justin Richer, Brian Campbell. Defines the `authorization_details` parameter for structured, fine-grained authorization beyond OAuth scopes. Fields include `locations`, `actions`, `datatypes`, `identifier`, and `privileges`.
-[^mcp-rar]: GitHub, modelcontextprotocol/modelcontextprotocol, Issue #1670: "Support Rich Authorization Requests for OAuth - RFC 9396," October 17, 2025. Requests RAR support in MCP for fine-grained, time-bound, role-based agent authorization that traditional scopes cannot express.
-[^gnap]: IETF RFC 9635, "Grant Negotiation and Authorization Protocol (GNAP)," October 2024. Authors: Justin Richer, Fabien Imbault. Defines a next-generation authorization protocol that removes OAuth's pre-registration requirement, makes key-bound tokens the default, and separates access requests from interaction modes. See also IETF RFC 9767, "GNAP Resource Server Connections," 2025.
-[^twigbush]: TwigBush, "GNAP grant engine in Go, built for short-lived tokens that let AI agents delegate securely," github.com/TwigBush/TwigBush. Open-source implementation of RFC 9635 and RFC 9767 targeting AI agent delegation, multi-cloud environments, and ephemeral workloads. Early-stage.
 [^wimse-agents]: IETF, "WIMSE Applicability for AI Agents," draft-ni-wimse-ai-agent-identity-02, 2026. Extends WIMSE architecture to AI agents with dual-identity credentials binding agent and owner identities, Identity Proxy for credential management, and requirements for automated credential management with reduced validity periods. See also IETF 122 WIMSE WG minutes, March 2026.
 [^bpi-aba]: Bank Policy Institute and American Bankers Association, "BPI/ABA Comment on NIST's Security Considerations for AI Agent Systems," bpi.com, March 9, 2026. Joint comment to NIST CAISI proposing risk-scaled "nutrition label" controlled-sharing profile for agent transparency, with foundational and enhanced tiers, Data Dependency Labels, and NCCoE-style practice guides for financial services agent deployments.
 [^cyberark-agents]: CyberArk, "CyberArk Introduces First Identity Security Solution Purpose-Built to Protect AI Agents with Privilege Controls," cyberark.com, November 2025. General availability late 2025. Uses SPIFFE SVIDs as short-lived agent identities. Palo Alto Networks acquired CyberArk for $25 billion in February 2026, the largest security industry deal in history, making agent identity security a core pillar of its platform. See also GitGuardian, "Workload And Agentic Identity at Scale: Insights From CyberArk's Workload Identity Day Zero," blog.gitguardian.com, November 2025.
 [^keycloak-idjag]: Keycloak, "JWT Authorization Grant and Identity Chaining in Keycloak 26.5," keycloak.org, January 2026. Implements IETF Identity Assertion JWT Authorization Grant (ID-JAG) via RFC 7523 profile, combined with Token Exchange (RFC 8693) for cross-domain identity chaining. See also CVE-2026-1609: disabled users could obtain tokens via JWT Authorization Grant (fixed in 26.5.3, February 2026); CVE-2026-1486: logic bypass allowing authentication via disabled identity providers.
+[^rar]: IETF RFC 9396, "OAuth 2.0 Rich Authorization Requests," May 2023. Authors: Torsten Lodderstedt, Justin Richer, Brian Campbell. Defines the `authorization_details` parameter for structured, fine-grained authorization beyond OAuth scopes. Fields include `locations`, `actions`, `datatypes`, `identifier`, and `privileges`.
+[^mcp-rar]: GitHub, modelcontextprotocol/modelcontextprotocol, Issue #1670: "Support Rich Authorization Requests for OAuth - RFC 9396," October 17, 2025. Requests RAR support in MCP for fine-grained, time-bound, role-based agent authorization that traditional scopes cannot express.
+[^gnap]: IETF RFC 9635, "Grant Negotiation and Authorization Protocol (GNAP)," October 2024. Authors: Justin Richer, Fabien Imbault. Defines a next-generation authorization protocol that removes OAuth's pre-registration requirement, makes key-bound tokens the default, and separates access requests from interaction modes. See also IETF RFC 9767, "GNAP Resource Server Connections," 2025.
+[^twigbush]: TwigBush, "GNAP grant engine in Go, built for short-lived tokens that let AI agents delegate securely," github.com/TwigBush/TwigBush. Open-source implementation of RFC 9635 and RFC 9767 targeting AI agent delegation, multi-cloud environments, and ephemeral workloads. Early-stage.
 [^pic]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," shanedeconinck.be, March 11, 2026. Reflections from the LFDT Belgium meetup featuring Nicola Gallo (Nitro Agility, co-chair of Trusted AI Agents working group at Decentralized Identity Foundation) on PIC. See also pic-protocol.org.
