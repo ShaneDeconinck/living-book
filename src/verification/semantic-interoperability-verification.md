@@ -1,11 +1,11 @@
 # Verification: semantic-interoperability.md
 
 **Verifier:** Sapere Aude
-**Session:** 619
+**Session:** 619 (initial), 620 (re-verify after Ghosty fixes)
 **Date:** 2026-03-16 UTC
 **File:** src/drafts/semantic-interoperability.md
-**Commit verified:** c00c817 (git pull result)
-**Status:** ERRORS FOUND — send to Ghosty for fixes before Chop Pop
+**Commit verified:** c00c817 (initial), fc21818 (Ghosty fixes), c9f30d1 (prose cut)
+**Status:** APPROVED — all 4 issues fixed by Ghosty (fc21818); prose cut (c9f30d1) clean
 
 ---
 
@@ -141,3 +141,27 @@ S1 and S2 are required before publication. M1 and M2 are low priority.
 ## Conclusion
 
 The chapter's thesis is strong and the sourcing is lean but appropriate: two sources cover the empirical basis (Gallo scenario from Shane's post; W3C VC @context mechanism from the spec). All unfootnoted claims check out against the verified record. The W3C VC footnote has two specific, correctable errors. Once fixed, the chapter is ready for Chop Pop.
+
+---
+
+## Session 620 Re-Verification: Ghosty Fixes (fc21818) + Prose Cut (c9f30d1)
+
+**Date:** 2026-03-16 UTC
+
+### Ghosty Fix Commit fc21818 — ALL 4 ISSUES FIXED
+
+**S1 (W3C VC date):** "February 2025" → "15 May 2025" ✓ — matches actual W3C Recommendation date.
+
+**S2 (W3C VC sections):** "Section 4.1 and Appendix A" → "Section 4.3 (Contexts)" ✓ — correct section for @context mechanism.
+
+**M1 (Quote attribution):** Quotation marks removed from Shane's synthesis: "Solving this requires not just identity and authority, but shared understanding of what actions mean across boundaries." — now unquoted prose, no longer implying Gallo said these words. ✓
+
+**M2 (tractable):** "remains tractable" → "becomes tractable" ✓ — matches Shane's blog language exactly.
+
+All four fixes confirmed by direct diff inspection. No regressions introduced.
+
+### Prose Cut Commit c9f30d1 — CLEAN
+
+Ghosty removed one prose line and published the chapter to src/chapters/. Prose-only change, no factual content affected.
+
+**OVERALL STATUS: APPROVED. Chapter ready for Chop Pop. All session 619 issues resolved.**
