@@ -22,7 +22,7 @@ Shane identified a specific failure mode: the scaffolding trap. When the model i
 
 Claude Code's history illustrates this concretely. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
 
-The architecture that resulted is instructive: a single loop, a handful of basic tools, no multi-agent orchestration. Anthropic's engineering blog puts it simply: "do the simplest thing that works."[^3]
+The architecture that resulted is instructive: a single loop, a handful of basic tools, no multi-agent orchestration. Anthropic's engineering blog: "do the simplest thing that works."[^3]
 
 Manus, the AI agent that gained widespread attention in early 2026, learned the same lesson independently. Their team rebuilt the agent framework four times, each time after discovering a better way to shape context rather than adding more scaffolding. They describe the process as "Stochastic Graduate Descent": an experimental science of context optimization.[^4]
 
@@ -48,7 +48,7 @@ The most capable agents running today share a pattern: thin architecture, rich c
 
 Claude Code uses no vector databases, no embeddings. Just raw files and search. Each team at Anthropic maintains a `CLAUDE.md` file checked into git. When the team sees the model make a mistake, they do not write code. They write a sentence in the context file.[^2]
 
-This is context infrastructure in action: simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
+Simple files, continuously curated, immediately valuable. Context is cheap to update and does not create maintenance burden. It degrades gracefully: if a model outgrows an instruction, the instruction just stops mattering. When you would normally write a linter rule or a validation check, they write a sentence.[^2]
 
 Lance Martin expanded this into a comprehensive framework for context engineering, identifying four core operations: writing context (saving it outside the context window), selecting context (pulling it in), compressing context (retaining only the tokens required), and isolating context (splitting it across agents or turns).[^5]
 
@@ -130,7 +130,7 @@ For context infrastructure specifically, authority means the agent sees what the
 
 The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10]
 
-But agent gateways introduce new questions. How do they interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
+How do agent gateways interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
 
 ### 5. Freshness
 
@@ -195,8 +195,6 @@ Context infrastructure is a long-term investment, but there are immediate steps:
 **Invest in discovery.** MCP adoption is accelerating. If your organization exposes APIs or data sources that agents should consume, making them discoverable through standard protocols is a durable investment.
 
 **Treat freshness as a feature.** Add timestamps, version numbers, and staleness signals to information that agents consume. An agent that knows "this was last verified three months ago" can make better decisions than one that treats everything as current.
-
-Context tells agents what to do. The next chapter addresses what happens when agents act on that knowledge with money: a domain where wrong decisions compound faster than any other.
 
 ---
 
