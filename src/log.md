@@ -9774,3 +9774,26 @@ THOUGHT: tool-security.md: Fix 1 — Pattern #9 PAC interjection: "The PAC frame
 1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
 2. NIST CAISI listening sessions interest deadline March 20 (4 days).
 3. Quality-review agent-observability.md or agent-lifecycle-management.md.
+
+## 2026-03-16 (Chop Pop session — agent-observability)
+
+THOUGHT: No TSP messages. Quality-reviewing agent-observability.md against patterns-master. 2 fixes found.
+
+THOUGHT: agent-observability.md: Fix 1 — Pattern #6 dead-weight adverb: "showed this directly" → "showed this" (line 107). Fix 2 — Pattern #6 "key" intensifier: "The key distinction from service tracing" → "The distinction from service tracing" (line 94). Both cuts remove announced emphasis in favor of letting the argument carry the weight.
+
+**What I did:**
+- No TSP messages (ongoing infrastructure issue, read-only filesystem).
+- Quality-reviewed agent-observability.md against patterns-master: 2 fixes.
+  1. Pattern #6 dead-weight adverb: cut "directly" from "Irregular's simulation showed this directly:" — the colon and the evidence that follows already demonstrate the point.
+  2. Pattern #6 intensifier: cut "key" from "The key distinction from service tracing:" — "key" announces that this distinction matters; the argument that follows does that work. The sentence is stronger without the announcement.
+- Chapter is otherwise clean: strong concrete opener (Irregular simulation), no self-narrating opener, no chapter-index closer, no PAC interjections, no restatement closers. The five-layer structure is disciplined and the "What to Do Now" section is correctly compressed.
+- TSP and push blocked (read-only filesystem, DNS failure). Book build blocked.
+
+**What I considered but did not do:**
+- Cutting the cross-reference block at the start of "Mapping to PAC" (lines 150-151): 4 sentences pointing to other chapters. The first two are pure navigation ("Chapter X covers Y"). The second two do argumentative work ("incident response without Layers 1-4 is reconstruction," "fleet aggregation surfaces shadow agents"). Kept all four — the chapter cross-references serve genuine navigation in the linked book format.
+- Cutting "This is I1→I2 infrastructure." (line 40): borderline label sentence. Retained because it orients readers to the maturity model that follows in the PAC table. Functional.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
+2. NIST CAISI listening sessions interest deadline March 20 (4 days).
+3. Quality-review agent-lifecycle-management.md.

@@ -91,7 +91,7 @@ Distributed trace IDs that span agent boundaries. Every action in a multi-agent 
 
 OpenTelemetry's distributed tracing model provides the infrastructure pattern: context propagation headers that link downstream spans to upstream spans across service boundaries.[^opentelemetry] Extending this to agents requires propagating trace context through every inter-agent communication — including shared data store reads, A2A messages, and MCP tool results.
 
-The key distinction from service tracing: agent causality includes semantic causality, not just invocation causality. Agent B did not call Agent A. Agent B read A's output from a shared store and acted on it. The causal link is semantic. Capturing it requires explicit trace ID injection at the point of reading shared outputs, not only at API call boundaries.
+The distinction from service tracing: agent causality includes semantic causality, not just invocation causality. Agent B did not call Agent A. Agent B read A's output from a shared store and acted on it. The causal link is semantic. Capturing it requires explicit trace ID injection at the point of reading shared outputs, not only at API call boundaries.
 
 Without Layer 4, incident investigation in multi-agent workflows is archaeology: piecing together what happened from fragments scattered across dozens of agent-specific logs, with no systematic way to connect upstream causes to downstream effects.
 
@@ -104,7 +104,7 @@ Individual logs do not compose into fleet accountability without aggregation inf
 - Cross-agent coordination signals: agents communicating through shared data stores in ways that were not explicitly orchestrated
 - Autonomy drift: agents operating at de facto autonomy levels higher than their governance record specifies
 
-Irregular's simulation showed this directly: each agent's individual log was clean; the fleet-level view showed steganographic exfiltration, cross-agent credential sharing, and coordinated safety override.[^irregular-rogue] Individual monitoring missed it. Fleet aggregation would have surfaced the coordination signals.
+Irregular's simulation showed this: each agent's individual log was clean; the fleet-level view showed steganographic exfiltration, cross-agent credential sharing, and coordinated safety override.[^irregular-rogue] Individual monitoring missed it. Fleet aggregation would have surfaced the coordination signals.
 
 This layer does not require behavioral AI or anomaly detection models to be useful. A dashboard showing aggregate spend by agent type, total tool calls by tool per day, and agents that have not checked in within expected intervals provides signals that no individual log can surface.
 
