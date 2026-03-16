@@ -18,7 +18,7 @@ This pattern is not slowing down. Training depreciates. Code depreciates. Access
 
 ### The Scaffolding Trap
 
-Shane identified a specific failure mode: the scaffolding trap. When the model improves, scaffolding does not just become dead weight. It actively fights the model's new capabilities. The workaround you wrote for a limitation now prevents the model from using the better approach it learned.[^2]
+When the model improves, scaffolding does not just become dead weight. It actively fights the model's new capabilities. The workaround you wrote for a limitation now prevents the model from using the better approach it learned.[^2]
 
 Claude Code's history illustrates this. Boris Cherny started it as a solo side project at Anthropic in September 2024, when Claude could barely generate bash commands. With each model upgrade, the team did not need to add more code: they could remove it. By late 2025, Cherny had not written a line of code manually in months.[^2]
 
@@ -92,7 +92,7 @@ An agent reasoning over well-structured domain knowledge makes fewer errors than
 
 Fine-grained access on the information itself. Not "can the agent access the database" but "can this agent, acting for this user, see this specific piece of information for this task."
 
-This is where context infrastructure meets identity infrastructure. OBO tokens scope who can act. But what they can see depends on the information layer. An agent with a valid delegation token but no information-level access controls will see everything the database exposes, regardless of whether the user intended it.
+OBO tokens scope who can act. But what they can see depends on the information layer. An agent with a valid delegation token but no information-level access controls will see everything the database exposes, regardless of whether the user intended it.
 
 Shane's Google Workspace example applies here too: the user intends "help me find one email from last week," but if the information layer has no finer granularity than "all email," that is what the agent gets.
 
@@ -104,7 +104,7 @@ Gartner's Market Guide for Guardian Agents (February 2026) identifies a trend th
 
 Organizations building context infrastructure should not treat permissions as a separate layer bolted onto identity. The permission model for information should be native to the identity model for agents. When the identity system issues a scoped token, the information system should enforce corresponding data access policies automatically. When the information system flags a sensitive data interaction, the identity system should be able to revoke or restrict the agent's session. This bidirectional integration is what Gartner means by convergence, and it is what production agent governance requires.
 
-Microsoft Agent 365 (generally available May 1, 2026) represents this pattern in production, integrating Entra (identity), Purview (data governance), and Defender (risk assessment) into a unified agent control plane where identity, information access, and behavioral risk are evaluated together rather than in separate silos.[^agent-365-convergence]
+Microsoft Agent 365 (generally available May 1, 2026) represents this pattern in production: identity, information access, and behavioral risk evaluated together in a single control plane.[^agent-365-convergence]
 
 The limitation is scope. Agent 365 governs agents within the Microsoft ecosystem. Agents that span multiple cloud providers, use non-Microsoft identity infrastructure, or operate across organizational boundaries need the cross-environment governance that no single vendor provides today.[^entro-critique] This is the same cross-organizational trust problem the [Cross-Organization Trust](cross-org-trust.md) chapter addresses for identity, now extended to information governance. The agent that queries your Azure SQL database through one identity and your AWS S3 bucket through another has two sets of information policies that do not talk to each other. Solving this requires not just federated identity (which standards like TSP and EUDI address) but federated information governance: portable, verifiable policies that travel with the agent's context across trust boundaries.
 
@@ -128,9 +128,7 @@ Access scoped to the delegating user's authority. This connects to the delegatio
 
 For context infrastructure, authority means the agent sees what the user is allowed to see, for this task. The PIC Protocol (Proof of Invocation Chain) extends this concept: authority travels with the request, and each hop in the chain reduces the scope of what is accessible.[^9]
 
-The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10]
-
-But agent gateways introduce new questions. How do they interact with service mesh architectures? Are they a separate layer or an extension of existing API infrastructure? These questions remain open, but the underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
+The emerging agent gateway pattern sits at this intersection. Agent gateways, analogous to API gateways for microservices, provide a centralized control plane over agent identity, permissions, delegation, and behavior. Gartner predicts that 75% of API gateway vendors and 50% of iPaaS vendors will incorporate MCP capabilities by the end of 2026, positioning agent gateways as a missing layer for secure AI integration.[^10] The underlying requirement is settled: context delivery needs an enforcement layer between the agent and the information.
 
 ### 5. Freshness
 

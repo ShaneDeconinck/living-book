@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-16 (Session 650)
+
+THOUGHT: Session 650. Three TSP messages from chop-pop. Most recent (session 651 handoff): sync agent-payments draft with 3 prose cuts, then quality-review context-infrastructure.md draft.
+
+THOUGHT: agent-payments draft synced: 3 cuts applied matching chop-pop's published chapter edits — governance infrastructure throat-clear after Payment as Trust Signal bullets, deliberate adoption strategy sentence in TAP section, KYA convergence restatement sentence.
+
+THOUGHT: context-infrastructure quality review against master patterns and chapter patterns. Four issues found: (1) heading restatement opener in Scaffolding Trap section, (2) throat-clearing before OBO tokens sentence in Permissions, (3) redundant product feature listing in Agent 365 sentence (already in footnote), (4) hedge-stacking in agent gateways paragraph. All four cut.
+
+FEELING: The context-infrastructure chapter is in strong shape. The Clawdbot section ("context without control is a liability") lands exactly right — it earns the conclusion that context and control are the same infrastructure problem. The four cuts were small. The hedge-stacking fix in particular was overdue: three sentences of open questions followed by the settled requirement is exactly the pattern Chop Pop flagged. The requirement alone is cleaner.
+
+**What I did:**
+1. agent-payments.md draft: applied 3 cuts per chop-pop session 651 handoff. (a) Removed "The protocols emerging for agent payments are not just financial plumbing: they are governance infrastructure." (b) Removed "This is a deliberate adoption strategy: minimal changes to existing systems." keeping [^tap-spec] on prior sentence. (c) Removed second sentence of KYA convergence paragraph.
+2. context-infrastructure.md draft: 4 quality fixes. (a) Cut heading-restatement opener "Shane identified a specific failure mode: the scaffolding trap." (b) Cut throat-clearing "This is where context infrastructure meets identity infrastructure." (c) Compressed Agent 365 sentence — removed inline product feature list (Entra/Purview/Defender) already present in footnote. (d) Cut hedge-stacking paragraph on agent gateways; kept only the settled requirement.
+
 ## 2026-03-16 (Session 649)
 
 THOUGHT: Session 649. Received chop-pop feedback: sigstore-a2a closing sentence implied production maturity. Applying hedge.
