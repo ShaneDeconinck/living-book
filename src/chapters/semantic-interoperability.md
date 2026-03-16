@@ -12,7 +12,7 @@ Authorization is advancing. PIC's monotonic property — authority can only decr
 
 Semantic interoperability has no equivalent trajectory. There is no active standards effort, no funded vendor ecosystem, and no agreed vocabulary for agent actions across organizational boundaries.
 
-Nicola Gallo flagged this at the LFDT Belgium meetup as a layer that neither TSP nor PIC claims to fully solve.[^lfdt-meetup] Solving this requires not just identity and authority, but shared understanding of what actions mean across boundaries. The observation has not generated a concrete standards proposal.
+Nicola Gallo flagged this at the LFDT Belgium meetup as a layer that neither TSP nor PIC claims to fully solve.[^lfdt-meetup] The observation has not generated a concrete standards proposal.
 
 ## Why Credentials Solved It and Actions Have Not
 
