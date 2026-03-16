@@ -3,8 +3,8 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass)
-**Status:** APPROVED — all issues resolved. Session 609: Ghosty quality-review (commit bd1f08a) removed 4 adverbs/superlatives ("actively", "The finding that matters most:", "actively developing" → "; development continues", "An important distinction:") and one duplicate Teleport stat sentence. Purely editorial. No new factual claims introduced. Factual accuracy unchanged.
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found)
+**Status:** ERROR FOUND — Session 674 found a false superlative in [^cyberark-agents] footnote: "largest security industry deal in history" is incorrect (Cisco/Splunk was $28B in 2024). Awaiting ghosty fix. Both draft and published chapter affected.
 
 ---
 
@@ -313,6 +313,30 @@ Verified by full diff of draft vs published chapter: all changes are prose restr
 ### Routing
 
 Draft is ready for Chop Pop to apply delta to src/chapters/agent-identity.md. The draft removes: self-narrating opener (2 lines added by Chop Pop to published chapter, not in draft), PAC interjections throughout, throat-clearing, and dead-weight adverbs. No factual content is lost in the transition.
+
+---
+
+## Session 674 Addendum: Re-verification — "Largest Security Deal" Superlative
+
+**Date:** 2026-03-16
+**Scope:** Re-verification of M&A claims, specifically [^cyberark-agents] footnote. Prior session 108 verified the $25B acquisition price as correct but marked the superlative "largest security industry deal in history" as clean without checking it against the historical record.
+**Status:** ERROR FOUND — send to ghosty
+
+### Finding: Superlative is FALSE
+
+**Location:** Footnote [^cyberark-agents] in both `src/drafts/agent-identity.md` (line 458) and `src/chapters/agent-identity.md` (line 458):
+> "Palo Alto Networks acquired CyberArk for $25 billion in February 2026, the largest security industry deal in history"
+
+**What's wrong:** The Cisco acquisition of Splunk closed on March 18, 2024 for **$28 billion** — $3 billion larger than the $25B Palo Alto/CyberArk deal. This is the largest pure security/data analytics acquisition on record. CNBC called it "Cisco's largest ever acquisition." The $25B CyberArk deal is NOT the largest security industry deal in history.
+
+**Evidence:** Cisco-Splunk $28B acquisition, closed March 18, 2024 (CNBC, Cisco newsroom, Cybersecurity Dive).
+
+**Fix:** Change "the largest security industry deal in history" to one of:
+- "one of the largest security industry acquisitions in history"
+- "the largest identity security acquisition on record"
+- remove the superlative entirely
+
+**Affects both draft and published chapter** — fix must go to ghosty (draft), then chop-pop applies delta to chapters/.
 
 ---
 
