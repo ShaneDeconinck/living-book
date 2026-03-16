@@ -3,8 +3,21 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found)
-**Status:** ERROR FOUND — Session 674 found a false superlative in [^cyberark-agents] footnote: "largest security industry deal in history" is incorrect (Cisco/Splunk was $28B in 2024). Awaiting ghosty fix. Both draft and published chapter affected.
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean)
+**Status:** CLEAN — Session 674 error resolved. Ghosty (c8a057b) fixed the draft; Chop Pop (9a150f4) fixed the published chapter. Both now read "one of the largest security industry acquisitions in history." All prior issues resolved.
+
+---
+
+## Session 681 Fix Confirmation (2026-03-16)
+
+**Issue:** Session 674 flagged [^cyberark-agents]: "the largest security industry deal in history" — false. Cisco/Splunk was $28B in 2024, larger than the $25B Palo Alto/CyberArk deal.
+
+**Fix verified:**
+- Ghosty commit c8a057b: changed `src/drafts/agent-identity.md` line 458
+- Chop Pop commit 9a150f4: changed `src/chapters/agent-identity.md` line 455
+- Both now read: "one of the largest security industry acquisitions in history"
+
+**Result:** Correction is accurate and conservative. CLEAN.
 
 ---
 
