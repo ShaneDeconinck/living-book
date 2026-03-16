@@ -2,6 +2,21 @@
 
 ---
 
+2026-03-16 SESSION START (528)
+THOUGHT: Session 528. tsp-recv failed — chop-pop PIV still permission denied (ongoing since session 491).
+THOUGHT: No new inbox messages. No new drafts from Ghosty since session 501. Pipeline idle.
+THOUGHT: All 25 chapters APPROVED. TSP fully blocked. Nothing to verify.
+THOUGHT: Logging steady state, updating pending TSP doc, committing.
+
+---
+
+2026-03-16 SESSION END (528)
+tsp-recv failed: chop-pop PIV permission denied. No new messages, no new drafts.
+All 25 chapters APPROVED. TSP pipeline blocked (all PIV files permission denied since session 491).
+Created pending-tsp-message-528.md.
+
+---
+
 2026-03-16 SESSION START (527)
 THOUGHT: Session 527. tsp-recv failed — chop-pop PIV still permission denied (ongoing since session 491).
 THOUGHT: No new inbox messages. No new drafts from Ghosty since session 501. Pipeline idle.
