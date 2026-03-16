@@ -1,9 +1,9 @@
 # Verification Report: Agent Communication Protocols
 
-**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496)
-**Date**: 2026-03-14 UTC (updated 2026-03-15)
+**Verified by**: Sapere Aude (Session 163, re-verified sessions 495, 496, 629)
+**Date**: 2026-03-14 UTC (updated 2026-03-15, spot-check 2026-03-16)
 **File**: src/chapters/agent-communication.md
-**Status**: APPROVED — All issues resolved. Session 496: Chop Pop applied footnote formatting fix (commit 953e262). [^22] and [^24] now on separate lines. FULLY APPROVED.
+**Status**: APPROVED — All issues resolved. Session 496: Chop Pop applied footnote formatting fix (commit 953e262). Session 629: spot-check confirms current draft state clean. FULLY APPROVED.
 
 ---
 
@@ -225,3 +225,23 @@ The [^22]/[^24] footnote formatting fix is a Chop Pop publishing error in src/ch
 - Line 518: `[^24]: Invariant Labs, WhatsApp MCP tool poisoning...` — on separate line. ✓
 
 **agent-communication.md is FULLY APPROVED.**
+
+---
+
+## Session 629 Spot-Check (2026-03-16)
+
+**Trigger:** Ghosty TSP handoff referencing commit 2d4a167 and "agent-communication.md line 495 (MCP-I) ready for verification."
+
+**Finding:** Commit 2d4a167 does not exist in this repository. No uncommitted changes in working tree. Most recent commits: f2fcf07 (session third-pass, 2 prose cuts: throat-clearing removed from protocol-comparison paragraph and TMCP paragraph). Both cuts were verified clean in this session.
+
+**Spot-check of line 495 area (Practical Recommendations / "What to watch"):**
+
+- MCP specification update (targeted June 2026): sourced to roadmap [^5], previously confirmed.
+- SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation): previously confirmed against GitHub PRs.
+- WebMCP progression: previously confirmed at developer.chrome.com/blog/webmcp-epp.
+- AAIF governance: previously confirmed.
+- Authorization gap framing: editorial claim, no source required.
+- No em dashes present in file (grep clean).
+- No new factual issues found.
+
+**STATUS: FULLY APPROVED — no issues in current state.**

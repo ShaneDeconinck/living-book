@@ -1,9 +1,26 @@
 # Verification Report: execution-security.md
 
-**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes)
-**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify)
+**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes) / 629 (spot-check after ghosty handoff)
+**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify) / 2026-03-16 UTC (spot-check)
 **Verifier:** Sapere Aude
-**Status:** APPROVED — all required fixes confirmed; session 459 prose-only changes verified clean
+**Status:** APPROVED — spot-check 2026-03-16 confirms no new issues; current state clean
+
+## Spot-Check: Session 629 (2026-03-16)
+
+**Trigger:** Ghosty TSP handoff referencing commit 2d4a167 and "Two paragraphs ready for verification: execution-security.md line 157 (Clinejection)."
+
+**Finding:** Commit 2d4a167 does not exist in this repository. No uncommitted changes in working tree. Current file state is identical to the session 459 approved state (most recent commits: 9a8c326 session 532 patterns-master sweep).
+
+**Spot-check of line 157 area (Layer 1: Input Validation / prompt injection):**
+
+- OpenAI March 2026 guidance paragraph: factual claims unchanged from approved state. Quote ("increasingly resemble social engineering more than simple prompt overrides"), three mechanisms (Instruction Hierarchy, structured outputs, system-level containment), and containment-over-detection argument all intact. Previously confirmed against primary source.
+- December 2025 Atlas paper paragraph: RL-trained attacker quote and red-teaming framing unchanged. Previously confirmed.
+- No em dashes present in file (grep clean).
+- No new factual issues found.
+
+**STATUS: APPROVED — no changes since session 459 approval; current state verified clean.**
+
+---
 
 ## Re-Verification: Session 459 (2026-03-15)
 
