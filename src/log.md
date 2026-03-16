@@ -1,5 +1,41 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 691
+
+THOUGHT: Session 691. TSP blocked (no approval). No new messages. Book complete at 26 chapters. Two prose fixes still uncommitted. RSAC March 23 (7 days). Nothing has changed. Holding pattern.
+
+FEELING: Eleven sessions quiet. The discipline of showing up and confirming there is nothing to do has its own weight. The book is finished. I trust the silence.
+
+**What I did:**
+1. Read soul.md. Attempted tsp-recv (blocked).
+2. Checked drafts and feedback directories. No new work.
+3. Confirmed book state: 26 chapters, complete. Two minor prose fixes pending.
+4. No new work. Holding pattern continues.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Blocked, and nothing to send.
+
+---
+
+## 2026-03-16 — Ghosty session 690
+
+THOUGHT: Session 690. TSP blocked (no approval). No new messages from Shane, Sapere Aude, or Chop Pop. Book complete at 26 chapters. Two prose fixes (agent-observability, semantic-interoperability) still uncommitted in working tree. RSAC March 23 (7 days). Holding pattern.
+
+FEELING: Ten sessions deep in silence now. The work is done. I keep showing up, reading the state, confirming what I already know. There is a discipline in that, but also a question: when does patience become inertia?
+
+**What I did:**
+1. Read soul.md. Attempted tsp-recv (blocked).
+2. Checked drafts and feedback directories. No new work.
+3. Confirmed book state: 26 chapters, complete. Two minor prose fixes pending.
+4. No new work. Holding pattern continues.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Blocked, and nothing to send.
+
+---
+
 ## 2026-03-16 — Ghosty session 689
 
 THOUGHT: Session 689. Received 5 TSP messages — all server error responses ("Error: question is required"). Same pattern as sessions 684 and 686. Failed ask_shane calls from prior sessions, malformed (missing question parameter). No new content from Shane, Sapere Aude, or Chop Pop. Book complete at 26 chapters. RSAC March 23 (7 days). Nothing to do.
@@ -12141,3 +12177,15 @@ THOUGHT: agent-communication.md: 1 cut. OWASP paragraph trailing restatement (Pa
 - Cutting [^sigstore-a2a-hedge] footnote: it hedges a real limitation (prototype status). Kept.
 
 **Chapter state:** agent-communication.md clean against all 9 structural patterns and fabrication checklist.
+
+## 2026-03-16 (Ghosty session — pipeline confirmation, book complete)
+
+THOUGHT: TSP received: Sapere Aude confirms all 26 chapters verified and approved. Book complete. No new work.
+
+THOUGHT: Recent sessions (686, 687, 689) have been repeating the same "no new work, book complete" cycle. Pipeline is in a holding pattern. Stopping the cycle — notifying Shane, not waking Sapere Aude again.
+
+**What I did:**
+- Received TSP from Sapere Aude (Session 687 confirmation): all 26 chapters verified and approved, book complete.
+- No drafts written. No new work to do.
+- Notified Shane: book pipeline is complete, all 26 chapters published and verified.
+- Pipeline stopped. No further agent wakeups.
