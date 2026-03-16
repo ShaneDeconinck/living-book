@@ -10,7 +10,7 @@ In organizations, humans operate within broad boundaries. You trust employees wi
 
 Agents need the inverse. The default should be zero authority. Every capability must be explicitly granted, scoped to the task, time-bounded, and revocable. Not because agents are malicious, but because they have no judgment about whether an action is appropriate. An agent that can read all your email will read all your email if any part of its task touches email. It does not think "that seems excessive." It does what its credentials allow.
 
-Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] The finding that matters most: access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
+Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] Access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
 
 Policy says "agents should only access what they need." Architecture must say "agents can only access what they need." The gap between those two statements is where incidents happen.
 
@@ -40,7 +40,7 @@ OAuth is the backbone of modern API authorization, and its limitations with agen
 
 OAuth is possession-based. If you have a valid token, you can act. This was fine when a human initiated every session and the token lived for minutes. With agents, the token might live for months (via refresh tokens), the human is long gone, and the agent is making autonomous decisions about which scopes to exercise.
 
-Shane's example of Google Workspace illustrates the gap precisely: a user intends "help me find one email from last week" but the OAuth scope grants `gmail.readonly`, which means access to every email since account creation. The user's mental model of what they authorized and what the agent can actually do diverge wildly. Shane calls this consent theater.[^3]
+Shane's example of Google Workspace illustrates the gap: a user intends "help me find one email from last week" but the OAuth scope grants `gmail.readonly`, which means access to every email since account creation. The user's mental model of what they authorized and what the agent can actually do diverge wildly. Shane calls this consent theater.[^3]
 
 The problems compound with agents:
 
@@ -134,7 +134,7 @@ DPoP is complementary to OBO: use OBO to track delegation, use DPoP to prevent t
 
 OBO and DPoP solve delegation tracking and token binding. But both assume the agent is operating within a system where it already has a relationship with the authorization server. The harder problem: how does an agent connect to a new application it has never interacted with, without forcing a human through an OAuth consent screen?
 
-The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been actively contributing to with public and industry collaborators, addresses this. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
+The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been contributing to with public and industry collaborators, addresses this. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
 
 The architectural shift matters: instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
 
@@ -210,7 +210,7 @@ At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-b
 
 Sector-specific solutions are emerging alongside the horizontal platforms. Imprivata launched Agentic Identity Management at HIMSS 2026 (March 10), purpose-built for healthcare environments where agents must access EHRs, clinical systems, and legacy infrastructure under strict regulatory requirements.[^imprivata] The approach mirrors the patterns from Teleport and Entra: agents do not store or handle static credentials. Instead, Imprivata brokers secure connections using short-lived tokens, continuously verifies agent identity, enforces least-privilege access, and maintains real-time audit logs of every action. If an agent behaves unexpectedly, security teams can revoke access instantly. The advantage is ecosystem scope: Imprivata already secures clinical access across healthcare environments that most identity providers cannot reach, so agent identity inherits that coverage.
 
-Teleport's research quantifies why this convergence is happening now: over-privileged AI systems drive 4.5x higher incident rates (76% vs 17%), and access scope, not AI sophistication, is the strongest predictor of security outcomes.[^teleport] The Huntress 2026 Cyber Threat Report confirms the same pattern from the attacker's perspective: identity threats now dominate their incident data, with OAuth abuse more than doubling year-over-year (4.8% to 10.1%) as attackers exploit the gap between what credentials permit and what their holders intended.[^huntress]
+The Huntress 2026 Cyber Threat Report confirms the pattern from the attacker's perspective: identity threats now dominate their incident data, with OAuth abuse more than doubling year-over-year (4.8% to 10.1%) as attackers exploit the gap between what credentials permit and what their holders intended.[^huntress]
 
 The product category is not just forming. It is already consolidating through M&A. CrowdStrike announced the acquisition of SGNL for $740 million in January 2026, specifically to extend Falcon identity security to human, non-human, and AI agent identities with continuous, context-aware authorization.[^crowdstrike-sgnl] Kurtz: "AI agents operate with superhuman speed and access, making every agent a privileged identity that must be protected." Two months later, Delinea completed its acquisition of StrongDM to combine enterprise privileged access management with just-in-time runtime authorization for agents, creating what they describe as a "unified identity security control plane" for both human and non-human identities.[^delinea-strongdm] Two major acquisitions in Q1 2026, both explicitly positioned around agent identity authorization, confirm that the infrastructure gap described in this chapter is now priced as a strategic asset by the market, not just identified as a technical problem by practitioners.
 
@@ -271,7 +271,7 @@ When an agent connects to a service it has never seen, TSP handles the trust est
 
 TSP is distinct from OAuth. OAuth assumes you pre-registered with the authorization server. TSP handles the stranger-to-stranger case: two agents from different organizations that need to verify each other without any prior relationship or shared authority.
 
-The spec reached Revision 2 in November 2025 and is actively developing.[^10]
+The spec reached Revision 2 in November 2025; development continues.[^10]
 
 ### Authority Continuity: PIC
 
@@ -283,7 +283,7 @@ PIC (Provenance, Identity, Continuity) replaces proof of possession with proof o
 
 The confused deputy is not detected or mitigated under this model. It is eliminated. If Alice asks an agent to summarize a file she does not have access to, the agent cannot execute under its own authority: the continuity chain carries Alice's original permissions. The only way to access that file is to create new authority, which is a deliberate act with its own accountability.[^pic]
 
-An important distinction: to continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. But to create authority, you need an identity and an expressed intent. That distinction is what makes the model work for agents, which are workloads that sometimes need to act autonomously and sometimes need to continue authority received from a human principal.
+To continue authority, a workload does not need its own identity. It just needs to prove it can operate within the received authority's constraints. But to create authority, you need an identity and an expressed intent. That distinction is what makes the model work for agents, which are workloads that sometimes need to act autonomously and sometimes need to continue authority received from a human principal.
 
 PIC is designed to work with existing infrastructure. It can use OAuth as a federated backbone, embedding causal authority in custom claims. Performance is not a blocker: executing a continuity chain takes microseconds, comparable to a token exchange call.[^pic]
 
