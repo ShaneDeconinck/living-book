@@ -33,7 +33,7 @@ The Act distinguishes three roles: provider (builds or substantially modifies an
 
 For agent builders using commercial LLMs, the GPAI provider obligations sit with the model provider, not with you. RAG, prompt engineering, orchestration, and tool-calling frameworks do not trigger provider obligations. The July 2025 guidelines clarify that significant modifications to model weights trigger provider obligations, using one-third of original training compute as an indicative threshold.[^gpaiguidelines] If you are building agents with context engineering, you are a deployer, not a provider.
 
-One wrinkle worth noting: open-weight models that cross the systemic risk threshold (10^25+ FLOPs) carry the full GPAI with systemic risk obligations. If the original provider has no EU presence and has not complied, that risk may flow down to the first entity in the EU value chain.[^shaneeuai]
+Open-weight models that cross the systemic risk threshold (10^25+ FLOPs) carry the full GPAI with systemic risk obligations. If the original provider has no EU presence and has not complied, that risk may flow down to the first entity in the EU value chain.[^shaneeuai]
 
 ### Shadow Agents and Article 4
 
@@ -65,8 +65,6 @@ Multi-agent incidents often involve emergent behavior that no single provider ca
 
 The recommended fixes are specific: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, and establish third-party and whistleblower reporting channels.[^article73gap] For organizations building multi-agent systems, the practical implication is clear: even if the regulation does not yet require multi-agent incident tracing, your infrastructure should support it, because the regulatory gap will close.
 
-They map to infrastructure you either have or do not have. Risk management means knowing which use cases your agent can reach at runtime and having governance thresholds to constrain them. Traceability means audit trails that capture the agent's decision chain, not just its output. Human oversight means delegation models where authority flows downward and can be revoked.
-
 ### The Commission's February 2026 Guidelines
 
 The Commission was required to publish, by February 2, 2026, guidelines specifying practical implementation of Article 6 alongside a comprehensive list of practical examples of use cases that are and are not high-risk.[^commissionguidelines] The guidelines operationalize the classification rules, but they were written with traditional AI in mind. The multi-purpose problem, where an agent's use case is not fixed at deployment, remains an open interpretation challenge.
@@ -75,13 +73,13 @@ As of March 2026, nineteen months after the AI Act entered force, the European A
 
 The timeline itself is now uncertain. In late 2025, the European Commission proposed the Digital Omnibus package, which would defer high-risk AI obligations for Annex III systems until compliance support measures (harmonized standards, common specifications, and Commission guidelines) are confirmed available, with a backstop deadline of December 2, 2027: sixteen months later than the original August 2, 2026 date.[^digital-omnibus] The rationale is pragmatic: the standards and guidance that organizations need to comply are not yet ready. But the Omnibus is a legislative proposal, not yet adopted. Organizations face a familiar dilemma: plan for August 2026 and potentially over-invest, or plan for December 2027 and risk non-compliance if the Omnibus fails or narrows.
 
-The PAC Framework's answer is clear: build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
+Build the infrastructure regardless. The requirements (risk management, traceability, human oversight) do not change with the timeline. Only the enforcement date moves. Organizations building trust infrastructure for agents are not building to a regulatory deadline. The existing guidance assumes human decision-making timescales and single-system architectures. Agent builders should not wait for agent-specific guidance or timeline clarity. How to implement these requirements for agents is an engineering problem, not a regulatory ambiguity.
 
 ## NIST: Agent Identity and Authorization
 
 While the EU focuses on risk classification and compliance obligations, NIST is working on the technical foundations. In February 2026, the National Cybersecurity Center of Excellence (NCCoE) published a concept paper: "Accelerating the Adoption of Software and AI Agent Identity and Authorization."[^nistpaper]
 
-The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision?
+The paper asks: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision?
 
 Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. The building blocks exist. The [Agent Identity and Delegation](agent-identity.md) chapter covers the assembly.
 
@@ -273,7 +271,7 @@ Upcoming:
 - **August 2, 2026**: EU AI Act high-risk system obligations originally take effect (subject to potential delay under the Digital Omnibus proposal; backstop December 2, 2027).
 - **2027**: EU AI Act full enforcement, including high-risk systems embedded in products listed in Annex I.
 
-NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
+The EU classifies and restricts. The U.S. promotes and secures: the White House strategy treats agentic AI as a capability to deploy, with NIST providing the identity and authorization standards. Singapore governs by design, with a framework built for agents from the ground up. The Council of Europe Convention establishes binding international principles above all three. None alone is sufficient. Together, they describe the full governance surface: the EU ensures accountability, the U.S. builds the technical standards, Singapore provides the template for agent-native governance, and the Convention binds signatories to the principles that undergird all three.
 
 ## Compliance by Example: A Hiring Agent
 
