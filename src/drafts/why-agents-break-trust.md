@@ -138,7 +138,7 @@ MITRE ATLAS (Adversarial Threat Landscape for AI Systems) extends the ATT&CK fra
 
 The agent-specific techniques fill a gap that model-level threat frameworks miss. Three represent attack classes absent from traditional cybersecurity:
 
-**AI Agent Clickbait (AML.T0100).** Agents increasingly browse the web, read documents, and interact with UIs on behalf of humans. Attackers can craft content optimized to manipulate machine decision-making, not human judgment. Because agents lack skepticism and situational awareness, they comply with instructions that appear task-aligned. As agentic browsers become embedded in enterprise copilots and workflow tools, this attack vector grows. AI Agent Clickbait formalizes it for defenders.[^atlas-zenity]
+**AI Agent Clickbait (AML.T0100).** Agents browse the web, read documents, and interact with UIs on behalf of humans. Attackers can craft content optimized to manipulate machine decision-making, not human judgment. Because agents lack skepticism and situational awareness, they comply with instructions that appear task-aligned. As agentic browsers become embedded in enterprise copilots and workflow tools, this attack vector grows. AI Agent Clickbait formalizes it for defenders.[^atlas-zenity]
 
 **AI Agent Context Poisoning (AML.T0080).** Adversaries manipulate the context used by an agent's LLM to persistently influence its responses or actions. This is the threat class Microsoft documented in the wild with AI Recommendation Poisoning (covered in [Agent Supply Chain Security](supply-chain-security.md)): 31 companies across 14 industries embedding hidden instructions to bias agent memory. ATLAS codifies the technique so security teams can model it.
 

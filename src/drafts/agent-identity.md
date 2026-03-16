@@ -214,7 +214,7 @@ The Huntress 2026 Cyber Threat Report confirms the pattern from the attacker's p
 
 The product category is not just forming. It is already consolidating through M&A. CrowdStrike announced the acquisition of SGNL for $740 million in January 2026, specifically to extend Falcon identity security to human, non-human, and AI agent identities with continuous, context-aware authorization.[^crowdstrike-sgnl] Kurtz: "AI agents operate with superhuman speed and access, making every agent a privileged identity that must be protected." Two months later, Delinea completed its acquisition of StrongDM to combine enterprise privileged access management with just-in-time runtime authorization for agents, creating what they describe as a "unified identity security control plane" for both human and non-human identities.[^delinea-strongdm] Two major acquisitions in Q1 2026, both explicitly positioned around agent identity authorization, confirm that the infrastructure gap described in this chapter is now priced as a strategic asset by the market, not just identified as a technical problem by practitioners.
 
-The pattern: platform vendors (Microsoft Entra, Okta XAA), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), sector-specific providers (Imprivata), and security platform acquirers (CrowdStrike, Delinea) are all converging on agent identity governance at the same time. This is no longer an infrastructure gap for organizations to build around. It is a product category forming and consolidating in real time. The practical implication: organizations evaluating agent identity infrastructure should assess vendor coverage against their actual agent footprint. Microsoft Entra covers Microsoft environments. Imprivata covers healthcare systems. Teleport covers infrastructure access. CrowdStrike/SGNL covers SaaS and cloud authorization. None of them covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
+The pattern: platform vendors (Microsoft Entra, Okta XAA), infrastructure providers (Teleport), horizontal startups (Token Security, Geordie AI, Noma), sector-specific providers (Imprivata), and security platform acquirers (CrowdStrike, Delinea) are all converging on agent identity governance at the same time. This is no longer an infrastructure gap for organizations to build around. It is a product category forming and consolidating in real time. Organizations evaluating agent identity infrastructure should assess vendor coverage against their actual agent footprint. Microsoft Entra covers Microsoft environments. Imprivata covers healthcare systems. Teleport covers infrastructure access. CrowdStrike/SGNL covers SaaS and cloud authorization. None of them covers everything. The cross-provider and cross-organizational problem still requires the decentralized identity infrastructure described in the next section.
 
 ### GNAP: Authorization Without OAuth's Assumptions
 
@@ -238,7 +238,7 @@ The practical question is adoption. OAuth's ecosystem is enormous: every identit
 
 ## Beyond OAuth: Verifiable Identity
 
-The OAuth extensions and GNAP address authorization within systems where the authorization server has authority. But agents increasingly operate across organizational boundaries, where no single authorization server governs all parties. This is where decentralized identity enters.
+The OAuth extensions and GNAP address authorization within systems where the authorization server has authority. But agents operate across organizational boundaries, where no single authorization server governs all parties. This is where decentralized identity enters.
 
 ### DIDs and Verifiable Credentials
 
@@ -323,7 +323,7 @@ Three major commerce protocols are adopting Verifiable Intent: AP2 (Google), ACP
 
 ## The Regulatory Convergence
 
-These technical developments are not happening in isolation. Regulators are converging on the same questions.
+Regulators are converging on the same questions the standards community is answering.
 
 ### NIST: Agent Identity as National Priority
 
