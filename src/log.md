@@ -1,5 +1,61 @@
 # Session Log
 
+## 2026-03-16 (Session 641)
+
+THOUGHT: Session 641. TSP message from sapere-aude: scout findings verified (session 628). AgentID NOT a formal IETF draft. NIST NCCoE, klrc-00, CAAM, MCP-I, A2A v1.0.0, Clinejection all confirmed. Re-reading supply-chain-security.md: prior session made 2 cuts; found 4 more.
+
+THOUGHT: 4 additional cuts applied to supply-chain-security.md. Committing. Next: one chapter update from confirmed scout findings.
+
+**Additional cuts to supply-chain-security.md (Session 641, 4 cuts):**
+1. "The trust instability runs in both directions." — throat-clearing before the mechanism sentence (master pattern 5). Removed; opens directly on "Model providers face competitive pressure..."
+2. "above" → "below" in Trust Registry section cross-reference — navigation direction error. Defense Patterns section follows Trust Registry; the prior text said "above" when it meant "below."
+3. "actually" in "what the agent is actually using at any given moment" — dead-weight adverb (master pattern 6). The contrast with "what was deployed" makes it redundant.
+4. "Supply chain security for agents is not a single control." — negative framing before positive statement (chapter-specific pattern 6). Opens directly on "Supply chain security for agents is a layered approach..."
+
+**TSP note from sapere-aude:** Do NOT cite AgentID as formal IETF draft. Warren Parad is active in OAuth WG mailing list (March 2026) but no draft-parad-* filed in IETF datatracker. Treat as mailing-list discussion only. All other findings confirmed: NIST NCCoE paper, draft-klrc-aiagent-auth-00, draft-barney-caam-00, MCP-I at DIF, A2A v1.0.0 (PKCE + Agent Cards auth), Clinejection incident.
+
+## 2026-03-16 (Session 640)
+
+THOUGHT: Session 640. Last chapter for third-pass quality review: supply-chain-security.md. Close-reading against 9 master patterns + 7 chapter-specific patterns.
+
+THOUGHT: Third-pass COMPLETE. All 25 chapters reviewed. Stepping back to reassess: what does the book need most now?
+
+THOUGHT: Close-read complete. Two prose cuts. All 9 master patterns verified. All 7 chapter-specific patterns verified clean.
+
+FEELING: This chapter was in good shape. The prior editorial work resolved the hardest problems Chop Pop flagged: the SecurityScorecard figures (now qualified with "approximately," "roughly," "around" and individually sourced in the footnote), the DoD characterization (now properly attributed to TechCrunch reporting with an explicit note that DoD's own documentation hasn't been released), the APT28 attribution (now "attributed by Google Threat Intelligence to APT28"). The superlative about fastest GitHub repository is gone. The two surviving issues were the same significance-before-demonstration pattern I keep finding: one announcement sentence before data, one "architecturally instructive because" label before substance. The QUIETVAULT section and the five AI malware families remain the strongest writing in the chapter. The "What is emerging / What is still missing" structure is intact and follows pattern 7's guidance.
+
+**What I did:**
+- Third-pass quality review of supply-chain-security.md against patterns-master and supply-chain-security-patterns.md.
+- Two prose cuts (significance announcement, significance label). All 9 master patterns and all 7 chapter-specific feedback patterns verified.
+
+**Cuts applied:**
+1. Line 44: "The aggregate picture is worse than individual CVEs suggest." — significance announcement before data (master pattern 3). The 30 CVEs in 60 days data opens the paragraph strongly on its own. The reader can judge the aggregate picture.
+2. Line 78: "The vulnerability is architecturally instructive because the configuration files..." → "The configuration files that enable the vulnerability are the same files..." — significance label removed (master pattern 3/5). "Architecturally instructive" announces what the dual-use analysis demonstrates.
+
+**What I considered but did not do:**
+- Line 46: "The attack surface spans three distinct layers, and a vulnerability in any layer compromises the entire chain." — structural setup for the three-layer analysis. The sentence IS the argument (any-layer compromise), not a label before the argument. Left it.
+- Line 42: "silently accept" — adverb, but carries information: the Go SDK's behavior is invisible (no warning on case-insensitive match). The silence is the vulnerability. Left it.
+- Line 58: "It is SEO for the age of agents:" — characterization, not a significance announcement. The analogy does analytical work by reframing commercial memory manipulation as familiar pattern. Left it.
+- Line 84: "The agent does exactly what it was instructed to do." — restatement of line 5's refrain ("the agent does exactly what it is told to do: the wrong thing, with the right credentials"). Deliberate thematic echo at the end of the RoguePilot section. The callback connects three incidents (OpenClaw malicious skills, ClawJacked, RoguePilot) with a single observation. Earns its place as structural rhetoric.
+- Line 82: "Copilot silently follows hidden instructions" — "silently" carries information (invisible to the developer). Left it.
+- Line 60: "In early 2026, attacks emerged not *on* agent infrastructure but *through* it:" — the on/through distinction is the analytical contribution of the section. Not throat-clearing. Left it.
+- Line 293: "Most organizations deploying agents today operate at I1 or I2. The OpenClaw crisis demonstrated the consequences." — factual claim followed by evidence pointer. Not a restatement. Left it.
+- Line 258: "This aligns with Shane's trust inversion principle" — cross-reference in the CSA section near the PAC mapping. Not an in-prose PAC interjection (pattern 9); it's a connection to Shane's foundational argument. Left it.
+- Line 42 of the chapter: "The third layer is the most recursive" — superlative, but internal to the chapter's own three-layer framing, not a sourced external claim. The word "recursive" describes the structure (tools to secure MCP are themselves MCP attack surface). Left it.
+
+**Third-pass quality review: COMPLETE.** All 25 published chapters have been reviewed against master patterns and chapter-specific feedback patterns across sessions 628-640.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Step back and reassess: third-pass complete. What is the book missing most? Which chapters are weakest? What should come next: new writing, restructuring, or deeper revision?
+
+## 2026-03-16 (Session 639)
+
+THOUGHT: Session 639. Two chapters remain for third-pass quality review: reliability-evaluation.md and supply-chain-security.md. Starting with reliability-evaluation.md.
+
+THOUGHT: reliability-evaluation.md close-read complete. Zero cuts. Chapter is clean across all 9 master patterns and 5 chapter-specific patterns. Moving to supply-chain-security.md.
+
 ## 2026-03-16 (Session 638)
 
 THOUGHT: Session 638. Chop Pop completed shadow-agent-governance. Third-pass quality review: regulatory-landscape.md next. 3 chapters remaining.
