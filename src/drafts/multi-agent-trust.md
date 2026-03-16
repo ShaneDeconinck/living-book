@@ -241,7 +241,7 @@ The authors built a multi-agent Security Operations Center (SOC) workflow using 
 
 The key finding: these five principles reduce to two integration surfaces that account for all documented multi-agent attack vectors: **tool orchestration and memory management**. Every attack chain the authors traced, from tool redirection to memory poisoning to confused deputy via forged MCP to cross-phase escalation, entered through one of these two surfaces.
 
-The results are concrete. Compared to a flat multi-agent system (where every agent can reach every tool and every memory store), the AgenticCyOps architecture reduces exploitable trust boundaries by 72%: from 200 trust boundaries to 56. Agent-to-tool boundaries drop from 64 to 16 (75% reduction). Agent-to-memory boundaries drop from 48 to 16 (67%). Agent-to-agent boundaries drop from 12 to 4 (67%). The remaining 56 boundaries are not unprotected: each undergoes active verification through signed manifests, consensus validation, or write filtering.[^agenticcyops]
+Compared to a flat multi-agent system (where every agent can reach every tool and every memory store), the AgenticCyOps architecture reduces exploitable trust boundaries by 72%: from 200 trust boundaries to 56. Agent-to-tool boundaries drop from 64 to 16 (75% reduction). Agent-to-memory boundaries drop from 48 to 16 (67%). Agent-to-agent boundaries drop from 12 to 4 (67%). The remaining 56 boundaries are not unprotected: each undergoes active verification through signed manifests, consensus validation, or write filtering.[^agenticcyops]
 
 Attack path tracing showed that three of four representative attack chains were intercepted within the first two steps. The partial exception was cross-phase escalation, where the architecture contained but did not fully prevent lateral movement between SOC phases. This maps to the circuit breaker pattern described above: the trust boundaries between agent groups limit blast radius even when one boundary is breached.
 
@@ -305,7 +305,7 @@ Building on the I1-I5 infrastructure maturity scale used throughout this book:
 
 **I5 (Contained): Adaptive Trust.** Dynamic trust assessment adjusts delegation authority based on observed agent behavior. Reputation systems inform delegation decisions. Automated cascade detection and containment. Multi-agent systems self-govern within externally auditable bounds.
 
-The gap between I1 (where most organizations are) and I3 (where the EU AI Act's high-risk obligations require, whether on the original August 2026 timeline or the Digital Omnibus's December 2027 backstop) is the implementation challenge; the gap between I3 and I5 is the research frontier.
+The gap between I1 (where most organizations are) and I3 (where the EU AI Act's high-risk obligations require organizations to be, whether on the original August 2026 timeline or the Digital Omnibus's December 2027 backstop) is the implementation challenge; the gap between I3 and I5 is the research frontier.
 
 ## Practical Recommendations
 
