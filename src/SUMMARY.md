@@ -19,6 +19,10 @@
   - [Five Dimensions of Context Infrastructure](chapters/context-infrastructure.md#five-dimensions-of-context-infrastructure)
   - [What to Do Now](chapters/context-infrastructure.md#what-to-do-now)
 - [Agent Payments and Economics](chapters/agent-payments.md)
+  - [x402: HTTP Gets a Payment Layer](chapters/agent-payments.md#x402-http-gets-a-payment-layer)
+  - [The Four Commerce Protocols](chapters/agent-payments.md#the-four-commerce-protocols)
+  - [Know Your Agent: Commerce Identity Verification](chapters/agent-payments.md#know-your-agent-commerce-identity-verification)
+  - [What This Means in Practice](chapters/agent-payments.md#what-this-means-in-practice)
 
 # Accountability
 
