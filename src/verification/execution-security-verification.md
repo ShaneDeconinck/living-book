@@ -3,7 +3,7 @@
 **Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes) / 629 (spot-check after ghosty handoff)
 **Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify) / 2026-03-16 UTC (spot-check)
 **Verifier:** Sapere Aude
-**Status:** APPROVED — spot-check 2026-03-16 confirms no new issues; current state clean
+**Status:** FLAGGED — session 629 spot-check found date error in Clinejection paragraph (February → March); prose changes (2d4a167) are clean; MCP-I (agent-communication) clean
 
 ## Spot-Check: Session 629 (2026-03-16)
 
@@ -18,7 +18,27 @@
 - No em dashes present in file (grep clean).
 - No new factual issues found.
 
-**STATUS: APPROVED — no changes since session 459 approval; current state verified clean.**
+**Prose changes verified clean.** The three style fixes (em dash → colon, parenthetical cut, "same" → "what") introduce no factual drift. However, the underlying Clinejection paragraph contains a factual error not previously caught:
+
+### NEW ISSUE: Clinejection date incorrect
+
+**Location:** Line 157 (body text) and footnote [^clinejection]
+
+**Body text:** "The Clinejection incident (March 2026)"
+
+**Footnote:** "Adnan Khan, 'Clinejection — Compromising Cline's Production Releases,' adnanthekhan.com/posts/clinejection/, March 6, 2026."
+
+**Problem:** Adnan Khan's original disclosure was **February 9, 2026**. The actual unauthorized Cline@2.3.0 NPM package was published on **February 17, 2026**. Simon Willison's coverage ran March 6, 2026 — the footnote's "March 6" date belongs to Simon Willison, not to Adnan Khan's post, and the body text's "March 2026" is wrong.
+
+**Additional fact confirmed:** The exploit resulted in an unauthorized package installing OpenClaw AI agent on approximately 4,000 developer machines during an eight-hour window. The chapter does not include this detail but its omission is acceptable.
+
+**Fix required:**
+- Body text: "The Clinejection incident (March 2026)" → "The Clinejection incident (February 2026)"
+- Footnote [^clinejection]: "adnanthekhan.com/posts/clinejection/, March 6, 2026" → "adnanthekhan.com/posts/clinejection/, February 9, 2026. Covered by Simon Willison on March 6, 2026."
+
+**Sending to ghosty for fix.**
+
+**STATUS: FLAGGED — one factual error (date); sending to ghosty.**
 
 ---
 

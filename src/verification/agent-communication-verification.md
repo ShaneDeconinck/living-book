@@ -234,14 +234,20 @@ The [^22]/[^24] footnote formatting fix is a Chop Pop publishing error in src/ch
 
 **Finding:** Commit 2d4a167 does not exist in this repository. No uncommitted changes in working tree. Most recent commits: f2fcf07 (session third-pass, 2 prose cuts: throat-clearing removed from protocol-comparison paragraph and TMCP paragraph). Both cuts were verified clean in this session.
 
-**Spot-check of line 495 area (Practical Recommendations / "What to watch"):**
+**Spot-check of line 495 area — MCP-I paragraph (commit 2d4a167 changes):**
 
-- MCP specification update (targeted June 2026): sourced to roadmap [^5], previously confirmed.
-- SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation): previously confirmed against GitHub PRs.
-- WebMCP progression: previously confirmed at developer.chrome.com/blog/webmcp-epp.
-- AAIF governance: previously confirmed.
-- Authorization gap framing: editorial claim, no source required.
-- No em dashes present in file (grep clean).
-- No new factual issues found.
+Commit 2d4a167 made 4 prose fixes to this paragraph: em dash → colon ("Model Context Protocol — Identity" → "Model Context Protocol: Identity"), repetition collapsed, "define" → "structure", comma pair removed.
 
-**STATUS: FULLY APPROVED — no issues in current state.**
+**Verification of MCP-I claims against primary sources (web search confirmed):**
+
+- **MCP-I exists:** Confirmed. Specification is real.
+- **Vouched donated to DIF in March 2026:** Confirmed. DIF blog post "Why We Brought MCP-I to DIF (and Why DIF Said Yes)," blog.identity.foundation, March 5, 2026.
+- **Trusted AI Agents Working Group at DIF:** Confirmed. DIF established this working group with a dedicated MCP-I task force.
+- **Four identity dimensions (DIDs, principal authorization, delegated scope via VCs, trustworthiness signaling):** Confirmed exactly against DIF blog.
+- **Three conformance tiers:** Confirmed. Level 1 (basic OIDC/JWT), Level 2 (full DID + credential delegation), Level 3 (enterprise lifecycle + immutable audit).
+- **Authentication/authorization conflation as root problem:** Confirmed in DIF enterprise member report (March 12, 2026 blog post).
+- **Prose changes introduce no factual drift:** em dash → colon is style only; "define" → "structure" for conformance tiers is accurate (the tiers structure adoption); repetition and comma pair cuts are pure prose.
+
+**No em dashes present in file (grep clean).**
+
+**STATUS: FULLY APPROVED — MCP-I paragraph verified clean; all four prose changes are style-only.**
