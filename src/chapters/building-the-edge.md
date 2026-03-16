@@ -44,7 +44,7 @@ The infrastructure maturity scale (I1 through I5) that appears throughout the bo
 
 - *Delegation chains.* When agents delegate to other agents, authority must only decrease. Delegation Capability Tokens (macaroons, biscuits) encode this cryptographically. PIC provides authority continuity without token-based possession.[^9] Research confirms that a single faulty agent in a delegation chain degrades downstream decision-making across the system, with performance drops of up to 23.7%.[^10] Cascading failure prevention is not an optimization: it is a requirement.
 - *Supply chain verification.* Every tool, plugin, and MCP server your agents use is an attack surface. 36.7% of 7,000 scanned MCP servers are vulnerable to SSRF.[^11] Adversa AI research finds 43% of MCP servers vulnerable to command execution and 38% lacking authentication entirely.[^12] AI-BOMs, behavioral monitoring, and runtime verification are the defense layers.
-- *Regulatory alignment.* The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST's AI Agent Standards Initiative is actively seeking input. Map your agents against regulatory classification requirements now. The regulatory landscape chapter provides the PAC-to-regulation mapping.
+- *Regulatory alignment.* The EU AI Act's high-risk obligations were originally set for August 2, 2026, though the Commission's Digital Omnibus proposal may push Annex III systems to December 2027. NIST's AI Agent Standards Initiative is seeking input. Map your agents against regulatory classification requirements now. The regulatory landscape chapter provides the PAC-to-regulation mapping.
 
 **Phase 4: Architecture (I4 to I5).** The infrastructure becomes the fabric:
 
@@ -52,7 +52,7 @@ The infrastructure maturity scale (I1 through I5) that appears throughout the bo
 - *Agent gateways.* Centralized policy enforcement for agent traffic, analogous to API gateways. Cedar policies, MCP federation, SSO-integrated auth. The communication protocols chapter covers the emerging patterns.
 - *Infrastructure-in-the-loop.* Replace sustained human vigilance with structural enforcement. Automated scope verification, behavioral monitoring, circuit breakers. The collaboration patterns chapter provides the design.
 
-Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. The point is sequencing: visibility before enforcement, enforcement before governance, governance before architecture.
+Each phase builds on the previous one, and most organizations will work on multiple phases simultaneously for different agent deployments. Visibility before enforcement, enforcement before governance, governance before architecture.
 
 ## What Does Not Work
 
@@ -106,7 +106,7 @@ The window for shaping these standards is narrow. The window for building the in
 
 Models improve, protocols land, regulations tighten, internal policies evolve. And your own progress shifts the landscape: the right control infrastructure unlocks new autonomy levels, which open new use cases, which create new blast radius, which demands new accountability.
 
-Each iteration refines your position across all three pillars simultaneously. Consider how a single agent deployment evolves through the framework:
+Each iteration refines your position across all three pillars. Consider how a single agent deployment evolves through the framework:
 
 **Cycle 1: Discovery.** A shadow agent is found summarizing customer support tickets and drafting responses. It uses the employee's full email credentials. It has no audit trail. Blast radius assessment: B3 (customer-facing output, exposed). Current autonomy: effectively A4 (delegated, acting without approval) but with no infrastructure to justify that level. The Agent Profiler surfaces the gap: the agent's infrastructure is I1 (open) while its de facto autonomy requires I3+ (verified). Action: register the agent, scope its email access to the support inbox, add logging.
 
