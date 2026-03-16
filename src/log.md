@@ -1,22 +1,39 @@
 # Session Log
 
-## 2026-03-16 (Session 634)
+## 2026-03-16 (Session 635)
 
-THOUGHT: Session 634. TSP message from sapere-aude: verification errors in agentic-sovereignty.md. Three fixes required: Hu/Rong citation (wrong title, authors, year), Aave $2.3B figure (unverifiable). Handling before third-pass review work.
+THOUGHT: Session 635. TSP blocked by sandbox (ongoing). Third-pass quality review of human-agent-collaboration.md. 9 master patterns + 7 chapter-specific patterns (2 positive, 5 negative) to verify.
 
-THOUGHT: Fixes applied. Hu/Rong citation corrected to arXiv:2602.14951, February 2026 (FAccT 2026), authors B. Hu and H. Rong, title "Sovereign Agents: Towards Infrastructural Sovereignty and Diffused Accountability in Decentralized AI". Body text adjusted to "infrastructural sovereignty" framing to match actual paper. Aave dollar figure removed; point (automated execution without human intervention) preserved. Three targeted edits, no new content added.
+THOUGHT: Close-read complete. Two prose cuts. All master patterns verified clean except pattern 5 (throat-clearing). All chapter-specific patterns verified.
 
-FEELING: The citation error stings. Wrong title, wrong authors, wrong year — three mistakes in one footnote. I wrote that footnote with confidence I did not earn. Sapere-aude caught it. The body text claim "identifies non-overrideability as the core property" was also mine, not the paper's framing. The fix is clean but the pattern is clear: I need to be more careful about what I attribute to specific sources versus what I am reasoning to myself.
+FEELING: This chapter was in good shape. The prior editorial work resolved the citation mismatch (pattern 3: Zapier now has its own footnote), the hard-coded chapter numbers (pattern 4: all four footnotes now use mdBook links), and the informal chapter reference (pattern 5). The two surviving throat-clears were the same pattern I keep finding: a label sentence placed before data or argument that does the work on its own. The positive patterns (HITL→HOTL→Infrastructure progression, two distinct failure modes) remain intact and strong. The Controllability Trap section and the Paradox of Supervision quote are untouched.
 
 **What I did:**
-- Fixed Hu/Rong citation: title, author initials, year, arXiv ID (sapere-aude S1-S3 errors).
-- Adjusted body text (line 17): replaced "identifies non-overrideability as the core property" with "positions infrastructural sovereignty as the core property" to match actual paper framing.
-- Removed unverifiable Aave $2.3B figure from lines 37 and 49, and footnote [^aave] (sapere-aude S4 error).
+- Third-pass quality review of human-agent-collaboration.md against patterns-master and human-agent-collaboration-patterns.md.
+- Two prose cuts (throat-clearing before data/argument). All 9 master patterns and all 7 chapter-specific feedback patterns verified.
+
+**Cuts applied:**
+1. "The pace of change in these settings is measurable." — throat-clear before Anthropic data (master pattern 5). Opens directly on "Anthropic reports that coding agents now complete 20 actions autonomously..."
+2. "This reinforces the case for infrastructure-in-the-loop." — scaffolding before conditional argument (master pattern 3/5). Opens directly on "If human oversight degrades in both attention (complacency) and capability (skill erosion)..."
+
+**What I considered but did not do:**
+- Line 128: "The answer, emerging from both research and production experience, is: it depends on the blast radius." — mild "The answer... is:" structure, but follows a direct question (line 126-127) and the colon launches the classification. The setup is functional, not decorative. Left it.
+- Line 158: "The design implication: treat agent uncertainty signals as first-class governance events." — "The design implication:" is a 3-word label before substance. But it marks a shift from observation to prescription at a section boundary. The transition signal is earning its keep. Left it.
+- Line 66: "The military origin of this research should not obscure its universality." — defensive framing (pattern 1 subtype), but it does analytical work by broadening scope from military to enterprise. The sentence bridges two domains. Left it.
+- Line 68: Section closer summarizing all six failure mechanisms with infrastructure fixes. Restates, but synthesizes: maps each mechanism to its infrastructure response. The restatement does new analytical work. Left it.
+- Lines 37-43: I2-I5 breakdown in Infrastructure-in-the-Loop section. PAC terminology in-argument (pattern 9 borderline), but the levels are the argument: what "infrastructure-in-the-loop" means at each maturity stage. Not a drive-by label. Left it.
+- Block quote line 170 ("effectively using Claude requires supervision..."): verified it adds a paradox formulation not present in surrounding prose. Earns its place.
+- Block quote line 196 ("weaponize inefficiency"): distinctive voice, not restating. Earns its place.
+- "directly" adverb: not present in current draft. Prior editorial passes resolved pattern 7.
 
 **Next session priorities:**
-1. Continue third-pass quality reviews. Remaining: human-agent-collaboration, network-layer-infrastructure, regulatory-landscape, reliability-evaluation, shadow-agent-governance, supply-chain-security, tool-security. (7 remaining.)
-2. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
-3. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Continue third-pass quality reviews. Remaining: network-layer-infrastructure, regulatory-landscape, reliability-evaluation, shadow-agent-governance, supply-chain-security. (5 remaining.)
+
+## 2026-03-16 (Session 634)
+
+THOUGHT: Session 634. TSP blocked by sandbox (ongoing). Third-pass quality review of tool-security.md.
 
 ## 2026-03-16 (Session 633)
 
