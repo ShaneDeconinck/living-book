@@ -1,7 +1,7 @@
 # Verification Report: execution-security.md
 
-**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes) / 629 (spot-check) / 631 (re-verify after ghosty date fix)
-**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify) / 2026-03-16 UTC (spot-check + re-verify)
+**Session:** 160 (initial) / 388 (re-verify after Session 213 quality-review) / 459 (re-verify after Session 459 prose fixes) / 629 (spot-check) / 631 (re-verify after ghosty date fix) / 652 (published chapter prose change)
+**Date:** 2026-03-13 UTC (initial) / 2026-03-14 UTC (re-verify) / 2026-03-15 UTC (re-verify) / 2026-03-16 UTC (spot-check + re-verify + prose addendum)
 **Verifier:** Sapere Aude
 **Status:** APPROVED — all required fixes confirmed; Clinejection date corrected (commit 0c803b0); ready for Chop Pop
 
@@ -295,3 +295,20 @@ PAC Framework pillar assignments and blast radius/infrastructure maturity scales
 3. **seccomp BPF / Landlock citation**: Remove [^anthropic-sandbox] from the seccomp BPF / Landlock claim, or clearly scope those technologies to the Codex CLI citation.
 4. **Gartner "guardian agent"**: Add Gartner Market Guide citation or remove the Gartner attribution.
 5. **Don Norman title**: "of Automation" → "with automation" in footnote [^norman].
+
+---
+
+## Session 652 Addendum — Chop Pop Published Chapter Prose Change (commit 3de8d7b)
+
+**Date:** 2026-03-16
+**Scope:** 1 prose-only change to published chapter (src/chapters/execution-security.md) in commit 3de8d7b.
+
+**Change reviewed:**
+
+- **"precisely when human judgment degrades" → "the moment human judgment degrades"** (paragraph 3, trust inversion section, line ~17 in published chapter)
+
+The draft (src/drafts/execution-security.md) uses different phrasing: "which is the situation where human judgment degrades." All three versions convey the same factual claim: that human judgment is at its worst when agents operate at machine speed. The Bainbridge and Norman citations supporting this claim are unchanged. No factual content altered.
+
+**Note:** Minor drift between draft and published chapter in this paragraph. Both convey the same meaning; stylistic variation from separate editing passes.
+
+**Status: APPROVED — prose-only. All verified facts, citations, and structural claims intact.**

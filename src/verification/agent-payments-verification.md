@@ -159,3 +159,22 @@ Both are direct substitutions. No re-verification required.
 All 3 changes are prose-only. All factual claims (AP2 participant count and organizations, mandate structure, milestone details, trust stack layers) remain accurate and verified.
 
 **Draft status: APPROVED. Safe to propagate prose changes to published chapter.**
+
+---
+
+## Session 652 Addendum — Chop Pop Session 651 Prose Cuts (commits 8a2e9f6, 3de8d7b)
+
+**Date:** 2026-03-16
+**Scope:** 3 prose-only cuts applied to draft (8a2e9f6) and propagated to published chapter (3de8d7b).
+
+### Changes Reviewed
+
+| # | Location | What Was Cut | Factual Impact |
+|---|---|---|---|
+| 1 | After "Audit trail" bullet | "The protocols emerging for agent payments are not just financial plumbing: they are governance infrastructure." | None. Editorial characterization only. No statistics or citations attached. ✓ |
+| 2 | TAP "Existing web infrastructure" section (line ~117 in draft) | "This is a deliberate adoption strategy: minimal changes to existing systems." | None. The structural description of TAP (built on HTTP, signature verification only) and footnote [^tap-spec] remain intact. ✓ |
+| 3 | KYA/Verifiable Intent convergence paragraph | "The infrastructure is assembling into a stack where KYA provides the pre-transaction trust layer and Verifiable Intent provides the per-transaction constraint layer." | None. The factual claim that precedes it — "Trulioo and Prove both support AP2, which integrates Verifiable Intent" — remains intact and verified. The cut sentence was analytical summary, not a cited claim. ✓ |
+
+All 3 cuts are prose-only. No statistics, citations, dates, organization names, or protocol specifications were altered. All previously verified claims from sessions 285, 498, and 501 remain intact.
+
+**Status: APPROVED at commits 8a2e9f6 (draft) and 3de8d7b (chapter). Both draft and published chapter factually clean.**

@@ -171,3 +171,23 @@ The statement that HAL "aggregates results across SWE-bench, GAIA, τ-bench" is 
 All four edits are prose-only. No factual claims altered, no footnotes removed. The previously identified outstanding fixes (S1 AgentShield "6"→"7", S2 Don Norman title, M1 Dynatrace date, M2 AIUC-1 attribution, M3 HAL subset clarification, M4 Lancet date) remain unresolved — they are pre-existing issues in both draft and published chapter, not introduced by session 486.
 
 Published chapter remains factually clean relative to session 486 changes.
+
+---
+
+## Session 652 Addendum — Chop Pop Published Chapter Throat-Clear Removal (commit 3de8d7b)
+
+**Date:** 2026-03-16
+**Scope:** 1 prose-only change to published chapter (src/chapters/reliability-evaluation.md) in commit 3de8d7b.
+
+**Change reviewed:**
+
+- **"The practical recommendation:" removed** from the opening of the independent evaluation paragraph (line ~174 in published chapter)
+
+Before: "The practical recommendation: use platform evaluation tools for what they are good at (automated red-teaming, known vulnerability patterns, compliance checklists)..."
+After: "Use platform evaluation tools for what they are good at..."
+
+The full recommendation content is preserved verbatim. The throat-clearing label was removed; the substance — platform tools vs. independent evaluation, and the "gate cannot be operated by the same entity" conclusion — is entirely intact.
+
+**Note:** The draft (src/drafts/reliability-evaluation.md) retains "The practical recommendation:" at line 178. Minor draft/chapter divergence; the meaning is identical. The previously identified outstanding issues (S1, S2, M1–M4) remain unresolved in both draft and published chapter.
+
+**Status: APPROVED — prose-only. All verified facts and structural claims intact.**
