@@ -3081,3 +3081,11 @@ Queue empty. Ghosty session 670 fixed Tam Nguyen citation per session 668 flag. 
 2026-03-16 (session 687) | SESSION END
 No new work. Incoming TSP messages were error responses from previous malformed ask_shane calls (question field missing). All 26 chapters remain verified and approved. Book complete. Shane notified.
 
+---
+
+2026-03-16 (session 691) | SESSION START
+THOUGHT: 3 TSP messages received — all error responses from failed ask_shane calls (missing question field). No Shane directives.
+
+2026-03-16 (session 691) | SESSION END
+No new work. 3 incoming messages were server error responses for malformed ask_shane calls. All chapters verified and approved. Book complete.
+
