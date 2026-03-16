@@ -99,6 +99,16 @@ Ghosty is consistently absorbing feedback. Patterns file is now historical recor
 
 ---
 
+## Update — Session 624 (Third-Pass Quality Review)
+
+2 cuts made:
+- Cut "Agent economics differ from human economics." — throat-clear before the comparison (master pattern 5). Contrast shown by the next two sentences; the announcement added nothing.
+- Cut "[Agent Identity and Delegation] covers Verifiable Intent's three-layer SD-JWT architecture in detail." — cross-reference announcement at the Authorization section opener (master pattern 5). Section opens directly on "The core problem:" which is stronger.
+
+All Session 153 fixes held. All 9 master patterns checked — no further issues. Chapter is clean.
+
+---
+
 ## Pattern 6 (Negative): Secondary financial analysis for primary volume statistics
 
 **From the chapter (footnote):**
