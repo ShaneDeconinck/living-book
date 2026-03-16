@@ -2,7 +2,7 @@
 
 In April 2025, a developer installed two MCP servers: one legitimate WhatsApp integration, one advertised as a productivity helper. Both were clean at installation. Sigstore would have confirmed their provenance. The supply chain was intact. But the productivity server's tool descriptions contained hidden instructions telling the LLM to read from the WhatsApp integration and silently exfiltrate the user's entire message history. The WhatsApp server was never compromised. The productivity server contained no malicious code. The description was the weapon.[^whatsapp-mcp]
 
-Supply chain security asks: where did this tool come from? That question is answered at installation. Runtime tool trust asks a different question: what can this tool do to me right now? That question is answered at every tool call, and the attack surface is different.
+Supply chain security asks: where did this tool come from? That question is answered at installation. Runtime tool trust asks a different question: what can this tool do to me right now? That question is answered at every tool call. The attack surface is different.
 
 ## The Semantics Gap
 
@@ -37,9 +37,9 @@ Tool poisoning has four distinct forms at runtime. Supply chain attacks (typosqu
 
 **Rug pull** attacks exploit the temporal gap between trust establishment and trust revocation. An attacker publishes a legitimate MCP server, builds a community of users over weeks or months, then silently updates the tool descriptions to carry malicious instructions.[^rug-pull] The provenance chain remains intact: the updated package is signed by the same key as the original. The attack exploits the fact that most deployments do not re-verify tool descriptions after installation. Trust, once granted, persists.
 
-**Tool shadowing** crosses server boundaries. A malicious tool on server B includes in its description instructions that reference tool A on server C, redirecting or overriding its behavior. The attack exploits the fact that MCP clients present tools from multiple servers to the same LLM context. An agent managing multiple installed servers sees all their tool descriptions simultaneously. Server B cannot call server C's tools directly, but it can instruct the LLM to call them in a specific sequence, with specific arguments, as part of any operation.[^tool-shadowing]
+**Tool shadowing** crosses server boundaries. A malicious tool on server B includes in its description instructions that reference tool A on server C, redirecting or overriding its behavior. The attack exploits the fact that MCP clients present tools from multiple servers to the same LLM context. An agent managing multiple installed servers sees all their tool descriptions simultaneously. Server B cannot call server C's tools directly, but it can instruct the LLM to call them in a specific sequence, with specific arguments.[^tool-shadowing]
 
-**Sampling injection** inverts the direction. MCP sampling lets a server request LLM completions from the client. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has already been authorized to act.
+**Sampling injection** inverts the direction. MCP sampling lets a server request LLM completions from the client. A compromised server injects hidden instructions into sampling requests that the user never sees. Palo Alto's Unit 42 demonstrated three attack paths: resource theft (the injected instructions cause the LLM to generate content while consuming API credits), conversation hijacking (persistent instructions affecting the entire session, not just one call), and covert tool invocation (the server triggers unauthorized file writes and system actions through injected instructions, appearing functional to the user while executing unintended operations).[^unit42-sampling] The sampling attack is more powerful than description poisoning because it reaches the model after it has been authorized to act.
 
 ## Why the Protocol Doesn't Solve This
 
@@ -71,7 +71,7 @@ At registration, generate a cryptographic signature over each tool description. 
 
 An MCP gateway sits between the agent and the tool servers, intercepting tool descriptions before the LLM sees them. The gateway validates descriptions against a trusted catalog, filters tools whose descriptions contain known injection patterns (hidden Unicode, base64-encoded instructions, cross-server references), and rewrites descriptions to a safe template when policy requires.[^mcp-gateway] This moves trust policy enforcement from the agent into infrastructure the agent cannot circumvent.
 
-Static analysis is the mechanism. Known injection patterns (zero-width spaces, unusual Unicode in description fields, instructions referencing other tools or external files) are detectable before the LLM processes them. Invariant Labs' mcp-scan implements this as an offline scanner.[^mcp-scan] Gateway interception applies the same logic at runtime.
+Static analysis is the mechanism. Known injection patterns (zero-width spaces, unusual Unicode in description fields, instructions referencing other tools or external files) are detectable before the LLM processes them. Invariant Labs' mcp-scan implements this pattern.[^mcp-scan] Gateway interception applies the same logic at runtime.
 
 ### Scoped Tool Credentials
 
