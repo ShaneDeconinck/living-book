@@ -103,7 +103,7 @@ If traditional IAM answers "who is this user?", agent trust infrastructure needs
 
 These are not five separate products. They are one system. Identity without delegation tracking is incomplete. Delegation without audit trails is unverifiable. Audit trails without scoped permissions are just a record of things going wrong.
 
-The emerging infrastructure to address this is real but early. OAuth 2.0 Token Exchange (RFC 8693) supports delegation chains. NIST published a concept paper in February 2026 on AI agent identity and authorization, actively soliciting industry feedback.[^5] DPoP (Demonstration of Proof-of-Possession) binds tokens to agent keys so intercepted tokens are useless. The Trust Spanning Protocol addresses cross-organizational trust. Agent gateways are emerging as an infrastructure layer for centralized control over agent identity, permissions, and behavior.
+The emerging infrastructure to address this is real but early. OAuth 2.0 Token Exchange (RFC 8693) supports delegation chains. NIST published a concept paper in February 2026 on AI agent identity and authorization, soliciting industry feedback.[^5] DPoP (Demonstration of Proof-of-Possession) binds tokens to agent keys so intercepted tokens are useless. The Trust Spanning Protocol addresses cross-organizational trust. Agent gateways are emerging as an infrastructure layer for centralized control over agent identity, permissions, and behavior.
 
 None of this is finished. But the direction is clear: agents need their own trust layer, distinct from human identity systems, built on verifiable credentials and scoped delegation rather than ambient authority.
 
@@ -128,7 +128,7 @@ The mapping to this book:
 | **ASI09: Human-Agent Trust Exploitation** (over-trust, complacency) | [Reliability & Evaluation](reliability-evaluation.md) (complacency trap, 40 years of human factors research), [Human-Agent Collaboration](human-agent-collaboration.md) |
 | **ASI10: Rogue Agents** (compromised or misaligned agents acting autonomously) | [Shadow Agent Governance](shadow-agent-governance.md) (discovery, registration, enforcement), this chapter (Kiro incident) |
 
-The OWASP taxonomy organizes risks by attack surface. The PAC Framework organizes by governance response. Together, they answer both questions a practitioner needs: what can go wrong (OWASP), and what infrastructure prevents it (PAC).
+The OWASP taxonomy organizes risks by attack surface. The PAC Framework organizes by governance response.
 
 ## MITRE ATLAS: The Attack Technique Library
 
