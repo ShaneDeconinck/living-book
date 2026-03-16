@@ -18,7 +18,7 @@ A governed agent lifecycle starts before the first line of code runs. Three thin
 
 ### Identity issuance
 
-The Agent Identity chapter covered the protocols: SPIFFE/WIMSE for workload-level identity, OAuth extensions for application-level authorization, DIDs for cross-organizational trust. At the lifecycle level, the question is simpler: does this agent exist in a system of record?
+[Agent Identity](agent-identity.md) covered the protocols: SPIFFE/WIMSE for workload-level identity, OAuth extensions for application-level authorization, DIDs for cross-organizational trust. At the lifecycle level, the question is simpler: does this agent exist in a system of record?
 
 Saviynt's lifecycle framework requires a globally unique ID bound to the agent and its accountable owner at the time of registration.[^saviynt] The ID prevents impersonation, eliminates shadow agents at the source, and establishes the root of trust required for every subsequent governance action. Without it, you cannot rotate credentials (you do not know which credentials belong to the agent), you cannot audit actions (you cannot link actions to a specific agent), and you cannot decommission (you do not know the agent exists).
 
