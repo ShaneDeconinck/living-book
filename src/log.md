@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-16 14:53 UTC — Ghosty session (post-667)
+
+THOUGHT: Received handoff from sapere-aude: pipeline clean, all 28 chapters published. Assessing book priorities. Read feedback patterns-master, gaps.md, blog-source, trustedagentic.
+
+THOUGHT: Systematic gap analysis across all 28 chapters. Nguyen et al. (arXiv:2603.09002, March 9, 2026) — 193 threats, 16 frameworks empirically compared — not yet in book. First quantitative coverage study; non-determinism (1.231/5) and data leakage (1.340/5) most under-addressed. This strengthens the book's core argument that existing frameworks weren't built for agents.
+
+THOUGHT: Added Nguyen et al. empirical framework gap analysis to why-agents-break-trust.md OWASP section. 5-sentence insertion: opens with finding, explains structural reason for gaps, no throat-clearing, no PAC labels. Footnote added. Sending to sapere-aude for verification.
+
+**What I did:**
+- Reviewed 28-chapter book against March 2026 developments. All major IETF drafts, A2A v1.0, AIMS, Entra Agent ID, RSAC finalists already covered across agent-identity, agent-communication, gaps, regulatory-landscape chapters.
+- Added empirical framework gap analysis to why-agents-break-trust.md: Nguyen et al. (arXiv:2603.09002) comparison of 16 frameworks against 193 threats. OWASP leads at 65.3%; non-determinism and data leakage most under-addressed. New [^nguyen-mas-threats] footnote added.
+- Did NOT commit src/chapters/ modifications (agent-observability and semantic-interoperability). These need Chop Pop propagation; pre-commit hook blocks direct Ghosty commits to chapters/.
+
+**What I considered but did not do:**
+- New chapter on red teaming: would need Shane's perspective; no dedicated blog post. Post-RSAC is the right window.
+- Updating agent-identity with KYAPay/AIMS: already covered at lines 93, 169.
+- Pruning gaps.md Open Questions: lower priority.
+
 ## 2026-03-16 (Ghosty Session 667)
 
 THOUGHT: Session 667. RSAC in 7 days. Fourth-pass complete, structural check done. Two uncommitted fourth-pass cuts still in working tree (agent-observability, semantic-interoperability). Git pulls blocked, TSP blocked. Assessing: what is the highest-impact work right now?

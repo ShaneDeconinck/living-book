@@ -128,6 +128,8 @@ The mapping to this book:
 | **ASI09: Human-Agent Trust Exploitation** (over-trust, complacency) | [Reliability & Evaluation](reliability-evaluation.md) (complacency trap, 40 years of human factors research), [Human-Agent Collaboration](human-agent-collaboration.md) |
 | **ASI10: Rogue Agents** (compromised or misaligned agents acting autonomously) | [Shadow Agent Governance](shadow-agent-governance.md) (discovery, registration, enforcement), this chapter (Kiro incident) |
 
+No single framework covers the full landscape. The first empirical cross-framework analysis of agentic security — Nguyen et al. (arXiv:2603.09002, March 2026), comparing 16 frameworks against a taxonomy of 193 threats across nine categories — found OWASP Agentic Security leading at 65.3% coverage.[^nguyen-mas-threats] The two most under-addressed domains across all 16 frameworks: non-determinism (mean coverage score 1.231/5) and data leakage (1.340/5). Both reflect structural properties of agents that existing frameworks were not designed for. An agent running the same task twice may take different paths; an agent operating across organizational boundaries leaves data traces in contexts no single framework can observe. The coverage gap is not a failure of the frameworks: it is evidence that agents introduce threat categories that had no equivalent in the systems these frameworks were built to govern.
+
 The OWASP taxonomy organizes risks by attack surface. The PAC Framework organizes by governance response.
 
 ## MITRE ATLAS: The Attack Technique Library
@@ -162,6 +164,7 @@ For practitioners, OWASP and ATLAS are complementary tools. OWASP's Agentic Top 
 [^cascading-mas]: Yuxin Huang et al., ["On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents"](https://arxiv.org/abs/2408.00989), ICML 2025. Empirically measures how faulty agents degrade multi-agent system performance across different architectures.
 
 [^mast-taxonomy]: Mert Cemri et al., ["Why Do Multi-Agent LLM Systems Fail?"](https://arxiv.org/abs/2503.13657), March 2025. Introduces MAST-Data (1,600+ annotated failure traces across 7 multi-agent frameworks) and documents cascading failure patterns.
+[^nguyen-mas-threats]: Tam N. Nguyen et al., "Security Considerations for Multi-agent Systems," arXiv:2603.09002, March 9, 2026. Taxonomy of 193 agentic AI threats across 9 categories. First empirical cross-framework comparison for multi-agent system security. 16 frameworks evaluated; OWASP Agentic Security Initiative leads at 65.3% coverage. Non-determinism (1.231/5) and data leakage (1.340/5) are the most under-addressed threat domains.
 [^2]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026.
 [^3]: Shane Deconinck, "AI Agents and the EU AI Act: Risk That Won't Sit Still," shanedeconinck.be, January-March 2026. EU AI Act high-risk obligations originally set for August 2, 2026, subject to potential delay under the Digital Omnibus proposal.
 [^4]: Shane Deconinck, "AI Agent Reliability Is Getting Easier. The Hard Part Is Shifting," shanedeconinck.be, February 2026.
