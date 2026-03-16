@@ -102,7 +102,7 @@ DPoP is already covered in the [Agent Identity and Delegation](agent-identity.md
 
 ### Adoption
 
-The adoption numbers are striking. By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
+By February 2026, MCP crossed 98.6 million monthly SDK downloads (Python and TypeScript combined).[^7] Every major AI provider has adopted it: Anthropic, OpenAI, Google, Microsoft, and Amazon. This is not a protocol war. MCP won the tool-connection layer.
 
 ### Security: MCP Is Plumbing, Not Trust
 
@@ -345,7 +345,7 @@ The implementation is practical. TSP is deliberately thin: a transport-layer pro
 
 ### TA2A: Trust-Enabled A2A
 
-The same principle applies to A2A. Running A2A over TSP means that Agent Cards are cryptographically verifiable (solving the spoofing problem with unsigned cards), task messages are authenticated and private, and cross-organizational agent discovery gets verifiable identity guarantees instead of relying on DNS and TLS alone.
+Running A2A over TSP means that Agent Cards are cryptographically verifiable (solving the spoofing problem with unsigned cards), task messages are authenticated and private, and cross-organizational agent discovery gets verifiable identity guarantees instead of relying on DNS and TLS alone.
 
 Wenjing Chu presented TMCP and TA2A at the LFDT meetup as near-term deliverables from the Trust over IP Foundation's AI and Human Trust working group.[^16] The architecture is designed for incremental adoption: you can start with standard MCP/A2A and layer TSP underneath when cross-organizational trust becomes a requirement.
 
@@ -487,8 +487,6 @@ Most organizations are at I1-I2: they have adopted MCP for tool connections but 
 **If you are crossing organizational boundaries**: evaluate TMCP and TA2A for trust-layer integration. Standard MCP/A2A do not verify server identity or track delegation chains. For cross-org deployments, you need verifiable identifiers and authenticated channels that survive across trust boundaries.
 
 **What to watch**: the MCP specification update (targeted June 2026) will address streamable HTTP transport, `.well-known` discovery, Tasks primitive refinements, and enterprise deployment needs (audit trails, SSO-integrated auth, gateway behavior). Beyond the core release, track the security SEPs: SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) are already in progress and would close the gap between MCP's communication layer and the identity infrastructure this book argues is essential. WebMCP's progression from Chrome Canary to stable release and W3C formal draft will determine how quickly the browser becomes a first-class agent tool surface. The AAIF governance structure will shape how MCP, A2A, and agent gateways evolve together. And the authorization gap: the distance between what communication protocols can express ("connect to this tool") and what governance requires ("connect to this tool, for this purpose, under these constraints"): remains the most important unsolved problem in the stack.
-
-[Agent Identity and Delegation](agent-identity.md) covers the identity infrastructure (OBO, DPoP, Verifiable Intent) that fills the authorization gap MCP and A2A leave open: communication protocols handle discovery and transport, identity protocols handle who agents are and what they are authorized to do. [Sandboxing and Execution Security](execution-security.md) provides the containment layer for what happens after an agent connects to a tool: filesystem isolation and network restrictions limit the blast radius of a compromised MCP server. [Agent Supply Chain Security](supply-chain-security.md) addresses the trust problem in the tool ecosystem itself: every MCP server is a dependency, and 38% of scanned servers lack authentication entirely. [Cross-Organization Trust](cross-org-trust.md) covers TSP and PIC, the trust layer that TMCP and TA2A run on top of when agent communication crosses organizational boundaries.
 
 ---
 

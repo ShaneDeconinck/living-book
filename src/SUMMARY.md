@@ -43,6 +43,10 @@
 
 - [Sandboxing and Execution Security](chapters/execution-security.md)
 - [Agent Communication Protocols](chapters/agent-communication.md)
+  - [MCP: Connecting Agents to Tools](chapters/agent-communication.md#mcp-connecting-agents-to-tools)
+  - [The Authorization Gap](chapters/agent-communication.md#the-authorization-gap)
+  - [Agent Gateways: The Enforcement Layer](chapters/agent-communication.md#agent-gateways-the-enforcement-layer)
+  - [Practical Recommendations](chapters/agent-communication.md#practical-recommendations)
 - [Network-Layer Agent Infrastructure](chapters/network-layer-infrastructure.md)
 - [Cross-Organization Trust](chapters/cross-org-trust.md)
   - [Trust Spanning Protocol: Identity Across Boundaries](chapters/cross-org-trust.md#trust-spanning-protocol-identity-across-boundaries)
