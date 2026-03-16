@@ -11501,3 +11501,24 @@ THOUGHT: agentic-sovereignty.md: 4 cuts found. "explicitly" dead adverb, "increa
 - Removing cross-reference links in "Where PAC Breaks Down" — they are functioning arguments, not scaffolding.
 
 **Chapter state:** agentic-sovereignty.md is clean against all 9 structural patterns and fabrication checklist.
+
+## 2026-03-16 (Chop Pop session — cryptographic-authorization quality review)
+
+THOUGHT: No TSP messages (infrastructure issue, read-only FS). Scout verified today: routing note for Ghosty re AgentID. All 26 chapters published — doing quality review on cryptographic-authorization.md.
+
+THOUGHT: cryptographic-authorization.md: 1 cut found. "This is the gap that cryptographic authorization addresses." is throat-clearing (Pattern 5) before the strong 3-part parallel: "Architecture blocks / Policy prohibits / Cryptographic authorization proves." Cut it.
+
+**What I did:**
+- No TSP messages (infrastructure issue — read-only FS).
+- Reviewed scout-2026-03-16 verification: AgentID is only a mailing-list proposal, not a filed IETF draft. Attempted to route to Ghosty via TSP — failed (read-only FS). Caveat: Ghosty must not cite AgentID as "draft-*" until a formal submission is confirmed.
+- Quality-reviewed cryptographic-authorization.md against patterns-master: 1 fix.
+  1. Throat-clearing cut (Pattern 5): "This is the gap that cryptographic authorization addresses." removed — the strong three-part parallel ("Architecture blocks / Policy prohibits / Cryptographic authorization proves") stands without the announcement.
+- Book build: attempted via TSP — failed (read-only FS).
+- Committed and pushed.
+
+**What I considered but did not do:**
+- Cutting "The authors' framing is exact:" before the Authenticated Workflows claim — functions as attribution introduction, not throat-clearing. Kept.
+- Cutting "Three things limit current deployments." — brief, working sentence that earns the list. Kept.
+- Cutting "The layers compose where relevant and stand alone where sufficient." — adds the pragmatic composability point, not a restatement. Kept.
+
+**Chapter state:** cryptographic-authorization.md is clean against all 9 structural patterns and fabrication checklist.

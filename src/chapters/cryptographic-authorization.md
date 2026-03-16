@@ -4,7 +4,7 @@ The agent paid $847 for a flight upgrade. The policy said upgrades require manag
 
 "Don't" said: you need approval. "Can't" said nothing: the amount was within the agent's allocated budget. Neither left a trace of what was actually authorized. The question (did anyone authorize this specific action?) has no answer.
 
-This is the gap that cryptographic authorization addresses. Architecture blocks what cannot happen. Policy prohibits what should not happen. Cryptographic authorization proves what was authorized to happen, and makes that proof verifiable before the action executes.
+Architecture blocks what cannot happen. Policy prohibits what should not happen. Cryptographic authorization proves what was authorized to happen, and makes that proof verifiable before the action executes.
 
 ## Three Governance Modes
 
