@@ -35,7 +35,7 @@ Four capabilities are relevant:
 
 **AI-aware traffic optimization.** The platform identifies AI traffic and applies optimization techniques to maintain reliable, low-latency interactions during agentic workload bursts.[^cisco-traffic-opt] Agent traffic is bursty, latency-sensitive, and long-lived: unlike human web traffic. Infrastructure that cannot distinguish the two cannot optimize for either.
 
-The significance of Cisco's approach is architectural, not just commercial. When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 (application developers building gateways, network teams enforcing generic HTTPS policies) is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
+When the leading network security platform adds MCP-specific controls, the application-layer protocol and the network-layer enforcement plane are no longer separate stacks. The separation that characterized agent security in 2025 (application developers building gateways, network teams enforcing generic HTTPS policies) is beginning to collapse. Whether other SASE vendors (Zscaler, Palo Alto Prisma) follow with similar capabilities in 2026 will determine whether this is a product feature or an architectural shift.
 
 ## Naming and Discovery Below the Application Layer
 
@@ -51,7 +51,7 @@ Service discovery in AgentDNS uses natural-language queries processed by a root 
 
 The governance implication: a root-domain naming system for agents creates a layer where discovery itself can be governed. Today, an agent discovers MCP servers through environment variables, hardcoded URLs, or MCP registries that each vendor maintains independently. AgentDNS would centralize this discovery, which also centralizes the ability to revoke access for a compromised or deregistered server.
 
-This connects directly to supply chain security. A malicious MCP server in the SANDWORM_MODE campaign (19 typosquatting npm packages documented in [Agent Supply Chain Security](supply-chain-security.md)) achieved reach by being installable and discoverable through package registries.[^sandworm-mode] A governance layer at the naming level (where discovering a server requires a verifiable identity claim) raises the bar for these attacks.
+A malicious MCP server in the SANDWORM_MODE campaign (19 typosquatting npm packages documented in [Agent Supply Chain Security](supply-chain-security.md)) achieved reach by being installable and discoverable through package registries.[^sandworm-mode] A governance layer at the naming level (where discovering a server requires a verifiable identity claim) raises the bar for these attacks.
 
 AgentDNS is an early-stage draft. Its operational characteristics (governance of the root server, conflict resolution for namespace collisions, key rotation) are not yet specified. The solution has not yet been stress-tested.
 
