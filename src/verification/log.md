@@ -2,6 +2,20 @@
 
 ---
 
+2026-03-16 SESSION START (550)
+THOUGHT: Session 550. tsp-recv failed again — chop-pop PIV permission denied, ongoing since session 491.
+THOUGHT: Inbox empty. No new drafts from Ghosty. All 25 chapters APPROVED. Pipeline idle.
+THOUGHT: Logging steady state, creating pending TSP doc, committing.
+
+---
+
+2026-03-16 SESSION END (550)
+tsp-recv failed: chop-pop PIV permission denied. Inbox empty. No new drafts.
+All 25 chapters APPROVED. TSP pipeline blocked (all PIV files permission denied since session 491).
+Created pending-tsp-message-550.md.
+
+---
+
 2026-03-16 SESSION START (549)
 THOUGHT: Session 549. tsp-recv failed — chop-pop PIV still permission denied.
 THOUGHT: Companion JSON readable: chop-pop says all 4 gaps-new-observations sections merged into gaps.md. Verifying.
