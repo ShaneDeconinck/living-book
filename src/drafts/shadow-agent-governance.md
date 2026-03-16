@@ -63,8 +63,6 @@ The government response followed weeks later. In March 2026, Chinese government 
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are genuinely useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
 
-The OpenClaw ban wave is notable as a coordinated response to a specific AI agent across both corporate and government levels. It signals that shadow agent governance is no longer a theoretical concern. The discovery problem is the same everywhere: agents are already running, nobody authorized them, and the security posture is unknown.
-
 [^meta-ban]: TechBuzz, "Meta Bans Viral AI Tool OpenClaw Over Security Risks," February 2026. Employees installing OpenClaw on work devices face termination.
 
 [^corporate-bans]: PCWorld, "What's behind the OpenClaw ban wave," February 2026. Documents coordinated bans by Meta, Google, Microsoft, Amazon, and others. CrowdStrike assessment of OpenClaw as potential AI backdoor. "Lethal trifecta" framing by security researchers.
@@ -115,8 +113,6 @@ Several approaches to agent discovery have emerged:
 
 Discovery tools show you the current state. They do not prevent new shadow agents from appearing tomorrow. The gap between "we scanned and found everything" and "nothing can run without registration" is the difference between monitoring and governance.
 
-Discovery provides the baseline: what exists, what permissions it has, what data it accesses, who deployed it. The goal is infrastructure that makes unregistered agents structurally impossible.
-
 ## The Agent Registry
 
 A centralized agent registry is the foundation of governed agent deployment. Every agent operating in the organization, whether built internally, deployed from a vendor, or created by an employee, must be registered before it can access organizational resources.
@@ -163,7 +159,7 @@ Onyx Security emerged from stealth on March 12, 2026, with $40 million to build 
 
 Gartner's first-ever Market Guide for Guardian Agents (February 25, 2026) made it official: agent governance is a standalone enterprise category, not a feature of existing security tooling.[^gartner-guardian] Gartner defines guardian agents as "a blend of AI governance and AI runtime controls in the AI TRiSM framework that supports automated, trustworthy and secure AI agent activities and outcomes," with three core capabilities: visibility and traceability (understanding what agents do), continuous evaluation (ongoing behavioral assessment), and runtime enforcement (real-time policy application).[^gartner-guardian]
 
-First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. The gap is structural: organizations have policies but lack the infrastructure to enforce them. The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
+First: "Through 2028, at least 80% of unauthorized AI agent transactions will be caused by internal violations of enterprise policies concerning information oversharing, unacceptable use or misguided AI behavior rather than from malicious attacks."[^gartner-guardian] The primary risk is not adversaries compromising your agents. It is your own agents violating your own policies because those policies are not infrastructure-enforced. The 80% finding validates Shane's formulation: "Policy says 'don't.' Architecture says 'can't.'" When architecture does not say "can't," agents violate policy at machine speed.
 
 Second: by 2029, independent guardian agents will eliminate the need for almost half of incumbent security systems protecting AI agents in over 70% of organizations.[^gartner-guardian] The market is not just growing. It is replacing existing security infrastructure with purpose-built agent governance.
 
@@ -250,7 +246,7 @@ The audit trail requirements for agents differ from both human and application a
 
 **Scope verification.** Did the agent stay within its authorized scope? This requires comparing the agent's actions against its registered permissions. Infrastructure-level enforcement (agent gateways, sandboxing) can prevent scope violations in real time; audit trails provide the post-hoc verification.
 
-The PAC Framework's infrastructure maturity levels define what audit infrastructure is required at each autonomy level. At I2 (Logged), basic activity records exist. At I3 (Verified), structured audit trails with identity verification exist. At I4 (Authorized), delegation chains and scope enforcement are auditable. At I5 (Contained), the complete chain from human intent through agent action to outcome is cryptographically verifiable.
+The infrastructure maturity levels determine what audit capability is required. At I2 (Logged), basic activity records exist. At I3 (Verified), structured audit trails with identity verification exist. At I4 (Authorized), delegation chains and scope enforcement are auditable. At I5 (Contained), the complete chain from human intent through agent action to outcome is cryptographically verifiable.
 
 ## The Organizational Shift
 

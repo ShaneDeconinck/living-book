@@ -81,7 +81,7 @@ Build the infrastructure regardless. The requirements (risk management, traceabi
 
 While the EU focuses on risk classification and compliance obligations, NIST is working on the technical foundations. In February 2026, the National Cybersecurity Center of Excellence (NCCoE) published a concept paper: "Accelerating the Adoption of Software and AI Agent Identity and Authorization."[^nistpaper]
 
-The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision? Existing identity frameworks must evolve to address this shift, because systems that autonomously access tools, query databases, and execute operations on behalf of users require clear mechanisms for identification, authentication, and authorization.
+The paper asks a straightforward question: how should organizations identify, authenticate, and control software and AI agents that access enterprise systems and take actions with limited human supervision?
 
 Rather than proposing new frameworks from scratch, NIST focuses on adapting existing standards: OAuth 2.0/2.1 and OpenID Connect, widely deployed authentication and authorization protocols, alongside identity lifecycle management tools. The building blocks exist. The assembly is what is missing.
 
@@ -114,7 +114,7 @@ For agent deployments, ISO 42001 formalizes the governance loops that agents mak
 - **Roles and responsibilities**: who approves deployment, who monitors performance, who handles incidents. This is where shadow agent governance gets formalized.
 - **Continual improvement**: feedback loops that capture operational experience and feed it back into governance.
 
-ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate. An organization with ISO 42001 certification has the governance structure.
+ISO 42001 does not solve the technical problems of agent identity or authorization. But it provides the management framework within which those technical solutions operate.
 
 ## The U.S. Federal Response: Promote and Secure
 
@@ -168,7 +168,7 @@ The Convention needs five ratifications (including at least three Council of Eur
 
 ## Standards Convergence
 
-Beyond regulation, the standards bodies shaping agent protocols are converging on agent trust infrastructure simultaneously. The building blocks for compliance are being standardized, not proprietary.
+The building blocks for compliance are being standardized, not proprietary.
 
 ### IETF and OAuth Extensions
 
@@ -279,7 +279,7 @@ NIST and the EU are converging on agent governance simultaneously.[^shaneeuai] B
 
 An organization deploys an AI agent to screen job applications. It reads resumes, scores candidates against role requirements, and sends shortlisted candidates to a human recruiter for final review.
 
-**Classification.** Under the EU AI Act, this agent falls squarely into Annex III, category 4(a): "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates." It is high-risk by default. No interpretation needed. Under Singapore's framework, it requires bounded tool access, human override capability, and clear organizational accountability. Under the Colorado AI Act, it qualifies as high-risk because it makes or substantially influences consequential decisions in employment.
+**Classification.** Under the EU AI Act, this agent falls into Annex III, category 4(a): "AI systems intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates." It is high-risk by default. No interpretation needed. Under Singapore's framework, it requires bounded tool access, human override capability, and clear organizational accountability. Under the Colorado AI Act, it qualifies as high-risk because it makes or substantially influences consequential decisions in employment.
 
 **What the infrastructure must do.** Article 12 traceability means logging every screening decision: which resumes the agent saw, what criteria it applied, which candidates it shortlisted, and which it rejected. Not a summary. The decision chain. Article 14 human oversight means the recruiter must be able to override the agent's ranking, review its reasoning, and intervene before any candidate is contacted. Article 9 risk management means ongoing monitoring: is the agent's acceptance rate drifting by demographic? Are its criteria still aligned with the role requirements? This is not a one-time assessment.
 

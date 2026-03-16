@@ -122,9 +122,7 @@ Both are designed to work with existing infrastructure, not replace it. PIC can 
 
 ### CAAM: The Authorization Mesh
 
-TSP establishes identity across boundaries. PIC ensures authority cannot expand through delegation chains. But what happens in between: after an agent is discovered but before it executes a tool call?
-
-The Contextual Agent Authorization Mesh (CAAM, draft-barney-caam-00, February 2026) addresses this gap through a sidecar-based authorization mediator that intercepts tool calls outside the agent's reasoning loop.[^caam] The core mechanism is the Session Context Object (SCO): a cryptographically signed JWT or CWT carrying purpose constraints, scope ceiling, delegation depth, attestation evidence, and a contextual risk score. Every tool call passes through the sidecar, which evaluates the SCO against declared policies before the call proceeds.
+TSP establishes identity across boundaries. PIC ensures authority cannot expand through delegation chains. The Contextual Agent Authorization Mesh (CAAM, draft-barney-caam-00, February 2026) addresses the gap between discovery and execution: a sidecar-based authorization mediator that intercepts tool calls outside the agent's reasoning loop.[^caam] The core mechanism is the Session Context Object (SCO): a cryptographically signed JWT or CWT carrying purpose constraints, scope ceiling, delegation depth, attestation evidence, and a contextual risk score. Every tool call passes through the sidecar, which evaluates the SCO against declared policies before the call proceeds.
 
 First, CAAM introduces what the authors call the Ghost Token Pattern. Raw delegation tokens never reach the agent. They remain in a vault managed by the sidecar. When the agent needs to act, the sidecar synthesizes a short-lived, single-use token bound to the specific request, the current SCO, and the contextual risk score. The agent operates with ephemeral credentials that cannot be replayed, exfiltrated, or used outside their intended context. This addresses the token-as-authority-object problem that PIC solves theoretically: CAAM solves it at the infrastructure layer through token isolation.
 

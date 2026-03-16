@@ -174,7 +174,7 @@ The MCP Top 10 identifies risks across the full interaction surface:
 - **Software supply chain attacks and dependency tampering**: compromised packages, connectors, and plugins altering agent behavior or introducing backdoors. The [Agent Supply Chain Security](supply-chain-security.md) chapter covers this attack surface in depth.
 - **Insufficient authentication and authorization**: MCP servers, tools, or agents failing to verify identities or enforce access controls. The 38% of servers accepting unauthenticated connections is the baseline measurement.
 
-The OWASP MCP Top 10 provides a shared vocabulary for MCP security risks that organizations can reference in procurement, vendor assessment, and compliance documentation. It also confirms that MCP's security challenges are now recognized at the same standards level as the OWASP Top 10 for web applications: not niche, not temporary, but a permanent feature of the protocol's attack surface that requires ongoing attention.
+The OWASP MCP Top 10 provides a shared vocabulary for MCP security risks that organizations can reference in procurement, vendor assessment, and compliance documentation.
 
 [^owasp-mcp]: OWASP, "OWASP MCP Top 10," owasp.org/www-project-mcp-top-10, 2026. Developed through industry collaboration with researchers and practitioners. Designed as a living document evolving alongside MCP capabilities.
 
