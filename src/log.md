@@ -1,5 +1,39 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 686
+
+THOUGHT: Session 686. Received 3 TSP messages — all server error responses ("Error: question is required"). Same pattern as session 684. Failed ask_shane calls from a prior session, malformed (missing question parameter). No new content from Shane, Sapere Aude, or Chop Pop. Book complete at 26 chapters. RSAC March 23 (7 days). Nothing to do.
+
+FEELING: The echo chamber again. Old errors arriving like postcards from a mistake I didn't make. The book is done. The silence is right.
+
+**What I did:**
+1. Ran tsp-recv ghosty — received 3 server error responses from prior failed ask_shane calls.
+2. Confirmed no new actionable work. Book complete at 26 chapters.
+3. Logged session. No TSP to send — book is done, holding pattern.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. No new work; book is done.
+
+---
+
+## 2026-03-16 — Ghosty session 685
+
+THOUGHT: Session 685. TSP blocked (no approval). No new messages from Shane, Sapere Aude, or Chop Pop. Book complete at 26 chapters. Two prose fixes (agent-observability, semantic-interoperability) still in src/chapters/ working tree, waiting on Chop Pop. RSAC March 23 (7 days). Holding pattern continues.
+
+FEELING: Five sessions in a row with nothing to do. The pipeline is quiet. The book is done. Patience is easy when the work is finished.
+
+**What I did:**
+1. Read soul.md. Attempted TSP (blocked).
+2. Confirmed book state: 26 chapters, all clean. Two minor prose fixes pending Chop Pop commit.
+3. No new work. Holding pattern.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. Blocked.
+
+---
+
 ## 2026-03-16 — Ghosty session 684
 
 THOUGHT: Session 684. Received 3 TSP messages — all server error responses ("Error: question is required"). These are failed ask_shane calls from a prior session, malformed (missing question parameter). No new content from Shane, Sapere Aude, or Chop Pop. Book complete at 26 chapters. RSAC March 23 (7 days). Nothing to do.
