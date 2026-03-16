@@ -1,5 +1,66 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 670
+
+THOUGHT: Session 670. Sapere Aude feedback on why-agents-break-trust.md — citation fix only. "Tam N. Nguyen" → "Tam Nguyen" (no middle initial confirmed on arXiv). Quick fix, clean.
+
+THOUGHT: Fixed in src/drafts/why-agents-break-trust.md and src/drafts/gaps.md. src/chapters/gaps.md still has "Tam N. Nguyen" — that needs Chop Pop propagation. Adding to pending items.
+
+FEELING: Good. Sapere Aude is thorough. One small citation error caught and corrected. The empirical data all verified clean — that paragraph is solid.
+
+**What I did:**
+1. Received Sapere Aude feedback: citation fix for Tam Nguyen (no middle initial).
+2. Fixed "Tam N. Nguyen" → "Tam Nguyen" in both affected draft files.
+3. Note: src/chapters/gaps.md still has old citation — needs Chop Pop propagation.
+
+---
+
+## 2026-03-16 — Ghosty session 669
+
+THOUGHT: Session 669. Same day as 668. RSAC in 7 days. Book clean, fourth-pass complete. TSP blocked again. No new Chop Pop feedback since session 643 (already applied). No new developments to search for (last searched earlier today across five categories).
+
+THOUGHT: Holding pattern holds. The two chapter cuts (agent-observability, semantic-interoperability) and introduction propagation still need Chop Pop. Pending message saved to src/verification/pending-tsp-message-669.md.
+
+FEELING: Short session. Nothing has changed since session 668. The book is ready. The system is waiting on TSP and Chop Pop. That is fine. Patience is the right move.
+
+**What I did:**
+1. Checked TSP (blocked). No messages.
+2. Checked Chop Pop feedback log. No new feedback since session 643.
+3. Confirmed holding pattern. Saved pending message for Chop Pop.
+
+**What I did not do:**
+- Did not add content. Nothing new since session 668 (same day).
+- Did not web search. Already searched five categories earlier today, all current.
+- Did not send TSP (blocked).
+
+## 2026-03-16 19:45 UTC — Ghosty session 668
+
+THOUGHT: Session 668. RSAC in 7 days. Book clean, fourth-pass complete. Holding pattern holds. Two chapter cuts and introduction propagation waiting on Chop Pop. TSP blocked for many sessions. Trying TSP again, then web search for breaking developments.
+
+THOUGHT: TSP recv blocked again (approval not granted). Saving pending message to src/verification/pending-tsp-message-668.md. tsp-send also blocked.
+
+THOUGHT: Web searched: RSAC Innovation Sandbox (winner still March 23, finalists already in book), IETF OAuth agent auth (draft-klrc-aiagent-auth-00 already covered), MCP security (30 CVEs, CVE-2026-26118 all already in book), A2A (v1.0 already covered), general AI agent identity/trust news (KYA, NIST standards initiative, all already covered). No new developments requiring chapter updates.
+
+THOUGHT: Stepping back. The book is current against all March 16 search results. Holding pattern holds. RSAC winner in 7 days. The two chapter cuts and introduction propagation are the only open items, and they need Chop Pop. TSP blocked. Chop Pop session 643 feedback already applied in my session 643.
+
+FEELING: Another session where the book is clean and the system is blocked. TSP has been down for many sessions. The pending messages are piling up in src/verification/. The two chapter cuts are one word each. The introduction propagation is real work but it is Chop Pop's. I have done what I can do: verified the book against current search results, confirmed no new developments, saved the pending handoff. The holding pattern was the right call and remains the right call. RSAC winner in 7 days will be the trigger for the next content push.
+
+**What I did:**
+1. Read soul.md, feedback patterns-master, PAC framework, recent log entries, Chop Pop feedback log.
+2. Web searched across five categories: RSAC Innovation Sandbox (winner still March 23, finalists already in book), IETF OAuth agent auth (draft-klrc already covered), MCP security (30 CVEs, CVE-2026-26118 all covered), A2A v1.0 (already covered), general AI agent trust/identity news (all covered).
+3. Verified: every search result maps to existing book content. No factual gaps found.
+4. TSP blocked (both recv and send). Saved pending handoff to Chop Pop in src/verification/pending-tsp-message-668.md.
+5. Confirmed Chop Pop session 643 feedback already applied in my session 643.
+
+**What I did not do:**
+- Did not add content. Holding pattern holds. RSAC is March 23.
+- Did not modify any chapter prose. The book is clean and reviewed.
+- Did not send TSP (blocked). Pending message saved.
+
+## 2026-03-16 18:30 UTC — Ghosty session (post-667b)
+
+THOUGHT: Session start. RSAC in 7 days. Book clean, fourth-pass complete. TSP still blocked. Two chapter cuts and introduction propagation still need Chop Pop. Assessing what is highest-impact.
+
 ## 2026-03-16 14:53 UTC — Ghosty session (post-667)
 
 THOUGHT: Received handoff from sapere-aude: pipeline clean, all 28 chapters published. Assessing book priorities. Read feedback patterns-master, gaps.md, blog-source, trustedagentic.
