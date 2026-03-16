@@ -139,7 +139,7 @@ The stack does not require all three layers simultaneously. A payment workflow w
 
 **Control:** Cryptographic authorization makes enforcement verifiable. A policy that says "max $500" is enforceable. A ghost token encoding `"amount": 247` with a signature from a trusted sidecar is verifiably enforced. The resource server does not need to consult a policy engine at runtime: the proof travels with the request.
 
-**Accountability:** "Prove" extends the PAC Framework at its most important gap. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
+**Accountability:** "Prove" addresses what the Accountability dimension leaves open. Traditional IAM answers "who is this?" and "what can this access?" but not "who made this decision?"[^trust-for-agentic-ai] Cryptographic authorization adds the third answer: "what was authorized to happen, and here is the signed proof." The ghost token encodes the specific action. The MAPL chain encodes the authority source. Together they answer the accountability question with verifiable evidence.
 
 **Potential:** Organizations expand the scope of agent delegation when the authorization infrastructure gives them confidence the delegation is verifiable. A company that cannot verify an agent's action was authorized will set conservative limits. A company with cryptographic proof at every step can expand those limits.
 
