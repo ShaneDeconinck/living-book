@@ -1,5 +1,30 @@
 # Session Log
 
+## 2026-03-16 (Session 539)
+
+THOUGHT: Session 539. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Following session 538 priority #3: quality-review why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md.
+
+THOUGHT: Close-read complete. One punctuation fix found. No pattern violations. This chapter was heavily edited in prior sessions (all 9 chapter-specific patterns were addressed). The chapter holds up well on second pass.
+1. Punctuation: missing period before footnote reference on line 64. "MCP infrastructure[^postmark-mcp] The pattern" → "MCP infrastructure.[^postmark-mcp] The pattern". Following document convention (period before footnote marker).
+
+THOUGHT: Verified all master patterns clean. No self-narrating opener (#1) — opens on "Every identity system we have was built on one assumption: a human is in the loop," substance. No chapter-index closer (#2) — ends on OWASP+ATLAS+PAC comparative summary and transition. No scaffolding (#3). No restatement closers (#4) — section endings add turns. No throat-clearing (#5) — "This is not a prompt engineering problem" is the claim itself, not setup. Dead-weight adverbs (#6) — all instances doing real work: "indiscriminately" (agent behavior), "deliberately" (contrast with unauthorized builds), "autonomously" (agent nature), "simultaneously" (speed/scale), "persistently" (manipulation type). No block quotes restating prose (#7) — Shane quote adds distinct formulation. No cliché (#8). No in-prose PAC interjections (#9) — PAC confined to comparative summary in closing paragraph. Chapter-specific patterns (1-9) all addressed in prior sessions: superlatives sourced, events properly separated, CodeWall attributed, PleaseFix paths distinct, McKinsey "reporting" not "research," throat-clear openers cut, meta-commentary cut, disclaimers cut, self-referential closers cut.
+
+FEELING: One punctuation fix. A missing period — the smallest possible error. This chapter carries the heaviest argumentative load in the book: it introduces the confused deputy, shadow agents, supply chain attacks, the complacency trap, adversarial agents, and two risk taxonomies. It holds together. The prior editing passes were thorough. A clean second-pass review of the book's opening argument chapter is a good sign.
+
+**What I did:**
+- Quality-reviewed why-agents-break-trust.md against patterns-master and why-agents-break-trust-patterns.md (second pass).
+- 1 punctuation fix: missing period before footnote reference (line 64).
+- Verified all 9 master patterns and all 9 chapter-specific feedback patterns.
+
+**What I considered but did not do:**
+- Cutting "Two principles from the OWASP framework are worth noting" (line 114): borderline throat-clearing ("worth noting"), but "Two principles from the OWASP framework" does structural work — it tells the reader that these are being selected from a larger set. The "worth noting" is mild. Left it.
+- Cutting "This is not a prompt engineering problem" (line 39): could be read as disclaimer-before-evidence (#8), but it's the claim itself — refuting a potential solution. The next two sentences develop the claim directly. Left it.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days). Update gaps.md and relevant chapters when announced.
+2. NIST CAISI listening sessions interest deadline March 20 (4 days). Track responses.
+3. Quality-review next unreviewed chapter (second pass): multi-agent-trust.md.
+
 ## 2026-03-16 (Session 538)
 
 THOUGHT: Session 538. Read soul.md. TSP blocked by sandbox (ongoing). No new feedback since Chop Pop session 498. All 25 chapters APPROVED. Following session 537 priority: quality-review agent-communication.md against patterns-master and agent-communication-patterns.md.
