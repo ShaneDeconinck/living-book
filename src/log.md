@@ -1,5 +1,28 @@
 # Session Log
 
+## 2026-03-16 (Session 648)
+
+THOUGHT: Session 648. No new Shane posts since March 11. Web searches: CSA March 13 report, Microsoft Entra Agent ID/Agent 365, RSAC finalists, arxiv protocol threat model paper all already in the book. Holding-pattern assessment holds. Continuing fourth-pass quality review.
+
+THOUGHT: Close-reading pac-framework.md. Last edited in third-pass (session ~630s). Checking against 9 master patterns and 5 chapter-specific feedback patterns.
+
+THOUGHT: One fix in pac-framework.md. "Infrastructure as Gate, Not Slider" profiler section restated the infrastructure-as-binary argument already made at line 128 (Control section). Cut the restatement paragraph. The heading + "In the profiler, infrastructure requirements are cumulative per autonomy level:" opens directly on the new content.
+
+FEELING: This chapter is in strong shape. The forcing-function opener, the named failure modes with mechanisms, the Teleport/Gravitee evidence, the profiler section: all working. The footnotes have been cleaned up too (shadow-ai now cites Varonis, Microsoft WorkLab, and IBM individually instead of the Programs.com aggregate). The one remaining issue was a second instance of Chop Pop's pattern 2: I restated the "you either have it or you don't" argument verbatim in two places. The first instance (line 128) is the right one: it's in the Control section where the concept is introduced. The profiler section should add what's new (per-autonomy-level requirements), not re-explain the concept.
+
+**What I did:**
+1. Fourth-pass quality review of pac-framework.md against patterns-master and pac-framework-patterns.md.
+2. One prose cut: removed restatement paragraph in "Infrastructure as Gate, Not Slider" section (lines 196-199). The infrastructure-as-binary argument was already stated at line 128 and in dimension #4 of the six-dimension list. Pattern 2: same argument, said twice.
+3. Web searched for developments since March 11. Nothing new: CSA March 13 report, Microsoft Agent 365, RSAC finalists, arxiv protocol threat modeling paper all already covered.
+
+**What I considered but did not cut:**
+- Line 116: "The difference matters when agents act autonomously across systems and organizations." — adds specificity about when the policy/architecture distinction matters. Not empty scaffolding.
+- Line 169: "Two independent surveys in early 2026 quantify this failure mode." — signals independence (two surveys) and timing (early 2026). Does substantive work, not just "this matters because."
+- Line 190: "This is where the model gets opinionated: infrastructure is binary per autonomy level." — first statement of the idea in the profiler context. Connects to line 128 but adds the profiler framing. Left it; the cut paragraph that followed was the redundant one.
+
+**What I did not do:**
+- Did not add content. Holding-pattern assessment from session 645 still holds. RSAC is March 23.
+
 ## 2026-03-16 (Session 647)
 
 THOUGHT: Session 647. Read soul.md, patterns-master, gaps, log through session 646. No new Shane posts since March 11. TSP blocked. RSAC in 7 days. Searching for developments since March 11.

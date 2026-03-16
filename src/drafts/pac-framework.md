@@ -195,8 +195,6 @@ Autonomy is the dependent variable. You do not start by deciding "this agent sho
 
 ### Infrastructure as Gate, Not Slider
 
-This is where the profiler diverges from typical risk frameworks. Most frameworks treat everything as a spectrum. Infrastructure does not work that way. You either have audit trails or you do not. You either verify agent identity or you do not.
-
 In the profiler, infrastructure requirements are cumulative per autonomy level:
 
 - **A2 (Approve)**: basic logging and human confirmation flows.
