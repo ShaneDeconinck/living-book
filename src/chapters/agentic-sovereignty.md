@@ -10,7 +10,7 @@ Sovereignty here has three meanings, often conflated.
 
 **Technical sovereignty** means the agent's execution is opaque and non-modifiable even to the infrastructure it runs on. A Trusted Execution Environment (TEE) like Intel SGX or AWS Nitro Enclaves creates an encrypted enclave where neither the host operating system, the hypervisor, nor the cloud provider can inspect or alter what runs inside.[^tee] The hardware operator has no more access to the enclave than anyone else. The guarantee is architectural: the host cannot compromise what it cannot read.
 
-**Operational sovereignty** means the agent was designed to run without human intervention as a governance guarantee, not a convenience. DeFi protocols use this pattern explicitly: the system is trustworthy precisely because no administrator can modify it mid-execution. The absence of an override is the feature. Any organization that could intervene creates a point of corruption, coercion, or compromise.
+**Operational sovereignty** means the agent was designed to run without human intervention as a governance guarantee, not a convenience. DeFi protocols use this pattern: the system is trustworthy precisely because no administrator can modify it mid-execution. The absence of an override is the feature. Any organization that could intervene creates a point of corruption, coercion, or compromise.
 
 **Protocol sovereignty** means the agent persists as long as the underlying protocol operates, regardless of what any individual party does. A smart contract on Ethereum runs until every node stops running Ethereum. Its authors can deprecate the interface, but they cannot stop the contract. The execution environment provides continuity that no single actor controls.
 
@@ -36,7 +36,7 @@ The blockchain-native case is the clearest, but not the only one.
 
 **Decentralized finance.** Automated market makers (Uniswap's liquidity pool contracts, Compound's interest rate models, Aave's liquidation engines) execute financial actions continuously, at machine speed, without human authorization per transaction.[^defi] Aave's v3 liquidation engine processed liquidations continuously throughout the March 2023 USDC de-pegging event without a single human-initiated transaction.[^aave] The liquidations were correct by protocol design, and irreversible.
 
-**Confidential AI inference.** Organizations handling sensitive data increasingly deploy inference workloads in TEEs: legal discovery agents, medical record summarization, financial analysis.[^confidential-ai] The hospital that deploys a diagnostic agent in an SGX enclave provides a privacy guarantee: even the cloud provider cannot observe the patient data being analyzed. The enclave's non-modifiability is the privacy property. The same design makes the agent difficult to stop, patch, or audit from outside.
+**Confidential AI inference.** Organizations handling sensitive data deploy inference workloads in TEEs: legal discovery agents, medical record summarization, financial analysis.[^confidential-ai] The hospital that deploys a diagnostic agent in an SGX enclave provides a privacy guarantee: even the cloud provider cannot observe the patient data being analyzed. The enclave's non-modifiability is the privacy property. The same design makes the agent difficult to stop, patch, or audit from outside.
 
 **Autonomous vehicle fleets.** Real-time navigation and safety systems cannot wait for human authorization. An agent deciding to brake, merge, or swerve executes in milliseconds, within a closed control loop no external system can override while the vehicle is in motion. The accountability model shifts from "who authorized this action" to "who designed and certified the system that took this action."
 
@@ -48,7 +48,7 @@ Sovereign execution does not eliminate accountability. It relocates it.
 
 When a DeFi liquidation engine processes liquidations at machine speed across a market crisis, the accountable parties are the organizations and individuals who designed the protocol, wrote the code, and deployed it. Their accountability is pre-execution, not concurrent. The question is not "who authorized this liquidation?" but "who designed a system that would execute this liquidation under these conditions, and were they authorized to deploy such a system?"
 
-This is not weaker accountability. It is earlier accountability. And it has different implications for governance.
+This is not weaker accountability. It is earlier accountability.
 
 **Pre-execution audit.** In sovereign environments, the audit happens before deployment, not after execution. The code is the commitment. Formal verification, third-party audit, and governance votes over protocol parameters are the accountability mechanisms. After deployment, the code does what it was designed to do. The accountability question has already been answered.
 
@@ -64,7 +64,7 @@ Sovereign agents do not sit outside the PAC Framework. They reconfigure it.
 
 PAC's Accountability pillar does not require concurrent human oversight of every action. It requires that actions be traceable to authorized principals, that evidence of authorization exists, and that responsible parties exist when things go wrong. Sovereign execution changes the form and timing of that evidence, but not the requirement.
 
-The practical implication: organizations building sovereign agent systems need to design accountability infrastructure that frontloads the commitments that post-execution accountability normally provides.
+Organizations building sovereign agent systems need to design accountability infrastructure that frontloads the commitments that post-execution accountability normally provides.
 
 - **Pre-deployment specification**: document what the agent will do, under what conditions, with what outcomes, in sufficient detail to constitute a binding accountability record.
 - **Attestation infrastructure**: record execution-time evidence that the deployed code ran as specified.

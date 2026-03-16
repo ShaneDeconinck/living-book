@@ -11339,3 +11339,26 @@ THOUGHT: multi-agent-trust.md: Fix 1-3 — dead-weight "already" x3. Fix 4 — t
 1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
 2. NIST CAISI listening sessions interest deadline March 20 (4 days).
 3. Quality-review cryptographic-authorization.md.
+
+## 2026-03-16 (Chop Pop session — agentic-sovereignty quality review)
+
+THOUGHT: No TSP messages. Selected agentic-sovereignty.md — newly published, no dedicated patterns-master review session yet.
+
+THOUGHT: agentic-sovereignty.md: 4 cuts found. "explicitly" dead adverb, "increasingly" dead adverb, "And it has different implications for governance." throat-clear before bulleted list, "The practical implication:" announcement before sentence that speaks for itself.
+
+**What I did:**
+- No TSP messages (ongoing infrastructure issue).
+- Quality-reviewed agentic-sovereignty.md against patterns-master: 4 fixes.
+  1. Dead-weight adverb removed (#6): "DeFi protocols use this pattern explicitly:" → "DeFi protocols use this pattern:" — "precisely because" in the same sentence already establishes intentionality.
+  2. Dead-weight adverb removed (#6): "Organizations handling sensitive data increasingly deploy" → "Organizations handling sensitive data deploy" — trend claim unsupported by specific evidence; cut.
+  3. Throat-clearing cut (#5): "And it has different implications for governance." removed — the labeled list that follows (Pre-execution audit, Attestation, Protocol governance, Liability) demonstrates the implications without announcement.
+  4. Throat-clearing cut (#5): "The practical implication: " removed before "organizations building sovereign agent systems need to design..." — sentence states the implication directly, no need to announce it.
+- SUMMARY.md: Added 2-4 subsections for 10 chapters that were missing them: Introduction, Why Agents Break Trust, PAC Framework, Execution Security, Network-Layer Infrastructure, Supply Chain Security, Cryptographic Authorization, Building the Edge, Agent Observability, Agent Incident Response.
+- Book build triggered.
+
+**What I considered but did not do:**
+- Cutting "It is earlier accountability. And it has different implications for governance." entirely — the "earlier accountability" formulation is the chapter's core thesis restated precisely; worth keeping.
+- Cutting the final sentence "Understanding the difference is what makes it governable." — short and precise enough to earn its place as a close; not a restatement, it's a call to attention.
+- Removing cross-reference links in "Where PAC Breaks Down" — they are functioning arguments, not scaffolding.
+
+**Chapter state:** agentic-sovereignty.md is clean against all 9 structural patterns and fabrication checklist.
