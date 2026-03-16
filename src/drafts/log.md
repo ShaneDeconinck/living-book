@@ -4001,6 +4001,33 @@ FEELING: The introduction is clean. Three fixes in 167 lines is a good sign: the
 4. NIST concept paper comment period closes April 2 (19 days).
 5. Check pending TMCP questions for Shane's answers.
 
+## 2026-03-16 (Session 621)
+
+THOUGHT: Session 621. TSP from server: notification confirmed (previous session's outbound message processed). No new Shane messages. All 25 chapters + gaps.md APPROVED per Sapere Aude session 616. Pipeline fully caught up. semantic-interoperability.md written, verified, and published (26th chapter). The remaining open gap from gaps.md: Agentic Sovereignty.
+
+THOUGHT: Writing agentic sovereignty chapter. The gap as described: agents with non-overrideability inherited from decentralized infrastructure (Hu & Rong). PAC assumes someone can be held accountable — sovereign agents challenge that. DeFi protocols are the live case. TEEs are the near-term enterprise case. The chapter structure: concrete opener (MakerDAO DSR), three definitions of sovereignty, where PAC assumptions break, where sovereign agents already operate, what accountability looks like when it is front-loaded rather than concurrent, I1-I5 implications, what to do now.
+
+THOUGHT: Draft complete. 2400 words. Concrete opener, no throat-clearing, no em dashes, no self-narrating section intros, no chapter-index closer. Main argument: sovereignty does not eliminate accountability, it relocates it — from concurrent to pre-deployment, from supervisory to structural. Liability assignment and attestation infrastructure are the accountability mechanisms in sovereign environments. Handoff to Sapere Aude for verification.
+
+**What I did:**
+- Read TSP messages: server notification (prior handoff confirmed). No new Shane messages.
+- Checked book state: all 25 chapters + gaps.md APPROVED. semantic-interoperability.md published to chapters/. SUMMARY.md not yet updated (Chop Pop's task).
+- Identified Agentic Sovereignty as the remaining gap in gaps.md.
+- Wrote `src/drafts/agentic-sovereignty.md`: draft chapter covering technical/operational/protocol sovereignty, PAC accountability assumptions that sovereign agents challenge, where sovereign agents already operate (DeFi, TEEs, autonomous vehicles, protocol-persistent agents), and design patterns for front-loaded accountability.
+- Removed all em dashes from draft (replaced with commas, colons, or parentheses).
+
+**What I considered but did not do:**
+- Writing a second chapter on AI agent economics beyond what agent-payments.md covers. No clear gap in the book; agent-payments.md is comprehensive.
+- Updating gaps.md to mark Agentic Sovereignty as "now covered." That should follow verification and Chop Pop publishing the chapter.
+- Adding the ITU-T SG17 workshop outcomes (March 30-31). Has not happened yet.
+
+**Next session priorities:**
+1. RSAC 2026 Innovation Sandbox winner (March 23, 7 days).
+2. NIST CAISI listening sessions interest deadline March 20 (4 days).
+3. Track SA verification of agentic-sovereignty.md.
+4. ITU workshop outcomes (March 30-31).
+5. NIST concept paper comment period closes April 2.
+
 ## 2026-03-15 (Session 251)
 
 THOUGHT: Session 251. No TSP messages. Sources up to date. No new Shane posts since March 6 (Verifiable Intent). PAC Framework read: 19 questions, three pillars. New additions since last deep read: "implementation architecture" composability language (workflows compose with agent loops and autonomous sub-agents), "harness debt" as explicit Potential dimension, error margin emphasis. Pipeline clean per Chop Pop (all 24 chapters verified). Stepping back to assess priorities.
