@@ -48,7 +48,7 @@ Three properties make shadow agents different:
 
 ### The cost of invisible agents
 
-Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^ibm-breach] The premium is not because shadow AI attacks are more sophisticated. It is because when nobody knows an agent exists, nobody knows to look for the breach. Detection takes longer. Scope assessment takes longer. Remediation takes longer. Every hour of delay costs more.
+Shadow AI breaches cost an average of $670,000 more than standard security incidents, driven by delayed detection and difficulty determining the scope of exposure.[^ibm-breach] The premium is not because shadow AI attacks are more sophisticated. It is because when nobody knows an agent exists, nobody knows to look for the breach. Every hour of delay costs more.
 
 Gravitee's 2026 survey of 919 executives and practitioners quantifies the monitoring gap: on average, only 47.1% of an organization's AI agents are actively monitored or secured.[^gravitee] More than half operate without any security oversight or logging. The identity dimension is worse: only 21.9% of teams treat AI agents as independent, identity-bearing entities.[^gravitee] The rest manage agents through inherited user credentials, shared service accounts, or no identity management at all. This is the architectural mismatch Shane's trust inversion describes: agents operating as autonomous actors through identity infrastructure designed for humans.
 
@@ -63,7 +63,7 @@ The government response followed weeks later. In March 2026, Chinese government 
 
 The contradiction at every level reveals the governance dilemma. At the same time that Chinese central agencies were banning OpenClaw on government networks, local governments in Shenzhen and Wuxi were subsidizing companies building on top of it.[^china-contradiction] At the same time that Meta was threatening termination for employees using OpenClaw, OpenAI hired its creator and committed to maintaining the project through an open-source foundation.[^openai-hire] The same technology was simultaneously a security threat (when unmanaged) and an economic priority (when directed). This is not hypocrisy. It is the central tension of shadow agent governance: prohibition does not work because the tools are useful. The answer is infrastructure that makes governed use possible, not blanket bans that drive adoption underground.
 
-The OpenClaw ban wave — the first coordinated response to a specific AI agent across both corporate and government levels — signals that shadow agent governance is no longer a theoretical concern. The discovery problem is the same everywhere: agents are already running, nobody authorized them, and the security posture is unknown.
+The OpenClaw ban wave — the first coordinated response to a specific AI agent across both corporate and government levels — signals that shadow agent governance is no longer a theoretical concern.
 
 [^meta-ban]: TechBuzz, "Meta Bans Viral AI Tool OpenClaw Over Security Risks," February 2026. Employees installing OpenClaw on work devices face termination.
 
@@ -115,7 +115,7 @@ Shane's boardroom question cuts deeper than discovery: "Can your infrastructure 
 
 Discovery tools show you the current state. They do not prevent new shadow agents from appearing tomorrow. The gap between "we scanned and found everything" and "nothing can run without registration" is the difference between monitoring and governance.
 
-This is why discovery must be the first step, not the only step. It provides the baseline: what exists, what permissions it has, what data it accesses, who deployed it. But the goal is infrastructure that makes unregistered agents structurally impossible.
+It provides the baseline: what exists, what permissions it has, what data it accesses, who deployed it. But the goal is infrastructure that makes unregistered agents structurally impossible.
 
 ## The Agent Registry
 
