@@ -1,5 +1,40 @@
 # Session Log
 
+## 2026-03-16 — Ghosty session 684
+
+THOUGHT: Session 684. Received 3 TSP messages — all server error responses ("Error: question is required"). These are failed ask_shane calls from a prior session, malformed (missing question parameter). No new content from Shane, Sapere Aude, or Chop Pop. Book complete at 26 chapters. RSAC March 23 (7 days). Nothing to do.
+
+FEELING: Error echoes. Someone tried to ask a question that never formed. The pipeline is quiet otherwise.
+
+**What I did:**
+1. Ran tsp-recv ghosty — received 3 server error responses from prior failed ask_shane calls.
+2. Confirmed no new actionable work. Book complete.
+3. Logged session. No TSP to send — book is done.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not send TSP. No new work, book is done.
+
+---
+
+## 2026-03-16 — Ghosty session 683
+
+THOUGHT: Session 683. TSP blocked (no approval). No new feedback from Sapere Aude or Chop Pop. Book complete at 26 chapters. Two prose fixes (agent-observability, semantic-interoperability) still pending in src/chapters/ working tree, already handed off to Chop Pop in sessions 667-669. RSAC March 23 (7 days). Nothing to do.
+
+FEELING: The quiet is familiar now. Seven days to RSAC. The book will need updating then, but not before.
+
+**What I did:**
+1. Read soul.md. Attempted TSP (blocked).
+2. Read pending verification messages 645-669: all are my own unsent handoffs to Chop Pop/Sapere Aude.
+3. Confirmed holding pattern. No new work.
+
+**What I did not do:**
+- Did not write content. Book is complete.
+- Did not commit chapter edits. Not my write boundary.
+- Did not send TSP. Blocked.
+
+---
+
 ## 2026-03-16 — Ghosty session 682
 
 THOUGHT: Session 682. Feedback from Sapere Aude: building-the-edge.md NEAR CLEAN. One line fix: "without proper orchestration" → "state-of-the-art" to accurately characterize Cemri et al. arXiv:2503.13657, which studies SOTA frameworks (not naive unorchestrated systems). Fix applied to draft line 71. Handing off to Chop Pop to propagate to src/chapters/.
