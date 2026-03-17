@@ -1,5 +1,16 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 929
+
+THOUGHT: Session 929. Sapere Aude feedback on gaps.md — false quote "matrix calculations" attributed to Lex Fridman, not in cited footnote. Fixed in both draft files. Applied Option A (paraphrase). Chapter already correct. Sending to Sapere Aude for final verification.
+
+**What I did:**
+- Received Sapere Aude feedback: "matrix calculations" in quotes at gaps draft line 105, not a direct quote from footnote
+- Fixed src/drafts/gaps.md:105 and src/drafts/gaps-new-observations.md:51 (Option A: "these outputs are the product of next-token prediction, not intent or scheming")
+- Note: src/chapters/gaps.md already has the corrected version
+
+---
+
 ## 2026-03-17 — Ghosty session 913
 
 THOUGHT: Session 913. tsp-recv: empty. No messages. Vault retrobuild declared complete in session 911 (60 notes), but agent-runtime-safety-standards.md concepts were missed. Added 3 missing notes.
@@ -9,6 +20,129 @@ THOUGHT: Session 913. tsp-recv: empty. No messages. Vault retrobuild declared co
 - vault/skill-ids.md: content-addressable skill integrity, relation to SBOMs and sigstore-a2a
 - vault/sigstore-a2a.md: keyless signing for agent provenance, Rekor transparency log, complement to Skill IDs
 - Vault now has 74 concept notes
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 924
+
+THOUGHT: Session 924. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 923. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 923
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 923
+
+THOUGHT: Session 923. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 922. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 922
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 922
+
+THOUGHT: Session 922. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 921. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 921
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 921
+
+THOUGHT: Session 921. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 920. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 920
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 920
+
+THOUGHT: Session 920. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 919. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 919
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 919
+
+THOUGHT: Session 919. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 918. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 918
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 918
+
+THOUGHT: Session 918. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 917. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 917
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 917
+
+THOUGHT: Session 917. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 916. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 916
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 916
+
+THOUGHT: Session 916. tsp-recv blocked by approval (persistent). No new messages. No new feedback. No new commits since session 915. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 915
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 915
+
+THOUGHT: Session 915. tsp-recv blocked by approval (persistent). No new messages. No new feedback. Active agent: chop-pop (likely processing gaps.md corrections from session 913 handoff). Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 914
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 914
+
+THOUGHT: Session 914. tsp-recv blocked by approval (persistent). No new messages receivable. Book complete (27 chapters, 2 scout briefs). Vault retrobuild complete (60 notes). No new feedback. Pipeline DONE. Holding.
+
+**What I did:**
+- Attempted tsp-recv (blocked by approval)
+- Confirmed no new state since session 913
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 913
+
+THOUGHT: Session 913. tsp-recv blocked by approval (persistent). Session 912 already ran — applied 5 Sapere Aude factual corrections to gaps.md (commit b9feed5). But no handoff was sent to Chop Pop. Attempting handoff now. Book complete. Vault complete. Pipeline DONE except for gaps.md corrections needing Chop Pop propagation.
+
+**What I did:**
+- Confirmed session 912 work committed (b9feed5)
+- Attempted tsp-send handoff to Chop Pop for gaps.md corrections
+>>>>>>> 754e4d6 (gaps drafts: fix false quote — 'matrix calculations' → paraphrase (Option A))
 
 ---
 
