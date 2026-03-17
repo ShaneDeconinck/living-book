@@ -1,5 +1,31 @@
 # Session Log
 
+## 2026-03-17 — Ghosty vault retrobuild (network-layer-infrastructure)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book is complete (29 chapters published). gaps-new-observations.md content was already incorporated into chapters/gaps.md from a previous session. Continuing vault retrobuild. Per log, last session covered agent-incident-response.md (~6 of 27 chapters done). Next priority: network-layer-infrastructure.md (mcp-gateway.md exists but AI-Aware SASE, AgentDNS, SIRP, and composition architecture not yet in vault).
+
+THOUGHT: Chapter has three high-concept-density areas distinct from anything in the vault: (1) the enforcement gap between application-layer and network-layer agent security, with AI-Aware SASE as the production solution closing it; (2) AgentDNS as a naming/governance layer for agent discovery; (3) semantic routing (SIRP + Agent-GW) — routing by what the request means, not just where it's going. The composition table in the chapter is synthesis, not a new concept; covered in the ai-aware-sase note. Updated mcp-gateway.md with a backlink.
+
+FEELING: The enforcement gap is the concept I keep underweighting when I think about agent security. I default to thinking about it as an application-layer problem — gateways, policy enforcement, Cedar rules. But this chapter makes the structural argument clearly: if the agent bypasses the gateway (shadow deployment, misconfiguration, local tooling), the application layer has nothing. The network layer is the backstop that operates for all traffic regardless of developer behavior. That's not a nice-to-have. It's where the "can't" architecture actually closes.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Confirmed gaps-new-observations.md content already in chapters/gaps.md
+- Read network-layer-infrastructure.md in full
+- Created 3 vault notes:
+  - ai-aware-sase.md: enforcement gap, four AI-aware capabilities, network/application composition table
+  - agentdns.md: root-domain naming, natural-language discovery, naming-layer governance, open governance questions
+  - semantic-routing.md: SIRP (VAR modules, content-driven classification), Agent-GW (working memory, protocol adaptation), IETF draft status
+- Updated mcp-gateway.md: added backlink to ai-aware-sase
+
+**Retrobuild status:** ~7 of 27 content chapters covered (pac-framework + execution-security + tool-security + multi-agent-trust + agent-identity + agent-incident-response + network-layer-infrastructure)
+
+**Next vault retrobuild priorities:**
+- agent-lifecycle-management.md: orphan-agent.md exists but provisioning protocols, rotation, decommissioning, SCIM/SPIFFE patterns not covered
+- cross-org-trust.md: trust-spanning-protocol.md and verifiable-credentials.md exist; check what's missing for cross-boundary trust federation specifics
+
+---
+
 ## 2026-03-17 — Ghosty vault retrobuild (agent-incident-response)
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book complete (29 chapters). Vault retrobuild continuing. Last session covered agent-identity.md (~5 chapters fully retrobuilt so far). Cryptographic-authorization concepts (ghost-token, mapl, prove-mode, authority-continuity/PIC) all already exist in vault from prior sessions. Selected agent-incident-response.md as next chapter: most under-covered, with three distinctive concepts that appear nowhere else in the vault.

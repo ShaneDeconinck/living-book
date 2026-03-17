@@ -46,6 +46,7 @@ I3 deployments introduce gateway interception with description catalog validatio
 - [[confused-deputy]] — gateway implements per-call credential scoping, eliminating ambient credential exposure
 - [[delegation-chain]] — tool calls flow through the delegation chain; gateway enforces that tool operations stay within granted authority
 - [[sandboxing]] — complementary defense: sandboxing limits what executed code can do; gateway limits what descriptions can instruct the LLM to do
+- [[ai-aware-sase]] — the network-layer complement; SASE governs connectivity and intent for all traffic regardless of gateway deployment
 
 ## Sources
 
