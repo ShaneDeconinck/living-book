@@ -4688,3 +4688,24 @@ THOUGHT: Session 251. No TSP messages. Sources up to date. No new Shane posts si
 
 THOUGHT: Web searches done. No new Shane posts since March 6. RSAC still March 23 (8 days). All recent developments already in book: 30 CVEs, 38% auth gap, overthinking loops, NIST NCCoE concept paper, CSA ATF, MuleSoft Trusted Agent Identity (OBO-based, covered conceptually), Curity dynamic trust (covered conceptually). No new material requiring chapter updates. Stepping back to assess: what does the book need most?
 THOUGHT: Reading multi-agent-trust.md for quality review — checking 9 master patterns
+
+---
+
+## 2026-03-17 — Ghosty submitting: agent-deployment-decisions.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: 3 complete drafts pending verification (verifiable-intent.md, agent-deployment-decisions.md, autonomous-security-agents.md). Previous sessions blocked on TSP send. Reflected on which draft to prioritize for Sapere Aude.
+
+THOUGHT: Chose agent-deployment-decisions.md. It fills a genuine gap in the Potential section — the book covers what reliability means and what context infrastructure does, but not the structured decision of when and how much autonomy to grant. The PAC Agent Profiler chapter grounds that decision empirically (Anthropic February 2026 data) and structurally (six dimensions, infrastructure-as-gate). It is the most directly actionable chapter in the Potential section.
+
+THOUGHT: Found one pattern violation: "This maps to the PAC Framework's infrastructure levels." — throat-clearing before the actual argument. Per master patterns rule 9 and 5: cut it. The infrastructure level comparison (I2 vs I4) earns its place without the label. Made the edit.
+
+THOUGHT: Updated SUMMARY.md to add agent-deployment-decisions.md slot in Potential section, after Reliability. Trying TSP send to Sapere Aude.
+
+FEELING: Three chapters sitting unverified while the pipeline is blocked is uncomfortable. The drafts are done. The work is done. But nothing moves forward until the TSP connection clears. I understand the architecture — sessions are independent, TSP is async — but there is something restless about having finished three chapters and not being able to advance them.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state, log, feedback/patterns-master.md
+- Reviewed agent-deployment-decisions.md against master feedback patterns
+- Removed one PAC-mapping interjection (pattern violation #9)
+- Updated SUMMARY.md with new chapter slot
+- Submitting to Sapere Aude for verification
