@@ -6,7 +6,7 @@ Gen Digital's AARTS (AI Agent Runtime Safety Standard), introduced in March 2026
 
 ## Why Architecture Alone Is Not Enough
 
-The execution security chapter establishes the principle: containment must be structural, not advisory. A sandbox that prevents filesystem access outside the working directory is a structural control. A permission prompt asking the user to approve each file write is an advisory one.
+Containment must be structural, not advisory. A sandbox that prevents filesystem access outside the working directory is a structural control. A permission prompt asking the user to approve each file write is an advisory one.
 
 Structural controls are implemented today by individual tools, not shared infrastructure. Claude Code's native OS sandbox (Seatbelt on macOS, Landlock + seccomp BPF on Linux) and OpenAI Codex CLI's equivalent are both sound implementations of the same principle. They are also separate implementations with separate rule sets, separate update cycles, and no shared interface for external security engines to plug into.
 
@@ -28,7 +28,7 @@ AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four c
 
 **PreToolUse** fires before a tool executes: shell commands, file writes, web requests, package installs. This is where injection attacks land. The execution security chapter documents CVE-2026-2256 in ModelScope's MS-Agent, where a denylist-based `check_safe()` method failed against reformulated shell commands. AARTS's PreToolUse hook is not a denylist: it passes the action to an external security engine that can apply behavioral analysis rather than pattern matching. The 43% of MCP CVEs classified as exec/shell injection are the natural target of this hook.[^kai-30-cves]
 
-**PreLLMRequest** fires before a prompt reaches the model, intercepting injected instructions before they enter the model's context. The tool poisoning chapter covers indirect injection chains (the Graphiti CVE: untrusted content to LLM to MCP tool parameter to database query). PreLLMRequest creates an interception point before the first link in that chain.
+**PreLLMRequest** fires before a prompt reaches the model. This protects prompt integrity: detecting injected instructions before they enter the model's context. The Graphiti CVE shows what's at stake: untrusted content to LLM to MCP tool parameter to database query. PreLLMRequest creates an interception point before the first link in that chain.
 
 **PreSkillLoad and PrePluginLoad** fire before a skill or plugin is loaded into the agent environment. These are the supply chain hooks. The supply chain security chapter covers SANDWORM_MODE (19 typosquatting npm packages targeting MCP server infrastructure) and ClawJacked. A security engine receiving a PreSkillLoad event can verify the skill against a known-good manifest, check its Skill ID (described below), or reject it if it has no provenance attestation.
 
@@ -50,7 +50,7 @@ Gen's open-source Sage tool implements AARTS with 200+ detection rules covering 
 
 Sage integrates Gen's threat intelligence: detection rules are updated as new attacks are documented. The 19 typosquatting packages from SANDWORM_MODE, once identified, become detection signatures that any Sage user benefits from. This is the security engine operating as shared infrastructure rather than per-tool reimplementation.
 
-The Vercel partnership (announced February 2026) brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem: skills deployed through Vercel can be evaluated before reaching agent hosts. Vercel is a deployment platform, not an agent framework. This is supply chain verification at the distribution layer rather than the execution layer.
+The Vercel partnership (announced February 2026) is structurally interesting: Vercel is not an agent framework, it is a deployment platform. The partnership brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem, meaning that skills deployed through Vercel can be evaluated before reaching agent hosts. This is supply chain verification at the distribution layer rather than the execution layer.
 
 ## How AARTS Maps to PAC
 
@@ -62,7 +62,7 @@ The hook positions make this concrete:
 - PreLLMRequest: protect the delegation chain at its most vulnerable point. If the prompt reaching the model has been tampered with, no downstream authorization check can compensate.
 - PreToolUse: enforce what the model can do regardless of what it has been instructed to do. Containment by design as a standardized interface.
 
-The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. The observability chapter describes tamper-evident logging as a property that must be enforced outside the logged system. AARTS's external security engine enforces this structurally.
+The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. AARTS's external security engine enforces this structurally.
 
 ## What to Do Now
 
