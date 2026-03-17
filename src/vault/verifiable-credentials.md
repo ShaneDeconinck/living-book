@@ -54,6 +54,9 @@ They can compose: an OAuth token can carry embedded VC claims; a VC can authoriz
 - [[trust-inversion]] — VCs remove the need to trust the agent's self-assertion; the issuer's signature is the trust anchor
 - [[accountability-pillar]] — verifiable credentials make attribution auditable across org boundaries
 - [[non-human-identity]] — VCs are the primary credential format for non-human identity in cross-boundary deployments
+- [[eudi-wallet-agents]] — EUDI infrastructure provides the trusted issuer and cross-border verification layer for VCs at continental scale
+- [[cross-domain-delegation-model]] — VCs are the credential mechanism in Windley's policies/promises/credentials/reputation model
+- [[verifiable-content-provenance]] — VCs applied to content binding rather than agent authorization
 
 ## Sources
 

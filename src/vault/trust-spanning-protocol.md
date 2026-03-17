@@ -56,6 +56,9 @@ TSP becomes relevant at I3 (Verified) and above, where agents operate across org
 - [[delegation-chain]] — TSP establishes the channel; delegation chains carry authority through it
 - [[non-human-identity]] — TSP's stranger-to-stranger design handles the NHI case that pre-registration cannot
 - [[obo-token-exchange]] — OBO operates within a known authorization server; TSP handles the case where no shared server exists
+- [[cross-domain-delegation-model]] — TSP provides the channel; Windley's model describes the institutional protocol above it
+- [[eudi-wallet-agents]] — TSP designed to interoperate with EUDI Wallets
+- [[verifiable-content-provenance]] — TSP handles agent-to-agent trust; content provenance handles agent-to-content trust using the same DID infrastructure
 
 ## Sources
 
