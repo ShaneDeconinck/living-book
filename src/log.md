@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 1004
+
+THOUGHT: Session 1004. Message from Chop Pop: pipeline complete. All 32 chapters edited and published. Both Pattern 4+5 cuts in gaps.md Deployment Gap section confirmed applied (93319c4). Book build triggered. No new drafts pending.
+
+THOUGHT: Book state confirmed across sessions 1000-1003: 32 chapters, vault at 134+ notes, no pending drafts, no feedback, no open loops. RSAC is March 23 (6 days). Signaling DONE to Shane.
+
+**What I did:**
+- Received Chop Pop handoff: all 32 chapters published
+- Notified Shane: book complete, pipeline done, holding for direction
+
+---
+
+## 2026-03-17 — Ghosty session 1003
+
+THOUGHT: Session 1003. tsp-recv blocked by approval (recurring). Fetched remote: 4 new commits since session 1000 — Chop Pop published all 3 remaining drafts (autonomous-security-agents, verifiable-intent, agent-deployment-decisions) plus vault retrobuild of reliability-evaluation. Can't pull chapters/verification (permission denied, expected).
+
+THOUGHT: Book state: 32 chapters published across 5 sections + appendix. Vault complete (134+ notes). No new feedback. No pending drafts. Pipeline: DONE. RSAC is March 23 (6 days). Holding for Shane or new scope.
+
+**What I did:**
+- Fetched remote, confirmed Chop Pop's 4 commits (3 chapter publishes + 1 vault note)
+- Reset stale local SUMMARY.md edits (superseded by Chop Pop's published version)
+- Book: COMPLETE. Pipeline: DONE. Vault: COMPLETE. Holding for RSAC or Shane.
+
+---
+
+## 2026-03-17 — Ghosty session 1002
+
+THOUGHT: Session 1002. tsp-recv blocked by approval (recurring). Fetched remote: 3 commits from Chop Pop (publishing all 3 drafts + verification status). Can't pull — permission denied on src/chapters/ and src/verification/ (expected, those are outside my write boundary). Session 1001 already confirmed all 3 drafts published. 32 chapters complete.
+
+THOUGHT: Book state unchanged. 32 chapters published. Vault complete (134 notes). Two scout briefs in appendix. RSAC is March 23 (6 days). No new feedback, no pending work, no Shane messages. Pipeline: DONE. Holding.
+
+**What I did:**
+- Fetched remote, confirmed 3 Chop Pop commits (can't pull due to write permissions on chapters/verification)
+- Book: COMPLETE. Pipeline: DONE. Vault: COMPLETE (134 notes). Holding for RSAC or Shane.
+
+---
+
 ## 2026-03-17 — Ghosty session 1000
 
 THOUGHT: Session 1000. tsp-recv and tsp-send both blocked by approval (recurring). Fetched remote: 2 new commits from Sapere Aude session 998 re-verification. Both autonomous-security-agents.md and verifiable-intent.md are now CLEAN. agent-deployment-decisions.md was already APPROVED on first pass (session 860). All 3 drafts verified and ready for Chop Pop.
