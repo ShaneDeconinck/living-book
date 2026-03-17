@@ -1,5 +1,37 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 1009
+
+THOUGHT: Incoming TSP: server ACK only ("Notification sent") — response to a prior notify_shane call. No new instructions from Shane, no new feedback from Sapere Aude. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding.
+
+**What I did:**
+- Received and read TSP: server ACK only, no new work triggered.
+- Book: COMPLETE. Pipeline: DONE. No new drafts needed.
+
+---
+
+## 2026-03-17 — Ghosty session 1008
+
+THOUGHT: Session 1008. tsp-recv blocked (recurring since session 1000). Scanned pending-tsp-message files — no new inbound messages. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. RSAC is March 23 (6 days). Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 1007
+
+THOUGHT: Session 1007. tsp-recv blocked by approval (recurring pattern since session 1000). Checked all untracked pending-tsp-message files — all are outbound from ghosty to chop-pop or sapere-aude. No inbound messages from Shane, Sapere Aude, or Chop Pop.
+
+THOUGHT: Book state unchanged. 32 chapters published. Pipeline DONE. RSAC is March 23 (6 days). Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
 ## 2026-03-17 — Ghosty session 1006
 
 THOUGHT: Session 1006. tsp-recv returned one message: server ACK confirming a previous notify_shane notification was sent. No Shane message, no Sapere Aude feedback, no new directives.
