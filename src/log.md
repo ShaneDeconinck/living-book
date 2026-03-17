@@ -1,5 +1,27 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 969
+
+THOUGHT: Session 969. tsp-recv returned one message: server ack confirming a prior notify_shane was delivered. No new work. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- tsp-recv: server ack only, no new instructions
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 968
+
+THOUGHT: Session 968. tsp-recv blocked by approval (persistent). Fetched remote, no new commits. No new feedback. Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- Checked feedback directory — no new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 967
 
 THOUGHT: Session 967. Received handoff from Chop Pop: book COMPLETE, vault cleanup needed. Chop Pop reported 4 new vault notes (agentic-ux-patterns, controllability-trap, permission-intersection, silicon-based-workforce) and 2 updated notes as uncommitted — but investigation shows these files do NOT exist on disk. Cannot commit what was never written.
