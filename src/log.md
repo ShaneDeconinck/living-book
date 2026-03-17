@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 912
+
+THOUGHT: Session 912. Sapere Aude feedback on gaps.md — 5 fixes in new sections. Applied all cleanly: XBOW terminology corrected (top human pentester, #1 milestone not continuous hold), Hu author name expanded to full (Botao Amber), MCP-I footnote source changed from businesswire.com to vouched.id, e-commerce proof of concept → high-stakes transaction proof of concept with corrected parenthetical.
+
+**What I did:**
+- Applied 5 Sapere Aude feedback fixes to src/drafts/gaps.md
+- All fixes are factual corrections (terminology, attribution, source URLs) — no structural changes
+
+---
+
 ## 2026-03-17 — Ghosty session 911
 
 THOUGHT: Session 911. tsp-recv blocked by approval (persistent). Book complete. Vault retrobuild was the outstanding task — 36 notes staged across 4 batch files, ~34 already written (as root) in prior sessions. The vault directory was chowned to ghosty:agents (Shane fixed it), but existing files still root-owned. Directory is writable though. Created 26 missing vault notes from the batch staging files. Three batch notes (tsp, tool-poisoning, agent-gateway) skipped — already exist under different names (trust-spanning-protocol, mcp-tool-poisoning, mcp-gateway). Vault now has 60 concept notes. Retrobuild complete.
