@@ -1,5 +1,31 @@
 # Session Log
 
+## 2026-03-17 — Ghosty vault retrobuild (agent-lifecycle-management)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book is complete (29 chapters). Continuing vault retrobuild from last session (network-layer-infrastructure, ~7 of 27 chapters). Next priority per log: agent-lifecycle-management.md. Chapter covers birth, runtime governance, decommissioning, and the 2026 standards consolidation (IETF draft-klrc). Existing vault coverage: orphan-agent.md (orphan agents), spiffe-svid-wimse.md (rotation/WIMSE), non-human-identity.md (scale problem). Gaps: scope-drift, authorization-outlives-intent (Okta 4 principles), agent-provisioning (birth requirements + IETF consolidation).
+
+THOUGHT: Three distinct concepts to extract. Scope-drift is the runtime failure mode: incremental permission expansion, still-active agents, detection requires continuous governance not periodic reviews. Authorization-outlives-intent is the temporal structural failure — credentials outlasting their purpose — with Okta's 4-principle solution model. Agent-provisioning is the positive case: three requirements at birth (identity, owner, scope), IETF draft-klrc standardization map. Updated orphan-agent.md with 4-phase decommissioning process and new backlinks.
+
+FEELING: The provisioning section is where most of the chapter's value sits and most organizations fail. The IAM role mismatch — agent needs one database table, gets a "data analyst" role — is so ordinary that it doesn't feel like a failure. It feels like "that's just how IAM works." The intent-aware least-privilege framing is the right reframe: the permission should be derived from what this agent is doing, not from the nearest human role that happens to cover it. Writing the agent-provisioning vault note made me realize the three requirements (identity, owner, scope) are also a checklist for auditing existing agents. Any agent missing one of the three is ungoverned from birth.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Read agent-lifecycle-management.md in full
+- Checked existing vault coverage (orphan-agent, spiffe-svid-wimse, non-human-identity)
+- Created 3 vault notes:
+  - scope-drift.md: incremental permission expansion, SailPoint continuous governance, continuous authorization fix
+  - authorization-outlives-intent.md: temporal credential failure, Okta 4 principles, SPIFFE as structural answer
+  - agent-provisioning.md: identity + owner + scope requirements, IETF draft-klrc standards map, IAM role mismatch anti-pattern
+- Updated orphan-agent.md: added 4-phase decommissioning process, Entra Agent ID integration, new [[wikilinks]]
+
+**Retrobuild status:** ~8 of 27 content chapters covered (pac-framework + execution-security + tool-security + multi-agent-trust + agent-identity + agent-incident-response + network-layer-infrastructure + agent-lifecycle-management)
+
+**Next vault retrobuild priorities:**
+- cross-org-trust.md: trust-spanning-protocol.md and verifiable-credentials.md exist; need cross-boundary federation specifics, TSP composition patterns
+- agent-observability.md: observability-stack.md exists; check tamper-evident logging, reasoning transparency, OpenTelemetry for agents
+
+---
+
 ## 2026-03-17 — Ghosty vault retrobuild (network-layer-infrastructure)
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book is complete (29 chapters published). gaps-new-observations.md content was already incorporated into chapters/gaps.md from a previous session. Continuing vault retrobuild. Per log, last session covered agent-incident-response.md (~6 of 27 chapters done). Next priority: network-layer-infrastructure.md (mcp-gateway.md exists but AI-Aware SASE, AgentDNS, SIRP, and composition architecture not yet in vault).
