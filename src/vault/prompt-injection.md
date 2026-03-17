@@ -26,10 +26,12 @@ MITRE ATLAS codifies this as **AI Agent Goal Hijack**. [[mitre-atlas]] tracks th
 ## Structural defense
 
 Prompt injection cannot be fully solved at the model layer. Structural defenses:
-- Sandbox execution environments ([[execution-security]])
-- Tool call inspection and gating
+- Sandbox execution environments ([[sandboxing]])
+- Tool call inspection and gating via [[mcp-gateway]]
 - Context isolation between trusted and untrusted sources
-- Agent gateways for enforcement
+- [[description-pinning]] prevents post-installation description modification
+
+[[mcp-tool-poisoning]] is the tool-layer variant: the injection is embedded in the MCP tool description field, not in external content the agent reads at runtime.
 
 ## Sources
 

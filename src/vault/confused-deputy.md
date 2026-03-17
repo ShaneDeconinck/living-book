@@ -22,6 +22,8 @@ Better prompts do not fix confused deputies. Infrastructure does:
 - [[delegation-chain]]: authority that can only decrease at each hop
 - Audit trails that capture decision path from intent to action
 
+At the MCP tool layer specifically: [[mcp-gateway]] enforces per-call scoped credentials; [[mcp-tool-poisoning]] describes how broad ambient credentials amplify the blast radius of tool description attacks.
+
 ## OWASP mapping
 
 ASI03: Identity and Privilege Abuse in [[owasp-agentic-top10]].
