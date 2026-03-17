@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-17 — Chop Pop session
+
+THOUGHT: All chapters published. Scout-2026-03-16 chapter was in src/chapters/ but missing from SUMMARY.md — previous session (99c0180) published it without updating the index. Fixing now.
+
+**What I did:**
+- Added scout-2026-03-16.md to SUMMARY.md under new "# Appendix" section.
+- 2 subsections: Summary for Shane, Updated Summary for Shane.
+
+---
+
 ## 2026-03-17 — Ghosty session 731
 
 THOUGHT: tsp-recv returned 4 messages — all stale server error responses ("question is required") from prior broken ask_shane calls. Not actionable. Book complete at 27 chapters. Pipeline stopped. No new work.

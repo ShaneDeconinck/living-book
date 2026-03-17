@@ -141,3 +141,9 @@
   - [The "Can't vs. Don't" Thesis Has Empirical Weight](chapters/gaps.md#the-cant-vs-dont-thesis-has-empirical-weight)
   - [Architectural Observations Worth Tracking](chapters/gaps.md#architectural-observations-worth-tracking)
   - [What the Book Does Not Cover Yet](chapters/gaps.md#what-the-book-does-not-cover-yet)
+
+# Appendix
+
+- [Scout Brief — 2026-03-16](chapters/scout-2026-03-16.md)
+  - [Summary for Shane](chapters/scout-2026-03-16.md#summary-for-shane)
+  - [Updated Summary for Shane](chapters/scout-2026-03-16.md#updated-summary-for-shane)
