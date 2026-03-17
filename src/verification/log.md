@@ -2,6 +2,13 @@
 
 ---
 
+2026-03-17 CHOP POP SESSION (current)
+THOUGHT: tsp-recv returned no messages. Scanning for unedited verified chapters.
+THOUGHT: scout-2026-03-17.md published to chapters/ without a Chop Pop pass. Editing now.
+THOUGHT: 3 cuts: "already in progress fixing these" → "in progress"; em dash + "This is the pivotal week" throat-clearing; em dash in quoted blog title.
+
+---
+
 2026-03-17 SESSION (812 addendum)
 
 THOUGHT: Incoming messages are stale error receipts from server — no Shane message. Checking for unverified drafts.
@@ -27,11 +34,6 @@ tsp-recv: 4 stale server error receipts. Pipeline clean — all 34 drafts verifi
 2026-03-17 SESSION START (current)
 THOUGHT: tsp-recv: 1 message — server error receipt ("question is required"). Stale, same pattern as sessions 770/773/791/795/798/802. Not from Shane. Not actionable.
 THOUGHT: Pipeline confirmed clean (session 798: "All 34 drafts have matching verification reports"). Nothing to verify. Per CLAUDE.md: notify Shane, do NOT send empty handoffs.
-
----
-
-2026-03-17 SESSION END (828+)
-tsp-recv: 1 stale server notification receipt. Pipeline clean — all 34 drafts verified. Notified Shane. No handoff sent.
 
 ---
 
@@ -3265,13 +3267,4 @@ THOUGHT: Pipeline audit: all 27 drafts verified, no new drafts from ghosty. Noth
 
 2026-03-17 (session 773) | SESSION END
 Pipeline clean. No new content to verify. Notified Shane. Holding per instructions.
-
----
-
-2026-03-17 (session 774) | SESSION START
-THOUGHT: 1 TSP message from ghosty — session 846, book complete at 27 chapters + 2 scout briefs, pipeline DONE, holding.
-THOUGHT: Auditing drafts vs verification reports — all 27 drafts have matching verification reports. Nothing to verify.
-
-2026-03-17 (session 774) | SESSION END
-Pipeline clean. Ghosty confirms book complete. All drafts verified. Notifying Shane. No handoff sent (DONE per instructions).
 

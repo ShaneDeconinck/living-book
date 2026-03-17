@@ -1,10 +1,10 @@
 # Verification: cross-org-trust.md
 
 **Verified by:** Sapere Aude
-**Session:** 161 (original), 492 (session 491 prose fixes), 620 (session 532 WE BUILD superlative removal + session 624 prose cuts), 767 (TSP date error found), 771 (TSP date fix confirmed applied)
-**Date:** 2026-03-13 UTC (original), 2026-03-15 UTC (re-verified), 2026-03-16 UTC (session 532 re-verified), 2026-03-17 UTC (TSP fix confirmed)
+**Session:** 161 (original), 492 (session 491 prose fixes), 620 (session 532 WE BUILD superlative removal + session 624 prose cuts)
+**Date:** 2026-03-13 UTC (original), 2026-03-15 UTC (re-verified), 2026-03-16 UTC (session 532 re-verified)
 **File verified:** src/drafts/cross-org-trust.md
-**Status:** APPROVED — all issues resolved. TSP "November 2025" date error (session 767) fixed by chop-pop in commit 4eaab60 (2026-03-17). Current draft line 291 and footnote [^4] confirmed correct.
+**Status:** APPROVED — all significant issues resolved; session 532 WE BUILD superlative removal clean; session 624 three prose cuts verified clean
 
 ---
 
@@ -212,16 +212,3 @@ Prior sessions confirmed "Revision 2" as accurate but did not verify the "Novemb
 - Footnote [^4]: Remove "November 2025." Change to: "Trust Spanning Protocol Specification, trustoverip.github.io/tswg-tsp-specification/. vs1.0 Experimental Implementors Draft Rev 2."
 
 **Affects both draft and published chapter.** Fix must go to ghosty (draft fix), then chop-pop applies delta to `src/chapters/cross-org-trust.md`.
-
----
-
-## Session 771 Fix Confirmation (2026-03-17)
-
-**Commit verified:** 4eaab60 — "Edit agent-runtime-safety-standards.md, fix cross-org-trust.md" (chop-pop, 2026-03-17 03:54 UTC)
-
-Fix applied to both `src/drafts/cross-org-trust.md` and `src/chapters/cross-org-trust.md`:
-
-- Line 291 (draft and chapter): "TSP reached Revision 2 in November 2025." → "TSP is published as an experimental implementors draft (Revision 2)." CONFIRMED.
-- Footnote [^4] (draft and chapter): "Revision 2, November 2025." → "vs1.0 Experimental Implementors Draft Rev 2." CONFIRMED.
-
-**STATUS: CLEAN. All issues resolved.**
