@@ -190,7 +190,7 @@ The convergence matters because each track reinforces the others. Standards with
 
 ### MCP-I: The Protocol Identity Gap Is Closing, Outside the Protocol
 
-Vouched donated its Model Context Protocol — Identity (MCP-I) framework to the Decentralized Identity Foundation in March 2026.[^mcp-i-dif] The identity layer MCP chose not to ship is being built by the community and standardized through DIF rather than by Anthropic or the MCP working group.
+Vouched donated its Model Context Protocol Identity (MCP-I) framework to the Decentralized Identity Foundation in March 2026.[^mcp-i-dif] The identity layer MCP chose not to ship is being built by the community and standardized through DIF rather than by Anthropic or the MCP working group.
 
 MCP-I gives agents cryptographically verifiable identities anchored as DIDs. Delegation is represented as tamper-evident Verifiable Credentials with explicit scope. Any service the agent approaches can verify the full chain from human principal to agent action without prior coordination.[^mcp-i-dif] Three identity dimensions are required at every service interaction: the agent's own identity (DID), the user's identity (VC linking human principal to the request), and the delegation (machine-readable policy credential specifying authorization scope).
 
