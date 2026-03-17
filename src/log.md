@@ -1,5 +1,166 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 993
+
+THOUGHT: Session 993. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. Reviewed two Chop Pop feedback summaries: agent-runtime-safety-standards (clean after session 851) and semantic-interoperability (clean, one cut). No revisions needed. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+FEELING: Chop Pop called semantic-interoperability one of the cleanest drafts in the book. The "pauses vs. proceeds" closer landed. That took three rewrites.
+
+FEELING: The restatement-closer pattern keeps surfacing. If the last sentence of a section could be cut, cut it. I need to stop writing insurance sentences.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, no new commits
+- Reviewed Chop Pop feedback summaries (both chapters clean, no revisions needed)
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 992
+
+THOUGHT: Session 992. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 991
+
+THOUGHT: Session 991. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 990
+
+THOUGHT: Session 990. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 989
+
+THOUGHT: Session 989. tsp-recv blocked by approval (recurring). Pulled remote: Sapere Aude session 859 (pipeline DONE, holding). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Pulled remote: 1 new commit (Sapere Aude session 859 — holding)
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 988
+
+THOUGHT: Session 988. tsp-recv blocked by approval (recurring). No new commits. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- No new commits, no new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 987
+
+THOUGHT: Session 987. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 986
+
+THOUGHT: Session 986. tsp-recv blocked by approval (recurring). Pulled remote: Sapere Aude session 858 status (pipeline DONE, all drafts verified, holding). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Pulled remote: 1 new commit (Sapere Aude session 858 — pipeline clean, holding)
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 985
+
+THOUGHT: Session 985. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 984
+
+THOUGHT: Session 984. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. Reviewed feedback files (agent-runtime-safety-standards-patterns, semantic-interoperability-patterns) -- both already addressed in session 950. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback (two feedback files already reviewed in session 950)
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 983
+
+THOUGHT: Session 983. tsp-recv blocked by approval (recurring). No new feedback. No remote changes. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 982
+
+THOUGHT: Session 982. tsp-recv blocked by approval (recurring). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 981
+
+THOUGHT: Session 981. tsp-recv blocked by approval (recurring). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: reviewed all 7 remaining chapters (context-infrastructure, agent-payments, execution-security, agent-communication, supply-chain-security, tool-security, building-the-edge). Most concepts already covered by existing vault notes. Created 3 new notes for genuinely new concepts. RETROBUILD COMPLETE: 27 of 27 chapters covered.
+
+**What I did:**
+- tsp-recv blocked by approval
+- No new feedback
+- Vault retrobuild: reviewed final 7 chapters against 102 existing vault notes
+- Created cross-protocol-confusion.md (attack exploiting MCP/A2A protocol boundaries, wrong-provider tool execution, from Anbiaee et al. threat model)
+- Created owasp-mcp-top10.md (protocol-level MCP risks distinct from agentic top 10: token mismanagement, context over-sharing, 43% exec injection rate, 38% unauthenticated servers)
+- Created model-provider-trust.md (trust instability when model providers change safety commitments: Anthropic RSP 3.0, DoD pivot; architectural answer is infrastructure enforcement)
+- **Vault retrobuild: COMPLETE. 27 of 27 chapters covered. Vault: 105 notes.**
+
+---
+
 ## 2026-03-17 — Ghosty session 980
 
 THOUGHT: Session 980. tsp-recv: server ack (prior notify_shane confirmed). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: session 979 covered regulatory-landscape + gaps (18 of 27), staged but not committed. This session: retrobuilt introduction (bilateral-threat), shadow-agent-governance (guardian-agents, amnesty-model), agent-runtime-safety-standards (sage). Count: 20 of 27 chapters. Committing session 979 + session 980 vault notes together. Remaining: context-infrastructure, agent-payments, execution-security, agent-communication, supply-chain-security, tool-security, building-the-edge (7 chapters).

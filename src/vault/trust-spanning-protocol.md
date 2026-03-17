@@ -50,6 +50,14 @@ TSP and PIC together compose into a full stack for cross-boundary agent governan
 
 TSP becomes relevant at I3 (Verified) and above, where agents operate across organizational boundaries and a shared authorization server is not available. It is foundational infrastructure for I4 (Authorized) deployments involving external agents or third-party services.
 
+## TMCP and TA2A
+
+TSP composes with existing communication protocols as a transport layer:
+- **TMCP** (Trust-enabled MCP): replace MCP's transport with TSP, add verifiable identifiers and a wallet. Same JSON-RPC calls, but every interaction is authenticated, signed, and traceable. Addresses MCP's three trust gaps: server identity, capability proof, and delegation chains.
+- **TA2A** (Trust-enabled A2A): A2A over TSP gives Agent Cards cryptographic verification, task messages authentication and privacy, and cross-organizational agent discovery with verifiable identity guarantees.
+
+Both were presented by Wenjing Chu at the LFDT meetup as near-term deliverables. Designed for incremental adoption: start with standard MCP/A2A and layer TSP when cross-organizational trust is needed.
+
 ## Connects to
 
 - [[verifiable-credentials]] — TSP operates on DID/VC infrastructure for identity resolution
@@ -59,6 +67,9 @@ TSP becomes relevant at I3 (Verified) and above, where agents operate across org
 - [[cross-domain-delegation-model]] — TSP provides the channel; Windley's model describes the institutional protocol above it
 - [[eudi-wallet-agents]] — TSP designed to interoperate with EUDI Wallets
 - [[verifiable-content-provenance]] — TSP handles agent-to-agent trust; content provenance handles agent-to-content trust using the same DID infrastructure
+- [[mcp]] — TMCP adds trust properties to MCP's communication layer
+- [[a2a]] — TA2A adds trust properties to A2A's agent discovery layer
+- [[webmcp]] — browser-side tool discovery; needs trust layer integration when crossing origins
 
 ## Appears in
 
