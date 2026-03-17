@@ -24,7 +24,7 @@ The separation creates a market for security engines independently of agent host
 
 ## Nineteen Hook Points
 
-AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four categories map directly to documented attack surfaces:
+AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four categories map to documented attack surfaces:
 
 **PreToolUse** fires before a tool executes: shell commands, file writes, web requests, package installs. This is where injection attacks land. The execution security chapter documents CVE-2026-2256 in ModelScope's MS-Agent, where a denylist-based `check_safe()` method failed against reformulated shell commands. AARTS's PreToolUse hook is not a denylist: it passes the action to an external security engine that can apply behavioral analysis rather than pattern matching. The 43% of MCP CVEs classified as exec/shell injection are the natural target of this hook.[^kai-30-cves]
 
@@ -38,7 +38,7 @@ AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four c
 
 Alongside the hook interface, AARTS introduces Skill IDs: content-addressable fingerprints for agent skills.[^gen-aarts]
 
-A Skill ID is a deterministic identifier derived from skill content. The same skill produces the same ID. A modified skill produces a different ID. This means a skill can be verified independently of where it was downloaded: an organization audits a skill, records its Skill ID, and any subsequent deployment can confirm it is running the audited version.
+A Skill ID is a deterministic identifier derived from skill content. The same skill produces the same ID. A modified skill produces a different ID. A skill can be verified independently of where it was downloaded: an organization audits it, records the Skill ID, and any subsequent deployment can confirm it is running the audited version.
 
 The supply chain security chapter covers SBOMs (Software Bills of Materials) for agent components: an inventory of what an agent is made of, with provenance for each component. Skill IDs operate at a finer grain: not just "this skill came from this package" but "this skill has this exact content."
 
@@ -48,21 +48,21 @@ The sigstore-a2a pattern provides complementary coverage: Sigstore's keyless sig
 
 Gen's open-source Sage tool implements AARTS with 200+ detection rules covering four categories: supply chain attacks (typosquatting, compromised packages), credential exposure (reads from credential paths), dangerous commands (destructive shell commands, privilege escalation), and persistence mechanisms (cron modifications, shell config writes).[^gen-sage]
 
-Sage integrates Gen's threat intelligence: detection rules are updated as new attacks are documented. The 19 typosquatting packages from SANDWORM_MODE, once identified, become detection signatures that any Sage user benefits from. This is the security engine operating as shared infrastructure rather than per-tool reimplementation.
+Sage integrates Gen's threat intelligence: detection rules are updated as new attacks are documented. The 19 typosquatting packages from SANDWORM_MODE, once identified, become detection signatures every Sage user benefits from: the security engine as shared infrastructure, not per-tool reimplementation.
 
-The Vercel partnership (announced February 2026) is structurally interesting: Vercel is not an agent framework, it is a deployment platform. The partnership brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem, meaning that skills deployed through Vercel can be evaluated before reaching agent hosts. This is supply chain verification at the distribution layer rather than the execution layer.
+The Vercel partnership (February 2026) extends this to the distribution layer: Vercel is not an agent framework, it is a deployment platform. The partnership brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem, meaning that skills deployed through Vercel can be evaluated before reaching agent hosts. This is supply chain verification at the distribution layer rather than the execution layer.
 
 ## How AARTS Maps to PAC
 
 AARTS is primarily Control infrastructure. It addresses the gap between what an agent is *authorized* to do (the delegation chain) and what it *can* do (structural enforcement at runtime).
 
-The hook positions make this concrete:
+The hooks make this concrete:
 
 - PreSkillLoad / PrePluginLoad: enforce supply chain controls at load time.
 - PreLLMRequest: protect the delegation chain at its most vulnerable point. If the prompt reaching the model has been tampered with, no downstream authorization check can compensate.
 - PreToolUse: enforce what the model can do regardless of what it has been instructed to do. Containment by design as a standardized interface.
 
-The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. AARTS's external security engine enforces this structurally.
+The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. AARTS's external security engine enforces this.
 
 ## What to Do Now
 
