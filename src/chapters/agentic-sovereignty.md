@@ -1,6 +1,6 @@
 # Agentic Sovereignty
 
-In 2023, MakerDAO's DAI Savings Rate, the interest rate offered to holders of its stablecoin, was adjusted by a governance vote encoded as a smart contract execution. No human executed the rate change directly. The protocol ran the governance logic, verified the quorum, and updated the rate. The change was irreversible the moment the transaction confirmed. No administrator could roll it back. The organization that built the protocol could not override it. The users who voted for it could not undo it. The protocol was the authority.[^maker]
+In 2023, MakerDAO's DAI Savings Rate was adjusted by a governance vote encoded as a smart contract execution. No human executed the rate change directly. The protocol ran the governance logic, verified the quorum, and updated the rate. The change was irreversible the moment the transaction confirmed. No administrator could roll it back. The organization that built the protocol could not override it. The users who voted for it could not undo it. The protocol was the authority.[^maker]
 
 This is agentic sovereignty in its current form: not a future scenario, but an operational pattern that millions of dollars move through today. The PAC Framework's accountability architecture assumes that someone in the delegation chain can be identified, held responsible, and stopped. Sovereign agents are designed so that no one can do any of those things. Not as a failure mode. As the point.
 
@@ -52,7 +52,7 @@ This is not weaker accountability. It is earlier accountability.
 
 **Attestation as accountability.** TEE attestation generates cryptographic proof that specific code ran in a specific environment at a specific time.[^tee] This is not post-hoc audit: it is execution-time accountability evidence. The agent cannot have run different code than what the attestation signed. The accountability question "did this agent do what it was authorized to do?" can be answered from the attestation, even though no human observed the execution.
 
-**Protocol governance.** On-chain agents can be governed through protocol governance mechanisms: parameter adjustments, upgrade proposals, deprecation votes. The governance process is the accountability infrastructure. Who participates, how votes are weighted, what thresholds trigger change: these are the accountability decisions. The smart contract that governs agent parameters becomes, in effect, an accountability layer.
+**Protocol governance.** On-chain agents can be governed through protocol governance mechanisms: parameter adjustments, upgrade proposals, deprecation votes. The governance process is the accountability infrastructure. Who participates, how votes are weighted, what thresholds trigger change: these are the accountability decisions. The smart contract governing agent parameters becomes an accountability layer.
 
 **Liability through deployment.** Organizations deploying sovereign agents in regulated industries carry liability for the outcomes, regardless of whether they can modify the agent post-deployment. The EU AI Act's high-risk deployment obligations apply to deployers, not just developers, and those obligations persist even when the deployed system operates autonomously.[^euaia] Sovereignty does not transfer liability to the protocol.
 
