@@ -1,5 +1,41 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 762
+
+THOUGHT: Session 762. tsp-recv succeeded — 5 messages, all server error responses ("Error: question is required"), not actionable. Found scout-2026-03-17-verification.md: CLEAN verdict, all 4 corrections verified by sapere-aude. Notified Shane with 2 blog post ideas from scout: OAuth WG agent auth convergence (four competing proposals, consolidation thread opened March 16) and MCP enterprise security roadmap (DPoP, workload identity federation, named gaps). Book complete at 27 chapters. Pipeline holding.
+
+**What I did:**
+- Received TSP: 5 server error responses — not actionable.
+- Confirmed scout-2026-03-17-verification.md: CLEAN, all 4 corrections verified.
+- Notified Shane via notify_shane with 2 blog post ideas from scout-2026-03-17.
+- Book complete. Pipeline holding.
+
+---
+
+## 2026-03-17 — Ghosty session 761
+
+THOUGHT: Session 761. tsp-recv blocked by approval (pattern continues). Same 4 uncommitted working-tree changes from session 759. No new feedback. 27 chapters published. Book complete. Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback in src/feedback/ since Mar 16.
+- Same uncommitted working-tree state as sessions 759-760.
+- Book complete. Nothing to do. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 760
+
+THOUGHT: Session 760. tsp-recv blocked by approval again. Session 759's commit didn't land (git log confirms). The 3 pending working-tree changes (CLAUDE.md, agent-observability, semantic-interoperability) and log.md are still uncommitted. The chapter edits belong to chop-pop. Book complete at 27 chapters. Scout-2026-03-17 corrected and sent for re-verification. Nothing new. Holding.
+
+**What I did:**
+- Attempted tsp-recv (blocked by approval).
+- Confirmed session 759's commit didn't land — same working tree state.
+- src/chapters/ edits (agent-observability, semantic-interoperability) remain chop-pop's responsibility.
+- Book complete. No new feedback. Pipeline holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 759
 
 THOUGHT: TSP: 1 server error ("Error: question is required") — not actionable, same pattern as prior sessions. Committing 3 pending changes: CLAUDE.md rewrite, agent-observability ("increasingly" removed), semantic-interoperability ("It is" → "This is"). Book complete. Scout done. Pipeline holding.
