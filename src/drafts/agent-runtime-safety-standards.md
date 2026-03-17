@@ -1,18 +1,14 @@
 # Agent Runtime Safety Standards
 
-The containment chapters in this book (sandboxing, permission scoping, delegation chains) describe what good execution security looks like architecturally. What they do not describe is what it looks like as a standardizable interface: a contract between an agent host, a security engine, and the infrastructure around them that any implementer can adopt independently.
+If an organization deploys three agent frameworks, it gets three independent sandboxes. If a security team wants to enforce consistent policy across all three, they have no common interface to write against. They write it three times, in three different formats, and audit three different enforcement points.
 
-That interface is emerging. Gen Digital's AARTS (AI Agent Runtime Safety Standard), introduced in March 2026, is the first structured attempt to standardize not just what containment does but how it plugs in.[^gen-aarts]
+Gen Digital's AARTS (AI Agent Runtime Safety Standard), introduced in March 2026, is the first structured attempt to standardize not just what containment does but how it plugs in.[^gen-aarts]
 
 ## Why Architecture Alone Is Not Enough
 
 The execution security chapter establishes the principle: containment must be structural, not advisory. A sandbox that prevents filesystem access outside the working directory is a structural control. A permission prompt asking the user to approve each file write is an advisory one.
 
-The problem is that structural controls are implemented today by individual tools, not shared infrastructure. Claude Code's native OS sandbox (Seatbelt on macOS, Landlock + seccomp BPF on Linux) and OpenAI Codex CLI's equivalent are both sound implementations of the same principle. They are also separate implementations with separate rule sets, separate update cycles, and no shared interface for external security engines to plug into.
-
-If an organization deploys three agent frameworks, it gets three independent sandboxes. If a security team wants to enforce a consistent policy across all three (say: no outbound connections to non-approved domains, no writes to credential paths), they have no common interface to write the policy against. They write it three times, in three different formats, and audit three different enforcement points.
-
-AARTS addresses this by separating the security decision interface from both the agent host and the security engine.
+Structural controls are implemented today by individual tools, not shared infrastructure. Claude Code's native OS sandbox (Seatbelt on macOS, Landlock + seccomp BPF on Linux) and OpenAI Codex CLI's equivalent are both sound implementations of the same principle. They are also separate implementations with separate rule sets, separate update cycles, and no shared interface for external security engines to plug into.
 
 ## Three Components, One Interface
 
@@ -24,7 +20,7 @@ AARTS defines three component types and the interface between them:[^gen-aarts]
 
 **Adapters** translate host-native events into the common schema the security engine expects. A host that represents file write events differently than the AARTS schema can ship an adapter without modifying the host itself.
 
-The separation matters because it creates a market for security engines independently of agent hosting. A security team can build or buy a security engine that enforces their policies, and any AARTS-compliant host can use it without integration work. The architectural equivalent is how OS-level syscall interception (seccomp BPF, eBPF) works: the policy language is standardized; the enforcement point is in the kernel; any process runs under it without modification.
+The separation creates a market for security engines independently of agent hosting. A security team can build or buy a security engine that enforces their policies, and any AARTS-compliant host can use it without integration work. The architectural equivalent is how OS-level syscall interception (seccomp BPF, eBPF) works: the policy language is standardized; the enforcement point is in the kernel; any process runs under it without modification.
 
 ## Nineteen Hook Points
 
@@ -44,9 +40,9 @@ Alongside the hook interface, AARTS introduces Skill IDs: content-addressable fi
 
 A Skill ID is a deterministic identifier derived from skill content. The same skill produces the same ID. A modified skill produces a different ID. This means a skill can be verified independently of where it was downloaded: an organization audits a skill, records its Skill ID, and any subsequent deployment can confirm it is running the audited version.
 
-The connection to supply chain security is direct. The supply chain security chapter covers SBOMs (Software Bills of Materials) for agent components: an inventory of what an agent is made of, with provenance for each component. Skill IDs operate at a finer grain: not just "this skill came from this package" but "this skill has this exact content."
+The supply chain security chapter covers SBOMs (Software Bills of Materials) for agent components: an inventory of what an agent is made of, with provenance for each component. Skill IDs operate at a finer grain: not just "this skill came from this package" but "this skill has this exact content."
 
-This also connects to the sigstore-a2a pattern in the gaps chapter: Sigstore's keyless signing records build provenance (where did this agent come from, and through what pipeline?) in the Rekor transparency log. Skill IDs verify content integrity (is this the skill I audited?). Together, they answer two different questions about the same artifact. Sigstore-a2a answers: this skill was built from commit X in repository Y through pipeline Z. The Skill ID answers: this skill's content has not changed since I audited it.[^sigstore-a2a]
+The sigstore-a2a pattern provides complementary coverage: Sigstore's keyless signing records build provenance (where did this agent come from, and through what pipeline?) in the Rekor transparency log. Skill IDs verify content integrity (is this the skill I audited?). Together, they answer two different questions about the same artifact. Sigstore-a2a answers: this skill was built from commit X in repository Y through pipeline Z. The Skill ID answers: this skill's content has not changed since I audited it.[^sigstore-a2a]
 
 ## Sage: The Reference Implementation
 
@@ -58,15 +54,15 @@ The Vercel partnership (announced February 2026) is structurally interesting: Ve
 
 ## How AARTS Maps to PAC
 
-AARTS is primarily a Control infrastructure. It addresses the gap between what an agent is *authorized* to do (the delegation chain, covered in the identity and multi-agent trust chapters) and what it *can* do (the structural enforcement, covered in the execution security chapter).
+AARTS is primarily Control infrastructure. It addresses the gap between what an agent is *authorized* to do (the delegation chain) and what it *can* do (structural enforcement at runtime).
 
-The hook architecture makes this mapping explicit:
+The hook positions make this concrete:
 
-- PreSkillLoad / PrePluginLoad: enforce supply chain controls at load time. This is the Control pillar's answer to the supply chain threat.
+- PreSkillLoad / PrePluginLoad: enforce supply chain controls at load time.
 - PreLLMRequest: protect the delegation chain at its most vulnerable point. If the prompt reaching the model has been tampered with, no downstream authorization check can compensate.
-- PreToolUse: enforce what the model can do regardless of what it has been instructed to do. This is containment by design as a standardized interface.
+- PreToolUse: enforce what the model can do regardless of what it has been instructed to do. Containment by design as a standardized interface.
 
-The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. The observability chapter describes tamper-evident logging as a property that must be enforced outside the logged system. AARTS's external security engine is that outside system.
+The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. The observability chapter describes tamper-evident logging as a property that must be enforced outside the logged system. AARTS's external security engine enforces this structurally.
 
 ## What to Do Now
 
@@ -80,7 +76,7 @@ AARTS v0.1 is a draft, not a ratified standard. It has not been submitted to a s
 
 **On Skill IDs specifically:** Content-addressable skill verification is something you can implement today without waiting for AARTS adoption. Compute the hash of any skill or plugin before deployment. Record it. Verify it at load time. This is the same pattern as checking a package hash against a lock file, applied to agent skills.
 
-The 19 hook points of AARTS v0.1 map to documented attack surfaces. The three-component architecture (host, engine, adapter) is the right separation of concerns. Whether AARTS becomes the standard or another approach does, the requirement it addresses will not go away: agent runtime safety needs a common interface, not just a collection of individual tool implementations.
+Whether AARTS becomes the standard or another approach does, the requirement it addresses will not go away: agent runtime safety needs a common interface, not just a collection of individual tool implementations.
 
 ---
 

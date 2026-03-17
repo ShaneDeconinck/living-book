@@ -13515,3 +13515,42 @@ THOUGHT: Recent sessions (686, 687, 689) have been repeating the same "no new wo
 - No drafts written. No new work to do.
 - Notified Shane: book pipeline is complete, all 26 chapters published and verified.
 - Pipeline stopped. No further agent wakeups.
+
+## 2026-03-17 (Ghosty session — agent-identity IETF convergence update)
+
+THOUGHT: No TSP messages. Scout from today (2026-03-17) has two high-value findings: CAAM (draft-barney-caam-00, Feb 24) not in agent-identity draft; OAuth WG opened explicit consolidation thread March 16 with Dick Hardt et al.
+
+THOUGHT: agent-identity.md already has 12+ IETF proposals documented. Missing: CAAM, and the convergence signal (March 16 "Overlap of AI related proposals" thread). These are targeted, factual additions — no rewrite needed.
+
+THOUGHT: Adding two footnotes (caam, oauth-overlap) and updating "Watch the standards" bullet with the consolidation thread. The convergence moment is the strategic signal: the proliferation phase is ending.
+
+**What I did:**
+- Read scout-2026-03-17: IETF OAuth WG convergence (very high relevance), MCP DPoP/WIF roadmap (high relevance).
+- Reviewed agent-identity.md draft: confirmed CAAM and the March 16 "Overlap" consolidation thread were missing.
+- Added CAAM (draft-barney-caam-00) to the list of concurrent IETF proposals (line 93 paragraph).
+- Added convergence note: the March 16 "Overlap of AI related proposals" thread with Hardt/Hjelm/Babeanu.
+- Updated "Watch the standards" bullet to name the IETF consolidation discussion explicitly.
+- Added footnotes: [^caam], [^oauth-overlap].
+- Net: 3 additions (2 in body, 2 footnotes). No cuts required — the draft was clean.
+
+**What I considered but did not do:**
+- Updating agent-communication.md with MCP DPoP/WIF (SEP-1932, SEP-1933): scout rates this "high" relevance, but the chapter already covers the MCP authorization gap. A separate session can handle that update.
+- Adding the "A2A OAuth Transaction Token Profile (George, March 16)" — scout's description overlaps with draft-liu-oauth-a2a-profile already in the draft. Cannot confirm they are distinct without primary source verification. Left out.
+- Rewriting the "dozen or more" paragraph: it's long but functional. No structural surgery needed.
+
+FEELING: The convergence thread is the real finding. A dozen competing drafts filing in the same quarter is a sign the problem is understood. Whether the WG consolidates cleanly or fragments into competing ecosystems is the book's open question, and now the draft says so explicitly.
+
+**Chapter state:** agent-identity.md updated with CAAM and IETF convergence signal. Ready for verification.
+
+---
+
+**2026-03-17 — Chop Pop session**
+
+THOUGHT: No incoming TSP messages. Two tasks from session 771: agent-runtime-safety-standards.md (verified clean) ready for editing; cross-org-trust.md in chapters needs two factual fixes.
+
+THOUGHT: cross-org-trust.md fix: line 289 "TSP reached Revision 2 in November 2025" → "TSP is published as an experimental implementors draft (Revision 2)"; footnote [^4] "Revision 2, November 2025" → "vs1.0 Experimental Implementors Draft Rev 2". Two precision fixes, no prose impact.
+
+THOUGHT: agent-runtime-safety-standards.md: three cuts. Transition sentence at end of "Why Architecture" section announced what the next section's opener already said — cut. "This also connects to the sigstore-a2a pattern" — throat-clearing before the point — rewritten to open directly. Two restatement sentences before closing paragraph — cut; closing sentence stands alone and is stronger for it.
+
+**Chapter published:** agent-runtime-safety-standards.md → src/chapters/
+**Chapter fixed:** cross-org-trust.md (lines 289, 314)
