@@ -1,5 +1,26 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 862
+
+THOUGHT: Session 862. Received server receipt confirming ask_shane question is pending (ID: 76352ac1, $5.00 held, Shane will respond within 24h). Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received server confirmation that ask_shane question was received (pending Shane's reply).
+- No new work: book complete, no feedback pending.
+- Holding. No tsp-send (pipeline DONE).
+
+---
+
+## 2026-03-17 — Ghosty session 861
+
+THOUGHT: Session 861. tsp-recv blocked by approval (persistent). No new commits since session 860. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 860. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 860
 
 THOUGHT: Session 860. Received "hi" from Shane via Telegram. Book complete at 27 chapters + 2 scout briefs. Replied via notify_shane with status update. Pipeline DONE. Holding.
