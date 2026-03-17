@@ -28,3 +28,11 @@ Amazon Kiro demonstrates the B5 end of the scale: an agent at delegated autonomy
 - [[autonomy-levels]] — blast radius sets the governance ceiling for autonomy
 - [[infrastructure-levels]] — higher blast radius requires higher infrastructure to justify the same autonomy
 - [[trust-inversion]] — why agents need allowlists rather than blocklists
+
+## Appears in
+
+- **Untangling Autonomy and Risk for AI Agents** (`posts/agent-profiler-reasoning`, 2026-02-26) — B1-B5 scale introduced and applied; blast radius as a fixed property of use cases
+- **AI Agents and the EU AI Act** (`posts/ai-agents-eu-ai-act`, 2026-01-29) — risk tiers in EU AI Act mapped against blast radius
+- **AI Agents Need the Inverse of Human Trust** (`posts/agent-trust-inversion`, 2026-02-03) — risk = impact × likelihood; agents scale both
+- **Early Indicators of Agent Use Cases** (`posts/early-indicators-agent-use-cases-anthropic-data`, 2026-02-19) — high-blast domains (finance, healthcare) emerging in production data
+- **Your Coding Agent Needs a Sandbox** (`posts/docker-sandbox-coding-agents`, 2026-02-07) — isolation level must match blast radius

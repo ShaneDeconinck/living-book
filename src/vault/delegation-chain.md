@@ -51,6 +51,14 @@ See `src/chapters/multi-agent-trust.md` and `src/chapters/cryptographic-authoriz
 - [[delegation-chain-forensics]] — forensic reconstruction of the chain after an incident
 - [[coordinated-revocation]] — revocation must follow the chain forward, not just cancel the source
 
+## Appears in
+
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — "delegation becomes abdication" — the framing problem
+- **AI Agents Beyond POCs: IAM Emerging Patterns** (`posts/ai-agents-beyond-pocs-iam-emerging-patterns`, 2026-01-03) — proof of continuity and trust-spanning frameworks
+- **Auth for Agent Builders: A Crash Course** (`posts/history-of-auth-dealing-with-legacy`, 2026-01-26) — OBO and delegation chain in the auth evolution
+- **Verifiable Intent: Mastercard and Google Open-Source Agent Authorization** (`posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved`, 2026-03-06) — L2→L3 as a delegation chain with cryptographic attenuation
+- **Trusted AI Agents by Design** (`posts/lfdt-meetup-trust-ecosystems-authority-continuity`, 2026-03-11) — PIC model (Nicola Gallo); authority as relationship not object
+
 ## Sources
 
 - [Deconinck 2026d]: Shane Deconinck, "AI Agents Beyond POCs: IAM Emerging Patterns," shanedeconinck.be, January 2026

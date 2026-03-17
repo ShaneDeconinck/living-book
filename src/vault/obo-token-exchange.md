@@ -42,6 +42,15 @@ OBO + [[verifiable-credentials]]: for cross-organizational delegation, VCs can c
 - [[trust-inversion]] — OBO enforces that the human principal cannot be removed from the authorization record
 - [[accountability-pillar]] — delegation traceability is a core accountability requirement
 
+## Appears in
+
+- **AI Agents Beyond POCs: IAM Emerging Patterns** (`posts/ai-agents-beyond-pocs-iam-emerging-patterns`, 2026-01-03) — OBO as one of three key patterns emerging for agent IAM
+- **Auth for Agent Builders: A Crash Course** (`posts/history-of-auth-dealing-with-legacy`, 2026-01-26) — OBO in the auth evolution timeline; where it fits and where it falls short
+- **AI Agents: Why Context Infrastructure May Be Your Best Long-Term Investment** (`posts/ai-agents-context-infrastructure-long-term-investment`, 2026-02-09) — authority scoping as a pillar of context infrastructure
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — OBO for delegation traceability within a trust domain
+- **Trusted AI Agents by Design** (`posts/lfdt-meetup-trust-ecosystems-authority-continuity`, 2026-03-11) — OBO limitations across trust boundaries; where TSP takes over
+- Explainer: **Understanding OAuth OBO** (`explainers/oauth-obo`) — dedicated explainer
+
 ## Sources
 
 - RFC 8693: OAuth 2.0 Token Exchange

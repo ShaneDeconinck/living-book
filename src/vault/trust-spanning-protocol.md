@@ -60,6 +60,14 @@ TSP becomes relevant at I3 (Verified) and above, where agents operate across org
 - [[eudi-wallet-agents]] — TSP designed to interoperate with EUDI Wallets
 - [[verifiable-content-provenance]] — TSP handles agent-to-agent trust; content provenance handles agent-to-content trust using the same DID infrastructure
 
+## Appears in
+
+- **Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity** (`posts/lfdt-meetup-trust-ecosystems-authority-continuity`, 2026-03-11) — Wenjing Chu's full TSP presentation; TMCP = MCP + TSP as the foundation layer
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — TSP enables strangers to verify each other without a shared identity provider
+- **Auth for Agent Builders: A Crash Course** (`posts/history-of-auth-dealing-with-legacy`, 2026-01-26) — TSP in the auth evolution; the decentralized track
+- **Verifiable Intent: Mastercard and Google Open-Source Agent Authorization** (`posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved`, 2026-03-06) — TSP fills the agent discovery gap VI leaves open
+- Explainer: **Understanding TSP** (`explainers/tsp`) — dedicated explainer
+
 ## Sources
 
 - Linux Foundation Decentralized Trust, Trust Spanning Protocol specification, Revision 2, November 2025

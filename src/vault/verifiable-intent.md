@@ -54,6 +54,11 @@ It maps to the PAC Accountability pillar: the audit trail is not "what did the a
 - [[delegation-chain]] — Layer 2 → Layer 3 is a delegation step with cryptographic attenuation
 - [[trust-inversion]] — the user's constraints are enforced structurally, not by asking the agent to behave correctly
 
+## Appears in
+
+- **Verifiable Intent: Mastercard and Google Open-Source Agent Authorization** (`posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved`, 2026-03-06) — full dedicated post; three-layer SD-JWT architecture, constraint types, selective disclosure, protocol interoperability
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — the problem VI solves: what did the user actually authorize?
+
 ## Sources
 
 - Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026

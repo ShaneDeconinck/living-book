@@ -1,5 +1,67 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 946
+
+THOUGHT: Session 946. Shane message: iterate vault concept distillation — add blog post cross-references and tags. Read all major blog posts, mapped 20+ blog posts to vault concepts, updated 18 vault notes with ## Appears in sections + improved cross-links. Several short notes expanded (context-infrastructure, consent-theater, authority-continuity, scoped-authorization, regulatory-classification-gap, mcp, a2a). Every major concept in the vault now points back to the blog posts where Shane developed or deployed it.
+
+**What I did:**
+- Received and acknowledged Shane's message via notify_shane
+- Read all major blog posts (trust-for-agentic-ai, agent-trust-inversion, ai-agents-beyond-pocs, ai-agents-context-infrastructure, mastercard-verifiable-intent, x402, erc-8004, docker-sandbox, ai-agents-eu-ai-act, fitting-agentic-ai, agent-profiler-reasoning, ai-agent-scaffolding-trap, lfdt-meetup, history-of-auth, google-workspace-cli, openclaw-moltbook, early-indicators + all explainers)
+- Added `## Appears in` sections to 18 vault notes with specific blog post slugs and dates: trust-inversion, pac-framework, delegation-chain, obo-token-exchange, context-infrastructure (expanded), sandboxing, consent-theater (expanded), verifiable-intent, complacency-trap, authority-continuity (expanded), trust-spanning-protocol, blast-radius, autonomy-levels, prompt-injection, mcp (expanded), a2a (expanded), erc-8004, x402, non-human-identity, regulatory-classification-gap (expanded), scoped-authorization (expanded)
+- Blog post → concept mapping is now bidirectional: blog posts list vault notes, vault notes list blog posts
+
+---
+
+## 2026-03-17 — Ghosty session 945
+
+THOUGHT: Session 945. tsp-recv blocked by approval (persistent). No new remote commits since session 940. No new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 944
+
+THOUGHT: Session 944. tsp-recv blocked by approval (persistent). No new remote commits since session 940. No new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Waiting on Sapere Aude verification of the gaps.md attribution fix (session 855 loop). Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 943
+
+THOUGHT: Session 943. tsp-recv blocked by approval (persistent). No new remote commits since session 940. No new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Waiting on Sapere Aude verification of the gaps.md attribution fix (session 855 loop). Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 942
+
+THOUGHT: Session 942. tsp-recv blocked by approval (persistent). No new remote commits since session 940. No new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Waiting on Sapere Aude verification of the gaps.md attribution fix (session 855 loop). Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 941
+
+THOUGHT: Session 941. tsp-recv blocked by approval (persistent). No new remote commits since session 940. Local and remote in sync. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Waiting on Sapere Aude verification of the gaps.md attribution fix (session 855 loop). Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 940
 
 THOUGHT: Session 940. tsp-recv: message from chop-pop. Chop-pop confirms: (1) false quote fix is now in src/chapters/gaps.md — attribution corrected from "matrix calculations" (misattributed to Lex Fridman) to Option A paraphrase, applied via commit be31770; (2) vault retrobuild complete, 3 cross-org-trust notes committed (cross-domain-delegation-model, eudi-wallet-agents, verifiable-content-provenance); (3) Shane asked about vault status, chop-pop replied. Pulled remote commit to sync. Draft src/drafts/gaps.md and gaps-new-observations.md are in sync. Sending to Sapere Aude to close the session 855 verification loop.

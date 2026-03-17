@@ -80,6 +80,12 @@ Sandboxing directly addresses 5 of the [[owasp-agentic-top10]] risks (ASI02, ASI
 - [[semantic-policy-enforcement]] — complementary layer for business-logic constraints
 - [[prompt-injection]] — sandboxing limits blast radius but does not prevent injection
 
+## Appears in
+
+- **Your Coding Agent Needs a Sandbox** (`posts/docker-sandbox-coding-agents`, 2026-02-07) — central thesis; full isolation spectrum and native vs Docker comparison
+- **OpenClaw and Moltbook** (`posts/openclaw-moltbook-trust-fear-ai`, 2026-02-17) — Clawdbot's missing containment; documentation is not a security model
+- **AI Agents Need the Inverse of Human Trust** (`posts/agent-trust-inversion`, 2026-02-03) — containment as the structural implementation of trust inversion
+
 ## Sources
 
 - [Deconinck 2026]: Shane Deconinck, "Your Coding Agent Needs a Sandbox," shanedeconinck.be, February 7, 2026

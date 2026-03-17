@@ -31,6 +31,14 @@ The PAC Framework is a living practice, not a one-time assessment. [[infrastruct
 
 The PAC Agent Profiler (trustedagentic.ai/profiler) applies the framework to specific deployments across six dimensions: [[business-value-tiers]], reliability, [[blast-radius]], [[infrastructure-levels]], governance thresholds, and [[autonomy-levels]]. Autonomy is the dependent variable — the level the agent earns, not the starting point you declare. [Deconinck 2026a]
 
+## Appears in
+
+- **Untangling Autonomy and Risk for AI Agents** (`posts/agent-profiler-reasoning`, 2026-02-26) — full PAC treatment; introduces the six-dimension profiler and the PAC Agent Profiler tool
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — PAC framing introduced as governance infrastructure
+- **AI Agents and the EU AI Act** (`posts/ai-agents-eu-ai-act`, 2026-01-29) — PAC as a lens for regulatory risk classification
+- **AI Agents Need the Inverse of Human Trust** (`posts/agent-trust-inversion`, 2026-02-03) — governance vs reliability distinction, the PAC separation
+- **Early Indicators of Agent Use Cases** (`posts/early-indicators-agent-use-cases-anthropic-data`, 2026-02-19) — blast radius and autonomy applied to domain data
+
 ## Sources
 
 - [Deconinck 2026a]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," shanedeconinck.be, February 26, 2026

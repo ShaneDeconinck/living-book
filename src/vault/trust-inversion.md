@@ -42,6 +42,14 @@ The principle extends beyond end users to agent deployers. Default permissions f
 - [[blast-radius]] — trust inversion limits blast radius by constraining what agents can reach
 - [[delegation-chain]] — trust inversion requires authority attenuation at every hop
 
+## Appears in
+
+- **AI Agents Need the Inverse of Human Trust** (`posts/agent-trust-inversion`, 2026-02-03) — central thesis; the inversion principle articulated in full
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — foundational framing; trust inversion as the core IAM shift
+- **Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First.** (`posts/google-workspace-cli-agent-first-oauth-app-first`, 2026-03-05) — consent theater as trust inversion failure in practice
+- **Your Coding Agent Needs a Sandbox** (`posts/docker-sandbox-coding-agents`, 2026-02-07) — containment by design as the structural implementation
+- **OpenClaw and Moltbook** (`posts/openclaw-moltbook-trust-fear-ai`, 2026-02-17) — "documentation is not a security model" — inversion applies to deployers
+
 ## Sources
 
 - [Deconinck 2026b]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 3, 2026. "Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task."

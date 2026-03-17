@@ -35,6 +35,14 @@ Higher autonomy reduces attentiveness — Bainbridge's irony from 1983. The more
 - [[pac-framework]] — autonomy is the output of the profiler assessment
 - [[trust-inversion]] — autonomy without inversion produces security incidents
 
+## Appears in
+
+- **Untangling Autonomy and Risk for AI Agents** (`posts/agent-profiler-reasoning`, 2026-02-26) — A1-A5 scale introduced; autonomy as the dependent variable of the profiler
+- **Fitting Agentic AI Components in a Mental Model** (`posts/fitting-agentic-ai-components-in-a-mental-model`, 2026-01-06) — human-in-the-loop as autonomy A2; autonomy framing in the mental model
+- **AI Agents and the EU AI Act** (`posts/ai-agents-eu-ai-act`, 2026-01-29) — autonomy level determines regulatory classification
+- **Early Indicators of Agent Use Cases** (`posts/early-indicators-agent-use-cases-anthropic-data`, 2026-02-19) — Anthropic data shows autonomy distribution in practice
+- **Your Coding Agent Needs a Sandbox** (`posts/docker-sandbox-coding-agents`, 2026-02-07) — sandbox requirements scale with autonomy level
+
 ## Sources
 
 - [Deconinck 2026a]: Shane Deconinck, "Untangling Autonomy and Risk for AI Agents," shanedeconinck.be, February 26, 2026

@@ -31,6 +31,13 @@ The [[delegation-chain]] model: authority that can only decrease at each hop mea
 
 NIST February 2026 concept paper on AI agent identity and authorization addresses NHI lifecycle management specifically. [NIST 2026]
 
+## Appears in
+
+- **Auth for Agent Builders: A Crash Course** (`posts/history-of-auth-dealing-with-legacy`, 2026-01-26) — NHI in the auth evolution; service accounts as the legacy problem agents inherit
+- **ERC-8004 Goes Mainnet** (`posts/erc-8004-mainnet`, 2026-01-28) — ERC-8004 as a public identity layer for NHIs crossing org boundaries
+- **Trusted AI Agents by Design** (`posts/lfdt-meetup-trust-ecosystems-authority-continuity`, 2026-03-11) — agents need their own identifiers, not borrowed human credentials
+- **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — agents create intent and need to carry their own identity
+
 ## Sources
 
 - [Huntress 2026]: "2026 Cyber Threat Report," huntress.com, February 2026

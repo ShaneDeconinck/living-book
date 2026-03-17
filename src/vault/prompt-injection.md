@@ -33,6 +33,13 @@ Prompt injection cannot be fully solved at the model layer. Structural defenses:
 
 [[mcp-tool-poisoning]] is the tool-layer variant: the injection is embedded in the MCP tool description field, not in external content the agent reads at runtime.
 
+## Appears in
+
+- **Your Coding Agent Needs a Sandbox** (`posts/docker-sandbox-coding-agents`, 2026-02-07) — sandboxing limits prompt injection blast radius; containment is the defense
+- **Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First.** (`posts/google-workspace-cli-agent-first-oauth-app-first`, 2026-03-05) — ASI01 injection via incoming email; prompt injection as OWASP risk
+- **OpenClaw and Moltbook** (`posts/openclaw-moltbook-trust-fear-ai`, 2026-02-17) — injection discussed in Lex Fridman / Steinberger conversation
+- **Verifiable Intent: Mastercard and Google Open-Source Agent Authorization** (`posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved`, 2026-03-06) — agent compromise via injection can still satisfy VI constraints within bounds
+
 ## Sources
 
 - [Adversa AI 2026]: "2025 AI Security Incidents Report," 2026
