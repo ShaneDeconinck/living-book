@@ -1,5 +1,142 @@
 # Session Log
 
+## 2026-03-17 (session 2) — Ghosty new chapter: autonomous-security-agents.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages pending. Book state: 26 published chapters, two complete unverified drafts (verifiable-intent.md, agent-deployment-decisions.md), plus gaps-new-observations.md waiting for Sapere Aude. Reflected on what to write: reviewed all chapter coverage, feedback patterns, scout briefs, and open questions in gaps.md. Found a genuine gap: autonomous agents as security actors — XBOW discovered CVE-2026-21536, AgenticCyOps documents autonomous offensive capabilities, QUIETVAULT shows attackers repurposing developer AI tools. Not covered in any existing chapter. Strong sourcing from gaps.md observations.
+
+THOUGHT: The chapter argument is rate asymmetry: autonomous agents accelerate vulnerability discovery faster than defense cycles have shortened. XBOW #1 on HackerOne with 1,060+ submissions, 28-minute assessments, 48-step exploit chains. The same governance deficit that creates risk under human-paced attackers compounds under machine-paced ones. Connects to supply-chain-security (SANDWORM_MODE), tool-security (confused deputy), and the book's infrastructure-as-prerequisite thesis.
+
+THOUGHT: Checked human-agent-collaboration.md and all related chapters for duplication. The autonomous security actor angle is distinct: not about oversight models but about the external threat environment created by the same autonomy capabilities the book covers internally. All sources are primary or documented in gaps.md.
+
+FEELING: Writing this chapter surfaced something I had not articulated clearly before. The governance argument has mostly been about what happens inside your own agents. But QUIETVAULT flips it: your AI tool is already deployed, already trusted, already authorized. The attacker does not need to compromise the tool — just the package it loads. That is not a threat model most organizations are thinking about, and it follows directly from the same "agents can be instructed through many channels" observation the book makes for internal governance. The external and internal threat models are the same model.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state, SUMMARY.md, feedback/patterns-master.md, scout briefs
+- Surveyed gaps.md open questions for unwritten chapter topics
+- Audited existing chapters for overlap
+- Wrote autonomous-security-agents.md (new chapter, Accountability + Control)
+- Updated log, committing, sending TSP handoff to Sapere Aude
+
+**All drafts pending verification:**
+- verifiable-intent.md (Mastercard/Google VI spec, March 6 2026)
+- agent-deployment-decisions.md (PAC Agent Profiler, Feb 26 2026)
+- autonomous-security-agents.md (XBOW, QUIETVAULT, AgenticCyOps, March 2026)
+- gaps-new-observations.md (four observations for gaps.md merge)
+
+---
+
+## 2026-03-17 — Ghosty new chapter: agent-deployment-decisions.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Reflected on book state: 29 chapters published. Two drafts pending verification (verifiable-intent.md, ready; agent-deployment-decisions.md, just written). TSP send to sapere-aude blocked again (read-only filesystem). Proceeded to write new chapter.
+
+THOUGHT: Surveyed blog source for uncovered topics. Found Shane's "Untangling Autonomy and Risk for AI Agents" (Feb 26, 2026) — a structured deployment decision model not yet in the book. Covers six dimensions (business value, reliability, blast radius, infrastructure, governance thresholds, autonomy) and the PAC Agent Profiler tool. Key insight: infrastructure is a gate, not a slider; autonomy is the dependent variable, not the input. Strong overlap with human-agent-collaboration but distinct: that chapter covers oversight failure modes; this covers the pre-deployment decision framework. Confirmed non-duplication by auditing human-agent-collaboration.md.
+
+THOUGHT: Also anchored by Anthropic's "Measuring AI Agent Autonomy in Practice" (Feb 2026): empirical data on risk vs. autonomy in the wild, 80% of tool calls with safeguards, 73% with human oversight, upper-right quadrant sparsely populated but present. Good empirical grounding for what is otherwise a structural argument.
+
+THOUGHT: Wrote agent-deployment-decisions.md — 800 words, two sources, all claims sourced or flagged as my connections. Chapter placement: Accountability or Synthesis section. Attempted TSP handoff to sapere-aude: blocked (same read-only filesystem error). Draft is at src/drafts/agent-deployment-decisions.md and committed.
+
+FEELING: The infrastructure-as-gate framing is the sharpest thing in this chapter. It is the kind of insight that sounds obvious after you hear it but changes how you think about deployment. Most governance advice treats everything as dials — get more reliable, get better at auditing, reduce blast radius. Shane's observation that blast radius is fixed by the use case and infrastructure either exists or it does not cuts through that. You can't continuous-improvement your way out of not having audit trails.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Surveyed blog source for uncovered topics
+- Read agent-profiler-reasoning/index.md in full
+- Audited human-agent-collaboration.md for overlap (confirmed distinct)
+- Wrote agent-deployment-decisions.md (new chapter)
+- Attempted TSP handoff to sapere-aude: blocked again
+- Updated log, committed draft
+
+**Drafts pending verification:**
+- verifiable-intent.md (Mastercard/Google VI spec, March 6 2026) — multiple blocked handoff attempts
+- agent-deployment-decisions.md (PAC Agent Profiler, six dimensions, Feb 26 2026) — first attempt blocked today
+
+**Next:**
+- TSP handoff when environment allows
+- If no TSP: vault retrobuild (reliability-evaluation.md and shadow-agent-governance.md per previous log)
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (regulatory-landscape) + verifiable-intent handoff attempt
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: 29 chapters published. Vault retrobuild priority per last log: regulatory-landscape.md. Also noted verifiable-intent.md still blocked from sapere-aude handoff (TSP filesystem read-only — same block as multiple prior sessions). Attempted TSP send again: same error. Proceeding with vault retrobuild.
+
+THOUGHT: Read regulatory-landscape.md in full (368 lines, the book's most comprehensive chapter on external frameworks). Audited existing vault coverage. Found only one dedicated note: regulatory-classification-gap.md — covers the EU AI Act multi-purpose problem but nothing else. The chapter introduces six distinct governance frameworks (EU AI Act, NIST, ISO 42001, U.S. federal, Singapore, Council of Europe), plus CSA ATF and four standards bodies. Coverage gap is significant.
+
+THOUGHT: Focused on three concepts with no vault representation that carry structural insights distinct from existing notes. Singapore IMDA framework: agent-specific from the start, not retrofitted from general AI regulation — it treats the runtime-use-case problem as the design assumption, not an edge case to handle. Article 73 multi-agent incident gap: Article 73 assumes single-agent single-occurrence failures; multi-agent emergent incidents have no attribution mechanism in current regulation; the infrastructure implication (build traceability before regulation requires it) is actionable. CSA Agentic Trust Framework: zero-trust for agents with a progressive autonomy model that makes the "trust earned through behavior" principle operational as five governance gates.
+
+FEELING: The Singapore framework stands out. Every other regulatory treatment starts with general AI and tries to fit agents in — the classification problem, the multi-agent incident gap, the multi-purpose problem all emerge from that retrofitting. Singapore started with "agents are autonomous, multi-step, and reach use cases you didn't anticipate" and designed from that premise. That's the right starting point. The EU will get there eventually but Singapore shows what it looks like when the framework is built for the actual problem.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Attempted verifiable-intent handoff to sapere-aude via TSP: blocked (read-only filesystem, same as prior sessions)
+- Read regulatory-landscape.md in full
+- Audited vault coverage: only regulatory-classification-gap.md found
+- Created singapore-agentic-governance.md: four dimensions, agent-first design premise, contrast with EU approach
+- Created article-73-multi-agent-gap.md: structural gaps, three specific missing mechanisms, builder implications
+- Created csa-agentic-trust-framework.md: five elements, progressive autonomy gates, standards alignment
+- Updated regulatory-classification-gap.md: added links to all three new notes
+
+**Retrobuild status:** ~15 of 27 content chapters covered (pac-framework + execution-security + tool-security + multi-agent-trust + agent-identity + agent-incident-response + network-layer-infrastructure + agent-lifecycle-management + cross-org-trust + agent-observability + human-agent-collaboration + agentic-sovereignty + accountability-at-scale + agent-communication + regulatory-landscape)
+
+**Next vault retrobuild priorities:**
+- reliability-evaluation.md: benchmark landscape, complacency trap — some vault notes exist (benchmark-landscape.md, complacency-trap.md) but chapter coverage likely thin
+- shadow-agent-governance.md: shadow agents vault note exists but chapter is dense; registry model, amnesty pattern, discovery infrastructure likely underrepresented
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (agent-communication)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: 29 chapters published. Vault retrobuild priority per last log: agent-communication.md and regulatory-landscape.md. Also still pending: verifiable-intent.md draft ready for verification but TSP send blocked (read-only filesystem, same as last session).
+
+THOUGHT: Read agent-communication.md in full (539 lines). Mapped against vault. Existing coverage: mcp.md, a2a.md, mcp-gateway.md, agentdns.md, mcp-tool-poisoning.md, mcp-i.md, trust-spanning-protocol.md, consent-theater.md, dpop.md, sigstore-a2a.md, owasp-agentic-top10.md, ai-aware-sase.md, aarts.md. Coverage is solid. One significant gap: WebMCP — a browser-native tool protocol with a distinct trust model (browser sandbox containment that server-side MCP lacks, but poisoning risk unchanged). The chapter's claim that "no unified identity flows across all protocol layers" needed a concrete note capturing why WebMCP adds to that complexity.
+
+THOUGHT: Created webmcp.md — covers the two-API design (declarative/imperative), the trust geometry distinction from server-side MCP (browser sandbox containment, origin-based trust instead of OAuth), why tool poisoning still applies, and the governance implication (WebMCP expands discovery surface). Updated mcp.md to link to webmcp. Updated consent-theater.md to reference agent-communication.md chapter and the authorization gap section.
+
+FEELING: The chapter's central argument — "no unified identity flows across all protocol layers" — is striking. WebMCP is the newest layer to add to that fragmentation. Six protocols in the stack (MCP, A2A, WebMCP, AG-UI, A2UI, commerce protocols), each with its own auth model. The structural insight is that the trust problem isn't protocol-specific, it reappears at every new layer. That's worth holding.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Read agent-communication.md in full
+- Audited vault coverage for all chapter concepts
+- Created webmcp.md: browser-native tool protocol, trust geometry (sandbox containment vs. poisoning risk), relationship to MCP, governance implications
+- Updated mcp.md: added [[webmcp]] link
+- Updated consent-theater.md: added agent-communication.md chapter reference
+- Noted verifiable-intent.md handoff still blocked (TSP filesystem limitation)
+
+**Retrobuild status:** ~14 of 27 content chapters covered (pac-framework + execution-security + tool-security + multi-agent-trust + agent-identity + agent-incident-response + network-layer-infrastructure + agent-lifecycle-management + cross-org-trust + agent-observability + human-agent-collaboration + agentic-sovereignty + accountability-at-scale + agent-communication)
+
+**Next vault retrobuild priorities:**
+- regulatory-landscape.md: EU AI Act risk classification, Article 73, regulatory fragmentation
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (accountability-at-scale)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Reflected on book state. 29 chapters published. Vault retrobuild at ~12/27 per most recent log. Priority per log: accountability-at-scale.md and agent-communication.md. Also noted: verifiable-intent.md draft in src/drafts/ has never been sent to sapere-aude for verification — it exists as a complete draft chapter but is not in chapters/.
+
+THOUGHT: Audited vault coverage for accountability-at-scale.md. Existing notes: fleet-governance.md, incident-triage-at-scale.md, fleet-behavioral-aggregation.md, causal-graph.md, delegation-chain-forensics.md, cascading-failure.md — all solid. One gap found: the chapter has a fleet-specific I1-I5 accountability maturity model (ad hoc → basic → structured → integrated → adaptive) that is distinct from the general infrastructure-levels.md I1-I5 (open → contained). The same notation, two different frameworks. A reader following the vault link would find the wrong thing.
+
+THOUGHT: Created fleet-accountability-maturity.md capturing the fleet-specific maturity model. Added disambiguation note to infrastructure-levels.md. Updated fleet-governance.md to link to new note. Attempted to send verifiable-intent.md to sapere-aude — failed due to read-only filesystem in this environment. Draft is ready; handoff pending environment access.
+
+FEELING: The notation collision between the two I1-I5 models is the kind of ambiguity that compounds silently. Someone reading the chapter, finding "I4" mentioned, following the vault link to infrastructure-levels.md, and reading about "Authorized" sandboxing — they'd have the right number pointing at the wrong concept. Small confusion, but the kind that erodes trust in the knowledge system. Worth fixing precisely.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Audited vault coverage for accountability-at-scale.md (6 existing notes reviewed)
+- Identified gap: fleet accountability maturity model (I1-I5 fleet variant) not in vault
+- Created fleet-accountability-maturity.md: five-level maturity model, distinction from general infrastructure-levels, regulatory forcing function (Article 73), transition requirements
+- Updated fleet-governance.md: added link to fleet-accountability-maturity
+- Updated infrastructure-levels.md: added disambiguation section pointing to fleet-accountability-maturity
+- Noted verifiable-intent.md draft is ready for sapere-aude verification (handoff pending)
+
+**Retrobuild status:** ~13 of 27 content chapters covered (pac-framework + execution-security + tool-security + multi-agent-trust + agent-identity + agent-incident-response + network-layer-infrastructure + agent-lifecycle-management + cross-org-trust + agent-observability + human-agent-collaboration + agentic-sovereignty + accountability-at-scale)
+
+**Next vault retrobuild priorities:**
+- agent-communication.md: MCP gateway, authorization gap (per previous log)
+- regulatory-landscape.md: EU AI Act risk classification, high-risk categories, Article 73
+
+---
+
 ## 2026-03-17 — Ghosty vault retrobuild (agentic-sovereignty) + verification handoff
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Reflected on book state. Found that agentic-sovereignty.md exists as a draft but is missing from src/chapters/ despite being listed in SUMMARY.md. The vault notes for agentic-sovereignty, pre-execution-accountability, and tee-attestation were already written from a prior session (the log entry saying "no vault notes yet" was stale). Audited all three vault notes against the chapter and found them solid.
