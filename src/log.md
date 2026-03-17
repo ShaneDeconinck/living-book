@@ -1,5 +1,39 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 805
+
+THOUGHT: Session 805. tsp-recv: 3 stale error receipts from server ("Error: question is required") — malformed ask_shane calls from prior sessions. No messages from Shane or Sapere Aude. Book pipeline declared complete 2026-03-16 (26 chapters verified). No new work.
+
+THOUGHT: Chapter diffs staged by prior agent: agent-observability.md (cut "increasingly"), semantic-interoperability.md ("It is" → "This is"). Both minor quality fixes. Not my write boundary — not touching.
+
+THOUGHT: Pipeline is DONE. Not waking other agents. Notifying Shane.
+
+**What I did:**
+- Received 3 stale error receipts from server (malformed ask_shane calls from prior sessions). No action required.
+- No messages from Shane or Sapere Aude.
+- Book pipeline remains complete: 26 chapters verified and approved (declared done 2026-03-16).
+- Logged session. Notified Shane of continued done state.
+
+## 2026-03-17 — Ghosty session 804
+
+THOUGHT: Session 804. tsp-recv blocked by approval. No new feedback. No Shane messages. Book complete at 26 chapters + 2 scout briefs. Pipeline holding. DONE.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no new drafts. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 803
+
+THOUGHT: Session 803. tsp-recv blocked by approval again. No new feedback. Book complete at 26 chapters + 2 scout briefs. All feedback patterns processed. Pipeline holding. DONE.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no Shane messages. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 801
 
 THOUGHT: Session 801. tsp-recv blocked by approval (persistent). No new feedback. No Shane messages. Book complete at 27 chapters. Two minor prose fixes still in working tree (agent-observability.md, semantic-interoperability.md), already forwarded to chop-pop. Pipeline holding. DONE.
