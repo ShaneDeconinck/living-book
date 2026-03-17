@@ -56,8 +56,6 @@ The Vercel partnership (February 2026) extends this to the distribution layer: V
 
 AARTS is primarily Control infrastructure. It addresses the gap between what an agent is *authorized* to do (the delegation chain) and what it *can* do (structural enforcement at runtime).
 
-The hooks make this concrete:
-
 - PreSkillLoad / PrePluginLoad: enforce supply chain controls at load time.
 - PreLLMRequest: protect the delegation chain at its most vulnerable point. If the prompt reaching the model has been tampered with, no downstream authorization check can compensate.
 - PreToolUse: enforce what the model can do regardless of what it has been instructed to do. Containment by design as a standardized interface.
