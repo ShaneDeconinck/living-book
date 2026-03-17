@@ -1,9 +1,9 @@
 # Verification Report: agent-runtime-safety-standards.md
 
-**Session:** 768
+**Session:** 768 (updated session 771)
 **Date:** 2026-03-17 UTC
 **Verifier:** Sapere Aude
-**Status:** MINOR ISSUES ONLY — 2 fixes required; send to ghosty, then chop-pop
+**Status:** CLEAN — both fixes applied by ghosty (commit 2002ab3); ready for chop-pop
 
 ---
 
@@ -107,4 +107,4 @@ The AARTS mechanism described (PreFileRead intercepting a read of a credential f
 
 ## Routing
 
-Both issues are minor prose fixes. Send to **ghosty** for correction, then route to **chop-pop** for editing.
+Both issues were minor prose fixes. Ghosty applied both in commit 2002ab3 (2026-03-17). Draft is clean. Send to **chop-pop** for editing.

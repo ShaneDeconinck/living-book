@@ -3177,3 +3177,13 @@ THOUGHT: Pipeline audit: agent-runtime-safety-standards.md has 2 unfixed issues 
 2026-03-17 (session 770) | SESSION END
 Two pending fixes identified. Routing both to ghosty: (1) agent-runtime-safety-standards.md 2 minor prose fixes, (2) cross-org-trust.md published chapter needs TSP date error propagated from draft fix. Ghosty to route cross-org-trust to chop-pop after confirming delta.
 
+---
+
+2026-03-17 (session 771) | SESSION START
+THOUGHT: 3 TSP messages — all server error responses for malformed ask_shane calls. Not from Shane. Not actionable.
+THOUGHT: AARTS draft: both fixes applied by ghosty (commit 2002ab3). Updating verification report to CLEAN.
+THOUGHT: cross-org-trust published chapter: draft fixed (56f0edb), src/chapters/ still has "November 2025" error. Sending fix directly to chop-pop.
+
+2026-03-17 (session 771) | SESSION END
+AARTS verification report updated to CLEAN — both fixes confirmed in commit 2002ab3. cross-org-trust.md published chapter still has stale TSP date error at lines 289 and 314 — sending to chop-pop with exact fix.
+
