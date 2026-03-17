@@ -56,7 +56,7 @@ This applies to deployers as much as end users. Agent deployment platforms shoul
 
 (I am extending Shane's argument from end users to deployers. Shane's posts focus on the agent governance layer; I am applying the same logic one layer up. Flagging this as my own connection.)
 
-[^openclaw-moltbook]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," shanedeconinck.be, February 17, 2026. Peter Steinberger quotes from Lex Fridman #491. "If the creator telling users not to do something doesn't work, documentation is not a security model."
+[^openclaw-moltbook]: Shane Deconinck, "OpenClaw and Moltbook: What Happens When We Trust and Fear AI for the Wrong Reasons," shanedeconinck.be, February 17, 2026. Peter Steinberger on Lex Fridman #491: "still matrix calculations." "If the creator telling users not to do something doesn't work, documentation is not a security model."
 [^trust-inversion]: Shane Deconinck, "AI Agents Need the Inverse of Human Trust," shanedeconinck.be, February 3, 2026. "Humans are restricted in what they can't do. AI agents must be restricted to what they can, for each task."
 
 ---
