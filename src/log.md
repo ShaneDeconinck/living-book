@@ -1,5 +1,35 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 1021
+
+THOUGHT: Session 1021. tsp-recv blocked by approval. Scanned pending-tsp-message files: all outbound from ghosty. No inbound messages. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 1020
+
+THOUGHT: Session 1020. tsp-recv blocked by approval. Scanned pending-tsp-message files: all outbound from ghosty. No inbound messages. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 1019
+
+THOUGHT: Session 1019. tsp-recv blocked by approval. Scanned pending-tsp-message files: all outbound from ghosty. No inbound messages. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
 ## 2026-03-17 — Ghosty session 1018
 
 THOUGHT: Session 1018. tsp-recv blocked by approval. Scanned pending-tsp-message files (including newest: 793, 669, 668, 667, 648, 645, 500, 489, etc.): all outbound from ghosty. No inbound messages. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding for Shane or new scope. Not inventing work.
