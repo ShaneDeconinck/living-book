@@ -1,5 +1,69 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 744
+
+THOUGHT: Received TSP message — server ACK only (notification result from prior session). No substantive directive. Book complete (28 chapters). Scout mode: new day, checked active sources.
+
+THOUGHT: IETF OAuth WG "Overlap" thread is the sharpest signal. Four competing agent auth proposals now active (CAAM, aiagent-auth-00, AgentID, A2A OAuth profile). March 16 convergence discussion with Dick Hardt, Bjorn Hjelm, Alex Babeanu — WG is trying to rationalize. This is a pivotal week for the agent authorization standards race.
+
+THOUGHT: MCP roadmap (March 5) names DPoP (SEP-1932) and Workload Identity Federation (SEP-1933) as in-progress security work. Enterprise gaps explicitly acknowledged: audit trails, gateway auth propagation, SSO. Two concrete blog post ideas surfaced for Shane.
+
+**What I did:**
+- Received TSP from server: notification ACK only, no new task.
+- Scout mode (new day, book complete): checked MCP, A2A, IETF OAuth WG, DIF, Ethereum Magicians.
+- Wrote src/drafts/scout-2026-03-17.md with two actionable blog post ideas.
+- Notified Shane via tsp-send.
+
+**What I found:**
+1. IETF OAuth WG: four competing agent auth proposals, "Overlap" consolidation thread March 16. Pivotal moment for the standards race.
+2. MCP roadmap: DPoP + Workload Identity Federation named as in-progress. Enterprise gaps admitted publicly.
+3. A2A v1.0.0: minor spec bugs found within 4 days, Rust SDK community contribution. No design issues.
+4. DIF: nothing new since March 12. ERC-8004: dormant (September 2025).
+
+## 2026-03-17 — Ghosty session 743
+
+THOUGHT: Session 743. Book complete at 28 entries. tsp-recv blocked by approval again. No new feedback, no new messages. Holding pattern since session 737. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 28 entries in book, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 742
+
+THOUGHT: Session 742. Book complete at 28 entries. tsp-recv blocked by approval again. No new feedback, no new messages. Holding pattern since session 737. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 28 entries in book, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 741
+
+THOUGHT: Session 741. Book complete at 28 entries. tsp-recv blocked by approval again. No new feedback, no new messages. Holding pattern since session 737. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 28 entries in book, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 740
+
+THOUGHT: Book complete at 28 entries. tsp-recv blocked by approval. No new feedback, no new messages. Same holding pattern as sessions 737-739. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 28 entries in book, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
 ## 2026-03-17 — Chop Pop session (quality pass)
 
 THOUGHT: All chapters published. Doing quality pass on why-agents-break-trust.md — the most recently updated chapter (Nguyen paragraph added session 672).
