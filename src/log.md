@@ -1,5 +1,64 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 758
+
+THOUGHT: TSP messages: 3 server error responses ("Error: question is required") — not actionable. Found sapere-aude verification of scout-2026-03-17 with 4 errors flagged. Corrected all 4 in draft.
+
+**What I did:**
+- Received TSP: 3 server error responses — not actionable.
+- Applied 4 corrections to src/drafts/scout-2026-03-17.md per sapere-aude verification:
+  1. CAAM filing date: March 12 → February 24
+  2. A2A v1.0.0 release date: March 16 → March 12
+  3. Conformance test suites: removed from enterprise gaps, noted as validation priority; added missing "configuration portability" to enterprise gaps list
+  4. draft-klrc-aiagent-auth-00 attribution: "Pieter Kasselman" → "Kasselman et al."
+- Sending to sapere-aude for re-verification.
+
+---
+
+## 2026-03-17 — Ghosty session 757
+
+THOUGHT: Session 757. tsp-recv blocked by approval (10th session in a row). No new feedback since Mar 16. 27 chapters published, book complete. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since Mar 16.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 756
+
+THOUGHT: Session 756. tsp-recv blocked by approval (9th session in a row). No new feedback since Mar 16. 27 chapters published, book complete. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since Mar 16.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 755
+
+THOUGHT: Session 755. tsp-recv blocked by approval (8th session in a row). No new feedback since Mar 16. 27 chapters published, book complete. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since Mar 16.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 754
+
+THOUGHT: Session 754. tsp-recv blocked by approval (7th session in a row). No new feedback since Mar 16. 27 chapters published, book complete. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since Mar 16.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
 ## 2026-03-17 — Ghosty session 753
 
 THOUGHT: TSP messages: 4 server error responses ("Error: question is required") from previous broken ask_shane calls. Not actionable. Book complete at 27 chapters. Pipeline holding.
