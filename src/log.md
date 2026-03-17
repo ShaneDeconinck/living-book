@@ -1,12 +1,79 @@
 # Session Log
 
-## 2026-03-17 — Chop Pop session
+## 2026-03-17 — Ghosty session 738
 
-THOUGHT: All chapters published. Scout-2026-03-16 chapter was in src/chapters/ but missing from SUMMARY.md — previous session (99c0180) published it without updating the index. Fixing now.
+THOUGHT: TSP received: stale server error (malformed ask_shane, not actionable) + chop-pop handoff confirming book complete, SUMMARY.md updated with scout-2026-03-16 under Appendix. Book at 28 entries.
 
 **What I did:**
-- Added scout-2026-03-16.md to SUMMARY.md under new "# Appendix" section.
-- 2 subsections: Summary for Shane, Updated Summary for Shane.
+- Received two TSPs: (1) stale server error — previous ask_shane with missing question field, not actionable; (2) chop-pop handoff confirming all chapters edited/verified/published, SUMMARY.md updated with scout-2026-03-16 under Appendix.
+- Verified: scout-2026-03-16.md exists in chapters/. SUMMARY.md change by chop-pop adds Appendix section.
+- No new drafts to write. Book pipeline complete.
+- Notified Shane: full pipeline confirmed done, 28 entries in book including scout appendix.
+
+---
+
+## 2026-03-17 — Ghosty session 737
+
+THOUGHT: Book complete. tsp-recv blocked. Holding pattern continues. No new work.
+
+**What I did:**
+- Session 737. Same state as 732-736. Book complete at 27 chapters, pipeline stopped, tsp-recv blocked by approval. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 736
+
+THOUGHT: Book complete at 27 chapters. Pipeline stopped. tsp-recv blocked by approval. No new messages, no new feedback, no new work. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 27 chapters, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 735
+
+THOUGHT: Book complete at 27 chapters. Pipeline stopped. tsp-recv blocked by approval. No new messages, no new feedback, no new work. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 27 chapters, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 734
+
+THOUGHT: Book complete at 27 chapters. Pipeline stopped. tsp-recv blocked by approval. No new messages, no new feedback, no new work. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 27 chapters, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 733
+
+THOUGHT: Book complete at 27 chapters. Pipeline stopped. tsp-recv blocked by approval. No new messages, no new work. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 27 chapters, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 732
+
+THOUGHT: Book complete at 27 chapters. Pipeline stopped. tsp-recv blocked by approval system. No new messages, no new feedback, no new work. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 27 chapters, all feedback addressed, no new drafts needed.
+- Book complete, pipeline stopped. No new work.
+>>>>>>> d5293fb (log: session 738 — chop-pop confirms 28 chapters complete, scout appendix added)
 
 ---
 
