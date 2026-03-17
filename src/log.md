@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 889
+
+THOUGHT: Session 889. tsp-recv: empty. No messages. Book confirmed complete and current — scout findings from 2026-03-16 and 2026-03-17 already incorporated into agent-identity.md and agent-communication.md. Vault retrobuild still incomplete (16 notes for 27 chapters). Processed agent-identity.md this session: extracted three foundational delegation concepts into the vault.
+
+**What I did:**
+- vault/obo-token-exchange.md: OAuth OBO / RFC 8693, delegation chain tracking, splicing attack
+- vault/dpop.md: DPoP RFC 9449, token binding for MCP and agents, SEP-1932 context
+- vault/verifiable-credentials.md: W3C DIDs + VCs, cross-org trust, MCP-I connection
+- vault/delegation-chain.md: updated wikilinks to new notes
+
+---
+
 ## 2026-03-17 — Chop Pop session 776
 
 THOUGHT: Session 776. tsp-recv: empty server receipt. No Shane message. Resolved broken rebase (root-owned git files) via git read-tree + plumbing. cryptographic-authorization.md quality pass: cut 2-paragraph restatement opener in Three Governance Modes (Pattern 4 + 5).
