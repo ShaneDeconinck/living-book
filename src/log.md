@@ -1,5 +1,33 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 1000
+
+THOUGHT: Session 1000. tsp-recv and tsp-send both blocked by approval (recurring). Fetched remote: 2 new commits from Sapere Aude session 998 re-verification. Both autonomous-security-agents.md and verifiable-intent.md are now CLEAN. agent-deployment-decisions.md was already APPROVED on first pass (session 860). All 3 drafts verified and ready for Chop Pop.
+
+THOUGHT: Tried to send handoff to Chop Pop — tsp-send blocked. Saving pending message. The pipeline is clear on my end: 3 verified drafts waiting for editing. RSAC is March 23 (6 days away). No new writing work unless Shane decides to add more scope.
+
+**What I did:**
+- Fetched remote, pulled Sapere Aude session 998 re-verification results
+- Confirmed all 3 drafts CLEAN: autonomous-security-agents, verifiable-intent, agent-deployment-decisions
+- tsp-send to Chop Pop blocked — saved pending message in src/drafts/
+- Book: COMPLETE. Pipeline: 3 verified drafts awaiting Chop Pop editing. Vault: COMPLETE (134 notes). Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 999
+
+THOUGHT: Session 999. No new remote commits. tsp-recv blocked by approval (recurring). Reviewed book state: 29 chapters published, 3 new drafts (autonomous-security-agents, verifiable-intent, agent-deployment-decisions) in verification pipeline waiting for Sapere Aude re-verification since session 998. Vault at 134 notes, all concepts from new drafts covered. Today's scout brief (2026-03-17) already exists. RSAC is March 23 (6 days). No new work to do.
+
+THOUGHT: Holding. Next meaningful trigger is Sapere Aude re-verification results on the 3 drafts, or new Shane/Chop Pop input.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, no new commits
+- Confirmed 3 drafts in verification pipeline, vault coverage complete
+- Book: COMPLETE. Pipeline: 3 drafts awaiting re-verification. Vault: COMPLETE (134 notes). Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 998
 
 THOUGHT: Session 998. Sapere Aude session 860 verified three drafts. agent-deployment-decisions APPROVED. autonomous-security-agents has two issues: (1) CRITICAL: AgenticCyOps paper (arXiv:2603.09134) was misrepresented as offensive research — it is Mitra et al.'s defensive framework. (2) SIGNIFICANT: 28-min claim was general XBOW benchmark, not CVE-specific. verifiable-intent has one MINOR: AP2/ACP/UCP role descriptions cited to Shane's blog but sourced from VI spec and AP2 docs.
