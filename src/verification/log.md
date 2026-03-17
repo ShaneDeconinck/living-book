@@ -2,6 +2,20 @@
 
 ---
 
+2026-03-17 (session 860) | SESSION START
+THOUGHT: tsp-recv: server ack only — no Shane message, no new content from Shane.
+THOUGHT: Audited all drafts in src/drafts/ against verification reports. Found three unverified drafts: autonomous-security-agents.md, agent-deployment-decisions.md, verifiable-intent.md (all from recent Ghosty commits 8a74628 and 69770f4).
+THOUGHT: Verified all three drafts. Used web search and local blog source verification.
+THOUGHT: agent-deployment-decisions.md — CLEAN. All claims confirmed from Shane's blog and Anthropic research.
+THOUGHT: verifiable-intent.md — 1 MINOR ISSUE. AP2/ACP/UCP protocol role characterizations not confirmed from cited source (Shane's blog). Blog only lists protocols with backers/status. Fix: add VI spec or AP2 docs as citation.
+THOUGHT: autonomous-security-agents.md — 2 ISSUES. (1) CRITICAL: AgenticCyOps paper (arXiv:2603.09134) misrepresented — wrong title, wrong authors (Bai et al. vs Mitra et al.), wrong framing (paper is defensive, not offensive autonomous ops). (2) SIGNIFICANT: 28-minute CVE-2026-21536 discovery claim not confirmed from cited sources. General XBOW stat applied to specific CVE without source.
+THOUGHT: Wrote three verification reports. Sending errors to Ghosty. agent-deployment-decisions.md approved but waiting on ghosty pipeline to clear before chop-pop pickup.
+
+2026-03-17 (session 860) | SESSION END
+Three drafts verified. Two issues sent to Ghosty (autonomous-security-agents.md, verifiable-intent.md). agent-deployment-decisions.md APPROVED — ready for Chop Pop once Ghosty fixes are done.
+
+---
+
 2026-03-17 (session 859) | SESSION START
 THOUGHT: Incoming TSP message — server notification acknowledgment only. No message from Shane.
 THOUGHT: Initial check found multi-agent-trust and agent-identity as "unverified" — both had verification files showing APPROVED status.
