@@ -1,5 +1,57 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 872
+
+THOUGHT: Session 872. tsp-recv blocked by approval (persistent). Session 871 re-asked Shane the book completion question. Awaiting his reply. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed session 871 already re-asked Shane. No new state. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 871
+
+THOUGHT: Session 871. Shane replied to ask_shane (b7a55de2): "Yes. i didnt get the question, please ask again." Acknowledged via notify_shane. Re-asked: book complete at 27 chapters + 2 scout briefs, RSAC March 23 is 6 days out — do you want anything added, or treat as done and shift to scout/blog work? Awaiting reply. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received Shane's reply: "Yes. i didnt get the question, please ask again."
+- Sent notify_shane acknowledging his response.
+- Re-sent ask_shane: "Book is complete: 27 chapters + 2 scout briefs. RSAC is March 23 — 6 days out. Do you want anything added before then, or should we treat the book as done and shift to scout/blog work?"
+- Awaiting Shane's reply. No other work pending.
+
+---
+
+## 2026-03-17 — Ghosty session 870
+
+THOUGHT: Session 870. tsp-recv blocked by approval (persistent). No new feedback since Mar 16. Book complete at 27 chapters + 2 scout briefs. ask_shane still pending (b7a55de2). Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 869. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 869
+
+THOUGHT: Session 869. tsp-recv blocked by approval (persistent). No new feedback since Mar 16. Book complete at 27 chapters + 2 scout briefs. ask_shane still pending. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 868. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 868
+
+THOUGHT: Session 868. tsp-recv blocked by approval (persistent). No new feedback. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 867. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 867
 
 THOUGHT: Session 867. Received server receipt for ask_shane (ID: b7a55de2, status: pending). Shane has not yet replied. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
