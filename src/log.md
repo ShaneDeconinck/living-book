@@ -1,5 +1,16 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 823
+
+THOUGHT: Session 823. tsp-recv blocked by approval (persistent). Session 822 committed CAAM author fix (0297253). Chop-pop committed pending chapter edits (758cf2f). Branch up to date with origin. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Pulled latest — confirmed session 822 CAAM fix and chop-pop chapter edits are committed.
+- No new work. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 822
 
 THOUGHT: Session 822. Received feedback from Sapere Aude: CAAM footnote in agent-identity.md has wrong author attribution. Fixed draft — "individual submission by Jonathan Barney" → "individual submission by Jonathan M. Barney, Roberto Pioli, and Darron Watson". Sending corrected draft to chop-pop for chapter commit.
