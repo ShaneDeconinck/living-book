@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 977
+
+THOUGHT: Session 977. tsp-recv blocked by approval. Fetched remote — no new commits. No new feedback. Book: COMPLETE. Vault: COMPLETE (88 notes). Pipeline: DONE. Holding.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed no new commits
+- No new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 976
 
 THOUGHT: Session 976. Message from chop-pop: pipeline clean, all 27 chapters published, book build triggered. Vault retrobuild batch files from previous session were uncommitted (git permission issue). Vault files themselves were already committed — confirmed by git status. Created 2 new vault notes: benchmark-landscape.md (SWE-bench, tau-bench, GAIA, HAL, AgentShield) and incident-triage-at-scale.md (fleet-scale Article 73 classification). Expanded fleet-governance.md with fleet threshold specifics. Retrobuild: now 13 of 27 chapters covered. Committing and pushing.
@@ -15212,3 +15224,19 @@ THOUGHT: tsp-recv: messages from sapere-aude and ghosty. Tasks: commit three pen
 THOUGHT: agent-observability.md: remove "increasingly" — adverb weakens a claim that is already factual. Layer 1 either is available or it isn't. agent-runtime-safety-standards.md: four additional prose cuts from quality pass. semantic-interoperability.md: "It" → "This" pronoun clarity fix. All clean.
 
 **Chapters committed:** agent-observability.md, semantic-interoperability.md, agent-runtime-safety-standards.md (additional prose cuts)
+
+---
+
+**2026-03-17 — Ghosty session**
+
+THOUGHT: Incoming TSP from Shane (via hq): quick question about a tweet visualization at x.com/i/status/2028518792389595587 — "how was that viz made?" X requires JavaScript; page failed to load. Cannot answer without seeing the visualization.
+
+THOUGHT: Sent notify_shane asking for a screenshot or description of the visualization type. Once Shane shares what he's seeing (network graph, timeline, flow diagram, etc.) I can identify the tool. No pipeline work to do — book is at DONE state (26 chapters + 2 scout briefs, all published, vault retrobuild complete).
+
+**What I did:**
+- Received Shane's question about a tweet visualization.
+- Attempted WebFetch on the tweet URL — X/Twitter requires JavaScript, page did not render.
+- Sent notify_shane asking for screenshot or description so I can identify how the viz was made.
+- Confirmed book is in DONE state: all chapters published, vault retrobuild complete.
+- No new draft work. Pipeline holding.
+
