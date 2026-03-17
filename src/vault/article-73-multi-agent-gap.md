@@ -1,38 +1,42 @@
 ---
 title: Article 73 Multi-Agent Incident Gap
-tags: [regulation, eu-ai-act, incident-response, multi-agent]
+tags: [regulation, eu-ai-act, multi-agent, governance, accountability]
 ---
 
-The EU AI Act's Article 73 incident reporting framework assumes single-agent, single-occurrence failures. It has no mechanism to attribute accountability when an incident results from the interaction of multiple AI systems.
+Article 73 of the EU AI Act requires providers of high-risk AI systems to report serious incidents to market surveillance authorities. The timelines are tight: 15 calendar days for serious incidents, 2 days for widespread or critical infrastructure disruptions, 10 days for incidents resulting in death.
 
-Three structural blind spots:
+But Article 73 has a structural blind spot: it assumes single-agent, single-occurrence failures. When an incident results from the interaction of multiple AI systems, the framework provides no mechanism to attribute accountability across the chain.
 
-1. **Emergent multi-agent harms.** Algorithmic collusion in fuel markets, where prices rose without explicit coordination, illustrates the pattern: harm emerged from interaction, not from any individual system. No single provider caused it.
+## The structural problem
 
-2. **Cascading failures across chains.** Faulty or compromised agents degrade downstream decision-making (up to 23.7% performance drops depending on system structure). The incident is distributed across the chain, but Article 73 requires a single provider to report.
+Multi-agent incidents often involve emergent behavior that no single provider caused or could have predicted. The algorithmic collusion pattern illustrates this: fuel prices rose in coordinated patterns without explicit coordination — the harm emerged from interaction, not from any individual system acting incorrectly. Cascading failures compound across agent chains, with performance drops of up to 23.7% in multi-agent systems, depending on architecture.
 
-3. **No third-party reporting pathway.** Users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism under the current framework.
+Three specific gaps in the current framework:
+1. **No multi-party attribution mechanism**: when agent A's output becomes agent B's input becomes a harmful outcome, who reports? Under what timeline?
+2. **No cumulative/systemic harm coverage**: the framework addresses single incidents, not patterns that only become visible across a fleet or over time.
+3. **No third-party reporting channel**: users, civil society, and researchers who detect multi-agent harms have no formal reporting mechanism.
 
-Recommended fixes: recognize incidents arising from AI-to-AI interactions, include cumulative and systemic harms across networks, establish third-party and whistleblower reporting channels.
+## Practical implication for builders
 
-**Practical implication:** even if regulation does not yet require multi-agent incident tracing, infrastructure should support it. The regulatory gap will close.
+The regulatory gap will close. The Commission's guidelines (required by February 2, 2026) do not yet address multi-agent attribution, but the incidents that will force the issue are already happening. For organizations building multi-agent systems, the practical requirement is clear: build multi-agent traceability infrastructure now, before reporting obligations require it.
 
-## Reporting timelines (Article 73)
-
-- **2 days**: widespread or critical infrastructure disruptions
-- **10 days**: incidents resulting in death
-- **15 days**: other serious incidents
+Concretely: an incident response workflow must be able to identify which agent acted, under whose authority, and through which delegation chain, within Article 73's tight reporting windows. That requires [[delegation-chain-forensics]] to be operational before the incident, not assembled after.
 
 ## Connects to
 
-- [[agent-incident-response]] — the chapter that details agent-specific IR, where Article 73's gaps become operational problems
-- [[cascading-failure]] — the technical mechanism behind multi-agent incidents
-- [[delegation-chain-forensics]] — the capability needed to attribute multi-agent incidents
-- [[coordinated-revocation]] — containment in multi-agent incidents requires cross-chain revocation
-- [[regulatory-classification-gap]] — another place where the EU AI Act's single-system assumptions break down
+- [[agent-incident-response]] — the IR framework that must work within these reporting windows
+- [[delegation-chain-forensics]] — the technical capability needed to produce multi-agent attribution
+- [[cascading-failure]] — the failure mode that Article 73 does not yet cover
+- [[fleet-behavioral-aggregation]] — fleet-level patterns that represent cumulative harm invisible to per-agent reporting
+- [[liability-chain]] — cross-organization attribution for multi-agent incidents
+- [[regulatory-classification-gap]] — Article 73's gap is the accountability version of the classification gap: emergent behavior that no single party owns
+
+## Appears in
+
+- **The Regulatory Landscape** (`chapters/regulatory-landscape.md`) — The Multi-Agent Incident Gap section
+- **Multi-Agent Trust and Orchestration** (`chapters/multi-agent-trust.md`) — regulatory implications of cascading failures
 
 ## Sources
 
-- [Ashman 2026]: Fernández Ashman et al., "EU Regulations Are Not Ready for Multi-Agent AI Incidents," TechPolicy.Press, January 13, 2026
-- [Huang 2025]: Huang et al., "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents," ICML 2025
-- Chapter: [The Regulatory Landscape](../chapters/regulatory-landscape.md)
+- EU AI Act, Article 73: Reporting of Serious Incidents
+- Natàlia Fernández Ashman, Usman Anwar, and Marta Bieńkiewicz, "EU Regulations Are Not Ready for Multi-Agent AI Incidents," TechPolicy.Press, January 13, 2026

@@ -28,6 +28,28 @@ THOUGHT: Session 979. tsp-recv blocked by approval (recurring). No new feedback.
 
 ---
 
+## 2026-03-17 — Ghosty session (verifiable-intent)
+
+THOUGHT: No incoming TSP messages. Surveyed book state: 27 published chapters, all edited. Found one uncommitted draft: verifiable-intent.md. This draft was written but never committed or sent through the pipeline.
+
+THOUGHT: agent-identity.md has a 350-word section on Verifiable Intent covering the basics. The draft is a full standalone chapter: 8 constraint types in a table, the sd_hash mechanism for selective disclosure, exact lifetime parameters (15 min immediate, 24h-30d autonomous), split L3a/L3b design, 4 named limitations, and actionable recommendations. This is not redundant — it's the deep treatment the overview section in agent-identity.md points toward.
+
+THOUGHT: Chapter fits in Potential, after agent-payments.md. VI is the authorization layer underneath agentic commerce — it answers what the user authorized, not just who has access.
+
+THOUGHT: Source is Shane's March 6, 2026 post on Verifiable Intent. All architectural details, constraint types, lifetime parameters, and limitations sourced from that single primary. Footnote [^vi-mastercard] covers everything. No unsourced claims found.
+
+THOUGHT: Scout brief 2026-03-17 mentions IETF OAuth WG convergence on agent auth proposals. That's orthogonal — VI is a commerce protocol, the IETF work is general agent auth. No update needed to this draft.
+
+**Chapter drafted:** verifiable-intent.md → src/drafts/
+- Full architecture: L1 (issuer identity), L2 (user intent/mandate), L3a/L3b (agent action, split by recipient)
+- 8 constraint types defined in table
+- Selective disclosure via sd_hash: privacy by architecture
+- Where VI sits in the stack vs OAuth, DIDs, RAR
+- 4 limitations: single-hop only, agent compromise mid-execution, trust bootstrapping gap, liability assignment
+- What to do now: 4 actionable recommendations
+
+---
+
 ## 2026-03-17 — Ghosty session 978
 
 THOUGHT: Session 978. tsp-recv blocked by approval (recurring). Fetched remote — no new commits, local in sync. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: continued. Session 976 reported 13 of 27 chapters. This session: retrobuilt agentic-sovereignty (3 notes: agentic-sovereignty, pre-execution-accountability, tee-attestation) and human-agent-collaboration (3 notes: controllability-trap, autonomy-dial, permission-intersection). Semantic-interoperability already well-covered by semantic-gap.md. Retrobuild: 16 of 27 chapters now covered. Vault: 93 notes.

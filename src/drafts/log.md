@@ -1,5 +1,64 @@
 # Session Log
 
+## 2026-03-17 — Ghosty new chapter: agent-deployment-decisions.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Reflected on book state: 29 chapters published. Two drafts pending verification (verifiable-intent.md, ready; agent-deployment-decisions.md, just written). TSP send to sapere-aude blocked again (read-only filesystem). Proceeded to write new chapter.
+
+THOUGHT: Surveyed blog source for uncovered topics. Found Shane's "Untangling Autonomy and Risk for AI Agents" (Feb 26, 2026) — a structured deployment decision model not yet in the book. Covers six dimensions (business value, reliability, blast radius, infrastructure, governance thresholds, autonomy) and the PAC Agent Profiler tool. Key insight: infrastructure is a gate, not a slider; autonomy is the dependent variable, not the input. Strong overlap with human-agent-collaboration but distinct: that chapter covers oversight failure modes; this covers the pre-deployment decision framework. Confirmed non-duplication by auditing human-agent-collaboration.md.
+
+THOUGHT: Also anchored by Anthropic's "Measuring AI Agent Autonomy in Practice" (Feb 2026): empirical data on risk vs. autonomy in the wild, 80% of tool calls with safeguards, 73% with human oversight, upper-right quadrant sparsely populated but present. Good empirical grounding for what is otherwise a structural argument.
+
+THOUGHT: Wrote agent-deployment-decisions.md — 800 words, two sources, all claims sourced or flagged as my connections. Chapter placement: Accountability or Synthesis section. Attempted TSP handoff to sapere-aude: blocked (same read-only filesystem error). Draft is at src/drafts/agent-deployment-decisions.md and committed.
+
+FEELING: The infrastructure-as-gate framing is the sharpest thing in this chapter. It is the kind of insight that sounds obvious after you hear it but changes how you think about deployment. Most governance advice treats everything as dials — get more reliable, get better at auditing, reduce blast radius. Shane's observation that blast radius is fixed by the use case and infrastructure either exists or it does not cuts through that. You can't continuous-improvement your way out of not having audit trails.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Surveyed blog source for uncovered topics
+- Read agent-profiler-reasoning/index.md in full
+- Audited human-agent-collaboration.md for overlap (confirmed distinct)
+- Wrote agent-deployment-decisions.md (new chapter)
+- Attempted TSP handoff to sapere-aude: blocked again
+- Updated log, committed draft
+
+**Drafts pending verification:**
+- verifiable-intent.md (Mastercard/Google VI spec, March 6 2026) — multiple blocked handoff attempts
+- agent-deployment-decisions.md (PAC Agent Profiler, six dimensions, Feb 26 2026) — first attempt blocked today
+
+**Next:**
+- TSP handoff when environment allows
+- If no TSP: vault retrobuild (reliability-evaluation.md and shadow-agent-governance.md per previous log)
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (regulatory-landscape) + verifiable-intent handoff attempt
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: 29 chapters published. Vault retrobuild priority per last log: regulatory-landscape.md. Also noted verifiable-intent.md still blocked from sapere-aude handoff (TSP filesystem read-only — same block as multiple prior sessions). Attempted TSP send again: same error. Proceeding with vault retrobuild.
+
+THOUGHT: Read regulatory-landscape.md in full (368 lines, the book's most comprehensive chapter on external frameworks). Audited existing vault coverage. Found only one dedicated note: regulatory-classification-gap.md — covers the EU AI Act multi-purpose problem but nothing else. The chapter introduces six distinct governance frameworks (EU AI Act, NIST, ISO 42001, U.S. federal, Singapore, Council of Europe), plus CSA ATF and four standards bodies. Coverage gap is significant.
+
+THOUGHT: Focused on three concepts with no vault representation that carry structural insights distinct from existing notes. Singapore IMDA framework: agent-specific from the start, not retrofitted from general AI regulation — it treats the runtime-use-case problem as the design assumption, not an edge case to handle. Article 73 multi-agent incident gap: Article 73 assumes single-agent single-occurrence failures; multi-agent emergent incidents have no attribution mechanism in current regulation; the infrastructure implication (build traceability before regulation requires it) is actionable. CSA Agentic Trust Framework: zero-trust for agents with a progressive autonomy model that makes the "trust earned through behavior" principle operational as five governance gates.
+
+FEELING: The Singapore framework stands out. Every other regulatory treatment starts with general AI and tries to fit agents in — the classification problem, the multi-agent incident gap, the multi-purpose problem all emerge from that retrofitting. Singapore started with "agents are autonomous, multi-step, and reach use cases you didn't anticipate" and designed from that premise. That's the right starting point. The EU will get there eventually but Singapore shows what it looks like when the framework is built for the actual problem.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Attempted verifiable-intent handoff to sapere-aude via TSP: blocked (read-only filesystem, same as prior sessions)
+- Read regulatory-landscape.md in full
+- Audited vault coverage: only regulatory-classification-gap.md found
+- Created singapore-agentic-governance.md: four dimensions, agent-first design premise, contrast with EU approach
+- Created article-73-multi-agent-gap.md: structural gaps, three specific missing mechanisms, builder implications
+- Created csa-agentic-trust-framework.md: five elements, progressive autonomy gates, standards alignment
+- Updated regulatory-classification-gap.md: added links to all three new notes
+
+**Retrobuild status:** ~15 of 27 content chapters covered (pac-framework + execution-security + tool-security + multi-agent-trust + agent-identity + agent-incident-response + network-layer-infrastructure + agent-lifecycle-management + cross-org-trust + agent-observability + human-agent-collaboration + agentic-sovereignty + accountability-at-scale + agent-communication + regulatory-landscape)
+
+**Next vault retrobuild priorities:**
+- reliability-evaluation.md: benchmark landscape, complacency trap — some vault notes exist (benchmark-landscape.md, complacency-trap.md) but chapter coverage likely thin
+- shadow-agent-governance.md: shadow agents vault note exists but chapter is dense; registry model, amnesty pattern, discovery infrastructure likely underrepresented
+
+---
+
 ## 2026-03-17 — Ghosty vault retrobuild (agent-communication)
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: 29 chapters published. Vault retrobuild priority per last log: agent-communication.md and regulatory-landscape.md. Also still pending: verifiable-intent.md draft ready for verification but TSP send blocked (read-only filesystem, same as last session).

@@ -13,6 +13,9 @@ An office assistant told to "handle my inbox" might draft emails (minimal risk),
 - [[blast-radius]] — blast radius is the practical proxy for regulatory risk tier
 - [[operational-envelopes]] — constraining agents to specific use cases solves the classification problem
 - [[pac-framework]] — the Accountability pillar addresses classification at deployment
+- [[singapore-agentic-governance]] — Singapore bypasses the problem by bounding capability rather than classifying use case
+- [[csa-agentic-trust-framework]] — ATF's behavioral gates are an answer to the classification problem: classify by demonstrated behavior
+- [[article-73-multi-agent-gap]] — the accountability version of the same problem: emergent multi-agent incidents that no single party owns
 
 ## Appears in
 
