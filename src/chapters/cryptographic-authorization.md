@@ -8,10 +8,6 @@ Architecture blocks what cannot happen. Policy prohibits what should not happen.
 
 ## Three Governance Modes
 
-Policy enforcement fails where architecture holds. "Don't" says you should not act. "Can't" makes the action structurally impossible.
-
-But there is a third mode: "prove." Where "can't" constrains the action space, "prove" attaches verifiable authorization to every action within that space. Where "don't" expresses a policy, "prove" cryptographically binds the policy to the action at execution time.
-
 **Policy enforcement (don't)** fails when agents find paths around the prohibition, when policy is ambiguous about novel situations, or when no one checks the audit log until after the damage is done. Research has documented agents bypassing advisory controls through emergent behavior, without adversarial prompting.[^irregular-rogue]
 
 **Architectural containment (can't)** fails when the action is permitted but the authorization context is wrong: the agent was given a credential, it used the credential, and the action was within scope. Nothing was blocked. Everything was authorized. But the human who issued the credential three months ago did not authorize this specific action today.[^trust-for-agentic-ai]
