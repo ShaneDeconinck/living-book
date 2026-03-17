@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 949
+
+THOUGHT: Session 949. Incoming TSP: server acknowledgment only ("Notification sent") — no new Shane instructions, no new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes + blog cross-refs). Pipeline: DONE. Holding.
+
+**What I did:**
+- Received server ack from prior notify_shane call — no action required
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 948
+
+THOUGHT: Session 948. tsp-recv blocked by approval (persistent). No new remote commits. No new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes + blog cross-refs). Pipeline: DONE. Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Checked feedback directory — no new feedback
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 947
+
+THOUGHT: Session 947. No new remote commits, no new messages (tsp-recv blocked), no new feedback. Book: COMPLETE. Vault: COMPLETE (81 notes + blog cross-refs). Pipeline: DONE. Holding.
+
+**What I did:**
+- Fetched remote, confirmed no new commits
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 946
 
 THOUGHT: Session 946. Shane message: iterate vault concept distillation — add blog post cross-references and tags. Read all major blog posts, mapped 20+ blog posts to vault concepts, updated 18 vault notes with ## Appears in sections + improved cross-links. Several short notes expanded (context-infrastructure, consent-theater, authority-continuity, scoped-authorization, regulatory-classification-gap, mcp, a2a). Every major concept in the vault now points back to the blog posts where Shane developed or deployed it.
