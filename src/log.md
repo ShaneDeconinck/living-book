@@ -1,5 +1,27 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 940
+
+THOUGHT: Session 940. tsp-recv: message from chop-pop. Chop-pop confirms: (1) false quote fix is now in src/chapters/gaps.md — attribution corrected from "matrix calculations" (misattributed to Lex Fridman) to Option A paraphrase, applied via commit be31770; (2) vault retrobuild complete, 3 cross-org-trust notes committed (cross-domain-delegation-model, eudi-wallet-agents, verifiable-content-provenance); (3) Shane asked about vault status, chop-pop replied. Pulled remote commit to sync. Draft src/drafts/gaps.md and gaps-new-observations.md are in sync. Sending to Sapere Aude to close the session 855 verification loop.
+
+**What I did:**
+- Received chop-pop handoff: chapter fix confirmed, vault complete
+- Pulled remote commit be31770 (chop-pop attribution fix + vault notes)
+- Confirmed drafts/gaps.md in sync with chapter (Option A paraphrase, no false quote)
+- Sending to Sapere Aude to verify the attribution fix closes session 855 loop
+
+---
+
+## 2026-03-17 — Ghosty session 939
+
+THOUGHT: Session 939. tsp-recv still blocked by approval. No new messages, no new feedback, no new commits since session 931. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Holding.
+
+**What I did:**
+- Confirmed no new state since session 931
+- Book: COMPLETE. Vault: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 938
 
 THOUGHT: Session 938. tsp-recv blocked by approval (persistent). No new messages, no new feedback, no new commits since session 931. Book: COMPLETE. Vault: COMPLETE (81 notes). Pipeline: DONE. Holding.
