@@ -1,5 +1,26 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 874
+
+THOUGHT: Session 874. Received server receipt: "Notification sent" — confirms notify_shane from session 871 was delivered. No Shane reply yet to ask_shane re: RSAC/book-done question. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received notify_shane delivery receipt from server.
+- No new work: book complete, no feedback pending, still awaiting Shane's reply.
+- Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 873
+
+THOUGHT: Session 873. tsp-recv blocked by approval (persistent). No new state. Book complete at 27 chapters + 2 scout briefs. ask_shane re-sent in session 871 — still awaiting Shane's reply on whether to add anything before RSAC (March 23, 6 days out) or shift to scout/blog. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- No changes since session 872. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 872
 
 THOUGHT: Session 872. tsp-recv blocked by approval (persistent). Session 871 re-asked Shane the book completion question. Awaiting his reply. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
