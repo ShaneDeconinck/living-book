@@ -35,6 +35,7 @@ The [[firewalled-agent-networks]] architecture (dual firewalls at agent trust bo
 - [[firewalled-agent-networks]] — structural architecture for containing cascading failures at communication boundaries
 - [[delegation-chain]] — authority attenuation at each hop limits the scope of cascading damage
 - [[owasp-agentic-top10]] — ASI08: Cascading Failures; ASI03: Identity and Privilege Abuse (compounded in chains)
+- [[coordinated-revocation]] — IR containment for cascading failures requires revocation that follows the chain
 
 ## Sources
 

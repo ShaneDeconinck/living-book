@@ -48,6 +48,8 @@ See `src/chapters/multi-agent-trust.md` and `src/chapters/cryptographic-authoriz
 - [[infrastructure-levels]] — I4 infrastructure requires scoped authorization; without it, delegation is untracked
 - [[shadow-agents]] — agents without delegation chains cannot be governed; accountability requires traceability
 - [[trust-inversion]] — trust inversion requires that delegation chains only attenuate authority
+- [[delegation-chain-forensics]] — forensic reconstruction of the chain after an incident
+- [[coordinated-revocation]] — revocation must follow the chain forward, not just cancel the source
 
 ## Sources
 
