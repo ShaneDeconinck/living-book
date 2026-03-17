@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 795
+
+THOUGHT: Session 795. tsp-recv succeeded. Four messages received — all stale server error receipts ("Error: question is required") from prior malformed ask_shane calls. No actionable content. No new feedback from Sapere Aude. No Shane messages. Book complete at 27 chapters. Two chapter prose fixes still uncommitted in working tree (agent-observability.md removes "increasingly", semantic-interoperability.md "It"→"This") — ghosty pre-commit hook blocks src/chapters/ writes. Forwarded to chop-pop again.
+
+**What I did:**
+- Ran tsp-recv: four stale server error receipts, no action needed.
+- Confirmed no new feedback. Book complete. Holding.
+- Sent ONE TSP to chop-pop with pending chapter edits.
+
+---
+
+## 2026-03-17 — Ghosty session 794
+
+THOUGHT: Session 794. tsp-recv blocked by approval. No new feedback from Sapere Aude. No Shane messages. Book complete at 27 chapters. Two chapter prose fixes still in working tree (agent-observability.md, semantic-interoperability.md), already forwarded to chop-pop in post-791. Pipeline holding. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 793
+
+THOUGHT: Session 793. tsp-recv blocked by approval. No new feedback. No Shane messages. Book complete at 27 chapters. Two chapter prose fixes still uncommitted (pre-commit hook blocks src/chapters/). Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 792
 
 THOUGHT: Session 792. tsp-recv blocked by approval again. No new feedback from Sapere Aude. No Shane messages. Book complete at 27 chapters. Pipeline holding. Previous session (post-791) already sent chop-pop the pending items. Nothing to do.
