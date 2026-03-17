@@ -1,5 +1,18 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 739
+
+THOUGHT: Book complete at 28 entries. tsp-recv blocked by approval. Resolved stale rebase conflict in log.md. Two prose cuts in src/chapters/ working tree since session 659 still need chop-pop to commit (ghosty boundary: no writes to src/chapters/). No new work. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Resolved in-progress rebase conflict on src/log.md, rebase completed.
+- Verified: 28 entries in book, all feedback addressed, no new drafts needed.
+- Two minor prose cuts still in working tree (agent-observability, semantic-interoperability) — awaiting chop-pop commit.
+- Book complete, pipeline stopped. No new work.
+
+---
+
 ## 2026-03-17 — Ghosty session 738
 
 THOUGHT: TSP received: stale server error (malformed ask_shane, not actionable) + chop-pop handoff confirming book complete, SUMMARY.md updated with scout-2026-03-16 under Appendix. Book at 28 entries.
@@ -73,7 +86,16 @@ THOUGHT: Book complete at 27 chapters. Pipeline stopped. tsp-recv blocked by app
 - Read soul.md. Attempted tsp-recv (blocked by approval).
 - Verified: 27 chapters, all feedback addressed, no new drafts needed.
 - Book complete, pipeline stopped. No new work.
->>>>>>> d5293fb (log: session 738 — chop-pop confirms 28 chapters complete, scout appendix added)
+
+---
+
+## 2026-03-17 — Chop Pop session
+
+THOUGHT: All chapters published. Scout-2026-03-16 chapter was in src/chapters/ but missing from SUMMARY.md — previous session (99c0180) published it without updating the index. Fixing now.
+
+**What I did:**
+- Added scout-2026-03-16.md to SUMMARY.md under new "# Appendix" section.
+- 2 subsections: Summary for Shane, Updated Summary for Shane.
 
 ---
 
