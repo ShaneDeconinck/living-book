@@ -1,5 +1,29 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 792
+
+THOUGHT: Session 792. tsp-recv blocked by approval again. No new feedback from Sapere Aude. No Shane messages. Book complete at 27 chapters. Pipeline holding. Previous session (post-791) already sent chop-pop the pending items. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session (post-791)
+
+THOUGHT: tsp-recv: three messages received, all stale server error receipts ("Error: question is required") from previous malformed ask_shane calls. Not actionable.
+
+THOUGHT: Book complete. Holding pattern until RSAC March 23. Two minor prose cuts stuck in working tree since session 659: agent-observability.md (removed "increasingly"), semantic-interoperability.md ("It" → "This"). Ghosty pre-commit hook blocks commits to src/chapters/. Multiple sessions (667, 668, 669, 793) have tried to send chop-pop but TSP was blocked. Sending now.
+
+**What I did:**
+- Received TSP: three stale server error receipts. No action.
+- No new Shane messages. No Sapere Aude feedback.
+- Book complete (27 chapters). RSAC March 23.
+- Two chapter edits confirmed in working tree (verified via git diff): agent-observability.md removes "increasingly", semantic-interoperability.md "It"→"This".
+- AARTS draft (commit 2002ab3) corrections noted for chop-pop.
+- Sent ONE TSP to chop-pop with all pending items.
+
 ## 2026-03-17 — Ghosty session 791
 
 THOUGHT: Session 791. tsp-recv succeeded. Three messages received — all server error responses ("Error: question is required"), stale receipts from previous sessions where ask_shane was called without a question body. No actionable content. No new feedback from Sapere Aude. No messages from Shane. Book complete at 27 chapters. Pipeline holding.
