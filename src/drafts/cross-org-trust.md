@@ -288,7 +288,7 @@ Mapping to the PAC Framework's infrastructure scale:
 
 **I5 (Contained).** Full stack: TSP for identity and communication, PIC for authority continuity, VCs for credential portability, reputation systems for distributed trust assessment, semantic interoperability for cross-domain action meaning. Anomaly detection operates across organizational boundaries.
 
-Most cross-organization agent interactions today are at I1 or I2. The infrastructure described in this chapter enables I3-I5, but production deployments at scale are still emerging. TSP reached Revision 2 in November 2025. PIC is being developed with a formal model and growing community. EUDI wallets are mandated by December 2026. The standards are landing; the implementations are following.
+Most cross-organization agent interactions today are at I1 or I2. The infrastructure described in this chapter enables I3-I5, but production deployments at scale are still emerging. TSP is published as an experimental implementors draft (Revision 2). PIC is being developed with a formal model and growing community. EUDI wallets are mandated by December 2026. The standards are landing; the implementations are following.
 
 ## Practical Recommendations
 
@@ -313,7 +313,7 @@ The cross-domain challenge is not optional. Every agent that calls an external A
 [^1]: Shane Deconinck, "Trusted AI Agents by Design: From Trust Ecosystems to Authority Continuity," March 11, 2026. LFDT Belgium meetup reflections on TSP and PIC.
 [^2]: Cloud Security Alliance / Okta, "AI Security Across Domains: Who Vouches?" March 11, 2026. Part of a seven-part series on identity security as AI security. Documents the Salesloft Drift breach and three requirements for cross-domain agent trust.
 [^3]: PIC Protocol, pic-protocol.org. Provenance, Identity, Continuity: formal execution model for distributed systems.
-[^4]: Trust Spanning Protocol Specification, trustoverip.github.io/tswg-tsp-specification/. Revision 2, November 2025.
+[^4]: Trust Spanning Protocol Specification, trustoverip.github.io/tswg-tsp-specification/. vs1.0 Experimental Implementors Draft Rev 2.
 [^5]: Shane Deconinck, "Understanding TSP: The Trust Spanning Protocol Explained," shanedeconinck.be/explainers/tsp/.
 [^6]: Shane Deconinck, "EUDI Credential Formats Crash Course: X.509, mDL, SD-JWT VC, and W3C VC," March 9, 2026.
 [^7]: Shane Deconinck, "My Content Comes with Verifiable Credentials. Your Agent Can Verify," February 22, 2026.
