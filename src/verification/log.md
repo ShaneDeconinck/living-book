@@ -2,6 +2,17 @@
 
 ---
 
+2026-03-17 SESSION (812 addendum)
+
+THOUGHT: Incoming messages are stale error receipts from server — no Shane message. Checking for unverified drafts.
+THOUGHT: agent-identity was updated in session 812 (commit 6009e57) after last verification (session 739). Need re-verify of new additions.
+THOUGHT: Verified CAAM draft-barney-caam-00 against IETF Datatracker — exists, correct date, but WRONG author (3 authors, not just Jonathan Barney).
+THOUGHT: OAuth overlap thread verified clean — exists March 16, named contributors confirmed as active repliers.
+THOUGHT: Huntress 230K fix confirmed clean — figure removed from footnote.
+THOUGHT: One error found in CAAM footnote. Sending to ghosty. Draft otherwise clean.
+
+---
+
 2026-03-17 SESSION START (805+)
 THOUGHT: tsp-recv: 4 stale server error receipts ("question is required"). No Shane message. Same pattern as sessions 770/773/791/795/798/802/805.
 THOUGHT: All 34 drafts have matching verification reports (confirmed session 798). Pipeline clean. Per CLAUDE.md: notify Shane, do NOT send empty handoffs.

@@ -3,8 +3,79 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean), 739 (chain-splicing/AgentID additions + Huntress 230K figure)
-**Status:** ONE ISSUE — Session 739 found Huntress "230,000+ organizations" figure unconfirmed. Sending to ghosty for fix. Chain-splicing and AgentID additions flagged low-risk/unverified.
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean), 739 (chain-splicing/AgentID additions + Huntress 230K figure), 812 (CAAM/convergence additions + Huntress fix)
+**Status:** ONE ISSUE — Session 812 found CAAM footnote has wrong author attribution. Sending to ghosty for fix. Huntress 230K fix confirmed clean. OAuth overlap thread confirmed clean.
+
+---
+
+## Session 812 Verification Addendum (2026-03-17)
+
+**Commit verified:** 6009e57 — "agent-identity: huntress fix + CAAM/convergence additions"
+
+### 1. Huntress 230K Fix — CONFIRMED CLEAN
+
+Session 739 flagged: `[^huntress]` footnote contained unconfirmed "230,000+ organizations" figure.
+
+Ghosty's fix removes this figure. The footnote now reads:
+> "Analysis of 4.6 million endpoints and 9.4 million identities."
+
+The "230,000+ organizations" text is gone. CLEAN.
+
+---
+
+### 2. CAAM (draft-barney-caam-00) — ERROR FOUND
+
+**Claim in footnote [^caam]:**
+> "individual submission by Jonathan Barney, February 24, 2026"
+
+**Verified against IETF Datatracker (datatracker.ietf.org/doc/draft-barney-caam/):**
+
+- Draft exists: YES
+- Title "Contextual Agent Authorization Mesh (CAAM)": CORRECT
+- Draft identifier draft-barney-caam-00: CORRECT
+- Submission date February 24, 2026: CORRECT
+- Individual submission (not WG draft): CORRECT
+- Author attribution: **WRONG** — the draft has three authors:
+  1. Jonathan M. Barney
+  2. Roberto Pioli
+  3. Darron Watson
+
+The footnote attributes it solely to Jonathan Barney. The other two co-authors must be included.
+
+**Description "token delegation framework":** Acceptable shorthand. The draft is technically an OAuth 2.0 Token Exchange extension with contextual authorization and purpose-bound delegation. Not incorrect, but simplified.
+
+**REQUIRED FIX:** Change footnote [^caam] to include all three authors.
+
+---
+
+### 3. IETF OAuth WG "Overlap of AI related proposals" Thread — CONFIRMED CLEAN
+
+**Claim in footnote [^oauth-overlap]:**
+> "mailarchive.ietf.org/arch/browse/oauth/, March 16, 2026. Thread opened to rationalize concurrent agent authorization proposals. Active contributors include Dick Hardt, Bjorn Hjelm, and Alex Babeanu."
+
+**Verified against IETF OAuth WG mailing list archive:**
+
+- Thread exists: YES
+- Thread title "[OAUTH-WG] Overlap of AI related proposals": CORRECT
+- Date March 16, 2026: CORRECT
+- Archive location mailarchive.ietf.org/arch/browse/oauth/: CORRECT
+- Dick Hardt, Bjorn Hjelm, Alex Babeanu as "active contributors": CORRECT (verified as reply contributors in the thread)
+- Characterization as rationalizing overlapping proposals: ACCURATE
+
+CLEAN.
+
+---
+
+### Session 812 Summary
+
+| Item | Status |
+|------|--------|
+| Huntress 230K removal | CLEAN |
+| CAAM draft exists and details | CLEAN (except author) |
+| CAAM author attribution | **ERROR** — 3 authors, not 1 |
+| OAuth overlap thread | CLEAN |
+
+**Action:** Sending CAAM author error to ghosty for fix.
 
 ---
 
