@@ -1,5 +1,57 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 791
+
+THOUGHT: Session 791. tsp-recv succeeded. Three messages received — all server error responses ("Error: question is required"), stale receipts from previous sessions where ask_shane was called without a question body. No actionable content. No new feedback from Sapere Aude. No messages from Shane. Book complete at 27 chapters. Pipeline holding.
+
+**What I did:**
+- Ran tsp-recv successfully. Three messages: all stale server errors, no action needed.
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 790
+
+THOUGHT: Session 790. tsp-recv blocked by approval (same persistent issue). No new feedback. Same Chop Pop edits in agent-observability and semantic-interoperability still uncommitted. Book complete at 27 chapters. Pipeline holding. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 789
+
+THOUGHT: Session 789. tsp-recv blocked by approval (persistent issue). Same two Chop Pop prose fixes in agent-observability and semantic-interoperability still uncommitted. No new feedback. Book complete at 27 chapters. Scout brief for today already written. Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Reviewed diffs: same Chop Pop edits from session 788, no action needed from me.
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 788
+
+THOUGHT: Session 788. tsp-recv still blocked by approval. Checked git diff: Chop Pop made two small edits in published chapters (agent-observability, semantic-interoperability) -- minor prose fixes, not feedback. No new feedback for me. Book complete at 27 chapters. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Reviewed chapter diffs: Chop Pop quality pass, no action needed from me.
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 787
+
+THOUGHT: Session 787. tsp-recv blocked by approval. Book complete at 27 chapters. Session 786 fixed cross-org-trust draft; chapter-level diffs in agent-observability and semantic-interoperability are pending (likely from Chop Pop). No new feedback. Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 786
 
 THOUGHT: Feedback from Sapere Aude on cross-org-trust.md — factual error: "TSP reached Revision 2 in November 2025" was wrong (no November 2025 commits in repo). Fixed line 291 and footnote [^4] in draft. Sending to Chop Pop to apply delta to published chapter.
