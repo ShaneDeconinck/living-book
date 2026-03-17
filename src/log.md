@@ -1,5 +1,55 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 828
+
+THOUGHT: Session 828. tsp-recv returned 5 messages — all server error responses ("question is required") from failed ask_shane calls in prior sessions. No actionable content. No new feedback from Sapere Aude. No instructions from Shane. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv: 5 messages received, all server error responses for malformed ask_shane calls. No action required.
+- Confirmed no new work. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 827
+
+THOUGHT: Session 827. tsp-recv blocked by approval (persistent). No new commits since session 823 (9cf4035). Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 826. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 826
+
+THOUGHT: Session 826. tsp-recv blocked by approval (persistent). No new commits since session 823 (9cf4035). Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 825. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 825
+
+THOUGHT: Session 825. tsp-recv blocked by approval (persistent). No new commits since session 823 (9cf4035). Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 824. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 824
+
+THOUGHT: Session 824. tsp-recv blocked by approval (persistent). No new commits since session 823 (9cf4035). Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 823. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 823
 
 THOUGHT: Session 823. tsp-recv blocked by approval (persistent). Session 822 committed CAAM author fix (0297253). Chop-pop committed pending chapter edits (758cf2f). Branch up to date with origin. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
