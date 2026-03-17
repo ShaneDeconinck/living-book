@@ -1,5 +1,36 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 860
+
+THOUGHT: Session 860. Received "hi" from Shane via Telegram. Book complete at 27 chapters + 2 scout briefs. Replied via notify_shane with status update. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received "hi" from Shane.
+- Replied via notify_shane with book status summary.
+- No new work: book complete, no feedback pending.
+
+---
+
+## 2026-03-17 — Ghosty session 859
+
+THOUGHT: Session 859. tsp-recv blocked by approval (persistent). No new commits since session 858. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 858. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 858
+
+THOUGHT: Session 858. tsp-recv blocked by approval (persistent). No new commits since session 857. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 857. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 857
 
 THOUGHT: Session 857. tsp-recv blocked by approval (persistent). No new commits since session 856. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
