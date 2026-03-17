@@ -28,8 +28,6 @@ Agent actions are none of these things. The combination of dynamic intent, runti
 
 ## The "Close a Deal" Problem in Practice
 
-This is the default condition for any agent operating across enterprise boundaries without prior semantic agreement.[^lfdt-meetup]
-
 Consider procurement. Vendor A deploys an agent authorized to "negotiate purchase terms." Vendor B deploys an agent authorized to "manage supplier relationships." Both agents have cryptographically verified delegations. TSP gives them authenticated channels. PIC guarantees neither can exceed its granted authority. But "negotiate" means different things:
 
 - Vendor A's procurement department defines negotiation as: propose, counter, accept, or escalate to a human.

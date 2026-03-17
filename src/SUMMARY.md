@@ -100,6 +100,7 @@
   - [Verifiable Credentials as the Trust Carrier](chapters/cross-org-trust.md#verifiable-credentials-as-the-trust-carrier)
   - [Practical Recommendations](chapters/cross-org-trust.md#practical-recommendations)
 - [Semantic Interoperability for Agents](chapters/semantic-interoperability.md)
+  - [Identity Is Solved. Authority Is Advancing. Semantics Are Not.](chapters/semantic-interoperability.md#identity-is-solved-authority-is-advancing-semantics-are-not)
   - [Why Credentials Solved It and Actions Have Not](chapters/semantic-interoperability.md#why-credentials-solved-it-and-actions-have-not)
   - [Interim Approaches](chapters/semantic-interoperability.md#interim-approaches)
   - [What to Do Now](chapters/semantic-interoperability.md#what-to-do-now)
