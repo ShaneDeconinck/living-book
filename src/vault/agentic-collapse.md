@@ -20,6 +20,7 @@ The defense: treat all agent-invoked tool parameters as untrusted input at the t
 - [[mcp-tool-poisoning]] — different attack vector, same principle: the LLM is the delivery mechanism
 - [[containment-by-design]] — structural containment at the tool boundary prevents agentic collapse
 - [[infrastructure-in-the-loop]] — tool-boundary validation must be architectural, not advisory
+- [[xbow]] — autonomous agents can find agentic collapse paths at machine speed
 
 ## Sources
 

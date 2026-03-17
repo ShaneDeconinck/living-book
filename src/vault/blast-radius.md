@@ -28,6 +28,7 @@ Amazon Kiro demonstrates the B5 end of the scale: an agent at delegated autonomy
 - [[autonomy-levels]] — blast radius sets the governance ceiling for autonomy
 - [[infrastructure-levels]] — higher blast radius requires higher infrastructure to justify the same autonomy
 - [[trust-inversion]] — why agents need allowlists rather than blocklists
+- [[pac-agent-profiler]] — blast radius as a deployment filter in the profiler
 
 ## Appears in
 

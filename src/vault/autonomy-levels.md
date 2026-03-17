@@ -53,6 +53,7 @@ Higher autonomy reduces attentiveness — Bainbridge's irony from 1983. The more
 - [[trust-inversion]] — autonomy without inversion produces security incidents
 - [[infrastructure-in-the-loop]] — the structural complement that makes high autonomy safe
 - [[self-aware-agent]] — agent uncertainty signals should factor into dial settings
+- [[pac-agent-profiler]] — the deployment model that produces autonomy as the dependent variable
 
 ## Appears in
 

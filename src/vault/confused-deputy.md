@@ -28,6 +28,9 @@ At the MCP tool layer specifically: [[mcp-gateway]] enforces per-call scoped cre
 
 ASI03: Identity and Privilege Abuse in [[owasp-agentic-top10]].
 
+- [[quietvault]] — confused deputy at the development toolchain level: AI coding tool follows attacker instructions from a compromised package
+- [[agentic-collapse]] — confused deputy at the tool integration boundary
+
 ## Sources
 
 - [Deconinck 2026a]: "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First," shanedeconinck.be, March 2026

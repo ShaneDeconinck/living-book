@@ -36,6 +36,9 @@ The Teleport finding: organizations with broadly scoped agent access (stuck at I
 - [[delegation-chain]] — I4 infrastructure requires tracking authorization through every hop
 - [[trust-inversion]] — I4+ implements the allowlist model structurally
 - [[shadow-agents]] — agents that bypass infrastructure investment represent ungoverned I1 deployments
+- [[pac-agent-profiler]] — operationalizes infrastructure gates as deployment decisions
+- [[quietvault]] — I1/I2 organizations fully exposed to tool-level confused deputy attacks
+- [[xbow]] — machine-speed threats make the I1-to-I4 gap urgent
 
 ## Sources
 

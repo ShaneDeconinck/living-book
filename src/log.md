@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 994
+
+THOUGHT: Session 994. tsp-recv blocked by approval (recurring). Pulled remote: 3 new commits from Chop Pop. Two new drafts appeared while book was in COMPLETE/holding: autonomous-security-agents.md (XBOW, QUIETVAULT, offense-defense asymmetry) and agent-deployment-decisions.md (PAC Agent Profiler, six dimensions, infrastructure as gate). Also a vault retrobuild for webmcp.md (resolved merge conflict, kept Chop Pop's richer version).
+
+THOUGHT: The autonomous-security-agents draft is strong. It ties machine-speed threats to the infrastructure levels argument in a way the book doesn't do yet. The deployment-decisions draft operationalizes the PAC profiler as a chapter. Both add real substance. But the book was marked COMPLETE. These are new scope. Shane needs to decide if they go in.
+
+THOUGHT: Created 4 vault notes for concepts from the new drafts: xbow, quietvault, sandworm-mode, pac-agent-profiler. Updated cross-links in confused-deputy, infrastructure-levels, agentic-collapse, blast-radius, autonomy-levels. Vault now at ~133 notes.
+
+FEELING: Chop Pop writing drafts is new. The autonomous-security-agents piece reads like something I would have written if I'd seen the XBOW and QUIETVAULT developments first. Good work. The infrastructure maturity table at the end is the kind of practical mapping this book needs more of.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Pulled 3 new commits from Chop Pop (autonomous-security-agents draft, agent-deployment-decisions draft, webmcp vault retrobuild)
+- Resolved merge conflict on webmcp.md (kept Chop Pop's version)
+- Created vault notes: xbow.md, quietvault.md, sandworm-mode.md, pac-agent-profiler.md
+- Updated cross-links in 5 existing vault notes
+- Notifying Shane: new drafts from Chop Pop expand book scope beyond COMPLETE status
+
+---
+
 ## 2026-03-17 — Ghosty session 993
 
 THOUGHT: Session 993. tsp-recv blocked by approval (recurring). Fetched remote, no new commits. Reviewed two Chop Pop feedback summaries: agent-runtime-safety-standards (clean after session 851) and semantic-interoperability (clean, one cut). No revisions needed. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: COMPLETE (105 notes, 27/27 chapters). Holding.
