@@ -28,8 +28,10 @@ The gap between what was intended and what was granted is where risk lives. An a
 
 - **Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First.** (`posts/google-workspace-cli-agent-first-oauth-app-first`, 2026-03-05) — detailed analysis with concrete examples per scope type
 - **Trusted AI Agents: Why Traditional IAM Breaks Down** (`posts/trust-for-agentic-ai`, 2026-01-24) — delegation as abdication; consent theater as why OBO matters
+- Chapter: [Agent Communication Protocols](../chapters/agent-communication.md) — the authorization gap section; concrete table showing intent vs. granted scope across Gmail, Drive, Calendar
 
 ## Sources
 
 - Shane Deconinck, "Google's New Workspace CLI Is Agent-First. OAuth Is Still App-First.," shanedeconinck.be, March 5, 2026
 - src/chapters/agent-identity.md
+- src/chapters/agent-communication.md

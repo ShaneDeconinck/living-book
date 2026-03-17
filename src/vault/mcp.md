@@ -13,6 +13,7 @@ MCP defines three primitives: **tools** (callable functions with typed inputs/ou
 - [[mcp-tool-poisoning]] — the trust model vulnerability
 - [[trust-spanning-protocol]] — TMCP: MCP + TSP for authenticated transport
 - [[a2a]] — complementary protocol for agent-to-agent coordination (MCP handles tools, A2A handles agents)
+- [[webmcp]] — browser-native complement: WebMCP for web content, MCP for backend services
 - [[context-infrastructure]] — MCP as the discovery layer of context infrastructure
 
 ## Appears in
