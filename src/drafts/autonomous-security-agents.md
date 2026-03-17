@@ -1,6 +1,6 @@
 # Autonomous Agents as Security Actors
 
-CVE-2026-21536 is a remote code execution vulnerability in Microsoft's Devices Pricing Program cloud service, rated CVSS 9.8. Microsoft patched it server-side in the March 2026 Patch Tuesday. The vulnerability was discovered without access to source code, in 28 minutes, by XBOW: a fully autonomous AI penetration testing agent.[^xbow-cve]
+CVE-2026-21536 is a remote code execution vulnerability in Microsoft's Devices Pricing Program cloud service, rated CVSS 9.8. Microsoft patched it server-side in the March 2026 Patch Tuesday. The vulnerability was credited to XBOW, a fully autonomous AI penetration testing agent, which found it without access to source code.[^xbow-cve]
 
 XBOW reached number one on HackerOne's bug bounty leaderboard. As of March 2026, it has submitted more than 1,060 vulnerabilities through HackerOne, executed 48-step exploit chains, and completed penetration assessments in minutes that take skilled human pentesters hours.[^xbow-scale] The agent reasons about systems, chains tool calls across multiple steps, and persists through complex workflows without human direction.
 
@@ -10,11 +10,11 @@ This is the same class of capability the book describes as a governance challeng
 
 XBOW's results mark a threshold. Not a qualitative shift — agents have been writing scripts and fuzz-testing for years — but a quantitative one: autonomous agents have crossed the capability point where they can match, and in specific dimensions exceed, top human security practitioners.
 
-The relevant dimension is scale over time. A human pentester can execute complex exploit chains. XBOW can execute the same chains in parallel across hundreds of targets, continuously, at a cost profile that does not scale with hours worked. What took a specialized team weeks to assess now takes minutes per target.[^xbow-scale]
+The relevant dimension is scale over time. A human pentester can execute complex exploit chains. XBOW can execute the same chains in parallel across hundreds of targets, continuously, at a cost profile that does not scale with hours worked. XBOW benchmarks show full penetration assessments completing in 28 minutes — what took a specialized team weeks now takes minutes per target.[^xbow-scale]
 
 This creates rate asymmetry. Attacks scale faster than defenses. Vulnerability discovery has historically been rate-limited by human capacity: finding a zero-day in production infrastructure required talent, time, and access. All three are now automatable.
 
-The offensive research community recognized this asymmetry earlier. AgenticCyOps (arXiv:2603.09134, March 2026) describes multi-agent autonomous cyber operations in detail: agent architectures for reconnaissance, exploitation, lateral movement, and persistence, coordinating without human direction at each step.[^agenticcyops] The defensive implication: threat models that assume human-paced attackers are already outdated.
+The enterprise security research community is already responding to this asymmetry. Mitra et al. (arXiv:2603.09134, March 2026) address the challenge of securing multi-agent AI integration in enterprise cyber operations: how to deploy agentic capabilities defensively while constraining the same attack surface they create.[^agenticcyops] The implication is direct: threat models that assume human-paced attackers are already outdated, and defensive architectures must be designed with that in mind.
 
 ## The Other Direction
 
@@ -32,7 +32,7 @@ SANDWORM_MODE, documented in February 2026, shows the same logic at the package 
 
 **Discovery rate is increasing.** Autonomous agents scan and probe at machine speed. XBOW's 1,060+ submissions represent discovery at a rate impossible for human pentesters. As more organizations deploy autonomous security testing — offensively or defensively — the rate of vulnerability discovery increases. More discoveries means a larger backlog of known vulnerabilities relative to patching capacity.
 
-**Exploitation rate is increasing.** The same tools that discover vulnerabilities can automate exploitation. The 28-minute assessment-to-exploit time for CVE-2026-21536 represents an upper bound that will compress further as agent capabilities improve.
+**Exploitation rate is increasing.** The same tools that discover vulnerabilities can automate exploitation. Autonomous agents that complete full penetration assessments in 28 minutes can chain discovery to exploitation in the same session — and that upper bound will compress as agent capabilities improve.
 
 **Defense cycles have not shortened proportionally.** Patching production systems requires coordinated deployment, testing, and rollout. The March 2026 Patch Tuesday that fixed CVE-2026-21536 represents the same release cadence as patches from ten years ago. The human coordination required to deploy a patch has not become meaningfully faster as the agents probing for unpatched systems have become faster.
 
@@ -100,7 +100,7 @@ Most organizations are at I1 or I2. QUIETVAULT, SANDWORM_MODE, and the agentic c
 
 [^xbow-scale]: XBOW, xbow.com. Autonomous offensive security platform. Statistics from XBOW, "We Ran 1,060 Autonomous Attacks," xbow.com blog, 2026. 1,060+ vulnerability submissions on HackerOne; 48-step exploit chain execution; 28-minute penetration assessment time; HackerOne #1 leaderboard ranking.
 
-[^agenticcyops]: Bai et al., "AgenticCyOps: Agentic AI for Autonomous Cyber Operations," arXiv:2603.09134, March 2026. Multi-agent architectures for autonomous reconnaissance, exploitation, lateral movement, and persistence.
+[^agenticcyops]: Mitra et al., "Securing Multi-Agentic AI Integration in Enterprise Cyber Operations," arXiv:2603.09134, March 2026. Defensive research on deploying multi-agent AI capabilities within enterprise security operations while managing the attack surface created by agentic architectures.
 
 [^quietvault]: Google Threat Intelligence Group, QUIETVAULT documentation, 2026. Trojanized npm package repurposing developer AI coding tool as reconnaissance agent; natural-language filesystem commands executed by the tool. Five AI-powered malware families operational in the wild. First documented in gaps chapter observation "AI Tools as Attack Infrastructure."
 

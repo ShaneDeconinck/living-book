@@ -64,7 +64,7 @@ The L1 credential establishes identity, grounded in an issuer relationship (a ca
 
 The L2 mandate is the novel layer. Delegation frameworks like OAuth's RAR (Rich Authorization Requests) establish what resources an agent can access. L2 establishes what the user authorized for a specific engagement: not a scope, but a constrained mandate with a time limit, a set of permitted merchants, and a spending ceiling. RAR and L2 address different questions.
 
-VI integrates with all three major commerce protocols. AP2 references Verifiable Intent as its cryptographic constraint layer. ACP handles checkout flows through a compatible mandate model. UCP handles product discovery and integrates with AP2 for secure payment handling.[^vi-mastercard] The shared primitives (SD-JWT credentials, mandate structures) give VI a path to relevance regardless of which commerce protocol wins.
+VI integrates with all three major commerce protocols. AP2 references Verifiable Intent as its cryptographic constraint layer. ACP handles checkout flows through a compatible mandate model. UCP handles product discovery and integrates with AP2 for secure payment handling.[^commerce-protocols] The shared primitives (SD-JWT credentials, mandate structures) give VI a path to relevance regardless of which commerce protocol wins.
 
 ## What VI Does Not Solve
 
@@ -108,4 +108,6 @@ Most agentic commerce deployments today are operating at I2 or I3: OAuth tokens 
 
 ---
 
-[^vi-mastercard]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026. Primary source for all architectural details, constraint types, selective disclosure mechanism, and protocol integrations. L1/L2/L3 structure, lifetime parameters (15 min immediate, 24h-30d autonomous), eight constraint types, split L3a/L3b design, sd_hash binding mechanism, protocol compatibility with AP2/ACP/UCP, and stated limitations (L3 terminal, agent compromise, trust bootstrapping, liability) all from this source.
+[^vi-mastercard]: Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026. Primary source for all architectural details, constraint types, selective disclosure mechanism. L1/L2/L3 structure, lifetime parameters (15 min immediate, 24h-30d autonomous), eight constraint types, split L3a/L3b design, sd_hash binding mechanism, and stated limitations (L3 terminal, agent compromise, trust bootstrapping, liability) all from this source.
+
+[^commerce-protocols]: Verifiable Intent specification (open-sourced by Mastercard and Google, 2026), section on protocol integrations; Agentic Payment Protocol v2 (AP2) specification. AP2's reference to VI as its cryptographic constraint layer, ACP's compatible mandate model, and UCP's AP2 integration for payment handling are described in the VI spec and AP2 protocol documentation, not Shane's blog summary.
