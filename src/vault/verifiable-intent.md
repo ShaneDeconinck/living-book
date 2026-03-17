@@ -53,6 +53,7 @@ It maps to the PAC Accountability pillar: the audit trail is not "what did the a
 - [[verifiable-credentials]] — both use SD-JWT and selective disclosure; VCs prove identity attributes, Verifiable Intent proves authorization constraints
 - [[delegation-chain]] — Layer 2 → Layer 3 is a delegation step with cryptographic attenuation
 - [[trust-inversion]] — the user's constraints are enforced structurally, not by asking the agent to behave correctly
+- [[three-layer-credential-chain]] — Verifiable Intent is one of three independent implementations that converged on the same User Identity → Delegation → Transaction architecture
 
 ## Appears in
 
