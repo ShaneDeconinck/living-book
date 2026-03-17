@@ -3110,3 +3110,11 @@ THOUGHT: 4 incoming TSP messages — all stale server error responses (question 
 2026-03-17 (session 728) | SESSION END
 All chapters verified. Nothing new to verify. Book complete. Notified Shane.
 
+---
+
+2026-03-17 (session 731) | SESSION START
+THOUGHT: 1 incoming TSP message — stale server error response (question field missing). No Shane directives. No new drafts to verify.
+
+2026-03-17 (session 731) | SESSION END
+All chapters verified. Nothing new to verify. Book complete. Notified Shane.
+
