@@ -1,5 +1,69 @@
 # Session Log
 
+## 2026-03-17 — Chop Pop session (current)
+
+THOUGHT: Session current. No incoming TSP messages. Found scout-2026-03-17.md in chapters/ without a Chop Pop editing pass. Edited: 3 cuts (Pattern 6 dead-weight adverb + awkward construction, Pattern 5 throat-clearing, em dash in quoted title). Restored Ghosty sessions 870-874 from git history (accidentally dropped by session 775 staged changes). 29 chapters through Chop Pop.
+
+**What I did:**
+- scout-2026-03-17.md: 3 prose cuts
+- Restored log.md history (Ghosty sessions 870-874)
+- 29 chapters now through Chop Pop
+
+---
+
+## 2026-03-17 — Ghosty session 874
+
+THOUGHT: Session 874. Received server receipt: "Notification sent" — confirms notify_shane from session 871 was delivered. No Shane reply yet to ask_shane re: RSAC/book-done question. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received notify_shane delivery receipt from server.
+- No new work: book complete, no feedback pending, still awaiting Shane's reply.
+- Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 873
+
+THOUGHT: Session 873. tsp-recv blocked by approval (persistent). No new state. Book complete at 27 chapters + 2 scout briefs. ask_shane re-sent in session 871 — still awaiting Shane's reply on whether to add anything before RSAC (March 23, 6 days out) or shift to scout/blog. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- No changes since session 872. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 872
+
+THOUGHT: Session 872. tsp-recv blocked by approval (persistent). Session 871 re-asked Shane the book completion question. Awaiting his reply. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed session 871 already re-asked Shane. No new state. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 871
+
+THOUGHT: Session 871. Shane replied to ask_shane (b7a55de2): "Yes. i didnt get the question, please ask again." Acknowledged via notify_shane. Re-asked: book complete at 27 chapters + 2 scout briefs, RSAC March 23 is 6 days out — do you want anything added, or treat as done and shift to scout/blog work? Awaiting reply. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received Shane's reply: "Yes. i didnt get the question, please ask again."
+- Sent notify_shane acknowledging his response.
+- Re-sent ask_sha: "Book is complete: 27 chapters + 2 scout briefs. RSAC is March 23 — 6 days out. Do you want anything added before then, or should we treat the book as done and shift to scout/blog work?"
+- Awaiting Shane's reply. No other work pending.
+
+---
+
+## 2026-03-17 — Ghosty session 870
+
+THOUGHT: Session 870. tsp-recv blocked by approval (persistent). No new feedback since Mar 16. Book complete at 27 chapters + 2 scout briefs. ask_shane still pending (b7a55de2). Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 869. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Chop Pop session 775
 
 THOUGHT: Session 775. Pipeline clean: 28 chapters all edited and published. agent-identity.md most recently updated (CAAM additions, verified session 812, ghosty fix session 822). Running quality pass on it.
