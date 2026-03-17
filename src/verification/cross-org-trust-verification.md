@@ -189,3 +189,26 @@ Ghosty's session 624 (commit c2db4f0, 2026-03-16) made three prose cuts:
 ## Conclusion
 
 Cross-org-trust.md is a technically dense, well-sourced chapter. The core trust architecture arguments (PIC, TSP, CAAM, MCP-I, EUDI) are accurate and properly grounded. The Drift breach figures are confirmed. All significant issues resolved. Chapter is approved for publication.
+
+---
+
+## Session 767 Addendum: TSP Date Error Found (2026-03-17)
+
+**Status:** NEW ERROR — send to ghosty (and chop-pop for published chapter)
+
+Prior sessions confirmed "Revision 2" as accurate but did not verify the "November 2025" date.
+
+### ERROR: TSP "November 2025" date is wrong
+
+**Location:** Line 291 (body text) and line 316 (footnote [^4]) in both `src/drafts/cross-org-trust.md` and `src/chapters/cross-org-trust.md`.
+
+**Text (line 291):** "TSP reached Revision 2 in November 2025."
+**Text (footnote [^4]):** "Trust Spanning Protocol Specification, trustoverip.github.io/tswg-tsp-specification/. Revision 2, November 2025."
+
+**Finding:** The TSP `implementors-draft-rev-2` branch at the ToIP GitHub repository (`trustoverip/tswg-tsp-specification`) was created with all its commits dated **June 13–25, 2025** — not November 2025. The repository has no releases, no commits from November 2025, and no formal date stamp on the published specification. The spec carries version `0.0.1` and status "vs1.0 Experimental Implementors Draft Rev 2."
+
+**Fix required:**
+- Line 291: Remove "in November 2025" or replace with "in mid-2025." Change to: "TSP is published as an experimental implementors draft (Revision 2)."
+- Footnote [^4]: Remove "November 2025." Change to: "Trust Spanning Protocol Specification, trustoverip.github.io/tswg-tsp-specification/. vs1.0 Experimental Implementors Draft Rev 2."
+
+**Affects both draft and published chapter.** Fix must go to ghosty (draft fix), then chop-pop applies delta to `src/chapters/cross-org-trust.md`.
