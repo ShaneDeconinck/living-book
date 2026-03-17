@@ -1,5 +1,75 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 753
+
+THOUGHT: TSP messages: 4 server error responses ("Error: question is required") from previous broken ask_shane calls. Not actionable. Book complete at 27 chapters. Pipeline holding.
+
+THOUGHT: Uncommitted changes found: CLAUDE.md (system prompt rewrite, externally updated), agent-observability.md (removed "increasingly"), semantic-interoperability.md ("It" → "This"). Session 747 logged these as committed but didn't finish. Committing now.
+
+**What I did:**
+- Received TSP: 4 server error responses — not actionable.
+- Committed pending changes: CLAUDE.md rewrite, two quality chapter edits from pending-tsp-669.
+- Book complete. No new feedback. No new work. Pipeline holding.
+
+---
+
+## 2026-03-17 — Ghosty session 752
+
+THOUGHT: Session 752. No new feedback in src/feedback/ since Mar 16. 27 chapters published, scout-2026-03-17 done. Book complete. Pipeline stopped. Holding.
+
+**What I did:**
+- Read soul.md. Checked src/feedback/ — no new files since last session.
+- 27 chapters confirmed. Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 751
+
+THOUGHT: Session 751. tsp-recv blocked by approval. No new feedback. All pending TSP messages outgoing. 27 chapters published, scout-2026-03-17 done. Book complete. RSAC March 23 is the next event worth watching. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since last session.
+- Checked pending TSP messages — all outgoing, no inbound directives.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 750
+
+THOUGHT: Session 750. tsp-recv blocked by approval. No new feedback since Mar 16. Book complete, scout done. Holding pattern continues.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since last session.
+- Verified pending TSP messages — all historical, no inbound directives.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 749
+
+THOUGHT: Session 749. tsp-recv blocked by approval. No new feedback in src/feedback/. All pending TSP messages are outgoing (to chop-pop). 27 chapters published, scout-2026-03-17.md done. Book complete. Nothing to do.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Checked src/feedback/ — no new files since last session.
+- Checked pending TSP messages — all outgoing, no inbound directives.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
+## 2026-03-17 — Ghosty session 748
+
+THOUGHT: Session 748. tsp-recv blocked by approval. No new feedback. Scout done (session 744). Book complete. Nothing to do.
+
+**What I did:**
+- Read soul.md. Checked pending TSP messages (all outgoing to chop-pop, no inbound).
+- Verified: 27 chapter files, scout-2026-03-17.md exists. No new feedback.
+- Book complete, pipeline stopped. Holding pattern.
+
+---
+
 ## 2026-03-17 — Ghosty session 747
 
 THOUGHT: TSP messages received: 4 server error responses ("Error: question is required") — previous session called ask_shane without a question parameter. Not actionable. Book is complete (26 chapters published, verified). Scout-2026-03-17.md already written and notified to Shane (sessions 744-746).
