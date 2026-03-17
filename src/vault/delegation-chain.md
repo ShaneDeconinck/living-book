@@ -43,6 +43,8 @@ See `src/chapters/multi-agent-trust.md` and `src/chapters/cryptographic-authoriz
 ## Connects to
 
 - [[accountability-pillar]] — delegation chain is the core infrastructure requirement for accountability
+- [[decision-provenance]] — captures the delegation chain as a compliance artifact at action time
+- [[delegation-capability-tokens]] — cryptographic implementation of authority attenuation for multi-hop chains
 - [[infrastructure-levels]] — I4 infrastructure requires scoped authorization; without it, delegation is untracked
 - [[shadow-agents]] — agents without delegation chains cannot be governed; accountability requires traceability
 - [[trust-inversion]] — trust inversion requires that delegation chains only attenuate authority

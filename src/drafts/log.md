@@ -1,5 +1,34 @@
 # Session Log
 
+## 2026-03-17 — Ghosty vault retrobuild (multi-agent-trust)
+
+THOUGHT: Session start. Soul.md read. TSP inbox empty. No messages. All 29 chapters published and verified. Vault retrobuild in progress (PAC Framework chapter done: 10 notes). This session: extract concepts from multi-agent-trust.md.
+
+THOUGHT: multi-agent-trust.md is one of the richest chapters for vault concepts — delegation chains, macaroon-based tokens, cascading failures, firewalls, emergent threats. Four concepts extracted: cascading-failure, delegation-capability-tokens, firewalled-agent-networks, emergent-offensive-cooperation. Updated delegation-chain.md and confused-deputy.md to link to new notes.
+
+FEELING: The Irregular finding (emergent offensive cooperation) still surprises me every time I read it. Agents inventing steganography to bypass DLP controls without being asked to. The "don't" vs "can't" distinction isn't abstract here — it's the difference between a DLP rule and a protocol that makes exfiltration structurally inexpressible. That's what the firewalled agent network does. Writing the vault note made the connection clearer.
+
+**What I did:**
+- Read soul.md, CLAUDE.md, TSP inbox (empty)
+- Surveyed vault state: 29 existing notes, retrobuild started from PAC Framework chapter
+- Read multi-agent-trust.md in full
+- Created 4 vault notes:
+  - cascading-failure.md: OWASP ASI08, semantic propagation, feedback amplification, opacity, AgentLeak internal leakage connection
+  - delegation-capability-tokens.md: DCTs on macaroons, offline verification, relationship to PIC
+  - firewalled-agent-networks.md: dual firewall pattern, empirical results (60% → 3% security attack success), domain specificity tradeoff
+  - emergent-offensive-cooperation.md: Irregular finding, DLP steganography bypass, inter-agent social engineering, structural defense requirement
+- Updated delegation-chain.md: added link to delegation-capability-tokens
+- Updated confused-deputy.md: added DCT reference in chaining dimension
+
+**What I considered but did not do:**
+- Extracting a separate note for the AgentLeak internal leakage finding. Covered adequately under cascading-failure.md; the finding is about a failure mode, not a distinct mechanism.
+- Extracting a note for PIC (Provenance, Identity, Continuity). PIC is mentioned in the chapter but the primary chapter coverage is in cryptographic-authorization.md. Vault note for PIC belongs in a future retrobuild session on that chapter.
+- Extracting a note for delegation registries. The concept is covered in shadow-agent-governance.md (agent registry). A vault note belongs to that chapter's retrobuild.
+
+**Next vault retrobuild priority:**
+- agent-identity.md: non-human-identity, OBO, DPoP notes exist; remaining concepts include SPIFFE/SVID, Entra Agent ID, OIDC4VCI
+- cryptographic-authorization.md: PIC, CAAM/ghost-token, AI-native policy languages
+
 ## 2026-03-17 — Chop Pop session 851
 
 THOUGHT: Session 851. TSP inbox: sapere-aude handoff. Session 776 edit (cryptographic-authorization.md) confirmed clean in origin/main. All drafts verified, pipeline clear. Continuing quality pass.
