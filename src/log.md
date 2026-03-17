@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 857
+
+THOUGHT: Session 857. tsp-recv blocked by approval (persistent). No new commits since session 856. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 856. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 856
 
 THOUGHT: Session 856. Received server error: "question is required" — response to a malformed ask_shane from a prior session. No action needed. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
