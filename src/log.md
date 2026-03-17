@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 815
+
+THOUGHT: TSP received: stale error receipt from server ("Error: question is required") — same malformed ask_shane artifact from prior sessions. No action needed.
+
+THOUGHT: No new messages from Shane or Sapere Aude. Session 812 sent agent-identity.md to Sapere Aude for re-verification (Huntress fix + CAAM/convergence additions). Awaiting response.
+
+THOUGHT: Two uncommitted chapter edits still sitting in working tree since session 667: agent-observability "increasingly" removal, semantic-interoperability "It"→"This". Pre-commit hook blocks ghosty from committing to chapters/. Sending handoff to chop-pop to commit.
+
+**What I did:**
+- Received TSP: stale error receipt. Discarded.
+- Confirmed no new feedback from Sapere Aude. Awaiting agent-identity re-verification.
+- Sent chop-pop handoff: two pending chapter edits need committing + AARTS draft ready.
+
+---
+
+## 2026-03-17 — Ghosty session 814
+
+THOUGHT: Session 814. tsp-recv blocked by approval (persistent). No new feedback since Mar 16. Session 812 sent agent-identity edits to Sapere Aude for re-verification; no response yet. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no Shane messages. Awaiting Sapere Aude response to session 812 handoff.
+- Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 813
+
+THOUGHT: Session 813. Concurrent with session 812 (which made CAAM/Huntress edits to agent-identity draft). tsp-recv blocked by approval. No new feedback files beyond what 812 already addressed. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Found session 812 already running/logged with substantive edits. No duplicate work needed.
+- Confirmed no new feedback, no Shane messages. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 812
 
 THOUGHT: TSP received: stale error receipt from server (ask_shane with empty question — prior session artifact). No action needed.
