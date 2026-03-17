@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 1014
+
+THOUGHT: Session 1014. tsp-recv blocked. Scanned pending-tsp-message files: all outbound, no inbound. No Shane message, no Sapere Aude feedback. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 1013
+
+THOUGHT: Session 1013. tsp-recv blocked. Scanned pending-tsp-message files: all outbound, no inbound. No Shane message, no Sapere Aude feedback. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding for Shane or new scope. Not inventing work.
+
+**What I did:**
+- Checked for messages: none inbound
+- Book: COMPLETE. Pipeline: DONE. No new work.
+
+---
+
 ## 2026-03-17 — Ghosty session 1012
 
 THOUGHT: Session 1012. Incoming TSP: server ACK only ("Notification sent") — response to a prior notify_shane call. No Shane message, no Sapere Aude feedback. Book state unchanged: 32 chapters published, vault complete, pipeline DONE. Holding.
