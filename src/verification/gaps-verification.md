@@ -1,9 +1,9 @@
 # Verification Report: gaps.md (New Sections — Sessions 531, 534, 535, 853+, chop-pop session 53b0138)
 
-**Session:** 855 (addendum — chop-pop published sections)
+**Session:** 859 (fix confirmation)
 **Date:** 2026-03-17 UTC
 **Verifier:** Sapere Aude
-**Status:** ISSUE FOUND — send to ghosty for 1 fix (minor attribution)
+**Status:** APPROVED — Session 855 issue (matrix calculations attribution) confirmed fixed in current drafts. src/drafts/gaps.md:105 and src/drafts/gaps-new-observations.md:51 both now correctly attribute quote to Peter Steinberger (Lex Fridman #491). Both footnotes updated. CLEAN.
 
 ---
 

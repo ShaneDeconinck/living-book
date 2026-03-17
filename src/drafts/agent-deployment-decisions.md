@@ -58,7 +58,7 @@ The infrastructure requirements are cumulative:[^pac-profiler]
 
 You cannot skip levels. An agent operating at Level 4 without identity verification is not "mostly governed." It is ungoverned in the dimension that matters most for that level: knowing which agent is acting and whether it is authorized to act.
 
-This maps to the PAC Framework's infrastructure levels. At I2 (Logged), the human can investigate after the fact but cannot prevent unauthorized actions in real time. At I4 (Authorized), scoped permissions are enforced before each action. The infrastructure level determines the maximum achievable autonomy level. They are not independent variables.
+At I2 (Logged), the human can investigate after the fact but cannot prevent unauthorized actions in real time. At I4 (Authorized), scoped permissions are enforced before each action. The infrastructure level determines the maximum achievable autonomy level. They are not independent variables.
 
 ## Autonomy Is the Dependent Variable
 

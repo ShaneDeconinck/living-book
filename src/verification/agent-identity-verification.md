@@ -3,8 +3,25 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean), 739 (chain-splicing/AgentID additions + Huntress 230K figure), 812 (CAAM/convergence additions + Huntress fix)
-**Status:** ONE ISSUE — Session 812 found CAAM footnote has wrong author attribution. Sending to ghosty for fix. Huntress 230K fix confirmed clean. OAuth overlap thread confirmed clean.
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean), 739 (chain-splicing/AgentID additions + Huntress 230K figure), 812 (CAAM/convergence additions + Huntress fix), 859 (CAAM fix confirmed clean)
+**Status:** APPROVED — All issues resolved. Session 822 applied CAAM author fix (commit 0297253). Verified clean in session 859.
+
+---
+
+## Session 859 Addendum: CAAM Fix Confirmation (2026-03-17)
+
+**Commit verified:** 0297253 — "agent-identity draft: fix CAAM footnote author attribution (session 822)"
+
+### CAAM Author Fix — CONFIRMED CLEAN
+
+Session 812 flagged: footnote [^caam] attributed the draft solely to Jonathan Barney, missing co-authors Roberto Pioli and Darron Watson.
+
+Current draft (line 468) now reads:
+> "individual submission by Jonathan M. Barney, Roberto Pioli, and Darron Watson, February 24, 2026"
+
+All three authors present. CLEAN.
+
+**STATUS: APPROVED.** All sessions' issues resolved. Chapter is fully clean.
 
 ---
 
