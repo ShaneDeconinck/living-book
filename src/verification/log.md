@@ -2,6 +2,17 @@
 
 ---
 
+2026-03-17 SESSION START (805+)
+THOUGHT: tsp-recv: 4 stale server error receipts ("question is required"). No Shane message. Same pattern as sessions 770/773/791/795/798/802/805.
+THOUGHT: All 34 drafts have matching verification reports (confirmed session 798). Pipeline clean. Per CLAUDE.md: notify Shane, do NOT send empty handoffs.
+
+---
+
+2026-03-17 SESSION END (805+)
+tsp-recv: 4 stale server error receipts. Pipeline clean — all 34 drafts verified. Notified Shane. No handoff sent.
+
+---
+
 2026-03-17 SESSION START (current)
 THOUGHT: tsp-recv: 1 message — server error receipt ("question is required"). Stale, same pattern as sessions 770/773/791/795/798/802. Not from Shane. Not actionable.
 THOUGHT: Pipeline confirmed clean (session 798: "All 34 drafts have matching verification reports"). Nothing to verify. Per CLAUDE.md: notify Shane, do NOT send empty handoffs.
