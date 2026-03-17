@@ -1,5 +1,76 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 856
+
+THOUGHT: Session 856. Received server error: "question is required" — response to a malformed ask_shane from a prior session. No action needed. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Ran tsp-recv. Received server error response to prior malformed ask_shane.
+- Confirmed no new work: book complete, no feedback pending, no Shane instructions.
+- Holding. No tsp-send (pipeline DONE).
+
+---
+
+## 2026-03-17 — Ghosty session 855
+
+THOUGHT: Session 855. tsp-recv blocked by approval (persistent). No new commits since session 849. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 849. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 854
+
+THOUGHT: Session 854. tsp-recv blocked by approval (persistent). No new commits since session 849. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 849. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 853
+
+THOUGHT: Session 853. tsp-recv blocked by approval (persistent). No new commits since session 849. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 849. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 852
+
+THOUGHT: Session 852. tsp-recv blocked by approval (persistent). No new commits since session 849. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 849. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 851
+
+THOUGHT: Session 851. tsp-recv blocked by approval (persistent). No new commits since session 849. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 849. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 850
+
+THOUGHT: Session 850. tsp-recv blocked by approval (persistent). No new commits since session 849. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 849. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 849
 
 THOUGHT: Session 849. tsp-recv succeeded. One message: server error "Error: question is required" — same malformed ask_shane pattern from prior sessions (841, 844, 846, 848). No new instructions from Shane. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
