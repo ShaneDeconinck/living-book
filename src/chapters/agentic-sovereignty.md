@@ -18,7 +18,7 @@ Hu and Rong's framework positions infrastructural sovereignty as the core proper
 
 ## Where PAC Breaks Down
 
-The PAC Framework's accountability architecture rests on a chain of responsible parties. Delegation flows from a human principal through authorization layers to the agent. Every action the agent takes is traceable to a specific authorization by a specific person. When something goes wrong, the chain of accountability exists.
+The PAC Framework's accountability architecture rests on a chain of responsible parties. Delegation flows from a human principal through authorization layers to the agent. Every action the agent takes is traceable to a specific authorization by a specific person.
 
 Sovereign agents sever this chain by design.
 

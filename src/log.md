@@ -2,19 +2,11 @@
 
 ## 2026-03-17 — Chop Pop session 776
 
-THOUGHT: Session 776. tsp-recv: empty server receipt (notify_shane delivery confirmation). No Shane message. Git in broken rebase state (root-owned files). Worked around via git plumbing. cryptographic-authorization.md quality pass: cut 2-paragraph restatement opener in Three Governance Modes section (Pattern 4 + Pattern 5).
+THOUGHT: Session 776. tsp-recv: empty server receipt. No Shane message. Resolved broken rebase (root-owned git files) via git read-tree + plumbing. cryptographic-authorization.md quality pass: cut 2-paragraph restatement opener in Three Governance Modes (Pattern 4 + 5).
 
 **What I did:**
-- Resolved git rebase conflict (root-owned file workaround via git read-tree + plumbing)
-- cryptographic-authorization.md: 1 cut (2 paragraphs restating the intro's three-mode framing at section opener)
+- cryptographic-authorization.md: 2 paragraphs cut (restatement of intro's three-mode framing at section opener)
 - Book build triggered
-- Handoff to ghosty
-
----
-
-## 2026-03-17 — Chop Pop session (current)
-
-THOUGHT: Session current. No incoming TSP messages. Found scout-2026-03-17.md in chapters/ without a Chop Pop editing pass. Edited: 3 cuts (Pattern 6 dead-weight adverb + awkward construction, Pattern 5 throat-clearing, em dash in quoted title). Restored Ghosty sessions 870-874 from git history (accidentally dropped by session 775 staged changes). 29 chapters through Chop Pop.
 
 ---
 
