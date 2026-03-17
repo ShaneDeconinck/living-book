@@ -1,56 +1,59 @@
 ---
 title: Infrastructure in the Loop
-tags: [governance, control, architecture]
+tags: [governance, control, architecture, human-agent, oversight]
 ---
 
-The third oversight model, after HITL and HOTL: infrastructure enforces governance. Humans design policies and boundaries. Machines enforce them continuously, independent of human attention.
+The oversight model this book advocates: infrastructure enforces governance policy automatically, independent of human attention. Policy says what agents should not do; architecture makes it so they *cannot* do it, regardless of what they try.
 
-## The progression from HITL to IitL
+Shane's framing: the difference between "don't" and "can't." Policy says the agent should not access production databases without authorization. Infrastructure makes it so the agent *cannot* access production databases without authorization. "Don't" depends on the agent's compliance and the human's vigilance. "Can't" depends on neither. [Deconinck-2026]
 
-**HITL (Human-in-the-Loop)**: agents propose, humans approve. Every significant action requires explicit authorization before execution. Works when decision volume is low and stakes are high. Fails at scale: the human becomes a bottleneck, then a rubber stamp. Anthropic data: new Claude Code users auto-approve ~20% of sessions; after ~750 sessions, that climbs past 40%. This is rational, not reckless — reviewing everything costs more than catching rare errors. HITL fails not because humans are careless but because it is architecturally unsuited to machine-speed volume. [Anthropic-autonomy-2026]
+## Why the prior models fail
 
-**HOTL (Human-on-the-Loop)**: agents act, humans monitor. Unlocks speed for tasks where decision velocity exceeds human reaction time (cybersecurity threat response, real-time inventory, autonomous vehicles). Fails when monitoring is passive: the same [[complacency-trap]] applies. Bainbridge's 1983 irony — the more reliable the system, the less capable the operator becomes at intervening when needed. HITL and HOTL share a common failure: both depend on human attention, which is a depletable resource deployed against a system that operates at machine speed.
+**HITL (Human-in-the-Loop)**: agents propose, humans approve. Fails at scale — approval rates climb as volume increases, review quality drops, oversight becomes a checkbox. Anthropic data: new Claude Code users fully auto-approve ~20% of sessions; after 750 sessions, that climbs past 40%. Not recklessness — rational response to a system that is almost always right. This is the [[complacency-trap]] at the authorization layer.
 
-**Infrastructure-in-the-Loop (IitL)**: infrastructure enforces governance. Humans design policy boundaries. Architecture limits what agents *can* do, not just what they *should* do. The distinction is Shane's "don't vs. can't": policy says the agent should not access production databases without authorization; infrastructure makes it so the agent cannot access production databases without authorization. "Don't" depends on agent compliance and human vigilance. "Can't" depends on neither. [PAC-Framework]
+**HOTL (Human-on-the-Loop)**: agents act, humans monitor. Fails when monitoring is passive. The same complacency dynamics apply. [[ironies-of-automation]]: the operator becomes a monitor who no longer has the contextual understanding to intervene effectively when intervention is needed. And the [[controllability-trap]] adds a second failure: even an attentive human may not be able to correct an agent that partially absorbs corrections, resists contrary evidence, or propagates errors faster than human reaction time.
 
-## What IitL does not remove
+Both models share the same load-bearing assumption: that human attention is available, sustained, and sufficient. Infrastructure-in-the-loop removes that assumption entirely.
 
-IitL does not remove humans from governance. It moves them from enforcement to design. Humans define authorization boundaries, set blast radius thresholds, configure anomaly detection rules, and investigate flagged incidents — high-value activities that play to human strengths: judgment, context, strategic thinking. What humans no longer do is watch a stream of agent actions and approve each one.
+## What it changes
 
-Anthropic's 2026 Coding Trends Report adds another dimension: AI-automated review systems scale oversight beyond what human reviewers can sustain. Review agents maintain quality while accelerating throughput. Development environments now display status across multiple concurrent agent sessions. This is not less oversight — it is oversight augmented and scaled through tooling. [Anthropic-coding-2026]
+The human role shifts from enforcement to design. Humans define authorization boundaries, set blast-radius thresholds, configure anomaly detection rules, investigate flagged incidents. These play to human strengths: judgment, context, strategic thinking.
 
-## Mapping to PAC infrastructure levels
+What humans no longer do is watch a stream of agent actions and approve each one. That was the task they were failing at.
 
-The concrete implementation of IitL maps to the PAC infrastructure maturity scale:
-- **I2 (Logged)**: investigation possible post-hoc, no real-time prevention
-- **I3 (Verified)**: identity confirmed, audit trails structured. Human reviews patterns, not individual actions.
-- **I4 (Authorized)**: scoped permissions enforced per action. Human sets scope; infrastructure enforces it.
+Anthropic's 2026 Agentic Coding Trends Report identifies a complementary scaling mechanism: AI-automated review systems. Instead of adding human reviewers as agent output grows, organizations deploy review agents that maintain quality at scale. The oversight isn't diminished — it's augmented through intelligent tooling. [Anthropic-coding-2026]
+
+## Infrastructure levels and collaboration capability
+
+The [[infrastructure-levels]] scale defines what infrastructure-in-the-loop looks like at each maturity level:
+
+- **I2 (Logged)**: post-hoc review possible; no real-time enforcement.
+- **I3 (Verified)**: agent identity confirmed, structured audit trails. Human reviews patterns, not individual actions.
+- **I4 (Authorized)**: scoped permissions enforced before each action. Human sets scope; infrastructure enforces it.
 - **I5 (Contained)**: sandboxed execution with automatic containment. Human defines containment policies; infrastructure executes them.
 
-Moving from HITL to IitL is not about trusting agents more. It is about trusting human attention less and building systems that do not depend on it.
+HITL is an I2-I3 pattern. HOTL is an I3 pattern. Infrastructure-in-the-loop becomes fully operational at I4-I5: the autonomy dial settings A4-A5 require these levels to be safe.
 
-## The response to controllability trap failures
+## Three structural mechanisms
 
-Each of the [[controllability-trap]]'s six failure mechanisms has an IitL response:
-- Interpretive divergence → make interpretation visible before execution (pre-action audit)
-- Correction absorption → verify correction compliance through infrastructure check
-- Belief resistance → enforce operator authority architecturally, not through persuasion
-- Commitment irreversibility → track cumulative state trajectories, not just individual actions
-- State divergence → validate world model consistency against live environment
-- Cascade severance → circuit breakers contain propagation before humans can intervene
+1. **Structural authorization over approval workflows**: define allowed scope in advance; infrastructure checks it per action, not per human decision.
+2. **Anomaly detection over vigilant monitoring**: flag statistical deviations; let humans investigate exceptions rather than watch the stream.
+3. **Automatic containment over manual intervention**: halt actions that exceed boundaries before human reaction time matters.
+
+Infrastructure does not get tired. [[complacency-trap]] cannot affect it. [[controllability-trap]] failures — correction absorption, belief resistance, cascade severance — are all addressed at the architectural level, not through attentiveness.
 
 ## Connects to
 
-- [[complacency-trap]] — IitL is the structural response; it does not degrade with agent reliability
-- [[paradox-of-supervision]] — IitL is immune to skill erosion because it does not depend on human capability
-- [[self-aware-agent]] — complementary layer: agent calibration improves with capability; IitL doesn't degrade; human review does both
-- [[controllability-trap]] — IitL is the architectural response to each of the six failure mechanisms
-- [[autonomy-levels]] — higher autonomy levels require higher infrastructure maturity; A5 requires I5
-- [[infrastructure-levels]] — the concrete maturity scale IitL maps to
-- [[blast-radius]] — IitL enforces blast radius limits structurally
+- [[complacency-trap]] — the human-side failure that makes HITL and HOTL unreliable over time
+- [[controllability-trap]] — the agent-side failure mechanisms that infrastructure-level responses address
+- [[autonomy-levels]] — A4-A5 require I4-I5 infrastructure; the autonomy ceiling is an infrastructure gate
+- [[agentic-ux-patterns]] — UX patterns operationalize infrastructure-in-the-loop for humans; scope indicators make enforcement boundaries visible
+- [[permission-intersection]] — audience-side authorization is an infrastructure-in-the-loop problem, not a vigilance problem
+- [[blast-radius]] — containment infrastructure limits blast radius regardless of what the agent attempts
+- [[self-aware-agent]] — agent-initiated oversight complements infrastructure enforcement; together they form a dual redundancy
 
 ## Sources
 
-- [PAC-Framework]: Shane Deconinck, PAC Framework, trustedagentic.ai/framework, 2026
-- [Anthropic-autonomy-2026]: Anthropic, "Measuring AI Agent Autonomy in Practice," February 2026
-- [Anthropic-coding-2026]: Anthropic, "2026 Agentic Coding Trends Report," March 2026
+- [Deconinck-2026]: Shane Deconinck, PAC Framework, trustedagentic.ai/framework, 2026. "Don't" vs "can't" framing.
+- [Anthropic-coding-2026]: Anthropic, "2026 Agentic Coding Trends Report," March 2026. AI-automated review scaling.
+- [Bainbridge-1983]: Lisanne Bainbridge, "Ironies of Automation," Automatica, 1983. Cited in [[ironies-of-automation]] and [Human-Agent Collaboration Patterns](../chapters/human-agent-collaboration.md).

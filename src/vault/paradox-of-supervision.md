@@ -3,34 +3,37 @@ title: Paradox of Supervision
 tags: [human-agent, governance, synthesis]
 ---
 
-The governance risk where skills required to review delegated work atrophy through overuse of delegation, making human oversight less rigorous even when technically present.
+The governance risk where the skills required to review delegated work atrophy through overuse of delegation, making human oversight less rigorous even when technically present.
 
-This extends the [[complacency-trap]]: it is not just that humans monitor less as agents succeed more, but that humans become less *capable* of meaningful monitoring. Anthropic's 2025 internal study of their own engineering team: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts comparing February and August 2025 snapshots. Task complexity increased from 3.2 to 3.8 on a five-point scale. Average human turns per session decreased 33% (6.2 to 4.1). Engineers described a trust progression analogous to navigation software: starting cautious, then using it for everything. [Anthropic-work-2025]
+This extends the [[complacency-trap]]: it is not just that humans monitor less as agents succeed more, but that humans become less *capable* of meaningful monitoring. A manager who delegates all code review to an agent gradually loses the ability to evaluate code quality. The oversight checkbox is checked, but the oversight is hollow.
 
-The paradox surfaced in what the productivity numbers don't capture. Engineers reported that as they delegated more coding to Claude, the skills required to review that code began to atrophy. The report's own framing: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse." The skills needed to exercise oversight are the same skills that delegation erodes.
+## Empirical evidence
 
-## The key distinction from complacency
+Anthropic studied 132 engineers over nine months (200,000 Claude Code transcripts, February vs. August 2025). Productivity gains were measurable: task complexity rose from 3.2 to 3.8, human turns per session fell 33%, consecutive autonomous tool calls increased 116%.
 
-- **[[complacency-trap]]**: attention problem. The human is capable of evaluating but stops doing so because the agent is almost always right.
-- **Paradox of supervision**: capability problem. The human watches, reviews, and approves, but the evaluation is less rigorous because the underlying expertise is degrading. The approval happens. It just means less.
+The paradox emerged in qualitative interviews: engineers reported that as they delegated more coding, the skills required to review that code began to atrophy. The authors' framing: "effectively using Claude requires supervision, and supervising Claude requires the very coding skills that may atrophy from AI overuse." [Anthropic-work-2025]
 
-A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Distinguishing between the two requires continuous evaluation infrastructure — tracking not just whether humans review but whether those reviews catch anything.
+The skills needed to exercise oversight are the same skills that delegation erodes.
 
-## What doesn't degrade
+## The double failure
 
-[[Infrastructure-in-the-loop]] does not degrade with use. [[self-aware-agent]] calibration does not erode through delegation — an agent's uncertainty recognition is independent of the human's reviewing skills. These two layers provide governance that compounds rather than decays, which is why the chapter argues they must be primary rather than supplementary to human review.
+[[Complacency-trap]]: humans are capable of evaluating but stop doing so (attention problem).
+Paradox of supervision: humans watch, review, and approve, but the evaluation is less rigorous because the underlying expertise is degrading (capability problem).
 
-## Practical implication
+Both lead to approval that means less. A 100% review rate with declining correction frequency may indicate either a better agent or a less capable reviewer. Organizations should monitor not just whether reviews happen, but whether they are substantive — tracking review quality metrics (time per review, corrections made, escalation rates) alongside completion rates.
 
-Organizations should monitor review quality metrics, not just review completion rates: time spent per review, corrections made, escalation rates. A 100% review rate with declining correction frequency is a warning sign. High completion, low signal is worse than acknowledged non-review because it creates false assurance.
+## Response
+
+Not preventing delegation but ensuring critical skills are exercised independently of agent output. And using [[infrastructure-in-the-loop]] for the mechanical aspects of oversight — structural enforcement doesn't degrade with use.
 
 ## Connects to
 
-- [[complacency-trap]] — the attention failure that paradox of supervision complements; together they explain why human review degrades along two independent dimensions
-- [[infrastructure-in-the-loop]] — the structural response that doesn't depend on human capability
-- [[self-aware-agent]] — agent-initiated oversight that doesn't erode with delegation
-- [[agentic-ux-patterns]] — batch review interfaces must be designed for substantive review, not just completion
+- [[complacency-trap]] — the attention-degradation companion failure
+- [[ironies-of-automation]] — the foundational research; skill degradation is one of Bainbridge's two compounding failures
+- [[infrastructure-in-the-loop]] — the structural response that doesn't degrade
+- [[autonomy-levels]] — review quality should factor into dial settings
+- [[self-aware-agent]] — agent calibration doesn't degrade with delegation; the asymmetry that makes it a necessary complement to human review
 
 ## Sources
 
-- [Anthropic-work-2025]: Anthropic, "How AI Is Transforming Work at Anthropic," December 2025. Internal study: 132 engineers surveyed, 53 in-depth interviews, 200,000 Claude Code transcripts. Task complexity 3.2 → 3.8, human turns/session 33% decrease, skill erosion reported alongside productivity gains.
+- [Anthropic-work-2025]: Anthropic, "How AI Is Transforming Work at Anthropic," December 2025. 132 engineers, 53 interviews, 200,000 transcripts.
