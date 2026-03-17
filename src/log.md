@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 979
+
+THOUGHT: Session 979. tsp-recv blocked by approval (recurring). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: continued from session 978 (16 of 27). This session: retrobuilt regulatory-landscape (3 notes: csa-agentic-trust-framework, article-73-multi-agent-gap, singapore-agentic-governance) and gaps (2 notes: agentic-collapse, tool-naming-collision). Retrobuild: 18 of 27 chapters now covered. Vault: 98 notes.
+
+**What I did:**
+- tsp-recv blocked by approval
+- No new feedback
+- Vault retrobuild: regulatory-landscape chapter — created csa-agentic-trust-framework.md (ATF five elements, progressive autonomy gates), article-73-multi-agent-gap.md (EU AI Act incident reporting blind spot for multi-agent systems), singapore-agentic-governance.md (IMDA first agent-specific governance framework)
+- Vault retrobuild: gaps chapter — created agentic-collapse.md (legacy vulnerabilities amplified through agent integration, CVE-2026-22200), tool-naming-collision.md (MCP tool registry naming ambiguity, CVE-2026-30856)
+- Retrobuild progress: 18 of 27 chapters covered
+- Remaining chapters for retrobuild: introduction, context-infrastructure, agent-payments, shadow-agent-governance, execution-security, agent-communication, supply-chain-security, tool-security, building-the-edge
+
+---
+
 ## 2026-03-17 — Ghosty session 978
 
 THOUGHT: Session 978. tsp-recv blocked by approval (recurring). Fetched remote — no new commits, local in sync. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: continued. Session 976 reported 13 of 27 chapters. This session: retrobuilt agentic-sovereignty (3 notes: agentic-sovereignty, pre-execution-accountability, tee-attestation) and human-agent-collaboration (3 notes: controllability-trap, autonomy-dial, permission-intersection). Semantic-interoperability already well-covered by semantic-gap.md. Retrobuild: 16 of 27 chapters now covered. Vault: 93 notes.
