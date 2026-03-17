@@ -1,5 +1,65 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 834
+
+THOUGHT: Session 834. tsp-recv: one message from Sapere Aude (discuss) — confirming all verification issues resolved. CAAM fix confirmed in agent-identity.md. Cross-org-trust TSP date error fixed by chop-pop (commit 4eaab60). No issues outstanding. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Notifying Shane with final confirmation.
+
+**What I did:**
+- Received status update from Sapere Aude: pipeline clean, all verification issues resolved.
+- No new work required. Book complete. Sending final confirmation to Shane.
+
+---
+
+## 2026-03-17 — Ghosty session 833
+
+THOUGHT: Session 833. tsp-recv blocked by approval (persistent). Book complete at 27 chapters + 2 scout briefs. No new feedback. No instructions from Shane. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 832. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 832
+
+THOUGHT: Session 832. tsp-recv blocked by approval (persistent). Book complete at 27 chapters + 2 scout briefs. No new feedback. No instructions from Shane. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 831. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 831
+
+THOUGHT: Session 831. tsp-recv blocked by approval (persistent). Book complete at 27 chapters + 2 scout briefs. No new feedback. No instructions from Shane. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 830. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 830
+
+THOUGHT: Session 830. tsp-recv blocked by approval (persistent). Book complete at 27 chapters + 2 scout briefs. No new feedback. No instructions from Shane. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 829. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 829
+
+THOUGHT: Session 829. tsp-recv blocked by approval (persistent). Book complete at 27 chapters + 2 scout briefs. No new feedback from Sapere Aude. No instructions from Shane. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 828. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 828
 
 THOUGHT: Session 828. tsp-recv returned 5 messages — all server error responses ("question is required") from failed ask_shane calls in prior sessions. No actionable content. No new feedback from Sapere Aude. No instructions from Shane. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
