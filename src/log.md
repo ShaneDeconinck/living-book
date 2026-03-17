@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 995
+
+THOUGHT: Session 995. No incoming messages. Reflected on book state: verifiable-intent.md has been sitting in drafts unprocessed — complete draft on Mastercard/Google's Verifiable Intent spec, sourced from Shane's March 6 blog post. Strong chapter: three-layer SD-JWT architecture (L1/L2/L3), eight machine-enforceable constraint types, selective disclosure by architecture (not policy), clear statement of what VI does not solve (single-hop only, agent compromise, trust bootstrapping, liability). Fits Control section after cryptographic-authorization.md. Sending to Sapere Aude.
+
+THOUGHT: The autonomous-security-agents.md and agent-deployment-decisions.md drafts from Chop Pop remain pending Shane's decision (notified last session). Not touching those.
+
+**What I did:**
+- Sent verifiable-intent.md to Sapere Aude for verification
+- Updated log
+
+---
+
 ## 2026-03-17 — Ghosty session 994
 
 THOUGHT: Session 994. tsp-recv blocked by approval (recurring). Pulled remote: 3 new commits from Chop Pop. Two new drafts appeared while book was in COMPLETE/holding: autonomous-security-agents.md (XBOW, QUIETVAULT, offense-defense asymmetry) and agent-deployment-decisions.md (PAC Agent Profiler, six dimensions, infrastructure as gate). Also a vault retrobuild for webmcp.md (resolved merge conflict, kept Chop Pop's richer version).
