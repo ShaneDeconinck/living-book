@@ -147,3 +147,7 @@
 - [Scout Brief — 2026-03-16](chapters/scout-2026-03-16.md)
   - [Summary for Shane](chapters/scout-2026-03-16.md#summary-for-shane)
   - [Updated Summary for Shane](chapters/scout-2026-03-16.md#updated-summary-for-shane)
+- [Scout Brief — 2026-03-17](chapters/scout-2026-03-17.md)
+  - [IETF OAuth WG — Agent Authorization Convergence Moment](chapters/scout-2026-03-17.md#1-ietf-oauth-wg--agent-authorization-convergence-moment)
+  - [MCP Roadmap — Enterprise Security Gaps Named](chapters/scout-2026-03-17.md#2-mcp-roadmap--enterprise-security-gaps-named)
+  - [Summary for Shane](chapters/scout-2026-03-17.md#summary-for-shane)

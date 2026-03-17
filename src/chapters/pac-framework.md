@@ -35,7 +35,7 @@ The framework pairs reliability with blast radius, a five-level scale:
 - **B4 Regulated**: failure triggers compliance obligations. Incorrect financial reporting.
 - **B5 Irreversible**: failure cannot be undone. Funds transferred, contracts signed, data deleted.
 
-The governance threshold depends on both. A B1 task can tolerate 90% reliability. A B5 task might need 99.9% and still require human approval. The framework makes this tradeoff explicit rather than leaving it to individual judgment.[^2]
+The governance threshold depends on both. A B1 task can tolerate 90% reliability. A B5 task might need 99.9% and still require human approval.[^2]
 
 ### Autonomy Levels
 
@@ -197,7 +197,7 @@ The key insight: autonomy is the dependent variable. You do not start by decidin
 
 ### Infrastructure as Gate, Not Slider
 
-This is where the profiler diverges from typical risk frameworks. Most frameworks treat everything as a spectrum. Infrastructure does not work that way.
+Most frameworks treat everything as a spectrum. Infrastructure does not work that way.
 
 In the profiler, infrastructure requirements are cumulative per autonomy level:
 
@@ -216,7 +216,7 @@ The profiler also changes over time. As you build infrastructure, improve reliab
 
 ## The 19 Questions
 
-The framework distills each pillar into concrete questions designed for stakeholders at every level: engineering, security, compliance, and leadership. These are conversation starters, not a checklist. The right question at the right table surfaces gaps that dashboards and audits miss.[^1]
+The framework distills each pillar into concrete questions designed for stakeholders at every level: engineering, security, compliance, and leadership. These are conversation starters, not a checklist.[^1]
 
 ### Potential
 
