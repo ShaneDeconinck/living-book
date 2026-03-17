@@ -24,11 +24,11 @@ The separation creates a market for security engines independently of agent host
 
 ## Nineteen Hook Points
 
-AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four categories are worth examining closely because they map directly to documented attack surfaces:
+AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four categories map directly to documented attack surfaces:
 
 **PreToolUse** fires before a tool executes: shell commands, file writes, web requests, package installs. This is where injection attacks land. The execution security chapter documents CVE-2026-2256 in ModelScope's MS-Agent, where a denylist-based `check_safe()` method failed against reformulated shell commands. AARTS's PreToolUse hook is not a denylist: it passes the action to an external security engine that can apply behavioral analysis rather than pattern matching. The 43% of MCP CVEs classified as exec/shell injection are the natural target of this hook.[^kai-30-cves]
 
-**PreLLMRequest** fires before a prompt reaches the model. This protects prompt integrity: detecting injected instructions before they enter the model's context. The tool poisoning chapter covers indirect injection chains (the Graphiti CVE: untrusted content to LLM to MCP tool parameter to database query). PreLLMRequest creates an interception point before the first link in that chain.
+**PreLLMRequest** fires before a prompt reaches the model, intercepting injected instructions before they enter the model's context. The tool poisoning chapter covers indirect injection chains (the Graphiti CVE: untrusted content to LLM to MCP tool parameter to database query). PreLLMRequest creates an interception point before the first link in that chain.
 
 **PreSkillLoad and PrePluginLoad** fire before a skill or plugin is loaded into the agent environment. These are the supply chain hooks. The supply chain security chapter covers SANDWORM_MODE (19 typosquatting npm packages targeting MCP server infrastructure) and ClawJacked. A security engine receiving a PreSkillLoad event can verify the skill against a known-good manifest, check its Skill ID (described below), or reject it if it has no provenance attestation.
 
@@ -42,7 +42,7 @@ A Skill ID is a deterministic identifier derived from skill content. The same sk
 
 The supply chain security chapter covers SBOMs (Software Bills of Materials) for agent components: an inventory of what an agent is made of, with provenance for each component. Skill IDs operate at a finer grain: not just "this skill came from this package" but "this skill has this exact content."
 
-The sigstore-a2a pattern provides complementary coverage: Sigstore's keyless signing records build provenance (where did this agent come from, and through what pipeline?) in the Rekor transparency log. Skill IDs verify content integrity (is this the skill I audited?). Together, they answer two different questions about the same artifact. Sigstore-a2a answers: this skill was built from commit X in repository Y through pipeline Z. The Skill ID answers: this skill's content has not changed since I audited it.[^sigstore-a2a]
+The sigstore-a2a pattern provides complementary coverage: Sigstore's keyless signing records build provenance (where did this agent come from, and through what pipeline?) in the Rekor transparency log. Skill IDs verify content integrity (is this the skill I audited?). Sigstore-a2a answers: this skill was built from commit X in repository Y through pipeline Z. The Skill ID answers: this skill's content has not changed since I audited it.[^sigstore-a2a]
 
 ## Sage: The Reference Implementation
 
@@ -50,7 +50,7 @@ Gen's open-source Sage tool implements AARTS with 200+ detection rules covering 
 
 Sage integrates Gen's threat intelligence: detection rules are updated as new attacks are documented. The 19 typosquatting packages from SANDWORM_MODE, once identified, become detection signatures that any Sage user benefits from. This is the security engine operating as shared infrastructure rather than per-tool reimplementation.
 
-The Vercel partnership (announced February 2026) is structurally interesting: Vercel is not an agent framework, it is a deployment platform. The partnership brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem, meaning that skills deployed through Vercel can be evaluated before reaching agent hosts. This is supply chain verification at the distribution layer rather than the execution layer.
+The Vercel partnership (announced February 2026) brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem: skills deployed through Vercel can be evaluated before reaching agent hosts. Vercel is a deployment platform, not an agent framework. This is supply chain verification at the distribution layer rather than the execution layer.
 
 ## How AARTS Maps to PAC
 

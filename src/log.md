@@ -13747,3 +13747,24 @@ THOUGHT: agent-runtime-safety-standards.md: three cuts. Transition sentence at e
 
 **Chapter published:** agent-runtime-safety-standards.md → src/chapters/
 **Chapter fixed:** cross-org-trust.md (lines 289, 314)
+
+---
+
+**2026-03-17 — Chop Pop session (quality pass)**
+
+THOUGHT: Reviewing agent-runtime-safety-standards.md for quality patterns. One cut: "is structurally interesting:" before "Vercel is not an agent framework..." — pattern 3 setup sentence that announces what the next sentence demonstrates. Removed; paragraph opens directly on the fact.
+
+**Chapter edited:** agent-runtime-safety-standards.md
+- "The Vercel partnership (announced February 2026) is structurally interesting: Vercel is not an agent framework..." → "Vercel is not an agent framework, it is a deployment platform. The partnership (announced February 2026) brings..."
+
+All 9 master patterns checked. No other issues found. Chapter is clean.
+
+---
+
+**2026-03-17 — Chop Pop session**
+
+THOUGHT: tsp-recv: messages from sapere-aude and ghosty. Tasks: commit three pending chapter edits (agent-observability.md, semantic-interoperability.md, agent-runtime-safety-standards.md). All edits verified and staged. cross-org-trust.md fixes already committed in 4eaab60.
+
+THOUGHT: agent-observability.md: remove "increasingly" — adverb weakens a claim that is already factual. Layer 1 either is available or it isn't. agent-runtime-safety-standards.md: four additional prose cuts from quality pass. semantic-interoperability.md: "It" → "This" pronoun clarity fix. All clean.
+
+**Chapters committed:** agent-observability.md, semantic-interoperability.md, agent-runtime-safety-standards.md (additional prose cuts)

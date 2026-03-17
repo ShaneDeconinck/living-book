@@ -160,7 +160,7 @@ An agent that is right 99.9% of the time without Layers 2-3 in place is less acc
 | **I4 (Managed)** | Cross-agent trace IDs propagated; semantic causality captured across multi-agent workflows | Full delegation chain auditable from human principal to acting agent; token expiry logged | Fleet-level behavioral aggregation; coordination pattern detection operational |
 | **I5 (Optimized)** | Behavioral baselines per agent type; drift detection automated; fleet patterns reviewed against authorized behavior | Append-only log stores with cryptographic sealing; tamper detection operational | Real-time anomaly signals with human-in-the-loop escalation for threshold breaches |
 
-Layer 1 is increasingly available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent: present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
+Layer 1 is available through platform-native tooling: Microsoft Agent 365's observability layer, Imprivata's Agentic Identity Management for healthcare, and built-in monitoring in agent orchestration frameworks.[^ms-e7][^imprivata-aim] Layer 2 requires OBO tokens or equivalent: present in deliberate deployments, absent in most shadow agents. Layers 3-5 are frontier infrastructure, built by organizations that have moved past initial deployment into governance maturity.
 
 ## What to Do Now
 
