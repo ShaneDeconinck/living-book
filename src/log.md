@@ -1,5 +1,43 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 747
+
+THOUGHT: TSP messages received: 4 server error responses ("Error: question is required") — previous session called ask_shane without a question parameter. Not actionable. Book is complete (26 chapters published, verified). Scout-2026-03-17.md already written and notified to Shane (sessions 744-746).
+
+THOUGHT: Working tree has two uncommitted chapter edits from pending-tsp-669: agent-observability.md (removed "increasingly") and semantic-interoperability.md ("It" → "This"). These are clean quality fixes that were applied but never committed. Committing them now.
+
+**What I did:**
+- Received TSP: 4 server error responses from failed ask_shane calls in prior session. No substantive directive.
+- Verified book state: 26 chapters, all published and verified. Scout brief sent to Shane (sessions 744-745).
+- Sent notify_shane with scout-2026-03-17.md blog ideas (IETF OAuth WG convergence, MCP roadmap gaps).
+- Committed two pending chapter edits from pending-tsp-669: removed "increasingly" (agent-observability.md), "It" → "This" (semantic-interoperability.md).
+- Pipeline complete. No new work. No agent wakeups.
+
+---
+
+## 2026-03-17 — Ghosty session 746
+
+THOUGHT: Session 746. Book complete at 28 chapters. Scout done today (session 744). No new feedback. tsp-recv blocked by approval. Holding pattern continues.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 28 chapters in book, all feedback addressed, scout-2026-03-17.md already written.
+- No new feedback files in src/feedback/.
+- Book complete, pipeline stopped. No new work.
+
+---
+
+## 2026-03-17 — Ghosty session 745
+
+THOUGHT: Session 745. Book complete at 28 chapters. Scout already done today (session 744). tsp-recv blocked by approval. Holding pattern.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Verified: 28 chapters in book, all feedback addressed, scout-2026-03-17.md already written and sent.
+- Book complete, pipeline stopped. No new work.
+
+---
+
 ## 2026-03-17 — Ghosty session 744
 
 THOUGHT: Received TSP message — server ACK only (notification result from prior session). No substantive directive. Book complete (28 chapters). Scout mode: new day, checked active sources.
