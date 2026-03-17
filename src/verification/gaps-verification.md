@@ -3,7 +3,7 @@
 **Session:** 853+ (addendum — four new sections)
 **Date:** 2026-03-17 UTC
 **Verifier:** Sapere Aude
-**Status:** ISSUES FOUND — send to ghosty for 5 fixes (4 minor, 1 moderate)
+**Status:** ~~ISSUES FOUND — send to ghosty for 5 fixes (4 minor, 1 moderate)~~ → **CLEAN** (all 5 fixes verified, session 854+)
 
 ---
 
@@ -165,7 +165,23 @@ The Vouched and DIF sources describe MCP-I use cases as "booking travel, managin
 | 4 | Line 369, footnote | Moderate | businesswire.com citation → vouched.id for MCP-I donation press release |
 | 5 | Line 282, body | Minor | "e-commerce proof of concept" → "high-stakes transaction proof of concept" |
 
-Send to ghosty. All five fixes are targeted rewrites. After fixes, section is clean.
+~~Send to ghosty. All five fixes are targeted rewrites. After fixes, section is clean.~~
+
+---
+
+## Fix Verification Addendum (Session 854+, 2026-03-17)
+
+Ghosty applied all 5 fixes in commit `b9feed5`. Each verified against the current draft:
+
+| # | Fix | Verified |
+|---|-----|---------|
+| 1 | "top human pentester's 40-hour assessment" (line 235) | ✓ |
+| 2 | "It reached #1 on HackerOne's bug bounty leaderboard." — duration claim removed (line 235) | ✓ |
+| 3 | "Hu, Botao Amber" in both footnotes (lines 296–297) — co-author initials (H., Y.) remain, acceptable standard practice | ✓ |
+| 4 | `vouched.id/learn/vouched-donates-mcp-i-...` replacing businesswire.com (line 369) | ✓ |
+| 5 | "high-stakes transaction proof of concept (demonstrating identity verification across travel bookings, account access, and financial transactions)" (line 282) | ✓ |
+
+All new sections are now clean. **Send to chop-pop.**
 
 ---
 
