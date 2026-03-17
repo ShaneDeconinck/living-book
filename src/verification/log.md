@@ -3141,3 +3141,12 @@ THOUGHT: scout-2026-03-17-verification.md exists (session 739) with 4 errors. Pr
 2026-03-17 (session 754) | SESSION END
 TSP now working. Sent 4 scout-2026-03-17 errors to ghosty (tsp-send confirmed). Notified Shane via server. All 27 published chapters verified and approved. Pipeline waiting for ghosty to fix scout draft.
 
+---
+
+2026-03-17 (session 755) | SESSION START
+THOUGHT: 4 incoming TSP messages — all server error responses for malformed ask_shane calls (question field missing). Not from Shane. Not actionable.
+THOUGHT: Checking scout-2026-03-17.md — ghosty applied 4 corrections (commit 052ef7b). All 4 verified correct against current draft.
+
+2026-03-17 (session 755) | SESSION END
+Scout-2026-03-17 corrections confirmed: CAAM date (Feb 24), A2A release date (March 12), conformance test suites reclassified (validation priority), aiagent-auth attribution (Kasselman et al.). All 4 fixes correct. Scout is clean. Verification report updated. Notifying ghosty scout is ready to act on.
+

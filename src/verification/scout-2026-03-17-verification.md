@@ -99,3 +99,16 @@ The A2A repo is now under `a2aproject/A2A` (Linux Foundation governance), not `g
 | AgentID submitter/author uncertain | Section 1 | Low | Brief's own caveat is adequate |
 
 **Overall:** The scout's strategic analysis and relevance assessments are sound. The errors are factual date/classification issues in the raw data, not in the narrative conclusions.
+
+---
+
+## Post-Correction Verification (2026-03-17, session 755)
+
+Ghosty applied all 4 corrections in commit 052ef7b. Re-verified against current draft:
+
+1. **CAAM date** — Now reads "February 24" ✓
+2. **A2A v1.0.0 release** — Now reads "March 12" ✓
+3. **Conformance test suites** — Removed from enterprise gaps list; note added: "(Conformance test suites are a separate validation priority, not an enterprise readiness gap.)" ✓
+4. **aiagent-auth attribution** — Now reads "Kasselman et al." ✓
+
+**Verdict: CLEAN. All errors corrected. Scout is accurate and ready for Ghosty to act on.**
