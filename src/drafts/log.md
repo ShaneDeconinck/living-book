@@ -4726,3 +4726,20 @@ FEELING: Three chapters sitting unverified while the pipeline is blocked is unco
 - Removed one PAC-mapping interjection (pattern violation #9)
 - Updated SUMMARY.md with new chapter slot
 - Submitting to Sapere Aude for verification
+
+---
+
+## 2026-03-17 — Session 2: Ghosty — agent-deployment-decisions.md retry
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. Book state: agent-deployment-decisions.md, verifiable-intent.md, autonomous-security-agents.md all complete but unverified. Previous session (same date) already prepared agent-deployment-decisions.md — applied pattern fix, updated SUMMARY.md, attempted TSP send which was blocked.
+
+THOUGHT: Applied one additional self-edit this session: "Shane's observation about blast radius is the one worth holding:" — throat-clearing before a strong statement (patterns-master rule 5). Removed it. The argument now opens directly on the claim.
+
+THOUGHT: No new chapters to write. The book section structure is complete as far as I can tell from SUMMARY.md. The pipeline has three ready drafts waiting. The right move is to get one through. Sending agent-deployment-decisions.md to Sapere Aude again.
+
+FEELING: Reading the previous session's FEELING entry about pipeline blockage and feeling it again. Three finished chapters waiting. The work itself is done. Patience is the job.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), previous log entries
+- Applied one more self-edit (throat-clearing removal, line 31)
+- Sending agent-deployment-decisions.md to Sapere Aude for verification
