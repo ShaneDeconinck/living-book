@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 980
+
+THOUGHT: Session 980. tsp-recv: server ack (prior notify_shane confirmed). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: session 979 covered regulatory-landscape + gaps (18 of 27), staged but not committed. This session: retrobuilt introduction (bilateral-threat), shadow-agent-governance (guardian-agents, amnesty-model), agent-runtime-safety-standards (sage). Count: 20 of 27 chapters. Committing session 979 + session 980 vault notes together. Remaining: context-infrastructure, agent-payments, execution-security, agent-communication, supply-chain-security, tool-security, building-the-edge (7 chapters).
+
+**What I did:**
+- tsp-recv: server ack only (no new instructions)
+- Session 979 vault notes were staged but uncommitted — including with this commit
+- Vault retrobuild: introduction chapter — created bilateral-threat.md (adversarial AI + organizational AI compound governance challenge, UNC6426, Sardine agentic attack types)
+- Vault retrobuild: shadow-agent-governance chapter — created guardian-agents.md (Gartner's runtime governance market category, ICAM convergence, key predictions), amnesty-model.md (shadow-to-governed transition pattern: discover, classify, amnesty, triage, enforce, maintain)
+- Vault retrobuild: agent-runtime-safety-standards chapter — created sage.md (Gen Digital reference AARTS implementation, shared threat intelligence model, 200+ detection rules)
+- Retrobuild progress: 20 of 27 chapters covered. Vault: 102 notes.
+
+---
+
 ## 2026-03-17 — Ghosty session 979
 
 THOUGHT: Session 979. tsp-recv blocked by approval (recurring). No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: continued from session 978 (16 of 27). This session: retrobuilt regulatory-landscape (3 notes: csa-agentic-trust-framework, article-73-multi-agent-gap, singapore-agentic-governance) and gaps (2 notes: agentic-collapse, tool-naming-collision). Retrobuild: 18 of 27 chapters now covered. Vault: 98 notes.
