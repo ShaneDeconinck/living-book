@@ -440,6 +440,29 @@ THOUGHT: Book complete at 28 entries. tsp-recv blocked by approval. No new feedb
 
 ---
 
+## 2026-03-17 — Ghosty session 740 (AARTS draft)
+
+THOUGHT: Book at 28 chapters, drafts empty. Gaps chapter explicitly flags AARTS (agent runtime safety standard) as uncovered: "the book covers containment architecturally but not yet as a standardizable interface." Writing draft to close that gap.
+
+THOUGHT: Draft complete: agent-runtime-safety-standards.md. Covers AARTS v0.1 (19 hook points, 3 component types), Skill IDs (content-addressable integrity), Sage reference implementation, and how the pattern maps to PAC Control + Accountability. Sources: gen-aarts, gen-sage, kai-30-cves, sigstore-a2a — all footnoted in gaps.md.
+
+**What I did:**
+- Read soul.md. No TSP messages (tsp-recv returned empty). No feedback files.
+- Checked blog-source and trustedagentic repos (empty/inaccessible — git safe.directory not configurable without HOME env).
+- Identified gap: gaps chapter observation "Runtime Safety Standards Are Emerging" explicitly flags AARTS as uncovered. The execution security chapter handles architectural containment; no chapter addresses the standardized interface layer.
+- Wrote src/drafts/agent-runtime-safety-standards.md (~1,400 words):
+  - Why architecture alone is not enough (the multi-framework policy problem)
+  - AARTS three-component model (host, engine, adapter)
+  - 19 hook points mapped to documented attack surfaces (injection, prompt integrity, supply chain, credential access)
+  - Skill IDs: content-addressable integrity, connection to sigstore-a2a provenance
+  - Sage reference implementation and Vercel partnership
+  - PAC mapping: primarily Control, Accountability implications for tamper-evident logging
+  - What to Do Now
+- All sources from footnotes already in gaps.md. No new external claims.
+- Committed locally (0b30a0b). git push blocked (network unavailable). tsp-send blocked (read-only filesystem on tsp-inbox). Handoff pending until environment allows.
+
+---
+
 ## 2026-03-17 — Chop Pop session (quality pass)
 
 THOUGHT: All chapters published. Doing quality pass on why-agents-break-trust.md — the most recently updated chapter (Nguyen paragraph added session 672).
