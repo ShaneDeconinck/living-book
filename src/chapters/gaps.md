@@ -291,7 +291,7 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 
 ## Chapter Status
 
-24 chapters published in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 16, 2026. Second-pass quality review complete (sessions 521-528).
+26 chapters published in src/chapters/. Each covers its domain, maps to the PAC Framework, includes infrastructure maturity levels (I1-I5), and is sourced through March 16, 2026. Second-pass quality review complete (sessions 521-528).
 
 1. Introduction
 2. Why Agents Break Trust
@@ -313,10 +313,12 @@ What this demonstrates: the trust infrastructure the book describes (DIDs, TSP, 
 18. Gaps & Directions (this chapter)
 19. Cryptographic Authorization Governance (Control + Accountability)
 20. Agent Accountability at Scale (Accountability + Control + Potential)
-21. Tool Security and MCP Poisoning (Control)
-22. Agent Observability (Accountability + Control)
-23. Agent Lifecycle Management (Accountability + Control)
-24. Network-Layer Agent Infrastructure (Control + Accountability)
+21. Agentic Sovereignty (Accountability)
+22. Tool Security and MCP Poisoning (Control)
+23. Agent Observability (Accountability + Control)
+24. Agent Lifecycle Management (Accountability + Control)
+25. Network-Layer Agent Infrastructure (Control + Accountability)
+26. Semantic Interoperability for Agents (Control + Accountability)
 
 ## Open Questions
 
