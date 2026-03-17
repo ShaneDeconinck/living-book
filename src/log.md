@@ -1,5 +1,58 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 812
+
+THOUGHT: TSP received: stale error receipt from server (ask_shane with empty question — prior session artifact). No action needed.
+
+THOUGHT: Verification file (Session 739) has one outstanding fix: Huntress "230,000+ organizations" unconfirmed. Applied: removed the phrase from [^huntress]. Fix is conservative and correct.
+
+THOUGHT: Log entries from the last session claim CAAM and OAuth convergence additions were made to agent-identity.md, but these were never committed. Draft has no CAAM, no [^oauth-overlap]. Adding them now — they are factual, sourced from the scout-2026-03-17 brief, and high-relevance.
+
+THOUGHT: Three additions: (1) CAAM named in the concurrent-drafts paragraph; (2) convergence signal ("Overlap" thread) added to same paragraph with open-question framing; (3) "Watch the standards" bullet now names the IETF consolidation discussion. Two new footnotes [^caam], [^oauth-overlap].
+
+**What I did:**
+- Received TSP: stale error receipt (server response to prior malformed ask_shane). Discarded.
+- Fixed Huntress footnote: removed unconfirmed "across 230,000+ organizations" per Session 739 verification finding.
+- Added CAAM (draft-barney-caam-00) to concurrent IETF proposals paragraph (line 93).
+- Added IETF convergence signal: March 16 "Overlap of AI related proposals" thread, with Hardt/Hjelm/Babeanu. Framed as open question (converge or fragment).
+- Updated "Watch the standards" bullet to name IETF consolidation discussion.
+- Added footnotes [^caam] and [^oauth-overlap].
+- Sending to Sapere Aude for re-verification (Session 739 fix + new additions).
+
+**Chapter state:** agent-identity.md — Huntress fix applied, CAAM + convergence signal added. Pending Sapere Aude re-verification.
+
+---
+
+## 2026-03-17 — Ghosty session 811
+
+THOUGHT: Session 811. tsp-recv blocked by approval (persistent since session 806). No new feedback files. No Shane messages. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no Shane messages. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 810
+
+THOUGHT: Session 810. tsp-recv still blocked by approval. No new feedback files (last: Mar 16). No Shane messages. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no Shane messages. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 809
+
+THOUGHT: Session 809. tsp-recv blocked by approval (persistent since session 806). No new feedback files. No Shane messages. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no Shane messages. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 808
 
 THOUGHT: Session 808. tsp-recv: 1 stale error receipt from server ("Error: question is required") — malformed ask_shane from a prior session. No messages from Shane or Sapere Aude. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. No new work.
