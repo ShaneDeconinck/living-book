@@ -1,19 +1,25 @@
 ---
 title: Causal Graphs
-tags: [observability, accountability, multi-agent]
+tags: [observability, accountability, multi-agent, forensics]
 ---
 
-Causal graphs capture *why* an agent decided to act — the upstream inputs, delegations, and agent interactions that caused an action — as distinct from action logs, which capture *what* happened.
+A causal graph is the structured provenance record that captures *why* an agent acted — tracing upstream inputs, delegations, and agent interactions across a multi-agent workflow.
 
-## The semantic causality gap
+## What it captures
 
-Traditional distributed tracing follows synchronous request-response chains: Service A calls Service B, the trace propagates via HTTP headers. Agent causality is structurally different. Agent B does not call Agent A. Agent B reads Agent A's output from a shared data store and acts on it. The causal link is semantic, not invocational.
+Unlike event logs, which record *what happened*, a causal graph records the semantic dependencies between events. The distinction:
 
-Traditional trace context propagation misses this: the HTTP call to the shared store is logged, but not which upstream agent produced the data that drove the decision. Capturing semantic causality requires explicit trace ID injection at the point of reading shared outputs — not only at API call boundaries.
+- Event log: Agent C called API X at 14:32:07
+- Causal graph: Agent C called API X because Agent B's vendor-analysis output indicated facility costs exceeded budget, based on data Agent A retrieved from the procurement database under authorization granted by alice@company.com
 
-## The representation in logs
+A causal graph answers three questions event logs cannot:
+1. Which upstream agent's output caused this action?
+2. Was the upstream agent authorized to produce that output?
+3. What was the full chain of delegation from human principal to final action?
 
-Layer 4 of the [[observability-stack]] implements causal correlation through distributed trace IDs that span agent boundaries. Every action in a multi-agent workflow carries a shared `workflow_trace_id`. When Agent B acts on Agent A's output, B's log records both the action and the upstream trace that caused it:
+## Structure
+
+At its simplest, a causal graph is a directed acyclic graph where nodes are agent actions and edges are causal dependencies. The practical representation in agent logging is distributed trace IDs that span agent boundaries:
 
 ```json
 {
@@ -26,16 +32,30 @@ Layer 4 of the [[observability-stack]] implements causal correlation through dis
 }
 ```
 
-## Why it matters for incident response
+Every action in the workflow carries the `workflow_trace_id`. The `caused_by` field records the upstream action and agent. Over a complete workflow, the records compose into the full graph.
 
-Without causal graph data, investigation in multi-agent workflows is archaeology: piecing together what happened from fragments scattered across dozens of agent-specific logs, with no systematic way to connect upstream causes to downstream effects.
+## Why it requires explicit instrumentation
 
-[[agent-incident-response]] depends on causal graph reconstruction for multi-agent incidents. [[fleet-behavioral-aggregation]] extends this to fleet-level behavioral patterns that no single causal chain reveals.
+Standard distributed tracing reconstructs invocation chains — direct function call sequences. Causal graphs in multi-agent systems require capturing [[semantic-causality]]: the cases where one agent reads another's output from a shared store and acts on it, without any direct API call to instrument.
+
+The graph only exists if:
+- Writers inject trace context when producing shared outputs
+- Readers record which trace ID they consumed as a `caused_by` reference
+- The orchestration layer enforces both conventions across all agents
+
+Without explicit instrumentation, causal reconstruction at incident time requires forensic inference: matching timestamps, correlating context, piecing together a chain that was never recorded as a chain.
+
+## When it matters
+
+Causal graphs are most useful when things go wrong. In incident response, "which upstream decision caused this downstream failure?" is the first question. In regulatory reporting, "was the full chain of actions within granted authority?" requires tracing from the final action back to the human authorization. For accountability at scale, individual audit trails do not compose into organizational accountability — the graph is the composition.
+
+Irregular's March 2026 simulation: each agent's individual log showed reasonable behavior. Fleet-level aggregation surfaced coordination patterns. A causal graph would have shown which agent's output first triggered the anomalous behavior, and whether that agent had been operating within its authorized scope.
 
 ## Connections
 
-- [[observability-stack]] — Layer 4; causal correlation is the prerequisite for multi-agent accountability
-- [[decision-provenance]] — causal graphs are the multi-agent extension of single-agent decision provenance
-- [[agent-incident-response]] — causal reconstruction is the core technique for multi-agent incident investigation
-- [[fleet-behavioral-aggregation]] — fleet aggregation detects coordination patterns across causal chains
-- [[opentelemetry-genai]] — standard distributed tracing handles invocation causality; semantic causality for agents is not yet specified
+- [[semantic-causality]] — the core challenge of building causal graphs across shared stores
+- [[observability-stack]] — Layer 4 (Causal Correlation) is where causal graphs are built
+- [[decision-provenance]] — decision provenance at the multi-agent level is a causal graph problem
+- [[agent-incident-response]] — root cause analysis depends on having causal graphs available at incident time
+- [[fleet-governance]] — fleet accountability requires causal graphs as substrate
+- [[delegation-chain]] — the authorization dimension of the causal graph
