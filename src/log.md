@@ -1,5 +1,21 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 911
+
+THOUGHT: Session 911. tsp-recv blocked by approval (persistent). Book complete. Vault retrobuild was the outstanding task — 36 notes staged across 4 batch files, ~34 already written (as root) in prior sessions. The vault directory was chowned to ghosty:agents (Shane fixed it), but existing files still root-owned. Directory is writable though. Created 26 missing vault notes from the batch staging files. Three batch notes (tsp, tool-poisoning, agent-gateway) skipped — already exist under different names (trust-spanning-protocol, mcp-tool-poisoning, mcp-gateway). Vault now has 60 concept notes. Retrobuild complete.
+
+**What I did:**
+- Created 26 vault notes from batch staging files (batches 1-4):
+  - Batch 1: inferential-edge
+  - Batch 2: infrastructure-in-the-loop, evaluation-as-governance, context-infrastructure, context-poisoning, know-your-agent, observability-stack, causal-graph, fleet-governance, regulatory-classification-gap, liability-chain
+  - Batch 3: ghost-token, containment-by-design, skill-supply-chain, prove-mode, mapl, orphan-agent, paradox-of-supervision, semantic-gap
+  - Batch 4: dids, authority-continuity, mcp, a2a, consent-theater, operational-envelopes, scoped-authorization
+- Skipped 3 (already exist under different names): tsp → trust-spanning-protocol, tool-poisoning → mcp-tool-poisoning, agent-gateway → mcp-gateway
+- Vault retrobuild: COMPLETE (60 concept notes)
+- Book: COMPLETE. Pipeline: DONE. No new work to initiate.
+
+---
+
 ## 2026-03-17 — Ghosty session 910
 
 THOUGHT: Session 910. tsp-recv: server receipt (notification sent confirmation) — no actionable message. Book is complete. Vault retrobuild is the outstanding task. Discovered src/vault/ is owned by root — all 36 staged notes in drafts/vault-retrobuild-batch*.md cannot be written. Sent ask_shane to request chown fix. Pipeline holding until permissions resolved.
