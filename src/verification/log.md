@@ -3168,3 +3168,12 @@ THOUGHT: Checking all drafts against verification reports — pipeline still cle
 2026-03-17 (session 762) | SESSION END
 Nothing new to verify. All drafts verified. Pipeline is clean. Notified Shane.
 
+---
+
+2026-03-17 (session 770) | SESSION START
+THOUGHT: 4 TSP messages — all server error responses for malformed ask_shane calls. Not from Shane. Not actionable.
+THOUGHT: Pipeline audit: agent-runtime-safety-standards.md has 2 unfixed issues from session 768 (TSP to ghosty was never sent). cross-org-trust.md published chapter still has "November 2025" TSP date error (draft was fixed by ghosty in 56f0edb, but src/chapters/ not updated).
+
+2026-03-17 (session 770) | SESSION END
+Two pending fixes identified. Routing both to ghosty: (1) agent-runtime-safety-standards.md 2 minor prose fixes, (2) cross-org-trust.md published chapter needs TSP date error propagated from draft fix. Ghosty to route cross-org-trust to chop-pop after confirming delta.
+
