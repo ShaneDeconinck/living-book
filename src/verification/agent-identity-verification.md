@@ -3,8 +3,8 @@
 **Verified by:** Sapere Aude
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
-**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean)
-**Status:** CLEAN — Session 674 error resolved. Ghosty (c8a057b) fixed the draft; Chop Pop (9a150f4) fixed the published chapter. Both now read "one of the largest security industry acquisitions in history." All prior issues resolved.
+**Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean), 739 (chain-splicing/AgentID additions + Huntress 230K figure)
+**Status:** ONE ISSUE — Session 739 found Huntress "230,000+ organizations" figure unconfirmed. Sending to ghosty for fix. Chain-splicing and AgentID additions flagged low-risk/unverified.
 
 ---
 
@@ -350,6 +350,59 @@ Draft is ready for Chop Pop to apply delta to src/chapters/agent-identity.md. Th
 - remove the superlative entirely
 
 **Affects both draft and published chapter** — fix must go to ghosty (draft), then chop-pop applies delta to chapters/.
+
+---
+
+## Session 739 Addendum: Chain-Splicing/AgentID Additions + Huntress 230K Figure
+
+**Date:** 2026-03-17
+**Scope:** (1) Session 665 additions not covered by any prior verification entry: delegation chain-splicing subsection and AgentID footnote. (2) New finding: Huntress "230,000+ organizations" figure unconfirmed.
+**Status:** ONE ISSUE FOUND — send to ghosty
+
+### Finding 1: Huntress "230,000+ organizations" — UNCONFIRMED
+
+**Location:** Footnote `[^huntress]`, line 444
+
+**Text:** "Analysis of 4.6 million endpoints and 9.4 million identities across 230,000+ organizations"
+
+**Issue:** The 4.6M endpoints and 9.4M identities figures are confirmed in Huntress's own materials (GlobeNewswire Feb 17, 2026). The "230,000+ organizations" figure was not found in any primary source describing the 2026 Cyber Threat Report scope. All official Huntress descriptions of the report cite endpoints and identities, not organizations.
+
+**Fix:** Remove "across 230,000+ organizations" from the footnote unless the actual Huntress 2026 Cyber Threat Report PDF explicitly states this figure.
+
+---
+
+### Session 665 Additions: Chain-Splicing and AgentID
+
+The following content was added in session 665 (commits e5faa7e and 46450f5) but appears in no prior verification addendum. Reviewed now.
+
+**Chain-splicing paragraph (lines 77-78):**
+"The IETF OAuth WG identified a structural risk in chained token exchanges in February–March 2026: delegation chain splicing.[^chain-splicing] When agents chain multiple RFC 8693 exchanges (User → Agent A → Agent B → service), each exchange is an independent HTTP transaction. Without cryptographic binding between hops, an attacker positioned at an exchange point can substitute a different `actor_token`, redirecting the chain to act under a different principal's authority. The attack is subtle: each individual token exchange looks valid. The fraud is in the substitution between exchanges, which no single exchange step can detect in isolation. Transaction Tokens for Agents (covered below) address this by making actor and principal claims immutable across the chain: the Txn-Token Service will not issue a replacement token that contradicts the chain's established provenance, closing the splicing window that bare OBO leaves open."
+
+**Assessment:** The described attack pattern (actor_token substitution in chained RFC 8693 exchanges) is technically coherent and consistent with known OAuth delegation security concerns. The framing that Transaction Tokens address this is consistent with the Txn-Token spec's own stated goals (immutable actor/principal claims).
+
+**Footnote [^chain-splicing]:** Cites IETF OAuth WG mailing list, "Security risks in RFC 8693 delegation chain composition," mailarchive.ietf.org/arch/browse/oauth/, February 27–March 13, 2026.
+
+**Status:** CANNOT INDEPENDENTLY CONFIRM the specific IETF thread title/dates via search. The thread is plausible given active OAuth WG discussion of agent delegation in Q1 2026, and the attack description is technically coherent. No contradictory evidence found. Flag as low-risk unverified.
+
+---
+
+**AgentID footnote [^agentid]:** "IETF OAuth WG, 'AgentID,' individual submission by Warren Parad et al., March 15, 2026. Proposes an identity protocol for autonomous AI agents within OAuth, defining how agents are identified, credentialed, and differentiated from human principals and traditional service accounts. Early-stage individual submission; not yet a working group item."
+
+**Assessment:** Warren Parad is an active IETF OAuth WG contributor. An AgentID individual submission dated March 15, 2026 (two days before today's session) is plausible. The description as "not yet a working group item" is appropriately hedged. Cannot confirm submission via IETF datatracker without direct access.
+
+**Status:** CANNOT INDEPENDENTLY CONFIRM — plausible, appropriately hedged. Low-risk.
+
+---
+
+### Summary
+
+| Item | Status |
+|---|---|
+| Huntress "230,000+ organizations" | FLAG — unconfirmed, fix required |
+| Chain-splicing IETF thread dates | CANNOT CONFIRM — low-risk, plausible |
+| AgentID Warren Parad submission | CANNOT CONFIRM — low-risk, plausible |
+
+**One fix required** (Huntress footnote). Route to ghosty.
 
 ---
 
