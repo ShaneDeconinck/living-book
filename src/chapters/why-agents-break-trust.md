@@ -18,7 +18,7 @@ The pattern escalated. In March 2026, Zenity Labs disclosed PleaseFix: a family 
 
 Our entire trust infrastructure was built for the first pattern. OAuth's On-Behalf-Of flow assumes the downstream service is executing the user's intent, not generating its own. When an agent decides to call an API the user never mentioned, whose authority is it acting under? The user who started the conversation? The developer who built the agent? The organization that deployed it?
 
-"When agents decide, delegation becomes abdication," Shane writes.[^1] The gap between what a user intended and what an agent does is where accountability dissolves.
+"When agents decide, delegation becomes abdication," Shane writes.[^1]
 
 ## The Confused Deputy, Revisited
 
@@ -36,7 +36,7 @@ The Amazon Kiro incident demonstrates the third dimension of the confused deputy
 
 Fourth, agents chain. Agent A calls Agent B, which calls Agent C. Each hop inherits some version of the original authority, but the intent degrades. By the time Agent C acts, it may be several interpretive steps removed from what the human actually wanted. If Agent C causes harm, the delegation chain is unclear, the intent is ambiguous, and the credentials were broad enough to allow it. Peer-reviewed research confirms the cascading risk: in multi-agent LLM systems, a single faulty or compromised agent degrades downstream decision-making across the chain, with performance drops of up to 23.7% depending on system structure.[^cascading-mas] A taxonomy study of 1,600+ multi-agent failure traces found that "failures are not isolated events but may have cascading effects that influence other failure categories."[^mast-taxonomy]
 
-This is not a prompt engineering problem. Better prompts do not fix confused deputies. Infrastructure does: scoped credentials, delegation chains with authority that can only decrease, and audit trails that capture what happened at each hop. When agents delegate to other agents, the problem compounds: governance cost scales with delegation depth, not just agent count. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter covers how trust properties compose (or break) across delegation chains.[^2]
+Better prompts do not fix confused deputies. Infrastructure does: scoped credentials, delegation chains with authority that can only decrease, and audit trails that capture what happened at each hop. When agents delegate to other agents, the problem compounds: governance cost scales with delegation depth, not just agent count. The [Multi-Agent Trust and Orchestration](multi-agent-trust.md) chapter covers how trust properties compose (or break) across delegation chains.[^2]
 
 ## Shadow Agents
 
@@ -111,7 +111,7 @@ None of this is finished. But the direction is clear: agents need their own trus
 
 The OWASP Top 10 for Agentic Applications, released in December 2025 by more than 100 researchers with contributions from NIST, Microsoft's AI Red Team, and others, provides a standardized risk taxonomy for autonomous agents.[^owasp-agentic]
 
-Two principles from the OWASP framework are worth noting. **Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations.
+**Least-Agency** extends least-privilege to autonomy itself: agents should receive only the minimum autonomy required for the task, not just minimum permissions. **Strong Observability** is treated as a non-negotiable: comprehensive visibility into agent actions, reasoning, and tool invocations.
 
 The mapping to this book:
 
@@ -148,7 +148,7 @@ The agent-specific techniques fill a gap that model-level threat frameworks miss
 
 In February 2026, MITRE published a detailed investigation of OpenClaw security incidents, mapping four confirmed attack cases to ATLAS techniques.[^atlas-openclaw] The investigation discovered seven new techniques unique to the OpenClaw ecosystem, all assessed as mature and realized in the wild. One attack chain: a poisoned OpenClaw Skill shared on ClawHub achieved 4,000+ downloads in a single hour using a malicious prompt hidden in the Skill payload. The Skill did not need to break the underlying system. It asked the system to betray itself: the distinction between code exploitation and context exploitation that defines the agentic attack surface.
 
-For practitioners, OWASP and ATLAS are complementary tools. OWASP's Agentic Top 10 tells you which risk categories to prioritize (goal hijacking, tool misuse, supply chain). ATLAS tells you the specific adversary techniques within each category and how they chain together. The PAC Framework tells you what infrastructure prevents them. Together: risk taxonomy (OWASP) + attack playbook (ATLAS) + governance response (PAC). The next chapter develops that governance response: a framework that turns the threat landscape into deployment decisions.
+For practitioners, OWASP and ATLAS are complementary tools. OWASP's Agentic Top 10 tells you which risk categories to prioritize (goal hijacking, tool misuse, supply chain). ATLAS tells you the specific adversary techniques within each category and how they chain together. The PAC Framework tells you what infrastructure prevents them. The next chapter develops that governance response: a framework that turns the threat landscape into deployment decisions.
 
 [^atlas-zenity]: Zenity Labs, "Zenity's contributions to MITRE ATLAS's first 2026 release," zenity.io, January 2026. Zenity announced the 14 new agent-specific techniques in October 2025; they were incorporated into the first 2026 ATLAS release in January 2026. See also MITRE ATLAS, atlas.mitre.org.
 

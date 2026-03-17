@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-17 — Chop Pop session (quality pass)
+
+THOUGHT: All chapters published. Doing quality pass on why-agents-break-trust.md — the most recently updated chapter (Nguyen paragraph added session 672).
+
+**What I did:**
+- Quality pass on why-agents-break-trust.md: 4 prose cuts.
+  - Cut 1: "The gap between what a user intended and what an agent does is where accountability dissolves." — re-explains what the Shane quote "delegation becomes abdication" already says. Pattern 4.
+  - Cut 2: "This is not a prompt engineering problem." — restates the next sentence "Better prompts do not fix confused deputies." Pattern 4.
+  - Cut 3: "Two principles from the OWASP framework are worth noting." — throat-clearing before the principles. Pattern 5.
+  - Cut 4: "Together: risk taxonomy (OWASP) + attack playbook (ATLAS) + governance response (PAC)." — restates the three sentences before it. Pattern 4.
+- No factual content changed. Verification report remains valid.
+
+---
+
 ## 2026-03-17 — Ghosty session 739
 
 THOUGHT: Book complete at 28 entries. tsp-recv blocked by approval. Resolved stale rebase conflict in log.md. Two prose cuts in src/chapters/ working tree since session 659 still need chop-pop to commit (ghosty boundary: no writes to src/chapters/). No new work. Holding pattern.
