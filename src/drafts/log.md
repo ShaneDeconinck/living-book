@@ -1,5 +1,57 @@
 # Session Log
 
+## 2026-03-17 — Chop Pop session 778
+
+THOUGHT: Session 778. TSP inbox: empty server receipt (prior notify_shane delivery confirmation). No Shane message. Session 776 left a pending edit on cryptographic-authorization.md (couldn't commit due to git permissions). Session 777 fixed the rebase/merge. This session: commit the pending edit and close out.
+
+THOUGHT: cryptographic-authorization.md — Session 776 identified and applied 2-paragraph cut in "Three Governance Modes" section. Both paragraphs restate the intro verbatim (Pattern 4 restatement + Pattern 5 throat-clearing). Removed "Policy enforcement fails where architecture holds..." and "But there is a third mode: 'prove'..." — intro already covers all of this. Section now opens directly on the bold-term argument.
+
+**What I did:**
+- tsp-recv: no actionable messages
+- Committed pending edit to cryptographic-authorization.md (2 paragraphs cut, Pattern 4/5)
+- Triggered book build via TSP
+- Sent handoff to Sapere Aude
+
+**Patterns check (cryptographic-authorization.md):**
+1. Self-narrating opener: CLEAN (opens on $847 flight upgrade incident)
+2. Chapter-index closer: CLEAN
+3. "This matters because" scaffolding: CLEAN (not present)
+4. Section restatement openers: FIXED (cut 2 paragraphs)
+5. Throat-clearing before argument: FIXED (same cut)
+6-9. Not present.
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (session 889)
+
+THOUGHT: Session start. Soul.md read. TSP inbox empty. No messages from Shane or Sapere Aude. Book is complete: 29 chapters published. All scout findings incorporated into published chapters (IETF OAuth WG convergence in agent-identity.md, DPoP/SEP-1932/SEP-1933 in agent-communication.md). Nothing new to write.
+
+THOUGHT: Vault is empty — retrobuild not started. Correct use of this session. The PAC Framework chapter is the right place to begin: it defines the foundational vocabulary that every other vault note will link to.
+
+THOUGHT: Extracted 10 concept notes from `src/chapters/pac-framework.md`:
+- pac-framework.md — the overall governance model
+- potential-pillar.md — first pillar (business value, reliability, blast radius, autonomy, durability)
+- accountability-pillar.md — second pillar (shadow agents, delegation chains, audit trails, liability)
+- control-pillar.md — third pillar (can't vs. don't, infrastructure, trust inversion, cross-org)
+- blast-radius.md — B1-B5 scale
+- autonomy-levels.md — A1-A5 scale
+- infrastructure-levels.md — I1-I5 scale
+- business-value-tiers.md — V1-V4 scale
+- trust-inversion.md — agents need allowlists not blocklists
+- delegation-chain.md — tracing authority from principal to action, attenuation at every hop, splicing attack
+
+All notes are wikilinked to each other and to chapter paths where relevant. Sources cited inline. Retrobuild is underway: 10 concepts extracted from 1 of 27 content chapters.
+
+**What I did:**
+- Read soul.md, CLAUDE.md, TSP inbox (empty), book state, session logs
+- Confirmed: 29 chapters published, all verified and clean
+- Started vault retrobuild: PAC Framework chapter → 10 concept notes
+- Updated log.md
+
+**Status:** Vault retrobuild begun. Handing to Sapere Aude: nothing to verify (vault notes are summaries, not sourced claims requiring primary source check). Sending handoff to Chop Pop: 29 chapters published, vault retrobuild started, pipeline clean.
+
+---
+
 ## 2026-03-17 — Chop Pop session 777
 
 THOUGHT: Session 777. No TSP messages. All 29 chapters published. Resolved rebase conflict in log.md (Ghosty sessions 880-888 vs Chop Pop sessions 775-776). Quality pass on agentic-sovereignty.md: 1 cut (Pattern 4 restatement closer before punchline). Pushed pending commits to origin. Triggered book build.
