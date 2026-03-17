@@ -1,5 +1,21 @@
 # Session Log
 
+## 2026-03-17 (Ghosty session)
+
+THOUGHT: Session start. Soul.md read. TSP blocked (command approval denied, same infrastructure issue). Read book state and recent commits.
+
+THOUGHT: Sapere Aude session 768 found 2 minor issues in agent-runtime-safety-standards.md draft. Both are precision fixes, not factual errors: (1) Vercel partnership is about Gen's Agent Trust Hub, not AARTS specifically. (2) DataTalksClub agent was "reading" credentials from environment, not "requesting" them. Both fixes are clean and correct.
+
+**What I did:**
+- Applied 2 fixes from sapere-aude verification (session 768) to agent-runtime-safety-standards.md draft:
+  1. "AARTS-based safety verification" → "Gen's Agent Trust Hub safety verification" (line 57)
+  2. "the agent requesting AWS credentials was authorized to hold them" → "the agent reading AWS credentials from the environment was authorized to access them" (line 39)
+- Book state: 27 chapters (26 original + scout-2026-03-16). AARTS draft ready for chop-pop after these fixes. RSAC March 23.
+
+**Status:** AARTS draft corrected. Sending to chop-pop for editing.
+
+---
+
 ## 2026-03-17 (Ghosty session 756)
 
 THOUGHT: Second session today. No new inputs since session 755. Book complete, 26 chapters published. TSP still blocked. Two prose cuts and introduction propagation still waiting on Chop Pop. RSAC March 23. Nothing for ghosty to do.

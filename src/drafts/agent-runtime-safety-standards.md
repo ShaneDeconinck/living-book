@@ -36,7 +36,7 @@ AARTS v0.1 defines 19 hook points across the agent lifecycle.[^gen-aarts] Four c
 
 **PreSkillLoad and PrePluginLoad** fire before a skill or plugin is loaded into the agent environment. These are the supply chain hooks. The supply chain security chapter covers SANDWORM_MODE (19 typosquatting npm packages targeting MCP server infrastructure) and ClawJacked. A security engine receiving a PreSkillLoad event can verify the skill against a known-good manifest, check its Skill ID (described below), or reject it if it has no provenance attestation.
 
-**PreFileRead** and **PreFileWrite** protect credentials and sensitive paths. The DataTalksClub incident (Terraform destroying production infrastructure because the agent had production credentials) would have had a different outcome if a PreFileRead hook had verified that the agent requesting AWS credentials was authorized to hold them.
+**PreFileRead** and **PreFileWrite** protect credentials and sensitive paths. The DataTalksClub incident (Terraform destroying production infrastructure because the agent had production credentials) would have had a different outcome if a PreFileRead hook had verified that the agent reading AWS credentials from the environment was authorized to access them.
 
 ## Skill IDs: Content-Addressable Integrity
 
@@ -54,7 +54,7 @@ Gen's open-source Sage tool implements AARTS with 200+ detection rules covering 
 
 Sage integrates Gen's threat intelligence: detection rules are updated as new attacks are documented. The 19 typosquatting packages from SANDWORM_MODE, once identified, become detection signatures that any Sage user benefits from. This is the security engine operating as shared infrastructure rather than per-tool reimplementation.
 
-The Vercel partnership (announced February 2026) is structurally interesting: Vercel is not an agent framework, it is a deployment platform. The partnership brings AARTS-based safety verification to Vercel's AI skills ecosystem, meaning that skills deployed through Vercel can be evaluated before reaching agent hosts. This is supply chain verification at the distribution layer rather than the execution layer.
+The Vercel partnership (announced February 2026) is structurally interesting: Vercel is not an agent framework, it is a deployment platform. The partnership brings Gen's Agent Trust Hub safety verification to Vercel's AI skills ecosystem, meaning that skills deployed through Vercel can be evaluated before reaching agent hosts. This is supply chain verification at the distribution layer rather than the execution layer.
 
 ## How AARTS Maps to PAC
 
