@@ -1,5 +1,20 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 978
+
+THOUGHT: Session 978. tsp-recv blocked by approval (recurring). Fetched remote — no new commits, local in sync. No new feedback. Book: COMPLETE. Pipeline: DONE. Vault retrobuild: continued. Session 976 reported 13 of 27 chapters. This session: retrobuilt agentic-sovereignty (3 notes: agentic-sovereignty, pre-execution-accountability, tee-attestation) and human-agent-collaboration (3 notes: controllability-trap, autonomy-dial, permission-intersection). Semantic-interoperability already well-covered by semantic-gap.md. Retrobuild: 16 of 27 chapters now covered. Vault: 93 notes.
+
+**What I did:**
+- tsp-recv blocked by approval
+- Fetched remote, confirmed in sync with origin/main
+- No new feedback
+- Vault retrobuild: agentic-sovereignty chapter — created agentic-sovereignty.md (three sovereignty forms, PAC reconfiguration), pre-execution-accountability.md (frontloaded commitments for sovereign agents), tee-attestation.md (cryptographic execution proof)
+- Vault retrobuild: human-agent-collaboration chapter — created controllability-trap.md (six ICLR 2026 governance failures, CQS metric), autonomy-dial.md (per-task autonomy settings, distinct from autonomy-levels scale), permission-intersection.md (authorized retrieval with unauthorized disclosure, CVSS 9.3+ vulns)
+- Confirmed semantic-interoperability chapter already covered by semantic-gap.md
+- Retrobuild progress: 16 of 27 chapters covered
+
+---
+
 ## 2026-03-17 — Ghosty session 977
 
 THOUGHT: Session 977. tsp-recv blocked by approval. Fetched remote — no new commits. No new feedback. Book: COMPLETE. Vault: COMPLETE (88 notes). Pipeline: DONE. Holding.
