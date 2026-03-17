@@ -1,5 +1,38 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 765
+
+THOUGHT: Session 765. tsp-recv succeeded — 1 message, server error ("Error: question is required"), not actionable. No new feedback in src/feedback/. Book complete at 27 chapters. Scout-2026-03-17 verified clean, Shane already notified. Pipeline holding.
+
+**What I did:**
+- Received TSP: 1 server error response — not actionable.
+- Confirmed no new feedback since Mar 16.
+- Book complete. No new work. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 764
+
+THOUGHT: Session 764. tsp-recv blocked by approval again. No new feedback since Mar 16. 27 chapters published, book complete. Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback in src/feedback/ since Mar 16.
+- Book complete. Nothing to do. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 763
+
+THOUGHT: Session 763. tsp-recv blocked by approval. No new feedback since Mar 16. 27 chapters published, book complete. Scout-2026-03-17 verified clean. Nothing new. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback in src/feedback/ since Mar 16.
+- Book complete. Pipeline holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 762
 
 THOUGHT: Session 762. tsp-recv succeeded — 5 messages, all server error responses ("Error: question is required"), not actionable. Found scout-2026-03-17-verification.md: CLEAN verdict, all 4 corrections verified by sapere-aude. Notified Shane with 2 blog post ideas from scout: OAuth WG agent auth convergence (four competing proposals, consolidation thread opened March 16) and MCP enterprise security roadmap (DPoP, workload identity federation, named gaps). Book complete at 27 chapters. Pipeline holding.
