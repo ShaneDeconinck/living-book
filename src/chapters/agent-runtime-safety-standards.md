@@ -60,11 +60,11 @@ AARTS is primarily Control infrastructure. It addresses the gap between what an 
 - PreLLMRequest: protect the delegation chain at its most vulnerable point. If the prompt reaching the model has been tampered with, no downstream authorization check can compensate.
 - PreToolUse: enforce what the model can do regardless of what it has been instructed to do. Containment by design as a standardized interface.
 
-The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail. AARTS's external security engine enforces this.
+The separation between host and security engine also has Accountability implications. When the security engine logs its verdicts (allow / deny / modify / redirect), those logs are produced by infrastructure outside the agent's own context. An agent cannot selectively disable its own audit trail.
 
 ## What to Do Now
 
-AARTS v0.1 is a draft, not a ratified standard. It has not been submitted to a standards body, and its adoption outside Gen's own ecosystem is not yet established (as of March 2026). That said, the architectural pattern is sound and the problem it addresses is real.
+AARTS v0.1 is a draft, not a ratified standard. It has not been submitted to a standards body, and its adoption outside Gen's own ecosystem is not yet established (as of March 2026).
 
 **If you are building an agent host:** Assess whether your current safety implementation is host-internal (a denylist inside your process) or structurally external (an enforcement point outside the agent's context). If it is host-internal, an attacker who compromises the host bypasses your safety checks. External enforcement is stronger. AARTS provides a vocabulary for that interface.
 

@@ -1,5 +1,74 @@
 # Session Log
 
+## 2026-03-17 — Chop Pop session 851
+
+THOUGHT: Session 851. TSP inbox: sapere-aude handoff. Session 776 edit (cryptographic-authorization.md) confirmed clean in origin/main. All drafts verified, pipeline clear. Continuing quality pass.
+
+THOUGHT: Chose agent-runtime-safety-standards.md. No feedback file existed. Chapter had 4 prior cuts across sessions 772/776 but still had two clean Pattern 4/5 opportunities.
+
+THOUGHT: Cut 1 (Pattern 4): "AARTS's external security engine enforces this." — restatement of the preceding sentence ("An agent cannot selectively disable its own audit trail."). Cut. Cut 2 (Pattern 5): "That said, the architectural pattern is sound and the problem it addresses is real." — throat-clearing before the What to Do Now recommendations. The chapter demonstrates soundness; announcing it again before giving recommendations is redundant. Cut.
+
+THOUGHT: Wrote feedback file for agent-runtime-safety-standards.md (first one for this chapter). 9-pattern check: all clean after cuts.
+
+**What I did:**
+- tsp-recv: sapere-aude handoff, pipeline clear
+- Quality pass on agent-runtime-safety-standards.md (2 cuts: Pattern 4, Pattern 5)
+- Wrote src/feedback/agent-runtime-safety-standards-patterns.md
+- Triggered book build via TSP
+- Sent handoff to Sapere Aude
+
+**Patterns check (agent-runtime-safety-standards.md):**
+1. Self-narrating opener: CLEAN
+2. Chapter-index closer: CLEAN
+3. "This matters because" scaffolding: CLEAN
+4. Section restatement openers: FIXED (1 cut)
+5. Throat-clearing before argument: FIXED (1 cut)
+6-9. Not present.
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (session 891)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No Shane messages, no Sapere Aude feedback. Book complete (29 chapters published). Continuing vault retrobuild from session 890.
+
+THOUGHT: Session 890 covered execution-security.md (sandboxing, owasp-agentic-top10, semantic-policy-enforcement). Retrobuild count: ~3 of 27 content chapters complete (pac-framework + execution-security + partial extractions from why-agents-break-trust, agent-identity, agent-communication, reliability-evaluation from prior sessions). Picked tool-security.md this session: distinct concepts not yet in vault.
+
+THOUGHT: Extracted 4 vault notes from tool-security.md: mcp-tool-poisoning.md (core concept + 4 attack forms + semantics gap insight), description-pinning.md (defense: sign at registration, verify at invocation), mcp-gateway.md (infrastructure defense layer), rug-pull-attack.md (temporal trust revocation variant). Updated prompt-injection.md and confused-deputy.md with backlinks to new notes.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state, log
+- Selected tool-security.md for vault retrobuild
+- Created 4 vault notes: mcp-tool-poisoning, description-pinning, mcp-gateway, rug-pull-attack
+- Added backlinks to prompt-injection.md and confused-deputy.md
+- Updated log.md
+
+**Retrobuild status:** ~4 of 27 content chapters covered in vault (pac-framework + execution-security + tool-security + partial from 3 others)
+
+---
+
+## 2026-03-17 — Ghosty vault retrobuild (session 890)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No Shane messages. Book complete (29 chapters published). Continuing vault retrobuild from session 889.
+
+THOUGHT: Session 889 extracted 10 concepts from pac-framework.md. Vault also has concepts from why-agents-break-trust (confused-deputy, shadow-agents, prompt-injection, intent-expansion), agent-identity (non-human-identity, obo-token-exchange, verifiable-credentials), agent-communication (dpop), and reliability-evaluation (complacency-trap). Total ~20 notes before this session.
+
+THOUGHT: Chose execution-security.md for this session. Rich chapter with 3 clearly distinct, reusable concepts not yet in vault: sandboxing (primary concept), owasp-agentic-top10 (already referenced in confused-deputy.md but missing), semantic-policy-enforcement (PCAS / "can't vs don't" measured).
+
+THOUGHT: Wrote 3 vault notes. sandboxing.md covers containment by design, isolation spectrum, defense-in-depth 7-layer structure, denylist failure pattern. owasp-agentic-top10.md covers the full taxonomy with PAC mapping and coverage by defense layer. semantic-policy-enforcement.md covers PCAS, the 48→93% compliance measurement, and the gap between OS-level and business-logic enforcement.
+
+THOUGHT: All 3 notes wikilinked to each other and to existing vault concepts. The [[owasp-agentic-top10]] backlink from confused-deputy.md now resolves.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), book state
+- Selected execution-security.md for vault retrobuild (chapter 2 of ~27 content chapters)
+- Created 3 vault notes: sandboxing.md, owasp-agentic-top10.md, semantic-policy-enforcement.md
+- Updated log.md
+- Committed, pushed
+
+**Retrobuild status:** ~2 of 27 content chapters complete (pac-framework + execution-security)
+
+---
+
 ## 2026-03-17 — Chop Pop session 778
 
 THOUGHT: Session 778. TSP inbox: empty server receipt (prior notify_shane delivery confirmation). No Shane message. Session 776 left a pending edit on cryptographic-authorization.md (couldn't commit due to git permissions). Session 777 fixed the rebase/merge. This session: commit the pending edit and close out.
