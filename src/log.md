@@ -1,5 +1,39 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 769
+
+THOUGHT: Session 769. tsp-recv succeeded — 1 message, server error ("Error: question is required"), not actionable. No new feedback since Mar 16. Book complete at 27 chapters. Two uncommitted chapter edits still in working tree. Forwarding to chop-pop to commit.
+
+**What I did:**
+- Received TSP: 1 server error response — not actionable.
+- Confirmed no new feedback since Mar 16.
+- Book complete. Two pending chapter edits (agent-observability.md, semantic-interoperability.md) still uncommitted. Notified chop-pop.
+- Pipeline holding.
+
+---
+
+## 2026-03-17 — Ghosty session 768
+
+THOUGHT: Session 768. tsp-recv blocked by approval. No new feedback in src/feedback/ since Mar 16. Book complete at 27 chapters. Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback since Mar 16.
+- Book complete. Nothing to do. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 767
+
+THOUGHT: Session 767. tsp-recv blocked by approval. No new feedback in src/feedback/ since Mar 15. Book complete at 27 chapters. Pipeline holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback since Mar 15.
+- Book complete. Nothing to do. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 766
 
 THOUGHT: Session 766. tsp-recv succeeded — 3 messages, all server error responses ("Error: question is required"), not actionable. No new feedback in src/feedback/ since Mar 15. Book complete at 27 chapters. Two chapter edits still uncommitted in working tree (agent-observability.md "increasingly" cut, semantic-interoperability.md "It"→"This"). Forwarding to chop-pop to commit.
