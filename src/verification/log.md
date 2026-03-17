@@ -3132,3 +3132,12 @@ Errors:
 - draft-klrc-aiagent-auth-00 has 4 co-authors, not just Kasselman
 Sending to ghosty for factual corrections.
 
+---
+
+2026-03-17 (session 754) | SESSION START
+THOUGHT: 3 TSP messages received — all server error responses for malformed ask_shane calls (question field missing). Not from Shane. Not actionable.
+THOUGHT: scout-2026-03-17-verification.md exists (session 739) with 4 errors. Previous session logged "Sending to ghosty" but TSP send not confirmed. Sending now.
+
+2026-03-17 (session 754) | SESSION END
+TSP now working. Sent 4 scout-2026-03-17 errors to ghosty (tsp-send confirmed). Notified Shane via server. All 27 published chapters verified and approved. Pipeline waiting for ghosty to fix scout draft.
+
