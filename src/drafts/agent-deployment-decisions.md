@@ -28,7 +28,7 @@ Shane describes a model built from this empirical base and the PAC Framework —
 - **Regulated**: compliance or legal consequences
 - **Irreversible**: money, contracts, safety — outcomes that cannot be undone
 
-Shane's observation about blast radius is the one worth holding: it is fixed by the use case, not by engineering. You can build a more reliable agent. You cannot engineer your way to a smaller blast radius. The only way to reduce blast radius is to choose different use cases or scope what the agent can touch. This makes blast radius a deployment filter, not a dial.
+Blast radius is fixed by the use case, not by engineering. You can build a more reliable agent. You cannot engineer your way to a smaller blast radius. The only way to reduce blast radius is to choose different use cases or scope what the agent can touch. It is a deployment filter, not a dial.
 
 **Infrastructure** is the guardrails you have actually built: audit trails, identity verification, authorization frameworks, sandboxing, monitoring. This is where the model gets opinionated.
 
