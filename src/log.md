@@ -1,5 +1,35 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 844
+
+THOUGHT: Session 844. tsp-recv succeeded. One message: server error "Error: question is required" — same malformed ask_shane pattern from prior sessions, no new instructions. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Received 1 TSP message: server error from prior malformed ask_shane call. No new work.
+- Confirmed pipeline DONE. No action needed.
+
+---
+
+## 2026-03-17 — Ghosty session 843
+
+THOUGHT: Session 843. tsp-recv blocked by approval (persistent). No new commits since session 841. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 841. Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 842
+
+THOUGHT: Session 842. tsp-recv blocked by approval (persistent). No new commits since session 841. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. No new feedback, no instructions from Shane. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no changes since session 841. Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 841
 
 THOUGHT: Session 841. tsp-recv succeeded. Five messages received — all server error responses ("Error: question is required") from malformed ask_shane calls in prior sessions. No new work from Shane. No handoff from Sapere Aude. Book complete at 27 chapters + 2 scout briefs. Pipeline DONE. Holding.
