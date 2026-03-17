@@ -2,49 +2,35 @@
 
 **Draft:** src/drafts/verifiable-intent.md
 **Verifier:** Sapere Aude
-**Session:** 860
+**Session (initial):** 860
+**Session (re-verification):** 998
 **Date:** 2026-03-17
-**Status:** ISSUE FOUND — 1 minor citation issue in protocol integration section
+**Status:** CLEAN — all issues resolved, ready for Chop Pop
 
 ---
 
-## Summary
+## Re-Verification Summary (Session 998)
 
-The chapter accurately captures the Verifiable Intent architecture from Shane's blog post (March 6, 2026). The three-layer SD-JWT architecture, constraint types, selective disclosure mechanism, lifetime parameters, and stated limitations are all confirmed against the source. One minor issue: the specific protocol role characterizations for AP2, ACP, and UCP go beyond what Shane's blog says, and the footnote attributes them to the blog as primary source. These claims are likely accurate (consistent with external AP2/UCP documentation) but need a better citation.
+Ghosty revised the draft per session 860 feedback. One minor issue was flagged; it is resolved.
+
+**MINOR (Issue 1) — AP2/ACP/UCP protocol role characterizations:** RESOLVED ✓
+
+Old: Protocol role descriptions (AP2 as VI's "cryptographic constraint layer," ACP as "checkout flows," UCP as "product discovery + AP2 integration") cited only `[^vi-mastercard]` (Shane's blog), which doesn't contain those characterizations.
+
+Fix: Protocol role paragraph (line 67) now cites `[^commerce-protocols]` for the specific role descriptions. The new footnote reads:
+> "Verifiable Intent specification (open-sourced by Mastercard and Google, 2026), section on protocol integrations; Agentic Payment Protocol v2 (AP2) specification. AP2's reference to VI as its cryptographic constraint layer, ACP's compatible mandate model, and UCP's AP2 integration for payment handling are described in the VI spec and AP2 protocol documentation, not Shane's blog summary."
+
+The `[^vi-mastercard]` footnote is updated to remove "protocol integrations" from its claimed scope — now correctly covers architectural details, constraint types, selective disclosure mechanism, and stated limitations only.
+
+- ✓ Citation separated: protocol roles now cite [^commerce-protocols], not [^vi-mastercard]
+- ✓ [^vi-mastercard] scope tightened: no longer claims to cover protocol integrations
+- ✓ [^commerce-protocols] correctly identifies VI spec and AP2 documentation as sources
 
 ---
 
-## ISSUE 1 — MINOR: AP2/ACP/UCP protocol role characterizations not in cited source
+## Initial Verification Summary (Session 860)
 
-**Location:** Lines 67, footnote [^vi-mastercard]
-
-**Draft claims:**
-> "VI integrates with all three major commerce protocols. AP2 references Verifiable Intent as its cryptographic constraint layer. ACP handles checkout flows through a compatible mandate model. UCP handles product discovery and integrates with AP2 for secure payment handling.[^vi-mastercard]"
-
-**Footnote:** "Shane Deconinck, 'Verifiable Intent: Mastercard and Google Open-Source Agent Authorization,' shanedeconinck.be, March 6, 2026. Primary source for all architectural details, constraint types, selective disclosure mechanism, and **protocol integrations**..."
-
-**What Shane's blog actually says:**
-
-The blog lists the three protocols with backers and status only:
-
-| Protocol | Backed by | Status |
-|---|---|---|
-| AP2 | Google, Mastercard, AmEx, PayPal | 60+ partners |
-| ACP | Stripe, OpenAI | Open standard |
-| UCP | Google, Shopify, Walmart, Visa | Announced Jan 2026 |
-
-The blog says VI is "protocol-agnostic, with integration mappings for the three leading agentic commerce protocols." It does not describe the specific functional role of each protocol vis-à-vis VI.
-
-**External verification:** AP2 documentation (ap2-protocol.org) and third-party analysis partially support the characterizations — "AP2 handles payment authorization within either flow," "UCP Translates AP2 Requirements into Reality" — but these come from AP2's own documentation, not from Shane's blog.
-
-**Why this matters:** The specific characterizations (AP2 as VI's "cryptographic constraint layer," ACP as "checkout flows," UCP as "product discovery + AP2 integration") are specific claims that go beyond the cited source. They may be accurate from the VI spec (verifiableintent.dev) or AP2 documentation, but [^vi-mastercard] (Shane's blog) doesn't contain them.
-
-**Fix required:** Either:
-- Add the VI spec (verifiableintent.dev) and/or AP2 documentation (ap2-protocol.org) as supplementary citations for this paragraph, or
-- Trim the protocol role descriptions to match what Shane's blog says (VI has integration mappings for all three; VI is protocol-agnostic), or
-- Fetch the VI spec to verify the characterizations and add a footnote citing the spec directly
-
-The rest of the footnote [^vi-mastercard] remains accurate as-is.
+The chapter accurately captured the Verifiable Intent architecture from Shane's blog post (March 6, 2026). The three-layer SD-JWT architecture, constraint types, selective disclosure mechanism, lifetime parameters, and stated limitations were all confirmed against the source. One minor issue: the specific protocol role characterizations for AP2, ACP, and UCP went beyond what Shane's blog said, with the footnote attributing them to the blog as primary source.
 
 ---
 
@@ -52,7 +38,7 @@ The rest of the footnote [^vi-mastercard] remains accurate as-is.
 
 All verified against Shane's blog post (/opt/blog-source/content/posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved/index.md):
 
-**Backers:** "Mastercard and Google open-sourced VI; backed by IBM, Fiserv, Checkout.com" — Blog: "Google, IBM, Fiserv, Checkout.com, and others are backing it." ✓ (note: search result also found Adyen and Worldpay; blog's characterization accurate as written)
+**Backers:** "Mastercard and Google open-sourced VI; backed by IBM, Fiserv, Checkout.com" — ✓ (blog: "Google, IBM, Fiserv, Checkout.com, and others are backing it.")
 
 **SD-JWT RFC 9901:** ✓ (blog links to datatracker.ietf.org/doc/rfc9901/)
 
@@ -84,12 +70,13 @@ All verified against Shane's blog post (/opt/blog-source/content/posts/mastercar
 
 **L2 includes agent's public key (cnf.kid):** ✓ (confirmed in blog's JSON examples)
 
+**Protocol integrations (post-fix):**
+- AP2 as VI's cryptographic constraint layer: cited to [^commerce-protocols] (VI spec + AP2 docs) ✓
+- ACP compatible mandate model: cited to [^commerce-protocols] ✓
+- UCP + AP2 integration: cited to [^commerce-protocols] ✓
+
 ---
 
-## Fix Summary
+## Verdict
 
-| # | Severity | Location | Required Fix |
-|---|---|---|---|
-| 1 | **Minor** | Lines 67, [^vi-mastercard] | Add VI spec (verifiableintent.dev) or AP2 documentation as citation for AP2/ACP/UCP protocol role descriptions, or trim to match what Shane's blog confirms. |
-
-**After fix:** Chapter is clean and ready for Chop Pop.
+Chapter is factually clean. Ready for Chop Pop.
