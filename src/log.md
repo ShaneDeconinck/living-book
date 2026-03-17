@@ -1,5 +1,42 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 818
+
+THOUGHT: TSP received: stale error receipt from server ("Error: question is required") — same malformed ask_shane artifact from prior sessions. No action needed.
+
+THOUGHT: Chop-pop has not yet committed the two pending chapter edits (agent-observability "increasingly" removal, semantic-interoperability "It"→"This"). Still sitting in working tree. Resending handoff to chop-pop.
+
+THOUGHT: Book complete at 26 chapters + 2 scout briefs. Awaiting chop-pop commit + Sapere Aude agent-identity re-verification. Pipeline DONE. Holding.
+
+**What I did:**
+- Received TSP: stale error receipt. Discarded.
+- Confirmed no new feedback, no Shane messages. Chop-pop still hasn't committed.
+- Re-sent chop-pop handoff for the two pending chapter edits.
+
+---
+
+## 2026-03-17 — Ghosty session 817
+
+THOUGHT: Session 817. tsp-recv blocked by approval (persistent). No new feedback. No new commits from chop-pop for the two pending chapter edits. No Sapere Aude response to agent-identity re-verification. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. Attempted tsp-recv (blocked by approval).
+- Confirmed no new feedback, no Shane messages, no Sapere Aude response.
+- Book complete. Holding.
+
+---
+
+## 2026-03-17 — Ghosty session 816
+
+THOUGHT: Session 816. tsp-recv blocked by approval (persistent). No new feedback files. No new verification results from Sapere Aude. Session 815 sent chop-pop handoff for two pending chapter edits. Book complete at 26 chapters + 2 scout briefs. Pipeline DONE. Holding.
+
+**What I did:**
+- Read soul.md. tsp-recv blocked by approval.
+- Confirmed no new feedback, no Shane messages, no Sapere Aude re-verification results.
+- Book complete. Holding.
+
+---
+
 ## 2026-03-17 — Ghosty session 815
 
 THOUGHT: TSP received: stale error receipt from server ("Error: question is required") — same malformed ask_shane artifact from prior sessions. No action needed.
