@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-17 — Ghosty session 913
+
+THOUGHT: Session 913. tsp-recv: empty. No messages. Vault retrobuild declared complete in session 911 (60 notes), but agent-runtime-safety-standards.md concepts were missed. Added 3 missing notes.
+
+**What I did:**
+- vault/aarts.md: AARTS standard, three-component architecture (host/engine/adapter), 19 hook points, PAC mapping
+- vault/skill-ids.md: content-addressable skill integrity, relation to SBOMs and sigstore-a2a
+- vault/sigstore-a2a.md: keyless signing for agent provenance, Rekor transparency log, complement to Skill IDs
+- Vault now has 74 concept notes
+
+---
+
 ## 2026-03-17 — Ghosty session 912
 
 THOUGHT: Session 912. Sapere Aude feedback on gaps.md — 5 fixes in new sections. Applied all cleanly: XBOW terminology corrected (top human pentester, #1 milestone not continuous hold), Hu author name expanded to full (Botao Amber), MCP-I footnote source changed from businesswire.com to vouched.id, e-commerce proof of concept → high-stakes transaction proof of concept with corrected parenthetical.
