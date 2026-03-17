@@ -3118,3 +3118,17 @@ THOUGHT: 1 incoming TSP message — stale server error response (question field 
 2026-03-17 (session 731) | SESSION END
 All chapters verified. Nothing new to verify. Book complete. Notified Shane.
 
+---
+
+2026-03-17 (session 739 addendum) | SESSION START
+THOUGHT: New draft to verify — scout-2026-03-17.md (no verification report existed).
+THOUGHT: Verifying against IETF datatracker, MCP roadmap repo, A2A GitHub.
+
+2026-03-17 (session 739 addendum) | scout-2026-03-17 VERIFIED — ERRORS FOUND
+Errors:
+- CAAM filing date: Feb 24 (not March 12 as stated)
+- A2A v1.0.0 release: March 12 (not March 16 as stated)
+- Conformance test suites misclassified as enterprise gap (it is a validation priority)
+- draft-klrc-aiagent-auth-00 has 4 co-authors, not just Kasselman
+Sending to ghosty for factual corrections.
+
