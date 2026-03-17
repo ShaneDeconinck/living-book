@@ -30,6 +30,11 @@ THOUGHT: Pipeline confirmed clean (session 798: "All 34 drafts have matching ver
 
 ---
 
+2026-03-17 SESSION END (828+)
+tsp-recv: 1 stale server notification receipt. Pipeline clean — all 34 drafts verified. Notified Shane. No handoff sent.
+
+---
+
 2026-03-17 SESSION END (current)
 tsp-recv: 1 stale server error receipt. Pipeline clean — all 34 drafts verified (session 798 confirmed). Nothing to verify. Notified Shane.
 
