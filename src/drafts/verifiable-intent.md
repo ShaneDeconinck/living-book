@@ -42,7 +42,7 @@ The constraint system is what makes VI different from a general-purpose credenti
 
 Budget, recurrence, and agent recurrence require the payment network to maintain state across transactions. That is a significant infrastructure requirement, but it means constraint enforcement happens at the network level, not at the agent level. An agent operating within a budget mandate cannot exceed it by signing additional L3 credentials: the network is the enforcement point, not the agent's own configuration.
 
-This distinction matters for governance. An agent's self-imposed limits can be removed or bypassed. Network-level constraints cannot be removed by the agent. The same logic that motivates hardware security modules for key management (take the sensitive operation out of software) applies here: take constraint enforcement out of the agent.
+An agent's self-imposed limits can be removed or bypassed. Network-level constraints cannot be removed by the agent. The same logic that motivates hardware security modules for key management (take the sensitive operation out of software) applies here: take constraint enforcement out of the agent.
 
 ## Selective Disclosure: Privacy by Architecture
 
@@ -93,6 +93,18 @@ VI's L3-is-terminal design is a current constraint, not a permanent one. If your
 **On the convergence question:**
 
 The three commerce protocols (AP2, ACP, UCP) and VI share enough primitives (SD-JWT credentials, mandate structures) that building on shared components rather than protocol-specific APIs is the lower-risk path. The protocols are still early. The standards are not.
+
+## Infrastructure Maturity for Agentic Commerce
+
+| Level | What exists | Authorization posture |
+|---|---|---|
+| **I1 Open** | No mandate structure | Agent purchasing authority is undefined; scope is whatever the agent assumes |
+| **I2 Logged** | Purchase actions recorded after the fact | Post-hoc audit possible; no constraint enforcement at transaction time |
+| **I3 Verified** | Agent identity confirmed, scoped OAuth tokens | Authorization scope is declared, but no machine-enforceable per-transaction constraints |
+| **I4 Authorized** | VI mandate structure with network-level enforcement | Transaction constraints enforced at the payment network; the agent cannot exceed scope by intent or compromise |
+| **I5 Contained** | Full L1-L2-L3 chain with automated dispute resolution | Intent-to-action chain cryptographically verifiable end-to-end; liability assignable to specific authorization events |
+
+Most agentic commerce deployments today are operating at I2 or I3: OAuth tokens establish scope, but per-transaction constraints live in the application layer, not in the authorization artifact. The move from I3 to I4 is what VI enables. The mandate is not stored in the agent; it is enforced by infrastructure the agent cannot modify.
 
 ---
 
