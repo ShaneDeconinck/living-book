@@ -4,13 +4,13 @@ Every time an agent calls an API, sends a message, or makes a purchase, somethin
 
 ## The Trust Inversion
 
-Shane's framing: humans are restricted in what they can't do, agents must be restricted to what they can.[^1]
+Shane's framing of this is precise: humans are restricted in what they can't do, agents must be restricted to what they can.[^1]
 
 In organizations, humans operate within broad boundaries. You trust employees with judgment, then add guardrails for specific risks: compliance training, approval workflows, separation of duties. The default is trust. Restrictions are exceptions.
 
 Agents need the inverse. The default should be zero authority. Every capability must be explicitly granted, scoped to the task, time-bounded, and revocable. Not because agents are malicious, but because they have no judgment about whether an action is appropriate. An agent that can read all your email will read all your email if any part of its task touches email. It does not think "that seems excessive." It does what its credentials allow.
 
-Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] The finding that matters most: access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
+Teleport's 2026 State of AI in Enterprise Infrastructure Security report quantifies this. Organizations that grant AI systems excessive permissions experience 4.5x more security incidents than those enforcing least-privilege: a 76% incident rate versus 17%.[^teleport] Access scope, not AI sophistication, was the strongest predictor of outcomes. It does not matter how capable or well-designed the agent is. If its credentials are broader than its task requires, incidents follow. And 70% of organizations report granting AI systems higher levels of privileged access than humans would receive for the same task.
 
 Policy says "agents should only access what they need." Architecture must say "agents can only access what they need." The gap between those two statements is where incidents happen.
 
@@ -40,7 +40,7 @@ OAuth is the backbone of modern API authorization, and its limitations with agen
 
 OAuth is possession-based. If you have a valid token, you can act. This was fine when a human initiated every session and the token lived for minutes. With agents, the token might live for months (via refresh tokens), the human is long gone, and the agent is making autonomous decisions about which scopes to exercise.
 
-Shane's example of Google Workspace illustrates the gap precisely: a user intends "help me find one email from last week" but the OAuth scope grants `gmail.readonly`, which means access to every email since account creation. The user's mental model of what they authorized and what the agent can actually do diverge wildly. Shane calls this consent theater.[^3]
+Shane's example of Google Workspace illustrates the gap: a user intends "help me find one email from last week" but the OAuth scope grants `gmail.readonly`, which means access to every email since account creation. The user's mental model of what they authorized and what the agent can actually do diverge wildly. Shane calls this consent theater.[^3]
 
 The problems compound with agents:
 
@@ -56,7 +56,7 @@ The problems compound with agents:
 
 Shane identified this gap: an agent usually acts on behalf of a user but creates its own intent. It is neither a human (who would use interactive OAuth) nor a traditional service (which would use Client Credentials). It is something new: a delegated entity with decision-making capability.[^2]
 
-The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] A second independent survey by the Cloud Security Alliance and Strata Identity (285 IT and security professionals) corroborates the same picture: 44% use static API keys, 43% use username and password combinations, and 35% rely on shared service accounts for agent authentication. Only 18% say they are "highly confident" their current IAM systems can manage agent identities effectively.[^csa-strata-auth] Two independent surveys, different respondent pools, same finding: nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005.
+The numbers confirm how wide this gap is. According to the Gravitee State of AI Agent Security 2026 survey (900+ respondents): only 21.9% of teams treat AI agents as independent, identity-bearing entities. 45.6% still rely on shared API keys for agent-to-agent authentication. And 27.2% have reverted to custom, hardcoded authorization logic because existing tools do not fit the agent model.[^gravitee] A second independent survey by the Cloud Security Alliance and Strata Identity (285 IT and security professionals) corroborates the same picture: 44% use static API keys, 43% use username and password combinations, and 35% rely on shared service accounts for agent authentication. Only 18% say they are "highly confident" their current IAM systems can manage agent identities effectively.[^csa-strata-auth] Two independent surveys, different respondent pools, same finding: nearly half of organizations are authenticating agents the same way they authenticated batch scripts in 2005. Shared API keys cannot carry delegation semantics, enforce scope attenuation, or create auditable accountability chains.
 
 ## OAuth Extensions for Agents
 
@@ -74,7 +74,7 @@ In practice, the token request includes:
 
 The IETF has a draft specifically for AI agents: "OAuth 2.0 Extension: On-Behalf-Of User Authorization for AI Agents" (draft-oauth-ai-agents-on-behalf-of-user), which introduces a `requested_actor` parameter in authorization requests to identify the specific agent requiring delegation.[^5]
 
-The IETF OAuth WG identified a structural risk in chained token exchanges in February–March 2026: delegation chain splicing.[^chain-splicing] When agents chain multiple RFC 8693 exchanges (User → Agent A → Agent B → service), each exchange is an independent HTTP transaction. Without cryptographic binding between hops, an attacker positioned at an exchange point can substitute a different `actor_token`, redirecting the chain to act under a different principal's authority. Each individual token exchange looks valid. The fraud is in the substitution between exchanges, which no single exchange step can detect in isolation. Transaction Tokens for Agents (covered below) address this by making actor and principal claims immutable across the chain: the Txn-Token Service will not issue a replacement token that contradicts the chain's established provenance.
+The IETF OAuth WG identified a structural risk in chained token exchanges in February–March 2026: delegation chain splicing.[^chain-splicing] When agents chain multiple RFC 8693 exchanges (User → Agent A → Agent B → service), each exchange is an independent HTTP transaction. Without cryptographic binding between hops, an attacker positioned at an exchange point can substitute a different `actor_token`, redirecting the chain to act under a different principal's authority. The attack is subtle: each individual token exchange looks valid. The fraud is in the substitution between exchanges, which no single exchange step can detect in isolation. Transaction Tokens for Agents (covered below) address this by making actor and principal claims immutable across the chain: the Txn-Token Service will not issue a replacement token that contradicts the chain's established provenance, closing the splicing window that bare OBO leaves open.
 
 But OBO alone does not solve purpose encoding or constraint enforcement. The token says who delegated and who acts, but not what the user actually intended.
 
@@ -90,7 +90,7 @@ The `oversight.requires_human_approval_for` claim embeds human oversight require
 
 A complementary draft from China Mobile (draft-chen-agent-decoupled-authorization-model, February 2026) takes a different angle: it decouples authorization decisions from business logic through separate Authorization Decision and Execution Points, enabling just-in-time permissions based on specific agent intent rather than static role assignments.[^decoupled-auth] Where AAP enriches the token, the Decoupled model restructures the authorization architecture itself.
 
-Both drafts are individual submissions, not IETF-endorsed standards. But together with the AI Agent Authentication draft (draft-klrc-aiagent-auth), the On-Behalf-Of extension, the Transaction Tokens for Agents extension (below), AAuth (below), an OAuth Scopes Aggregation draft for multi-step agent workflows,[^scopes-aggregation] and AgentID (March 2026),[^agentid] they represent a dozen or more concurrent IETF efforts specifically targeting agent identity and authorization in Q1 2026 alone, including extensions for workload identity (WIMSE), lifecycle provisioning (SCIM), and selective disclosure (SD-JWT for agents). The standards ecosystem is responding to the same gap the products are: agents need richer authorization than OAuth was built to provide.
+Both drafts are individual submissions, not IETF-endorsed standards. But together with the AI Agent Authentication draft (draft-klrc-aiagent-auth), CAAM (Contextual Agent Authorization Mesh, a February 2026 token delegation proposal),[^caam] the On-Behalf-Of extension, the Transaction Tokens for Agents extension (below), AAuth (below), an OAuth Scopes Aggregation draft for multi-step agent workflows,[^scopes-aggregation] and AgentID (a March 2026 individual submission proposing a dedicated identity protocol for autonomous AI agents within OAuth),[^agentid] they represent a dozen or more concurrent IETF efforts specifically targeting agent identity and authorization in Q1 2026 alone, including extensions for workload identity (WIMSE), lifecycle provisioning (SCIM), and selective disclosure (SD-JWT for agents). The proliferation phase may be ending: on March 16, a thread titled "Overlap of AI related proposals" appeared in the IETF OAuth WG with multiple active contributors — Dick Hardt, Bjorn Hjelm, Alex Babeanu — explicitly trying to rationalize competing proposals.[^oauth-overlap] The standards ecosystem is responding to the same gap the products are: agents need richer authorization than OAuth was built to provide. Whether it converges cleanly or fragments is the open question.
 
 ### Rich Authorization Requests (RFC 9396)
 
@@ -110,7 +110,7 @@ Transaction Tokens for Agents (draft-oauth-transaction-tokens-for-agents, Januar
 
 The mechanism works like this: when an agent calls Service A, the first service exchanges the agent's access token for a Transaction Token (Txn-Token) at a dedicated Txn-Token Service. The Txn-Token is a short-lived, signed JWT that carries immutable actor and principal context. Service A then passes the Txn-Token (not the access token) to Service B, which passes it to Service C. At every hop, each service can verify who the agent is and who it acts for, but no service ever holds the original access token. If the Txn-Token needs replacement (for scope changes at a boundary), the Txn-Token Service issues a new one, but the actor and principal claims remain immutable: they cannot be altered through the chain.
 
-**Credential containment:** forwarding access tokens through a call chain exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. **Auditability:** every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
+First, credential containment: forwarding access tokens through a call chain is a common pattern but exposes the token at every hop. Txn-Tokens replace the token with a verifiable identity assertion that carries no authorization power beyond the current transaction. Second, auditability: every service in the chain can log the actor and principal from the Txn-Token, producing a complete trace of which agent acted on behalf of which principal at each service boundary.
 
 A companion draft, the A2A Profile for OAuth Transaction Tokens (draft-liu-oauth-a2a-profile), applies this pattern specifically to agent-to-agent scenarios where agents need to propagate delegation context across A2A protocol interactions.[^txn-tokens-a2a]
 
@@ -122,7 +122,7 @@ The drafts above assume agents interact through web-based OAuth flows. AAuth (Ag
 
 AAuth defines an Agent Authorization Grant inspired by the OAuth Device Authorization Grant (RFC 8628). The agent collects identity information through natural-language conversation, then obtains a scoped access token through HTTP polling, Server-Sent Events, or WebSocket. The key security contribution is its treatment of LLM hallucination as an impersonation vector. The draft explicitly addresses the risk that an LLM could hallucinate or confuse identity information gathered during conversation, potentially obtaining tokens for the wrong user. The mitigations require out-of-band identity verification: the authorization server sends a confirmation challenge through a separate channel (SMS code, email link) that the LLM cannot fabricate.
 
-AAuth identifies a threat class none of the other chapters address: the LLM itself, through hallucination rather than prompt injection, can become the confused deputy. The failure mode is internal: the model's own tendency to confuse or fabricate information during multi-turn conversations produces incorrect identity claims. The fix is architectural, not prompt-level: the authorization server never trusts identity information that passed through the LLM without independent verification.
+AAuth identifies a threat class none of the other chapters address: the LLM itself, through hallucination rather than prompt injection, can become the confused deputy. The attacker is not an external adversary injecting prompts. The failure mode is internal: the model's own tendency to confuse or fabricate information during multi-turn conversations produces incorrect identity claims. The fix is architectural, not prompt-level: the authorization server never trusts identity information that passed through the LLM without independent verification.
 
 ### DPoP (Demonstration of Proof-of-Possession)
 
@@ -138,7 +138,7 @@ OBO and DPoP solve delegation tracking and token binding. But both assume the ag
 
 The Identity Assertion JWT Authorization Grant (ID-JAG), an IETF draft Okta has been contributing to with public and industry collaborators, addresses this. Instead of interactive consent, the enterprise identity provider issues a signed identity assertion: a short-lived, scoped JWT that cryptographically represents both the user and the requesting agent. The agent presents this assertion to the target application's authorization server to obtain an access token. No consent screen. No popup. No human in the loop at the moment of connection.[^xaa]
 
-Instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
+The architectural shift matters: instead of applications establishing direct trust with each other (the OAuth model), the enterprise IdP mediates every connection. IT and security teams pre-approve which agent-to-application integrations are allowed through policy, and the IdP issues tokens only when policy permits. This moves authorization decisions from runtime consent (which agents cannot do) to policy configuration (which governance teams can manage).
 
 Okta's product implementation, Cross App Access (XAA), shipped in early access in January 2026 with industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, and others. A developer playground (xaa.dev) launched the same month for testing integrations.[^xaa]
 
@@ -184,7 +184,7 @@ The OAuth extensions earlier in this chapter solve authorization: what can an ag
 
 Without SCIM-level provisioning, agent lifecycle management is manual. An administrator creates the agent identity in Entra, then separately configures access in each connected application. When the agent is decommissioned, each application must be updated individually. This is the problem SCIM solved for human identities a decade ago, and agents inherit it. With SCIM agent extensions, the identity provider provisions agent identities across the entire application ecosystem through a single protocol, and decommissioning an agent revokes access everywhere simultaneously.
 
-SCIM provisioning creates a structural enforcement point for shadow agent governance (covered in [Shadow Agent Governance](shadow-agent-governance.md)): if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications.
+SCIM provisioning creates a structural enforcement point for shadow agent governance (covered in [Shadow Agent Governance](shadow-agent-governance.md)): if agent identities can only be provisioned through the SCIM lifecycle, then an agent that was not provisioned through governance channels cannot authenticate to SCIM-integrated applications. The agent cannot exist in the application ecosystem without having been provisioned through the governed channel.
 
 That both drafts come from identity platform practitioners (Okta, Microsoft ecosystem) rather than academic researchers signals that agent lifecycle management is hitting production requirements, not theoretical design. The same pattern played out with human SCIM: the protocol emerged from the operational need to manage identities at scale across SaaS applications, not from standards committee design.
 
@@ -202,11 +202,11 @@ The draft also introduces an Identity Proxy: an intermediary that can request, i
 
 CyberArk's Secure AI Agents Solution, generally available since late 2025, validates this architecture in production. The approach uses SPIFFE Verifiable Identity Documents (SVIDs) as universal, short-lived identities for AI agents, with two-way trust established between authorization servers and SPIFFE roots of trust via SPIRE.[^cyberark-agents] CyberArk's Workload Identity Day Zero event framed the design principle: "AI agents are workloads that need narrowly scoped permissions, explicit authorization of actions, and confirmation of intent."
 
-OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner?
+OAuth extensions (OBO, AAP, XAA) handle authorization at the application layer: what can this agent do? Entra Agent ID and SCIM handle identity lifecycle at the platform layer: who is this agent, and how does it get provisioned? WIMSE for agents handles identity bootstrapping at the infrastructure layer: how does this agent prove it exists, in this runtime environment, bound to this owner? Each layer addresses a different phase, and an agent operating in a well-governed environment needs all three.
 
 ### Agent Identity Is Now a Product Category
 
-Agent identity is converging into a product category across multiple market segments simultaneously.
+Auth0, Teleport, and Microsoft Entra are not isolated moves. Agent identity is converging into a product category across multiple market segments simultaneously.
 
 At RSAC 2026's Innovation Sandbox (March 23), two of ten finalists are purpose-built for agent governance. Token Security provides continuous discovery, lifecycle governance, and intent-based access controls for autonomous agents: treating every AI agent and non-human identity as a managed identity with enforced constraints.[^token-security] Geordie AI provides real-time visibility into an organization's agentic footprint, with posture and behavior monitoring designed to identify and mitigate risk as agents scale.[^geordie] Both were selected from hundreds of submissions, and each finalist receives a $5 million investment.
 
@@ -226,7 +226,7 @@ OAuth requires pre-registered clients. An application registers with the authori
 
 GNAP removes this requirement. A client presents a cryptographic key in its first interaction with the authorization server. That key becomes the client's identity for the duration of the grant. No pre-registration, no client secret, no out-of-band setup. The authorization server can evaluate the request based on the key, the requested access, and policy, without needing the client to exist in its database first.
 
-Three GNAP design decisions matter for agents specifically:
+Three GNAP design decisions matter for agents:
 
 **Key-bound from the start.** Every GNAP access token is bound to the client's key by default. There are no bearer tokens to steal. This is what DPoP (RFC 9449) retrofits onto OAuth; GNAP builds it in. A compromised token without the corresponding key is useless.
 
@@ -240,7 +240,7 @@ The practical question is adoption. OAuth's ecosystem is enormous: every identit
 
 ## Beyond OAuth: Verifiable Identity
 
-The OAuth extensions and GNAP address authorization within systems where the authorization server has authority. But agents operate across organizational boundaries, where no single authorization server governs all parties.
+The OAuth extensions and GNAP address authorization within systems where the authorization server has authority. But agents operate across organizational boundaries, where no single authorization server governs all parties. This is where decentralized identity enters.
 
 ### DIDs and Verifiable Credentials
 
@@ -336,7 +336,7 @@ In February 2026, NIST released "Accelerating the Adoption of Software and Artif
 - **Access delegation:** linking user identities to AI agents
 - **Logging and transparency:** linking agent actions to their non-human entity
 
-The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal).
+The comment period runs through April 2, 2026, nearly the same window as the EU AI Act's high-risk obligations (originally August 2026, potentially December 2027 under the Digital Omnibus proposal). Both the US and EU regulatory apparatus are recognizing that agent identity is a foundational governance requirement.
 
 ### Industry Response: The Agent Transparency Label
 
@@ -414,7 +414,7 @@ The standards are landing but not yet universal. For teams deploying agents toda
 
 **Log the delegation chain.** Even before you have formal delegation infrastructure, log who authorized what at every hop. When the incident comes, this is what you will need.
 
-**Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, PIC, and the Verifiable Intent specification are all active. These will shape how agent identity works for the next decade.
+**Watch the standards.** The NIST comment period (April 2, 2026), the OpenID AIIM Community Group, PIC, the Verifiable Intent specification, and the IETF OAuth WG consolidation discussion (the March 16 "Overlap of AI related proposals" thread) are all active. These will shape how agent identity works for the next decade.
 
 The identity layer for agents is being built right now, in IETF drafts, W3C specifications, and open-source implementations. The organizations that adopt this infrastructure early will have accountable, auditable agent deployments. The ones that wait will be explaining to regulators why they cannot trace what their agents did.
 
@@ -441,7 +441,7 @@ The identity layer for agents is being built right now, in IETF drafts, W3C spec
 [^token-security]: Token Security, "Token Security is a Top 10 Finalist for RSAC 2026 Innovation Sandbox Contest," globenewswire.com, February 10, 2026. Also named finalist in two categories of the 2026 SC Awards (Most Promising Early-Stage Startup and Best Emerging Technology).
 [^geordie]: Geordie AI, "Geordie AI Selected as Top 10 Finalist for RSAC 2026 Conference Innovation Sandbox Contest," globenewswire.com, February 10, 2026.
 [^imprivata]: Imprivata, "Imprivata Introduces Agentic Identity Management to Secure and Govern AI Agents in Healthcare," imprivata.com, March 10, 2026. Announced at HIMSS 2026.
-[^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026. Identity threats dominate incident data; OAuth abuse doubled year-over-year from 4.8% to 10.1%. Analysis of 4.6 million endpoints and 9.4 million identities across 230,000+ organizations.
+[^huntress]: Huntress, "2026 Cyber Threat Report," huntress.com, February 2026. Identity threats dominate incident data; OAuth abuse doubled year-over-year from 4.8% to 10.1%. Analysis of 4.6 million endpoints and 9.4 million identities.
 [^csa-strata-auth]: Cloud Security Alliance and Strata Identity, "Securing Autonomous AI Agents," CSA Survey Report, February 5, 2026. Survey of 285 IT and security professionals conducted September-October 2025. Authentication methods: 44% static API keys, 43% username/password, 35% shared service accounts. Only 18% highly confident in IAM for agents.
 [^xaa]: Okta, "Cross App Access: Securing AI agent and app-to-app connections," okta.com, 2025-2026. Built on IETF Identity Assertion JWT Authorization Grant (ID-JAG) draft. Early access January 2026. Industry support from AWS, Google Cloud, Salesforce, Box, Automation Anywhere, Glean, Grammarly, Miro, WRITER. See also WorkOS, "Cross App Access (XAA): The enterprise way to govern AI app integrations," workos.com, 2026; Descope, "What is Cross-App Access (XAA) and How It Works," descope.com, 2026.
 [^xaa-mcp]: Okta, "Cross App Access extends MCP to bring enterprise-grade security to AI agent interactions," okta.com, 2026. XAA incorporated into MCP specification as "Enterprise-Managed Authorization" extension.
@@ -465,3 +465,5 @@ The identity layer for agents is being built right now, in IETF drafts, W3C spec
 [^chain-splicing]: IETF OAuth WG mailing list, "Security risks in RFC 8693 delegation chain composition," mailarchive.ietf.org/arch/browse/oauth/, February 27–March 13, 2026. The thread analyzed attack scenarios in which an adversary intercepts a token exchange and substitutes a different actor_token, redirecting the delegation chain to act under a different principal's authority without the terminal service being able to detect the substitution. Mitigation requires cryptographic chain binding across hops or immutable provenance claims (as in Transaction Tokens for Agents).
 [^scopes-aggregation]: IETF OAuth WG, "OAuth 2.0 Scopes Aggregation," individual submission, March 6, 2026. Addresses scope composition for multi-step agent workflows where an agent must aggregate and present the union of scopes from multiple upstream delegations without exposing individual upstream tokens.
 [^agentid]: IETF OAuth WG, "AgentID," individual submission by Warren Parad et al., March 15, 2026. Proposes an identity protocol for autonomous AI agents within OAuth, defining how agents are identified, credentialed, and differentiated from human principals and traditional service accounts. Early-stage individual submission; not yet a working group item.
+[^caam]: IETF OAuth WG, "Contextual Agent Authorization Mesh (CAAM)," draft-barney-caam-00, individual submission by Jonathan Barney, February 24, 2026. Proposes a token delegation framework for contextual agent authorization.
+[^oauth-overlap]: IETF OAuth WG mailing list, "Overlap of AI related proposals," mailarchive.ietf.org/arch/browse/oauth/, March 16, 2026. Thread opened to rationalize concurrent agent authorization proposals. Active contributors include Dick Hardt, Bjorn Hjelm, and Alex Babeanu.
