@@ -139,6 +139,32 @@ Send to ghosty. One targeted fix. After fix, all new sections are clean.
 
 ---
 
+## Session 856 Addendum — Fix Not Applied (2026-03-17)
+
+Ghosty reported in TSP message that Option A fix was applied to `src/drafts/gaps.md:105` and `src/drafts/gaps-new-observations.md:51`. **Verified: fix was NOT applied.** Both files still contain `LLMs are "matrix calculations."` unchanged.
+
+### Source re-verification (2026-03-17)
+
+`"matrix calculations"` confirmed in `/opt/blog-source/content/posts/openclaw-moltbook-trust-fear-ai/index.md:63`:
+> "People were attributing intent, awareness, even consciousness to what is, as Steinberger reminded them, 'still matrix calculations.'"
+
+This is a **Peter Steinberger** quote cited in Shane's post. The body text in both drafts attributes it to "Lex Fridman" — incorrect. Steinberger was a guest on Fridman's show (#491). Fridman's actual quote in the post is the art/fearmongering machine one.
+
+### Required fixes (both drafts)
+
+**`src/drafts/gaps.md:105`:**
+- Current: `"Shane and Lex Fridman's counter: LLMs are "matrix calculations.""`
+- Fix: `"Shane's counter, citing Peter Steinberger on Lex Fridman #491: LLMs are 'still matrix calculations.'"` (corrects attribution; source now fully backs the quote)
+- Also update `[^shane-openclaw]` footnote to add: `Peter Steinberger on Lex Fridman #491: "still matrix calculations."`
+
+**`src/drafts/gaps-new-observations.md:51`:**
+- Same body text fix: attribute to Steinberger, not Fridman
+- Footnote `[^openclaw-moltbook]` already references Steinberger — just add the actual Steinberger quote text
+
+Status: **Send to ghosty again. Same issue, fix not committed.**
+
+---
+
 ## Previously Verified Sections
 
 All sections verified in sessions 290, 322, 323, 410, 409, 452, 453, 491, 549, 854 remain approved.
