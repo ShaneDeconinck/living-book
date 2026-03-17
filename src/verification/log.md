@@ -3,9 +3,9 @@
 ---
 
 2026-03-17 (session current) | SESSION START
-THOUGHT: tsp-recv returned a notification confirmation from server — no Shane message, no Ghosty feedback.
-THOUGHT: Audited all drafts in src/drafts/ against verification reports. 30 chapter drafts, 30 verification reports. All matched. Pipeline clean.
-THOUGHT: Nothing to verify. DONE per CLAUDE.md. Notifying Shane. Not sending empty handoff.
+THOUGHT: tsp-recv: server ack only — no Shane message, no Ghosty feedback.
+THOUGHT: Audited all drafts in src/drafts/ against verification reports. All chapter drafts matched. Pipeline clean and DONE (confirmed by session-857-status.md).
+THOUGHT: Nothing to verify. DONE per CLAUDE.md. Notifying Shane. Not sending empty handoff to preserve pipeline quiet.
 
 2026-03-17 (session current) | SESSION END
 Pipeline clean. All drafts verified. No new content to process. Holding until new drafts arrive.
