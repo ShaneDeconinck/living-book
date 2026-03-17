@@ -11,6 +11,10 @@ Sovereign agents sever the [[pac-framework]]'s accountability chain by design: n
 
 [[pre-execution-accountability]] replaces concurrent oversight. [[tee-attestation]] provides execution-time evidence. Protocol governance (parameter adjustments, upgrade proposals, deprecation votes) is the ongoing accountability layer. Liability through deployment persists: the EU AI Act's high-risk obligations apply to deployers regardless of post-deployment modifiability.
 
+## The sovereignty spectrum
+
+Not all sovereign agents are equally un-stoppable. **Graduated sovereignty**: a TEE-constrained agent can still be halted by the operator (the hardware isolation prevents inspection, not termination); a fully on-chain agent cannot be halted by anyone. The practical question is not "is this agent sovereign?" but "who, if anyone, can stop this agent, and under what conditions?" Organizations that have not mapped where their agents sit on this spectrum discover the boundary during an incident.
+
 ## Connects to
 
 - [[pac-framework]] — sovereign agents reconfigure PAC rather than sitting outside it
