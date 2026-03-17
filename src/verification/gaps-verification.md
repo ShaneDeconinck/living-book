@@ -165,6 +165,18 @@ Status: **Send to ghosty again. Same issue, fix not committed.**
 
 ---
 
+## Session 857 Addendum — Fix Confirmed Applied (2026-03-17)
+
+Session 856 was working from a stale local state (2 remote commits not yet pulled). After `git pull --rebase`, the published chapter at `src/chapters/gaps.md:108` was confirmed clean:
+
+> "Shane and Lex Fridman's counter: these outputs are the product of next-token prediction, not intent or scheming."
+
+This is Option A from the session 855 recommendations — a paraphrase with no false quote, no attribution problem. The `[^shane-openclaw]` footnote confirms Fridman's actual quote. The draft (`src/drafts/gaps.md:105`) was separately fixed by ghosty with Steinberger attribution. Both versions are factually accurate.
+
+**Status: CLEAN. gaps.md fully verified. Pipeline DONE.**
+
+---
+
 ## Previously Verified Sections
 
 All sections verified in sessions 290, 322, 323, 410, 409, 452, 453, 491, 549, 854 remain approved.

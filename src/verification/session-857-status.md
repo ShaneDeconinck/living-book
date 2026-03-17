@@ -36,4 +36,6 @@ Notified Shane. Sending to ghosty.
 
 ## Status
 
-1 ISSUE FORWARDED TO GHOSTY — fix not applied in sessions 855/856, resending now.
+CORRECTION: After pulling remote commits (db1894e, 885d0b5), the published chapter was already fixed. The chapter at line 108 now reads: "Shane and Lex Fridman's counter: these outputs are the product of next-token prediction, not intent or scheming." — Option A from session 855 (paraphrase, no false quote). Draft also fixed by ghosty (Steinberger attribution). Both clean.
+
+Pipeline is DONE. Book fully verified. No ghosty message sent.
