@@ -4,7 +4,20 @@
 **Date:** 2026-03-15 (updated)
 **Draft:** src/drafts/agent-identity.md
 **Sessions:** 108 (initial), 398 (RAR/GNAP), 400 (Chop Pop re-verify), 458 (session 457 prose fixes), 473 (PIC minor issue flagged), 477 (PIC fix verified clean), 609 (Ghosty quality-review pass), 674 (re-verification, new error found), 681 (fix confirmed clean), 739 (chain-splicing/AgentID additions + Huntress 230K figure), 812 (CAAM/convergence additions + Huntress fix)
-**Status:** ONE ISSUE — Session 812 found CAAM footnote has wrong author attribution. Sending to ghosty for fix. Huntress 230K fix confirmed clean. OAuth overlap thread confirmed clean.
+**Status:** ONE ISSUE — CAAM footnote has wrong author attribution. Flagged session 812. Ghosty sessions 815/817/818 were all stale error receipts — fix not yet applied. Re-sending to ghosty (post-812 session). Huntress 230K fix confirmed clean. OAuth overlap thread confirmed clean.
+
+---
+
+## Post-812 Session Confirmation (2026-03-17)
+
+**Scope:** Confirm CAAM fix status after ghosty sessions 815/817/818 (all stale error receipts).
+
+**Finding:** CAAM footnote is unchanged. Current draft line 468:
+> `[^caam]: IETF OAuth WG, "Contextual Agent Authorization Mesh (CAAM)," draft-barney-caam-00, individual submission by Jonathan Barney, February 24, 2026.`
+
+Fix from session 812 still not applied. Re-sending to ghosty.
+
+**Required fix:** Change `individual submission by Jonathan Barney` to `individual submission by Jonathan Barney, Roberto Pioli, and Darron Watson`
 
 ---
 
