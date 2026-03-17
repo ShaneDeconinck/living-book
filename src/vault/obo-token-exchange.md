@@ -19,7 +19,7 @@ The resulting token states: "User Alice authorized Agent A to act on her behalf,
 
 Without OBO, agents present their own credentials to downstream services and the human principal disappears from the authorization picture. The service sees a powerful agent; it cannot tell whether the human intended that action or was bypassed. OBO restores the human into the authorization chain at every hop.
 
-OBO is the **who-delegated-what** layer. It tracks identity across delegation hops. It does not, on its own, encode purpose or enforce constraints (that is [[aap|Agent Authorization Profile]]'s job) or prevent token theft (that is [[dpop|DPoP]]'s job).
+OBO is the **who-delegated-what** layer. It tracks identity across delegation hops. It does not, on its own, encode purpose or enforce constraints (that is [[agent-authorization-profile|Agent Authorization Profile]]'s job) or prevent token theft (that is [[dpop|DPoP]]'s job).
 
 ## Delegation chain splicing attack
 
@@ -31,7 +31,7 @@ Transaction Tokens for Agents address this by making `actor` and `principal` cla
 
 OBO + [[dpop]]: OBO tracks the delegation chain; DPoP binds tokens to cryptographic keys. Both together protect against two distinct attacks: impersonation (OBO makes the chain auditable) and token theft (DPoP makes stolen tokens useless without the private key).
 
-OBO + Transaction Tokens: closes the splicing window OBO leaves open.
+OBO + [[transaction-tokens|Transaction Tokens]]: closes the splicing window OBO leaves open.
 
 OBO + [[verifiable-credentials]]: for cross-organizational delegation, VCs can carry the delegation claim portably without relying on a shared authorization server.
 

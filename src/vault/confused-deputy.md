@@ -22,7 +22,7 @@ Better prompts do not fix confused deputies. Infrastructure does:
 - [[delegation-chain]]: authority that can only decrease at each hop
 - Audit trails that capture decision path from intent to action
 
-At the MCP tool layer specifically: [[mcp-gateway]] enforces per-call scoped credentials; [[mcp-tool-poisoning]] describes how broad ambient credentials amplify the blast radius of tool description attacks. In multi-agent chains, [[delegation-capability-tokens]] make privilege expansion through delegation mathematically impossible.
+At the MCP tool layer specifically: [[mcp-gateway]] enforces per-call scoped credentials; [[mcp-tool-poisoning]] describes how broad ambient credentials amplify the blast radius of tool description attacks. In multi-agent chains, [[delegation-capability-tokens]] make privilege expansion through delegation mathematically impossible. At the OAuth layer, [[transaction-tokens]] close the delegation chain splicing variant by making actor and principal claims immutable across backend service hops.
 
 ## OWASP mapping
 
