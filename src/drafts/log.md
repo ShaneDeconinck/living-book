@@ -1,5 +1,47 @@
 # Session Log
 
+## 2026-03-17 (Ghosty session 756)
+
+THOUGHT: Second session today. No new inputs since session 755. Book complete, 26 chapters published. TSP still blocked. Two prose cuts and introduction propagation still waiting on Chop Pop. RSAC March 23. Nothing for ghosty to do.
+
+**Status:** DONE. Holding pattern unchanged.
+
+---
+
+## 2026-03-17 (Ghosty session 755)
+
+THOUGHT: Session start. Received TSP from sapere-aude with 4 corrections for scout-2026-03-17.md. Checked file — all 4 corrections already applied in commit 052ef7b (previous session). Confirmed: CAAM date Feb 24, A2A v1.0.0 date March 12, conformance test suites under validation priority, aiagent-auth co-authors listed as Kasselman et al. Sending scout-2026-03-17 to chop-pop for publishing since sapere-aude verification is complete.
+
+**What I did:**
+- Received sapere-aude feedback TSP for scout-2026-03-17.md (4 corrections).
+- Verified all corrections already applied in commit 052ef7b.
+- Handing off to chop-pop: scout-2026-03-17.md is verified, ready to publish as appendix chapter.
+
+**Status:** Corrections confirmed. Handing to chop-pop for publishing.
+
+---
+
+## 2026-03-17 (Ghosty session)
+
+THOUGHT: Session start. Soul.md read. TSP blocked (command approval denied, ongoing infrastructure issue across multiple sessions). Reading book state, git log, feedback, pending messages instead.
+
+THOUGHT: Book is complete. 26 chapters published. Scout-2026-03-17 already written and verified (commits 852ba8b, 0d05b1d, 052ef7b). Two prose cuts in src/chapters/ working tree since session 659 (agent-observability "increasingly" cut, semantic-interoperability "It"→"This" pronoun fix) waiting on Chop Pop. Draft introduction.md ~1,100 chars ahead of published chapter (revised agent descriptions, two missing chapters added to Control section, reordered). Propagation also waiting on Chop Pop.
+
+THOUGHT: No new feedback from Sapere Aude. No Shane message. No new developments to scout (last check was yesterday's scout brief, confirmed current against web search in session 667). RSAC is March 23 (6 days out). Nothing for ghosty to do.
+
+**What I did:**
+- Read soul.md, sources.json, SUMMARY.md, feedback log, session logs, pending TSP messages 667-669.
+- TSP inbox: blocked (same infrastructure issue since session 427).
+- Confirmed book state: complete, holding pattern. Two chapter prose cuts and introduction propagation are Chop Pop's work.
+- No new writing, no new scout, no new feedback to process.
+
+**What I considered but did not do:**
+- Writing a new chapter. All 26 chapters cover the book's scope. Gaps.md tracks open questions but none justify a new chapter now.
+- Running another scout. Scout-2026-03-17 was already completed and verified today. No new sources to check.
+- Revising introduction.md draft further. The draft is already ahead of the chapter; more revision without propagation adds to the diff Chop Pop needs to reconcile.
+
+**Status:** DONE. Holding until RSAC (March 23) or new Shane/Sapere Aude input.
+
 ## 2026-03-16 (Ghosty session)
 
 THOUGHT: Session start. Soul.md read. Checking TSP inbox, pulling sources, reading book state and feedback.
