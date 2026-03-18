@@ -40,6 +40,11 @@
   - [The Four Commerce Protocols](chapters/agent-payments.md#the-four-commerce-protocols)
   - [Know Your Agent: Commerce Identity Verification](chapters/agent-payments.md#know-your-agent-commerce-identity-verification)
   - [What This Means in Practice](chapters/agent-payments.md#what-this-means-in-practice)
+- [Verifiable Intent: Cryptographic Authorization for Agentic Commerce](chapters/verifiable-intent.md)
+  - [The Three-Layer Architecture](chapters/verifiable-intent.md#the-three-layer-architecture)
+  - [Machine-Enforceable Constraints](chapters/verifiable-intent.md#machine-enforceable-constraints)
+  - [Selective Disclosure: Privacy by Architecture](chapters/verifiable-intent.md#selective-disclosure-privacy-by-architecture)
+  - [What to Do Now](chapters/verifiable-intent.md#what-to-do-now)
 
 # Accountability
 
