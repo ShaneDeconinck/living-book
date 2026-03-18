@@ -51,7 +51,7 @@ Negotiation Phase:
 Establishment Phase:
   Client ↔ Sidecar: mutual attestation (SPIFFE SVIDs + RATS Evidence)
   Sidecar → Client: Session Context Object (SCO)
-    // illustrative — field names from draft-barney-caam-00
+    // illustrative: field names from draft-barney-caam-00
     {
       "purpose": "procurement-session",
       "scope_ceiling": ["read:procurement", "write:purchase_orders"],

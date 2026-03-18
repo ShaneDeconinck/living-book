@@ -93,7 +93,7 @@ The composition:
 |---|---|---|
 | Application gateway | Tool-call authorization, content filtering, Cedar policies | Traffic that bypasses the gateway |
 | Network SASE | Connectivity, destination allowlists, intent inspection | Tool-call authorization details inside TLS |
-| Both composed | Enforcement without deployment gaps | — |
+| Both composed | Enforcement without deployment gaps | - |
 
 That matters: enterprise security teams operate the network layer and security buyers fund it. Agent security that exists only at the application layer must be funded and operated by the development teams building agents. Agent security at the network layer becomes part of the existing enterprise security stack.
 

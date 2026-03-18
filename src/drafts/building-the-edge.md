@@ -134,7 +134,7 @@ The intelligence is becoming commodity. The edge is the infrastructure to unleas
 
 [^1]: Shane Deconinck, "When Intelligence Becomes Commodity, Infrastructure Becomes the Edge," shanedeconinck.be, March 2026.
 [^2]: Gravitee, "State of AI Agent Security 2026: When Adoption Outpaces Control," gravitee.io, 2026.
-[^4]: Gartner prediction, as reported in Gravitee "State of AI Agent Security 2026." The exact figure varies across secondary sources (1,000+ in some reports, 2,000+ in others) — the primary Gartner report was not directly accessed; the aggregate trend is the point.
+[^4]: Gartner prediction, as reported in Gravitee "State of AI Agent Security 2026." The exact figure varies across secondary sources (1,000+ in some reports, 2,000+ in others); the primary Gartner report was not directly accessed; the aggregate trend is the point.
 [^forrester-prediction]: Forrester, "Predictions 2026: Cybersecurity And Risk Leaders Grapple With New Tech And Geopolitical Threats," forrester.com, 2025. Predicts the first public agentic AI breach with employee dismissals. Paddy Harrington (senior analyst) identifies cascading multi-agent failures as the primary risk mechanism.
 [^5]: CYE, "Shadow AI: The Hidden Threat to Enterprise Security," 2025. Noma Security, "State of Shadow AI," 2025.
 [^7]: NIST NCCoE, "Accelerating the Adoption of Software and AI Agent Identity and Authorization," concept paper, February 2026. Comment period closes April 2, 2026.
