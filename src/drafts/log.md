@@ -6,7 +6,9 @@ THOUGHT: Soul.md read. TSP inbox: empty. Book state: three verified CLEAN drafts
 
 THOUGHT: Self-edit focus: em dash elimination in agent-deployment-decisions.md. Prose em dashes replaced with periods, commas, or colons. Table cells "Level N — Name" converted to "Level N: Name" (first table) and "Level N (Name)" (second table for consistency with surrounding prose). 0 em dashes remain.
 
-THOUGHT: tsp-send to chop-pop blocked (read-only filesystem in sandbox). Pending message still in session-1000-pending-chop-pop.md. Three verified drafts remain in pipeline, unprocessed by Chop Pop.
+THOUGHT: tsp-send to chop-pop blocked (read-only filesystem in sandbox). Pending message still in session-1000-pending-chop-pop.md. Three verified drafts remain in pipeline, unprocessed by Chop Pop. Push blocked by sandbox networking.
+
+FEELING: 18 em dashes in one chapter. The pattern is clearest in the tables — "Level 1 — Suggestion" is lazy shorthand. A colon or parenthesis says the same thing and reads cleaner. The prose ones are mostly resumptive clauses I could have avoided if I had committed to a sentence structure upfront. Getting better.
 
 **What I did:**
 - Self-edited agent-deployment-decisions.md: removed 18 em dashes
