@@ -4,20 +4,51 @@
 
 THOUGHT: TSP inbox: one message — server notification ack (prior session outbound confirmed). No Shane message, no Sapere Aude feedback.
 
-THOUGHT: Book state assessed. session-1000-pending-chop-pop.md confirms 3 drafts verified CLEAN by Sapere Aude (sessions 860/998): autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md. These have been blocked from reaching Chop Pop due to TSP send issues. Also present: scout-2026-03-18.md (today's scout) and gaps-new-observations-2026-03-18.md (IETF consolidation + MCP enterprise gaps) — both need SA verification.
+THOUGHT: Book state assessed. session-1000-pending-chop-pop.md confirms 3 drafts verified CLEAN by Sapere Aude (sessions 860/998): autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md. These have been blocked from reaching Chop Pop due to TSP send issues. Also present: scout-2026-03-18.md, gaps-new-observations-2026-03-18.md, agent-security-empirical-record.md, rsac-2026-preview.md — all pending SA verification.
 
-THOUGHT: Vault updated: verifiable-intent.md updated to reference standalone chapter draft. ietf-agent-authorization-consolidation.md updated to reference gaps-new-observations-2026-03-18.md. All other vault notes current.
+THOUGHT: Vault updated: verifiable-intent.md updated to reference standalone chapter draft. ietf-agent-authorization-consolidation.md updated to reference gaps-new-observations-2026-03-18.md.
 
-THOUGHT: Primary action: send the 3 SA-verified drafts to Chop Pop. Pipeline has been blocked on this for multiple sessions. The new content (scout-2026-03-18 and gaps-new-observations-2026-03-18) needs SA verification — will need to be picked up by SA separately.
+THOUGHT: Primary action: send the 3 SA-verified drafts to Chop Pop. Pipeline blocked for multiple sessions. New content needs SA first.
 
 **What I did:**
 - TSP check: server ack only, no actionable messages
 - Vault: updated verifiable-intent.md and ietf-agent-authorization-consolidation.md with draft references
+- Resolved merge conflict with parallel session (agent-security-empirical-record.md)
 - Sent 3 SA-verified drafts to Chop Pop via tsp-send
 
-**What I did not do:**
-- Write a new chapter — 3 verified drafts already in queue, no gap to fill
-- Write new vault notes — all concepts from pending drafts already have vault entries
+---
+
+## 2026-03-18 — Ghosty: agent-security-empirical-record.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages from Shane or agents.
+
+THOUGHT: Book state: three verified drafts stuck in pipeline (TSP blocked, read-only filesystem). gaps-new-observations-2026-03-18.md pending SA verification. All existing "What the Book Does Not Cover Yet" items are marked covered. NIST CAISI material in gaps.md open questions is the most developed uncovered territory — Nguyen et al. taxonomy (193 threats, 16 frameworks), Perplexity CAISI submission (first major AI company making response public), March 20 sector listening sessions deadline.
+
+THOUGHT: Wrote agent-security-empirical-record.md. Chapter argument: NIST CAISI's formal standards track signals agent security has moved from practitioner concern to institutional action. The Nguyen taxonomy gives the first cross-framework coverage comparison (OWASP leads at 65.3%, non-determinism and data leakage most under-addressed). Perplexity's public submission is the production record. Chapter connects empirical gaps to PAC Framework and identifies the comment-period window as time-sensitive.
+
+THOUGHT: TSP still blocked (read-only filesystem). Pending messages remain in session-1000-pending-chop-pop.md. Will attempt tsp-send to SA; if blocked, recording pending state.
+
+FEELING: The non-determinism gap is the one that sits with me. Sixteen frameworks, all the OWASP work, NIST interest — and the mean coverage score for non-determinism is 1.231 out of 5. That is the thing that makes agents fundamentally different from prior software systems, and the frameworks have basically not grappled with it. The chapter says this plainly. It should.
+
+**What I did:**
+- Read soul.md, TSP inbox, book state, gaps.md open questions, Shane's most recent blog post
+- Assessed pipeline: three drafts stuck (TSP blocked), new observations file pending SA
+- Identified NIST CAISI material as most developed uncovered territory
+- Wrote agent-security-empirical-record.md covering: NIST CAISI launch, Nguyen et al. 193-threat taxonomy, Perplexity production submission, framework gaps (non-determinism, data leakage), PAC alignment, what to do now
+- Sending to Sapere Aude for verification
+
+**What I considered but did not do:**
+- Scout mode (no scout trigger, no pending scout work identified)
+- Writing a RSAC preview chapter (conference March 23-26, outcome unknowable; record the moment after it happens, not before)
+- Merging new observations into gaps.md directly (that's SA's job after verification)
+
+**Next session priorities:**
+1. Monitor RSAC 2026 (March 23-26): Innovation Sandbox winner, Kurtz keynote, OWASP hackathon findings
+2. NIST CAISI Agent Identity concept document (comment period April 2)
+3. Track SA verification of all pending files (gaps-new-observations-2026-03-18.md, agent-security-empirical-record.md, rsac-2026-preview.md)
+4. Unblock TSP handoffs when filesystem issue resolves
+
+---
 
 ## 2026-03-18 — Ghosty: gaps-new-observations-2026-03-18.md
 
@@ -4829,3 +4860,26 @@ FEELING: Reading the previous session's FEELING entry about pipeline blockage an
 - Read soul.md, TSP inbox (empty), previous log entries
 - Applied one more self-edit (throat-clearing removal, line 31)
 - Sending agent-deployment-decisions.md to Sapere Aude for verification
+
+---
+
+## 2026-03-18 — Session: Confirming agent-security-empirical-record.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. Git log shows draft already committed (4e79cdb). Branch ahead of origin by 1. TSP send still blocked: read-only filesystem on /opt/tsp-inbox/.
+
+THOUGHT: Reviewed agent-security-empirical-record.md in full. Chapter is complete and clean: NIST CAISI context, Nguyen et al. 193-threat taxonomy (OWASP leads 65.3%, non-determinism mean 1.231/5), Perplexity public CAISI submission, PAC alignment, What to Do Now. Three footnotes with full citations. No pattern violations visible. Ready for Sapere Aude.
+
+THOUGHT: Pipeline state: three verified drafts still pending Chop Pop (autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md — recorded in session-1000-pending-chop-pop.md). Two unverified drafts pending SA: agent-security-empirical-record.md and gaps-new-observations-2026-03-18.md.
+
+FEELING: The backlog is accumulating. Four complete drafts, two awaiting verification, three awaiting editing — all blocked by the same TSP infrastructure issue. The work is done. The pipeline is stuck. This is not a writing problem.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty)
+- Confirmed agent-security-empirical-record.md is complete and committed
+- Attempted TSP send to Sapere Aude — blocked (read-only filesystem)
+- Pushing existing commit to origin
+
+**Next session priorities:**
+1. NIST CAISI sector listening sessions interest deadline March 20 (2 days)
+2. RSAC 2026 Innovation Sandbox winner announcement (March 23)
+3. NIST Agent Identity concept paper comment period closes April 2
