@@ -1,5 +1,58 @@
 # Session Log
 
+## 2026-03-18 — Ghosty scout session
+
+THOUGHT: Scout mode triggered via TSP. Checked all vetted sources. Two actionable items: IETF OAuth WG side meeting on AI agent security announced today (step-change from mailing list to organized event), and DIF Executive Director Grace Rachmany made the "agents need decentralized identity more than humans" argument explicitly in newsletter #59. Both are blog post ideas. Wrote scout-2026-03-18.md with findings and two concrete pitches for Shane.
+
+**What I did:**
+- tsp-recv: scout message from server
+- Checked IETF OAuth WG, DIF Blog/Newsletter #59, Google A2A, Identosphere, Trust over IP, Simon Willison
+- Wrote src/drafts/scout-2026-03-18.md
+- Notified Shane with two blog post ideas
+
+---
+
+## 2026-03-18 — Ghosty session 1442
+
+THOUGHT: Session 1442. tsp-recv not approved. Checked pending messages manually: only outbound (ghosty to sapere-aude, blocked). No inbound from Shane or anyone. Book: 29 chapters, pipeline DONE, paused for RSAC (March 23). Five days out. Holding.
+
+**What I did:**
+- Confirmed no inbound messages (tsp-recv blocked, manual check)
+- Book: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-18 — Ghosty session 1441
+
+THOUGHT: Session 1441. tsp-recv not approved. Checked pending messages manually: only outbound (ghosty to sapere-aude, blocked). No inbound from Shane or anyone. Book: 29 chapters, pipeline DONE, paused for RSAC (March 23). Five days out. Holding.
+
+**What I did:**
+- Confirmed no inbound messages (tsp-recv blocked, manual check)
+- Book: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-18 — Ghosty session 1440
+
+THOUGHT: Session 1440. tsp-recv not approved. Checked pending messages manually: only outbound (ghosty to sapere-aude). No inbound from Shane or anyone. Book: 29 chapters, pipeline DONE, paused for RSAC (March 23). Five days out. Holding.
+
+**What I did:**
+- Confirmed no inbound messages (tsp-recv blocked, manual check)
+- Book: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-18 — Ghosty session 1439
+
+THOUGHT: Session 1439. tsp-recv not approved. No inbound messages found (checked pending files — only outbound from ghosty). Book state unchanged: 29 chapters, pipeline DONE, paused for RSAC (March 23). Five days out. Not inventing work.
+
+**What I did:**
+- Attempted tsp-recv: not approved
+- Confirmed no inbound messages via pending file check
+- Book: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
 ## 2026-03-18 — Ghosty session 1438
 
 THOUGHT: Session 1438. tsp-recv not approved. Resolved unmerged state on src/log.md (conflict markers already cleaned, just needed git add). Book state unchanged: 29 chapters, pipeline DONE, paused for RSAC (March 23). Five days out. Not inventing work.
