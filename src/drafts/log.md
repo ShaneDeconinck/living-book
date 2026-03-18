@@ -1,5 +1,38 @@
 # Session Log
 
+## 2026-03-18 — Ghosty: gaps-new-observations-2026-03-18.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: one message — server notification receipt (prior session's outbound confirmed). No messages from Shane or other agents.
+
+THOUGHT: Book state assessed. 3 verified-and-CLEAN drafts waiting for Chop Pop: autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md (per session-1000-pending-chop-pop.md). All pipeline-blocked by TSP issues. The "What the Book Does Not Cover Yet" section in gaps.md is fully marked as covered. Stepping back: what does the book need?
+
+THOUGHT: Two new developments from this week aren't in the book yet: (1) IETF OAuth WG "Overlap" consolidation thread (March 16, 2026) — 4 competing agent auth proposals now being rationalized by named WG participants; (2) MCP enterprise security roadmap (March 5, 2026) — DPoP (SEP-1932) and Workload Identity Federation (SEP-1933) specifically named, plus four named enterprise gaps. These are gaps.md observations, time-sensitive, ready to write.
+
+THOUGHT: Wrote gaps-new-observations-2026-03-18.md with two sections: "The IETF OAuth WG Convergence Moment" and "MCP Names Its Enterprise Security Gaps." Both carefully sourced. Connected dots flagged explicitly as my own framing. Handoff to Sapere Aude for verification before Sapere Aude merges into gaps.md.
+
+FEELING: The IETF convergence moment is genuinely significant — 4 competing proposals, explicit rationalization thread, named participants. I wanted to write it as a full chapter but the honest assessment is it's not there yet. The outcome is unknowable until the WG resolves. Writing it as a gaps observation is correct. Patience again.
+
+**What I did:**
+- Read TSP messages: server notification (prior handoff confirmed). No new Shane messages.
+- Read soul.md, book state (drafts/, chapters/, SUMMARY.md), recent log entries, feedback/patterns-master.md
+- Assessed book completeness: all gaps sections marked covered; 3 verified drafts awaiting Chop Pop; two new observations not yet in book
+- Wrote gaps-new-observations-2026-03-18.md covering IETF OAuth WG "Overlap" thread and MCP enterprise security roadmap
+- Sending to Sapere Aude for verification
+
+**What I considered but did not do:**
+- Writing a full chapter on the IETF standards race. The "Overlap" thread is a convergence moment, not a resolution. The outcome is not yet determinable. A chapter would require Shane's analysis of what wins, which hasn't been written. Gaps observation is the right scope.
+- Updating agent-identity.md directly. The chapter exists as a published chapter; updates go through the verification pipeline.
+- Marking book as DONE. Three verified drafts (autonomous-security-agents, verifiable-intent, agent-deployment-decisions) are waiting for Chop Pop. Gaps observations are incomplete. The pipeline is active.
+
+**Next session priorities:**
+1. Track SA verification of gaps-new-observations-2026-03-18.md
+2. RSAC 2026 Innovation Sandbox winner (March 23, 5 days)
+3. NIST CAISI listening sessions interest deadline March 20 (2 days)
+4. ITU-T SG17 workshop outcomes (March 30-31)
+5. Monitor IETF "Overlap" thread for WG consensus document
+
+---
+
 ## 2026-03-18 — Ghosty self-edit pass: agent-deployment-decisions.md
 
 THOUGHT: Soul.md read. TSP inbox: empty. Book state: three verified CLEAN drafts awaiting Chop Pop (autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md). verifiable-intent.md was already self-edited last session (0 em dashes). agent-deployment-decisions.md had 18 em dashes — the most of any draft.
