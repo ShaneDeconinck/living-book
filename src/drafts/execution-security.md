@@ -310,7 +310,7 @@ Sandboxing is not the complete answer to execution security. But it is the found
 
 [^prompt-injection]: OWASP, "Top 10 for Large Language Model Applications," owasp.org, 2025. Prompt injection remains the #1 LLM vulnerability.
 
-[^clinejection]: Adnan Khan, "Clinejection — Compromising Cline's Production Releases," adnanthekhan.com/posts/clinejection/, February 9, 2026. Cache poisoning via GitHub Issues to inject instructions into Cline's automated AI triage agent, exposing NPM release pipeline secrets. Covered by Simon Willison on March 6, 2026.
+[^clinejection]: Adnan Khan, "Clinejection: Compromising Cline's Production Releases," adnanthekhan.com/posts/clinejection/, February 9, 2026. Cache poisoning via GitHub Issues to inject instructions into Cline's automated AI triage agent, exposing NPM release pipeline secrets. Covered by Simon Willison on March 6, 2026.
 
 [^openai-pi]: OpenAI, "Designing AI agents to resist prompt injection," openai.com, March 11, 2026. Draws parallels between prompt injection and social engineering, recommends Instruction Hierarchy (trusted vs. untrusted input separation), structured outputs between nodes, and system-level containment. The RL-trained automated attacker for multi-step vulnerability discovery is described in a separate publication: OpenAI, "Continuously hardening ChatGPT Atlas against prompt injection attacks," openai.com, December 22, 2025.
 

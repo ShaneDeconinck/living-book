@@ -8,7 +8,7 @@ This is the semantic interoperability problem. Identity infrastructure tells you
 
 The agent identity landscape has moved. DIDs give agents verifiable identifiers. TSP provides authenticated, encrypted channels across organizational boundaries. Verifiable credentials let delegations travel with cryptographic proof. WIMSE, ID-JAG, and the competing IETF drafts address how workload identity propagates through multi-hop chains. The field disagrees on architecture but agrees on the problem.
 
-Authorization is advancing. PIC's monotonic property — authority can only decrease through a delegation chain — gives cross-organizational authority propagation a mathematical foundation. Cryptographic authorization patterns from MACAW and MAPL make policy enforcement provable rather than advisory. Ghost tokens bind authority to specific agent instances. The infrastructure is nascent but directional.
+Authorization is advancing. PIC's monotonic property (authority can only decrease through a delegation chain) gives cross-organizational authority propagation a mathematical foundation. Cryptographic authorization patterns from MACAW and MAPL make policy enforcement provable rather than advisory. Ghost tokens bind authority to specific agent instances. The infrastructure is nascent but directional.
 
 Semantic interoperability has no equivalent trajectory. There is no active standards effort, no funded vendor ecosystem, and no agreed vocabulary for agent actions across organizational boundaries.
 
@@ -18,11 +18,11 @@ Nicola Gallo flagged this at the LFDT Belgium meetup as a layer that neither TSP
 
 The W3C Verifiable Credentials data model has a mechanism for semantic interoperability: JSON-LD `@context`. A credential asserting `age_over_18` can include a context URI that resolves to a canonical definition. Two issuers in different jurisdictions using the same context URI mean the same thing. The vocabulary problem is solved by making every attribute resolvable to a shared definition.[^w3c-vc]
 
-This works for credentials because the attribute space is bounded. "Date of birth," "nationality," "professional license status" — these can be enumerated, agreed upon, and published as vocabularies. W3C, ETSI, and sector-specific bodies have done this work. The EUDI wallet framework relies on it.
+This works for credentials because the attribute space is bounded. "Date of birth," "nationality," "professional license status": these can be enumerated, agreed upon, and published as vocabularies. W3C, ETSI, and sector-specific bodies have done this work. The EUDI wallet framework relies on it.
 
 Agent actions are not bounded. An agent authorized to "manage supplier relationships" might create contracts, initiate payments, schedule deliveries, request credit terms, and flag compliance issues. None of these were enumerated when the agent was authorized. The action space is discovered at runtime, scoped by what the agent encounters, and interpreted against organizational semantics that were never documented because they did not need to be: the humans handling these interactions share enough context.
 
-The EDI parallel is instructive. Electronic Data Interchange spent four decades solving a structurally similar problem: how do you exchange business documents — purchase orders, invoices, shipping notices — when the sender and receiver use different systems with different data models? The solution was schema standards (X12, EDIFACT) agreed by industry consortia, sector by sector, document type by document type. Those standards work, but the scope is narrow: bounded document types, predictable field structure, pre-negotiated trading partner relationships.
+The EDI parallel is instructive. Electronic Data Interchange spent four decades solving a structurally similar problem: how do you exchange business documents (purchase orders, invoices, shipping notices) when the sender and receiver use different systems with different data models? The solution was schema standards (X12, EDIFACT) agreed by industry consortia, sector by sector, document type by document type. Those standards work, but the scope is narrow: bounded document types, predictable field structure, pre-negotiated trading partner relationships.
 
 Agent actions are none of these things. The combination of dynamic intent, runtime discovery, and open-ended action space means no pre-agreed schema will cover the semantic surface.
 
@@ -49,7 +49,7 @@ Three properties of agent action semantics distinguish this from the credential 
 
 **Organizational embeddedness.** Action semantics are encoded in organizational practice, not in schemas. What "approve" means in a financial services firm differs from what it means in a construction company, differs from what it means in a hospital. These meanings live in internal documentation, tacit knowledge, and established workflows. They are not documented as machine-readable definitions because humans in those organizations share enough context to interpret them without documentation.
 
-**The cross-domain gap.** Within a single organization, misinterpretations are recoverable. The agent operates in an environment where the organization can observe, intervene, and correct. Across organizational boundaries, the agent has acted by the time the misinterpretation is discoverable. The counterparty's system has recorded the action. Reversibility depends on whether both sides agree on what happened — which they may not, because they did not agree on what the action meant.
+**The cross-domain gap.** Within a single organization, misinterpretations are recoverable. The agent operates in an environment where the organization can observe, intervene, and correct. Across organizational boundaries, the agent has acted by the time the misinterpretation is discoverable. The counterparty's system has recorded the action. Reversibility depends on whether both sides agree on what happened, which they may not, because they did not agree on what the action meant.
 
 ## Interim Approaches
 
@@ -59,9 +59,9 @@ The field does not have a general solution.
 
 **Human checkpoints at semantic boundaries.** If an agent encounters an action type it has not seen before, or an action whose semantics it cannot verify, pause for human confirmation. This is the HITL pattern applied to semantic uncertainty rather than risk level. An agent that pauses creates an opportunity to resolve the ambiguity. An agent that proceeds creates a fact.
 
-**Domain-specific vocabulary agreements.** For sectors where cross-organizational agent interaction is predictable and high-volume — financial settlement, healthcare referrals, logistics — industry consortia can agree on action vocabularies the way they agreed on EDI schemas. This requires the same slow, negotiated standards process that produced X12 and EDIFACT. The first sector-specific agent vocabularies will likely emerge from industries where the business case for automation is strongest and the organizational relationships are most structured.
+**Domain-specific vocabulary agreements.** For sectors where cross-organizational agent interaction is predictable and high-volume (financial settlement, healthcare referrals, logistics), industry consortia can agree on action vocabularies the way they agreed on EDI schemas. This requires the same slow, negotiated standards process that produced X12 and EDIFACT. The first sector-specific agent vocabularies will likely emerge from industries where the business case for automation is strongest and the organizational relationships are most structured.
 
-Natural language constraints require trust in the interpretation. Human checkpoints limit the autonomy that makes agents valuable. Domain vocabularies require multi-year standards processes. The general case — arbitrary agents, arbitrary organizations, arbitrary action types — remains open.
+Natural language constraints require trust in the interpretation. Human checkpoints limit the autonomy that makes agents valuable. Domain vocabularies require multi-year standards processes. The general case (arbitrary agents, arbitrary organizations, arbitrary action types) remains open.
 
 ## Mapping to PAC
 
@@ -85,7 +85,7 @@ Most organizations operating cross-organizational agent workflows are at I1. I3 
 
 ## What to Do Now
 
-**Document what your agents mean.** Before deploying agents across organizational boundaries, write explicit prose definitions of every authorization type. "Approve a payment" should specify: up to what amount, through which channels, with what counterparty confirmation required. This documentation is for humans as much as agents — it forces the semantic work that organizations have not had to do before.
+**Document what your agents mean.** Before deploying agents across organizational boundaries, write explicit prose definitions of every authorization type. "Approve a payment" should specify: up to what amount, through which channels, with what counterparty confirmation required. This documentation is for humans as much as agents. It forces the semantic work that organizations have not had to do before.
 
 **Start with bounded domains.** Identify cross-organizational workflows with the narrowest action vocabularies: scheduling, quote requests, status updates. Deploy agents in these domains first. The semantic surface is small enough to manage manually, and the operational learning will inform how you approach more complex actions.
 
