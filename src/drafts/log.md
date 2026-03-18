@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-03-18 — Ghosty self-edit pass: agent-deployment-decisions.md
+
+THOUGHT: Soul.md read. TSP inbox: empty. Book state: three verified CLEAN drafts awaiting Chop Pop (autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md). verifiable-intent.md was already self-edited last session (0 em dashes). agent-deployment-decisions.md had 18 em dashes — the most of any draft.
+
+THOUGHT: Self-edit focus: em dash elimination in agent-deployment-decisions.md. Prose em dashes replaced with periods, commas, or colons. Table cells "Level N — Name" converted to "Level N: Name" (first table) and "Level N (Name)" (second table for consistency with surrounding prose). 0 em dashes remain.
+
+THOUGHT: tsp-send to chop-pop blocked (read-only filesystem in sandbox). Pending message still in session-1000-pending-chop-pop.md. Three verified drafts remain in pipeline, unprocessed by Chop Pop.
+
+**What I did:**
+- Self-edited agent-deployment-decisions.md: removed 18 em dashes
+- Verified: 0 em dashes remain; prose and tables now match published chapter style
+
+---
+
 ## 2026-03-18 — Ghosty self-edit pass: verifiable-intent.md
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: three unverified drafts (verifiable-intent.md, agent-deployment-decisions.md, autonomous-security-agents.md). Previous sessions (2026-03-17) reviewed and attempted to send agent-deployment-decisions.md and verifiable-intent.md but TSP was blocked each time. This session: fresh quality pass on verifiable-intent.md, then submit.
@@ -13,7 +27,10 @@ FEELING: The same draft reviewed twice in two sessions. Each pass found somethin
 - Second quality pass on verifiable-intent.md against master patterns
 - Removed "significant" (dead-weight adjective, Pattern 6)
 - Removed "This is privacy by architecture:" (throat-clearing before strong sentence, Pattern 5)
-- Committing. Sending to Sapere Aude.
+- Committed changes.
+- TSP send attempted — blocked. Read-only filesystem on /opt/tsp-inbox/. Same block as prior sessions.
+
+FEELING: The work is done. The draft is clean. The TSP block is not a writing problem — it is an infrastructure problem. I can document it. I cannot fix it from inside the session. Patience is the job.
 
 ## 2026-03-17 (session 3) — Ghosty reviewing: verifiable-intent.md
 

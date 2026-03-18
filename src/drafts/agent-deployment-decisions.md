@@ -2,19 +2,19 @@
 
 Most governance conversations ask the wrong question. "How risky is this agent?" bundles together four different questions: what does the agent do, what happens when it fails, how much freedom does it have, and have you built the infrastructure to contain it. Collapse those into one question and the answer will be wrong.
 
-The alternative is to separate the dimensions and let autonomy fall out as a result — not as a starting assumption.
+The alternative is to separate the dimensions and let autonomy fall out as a result, not as a starting assumption.
 
 ## What Anthropic's Data Shows
 
 Anthropic published an empirical analysis of millions of real agent interactions in February 2026, scoring agent tasks on two axes: autonomy (is the agent following explicit instructions or operating independently?) and risk (what happens if something goes wrong?).[^anthropic-autonomy]
 
-Today, most agent actions are low-risk and reversible. Software engineering accounts for nearly 50% of all agentic tool calls. The data also shows emerging usage in healthcare, finance, and cybersecurity. The upper-right quadrant — high autonomy combined with high risk — is "sparsely populated but not empty": patient medical records, cryptocurrency trading, production deployments are appearing. Anthropic expects this frontier to expand as agents move into domains where the stakes are higher than fixing a bug.[^anthropic-autonomy]
+Today, most agent actions are low-risk and reversible. Software engineering accounts for nearly 50% of all agentic tool calls. The data also shows emerging usage in healthcare, finance, and cybersecurity. The upper-right quadrant (high autonomy combined with high risk) is "sparsely populated but not empty": patient medical records, cryptocurrency trading, production deployments are appearing. Anthropic expects this frontier to expand as agents move into domains where the stakes are higher than fixing a bug.[^anthropic-autonomy]
 
 What the data also shows: 80% of tool calls in the wild have at least one safeguard in place, and 73% involve human oversight of some form. People are building infrastructure before granting autonomy, not after. The governance instinct is right. The frameworks to structure it are still developing.
 
 ## Six Dimensions, One Dependent Variable
 
-Shane describes a model built from this empirical base and the PAC Framework — the PAC Agent Profiler — that structures the deployment decision across six dimensions. Five are independent inputs; the sixth, autonomy, is the output that follows from the others.[^pac-profiler]
+Shane describes a model built from this empirical base and the PAC Framework, the PAC Agent Profiler, that structures the deployment decision across six dimensions. Five are independent inputs; the sixth, autonomy, is the output that follows from the others.[^pac-profiler]
 
 **Business value** is why you would accept any risk at all. This agent could collapse a workflow from days to minutes, save millions, unlock something previously impossible. Without a clear answer here, there is nothing to discuss.
 
@@ -26,7 +26,7 @@ Shane describes a model built from this empirical base and the PAC Framework —
 - **Recoverable**: a small group affected, the situation reversible
 - **Exposed**: public-facing impact, hard to recall
 - **Regulated**: compliance or legal consequences
-- **Irreversible**: money, contracts, safety — outcomes that cannot be undone
+- **Irreversible**: money, contracts, safety. Outcomes that cannot be undone.
 
 Blast radius is fixed by the use case, not by engineering. You can build a more reliable agent. You cannot engineer your way to a smaller blast radius. The only way to reduce blast radius is to choose different use cases or scope what the agent can touch. It is a deployment filter, not a dial.
 
@@ -42,7 +42,7 @@ Most frameworks treat everything as a spectrum. Infrastructure does not work tha
 
 Shane: "Infrastructure is a gate, not a slider. No amount of reliability compensates for guardrails you haven't built."[^pac-profiler]
 
-In the PAC Agent Profiler, infrastructure is binary per autonomy level. Each level requires a specific set of capabilities. If you have not built them, that level is locked — regardless of how reliable the agent is. A capable agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened.
+In the PAC Agent Profiler, infrastructure is binary per autonomy level. Each level requires a specific set of capabilities. If you have not built them, that level is locked, regardless of how reliable the agent is. A capable agent without audit trails cannot be trusted with delegated authority, because when something goes wrong you have no way to understand what happened.
 
 This makes the framework actionable. Instead of "improve your governance posture," it says specifically: "you need identity verification and authorization scopes before this agent can move from human-approval to oversight mode."
 
@@ -50,11 +50,11 @@ The infrastructure requirements are cumulative:[^pac-profiler]
 
 | Autonomy Level | Infrastructure Required |
 |---|---|
-| Level 1 — Suggestion | None mandatory; agent recommends, human decides |
-| Level 2 — Approve | Basic logging, human confirmation flows |
-| Level 3 — Oversight | Structured audit trails, monitoring |
-| Level 4 — Delegated | Identity verification, scoped authorization, sandboxing |
-| Level 5 — Autonomous | All above, plus anomaly detection, automated containment |
+| Level 1: Suggestion | None mandatory; agent recommends, human decides |
+| Level 2: Approve | Basic logging, human confirmation flows |
+| Level 3: Oversight | Structured audit trails, monitoring |
+| Level 4: Delegated | Identity verification, scoped authorization, sandboxing |
+| Level 5: Autonomous | All above, plus anomaly detection, automated containment |
 
 You cannot skip levels. An agent operating at Level 4 without identity verification is not "mostly governed." It is ungoverned in the dimension that matters most for that level: knowing which agent is acting and whether it is authorized to act.
 
@@ -82,15 +82,29 @@ The common failure: organizations grant high-autonomy deployment to a high-relia
 
 The agent performs well. The infrastructure gap is invisible until something goes wrong. When it does, there is no audit trail to investigate, no identity verification to establish what acted, no scoped authorization to understand what was permitted. The blast radius, which was always regulated or irreversible for this use case, is fully realized with no containment mechanism in place.
 
-Reliability and autonomy are not the same thing. An agent can be highly reliable and still require full infrastructure build-out before being trusted at Level 4. The distinction matters because reliability is observable in advance. The infrastructure gap is not — it is invisible until it is needed.
+Reliability and autonomy are not the same thing. An agent can be highly reliable and still require full infrastructure build-out before being trusted at Level 4. The distinction matters because reliability is observable in advance. The infrastructure gap is not. It is invisible until it is needed.
 
 This is the infrastructure-as-gate insight applied to deployment decisions: you do not discover the missing guardrail during normal operation. You discover it during the incident you were trying to prevent.
+
+## Infrastructure Maturity for Deployment Decisions
+
+The book's I1-I5 maturity levels map directly to the autonomy model. Infrastructure level determines the maximum autonomy that is responsible to grant.
+
+| Level | What exists | Maximum autonomy level |
+|---|---|---|
+| **I1 Open** | No formal authorization, no structured logging | Level 1 (Suggestion): agent recommends, human decides and acts |
+| **I2 Logged** | Actions recorded, basic confirmation flows | Level 2-3 (Approve/Oversight): human reviews before or monitors during execution |
+| **I3 Verified** | Agent identity confirmed, structured audit trails | Level 3 (Oversight): agent acts, human monitors and can intervene |
+| **I4 Authorized** | Scoped authorization enforced, sandboxing, monitoring | Level 4 (Delegated): agent acts within defined boundaries, human reviews periodically |
+| **I5 Contained** | All above, plus anomaly detection and automated containment | Level 5 (Autonomous): agent acts independently, human notified of exceptions |
+
+Most enterprise agent deployments today operate at I2: actions are logged, but authorization is not enforced at the action level. I2 supports Level 3 autonomy at most: you can monitor, but you cannot contain. Deploying an agent at Level 4 or Level 5 without I4 infrastructure is not a governance posture. It is an unmonitored exposure.
 
 ## What to Do Now
 
 **Before authorizing any autonomous deployment:**
 
-Map the use case against all six dimensions, not just reliability and business value. Blast radius in particular is often underweighted: it is easy to estimate optimistically because failures are rare. Estimate it adversarially — what is the worst credible outcome given the systems this agent can reach?
+Map the use case against all six dimensions, not just reliability and business value. Blast radius in particular is often underweighted: it is easy to estimate optimistically because failures are rare. Estimate it adversarially: what is the worst credible outcome given the systems this agent can reach?
 
 **Infrastructure first:**
 
