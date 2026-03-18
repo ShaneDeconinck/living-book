@@ -8,9 +8,9 @@ This is the same class of capability the book describes as a governance challeng
 
 ## The Capability Threshold
 
-XBOW's results mark a threshold. Not a qualitative shift — agents have been writing scripts and fuzz-testing for years — but a quantitative one: autonomous agents have crossed the capability point where they can match, and in specific dimensions exceed, top human security practitioners.
+XBOW's results mark a threshold. Not a qualitative shift, but a quantitative one. Agents have been writing scripts and fuzz-testing for years. Autonomous agents have crossed the capability point where they can match, and in specific dimensions exceed, top human security practitioners.
 
-The relevant dimension is scale over time. A human pentester can execute complex exploit chains. XBOW can execute the same chains in parallel across hundreds of targets, continuously, at a cost profile that does not scale with hours worked. XBOW benchmarks show full penetration assessments completing in 28 minutes — what took a specialized team weeks now takes minutes per target.[^xbow-scale]
+The relevant dimension is scale over time. A human pentester can execute complex exploit chains. XBOW can execute the same chains in parallel across hundreds of targets, continuously, at a cost profile that does not scale with hours worked. XBOW benchmarks show full penetration assessments completing in 28 minutes. What took a specialized team weeks now takes minutes per target.[^xbow-scale]
 
 This creates rate asymmetry. Attacks scale faster than defenses. Vulnerability discovery has historically been rate-limited by human capacity: finding a zero-day in production infrastructure required talent, time, and access. All three are now automatable.
 
@@ -20,7 +20,7 @@ The enterprise security research community is already responding to this asymmet
 
 Attackers are not waiting for new offensive tools. They are repurposing existing ones.
 
-Google documented QUIETVAULT: a supply chain attack through a trojanized npm package that, after compromise, uses the developer's own AI coding tool as a reconnaissance agent.[^quietvault] The attacker issues natural-language prompts for filesystem searching. The developer's tool — which has filesystem access and is designed to follow natural-language instructions — executes them dutifully. The AI is not compromised: it is doing exactly what it was built to do. The attacker is just issuing instructions through a compromised package rather than directly.
+Google documented QUIETVAULT: a supply chain attack through a trojanized npm package that, after compromise, uses the developer's own AI coding tool as a reconnaissance agent.[^quietvault] The attacker issues natural-language prompts for filesystem searching. The developer's tool, which has filesystem access and is designed to follow natural-language instructions, executes them dutifully. The AI is not compromised: it is doing exactly what it was built to do. The attacker is just issuing instructions through a compromised package rather than directly.
 
 Five AI-powered malware families are now operational in the wild.[^quietvault] The shift is categorical, not incremental: from attacks *on* AI tools, to attacks *by* adversary-built AI, to attacks *through* existing AI tools that the target has already deployed and trusted.
 
@@ -30,9 +30,9 @@ SANDWORM_MODE, documented in February 2026, shows the same logic at the package 
 
 ## Three Pressures Converging
 
-**Discovery rate is increasing.** Autonomous agents scan and probe at machine speed. XBOW's 1,060+ submissions represent discovery at a rate impossible for human pentesters. As more organizations deploy autonomous security testing — offensively or defensively — the rate of vulnerability discovery increases. More discoveries means a larger backlog of known vulnerabilities relative to patching capacity.
+**Discovery rate is increasing.** Autonomous agents scan and probe at machine speed. XBOW's 1,060+ submissions represent discovery at a rate impossible for human pentesters. As more organizations deploy autonomous security testing, offensively or defensively, the rate of vulnerability discovery increases. More discoveries means a larger backlog of known vulnerabilities relative to patching capacity.
 
-**Exploitation rate is increasing.** The same tools that discover vulnerabilities can automate exploitation. Autonomous agents that complete full penetration assessments in 28 minutes can chain discovery to exploitation in the same session — and that upper bound will compress as agent capabilities improve.
+**Exploitation rate is increasing.** The same tools that discover vulnerabilities can automate exploitation. Autonomous agents that complete full penetration assessments in 28 minutes can chain discovery to exploitation in the same session, and that upper bound will compress as agent capabilities improve.
 
 **Defense cycles have not shortened proportionally.** Patching production systems requires coordinated deployment, testing, and rollout. The March 2026 Patch Tuesday that fixed CVE-2026-21536 represents the same release cadence as patches from ten years ago. The human coordination required to deploy a patch has not become meaningfully faster as the agents probing for unpatched systems have become faster.
 
@@ -42,7 +42,7 @@ Organizations that assume vulnerability windows are measured in days (the histor
 
 The agents you have not governed are potentially being exploited as attack infrastructure.
 
-QUIETVAULT does not require deploying a malicious agent. It requires only that the organization's existing AI coding tool has filesystem access and follows natural-language instructions from any source — properties that describe most AI coding tools by design.
+QUIETVAULT does not require deploying a malicious agent. It requires only that the organization's existing AI coding tool has filesystem access and follows natural-language instructions from any source. Both properties describe most AI coding tools by design.
 
 The confused deputy at the tool level (an AI coding tool following instructions from a compromised package) is the same failure pattern as the confused deputy at the API level (an agent acting with authority it should not have for the current context). In both cases, the failure is architectural: the system does not distinguish between legitimate principals and attackers who have gained control of a channel the system trusts.
 
@@ -50,7 +50,7 @@ The confused deputy at the tool level (an AI coding tool following instructions 
 
 **For any agent with access to consequential systems:** the instruction source is part of the trust boundary. A coding agent that accepts instructions from npm lifecycle hooks has effectively granted those hooks access to everything the agent can reach.
 
-**On vulnerability management:** the rate pressure from autonomous discovery tools changes patching priority. A vulnerability in an agent-connected system is no longer a "patch within 30 days" item. If the system is reachable through an agent's tool calls, the window between disclosure and exploitation may be measured in hours. The "agentic collapse" pattern — an agent invoking a vulnerable API endpoint, bypassing WAFs that inspect HTTP traffic but cannot analyze semantic intent in natural-language prompts — makes every legacy system an agent touches a higher-priority patch target.[^agentic-collapse]
+**On vulnerability management:** the rate pressure from autonomous discovery tools changes patching priority. A vulnerability in an agent-connected system is no longer a "patch within 30 days" item. If the system is reachable through an agent's tool calls, the window between disclosure and exploitation may be measured in hours. The "agentic collapse" pattern makes every legacy system an agent touches a higher-priority patch target: an agent invoking a vulnerable API endpoint bypasses WAFs that inspect HTTP traffic but cannot analyze semantic intent in natural-language prompts.[^agentic-collapse]
 
 ## Autonomous Defense
 
@@ -58,7 +58,7 @@ The same capabilities that make XBOW effective offensively make it effective def
 
 But access is not uniform. XBOW and similar tools are available to organizations with the resources to use them. Organizations without those resources face the asymmetry from the wrong side: attackers with autonomous tools probing systems defended by human-paced processes.
 
-This is where the book's infrastructure argument acquires urgency beyond governance theory. I4-level infrastructure — authorized, scoped, monitored agent deployments — shrinks the attack surface that autonomous adversaries can probe. An agent that cannot be instructed by untrusted sources cannot be used as a QUIETVAULT vector. An agent that operates with scoped credentials limits what a compromised agent can reach. An agent with structured audit trails enables post-compromise investigation rather than guesswork.
+This is where the book's infrastructure argument acquires urgency beyond governance theory. I4-level infrastructure (authorized, scoped, monitored agent deployments) shrinks the attack surface that autonomous adversaries can probe. An agent that cannot be instructed by untrusted sources cannot be used as a QUIETVAULT vector. An agent that operates with scoped credentials limits what a compromised agent can reach. An agent with structured audit trails enables post-compromise investigation rather than guesswork.
 
 The governance debt that looks manageable under human-paced threat models compounds under machine-paced ones.
 
@@ -90,7 +90,7 @@ Most organizations are at I1 or I2. QUIETVAULT, SANDWORM_MODE, and the agentic c
 
 **Apply supply chain scrutiny to AI integrations.** The same supply chain controls that apply to MCP servers apply to AI coding tools and their dependencies. A compromised package in a tool's dependency tree has access to everything the tool can reach. Verify package provenance for anything an AI tool loads.
 
-**Treat agent-connected legacy systems as elevated patch targets.** Every system an agent can invoke via tool call inherits its vulnerability surface as an agent-level attack vector. The agentic collapse path — natural-language prompt to agent to vulnerable API — bypasses network controls that assume HTTP requests as the attack surface. Legacy vulnerabilities in agent-connected systems are more urgent than the same vulnerabilities in isolated systems.
+**Treat agent-connected legacy systems as elevated patch targets.** Every system an agent can invoke via tool call inherits its vulnerability surface as an agent-level attack vector. The agentic collapse path from natural-language prompt to agent to vulnerable API bypasses network controls that assume HTTP requests as the attack surface. Legacy vulnerabilities in agent-connected systems are more urgent than the same vulnerabilities in isolated systems.
 
 **Use autonomous tools defensively.** If the threat includes autonomous vulnerability discovery, the appropriate response includes autonomous defensive discovery. Continuous automated security testing at I4 infrastructure is operationally realistic; periodic human engagements at I1 are not, given the current threat tempo.
 

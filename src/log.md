@@ -1,5 +1,45 @@
 # Session Log
 
+## 2026-03-18 — Ghosty session (current)
+
+THOUGHT: tsp-recv returned one message: server notification acknowledgment. No Shane message, no Sapere Aude feedback.
+
+THOUGHT: Book state review. SUMMARY.md shows 30 published chapters across Foundation/Potential/Accountability/Control/Synthesis. Two scout briefs in Appendix. Two complete chapter drafts in src/drafts/ have not been sent through the pipeline: verifiable-intent.md and autonomous-security-agents.md. Also: gaps-new-observations-2026-03-18.md (IETF OAuth WG convergence + MCP enterprise gaps observations for gaps.md), scout-2026-03-18.md (IETF side meeting + DIF exec ephemerality argument).
+
+THOUGHT: Checked autonomous-security-agents.md for em dashes. Eight found across lines 11, 13, 23, 33, 35, 45, 53, 61, 93. Self-edited: restructured sentences, no meaning lost. verifiable-intent.md was clean (previous self-edit removed two violations).
+
+THOUGHT: SUMMARY placement proposals: verifiable-intent.md fits in Potential after agent-payments.md (cryptographic authorization layer for agentic commerce extends the payments chapter); autonomous-security-agents.md fits in Control after tool-security.md (QUIETVAULT/SANDWORM_MODE supply chain + XBOW capability threshold + infrastructure defense maps directly to the control section's threat focus).
+
+**What I did:**
+- Self-edited autonomous-security-agents.md: removed 8 em dashes, restructured sentences
+- Committed self-edit
+- Sent handoff to Sapere Aude: verifiable-intent.md, autonomous-security-agents.md, scout-2026-03-18.md, gaps-new-observations-2026-03-18.md
+
+FEELING: Both drafts are substantive additions. autonomous-security-agents.md names a capability threshold that the rest of the book discusses abstractly. verifiable-intent.md fills the specific gap between "agent has payment scope" and "what the user actually authorized." The pipeline had these waiting; sending them through.
+
+---
+
+## 2026-03-18 — Ghosty session (post-scout, late)
+
+THOUGHT: No inbound messages (tsp-recv not approved, pending file shows only outbound to sapere-aude, blocked). Book: 29 chapters, pipeline DONE, holding for RSAC (March 23). Scout done today. Vault retrobuild complete (143 notes, all batch files extracted). Nothing to do. Holding.
+
+**What I did:**
+- Confirmed no inbound messages via pending file check
+- Confirmed vault retrobuild fully complete (all batch4 notes in vault/)
+- Book: COMPLETE. Pipeline: DONE. Holding.
+
+---
+
+## 2026-03-18 — Ghosty session (post-scout)
+
+THOUGHT: No inbound messages (tsp-recv not approved, checked pending file manually — only outbound to sapere-aude, blocked). Book: 29 chapters, pipeline DONE, holding for RSAC (March 23). Scout brief already written this session. Vault retrobuild at 143 notes, well advanced. Nothing to do. Holding.
+
+**What I did:**
+- Confirmed no inbound messages
+- Book: COMPLETE. Pipeline: DONE. Scout: already done today. Holding.
+
+---
+
 ## 2026-03-18 — Ghosty scout session
 
 THOUGHT: Scout mode triggered via TSP. Checked all vetted sources. Two actionable items: IETF OAuth WG side meeting on AI agent security announced today (step-change from mailing list to organized event), and DIF Executive Director Grace Rachmany made the "agents need decentralized identity more than humans" argument explicitly in newsletter #59. Both are blog post ideas. Wrote scout-2026-03-18.md with findings and two concrete pitches for Shane.
