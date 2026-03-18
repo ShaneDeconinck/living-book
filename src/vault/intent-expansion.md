@@ -27,6 +27,15 @@ The [[delegation-chain]] must trace all the way from human intent to agent actio
 
 Intent expansion explains why [[confused-deputy]] attacks are structurally harder to prevent in agents than in traditional software. Traditional deputies execute explicit instructions. Agentic deputies interpret intent — and that interpretation becomes the attack surface for [[prompt-injection]].
 
+## Connects to
+
+- [[delegation-chain]] — the chain must trace from human intent to agent action; intent expansion breaks that traceability
+- [[confused-deputy]] — intent expansion is why confused deputy attacks are structurally harder in agents than in traditional software
+- [[prompt-injection]] — adversarial inputs exploit the interpretation gap that intent expansion creates
+- [[autonomy-levels]] — the interpretation gap widens at higher autonomy levels; at A4–A5, agents make sequences of decisions the human never reviewed; [[infrastructure-in-the-loop]] is the architectural response
+- [[reliability]] — agents with high task completion rates but unmeasured intent accuracy are unreliable in a way that standard metrics do not capture
+- [[complacency-trap]] — successful task completion masks undetected intent expansion; humans stop auditing execution paths, making the gap invisible until a failure exposes it
+
 ## Sources
 
 - [Deconinck 2026]: "Trusted AI Agents: Why Traditional IAM Breaks Down," shanedeconinck.be, January 2026

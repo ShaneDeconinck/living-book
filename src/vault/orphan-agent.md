@@ -27,3 +27,5 @@ Microsoft Entra Agent ID (March 2026) creates a dedicated identity type for agen
 - [[scope-drift]] — orphan agents compound scope drift: no owner to notice, no governance to correct
 - [[authorization-outlives-intent]] — orphan agents are the extreme case of this pattern
 - [[agent-provisioning]] — proper provisioning (named owner, defined scope, documented purpose) makes orphan detection tractable
+- [[blast-radius]] — orphan agents typically hold permissions accumulated over time with no cleanup; their blast radius is unconstrained and often unknown until an incident forces examination
+- [[reliability]] — an unmonitored orphan degrades in reliability with no one to notice; no owner means no alerting, no model updates, and no behavioral drift correction

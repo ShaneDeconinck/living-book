@@ -38,6 +38,8 @@ The response to the speed problem is not slower agents — it is infrastructure 
 - [[complacency-trap]] — human monitors fall behind as agent success rates rise, increasing the speed problem's damage potential
 - [[agent-incident-response]] — requires procedures designed for machine-speed attacks, not human-paced ones
 - [[pre-execution-accountability]] — one architectural response to the speed problem
+- [[infrastructure-levels]] — the speed problem is what drives the I2→I3 progression requirement; organizations that deploy agents at I1 (human-readable logging only) cannot detect speed-amplified failures until after damage; I3 infrastructure operates at machine speed
+- [[autonomy-levels]] — the speed problem scales with autonomy level; A3 agents with human checkpoints contain it; A4–A5 agents without [[infrastructure-in-the-loop]] have no containment at all
 
 ## Sources
 

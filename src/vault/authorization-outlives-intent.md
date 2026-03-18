@@ -42,6 +42,8 @@ SPIFFE/SPIRE addresses this at the workload layer: credentials are issued for ho
 - [[agent-provisioning]] — preventing this starts at provisioning: document the agent's purpose and set credential lifetimes from day one
 - [[spiffe-svid-wimse]] — SPIFFE's short-lived SVIDs are the infrastructure-layer answer to long-lived credentials
 - [[coordinated-revocation]] — when an agent is compromised, revocation must propagate cross-system instantly
+- [[reliability]] — stale credentials degrade reliability silently: the agent may behave correctly but act on permissions that no longer reflect current policy; reliability metrics that only track task success miss this failure mode
+- [[autonomy-levels]] — higher autonomy levels require tighter credential lifecycles; an A4 agent operating on month-old permissions has structural governance debt that grows with every autonomous decision cycle
 
 ## Sources
 
