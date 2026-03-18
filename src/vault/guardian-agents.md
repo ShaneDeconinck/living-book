@@ -41,6 +41,7 @@ AI governance spending forecast: $492 million in 2026, surpassing $1 billion by 
 ## Connects to
 
 - [[shadow-agents]] — the primary target; visibility and runtime enforcement address ungoverned agent behavior
+- [[agent-registry]] — the registration infrastructure guardian agents depend on for identity and scope verification
 - [[infrastructure-in-the-loop]] — guardian agents operationalize this principle as a product category
 - [[evaluation-as-governance]] — continuous evaluation is the guardian agent's Potential-pillar function
 - [[fleet-governance]] — guardian agents provide the infrastructure fleet-scale governance requires

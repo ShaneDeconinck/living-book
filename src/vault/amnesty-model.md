@@ -42,10 +42,12 @@ The organizational models that scale: federated governance with central standard
 ## Connects to
 
 - [[shadow-agents]] — the population this model is designed to govern
+- [[agent-registry]] — the registration infrastructure the amnesty model feeds into; step 5 is registry enforcement
 - [[blast-radius]] — the classification tool that determines the governance path for each agent
 - [[infrastructure-levels]] — the target state (I5: unregistered agents structurally unable to operate)
 - [[consent-theater]] — amnesty registration is the point where actual scope gets assessed vs. the inherited tokens the shadow agent was using
 - [[guardian-agents]] — the runtime enforcement infrastructure the governed path deploys
+- [[governance-ownership-models]] — the three organizational ownership models; amnesty works only within the infrastructure-enforced model where the governed path is faster than the shadow path
 
 ## Sources
 
