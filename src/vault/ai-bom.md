@@ -1,6 +1,7 @@
 ---
 title: AI Bill of Materials (AI-BOM)
 tags: [supply-chain, accountability, governance]
+dimension: supply-chain
 ---
 
 A structured inventory of every component an agent depends on: models, tools, plugins, prompt templates, configuration files, APIs, and data sources. The AI analog of software SBOMs (Software Bill of Materials).

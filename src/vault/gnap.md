@@ -1,6 +1,7 @@
 ---
 title: GNAP (Grant Negotiation and Authorization Protocol)
 tags: [protocol, authorization, oauth, agents, identity]
+dimension: emerging-trust-infra
 ---
 
 GNAP (RFC 9635) is a next-generation authorization protocol that replaces OAuth's pre-registration model with key-based identity, making it a better fit for dynamic, ephemeral agents than patched OAuth.

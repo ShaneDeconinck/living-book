@@ -1,6 +1,7 @@
 ---
 title: Blast Radius
 tags: [risk, scale, pac-framework, potential]
+dimension: blast-radius
 ---
 
 A five-level scale in the [[pac-framework]] that measures the worst-case impact of an agent failure, from self-contained to irreversible. Part of the [[potential-pillar]].

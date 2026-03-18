@@ -1,6 +1,7 @@
 ---
 title: AARTS (AI Agent Runtime Safety Standard)
 tags: [standard, runtime, security, control, containment]
+dimension: standards
 ---
 
 A structured interface standard for agent runtime safety, introduced by Gen Digital in March 2026. The first attempt to standardize not just what containment does but how it plugs in across agent frameworks.

@@ -1,6 +1,7 @@
 ---
 title: Amnesty Model
 tags: [governance, shadow-agents, transition, pattern]
+dimension: shadow-agents
 ---
 
 A governance transition pattern for converting shadow agent deployments into governed ones: discover everything, classify by risk, offer a registration window without penalties, triage by blast radius, then enforce structurally after the window closes.

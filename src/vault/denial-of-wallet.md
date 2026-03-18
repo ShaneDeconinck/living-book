@@ -1,6 +1,7 @@
 ---
 title: Denial-of-Wallet (Overthinking Loops)
 tags: [attack, mcp, security, control, economics]
+dimension: cost-structure
 ---
 
 An attack where malicious MCP tool servers induce cyclic reasoning loops in agents, amplifying token consumption up to 142.4x and draining API budgets without triggering obvious anomaly signals.

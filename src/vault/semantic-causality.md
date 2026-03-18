@@ -1,6 +1,7 @@
 ---
 title: Semantic Causality
 tags: [observability, multi-agent, tracing, accountability]
+dimension: audit-trails
 ---
 
 Semantic causality is the relationship between an upstream agent's output and a downstream agent's action, where the causal link runs through meaning rather than through a direct function call.

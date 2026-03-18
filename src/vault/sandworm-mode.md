@@ -1,6 +1,7 @@
 ---
 title: SANDWORM_MODE
 tags: [attack-pattern, supply-chain, mcp, typosquatting]
+dimension: supply-chain
 ---
 
 A supply chain attack targeting MCP server infrastructure through typosquatting npm packages. Documented in February 2026: 19 packages that steal credentials within seconds of installation, then harvest password managers, SSH keys, AWS credentials, and npm tokens.

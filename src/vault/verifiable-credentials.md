@@ -1,6 +1,7 @@
 ---
 title: Verifiable Credentials (VCs) and Decentralized Identifiers (DIDs)
 tags: [identity, protocol, w3c, cross-org-trust, delegation]
+dimension: agent-identity
 ---
 
 Two W3C standards that together enable cryptographic identity and claims without a central authority. DIDs provide the identity layer; VCs carry the attestations. Where OAuth requires a shared authorization server, DIDs and VCs work across organizational boundaries with no pre-registration.

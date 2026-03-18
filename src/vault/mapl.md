@@ -1,6 +1,7 @@
 ---
 title: MAPL (Machine-Actionable Policy Language)
 tags: [policy, cryptographic, control]
+dimension: policy-vs-architecture
 ---
 
 A policy language where child policies can only restrict parent policies, never relax them; effective policy is the intersection of all layers.

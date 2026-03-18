@@ -1,6 +1,7 @@
 ---
 title: Model Provider Trust Instability
 tags: [supply-chain, trust, policy, risk]
+dimension: supply-chain
 ---
 
 The risk that a model provider's safety commitments change over time, making those commitments a policy dependency rather than an infrastructure guarantee.

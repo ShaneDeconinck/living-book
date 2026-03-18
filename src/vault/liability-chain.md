@@ -1,6 +1,7 @@
 ---
 title: Liability Chains
 tags: [accountability, governance, legal]
+dimension: liability-chains
 ---
 
 The explicit record of who deployed an agent, who authorized its scope, who maintained it, and who is legally liable for its behavior.

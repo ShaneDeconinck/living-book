@@ -1,6 +1,7 @@
 ---
 title: Evaluation as Governance
 tags: [governance, accountability, infrastructure]
+dimension: governance-thresholds
 ---
 
 Treating evaluation practices as governance infrastructure rather than engineering tooling.

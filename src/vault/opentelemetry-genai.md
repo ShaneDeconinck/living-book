@@ -1,6 +1,7 @@
 ---
 title: OpenTelemetry GenAI Semantic Conventions
 tags: [observability, standards, opentelemetry, telemetry]
+dimension: audit-trails
 ---
 
 The OpenTelemetry GenAI semantic conventions are the primary open standard for structured telemetry of LLM and agent operations, enabling correlation of AI calls across agent systems using standard distributed tracing infrastructure.

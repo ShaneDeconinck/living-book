@@ -1,6 +1,7 @@
 ---
 title: Agentic Commerce Protocol (ACP)
 tags: [protocol, commerce, payments, agents]
+dimension: business-value
 ---
 
 Stripe and OpenAI's protocol for agent checkout flows, launched as the protocol behind Instant Checkout in ChatGPT. Apache 2.0, maintained by OpenAI and Stripe, with Salesforce support announced via Stripe.

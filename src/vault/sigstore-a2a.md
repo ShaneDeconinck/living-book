@@ -1,6 +1,7 @@
 ---
 title: Sigstore-a2a
 tags: [supply-chain, provenance, signing, transparency]
+dimension: supply-chain
 ---
 
 An extension of the Sigstore keyless signing framework applied to AI agents and agent-to-agent (A2A) interactions. Provides build provenance attestation for agent skills and components through the Rekor transparency log.

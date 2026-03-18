@@ -1,6 +1,7 @@
 ---
 title: Infrastructure in the Loop
 tags: [governance, control, architecture, human-agent, oversight]
+dimension: infrastructure-as-gate
 ---
 
 The oversight model this book advocates: infrastructure enforces governance policy automatically, independent of human attention. Policy says what agents should not do; architecture makes it so they *cannot* do it, regardless of what they try.

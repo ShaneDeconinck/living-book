@@ -1,6 +1,7 @@
 ---
 title: Infrastructure Levels
 tags: [scale, pac-framework, control, governance]
+dimension: infrastructure-as-gate
 ---
 
 A five-level scale in the [[pac-framework]] measuring the guardrails an organization has actually built for agent governance, from open access to full containment. Part of the [[control-pillar]]. Infrastructure is a gate per [[autonomy-levels]], not a spectrum.

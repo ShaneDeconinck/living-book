@@ -1,6 +1,7 @@
 ---
 title: Digital Agent Passport (DAP)
 tags: [protocol, identity, commerce, kya]
+dimension: agent-identity
 ---
 
 A tamper-proof credential bundle that enables merchants to assess whether an AI agent is legitimate, authorized, and acting with proper consent. Defined by Trulioo's Know Your Agent (KYA) framework.

@@ -1,6 +1,7 @@
 ---
 title: CSA Agentic Trust Framework (ATF)
 tags: [governance, zero-trust, standards, security]
+dimension: standards
 ---
 
 An open governance specification published by the Cloud Security Alliance (CSA) in February 2026 that applies Zero Trust principles to AI agents. Published under Creative Commons; designed for implementation with existing open-source tools.

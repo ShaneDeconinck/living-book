@@ -1,6 +1,7 @@
 ---
 title: Guardian Agents
 tags: [governance, market-category, runtime, accountability]
+dimension: infrastructure-as-gate
 ---
 
 Gartner's term for the emerging market category combining AI governance and AI runtime controls: automated infrastructure that makes agent behavior trustworthy, secure, and auditable without requiring continuous human monitoring.

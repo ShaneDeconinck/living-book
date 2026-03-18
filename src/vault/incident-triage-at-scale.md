@@ -1,6 +1,7 @@
 ---
 title: Incident Triage at Scale
 tags: [governance, accountability, scale, regulation]
+dimension: regulatory-landscape
 ---
 
 Infrastructure that classifies fleet-level anomalies into operational noise, governance review, and regulatory incidents — before the organization needs to respond.

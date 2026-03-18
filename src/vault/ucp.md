@@ -1,6 +1,7 @@
 ---
 title: Universal Commerce Protocol (UCP)
 tags: [protocol, commerce, discovery, agents]
+dimension: standards
 ---
 
 Open-source standard for agentic commerce product discovery and catalog access, co-announced by Google, Shopify, and Walmart in January 2026, with Visa among more than 20 endorsing partners.

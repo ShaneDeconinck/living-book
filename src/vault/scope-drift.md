@@ -1,6 +1,7 @@
 ---
 title: Scope Drift
 tags: [lifecycle, governance, risk, permissions]
+dimension: delegation-chains
 ---
 
 The gradual accumulation of permissions beyond an agent's original purpose through incremental, individually-justified additions. Each connection makes sense in isolation. The cumulative result is an agent with far broader authority than anyone intended.

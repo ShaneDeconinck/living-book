@@ -1,6 +1,7 @@
 ---
 title: Decentralized Identifiers (DIDs)
 tags: [identity, standard, w3c]
+dimension: agent-identity
 ---
 
 W3C standard URIs that resolve to DID Documents containing public keys, enabling cryptographic identity without dependence on a central authority.

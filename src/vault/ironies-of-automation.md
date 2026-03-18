@@ -1,6 +1,7 @@
 ---
 title: Ironies of Automation
 tags: [automation, human-oversight, complacency, governance, reliability]
+dimension: reliability
 ---
 
 The paradox at the heart of automation governance: the more you automate, the more capable your human operators need to be, but automation removes the very practice that keeps those skills sharp.

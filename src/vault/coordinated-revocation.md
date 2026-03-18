@@ -1,6 +1,7 @@
 ---
 title: Coordinated Revocation
 tags: [security, operations, multi-agent, accountability]
+dimension: agent-identity
 ---
 
 Revoking a compromised agent's credentials stops that agent. It does not stop downstream agents that have already acted on its outputs, persisted its decisions, or further delegated based on authority it passed along.

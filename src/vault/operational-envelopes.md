@@ -1,6 +1,7 @@
 ---
 title: Operational Envelopes
 tags: [authorization, control, delegation]
+dimension: delegation-chains
 ---
 
 Cryptographic constraints that travel with an authorization, defining what an agent can do in machine-enforceable terms.

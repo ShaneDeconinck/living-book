@@ -1,6 +1,7 @@
 ---
 title: Model Context Protocol (MCP)
 tags: [protocol, tools, infrastructure]
+dimension: implementation-architecture
 ---
 
 An open standard protocol for connecting AI agents to tools and data sources via a JSON-RPC interface.

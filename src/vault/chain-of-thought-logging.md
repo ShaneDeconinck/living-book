@@ -1,6 +1,7 @@
 ---
 title: Chain-of-Thought Logging
 tags: [observability, accountability, reasoning, compliance]
+dimension: audit-trails
 ---
 
 Chain-of-thought (CoT) logging captures the intermediate reasoning steps a model produces before acting — the internal monologue visible in extended-thinking architectures. It is forensically valuable but not cryptographic evidence of what determined the output.

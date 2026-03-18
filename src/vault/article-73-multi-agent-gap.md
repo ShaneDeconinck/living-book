@@ -1,6 +1,7 @@
 ---
 title: Article 73 Multi-Agent Incident Gap
 tags: [regulation, eu-ai-act, multi-agent, governance, accountability]
+dimension: regulatory-landscape
 ---
 
 Article 73 of the EU AI Act requires providers of high-risk AI systems to report serious incidents to market surveillance authorities. The timelines are tight: 15 calendar days for serious incidents, 2 days for widespread or critical infrastructure disruptions, 10 days for incidents resulting in death.

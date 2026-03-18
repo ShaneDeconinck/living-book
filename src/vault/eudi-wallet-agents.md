@@ -1,6 +1,7 @@
 ---
 title: EUDI Wallet as Agent Governance Substrate
 tags: [identity, regulation, cross-org-trust, eidas, credentials]
+dimension: cross-org-trust
 ---
 
 The European Digital Identity Wallet (eIDAS 2.0 mandate) provides the trusted issuer, cross-border verification, and selective disclosure infrastructure that cross-organization agent governance requires — as a byproduct of its primary purpose as a citizen credential wallet.

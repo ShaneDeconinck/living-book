@@ -1,6 +1,7 @@
 ---
 title: Sandboxing and Execution Security
 tags: [control, security, containment, infrastructure]
+dimension: infrastructure-as-gate
 ---
 
 Structural restriction of what an agent can physically do — independent of what it is instructed to do. The execution-layer implementation of [[trust-inversion]].

@@ -1,6 +1,7 @@
 ---
 title: AgentDNS
 tags: [infrastructure, discovery, naming, governance, protocol]
+dimension: emerging-trust-infra
 ---
 
 A proposed root-domain naming system for LLM agents and their tools, extending the DNS model to create a unified namespace and centralized discovery layer for the agent ecosystem. IETF Internet-Draft draft-liang-agentdns-00 (filed 2026, expires April 2026).

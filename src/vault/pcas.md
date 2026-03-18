@@ -1,6 +1,7 @@
 ---
 title: Policy Compiler for Secure Agentic Systems (PCAS)
 tags: [security, control, policy-enforcement, research]
+dimension: policy-vs-architecture
 ---
 
 A reference monitor architecture that intercepts all agent actions and validates them against policy before execution. Published February 2026.

@@ -1,6 +1,7 @@
 ---
 title: OWASP MCP Top 10
 tags: [security, mcp, owasp, framework]
+dimension: standards
 ---
 
 A dedicated security risk framework for Model Context Protocol deployments, distinct from the [[owasp-agentic-top10]] which addresses agent-level risks.

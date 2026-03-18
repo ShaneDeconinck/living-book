@@ -1,6 +1,7 @@
 ---
 title: Decision Provenance
 tags: [observability, accountability, audit, delegation]
+dimension: audit-trails
 ---
 
 Decision provenance is the record of *what decided* an agent action and *under what authority* — as distinct from the record of *what happened*.

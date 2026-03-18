@@ -1,6 +1,7 @@
 ---
 title: Scoped Authorization
 tags: [authorization, control, principle]
+dimension: delegation-chains
 ---
 
 The principle that agents receive time-bounded, task-specific permissions rather than broad ambient authority.

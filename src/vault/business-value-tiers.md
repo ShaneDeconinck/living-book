@@ -1,6 +1,7 @@
 ---
 title: Business Value Tiers
 tags: [pac-framework, potential, value]
+dimension: business-value
 ---
 
 A four-tier scale in the [[pac-framework]] measuring why an organization would accept any risk from deploying an AI agent. Part of the [[potential-pillar]]. Without business value, there is nothing to discuss.

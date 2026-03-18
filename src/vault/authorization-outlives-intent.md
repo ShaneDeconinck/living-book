@@ -1,6 +1,7 @@
 ---
 title: Authorization Outlives Intent
 tags: [lifecycle, authorization, governance, temporal]
+dimension: delegation-chains
 ---
 
 The structural failure where credentials remain valid after the purpose that justified them has ended. The credential was issued for a task. The task is done. The employee is gone. The integration has changed. The credential has not.

@@ -1,6 +1,7 @@
 ---
 title: Autonomy Levels
 tags: [scale, pac-framework, governance, autonomy]
+dimension: autonomy
 ---
 
 A five-level scale in the [[pac-framework]] measuring how much independence an agent has earned, from suggestion to fully autonomous. Part of the [[potential-pillar]]. Autonomy is the *dependent variable* — it falls out of the other five dimensions, not a starting point you declare.

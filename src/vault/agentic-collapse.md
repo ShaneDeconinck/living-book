@@ -1,6 +1,7 @@
 ---
 title: Agentic Collapse
 tags: [attack-pattern, integration, legacy, security]
+dimension: supply-chain
 ---
 
 The [[confused-deputy]] applied to legacy tool integration: an agent has legitimate permission to invoke a tool API, the API has a vulnerability the agent cannot detect, and the composition of legitimate delegation and latent vulnerability creates an exploit path that neither component creates alone.

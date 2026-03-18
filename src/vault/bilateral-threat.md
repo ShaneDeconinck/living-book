@@ -1,6 +1,7 @@
 ---
 title: Bilateral Threat
 tags: [threat, adversarial, governance, introduction]
+dimension: governance-thresholds
 ---
 
 The compound governance challenge where organizations must simultaneously defend against adversarial AI agents while deploying and governing their own agents.

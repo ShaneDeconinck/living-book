@@ -1,6 +1,7 @@
 ---
 title: Verifiable Content Provenance
 tags: [cross-org-trust, credentials, identity, content]
+dimension: cross-org-trust
 ---
 
 Binding content to a DID so that agents consuming that content can verify its authenticity and origin without contacting any authority. Cross-organizational trust at the content layer.

@@ -1,6 +1,7 @@
 ---
 title: Skill IDs
 tags: [integrity, supply-chain, content-addressable, control]
+dimension: supply-chain
 ---
 
 Content-addressable fingerprints for agent skills, introduced alongside [[aarts]] in AARTS v0.1 (Gen Digital, March 2026). A deterministic identifier derived from skill content: the same skill always produces the same ID; a modified skill produces a different ID.

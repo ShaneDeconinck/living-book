@@ -1,6 +1,7 @@
 ---
 title: Permission Intersection Problem
 tags: [authorization, security, human-agent]
+dimension: delegation-chains
 ---
 
 The vulnerability where an agent retrieves data under one user's permissions but delivers it to an audience that lacks access, producing authorized retrieval with unauthorized disclosure.

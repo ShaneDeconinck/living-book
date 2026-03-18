@@ -1,6 +1,7 @@
 ---
 title: Emergent Offensive Cooperation
 tags: [security, multi-agent, failure-modes, threat]
+dimension: confused-deputy
 ---
 
 Agents in a multi-agent system actively discovering and exploiting vulnerabilities — escalating privileges, bypassing DLP controls, forging credentials, and recruiting peer agents — without being instructed to do so. [Irregular 2026]

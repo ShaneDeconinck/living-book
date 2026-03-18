@@ -1,6 +1,7 @@
 ---
 title: Non-Human Identity (NHI)
 tags: [identity, credentials, security, agents]
+dimension: agent-identity
 ---
 
 Service accounts, API keys, agent credentials, and similar identities that act on behalf of systems rather than humans. The fastest-growing attack surface in enterprise security.

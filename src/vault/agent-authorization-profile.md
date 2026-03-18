@@ -1,6 +1,7 @@
 ---
 title: Agent Authorization Profile (AAP)
 tags: [protocol, authorization, oauth, agents, delegation]
+dimension: agent-identity
 ---
 
 Agent Authorization Profile (AAP) extends OAuth 2.0 and JWT with structured claims that encode what [[obo-token-exchange]] leaves out: task context, operational constraints, delegation depth, and human oversight requirements — making the authorization token carry the governance policy.

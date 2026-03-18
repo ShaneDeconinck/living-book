@@ -1,6 +1,7 @@
 ---
 title: Know Your Agent (KYA)
 tags: [identity, commerce, accountability]
+dimension: agent-identity
 ---
 
 A verification framework establishing whether an AI agent is legitimate, who built it, and who authorized it to act.

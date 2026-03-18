@@ -1,6 +1,7 @@
 ---
 title: Cross-Protocol Confusion Attack
 tags: [attack, mcp, a2a, protocol, composition]
+dimension: confused-deputy
 ---
 
 An attack that exploits the boundary between agent communication protocols when agents compose them in multi-protocol workflows.

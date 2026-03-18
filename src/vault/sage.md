@@ -1,6 +1,7 @@
 ---
 title: Sage (Gen Digital)
 tags: [tool, aarts, runtime, supply-chain, security]
+dimension: supply-chain
 ---
 
 Gen Digital's open-source reference implementation of [[aarts]], providing 200+ detection rules across four threat categories: supply chain attacks, credential exposure, dangerous commands, and persistence mechanisms.

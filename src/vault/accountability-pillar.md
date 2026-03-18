@@ -1,6 +1,7 @@
 ---
 title: Accountability (PAC Pillar)
 tags: [pac-framework, pillar, accountability, governance]
+dimension: governance-thresholds
 ---
 
 The second pillar of the [[pac-framework]], addressing who is accountable and whether that can be proven. Accountability without [[control-pillar]] is governance on paper; Accountability without [[potential-pillar]] generates compliance overhead with no business mandate.

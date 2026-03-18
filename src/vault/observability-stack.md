@@ -1,6 +1,7 @@
 ---
 title: Five-Layer Observability Stack
 tags: [observability, infrastructure, accountability]
+dimension: audit-trails
 ---
 
 The complete observability architecture for agent governance. Five layers that together make agent accountability possible — from action logging through fleet-level behavioral aggregation. Individual layers solve specific problems; the stack is what makes incident investigation, regulatory compliance, and fleet misbehavior detection possible.

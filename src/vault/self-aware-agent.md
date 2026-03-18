@@ -1,6 +1,7 @@
 ---
 title: Self-Aware Agent
 tags: [governance, calibration, oversight, human-agent]
+dimension: policy-vs-architecture
 ---
 
 An agent that recognizes its own uncertainty and initiates oversight rather than waiting for human intervention. Not a hardcoded rule: a learned behavior. The agent participates in its own governance by knowing when to stop and ask.

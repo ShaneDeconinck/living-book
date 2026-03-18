@@ -1,6 +1,7 @@
 ---
 title: Delegation Chain Forensics
 tags: [accountability, security, operations, audit]
+dimension: audit-trails
 ---
 
 The minimum audit record required to reconstruct what an agent was authorized to do, what it did, and who was downstream — specifically for incident response and regulatory accountability.

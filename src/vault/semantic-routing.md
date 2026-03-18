@@ -1,6 +1,7 @@
 ---
 title: Semantic Routing
 tags: [infrastructure, network, routing, protocol, control]
+dimension: infrastructure-as-gate
 ---
 
 Routing network traffic based on the semantic *intent* of a request — what the agent is trying to do — rather than conventional criteria (destination IP, port, protocol). Two IETF drafts define proposed infrastructure: SIRP (Semantic Inference Routing Protocol) and Agent Communication Gateway.

@@ -1,6 +1,7 @@
 ---
 title: AI-Assisted Living Off the Land (AI LOTL)
 tags: [threat, supply-chain, agents, attack-pattern]
+dimension: supply-chain
 ---
 
 An attack pattern where adversaries weaponize developers' existing AI coding tools for post-exploitation reconnaissance, treating AI agents as administrative tools equivalent to PowerShell or bash.

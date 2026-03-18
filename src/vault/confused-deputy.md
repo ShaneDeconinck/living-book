@@ -1,6 +1,7 @@
 ---
 title: Confused Deputy
 tags: [security, vulnerability, credentials, delegation]
+dimension: confused-deputy
 ---
 
 A program with elevated privileges gets tricked into misusing them on behalf of a less-privileged caller. First described in 1988. Agents make it worse in four ways.

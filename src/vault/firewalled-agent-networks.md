@@ -1,6 +1,7 @@
 ---
 title: Firewalled Agent Networks
 tags: [security, multi-agent, architecture, containment]
+dimension: infrastructure-as-gate
 ---
 
 An architecture for enforcing trust boundaries between agents using dual firewalls at every communication crossing: an outbound Information Firewall and an inbound Language Converter Firewall. [Abdelnabi 2026]

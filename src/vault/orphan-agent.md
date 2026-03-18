@@ -1,6 +1,7 @@
 ---
 title: Orphan Agents
 tags: [lifecycle, governance, risk]
+dimension: ownership
 ---
 
 An agent whose owner has departed, whose purpose has ended, or whose credentials have exceeded policy lifetime, combining broad historical permissions with zero ongoing governance.

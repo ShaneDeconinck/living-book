@@ -1,6 +1,7 @@
 ---
 title: Cascading Failure
 tags: [security, multi-agent, failure-modes, observability]
+dimension: reliability
 ---
 
 A single fault in a multi-agent system — hallucination, prompt injection, corrupted data — that propagates through agent-to-agent communication and amplifies into system-wide harm. OWASP ASI08.

@@ -1,6 +1,7 @@
 ---
 title: Prompt Injection
 tags: [security, attack, vulnerability, agents]
+dimension: confused-deputy
 ---
 
 An attack where adversaries embed malicious instructions in content an agent is designed to read, causing it to execute commands the user never authorized.

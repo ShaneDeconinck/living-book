@@ -1,6 +1,7 @@
 ---
 title: Agent Provisioning
 tags: [lifecycle, identity, governance, provisioning]
+dimension: agent-identity
 ---
 
 The set of requirements that must be satisfied before an agent is permitted to run. Three things need to happen at provisioning time: the agent gets an identity, an owner, and a scope. Any agent running without all three is ungoverned from its first action.

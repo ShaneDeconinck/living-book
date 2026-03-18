@@ -1,6 +1,7 @@
 ---
 title: Semantic Interoperability Gap
 tags: [interoperability, cross-org, unsolved]
+dimension: cross-org-trust
 ---
 
 The unsolved problem that agent actions carry different meanings in different organizational contexts, and no standard vocabulary exists for cross-boundary semantic verification.

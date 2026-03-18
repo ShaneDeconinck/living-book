@@ -1,6 +1,7 @@
 ---
 title: Consent Theater
 tags: [governance, authorization, identity]
+dimension: agent-identity
 ---
 
 The gap between a user's mental model of what they authorized and the actual scope of the token an agent holds.

@@ -1,6 +1,7 @@
 ---
 title: Context Engineering
 tags: [practice, potential, architecture, agents]
+dimension: context-management
 ---
 
 The emerging discipline of managing what information enters an agent's context window: writing it, selecting it, compressing it, and isolating it across agents or turns.

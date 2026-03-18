@@ -1,6 +1,7 @@
 ---
 title: AI-Aware SASE
 tags: [infrastructure, network, security, control, observability]
+dimension: infrastructure-as-gate
 ---
 
 A Secure Access Service Edge (SASE) platform extended to understand AI agent traffic — distinguishing agent sessions from browser traffic, inspecting MCP protocol content, and enforcing policy on agentic connections at the network layer rather than the application layer.

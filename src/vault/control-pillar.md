@@ -1,6 +1,7 @@
 ---
 title: Control (PAC Pillar)
 tags: [pac-framework, pillar, control, security]
+dimension: policy-vs-architecture
 ---
 
 The third pillar of the [[pac-framework]], addressing whether infrastructure can enforce what policy demands. Policy says "don't." Architecture says "can't." The difference matters when agents act autonomously across systems and organizations.

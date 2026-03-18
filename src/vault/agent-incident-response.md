@@ -1,6 +1,7 @@
 ---
 title: Agent Incident Response
 tags: [governance, accountability, security, operations]
+dimension: audit-trails
 ---
 
 Agent incidents are decision failures, not execution failures. This structural difference changes what the response looks like.

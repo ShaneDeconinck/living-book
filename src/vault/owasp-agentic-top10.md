@@ -1,6 +1,7 @@
 ---
 title: OWASP Top 10 for Agentic Applications
 tags: [security, taxonomy, owasp, risk]
+dimension: standards
 ---
 
 A peer-reviewed framework identifying the ten most critical security risks for autonomous AI systems. Published December 2025 by OWASP with input from over 100 security researchers and practitioners. [OWASP 2025]

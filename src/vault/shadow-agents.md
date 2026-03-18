@@ -1,6 +1,7 @@
 ---
 title: Shadow Agents
 tags: [accountability, governance, risk]
+dimension: shadow-agents
 ---
 
 AI agents deployed by employees without going through organizational governance processes — using personal credentials, operating without audit trails, invisible to security teams. Part of the [[accountability-pillar]] of the [[pac-framework]].

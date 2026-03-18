@@ -1,6 +1,7 @@
 ---
 title: Potential (PAC Pillar)
 tags: [pac-framework, pillar, value, potential]
+dimension: business-value
 ---
 
 The first pillar of the [[pac-framework]], addressing what is worth building that lasts. Potential without [[accountability-pillar]] is reckless adoption; Potential without [[control-pillar]] is ungoverned capability.

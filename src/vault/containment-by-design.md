@@ -1,6 +1,7 @@
 ---
 title: Containment by Design
 tags: [control, execution-security, architecture]
+dimension: infrastructure-as-gate
 ---
 
 Security controls that make dangerous operations structurally impossible through OS-level isolation, rather than relying on permission prompts or policy enforcement.

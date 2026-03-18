@@ -1,6 +1,7 @@
 ---
 title: MCP-I (Model Context Protocol — Identity)
 tags: [protocol, identity, mcp, decentralized, cross-org-trust]
+dimension: cross-org-trust
 ---
 
 An identity and delegation extension for the Model Context Protocol using DIDs and Verifiable Credentials, donated by Vouched to the Decentralized Identity Foundation in March 2026.

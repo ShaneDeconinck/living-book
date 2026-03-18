@@ -1,6 +1,7 @@
 ---
 title: Ghost Tokens (CAAM Pattern)
 tags: [authorization, cryptographic, control]
+dimension: delegation-chains
 ---
 
 An authorization sidecar pattern where the agent never holds persistent credentials; instead it receives short-lived, single-use, action-specific tokens that cannot be replayed or exfiltrated.

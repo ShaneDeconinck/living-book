@@ -1,6 +1,7 @@
 ---
 title: Delegation Chain
 tags: [accountability, authorization, identity, pac-framework]
+dimension: delegation-chains
 ---
 
 The traceable record of authority flowing from a human principal through one or more agents to a final action, with mandatory attenuation at each hop. Core to the [[accountability-pillar]] of the [[pac-framework]].

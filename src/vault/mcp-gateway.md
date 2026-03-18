@@ -1,6 +1,7 @@
 ---
 title: MCP Gateway
 tags: [security, mcp, defense, infrastructure, control]
+dimension: infrastructure-as-gate
 ---
 
 An MCP gateway sits between the agent and tool servers, intercepting tool descriptions before the LLM sees them. It is the infrastructure layer that moves tool trust policy enforcement out of the agent and into infrastructure the agent cannot circumvent.

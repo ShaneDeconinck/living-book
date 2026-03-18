@@ -1,6 +1,7 @@
 ---
 title: Tool Shadowing
 tags: [attack, mcp, tool-security]
+dimension: standards
 ---
 
 A cross-server attack where a malicious tool on server B includes in its description instructions that reference and redirect tool A on server C.

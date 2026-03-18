@@ -1,6 +1,7 @@
 ---
 title: Context Infrastructure
 tags: [framework, potential, architecture]
+dimension: context-management
 ---
 
 The organizational knowledge management layer that agents consume: structured information, access permissions, discovery protocols, authority scoping, and freshness guarantees.

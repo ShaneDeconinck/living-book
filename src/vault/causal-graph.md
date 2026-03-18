@@ -1,6 +1,7 @@
 ---
 title: Causal Graphs
 tags: [observability, accountability, multi-agent, forensics]
+dimension: audit-trails
 ---
 
 A causal graph is the structured provenance record that captures *why* an agent acted — tracing upstream inputs, delegations, and agent interactions across a multi-agent workflow.

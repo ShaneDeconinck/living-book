@@ -1,6 +1,7 @@
 ---
 title: Agent Benchmark Landscape
 tags: [evaluation, reliability, benchmarks]
+dimension: reliability
 ---
 
 The ecosystem of agent reliability benchmarks, each measuring different capability dimensions with different blind spots.

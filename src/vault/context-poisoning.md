@@ -1,6 +1,7 @@
 ---
 title: Context Poisoning
 tags: [threat, supply-chain, governance]
+dimension: supply-chain
 ---
 
 Adversarial or commercial manipulation of agent context at scale to corrupt future decision-making.

@@ -1,6 +1,7 @@
 ---
 title: The Scaffolding Trap
 tags: [pattern, anti-pattern, context-infrastructure, potential]
+dimension: harness-debt
 ---
 
 The scaffolding trap is the pattern where workarounds written to compensate for model limitations actively fight the model's new capabilities when it improves.

@@ -1,6 +1,7 @@
 ---
 title: Pre-Execution Accountability
 tags: [accountability, governance, sovereignty]
+dimension: governance-thresholds
 ---
 
 An accountability model where commitments are frontloaded before deployment rather than maintained concurrently during execution.

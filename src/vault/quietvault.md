@@ -1,6 +1,7 @@
 ---
 title: QUIETVAULT
 tags: [attack-pattern, supply-chain, ai-tools, confused-deputy]
+dimension: supply-chain
 ---
 
 A supply chain attack documented by Google Threat Intelligence Group in which a trojanized npm package repurposes the developer's own AI coding tool as a reconnaissance agent. The attacker issues natural-language prompts for filesystem searching. The tool executes them because it has filesystem access and is designed to follow natural-language instructions.

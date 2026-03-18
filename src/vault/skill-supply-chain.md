@@ -1,6 +1,7 @@
 ---
 title: Agent Supply Chain
 tags: [supply-chain, security, control]
+dimension: supply-chain
 ---
 
 The unique attack surface where compromised agent components (skills, plugins, MCP servers) inherit the agent's autonomous decision-making authority and credential access.

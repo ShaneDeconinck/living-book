@@ -1,6 +1,7 @@
 ---
 title: Agent Reliability
 tags: [reliability, evaluation, governance, potential]
+dimension: reliability
 ---
 
 Reliability is not a single number. It is four dimensions with separate failure modes, each requiring different governance responses.

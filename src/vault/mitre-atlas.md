@@ -1,6 +1,7 @@
 ---
 title: MITRE ATLAS
 tags: [security, taxonomy, mitre, attack-techniques, adversarial]
+dimension: standards
 ---
 
 MITRE ATLAS (Adversarial Threat Landscape for AI Systems) extends the ATT&CK framework to AI and machine learning systems. Where [[owasp-agentic-top10]] organizes by risk category, ATLAS organizes by adversary technique: how attackers actually execute attacks against AI systems.

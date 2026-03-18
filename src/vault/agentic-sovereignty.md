@@ -1,6 +1,7 @@
 ---
 title: Agentic Sovereignty
 tags: [governance, accountability, autonomy, defi, tee]
+dimension: ownership
 ---
 
 Agents designed so that no single party can inspect, modify, or stop their execution — not as a failure mode, but as the point.

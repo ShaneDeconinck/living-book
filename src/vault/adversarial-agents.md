@@ -1,6 +1,7 @@
 ---
 title: Adversarial Agents
 tags: [security, threat-actors, agentic-attacks, adversarial]
+dimension: confused-deputy
 ---
 
 Threat actors deploying AI agents as attack infrastructure. The bilateral dimension of the agentic security problem: organizations are not only governing their own agents but defending against adversary-operated agents moving at machine speed.

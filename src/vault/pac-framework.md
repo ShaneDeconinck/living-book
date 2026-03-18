@@ -1,6 +1,7 @@
 ---
 title: PAC Framework
 tags: [framework, governance, core]
+dimension: policy-vs-architecture
 ---
 
 A governance model for AI agents built around three interdependent pillars: [[potential-pillar]], [[accountability-pillar]], and [[control-pillar]]. Developed by Shane Deconinck, published at trustedagentic.ai.

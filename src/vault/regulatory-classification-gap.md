@@ -1,6 +1,7 @@
 ---
 title: Regulatory Classification Gap
 tags: [regulation, eu-ai-act, governance]
+dimension: regulatory-landscape
 ---
 
 The structural problem that agent risk classification cannot be fixed at deployment time because agents are general-purpose and their actual use cases emerge at runtime.

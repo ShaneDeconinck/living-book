@@ -1,6 +1,7 @@
 ---
 title: DPoP (Demonstration of Proof-of-Possession)
 tags: [protocol, security, oauth, identity, mcp]
+dimension: agent-identity
 ---
 
 A cryptographic token binding mechanism (RFC 9449) that ties access tokens to the private key held by the requester. A DPoP token cannot be used by anyone who doesn't hold the matching private key — making stolen tokens useless.

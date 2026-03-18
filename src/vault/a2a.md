@@ -1,6 +1,7 @@
 ---
 title: A2A (Agent-to-Agent Protocol)
 tags: [protocol, communication, google]
+dimension: emerging-trust-infra
 ---
 
 Google's protocol standardizing agent-to-agent discovery, communication, and collaboration, distinct from tool invocation.

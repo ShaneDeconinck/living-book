@@ -1,6 +1,7 @@
 ---
 title: Description Pinning
 tags: [security, mcp, defense, integrity, tool-security]
+dimension: supply-chain
 ---
 
 At MCP tool registration, generate a cryptographic signature over each tool description. At every invocation, verify the signature before presenting the description to the LLM. If the description has changed since registration, reject the tool call and alert.

@@ -1,6 +1,7 @@
 ---
 title: Delegation Capability Tokens (DCTs)
 tags: [authorization, multi-agent, cryptography, delegation]
+dimension: delegation-chains
 ---
 
 Bearer credentials built on macaroons that encode authority attenuation for multi-hop agent delegation chains: anyone holding a DCT can add restrictions but cannot remove them or expand scope.

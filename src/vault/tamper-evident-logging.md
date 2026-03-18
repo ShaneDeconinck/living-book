@@ -1,6 +1,7 @@
 ---
 title: Tamper-Evident Logging
 tags: [observability, security, audit, cryptography]
+dimension: audit-trails
 ---
 
 Tamper-evident logging is the infrastructure pattern that prevents an agent (or an attacker who has compromised an agent) from suppressing or altering its own audit record.

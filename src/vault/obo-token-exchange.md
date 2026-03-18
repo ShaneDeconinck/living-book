@@ -1,6 +1,7 @@
 ---
 title: On-Behalf-Of (OBO) / Token Exchange
 tags: [protocol, delegation, oauth, identity]
+dimension: delegation-chains
 ---
 
 The OAuth mechanism for making delegation explicit in token chains. An entity exchanges a subject token (the human principal's identity) plus an actor token (the agent's identity) for a new token that encodes both — creating a verifiable record of who authorized whom. Defined in RFC 8693 (OAuth 2.0 Token Exchange), with an AI-agent-specific extension in the IETF draft `draft-oauth-ai-agents-on-behalf-of-user`.

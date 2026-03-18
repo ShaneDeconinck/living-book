@@ -1,6 +1,7 @@
 ---
 title: Authority Continuity (PIC)
 tags: [principle, security, delegation, cross-org-trust]
+dimension: cross-org-trust
 ---
 
 The Provenance, Identity, Continuity model where authority can only decrease through delegation chains, never expand — replacing proof-of-possession with proof-of-continuity.

@@ -1,6 +1,7 @@
 ---
 title: Cross-Domain Delegation Model (Windley)
 tags: [delegation, cross-org-trust, governance, reputation]
+dimension: cross-org-trust
 ---
 
 Phil Windley's model for cross-domain delegation treats the problem as institutional design, not just a protocol engineering problem. Four complementary mechanisms: policies, promises, credentials, and reputation.

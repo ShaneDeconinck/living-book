@@ -1,6 +1,7 @@
 ---
 title: Three-Layer Credential Chain
 tags: [delegation, authorization, identity, convergence]
+dimension: delegation-chains
 ---
 
 A delegation architecture converging independently across three implementations: User Identity → Delegation → Transaction, where each layer is cryptographically chained and the lower layers enforce constraints on the upper.

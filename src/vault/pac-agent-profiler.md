@@ -1,6 +1,7 @@
 ---
 title: PAC Agent Profiler
 tags: [tool, pac-framework, governance, deployment, autonomy]
+dimension: autonomy
 ---
 
 A deployment decision model built from the [[pac-framework]] and Anthropic's empirical data on agent autonomy. Structures the deployment decision across six dimensions: five independent inputs (business value, reliability, [[blast-radius]], [[infrastructure-levels|infrastructure]], governance thresholds) and one dependent output ([[autonomy-levels|autonomy]]).

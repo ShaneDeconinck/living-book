@@ -1,6 +1,7 @@
 ---
 title: Fleet Governance
 tags: [governance, scale, accountability]
+dimension: governance-thresholds
 ---
 
 The governance infrastructure required when an organization operates enough agents that individual oversight becomes impossible.

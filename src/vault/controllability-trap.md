@@ -1,6 +1,7 @@
 ---
 title: Controllability Trap
 tags: [governance, human-agent, failure-modes]
+dimension: policy-vs-architecture
 ---
 
 Six governance failures specific to agentic AI that degrade meaningful human control even when the human is actively engaged, identified at ICLR 2026.

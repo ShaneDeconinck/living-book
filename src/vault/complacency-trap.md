@@ -1,6 +1,7 @@
 ---
 title: Complacency Trap
 tags: [reliability, governance, human-oversight, risk]
+dimension: reliability
 ---
 
 When agents succeed reliably, humans stop watching. Oversight becomes a formality. The rare failure — when it comes — happens unmonitored and causes disproportionate damage.

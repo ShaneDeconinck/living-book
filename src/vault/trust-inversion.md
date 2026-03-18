@@ -1,6 +1,7 @@
 ---
 title: Trust Inversion
 tags: [principle, control, authorization, security]
+dimension: agent-identity
 ---
 
 The principle that agents require the inverse of how organizations extend trust to humans: humans operate on blocklists (default allow, restrict exceptions), agents must operate on allowlists (default deny, grant specific capabilities). Articulated by Shane Deconinck. [Deconinck 2026b]

@@ -1,6 +1,7 @@
 ---
 title: Agent Payments Protocol (AP2)
 tags: [protocol, commerce, payments, agents]
+dimension: business-value
 ---
 
 Google's protocol for agent payment authorization, announced September 2025 with over 60 participating organizations including Mastercard, American Express, PayPal, Adyen, Etsy, and Coinbase.

@@ -1,6 +1,7 @@
 ---
 title: Paradox of Supervision
 tags: [human-agent, governance, synthesis]
+dimension: policy-vs-architecture
 ---
 
 The governance risk where the skills required to review delegated work atrophy through overuse of delegation, making human oversight less rigorous even when technically present.

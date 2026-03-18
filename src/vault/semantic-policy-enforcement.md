@@ -1,6 +1,7 @@
 ---
 title: Semantic Policy Enforcement
 tags: [control, policy, enforcement, governance]
+dimension: policy-vs-architecture
 ---
 
 Business-logic constraint enforcement that operates above OS-level [[sandboxing]]: preventing agents from taking actions that violate organizational policy even when those actions are technically possible within the sandbox.

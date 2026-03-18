@@ -1,6 +1,7 @@
 ---
 title: Singapore IMDA Agentic AI Governance Framework
 tags: [regulation, governance, singapore, agents]
+dimension: regulatory-landscape
 ---
 
 The world's first government-sponsored governance framework designed specifically for AI agents capable of autonomous planning, reasoning, and action. Launched January 22, 2026 by Singapore's Infocomm Media Development Authority (IMDA) at the World Economic Forum.

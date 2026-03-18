@@ -1,0 +1,83 @@
+{
+  "$comment": "Vetted sources for Ghosty's scout mode. Only these get checked.",
+
+  "identity": [
+    {
+      "name": "Identosphere Newsletter",
+      "url": "https://newsletter.identosphere.net/archive",
+      "type": "newsletter",
+      "frequency": "weekly",
+      "topics": ["DIDs", "VCs", "decentralized identity"]
+    },
+    {
+      "name": "DIF Blog",
+      "url": "https://blog.identity.foundation",
+      "type": "blog",
+      "topics": ["DIDs", "DIDComm", "decentralized identity standards"]
+    },
+    {
+      "name": "Trust over IP Blog",
+      "url": "https://trustoverip.org/blog",
+      "type": "blog",
+      "topics": ["trust frameworks", "governance", "TSP", "verifiable credentials"]
+    },
+    {
+      "name": "W3C Credentials Community Group",
+      "url": "https://w3c-ccg.github.io",
+      "type": "standards",
+      "topics": ["VCs", "DIDs", "linked data"]
+    }
+  ],
+
+  "agent_protocols": [
+    {
+      "name": "Google A2A",
+      "url": "https://github.com/google/A2A",
+      "type": "repo",
+      "topics": ["agent-to-agent communication", "agent cards", "task protocol"]
+    },
+    {
+      "name": "Anthropic MCP",
+      "url": "https://github.com/modelcontextprotocol/specification/blob/main/CHANGELOG.md",
+      "type": "changelog",
+      "topics": ["model context protocol", "tool integration", "agent infrastructure"]
+    },
+    {
+      "name": "ACP Spec",
+      "url": "https://github.com/agentcommunicationprotocol/acp",
+      "type": "repo",
+      "topics": ["agent communication", "multi-agent coordination"]
+    }
+  ],
+
+  "ai_agents": [
+    {
+      "name": "Interconnects (Nathan Lambert)",
+      "url": "https://www.interconnects.ai/archive",
+      "type": "newsletter",
+      "frequency": "weekly",
+      "topics": ["AI research", "LLM capabilities", "agent systems"]
+    },
+    {
+      "name": "Simon Willison's Weblog",
+      "url": "https://simonwillison.net",
+      "type": "blog",
+      "topics": ["LLMs", "AI tools", "agent patterns", "MCP"]
+    }
+  ],
+
+  "standards": [
+    {
+      "name": "IETF OAuth WG",
+      "url": "https://mailarchive.ietf.org/arch/browse/oauth/",
+      "type": "mailing-list",
+      "topics": ["OAuth 2.1", "token exchange", "OBO", "GNAP"]
+    },
+    {
+      "name": "Ethereum Magicians",
+      "url": "https://ethereum-magicians.org/c/ercs/44",
+      "type": "forum",
+      "topics": ["ERCs", "ERC-8004", "on-chain agents"]
+    }
+  ]
+}

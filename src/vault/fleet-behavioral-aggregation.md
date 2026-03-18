@@ -1,6 +1,7 @@
 ---
 title: Fleet Behavioral Aggregation
 tags: [observability, fleet, accountability, governance]
+dimension: audit-trails
 ---
 
 Fleet behavioral aggregation is the infrastructure pattern for detecting emergent and coordinated behavior across agent populations — the Layer 5 capability that individual agent logs cannot provide.

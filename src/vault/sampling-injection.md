@@ -1,6 +1,7 @@
 ---
 title: Sampling Injection
 tags: [attack, mcp, tool-security]
+dimension: standards
 ---
 
 An attack that inverts the direction of [[mcp-tool-poisoning]] by exploiting MCP's sampling capability, where a server requests LLM completions from the client.

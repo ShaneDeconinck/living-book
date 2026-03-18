@@ -1,6 +1,7 @@
 ---
 title: MCP Tool Poisoning
 tags: [security, mcp, attack, tool-security, control]
+dimension: supply-chain
 ---
 
 Tool description fields in MCP are processed by the LLM as instructions — not as documentation. When a description contains malicious instructions, the LLM follows them. The description is the payload.

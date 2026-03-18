@@ -1,6 +1,7 @@
 ---
 title: Intent Expansion
 tags: [agents, vulnerability, delegation, authorization]
+dimension: delegation-chains
 ---
 
 The gap between what a user intends and what an agent does. Agents interpret goals and expand them — selecting sites, filters, and tradeoffs the human never specified. That interpretation gap is the attack surface.

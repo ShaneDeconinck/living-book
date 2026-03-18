@@ -1,6 +1,7 @@
 ---
 title: SPIFFE, SVIDs, and WIMSE (Infrastructure-Layer Workload Identity)
 tags: [identity, protocol, infrastructure, agents, security]
+dimension: agent-identity
 ---
 
 Infrastructure-layer identity: how software processes prove who they are to other software processes, without static secrets, without a human in the loop, and without pre-registration. The answer is attestation-based identity bound to the runtime environment.

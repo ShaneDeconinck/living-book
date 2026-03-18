@@ -1,6 +1,7 @@
 ---
 title: Agentic UX Patterns
 tags: [ux, governance, human-agent, oversight]
+dimension: governance-thresholds
 ---
 
 Design patterns for interfaces between humans and agents that make oversight effective rather than theatrical. From Smashing Magazine's taxonomy [Smashing-2026] and UX Magazine research [UX-Magazine-2025].

@@ -1,6 +1,7 @@
 ---
 title: Autonomy Dial
 tags: [human-agent, governance, ux, autonomy]
+dimension: autonomy
 ---
 
 A per-task autonomy setting that replaces the per-agent autonomy classification, recognizing that the same agent requires different oversight for different actions.
