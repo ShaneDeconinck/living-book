@@ -47,6 +47,8 @@ AAP is a Control infrastructure: it makes governance policy machine-enforceable 
 - [[delegation-chain]] — AAP tracks delegation depth explicitly; parent-token linkage makes chains auditable
 - [[transaction-tokens]] — Txn-Tokens propagate identity through backend chains; AAP defines what constraints travel with it
 
+- [[ietf-agent-authorization-consolidation]] — AAP is one of four competing proposals in the IETF consolidation process
+
 ## Sources
 
 - IETF, draft-aap-oauth-profile, February 2026

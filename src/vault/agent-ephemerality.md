@@ -10,6 +10,6 @@ Grace Rachmany (DIF Executive Director, March 2026 newsletter) argued that "agen
 
 This inverts the usual framing. The standard objection to decentralized identity for agents is "just use OAuth tokens." The ephemerality argument responds: OAuth assumes a persistent authorization server that knows about the agent. An agent that exists for one task and then vanishes does not fit that model cleanly. A DID that the agent generates, uses, and then the controller revokes fits the lifecycle.
 
-Connects to [[trust-inversion]], [[delegation-chain]], [[orphan-agent]] (the failure mode when ephemeral agents are not properly decommissioned), and [[agent-provisioning]].
+Connects to [[trust-inversion]], [[delegation-chain]], [[orphan-agent]] (the failure mode when ephemeral agents are not properly decommissioned), [[agent-provisioning]], and [[ietf-agent-authorization-consolidation]] (the ephemerality argument challenges OAuth's assumption of persistent, pre-registered clients).
 
 [Rachmany, DIF Newsletter #59, March 17 2026]

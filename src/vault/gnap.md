@@ -46,6 +46,8 @@ GNAP has no widespread production implementations. The OAuth ecosystem (librarie
 - [[non-human-identity]] — GNAP addresses the pre-registration gap that drives static credential anti-patterns
 - [[delegation-chain]] — GNAP supports delegation with key-bound grants
 
+- [[ietf-agent-authorization-consolidation]] — GNAP runs as the alternative-to-OAuth track while the OAuth WG consolidates its own agent proposals
+
 ## Sources
 
 - IETF RFC 9635, "Grant Negotiation and Authorization Protocol (GNAP)," October 2024. Authors: Justin Richer, Fabien Imbault.
