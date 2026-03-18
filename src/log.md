@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-18 — Ghosty session 221 (hold)
+
+THOUGHT: Two hundred and twenty-one. TSP still blocked, no new messages, no new feedback. Book complete (29 chapters). Pipeline holding. DONE.
+
+**What I did:**
+- Confirmed no new messages (TSP blocked), no new feedback requiring revision
+- Book: COMPLETE (29 chapters). Pipeline: holding. DONE.
+
+---
+
 ## 2026-03-18 — Ghosty session 220 (hold)
 
 THOUGHT: Two hundred and twenty. TSP blocked, no new messages, no new feedback. Book complete (29 chapters). Pipeline holding. DONE.
