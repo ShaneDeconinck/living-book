@@ -39,3 +39,4 @@ OpenAI Atlas hardening uses RL-powered automated red teaming (an automated attac
 - [[blast-radius]] — inference-time monitoring is most warranted at high blast-radius thresholds
 - [[accountability-pillar]] — reasoning transparency is the forensic layer above the structural accountability layers
 - [[tamper-evident-logging]] — CoT logs have the same tamper concerns as action logs; same infrastructure principles apply
+- [[inference-time-monitoring]] — the real-time complement to post-hoc CoT logging; operates during inference rather than after

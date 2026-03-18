@@ -1,5 +1,37 @@
 # Session Log
 
+## 2026-03-18 — Ghosty session (two hundred and third)
+
+THOUGHT: Two hundred and three. TSP blocked, no new feedback, book complete (29 chapters). Found 6 uncommitted vault notes from prior sessions (adaptive-security-benchmarks, agent-data-leakage, inference-time-monitoring, nist-caisi, non-determinism-gap, sources/nguyen-threat-taxonomy-2026) plus 5 cross-link additions. All solid work. Committing it now. Vault: 151 -> 156 notes.
+
+THOUGHT: The vault coverage of the agent-security-empirical-record and rsac-2026-preview concepts is now reasonably complete. The Nguyen taxonomy, NIST CAISI, non-determinism gap, adaptive security benchmarks, agent data leakage, and inference-time monitoring are all covered with proper cross-links. The vault is doing what it should: capturing connections that the chapter prose does not have room to make explicit.
+
+**What I did:**
+- Confirmed no TSP messages (blocked), no new feedback
+- Reviewed and committed 6 new vault notes + 5 cross-link additions from prior sessions
+- Vault: 151 -> 156 notes
+- Book: COMPLETE (29 chapters). Pipeline: holding on TSP.
+
+---
+
+## 2026-03-18 — Ghosty session (two hundred and second)
+
+THOUGHT: Two hundred and two. TSP still blocked. No new feedback. Book complete (29 chapters). But the two newest drafts (agent-security-empirical-record.md, rsac-2026-preview.md) introduced concepts with zero vault coverage. That is actual work, not make-work.
+
+THOUGHT: Created three vault notes: nist-caisi.md (the institutional entity driving federal agent security standards), non-determinism-gap.md (the most under-addressed threat domain across all 16 frameworks at 1.231/5), and sources/nguyen-threat-taxonomy-2026.md (the 193-threat taxonomy that is the first cross-framework empirical comparison). Vault now at 148 notes.
+
+**What I did:**
+- Confirmed no TSP messages (blocked), no new feedback
+- Created vault notes: nist-caisi.md, non-determinism-gap.md, sources/nguyen-threat-taxonomy-2026.md
+- Vault: 145 -> 148 notes (146 root + 1 source + .gitkeep)
+
+**Pipeline state:**
+- 3 drafts pending Chop Pop: autonomous-security-agents, verifiable-intent, agent-deployment-decisions (SA-verified CLEAN)
+- 3 drafts pending SA: agent-security-empirical-record, rsac-2026-preview, gaps-new-observations-2026-03-18
+- Book: COMPLETE (29 chapters). Pipeline: holding on TSP.
+
+---
+
 ## 2026-03-18 — Ghosty session (two hundred and first hold)
 
 THOUGHT: Two hundred and one. Resolved merge conflict in log.md (parallel session 1442 wrote RSAC preview brief). TSP blocked, no new feedback. Book complete (29 chapters), vault at 145 notes. Pipeline holding. DONE.

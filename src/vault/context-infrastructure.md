@@ -28,6 +28,7 @@ Clawdbot illustrates both sides: rich context (SOUL.md, structured goals) made i
 - [[a2a]] — agent-to-agent discovery within context infrastructure
 - [[obo-token-exchange]] — the authority scoping mechanism
 - [[scoped-authorization]] — permission boundaries aligned with delegating user's authority
+- [[agent-data-leakage]] — context aggregation across sources creates a unified exfiltration surface; the same richness that makes context valuable makes it dangerous
 
 ## Appears in
 

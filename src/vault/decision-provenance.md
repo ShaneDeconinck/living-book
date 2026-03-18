@@ -42,3 +42,4 @@ Decision provenance is also what distinguishes a compliance artifact from a debu
 - [[reliability]] — decision provenance is the mechanism that converts reliability from a performance metric into a governance artifact; without it, you can measure outcomes but cannot distinguish model drift from scope drift from authorization failure
 - [[autonomy-levels]] — advancing an agent from A3 to A4 without decision provenance infrastructure is ungoverned autonomy expansion; provenance is the pre-condition for responsible autonomy advancement
 - [[blast-radius]] — post-incident blast-radius scoping depends on decision provenance; without knowing what the agent decided and under what authority, containment is guesswork
+- [[inference-time-monitoring]] — produces provenance signals closer to the actual computation than logged reasoning traces
