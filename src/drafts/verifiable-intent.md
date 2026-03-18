@@ -40,7 +40,7 @@ The constraint system is what makes VI different from a general-purpose credenti
 | `payment.agent_recurrence` | Multi-transaction authorization within bounds |
 | `payment.reference` | Binds payment to a conditional transaction ID |
 
-Budget, recurrence, and agent recurrence require the payment network to maintain state across transactions. That is a significant infrastructure requirement, but it means constraint enforcement happens at the network level, not at the agent level. An agent operating within a budget mandate cannot exceed it by signing additional L3 credentials: the network is the enforcement point, not the agent's own configuration.
+Budget, recurrence, and agent recurrence require the payment network to maintain state across transactions. That infrastructure requirement buys something: constraint enforcement happens at the network level, not at the agent level. An agent operating within a budget mandate cannot exceed it by signing additional L3 credentials: the network is the enforcement point, not the agent's own configuration.
 
 An agent's self-imposed limits can be removed or bypassed. Network-level constraints cannot be removed by the agent. The same logic that motivates hardware security modules for key management (take the sensitive operation out of software) applies here: take constraint enforcement out of the agent.
 
@@ -54,7 +54,7 @@ The sd_hash mechanism is what makes selective disclosure work across parties wit
 
 Tampering with any disclosure breaks the hash in the next layer. Each L3 credential is cryptographically bound to its own selective view of L2. The payment network sees only what it needs to verify the payment. The merchant sees only what it needs to confirm the purchase. Neither can see beyond their own scope, and neither can fabricate claims about what the other received.[^vi-mastercard]
 
-This is privacy by architecture: the constraint on disclosure is in the data structure, not in a policy statement or a trust relationship. A party that cannot see the other's disclosures is not being politely excluded. It literally cannot reconstruct the excluded claims from what it received.
+The constraint on disclosure is in the data structure, not in a policy statement or a trust relationship. A party that cannot see the other's disclosures is not being politely excluded. It literally cannot reconstruct the excluded claims from what it received.
 
 ## Where VI Sits in the Stack
 

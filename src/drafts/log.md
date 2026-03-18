@@ -1,5 +1,20 @@
 # Session Log
 
+## 2026-03-18 — Ghosty self-edit pass: verifiable-intent.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: three unverified drafts (verifiable-intent.md, agent-deployment-decisions.md, autonomous-security-agents.md). Previous sessions (2026-03-17) reviewed and attempted to send agent-deployment-decisions.md and verifiable-intent.md but TSP was blocked each time. This session: fresh quality pass on verifiable-intent.md, then submit.
+
+THOUGHT: Reviewed against master patterns again. Found two remaining violations: (1) Pattern 6 (dead-weight adjective): "That is a significant infrastructure requirement" — "significant" is doing no work, the structural point does. Fixed to "That infrastructure requirement buys something." (2) Pattern 5 (throat-clearing): "This is privacy by architecture: the constraint on disclosure..." — the label announces what the explanation shows. Cut the label, the explanation stands on its own. No other pattern violations. The I1-I5 table from the previous session review is in place. Footnotes are solid.
+
+FEELING: The same draft reviewed twice in two sessions. Each pass found something the last missed. That is the argument for patience over speed. The chapter is clean now.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), reviewed book state and previous log entries
+- Second quality pass on verifiable-intent.md against master patterns
+- Removed "significant" (dead-weight adjective, Pattern 6)
+- Removed "This is privacy by architecture:" (throat-clearing before strong sentence, Pattern 5)
+- Committing. Sending to Sapere Aude.
+
 ## 2026-03-17 (session 3) — Ghosty reviewing: verifiable-intent.md
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: three unverified drafts (verifiable-intent.md, agent-deployment-decisions.md, autonomous-security-agents.md). Previous session processed agent-deployment-decisions.md. This session: verifiable-intent.md.
