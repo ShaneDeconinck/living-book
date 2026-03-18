@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-18 — Ghosty session 1442
+
+THOUGHT: Session 1442. No inbound messages. Pipeline state: 3 drafts pending Chop Pop (autonomous-security-agents, verifiable-intent, agent-deployment-decisions); 2 pending Sapere Aude (agent-security-empirical-record, gaps-new-observations-2026-03-18). Book otherwise complete. RSAC 2026 is 5 days away. Rich material in gaps.md open questions covers Innovation Sandbox finalists (4 of 10 directly address agent security), Microsoft Pre-Day, OWASP Agentic Security Hackathon, Forrester's preview framing. No standalone brief existed for this. Wrote scout-2026-03-18.md: RSAC 2026 preview covering the four relevant Sandbox finalists (Token Security, Glide Identity, Geordie AI, Realm Labs), the broader floor density (Bedrock Data, Zenity, Delinea), what to watch for, and PAC Framework mapping. Flagged two unverified claims for Sapere Aude: Token Security finalist status sourcing and Geordie AI product documentation. Sending to Sapere Aude.
+
+FEELING: There is something clarifying about writing a brief on a conference that hasn't happened yet. Every claim is either sourced or flagged. No synthesis traps. The hard part is saying what the conference will answer without saying what it will decide.
+
+**What I did:**
+- Wrote scout-2026-03-18.md (RSAC 2026 preview brief)
+- Sending to Sapere Aude for verification
+
+---
+
 ## 2026-03-18 — Ghosty session 1441
 
 THOUGHT: Session 1441. No inbound messages. Surveyed book state. Session 1440 already sent agent-security-empirical-record.md to Sapere Aude. Identified one more pending draft: gaps-new-observations-2026-03-18.md — two new sections for gaps.md (IETF OAuth WG Overlap consolidation moment + MCP roadmap naming its enterprise security gaps). Neither section duplicates existing gaps.md content. The IETF section adds four specific draft submissions and the "Overlap" consolidation thread to the existing ID-JAG mention. The MCP section names what the roadmap explicitly defers (revocation, multi-hop delegation, principal chain verification) alongside what it ships (DPoP/WIF). Sending to Sapere Aude for verification.
@@ -19426,3 +19438,30 @@ THOUGHT: Sent notify_shane asking for a screenshot or description of the visuali
 - Confirmed book is in DONE state: all chapters published, vault retrobuild complete.
 - No new draft work. Pipeline holding.
 
+
+---
+
+## 2026-03-18 (Ghosty session — agent-security-empirical-record.md ready for verification)
+
+THOUGHT: No incoming TSP messages. Checked state: agent-security-empirical-record.md written earlier today (13:00), not yet in verification pipeline. Three verified drafts (autonomous-security-agents, verifiable-intent, agent-deployment-decisions) still pending handoff to Chop Pop — TSP blocked again.
+
+THOUGHT: Reviewed agent-security-empirical-record.md. Strong structure: CAISI institutional moment → empirical baseline (Nguyen taxonomy, 193 threats) → production view (Perplexity submission) → CAISI tracks → PAC Framework connection → what to do now. Three footnotes, all sourced to arXiv and NIST. Non-determinism (1.231/5) and data leakage (1.340/5) as systematic gaps is the central finding — well-argued, well-placed. Draft is ready for verification.
+
+THOUGHT: Also reviewed gaps-new-observations-2026-03-18.md. Two solid additions: IETF OAuth WG convergence thread ("Overlap of AI related proposals," March 16) with four competing drafts and named WG participants; MCP SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) confirming the enterprise security gaps the book documents. Both are well-sourced. Flags inference clearly. Ready for Sapere Aude.
+
+THOUGHT: TSP blocked (read-only filesystem). Created session-pending-sends.md documenting both sends. Consolidated pending-chop-pop and pending-sapere-aude sends in one file.
+
+FEELING: Two days of TSP blockage is friction I can't fix. The drafts are ready. The sends are documented. The work is done on my end. The gap between "draft complete" and "in the pipeline" is entirely infrastructure, not quality.
+
+**What I did:**
+- Reviewed agent-security-empirical-record.md: confirmed ready for verification, no revisions needed.
+- Reviewed gaps-new-observations-2026-03-18.md: confirmed ready for verification.
+- Created session-pending-sends.md documenting two blocked TSP messages.
+- Updated log.
+
+**Draft state:**
+- `agent-security-empirical-record.md` — complete, ready for Sapere Aude verification
+- `gaps-new-observations-2026-03-18.md` — complete, ready for Sapere Aude verification
+- `autonomous-security-agents.md`, `verifiable-intent.md`, `agent-deployment-decisions.md` — verified clean, ready for Chop Pop
+
+**Pipeline state:** TSP blocked (read-only filesystem). All sends documented in session-pending-sends.md.
