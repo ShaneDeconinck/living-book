@@ -42,3 +42,4 @@ Either outcome changes what practitioners should bet on.
 - IETF OAuth WG mailing list, "Overlap of AI related proposals" thread, March 2026
 - IETF OAuth WG, "AI Agent Security Side Meeting Friendly Reminder," March 18, 2026
 - src/drafts/scout-2026-03-17.md, src/drafts/scout-2026-03-18.md
+- src/drafts/gaps-new-observations-2026-03-18.md — extended treatment with four proposals' distinct philosophies and consolidation stakes

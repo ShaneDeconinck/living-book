@@ -66,3 +66,4 @@ It maps to the PAC Accountability pillar: the audit trail is not "what did the a
 - Shane Deconinck, "Verifiable Intent: Mastercard and Google Open-Source Agent Authorization," shanedeconinck.be, March 6, 2026
 - Mastercard, "How Verifiable Intent Builds Trust in Agentic AI Commerce," March 5, 2026
 - src/chapters/agent-identity.md §Verifiable Intent: Proving What Was Authorized
+- src/drafts/verifiable-intent.md — standalone chapter draft: full L1/L2/L3 architecture, eight constraint types, sd_hash selective disclosure, infrastructure maturity table (I1–I5)
