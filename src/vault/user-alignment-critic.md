@@ -1,6 +1,7 @@
 ---
 title: User Alignment Critic
 tags: [security, guardian-agents, defense, browser-agents, control]
+dimension: infrastructure-as-gate
 ---
 
 A separate LLM that reviews every proposed agent action and vetoes anything that does not match the user's specific intent. Google's Project Mariner is the most concrete production implementation of the [[guardian-agents]] pattern.

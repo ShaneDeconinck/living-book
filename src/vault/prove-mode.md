@@ -1,7 +1,7 @@
 ---
 title: Prove Mode Authorization
 tags: [governance, cryptographic, accountability]
-dimension: governance-thresholds
+dimension: audit-trails
 ---
 
 The third governance mode beyond "don't" (policy) and "can't" (architecture), where actions carry cryptographic proof of who authorized them, what constraints apply, and when.

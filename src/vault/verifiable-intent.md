@@ -1,7 +1,7 @@
 ---
 title: Verifiable Intent
 tags: [protocol, authorization, identity, commerce, delegation]
-dimension: standards
+dimension: delegation-chains
 ---
 
 Verifiable Intent is a three-layer SD-JWT protocol that cryptographically proves what a user authorized an agent to do, not just who has access — solving the consent theater problem at the authorization layer.

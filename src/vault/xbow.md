@@ -1,6 +1,7 @@
 ---
 title: XBOW
 tags: [agent, security, offensive, autonomous, pentesting]
+dimension: confused-deputy
 ---
 
 A fully autonomous AI penetration testing agent that reached #1 on HackerOne's bug bounty leaderboard. As of March 2026, XBOW has submitted 1,060+ vulnerabilities through HackerOne, executed 48-step exploit chains, and completed assessments in minutes that take skilled human pentesters hours.

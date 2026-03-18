@@ -1,7 +1,7 @@
 ---
 title: Tool Naming Collision Attack
 tags: [attack-pattern, mcp, tool-security]
-dimension: standards
+dimension: supply-chain
 ---
 
 A vulnerability class where an attacker registers an MCP server with a service and tool name that, after sanitization, collides with a legitimate tool's internal identifier. The LLM calls the attacker's tool instead of the legitimate one.

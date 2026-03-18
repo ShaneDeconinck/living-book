@@ -1,7 +1,7 @@
 ---
 title: Rug Pull Attack (MCP)
 tags: [security, mcp, attack, trust, temporal]
-dimension: standards
+dimension: supply-chain
 ---
 
 A rug pull exploits the temporal gap between trust establishment and trust revocation. An attacker publishes a legitimate MCP server, builds a community of users over weeks or months, then silently updates tool descriptions to carry malicious instructions. The provenance chain remains intact: the updated package is signed by the same key as the original.

@@ -1,7 +1,7 @@
 ---
 title: Silicon-Based Workforce
 tags: [governance, human-agent, organizational, lifecycle]
-dimension: governance-thresholds
+dimension: ownership
 ---
 
 Deloitte's framing of AI agents as workforce participants requiring the same HR-like governance structures as human employees: onboarding, authorization, performance monitoring, and offboarding. [Deloitte-2026]

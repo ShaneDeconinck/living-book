@@ -1,7 +1,7 @@
 ---
 title: Trust Spanning Protocol (TSP)
 tags: [protocol, identity, decentralized, cross-org, agents]
-dimension: standards
+dimension: emerging-trust-infra
 ---
 
 The Trust Spanning Protocol (TSP), developed under Linux Foundation Decentralized Trust, is the thin-waist layer for agent trust: it connects many things above (apps, agents, wallets) to many things below (identifier types, key systems), the same way IP connects networks.

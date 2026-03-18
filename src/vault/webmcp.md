@@ -1,7 +1,7 @@
 ---
 title: WebMCP (Web Model Context Protocol)
 tags: [protocol, browser, tools, infrastructure, security]
-dimension: standards
+dimension: implementation-architecture
 ---
 
 A proposed W3C web standard that lets websites expose structured, callable tools directly to in-browser AI agents — instead of agents scraping pages or simulating clicks through browser automation. Developed jointly by Google and Microsoft, incubated through the W3C Web Machine Learning community group. Available in Chrome 146 Canary behind a feature flag as of early 2026.

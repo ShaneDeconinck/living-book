@@ -1,7 +1,7 @@
 ---
 title: Trusted Agent Protocol (TAP)
 tags: [protocol, commerce, identity, trust, agents]
-dimension: standards
+dimension: business-value
 ---
 
 Visa's open-source protocol (Apache 2.0) for establishing agent legitimacy in commerce interactions, using RFC 9421 HTTP Message Signatures. Announced October 2025, solves the trust bootstrapping problem the other commerce protocols assume away: how does a merchant distinguish a legitimate agent from a bot?

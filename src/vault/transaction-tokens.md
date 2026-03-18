@@ -1,7 +1,7 @@
 ---
 title: Transaction Tokens for Agents
 tags: [protocol, authorization, oauth, delegation, identity, security]
-dimension: standards
+dimension: delegation-chains
 ---
 
 Transaction Tokens for Agents (Txn-Tokens) propagate agent identity and delegation context through backend service chains without forwarding the original access token — solving both credential exposure and delegation chain splicing.
