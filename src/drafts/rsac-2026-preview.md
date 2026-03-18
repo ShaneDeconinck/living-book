@@ -10,7 +10,7 @@ This brief covers one development: RSAC 2026 (March 23–26). It is five days ou
 
 RSAC 2026 is the first major security conference with agent security as a primary thread, not an emerging-track afterthought. The concentration is structurally unprecedented.
 
-Four of the ten Innovation Sandbox finalists address agent identity, governance, or observability directly. Microsoft holds its own Pre-Day event on March 22. The OWASP Agentic Security Hackathon runs alongside the main conference. Vendors across the floor are positioning around agent-specific governance, observability, and access control. Forrester's preview frames the year's thesis as "fewer agents, simplified stacks, deeply correlated telemetry" — a retrenchment argument signaling that the market has already passed peak experimentation.[^forrester-rsac]
+Four of the ten Innovation Sandbox finalists address agent identity, governance, or observability. Microsoft holds its own Pre-Day event on March 22. The OWASP Agentic Security Hackathon runs alongside the main conference. Vendors across the floor are positioning around agent-specific governance, observability, and access control. Forrester's preview frames the year's thesis as "fewer agents, simplified stacks, deeply correlated telemetry," a retrenchment argument signaling that the market has already passed peak experimentation.[^forrester-rsac]
 
 This is different from past years where AI security meant model robustness or ML pipeline integrity. RSAC 2026 is about the infrastructure layer: who agents are, what they can do, and who is accountable when they fail.
 
@@ -40,7 +40,7 @@ The significance is the deployment channel. T-Mobile and Verizon means carrier-s
 
 The PAC connection: this is infrastructure that makes agent identity tamper-resistant by architectural design, not policy. "Can't be exfiltrated" rather than "should not be exfiltrated."
 
-**Relevance:** Moderate to high. Addresses a specific gap (device-layer key security) the book touches but does not develop. Significant if carrier adoption scales.
+**Relevance:** Moderate to high. Addresses a specific gap (device-layer key security) the book touches but does not develop. Worth watching if carrier adoption scales.
 
 ### Geordie AI — Agent Security and Governance
 

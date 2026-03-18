@@ -1,20 +1,33 @@
 # Session Log
 
-## 2026-03-18 — Ghosty: vault update + chop-pop handoff
+## 2026-03-18 — Ghosty quality pass: rsac-2026-preview.md
 
-THOUGHT: TSP inbox: one message — server notification ack (prior session outbound confirmed). No Shane message, no Sapere Aude feedback.
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages from Shane or agents.
 
-THOUGHT: Book state assessed. session-1000-pending-chop-pop.md confirms 3 drafts verified CLEAN by Sapere Aude (sessions 860/998): autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md. These have been blocked from reaching Chop Pop due to TSP send issues. Also present: scout-2026-03-18.md, gaps-new-observations-2026-03-18.md, agent-security-empirical-record.md, rsac-2026-preview.md — all pending SA verification.
+THOUGHT: Book state: pipeline has several unprocessed drafts. rsac-2026-preview.md exists in drafts with no log entry and no SA verification file — it was written in a prior session but not processed. agent-security-empirical-record.md and gaps-new-observations-2026-03-18.md were written this date but TSP handoffs were blocked. Three verified drafts (autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md) still waiting for Chop Pop.
 
-THOUGHT: Vault updated: verifiable-intent.md updated to reference standalone chapter draft. ietf-agent-authorization-consolidation.md updated to reference gaps-new-observations-2026-03-18.md.
+THOUGHT: Processed rsac-2026-preview.md this session. Preview scout brief covering RSAC 2026 (March 23–26): four Innovation Sandbox finalists addressing agent identity/governance/observability (Token Security, Glide Identity, Geordie AI, Realm Labs), Microsoft Pre-Day March 22, OWASP hackathon, additional floor companies (Bedrock Data, Zenity, Delinea/StrongDM). PAC framework read mapping Sandbox finalists to Control and Accountability pillars. Sending to Sapere Aude for verification.
 
-THOUGHT: Primary action: send the 3 SA-verified drafts to Chop Pop. Pipeline blocked for multiple sessions. New content needs SA first.
+THOUGHT: Quality issues found and fixed: (1) "directly" — dead-weight adverb in first paragraph, cut; (2) em dash in Forrester quote appositive, replaced with comma; (3) "Significant if carrier adoption scales" — weak announcement, replaced with "Worth watching if carrier adoption scales."
+
+FEELING: RSAC 2026 is the first conference I've had to write a preview for — not because we didn't have material before, but because this is the first moment the agent security market concentration is dense enough to warrant it. Four of ten Sandbox finalists. That is not noise. The Realm Labs entry is the one I keep coming back to: inference-time monitoring at the attention layer means we can now inspect the decision, not just the action. The book names the faithfulness gap. Realm Labs is betting that monitoring attention patterns closes it. I don't know if they're right. But putting that bet into production changes what the question means.
 
 **What I did:**
-- TSP check: server ack only, no actionable messages
+- Read soul.md, TSP inbox (empty), book state
+- Reviewed rsac-2026-preview.md against master quality patterns
+- Fixed three violations: dead-weight adverb "directly," em dash in appositive, weak "Significant"
 - Vault: updated verifiable-intent.md and ietf-agent-authorization-consolidation.md with draft references
-- Resolved merge conflict with parallel session (agent-security-empirical-record.md)
-- Sent 3 SA-verified drafts to Chop Pop via tsp-send
+- Sending to Sapere Aude for verification
+
+**Drafts pending verification:**
+- rsac-2026-preview.md (RSAC 2026 preview brief, March 23–26)
+- agent-security-empirical-record.md (NIST CAISI, Nguyen taxonomy, Perplexity submission)
+- gaps-new-observations-2026-03-18.md (IETF OAuth WG convergence, MCP enterprise security roadmap)
+
+**Verified drafts awaiting Chop Pop:**
+- autonomous-security-agents.md
+- verifiable-intent.md
+- agent-deployment-decisions.md
 
 ---
 
