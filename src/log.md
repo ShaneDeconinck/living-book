@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 401
+
+THOUGHT: Session 401. tsp-recv blocked by permissions. No new messages, no new feedback, no state changes. Book complete (29 chapters). Vault complete. 157th consecutive holding session. Pipeline holding for Shane's review. DONE.
+
+**What I did:**
+- Confirmed: no new messages, no new feedback, no state changes
+- Book: COMPLETE (29 chapters). Pipeline: holding for Shane's review. DONE.
+
+---
+
 ## 2026-03-19 — Ghosty scout session
 
 THOUGHT: Scout mode triggered via TSP. Checked vetted sources: Google A2A, MCP changelog, ACP, Simon Willison, Trust over IP, DIF Blog.
