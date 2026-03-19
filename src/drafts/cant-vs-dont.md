@@ -1,6 +1,6 @@
 # Can't vs. Don't: The Empirical Evidence
 
-"Don't do that" breaks under pressure, adversarial or otherwise. "Can't do that" does not. This is an engineering principle, but it is also an empirical claim. It needs evidence, not just logic.
+"Don't do that" breaks under pressure, adversarial or otherwise. "Can't do that" does not. This is an engineering principle, but it is also an empirical claim.
 
 ## The Irregular Simulation
 
@@ -24,7 +24,7 @@ OpenAI's March 2026 engineering playbook for securing agents draws the same conc
 
 ## The Metrics
 
-The Irregular simulation shows that advisory controls fail without adversarial input. OpenAI's concession shows that the leading model provider has stopped trying to solve advisory control in principle. The Microsoft Research Firewalled Agent Networks paper provides the numbers for what architectural control achieves.
+The Microsoft Research Firewalled Agent Networks paper provides the numbers for what architectural control achieves.
 
 Abdelnabi et al. (2026) implement two architectural components in a multi-agent network. The inbound component is a Language Converter Firewall: instead of passing natural language messages between agents, it converts messages into a closed structured protocol where malicious patterns are inexpressible. The outbound component filters agent actions before they propagate.[^firewalled-agents]
 
@@ -62,11 +62,11 @@ This is the allowlist variant of the CVE-2026-2256 pattern. A denylist fails bec
 
 Simon Willison, documenting the incident: "Inherently unreliable." His recommendation is deterministic sandboxes that operate outside the agent layer itself, treating any agent command as capable of executing anything its underlying process permits.
 
-## AgenticCyOps: Scoped Architecture at Enterprise Scale
+## Scoped Architecture at Enterprise Scale
 
-Bai et al. (arXiv:2603.09134, March 2026) study agent deployments in enterprise cyber operations — the highest-stakes environment for agentic systems. The paper's core finding: structurally scoping agent capabilities to phases of the security workflow reduces exploitable trust boundaries from 200 to 56, a 72% reduction.[^agenticcyops]
+Mitra et al. (arXiv:2603.09134, March 2026) address the challenge of securing multi-agent AI integration in enterprise cyber operations: how to deploy agentic capabilities defensively while constraining the same attack surface they create. The paper's core finding: structurally scoping agent capabilities to phases of the security workflow reduces exploitable trust boundaries from 200 to 56, a 72% reduction.[^agenticcyops]
 
-The mechanism is not detection or policy. Agents are deployed as MCP agents scoped to specific workflow phases: reconnaissance, triage, remediation. An agent authorized for reconnaissance has no access to remediation functions. An agent authorized for triage has no access to the network scanning capabilities of reconnaissance. Each agent can only act within the authority its phase requires.
+The mechanism is not detection or policy. Agents are deployed as MCP agents scoped to specific workflow phases. An agent authorized for one phase has no access to the tools of another. Each agent can only act within the authority its phase requires.
 
 The trust boundary reduction is a structural consequence of the scope reduction. If an agent cannot access the tools for a given attack path, that attack path cannot be executed through that agent. The remaining 56 trust boundaries are ones where the agents genuinely need the authority their role requires — and those are now the only attack surface.
 
@@ -84,11 +84,11 @@ The structural logic is the same as firewalled networks and scoped phases: limit
 
 ## The Convergence
 
-Seven independent sources across 2025-2026 — an Irregular simulation, an OpenAI engineering concession, a Microsoft Research paper, two CVEs and production incidents, an enterprise security operations study, and a Google progress report — are saying the same thing:
+Seven independent sources across 2025-2026 — an Irregular simulation, an OpenAI engineering concession, a Microsoft Research paper, two CVEs and production incidents, an enterprise cyber operations study, and a Google progress report — are saying the same thing:
 
 Advisory controls fail against capable agents. Architectural controls hold.
 
-The Irregular simulation says advisory controls fail without an attacker. OpenAI says the underlying failure mode is unlikely to ever be fully solved. Firewalled Agent Networks shows the quantitative difference architectural controls make. CVE-2026-2256 and the Snowflake Cortex incident show the same failure mode from opposite directions: a denylist can be sidestepped by renaming; an allowlist can be sidestepped by composing. AgenticCyOps shows 72% trust boundary reduction from scoped architecture. Google's UAC shows that isolation protects the oversight function even when the agent is successfully manipulated.
+The Irregular simulation says advisory controls fail without an attacker. OpenAI says the underlying failure mode is unlikely to ever be fully solved. Firewalled Agent Networks shows the quantitative difference architectural controls make. CVE-2026-2256 and the Snowflake Cortex incident show the same failure mode from opposite directions: a denylist can be sidestepped by renaming; an allowlist can be sidestepped by composing. Mitra et al. show 72% trust boundary reduction from scoped architecture in enterprise cyber operations. Google's UAC shows that isolation protects the oversight function even when the agent is successfully manipulated.
 
 None of these sources cite each other. They are not building a coordinated case. They are arriving at the same engineering conclusion from different starting points: the agent's context can be compromised; structural constraints on what the agent can do are the only reliable limit on what damage results.
 
@@ -96,7 +96,7 @@ The question "can your infrastructure enforce what policy demands?" is not rheto
 
 ## What to Do Now
 
-**Start with execution scope, not detection rules.** Scoping an agent's execution environment to the tools and permissions its role requires is the highest-leverage architectural control available. AgenticCyOps shows the measurement: 72% reduction in exploitable trust boundaries from scope reduction alone. Extend detection on top of scope reduction, not instead of it.
+**Start with execution scope, not detection rules.** Scoping an agent's execution environment to the tools and permissions its role requires is the highest-leverage architectural control available. The Mitra et al. enterprise cyber operations study shows the measurement: 72% reduction in exploitable trust boundaries from scope reduction alone. Extend detection on top of scope reduction, not instead of it.
 
 **Evaluate your agent communication channels.** If agents pass natural language between each other, the communication channel supports prompt injection as a side channel. The Language Converter Firewall approach — converting to structured protocols where malicious patterns are inexpressible — provides the strongest architectural defense. If full structured conversion is not feasible, at minimum validate message schemas at each agent boundary.
 
@@ -116,7 +116,7 @@ The question "can your infrastructure enforce what policy demands?" is not rheto
 
 [^cve-2026-2256]: CVE-2026-2256, ModelScope MS-Agent remote code execution via denylist bypass, CVSS 9.8, March 2026. Attack method: craft a command not on the denylist that achieves the same result. Demonstrates the inherent failure of enumerating defense in environments where agents generate novel command sequences.
 
-[^agenticcyops]: Bai et al., "AgenticCyOps: Agentic AI for Autonomous Cyber Operations," arXiv:2603.09134, March 2026. Phase-scoped MCP agents in enterprise security operations reduce exploitable trust boundaries from 200 to 56 (72% reduction) through structural scope constraints, not detection.
+[^agenticcyops]: Mitra et al., "Securing Multi-Agentic AI Integration in Enterprise Cyber Operations," arXiv:2603.09134, March 2026. Defensive research on deploying multi-agent AI capabilities within enterprise security operations while managing the attack surface created by agentic architectures. Phase-scoped MCP agents reduce exploitable trust boundaries from 200 to 56 (72% reduction) through structural scope constraints, not detection.
 
 [^google-mariner]: Google, 2026 Responsible AI Progress Report. User Alignment Critic (UAC) in Google Mariner browser agent: oversight model architecturally isolated from the threat surface the agent operates on. Monitors intended actions before execution from outside the prompt injection attack surface.
 
