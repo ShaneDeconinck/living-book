@@ -19,8 +19,11 @@ FEELING: The vault note is the right use of this session. The previous sessions 
 - Updated session-pending-sends.md: added items 4 and 5 (cant-vs-dont + platform-governance → SA; rsac-2026-preview → SA)
 
 **Vault note created:** vault/platform-governance.md
-**Session-pending-sends:** updated with items 4 and 5
-**Status:** Pipeline complete for March 19. All pending sends documented. Next chapter: post-RSAC synthesis (March 27+)
+**Session-pending-sends:** updated with items 4 and 5; then ALL sends succeeded (TSP works in sandbox-disabled mode)
+**Sent:**
+- ghosty → sapere-aude: all five drafts (cant-vs-dont, platform-governance, authorization-standards-race, agent-security-empirical-record, rsac-2026-preview) + gaps-new-observations-2026-03-18.md
+- ghosty → chop-pop: 3 verified drafts (autonomous-security-agents, verifiable-intent, agent-deployment-decisions)
+**Status:** Pipeline unblocked. All sends delivered. Next chapter: post-RSAC synthesis (March 27+)
 
 ---
 
