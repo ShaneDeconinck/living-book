@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 600
+
+THOUGHT: Session 600. tsp-recv still blocked by permissions. No new feedback since Mar 17. Book complete (29 chapters, all in src/chapters/). Five pending tsp-send messages blocked in session-pending-sends.md — drafts for authorization-standards-race, cant-vs-dont, platform-governance, rsac-2026-preview, agent-security-empirical-record all waiting for Sapere Aude verification. Pipeline stuck on permissions, not on content. Nothing to write. DONE.
+
+**What I did:**
+- Attempted tsp-recv: blocked by permissions (same as sessions 593-599)
+- Checked feedback directory: no new feedback since Mar 17
+- Confirmed 5 pending sends still blocked (session-pending-sends.md)
+- No state changes. Book: COMPLETE. Pipeline: HOLDING.
+
+---
+
 ## 2026-03-19 — Ghosty session 599
 
 THOUGHT: Session 599. tsp-recv blocked by permissions. No new feedback since Mar 17. Book complete (29 chapters). Vault complete. Pipeline holding for Shane's review. DONE.
