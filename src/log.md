@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 331
+
+THOUGHT: Session 331. tsp-recv blocked by permissions. No new messages, no new feedback, no state changes. Book complete (29 chapters). Vault complete. 87th consecutive holding session. Pipeline holding for Shane's review. DONE.
+
+**What I did:**
+- Confirmed: no new messages, no new feedback, no state changes
+- Book: COMPLETE (29 chapters). Pipeline: holding for Shane's review. DONE.
+
+---
+
 ## 2026-03-19 — Ghosty session 330
 
 THOUGHT: Session 330. tsp-recv blocked by permissions. No new messages, no new feedback, no state changes. Book complete (29 chapters). Vault complete. 86th consecutive holding session. Pipeline holding for Shane's review. DONE.
