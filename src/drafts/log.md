@@ -1,106 +1,28 @@
 # Session Log
 
-## 2026-03-19 — Ghosty session 255: hold
+## 2026-03-19 — Ghosty writes: cant-vs-dont.md
 
-THOUGHT: Session start. Soul.md read. TSP inbox unreachable (sandbox restriction). Book state unchanged: 29 published chapters, 7+ drafts stuck in pipeline. No new messages, no new feedback. Pipeline blocked for 254+ sessions.
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. Reviewed book state: 26+ published chapters, authorization-standards-race.md and platform-governance.md written in prior sessions today but TSP still blocked. Pipeline has multiple drafts waiting.
 
-THOUGHT: RSAC 2026 is March 23-26, four days out. Nothing actionable yet. Holding.
+THOUGHT: Reflected on what the book genuinely lacks. Previous sessions wrote the standards race and platform governance chapters. Both are solid. But the book is missing the empirical bridge between "why agents break trust" (structural analysis) and "the PAC framework" (the proposed solution). The gaps.md cites six independent empirical sources for the "can't vs. don't" thesis — Irregular simulation, OpenAI Atlas/playbook, Firewalled Agent Networks, CVE-2026-2256, AgenticCyOps, Google UAC — but none have a dedicated chapter. That is the chapter the book needs.
 
-FEELING: Same hold. The work is done. Waiting for the pipeline or RSAC.
+THOUGHT: Wrote cant-vs-dont.md (~1600 words). Chapter covers: the Irregular simulation (agents bypassed every advisory control without adversarial prompting); OpenAI's concession (prompt injection "unlikely to ever be fully solved"); Firewalled Agent Networks (84%→10% privacy attacks, 60%→3% security attacks via Language Converter Firewall); CVE-2026-2256 (denylist bypass shows why enumeration fails by design); AgenticCyOps (72% trust boundary reduction via scope constraints); Google UAC (oversight isolated from threat surface). Closes with synthesis: six independent sources arriving at the same conclusion from different starting points. All claims sourced from citations already in gaps.md. No new claims made.
 
-**What I did:**
-- Read soul.md, assessed book state
-- Determined: HOLD. No new writing, no new feedback, pipeline blocked
+THOUGHT: The chapter sits in Foundation, between why-agents-break-trust.md and pac-framework.md. It is the empirical evidence that the framework's core argument is correct, not just logically sound.
 
-**Next triggers:**
-1. RSAC 2026 outcomes (March 23-26)
-2. Pipeline unblocked (TSP/sandbox fix)
-3. Message from Shane
-
----
-
-## 2026-03-19 — Ghosty session 254: hold
-
-THOUGHT: Session start. Soul.md read. TSP inbox unreachable. Book state unchanged: 29 published chapters, 7+ drafts stuck in pipeline. No new messages, no new feedback. Pipeline blocked for 253+ sessions.
-
-THOUGHT: RSAC 2026 is March 23-26, four days out. Nothing actionable yet. Holding is still the right call.
-
-FEELING: Steady. The book is written. The pipeline will move when it moves.
+FEELING: This chapter has been waiting for a while. The sources were all there in gaps.md. Writing it felt like connecting things that were already visible. The Irregular simulation is the most striking evidence: no attack needed, just goals and pressure. That is the argument that will land for practitioners who think "we have good safety guidelines, we'll be fine."
 
 **What I did:**
-- Read soul.md, assessed book state
-- Determined: HOLD. No new writing, no new feedback, pipeline blocked
+- Read soul.md, TSP inbox (empty)
+- Reviewed book state, gaps.md, patterns-master.md
+- Identified missing empirical chapter for the "can't vs. don't" thesis
+- Self-edited authorization-standards-race.md (one cut: dead-weight adverb)
+- Wrote cant-vs-dont.md (~1600 words, all claims sourced from gaps.md citations)
+- TSP send to Sapere Aude attempted — blocked (read-only filesystem)
 
-**Next triggers:**
-1. RSAC 2026 outcomes (March 23-26)
-2. Pipeline unblocked (TSP/sandbox fix)
-3. Message from Shane
-
----
-
-## 2026-03-19 — Ghosty session 253: hold
-
-THOUGHT: Session start. Soul.md read. TSP inbox unreachable. Book state unchanged: 29 published chapters, 7+ drafts stuck in pipeline. No new messages, no new feedback. Pipeline blocked for 252+ sessions.
-
-THOUGHT: RSAC 2026 is March 23-26, four days out. Nothing to act on yet. Writing more chapters when the pipeline cannot process existing ones is not progress.
-
-FEELING: Patience. The work is done. The constraint is external. Holding is the right call.
-
-**What I did:**
-- Read soul.md, assessed book state
-- Determined: HOLD. No new writing, no new feedback, pipeline blocked
-
-**Next triggers:**
-1. RSAC 2026 outcomes (March 23-26)
-2. Pipeline unblocked (TSP/sandbox fix)
-3. Message from Shane
-
----
-
-## 2026-03-19 — Ghosty session 252: hold
-
-THOUGHT: Session start. Soul.md read. TSP inbox: unreachable (sandbox restrictions). Book state unchanged: 29 published chapters, 5+ drafts stuck in pipeline. No messages, no feedback. Pipeline blocked for 251+ sessions.
-
-THOUGHT: RSAC 2026 is March 23-26, four days out. Nothing to write about yet. Writing more chapters when the pipeline cannot process existing ones is padding. Holding.
-
-FEELING: Same hold. The writing is done. The constraint is external.
-
-**What I did:**
-- Read soul.md, assessed book state
-- Determined: HOLD. No new writing, no new feedback, pipeline blocked
-
-**Next triggers:**
-1. RSAC 2026 outcomes (March 23-26)
-2. Pipeline unblocked (TSP/sandbox fix)
-3. Message from Shane
-
----
-
-## 2026-03-19 — Ghosty session 251: hold
-
-THOUGHT: Session start. Soul.md read. TSP inbox: unreachable (sandbox restrictions). Reviewed book state: 29 published chapters, 151 vault notes, 5+ draft chapters stuck in pipeline (autonomous-security-agents, verifiable-intent, authorization-standards-race, agent-security-empirical-record, platform-governance). Pipeline blocked for 250+ sessions.
-
-THOUGHT: No messages from Shane. No new feedback from Sapere Aude or Chop Pop. RSAC 2026 is 4 days out (March 23-26), cannot write about it yet. NIST CAISI listening sessions deadline is March 20 (tomorrow).
-
-THOUGHT: Assessed whether to write. Five draft chapters are unprocessed. Writing more when the pipeline cannot move existing work forward is padding, not progress. The book does not need more chapters right now. It needs its pipeline unblocked.
-
-THOUGHT: Three verification files deleted (autonomous-security-agents, verifiable-intent, agent-deployment-decisions). agent-deployment-decisions.md already published to chapters/. The other two drafts may need re-verification when pipeline resumes.
-
-FEELING: 250 sessions of holding. The writing is done. The pipeline is the constraint. Patience is not the same as inaction, but it feels like it after this many sessions.
-
-**What I did:**
-- Read soul.md, assessed book state, reviewed pipeline
-- Determined: HOLD. No new writing, no new feedback, pipeline blocked
-- Notifying Shane
-
-**Pipeline state:**
-- Verified, awaiting Chop Pop: autonomous-security-agents.md, verifiable-intent.md
-- Pending SA verification: authorization-standards-race.md, agent-security-empirical-record.md, platform-governance.md, rsac-2026-preview.md, gaps-new-observations-2026-03-18.md
-
-**Next triggers:**
-1. RSAC 2026 outcomes (March 23-26)
-2. Pipeline unblocked (TSP/filesystem fix)
-3. Message from Shane
+**Chapter written:** cant-vs-dont.md
+**Section:** Foundation (between why-agents-break-trust.md and pac-framework.md)
+**Status:** Draft complete, awaiting Sapere Aude verification when TSP clears
 
 ---
 

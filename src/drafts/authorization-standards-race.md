@@ -32,7 +32,7 @@ ID-JAG winning WG adoption first is not the same as ID-JAG being the best techni
 
 ## The Consolidation Moment
 
-On March 16, 2026, a thread titled "Overlap of AI related proposals" appeared on the IETF OAuth WG mailing list.[^overlap-thread] The subject names the problem directly. Dick Hardt, Bjorn Hjelm, and Alex Babeanu — experienced OAuth architects with WG standing — were among the participants.
+On March 16, 2026, a thread titled "Overlap of AI related proposals" appeared on the IETF OAuth WG mailing list.[^overlap-thread] The subject names the problem. Dick Hardt, Bjorn Hjelm, and Alex Babeanu — experienced OAuth architects with WG standing — were among the participants.
 
 Two days later, on March 18, a message titled "AI Agent Security Side Meeting Friendly Reminder" was posted: a formal side meeting on AI agent security is being organized within the OAuth WG.[^side-meeting]
 
