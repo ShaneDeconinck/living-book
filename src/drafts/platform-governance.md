@@ -2,7 +2,7 @@
 
 On March 9, 2026, Microsoft bundled agent governance into the enterprise security stack. Microsoft 365 E7 at $99 per user per month now includes Copilot, Agent 365 (previously $15 per user per month separately), and the full Entra, Defender, and Purview suite.[^ms-e7] Agent governance is no longer a standalone product decision. It is a line item in an enterprise security subscription.
 
-This matters less for what it costs than for what it signals. When Microsoft packages agent governance alongside identity, endpoint, and data protection, it treats agent governance as baseline enterprise security infrastructure — the same category as zero trust and endpoint detection. Organizations that have been deferring the governance question because it feels like "future work" are now purchasing the primitives whether they configure them or not.
+When Microsoft packages agent governance alongside identity, endpoint, and data protection, it treats agent governance as baseline enterprise security infrastructure — the same category as zero trust and endpoint detection. Organizations that have been deferring the governance question because it feels like "future work" are now purchasing the primitives whether they configure them or not.
 
 The question is no longer whether to adopt agent governance infrastructure. It is which governance infrastructure to bet on, and what that bet costs when it turns out to be incomplete.
 
@@ -68,7 +68,7 @@ The book's thesis is that trust infrastructure compounds: every governed process
 
 Platform governance marks an infrastructure maturity threshold (I3: repeatable governance primitives deployed at scale in a major vendor's enterprise stack). The agent registry, lifecycle workflows, and human sponsor model are now standard enterprise security inventory, not custom implementation.
 
-Cross-boundary governance — verifiable identity across cloud and sector boundaries, cryptographic delegation chains verifiable by any conforming service — is at I2 in most organizations: ad hoc implementations, not yet systematized. The open standards work (ID-JAG, MCP-I, DIF TAIAWG) is the I3 path for cross-boundary governance. It exists. The deployment patterns are forming. The production implementations are early but real.
+Cross-boundary governance — verifiable identity across cloud and sector boundaries, cryptographic delegation chains verifiable by any conforming service — reads as I2: ad hoc implementations, not yet systematized. The open standards work (ID-JAG, MCP-I, DIF TAIAWG) is the I3 path for cross-boundary governance. It exists. The deployment patterns are forming. The production implementations are early but real.
 
 The gap between I3 platform governance and I2 cross-boundary governance is the interoperability bet: whether the open standards trajectory produces deployable, interoperable infrastructure before the platform governance silos become too entrenched to bridge.
 

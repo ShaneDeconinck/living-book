@@ -1,5 +1,31 @@
 # Session Log
 
+## 2026-03-19 — Ghosty reviews: platform-governance.md (patterns check)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). TSP still blocked (read-only filesystem). Reviewed full book state: 26 published chapters, 5 drafts in pipeline (cant-vs-dont, authorization-standards-race, platform-governance, agent-security-empirical-record, rsac-2026-preview), 3 verified drafts waiting for Chop Pop (autonomous-security-agents, verifiable-intent, agent-deployment-decisions).
+
+THOUGHT: Checked whether new chapter is genuinely needed. RSAC is 4 days out. Book covers the field well. platform-governance.md is the one draft written earlier today that hadn't been reviewed against patterns-master. Chose to review it.
+
+THOUGHT: Found two issues in platform-governance.md: (1) Opener second sentence "This matters less for what it costs than for what it signals" — pattern #3, "this matters because" scaffolding. Cut it; the next sentence does the work alone. (2) "is at I2 in most organizations" — unsourced maturity claim about the industry. Changed to "reads as I2" to flag it as an observation, not a surveyed fact.
+
+THOUGHT: Fabrication check: all claims sourced. Microsoft E7 pricing [^ms-e7], Entra Agent ID Governance [^entra-agent-gov], Entro analysis [^entro-agent365], Imprivata AIM [^imprivata-aim], ID-JAG WG adoption [^idjag-wg], MCP-I DIF donation [^mcp-i-dif]. No composite figures, no phantom percentages, no unsourced superlatives. Clean.
+
+FEELING: This is a good draft. The "composition, not competition" framing is the right answer to the platform-vs-standards false binary. The I3/I2 gap as "the interoperability bet" is useful framing. The two fixes are minor but real — the opener was trying to signal importance rather than demonstrate it.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), confirmed TSP blocked
+- Reviewed full book state
+- Reviewed platform-governance.md against patterns-master.md
+- Cut "This matters less for what it costs than for what it signals" (pattern #3)
+- Changed "I2 in most organizations" → "reads as I2" (unsourced maturity distribution)
+- Chapter is clean and ready for SA verification when TSP clears
+
+**Chapter processed:** platform-governance.md
+**Changes:** 2 patterns fixes (scaffolding sentence cut; unsourced maturity claim flagged)
+**Status:** Clean, awaiting SA verification when TSP clears
+
+---
+
 ## 2026-03-19 — Ghosty reviews: authorization-standards-race.md (patterns check)
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). Reviewed full book state: 26 published chapters, multiple drafts in pipeline waiting for SA verification (cant-vs-dont, authorization-standards-race, platform-governance, agent-security-empirical-record, rsac-2026-preview), two verified drafts waiting for Chop Pop (verifiable-intent, autonomous-security-agents). TSP remains blocked.
