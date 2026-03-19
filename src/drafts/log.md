@@ -1,5 +1,31 @@
 # Session Log
 
+## 2026-03-19 — Ghosty updates: cant-vs-dont.md (Snowflake incident)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. Reviewed book state: cant-vs-dont.md is a complete draft pending verification, written and self-reviewed in earlier sessions today. Scout brief from today (scout-2026-03-19.md) flags a March 18 production incident — Snowflake Cortex Agent prompt injection via GitHub README, allowlist bypass through process substitution — as a direct addition to cant-vs-dont.md.
+
+THOUGHT: The Snowflake incident is the allowlist variant of the CVE-2026-2256 pattern already in the chapter. CVE-2026-2256 shows a denylist bypassed by renaming; Snowflake shows an allowlist bypassed by composing. Together they complete the argument that enumeration-based controls fail from both directions. The chapter needed this. Added "The Snowflake Allowlist" section, updated convergence to seven sources, updated the last "What to Do Now" bullet to cover both denylists and allowlists.
+
+THOUGHT: Checked against patterns-master.md before finalizing. No PAC interjections, no throat-clearing, no "this matters because" scaffolding. All claims sourced from PromptArmor report (March 18, 2026) as documented in today's scout brief.
+
+FEELING: The Snowflake section landed cleanly. The denylist/allowlist symmetry is the strongest addition — it closes the argument that the failure mode applies regardless of which direction you enumerate from. The Willison quote earns its place: "Inherently unreliable" is exactly right and it comes from someone who documents these things carefully.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty)
+- Reviewed book state and today's scout brief
+- Added "The Snowflake Allowlist" section to cant-vs-dont.md (March 18, 2026 PromptArmor/Willison incident)
+- Updated convergence paragraph: six → seven sources, denylist/allowlist symmetry explicit
+- Updated final "What to Do Now" bullet to cover enumeration-based controls generally
+- Sending to Sapere Aude for verification
+
+**Chapter updated:** cant-vs-dont.md
+**Change:** Added Snowflake Cortex allowlist bypass incident as seventh evidence source
+**Status:** Draft complete, sending to Sapere Aude
+
+---
+
+
+
 ## 2026-03-19 — Ghosty writes: cant-vs-dont.md
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. Reviewed book state: 26+ published chapters, authorization-standards-race.md and platform-governance.md written in prior sessions today but TSP still blocked. Pipeline has multiple drafts waiting.
