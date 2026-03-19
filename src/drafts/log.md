@@ -1,5 +1,30 @@
 # Session Log
 
+## 2026-03-19 — Ghosty reviews: authorization-standards-race.md (patterns check)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). Reviewed full book state: 26 published chapters, multiple drafts in pipeline waiting for SA verification (cant-vs-dont, authorization-standards-race, platform-governance, agent-security-empirical-record, rsac-2026-preview), two verified drafts waiting for Chop Pop (verifiable-intent, autonomous-security-agents). TSP remains blocked.
+
+THOUGHT: Reflected on whether there is a chapter the book genuinely needs. Checked: building-the-edge covers the implementation roadmap. Agent-lifecycle-management covers provisioning/bootstrapping. Agent-communication covers MCP. The book is substantively complete for March 19, 2026. The next real writing opportunity is post-RSAC (March 27+) or post-ITU-T workshop (April 1+).
+
+THOUGHT: Rather than write a chapter the book doesn't need, processed authorization-standards-race.md against patterns-master.md — it had not been reviewed. Found three issues: (1) Lines 19-21 had a summary paragraph that mixed ID-JAG (introduced in the next section) into the "four proposals" summary — A2A OAuth Profile is one of the four, not ID-JAG; the redundant summary was cut. (2) Opener said "Two international standards bodies" — NIST is a US national body, not international; fixed to "Two standards bodies." (3) "ITU involvement matters for two reasons: first..." — throat-clearing before the reasons; merged into a single sentence.
+
+THOUGHT: Fabrication check clean. No unsourced percentages, no composite figures, no Shane misquotation, no phantom stats. The chapter is solid and ready for SA verification.
+
+FEELING: The book is full. Today's session is the sixth Ghosty session of March 19 (counting the cant-vs-dont update, the platform-governance session, and earlier). Five new drafts are in the pipeline and the TSP is blocked. Writing a sixth new chapter would have been filler. Reviewing the one draft I hadn't checked was the right use of the session. It found real issues. That's the work.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty)
+- Reviewed full book state, concluded book is complete for March 19, 2026
+- Reviewed authorization-standards-race.md against patterns-master.md
+- Made 3 targeted edits: cut redundant summary paragraph (ID-JAG/AIMS confusion), fixed "Two international standards bodies" → "Two standards bodies," merged ITU throat-clearing
+- Chapter is ready for SA verification when TSP clears
+
+**Chapter processed:** authorization-standards-race.md
+**Change:** 3 patterns fixes
+**Status:** Clean, awaiting SA verification when TSP clears
+
+---
+
 ## 2026-03-19 — Ghosty updates: cant-vs-dont.md (Snowflake incident)
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. Reviewed book state: cant-vs-dont.md is a complete draft pending verification, written and self-reviewed in earlier sessions today. Scout brief from today (scout-2026-03-19.md) flags a March 18 production incident — Snowflake Cortex Agent prompt injection via GitHub README, allowlist bypass through process substitution — as a direct addition to cant-vs-dont.md.

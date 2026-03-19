@@ -1,6 +1,6 @@
 # The Authorization Standards Race
 
-Four competing proposals in three weeks. One Working Group adoption. A side meeting called to rationalize the overlap. Two international standards bodies now engaged.
+Four competing proposals in three weeks. One Working Group adoption. A side meeting called to rationalize the overlap. Two standards bodies now engaged.
 
 The agent authorization standards race is not over, but it has moved from open field to a recognizable track. The question for anyone building agent infrastructure right now is not "should we wait for a standard?" — you cannot wait; agents are in production — but "how do we read the signals, and which bet is defensible?"
 
@@ -16,8 +16,6 @@ The IETF OAuth Working Group received four distinct drafts on agent identity and
 
 **A2A OAuth Transaction Token Profile** (March 16, 2026) specializes for the Agent-to-Agent communication protocol. It is an OAuth profile shaped to A2A's interaction patterns — which raises a question the field has not yet answered: will per-protocol OAuth profiles proliferate as agent communication protocols multiply?[^a2a-profile]
 
-Each proposal addresses a different failure mode. CAAM addresses what happens when delegation tokens are too powerful and too portable. ID-JAG addresses interoperability with existing OAuth infrastructure. AIMS addresses the system-level question of how identity, access control, and attestation fit together. AgentID addresses what the others assume: that "who the agent is" is already solved.
-
 The four proposals are not competing for the same design space. They are competing to define which part of the design space matters most.
 
 ## The First Winner
@@ -28,7 +26,7 @@ Before these four appeared, another draft was already on a different trajectory.
 
 ID-JAG builds on JWT assertions and is designed to interoperate with existing OAuth infrastructure. It does not require new token formats or new authorization servers. An organization with existing OAuth infrastructure can add ID-JAG support incrementally. Keycloak v26.5 implemented ID-JAG in early 2026 — the first production implementation of the approach in a widely-deployed enterprise identity platform.[^keycloak] Production deployments exist.
 
-ID-JAG winning WG adoption first is not the same as ID-JAG being the best technical approach. It means ID-JAG was most compatible with the working group's existing body of work, had the strongest co-author coalition, and reached the adoption threshold first. Whether the four newer proposals challenge that status is the question the next twelve months will answer.
+ID-JAG winning WG adoption first is not the same as ID-JAG being the best technical approach. It means ID-JAG was most compatible with the working group's existing body of work, had the strongest co-author coalition, and reached the adoption threshold first.
 
 ## The Consolidation Moment
 
@@ -64,7 +62,7 @@ IETF and DIF are not the only institutions moving.
 
 ITU-T Study Group 17 — the ITU's security study group — is hosting a workshop titled "Trustable and Interoperable Digital Identities for Human and Agentic AI" on March 30-31, 2026, in Geneva.[^itu-workshop] The ITU is the international telecommunications standards body. Its involvement means agent identity is entering the international standards track that governs interoperability across national regulatory regimes, not just the practitioner and vendor-community track that IETF and DIF represent.
 
-The ITU timeline is longer than IETF or DIF. ITU standards move through national delegations and formal approval processes that take years. But ITU involvement matters for two reasons: first, it signals that governments are treating agent identity as a standards-track problem rather than a regulatory problem; second, ITU standards, once issued, carry implementation obligations in regulatory regimes that reference them.
+The ITU timeline is longer than IETF or DIF. ITU standards move through national delegations and formal approval processes that take years. But ITU involvement signals that governments are treating agent identity as a standards-track problem rather than a regulatory problem — and ITU standards, once issued, carry implementation obligations in regulatory regimes that reference them.
 
 Separately, the NIST Collaborative AI Safety Institute (CAISI) has an Agent Identity concept paper in comment (through April 2, 2026). NIST's eventual standard will govern how agents are treated within US federal information systems, and its procurement requirements will pull enterprise adoption. The CAISI process and the ITU process are running on different timelines toward different instruments — NIST produces guidance that becomes procurement requirements; ITU produces international standards that become interoperability baselines — but both are moving.
 
