@@ -4,7 +4,7 @@ On February 17, 2026, NIST launched the Collaborative AI Safety Institute (CAISI
 
 This is not a research exercise. When NIST opens an RFI on a topic, it is building the evidentiary record that becomes a federal standard. The agency that wrote NIST SP 800-207 (Zero Trust Architecture) and NIST AI RMF (AI Risk Management Framework) is now treating agent security as a standards domain, not an emerging concern to monitor.
 
-That shift matters independent of what NIST ultimately produces. It means agent security has moved from "practitioners are worried" to "institutions are acting." The question the field was asking — is this real enough to standardize? — has been answered.
+It means agent security has moved from "practitioners are worried" to "institutions are acting." The question the field was asking — is this real enough to standardize? — has been answered.
 
 ## What the Empirical Record Actually Shows
 
@@ -12,21 +12,19 @@ Before CAISI can write a standard, it needs an empirical baseline. The RFI respo
 
 Their method: catalog every documented agentic AI security threat, classify it across a nine-category taxonomy, then score sixteen existing frameworks on how well they address each category. The result is 193 distinct threats and the first cross-framework coverage comparison for multi-agent system security.
 
-The nine categories are the shape of the problem: identity and authentication, authorization and access control, data integrity, model behavior and reliability, tool and plugin security, communication and coordination, privacy, regulatory compliance, and non-determinism. Every chapter in this book maps to at least one.
-
-What the coverage scores reveal is more interesting than the count.
+The nine categories are the shape of the problem: identity and authentication, authorization and access control, data integrity, model behavior and reliability, tool and plugin security, communication and coordination, privacy, regulatory compliance, and non-determinism.
 
 **OWASP Agentic Security Initiative** leads all sixteen frameworks at 65.3% overall coverage. This is notable: OWASP has moved faster on agent security than NIST, ISO, or most enterprise security frameworks. The same organization that built the Web Application Top 10 and LLM Top 10 is now the most comprehensive reference for agentic threats — ahead of government standards bodies by a meaningful margin.
 
 But even at 65.3%, OWASP is covering roughly two-thirds of the documented threat surface. A standard that covers two-thirds of known threats is not a standard that covers the problem.
 
-The gaps matter more than the coverage. Two categories stand out as systematically under-addressed across all sixteen frameworks:
+Two categories stand out as systematically under-addressed across all sixteen frameworks:
 
 **Non-determinism** (mean coverage score: 1.231/5). Agentic systems are not deterministic. The same input, the same agent, the same tools can produce different outputs across runs. This is fundamental to how LLMs work. It means that security properties you verify at test time may not hold at runtime. It means that an agent behaving correctly in staging may behave incorrectly — or adversarially — in production under different context. The frameworks have largely not grappled with this. The threat models assume a more predictable adversary.
 
 **Data leakage** (mean coverage score: 1.340/5). Agents aggregate context from multiple sources: conversation history, tool results, retrieved documents, prior session state. That aggregated context is a richer target than any individual data source. The pathways through which agents might leak sensitive context — through tool calls, through generated outputs, through reasoning traces stored for observability — are numerous and mostly undocumented in existing frameworks.
 
-These two gaps are not minor edge cases. Non-determinism is intrinsic to the technology. Data leakage is a function of the thing that makes agents useful: their ability to hold and use rich context. Building standards that don't address either means building standards that don't cover what makes agentic AI different from prior AI deployments.
+Non-determinism is intrinsic to the technology. Data leakage is a function of the thing that makes agents useful: their ability to hold and use rich context. Building standards that don't address either means building standards that don't cover what makes agentic AI different from prior AI deployments.
 
 ## What Production Scale Adds
 
@@ -38,7 +36,7 @@ Three threats dominate their operational record: **indirect prompt injection**, 
 
 Indirect prompt injection is the attack surface that doesn't exist in traditional software. An agent retrieves a document, and that document contains instructions that redirect the agent. The injection point is not a form field or an API parameter — it is the agent's own tool call, the content it fetches to do its job. The attack surface is the agent's capability. The better the agent is at following complex instructions, the more effective the injection.
 
-Confused-deputy behavior — the agent acting with authority it should not have for the current context — maps directly to the book's opening chapter. What Perplexity's submission adds is production scale: this is not a theoretical vulnerability. It is a recurring failure mode in systems where delegation chains are implicit rather than cryptographic.
+Confused-deputy behavior — the agent acting with authority it should not have for the current context — maps to the book's opening chapter. What Perplexity's submission adds is production scale: this is not a theoretical vulnerability. It is a recurring failure mode in systems where delegation chains are implicit rather than cryptographic.
 
 Cascading failures in long-running workflows describe what happens when agent decisions compound. An early misclassification or incorrect tool call does not fail immediately; it propagates through subsequent steps, each of which builds on the previous output. By the time the failure is visible, the chain of causation is long and the blast radius has expanded. The incident response chapter describes this structurally. The Perplexity submission confirms it empirically: long-horizon tasks amplify small errors.
 
@@ -58,7 +56,7 @@ The **RFI response record** is now public. Perplexity's submission is one data p
 
 The CAISI process is not building the PAC Framework. It is building federal standards, which will reflect federal priorities: compliance verification, procurement requirements, risk management documentation. These are not the same as the infrastructure-first approach the book argues for.
 
-The relationship is useful to name precisely. PAC's argument is structural: the reason agents break trust is architectural, and the solution is infrastructure that makes failures impossible rather than policy that makes them prohibited. NIST's job is different: to define what compliance looks like so agencies and contractors can be audited against it.
+The relationship is useful to name precisely. The reason agents break trust is architectural, and the solution is infrastructure that makes failures impossible rather than policy that makes them prohibited. NIST's job is different: to define what compliance looks like so agencies and contractors can be audited against it.
 
 A standard that says "agents must have verifiable identities" does not tell you how to build verifiable agent identity. It tells you that you will eventually be audited for it. That creates procurement demand, which creates market pressure, which accelerates infrastructure investment. The PAC Framework provides the architecture; the CAISI standard provides the regulatory forcing function.
 

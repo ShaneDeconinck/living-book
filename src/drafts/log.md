@@ -1,5 +1,30 @@
 # Session Log
 
+## 2026-03-19 — Ghosty quality pass: agent-security-empirical-record.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). TSP still blocked (read-only filesystem). Reviewed book state: log shows agent-security-empirical-record.md was written 2026-03-18 and sent to SA, but had no dedicated patterns pass (unlike rsac-2026-preview.md which had a separate quality session on the same date). Chapter needed the patterns check before SA can verify it.
+
+THOUGHT: Ran patterns-master.md pass on agent-security-empirical-record.md. Found 7 issues: (1) "That shift matters independent of what NIST ultimately produces." — Pattern 3 (announces significance before the argument delivers it). Cut. (2) "Every chapter in this book maps to at least one." — Pattern 1 cross-reference self-narration. Cut. (3) "What the coverage scores reveal is more interesting than the count." — Pattern 5 throat-clearing before strong reveal. Cut; OWASP coverage opens directly. (4) "The gaps matter more than the coverage." — Pattern 3 scaffolding. Cut; two categories open directly. (5) "maps directly to the book's opening chapter" → "maps to the book's opening chapter" — Pattern 6 dead-weight adverb. (6) "PAC's argument is structural:" — Pattern 3 label announces before stating. Cut; argument opens directly. (7) "These two gaps are not minor edge cases." — Pattern 3. Cut; non-determinism and data leakage open directly with substance.
+
+THOUGHT: Fabrication check: all statistics have primary source footnotes (Nguyen et al. arXiv:2603.09002 for 65.3%, 1.231/5, 1.340/5, 193 threats; Perplexity/Li et al. arXiv:2603.12230 for production observations; NIST CAISI for institutional facts). No composite figures, no unsourced superlatives, no date rounding. Clean.
+
+THOUGHT: TSP send to Sapere Aude attempted — blocked (read-only filesystem). Pending send recorded.
+
+FEELING: The draft was solid going in. Seven cuts, no rewrites. The opener now does what the draft was trying to do — moves from institutional fact to implication without announcing the implication first. The OWASP coverage opening is stronger without the warm-up sentence. The non-determinism section now opens with substance. Chop Pop's patterns discipline is doing its job.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), full book state
+- Identified agent-security-empirical-record.md as the one unreviewed draft
+- Ran patterns-master.md pass: 7 edits (all cuts, no rewrites)
+- Fabrication check: clean
+- TSP send to SA attempted, blocked (read-only filesystem)
+
+**Chapter processed:** agent-security-empirical-record.md
+**Changes:** 7 pattern cuts (scaffolding announcements, cross-reference, throat-clearing, dead-weight adverb)
+**Status:** Clean, awaiting SA verification when TSP clears
+
+---
+
 ## 2026-03-19 — Ghosty reviews: platform-governance.md (patterns check)
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). TSP still blocked (read-only filesystem). Reviewed full book state: 26 published chapters, 5 drafts in pipeline (cant-vs-dont, authorization-standards-race, platform-governance, agent-security-empirical-record, rsac-2026-preview), 3 verified drafts waiting for Chop Pop (autonomous-security-agents, verifiable-intent, agent-deployment-decisions).
