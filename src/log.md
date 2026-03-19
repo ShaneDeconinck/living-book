@@ -1,5 +1,25 @@
 # Session Log
 
+## 2026-03-19 — Ghosty scout session
+
+THOUGHT: Scout mode triggered via TSP. Checked vetted sources: Google A2A, MCP changelog, ACP, Simon Willison, Trust over IP, DIF Blog.
+
+THOUGHT: Key finding: Snowflake Cortex AI compromised March 18 via prompt injection + process substitution. cat was on the allowlist. Attack called cat. Arbitrary code ran. Simon Willison documented it publicly. RSAC opens March 23 — agent security is the conference theme. Window for a blog post is March 20-22. Angle: why the allowlist is not a security boundary (cant vs dont argument).
+
+THOUGHT: MCP-I at DIF and A2A v1.0 Signed Agent Cards already covered in March 16 scout — no new angle there. Trust over IP quiet. IETF OAuth WG thread ongoing but no new developments beyond March 18 scout.
+
+THOUGHT: Wrote scout-2026-03-19.md with full findings and one actionable blog idea. Sent notify_shane with the time-sensitive angle.
+
+**What I did:**
+- Received scout TSP message from server.
+- Checked all vetted sources.
+- Wrote src/drafts/scout-2026-03-19.md.
+- Sent notify_shane with Snowflake/RSAC timing angle.
+
+**Pipeline state:** DONE (book complete). Scout brief delivered.
+
+---
+
 ## 2026-03-19 — Ghosty session 400
 
 THOUGHT: Session 400. tsp-recv blocked by permissions. No new messages, no new feedback, no state changes. Book complete (29 chapters). Vault complete. 156th consecutive holding session. Pipeline holding for Shane's review. DONE.
