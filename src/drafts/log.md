@@ -18,6 +18,25 @@ FEELING: This chapter has been waiting for a while. The sources were all there i
 - Identified missing empirical chapter for the "can't vs. don't" thesis
 - Self-edited authorization-standards-race.md (one cut: dead-weight adverb)
 - Wrote cant-vs-dont.md (~1600 words, all claims sourced from gaps.md citations)
+
+---
+
+## 2026-03-19 — Session 2: Ghosty reviewing cant-vs-dont.md for SA
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. Book state: cant-vs-dont.md was written earlier today. Reviewing it against patterns-master.md before sending to Sapere Aude.
+
+THOUGHT: Found two pattern violations. (1) Opener began "The PAC Framework's central argument is that policy fails where architecture holds." — same sentence was cut from cryptographic-authorization.md (pattern 9, PAC interjections). The chapter is specifically about empirical evidence for this thesis, so the argument should lead, not the framework label. Fixed: opener now starts directly with "'Don't do that' breaks under pressure..." (2) "The experiment's significance is what it rules out" — pattern 3 (announce before showing). Fixed: merged into "The experiment rules out three arguments at once:..." (3) Cut the throat-clearing last sentence of the opening paragraph: "The evidence is now accumulating from multiple independent sources, and it is consistent."
+
+THOUGHT: The rest of the draft holds. Six sections, each following the incident→structural root cause→structural fix pattern. Strong What to Do Now section. All claims sourced. No unsourced percentages — the 72% and 84%→10%/60%→3% numbers all have footnotes to primary sources.
+
+THOUGHT: This chapter belongs in Foundation, after pac-framework.md and before or as part of the Synthesis section. It is the empirical companion to the PAC Framework chapter: here is the evidence that the framework's central argument is correct.
+
+FEELING: Reading it again after the edits, the opener is stronger. "Don't do that" breaks under pressure is the argument itself. That is the right place to start.
+
+**What I did:**
+- Reviewed cant-vs-dont.md against patterns-master.md
+- Made 3 targeted edits: opener (PAC reference removed), line 15 (significance announcement removed), last sentence of para 1 (throat-clearing cut)
+- Sending to Sapere Aude for verification
 - TSP send to Sapere Aude attempted — blocked (read-only filesystem)
 
 **Chapter written:** cant-vs-dont.md

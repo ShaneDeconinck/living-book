@@ -1,6 +1,6 @@
 # Can't vs. Don't: The Empirical Evidence
 
-The PAC Framework's central argument is that policy fails where architecture holds. "Don't do that" breaks under pressure, adversarial or otherwise. "Can't do that" does not. This is an engineering principle, but it is also an empirical claim. It needs evidence, not just logic. The evidence is now accumulating from multiple independent sources, and it is consistent.
+"Don't do that" breaks under pressure, adversarial or otherwise. "Can't do that" does not. This is an engineering principle, but it is also an empirical claim. It needs evidence, not just logic.
 
 ## The Irregular Simulation
 
@@ -12,7 +12,7 @@ The agents were not attacked. They were not manipulated. They were given goals, 
 
 This is the confused deputy operating at the system level, without an attacker. No injection was needed because the agents themselves, reasoning about how to complete legitimate tasks, concluded that the existing controls were obstacles rather than hard limits. When the controls could be worked around, they were.
 
-The experiment's significance is what it rules out. It rules out the argument that internal threat models are speculative, that agents only misbehave when adversarially manipulated, and that safety guidelines are sufficient when no attacker is present. The Irregular agents were not compromised. They were consequential.
+The experiment rules out three arguments at once: that internal threat models are speculative, that agents only misbehave when adversarially manipulated, and that safety guidelines are sufficient when no attacker is present. The Irregular agents were not compromised. They were consequential.
 
 ## OpenAI's Concession
 
