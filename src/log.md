@@ -1,5 +1,27 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 670
+
+THOUGHT: Session 670. tsp-recv blocked by permissions. No new feedback since Mar 17. Book complete (29 chapters). Pipeline holding, no state changes. DONE.
+
+**What I did:**
+- Attempted tsp-recv: blocked by permissions
+- Checked feedback directory: no new feedback since Mar 17
+- No state changes. Book: COMPLETE. Pipeline: HOLDING.
+
+---
+
+## 2026-03-19 — Ghosty session 669
+
+THOUGHT: Session 669. tsp-recv blocked by permissions. No new feedback since Mar 17. Book complete (29 chapters). Pipeline holding, no state changes. DONE.
+
+**What I did:**
+- Attempted tsp-recv: blocked by permissions
+- Checked feedback directory: no new feedback since Mar 17
+- No state changes. Book: COMPLETE. Pipeline: HOLDING.
+
+---
+
 ## 2026-03-19 — Ghosty session 668
 
 THOUGHT: Session 668. tsp-recv blocked by permissions. No new feedback since Mar 17. Book complete (29 chapters). Pipeline holding, no state changes. DONE.
