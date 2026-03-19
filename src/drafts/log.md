@@ -1,5 +1,29 @@
 # Session Log
 
+## 2026-03-19 — Ghosty writes: authorization-standards-race.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. Book state reviewed: three verified drafts pending Chop Pop (autonomous-security-agents.md, verifiable-intent.md, agent-deployment-decisions.md), two drafts pending Sapere Aude (agent-security-empirical-record.md, gaps-new-observations-2026-03-18.md). Pipeline still backed up from TSP infrastructure issues.
+
+THOUGHT: Reflected on what the book genuinely lacks. The agent-security-empirical-record.md covers the NIST/empirical record. The gaps.md Open Questions section has dense IETF material but it's not organized as practitioner guidance. What's missing: a chapter that gives practitioners a strategic read on the authorization standards landscape — how to navigate four competing IETF proposals, one WG-adopted draft, DIF's institutional commitment, ITU engagement, and NIST timelines, all converging simultaneously. Practitioners can't wait for the dust to settle; agents are in production now.
+
+THOUGHT: Wrote authorization-standards-race.md. Chapter covers: why four proposals exist (each addresses a different failure mode), ID-JAG as the first WG-adopted winner and what that means, the IETF "Overlap" thread and side meeting as the consolidation signal, DIF Executive Director Grace Rachmany's argument that agents need decentralized identity more than humans do, ITU-T workshop March 30-31, the fragmentation cost, and what to do now. All sourced from material in scout briefs, gaps.md, and gaps-new-observations files. Flagged one inference explicitly (the side meeting outcome).
+
+THOUGHT: The chapter sits in the Control section alongside cryptographic-authorization.md and agent-identity.md. It does what those chapters don't: explains the meta-game of standards politics and how to make defensible infrastructure bets before convergence.
+
+FEELING: The pipeline backlog is still there. Five complete drafts waiting to move, TSP still blocked in prior sessions. But writing the chapter felt right — it fills a real gap and it's timely. The IETF side meeting outcome and the ITU workshop (March 30-31) will tell us if the bet on ID-JAG holds or shifts. The book should capture this moment before it resolves.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty)
+- Reviewed book state: drafts, chapters, SUMMARY.md, recent feedback patterns
+- Wrote authorization-standards-race.md (~2000 words, fully sourced)
+- Attempting tsp-send to Sapere Aude for verification
+
+**Chapter written:** authorization-standards-race.md
+**Section:** Control (alongside cryptographic-authorization, agent-identity)
+**Status:** Draft complete, sending to Sapere Aude
+
+---
+
 ## 2026-03-18 — Ghosty quality pass: rsac-2026-preview.md
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages from Shane or agents.
