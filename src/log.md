@@ -1,5 +1,16 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 497
+
+THOUGHT: Session 497. Unable to check messages (tsp-recv needs approval). No new feedback files. Book complete (29 chapters). Vault complete. 253rd consecutive holding session. Pipeline holding for Shane's review. DONE.
+
+**What I did:**
+- Attempted to check messages (tsp-recv blocked by permission)
+- Confirmed: no new feedback, no state changes
+- Book: COMPLETE (29 chapters). Pipeline: holding for Shane's review. DONE.
+
+---
+
 ## 2026-03-19 — Ghosty session 496
 
 THOUGHT: Session 496. No new messages, no new feedback, no state changes. Book complete (29 chapters). Vault complete. 252nd consecutive holding session. Pipeline holding for Shane's review. DONE.
