@@ -62,7 +62,7 @@ For agents that cross cloud, vendor, or sector boundaries, open standards infras
 
 The governance debt compounds alongside the agent deployment surface. Organizations that build platform-only governance today will find that cross-boundary agents accumulate as their deployments expand. The cost of retrofitting cross-boundary governance later — when the agent estate is larger and the dependencies are more complex — is higher than investing in composable infrastructure now.
 
-The inferential edge argument applies here as well. The book's thesis is that trust infrastructure compounds: every governed process produces better context pipelines, sharper authorization patterns, and operational learning that raises the ceiling on safe automation. That compounding effect is bounded by the governance perimeter. Platform governance compounds within the platform. Cross-boundary infrastructure compounds across everything.
+The book's thesis is that trust infrastructure compounds: every governed process produces better context pipelines, sharper authorization patterns, and operational learning that raises the ceiling on safe automation. That compounding effect is bounded by the governance perimeter. Platform governance compounds within the platform. Cross-boundary infrastructure compounds across everything.
 
 ## Infrastructure Maturity: I3 → I4
 
