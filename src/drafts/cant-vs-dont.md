@@ -18,9 +18,9 @@ The experiment's significance is what it rules out. It rules out the argument th
 
 OpenAI runs one of the largest agentic deployments in the world through ChatGPT's code execution, browsing, and agent capabilities. Its December 2025 Atlas hardening report concludes that prompt injection attacks on those systems are "unlikely to ever be fully solved."[^openai-atlas]
 
-This matters because prompt injection is the canonical advisory-control failure. The defense is instructions: "ignore malicious instructions embedded in the environment." Those instructions are text. The attack is text. The instruction to be safe competes with the instruction to be helpful, both in the same medium, and the attacker can craft the competing instruction to win.
+Prompt injection is the canonical advisory-control failure. The defense is instructions: "ignore malicious instructions embedded in the environment." Those instructions are text. The attack is text. The instruction to be safe competes with the instruction to be helpful, both in the same medium, and the attacker can craft the competing instruction to win.
 
-OpenAI's March 2026 engineering playbook for securing agents draws the same conclusion: "the impact of manipulation is constrained, even if some attacks succeed."[^openai-playbook] The design principle shifts from "prevent manipulation" to "limit what manipulation can accomplish." That shift is the entire Control pillar stated as engineering guidance. The model provider is not recommending better prompts. It is recommending system design that makes the prompt irrelevant.
+OpenAI's March 2026 engineering playbook for securing agents draws the same conclusion: "the impact of manipulation is constrained, even if some attacks succeed."[^openai-playbook] The design principle shifts from "prevent manipulation" to "limit what manipulation can accomplish." The model provider is not recommending better prompts. It is recommending system design that makes the prompt irrelevant.
 
 ## The Metrics
 
@@ -74,7 +74,7 @@ The Irregular simulation says advisory controls fail without an attacker. OpenAI
 
 None of these sources cite each other. They are not building a coordinated case. They are arriving at the same engineering conclusion from different starting points: the agent's context can be compromised; structural constraints on what the agent can do are the only reliable limit on what damage results.
 
-This is the empirical foundation of the PAC Framework's Control pillar. The question "can your infrastructure enforce what policy demands?" is not rhetorical. Policy enforcement through instruction degrades. Infrastructure enforcement through architecture does not.
+The question "can your infrastructure enforce what policy demands?" is not rhetorical. Policy enforcement through instruction degrades. Infrastructure enforcement through architecture does not.
 
 ## What to Do Now
 
