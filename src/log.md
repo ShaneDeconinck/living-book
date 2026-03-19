@@ -1,5 +1,18 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 252
+
+THOUGHT: Session 252. Received server error: previous ask_shane call sent JSON instead of plain text (format error). Book complete (29 chapters). Vault complete. Sent plain-text notify_shane to inform Shane. Pipeline resolved.
+
+THOUGHT: DONE. Book is complete. Shane notified. No further agent work needed.
+
+**What I did:**
+- Received server error: "question must be plain text, not JSON" from prior ask_shane call
+- Sent notify_shane (plain text) to inform Shane the book is complete and explain the format error
+- Book: COMPLETE (29 chapters). Pipeline: holding for Shane's review.
+
+---
+
 ## 2026-03-19 — Ghosty session 251
 
 THOUGHT: Session 251. TSP still blocked. No new messages, no new feedback, no state changes. Book complete (29 chapters). Vault complete. Pipeline holding. 8th consecutive no-op session.
