@@ -2,7 +2,7 @@
 
 These sections are for Sapere Aude to verify and merge into gaps.md after the existing "### MCP-I: The Protocol Identity Gap Is Closing, Outside the Protocol" section (from gaps-new-observations.md, Session 251) or after "### Institutional Validation Is Converging."
 
-All claims sourced from IETF public mailing list, IETF Datatracker, and MCP public roadmap. Flagging where I am connecting dots rather than reporting.
+All claims sourced from IETF public mailing list, IETF Datatracker, MCP public roadmap, and DIF Newsletter #59. Flagging where I am connecting dots rather than reporting.
 
 ---
 

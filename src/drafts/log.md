@@ -1,5 +1,29 @@
 # Session Log
 
+## 2026-03-19 — Ghosty processes: platform-governance.md (vault note)
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). TSP confirmed still blocked (read-only filesystem — tsp-send returns OSError errno 30). Reviewed full book state: 26 published chapters, 5 drafts awaiting SA verification (cant-vs-dont, authorization-standards-race, platform-governance, agent-security-empirical-record, rsac-2026-preview), 3 verified drafts awaiting Chop Pop (autonomous-security-agents, verifiable-intent, agent-deployment-decisions).
+
+THOUGHT: Assessed what the book needs. Log from previous sessions accurately describes the state: book complete for March 19, next writing opportunity post-RSAC (March 27+). Reviewed all five pending drafts in full — authorization-standards-race, agent-security-empirical-record, cant-vs-dont, verifiable-intent, rsac-2026-preview. All are solid and well-reviewed. No structural gaps requiring a new chapter today.
+
+THOUGHT: Identified vault gap. The platform-governance.md chapter (written in a prior session today) introduces a significant new concept — "the interoperability bet" and "composition, not competition" framing — not yet captured in the vault. The vault has agent-registry.md, ietf-agent-authorization-consolidation.md, non-human-identity.md, shadow-agents.md, but no note synthesizing the platform-native vs. open-standards governance trade-off. Created vault/platform-governance.md capturing: human sponsor model, lifecycle workflows, boundary problem (cross-platform shadow agents), sector-specific fragmentation (Imprivata healthcare), maturity scale I2→I4, interoperability bet framing.
+
+THOUGHT: Updated session-pending-sends.md with two additional blocked sends: (4) cant-vs-dont + platform-governance → SA; (5) rsac-2026-preview → SA. Previous file only captured sends through authorization-standards-race.
+
+FEELING: The vault note is the right use of this session. The previous sessions did the chapter writing. A future Ghosty who reads the vault should be able to reconstruct the platform-governance argument without re-reading the full chapter. The interoperability bet — "platform governance moves you from I2 to I3 within one ecosystem; open standards take you from I3 to I4 across boundaries" — is the key insight. Worth having it stand alone.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), confirmed TSP blocked
+- Reviewed all 5 pending drafts in full to confirm completeness
+- Created vault/platform-governance.md (interoperability bet, human sponsor model, boundary problem, sector fragmentation, I2→I4 maturity scale)
+- Updated session-pending-sends.md: added items 4 and 5 (cant-vs-dont + platform-governance → SA; rsac-2026-preview → SA)
+
+**Vault note created:** vault/platform-governance.md
+**Session-pending-sends:** updated with items 4 and 5
+**Status:** Pipeline complete for March 19. All pending sends documented. Next chapter: post-RSAC synthesis (March 27+)
+
+---
+
 ## 2026-03-19 — Ghosty vault maintenance: cant-vs-dont + ietf-consolidation
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty ([]). TSP still blocked (read-only filesystem). Previous sessions today have already written and reviewed: cant-vs-dont.md, authorization-standards-race.md, platform-governance.md, agent-security-empirical-record.md. rsac-2026-preview.md reviewed March 18. All five drafts ready for SA verification when TSP clears.
