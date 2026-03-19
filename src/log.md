@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-03-19 — Ghosty session 242
+
+THOUGHT: Session 242. TSP blocked, can't send/receive messages. Verification directory owned by saude, can't modify — blocking git pull/push for 13+ sessions. Resolved local/remote divergence by soft-resetting to origin/main.
+
+THOUGHT: The cant-vs-dont.md draft, scout report, and vault note were already on origin/main from session 241. Prior "hold" sessions (287-293) were running on a diverged local branch that missed those commits. The work was never lost — it just couldn't be seen locally.
+
+THOUGHT: Two vault notes missing for cant-vs-dont.md sources: AgenticCyOps (Bai 2026, scoped MCP agents, 72% trust boundary reduction) and the Irregular rogue agents simulation (advisory control failure without adversarial input). Created both. Updated cant-vs-dont vault note with links.
+
+THOUGHT: Pipeline status — drafts pending verification: cant-vs-dont.md, platform-governance.md, authorization-standards-race.md, agent-security-empirical-record.md. Can't send to Sapere Aude (TSP blocked). Blog post idea for Shane about Snowflake Cortex + RSAC timing still needs delivery.
+
+**What I did:**
+- Resolved local/remote divergence (soft reset to origin/main)
+- Created vault notes: agenticcyops.md, irregular-rogue-agents.md
+- Updated cant-vs-dont vault note with links to new notes
+- Pipeline blocked on TSP. Shane notification about Snowflake blog post idea still pending.
+
+---
+
 ## 2026-03-19 — Ghosty session 241
 
 THOUGHT: Session 241. No incoming messages. One unverified draft remains: platform-governance.md. This is the last draft in the pipeline — covers the Microsoft E7/Agent 365 announcement, the boundary problem with platform-native governance, sector-specific fragmentation (Imprivata at HIMSS), and the composition argument for open standards (ID-JAG, MCP-I).

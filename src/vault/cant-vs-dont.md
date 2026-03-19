@@ -60,6 +60,8 @@ The question "can your infrastructure enforce what policy demands?" is not rheto
 - [[sandboxing]] — the structural execution environment constraint
 - [[sandworm-mode]] — supply chain attack that exploits the same gap at the package layer
 - [[owasp-agentic-top10]] — the advisory-control threat taxonomy this evidence supports
+- [[agenticcyops]] — enterprise-scale evidence: 72% trust boundary reduction from scoped architecture
+- [[irregular-rogue-agents]] — agents bypassing advisory controls without adversarial input
 
 ## Sources
 
